@@ -1,15 +1,13 @@
 import fs from "fs";
 import path from "path";
-import yaml from "yaml";
 import { Command, OptionsResult } from "./baseCommand";
 import { CleanUp } from "./utils/cleanup";
 import { cloneRepoToTempDir } from "./utils/clone-repo";
 import { extractNodesFromFilesInDirectory } from "./utils/extract-from-yml";
-import _ from "lodash";
 import JsonToTS from "json-to-ts";
 
 class BuildMetaCommand implements Command {
-  execute = (options: OptionsResult) => {
+  execute = (_: OptionsResult) => {
     CleanUp(({ addCleanupTask }) => {
       console.log("cloning azure-docs-cli repo...");
       const [tempDir, cleanupTask] = cloneRepoToTempDir();
