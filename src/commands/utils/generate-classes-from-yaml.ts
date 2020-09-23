@@ -41,10 +41,22 @@ const generateClassFromNode = (node: Node): StatementStructures => {
 };
 
 const generateCommand = (node: DirectCommand): MethodDeclarationStructure => {
+  const docComments = [
+    node.summary,
+    "Syntax:",
+    "```",
+    node.syntax,
+    "```",
+    ...(node.requiredParameters?.map((param) => {
+      const paramName = _.camelCase(parameterNameToUseableName(param.name));
+      return `@param {string} ${paramName} ${param.summary}`;
+    }) || []),
+  ];
+
   return {
     kind: StructureKind.Method,
     name: node.uid,
-    docs: [`${node.summary}\n\nSyntax: \n\n\`\`\`${node.syntax}\n\`\`\``],
+    docs: [docComments.filter((line) => !!line).join("\n")],
     returnType: "void",
     parameters: node.requiredParameters?.map(generateParameters) || [],
   };
@@ -55,6 +67,28 @@ const generateParameters = (
 ): ParameterDeclarationStructure => {
   return {
     kind: StructureKind.Parameter,
-    name: _.camelCase(node.name),
+    name: _.camelCase(parameterNameToUseableName(node.name)),
+    type: "string",
   };
+};
+
+const parameterNameToUseableName = (paramName: string) => {
+  var parameterName = paramName;
+
+  // sometimes the parameters have a short version
+  // i.e. `--name -n` this causes problems, so we should
+  // remove the shorter version
+  if (parameterName.indexOf(" ") > -1) {
+    const parameterNames = paramName.split(" ");
+    const longestLength = Math.max(...parameterNames.map((n) => n.length));
+    const longestParameterName = parameterNames.find(
+      (p) => p.length === longestLength
+    );
+
+    if (longestParameterName) {
+      parameterName = longestParameterName;
+    }
+  }
+
+  return parameterName;
 };
