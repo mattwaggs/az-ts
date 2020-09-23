@@ -1,7 +1,4 @@
-import JsonToTS from "json-to-ts";
 import path from "path";
-import fs from "fs";
-import yaml from "yaml";
 import { Command, OptionsResult } from "./baseCommand";
 import { CleanUp } from "./utils/cleanup";
 import { cloneRepoToTempDir } from "./utils/clone-repo";
@@ -10,7 +7,7 @@ import { Node } from "./gen/yaml-structure";
 import { generateClassesFromYaml } from "./utils/generate-classes-from-yaml";
 
 class BuildCommand implements Command {
-  execute = (options: OptionsResult) => {
+  execute = (_: OptionsResult) => {
     CleanUp(({ addCleanupTask }) => {
       console.log("cloning azure-docs-cli repo...");
       const [tempDir, cleanupTask] = cloneRepoToTempDir();

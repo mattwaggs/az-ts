@@ -26,7 +26,19 @@ export const generateClassesFromYaml = (yamlNodes: Node[]): void => {
   project.createSourceFile(
     path.join(generatedSourceDir, "az.ts"),
     {
-      statements: yamlNodes.map(generateClassFromNode),
+      statements: [
+        "import './base';",
+        ...yamlNodes.map(generateClassFromNode),
+        ...yamlNodes
+          .map((classNode) => {
+            return classNode?.directCommands || [];
+          })
+          .filter((a) => a?.length > 0)
+          .reduce((a, b) => a.concat(b))
+          .map((commandNode) => {
+            return generateCommandBuilderClass(commandNode);
+          }),
+      ],
     },
     {
       overwrite: true,
@@ -47,12 +59,25 @@ const generateClassFromNode = (node: Node): StatementStructures => {
 };
 
 const generateCommand = (node: DirectCommand): MethodDeclarationStructure => {
+  const commandBuilderClassName = `${node.uid}_command_builder`;
+  let returnedCommandBuilder = `return new ${commandBuilderClassName}(this);`;
+  if (node.requiredParameters?.length > 0) {
+    const params = node.requiredParameters
+      .map((p) => {
+        return _.camelCase(parameterNameToUseableName(p.name));
+      })
+      .join(", ");
+
+    returnedCommandBuilder = `return new ${commandBuilderClassName}(this, ${params});`;
+  }
+
   return {
     kind: StructureKind.Method,
     name: node.uid,
     docs: [generateDocCommentsForCommand(node)],
-    returnType: "void",
+    returnType: commandBuilderClassName,
     parameters: node.requiredParameters?.map(generateParameters) || [],
+    statements: [returnedCommandBuilder],
   };
 };
 
@@ -93,7 +118,7 @@ const generateDocCommentsForCommand = (node: DirectCommand) => {
     "\nSyntax:",
     "```",
     node.syntax,
-    `\`\`\`${(node.requiredParameters?.length || 0) > 0 ? "\n" : ""}`,
+    `\`\`\`${node.requiredParameters?.length > 0 ? "\n" : ""}`,
     ...(node.requiredParameters?.map((param) => {
       const paramName = _.camelCase(parameterNameToUseableName(param.name));
       return `@param {${getParameterTypeFrom(param)}} ${paramName} ${
@@ -113,24 +138,38 @@ const generateCommandBuilderClass = (
   return {
     kind: StructureKind.Class,
     name: className,
+    extends: "CommandBuilder",
     docs: [generateDocCommentsForCommand(node)],
     ctors: [
       {
         kind: StructureKind.Constructor,
-        parameters: node.requiredParameters?.map(generateParameters) || [],
+        parameters: [
+          {
+            kind: StructureKind.Parameter,
+            name: "commandParent",
+            type: "ICommandParent",
+          },
+          ...(node.requiredParameters?.map(generateParameters) || []),
+        ],
+        statements: ["super(commandParent);"],
       },
     ],
     methods:
-      node.optionalParameters?.map(generateCommandBuilderMethodFromParm) || [],
+      node.optionalParameters?.map((p) =>
+        generateCommandBuilderMethodFromParam(p, node)
+      ) || [],
   };
 };
 
-const generateCommandBuilderMethodFromParm = (
-  node: OptionalParameter
+const generateCommandBuilderMethodFromParam = (
+  node: OptionalParameter,
+  parent: DirectCommand
 ): MethodDeclarationStructure => {
+  const className = `${parent.uid}_command_builder`;
+
   return {
     kind: StructureKind.Method,
-    name: parameterNameToUseableName(node.name),
+    name: _.camelCase(parameterNameToUseableName(node.name)),
     docs: [node.summary],
     parameters: [
       {
@@ -138,6 +177,11 @@ const generateCommandBuilderMethodFromParm = (
         name: "value",
         type: getParameterTypeFrom(node),
       },
+    ],
+    returnType: className,
+    statements: [
+      `this.setFlag("${parameterNameToUseableName(node.name)}", value);`,
+      `return this;`,
     ],
   };
 };
