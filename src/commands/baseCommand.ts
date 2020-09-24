@@ -1,13 +1,14 @@
 import commandLineArgs, { OptionDefinition } from "command-line-args";
 import commandLineUsage from "command-line-usage";
 
-var packageJson = require("../../package.json");
-var appVersion = packageJson.version;
+const packageJson = require("../../package.json");
+const appVersion = packageJson.version;
 
 export interface OptionsResult {
   build: boolean;
   ["build-meta"]: boolean;
   help: boolean;
+  file: string;
 }
 
 export interface Command {
@@ -18,6 +19,7 @@ const optionDefinitions: OptionDefinition[] = [
   { name: "build", type: Boolean },
   { name: "build-meta", type: Boolean },
   { name: "help", type: Boolean },
+  { name: "file", defaultOption: true },
 ];
 
 export const options = commandLineArgs(optionDefinitions) as OptionsResult;
@@ -30,7 +32,11 @@ const sections = [
   },
   {
     header: "Usage",
-    content: ["$ az-ts [options]"],
+    content: [
+      "$ az-ts ./infrastructure.az.ts",
+      "$ az-ts [options] ./infrastructure.az.ts",
+      "$ az-ts [options]",
+    ],
   },
   {
     header: "Options",
@@ -45,6 +51,11 @@ const sections = [
         type: Boolean,
         description:
           "Build the cli core code from the type definitions of the azure cli",
+      },
+      {
+        name: "file",
+        type: String,
+        description: "The az-ts file to run",
       },
       {
         name: "help",

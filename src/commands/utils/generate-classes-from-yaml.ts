@@ -23,17 +23,42 @@ export const generateClassesFromYaml = (yamlNodes: Node[]): void => {
     project.createDirectory(generatedSourceDir);
   }
 
+  // the current structure of node uids looks like:
+  // az_webapp_create_etc_etc
+  // we can group these by the first word after az
+  // az_`webapp`_create_etc_etc => webapp
+  const groupIdentifierRegex = RegExp("^(?:az_)([a-zA-Z]+)_*.*$");
+  const getGroupIdentifierName = (id: string) => {
+    return groupIdentifierRegex.exec(id)?.[1];
+  };
+
+  const groups = _.groupBy(yamlNodes, (node) =>
+    getGroupIdentifierName(node.uid)
+  );
+
+  Object.keys(groups).forEach((key) => {
+    const nodes = groups[key];
+    const fileName = path.join(generatedSourceDir, `${key}.ts`);
+    generateProjectFileForGroupOfNodes(project, fileName, nodes);
+  });
+
+  project.save();
+};
+
+const generateProjectFileForGroupOfNodes = (
+  project: Project,
+  fileName: string,
+  nodes: Node[]
+): void => {
   project.createSourceFile(
-    path.join(generatedSourceDir, "az.ts"),
+    fileName,
     {
       statements: [
-        "import './base';",
-        ...yamlNodes.map(generateClassFromNode),
-        ...yamlNodes
-          .map((classNode) => {
-            return classNode?.directCommands || [];
-          })
-          .filter((a) => a?.length > 0)
+        "import { CommandBuilder, ICommandParent } from '../base';",
+        ...nodes.map(generateClassFromNode),
+        ...nodes
+          .map((n) => n?.directCommands || [])
+          .filter((n) => n?.length > 0)
           .reduce((a, b) => a.concat(b))
           .map((commandNode) => {
             return generateCommandBuilderClass(commandNode);
@@ -44,18 +69,29 @@ export const generateClassesFromYaml = (yamlNodes: Node[]): void => {
       overwrite: true,
     }
   );
-
-  project.save();
 };
 
 const generateClassFromNode = (node: Node): StatementStructures => {
-  return {
+  const generatedClass: StatementStructures = {
     isExported: true,
     kind: StructureKind.Class,
     name: node.uid,
     docs: [node.summary],
     methods: node.directCommands?.map(generateCommand) || [],
   };
+
+  if (node.directCommands?.length > 0) {
+    generatedClass.implements = ["ICommandParent<any>"]; // <any> becuase no response data types yet
+    generatedClass.properties = [
+      {
+        kind: StructureKind.Property,
+        name: "commandPath",
+        initializer: `"${node.name}"`,
+      },
+    ];
+  }
+
+  return generatedClass;
 };
 
 const generateCommand = (node: DirectCommand): MethodDeclarationStructure => {
@@ -135,6 +171,12 @@ const generateCommandBuilderClass = (
 ): ClassDeclarationStructure => {
   const className = `${node.uid}_command_builder`;
 
+  type AnyParameter = RequiredParameter | OptionalParameter;
+  const required: AnyParameter[] = node.requiredParameters || [];
+  const optional: AnyParameter[] = node.optionalParameters || [];
+
+  const allParams: AnyParameter[] = required.concat(optional);
+
   return {
     kind: StructureKind.Class,
     name: className,
@@ -147,17 +189,24 @@ const generateCommandBuilderClass = (
           {
             kind: StructureKind.Parameter,
             name: "commandParent",
-            type: "ICommandParent",
+            type: "ICommandParent<any>", // any because we dont have response data types yet
           },
           ...(node.requiredParameters?.map(generateParameters) || []),
         ],
-        statements: ["super(commandParent);"],
+        statements: [
+          "super(commandParent);",
+          ...(node.requiredParameters?.map((param) => {
+            const paramName = _.camelCase(
+              parameterNameToUseableName(param.name)
+            );
+            return `this.${paramName}(${paramName})`;
+          }) || []),
+        ],
       },
     ],
     methods:
-      node.optionalParameters?.map((p) =>
-        generateCommandBuilderMethodFromParam(p, node)
-      ) || [],
+      allParams?.map((p) => generateCommandBuilderMethodFromParam(p, node)) ||
+      [],
   };
 };
 
@@ -166,6 +215,13 @@ const generateCommandBuilderMethodFromParam = (
   parent: DirectCommand
 ): MethodDeclarationStructure => {
   const className = `${parent.uid}_command_builder`;
+  const parameterType = getParameterTypeFrom(node);
+  const setFlagStatement =
+    parameterType === "boolean"
+      ? `this.setFlag("${parameterNameToUseableName(
+          node.name
+        )}", value.toString());`
+      : `this.setFlag("${parameterNameToUseableName(node.name)}", value);`;
 
   return {
     kind: StructureKind.Method,
@@ -175,14 +231,11 @@ const generateCommandBuilderMethodFromParam = (
       {
         kind: StructureKind.Parameter,
         name: "value",
-        type: getParameterTypeFrom(node),
+        type: parameterType,
       },
     ],
     returnType: className,
-    statements: [
-      `this.setFlag("${parameterNameToUseableName(node.name)}", value);`,
-      `return this;`,
-    ],
+    statements: [setFlagStatement, `return this;`],
   };
 };
 
