@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage the properties of a storage account's blob service. */
-export class az_storage_account_blob_service_properties implements ICommandParent<any> {
-    commandPath = "az storage account blob-service-properties";
-
+export class az_storage_account_blob_service_properties {
     /**
      * Show the properties of a storage account's blob service.
      *
@@ -17,8 +15,8 @@ export class az_storage_account_blob_service_properties implements ICommandParen
      *
      * @param {string} accountName The storage account name.
      */
-    az_storage_account_blob_service_properties_show(accountName: string): az_storage_account_blob_service_properties_show_command_builder {
-        return new az_storage_account_blob_service_properties_show_command_builder(this, accountName);
+    static az_storage_account_blob_service_properties_show(accountName: string): az_storage_account_blob_service_properties_show_command_builder {
+        return new az_storage_account_blob_service_properties_show_command_builder("az storage account blob-service-properties show", accountName);
     }
 
     /**
@@ -45,15 +43,13 @@ export class az_storage_account_blob_service_properties implements ICommandParen
      *
      * @param {string} accountName The storage account name.
      */
-    az_storage_account_blob_service_properties_update(accountName: string): az_storage_account_blob_service_properties_update_command_builder {
-        return new az_storage_account_blob_service_properties_update_command_builder(this, accountName);
+    static az_storage_account_blob_service_properties_update(accountName: string): az_storage_account_blob_service_properties_update_command_builder {
+        return new az_storage_account_blob_service_properties_update_command_builder("az storage account blob-service-properties update", accountName);
     }
 }
 
 /** Manage encryption scope for a storage account. */
-export class az_storage_account_encryption_scope implements ICommandParent<any> {
-    commandPath = "az storage account encryption-scope";
-
+export class az_storage_account_encryption_scope {
     /**
      * Create an encryption scope within storage account.
      *
@@ -70,8 +66,8 @@ export class az_storage_account_encryption_scope implements ICommandParent<any> 
      * @param {string} accountName The storage account name.
      * @param {string} name The name of the encryption scope within the specified storage account.
      */
-    az_storage_account_encryption_scope_create(accountName: string, name: string): az_storage_account_encryption_scope_create_command_builder {
-        return new az_storage_account_encryption_scope_create_command_builder(this, accountName, name);
+    static az_storage_account_encryption_scope_create(accountName: string, name: string): az_storage_account_encryption_scope_create_command_builder {
+        return new az_storage_account_encryption_scope_create_command_builder("az storage account encryption-scope create", accountName, name);
     }
 
     /**
@@ -87,8 +83,8 @@ export class az_storage_account_encryption_scope implements ICommandParent<any> 
      *
      * @param {string} accountName The storage account name.
      */
-    az_storage_account_encryption_scope_list(accountName: string): az_storage_account_encryption_scope_list_command_builder {
-        return new az_storage_account_encryption_scope_list_command_builder(this, accountName);
+    static az_storage_account_encryption_scope_list(accountName: string): az_storage_account_encryption_scope_list_command_builder {
+        return new az_storage_account_encryption_scope_list_command_builder("az storage account encryption-scope list", accountName);
     }
 
     /**
@@ -106,8 +102,8 @@ export class az_storage_account_encryption_scope implements ICommandParent<any> 
      * @param {string} accountName The storage account name.
      * @param {string} name The name of the encryption scope within the specified storage account.
      */
-    az_storage_account_encryption_scope_show(accountName: string, name: string): az_storage_account_encryption_scope_show_command_builder {
-        return new az_storage_account_encryption_scope_show_command_builder(this, accountName, name);
+    static az_storage_account_encryption_scope_show(accountName: string, name: string): az_storage_account_encryption_scope_show_command_builder {
+        return new az_storage_account_encryption_scope_show_command_builder("az storage account encryption-scope show", accountName, name);
     }
 
     /**
@@ -127,15 +123,13 @@ export class az_storage_account_encryption_scope implements ICommandParent<any> 
      * @param {string} accountName The storage account name.
      * @param {string} name The name of the encryption scope within the specified storage account.
      */
-    az_storage_account_encryption_scope_update(accountName: string, name: string): az_storage_account_encryption_scope_update_command_builder {
-        return new az_storage_account_encryption_scope_update_command_builder(this, accountName, name);
+    static az_storage_account_encryption_scope_update(accountName: string, name: string): az_storage_account_encryption_scope_update_command_builder {
+        return new az_storage_account_encryption_scope_update_command_builder("az storage account encryption-scope update", accountName, name);
     }
 }
 
 /** Manage the properties of file service in storage account. */
-export class az_storage_account_file_service_properties implements ICommandParent<any> {
-    commandPath = "az storage account file-service-properties";
-
+export class az_storage_account_file_service_properties {
     /**
      * Show the properties of file service in storage account.
      *
@@ -149,8 +143,8 @@ export class az_storage_account_file_service_properties implements ICommandParen
      *
      * @param {string} accountName The storage account name.
      */
-    az_storage_account_file_service_properties_show(accountName: string): az_storage_account_file_service_properties_show_command_builder {
-        return new az_storage_account_file_service_properties_show_command_builder(this, accountName);
+    static az_storage_account_file_service_properties_show(accountName: string): az_storage_account_file_service_properties_show_command_builder {
+        return new az_storage_account_file_service_properties_show_command_builder("az storage account file-service-properties show", accountName);
     }
 
     /**
@@ -167,15 +161,13 @@ export class az_storage_account_file_service_properties implements ICommandParen
      *
      * @param {string} accountName The storage account name.
      */
-    az_storage_account_file_service_properties_update(accountName: string): az_storage_account_file_service_properties_update_command_builder {
-        return new az_storage_account_file_service_properties_update_command_builder(this, accountName);
+    static az_storage_account_file_service_properties_update(accountName: string): az_storage_account_file_service_properties_update_command_builder {
+        return new az_storage_account_file_service_properties_update_command_builder("az storage account file-service-properties update", accountName);
     }
 }
 
 /** Manage storage account keys. */
-export class az_storage_account_keys implements ICommandParent<any> {
-    commandPath = "az storage account keys";
-
+export class az_storage_account_keys {
     /**
      * List the access keys or Kerberos keys (if active directory enabled) for a storage account.
      *
@@ -190,8 +182,8 @@ export class az_storage_account_keys implements ICommandParent<any> {
      *
      * @param {string} accountName The storage account name.
      */
-    az_storage_account_keys_list(accountName: string): az_storage_account_keys_list_command_builder {
-        return new az_storage_account_keys_list_command_builder(this, accountName);
+    static az_storage_account_keys_list(accountName: string): az_storage_account_keys_list_command_builder {
+        return new az_storage_account_keys_list_command_builder("az storage account keys list", accountName);
     }
 
     /**
@@ -209,15 +201,13 @@ export class az_storage_account_keys implements ICommandParent<any> {
      * @param {string} accountName The storage account name.
      * @param {'primary' | 'secondary'} key The key options to regenerate.
      */
-    az_storage_account_keys_renew(accountName: string, key: 'primary' | 'secondary'): az_storage_account_keys_renew_command_builder {
-        return new az_storage_account_keys_renew_command_builder(this, accountName, key);
+    static az_storage_account_keys_renew(accountName: string, key: 'primary' | 'secondary'): az_storage_account_keys_renew_command_builder {
+        return new az_storage_account_keys_renew_command_builder("az storage account keys renew", accountName, key);
     }
 }
 
 /** Manage storage account management policies. */
-export class az_storage_account_management_policy implements ICommandParent<any> {
-    commandPath = "az storage account management-policy";
-
+export class az_storage_account_management_policy {
     /**
      * Creates the data policy rules associated with the specified storage account.
      *
@@ -233,8 +223,8 @@ export class az_storage_account_management_policy implements ICommandParent<any>
      * @param {string} policy The Storage Account ManagementPolicies Rules, in JSON format. See more details in: <a href="https://docs.microsoft.com/azure/storage/common/storage-lifecycle-managment-concepts">https://docs.microsoft.com/azure/storage/common/storage-lifecycle-managment-concepts</a>.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_storage_account_management_policy_create(accountName: string, policy: string, resourceGroup: string): az_storage_account_management_policy_create_command_builder {
-        return new az_storage_account_management_policy_create_command_builder(this, accountName, policy, resourceGroup);
+    static az_storage_account_management_policy_create(accountName: string, policy: string, resourceGroup: string): az_storage_account_management_policy_create_command_builder {
+        return new az_storage_account_management_policy_create_command_builder("az storage account management-policy create", accountName, policy, resourceGroup);
     }
 
     /**
@@ -250,8 +240,8 @@ export class az_storage_account_management_policy implements ICommandParent<any>
      * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_storage_account_management_policy_delete(accountName: string, resourceGroup: string): az_storage_account_management_policy_delete_command_builder {
-        return new az_storage_account_management_policy_delete_command_builder(this, accountName, resourceGroup);
+    static az_storage_account_management_policy_delete(accountName: string, resourceGroup: string): az_storage_account_management_policy_delete_command_builder {
+        return new az_storage_account_management_policy_delete_command_builder("az storage account management-policy delete", accountName, resourceGroup);
     }
 
     /**
@@ -268,8 +258,8 @@ export class az_storage_account_management_policy implements ICommandParent<any>
      * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_storage_account_management_policy_show(accountName: string, resourceGroup: string): az_storage_account_management_policy_show_command_builder {
-        return new az_storage_account_management_policy_show_command_builder(this, accountName, resourceGroup);
+    static az_storage_account_management_policy_show(accountName: string, resourceGroup: string): az_storage_account_management_policy_show_command_builder {
+        return new az_storage_account_management_policy_show_command_builder("az storage account management-policy show", accountName, resourceGroup);
     }
 
     /**
@@ -289,15 +279,13 @@ export class az_storage_account_management_policy implements ICommandParent<any>
      * @param {string} accountName The name of the storage account within the specified resource group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_storage_account_management_policy_update(accountName: string, resourceGroup: string): az_storage_account_management_policy_update_command_builder {
-        return new az_storage_account_management_policy_update_command_builder(this, accountName, resourceGroup);
+    static az_storage_account_management_policy_update(accountName: string, resourceGroup: string): az_storage_account_management_policy_update_command_builder {
+        return new az_storage_account_management_policy_update_command_builder("az storage account management-policy update", accountName, resourceGroup);
     }
 }
 
 /** Manage network rules. */
-export class az_storage_account_network_rule implements ICommandParent<any> {
-    commandPath = "az storage account network-rule";
-
+export class az_storage_account_network_rule {
     /**
      * Add a network rule.
      *
@@ -314,8 +302,8 @@ export class az_storage_account_network_rule implements ICommandParent<any> {
      *
      * @param {string} accountName The storage account name.
      */
-    az_storage_account_network_rule_add(accountName: string): az_storage_account_network_rule_add_command_builder {
-        return new az_storage_account_network_rule_add_command_builder(this, accountName);
+    static az_storage_account_network_rule_add(accountName: string): az_storage_account_network_rule_add_command_builder {
+        return new az_storage_account_network_rule_add_command_builder("az storage account network-rule add", accountName);
     }
 
     /**
@@ -331,8 +319,8 @@ export class az_storage_account_network_rule implements ICommandParent<any> {
      *
      * @param {string} accountName The storage account name.
      */
-    az_storage_account_network_rule_list(accountName: string): az_storage_account_network_rule_list_command_builder {
-        return new az_storage_account_network_rule_list_command_builder(this, accountName);
+    static az_storage_account_network_rule_list(accountName: string): az_storage_account_network_rule_list_command_builder {
+        return new az_storage_account_network_rule_list_command_builder("az storage account network-rule list", accountName);
     }
 
     /**
@@ -350,15 +338,13 @@ export class az_storage_account_network_rule implements ICommandParent<any> {
      *
      * @param {string} accountName The storage account name.
      */
-    az_storage_account_network_rule_remove(accountName: string): az_storage_account_network_rule_remove_command_builder {
-        return new az_storage_account_network_rule_remove_command_builder(this, accountName);
+    static az_storage_account_network_rule_remove(accountName: string): az_storage_account_network_rule_remove_command_builder {
+        return new az_storage_account_network_rule_remove_command_builder("az storage account network-rule remove", accountName);
     }
 }
 
 /** Manage Object Replication Service Policy Rules. */
-export class az_storage_account_or_policy_rule implements ICommandParent<any> {
-    commandPath = "az storage account or-policy rule";
-
+export class az_storage_account_or_policy_rule {
     /**
      * Add rule to the specified Object Replication Service Policy.
      *
@@ -379,8 +365,8 @@ export class az_storage_account_or_policy_rule implements ICommandParent<any> {
      * @param {string} policyId The ID of object replication policy or "default" if the policy ID is unknown. Policy Id will be auto-generated when setting on destination account. Required when setting on source account.
      * @param {string} sourceContainer The source storage container name.
      */
-    az_storage_account_or_policy_rule_add(accountName: string, destinationContainer: string, policyId: string, sourceContainer: string): az_storage_account_or_policy_rule_add_command_builder {
-        return new az_storage_account_or_policy_rule_add_command_builder(this, accountName, destinationContainer, policyId, sourceContainer);
+    static az_storage_account_or_policy_rule_add(accountName: string, destinationContainer: string, policyId: string, sourceContainer: string): az_storage_account_or_policy_rule_add_command_builder {
+        return new az_storage_account_or_policy_rule_add_command_builder("az storage account or-policy rule add", accountName, destinationContainer, policyId, sourceContainer);
     }
 
     /**
@@ -398,8 +384,8 @@ export class az_storage_account_or_policy_rule implements ICommandParent<any> {
      * @param {string} accountName The storage account name.
      * @param {string} policyId The ID of object replication policy or "default" if the policy ID is unknown. Policy Id will be auto-generated when setting on destination account. Required when setting on source account.
      */
-    az_storage_account_or_policy_rule_list(accountName: string, policyId: string): az_storage_account_or_policy_rule_list_command_builder {
-        return new az_storage_account_or_policy_rule_list_command_builder(this, accountName, policyId);
+    static az_storage_account_or_policy_rule_list(accountName: string, policyId: string): az_storage_account_or_policy_rule_list_command_builder {
+        return new az_storage_account_or_policy_rule_list_command_builder("az storage account or-policy rule list", accountName, policyId);
     }
 
     /**
@@ -418,8 +404,8 @@ export class az_storage_account_or_policy_rule implements ICommandParent<any> {
      * @param {string} policyId The ID of object replication policy or "default" if the policy ID is unknown. Policy Id will be auto-generated when setting on destination account. Required when setting on source account.
      * @param {string} ruleId Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source account.
      */
-    az_storage_account_or_policy_rule_remove(accountName: string, policyId: string, ruleId: string): az_storage_account_or_policy_rule_remove_command_builder {
-        return new az_storage_account_or_policy_rule_remove_command_builder(this, accountName, policyId, ruleId);
+    static az_storage_account_or_policy_rule_remove(accountName: string, policyId: string, ruleId: string): az_storage_account_or_policy_rule_remove_command_builder {
+        return new az_storage_account_or_policy_rule_remove_command_builder("az storage account or-policy rule remove", accountName, policyId, ruleId);
     }
 
     /**
@@ -439,8 +425,8 @@ export class az_storage_account_or_policy_rule implements ICommandParent<any> {
      * @param {string} policyId The ID of object replication policy or "default" if the policy ID is unknown. Policy Id will be auto-generated when setting on destination account. Required when setting on source account.
      * @param {string} ruleId Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source account.
      */
-    az_storage_account_or_policy_rule_show(accountName: string, policyId: string, ruleId: string): az_storage_account_or_policy_rule_show_command_builder {
-        return new az_storage_account_or_policy_rule_show_command_builder(this, accountName, policyId, ruleId);
+    static az_storage_account_or_policy_rule_show(accountName: string, policyId: string, ruleId: string): az_storage_account_or_policy_rule_show_command_builder {
+        return new az_storage_account_or_policy_rule_show_command_builder("az storage account or-policy rule show", accountName, policyId, ruleId);
     }
 
     /**
@@ -463,15 +449,13 @@ export class az_storage_account_or_policy_rule implements ICommandParent<any> {
      * @param {string} policyId The ID of object replication policy or "default" if the policy ID is unknown. Policy Id will be auto-generated when setting on destination account. Required when setting on source account.
      * @param {string} ruleId Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source account.
      */
-    az_storage_account_or_policy_rule_update(accountName: string, policyId: string, ruleId: string): az_storage_account_or_policy_rule_update_command_builder {
-        return new az_storage_account_or_policy_rule_update_command_builder(this, accountName, policyId, ruleId);
+    static az_storage_account_or_policy_rule_update(accountName: string, policyId: string, ruleId: string): az_storage_account_or_policy_rule_update_command_builder {
+        return new az_storage_account_or_policy_rule_update_command_builder("az storage account or-policy rule update", accountName, policyId, ruleId);
     }
 }
 
 /** Manage storage account Object Replication Policy. */
-export class az_storage_account_or_policy implements ICommandParent<any> {
-    commandPath = "az storage account or-policy";
-
+export class az_storage_account_or_policy {
     /**
      * Create Object Replication Service Policy for storage account.
      *
@@ -493,8 +477,8 @@ export class az_storage_account_or_policy implements ICommandParent<any> {
      *
      * @param {string} accountName The storage account name.
      */
-    az_storage_account_or_policy_create(accountName: string): az_storage_account_or_policy_create_command_builder {
-        return new az_storage_account_or_policy_create_command_builder(this, accountName);
+    static az_storage_account_or_policy_create(accountName: string): az_storage_account_or_policy_create_command_builder {
+        return new az_storage_account_or_policy_create_command_builder("az storage account or-policy create", accountName);
     }
 
     /**
@@ -511,8 +495,8 @@ export class az_storage_account_or_policy implements ICommandParent<any> {
      * @param {string} accountName The storage account name.
      * @param {string} policyId The ID of object replication policy or "default" if the policy ID is unknown. Policy Id will be auto-generated when setting on destination account. Required when setting on source account.
      */
-    az_storage_account_or_policy_delete(accountName: string, policyId: string): az_storage_account_or_policy_delete_command_builder {
-        return new az_storage_account_or_policy_delete_command_builder(this, accountName, policyId);
+    static az_storage_account_or_policy_delete(accountName: string, policyId: string): az_storage_account_or_policy_delete_command_builder {
+        return new az_storage_account_or_policy_delete_command_builder("az storage account or-policy delete", accountName, policyId);
     }
 
     /**
@@ -528,8 +512,8 @@ export class az_storage_account_or_policy implements ICommandParent<any> {
      *
      * @param {string} accountName The storage account name.
      */
-    az_storage_account_or_policy_list(accountName: string): az_storage_account_or_policy_list_command_builder {
-        return new az_storage_account_or_policy_list_command_builder(this, accountName);
+    static az_storage_account_or_policy_list(accountName: string): az_storage_account_or_policy_list_command_builder {
+        return new az_storage_account_or_policy_list_command_builder("az storage account or-policy list", accountName);
     }
 
     /**
@@ -547,8 +531,8 @@ export class az_storage_account_or_policy implements ICommandParent<any> {
      * @param {string} accountName The storage account name.
      * @param {string} policyId The ID of object replication policy or "default" if the policy ID is unknown. Policy Id will be auto-generated when setting on destination account. Required when setting on source account.
      */
-    az_storage_account_or_policy_show(accountName: string, policyId: string): az_storage_account_or_policy_show_command_builder {
-        return new az_storage_account_or_policy_show_command_builder(this, accountName, policyId);
+    static az_storage_account_or_policy_show(accountName: string, policyId: string): az_storage_account_or_policy_show_command_builder {
+        return new az_storage_account_or_policy_show_command_builder("az storage account or-policy show", accountName, policyId);
     }
 
     /**
@@ -571,15 +555,13 @@ export class az_storage_account_or_policy implements ICommandParent<any> {
      *
      * @param {string} accountName The storage account name.
      */
-    az_storage_account_or_policy_update(accountName: string): az_storage_account_or_policy_update_command_builder {
-        return new az_storage_account_or_policy_update_command_builder(this, accountName);
+    static az_storage_account_or_policy_update(accountName: string): az_storage_account_or_policy_update_command_builder {
+        return new az_storage_account_or_policy_update_command_builder("az storage account or-policy update", accountName);
     }
 }
 
 /** Manage storage account private endpoint connection. */
-export class az_storage_account_private_endpoint_connection implements ICommandParent<any> {
-    commandPath = "az storage account private-endpoint-connection";
-
+export class az_storage_account_private_endpoint_connection {
     /**
      * Approve a private endpoint connection request for storage account.
      *
@@ -593,8 +575,8 @@ export class az_storage_account_private_endpoint_connection implements ICommandP
      *                                                        [--subscription]
      * ```
      */
-    az_storage_account_private_endpoint_connection_approve(): az_storage_account_private_endpoint_connection_approve_command_builder {
-        return new az_storage_account_private_endpoint_connection_approve_command_builder(this);
+    static az_storage_account_private_endpoint_connection_approve(): az_storage_account_private_endpoint_connection_approve_command_builder {
+        return new az_storage_account_private_endpoint_connection_approve_command_builder("az storage account private-endpoint-connection approve");
     }
 
     /**
@@ -610,8 +592,8 @@ export class az_storage_account_private_endpoint_connection implements ICommandP
      *                                                       [--yes]
      * ```
      */
-    az_storage_account_private_endpoint_connection_delete(): az_storage_account_private_endpoint_connection_delete_command_builder {
-        return new az_storage_account_private_endpoint_connection_delete_command_builder(this);
+    static az_storage_account_private_endpoint_connection_delete(): az_storage_account_private_endpoint_connection_delete_command_builder {
+        return new az_storage_account_private_endpoint_connection_delete_command_builder("az storage account private-endpoint-connection delete");
     }
 
     /**
@@ -627,8 +609,8 @@ export class az_storage_account_private_endpoint_connection implements ICommandP
      *                                                       [--subscription]
      * ```
      */
-    az_storage_account_private_endpoint_connection_reject(): az_storage_account_private_endpoint_connection_reject_command_builder {
-        return new az_storage_account_private_endpoint_connection_reject_command_builder(this);
+    static az_storage_account_private_endpoint_connection_reject(): az_storage_account_private_endpoint_connection_reject_command_builder {
+        return new az_storage_account_private_endpoint_connection_reject_command_builder("az storage account private-endpoint-connection reject");
     }
 
     /**
@@ -644,15 +626,13 @@ export class az_storage_account_private_endpoint_connection implements ICommandP
      *                                                     [--subscription]
      * ```
      */
-    az_storage_account_private_endpoint_connection_show(): az_storage_account_private_endpoint_connection_show_command_builder {
-        return new az_storage_account_private_endpoint_connection_show_command_builder(this);
+    static az_storage_account_private_endpoint_connection_show(): az_storage_account_private_endpoint_connection_show_command_builder {
+        return new az_storage_account_private_endpoint_connection_show_command_builder("az storage account private-endpoint-connection show");
     }
 }
 
 /** Manage storage account private link resources. */
-export class az_storage_account_private_link_resource implements ICommandParent<any> {
-    commandPath = "az storage account private-link-resource";
-
+export class az_storage_account_private_link_resource {
     /**
      * Get the private link resources that need to be created for a storage account.
      *
@@ -667,15 +647,13 @@ export class az_storage_account_private_link_resource implements ICommandParent<
      * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_storage_account_private_link_resource_list(accountName: string, resourceGroup: string): az_storage_account_private_link_resource_list_command_builder {
-        return new az_storage_account_private_link_resource_list_command_builder(this, accountName, resourceGroup);
+    static az_storage_account_private_link_resource_list(accountName: string, resourceGroup: string): az_storage_account_private_link_resource_list_command_builder {
+        return new az_storage_account_private_link_resource_list_command_builder("az storage account private-link-resource list", accountName, resourceGroup);
     }
 }
 
 /** Manage storage accounts. */
-export class az_storage_account implements ICommandParent<any> {
-    commandPath = "az storage account";
-
+export class az_storage_account {
     /**
      * Checks that the storage account name is valid and is not already in use.
      *
@@ -687,8 +665,8 @@ export class az_storage_account implements ICommandParent<any> {
      *
      * @param {string} name The storage account name.
      */
-    az_storage_account_check_name(name: string): az_storage_account_check_name_command_builder {
-        return new az_storage_account_check_name_command_builder(this, name);
+    static az_storage_account_check_name(name: string): az_storage_account_check_name_command_builder {
+        return new az_storage_account_check_name_command_builder("az storage account check-name", name);
     }
 
     /**
@@ -733,8 +711,8 @@ export class az_storage_account implements ICommandParent<any> {
      * @param {string} name The storage account name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_storage_account_create(name: string, resourceGroup: string): az_storage_account_create_command_builder {
-        return new az_storage_account_create_command_builder(this, name, resourceGroup);
+    static az_storage_account_create(name: string, resourceGroup: string): az_storage_account_create_command_builder {
+        return new az_storage_account_create_command_builder("az storage account create", name, resourceGroup);
     }
 
     /**
@@ -749,8 +727,8 @@ export class az_storage_account implements ICommandParent<any> {
      *                           [--yes]
      * ```
      */
-    az_storage_account_delete(): az_storage_account_delete_command_builder {
-        return new az_storage_account_delete_command_builder(this);
+    static az_storage_account_delete(): az_storage_account_delete_command_builder {
+        return new az_storage_account_delete_command_builder("az storage account delete");
     }
 
     /**
@@ -766,8 +744,8 @@ export class az_storage_account implements ICommandParent<any> {
      *                             [--yes]
      * ```
      */
-    az_storage_account_failover(): az_storage_account_failover_command_builder {
-        return new az_storage_account_failover_command_builder(this);
+    static az_storage_account_failover(): az_storage_account_failover_command_builder {
+        return new az_storage_account_failover_command_builder("az storage account failover");
     }
 
     /**
@@ -794,8 +772,8 @@ export class az_storage_account implements ICommandParent<any> {
      * @param {string} resourceTypes The resource types the SAS is applicable for. Allowed values: (s)ervice (c)ontainer (o)bject. Can be combined.
      * @param {string} services The storage services the SAS is applicable for. Allowed values: (b)lob (f)ile (q)ueue (t)able. Can be combined.
      */
-    az_storage_account_generate_sas(expiry: string, permissions: string, resourceTypes: string, services: string): az_storage_account_generate_sas_command_builder {
-        return new az_storage_account_generate_sas_command_builder(this, expiry, permissions, resourceTypes, services);
+    static az_storage_account_generate_sas(expiry: string, permissions: string, resourceTypes: string, services: string): az_storage_account_generate_sas_command_builder {
+        return new az_storage_account_generate_sas_command_builder("az storage account generate-sas", expiry, permissions, resourceTypes, services);
     }
 
     /**
@@ -808,8 +786,8 @@ export class az_storage_account implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_storage_account_list(): az_storage_account_list_command_builder {
-        return new az_storage_account_list_command_builder(this);
+    static az_storage_account_list(): az_storage_account_list_command_builder {
+        return new az_storage_account_list_command_builder("az storage account list");
     }
 
     /**
@@ -823,8 +801,8 @@ export class az_storage_account implements ICommandParent<any> {
      *                                           [--subscription]
      * ```
      */
-    az_storage_account_revoke_delegation_keys(): az_storage_account_revoke_delegation_keys_command_builder {
-        return new az_storage_account_revoke_delegation_keys_command_builder(this);
+    static az_storage_account_revoke_delegation_keys(): az_storage_account_revoke_delegation_keys_command_builder {
+        return new az_storage_account_revoke_delegation_keys_command_builder("az storage account revoke-delegation-keys");
     }
 
     /**
@@ -840,8 +818,8 @@ export class az_storage_account implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_storage_account_show(): az_storage_account_show_command_builder {
-        return new az_storage_account_show_command_builder(this);
+    static az_storage_account_show(): az_storage_account_show_command_builder {
+        return new az_storage_account_show_command_builder("az storage account show");
     }
 
     /**
@@ -862,8 +840,8 @@ export class az_storage_account implements ICommandParent<any> {
      *                                           [--table-endpoint]
      * ```
      */
-    az_storage_account_show_connection_string(): az_storage_account_show_connection_string_command_builder {
-        return new az_storage_account_show_connection_string_command_builder(this);
+    static az_storage_account_show_connection_string(): az_storage_account_show_connection_string_command_builder {
+        return new az_storage_account_show_connection_string_command_builder("az storage account show-connection-string");
     }
 
     /**
@@ -877,8 +855,8 @@ export class az_storage_account implements ICommandParent<any> {
      *
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
-    az_storage_account_show_usage(location: string): az_storage_account_show_usage_command_builder {
-        return new az_storage_account_show_usage_command_builder(this, location);
+    static az_storage_account_show_usage(location: string): az_storage_account_show_usage_command_builder {
+        return new az_storage_account_show_usage_command_builder("az storage account show-usage", location);
     }
 
     /**
@@ -924,15 +902,13 @@ export class az_storage_account implements ICommandParent<any> {
      *                           [--use-subdomain {false, true}]
      * ```
      */
-    az_storage_account_update(): az_storage_account_update_command_builder {
-        return new az_storage_account_update_command_builder(this);
+    static az_storage_account_update(): az_storage_account_update_command_builder {
+        return new az_storage_account_update_command_builder("az storage account update");
     }
 }
 
 /** Manage blob copy operations. Use `az storage blob show` to check the status of the blobs. */
-export class az_storage_blob_copy implements ICommandParent<any> {
-    commandPath = "az storage blob copy";
-
+export class az_storage_blob_copy {
     /**
      * Aborts a pending copy_blob operation, and leaves a destination blob with zero length and full metadata.
      *
@@ -955,8 +931,8 @@ export class az_storage_blob_copy implements ICommandParent<any> {
      * @param {string} destinationBlob Name of the destination blob. If the exists, it will be overwritten.
      * @param {string} destinationContainer The container name.
      */
-    az_storage_blob_copy_cancel(copyId: string, destinationBlob: string, destinationContainer: string): az_storage_blob_copy_cancel_command_builder {
-        return new az_storage_blob_copy_cancel_command_builder(this, copyId, destinationBlob, destinationContainer);
+    static az_storage_blob_copy_cancel(copyId: string, destinationBlob: string, destinationContainer: string): az_storage_blob_copy_cancel_command_builder {
+        return new az_storage_blob_copy_cancel_command_builder("az storage blob copy cancel", copyId, destinationBlob, destinationContainer);
     }
 
     /**
@@ -999,8 +975,8 @@ export class az_storage_blob_copy implements ICommandParent<any> {
      * @param {string} destinationBlob Name of the destination blob. If the exists, it will be overwritten.
      * @param {string} destinationContainer The container name.
      */
-    az_storage_blob_copy_start(destinationBlob: string, destinationContainer: string): az_storage_blob_copy_start_command_builder {
-        return new az_storage_blob_copy_start_command_builder(this, destinationBlob, destinationContainer);
+    static az_storage_blob_copy_start(destinationBlob: string, destinationContainer: string): az_storage_blob_copy_start_command_builder {
+        return new az_storage_blob_copy_start_command_builder("az storage blob copy start", destinationBlob, destinationContainer);
     }
 
     /**
@@ -1026,15 +1002,13 @@ export class az_storage_blob_copy implements ICommandParent<any> {
      *                                  [--subscription]
      * ```
      */
-    az_storage_blob_copy_start_batch(): az_storage_blob_copy_start_batch_command_builder {
-        return new az_storage_blob_copy_start_batch_command_builder(this);
+    static az_storage_blob_copy_start_batch(): az_storage_blob_copy_start_batch_command_builder {
+        return new az_storage_blob_copy_start_batch_command_builder("az storage blob copy start-batch");
     }
 }
 
 /** Manage blob incremental copy operations. */
-export class az_storage_blob_incremental_copy implements ICommandParent<any> {
-    commandPath = "az storage blob incremental-copy";
-
+export class az_storage_blob_incremental_copy {
     /**
      * Aborts a pending copy_blob operation, and leaves a destination blob with zero length and full metadata.
      *
@@ -1057,8 +1031,8 @@ export class az_storage_blob_incremental_copy implements ICommandParent<any> {
      * @param {string} copyId Copy identifier provided in the copy.id of the original copy_blob operation.
      * @param {string} name The blob name.
      */
-    az_storage_blob_incremental_copy_cancel(containerName: string, copyId: string, name: string): az_storage_blob_incremental_copy_cancel_command_builder {
-        return new az_storage_blob_incremental_copy_cancel_command_builder(this, containerName, copyId, name);
+    static az_storage_blob_incremental_copy_cancel(containerName: string, copyId: string, name: string): az_storage_blob_incremental_copy_cancel_command_builder {
+        return new az_storage_blob_incremental_copy_cancel_command_builder("az storage blob incremental-copy cancel", containerName, copyId, name);
     }
 
     /**
@@ -1094,15 +1068,13 @@ export class az_storage_blob_incremental_copy implements ICommandParent<any> {
      * @param {string} destinationBlob Name of the destination blob. If the exists, it will be overwritten.
      * @param {string} destinationContainer The container name.
      */
-    az_storage_blob_incremental_copy_start(destinationBlob: string, destinationContainer: string): az_storage_blob_incremental_copy_start_command_builder {
-        return new az_storage_blob_incremental_copy_start_command_builder(this, destinationBlob, destinationContainer);
+    static az_storage_blob_incremental_copy_start(destinationBlob: string, destinationContainer: string): az_storage_blob_incremental_copy_start_command_builder {
+        return new az_storage_blob_incremental_copy_start_command_builder("az storage blob incremental-copy start", destinationBlob, destinationContainer);
     }
 }
 
 /** Manage storage blob leases. */
-export class az_storage_blob_lease implements ICommandParent<any> {
-    commandPath = "az storage blob lease";
-
+export class az_storage_blob_lease {
     /**
      * Request a new lease.
      *
@@ -1128,8 +1100,8 @@ export class az_storage_blob_lease implements ICommandParent<any> {
      * @param {string} blobName The blob name.
      * @param {string} containerName The container name.
      */
-    az_storage_blob_lease_acquire(blobName: string, containerName: string): az_storage_blob_lease_acquire_command_builder {
-        return new az_storage_blob_lease_acquire_command_builder(this, blobName, containerName);
+    static az_storage_blob_lease_acquire(blobName: string, containerName: string): az_storage_blob_lease_acquire_command_builder {
+        return new az_storage_blob_lease_acquire_command_builder("az storage blob lease acquire", blobName, containerName);
     }
 
     /**
@@ -1156,8 +1128,8 @@ export class az_storage_blob_lease implements ICommandParent<any> {
      * @param {string} blobName The blob name.
      * @param {string} containerName The container name.
      */
-    az_storage_blob_lease_break(blobName: string, containerName: string): az_storage_blob_lease_break_command_builder {
-        return new az_storage_blob_lease_break_command_builder(this, blobName, containerName);
+    static az_storage_blob_lease_break(blobName: string, containerName: string): az_storage_blob_lease_break_command_builder {
+        return new az_storage_blob_lease_break_command_builder("az storage blob lease break", blobName, containerName);
     }
 
     /**
@@ -1187,8 +1159,8 @@ export class az_storage_blob_lease implements ICommandParent<any> {
      * @param {string} leaseId Required if the blob has an active lease.
      * @param {string} proposedLeaseId Proposed lease ID, in a GUID string format. The Blob service returns 400 (Invalid request) if the proposed lease ID is not in the correct format.
      */
-    az_storage_blob_lease_change(blobName: string, containerName: string, leaseId: string, proposedLeaseId: string): az_storage_blob_lease_change_command_builder {
-        return new az_storage_blob_lease_change_command_builder(this, blobName, containerName, leaseId, proposedLeaseId);
+    static az_storage_blob_lease_change(blobName: string, containerName: string, leaseId: string, proposedLeaseId: string): az_storage_blob_lease_change_command_builder {
+        return new az_storage_blob_lease_change_command_builder("az storage blob lease change", blobName, containerName, leaseId, proposedLeaseId);
     }
 
     /**
@@ -1216,8 +1188,8 @@ export class az_storage_blob_lease implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} leaseId Required if the blob has an active lease.
      */
-    az_storage_blob_lease_release(blobName: string, containerName: string, leaseId: string): az_storage_blob_lease_release_command_builder {
-        return new az_storage_blob_lease_release_command_builder(this, blobName, containerName, leaseId);
+    static az_storage_blob_lease_release(blobName: string, containerName: string, leaseId: string): az_storage_blob_lease_release_command_builder {
+        return new az_storage_blob_lease_release_command_builder("az storage blob lease release", blobName, containerName, leaseId);
     }
 
     /**
@@ -1245,15 +1217,13 @@ export class az_storage_blob_lease implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} leaseId Required if the blob has an active lease.
      */
-    az_storage_blob_lease_renew(blobName: string, containerName: string, leaseId: string): az_storage_blob_lease_renew_command_builder {
-        return new az_storage_blob_lease_renew_command_builder(this, blobName, containerName, leaseId);
+    static az_storage_blob_lease_renew(blobName: string, containerName: string, leaseId: string): az_storage_blob_lease_renew_command_builder {
+        return new az_storage_blob_lease_renew_command_builder("az storage blob lease renew", blobName, containerName, leaseId);
     }
 }
 
 /** Manage blob metadata. */
-export class az_storage_blob_metadata implements ICommandParent<any> {
-    commandPath = "az storage blob metadata";
-
+export class az_storage_blob_metadata {
     /**
      * Returns all user-defined metadata for the specified blob or snapshot.
      *
@@ -1280,8 +1250,8 @@ export class az_storage_blob_metadata implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} name The blob name.
      */
-    az_storage_blob_metadata_show(containerName: string, name: string): az_storage_blob_metadata_show_command_builder {
-        return new az_storage_blob_metadata_show_command_builder(this, containerName, name);
+    static az_storage_blob_metadata_show(containerName: string, name: string): az_storage_blob_metadata_show_command_builder {
+        return new az_storage_blob_metadata_show_command_builder("az storage blob metadata show", containerName, name);
     }
 
     /**
@@ -1309,15 +1279,13 @@ export class az_storage_blob_metadata implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} name The blob name.
      */
-    az_storage_blob_metadata_update(containerName: string, name: string): az_storage_blob_metadata_update_command_builder {
-        return new az_storage_blob_metadata_update_command_builder(this, containerName, name);
+    static az_storage_blob_metadata_update(containerName: string, name: string): az_storage_blob_metadata_update_command_builder {
+        return new az_storage_blob_metadata_update_command_builder("az storage blob metadata update", containerName, name);
     }
 }
 
 /** Manage storage blob delete-policy service properties. */
-export class az_storage_blob_service_properties_delete_policy implements ICommandParent<any> {
-    commandPath = "az storage blob service-properties delete-policy";
-
+export class az_storage_blob_service_properties_delete_policy {
     /**
      * Show the storage blob delete-policy.
      *
@@ -1333,8 +1301,8 @@ export class az_storage_blob_service_properties_delete_policy implements IComman
      *                                                       [--timeout]
      * ```
      */
-    az_storage_blob_service_properties_delete_policy_show(): az_storage_blob_service_properties_delete_policy_show_command_builder {
-        return new az_storage_blob_service_properties_delete_policy_show_command_builder(this);
+    static az_storage_blob_service_properties_delete_policy_show(): az_storage_blob_service_properties_delete_policy_show_command_builder {
+        return new az_storage_blob_service_properties_delete_policy_show_command_builder("az storage blob service-properties delete-policy show");
     }
 
     /**
@@ -1352,15 +1320,13 @@ export class az_storage_blob_service_properties_delete_policy implements IComman
      *                                                         [--subscription]
      * ```
      */
-    az_storage_blob_service_properties_delete_policy_update(): az_storage_blob_service_properties_delete_policy_update_command_builder {
-        return new az_storage_blob_service_properties_delete_policy_update_command_builder(this);
+    static az_storage_blob_service_properties_delete_policy_update(): az_storage_blob_service_properties_delete_policy_update_command_builder {
+        return new az_storage_blob_service_properties_delete_policy_update_command_builder("az storage blob service-properties delete-policy update");
     }
 }
 
 /** Manage storage blob service properties. */
-export class az_storage_blob_service_properties implements ICommandParent<any> {
-    commandPath = "az storage blob service-properties";
-
+export class az_storage_blob_service_properties {
     /**
      * Gets the properties of a storage account's Blob service, including Azure Storage Analytics.
      *
@@ -1376,8 +1342,8 @@ export class az_storage_blob_service_properties implements ICommandParent<any> {
      *                                         [--timeout]
      * ```
      */
-    az_storage_blob_service_properties_show(): az_storage_blob_service_properties_show_command_builder {
-        return new az_storage_blob_service_properties_show_command_builder(this);
+    static az_storage_blob_service_properties_show(): az_storage_blob_service_properties_show_command_builder {
+        return new az_storage_blob_service_properties_show_command_builder("az storage blob service-properties show");
     }
 
     /**
@@ -1403,15 +1369,13 @@ export class az_storage_blob_service_properties implements ICommandParent<any> {
      *                                           [--timeout]
      * ```
      */
-    az_storage_blob_service_properties_update(): az_storage_blob_service_properties_update_command_builder {
-        return new az_storage_blob_service_properties_update_command_builder(this);
+    static az_storage_blob_service_properties_update(): az_storage_blob_service_properties_update_command_builder {
+        return new az_storage_blob_service_properties_update_command_builder("az storage blob service-properties update");
     }
 }
 
 /** Manage object storage for unstructured data (blobs). */
-export class az_storage_blob implements ICommandParent<any> {
-    commandPath = "az storage blob";
-
+export class az_storage_blob {
     /**
      * Mark a blob or snapshot for deletion.
      *
@@ -1438,8 +1402,8 @@ export class az_storage_blob implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} name The blob name.
      */
-    az_storage_blob_delete(containerName: string, name: string): az_storage_blob_delete_command_builder {
-        return new az_storage_blob_delete_command_builder(this, containerName, name);
+    static az_storage_blob_delete(containerName: string, name: string): az_storage_blob_delete_command_builder {
+        return new az_storage_blob_delete_command_builder("az storage blob delete", containerName, name);
     }
 
     /**
@@ -1467,8 +1431,8 @@ export class az_storage_blob implements ICommandParent<any> {
      *
      * @param {string} source The blob container from where the files will be deleted.
      */
-    az_storage_blob_delete_batch(source: string): az_storage_blob_delete_batch_command_builder {
-        return new az_storage_blob_delete_batch_command_builder(this, source);
+    static az_storage_blob_delete_batch(source: string): az_storage_blob_delete_batch_command_builder {
+        return new az_storage_blob_delete_batch_command_builder("az storage blob delete-batch", source);
     }
 
     /**
@@ -1505,8 +1469,8 @@ export class az_storage_blob implements ICommandParent<any> {
      * @param {string} file Path of file to write out to.
      * @param {string} name The blob name.
      */
-    az_storage_blob_download(containerName: string, file: string, name: string): az_storage_blob_download_command_builder {
-        return new az_storage_blob_download_command_builder(this, containerName, file, name);
+    static az_storage_blob_download(containerName: string, file: string, name: string): az_storage_blob_download_command_builder {
+        return new az_storage_blob_download_command_builder("az storage blob download", containerName, file, name);
     }
 
     /**
@@ -1532,8 +1496,8 @@ export class az_storage_blob implements ICommandParent<any> {
      * @param {string} destination The existing destination folder for this download operation.
      * @param {string} source The blob container from where the files will be downloaded.
      */
-    az_storage_blob_download_batch(destination: string, source: string): az_storage_blob_download_batch_command_builder {
-        return new az_storage_blob_download_batch_command_builder(this, destination, source);
+    static az_storage_blob_download_batch(destination: string, source: string): az_storage_blob_download_batch_command_builder {
+        return new az_storage_blob_download_batch_command_builder("az storage blob download-batch", destination, source);
     }
 
     /**
@@ -1556,8 +1520,8 @@ export class az_storage_blob implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} name The blob name.
      */
-    az_storage_blob_exists(containerName: string, name: string): az_storage_blob_exists_command_builder {
-        return new az_storage_blob_exists_command_builder(this, containerName, name);
+    static az_storage_blob_exists(containerName: string, name: string): az_storage_blob_exists_command_builder {
+        return new az_storage_blob_exists_command_builder("az storage blob exists", containerName, name);
     }
 
     /**
@@ -1590,8 +1554,8 @@ export class az_storage_blob implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} name The blob name.
      */
-    az_storage_blob_generate_sas(containerName: string, name: string): az_storage_blob_generate_sas_command_builder {
-        return new az_storage_blob_generate_sas_command_builder(this, containerName, name);
+    static az_storage_blob_generate_sas(containerName: string, name: string): az_storage_blob_generate_sas_command_builder {
+        return new az_storage_blob_generate_sas_command_builder("az storage blob generate-sas", containerName, name);
     }
 
     /**
@@ -1618,8 +1582,8 @@ export class az_storage_blob implements ICommandParent<any> {
      *
      * @param {string} containerName The container name.
      */
-    az_storage_blob_list(containerName: string): az_storage_blob_list_command_builder {
-        return new az_storage_blob_list_command_builder(this, containerName);
+    static az_storage_blob_list(containerName: string): az_storage_blob_list_command_builder {
+        return new az_storage_blob_list_command_builder("az storage blob list", containerName);
     }
 
     /**
@@ -1638,8 +1602,8 @@ export class az_storage_blob implements ICommandParent<any> {
      * @param {string} accountName The storage account name.
      * @param {string} timeToRestore Restore blob to the specified time, which should be UTC datetime in (Y-m-d'T'H:M:S'Z').
      */
-    az_storage_blob_restore(accountName: string, timeToRestore: string): az_storage_blob_restore_command_builder {
-        return new az_storage_blob_restore_command_builder(this, accountName, timeToRestore);
+    static az_storage_blob_restore(accountName: string, timeToRestore: string): az_storage_blob_restore_command_builder {
+        return new az_storage_blob_restore_command_builder("az storage blob restore", accountName, timeToRestore);
     }
 
     /**
@@ -1665,8 +1629,8 @@ export class az_storage_blob implements ICommandParent<any> {
      * @param {string} name The blob name.
      * @param {string} tier The tier value to set the blob to.
      */
-    az_storage_blob_set_tier(containerName: string, name: string, tier: string): az_storage_blob_set_tier_command_builder {
-        return new az_storage_blob_set_tier_command_builder(this, containerName, name, tier);
+    static az_storage_blob_set_tier(containerName: string, name: string, tier: string): az_storage_blob_set_tier_command_builder {
+        return new az_storage_blob_set_tier_command_builder("az storage blob set-tier", containerName, name, tier);
     }
 
     /**
@@ -1695,8 +1659,8 @@ export class az_storage_blob implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} name The blob name.
      */
-    az_storage_blob_show(containerName: string, name: string): az_storage_blob_show_command_builder {
-        return new az_storage_blob_show_command_builder(this, containerName, name);
+    static az_storage_blob_show(containerName: string, name: string): az_storage_blob_show_command_builder {
+        return new az_storage_blob_show_command_builder("az storage blob show", containerName, name);
     }
 
     /**
@@ -1724,8 +1688,8 @@ export class az_storage_blob implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} name The blob name.
      */
-    az_storage_blob_snapshot(containerName: string, name: string): az_storage_blob_snapshot_command_builder {
-        return new az_storage_blob_snapshot_command_builder(this, containerName, name);
+    static az_storage_blob_snapshot(containerName: string, name: string): az_storage_blob_snapshot_command_builder {
+        return new az_storage_blob_snapshot_command_builder("az storage blob snapshot", containerName, name);
     }
 
     /**
@@ -1750,8 +1714,8 @@ export class az_storage_blob implements ICommandParent<any> {
      * @param {string} container The sync destination container.
      * @param {string} source The source file path to sync from.
      */
-    az_storage_blob_sync(container: string, source: string): az_storage_blob_sync_command_builder {
-        return new az_storage_blob_sync_command_builder(this, container, source);
+    static az_storage_blob_sync(container: string, source: string): az_storage_blob_sync_command_builder {
+        return new az_storage_blob_sync_command_builder("az storage blob sync", container, source);
     }
 
     /**
@@ -1773,8 +1737,8 @@ export class az_storage_blob implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} name The blob name.
      */
-    az_storage_blob_undelete(containerName: string, name: string): az_storage_blob_undelete_command_builder {
-        return new az_storage_blob_undelete_command_builder(this, containerName, name);
+    static az_storage_blob_undelete(containerName: string, name: string): az_storage_blob_undelete_command_builder {
+        return new az_storage_blob_undelete_command_builder("az storage blob undelete", containerName, name);
     }
 
     /**
@@ -1808,8 +1772,8 @@ export class az_storage_blob implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} name The blob name.
      */
-    az_storage_blob_update(containerName: string, name: string): az_storage_blob_update_command_builder {
-        return new az_storage_blob_update_command_builder(this, containerName, name);
+    static az_storage_blob_update(containerName: string, name: string): az_storage_blob_update_command_builder {
+        return new az_storage_blob_update_command_builder("az storage blob update", containerName, name);
     }
 
     /**
@@ -1853,8 +1817,8 @@ export class az_storage_blob implements ICommandParent<any> {
      * @param {string} file Path of the file to upload as the blob content.
      * @param {string} name The blob name.
      */
-    az_storage_blob_upload(containerName: string, file: string, name: string): az_storage_blob_upload_command_builder {
-        return new az_storage_blob_upload_command_builder(this, containerName, file, name);
+    static az_storage_blob_upload(containerName: string, file: string, name: string): az_storage_blob_upload_command_builder {
+        return new az_storage_blob_upload_command_builder("az storage blob upload", containerName, file, name);
     }
 
     /**
@@ -1897,8 +1861,8 @@ export class az_storage_blob implements ICommandParent<any> {
      * @param {string} destination The blob container where the files will be uploaded.
      * @param {string} source The directory where the files to be uploaded are located.
      */
-    az_storage_blob_upload_batch(destination: string, source: string): az_storage_blob_upload_batch_command_builder {
-        return new az_storage_blob_upload_batch_command_builder(this, destination, source);
+    static az_storage_blob_upload_batch(destination: string, source: string): az_storage_blob_upload_batch_command_builder {
+        return new az_storage_blob_upload_batch_command_builder("az storage blob upload-batch", destination, source);
     }
 
     /**
@@ -1921,15 +1885,13 @@ export class az_storage_blob implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} name The blob name.
      */
-    az_storage_blob_url(containerName: string, name: string): az_storage_blob_url_command_builder {
-        return new az_storage_blob_url_command_builder(this, containerName, name);
+    static az_storage_blob_url(containerName: string, name: string): az_storage_blob_url_command_builder {
+        return new az_storage_blob_url_command_builder("az storage blob url", containerName, name);
     }
 }
 
 /** Manage container immutability policies. */
-export class az_storage_container_immutability_policy implements ICommandParent<any> {
-    commandPath = "az storage container immutability-policy";
-
+export class az_storage_container_immutability_policy {
     /**
      * Creates or updates an unlocked immutability policy.
      *
@@ -1947,8 +1909,8 @@ export class az_storage_container_immutability_policy implements ICommandParent<
      * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param {string} containerName The container name.
      */
-    az_storage_container_immutability_policy_create(accountName: string, containerName: string): az_storage_container_immutability_policy_create_command_builder {
-        return new az_storage_container_immutability_policy_create_command_builder(this, accountName, containerName);
+    static az_storage_container_immutability_policy_create(accountName: string, containerName: string): az_storage_container_immutability_policy_create_command_builder {
+        return new az_storage_container_immutability_policy_create_command_builder("az storage container immutability-policy create", accountName, containerName);
     }
 
     /**
@@ -1967,8 +1929,8 @@ export class az_storage_container_immutability_policy implements ICommandParent<
      * @param {string} containerName The container name.
      * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
      */
-    az_storage_container_immutability_policy_delete(accountName: string, containerName: string, ifMatch: string): az_storage_container_immutability_policy_delete_command_builder {
-        return new az_storage_container_immutability_policy_delete_command_builder(this, accountName, containerName, ifMatch);
+    static az_storage_container_immutability_policy_delete(accountName: string, containerName: string, ifMatch: string): az_storage_container_immutability_policy_delete_command_builder {
+        return new az_storage_container_immutability_policy_delete_command_builder("az storage container immutability-policy delete", accountName, containerName, ifMatch);
     }
 
     /**
@@ -1989,8 +1951,8 @@ export class az_storage_container_immutability_policy implements ICommandParent<
      * @param {string} containerName The container name.
      * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
      */
-    az_storage_container_immutability_policy_extend(accountName: string, containerName: string, ifMatch: string): az_storage_container_immutability_policy_extend_command_builder {
-        return new az_storage_container_immutability_policy_extend_command_builder(this, accountName, containerName, ifMatch);
+    static az_storage_container_immutability_policy_extend(accountName: string, containerName: string, ifMatch: string): az_storage_container_immutability_policy_extend_command_builder {
+        return new az_storage_container_immutability_policy_extend_command_builder("az storage container immutability-policy extend", accountName, containerName, ifMatch);
     }
 
     /**
@@ -2009,8 +1971,8 @@ export class az_storage_container_immutability_policy implements ICommandParent<
      * @param {string} containerName The container name.
      * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
      */
-    az_storage_container_immutability_policy_lock(accountName: string, containerName: string, ifMatch: string): az_storage_container_immutability_policy_lock_command_builder {
-        return new az_storage_container_immutability_policy_lock_command_builder(this, accountName, containerName, ifMatch);
+    static az_storage_container_immutability_policy_lock(accountName: string, containerName: string, ifMatch: string): az_storage_container_immutability_policy_lock_command_builder {
+        return new az_storage_container_immutability_policy_lock_command_builder("az storage container immutability-policy lock", accountName, containerName, ifMatch);
     }
 
     /**
@@ -2029,15 +1991,13 @@ export class az_storage_container_immutability_policy implements ICommandParent<
      * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param {string} containerName The container name.
      */
-    az_storage_container_immutability_policy_show(accountName: string, containerName: string): az_storage_container_immutability_policy_show_command_builder {
-        return new az_storage_container_immutability_policy_show_command_builder(this, accountName, containerName);
+    static az_storage_container_immutability_policy_show(accountName: string, containerName: string): az_storage_container_immutability_policy_show_command_builder {
+        return new az_storage_container_immutability_policy_show_command_builder("az storage container immutability-policy show", accountName, containerName);
     }
 }
 
 /** Manage blob storage container leases. */
-export class az_storage_container_lease implements ICommandParent<any> {
-    commandPath = "az storage container lease";
-
+export class az_storage_container_lease {
     /**
      * Requests a new lease.
      *
@@ -2059,8 +2019,8 @@ export class az_storage_container_lease implements ICommandParent<any> {
      *
      * @param {string} containerName The container name.
      */
-    az_storage_container_lease_acquire(containerName: string): az_storage_container_lease_acquire_command_builder {
-        return new az_storage_container_lease_acquire_command_builder(this, containerName);
+    static az_storage_container_lease_acquire(containerName: string): az_storage_container_lease_acquire_command_builder {
+        return new az_storage_container_lease_acquire_command_builder("az storage container lease acquire", containerName);
     }
 
     /**
@@ -2083,8 +2043,8 @@ export class az_storage_container_lease implements ICommandParent<any> {
      *
      * @param {string} containerName The container name.
      */
-    az_storage_container_lease_break(containerName: string): az_storage_container_lease_break_command_builder {
-        return new az_storage_container_lease_break_command_builder(this, containerName);
+    static az_storage_container_lease_break(containerName: string): az_storage_container_lease_break_command_builder {
+        return new az_storage_container_lease_break_command_builder("az storage container lease break", containerName);
     }
 
     /**
@@ -2110,8 +2070,8 @@ export class az_storage_container_lease implements ICommandParent<any> {
      * @param {string} leaseId Lease ID for active lease.
      * @param {string} proposedLeaseId Proposed lease ID, in a GUID string format. The Blob service returns 400 (Invalid request) if the proposed lease ID is not in the correct format.
      */
-    az_storage_container_lease_change(containerName: string, leaseId: string, proposedLeaseId: string): az_storage_container_lease_change_command_builder {
-        return new az_storage_container_lease_change_command_builder(this, containerName, leaseId, proposedLeaseId);
+    static az_storage_container_lease_change(containerName: string, leaseId: string, proposedLeaseId: string): az_storage_container_lease_change_command_builder {
+        return new az_storage_container_lease_change_command_builder("az storage container lease change", containerName, leaseId, proposedLeaseId);
     }
 
     /**
@@ -2135,8 +2095,8 @@ export class az_storage_container_lease implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} leaseId Lease ID for active lease.
      */
-    az_storage_container_lease_release(containerName: string, leaseId: string): az_storage_container_lease_release_command_builder {
-        return new az_storage_container_lease_release_command_builder(this, containerName, leaseId);
+    static az_storage_container_lease_release(containerName: string, leaseId: string): az_storage_container_lease_release_command_builder {
+        return new az_storage_container_lease_release_command_builder("az storage container lease release", containerName, leaseId);
     }
 
     /**
@@ -2160,15 +2120,13 @@ export class az_storage_container_lease implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} leaseId Lease ID for active lease.
      */
-    az_storage_container_lease_renew(containerName: string, leaseId: string): az_storage_container_lease_renew_command_builder {
-        return new az_storage_container_lease_renew_command_builder(this, containerName, leaseId);
+    static az_storage_container_lease_renew(containerName: string, leaseId: string): az_storage_container_lease_renew_command_builder {
+        return new az_storage_container_lease_renew_command_builder("az storage container lease renew", containerName, leaseId);
     }
 }
 
 /** Manage container legal holds. */
-export class az_storage_container_legal_hold implements ICommandParent<any> {
-    commandPath = "az storage container legal-hold";
-
+export class az_storage_container_legal_hold {
     /**
      * Clears legal hold tags.
      *
@@ -2185,8 +2143,8 @@ export class az_storage_container_legal_hold implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} tags Each tag should be 3 to 23 alphanumeric characters and is normalized to lower case.
      */
-    az_storage_container_legal_hold_clear(accountName: string, containerName: string, tags: string): az_storage_container_legal_hold_clear_command_builder {
-        return new az_storage_container_legal_hold_clear_command_builder(this, accountName, containerName, tags);
+    static az_storage_container_legal_hold_clear(accountName: string, containerName: string, tags: string): az_storage_container_legal_hold_clear_command_builder {
+        return new az_storage_container_legal_hold_clear_command_builder("az storage container legal-hold clear", accountName, containerName, tags);
     }
 
     /**
@@ -2205,8 +2163,8 @@ export class az_storage_container_legal_hold implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} tags Each tag should be 3 to 23 alphanumeric characters and is normalized to lower case.
      */
-    az_storage_container_legal_hold_set(accountName: string, containerName: string, tags: string): az_storage_container_legal_hold_set_command_builder {
-        return new az_storage_container_legal_hold_set_command_builder(this, accountName, containerName, tags);
+    static az_storage_container_legal_hold_set(accountName: string, containerName: string, tags: string): az_storage_container_legal_hold_set_command_builder {
+        return new az_storage_container_legal_hold_set_command_builder("az storage container legal-hold set", accountName, containerName, tags);
     }
 
     /**
@@ -2224,15 +2182,13 @@ export class az_storage_container_legal_hold implements ICommandParent<any> {
      * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param {string} containerName The container name.
      */
-    az_storage_container_legal_hold_show(accountName: string, containerName: string): az_storage_container_legal_hold_show_command_builder {
-        return new az_storage_container_legal_hold_show_command_builder(this, accountName, containerName);
+    static az_storage_container_legal_hold_show(accountName: string, containerName: string): az_storage_container_legal_hold_show_command_builder {
+        return new az_storage_container_legal_hold_show_command_builder("az storage container legal-hold show", accountName, containerName);
     }
 }
 
 /** Manage container metadata. */
-export class az_storage_container_metadata implements ICommandParent<any> {
-    commandPath = "az storage container metadata";
-
+export class az_storage_container_metadata {
     /**
      * Returns all user-defined metadata for the specified container.
      *
@@ -2252,8 +2208,8 @@ export class az_storage_container_metadata implements ICommandParent<any> {
      *
      * @param {string} name The container name.
      */
-    az_storage_container_metadata_show(name: string): az_storage_container_metadata_show_command_builder {
-        return new az_storage_container_metadata_show_command_builder(this, name);
+    static az_storage_container_metadata_show(name: string): az_storage_container_metadata_show_command_builder {
+        return new az_storage_container_metadata_show_command_builder("az storage container metadata show", name);
     }
 
     /**
@@ -2276,15 +2232,13 @@ export class az_storage_container_metadata implements ICommandParent<any> {
      *
      * @param {string} name The container name.
      */
-    az_storage_container_metadata_update(name: string): az_storage_container_metadata_update_command_builder {
-        return new az_storage_container_metadata_update_command_builder(this, name);
+    static az_storage_container_metadata_update(name: string): az_storage_container_metadata_update_command_builder {
+        return new az_storage_container_metadata_update_command_builder("az storage container metadata update", name);
     }
 }
 
 /** Manage container stored access policies. */
-export class az_storage_container_policy implements ICommandParent<any> {
-    commandPath = "az storage container policy";
-
+export class az_storage_container_policy {
     /**
      * Create a stored access policy on the containing object.
      *
@@ -2307,8 +2261,8 @@ export class az_storage_container_policy implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} name The stored access policy name.
      */
-    az_storage_container_policy_create(containerName: string, name: string): az_storage_container_policy_create_command_builder {
-        return new az_storage_container_policy_create_command_builder(this, containerName, name);
+    static az_storage_container_policy_create(containerName: string, name: string): az_storage_container_policy_create_command_builder {
+        return new az_storage_container_policy_create_command_builder("az storage container policy create", containerName, name);
     }
 
     /**
@@ -2330,8 +2284,8 @@ export class az_storage_container_policy implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} name The stored access policy name.
      */
-    az_storage_container_policy_delete(containerName: string, name: string): az_storage_container_policy_delete_command_builder {
-        return new az_storage_container_policy_delete_command_builder(this, containerName, name);
+    static az_storage_container_policy_delete(containerName: string, name: string): az_storage_container_policy_delete_command_builder {
+        return new az_storage_container_policy_delete_command_builder("az storage container policy delete", containerName, name);
     }
 
     /**
@@ -2352,8 +2306,8 @@ export class az_storage_container_policy implements ICommandParent<any> {
      *
      * @param {string} containerName The container name.
      */
-    az_storage_container_policy_list(containerName: string): az_storage_container_policy_list_command_builder {
-        return new az_storage_container_policy_list_command_builder(this, containerName);
+    static az_storage_container_policy_list(containerName: string): az_storage_container_policy_list_command_builder {
+        return new az_storage_container_policy_list_command_builder("az storage container policy list", containerName);
     }
 
     /**
@@ -2376,8 +2330,8 @@ export class az_storage_container_policy implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} name The stored access policy name.
      */
-    az_storage_container_policy_show(containerName: string, name: string): az_storage_container_policy_show_command_builder {
-        return new az_storage_container_policy_show_command_builder(this, containerName, name);
+    static az_storage_container_policy_show(containerName: string, name: string): az_storage_container_policy_show_command_builder {
+        return new az_storage_container_policy_show_command_builder("az storage container policy show", containerName, name);
     }
 
     /**
@@ -2402,15 +2356,13 @@ export class az_storage_container_policy implements ICommandParent<any> {
      * @param {string} containerName The container name.
      * @param {string} name The stored access policy name.
      */
-    az_storage_container_policy_update(containerName: string, name: string): az_storage_container_policy_update_command_builder {
-        return new az_storage_container_policy_update_command_builder(this, containerName, name);
+    static az_storage_container_policy_update(containerName: string, name: string): az_storage_container_policy_update_command_builder {
+        return new az_storage_container_policy_update_command_builder("az storage container policy update", containerName, name);
     }
 }
 
 /** Manage blob storage containers. */
-export class az_storage_container implements ICommandParent<any> {
-    commandPath = "az storage container";
-
+export class az_storage_container {
     /**
      * Create a container in a storage account.
      *
@@ -2434,8 +2386,8 @@ export class az_storage_container implements ICommandParent<any> {
      *
      * @param {string} name The container name.
      */
-    az_storage_container_create(name: string): az_storage_container_create_command_builder {
-        return new az_storage_container_create_command_builder(this, name);
+    static az_storage_container_create(name: string): az_storage_container_create_command_builder {
+        return new az_storage_container_create_command_builder("az storage container create", name);
     }
 
     /**
@@ -2460,8 +2412,8 @@ export class az_storage_container implements ICommandParent<any> {
      *
      * @param {string} name The container name.
      */
-    az_storage_container_delete(name: string): az_storage_container_delete_command_builder {
-        return new az_storage_container_delete_command_builder(this, name);
+    static az_storage_container_delete(name: string): az_storage_container_delete_command_builder {
+        return new az_storage_container_delete_command_builder("az storage container delete", name);
     }
 
     /**
@@ -2481,8 +2433,8 @@ export class az_storage_container implements ICommandParent<any> {
      *
      * @param {string} name The container name.
      */
-    az_storage_container_exists(name: string): az_storage_container_exists_command_builder {
-        return new az_storage_container_exists_command_builder(this, name);
+    static az_storage_container_exists(name: string): az_storage_container_exists_command_builder {
+        return new az_storage_container_exists_command_builder("az storage container exists", name);
     }
 
     /**
@@ -2512,8 +2464,8 @@ export class az_storage_container implements ICommandParent<any> {
      *
      * @param {string} name The container name.
      */
-    az_storage_container_generate_sas(name: string): az_storage_container_generate_sas_command_builder {
-        return new az_storage_container_generate_sas_command_builder(this, name);
+    static az_storage_container_generate_sas(name: string): az_storage_container_generate_sas_command_builder {
+        return new az_storage_container_generate_sas_command_builder("az storage container generate-sas", name);
     }
 
     /**
@@ -2535,8 +2487,8 @@ export class az_storage_container implements ICommandParent<any> {
      *                           [--timeout]
      * ```
      */
-    az_storage_container_list(): az_storage_container_list_command_builder {
-        return new az_storage_container_list_command_builder(this);
+    static az_storage_container_list(): az_storage_container_list_command_builder {
+        return new az_storage_container_list_command_builder("az storage container list");
     }
 
     /**
@@ -2560,8 +2512,8 @@ export class az_storage_container implements ICommandParent<any> {
      *
      * @param {string} name The container name.
      */
-    az_storage_container_set_permission(name: string): az_storage_container_set_permission_command_builder {
-        return new az_storage_container_set_permission_command_builder(this, name);
+    static az_storage_container_set_permission(name: string): az_storage_container_set_permission_command_builder {
+        return new az_storage_container_set_permission_command_builder("az storage container set-permission", name);
     }
 
     /**
@@ -2583,8 +2535,8 @@ export class az_storage_container implements ICommandParent<any> {
      *
      * @param {string} name The container name.
      */
-    az_storage_container_show(name: string): az_storage_container_show_command_builder {
-        return new az_storage_container_show_command_builder(this, name);
+    static az_storage_container_show(name: string): az_storage_container_show_command_builder {
+        return new az_storage_container_show_command_builder("az storage container show", name);
     }
 
     /**
@@ -2605,15 +2557,13 @@ export class az_storage_container implements ICommandParent<any> {
      *
      * @param {string} name The container name.
      */
-    az_storage_container_show_permission(name: string): az_storage_container_show_permission_command_builder {
-        return new az_storage_container_show_permission_command_builder(this, name);
+    static az_storage_container_show_permission(name: string): az_storage_container_show_permission_command_builder {
+        return new az_storage_container_show_permission_command_builder("az storage container show-permission", name);
     }
 }
 
 /** Manage storage service Cross-Origin Resource Sharing (CORS). */
-export class az_storage_cors implements ICommandParent<any> {
-    commandPath = "az storage cors";
-
+export class az_storage_cors {
     /**
      * Add a CORS rule to a storage account.
      *
@@ -2637,8 +2587,8 @@ export class az_storage_cors implements ICommandParent<any> {
      * @param {string} origins Space-separated list of origin domains that will be allowed via CORS, or '\*' to allow all domains.
      * @param {string} services The storage service(s) to add rules to. Allowed options are: (b)lob, (f)ile, (q)ueue, (t)able. Can be combined.
      */
-    az_storage_cors_add(methods: 'DELETE' | 'GET' | 'HEAD' | 'MERGE' | 'OPTIONS' | 'POST' | 'PUT', origins: string, services: string): az_storage_cors_add_command_builder {
-        return new az_storage_cors_add_command_builder(this, methods, origins, services);
+    static az_storage_cors_add(methods: 'DELETE' | 'GET' | 'HEAD' | 'MERGE' | 'OPTIONS' | 'POST' | 'PUT', origins: string, services: string): az_storage_cors_add_command_builder {
+        return new az_storage_cors_add_command_builder("az storage cors add", methods, origins, services);
     }
 
     /**
@@ -2657,8 +2607,8 @@ export class az_storage_cors implements ICommandParent<any> {
      *
      * @param {string} services The storage service(s) to remove rules from. Allowed options are: (b)lob, (f)ile, (q)ueue, (t)able. Can be combined.
      */
-    az_storage_cors_clear(services: string): az_storage_cors_clear_command_builder {
-        return new az_storage_cors_clear_command_builder(this, services);
+    static az_storage_cors_clear(services: string): az_storage_cors_clear_command_builder {
+        return new az_storage_cors_clear_command_builder("az storage cors clear", services);
     }
 
     /**
@@ -2676,15 +2626,13 @@ export class az_storage_cors implements ICommandParent<any> {
      *                      [--timeout]
      * ```
      */
-    az_storage_cors_list(): az_storage_cors_list_command_builder {
-        return new az_storage_cors_list_command_builder(this);
+    static az_storage_cors_list(): az_storage_cors_list_command_builder {
+        return new az_storage_cors_list_command_builder("az storage cors list");
     }
 }
 
 /** Manage file storage directory metadata. */
-export class az_storage_directory_metadata implements ICommandParent<any> {
-    commandPath = "az storage directory metadata";
-
+export class az_storage_directory_metadata {
     /**
      * Returns all user-defined metadata for the specified directory.
      *
@@ -2705,8 +2653,8 @@ export class az_storage_directory_metadata implements ICommandParent<any> {
      * @param {string} name The directory name.
      * @param {string} shareName The file share name.
      */
-    az_storage_directory_metadata_show(name: string, shareName: string): az_storage_directory_metadata_show_command_builder {
-        return new az_storage_directory_metadata_show_command_builder(this, name, shareName);
+    static az_storage_directory_metadata_show(name: string, shareName: string): az_storage_directory_metadata_show_command_builder {
+        return new az_storage_directory_metadata_show_command_builder("az storage directory metadata show", name, shareName);
     }
 
     /**
@@ -2728,15 +2676,13 @@ export class az_storage_directory_metadata implements ICommandParent<any> {
      * @param {string} name The directory name.
      * @param {string} shareName The file share name.
      */
-    az_storage_directory_metadata_update(name: string, shareName: string): az_storage_directory_metadata_update_command_builder {
-        return new az_storage_directory_metadata_update_command_builder(this, name, shareName);
+    static az_storage_directory_metadata_update(name: string, shareName: string): az_storage_directory_metadata_update_command_builder {
+        return new az_storage_directory_metadata_update_command_builder("az storage directory metadata update", name, shareName);
     }
 }
 
 /** Manage file storage directories. */
-export class az_storage_directory implements ICommandParent<any> {
-    commandPath = "az storage directory";
-
+export class az_storage_directory {
     /**
      * Creates a new directory under the specified share or parent directory.
      *
@@ -2757,8 +2703,8 @@ export class az_storage_directory implements ICommandParent<any> {
      * @param {string} name The directory name.
      * @param {string} shareName The file share name.
      */
-    az_storage_directory_create(name: string, shareName: string): az_storage_directory_create_command_builder {
-        return new az_storage_directory_create_command_builder(this, name, shareName);
+    static az_storage_directory_create(name: string, shareName: string): az_storage_directory_create_command_builder {
+        return new az_storage_directory_create_command_builder("az storage directory create", name, shareName);
     }
 
     /**
@@ -2780,8 +2726,8 @@ export class az_storage_directory implements ICommandParent<any> {
      * @param {string} name The directory name.
      * @param {string} shareName The file share name.
      */
-    az_storage_directory_delete(name: string, shareName: string): az_storage_directory_delete_command_builder {
-        return new az_storage_directory_delete_command_builder(this, name, shareName);
+    static az_storage_directory_delete(name: string, shareName: string): az_storage_directory_delete_command_builder {
+        return new az_storage_directory_delete_command_builder("az storage directory delete", name, shareName);
     }
 
     /**
@@ -2803,8 +2749,8 @@ export class az_storage_directory implements ICommandParent<any> {
      * @param {string} name The directory name.
      * @param {string} shareName The file share name.
      */
-    az_storage_directory_exists(name: string, shareName: string): az_storage_directory_exists_command_builder {
-        return new az_storage_directory_exists_command_builder(this, name, shareName);
+    static az_storage_directory_exists(name: string, shareName: string): az_storage_directory_exists_command_builder {
+        return new az_storage_directory_exists_command_builder("az storage directory exists", name, shareName);
     }
 
     /**
@@ -2825,8 +2771,8 @@ export class az_storage_directory implements ICommandParent<any> {
      *
      * @param {string} shareName The file share name.
      */
-    az_storage_directory_list(shareName: string): az_storage_directory_list_command_builder {
-        return new az_storage_directory_list_command_builder(this, shareName);
+    static az_storage_directory_list(shareName: string): az_storage_directory_list_command_builder {
+        return new az_storage_directory_list_command_builder("az storage directory list", shareName);
     }
 
     /**
@@ -2849,15 +2795,13 @@ export class az_storage_directory implements ICommandParent<any> {
      * @param {string} name The directory name.
      * @param {string} shareName The file share name.
      */
-    az_storage_directory_show(name: string, shareName: string): az_storage_directory_show_command_builder {
-        return new az_storage_directory_show_command_builder(this, name, shareName);
+    static az_storage_directory_show(name: string, shareName: string): az_storage_directory_show_command_builder {
+        return new az_storage_directory_show_command_builder("az storage directory show", name, shareName);
     }
 }
 
 /** Manage table storage entities. */
-export class az_storage_entity implements ICommandParent<any> {
-    commandPath = "az storage entity";
-
+export class az_storage_entity {
     /**
      * Deletes an existing entity in a table.
      *
@@ -2879,8 +2823,8 @@ export class az_storage_entity implements ICommandParent<any> {
      * @param {string} rowKey The RowKey of the entity.
      * @param {string} tableName The name of the table containing the entity to delete.
      */
-    az_storage_entity_delete(partitionKey: string, rowKey: string, tableName: string): az_storage_entity_delete_command_builder {
-        return new az_storage_entity_delete_command_builder(this, partitionKey, rowKey, tableName);
+    static az_storage_entity_delete(partitionKey: string, rowKey: string, tableName: string): az_storage_entity_delete_command_builder {
+        return new az_storage_entity_delete_command_builder("az storage entity delete", partitionKey, rowKey, tableName);
     }
 
     /**
@@ -2902,8 +2846,8 @@ export class az_storage_entity implements ICommandParent<any> {
      * @param {string} entity Space-separated list of key=value pairs. Must contain a PartitionKey and a RowKey.
      * @param {string} tableName The name of the table to insert the entity into.
      */
-    az_storage_entity_insert(entity: string, tableName: string): az_storage_entity_insert_command_builder {
-        return new az_storage_entity_insert_command_builder(this, entity, tableName);
+    static az_storage_entity_insert(entity: string, tableName: string): az_storage_entity_insert_command_builder {
+        return new az_storage_entity_insert_command_builder("az storage entity insert", entity, tableName);
     }
 
     /**
@@ -2925,8 +2869,8 @@ export class az_storage_entity implements ICommandParent<any> {
      * @param {string} entity The entity to merge. Could be a dict or an entity object. Must contain a PartitionKey and a RowKey.
      * @param {string} tableName The name of the table containing the entity to merge.
      */
-    az_storage_entity_merge(entity: string, tableName: string): az_storage_entity_merge_command_builder {
-        return new az_storage_entity_merge_command_builder(this, entity, tableName);
+    static az_storage_entity_merge(entity: string, tableName: string): az_storage_entity_merge_command_builder {
+        return new az_storage_entity_merge_command_builder("az storage entity merge", entity, tableName);
     }
 
     /**
@@ -2950,8 +2894,8 @@ export class az_storage_entity implements ICommandParent<any> {
      *
      * @param {string} tableName The name of the table to query.
      */
-    az_storage_entity_query(tableName: string): az_storage_entity_query_command_builder {
-        return new az_storage_entity_query_command_builder(this, tableName);
+    static az_storage_entity_query(tableName: string): az_storage_entity_query_command_builder {
+        return new az_storage_entity_query_command_builder("az storage entity query", tableName);
     }
 
     /**
@@ -2973,8 +2917,8 @@ export class az_storage_entity implements ICommandParent<any> {
      * @param {string} entity The entity to update. Could be a dict or an entity object. Must contain a PartitionKey and a RowKey.
      * @param {string} tableName The name of the table containing the entity to update.
      */
-    az_storage_entity_replace(entity: string, tableName: string): az_storage_entity_replace_command_builder {
-        return new az_storage_entity_replace_command_builder(this, entity, tableName);
+    static az_storage_entity_replace(entity: string, tableName: string): az_storage_entity_replace_command_builder {
+        return new az_storage_entity_replace_command_builder("az storage entity replace", entity, tableName);
     }
 
     /**
@@ -3000,15 +2944,13 @@ export class az_storage_entity implements ICommandParent<any> {
      * @param {string} rowKey The RowKey of the entity.
      * @param {string} tableName The name of the table to get the entity from.
      */
-    az_storage_entity_show(partitionKey: string, rowKey: string, tableName: string): az_storage_entity_show_command_builder {
-        return new az_storage_entity_show_command_builder(this, partitionKey, rowKey, tableName);
+    static az_storage_entity_show(partitionKey: string, rowKey: string, tableName: string): az_storage_entity_show_command_builder {
+        return new az_storage_entity_show_command_builder("az storage entity show", partitionKey, rowKey, tableName);
     }
 }
 
 /** Manage file copy operations. */
-export class az_storage_file_copy implements ICommandParent<any> {
-    commandPath = "az storage file copy";
-
+export class az_storage_file_copy {
     /**
      * Aborts a pending copy_file operation, and leaves a destination file  with zero length and full metadata.
      *
@@ -3029,8 +2971,8 @@ export class az_storage_file_copy implements ICommandParent<any> {
      * @param {string} destinationPath The path to the file within the file share.
      * @param {string} destinationShare Name of the destination share. The share must exist.
      */
-    az_storage_file_copy_cancel(copyId: string, destinationPath: string, destinationShare: string): az_storage_file_copy_cancel_command_builder {
-        return new az_storage_file_copy_cancel_command_builder(this, copyId, destinationPath, destinationShare);
+    static az_storage_file_copy_cancel(copyId: string, destinationPath: string, destinationShare: string): az_storage_file_copy_cancel_command_builder {
+        return new az_storage_file_copy_cancel_command_builder("az storage file copy cancel", copyId, destinationPath, destinationShare);
     }
 
     /**
@@ -3062,8 +3004,8 @@ export class az_storage_file_copy implements ICommandParent<any> {
      * @param {string} destinationPath The path to the file within the file share.
      * @param {string} destinationShare Name of the destination share. The share must exist.
      */
-    az_storage_file_copy_start(destinationPath: string, destinationShare: string): az_storage_file_copy_start_command_builder {
-        return new az_storage_file_copy_start_command_builder(this, destinationPath, destinationShare);
+    static az_storage_file_copy_start(destinationPath: string, destinationShare: string): az_storage_file_copy_start_command_builder {
+        return new az_storage_file_copy_start_command_builder("az storage file copy start", destinationPath, destinationShare);
     }
 
     /**
@@ -3090,15 +3032,13 @@ export class az_storage_file_copy implements ICommandParent<any> {
      *                                  [--timeout]
      * ```
      */
-    az_storage_file_copy_start_batch(): az_storage_file_copy_start_batch_command_builder {
-        return new az_storage_file_copy_start_batch_command_builder(this);
+    static az_storage_file_copy_start_batch(): az_storage_file_copy_start_batch_command_builder {
+        return new az_storage_file_copy_start_batch_command_builder("az storage file copy start-batch");
     }
 }
 
 /** Manage file metadata. */
-export class az_storage_file_metadata implements ICommandParent<any> {
-    commandPath = "az storage file metadata";
-
+export class az_storage_file_metadata {
     /**
      * Returns all user-defined metadata for the specified file.
      *
@@ -3119,8 +3059,8 @@ export class az_storage_file_metadata implements ICommandParent<any> {
      * @param {string} path The path to the file within the file share.
      * @param {string} shareName The file share name.
      */
-    az_storage_file_metadata_show(path: string, shareName: string): az_storage_file_metadata_show_command_builder {
-        return new az_storage_file_metadata_show_command_builder(this, path, shareName);
+    static az_storage_file_metadata_show(path: string, shareName: string): az_storage_file_metadata_show_command_builder {
+        return new az_storage_file_metadata_show_command_builder("az storage file metadata show", path, shareName);
     }
 
     /**
@@ -3142,15 +3082,13 @@ export class az_storage_file_metadata implements ICommandParent<any> {
      * @param {string} path The path to the file within the file share.
      * @param {string} shareName The file share name.
      */
-    az_storage_file_metadata_update(path: string, shareName: string): az_storage_file_metadata_update_command_builder {
-        return new az_storage_file_metadata_update_command_builder(this, path, shareName);
+    static az_storage_file_metadata_update(path: string, shareName: string): az_storage_file_metadata_update_command_builder {
+        return new az_storage_file_metadata_update_command_builder("az storage file metadata update", path, shareName);
     }
 }
 
 /** Manage file shares that use the SMB 3.0 protocol. */
-export class az_storage_file implements ICommandParent<any> {
-    commandPath = "az storage file";
-
+export class az_storage_file {
     /**
      * Marks the specified file for deletion.
      *
@@ -3169,8 +3107,8 @@ export class az_storage_file implements ICommandParent<any> {
      * @param {string} path The path to the file within the file share.
      * @param {string} shareName The file share name.
      */
-    az_storage_file_delete(path: string, shareName: string): az_storage_file_delete_command_builder {
-        return new az_storage_file_delete_command_builder(this, path, shareName);
+    static az_storage_file_delete(path: string, shareName: string): az_storage_file_delete_command_builder {
+        return new az_storage_file_delete_command_builder("az storage file delete", path, shareName);
     }
 
     /**
@@ -3191,8 +3129,8 @@ export class az_storage_file implements ICommandParent<any> {
      *
      * @param {string} source The source of the file delete operation. The source can be the file share URL or the share name.
      */
-    az_storage_file_delete_batch(source: string): az_storage_file_delete_batch_command_builder {
-        return new az_storage_file_delete_batch_command_builder(this, source);
+    static az_storage_file_delete_batch(source: string): az_storage_file_delete_batch_command_builder {
+        return new az_storage_file_delete_batch_command_builder("az storage file delete-batch", source);
     }
 
     /**
@@ -3221,8 +3159,8 @@ export class az_storage_file implements ICommandParent<any> {
      * @param {string} path The path to the file within the file share.
      * @param {string} shareName The file share name.
      */
-    az_storage_file_download(path: string, shareName: string): az_storage_file_download_command_builder {
-        return new az_storage_file_download_command_builder(this, path, shareName);
+    static az_storage_file_download(path: string, shareName: string): az_storage_file_download_command_builder {
+        return new az_storage_file_download_command_builder("az storage file download", path, shareName);
     }
 
     /**
@@ -3248,8 +3186,8 @@ export class az_storage_file implements ICommandParent<any> {
      * @param {string} destination The local directory where the files are downloaded to. This directory must already exist.
      * @param {string} source The source of the file download operation. The source can be the file share URL or the share name.
      */
-    az_storage_file_download_batch(destination: string, source: string): az_storage_file_download_batch_command_builder {
-        return new az_storage_file_download_batch_command_builder(this, destination, source);
+    static az_storage_file_download_batch(destination: string, source: string): az_storage_file_download_batch_command_builder {
+        return new az_storage_file_download_batch_command_builder("az storage file download-batch", destination, source);
     }
 
     /**
@@ -3271,8 +3209,8 @@ export class az_storage_file implements ICommandParent<any> {
      * @param {string} path The path to the file within the file share.
      * @param {string} shareName The file share name.
      */
-    az_storage_file_exists(path: string, shareName: string): az_storage_file_exists_command_builder {
-        return new az_storage_file_exists_command_builder(this, path, shareName);
+    static az_storage_file_exists(path: string, shareName: string): az_storage_file_exists_command_builder {
+        return new az_storage_file_exists_command_builder("az storage file exists", path, shareName);
     }
 
     /**
@@ -3302,8 +3240,8 @@ export class az_storage_file implements ICommandParent<any> {
      * @param {string} path The path to the file within the file share.
      * @param {string} shareName The file share name.
      */
-    az_storage_file_generate_sas(path: string, shareName: string): az_storage_file_generate_sas_command_builder {
-        return new az_storage_file_generate_sas_command_builder(this, path, shareName);
+    static az_storage_file_generate_sas(path: string, shareName: string): az_storage_file_generate_sas_command_builder {
+        return new az_storage_file_generate_sas_command_builder("az storage file generate-sas", path, shareName);
     }
 
     /**
@@ -3328,8 +3266,8 @@ export class az_storage_file implements ICommandParent<any> {
      *
      * @param {string} shareName The file share name.
      */
-    az_storage_file_list(shareName: string): az_storage_file_list_command_builder {
-        return new az_storage_file_list_command_builder(this, shareName);
+    static az_storage_file_list(shareName: string): az_storage_file_list_command_builder {
+        return new az_storage_file_list_command_builder("az storage file list", shareName);
     }
 
     /**
@@ -3352,8 +3290,8 @@ export class az_storage_file implements ICommandParent<any> {
      * @param {string} shareName The file share name.
      * @param {string} size The length to resize the file to.
      */
-    az_storage_file_resize(path: string, shareName: string, size: string): az_storage_file_resize_command_builder {
-        return new az_storage_file_resize_command_builder(this, path, shareName, size);
+    static az_storage_file_resize(path: string, shareName: string, size: string): az_storage_file_resize_command_builder {
+        return new az_storage_file_resize_command_builder("az storage file resize", path, shareName, size);
     }
 
     /**
@@ -3376,8 +3314,8 @@ export class az_storage_file implements ICommandParent<any> {
      * @param {string} path The path to the file within the file share.
      * @param {string} shareName The file share name.
      */
-    az_storage_file_show(path: string, shareName: string): az_storage_file_show_command_builder {
-        return new az_storage_file_show_command_builder(this, path, shareName);
+    static az_storage_file_show(path: string, shareName: string): az_storage_file_show_command_builder {
+        return new az_storage_file_show_command_builder("az storage file show", path, shareName);
     }
 
     /**
@@ -3405,8 +3343,8 @@ export class az_storage_file implements ICommandParent<any> {
      * @param {string} path The path to the file within the file share.
      * @param {string} shareName The file share name.
      */
-    az_storage_file_update(path: string, shareName: string): az_storage_file_update_command_builder {
-        return new az_storage_file_update_command_builder(this, path, shareName);
+    static az_storage_file_update(path: string, shareName: string): az_storage_file_update_command_builder {
+        return new az_storage_file_update_command_builder("az storage file update", path, shareName);
     }
 
     /**
@@ -3438,8 +3376,8 @@ export class az_storage_file implements ICommandParent<any> {
      * @param {string} shareName The file share name.
      * @param {string} source Path of the local file to upload as the file content.
      */
-    az_storage_file_upload(shareName: string, source: string): az_storage_file_upload_command_builder {
-        return new az_storage_file_upload_command_builder(this, shareName, source);
+    static az_storage_file_upload(shareName: string, source: string): az_storage_file_upload_command_builder {
+        return new az_storage_file_upload_command_builder("az storage file upload", shareName, source);
     }
 
     /**
@@ -3472,8 +3410,8 @@ export class az_storage_file implements ICommandParent<any> {
      * @param {string} destination The destination of the upload operation.
      * @param {string} source The directory to upload files from.
      */
-    az_storage_file_upload_batch(destination: string, source: string): az_storage_file_upload_batch_command_builder {
-        return new az_storage_file_upload_batch_command_builder(this, destination, source);
+    static az_storage_file_upload_batch(destination: string, source: string): az_storage_file_upload_batch_command_builder {
+        return new az_storage_file_upload_batch_command_builder("az storage file upload-batch", destination, source);
     }
 
     /**
@@ -3494,15 +3432,13 @@ export class az_storage_file implements ICommandParent<any> {
      * @param {string} path The path to the file within the file share.
      * @param {string} shareName The file share name.
      */
-    az_storage_file_url(path: string, shareName: string): az_storage_file_url_command_builder {
-        return new az_storage_file_url_command_builder(this, path, shareName);
+    static az_storage_file_url(path: string, shareName: string): az_storage_file_url_command_builder {
+        return new az_storage_file_url_command_builder("az storage file url", path, shareName);
     }
 }
 
 /** Manage file system access and permissions for Azure Data Lake Storage Gen2 account. */
-export class az_storage_fs_access implements ICommandParent<any> {
-    commandPath = "az storage fs access";
-
+export class az_storage_fs_access {
     /**
      * Set the access control properties of a path(directory or file) in Azure Data Lake Storage Gen2 account.
      *
@@ -3525,8 +3461,8 @@ export class az_storage_fs_access implements ICommandParent<any> {
      * @param {string} fileSystem File system name.
      * @param {string} path The path to a file or directory in the specified file system.
      */
-    az_storage_fs_access_set(fileSystem: string, path: string): az_storage_fs_access_set_command_builder {
-        return new az_storage_fs_access_set_command_builder(this, fileSystem, path);
+    static az_storage_fs_access_set(fileSystem: string, path: string): az_storage_fs_access_set_command_builder {
+        return new az_storage_fs_access_set_command_builder("az storage fs access set", fileSystem, path);
     }
 
     /**
@@ -3548,15 +3484,13 @@ export class az_storage_fs_access implements ICommandParent<any> {
      * @param {string} fileSystem File system name.
      * @param {string} path The path to a file or directory in the specified file system.
      */
-    az_storage_fs_access_show(fileSystem: string, path: string): az_storage_fs_access_show_command_builder {
-        return new az_storage_fs_access_show_command_builder(this, fileSystem, path);
+    static az_storage_fs_access_show(fileSystem: string, path: string): az_storage_fs_access_show_command_builder {
+        return new az_storage_fs_access_show_command_builder("az storage fs access show", fileSystem, path);
     }
 }
 
 /** Manage the metadata for directory in file system. */
-export class az_storage_fs_directory_metadata implements ICommandParent<any> {
-    commandPath = "az storage fs directory metadata";
-
+export class az_storage_fs_directory_metadata {
     /**
      * Return all user-defined metadata for the specified directory.
      *
@@ -3577,8 +3511,8 @@ export class az_storage_fs_directory_metadata implements ICommandParent<any> {
      * @param {string} fileSystem File system name.
      * @param {string} name The name of directory.
      */
-    az_storage_fs_directory_metadata_show(fileSystem: string, name: string): az_storage_fs_directory_metadata_show_command_builder {
-        return new az_storage_fs_directory_metadata_show_command_builder(this, fileSystem, name);
+    static az_storage_fs_directory_metadata_show(fileSystem: string, name: string): az_storage_fs_directory_metadata_show_command_builder {
+        return new az_storage_fs_directory_metadata_show_command_builder("az storage fs directory metadata show", fileSystem, name);
     }
 
     /**
@@ -3602,15 +3536,13 @@ export class az_storage_fs_directory_metadata implements ICommandParent<any> {
      * @param {string} metadata Metadata in space-separated key=value pairs. This overwrites any existing metadata.
      * @param {string} name The name of directory.
      */
-    az_storage_fs_directory_metadata_update(fileSystem: string, metadata: string, name: string): az_storage_fs_directory_metadata_update_command_builder {
-        return new az_storage_fs_directory_metadata_update_command_builder(this, fileSystem, metadata, name);
+    static az_storage_fs_directory_metadata_update(fileSystem: string, metadata: string, name: string): az_storage_fs_directory_metadata_update_command_builder {
+        return new az_storage_fs_directory_metadata_update_command_builder("az storage fs directory metadata update", fileSystem, metadata, name);
     }
 }
 
 /** Manage directories in Azure Data Lake Storage Gen2 account. */
-export class az_storage_fs_directory implements ICommandParent<any> {
-    commandPath = "az storage fs directory";
-
+export class az_storage_fs_directory {
     /**
      * Create a directory in ADLS Gen2 file system.
      *
@@ -3633,8 +3565,8 @@ export class az_storage_fs_directory implements ICommandParent<any> {
      * @param {string} fileSystem File system name.
      * @param {string} name The name of directory.
      */
-    az_storage_fs_directory_create(fileSystem: string, name: string): az_storage_fs_directory_create_command_builder {
-        return new az_storage_fs_directory_create_command_builder(this, fileSystem, name);
+    static az_storage_fs_directory_create(fileSystem: string, name: string): az_storage_fs_directory_create_command_builder {
+        return new az_storage_fs_directory_create_command_builder("az storage fs directory create", fileSystem, name);
     }
 
     /**
@@ -3657,8 +3589,8 @@ export class az_storage_fs_directory implements ICommandParent<any> {
      * @param {string} fileSystem File system name.
      * @param {string} name The name of directory.
      */
-    az_storage_fs_directory_delete(fileSystem: string, name: string): az_storage_fs_directory_delete_command_builder {
-        return new az_storage_fs_directory_delete_command_builder(this, fileSystem, name);
+    static az_storage_fs_directory_delete(fileSystem: string, name: string): az_storage_fs_directory_delete_command_builder {
+        return new az_storage_fs_directory_delete_command_builder("az storage fs directory delete", fileSystem, name);
     }
 
     /**
@@ -3680,8 +3612,8 @@ export class az_storage_fs_directory implements ICommandParent<any> {
      * @param {string} fileSystem File system name.
      * @param {string} name The name of directory.
      */
-    az_storage_fs_directory_exists(fileSystem: string, name: string): az_storage_fs_directory_exists_command_builder {
-        return new az_storage_fs_directory_exists_command_builder(this, fileSystem, name);
+    static az_storage_fs_directory_exists(fileSystem: string, name: string): az_storage_fs_directory_exists_command_builder {
+        return new az_storage_fs_directory_exists_command_builder("az storage fs directory exists", fileSystem, name);
     }
 
     /**
@@ -3705,8 +3637,8 @@ export class az_storage_fs_directory implements ICommandParent<any> {
      *
      * @param {string} fileSystem File system name.
      */
-    az_storage_fs_directory_list(fileSystem: string): az_storage_fs_directory_list_command_builder {
-        return new az_storage_fs_directory_list_command_builder(this, fileSystem);
+    static az_storage_fs_directory_list(fileSystem: string): az_storage_fs_directory_list_command_builder {
+        return new az_storage_fs_directory_list_command_builder("az storage fs directory list", fileSystem);
     }
 
     /**
@@ -3730,8 +3662,8 @@ export class az_storage_fs_directory implements ICommandParent<any> {
      * @param {string} name The name of directory.
      * @param {string} newDirectory The new directory name the users want to move to. The value must have the following format: "{filesystem}/{directory}/{subdirectory}".
      */
-    az_storage_fs_directory_move(fileSystem: string, name: string, newDirectory: string): az_storage_fs_directory_move_command_builder {
-        return new az_storage_fs_directory_move_command_builder(this, fileSystem, name, newDirectory);
+    static az_storage_fs_directory_move(fileSystem: string, name: string, newDirectory: string): az_storage_fs_directory_move_command_builder {
+        return new az_storage_fs_directory_move_command_builder("az storage fs directory move", fileSystem, name, newDirectory);
     }
 
     /**
@@ -3754,15 +3686,13 @@ export class az_storage_fs_directory implements ICommandParent<any> {
      * @param {string} fileSystem File system name.
      * @param {string} name The name of directory.
      */
-    az_storage_fs_directory_show(fileSystem: string, name: string): az_storage_fs_directory_show_command_builder {
-        return new az_storage_fs_directory_show_command_builder(this, fileSystem, name);
+    static az_storage_fs_directory_show(fileSystem: string, name: string): az_storage_fs_directory_show_command_builder {
+        return new az_storage_fs_directory_show_command_builder("az storage fs directory show", fileSystem, name);
     }
 }
 
 /** Manage the metadata for file in file system. */
-export class az_storage_fs_file_metadata implements ICommandParent<any> {
-    commandPath = "az storage fs file metadata";
-
+export class az_storage_fs_file_metadata {
     /**
      * Returns all user-defined metadata, standard HTTP properties, and system properties for the file.
      *
@@ -3783,8 +3713,8 @@ export class az_storage_fs_file_metadata implements ICommandParent<any> {
      * @param {string} fileSystem File system name.
      * @param {string} path The file path in a file system.
      */
-    az_storage_fs_file_metadata_show(fileSystem: string, path: string): az_storage_fs_file_metadata_show_command_builder {
-        return new az_storage_fs_file_metadata_show_command_builder(this, fileSystem, path);
+    static az_storage_fs_file_metadata_show(fileSystem: string, path: string): az_storage_fs_file_metadata_show_command_builder {
+        return new az_storage_fs_file_metadata_show_command_builder("az storage fs file metadata show", fileSystem, path);
     }
 
     /**
@@ -3808,15 +3738,13 @@ export class az_storage_fs_file_metadata implements ICommandParent<any> {
      * @param {string} metadata Metadata in space-separated key=value pairs. This overwrites any existing metadata.
      * @param {string} path The file path in a file system.
      */
-    az_storage_fs_file_metadata_update(fileSystem: string, metadata: string, path: string): az_storage_fs_file_metadata_update_command_builder {
-        return new az_storage_fs_file_metadata_update_command_builder(this, fileSystem, metadata, path);
+    static az_storage_fs_file_metadata_update(fileSystem: string, metadata: string, path: string): az_storage_fs_file_metadata_update_command_builder {
+        return new az_storage_fs_file_metadata_update_command_builder("az storage fs file metadata update", fileSystem, metadata, path);
     }
 }
 
 /** Manage files in Azure Data Lake Storage Gen2 account. */
-export class az_storage_fs_file implements ICommandParent<any> {
-    commandPath = "az storage fs file";
-
+export class az_storage_fs_file {
     /**
      * Append content to a file in ADLS Gen2 file system.
      *
@@ -3838,8 +3766,8 @@ export class az_storage_fs_file implements ICommandParent<any> {
      * @param {string} fileSystem File system name.
      * @param {string} path The file path in a file system.
      */
-    az_storage_fs_file_append(content: string, fileSystem: string, path: string): az_storage_fs_file_append_command_builder {
-        return new az_storage_fs_file_append_command_builder(this, content, fileSystem, path);
+    static az_storage_fs_file_append(content: string, fileSystem: string, path: string): az_storage_fs_file_append_command_builder {
+        return new az_storage_fs_file_append_command_builder("az storage fs file append", content, fileSystem, path);
     }
 
     /**
@@ -3870,8 +3798,8 @@ export class az_storage_fs_file implements ICommandParent<any> {
      * @param {string} fileSystem File system name.
      * @param {string} path The file path in a file system.
      */
-    az_storage_fs_file_create(fileSystem: string, path: string): az_storage_fs_file_create_command_builder {
-        return new az_storage_fs_file_create_command_builder(this, fileSystem, path);
+    static az_storage_fs_file_create(fileSystem: string, path: string): az_storage_fs_file_create_command_builder {
+        return new az_storage_fs_file_create_command_builder("az storage fs file create", fileSystem, path);
     }
 
     /**
@@ -3894,8 +3822,8 @@ export class az_storage_fs_file implements ICommandParent<any> {
      * @param {string} fileSystem File system name.
      * @param {string} path The file path in a file system.
      */
-    az_storage_fs_file_delete(fileSystem: string, path: string): az_storage_fs_file_delete_command_builder {
-        return new az_storage_fs_file_delete_command_builder(this, fileSystem, path);
+    static az_storage_fs_file_delete(fileSystem: string, path: string): az_storage_fs_file_delete_command_builder {
+        return new az_storage_fs_file_delete_command_builder("az storage fs file delete", fileSystem, path);
     }
 
     /**
@@ -3919,8 +3847,8 @@ export class az_storage_fs_file implements ICommandParent<any> {
      * @param {string} fileSystem File system name.
      * @param {string} path The file path in a file system.
      */
-    az_storage_fs_file_download(fileSystem: string, path: string): az_storage_fs_file_download_command_builder {
-        return new az_storage_fs_file_download_command_builder(this, fileSystem, path);
+    static az_storage_fs_file_download(fileSystem: string, path: string): az_storage_fs_file_download_command_builder {
+        return new az_storage_fs_file_download_command_builder("az storage fs file download", fileSystem, path);
     }
 
     /**
@@ -3942,8 +3870,8 @@ export class az_storage_fs_file implements ICommandParent<any> {
      * @param {string} fileSystem File system name.
      * @param {string} path The file path in a file system.
      */
-    az_storage_fs_file_exists(fileSystem: string, path: string): az_storage_fs_file_exists_command_builder {
-        return new az_storage_fs_file_exists_command_builder(this, fileSystem, path);
+    static az_storage_fs_file_exists(fileSystem: string, path: string): az_storage_fs_file_exists_command_builder {
+        return new az_storage_fs_file_exists_command_builder("az storage fs file exists", fileSystem, path);
     }
 
     /**
@@ -3969,8 +3897,8 @@ export class az_storage_fs_file implements ICommandParent<any> {
      *
      * @param {string} fileSystem File system name.
      */
-    az_storage_fs_file_list(fileSystem: string): az_storage_fs_file_list_command_builder {
-        return new az_storage_fs_file_list_command_builder(this, fileSystem);
+    static az_storage_fs_file_list(fileSystem: string): az_storage_fs_file_list_command_builder {
+        return new az_storage_fs_file_list_command_builder("az storage fs file list", fileSystem);
     }
 
     /**
@@ -3999,8 +3927,8 @@ export class az_storage_fs_file implements ICommandParent<any> {
      * @param {string} newPath The new path the users want to move to. The value must have the following format: "{filesystem}/{directory}/{subdirectory}/{file}".
      * @param {string} path The original file path users want to move in a file system.
      */
-    az_storage_fs_file_move(fileSystem: string, newPath: string, path: string): az_storage_fs_file_move_command_builder {
-        return new az_storage_fs_file_move_command_builder(this, fileSystem, newPath, path);
+    static az_storage_fs_file_move(fileSystem: string, newPath: string, path: string): az_storage_fs_file_move_command_builder {
+        return new az_storage_fs_file_move_command_builder("az storage fs file move", fileSystem, newPath, path);
     }
 
     /**
@@ -4023,8 +3951,8 @@ export class az_storage_fs_file implements ICommandParent<any> {
      * @param {string} fileSystem File system name.
      * @param {string} path The file path in a file system.
      */
-    az_storage_fs_file_show(fileSystem: string, path: string): az_storage_fs_file_show_command_builder {
-        return new az_storage_fs_file_show_command_builder(this, fileSystem, path);
+    static az_storage_fs_file_show(fileSystem: string, path: string): az_storage_fs_file_show_command_builder {
+        return new az_storage_fs_file_show_command_builder("az storage fs file show", fileSystem, path);
     }
 
     /**
@@ -4062,15 +3990,13 @@ export class az_storage_fs_file implements ICommandParent<any> {
      * @param {string} path The file path in a file system.
      * @param {string} source Path of the local file to upload as the file content.
      */
-    az_storage_fs_file_upload(fileSystem: string, path: string, source: string): az_storage_fs_file_upload_command_builder {
-        return new az_storage_fs_file_upload_command_builder(this, fileSystem, path, source);
+    static az_storage_fs_file_upload(fileSystem: string, path: string, source: string): az_storage_fs_file_upload_command_builder {
+        return new az_storage_fs_file_upload_command_builder("az storage fs file upload", fileSystem, path, source);
     }
 }
 
 /** Manage the metadata for file system. */
-export class az_storage_fs_metadata implements ICommandParent<any> {
-    commandPath = "az storage fs metadata";
-
+export class az_storage_fs_metadata {
     /**
      * Return all user-defined metadata for the specified file system.
      *
@@ -4089,8 +4015,8 @@ export class az_storage_fs_metadata implements ICommandParent<any> {
      *
      * @param {string} name File system name.
      */
-    az_storage_fs_metadata_show(name: string): az_storage_fs_metadata_show_command_builder {
-        return new az_storage_fs_metadata_show_command_builder(this, name);
+    static az_storage_fs_metadata_show(name: string): az_storage_fs_metadata_show_command_builder {
+        return new az_storage_fs_metadata_show_command_builder("az storage fs metadata show", name);
     }
 
     /**
@@ -4112,15 +4038,13 @@ export class az_storage_fs_metadata implements ICommandParent<any> {
      * @param {string} metadata Metadata in space-separated key=value pairs. This overwrites any existing metadata.
      * @param {string} name File system name.
      */
-    az_storage_fs_metadata_update(metadata: string, name: string): az_storage_fs_metadata_update_command_builder {
-        return new az_storage_fs_metadata_update_command_builder(this, metadata, name);
+    static az_storage_fs_metadata_update(metadata: string, name: string): az_storage_fs_metadata_update_command_builder {
+        return new az_storage_fs_metadata_update_command_builder("az storage fs metadata update", metadata, name);
     }
 }
 
 /** Manage file systems in Azure Data Lake Storage Gen2 account. */
-export class az_storage_fs implements ICommandParent<any> {
-    commandPath = "az storage fs";
-
+export class az_storage_fs {
     /**
      * Create file system for Azure Data Lake Storage Gen2 account.
      *
@@ -4140,8 +4064,8 @@ export class az_storage_fs implements ICommandParent<any> {
      *
      * @param {string} name File system name.
      */
-    az_storage_fs_create(name: string): az_storage_fs_create_command_builder {
-        return new az_storage_fs_create_command_builder(this, name);
+    static az_storage_fs_create(name: string): az_storage_fs_create_command_builder {
+        return new az_storage_fs_create_command_builder("az storage fs create", name);
     }
 
     /**
@@ -4162,8 +4086,8 @@ export class az_storage_fs implements ICommandParent<any> {
      *
      * @param {string} name File system name.
      */
-    az_storage_fs_delete(name: string): az_storage_fs_delete_command_builder {
-        return new az_storage_fs_delete_command_builder(this, name);
+    static az_storage_fs_delete(name: string): az_storage_fs_delete_command_builder {
+        return new az_storage_fs_delete_command_builder("az storage fs delete", name);
     }
 
     /**
@@ -4183,8 +4107,8 @@ export class az_storage_fs implements ICommandParent<any> {
      *
      * @param {string} name File system name.
      */
-    az_storage_fs_exists(name: string): az_storage_fs_exists_command_builder {
-        return new az_storage_fs_exists_command_builder(this, name);
+    static az_storage_fs_exists(name: string): az_storage_fs_exists_command_builder {
+        return new az_storage_fs_exists_command_builder("az storage fs exists", name);
     }
 
     /**
@@ -4203,8 +4127,8 @@ export class az_storage_fs implements ICommandParent<any> {
      *                    [--subscription]
      * ```
      */
-    az_storage_fs_list(): az_storage_fs_list_command_builder {
-        return new az_storage_fs_list_command_builder(this);
+    static az_storage_fs_list(): az_storage_fs_list_command_builder {
+        return new az_storage_fs_list_command_builder("az storage fs list");
     }
 
     /**
@@ -4225,15 +4149,13 @@ export class az_storage_fs implements ICommandParent<any> {
      *
      * @param {string} name File system name.
      */
-    az_storage_fs_show(name: string): az_storage_fs_show_command_builder {
-        return new az_storage_fs_show_command_builder(this, name);
+    static az_storage_fs_show(name: string): az_storage_fs_show_command_builder {
+        return new az_storage_fs_show_command_builder("az storage fs show", name);
     }
 }
 
 /** Manage storage service logging information. */
-export class az_storage_logging implements ICommandParent<any> {
-    commandPath = "az storage logging";
-
+export class az_storage_logging {
     /**
      * Turn off logging for a storage account.
      *
@@ -4248,8 +4170,8 @@ export class az_storage_logging implements ICommandParent<any> {
      *                        [--timeout]
      * ```
      */
-    az_storage_logging_off(): az_storage_logging_off_command_builder {
-        return new az_storage_logging_off_command_builder(this);
+    static az_storage_logging_off(): az_storage_logging_off_command_builder {
+        return new az_storage_logging_off_command_builder("az storage logging off");
     }
 
     /**
@@ -4267,8 +4189,8 @@ export class az_storage_logging implements ICommandParent<any> {
      *                         [--timeout]
      * ```
      */
-    az_storage_logging_show(): az_storage_logging_show_command_builder {
-        return new az_storage_logging_show_command_builder(this);
+    static az_storage_logging_show(): az_storage_logging_show_command_builder {
+        return new az_storage_logging_show_command_builder("az storage logging show");
     }
 
     /**
@@ -4292,15 +4214,13 @@ export class az_storage_logging implements ICommandParent<any> {
      * @param {string} retention Number of days for which to retain logs. 0 to disable.
      * @param {string} services The storage service(s) for which to update logging info: (b)lob (q)ueue (t)able. Can be combined.
      */
-    az_storage_logging_update(log: string, retention: string, services: string): az_storage_logging_update_command_builder {
-        return new az_storage_logging_update_command_builder(this, log, retention, services);
+    static az_storage_logging_update(log: string, retention: string, services: string): az_storage_logging_update_command_builder {
+        return new az_storage_logging_update_command_builder("az storage logging update", log, retention, services);
     }
 }
 
 /** Manage queue storage messages. */
-export class az_storage_message implements ICommandParent<any> {
-    commandPath = "az storage message";
-
+export class az_storage_message {
     /**
      * Deletes all messages from the specified queue.
      *
@@ -4318,8 +4238,8 @@ export class az_storage_message implements ICommandParent<any> {
      *
      * @param {string} queueName The queue name.
      */
-    az_storage_message_clear(queueName: string): az_storage_message_clear_command_builder {
-        return new az_storage_message_clear_command_builder(this, queueName);
+    static az_storage_message_clear(queueName: string): az_storage_message_clear_command_builder {
+        return new az_storage_message_clear_command_builder("az storage message clear", queueName);
     }
 
     /**
@@ -4343,8 +4263,8 @@ export class az_storage_message implements ICommandParent<any> {
      * @param {string} popReceipt A valid pop receipt value returned from an earlier call to the get_messages() or update_message().
      * @param {string} queueName The queue name.
      */
-    az_storage_message_delete(id: string, popReceipt: string, queueName: string): az_storage_message_delete_command_builder {
-        return new az_storage_message_delete_command_builder(this, id, popReceipt, queueName);
+    static az_storage_message_delete(id: string, popReceipt: string, queueName: string): az_storage_message_delete_command_builder {
+        return new az_storage_message_delete_command_builder("az storage message delete", id, popReceipt, queueName);
     }
 
     /**
@@ -4366,8 +4286,8 @@ export class az_storage_message implements ICommandParent<any> {
      *
      * @param {string} queueName The queue name.
      */
-    az_storage_message_get(queueName: string): az_storage_message_get_command_builder {
-        return new az_storage_message_get_command_builder(this, queueName);
+    static az_storage_message_get(queueName: string): az_storage_message_get_command_builder {
+        return new az_storage_message_get_command_builder("az storage message get", queueName);
     }
 
     /**
@@ -4388,8 +4308,8 @@ export class az_storage_message implements ICommandParent<any> {
      *
      * @param {string} queueName The queue name.
      */
-    az_storage_message_peek(queueName: string): az_storage_message_peek_command_builder {
-        return new az_storage_message_peek_command_builder(this, queueName);
+    static az_storage_message_peek(queueName: string): az_storage_message_peek_command_builder {
+        return new az_storage_message_peek_command_builder("az storage message peek", queueName);
     }
 
     /**
@@ -4413,8 +4333,8 @@ export class az_storage_message implements ICommandParent<any> {
      * @param {string} content Message content, up to 64KB in size.
      * @param {string} queueName The queue name.
      */
-    az_storage_message_put(content: string, queueName: string): az_storage_message_put_command_builder {
-        return new az_storage_message_put_command_builder(this, content, queueName);
+    static az_storage_message_put(content: string, queueName: string): az_storage_message_put_command_builder {
+        return new az_storage_message_put_command_builder("az storage message put", content, queueName);
     }
 
     /**
@@ -4441,15 +4361,13 @@ export class az_storage_message implements ICommandParent<any> {
      * @param {string} queueName The queue name.
      * @param {string} visibilityTimeout Specifies the new visibility timeout value, in seconds, relative to server time. The new value must be larger than or equal to 0, and cannot be larger than 7 days. The visibility timeout of a message cannot be set to a value later than the expiry time. A message can be updated until it has been deleted or has expired.
      */
-    az_storage_message_update(id: string, popReceipt: string, queueName: string, visibilityTimeout: string): az_storage_message_update_command_builder {
-        return new az_storage_message_update_command_builder(this, id, popReceipt, queueName, visibilityTimeout);
+    static az_storage_message_update(id: string, popReceipt: string, queueName: string, visibilityTimeout: string): az_storage_message_update_command_builder {
+        return new az_storage_message_update_command_builder("az storage message update", id, popReceipt, queueName, visibilityTimeout);
     }
 }
 
 /** Manage storage service metrics. */
-export class az_storage_metrics implements ICommandParent<any> {
-    commandPath = "az storage metrics";
-
+export class az_storage_metrics {
     /**
      * Show metrics settings for a storage account.
      *
@@ -4466,8 +4384,8 @@ export class az_storage_metrics implements ICommandParent<any> {
      *                         [--timeout]
      * ```
      */
-    az_storage_metrics_show(): az_storage_metrics_show_command_builder {
-        return new az_storage_metrics_show_command_builder(this);
+    static az_storage_metrics_show(): az_storage_metrics_show_command_builder {
+        return new az_storage_metrics_show_command_builder("az storage metrics show");
     }
 
     /**
@@ -4491,15 +4409,13 @@ export class az_storage_metrics implements ICommandParent<any> {
      * @param {string} retention Number of days for which to retain metrics. 0 to disable. Applies to both hour and minute metrics if both are specified.
      * @param {string} services The storage services from which to retrieve metrics info: (b)lob (q)ueue (t)able. Can be combined.
      */
-    az_storage_metrics_update(retention: string, services: string): az_storage_metrics_update_command_builder {
-        return new az_storage_metrics_update_command_builder(this, retention, services);
+    static az_storage_metrics_update(retention: string, services: string): az_storage_metrics_update_command_builder {
+        return new az_storage_metrics_update_command_builder("az storage metrics update", retention, services);
     }
 }
 
 /** Manage the metadata for a storage queue. */
-export class az_storage_queue_metadata implements ICommandParent<any> {
-    commandPath = "az storage queue metadata";
-
+export class az_storage_queue_metadata {
     /**
      * Retrieves user-defined metadata and queue properties on the specified queue.
      *
@@ -4518,8 +4434,8 @@ export class az_storage_queue_metadata implements ICommandParent<any> {
      *
      * @param {string} name The queue name.
      */
-    az_storage_queue_metadata_show(name: string): az_storage_queue_metadata_show_command_builder {
-        return new az_storage_queue_metadata_show_command_builder(this, name);
+    static az_storage_queue_metadata_show(name: string): az_storage_queue_metadata_show_command_builder {
+        return new az_storage_queue_metadata_show_command_builder("az storage queue metadata show", name);
     }
 
     /**
@@ -4540,15 +4456,13 @@ export class az_storage_queue_metadata implements ICommandParent<any> {
      *
      * @param {string} name The queue name.
      */
-    az_storage_queue_metadata_update(name: string): az_storage_queue_metadata_update_command_builder {
-        return new az_storage_queue_metadata_update_command_builder(this, name);
+    static az_storage_queue_metadata_update(name: string): az_storage_queue_metadata_update_command_builder {
+        return new az_storage_queue_metadata_update_command_builder("az storage queue metadata update", name);
     }
 }
 
 /** Manage shared access policies for a storage queue. */
-export class az_storage_queue_policy implements ICommandParent<any> {
-    commandPath = "az storage queue policy";
-
+export class az_storage_queue_policy {
     /**
      * Create a stored access policy on the containing object.
      *
@@ -4570,8 +4484,8 @@ export class az_storage_queue_policy implements ICommandParent<any> {
      * @param {string} name The stored access policy name.
      * @param {string} queueName The queue name.
      */
-    az_storage_queue_policy_create(name: string, queueName: string): az_storage_queue_policy_create_command_builder {
-        return new az_storage_queue_policy_create_command_builder(this, name, queueName);
+    static az_storage_queue_policy_create(name: string, queueName: string): az_storage_queue_policy_create_command_builder {
+        return new az_storage_queue_policy_create_command_builder("az storage queue policy create", name, queueName);
     }
 
     /**
@@ -4592,8 +4506,8 @@ export class az_storage_queue_policy implements ICommandParent<any> {
      * @param {string} name The stored access policy name.
      * @param {string} queueName The queue name.
      */
-    az_storage_queue_policy_delete(name: string, queueName: string): az_storage_queue_policy_delete_command_builder {
-        return new az_storage_queue_policy_delete_command_builder(this, name, queueName);
+    static az_storage_queue_policy_delete(name: string, queueName: string): az_storage_queue_policy_delete_command_builder {
+        return new az_storage_queue_policy_delete_command_builder("az storage queue policy delete", name, queueName);
     }
 
     /**
@@ -4613,8 +4527,8 @@ export class az_storage_queue_policy implements ICommandParent<any> {
      *
      * @param {string} queueName The queue name.
      */
-    az_storage_queue_policy_list(queueName: string): az_storage_queue_policy_list_command_builder {
-        return new az_storage_queue_policy_list_command_builder(this, queueName);
+    static az_storage_queue_policy_list(queueName: string): az_storage_queue_policy_list_command_builder {
+        return new az_storage_queue_policy_list_command_builder("az storage queue policy list", queueName);
     }
 
     /**
@@ -4636,8 +4550,8 @@ export class az_storage_queue_policy implements ICommandParent<any> {
      * @param {string} name The stored access policy name.
      * @param {string} queueName The queue name.
      */
-    az_storage_queue_policy_show(name: string, queueName: string): az_storage_queue_policy_show_command_builder {
-        return new az_storage_queue_policy_show_command_builder(this, name, queueName);
+    static az_storage_queue_policy_show(name: string, queueName: string): az_storage_queue_policy_show_command_builder {
+        return new az_storage_queue_policy_show_command_builder("az storage queue policy show", name, queueName);
     }
 
     /**
@@ -4661,15 +4575,13 @@ export class az_storage_queue_policy implements ICommandParent<any> {
      * @param {string} name The stored access policy name.
      * @param {string} queueName The queue name.
      */
-    az_storage_queue_policy_update(name: string, queueName: string): az_storage_queue_policy_update_command_builder {
-        return new az_storage_queue_policy_update_command_builder(this, name, queueName);
+    static az_storage_queue_policy_update(name: string, queueName: string): az_storage_queue_policy_update_command_builder {
+        return new az_storage_queue_policy_update_command_builder("az storage queue policy update", name, queueName);
     }
 }
 
 /** Manage shared access policies of a storage table. */
-export class az_storage_queue implements ICommandParent<any> {
-    commandPath = "az storage queue";
-
+export class az_storage_queue {
     /**
      * Creates a queue under the given account.
      *
@@ -4689,8 +4601,8 @@ export class az_storage_queue implements ICommandParent<any> {
      *
      * @param {string} name The queue name.
      */
-    az_storage_queue_create(name: string): az_storage_queue_create_command_builder {
-        return new az_storage_queue_create_command_builder(this, name);
+    static az_storage_queue_create(name: string): az_storage_queue_create_command_builder {
+        return new az_storage_queue_create_command_builder("az storage queue create", name);
     }
 
     /**
@@ -4711,8 +4623,8 @@ export class az_storage_queue implements ICommandParent<any> {
      *
      * @param {string} name The queue name.
      */
-    az_storage_queue_delete(name: string): az_storage_queue_delete_command_builder {
-        return new az_storage_queue_delete_command_builder(this, name);
+    static az_storage_queue_delete(name: string): az_storage_queue_delete_command_builder {
+        return new az_storage_queue_delete_command_builder("az storage queue delete", name);
     }
 
     /**
@@ -4732,8 +4644,8 @@ export class az_storage_queue implements ICommandParent<any> {
      *
      * @param {string} name The queue name.
      */
-    az_storage_queue_exists(name: string): az_storage_queue_exists_command_builder {
-        return new az_storage_queue_exists_command_builder(this, name);
+    static az_storage_queue_exists(name: string): az_storage_queue_exists_command_builder {
+        return new az_storage_queue_exists_command_builder("az storage queue exists", name);
     }
 
     /**
@@ -4756,8 +4668,8 @@ export class az_storage_queue implements ICommandParent<any> {
      *
      * @param {string} name The queue name.
      */
-    az_storage_queue_generate_sas(name: string): az_storage_queue_generate_sas_command_builder {
-        return new az_storage_queue_generate_sas_command_builder(this, name);
+    static az_storage_queue_generate_sas(name: string): az_storage_queue_generate_sas_command_builder {
+        return new az_storage_queue_generate_sas_command_builder("az storage queue generate-sas", name);
     }
 
     /**
@@ -4779,8 +4691,8 @@ export class az_storage_queue implements ICommandParent<any> {
      *                       [--timeout]
      * ```
      */
-    az_storage_queue_list(): az_storage_queue_list_command_builder {
-        return new az_storage_queue_list_command_builder(this);
+    static az_storage_queue_list(): az_storage_queue_list_command_builder {
+        return new az_storage_queue_list_command_builder("az storage queue list");
     }
 
     /**
@@ -4797,15 +4709,13 @@ export class az_storage_queue implements ICommandParent<any> {
      *                        [--timeout]
      * ```
      */
-    az_storage_queue_stats(): az_storage_queue_stats_command_builder {
-        return new az_storage_queue_stats_command_builder(this);
+    static az_storage_queue_stats(): az_storage_queue_stats_command_builder {
+        return new az_storage_queue_stats_command_builder("az storage queue stats");
     }
 }
 
 /** Manage the metadata of a file share. */
-export class az_storage_share_metadata implements ICommandParent<any> {
-    commandPath = "az storage share metadata";
-
+export class az_storage_share_metadata {
     /**
      * Returns all user-defined metadata for the specified share.
      *
@@ -4824,8 +4734,8 @@ export class az_storage_share_metadata implements ICommandParent<any> {
      *
      * @param {string} name The file share name.
      */
-    az_storage_share_metadata_show(name: string): az_storage_share_metadata_show_command_builder {
-        return new az_storage_share_metadata_show_command_builder(this, name);
+    static az_storage_share_metadata_show(name: string): az_storage_share_metadata_show_command_builder {
+        return new az_storage_share_metadata_show_command_builder("az storage share metadata show", name);
     }
 
     /**
@@ -4845,15 +4755,13 @@ export class az_storage_share_metadata implements ICommandParent<any> {
      *
      * @param {string} name The file share name.
      */
-    az_storage_share_metadata_update(name: string): az_storage_share_metadata_update_command_builder {
-        return new az_storage_share_metadata_update_command_builder(this, name);
+    static az_storage_share_metadata_update(name: string): az_storage_share_metadata_update_command_builder {
+        return new az_storage_share_metadata_update_command_builder("az storage share metadata update", name);
     }
 }
 
 /** Manage shared access policies of a storage file share. */
-export class az_storage_share_policy implements ICommandParent<any> {
-    commandPath = "az storage share policy";
-
+export class az_storage_share_policy {
     /**
      * Create a stored access policy on the containing object.
      *
@@ -4874,8 +4782,8 @@ export class az_storage_share_policy implements ICommandParent<any> {
      * @param {string} name The stored access policy name.
      * @param {string} shareName The file share name.
      */
-    az_storage_share_policy_create(name: string, shareName: string): az_storage_share_policy_create_command_builder {
-        return new az_storage_share_policy_create_command_builder(this, name, shareName);
+    static az_storage_share_policy_create(name: string, shareName: string): az_storage_share_policy_create_command_builder {
+        return new az_storage_share_policy_create_command_builder("az storage share policy create", name, shareName);
     }
 
     /**
@@ -4895,8 +4803,8 @@ export class az_storage_share_policy implements ICommandParent<any> {
      * @param {string} name The stored access policy name.
      * @param {string} shareName The file share name.
      */
-    az_storage_share_policy_delete(name: string, shareName: string): az_storage_share_policy_delete_command_builder {
-        return new az_storage_share_policy_delete_command_builder(this, name, shareName);
+    static az_storage_share_policy_delete(name: string, shareName: string): az_storage_share_policy_delete_command_builder {
+        return new az_storage_share_policy_delete_command_builder("az storage share policy delete", name, shareName);
     }
 
     /**
@@ -4915,8 +4823,8 @@ export class az_storage_share_policy implements ICommandParent<any> {
      *
      * @param {string} shareName The file share name.
      */
-    az_storage_share_policy_list(shareName: string): az_storage_share_policy_list_command_builder {
-        return new az_storage_share_policy_list_command_builder(this, shareName);
+    static az_storage_share_policy_list(shareName: string): az_storage_share_policy_list_command_builder {
+        return new az_storage_share_policy_list_command_builder("az storage share policy list", shareName);
     }
 
     /**
@@ -4937,8 +4845,8 @@ export class az_storage_share_policy implements ICommandParent<any> {
      * @param {string} name The stored access policy name.
      * @param {string} shareName The file share name.
      */
-    az_storage_share_policy_show(name: string, shareName: string): az_storage_share_policy_show_command_builder {
-        return new az_storage_share_policy_show_command_builder(this, name, shareName);
+    static az_storage_share_policy_show(name: string, shareName: string): az_storage_share_policy_show_command_builder {
+        return new az_storage_share_policy_show_command_builder("az storage share policy show", name, shareName);
     }
 
     /**
@@ -4961,15 +4869,13 @@ export class az_storage_share_policy implements ICommandParent<any> {
      * @param {string} name The stored access policy name.
      * @param {string} shareName The file share name.
      */
-    az_storage_share_policy_update(name: string, shareName: string): az_storage_share_policy_update_command_builder {
-        return new az_storage_share_policy_update_command_builder(this, name, shareName);
+    static az_storage_share_policy_update(name: string, shareName: string): az_storage_share_policy_update_command_builder {
+        return new az_storage_share_policy_update_command_builder("az storage share policy update", name, shareName);
     }
 }
 
 /** Manage Azure file shares using the Microsoft.Storage resource provider. */
-export class az_storage_share_rm implements ICommandParent<any> {
-    commandPath = "az storage share-rm";
-
+export class az_storage_share_rm {
     /**
      * Create a new Azure file share under the specified storage account.
      *
@@ -4989,8 +4895,8 @@ export class az_storage_share_rm implements ICommandParent<any> {
      * @param {string} name The file share name.
      * @param {string} storageAccount The name or ID of the storage account.
      */
-    az_storage_share_rm_create(name: string, storageAccount: string): az_storage_share_rm_create_command_builder {
-        return new az_storage_share_rm_create_command_builder(this, name, storageAccount);
+    static az_storage_share_rm_create(name: string, storageAccount: string): az_storage_share_rm_create_command_builder {
+        return new az_storage_share_rm_create_command_builder("az storage share-rm create", name, storageAccount);
     }
 
     /**
@@ -5006,8 +4912,8 @@ export class az_storage_share_rm implements ICommandParent<any> {
      *                            [--yes]
      * ```
      */
-    az_storage_share_rm_delete(): az_storage_share_rm_delete_command_builder {
-        return new az_storage_share_rm_delete_command_builder(this);
+    static az_storage_share_rm_delete(): az_storage_share_rm_delete_command_builder {
+        return new az_storage_share_rm_delete_command_builder("az storage share-rm delete");
     }
 
     /**
@@ -5022,8 +4928,8 @@ export class az_storage_share_rm implements ICommandParent<any> {
      *                            [--subscription]
      * ```
      */
-    az_storage_share_rm_exists(): az_storage_share_rm_exists_command_builder {
-        return new az_storage_share_rm_exists_command_builder(this);
+    static az_storage_share_rm_exists(): az_storage_share_rm_exists_command_builder {
+        return new az_storage_share_rm_exists_command_builder("az storage share-rm exists");
     }
 
     /**
@@ -5040,8 +4946,8 @@ export class az_storage_share_rm implements ICommandParent<any> {
      *
      * @param {string} storageAccount The name or ID of the storage account.
      */
-    az_storage_share_rm_list(storageAccount: string): az_storage_share_rm_list_command_builder {
-        return new az_storage_share_rm_list_command_builder(this, storageAccount);
+    static az_storage_share_rm_list(storageAccount: string): az_storage_share_rm_list_command_builder {
+        return new az_storage_share_rm_list_command_builder("az storage share-rm list", storageAccount);
     }
 
     /**
@@ -5060,8 +4966,8 @@ export class az_storage_share_rm implements ICommandParent<any> {
      *
      * @param {string} deletedVersion Identify the version of the deleted share that will be restored.
      */
-    az_storage_share_rm_restore(deletedVersion: string): az_storage_share_rm_restore_command_builder {
-        return new az_storage_share_rm_restore_command_builder(this, deletedVersion);
+    static az_storage_share_rm_restore(deletedVersion: string): az_storage_share_rm_restore_command_builder {
+        return new az_storage_share_rm_restore_command_builder("az storage share-rm restore", deletedVersion);
     }
 
     /**
@@ -5078,8 +4984,8 @@ export class az_storage_share_rm implements ICommandParent<any> {
      *                          [--subscription]
      * ```
      */
-    az_storage_share_rm_show(): az_storage_share_rm_show_command_builder {
-        return new az_storage_share_rm_show_command_builder(this);
+    static az_storage_share_rm_show(): az_storage_share_rm_show_command_builder {
+        return new az_storage_share_rm_show_command_builder("az storage share-rm show");
     }
 
     /**
@@ -5094,8 +5000,8 @@ export class az_storage_share_rm implements ICommandParent<any> {
      *                           [--subscription]
      * ```
      */
-    az_storage_share_rm_stats(): az_storage_share_rm_stats_command_builder {
-        return new az_storage_share_rm_stats_command_builder(this);
+    static az_storage_share_rm_stats(): az_storage_share_rm_stats_command_builder {
+        return new az_storage_share_rm_stats_command_builder("az storage share-rm stats");
     }
 
     /**
@@ -5118,15 +5024,13 @@ export class az_storage_share_rm implements ICommandParent<any> {
      *                            [--subscription]
      * ```
      */
-    az_storage_share_rm_update(): az_storage_share_rm_update_command_builder {
-        return new az_storage_share_rm_update_command_builder(this);
+    static az_storage_share_rm_update(): az_storage_share_rm_update_command_builder {
+        return new az_storage_share_rm_update_command_builder("az storage share-rm update");
     }
 }
 
 /** Manage file shares. */
-export class az_storage_share implements ICommandParent<any> {
-    commandPath = "az storage share";
-
+export class az_storage_share {
     /**
      * Creates a new share under the specified account.
      *
@@ -5146,8 +5050,8 @@ export class az_storage_share implements ICommandParent<any> {
      *
      * @param {string} name The file share name.
      */
-    az_storage_share_create(name: string): az_storage_share_create_command_builder {
-        return new az_storage_share_create_command_builder(this, name);
+    static az_storage_share_create(name: string): az_storage_share_create_command_builder {
+        return new az_storage_share_create_command_builder("az storage share create", name);
     }
 
     /**
@@ -5169,8 +5073,8 @@ export class az_storage_share implements ICommandParent<any> {
      *
      * @param {string} name The file share name.
      */
-    az_storage_share_delete(name: string): az_storage_share_delete_command_builder {
-        return new az_storage_share_delete_command_builder(this, name);
+    static az_storage_share_delete(name: string): az_storage_share_delete_command_builder {
+        return new az_storage_share_delete_command_builder("az storage share delete", name);
     }
 
     /**
@@ -5190,8 +5094,8 @@ export class az_storage_share implements ICommandParent<any> {
      *
      * @param {string} name The file share name.
      */
-    az_storage_share_exists(name: string): az_storage_share_exists_command_builder {
-        return new az_storage_share_exists_command_builder(this, name);
+    static az_storage_share_exists(name: string): az_storage_share_exists_command_builder {
+        return new az_storage_share_exists_command_builder("az storage share exists", name);
     }
 
     /**
@@ -5219,8 +5123,8 @@ export class az_storage_share implements ICommandParent<any> {
      *
      * @param {string} name The file share name.
      */
-    az_storage_share_generate_sas(name: string): az_storage_share_generate_sas_command_builder {
-        return new az_storage_share_generate_sas_command_builder(this, name);
+    static az_storage_share_generate_sas(name: string): az_storage_share_generate_sas_command_builder {
+        return new az_storage_share_generate_sas_command_builder("az storage share generate-sas", name);
     }
 
     /**
@@ -5242,8 +5146,8 @@ export class az_storage_share implements ICommandParent<any> {
      *                       [--timeout]
      * ```
      */
-    az_storage_share_list(): az_storage_share_list_command_builder {
-        return new az_storage_share_list_command_builder(this);
+    static az_storage_share_list(): az_storage_share_list_command_builder {
+        return new az_storage_share_list_command_builder("az storage share list");
     }
 
     /**
@@ -5264,8 +5168,8 @@ export class az_storage_share implements ICommandParent<any> {
      *
      * @param {string} name The file share name.
      */
-    az_storage_share_show(name: string): az_storage_share_show_command_builder {
-        return new az_storage_share_show_command_builder(this, name);
+    static az_storage_share_show(name: string): az_storage_share_show_command_builder {
+        return new az_storage_share_show_command_builder("az storage share show", name);
     }
 
     /**
@@ -5286,8 +5190,8 @@ export class az_storage_share implements ICommandParent<any> {
      *
      * @param {string} name The file share name.
      */
-    az_storage_share_snapshot(name: string): az_storage_share_snapshot_command_builder {
-        return new az_storage_share_snapshot_command_builder(this, name);
+    static az_storage_share_snapshot(name: string): az_storage_share_snapshot_command_builder {
+        return new az_storage_share_snapshot_command_builder("az storage share snapshot", name);
     }
 
     /**
@@ -5306,8 +5210,8 @@ export class az_storage_share implements ICommandParent<any> {
      *
      * @param {string} name The file share name.
      */
-    az_storage_share_stats(name: string): az_storage_share_stats_command_builder {
-        return new az_storage_share_stats_command_builder(this, name);
+    static az_storage_share_stats(name: string): az_storage_share_stats_command_builder {
+        return new az_storage_share_stats_command_builder("az storage share stats", name);
     }
 
     /**
@@ -5328,8 +5232,8 @@ export class az_storage_share implements ICommandParent<any> {
      * @param {string} name The file share name.
      * @param {string} quota Specifies the maximum size of the share, in gigabytes. Must be greater than 0, and less than or equal to 5 TB (5120 GB).
      */
-    az_storage_share_update(name: string, quota: string): az_storage_share_update_command_builder {
-        return new az_storage_share_update_command_builder(this, name, quota);
+    static az_storage_share_update(name: string, quota: string): az_storage_share_update_command_builder {
+        return new az_storage_share_update_command_builder("az storage share update", name, quota);
     }
 
     /**
@@ -5349,15 +5253,13 @@ export class az_storage_share implements ICommandParent<any> {
      *
      * @param {string} name The file share name.
      */
-    az_storage_share_url(name: string): az_storage_share_url_command_builder {
-        return new az_storage_share_url_command_builder(this, name);
+    static az_storage_share_url(name: string): az_storage_share_url_command_builder {
+        return new az_storage_share_url_command_builder("az storage share url", name);
     }
 }
 
 /** Manage shared access policies of a storage table. */
-export class az_storage_table_policy implements ICommandParent<any> {
-    commandPath = "az storage table policy";
-
+export class az_storage_table_policy {
     /**
      * Create a stored access policy on the containing object.
      *
@@ -5378,8 +5280,8 @@ export class az_storage_table_policy implements ICommandParent<any> {
      * @param {string} name The stored access policy name.
      * @param {string} tableName The container name.
      */
-    az_storage_table_policy_create(name: string, tableName: string): az_storage_table_policy_create_command_builder {
-        return new az_storage_table_policy_create_command_builder(this, name, tableName);
+    static az_storage_table_policy_create(name: string, tableName: string): az_storage_table_policy_create_command_builder {
+        return new az_storage_table_policy_create_command_builder("az storage table policy create", name, tableName);
     }
 
     /**
@@ -5399,8 +5301,8 @@ export class az_storage_table_policy implements ICommandParent<any> {
      * @param {string} name The stored access policy name.
      * @param {string} tableName The container name.
      */
-    az_storage_table_policy_delete(name: string, tableName: string): az_storage_table_policy_delete_command_builder {
-        return new az_storage_table_policy_delete_command_builder(this, name, tableName);
+    static az_storage_table_policy_delete(name: string, tableName: string): az_storage_table_policy_delete_command_builder {
+        return new az_storage_table_policy_delete_command_builder("az storage table policy delete", name, tableName);
     }
 
     /**
@@ -5419,8 +5321,8 @@ export class az_storage_table_policy implements ICommandParent<any> {
      *
      * @param {string} tableName The container name.
      */
-    az_storage_table_policy_list(tableName: string): az_storage_table_policy_list_command_builder {
-        return new az_storage_table_policy_list_command_builder(this, tableName);
+    static az_storage_table_policy_list(tableName: string): az_storage_table_policy_list_command_builder {
+        return new az_storage_table_policy_list_command_builder("az storage table policy list", tableName);
     }
 
     /**
@@ -5441,8 +5343,8 @@ export class az_storage_table_policy implements ICommandParent<any> {
      * @param {string} name The stored access policy name.
      * @param {string} tableName The container name.
      */
-    az_storage_table_policy_show(name: string, tableName: string): az_storage_table_policy_show_command_builder {
-        return new az_storage_table_policy_show_command_builder(this, name, tableName);
+    static az_storage_table_policy_show(name: string, tableName: string): az_storage_table_policy_show_command_builder {
+        return new az_storage_table_policy_show_command_builder("az storage table policy show", name, tableName);
     }
 
     /**
@@ -5465,15 +5367,13 @@ export class az_storage_table_policy implements ICommandParent<any> {
      * @param {string} name The stored access policy name.
      * @param {string} tableName The container name.
      */
-    az_storage_table_policy_update(name: string, tableName: string): az_storage_table_policy_update_command_builder {
-        return new az_storage_table_policy_update_command_builder(this, name, tableName);
+    static az_storage_table_policy_update(name: string, tableName: string): az_storage_table_policy_update_command_builder {
+        return new az_storage_table_policy_update_command_builder("az storage table policy update", name, tableName);
     }
 }
 
 /** Manage NoSQL key-value storage. */
-export class az_storage_table implements ICommandParent<any> {
-    commandPath = "az storage table";
-
+export class az_storage_table {
     /**
      * Creates a new table in the storage account.
      *
@@ -5491,8 +5391,8 @@ export class az_storage_table implements ICommandParent<any> {
      *
      * @param {string} name The name of the table to create. The table name may contain only alphanumeric characters and cannot begin with a numeric character. It is case-insensitive and must be from 3 to 63 characters long.
      */
-    az_storage_table_create(name: string): az_storage_table_create_command_builder {
-        return new az_storage_table_create_command_builder(this, name);
+    static az_storage_table_create(name: string): az_storage_table_create_command_builder {
+        return new az_storage_table_create_command_builder("az storage table create", name);
     }
 
     /**
@@ -5512,8 +5412,8 @@ export class az_storage_table implements ICommandParent<any> {
      *
      * @param {string} name The name of the table to delete.
      */
-    az_storage_table_delete(name: string): az_storage_table_delete_command_builder {
-        return new az_storage_table_delete_command_builder(this, name);
+    static az_storage_table_delete(name: string): az_storage_table_delete_command_builder {
+        return new az_storage_table_delete_command_builder("az storage table delete", name);
     }
 
     /**
@@ -5532,8 +5432,8 @@ export class az_storage_table implements ICommandParent<any> {
      *
      * @param {string} name The name of table to check for existence.
      */
-    az_storage_table_exists(name: string): az_storage_table_exists_command_builder {
-        return new az_storage_table_exists_command_builder(this, name);
+    static az_storage_table_exists(name: string): az_storage_table_exists_command_builder {
+        return new az_storage_table_exists_command_builder("az storage table exists", name);
     }
 
     /**
@@ -5560,8 +5460,8 @@ export class az_storage_table implements ICommandParent<any> {
      *
      * @param {string} name The name of the table to create a SAS token for.
      */
-    az_storage_table_generate_sas(name: string): az_storage_table_generate_sas_command_builder {
-        return new az_storage_table_generate_sas_command_builder(this, name);
+    static az_storage_table_generate_sas(name: string): az_storage_table_generate_sas_command_builder {
+        return new az_storage_table_generate_sas_command_builder("az storage table generate-sas", name);
     }
 
     /**
@@ -5580,8 +5480,8 @@ export class az_storage_table implements ICommandParent<any> {
      *                       [--timeout]
      * ```
      */
-    az_storage_table_list(): az_storage_table_list_command_builder {
-        return new az_storage_table_list_command_builder(this);
+    static az_storage_table_list(): az_storage_table_list_command_builder {
+        return new az_storage_table_list_command_builder("az storage table list");
     }
 
     /**
@@ -5597,15 +5497,13 @@ export class az_storage_table implements ICommandParent<any> {
      *                        [--timeout]
      * ```
      */
-    az_storage_table_stats(): az_storage_table_stats_command_builder {
-        return new az_storage_table_stats_command_builder(this);
+    static az_storage_table_stats(): az_storage_table_stats_command_builder {
+        return new az_storage_table_stats_command_builder("az storage table stats");
     }
 }
 
 /** Manage Azure Cloud Storage resources. */
-export class az_storage implements ICommandParent<any> {
-    commandPath = "az storage";
-
+export class az_storage {
     /**
      * Copy files or directories to or from Azure storage.
      *
@@ -5645,8 +5543,8 @@ export class az_storage implements ICommandParent<any> {
      *                 [--subscription]
      * ```
      */
-    az_storage_copy(): az_storage_copy_command_builder {
-        return new az_storage_copy_command_builder(this);
+    static az_storage_copy(): az_storage_copy_command_builder {
+        return new az_storage_copy_command_builder("az storage copy");
     }
 
     /**
@@ -5670,8 +5568,8 @@ export class az_storage implements ICommandParent<any> {
      *                   [--subscription]
      * ```
      */
-    az_storage_remove(): az_storage_remove_command_builder {
-        return new az_storage_remove_command_builder(this);
+    static az_storage_remove(): az_storage_remove_command_builder {
+        return new az_storage_remove_command_builder("az storage remove");
     }
 }
 
@@ -5689,7 +5587,7 @@ export class az_storage implements ICommandParent<any> {
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_blob_service_properties_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string) {
+    constructor(commandPath: string, accountName: string) {
         super(commandParent);
         this.accountName(accountName)
     }
@@ -5744,7 +5642,7 @@ class az_storage_account_blob_service_properties_show_command_builder extends Co
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_blob_service_properties_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string) {
+    constructor(commandPath: string, accountName: string) {
         super(commandParent);
         this.accountName(accountName)
     }
@@ -5857,7 +5755,7 @@ class az_storage_account_blob_service_properties_update_command_builder extends 
  * @param {string} name The name of the encryption scope within the specified storage account.
  */
 class az_storage_account_encryption_scope_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string) {
+    constructor(commandPath: string, accountName: string, name: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -5914,7 +5812,7 @@ class az_storage_account_encryption_scope_create_command_builder extends Command
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_encryption_scope_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string) {
+    constructor(commandPath: string, accountName: string) {
         super(commandParent);
         this.accountName(accountName)
     }
@@ -5960,7 +5858,7 @@ class az_storage_account_encryption_scope_list_command_builder extends CommandBu
  * @param {string} name The name of the encryption scope within the specified storage account.
  */
 class az_storage_account_encryption_scope_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string) {
+    constructor(commandPath: string, accountName: string, name: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -6015,7 +5913,7 @@ class az_storage_account_encryption_scope_show_command_builder extends CommandBu
  * @param {string} name The name of the encryption scope within the specified storage account.
  */
 class az_storage_account_encryption_scope_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string) {
+    constructor(commandPath: string, accountName: string, name: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -6078,7 +5976,7 @@ class az_storage_account_encryption_scope_update_command_builder extends Command
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_file_service_properties_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string) {
+    constructor(commandPath: string, accountName: string) {
         super(commandParent);
         this.accountName(accountName)
     }
@@ -6123,7 +6021,7 @@ class az_storage_account_file_service_properties_show_command_builder extends Co
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_file_service_properties_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string) {
+    constructor(commandPath: string, accountName: string) {
         super(commandParent);
         this.accountName(accountName)
     }
@@ -6174,7 +6072,7 @@ class az_storage_account_file_service_properties_update_command_builder extends 
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_keys_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string) {
+    constructor(commandPath: string, accountName: string) {
         super(commandParent);
         this.accountName(accountName)
     }
@@ -6226,7 +6124,7 @@ class az_storage_account_keys_list_command_builder extends CommandBuilder {
  * @param {'primary' | 'secondary'} key The key options to regenerate.
  */
 class az_storage_account_keys_renew_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, key: 'primary' | 'secondary') {
+    constructor(commandPath: string, accountName: string, key: 'primary' | 'secondary') {
         super(commandParent);
         this.accountName(accountName)
         this.key(key)
@@ -6279,7 +6177,7 @@ class az_storage_account_keys_renew_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_storage_account_management_policy_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, policy: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, policy: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.policy(policy)
@@ -6325,7 +6223,7 @@ class az_storage_account_management_policy_create_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_storage_account_management_policy_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
@@ -6365,7 +6263,7 @@ class az_storage_account_management_policy_delete_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_storage_account_management_policy_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
@@ -6414,7 +6312,7 @@ class az_storage_account_management_policy_show_command_builder extends CommandB
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_storage_account_management_policy_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
@@ -6480,7 +6378,7 @@ class az_storage_account_management_policy_update_command_builder extends Comman
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_network_rule_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string) {
+    constructor(commandPath: string, accountName: string) {
         super(commandParent);
         this.accountName(accountName)
     }
@@ -6542,7 +6440,7 @@ class az_storage_account_network_rule_add_command_builder extends CommandBuilder
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_network_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string) {
+    constructor(commandPath: string, accountName: string) {
         super(commandParent);
         this.accountName(accountName)
     }
@@ -6588,7 +6486,7 @@ class az_storage_account_network_rule_list_command_builder extends CommandBuilde
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_network_rule_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string) {
+    constructor(commandPath: string, accountName: string) {
         super(commandParent);
         this.accountName(accountName)
     }
@@ -6651,7 +6549,7 @@ class az_storage_account_network_rule_remove_command_builder extends CommandBuil
  * @param {string} sourceContainer The source storage container name.
  */
 class az_storage_account_or_policy_rule_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, destinationContainer: string, policyId: string, sourceContainer: string) {
+    constructor(commandPath: string, accountName: string, destinationContainer: string, policyId: string, sourceContainer: string) {
         super(commandParent);
         this.accountName(accountName)
         this.destinationContainer(destinationContainer)
@@ -6724,7 +6622,7 @@ class az_storage_account_or_policy_rule_add_command_builder extends CommandBuild
  * @param {string} policyId The ID of object replication policy or "default" if the policy ID is unknown. Policy Id will be auto-generated when setting on destination account. Required when setting on source account.
  */
 class az_storage_account_or_policy_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, policyId: string) {
+    constructor(commandPath: string, accountName: string, policyId: string) {
         super(commandParent);
         this.accountName(accountName)
         this.policyId(policyId)
@@ -6778,7 +6676,7 @@ class az_storage_account_or_policy_rule_list_command_builder extends CommandBuil
  * @param {string} ruleId Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source account.
  */
 class az_storage_account_or_policy_rule_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, policyId: string, ruleId: string) {
+    constructor(commandPath: string, accountName: string, policyId: string, ruleId: string) {
         super(commandParent);
         this.accountName(accountName)
         this.policyId(policyId)
@@ -6834,7 +6732,7 @@ class az_storage_account_or_policy_rule_remove_command_builder extends CommandBu
  * @param {string} ruleId Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source account.
  */
 class az_storage_account_or_policy_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, policyId: string, ruleId: string) {
+    constructor(commandPath: string, accountName: string, policyId: string, ruleId: string) {
         super(commandParent);
         this.accountName(accountName)
         this.policyId(policyId)
@@ -6899,7 +6797,7 @@ class az_storage_account_or_policy_rule_show_command_builder extends CommandBuil
  * @param {string} ruleId Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source account.
  */
 class az_storage_account_or_policy_rule_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, policyId: string, ruleId: string) {
+    constructor(commandPath: string, accountName: string, policyId: string, ruleId: string) {
         super(commandParent);
         this.accountName(accountName)
         this.policyId(policyId)
@@ -6983,7 +6881,7 @@ class az_storage_account_or_policy_rule_update_command_builder extends CommandBu
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_or_policy_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string) {
+    constructor(commandPath: string, accountName: string) {
         super(commandParent);
         this.accountName(accountName)
     }
@@ -7076,7 +6974,7 @@ class az_storage_account_or_policy_create_command_builder extends CommandBuilder
  * @param {string} policyId The ID of object replication policy or "default" if the policy ID is unknown. Policy Id will be auto-generated when setting on destination account. Required when setting on source account.
  */
 class az_storage_account_or_policy_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, policyId: string) {
+    constructor(commandPath: string, accountName: string, policyId: string) {
         super(commandParent);
         this.accountName(accountName)
         this.policyId(policyId)
@@ -7121,7 +7019,7 @@ class az_storage_account_or_policy_delete_command_builder extends CommandBuilder
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_or_policy_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string) {
+    constructor(commandPath: string, accountName: string) {
         super(commandParent);
         this.accountName(accountName)
     }
@@ -7167,7 +7065,7 @@ class az_storage_account_or_policy_list_command_builder extends CommandBuilder {
  * @param {string} policyId The ID of object replication policy or "default" if the policy ID is unknown. Policy Id will be auto-generated when setting on destination account. Required when setting on source account.
  */
 class az_storage_account_or_policy_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, policyId: string) {
+    constructor(commandPath: string, accountName: string, policyId: string) {
         super(commandParent);
         this.accountName(accountName)
         this.policyId(policyId)
@@ -7225,7 +7123,7 @@ class az_storage_account_or_policy_show_command_builder extends CommandBuilder {
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_or_policy_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string) {
+    constructor(commandPath: string, accountName: string) {
         super(commandParent);
         this.accountName(accountName)
     }
@@ -7311,7 +7209,7 @@ class az_storage_account_or_policy_update_command_builder extends CommandBuilder
  * ```
  */
 class az_storage_account_private_endpoint_connection_approve_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -7366,7 +7264,7 @@ class az_storage_account_private_endpoint_connection_approve_command_builder ext
  * ```
  */
 class az_storage_account_private_endpoint_connection_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -7421,7 +7319,7 @@ class az_storage_account_private_endpoint_connection_delete_command_builder exte
  * ```
  */
 class az_storage_account_private_endpoint_connection_reject_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -7476,7 +7374,7 @@ class az_storage_account_private_endpoint_connection_reject_command_builder exte
  * ```
  */
 class az_storage_account_private_endpoint_connection_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -7532,7 +7430,7 @@ class az_storage_account_private_endpoint_connection_show_command_builder extend
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_storage_account_private_link_resource_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
@@ -7575,7 +7473,7 @@ class az_storage_account_private_link_resource_list_command_builder extends Comm
  * @param {string} name The storage account name.
  */
 class az_storage_account_check_name_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -7636,7 +7534,7 @@ class az_storage_account_check_name_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_storage_account_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -7848,7 +7746,7 @@ class az_storage_account_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_account_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -7897,7 +7795,7 @@ class az_storage_account_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_account_failover_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -7963,7 +7861,7 @@ class az_storage_account_failover_command_builder extends CommandBuilder {
  * @param {string} services The storage services the SAS is applicable for. Allowed values: (b)lob (f)ile (q)ueue (t)able. Can be combined.
  */
 class az_storage_account_generate_sas_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, expiry: string, permissions: string, resourceTypes: string, services: string) {
+    constructor(commandPath: string, expiry: string, permissions: string, resourceTypes: string, services: string) {
         super(commandParent);
         this.expiry(expiry)
         this.permissions(permissions)
@@ -8055,7 +7953,7 @@ class az_storage_account_generate_sas_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_account_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -8090,7 +7988,7 @@ class az_storage_account_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_account_revoke_delegation_keys_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -8133,7 +8031,7 @@ class az_storage_account_revoke_delegation_keys_command_builder extends CommandB
  * ```
  */
 class az_storage_account_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -8193,7 +8091,7 @@ class az_storage_account_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_account_show_connection_string_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -8276,7 +8174,7 @@ class az_storage_account_show_connection_string_command_builder extends CommandB
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_storage_account_show_usage_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string) {
+    constructor(commandPath: string, location: string) {
         super(commandParent);
         this.location(location)
     }
@@ -8338,7 +8236,7 @@ class az_storage_account_show_usage_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_account_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -8582,7 +8480,7 @@ class az_storage_account_update_command_builder extends CommandBuilder {
  * @param {string} destinationContainer The container name.
  */
 class az_storage_blob_copy_cancel_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, copyId: string, destinationBlob: string, destinationContainer: string) {
+    constructor(commandPath: string, copyId: string, destinationBlob: string, destinationContainer: string) {
         super(commandParent);
         this.copyId(copyId)
         this.destinationBlob(destinationBlob)
@@ -8697,7 +8595,7 @@ class az_storage_blob_copy_cancel_command_builder extends CommandBuilder {
  * @param {string} destinationContainer The container name.
  */
 class az_storage_blob_copy_start_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, destinationBlob: string, destinationContainer: string) {
+    constructor(commandPath: string, destinationBlob: string, destinationContainer: string) {
         super(commandParent);
         this.destinationBlob(destinationBlob)
         this.destinationContainer(destinationContainer)
@@ -8908,7 +8806,7 @@ class az_storage_blob_copy_start_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_blob_copy_start_batch_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -9032,7 +8930,7 @@ class az_storage_blob_copy_start_batch_command_builder extends CommandBuilder {
  * @param {string} name The blob name.
  */
 class az_storage_blob_incremental_copy_cancel_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, copyId: string, name: string) {
+    constructor(commandPath: string, containerName: string, copyId: string, name: string) {
         super(commandParent);
         this.containerName(containerName)
         this.copyId(copyId)
@@ -9140,7 +9038,7 @@ class az_storage_blob_incremental_copy_cancel_command_builder extends CommandBui
  * @param {string} destinationContainer The container name.
  */
 class az_storage_blob_incremental_copy_start_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, destinationBlob: string, destinationContainer: string) {
+    constructor(commandPath: string, destinationBlob: string, destinationContainer: string) {
         super(commandParent);
         this.destinationBlob(destinationBlob)
         this.destinationContainer(destinationContainer)
@@ -9311,7 +9209,7 @@ class az_storage_blob_incremental_copy_start_command_builder extends CommandBuil
  * @param {string} containerName The container name.
  */
 class az_storage_blob_lease_acquire_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, blobName: string, containerName: string) {
+    constructor(commandPath: string, blobName: string, containerName: string) {
         super(commandParent);
         this.blobName(blobName)
         this.containerName(containerName)
@@ -9433,7 +9331,7 @@ class az_storage_blob_lease_acquire_command_builder extends CommandBuilder {
  * @param {string} containerName The container name.
  */
 class az_storage_blob_lease_break_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, blobName: string, containerName: string) {
+    constructor(commandPath: string, blobName: string, containerName: string) {
         super(commandParent);
         this.blobName(blobName)
         this.containerName(containerName)
@@ -9552,7 +9450,7 @@ class az_storage_blob_lease_break_command_builder extends CommandBuilder {
  * @param {string} proposedLeaseId Proposed lease ID, in a GUID string format. The Blob service returns 400 (Invalid request) if the proposed lease ID is not in the correct format.
  */
 class az_storage_blob_lease_change_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, blobName: string, containerName: string, leaseId: string, proposedLeaseId: string) {
+    constructor(commandPath: string, blobName: string, containerName: string, leaseId: string, proposedLeaseId: string) {
         super(commandParent);
         this.blobName(blobName)
         this.containerName(containerName)
@@ -9677,7 +9575,7 @@ class az_storage_blob_lease_change_command_builder extends CommandBuilder {
  * @param {string} leaseId Required if the blob has an active lease.
  */
 class az_storage_blob_lease_release_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, blobName: string, containerName: string, leaseId: string) {
+    constructor(commandPath: string, blobName: string, containerName: string, leaseId: string) {
         super(commandParent);
         this.blobName(blobName)
         this.containerName(containerName)
@@ -9795,7 +9693,7 @@ class az_storage_blob_lease_release_command_builder extends CommandBuilder {
  * @param {string} leaseId Required if the blob has an active lease.
  */
 class az_storage_blob_lease_renew_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, blobName: string, containerName: string, leaseId: string) {
+    constructor(commandPath: string, blobName: string, containerName: string, leaseId: string) {
         super(commandParent);
         this.blobName(blobName)
         this.containerName(containerName)
@@ -9914,7 +9812,7 @@ class az_storage_blob_lease_renew_command_builder extends CommandBuilder {
  * @param {string} name The blob name.
  */
 class az_storage_blob_metadata_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, name: string) {
+    constructor(commandPath: string, containerName: string, name: string) {
         super(commandParent);
         this.containerName(containerName)
         this.name(name)
@@ -10043,7 +9941,7 @@ class az_storage_blob_metadata_show_command_builder extends CommandBuilder {
  * @param {string} name The blob name.
  */
 class az_storage_blob_metadata_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, name: string) {
+    constructor(commandPath: string, containerName: string, name: string) {
         super(commandParent);
         this.containerName(containerName)
         this.name(name)
@@ -10156,7 +10054,7 @@ class az_storage_blob_metadata_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_blob_service_properties_delete_policy_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -10225,7 +10123,7 @@ class az_storage_blob_service_properties_delete_policy_show_command_builder exte
  * ```
  */
 class az_storage_blob_service_properties_delete_policy_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -10294,7 +10192,7 @@ class az_storage_blob_service_properties_delete_policy_update_command_builder ex
  * ```
  */
 class az_storage_blob_service_properties_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -10371,7 +10269,7 @@ class az_storage_blob_service_properties_show_command_builder extends CommandBui
  * ```
  */
 class az_storage_blob_service_properties_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -10499,7 +10397,7 @@ class az_storage_blob_service_properties_update_command_builder extends CommandB
  * @param {string} name The blob name.
  */
 class az_storage_blob_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, name: string) {
+    constructor(commandPath: string, containerName: string, name: string) {
         super(commandParent);
         this.containerName(containerName)
         this.name(name)
@@ -10628,7 +10526,7 @@ class az_storage_blob_delete_command_builder extends CommandBuilder {
  * @param {string} source The blob container from where the files will be deleted.
  */
 class az_storage_blob_delete_batch_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, source: string) {
+    constructor(commandPath: string, source: string) {
         super(commandParent);
         this.source(source)
     }
@@ -10765,7 +10663,7 @@ class az_storage_blob_delete_batch_command_builder extends CommandBuilder {
  * @param {string} name The blob name.
  */
 class az_storage_blob_download_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, file: string, name: string) {
+    constructor(commandPath: string, containerName: string, file: string, name: string) {
         super(commandParent);
         this.containerName(containerName)
         this.file(file)
@@ -10935,7 +10833,7 @@ class az_storage_blob_download_command_builder extends CommandBuilder {
  * @param {string} source The blob container from where the files will be downloaded.
  */
 class az_storage_blob_download_batch_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, destination: string, source: string) {
+    constructor(commandPath: string, destination: string, source: string) {
         super(commandParent);
         this.destination(destination)
         this.source(source)
@@ -11041,7 +10939,7 @@ class az_storage_blob_download_batch_command_builder extends CommandBuilder {
  * @param {string} name The blob name.
  */
 class az_storage_blob_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, name: string) {
+    constructor(commandPath: string, containerName: string, name: string) {
         super(commandParent);
         this.containerName(containerName)
         this.name(name)
@@ -11139,7 +11037,7 @@ class az_storage_blob_exists_command_builder extends CommandBuilder {
  * @param {string} name The blob name.
  */
 class az_storage_blob_generate_sas_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, name: string) {
+    constructor(commandPath: string, containerName: string, name: string) {
         super(commandParent);
         this.containerName(containerName)
         this.name(name)
@@ -11291,7 +11189,7 @@ class az_storage_blob_generate_sas_command_builder extends CommandBuilder {
  * @param {string} containerName The container name.
  */
 class az_storage_blob_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string) {
+    constructor(commandPath: string, containerName: string) {
         super(commandParent);
         this.containerName(containerName)
     }
@@ -11404,7 +11302,7 @@ class az_storage_blob_list_command_builder extends CommandBuilder {
  * @param {string} timeToRestore Restore blob to the specified time, which should be UTC datetime in (Y-m-d'T'H:M:S'Z').
  */
 class az_storage_blob_restore_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, timeToRestore: string) {
+    constructor(commandPath: string, accountName: string, timeToRestore: string) {
         super(commandParent);
         this.accountName(accountName)
         this.timeToRestore(timeToRestore)
@@ -11471,7 +11369,7 @@ class az_storage_blob_restore_command_builder extends CommandBuilder {
  * @param {string} tier The tier value to set the blob to.
  */
 class az_storage_blob_set_tier_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, name: string, tier: string) {
+    constructor(commandPath: string, containerName: string, name: string, tier: string) {
         super(commandParent);
         this.containerName(containerName)
         this.name(name)
@@ -11578,7 +11476,7 @@ class az_storage_blob_set_tier_command_builder extends CommandBuilder {
  * @param {string} name The blob name.
  */
 class az_storage_blob_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, name: string) {
+    constructor(commandPath: string, containerName: string, name: string) {
         super(commandParent);
         this.containerName(containerName)
         this.name(name)
@@ -11707,7 +11605,7 @@ class az_storage_blob_show_command_builder extends CommandBuilder {
  * @param {string} name The blob name.
  */
 class az_storage_blob_snapshot_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, name: string) {
+    constructor(commandPath: string, containerName: string, name: string) {
         super(commandParent);
         this.containerName(containerName)
         this.name(name)
@@ -11827,7 +11725,7 @@ class az_storage_blob_snapshot_command_builder extends CommandBuilder {
  * @param {string} source The source file path to sync from.
  */
 class az_storage_blob_sync_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, container: string, source: string) {
+    constructor(commandPath: string, container: string, source: string) {
         super(commandParent);
         this.container(container)
         this.source(source)
@@ -11926,7 +11824,7 @@ class az_storage_blob_sync_command_builder extends CommandBuilder {
  * @param {string} name The blob name.
  */
 class az_storage_blob_undelete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, name: string) {
+    constructor(commandPath: string, containerName: string, name: string) {
         super(commandParent);
         this.containerName(containerName)
         this.name(name)
@@ -12019,7 +11917,7 @@ class az_storage_blob_undelete_command_builder extends CommandBuilder {
  * @param {string} name The blob name.
  */
 class az_storage_blob_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, name: string) {
+    constructor(commandPath: string, containerName: string, name: string) {
         super(commandParent);
         this.containerName(containerName)
         this.name(name)
@@ -12194,7 +12092,7 @@ class az_storage_blob_update_command_builder extends CommandBuilder {
  * @param {string} name The blob name.
  */
 class az_storage_blob_upload_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, file: string, name: string) {
+    constructor(commandPath: string, containerName: string, file: string, name: string) {
         super(commandParent);
         this.containerName(containerName)
         this.file(file)
@@ -12423,7 +12321,7 @@ class az_storage_blob_upload_command_builder extends CommandBuilder {
  * @param {string} source The directory where the files to be uploaded are located.
  */
 class az_storage_blob_upload_batch_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, destination: string, source: string) {
+    constructor(commandPath: string, destination: string, source: string) {
         super(commandParent);
         this.destination(destination)
         this.source(source)
@@ -12631,7 +12529,7 @@ class az_storage_blob_upload_batch_command_builder extends CommandBuilder {
  * @param {string} name The blob name.
  */
 class az_storage_blob_url_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, name: string) {
+    constructor(commandPath: string, containerName: string, name: string) {
         super(commandParent);
         this.containerName(containerName)
         this.name(name)
@@ -12716,7 +12614,7 @@ class az_storage_blob_url_command_builder extends CommandBuilder {
  * @param {string} containerName The container name.
  */
 class az_storage_container_immutability_policy_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string) {
+    constructor(commandPath: string, accountName: string, containerName: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -12782,7 +12680,7 @@ class az_storage_container_immutability_policy_create_command_builder extends Co
  * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
  */
 class az_storage_container_immutability_policy_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string, ifMatch: string) {
+    constructor(commandPath: string, accountName: string, containerName: string, ifMatch: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -12839,7 +12737,7 @@ class az_storage_container_immutability_policy_delete_command_builder extends Co
  * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
  */
 class az_storage_container_immutability_policy_extend_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string, ifMatch: string) {
+    constructor(commandPath: string, accountName: string, containerName: string, ifMatch: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -12906,7 +12804,7 @@ class az_storage_container_immutability_policy_extend_command_builder extends Co
  * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
  */
 class az_storage_container_immutability_policy_lock_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string, ifMatch: string) {
+    constructor(commandPath: string, accountName: string, containerName: string, ifMatch: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -12961,7 +12859,7 @@ class az_storage_container_immutability_policy_lock_command_builder extends Comm
  * @param {string} containerName The container name.
  */
 class az_storage_container_immutability_policy_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string) {
+    constructor(commandPath: string, accountName: string, containerName: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -13026,7 +12924,7 @@ class az_storage_container_immutability_policy_show_command_builder extends Comm
  * @param {string} containerName The container name.
  */
 class az_storage_container_lease_acquire_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string) {
+    constructor(commandPath: string, containerName: string) {
         super(commandParent);
         this.containerName(containerName)
     }
@@ -13125,7 +13023,7 @@ class az_storage_container_lease_acquire_command_builder extends CommandBuilder 
  * @param {string} containerName The container name.
  */
 class az_storage_container_lease_break_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string) {
+    constructor(commandPath: string, containerName: string) {
         super(commandParent);
         this.containerName(containerName)
     }
@@ -13221,7 +13119,7 @@ class az_storage_container_lease_break_command_builder extends CommandBuilder {
  * @param {string} proposedLeaseId Proposed lease ID, in a GUID string format. The Blob service returns 400 (Invalid request) if the proposed lease ID is not in the correct format.
  */
 class az_storage_container_lease_change_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, leaseId: string, proposedLeaseId: string) {
+    constructor(commandPath: string, containerName: string, leaseId: string, proposedLeaseId: string) {
         super(commandParent);
         this.containerName(containerName)
         this.leaseId(leaseId)
@@ -13323,7 +13221,7 @@ class az_storage_container_lease_change_command_builder extends CommandBuilder {
  * @param {string} leaseId Lease ID for active lease.
  */
 class az_storage_container_lease_release_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, leaseId: string) {
+    constructor(commandPath: string, containerName: string, leaseId: string) {
         super(commandParent);
         this.containerName(containerName)
         this.leaseId(leaseId)
@@ -13418,7 +13316,7 @@ class az_storage_container_lease_release_command_builder extends CommandBuilder 
  * @param {string} leaseId Lease ID for active lease.
  */
 class az_storage_container_lease_renew_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, leaseId: string) {
+    constructor(commandPath: string, containerName: string, leaseId: string) {
         super(commandParent);
         this.containerName(containerName)
         this.leaseId(leaseId)
@@ -13508,7 +13406,7 @@ class az_storage_container_lease_renew_command_builder extends CommandBuilder {
  * @param {string} tags Each tag should be 3 to 23 alphanumeric characters and is normalized to lower case.
  */
 class az_storage_container_legal_hold_clear_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string, tags: string) {
+    constructor(commandPath: string, accountName: string, containerName: string, tags: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -13563,7 +13461,7 @@ class az_storage_container_legal_hold_clear_command_builder extends CommandBuild
  * @param {string} tags Each tag should be 3 to 23 alphanumeric characters and is normalized to lower case.
  */
 class az_storage_container_legal_hold_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string, tags: string) {
+    constructor(commandPath: string, accountName: string, containerName: string, tags: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -13617,7 +13515,7 @@ class az_storage_container_legal_hold_set_command_builder extends CommandBuilder
  * @param {string} containerName The container name.
  */
 class az_storage_container_legal_hold_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string) {
+    constructor(commandPath: string, accountName: string, containerName: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -13674,7 +13572,7 @@ class az_storage_container_legal_hold_show_command_builder extends CommandBuilde
  * @param {string} name The container name.
  */
 class az_storage_container_metadata_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -13761,7 +13659,7 @@ class az_storage_container_metadata_show_command_builder extends CommandBuilder 
  * @param {string} name The container name.
  */
 class az_storage_container_metadata_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -13856,7 +13754,7 @@ class az_storage_container_metadata_update_command_builder extends CommandBuilde
  * @param {string} name The stored access policy name.
  */
 class az_storage_container_policy_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, name: string) {
+    constructor(commandPath: string, containerName: string, name: string) {
         super(commandParent);
         this.containerName(containerName)
         this.name(name)
@@ -13955,7 +13853,7 @@ class az_storage_container_policy_create_command_builder extends CommandBuilder 
  * @param {string} name The stored access policy name.
  */
 class az_storage_container_policy_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, name: string) {
+    constructor(commandPath: string, containerName: string, name: string) {
         super(commandParent);
         this.containerName(containerName)
         this.name(name)
@@ -14035,7 +13933,7 @@ class az_storage_container_policy_delete_command_builder extends CommandBuilder 
  * @param {string} containerName The container name.
  */
 class az_storage_container_policy_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string) {
+    constructor(commandPath: string, containerName: string) {
         super(commandParent);
         this.containerName(containerName)
     }
@@ -14116,7 +14014,7 @@ class az_storage_container_policy_list_command_builder extends CommandBuilder {
  * @param {string} name The stored access policy name.
  */
 class az_storage_container_policy_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, name: string) {
+    constructor(commandPath: string, containerName: string, name: string) {
         super(commandParent);
         this.containerName(containerName)
         this.name(name)
@@ -14206,7 +14104,7 @@ class az_storage_container_policy_show_command_builder extends CommandBuilder {
  * @param {string} name The stored access policy name.
  */
 class az_storage_container_policy_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, containerName: string, name: string) {
+    constructor(commandPath: string, containerName: string, name: string) {
         super(commandParent);
         this.containerName(containerName)
         this.name(name)
@@ -14309,7 +14207,7 @@ class az_storage_container_policy_update_command_builder extends CommandBuilder 
  * @param {string} name The container name.
  */
 class az_storage_container_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -14422,7 +14320,7 @@ class az_storage_container_create_command_builder extends CommandBuilder {
  * @param {string} name The container name.
  */
 class az_storage_container_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -14524,7 +14422,7 @@ class az_storage_container_delete_command_builder extends CommandBuilder {
  * @param {string} name The container name.
  */
 class az_storage_container_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -14606,7 +14504,7 @@ class az_storage_container_exists_command_builder extends CommandBuilder {
  * @param {string} name The container name.
  */
 class az_storage_container_generate_sas_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -14740,7 +14638,7 @@ class az_storage_container_generate_sas_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_container_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -14839,7 +14737,7 @@ class az_storage_container_list_command_builder extends CommandBuilder {
  * @param {string} name The container name.
  */
 class az_storage_container_set_permission_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -14937,7 +14835,7 @@ class az_storage_container_set_permission_command_builder extends CommandBuilder
  * @param {string} name The container name.
  */
 class az_storage_container_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -15022,7 +14920,7 @@ class az_storage_container_show_command_builder extends CommandBuilder {
  * @param {string} name The container name.
  */
 class az_storage_container_show_permission_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -15106,7 +15004,7 @@ class az_storage_container_show_permission_command_builder extends CommandBuilde
  * @param {string} services The storage service(s) to add rules to. Allowed options are: (b)lob, (f)ile, (q)ueue, (t)able. Can be combined.
  */
 class az_storage_cors_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, methods: 'DELETE' | 'GET' | 'HEAD' | 'MERGE' | 'OPTIONS' | 'POST' | 'PUT', origins: string, services: string) {
+    constructor(commandPath: string, methods: 'DELETE' | 'GET' | 'HEAD' | 'MERGE' | 'OPTIONS' | 'POST' | 'PUT', origins: string, services: string) {
         super(commandParent);
         this.methods(methods)
         this.origins(origins)
@@ -15203,7 +15101,7 @@ class az_storage_cors_add_command_builder extends CommandBuilder {
  * @param {string} services The storage service(s) to remove rules from. Allowed options are: (b)lob, (f)ile, (q)ueue, (t)able. Can be combined.
  */
 class az_storage_cors_clear_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, services: string) {
+    constructor(commandPath: string, services: string) {
         super(commandParent);
         this.services(services)
     }
@@ -15267,7 +15165,7 @@ class az_storage_cors_clear_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_cors_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -15341,7 +15239,7 @@ class az_storage_cors_list_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_directory_metadata_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, shareName: string) {
+    constructor(commandPath: string, name: string, shareName: string) {
         super(commandParent);
         this.name(name)
         this.shareName(shareName)
@@ -15428,7 +15326,7 @@ class az_storage_directory_metadata_show_command_builder extends CommandBuilder 
  * @param {string} shareName The file share name.
  */
 class az_storage_directory_metadata_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, shareName: string) {
+    constructor(commandPath: string, name: string, shareName: string) {
         super(commandParent);
         this.name(name)
         this.shareName(shareName)
@@ -15510,7 +15408,7 @@ class az_storage_directory_metadata_update_command_builder extends CommandBuilde
  * @param {string} shareName The file share name.
  */
 class az_storage_directory_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, shareName: string) {
+    constructor(commandPath: string, name: string, shareName: string) {
         super(commandParent);
         this.name(name)
         this.shareName(shareName)
@@ -15597,7 +15495,7 @@ class az_storage_directory_create_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_directory_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, shareName: string) {
+    constructor(commandPath: string, name: string, shareName: string) {
         super(commandParent);
         this.name(name)
         this.shareName(shareName)
@@ -15678,7 +15576,7 @@ class az_storage_directory_delete_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_directory_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, shareName: string) {
+    constructor(commandPath: string, name: string, shareName: string) {
         super(commandParent);
         this.name(name)
         this.shareName(shareName)
@@ -15758,7 +15656,7 @@ class az_storage_directory_exists_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_directory_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, shareName: string) {
+    constructor(commandPath: string, shareName: string) {
         super(commandParent);
         this.shareName(shareName)
     }
@@ -15839,7 +15737,7 @@ class az_storage_directory_list_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_directory_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, shareName: string) {
+    constructor(commandPath: string, name: string, shareName: string) {
         super(commandParent);
         this.name(name)
         this.shareName(shareName)
@@ -15928,7 +15826,7 @@ class az_storage_directory_show_command_builder extends CommandBuilder {
  * @param {string} tableName The name of the table containing the entity to delete.
  */
 class az_storage_entity_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, partitionKey: string, rowKey: string, tableName: string) {
+    constructor(commandPath: string, partitionKey: string, rowKey: string, tableName: string) {
         super(commandParent);
         this.partitionKey(partitionKey)
         this.rowKey(rowKey)
@@ -16016,7 +15914,7 @@ class az_storage_entity_delete_command_builder extends CommandBuilder {
  * @param {string} tableName The name of the table to insert the entity into.
  */
 class az_storage_entity_insert_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, entity: string, tableName: string) {
+    constructor(commandPath: string, entity: string, tableName: string) {
         super(commandParent);
         this.entity(entity)
         this.tableName(tableName)
@@ -16097,7 +15995,7 @@ class az_storage_entity_insert_command_builder extends CommandBuilder {
  * @param {string} tableName The name of the table containing the entity to merge.
  */
 class az_storage_entity_merge_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, entity: string, tableName: string) {
+    constructor(commandPath: string, entity: string, tableName: string) {
         super(commandParent);
         this.entity(entity)
         this.tableName(tableName)
@@ -16180,7 +16078,7 @@ class az_storage_entity_merge_command_builder extends CommandBuilder {
  * @param {string} tableName The name of the table to query.
  */
 class az_storage_entity_query_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, tableName: string) {
+    constructor(commandPath: string, tableName: string) {
         super(commandParent);
         this.tableName(tableName)
     }
@@ -16278,7 +16176,7 @@ class az_storage_entity_query_command_builder extends CommandBuilder {
  * @param {string} tableName The name of the table containing the entity to update.
  */
 class az_storage_entity_replace_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, entity: string, tableName: string) {
+    constructor(commandPath: string, entity: string, tableName: string) {
         super(commandParent);
         this.entity(entity)
         this.tableName(tableName)
@@ -16363,7 +16261,7 @@ class az_storage_entity_replace_command_builder extends CommandBuilder {
  * @param {string} tableName The name of the table to get the entity from.
  */
 class az_storage_entity_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, partitionKey: string, rowKey: string, tableName: string) {
+    constructor(commandPath: string, partitionKey: string, rowKey: string, tableName: string) {
         super(commandParent);
         this.partitionKey(partitionKey)
         this.rowKey(rowKey)
@@ -16464,7 +16362,7 @@ class az_storage_entity_show_command_builder extends CommandBuilder {
  * @param {string} destinationShare Name of the destination share. The share must exist.
  */
 class az_storage_file_copy_cancel_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, copyId: string, destinationPath: string, destinationShare: string) {
+    constructor(commandPath: string, copyId: string, destinationPath: string, destinationShare: string) {
         super(commandParent);
         this.copyId(copyId)
         this.destinationPath(destinationPath)
@@ -16556,7 +16454,7 @@ class az_storage_file_copy_cancel_command_builder extends CommandBuilder {
  * @param {string} destinationShare Name of the destination share. The share must exist.
  */
 class az_storage_file_copy_start_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, destinationPath: string, destinationShare: string) {
+    constructor(commandPath: string, destinationPath: string, destinationShare: string) {
         super(commandParent);
         this.destinationPath(destinationPath)
         this.destinationShare(destinationShare)
@@ -16702,7 +16600,7 @@ class az_storage_file_copy_start_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_file_copy_start_batch_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -16830,7 +16728,7 @@ class az_storage_file_copy_start_batch_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_file_metadata_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string, shareName: string) {
+    constructor(commandPath: string, path: string, shareName: string) {
         super(commandParent);
         this.path(path)
         this.shareName(shareName)
@@ -16917,7 +16815,7 @@ class az_storage_file_metadata_show_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_file_metadata_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string, shareName: string) {
+    constructor(commandPath: string, path: string, shareName: string) {
         super(commandParent);
         this.path(path)
         this.shareName(shareName)
@@ -16997,7 +16895,7 @@ class az_storage_file_metadata_update_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_file_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string, shareName: string) {
+    constructor(commandPath: string, path: string, shareName: string) {
         super(commandParent);
         this.path(path)
         this.shareName(shareName)
@@ -17071,7 +16969,7 @@ class az_storage_file_delete_command_builder extends CommandBuilder {
  * @param {string} source The source of the file delete operation. The source can be the file share URL or the share name.
  */
 class az_storage_file_delete_batch_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, source: string) {
+    constructor(commandPath: string, source: string) {
         super(commandParent);
         this.source(source)
     }
@@ -17158,7 +17056,7 @@ class az_storage_file_delete_batch_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_file_download_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string, shareName: string) {
+    constructor(commandPath: string, path: string, shareName: string) {
         super(commandParent);
         this.path(path)
         this.shareName(shareName)
@@ -17285,7 +17183,7 @@ class az_storage_file_download_command_builder extends CommandBuilder {
  * @param {string} source The source of the file download operation. The source can be the file share URL or the share name.
  */
 class az_storage_file_download_batch_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, destination: string, source: string) {
+    constructor(commandPath: string, destination: string, source: string) {
         super(commandParent);
         this.destination(destination)
         this.source(source)
@@ -17390,7 +17288,7 @@ class az_storage_file_download_batch_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_file_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string, shareName: string) {
+    constructor(commandPath: string, path: string, shareName: string) {
         super(commandParent);
         this.path(path)
         this.shareName(shareName)
@@ -17479,7 +17377,7 @@ class az_storage_file_exists_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_file_generate_sas_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string, shareName: string) {
+    constructor(commandPath: string, path: string, shareName: string) {
         super(commandParent);
         this.path(path)
         this.shareName(shareName)
@@ -17611,7 +17509,7 @@ class az_storage_file_generate_sas_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_file_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, shareName: string) {
+    constructor(commandPath: string, shareName: string) {
         super(commandParent);
         this.shareName(shareName)
     }
@@ -17716,7 +17614,7 @@ class az_storage_file_list_command_builder extends CommandBuilder {
  * @param {string} size The length to resize the file to.
  */
 class az_storage_file_resize_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string, shareName: string, size: string) {
+    constructor(commandPath: string, path: string, shareName: string, size: string) {
         super(commandParent);
         this.path(path)
         this.shareName(shareName)
@@ -17799,7 +17697,7 @@ class az_storage_file_resize_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_file_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string, shareName: string) {
+    constructor(commandPath: string, path: string, shareName: string) {
         super(commandParent);
         this.path(path)
         this.shareName(shareName)
@@ -17892,7 +17790,7 @@ class az_storage_file_show_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_file_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string, shareName: string) {
+    constructor(commandPath: string, path: string, shareName: string) {
         super(commandParent);
         this.path(path)
         this.shareName(shareName)
@@ -18019,7 +17917,7 @@ class az_storage_file_update_command_builder extends CommandBuilder {
  * @param {string} source Path of the local file to upload as the file content.
  */
 class az_storage_file_upload_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, shareName: string, source: string) {
+    constructor(commandPath: string, shareName: string, source: string) {
         super(commandParent);
         this.shareName(shareName)
         this.source(source)
@@ -18171,7 +18069,7 @@ class az_storage_file_upload_command_builder extends CommandBuilder {
  * @param {string} source The directory to upload files from.
  */
 class az_storage_file_upload_batch_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, destination: string, source: string) {
+    constructor(commandPath: string, destination: string, source: string) {
         super(commandParent);
         this.destination(destination)
         this.source(source)
@@ -18317,7 +18215,7 @@ class az_storage_file_upload_batch_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_file_url_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string, shareName: string) {
+    constructor(commandPath: string, path: string, shareName: string) {
         super(commandParent);
         this.path(path)
         this.shareName(shareName)
@@ -18395,7 +18293,7 @@ class az_storage_file_url_command_builder extends CommandBuilder {
  * @param {string} path The path to a file or directory in the specified file system.
  */
 class az_storage_fs_access_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, path: string) {
+    constructor(commandPath: string, fileSystem: string, path: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.path(path)
@@ -18494,7 +18392,7 @@ class az_storage_fs_access_set_command_builder extends CommandBuilder {
  * @param {string} path The path to a file or directory in the specified file system.
  */
 class az_storage_fs_access_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, path: string) {
+    constructor(commandPath: string, fileSystem: string, path: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.path(path)
@@ -18576,7 +18474,7 @@ class az_storage_fs_access_show_command_builder extends CommandBuilder {
  * @param {string} name The name of directory.
  */
 class az_storage_fs_directory_metadata_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, name: string) {
+    constructor(commandPath: string, fileSystem: string, name: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.name(name)
@@ -18665,7 +18563,7 @@ class az_storage_fs_directory_metadata_show_command_builder extends CommandBuild
  * @param {string} name The name of directory.
  */
 class az_storage_fs_directory_metadata_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, metadata: string, name: string) {
+    constructor(commandPath: string, fileSystem: string, metadata: string, name: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.metadata(metadata)
@@ -18756,7 +18654,7 @@ class az_storage_fs_directory_metadata_update_command_builder extends CommandBui
  * @param {string} name The name of directory.
  */
 class az_storage_fs_directory_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, name: string) {
+    constructor(commandPath: string, fileSystem: string, name: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.name(name)
@@ -18856,7 +18754,7 @@ class az_storage_fs_directory_create_command_builder extends CommandBuilder {
  * @param {string} name The name of directory.
  */
 class az_storage_fs_directory_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, name: string) {
+    constructor(commandPath: string, fileSystem: string, name: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.name(name)
@@ -18943,7 +18841,7 @@ class az_storage_fs_directory_delete_command_builder extends CommandBuilder {
  * @param {string} name The name of directory.
  */
 class az_storage_fs_directory_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, name: string) {
+    constructor(commandPath: string, fileSystem: string, name: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.name(name)
@@ -19026,7 +18924,7 @@ class az_storage_fs_directory_exists_command_builder extends CommandBuilder {
  * @param {string} fileSystem File system name.
  */
 class az_storage_fs_directory_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string) {
+    constructor(commandPath: string, fileSystem: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
     }
@@ -19126,7 +19024,7 @@ class az_storage_fs_directory_list_command_builder extends CommandBuilder {
  * @param {string} newDirectory The new directory name the users want to move to. The value must have the following format: "{filesystem}/{directory}/{subdirectory}".
  */
 class az_storage_fs_directory_move_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, name: string, newDirectory: string) {
+    constructor(commandPath: string, fileSystem: string, name: string, newDirectory: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.name(name)
@@ -19215,7 +19113,7 @@ class az_storage_fs_directory_move_command_builder extends CommandBuilder {
  * @param {string} name The name of directory.
  */
 class az_storage_fs_directory_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, name: string) {
+    constructor(commandPath: string, fileSystem: string, name: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.name(name)
@@ -19303,7 +19201,7 @@ class az_storage_fs_directory_show_command_builder extends CommandBuilder {
  * @param {string} path The file path in a file system.
  */
 class az_storage_fs_file_metadata_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, path: string) {
+    constructor(commandPath: string, fileSystem: string, path: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.path(path)
@@ -19392,7 +19290,7 @@ class az_storage_fs_file_metadata_show_command_builder extends CommandBuilder {
  * @param {string} path The file path in a file system.
  */
 class az_storage_fs_file_metadata_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, metadata: string, path: string) {
+    constructor(commandPath: string, fileSystem: string, metadata: string, path: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.metadata(metadata)
@@ -19482,7 +19380,7 @@ class az_storage_fs_file_metadata_update_command_builder extends CommandBuilder 
  * @param {string} path The file path in a file system.
  */
 class az_storage_fs_file_append_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, content: string, fileSystem: string, path: string) {
+    constructor(commandPath: string, content: string, fileSystem: string, path: string) {
         super(commandParent);
         this.content(content)
         this.fileSystem(fileSystem)
@@ -19579,7 +19477,7 @@ class az_storage_fs_file_append_command_builder extends CommandBuilder {
  * @param {string} path The file path in a file system.
  */
 class az_storage_fs_file_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, path: string) {
+    constructor(commandPath: string, fileSystem: string, path: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.path(path)
@@ -19715,7 +19613,7 @@ class az_storage_fs_file_create_command_builder extends CommandBuilder {
  * @param {string} path The file path in a file system.
  */
 class az_storage_fs_file_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, path: string) {
+    constructor(commandPath: string, fileSystem: string, path: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.path(path)
@@ -19804,7 +19702,7 @@ class az_storage_fs_file_delete_command_builder extends CommandBuilder {
  * @param {string} path The file path in a file system.
  */
 class az_storage_fs_file_download_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, path: string) {
+    constructor(commandPath: string, fileSystem: string, path: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.path(path)
@@ -19897,7 +19795,7 @@ class az_storage_fs_file_download_command_builder extends CommandBuilder {
  * @param {string} path The file path in a file system.
  */
 class az_storage_fs_file_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, path: string) {
+    constructor(commandPath: string, fileSystem: string, path: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.path(path)
@@ -19982,7 +19880,7 @@ class az_storage_fs_file_exists_command_builder extends CommandBuilder {
  * @param {string} fileSystem File system name.
  */
 class az_storage_fs_file_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string) {
+    constructor(commandPath: string, fileSystem: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
     }
@@ -20099,7 +19997,7 @@ class az_storage_fs_file_list_command_builder extends CommandBuilder {
  * @param {string} path The original file path users want to move in a file system.
  */
 class az_storage_fs_file_move_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, newPath: string, path: string) {
+    constructor(commandPath: string, fileSystem: string, newPath: string, path: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.newPath(newPath)
@@ -20218,7 +20116,7 @@ class az_storage_fs_file_move_command_builder extends CommandBuilder {
  * @param {string} path The file path in a file system.
  */
 class az_storage_fs_file_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, path: string) {
+    constructor(commandPath: string, fileSystem: string, path: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.path(path)
@@ -20321,7 +20219,7 @@ class az_storage_fs_file_show_command_builder extends CommandBuilder {
  * @param {string} source Path of the local file to upload as the file content.
  */
 class az_storage_fs_file_upload_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, path: string, source: string) {
+    constructor(commandPath: string, fileSystem: string, path: string, source: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.path(path)
@@ -20492,7 +20390,7 @@ class az_storage_fs_file_upload_command_builder extends CommandBuilder {
  * @param {string} name File system name.
  */
 class az_storage_fs_metadata_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -20572,7 +20470,7 @@ class az_storage_fs_metadata_show_command_builder extends CommandBuilder {
  * @param {string} name File system name.
  */
 class az_storage_fs_metadata_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, metadata: string, name: string) {
+    constructor(commandPath: string, metadata: string, name: string) {
         super(commandParent);
         this.metadata(metadata)
         this.name(name)
@@ -20653,7 +20551,7 @@ class az_storage_fs_metadata_update_command_builder extends CommandBuilder {
  * @param {string} name File system name.
  */
 class az_storage_fs_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -20738,7 +20636,7 @@ class az_storage_fs_create_command_builder extends CommandBuilder {
  * @param {string} name File system name.
  */
 class az_storage_fs_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -20816,7 +20714,7 @@ class az_storage_fs_delete_command_builder extends CommandBuilder {
  * @param {string} name File system name.
  */
 class az_storage_fs_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -20887,7 +20785,7 @@ class az_storage_fs_exists_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_fs_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -20965,7 +20863,7 @@ class az_storage_fs_list_command_builder extends CommandBuilder {
  * @param {string} name File system name.
  */
 class az_storage_fs_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -21040,7 +20938,7 @@ class az_storage_fs_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_logging_off_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -21103,7 +21001,7 @@ class az_storage_logging_off_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_logging_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -21178,7 +21076,7 @@ class az_storage_logging_show_command_builder extends CommandBuilder {
  * @param {string} services The storage service(s) for which to update logging info: (b)lob (q)ueue (t)able. Can be combined.
  */
 class az_storage_logging_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, log: string, retention: string, services: string) {
+    constructor(commandPath: string, log: string, retention: string, services: string) {
         super(commandParent);
         this.log(log)
         this.retention(retention)
@@ -21264,7 +21162,7 @@ class az_storage_logging_update_command_builder extends CommandBuilder {
  * @param {string} queueName The queue name.
  */
 class az_storage_message_clear_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, queueName: string) {
+    constructor(commandPath: string, queueName: string) {
         super(commandParent);
         this.queueName(queueName)
     }
@@ -21340,7 +21238,7 @@ class az_storage_message_clear_command_builder extends CommandBuilder {
  * @param {string} queueName The queue name.
  */
 class az_storage_message_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, popReceipt: string, queueName: string) {
+    constructor(commandPath: string, id: string, popReceipt: string, queueName: string) {
         super(commandParent);
         this.id(id)
         this.popReceipt(popReceipt)
@@ -21428,7 +21326,7 @@ class az_storage_message_delete_command_builder extends CommandBuilder {
  * @param {string} queueName The queue name.
  */
 class az_storage_message_get_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, queueName: string) {
+    constructor(commandPath: string, queueName: string) {
         super(commandParent);
         this.queueName(queueName)
     }
@@ -21513,7 +21411,7 @@ class az_storage_message_get_command_builder extends CommandBuilder {
  * @param {string} queueName The queue name.
  */
 class az_storage_message_peek_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, queueName: string) {
+    constructor(commandPath: string, queueName: string) {
         super(commandParent);
         this.queueName(queueName)
     }
@@ -21595,7 +21493,7 @@ class az_storage_message_peek_command_builder extends CommandBuilder {
  * @param {string} queueName The queue name.
  */
 class az_storage_message_put_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, content: string, queueName: string) {
+    constructor(commandPath: string, content: string, queueName: string) {
         super(commandParent);
         this.content(content)
         this.queueName(queueName)
@@ -21693,7 +21591,7 @@ class az_storage_message_put_command_builder extends CommandBuilder {
  * @param {string} visibilityTimeout Specifies the new visibility timeout value, in seconds, relative to server time. The new value must be larger than or equal to 0, and cannot be larger than 7 days. The visibility timeout of a message cannot be set to a value later than the expiry time. A message can be updated until it has been deleted or has expired.
  */
 class az_storage_message_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, popReceipt: string, queueName: string, visibilityTimeout: string) {
+    constructor(commandPath: string, id: string, popReceipt: string, queueName: string, visibilityTimeout: string) {
         super(commandParent);
         this.id(id)
         this.popReceipt(popReceipt)
@@ -21791,7 +21689,7 @@ class az_storage_message_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_metrics_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -21872,7 +21770,7 @@ class az_storage_metrics_show_command_builder extends CommandBuilder {
  * @param {string} services The storage services from which to retrieve metrics info: (b)lob (q)ueue (t)able. Can be combined.
  */
 class az_storage_metrics_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, retention: string, services: string) {
+    constructor(commandPath: string, retention: string, services: string) {
         super(commandParent);
         this.retention(retention)
         this.services(services)
@@ -21964,7 +21862,7 @@ class az_storage_metrics_update_command_builder extends CommandBuilder {
  * @param {string} name The queue name.
  */
 class az_storage_queue_metadata_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -22043,7 +21941,7 @@ class az_storage_queue_metadata_show_command_builder extends CommandBuilder {
  * @param {string} name The queue name.
  */
 class az_storage_queue_metadata_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -22125,7 +22023,7 @@ class az_storage_queue_metadata_update_command_builder extends CommandBuilder {
  * @param {string} queueName The queue name.
  */
 class az_storage_queue_policy_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, queueName: string) {
+    constructor(commandPath: string, name: string, queueName: string) {
         super(commandParent);
         this.name(name)
         this.queueName(queueName)
@@ -22217,7 +22115,7 @@ class az_storage_queue_policy_create_command_builder extends CommandBuilder {
  * @param {string} queueName The queue name.
  */
 class az_storage_queue_policy_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, queueName: string) {
+    constructor(commandPath: string, name: string, queueName: string) {
         super(commandParent);
         this.name(name)
         this.queueName(queueName)
@@ -22290,7 +22188,7 @@ class az_storage_queue_policy_delete_command_builder extends CommandBuilder {
  * @param {string} queueName The queue name.
  */
 class az_storage_queue_policy_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, queueName: string) {
+    constructor(commandPath: string, queueName: string) {
         super(commandParent);
         this.queueName(queueName)
     }
@@ -22364,7 +22262,7 @@ class az_storage_queue_policy_list_command_builder extends CommandBuilder {
  * @param {string} queueName The queue name.
  */
 class az_storage_queue_policy_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, queueName: string) {
+    constructor(commandPath: string, name: string, queueName: string) {
         super(commandParent);
         this.name(name)
         this.queueName(queueName)
@@ -22447,7 +22345,7 @@ class az_storage_queue_policy_show_command_builder extends CommandBuilder {
  * @param {string} queueName The queue name.
  */
 class az_storage_queue_policy_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, queueName: string) {
+    constructor(commandPath: string, name: string, queueName: string) {
         super(commandParent);
         this.name(name)
         this.queueName(queueName)
@@ -22540,7 +22438,7 @@ class az_storage_queue_policy_update_command_builder extends CommandBuilder {
  * @param {string} name The queue name.
  */
 class az_storage_queue_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -22625,7 +22523,7 @@ class az_storage_queue_create_command_builder extends CommandBuilder {
  * @param {string} name The queue name.
  */
 class az_storage_queue_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -22703,7 +22601,7 @@ class az_storage_queue_delete_command_builder extends CommandBuilder {
  * @param {string} name The queue name.
  */
 class az_storage_queue_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -22778,7 +22676,7 @@ class az_storage_queue_exists_command_builder extends CommandBuilder {
  * @param {string} name The queue name.
  */
 class az_storage_queue_generate_sas_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -22870,7 +22768,7 @@ class az_storage_queue_generate_sas_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_queue_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -22962,7 +22860,7 @@ class az_storage_queue_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_queue_stats_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -23028,7 +22926,7 @@ class az_storage_queue_stats_command_builder extends CommandBuilder {
  * @param {string} name The file share name.
  */
 class az_storage_share_metadata_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -23106,7 +23004,7 @@ class az_storage_share_metadata_show_command_builder extends CommandBuilder {
  * @param {string} name The file share name.
  */
 class az_storage_share_metadata_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -23181,7 +23079,7 @@ class az_storage_share_metadata_update_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_share_policy_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, shareName: string) {
+    constructor(commandPath: string, name: string, shareName: string) {
         super(commandParent);
         this.name(name)
         this.shareName(shareName)
@@ -23266,7 +23164,7 @@ class az_storage_share_policy_create_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_share_policy_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, shareName: string) {
+    constructor(commandPath: string, name: string, shareName: string) {
         super(commandParent);
         this.name(name)
         this.shareName(shareName)
@@ -23332,7 +23230,7 @@ class az_storage_share_policy_delete_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_share_policy_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, shareName: string) {
+    constructor(commandPath: string, shareName: string) {
         super(commandParent);
         this.shareName(shareName)
     }
@@ -23399,7 +23297,7 @@ class az_storage_share_policy_list_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_share_policy_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, shareName: string) {
+    constructor(commandPath: string, name: string, shareName: string) {
         super(commandParent);
         this.name(name)
         this.shareName(shareName)
@@ -23475,7 +23373,7 @@ class az_storage_share_policy_show_command_builder extends CommandBuilder {
  * @param {string} shareName The file share name.
  */
 class az_storage_share_policy_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, shareName: string) {
+    constructor(commandPath: string, name: string, shareName: string) {
         super(commandParent);
         this.name(name)
         this.shareName(shareName)
@@ -23562,7 +23460,7 @@ class az_storage_share_policy_update_command_builder extends CommandBuilder {
  * @param {string} storageAccount The name or ID of the storage account.
  */
 class az_storage_share_rm_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, storageAccount: string) {
+    constructor(commandPath: string, name: string, storageAccount: string) {
         super(commandParent);
         this.name(name)
         this.storageAccount(storageAccount)
@@ -23637,7 +23535,7 @@ class az_storage_share_rm_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_share_rm_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -23691,7 +23589,7 @@ class az_storage_share_rm_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_share_rm_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -23741,7 +23639,7 @@ class az_storage_share_rm_exists_command_builder extends CommandBuilder {
  * @param {string} storageAccount The name or ID of the storage account.
  */
 class az_storage_share_rm_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, storageAccount: string) {
+    constructor(commandPath: string, storageAccount: string) {
         super(commandParent);
         this.storageAccount(storageAccount)
     }
@@ -23794,7 +23692,7 @@ class az_storage_share_rm_list_command_builder extends CommandBuilder {
  * @param {string} deletedVersion Identify the version of the deleted share that will be restored.
  */
 class az_storage_share_rm_restore_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, deletedVersion: string) {
+    constructor(commandPath: string, deletedVersion: string) {
         super(commandParent);
         this.deletedVersion(deletedVersion)
     }
@@ -23857,7 +23755,7 @@ class az_storage_share_rm_restore_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_share_rm_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -23917,7 +23815,7 @@ class az_storage_share_rm_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_share_rm_stats_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -23973,7 +23871,7 @@ class az_storage_share_rm_stats_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_share_rm_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -24076,7 +23974,7 @@ class az_storage_share_rm_update_command_builder extends CommandBuilder {
  * @param {string} name The file share name.
  */
 class az_storage_share_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -24162,7 +24060,7 @@ class az_storage_share_create_command_builder extends CommandBuilder {
  * @param {string} name The file share name.
  */
 class az_storage_share_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -24246,7 +24144,7 @@ class az_storage_share_delete_command_builder extends CommandBuilder {
  * @param {string} name The file share name.
  */
 class az_storage_share_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -24326,7 +24224,7 @@ class az_storage_share_exists_command_builder extends CommandBuilder {
  * @param {string} name The file share name.
  */
 class az_storage_share_generate_sas_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -24448,7 +24346,7 @@ class az_storage_share_generate_sas_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_share_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -24544,7 +24442,7 @@ class az_storage_share_list_command_builder extends CommandBuilder {
  * @param {string} name The file share name.
  */
 class az_storage_share_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -24623,7 +24521,7 @@ class az_storage_share_show_command_builder extends CommandBuilder {
  * @param {string} name The file share name.
  */
 class az_storage_share_snapshot_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -24700,7 +24598,7 @@ class az_storage_share_snapshot_command_builder extends CommandBuilder {
  * @param {string} name The file share name.
  */
 class az_storage_share_stats_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -24767,7 +24665,7 @@ class az_storage_share_stats_command_builder extends CommandBuilder {
  * @param {string} quota Specifies the maximum size of the share, in gigabytes. Must be greater than 0, and less than or equal to 5 TB (5120 GB).
  */
 class az_storage_share_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, quota: string) {
+    constructor(commandPath: string, name: string, quota: string) {
         super(commandParent);
         this.name(name)
         this.quota(quota)
@@ -24840,7 +24738,7 @@ class az_storage_share_update_command_builder extends CommandBuilder {
  * @param {string} name The file share name.
  */
 class az_storage_share_url_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -24915,7 +24813,7 @@ class az_storage_share_url_command_builder extends CommandBuilder {
  * @param {string} tableName The container name.
  */
 class az_storage_table_policy_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, tableName: string) {
+    constructor(commandPath: string, name: string, tableName: string) {
         super(commandParent);
         this.name(name)
         this.tableName(tableName)
@@ -25000,7 +24898,7 @@ class az_storage_table_policy_create_command_builder extends CommandBuilder {
  * @param {string} tableName The container name.
  */
 class az_storage_table_policy_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, tableName: string) {
+    constructor(commandPath: string, name: string, tableName: string) {
         super(commandParent);
         this.name(name)
         this.tableName(tableName)
@@ -25066,7 +24964,7 @@ class az_storage_table_policy_delete_command_builder extends CommandBuilder {
  * @param {string} tableName The container name.
  */
 class az_storage_table_policy_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, tableName: string) {
+    constructor(commandPath: string, tableName: string) {
         super(commandParent);
         this.tableName(tableName)
     }
@@ -25133,7 +25031,7 @@ class az_storage_table_policy_list_command_builder extends CommandBuilder {
  * @param {string} tableName The container name.
  */
 class az_storage_table_policy_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, tableName: string) {
+    constructor(commandPath: string, name: string, tableName: string) {
         super(commandParent);
         this.name(name)
         this.tableName(tableName)
@@ -25209,7 +25107,7 @@ class az_storage_table_policy_show_command_builder extends CommandBuilder {
  * @param {string} tableName The container name.
  */
 class az_storage_table_policy_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, tableName: string) {
+    constructor(commandPath: string, name: string, tableName: string) {
         super(commandParent);
         this.name(name)
         this.tableName(tableName)
@@ -25294,7 +25192,7 @@ class az_storage_table_policy_update_command_builder extends CommandBuilder {
  * @param {string} name The name of the table to create. The table name may contain only alphanumeric characters and cannot begin with a numeric character. It is case-insensitive and must be from 3 to 63 characters long.
  */
 class az_storage_table_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -25366,7 +25264,7 @@ class az_storage_table_create_command_builder extends CommandBuilder {
  * @param {string} name The name of the table to delete.
  */
 class az_storage_table_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -25437,7 +25335,7 @@ class az_storage_table_delete_command_builder extends CommandBuilder {
  * @param {string} name The name of table to check for existence.
  */
 class az_storage_table_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -25510,7 +25408,7 @@ class az_storage_table_exists_command_builder extends CommandBuilder {
  * @param {string} name The name of the table to create a SAS token for.
  */
 class az_storage_table_generate_sas_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -25623,7 +25521,7 @@ class az_storage_table_generate_sas_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_table_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -25696,7 +25594,7 @@ class az_storage_table_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_table_stats_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -25777,7 +25675,7 @@ class az_storage_table_stats_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_copy_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -25996,7 +25894,7 @@ class az_storage_copy_command_builder extends CommandBuilder {
  * ```
  */
 class az_storage_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

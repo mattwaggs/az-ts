@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage PostgreSQL databases on a server. */
-export class az_postgres_db implements ICommandParent<any> {
-    commandPath = "az postgres db";
-
+export class az_postgres_db {
     /**
      * Create a PostgreSQL database.
      *
@@ -21,8 +19,8 @@ export class az_postgres_db implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    az_postgres_db_create(name: string, resourceGroup: string, serverName: string): az_postgres_db_create_command_builder {
-        return new az_postgres_db_create_command_builder(this, name, resourceGroup, serverName);
+    static az_postgres_db_create(name: string, resourceGroup: string, serverName: string): az_postgres_db_create_command_builder {
+        return new az_postgres_db_create_command_builder("az postgres db create", name, resourceGroup, serverName);
     }
 
     /**
@@ -41,8 +39,8 @@ export class az_postgres_db implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    az_postgres_db_delete(name: string, resourceGroup: string, serverName: string): az_postgres_db_delete_command_builder {
-        return new az_postgres_db_delete_command_builder(this, name, resourceGroup, serverName);
+    static az_postgres_db_delete(name: string, resourceGroup: string, serverName: string): az_postgres_db_delete_command_builder {
+        return new az_postgres_db_delete_command_builder("az postgres db delete", name, resourceGroup, serverName);
     }
 
     /**
@@ -59,8 +57,8 @@ export class az_postgres_db implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    az_postgres_db_list(resourceGroup: string, serverName: string): az_postgres_db_list_command_builder {
-        return new az_postgres_db_list_command_builder(this, resourceGroup, serverName);
+    static az_postgres_db_list(resourceGroup: string, serverName: string): az_postgres_db_list_command_builder {
+        return new az_postgres_db_list_command_builder("az postgres db list", resourceGroup, serverName);
     }
 
     /**
@@ -79,15 +77,13 @@ export class az_postgres_db implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    az_postgres_db_show(name: string, resourceGroup: string, serverName: string): az_postgres_db_show_command_builder {
-        return new az_postgres_db_show_command_builder(this, name, resourceGroup, serverName);
+    static az_postgres_db_show(name: string, resourceGroup: string, serverName: string): az_postgres_db_show_command_builder {
+        return new az_postgres_db_show_command_builder("az postgres db show", name, resourceGroup, serverName);
     }
 }
 
 /** Manage firewall rules for a server. */
-export class az_postgres_flexible_server_firewall_rule implements ICommandParent<any> {
-    commandPath = "az postgres flexible-server firewall-rule";
-
+export class az_postgres_flexible_server_firewall_rule {
     /**
      * Create a new firewall rule for a flexible server.
      *
@@ -107,8 +103,8 @@ export class az_postgres_flexible_server_firewall_rule implements ICommandParent
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
      */
-    az_postgres_flexible_server_firewall_rule_create(endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string): az_postgres_flexible_server_firewall_rule_create_command_builder {
-        return new az_postgres_flexible_server_firewall_rule_create_command_builder(this, endIpAddress, name, resourceGroup, serverName, startIpAddress);
+    static az_postgres_flexible_server_firewall_rule_create(endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string): az_postgres_flexible_server_firewall_rule_create_command_builder {
+        return new az_postgres_flexible_server_firewall_rule_create_command_builder("az postgres flexible-server firewall-rule create", endIpAddress, name, resourceGroup, serverName, startIpAddress);
     }
 
     /**
@@ -124,8 +120,8 @@ export class az_postgres_flexible_server_firewall_rule implements ICommandParent
      *                                                  [--subscription]
      * ```
      */
-    az_postgres_flexible_server_firewall_rule_delete(): az_postgres_flexible_server_firewall_rule_delete_command_builder {
-        return new az_postgres_flexible_server_firewall_rule_delete_command_builder(this);
+    static az_postgres_flexible_server_firewall_rule_delete(): az_postgres_flexible_server_firewall_rule_delete_command_builder {
+        return new az_postgres_flexible_server_firewall_rule_delete_command_builder("az postgres flexible-server firewall-rule delete");
     }
 
     /**
@@ -142,8 +138,8 @@ export class az_postgres_flexible_server_firewall_rule implements ICommandParent
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    az_postgres_flexible_server_firewall_rule_list(resourceGroup: string, serverName: string): az_postgres_flexible_server_firewall_rule_list_command_builder {
-        return new az_postgres_flexible_server_firewall_rule_list_command_builder(this, resourceGroup, serverName);
+    static az_postgres_flexible_server_firewall_rule_list(resourceGroup: string, serverName: string): az_postgres_flexible_server_firewall_rule_list_command_builder {
+        return new az_postgres_flexible_server_firewall_rule_list_command_builder("az postgres flexible-server firewall-rule list", resourceGroup, serverName);
     }
 
     /**
@@ -159,8 +155,8 @@ export class az_postgres_flexible_server_firewall_rule implements ICommandParent
      *                                                [--subscription]
      * ```
      */
-    az_postgres_flexible_server_firewall_rule_show(): az_postgres_flexible_server_firewall_rule_show_command_builder {
-        return new az_postgres_flexible_server_firewall_rule_show_command_builder(this);
+    static az_postgres_flexible_server_firewall_rule_show(): az_postgres_flexible_server_firewall_rule_show_command_builder {
+        return new az_postgres_flexible_server_firewall_rule_show_command_builder("az postgres flexible-server firewall-rule show");
     }
 
     /**
@@ -181,15 +177,13 @@ export class az_postgres_flexible_server_firewall_rule implements ICommandParent
      *                                                  [--subscription]
      * ```
      */
-    az_postgres_flexible_server_firewall_rule_update(): az_postgres_flexible_server_firewall_rule_update_command_builder {
-        return new az_postgres_flexible_server_firewall_rule_update_command_builder(this);
+    static az_postgres_flexible_server_firewall_rule_update(): az_postgres_flexible_server_firewall_rule_update_command_builder {
+        return new az_postgres_flexible_server_firewall_rule_update_command_builder("az postgres flexible-server firewall-rule update");
     }
 }
 
 /** Commands for managing server parameter values for flexible server. */
-export class az_postgres_flexible_server_parameter implements ICommandParent<any> {
-    commandPath = "az postgres flexible-server parameter";
-
+export class az_postgres_flexible_server_parameter {
     /**
      * List the parameter values for a flexible server.
      *
@@ -204,8 +198,8 @@ export class az_postgres_flexible_server_parameter implements ICommandParent<any
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    az_postgres_flexible_server_parameter_list(resourceGroup: string, serverName: string): az_postgres_flexible_server_parameter_list_command_builder {
-        return new az_postgres_flexible_server_parameter_list_command_builder(this, resourceGroup, serverName);
+    static az_postgres_flexible_server_parameter_list(resourceGroup: string, serverName: string): az_postgres_flexible_server_parameter_list_command_builder {
+        return new az_postgres_flexible_server_parameter_list_command_builder("az postgres flexible-server parameter list", resourceGroup, serverName);
     }
 
     /**
@@ -222,8 +216,8 @@ export class az_postgres_flexible_server_parameter implements ICommandParent<any
      *                                           [--value]
      * ```
      */
-    az_postgres_flexible_server_parameter_set(): az_postgres_flexible_server_parameter_set_command_builder {
-        return new az_postgres_flexible_server_parameter_set_command_builder(this);
+    static az_postgres_flexible_server_parameter_set(): az_postgres_flexible_server_parameter_set_command_builder {
+        return new az_postgres_flexible_server_parameter_set_command_builder("az postgres flexible-server parameter set");
     }
 
     /**
@@ -239,15 +233,13 @@ export class az_postgres_flexible_server_parameter implements ICommandParent<any
      *                                            [--subscription]
      * ```
      */
-    az_postgres_flexible_server_parameter_show(): az_postgres_flexible_server_parameter_show_command_builder {
-        return new az_postgres_flexible_server_parameter_show_command_builder(this);
+    static az_postgres_flexible_server_parameter_show(): az_postgres_flexible_server_parameter_show_command_builder {
+        return new az_postgres_flexible_server_parameter_show_command_builder("az postgres flexible-server parameter show");
     }
 }
 
 /** Manage Azure Database for PostgreSQL Flexible Servers. */
-export class az_postgres_flexible_server implements ICommandParent<any> {
-    commandPath = "az postgres flexible-server";
-
+export class az_postgres_flexible_server {
     /**
      * Create a flexible server.
      *
@@ -275,8 +267,8 @@ export class az_postgres_flexible_server implements ICommandParent<any> {
      *                                    [--zone,]
      * ```
      */
-    az_postgres_flexible_server_create(): az_postgres_flexible_server_create_command_builder {
-        return new az_postgres_flexible_server_create_command_builder(this);
+    static az_postgres_flexible_server_create(): az_postgres_flexible_server_create_command_builder {
+        return new az_postgres_flexible_server_create_command_builder("az postgres flexible-server create");
     }
 
     /**
@@ -291,8 +283,8 @@ export class az_postgres_flexible_server implements ICommandParent<any> {
      *                                    [--subscription]
      * ```
      */
-    az_postgres_flexible_server_delete(): az_postgres_flexible_server_delete_command_builder {
-        return new az_postgres_flexible_server_delete_command_builder(this);
+    static az_postgres_flexible_server_delete(): az_postgres_flexible_server_delete_command_builder {
+        return new az_postgres_flexible_server_delete_command_builder("az postgres flexible-server delete");
     }
 
     /**
@@ -305,8 +297,8 @@ export class az_postgres_flexible_server implements ICommandParent<any> {
      *                                  [--subscription]
      * ```
      */
-    az_postgres_flexible_server_list(): az_postgres_flexible_server_list_command_builder {
-        return new az_postgres_flexible_server_list_command_builder(this);
+    static az_postgres_flexible_server_list(): az_postgres_flexible_server_list_command_builder {
+        return new az_postgres_flexible_server_list_command_builder("az postgres flexible-server list");
     }
 
     /**
@@ -320,8 +312,8 @@ export class az_postgres_flexible_server implements ICommandParent<any> {
      *
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
-    az_postgres_flexible_server_list_skus(location: string): az_postgres_flexible_server_list_skus_command_builder {
-        return new az_postgres_flexible_server_list_skus_command_builder(this, location);
+    static az_postgres_flexible_server_list_skus(location: string): az_postgres_flexible_server_list_skus_command_builder {
+        return new az_postgres_flexible_server_list_skus_command_builder("az postgres flexible-server list-skus", location);
     }
 
     /**
@@ -335,8 +327,8 @@ export class az_postgres_flexible_server implements ICommandParent<any> {
      *                                     [--subscription]
      * ```
      */
-    az_postgres_flexible_server_restart(): az_postgres_flexible_server_restart_command_builder {
-        return new az_postgres_flexible_server_restart_command_builder(this);
+    static az_postgres_flexible_server_restart(): az_postgres_flexible_server_restart_command_builder {
+        return new az_postgres_flexible_server_restart_command_builder("az postgres flexible-server restart");
     }
 
     /**
@@ -357,8 +349,8 @@ export class az_postgres_flexible_server implements ICommandParent<any> {
      * @param {string} sourceServer The name or resource ID of the source server to restore from.
      * @param {string} time The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00.
      */
-    az_postgres_flexible_server_restore(sourceServer: string, time: string): az_postgres_flexible_server_restore_command_builder {
-        return new az_postgres_flexible_server_restore_command_builder(this, sourceServer, time);
+    static az_postgres_flexible_server_restore(sourceServer: string, time: string): az_postgres_flexible_server_restore_command_builder {
+        return new az_postgres_flexible_server_restore_command_builder("az postgres flexible-server restore", sourceServer, time);
     }
 
     /**
@@ -373,8 +365,8 @@ export class az_postgres_flexible_server implements ICommandParent<any> {
      *                                  [--subscription]
      * ```
      */
-    az_postgres_flexible_server_show(): az_postgres_flexible_server_show_command_builder {
-        return new az_postgres_flexible_server_show_command_builder(this);
+    static az_postgres_flexible_server_show(): az_postgres_flexible_server_show_command_builder {
+        return new az_postgres_flexible_server_show_command_builder("az postgres flexible-server show");
     }
 
     /**
@@ -390,8 +382,8 @@ export class az_postgres_flexible_server implements ICommandParent<any> {
      *                                                    [--subscription]
      * ```
      */
-    az_postgres_flexible_server_show_connection_string(): az_postgres_flexible_server_show_connection_string_command_builder {
-        return new az_postgres_flexible_server_show_connection_string_command_builder(this);
+    static az_postgres_flexible_server_show_connection_string(): az_postgres_flexible_server_show_connection_string_command_builder {
+        return new az_postgres_flexible_server_show_connection_string_command_builder("az postgres flexible-server show-connection-string");
     }
 
     /**
@@ -405,8 +397,8 @@ export class az_postgres_flexible_server implements ICommandParent<any> {
      *                                   [--subscription]
      * ```
      */
-    az_postgres_flexible_server_start(): az_postgres_flexible_server_start_command_builder {
-        return new az_postgres_flexible_server_start_command_builder(this);
+    static az_postgres_flexible_server_start(): az_postgres_flexible_server_start_command_builder {
+        return new az_postgres_flexible_server_start_command_builder("az postgres flexible-server start");
     }
 
     /**
@@ -420,8 +412,8 @@ export class az_postgres_flexible_server implements ICommandParent<any> {
      *                                  [--subscription]
      * ```
      */
-    az_postgres_flexible_server_stop(): az_postgres_flexible_server_stop_command_builder {
-        return new az_postgres_flexible_server_stop_command_builder(this);
+    static az_postgres_flexible_server_stop(): az_postgres_flexible_server_stop_command_builder {
+        return new az_postgres_flexible_server_stop_command_builder("az postgres flexible-server stop");
     }
 
     /**
@@ -447,8 +439,8 @@ export class az_postgres_flexible_server implements ICommandParent<any> {
      *                                    [--tier]
      * ```
      */
-    az_postgres_flexible_server_update(): az_postgres_flexible_server_update_command_builder {
-        return new az_postgres_flexible_server_update_command_builder(this);
+    static az_postgres_flexible_server_update(): az_postgres_flexible_server_update_command_builder {
+        return new az_postgres_flexible_server_update_command_builder("az postgres flexible-server update");
     }
 
     /**
@@ -469,15 +461,13 @@ export class az_postgres_flexible_server implements ICommandParent<any> {
      *                                  [--updated]
      * ```
      */
-    az_postgres_flexible_server_wait(): az_postgres_flexible_server_wait_command_builder {
-        return new az_postgres_flexible_server_wait_command_builder(this);
+    static az_postgres_flexible_server_wait(): az_postgres_flexible_server_wait_command_builder {
+        return new az_postgres_flexible_server_wait_command_builder("az postgres flexible-server wait");
     }
 }
 
 /** Manage a postgres server's Active Directory administrator. */
-export class az_postgres_server_ad_admin implements ICommandParent<any> {
-    commandPath = "az postgres server ad-admin";
-
+export class az_postgres_server_ad_admin {
     /**
      * Create an Active Directory Administrator for PostgreSQL server.
      *
@@ -494,8 +484,8 @@ export class az_postgres_server_ad_admin implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    az_postgres_server_ad_admin_create(resourceGroup: string, serverName: string): az_postgres_server_ad_admin_create_command_builder {
-        return new az_postgres_server_ad_admin_create_command_builder(this, resourceGroup, serverName);
+    static az_postgres_server_ad_admin_create(resourceGroup: string, serverName: string): az_postgres_server_ad_admin_create_command_builder {
+        return new az_postgres_server_ad_admin_create_command_builder("az postgres server ad-admin create", resourceGroup, serverName);
     }
 
     /**
@@ -510,8 +500,8 @@ export class az_postgres_server_ad_admin implements ICommandParent<any> {
      *                                    [--yes]
      * ```
      */
-    az_postgres_server_ad_admin_delete(): az_postgres_server_ad_admin_delete_command_builder {
-        return new az_postgres_server_ad_admin_delete_command_builder(this);
+    static az_postgres_server_ad_admin_delete(): az_postgres_server_ad_admin_delete_command_builder {
+        return new az_postgres_server_ad_admin_delete_command_builder("az postgres server ad-admin delete");
     }
 
     /**
@@ -526,8 +516,8 @@ export class az_postgres_server_ad_admin implements ICommandParent<any> {
      *                                  [--subscription]
      * ```
      */
-    az_postgres_server_ad_admin_list(): az_postgres_server_ad_admin_list_command_builder {
-        return new az_postgres_server_ad_admin_list_command_builder(this);
+    static az_postgres_server_ad_admin_list(): az_postgres_server_ad_admin_list_command_builder {
+        return new az_postgres_server_ad_admin_list_command_builder("az postgres server ad-admin list");
     }
 
     /**
@@ -542,8 +532,8 @@ export class az_postgres_server_ad_admin implements ICommandParent<any> {
      *                                  [--subscription]
      * ```
      */
-    az_postgres_server_ad_admin_show(): az_postgres_server_ad_admin_show_command_builder {
-        return new az_postgres_server_ad_admin_show_command_builder(this);
+    static az_postgres_server_ad_admin_show(): az_postgres_server_ad_admin_show_command_builder {
+        return new az_postgres_server_ad_admin_show_command_builder("az postgres server ad-admin show");
     }
 
     /**
@@ -564,15 +554,13 @@ export class az_postgres_server_ad_admin implements ICommandParent<any> {
      *                                  [--updated]
      * ```
      */
-    az_postgres_server_ad_admin_wait(): az_postgres_server_ad_admin_wait_command_builder {
-        return new az_postgres_server_ad_admin_wait_command_builder(this);
+    static az_postgres_server_ad_admin_wait(): az_postgres_server_ad_admin_wait_command_builder {
+        return new az_postgres_server_ad_admin_wait_command_builder("az postgres server ad-admin wait");
     }
 }
 
 /** Manage configuration values for a server. */
-export class az_postgres_server_configuration implements ICommandParent<any> {
-    commandPath = "az postgres server configuration";
-
+export class az_postgres_server_configuration {
     /**
      * List the configuration values for a server.
      *
@@ -585,8 +573,8 @@ export class az_postgres_server_configuration implements ICommandParent<any> {
      *                                       [--subscription]
      * ```
      */
-    az_postgres_server_configuration_list(): az_postgres_server_configuration_list_command_builder {
-        return new az_postgres_server_configuration_list_command_builder(this);
+    static az_postgres_server_configuration_list(): az_postgres_server_configuration_list_command_builder {
+        return new az_postgres_server_configuration_list_command_builder("az postgres server configuration list");
     }
 
     /**
@@ -602,8 +590,8 @@ export class az_postgres_server_configuration implements ICommandParent<any> {
      *                                      [--value]
      * ```
      */
-    az_postgres_server_configuration_set(): az_postgres_server_configuration_set_command_builder {
-        return new az_postgres_server_configuration_set_command_builder(this);
+    static az_postgres_server_configuration_set(): az_postgres_server_configuration_set_command_builder {
+        return new az_postgres_server_configuration_set_command_builder("az postgres server configuration set");
     }
 
     /**
@@ -619,15 +607,13 @@ export class az_postgres_server_configuration implements ICommandParent<any> {
      *                                       [--subscription]
      * ```
      */
-    az_postgres_server_configuration_show(): az_postgres_server_configuration_show_command_builder {
-        return new az_postgres_server_configuration_show_command_builder(this);
+    static az_postgres_server_configuration_show(): az_postgres_server_configuration_show_command_builder {
+        return new az_postgres_server_configuration_show_command_builder("az postgres server configuration show");
     }
 }
 
 /** Manage firewall rules for a server. */
-export class az_postgres_server_firewall_rule implements ICommandParent<any> {
-    commandPath = "az postgres server firewall-rule";
-
+export class az_postgres_server_firewall_rule {
     /**
      * Create a new firewall rule for a server.
      *
@@ -647,8 +633,8 @@ export class az_postgres_server_firewall_rule implements ICommandParent<any> {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
      */
-    az_postgres_server_firewall_rule_create(endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string): az_postgres_server_firewall_rule_create_command_builder {
-        return new az_postgres_server_firewall_rule_create_command_builder(this, endIpAddress, name, resourceGroup, serverName, startIpAddress);
+    static az_postgres_server_firewall_rule_create(endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string): az_postgres_server_firewall_rule_create_command_builder {
+        return new az_postgres_server_firewall_rule_create_command_builder("az postgres server firewall-rule create", endIpAddress, name, resourceGroup, serverName, startIpAddress);
     }
 
     /**
@@ -664,8 +650,8 @@ export class az_postgres_server_firewall_rule implements ICommandParent<any> {
      *                                         [--yes]
      * ```
      */
-    az_postgres_server_firewall_rule_delete(): az_postgres_server_firewall_rule_delete_command_builder {
-        return new az_postgres_server_firewall_rule_delete_command_builder(this);
+    static az_postgres_server_firewall_rule_delete(): az_postgres_server_firewall_rule_delete_command_builder {
+        return new az_postgres_server_firewall_rule_delete_command_builder("az postgres server firewall-rule delete");
     }
 
     /**
@@ -680,8 +666,8 @@ export class az_postgres_server_firewall_rule implements ICommandParent<any> {
      *                                       [--subscription]
      * ```
      */
-    az_postgres_server_firewall_rule_list(): az_postgres_server_firewall_rule_list_command_builder {
-        return new az_postgres_server_firewall_rule_list_command_builder(this);
+    static az_postgres_server_firewall_rule_list(): az_postgres_server_firewall_rule_list_command_builder {
+        return new az_postgres_server_firewall_rule_list_command_builder("az postgres server firewall-rule list");
     }
 
     /**
@@ -697,8 +683,8 @@ export class az_postgres_server_firewall_rule implements ICommandParent<any> {
      *                                       [--subscription]
      * ```
      */
-    az_postgres_server_firewall_rule_show(): az_postgres_server_firewall_rule_show_command_builder {
-        return new az_postgres_server_firewall_rule_show_command_builder(this);
+    static az_postgres_server_firewall_rule_show(): az_postgres_server_firewall_rule_show_command_builder {
+        return new az_postgres_server_firewall_rule_show_command_builder("az postgres server firewall-rule show");
     }
 
     /**
@@ -719,15 +705,13 @@ export class az_postgres_server_firewall_rule implements ICommandParent<any> {
      *                                         [--subscription]
      * ```
      */
-    az_postgres_server_firewall_rule_update(): az_postgres_server_firewall_rule_update_command_builder {
-        return new az_postgres_server_firewall_rule_update_command_builder(this);
+    static az_postgres_server_firewall_rule_update(): az_postgres_server_firewall_rule_update_command_builder {
+        return new az_postgres_server_firewall_rule_update_command_builder("az postgres server firewall-rule update");
     }
 }
 
 /** Manage PostgreSQL server keys. */
-export class az_postgres_server_key implements ICommandParent<any> {
-    commandPath = "az postgres server key";
-
+export class az_postgres_server_key {
     /**
      * Create server key.
      *
@@ -743,8 +727,8 @@ export class az_postgres_server_key implements ICommandParent<any> {
      * @param {string} name Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_postgres_server_key_create(kid: string, name: string, resourceGroup: string): az_postgres_server_key_create_command_builder {
-        return new az_postgres_server_key_create_command_builder(this, kid, name, resourceGroup);
+    static az_postgres_server_key_create(kid: string, name: string, resourceGroup: string): az_postgres_server_key_create_command_builder {
+        return new az_postgres_server_key_create_command_builder("az postgres server key create", kid, name, resourceGroup);
     }
 
     /**
@@ -762,8 +746,8 @@ export class az_postgres_server_key implements ICommandParent<any> {
      *
      * @param {string} kid The Azure Key Vault key identifier of the server key. An example key identifier is "<a href="https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901">https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901</a>".
      */
-    az_postgres_server_key_delete(kid: string): az_postgres_server_key_delete_command_builder {
-        return new az_postgres_server_key_delete_command_builder(this, kid);
+    static az_postgres_server_key_delete(kid: string): az_postgres_server_key_delete_command_builder {
+        return new az_postgres_server_key_delete_command_builder("az postgres server key delete", kid);
     }
 
     /**
@@ -778,8 +762,8 @@ export class az_postgres_server_key implements ICommandParent<any> {
      *                             [--subscription]
      * ```
      */
-    az_postgres_server_key_list(): az_postgres_server_key_list_command_builder {
-        return new az_postgres_server_key_list_command_builder(this);
+    static az_postgres_server_key_list(): az_postgres_server_key_list_command_builder {
+        return new az_postgres_server_key_list_command_builder("az postgres server key list");
     }
 
     /**
@@ -797,15 +781,13 @@ export class az_postgres_server_key implements ICommandParent<any> {
      *
      * @param {string} kid The Azure Key Vault key identifier of the server key. An example key identifier is "<a href="https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901">https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901</a>".
      */
-    az_postgres_server_key_show(kid: string): az_postgres_server_key_show_command_builder {
-        return new az_postgres_server_key_show_command_builder(this, kid);
+    static az_postgres_server_key_show(kid: string): az_postgres_server_key_show_command_builder {
+        return new az_postgres_server_key_show_command_builder("az postgres server key show", kid);
     }
 }
 
 /** Manage PostgreSQL server private endpoint connections. */
-export class az_postgres_server_private_endpoint_connection implements ICommandParent<any> {
-    commandPath = "az postgres server private-endpoint-connection";
-
+export class az_postgres_server_private_endpoint_connection {
     /**
      * Approve the specified private endpoint connection associated with a PostgreSQL server.
      *
@@ -820,8 +802,8 @@ export class az_postgres_server_private_endpoint_connection implements ICommandP
      *                                                        [--subscription]
      * ```
      */
-    az_postgres_server_private_endpoint_connection_approve(): az_postgres_server_private_endpoint_connection_approve_command_builder {
-        return new az_postgres_server_private_endpoint_connection_approve_command_builder(this);
+    static az_postgres_server_private_endpoint_connection_approve(): az_postgres_server_private_endpoint_connection_approve_command_builder {
+        return new az_postgres_server_private_endpoint_connection_approve_command_builder("az postgres server private-endpoint-connection approve");
     }
 
     /**
@@ -837,8 +819,8 @@ export class az_postgres_server_private_endpoint_connection implements ICommandP
      *                                                       [--subscription]
      * ```
      */
-    az_postgres_server_private_endpoint_connection_delete(): az_postgres_server_private_endpoint_connection_delete_command_builder {
-        return new az_postgres_server_private_endpoint_connection_delete_command_builder(this);
+    static az_postgres_server_private_endpoint_connection_delete(): az_postgres_server_private_endpoint_connection_delete_command_builder {
+        return new az_postgres_server_private_endpoint_connection_delete_command_builder("az postgres server private-endpoint-connection delete");
     }
 
     /**
@@ -855,8 +837,8 @@ export class az_postgres_server_private_endpoint_connection implements ICommandP
      *                                                       [--subscription]
      * ```
      */
-    az_postgres_server_private_endpoint_connection_reject(): az_postgres_server_private_endpoint_connection_reject_command_builder {
-        return new az_postgres_server_private_endpoint_connection_reject_command_builder(this);
+    static az_postgres_server_private_endpoint_connection_reject(): az_postgres_server_private_endpoint_connection_reject_command_builder {
+        return new az_postgres_server_private_endpoint_connection_reject_command_builder("az postgres server private-endpoint-connection reject");
     }
 
     /**
@@ -873,15 +855,13 @@ export class az_postgres_server_private_endpoint_connection implements ICommandP
      *                                                     [--subscription]
      * ```
      */
-    az_postgres_server_private_endpoint_connection_show(): az_postgres_server_private_endpoint_connection_show_command_builder {
-        return new az_postgres_server_private_endpoint_connection_show_command_builder(this);
+    static az_postgres_server_private_endpoint_connection_show(): az_postgres_server_private_endpoint_connection_show_command_builder {
+        return new az_postgres_server_private_endpoint_connection_show_command_builder("az postgres server private-endpoint-connection show");
     }
 }
 
 /** Manage PostgreSQL server private link resources. */
-export class az_postgres_server_private_link_resource implements ICommandParent<any> {
-    commandPath = "az postgres server private-link-resource";
-
+export class az_postgres_server_private_link_resource {
     /**
      * List the private link resources supported for a PostgreSQL server.
      *
@@ -894,15 +874,13 @@ export class az_postgres_server_private_link_resource implements ICommandParent<
      *                                               [--subscription]
      * ```
      */
-    az_postgres_server_private_link_resource_list(): az_postgres_server_private_link_resource_list_command_builder {
-        return new az_postgres_server_private_link_resource_list_command_builder(this);
+    static az_postgres_server_private_link_resource_list(): az_postgres_server_private_link_resource_list_command_builder {
+        return new az_postgres_server_private_link_resource_list_command_builder("az postgres server private-link-resource list");
     }
 }
 
 /** Manage read replicas. */
-export class az_postgres_server_replica implements ICommandParent<any> {
-    commandPath = "az postgres server replica";
-
+export class az_postgres_server_replica {
     /**
      * Create a read replica for a server.
      *
@@ -921,8 +899,8 @@ export class az_postgres_server_replica implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} sourceServer The name or resource ID of the master server to the create replica for.
      */
-    az_postgres_server_replica_create(name: string, resourceGroup: string, sourceServer: string): az_postgres_server_replica_create_command_builder {
-        return new az_postgres_server_replica_create_command_builder(this, name, resourceGroup, sourceServer);
+    static az_postgres_server_replica_create(name: string, resourceGroup: string, sourceServer: string): az_postgres_server_replica_create_command_builder {
+        return new az_postgres_server_replica_create_command_builder("az postgres server replica create", name, resourceGroup, sourceServer);
     }
 
     /**
@@ -937,8 +915,8 @@ export class az_postgres_server_replica implements ICommandParent<any> {
      *                                 [--subscription]
      * ```
      */
-    az_postgres_server_replica_list(): az_postgres_server_replica_list_command_builder {
-        return new az_postgres_server_replica_list_command_builder(this);
+    static az_postgres_server_replica_list(): az_postgres_server_replica_list_command_builder {
+        return new az_postgres_server_replica_list_command_builder("az postgres server replica list");
     }
 
     /**
@@ -953,15 +931,13 @@ export class az_postgres_server_replica implements ICommandParent<any> {
      *                                 [--yes]
      * ```
      */
-    az_postgres_server_replica_stop(): az_postgres_server_replica_stop_command_builder {
-        return new az_postgres_server_replica_stop_command_builder(this);
+    static az_postgres_server_replica_stop(): az_postgres_server_replica_stop_command_builder {
+        return new az_postgres_server_replica_stop_command_builder("az postgres server replica stop");
     }
 }
 
 /** Manage a server's virtual network rules. */
-export class az_postgres_server_vnet_rule implements ICommandParent<any> {
-    commandPath = "az postgres server vnet-rule";
-
+export class az_postgres_server_vnet_rule {
     /**
      * Create a virtual network rule to allows access to a PostgreSQL server.
      *
@@ -981,8 +957,8 @@ export class az_postgres_server_vnet_rule implements ICommandParent<any> {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      * @param {string} subnet Name or ID of the subnet that allows access to an Azure Postgres Server. If subnet name is provided, --vnet-name must be provided.
      */
-    az_postgres_server_vnet_rule_create(name: string, resourceGroup: string, serverName: string, subnet: string): az_postgres_server_vnet_rule_create_command_builder {
-        return new az_postgres_server_vnet_rule_create_command_builder(this, name, resourceGroup, serverName, subnet);
+    static az_postgres_server_vnet_rule_create(name: string, resourceGroup: string, serverName: string, subnet: string): az_postgres_server_vnet_rule_create_command_builder {
+        return new az_postgres_server_vnet_rule_create_command_builder("az postgres server vnet-rule create", name, resourceGroup, serverName, subnet);
     }
 
     /**
@@ -997,8 +973,8 @@ export class az_postgres_server_vnet_rule implements ICommandParent<any> {
      *                                     [--subscription]
      * ```
      */
-    az_postgres_server_vnet_rule_delete(): az_postgres_server_vnet_rule_delete_command_builder {
-        return new az_postgres_server_vnet_rule_delete_command_builder(this);
+    static az_postgres_server_vnet_rule_delete(): az_postgres_server_vnet_rule_delete_command_builder {
+        return new az_postgres_server_vnet_rule_delete_command_builder("az postgres server vnet-rule delete");
     }
 
     /**
@@ -1013,8 +989,8 @@ export class az_postgres_server_vnet_rule implements ICommandParent<any> {
      *                                   [--subscription]
      * ```
      */
-    az_postgres_server_vnet_rule_list(): az_postgres_server_vnet_rule_list_command_builder {
-        return new az_postgres_server_vnet_rule_list_command_builder(this);
+    static az_postgres_server_vnet_rule_list(): az_postgres_server_vnet_rule_list_command_builder {
+        return new az_postgres_server_vnet_rule_list_command_builder("az postgres server vnet-rule list");
     }
 
     /**
@@ -1030,8 +1006,8 @@ export class az_postgres_server_vnet_rule implements ICommandParent<any> {
      *                                   [--subscription]
      * ```
      */
-    az_postgres_server_vnet_rule_show(): az_postgres_server_vnet_rule_show_command_builder {
-        return new az_postgres_server_vnet_rule_show_command_builder(this);
+    static az_postgres_server_vnet_rule_show(): az_postgres_server_vnet_rule_show_command_builder {
+        return new az_postgres_server_vnet_rule_show_command_builder("az postgres server vnet-rule show");
     }
 
     /**
@@ -1055,15 +1031,13 @@ export class az_postgres_server_vnet_rule implements ICommandParent<any> {
      *
      * @param {string} subnet Name or ID of the subnet that allows access to an Azure Postgres Server. If subnet name is provided, --vnet-name must be provided.
      */
-    az_postgres_server_vnet_rule_update(subnet: string): az_postgres_server_vnet_rule_update_command_builder {
-        return new az_postgres_server_vnet_rule_update_command_builder(this, subnet);
+    static az_postgres_server_vnet_rule_update(subnet: string): az_postgres_server_vnet_rule_update_command_builder {
+        return new az_postgres_server_vnet_rule_update_command_builder("az postgres server vnet-rule update", subnet);
     }
 }
 
 /** Manage server logs. */
-export class az_postgres_server_logs implements ICommandParent<any> {
-    commandPath = "az postgres server-logs";
-
+export class az_postgres_server_logs {
     /**
      * Download log files.
      *
@@ -1079,8 +1053,8 @@ export class az_postgres_server_logs implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    az_postgres_server_logs_download(name: string, resourceGroup: string, serverName: string): az_postgres_server_logs_download_command_builder {
-        return new az_postgres_server_logs_download_command_builder(this, name, resourceGroup, serverName);
+    static az_postgres_server_logs_download(name: string, resourceGroup: string, serverName: string): az_postgres_server_logs_download_command_builder {
+        return new az_postgres_server_logs_download_command_builder("az postgres server-logs download", name, resourceGroup, serverName);
     }
 
     /**
@@ -1100,15 +1074,13 @@ export class az_postgres_server_logs implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    az_postgres_server_logs_list(resourceGroup: string, serverName: string): az_postgres_server_logs_list_command_builder {
-        return new az_postgres_server_logs_list_command_builder(this, resourceGroup, serverName);
+    static az_postgres_server_logs_list(resourceGroup: string, serverName: string): az_postgres_server_logs_list_command_builder {
+        return new az_postgres_server_logs_list_command_builder("az postgres server-logs list", resourceGroup, serverName);
     }
 }
 
 /** Manage PostgreSQL servers. */
-export class az_postgres_server implements ICommandParent<any> {
-    commandPath = "az postgres server";
-
+export class az_postgres_server {
     /**
      * Create a server.
      *
@@ -1140,8 +1112,8 @@ export class az_postgres_server implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} skuName The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16.
      */
-    az_postgres_server_create(adminPassword: string, adminUser: string, name: string, resourceGroup: string, skuName: string): az_postgres_server_create_command_builder {
-        return new az_postgres_server_create_command_builder(this, adminPassword, adminUser, name, resourceGroup, skuName);
+    static az_postgres_server_create(adminPassword: string, adminUser: string, name: string, resourceGroup: string, skuName: string): az_postgres_server_create_command_builder {
+        return new az_postgres_server_create_command_builder("az postgres server create", adminPassword, adminUser, name, resourceGroup, skuName);
     }
 
     /**
@@ -1156,8 +1128,8 @@ export class az_postgres_server implements ICommandParent<any> {
      *                           [--yes]
      * ```
      */
-    az_postgres_server_delete(): az_postgres_server_delete_command_builder {
-        return new az_postgres_server_delete_command_builder(this);
+    static az_postgres_server_delete(): az_postgres_server_delete_command_builder {
+        return new az_postgres_server_delete_command_builder("az postgres server delete");
     }
 
     /**
@@ -1180,8 +1152,8 @@ export class az_postgres_server implements ICommandParent<any> {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      * @param {string} sourceServer The name or ID of the source server to restore from.
      */
-    az_postgres_server_georestore(location: string, sourceServer: string): az_postgres_server_georestore_command_builder {
-        return new az_postgres_server_georestore_command_builder(this, location, sourceServer);
+    static az_postgres_server_georestore(location: string, sourceServer: string): az_postgres_server_georestore_command_builder {
+        return new az_postgres_server_georestore_command_builder("az postgres server georestore", location, sourceServer);
     }
 
     /**
@@ -1194,8 +1166,8 @@ export class az_postgres_server implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_postgres_server_list(): az_postgres_server_list_command_builder {
-        return new az_postgres_server_list_command_builder(this);
+    static az_postgres_server_list(): az_postgres_server_list_command_builder {
+        return new az_postgres_server_list_command_builder("az postgres server list");
     }
 
     /**
@@ -1209,8 +1181,8 @@ export class az_postgres_server implements ICommandParent<any> {
      *                            [--subscription]
      * ```
      */
-    az_postgres_server_restart(): az_postgres_server_restart_command_builder {
-        return new az_postgres_server_restart_command_builder(this);
+    static az_postgres_server_restart(): az_postgres_server_restart_command_builder {
+        return new az_postgres_server_restart_command_builder("az postgres server restart");
     }
 
     /**
@@ -1230,8 +1202,8 @@ export class az_postgres_server implements ICommandParent<any> {
      * @param {string} restorePointInTime The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00.
      * @param {string} sourceServer The name or resource ID of the source server to restore from.
      */
-    az_postgres_server_restore(restorePointInTime: string, sourceServer: string): az_postgres_server_restore_command_builder {
-        return new az_postgres_server_restore_command_builder(this, restorePointInTime, sourceServer);
+    static az_postgres_server_restore(restorePointInTime: string, sourceServer: string): az_postgres_server_restore_command_builder {
+        return new az_postgres_server_restore_command_builder("az postgres server restore", restorePointInTime, sourceServer);
     }
 
     /**
@@ -1246,8 +1218,8 @@ export class az_postgres_server implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_postgres_server_show(): az_postgres_server_show_command_builder {
-        return new az_postgres_server_show_command_builder(this);
+    static az_postgres_server_show(): az_postgres_server_show_command_builder {
+        return new az_postgres_server_show_command_builder("az postgres server show");
     }
 
     /**
@@ -1275,8 +1247,8 @@ export class az_postgres_server implements ICommandParent<any> {
      *                           [--tags]
      * ```
      */
-    az_postgres_server_update(): az_postgres_server_update_command_builder {
-        return new az_postgres_server_update_command_builder(this);
+    static az_postgres_server_update(): az_postgres_server_update_command_builder {
+        return new az_postgres_server_update_command_builder("az postgres server update");
     }
 
     /**
@@ -1294,8 +1266,8 @@ export class az_postgres_server implements ICommandParent<any> {
      *                         [--timeout]
      * ```
      */
-    az_postgres_server_wait(): az_postgres_server_wait_command_builder {
-        return new az_postgres_server_wait_command_builder(this);
+    static az_postgres_server_wait(): az_postgres_server_wait_command_builder {
+        return new az_postgres_server_wait_command_builder("az postgres server wait");
     }
 }
 
@@ -1321,7 +1293,7 @@ export class az_postgres {
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_db_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, serverName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, serverName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1382,7 +1354,7 @@ class az_postgres_db_create_command_builder extends CommandBuilder {
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_db_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, serverName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, serverName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1435,7 +1407,7 @@ class az_postgres_db_delete_command_builder extends CommandBuilder {
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_db_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, serverName: string) {
+    constructor(commandPath: string, resourceGroup: string, serverName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
@@ -1483,7 +1455,7 @@ class az_postgres_db_list_command_builder extends CommandBuilder {
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_db_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, serverName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, serverName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1541,7 +1513,7 @@ class az_postgres_db_show_command_builder extends CommandBuilder {
  * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
  */
 class az_postgres_flexible_server_firewall_rule_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string) {
+    constructor(commandPath: string, endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string) {
         super(commandParent);
         this.endIpAddress(endIpAddress)
         this.name(name)
@@ -1601,7 +1573,7 @@ class az_postgres_flexible_server_firewall_rule_create_command_builder extends C
  * ```
  */
 class az_postgres_flexible_server_firewall_rule_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1657,7 +1629,7 @@ class az_postgres_flexible_server_firewall_rule_delete_command_builder extends C
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_flexible_server_firewall_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, serverName: string) {
+    constructor(commandPath: string, resourceGroup: string, serverName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
@@ -1702,7 +1674,7 @@ class az_postgres_flexible_server_firewall_rule_list_command_builder extends Com
  * ```
  */
 class az_postgres_flexible_server_firewall_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1762,7 +1734,7 @@ class az_postgres_flexible_server_firewall_rule_show_command_builder extends Com
  * ```
  */
 class az_postgres_flexible_server_firewall_rule_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1848,7 +1820,7 @@ class az_postgres_flexible_server_firewall_rule_update_command_builder extends C
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_flexible_server_parameter_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, serverName: string) {
+    constructor(commandPath: string, resourceGroup: string, serverName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
@@ -1894,7 +1866,7 @@ class az_postgres_flexible_server_parameter_list_command_builder extends Command
  * ```
  */
 class az_postgres_flexible_server_parameter_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1955,7 +1927,7 @@ class az_postgres_flexible_server_parameter_set_command_builder extends CommandB
  * ```
  */
 class az_postgres_flexible_server_parameter_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2024,7 +1996,7 @@ class az_postgres_flexible_server_parameter_show_command_builder extends Command
  * ```
  */
 class az_postgres_flexible_server_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2162,7 +2134,7 @@ class az_postgres_flexible_server_create_command_builder extends CommandBuilder 
  * ```
  */
 class az_postgres_flexible_server_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2208,7 +2180,7 @@ class az_postgres_flexible_server_delete_command_builder extends CommandBuilder 
  * ```
  */
 class az_postgres_flexible_server_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2243,7 +2215,7 @@ class az_postgres_flexible_server_list_command_builder extends CommandBuilder {
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_postgres_flexible_server_list_skus_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string) {
+    constructor(commandPath: string, location: string) {
         super(commandParent);
         this.location(location)
     }
@@ -2273,7 +2245,7 @@ class az_postgres_flexible_server_list_skus_command_builder extends CommandBuild
  * ```
  */
 class az_postgres_flexible_server_restart_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2321,7 +2293,7 @@ class az_postgres_flexible_server_restart_command_builder extends CommandBuilder
  * @param {string} time The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00.
  */
 class az_postgres_flexible_server_restore_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, sourceServer: string, time: string) {
+    constructor(commandPath: string, sourceServer: string, time: string) {
         super(commandParent);
         this.sourceServer(sourceServer)
         this.time(time)
@@ -2389,7 +2361,7 @@ class az_postgres_flexible_server_restore_command_builder extends CommandBuilder
  * ```
  */
 class az_postgres_flexible_server_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2438,7 +2410,7 @@ class az_postgres_flexible_server_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_postgres_flexible_server_show_connection_string_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2491,7 +2463,7 @@ class az_postgres_flexible_server_show_connection_string_command_builder extends
  * ```
  */
 class az_postgres_flexible_server_start_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2532,7 +2504,7 @@ class az_postgres_flexible_server_start_command_builder extends CommandBuilder {
  * ```
  */
 class az_postgres_flexible_server_stop_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2585,7 +2557,7 @@ class az_postgres_flexible_server_stop_command_builder extends CommandBuilder {
  * ```
  */
 class az_postgres_flexible_server_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2705,7 +2677,7 @@ class az_postgres_flexible_server_update_command_builder extends CommandBuilder 
  * ```
  */
 class az_postgres_flexible_server_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2793,7 +2765,7 @@ class az_postgres_flexible_server_wait_command_builder extends CommandBuilder {
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_server_ad_admin_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, serverName: string) {
+    constructor(commandPath: string, resourceGroup: string, serverName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
@@ -2849,7 +2821,7 @@ class az_postgres_server_ad_admin_create_command_builder extends CommandBuilder 
  * ```
  */
 class az_postgres_server_ad_admin_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2897,7 +2869,7 @@ class az_postgres_server_ad_admin_delete_command_builder extends CommandBuilder 
  * ```
  */
 class az_postgres_server_ad_admin_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2945,7 +2917,7 @@ class az_postgres_server_ad_admin_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_postgres_server_ad_admin_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2999,7 +2971,7 @@ class az_postgres_server_ad_admin_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_postgres_server_ad_admin_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3083,7 +3055,7 @@ class az_postgres_server_ad_admin_wait_command_builder extends CommandBuilder {
  * ```
  */
 class az_postgres_server_configuration_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3132,7 +3104,7 @@ class az_postgres_server_configuration_list_command_builder extends CommandBuild
  * ```
  */
 class az_postgres_server_configuration_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3187,7 +3159,7 @@ class az_postgres_server_configuration_set_command_builder extends CommandBuilde
  * ```
  */
 class az_postgres_server_configuration_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3248,7 +3220,7 @@ class az_postgres_server_configuration_show_command_builder extends CommandBuild
  * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
  */
 class az_postgres_server_firewall_rule_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string) {
+    constructor(commandPath: string, endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string) {
         super(commandParent);
         this.endIpAddress(endIpAddress)
         this.name(name)
@@ -3308,7 +3280,7 @@ class az_postgres_server_firewall_rule_create_command_builder extends CommandBui
  * ```
  */
 class az_postgres_server_firewall_rule_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3362,7 +3334,7 @@ class az_postgres_server_firewall_rule_delete_command_builder extends CommandBui
  * ```
  */
 class az_postgres_server_firewall_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3411,7 +3383,7 @@ class az_postgres_server_firewall_rule_list_command_builder extends CommandBuild
  * ```
  */
 class az_postgres_server_firewall_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3471,7 +3443,7 @@ class az_postgres_server_firewall_rule_show_command_builder extends CommandBuild
  * ```
  */
 class az_postgres_server_firewall_rule_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3558,7 +3530,7 @@ class az_postgres_server_firewall_rule_update_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_postgres_server_key_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, kid: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, kid: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.kid(kid)
         this.name(name)
@@ -3606,7 +3578,7 @@ class az_postgres_server_key_create_command_builder extends CommandBuilder {
  * @param {string} kid The Azure Key Vault key identifier of the server key. An example key identifier is "<a href="https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901">https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901</a>".
  */
 class az_postgres_server_key_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, kid: string) {
+    constructor(commandPath: string, kid: string) {
         super(commandParent);
         this.kid(kid)
     }
@@ -3661,7 +3633,7 @@ class az_postgres_server_key_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_postgres_server_key_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3712,7 +3684,7 @@ class az_postgres_server_key_list_command_builder extends CommandBuilder {
  * @param {string} kid The Azure Key Vault key identifier of the server key. An example key identifier is "<a href="https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901">https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901</a>".
  */
 class az_postgres_server_key_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, kid: string) {
+    constructor(commandPath: string, kid: string) {
         super(commandParent);
         this.kid(kid)
     }
@@ -3769,7 +3741,7 @@ class az_postgres_server_key_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_postgres_server_private_endpoint_connection_approve_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3830,7 +3802,7 @@ class az_postgres_server_private_endpoint_connection_approve_command_builder ext
  * ```
  */
 class az_postgres_server_private_endpoint_connection_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3886,7 +3858,7 @@ class az_postgres_server_private_endpoint_connection_delete_command_builder exte
  * ```
  */
 class az_postgres_server_private_endpoint_connection_reject_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3948,7 +3920,7 @@ class az_postgres_server_private_endpoint_connection_reject_command_builder exte
  * ```
  */
 class az_postgres_server_private_endpoint_connection_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4008,7 +3980,7 @@ class az_postgres_server_private_endpoint_connection_show_command_builder extend
  * ```
  */
 class az_postgres_server_private_link_resource_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4062,7 +4034,7 @@ class az_postgres_server_private_link_resource_list_command_builder extends Comm
  * @param {string} sourceServer The name or resource ID of the master server to the create replica for.
  */
 class az_postgres_server_replica_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, sourceServer: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, sourceServer: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4125,7 +4097,7 @@ class az_postgres_server_replica_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_postgres_server_replica_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4173,7 +4145,7 @@ class az_postgres_server_replica_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_postgres_server_replica_stop_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4228,7 +4200,7 @@ class az_postgres_server_replica_stop_command_builder extends CommandBuilder {
  * @param {string} subnet Name or ID of the subnet that allows access to an Azure Postgres Server. If subnet name is provided, --vnet-name must be provided.
  */
 class az_postgres_server_vnet_rule_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, serverName: string, subnet: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, serverName: string, subnet: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4292,7 +4264,7 @@ class az_postgres_server_vnet_rule_create_command_builder extends CommandBuilder
  * ```
  */
 class az_postgres_server_vnet_rule_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4340,7 +4312,7 @@ class az_postgres_server_vnet_rule_delete_command_builder extends CommandBuilder
  * ```
  */
 class az_postgres_server_vnet_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4389,7 +4361,7 @@ class az_postgres_server_vnet_rule_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_postgres_server_vnet_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4452,7 +4424,7 @@ class az_postgres_server_vnet_rule_show_command_builder extends CommandBuilder {
  * @param {string} subnet Name or ID of the subnet that allows access to an Azure Postgres Server. If subnet name is provided, --vnet-name must be provided.
  */
 class az_postgres_server_vnet_rule_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, subnet: string) {
+    constructor(commandPath: string, subnet: string) {
         super(commandParent);
         this.subnet(subnet)
     }
@@ -4546,7 +4518,7 @@ class az_postgres_server_vnet_rule_update_command_builder extends CommandBuilder
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_server_logs_download_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, serverName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, serverName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4596,7 +4568,7 @@ class az_postgres_server_logs_download_command_builder extends CommandBuilder {
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_server_logs_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, serverName: string) {
+    constructor(commandPath: string, resourceGroup: string, serverName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
@@ -4677,7 +4649,7 @@ class az_postgres_server_logs_list_command_builder extends CommandBuilder {
  * @param {string} skuName The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16.
  */
 class az_postgres_server_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, adminPassword: string, adminUser: string, name: string, resourceGroup: string, skuName: string) {
+    constructor(commandPath: string, adminPassword: string, adminUser: string, name: string, resourceGroup: string, skuName: string) {
         super(commandParent);
         this.adminPassword(adminPassword)
         this.adminUser(adminUser)
@@ -4808,7 +4780,7 @@ class az_postgres_server_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_postgres_server_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4864,7 +4836,7 @@ class az_postgres_server_delete_command_builder extends CommandBuilder {
  * @param {string} sourceServer The name or ID of the source server to restore from.
  */
 class az_postgres_server_georestore_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string, sourceServer: string) {
+    constructor(commandPath: string, location: string, sourceServer: string) {
         super(commandParent);
         this.location(location)
         this.sourceServer(sourceServer)
@@ -4942,7 +4914,7 @@ class az_postgres_server_georestore_command_builder extends CommandBuilder {
  * ```
  */
 class az_postgres_server_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4977,7 +4949,7 @@ class az_postgres_server_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_postgres_server_restart_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5024,7 +4996,7 @@ class az_postgres_server_restart_command_builder extends CommandBuilder {
  * @param {string} sourceServer The name or resource ID of the source server to restore from.
  */
 class az_postgres_server_restore_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, restorePointInTime: string, sourceServer: string) {
+    constructor(commandPath: string, restorePointInTime: string, sourceServer: string) {
         super(commandParent);
         this.restorePointInTime(restorePointInTime)
         this.sourceServer(sourceServer)
@@ -5086,7 +5058,7 @@ class az_postgres_server_restore_command_builder extends CommandBuilder {
  * ```
  */
 class az_postgres_server_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5147,7 +5119,7 @@ class az_postgres_server_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_postgres_server_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5276,7 +5248,7 @@ class az_postgres_server_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_postgres_server_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

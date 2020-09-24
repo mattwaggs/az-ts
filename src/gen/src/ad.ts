@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage an application's password or certificate credentials. */
-export class az_ad_app_credential implements ICommandParent<any> {
-    commandPath = "az ad app credential";
-
+export class az_ad_app_credential {
     /**
      * Delete an application's password or certificate credentials.
      *
@@ -17,8 +15,8 @@ export class az_ad_app_credential implements ICommandParent<any> {
      * @param {string} id Identifier uri, application id, or object id.
      * @param {string} keyId Credential key id.
      */
-    az_ad_app_credential_delete(id: string, keyId: string): az_ad_app_credential_delete_command_builder {
-        return new az_ad_app_credential_delete_command_builder(this, id, keyId);
+    static az_ad_app_credential_delete(id: string, keyId: string): az_ad_app_credential_delete_command_builder {
+        return new az_ad_app_credential_delete_command_builder("az ad app credential delete", id, keyId);
     }
 
     /**
@@ -33,8 +31,8 @@ export class az_ad_app_credential implements ICommandParent<any> {
      *
      * @param {string} id Identifier uri, application id, or object id.
      */
-    az_ad_app_credential_list(id: string): az_ad_app_credential_list_command_builder {
-        return new az_ad_app_credential_list_command_builder(this, id);
+    static az_ad_app_credential_list(id: string): az_ad_app_credential_list_command_builder {
+        return new az_ad_app_credential_list_command_builder("az ad app credential list", id);
     }
 
     /**
@@ -55,15 +53,13 @@ export class az_ad_app_credential implements ICommandParent<any> {
      *
      * @param {string} id Identifier uri, application id, or object id.
      */
-    az_ad_app_credential_reset(id: string): az_ad_app_credential_reset_command_builder {
-        return new az_ad_app_credential_reset_command_builder(this, id);
+    static az_ad_app_credential_reset(id: string): az_ad_app_credential_reset_command_builder {
+        return new az_ad_app_credential_reset_command_builder("az ad app credential reset", id);
     }
 }
 
 /** Manage application owners. */
-export class az_ad_app_owner implements ICommandParent<any> {
-    commandPath = "az ad app owner";
-
+export class az_ad_app_owner {
     /**
      * Add an application owner.
      *
@@ -76,8 +72,8 @@ export class az_ad_app_owner implements ICommandParent<any> {
      * @param {string} id Identifier uri, application id, or object id.
      * @param {string} ownerObjectId Owner's object id.
      */
-    az_ad_app_owner_add(id: string, ownerObjectId: string): az_ad_app_owner_add_command_builder {
-        return new az_ad_app_owner_add_command_builder(this, id, ownerObjectId);
+    static az_ad_app_owner_add(id: string, ownerObjectId: string): az_ad_app_owner_add_command_builder {
+        return new az_ad_app_owner_add_command_builder("az ad app owner add", id, ownerObjectId);
     }
 
     /**
@@ -91,8 +87,8 @@ export class az_ad_app_owner implements ICommandParent<any> {
      *
      * @param {string} id Identifier uri, application id, or object id of the application.
      */
-    az_ad_app_owner_list(id: string): az_ad_app_owner_list_command_builder {
-        return new az_ad_app_owner_list_command_builder(this, id);
+    static az_ad_app_owner_list(id: string): az_ad_app_owner_list_command_builder {
+        return new az_ad_app_owner_list_command_builder("az ad app owner list", id);
     }
 
     /**
@@ -107,15 +103,13 @@ export class az_ad_app_owner implements ICommandParent<any> {
      * @param {string} id Identifier uri, application id, or object id.
      * @param {string} ownerObjectId Owner's object id.
      */
-    az_ad_app_owner_remove(id: string, ownerObjectId: string): az_ad_app_owner_remove_command_builder {
-        return new az_ad_app_owner_remove_command_builder(this, id, ownerObjectId);
+    static az_ad_app_owner_remove(id: string, ownerObjectId: string): az_ad_app_owner_remove_command_builder {
+        return new az_ad_app_owner_remove_command_builder("az ad app owner remove", id, ownerObjectId);
     }
 }
 
 /** Manage an application's OAuth2 permissions. */
-export class az_ad_app_permission implements ICommandParent<any> {
-    commandPath = "az ad app permission";
-
+export class az_ad_app_permission {
     /**
      * Add an API permission.
      *
@@ -130,8 +124,8 @@ export class az_ad_app_permission implements ICommandParent<any> {
      * @param {string} apiPermissions Specify `ResourceAccess.id` - The unique identifier for one of the OAuth2Permission or AppRole instances that the resource application exposes. Space-separated list of `<resource-access-id>=<type>`.
      * @param {string} id Identifier uri, application id, or object id.
      */
-    az_ad_app_permission_add(api: string, apiPermissions: string, id: string): az_ad_app_permission_add_command_builder {
-        return new az_ad_app_permission_add_command_builder(this, api, apiPermissions, id);
+    static az_ad_app_permission_add(api: string, apiPermissions: string, id: string): az_ad_app_permission_add_command_builder {
+        return new az_ad_app_permission_add_command_builder("az ad app permission add", api, apiPermissions, id);
     }
 
     /**
@@ -144,8 +138,8 @@ export class az_ad_app_permission implements ICommandParent<any> {
      *
      * @param {string} id Identifier uri, application id, or object id.
      */
-    az_ad_app_permission_admin_consent(id: string): az_ad_app_permission_admin_consent_command_builder {
-        return new az_ad_app_permission_admin_consent_command_builder(this, id);
+    static az_ad_app_permission_admin_consent(id: string): az_ad_app_permission_admin_consent_command_builder {
+        return new az_ad_app_permission_admin_consent_command_builder("az ad app permission admin-consent", id);
     }
 
     /**
@@ -161,8 +155,8 @@ export class az_ad_app_permission implements ICommandParent<any> {
      * @param {string} api Specify `RequiredResourceAccess.resourceAppId` - The unique identifier for the resource that the application requires access to. This should be equal to the appId declared on the target resource application.
      * @param {string} id Identifier uri, application id, or object id.
      */
-    az_ad_app_permission_delete(api: string, id: string): az_ad_app_permission_delete_command_builder {
-        return new az_ad_app_permission_delete_command_builder(this, api, id);
+    static az_ad_app_permission_delete(api: string, id: string): az_ad_app_permission_delete_command_builder {
+        return new az_ad_app_permission_delete_command_builder("az ad app permission delete", api, id);
     }
 
     /**
@@ -181,8 +175,8 @@ export class az_ad_app_permission implements ICommandParent<any> {
      * @param {string} api Specify `RequiredResourceAccess.resourceAppId` - The unique identifier for the resource that the application requires access to. This should be equal to the appId declared on the target resource application.
      * @param {string} id Identifier uri, application id, or object id.
      */
-    az_ad_app_permission_grant(api: string, id: string): az_ad_app_permission_grant_command_builder {
-        return new az_ad_app_permission_grant_command_builder(this, api, id);
+    static az_ad_app_permission_grant(api: string, id: string): az_ad_app_permission_grant_command_builder {
+        return new az_ad_app_permission_grant_command_builder("az ad app permission grant", api, id);
     }
 
     /**
@@ -196,8 +190,8 @@ export class az_ad_app_permission implements ICommandParent<any> {
      *
      * @param {string} id Identifier uri, application id, or object id of the associated application.
      */
-    az_ad_app_permission_list(id: string): az_ad_app_permission_list_command_builder {
-        return new az_ad_app_permission_list_command_builder(this, id);
+    static az_ad_app_permission_list(id: string): az_ad_app_permission_list_command_builder {
+        return new az_ad_app_permission_list_command_builder("az ad app permission list", id);
     }
 
     /**
@@ -210,15 +204,13 @@ export class az_ad_app_permission implements ICommandParent<any> {
      *                                  [--show-resource-name {false, true}]
      * ```
      */
-    az_ad_app_permission_list_grants(): az_ad_app_permission_list_grants_command_builder {
-        return new az_ad_app_permission_list_grants_command_builder(this);
+    static az_ad_app_permission_list_grants(): az_ad_app_permission_list_grants_command_builder {
+        return new az_ad_app_permission_list_grants_command_builder("az ad app permission list-grants");
     }
 }
 
 /** Manage applications with AAD Graph. */
-export class az_ad_app implements ICommandParent<any> {
-    commandPath = "az ad app";
-
+export class az_ad_app {
     /**
      * Create a web application, web API or native application.
      *
@@ -245,8 +237,8 @@ export class az_ad_app implements ICommandParent<any> {
      *
      * @param {string} displayName The display name of the application.
      */
-    az_ad_app_create(displayName: string): az_ad_app_create_command_builder {
-        return new az_ad_app_create_command_builder(this, displayName);
+    static az_ad_app_create(displayName: string): az_ad_app_create_command_builder {
+        return new az_ad_app_create_command_builder("az ad app create", displayName);
     }
 
     /**
@@ -259,8 +251,8 @@ export class az_ad_app implements ICommandParent<any> {
      *
      * @param {string} id Identifier uri, application id, or object id.
      */
-    az_ad_app_delete(id: string): az_ad_app_delete_command_builder {
-        return new az_ad_app_delete_command_builder(this, id);
+    static az_ad_app_delete(id: string): az_ad_app_delete_command_builder {
+        return new az_ad_app_delete_command_builder("az ad app delete", id);
     }
 
     /**
@@ -277,8 +269,8 @@ export class az_ad_app implements ICommandParent<any> {
      *                [--show-mine]
      * ```
      */
-    az_ad_app_list(): az_ad_app_list_command_builder {
-        return new az_ad_app_list_command_builder(this);
+    static az_ad_app_list(): az_ad_app_list_command_builder {
+        return new az_ad_app_list_command_builder("az ad app list");
     }
 
     /**
@@ -292,8 +284,8 @@ export class az_ad_app implements ICommandParent<any> {
      *
      * @param {string} id Identifier uri, application id, or object id.
      */
-    az_ad_app_show(id: string): az_ad_app_show_command_builder {
-        return new az_ad_app_show_command_builder(this, id);
+    static az_ad_app_show(id: string): az_ad_app_show_command_builder {
+        return new az_ad_app_show_command_builder("az ad app show", id);
     }
 
     /**
@@ -326,15 +318,13 @@ export class az_ad_app implements ICommandParent<any> {
      *
      * @param {string} id Identifier uri, application id, or object id.
      */
-    az_ad_app_update(id: string): az_ad_app_update_command_builder {
-        return new az_ad_app_update_command_builder(this, id);
+    static az_ad_app_update(id: string): az_ad_app_update_command_builder {
+        return new az_ad_app_update_command_builder("az ad app update", id);
     }
 }
 
 /** Manage Azure Active Directory group members. */
-export class az_ad_group_member implements ICommandParent<any> {
-    commandPath = "az ad group member";
-
+export class az_ad_group_member {
     /**
      * Add a member to a group.
      *
@@ -348,8 +338,8 @@ export class az_ad_group_member implements ICommandParent<any> {
      * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
      * @param {string} memberId The object ID of the contact, group, user, or service principal.
      */
-    az_ad_group_member_add(group: string, memberId: string): az_ad_group_member_add_command_builder {
-        return new az_ad_group_member_add_command_builder(this, group, memberId);
+    static az_ad_group_member_add(group: string, memberId: string): az_ad_group_member_add_command_builder {
+        return new az_ad_group_member_add_command_builder("az ad group member add", group, memberId);
     }
 
     /**
@@ -364,8 +354,8 @@ export class az_ad_group_member implements ICommandParent<any> {
      * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
      * @param {string} memberId The object ID of the contact, group, user, or service principal.
      */
-    az_ad_group_member_check(group: string, memberId: string): az_ad_group_member_check_command_builder {
-        return new az_ad_group_member_check_command_builder(this, group, memberId);
+    static az_ad_group_member_check(group: string, memberId: string): az_ad_group_member_check_command_builder {
+        return new az_ad_group_member_check_command_builder("az ad group member check", group, memberId);
     }
 
     /**
@@ -379,8 +369,8 @@ export class az_ad_group_member implements ICommandParent<any> {
      *
      * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
      */
-    az_ad_group_member_list(group: string): az_ad_group_member_list_command_builder {
-        return new az_ad_group_member_list_command_builder(this, group);
+    static az_ad_group_member_list(group: string): az_ad_group_member_list_command_builder {
+        return new az_ad_group_member_list_command_builder("az ad group member list", group);
     }
 
     /**
@@ -395,15 +385,13 @@ export class az_ad_group_member implements ICommandParent<any> {
      * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
      * @param {string} memberId The object ID of the contact, group, user, or service principal.
      */
-    az_ad_group_member_remove(group: string, memberId: string): az_ad_group_member_remove_command_builder {
-        return new az_ad_group_member_remove_command_builder(this, group, memberId);
+    static az_ad_group_member_remove(group: string, memberId: string): az_ad_group_member_remove_command_builder {
+        return new az_ad_group_member_remove_command_builder("az ad group member remove", group, memberId);
     }
 }
 
 /** Manage Azure Active Directory group owners. */
-export class az_ad_group_owner implements ICommandParent<any> {
-    commandPath = "az ad group owner";
-
+export class az_ad_group_owner {
     /**
      * Add a group owner.
      *
@@ -416,8 +404,8 @@ export class az_ad_group_owner implements ICommandParent<any> {
      * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
      * @param {string} ownerObjectId Owner's object id.
      */
-    az_ad_group_owner_add(group: string, ownerObjectId: string): az_ad_group_owner_add_command_builder {
-        return new az_ad_group_owner_add_command_builder(this, group, ownerObjectId);
+    static az_ad_group_owner_add(group: string, ownerObjectId: string): az_ad_group_owner_add_command_builder {
+        return new az_ad_group_owner_add_command_builder("az ad group owner add", group, ownerObjectId);
     }
 
     /**
@@ -431,8 +419,8 @@ export class az_ad_group_owner implements ICommandParent<any> {
      *
      * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
      */
-    az_ad_group_owner_list(group: string): az_ad_group_owner_list_command_builder {
-        return new az_ad_group_owner_list_command_builder(this, group);
+    static az_ad_group_owner_list(group: string): az_ad_group_owner_list_command_builder {
+        return new az_ad_group_owner_list_command_builder("az ad group owner list", group);
     }
 
     /**
@@ -447,15 +435,13 @@ export class az_ad_group_owner implements ICommandParent<any> {
      * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
      * @param {string} ownerObjectId Owner's object id.
      */
-    az_ad_group_owner_remove(group: string, ownerObjectId: string): az_ad_group_owner_remove_command_builder {
-        return new az_ad_group_owner_remove_command_builder(this, group, ownerObjectId);
+    static az_ad_group_owner_remove(group: string, ownerObjectId: string): az_ad_group_owner_remove_command_builder {
+        return new az_ad_group_owner_remove_command_builder("az ad group owner remove", group, ownerObjectId);
     }
 }
 
 /** Manage Azure Active Directory groups. */
-export class az_ad_group implements ICommandParent<any> {
-    commandPath = "az ad group";
-
+export class az_ad_group {
     /**
      * Create a group in the directory.
      *
@@ -470,8 +456,8 @@ export class az_ad_group implements ICommandParent<any> {
      * @param {string} displayName Object's display name or its prefix.
      * @param {string} mailNickname Mail nickname.
      */
-    az_ad_group_create(displayName: string, mailNickname: string): az_ad_group_create_command_builder {
-        return new az_ad_group_create_command_builder(this, displayName, mailNickname);
+    static az_ad_group_create(displayName: string, mailNickname: string): az_ad_group_create_command_builder {
+        return new az_ad_group_create_command_builder("az ad group create", displayName, mailNickname);
     }
 
     /**
@@ -484,8 +470,8 @@ export class az_ad_group implements ICommandParent<any> {
      *
      * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
      */
-    az_ad_group_delete(group: string): az_ad_group_delete_command_builder {
-        return new az_ad_group_delete_command_builder(this, group);
+    static az_ad_group_delete(group: string): az_ad_group_delete_command_builder {
+        return new az_ad_group_delete_command_builder("az ad group delete", group);
     }
 
     /**
@@ -500,8 +486,8 @@ export class az_ad_group implements ICommandParent<any> {
      *
      * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
      */
-    az_ad_group_get_member_groups(group: string): az_ad_group_get_member_groups_command_builder {
-        return new az_ad_group_get_member_groups_command_builder(this, group);
+    static az_ad_group_get_member_groups(group: string): az_ad_group_get_member_groups_command_builder {
+        return new az_ad_group_get_member_groups_command_builder("az ad group get-member-groups", group);
     }
 
     /**
@@ -514,8 +500,8 @@ export class az_ad_group implements ICommandParent<any> {
      *                  [--query-examples]
      * ```
      */
-    az_ad_group_list(): az_ad_group_list_command_builder {
-        return new az_ad_group_list_command_builder(this);
+    static az_ad_group_list(): az_ad_group_list_command_builder {
+        return new az_ad_group_list_command_builder("az ad group list");
     }
 
     /**
@@ -529,15 +515,13 @@ export class az_ad_group implements ICommandParent<any> {
      *
      * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
      */
-    az_ad_group_show(group: string): az_ad_group_show_command_builder {
-        return new az_ad_group_show_command_builder(this, group);
+    static az_ad_group_show(group: string): az_ad_group_show_command_builder {
+        return new az_ad_group_show_command_builder("az ad group show", group);
     }
 }
 
 /** Show graph information about current signed-in user in CLI. */
-export class az_ad_signed_in_user implements ICommandParent<any> {
-    commandPath = "az ad signed-in-user";
-
+export class az_ad_signed_in_user {
     /**
      * Get the list of directory objects that are owned by the user.
      *
@@ -546,8 +530,8 @@ export class az_ad_signed_in_user implements ICommandParent<any> {
      * az ad signed-in-user list-owned-objects [--type]
      * ```
      */
-    az_ad_signed_in_user_list_owned_objects(): az_ad_signed_in_user_list_owned_objects_command_builder {
-        return new az_ad_signed_in_user_list_owned_objects_command_builder(this);
+    static az_ad_signed_in_user_list_owned_objects(): az_ad_signed_in_user_list_owned_objects_command_builder {
+        return new az_ad_signed_in_user_list_owned_objects_command_builder("az ad signed-in-user list-owned-objects");
     }
 
     /**
@@ -558,15 +542,13 @@ export class az_ad_signed_in_user implements ICommandParent<any> {
      * az ad signed-in-user show [--query-examples]
      * ```
      */
-    az_ad_signed_in_user_show(): az_ad_signed_in_user_show_command_builder {
-        return new az_ad_signed_in_user_show_command_builder(this);
+    static az_ad_signed_in_user_show(): az_ad_signed_in_user_show_command_builder {
+        return new az_ad_signed_in_user_show_command_builder("az ad signed-in-user show");
     }
 }
 
 /** Manage a service principal's credentials. */
-export class az_ad_sp_credential implements ICommandParent<any> {
-    commandPath = "az ad sp credential";
-
+export class az_ad_sp_credential {
     /**
      * Delete a service principal's credential.
      *
@@ -580,8 +562,8 @@ export class az_ad_sp_credential implements ICommandParent<any> {
      * @param {string} id Service principal name, or object id.
      * @param {string} keyId Credential key id.
      */
-    az_ad_sp_credential_delete(id: string, keyId: string): az_ad_sp_credential_delete_command_builder {
-        return new az_ad_sp_credential_delete_command_builder(this, id, keyId);
+    static az_ad_sp_credential_delete(id: string, keyId: string): az_ad_sp_credential_delete_command_builder {
+        return new az_ad_sp_credential_delete_command_builder("az ad sp credential delete", id, keyId);
     }
 
     /**
@@ -596,8 +578,8 @@ export class az_ad_sp_credential implements ICommandParent<any> {
      *
      * @param {string} id Service principal name, or object id.
      */
-    az_ad_sp_credential_list(id: string): az_ad_sp_credential_list_command_builder {
-        return new az_ad_sp_credential_list_command_builder(this, id);
+    static az_ad_sp_credential_list(id: string): az_ad_sp_credential_list_command_builder {
+        return new az_ad_sp_credential_list_command_builder("az ad sp credential list", id);
     }
 
     /**
@@ -618,15 +600,13 @@ export class az_ad_sp_credential implements ICommandParent<any> {
      *
      * @param {string} name Name or app ID of the service principal.
      */
-    az_ad_sp_credential_reset(name: string): az_ad_sp_credential_reset_command_builder {
-        return new az_ad_sp_credential_reset_command_builder(this, name);
+    static az_ad_sp_credential_reset(name: string): az_ad_sp_credential_reset_command_builder {
+        return new az_ad_sp_credential_reset_command_builder("az ad sp credential reset", name);
     }
 }
 
 /** Manage service principal owners. */
-export class az_ad_sp_owner implements ICommandParent<any> {
-    commandPath = "az ad sp owner";
-
+export class az_ad_sp_owner {
     /**
      * List service principal owners.
      *
@@ -638,15 +618,13 @@ export class az_ad_sp_owner implements ICommandParent<any> {
      *
      * @param {string} id Service principal name, or object id or the service principal.
      */
-    az_ad_sp_owner_list(id: string): az_ad_sp_owner_list_command_builder {
-        return new az_ad_sp_owner_list_command_builder(this, id);
+    static az_ad_sp_owner_list(id: string): az_ad_sp_owner_list_command_builder {
+        return new az_ad_sp_owner_list_command_builder("az ad sp owner list", id);
     }
 }
 
 /** Manage Azure Active Directory service principals for automation authentication. */
-export class az_ad_sp implements ICommandParent<any> {
-    commandPath = "az ad sp";
-
+export class az_ad_sp {
     /**
      * Create a service principal.
      *
@@ -657,8 +635,8 @@ export class az_ad_sp implements ICommandParent<any> {
      *
      * @param {string} id Identifier uri, application id, or object id of the associated application.
      */
-    az_ad_sp_create(id: string): az_ad_sp_create_command_builder {
-        return new az_ad_sp_create_command_builder(this, id);
+    static az_ad_sp_create(id: string): az_ad_sp_create_command_builder {
+        return new az_ad_sp_create_command_builder("az ad sp create", id);
     }
 
     /**
@@ -677,8 +655,8 @@ export class az_ad_sp implements ICommandParent<any> {
      *                          [--years]
      * ```
      */
-    az_ad_sp_create_for_rbac(): az_ad_sp_create_for_rbac_command_builder {
-        return new az_ad_sp_create_for_rbac_command_builder(this);
+    static az_ad_sp_create_for_rbac(): az_ad_sp_create_for_rbac_command_builder {
+        return new az_ad_sp_create_for_rbac_command_builder("az ad sp create-for-rbac");
     }
 
     /**
@@ -691,8 +669,8 @@ export class az_ad_sp implements ICommandParent<any> {
      *
      * @param {string} id Service principal name, or object id.
      */
-    az_ad_sp_delete(id: string): az_ad_sp_delete_command_builder {
-        return new az_ad_sp_delete_command_builder(this, id);
+    static az_ad_sp_delete(id: string): az_ad_sp_delete_command_builder {
+        return new az_ad_sp_delete_command_builder("az ad sp delete", id);
     }
 
     /**
@@ -708,8 +686,8 @@ export class az_ad_sp implements ICommandParent<any> {
      *               [--spn]
      * ```
      */
-    az_ad_sp_list(): az_ad_sp_list_command_builder {
-        return new az_ad_sp_list_command_builder(this);
+    static az_ad_sp_list(): az_ad_sp_list_command_builder {
+        return new az_ad_sp_list_command_builder("az ad sp list");
     }
 
     /**
@@ -723,8 +701,8 @@ export class az_ad_sp implements ICommandParent<any> {
      *
      * @param {string} id Service principal name, or object id.
      */
-    az_ad_sp_show(id: string): az_ad_sp_show_command_builder {
-        return new az_ad_sp_show_command_builder(this, id);
+    static az_ad_sp_show(id: string): az_ad_sp_show_command_builder {
+        return new az_ad_sp_show_command_builder("az ad sp show", id);
     }
 
     /**
@@ -741,15 +719,13 @@ export class az_ad_sp implements ICommandParent<any> {
      *
      * @param {string} id Service principal name, or object id.
      */
-    az_ad_sp_update(id: string): az_ad_sp_update_command_builder {
-        return new az_ad_sp_update_command_builder(this, id);
+    static az_ad_sp_update(id: string): az_ad_sp_update_command_builder {
+        return new az_ad_sp_update_command_builder("az ad sp update", id);
     }
 }
 
 /** Manage Azure Active Directory users and user authentication. */
-export class az_ad_user implements ICommandParent<any> {
-    commandPath = "az ad user";
-
+export class az_ad_user {
     /**
      * Create an Azure Active Directory user.
      *
@@ -767,8 +743,8 @@ export class az_ad_user implements ICommandParent<any> {
      * @param {string} password The password that should be assigned to the user for authentication.
      * @param {string} userPrincipalName Required. The user principal name (someuser@contoso.com). It must contain one of the verified domains for the tenant.
      */
-    az_ad_user_create(displayName: string, password: string, userPrincipalName: string): az_ad_user_create_command_builder {
-        return new az_ad_user_create_command_builder(this, displayName, password, userPrincipalName);
+    static az_ad_user_create(displayName: string, password: string, userPrincipalName: string): az_ad_user_create_command_builder {
+        return new az_ad_user_create_command_builder("az ad user create", displayName, password, userPrincipalName);
     }
 
     /**
@@ -781,8 +757,8 @@ export class az_ad_user implements ICommandParent<any> {
      *
      * @param {string} id The object ID or principal name of the user for which to get information.
      */
-    az_ad_user_delete(id: string): az_ad_user_delete_command_builder {
-        return new az_ad_user_delete_command_builder(this, id);
+    static az_ad_user_delete(id: string): az_ad_user_delete_command_builder {
+        return new az_ad_user_delete_command_builder("az ad user delete", id);
     }
 
     /**
@@ -796,8 +772,8 @@ export class az_ad_user implements ICommandParent<any> {
      *
      * @param {string} id The object ID or principal name of the user for which to get information.
      */
-    az_ad_user_get_member_groups(id: string): az_ad_user_get_member_groups_command_builder {
-        return new az_ad_user_get_member_groups_command_builder(this, id);
+    static az_ad_user_get_member_groups(id: string): az_ad_user_get_member_groups_command_builder {
+        return new az_ad_user_get_member_groups_command_builder("az ad user get-member-groups", id);
     }
 
     /**
@@ -811,8 +787,8 @@ export class az_ad_user implements ICommandParent<any> {
      *                 [--upn]
      * ```
      */
-    az_ad_user_list(): az_ad_user_list_command_builder {
-        return new az_ad_user_list_command_builder(this);
+    static az_ad_user_list(): az_ad_user_list_command_builder {
+        return new az_ad_user_list_command_builder("az ad user list");
     }
 
     /**
@@ -826,8 +802,8 @@ export class az_ad_user implements ICommandParent<any> {
      *
      * @param {string} id The object ID or principal name of the user for which to get information.
      */
-    az_ad_user_show(id: string): az_ad_user_show_command_builder {
-        return new az_ad_user_show_command_builder(this, id);
+    static az_ad_user_show(id: string): az_ad_user_show_command_builder {
+        return new az_ad_user_show_command_builder("az ad user show", id);
     }
 
     /**
@@ -845,8 +821,8 @@ export class az_ad_user implements ICommandParent<any> {
      *
      * @param {string} id The object ID or principal name of the user for which to get information.
      */
-    az_ad_user_update(id: string): az_ad_user_update_command_builder {
-        return new az_ad_user_update_command_builder(this, id);
+    static az_ad_user_update(id: string): az_ad_user_update_command_builder {
+        return new az_ad_user_update_command_builder("az ad user update", id);
     }
 }
 
@@ -868,7 +844,7 @@ export class az_ad {
  * @param {string} keyId Credential key id.
  */
 class az_ad_app_credential_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, keyId: string) {
+    constructor(commandPath: string, id: string, keyId: string) {
         super(commandParent);
         this.id(id)
         this.keyId(keyId)
@@ -906,7 +882,7 @@ class az_ad_app_credential_delete_command_builder extends CommandBuilder {
  * @param {string} id Identifier uri, application id, or object id.
  */
 class az_ad_app_credential_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -949,7 +925,7 @@ class az_ad_app_credential_list_command_builder extends CommandBuilder {
  * @param {string} id Identifier uri, application id, or object id.
  */
 class az_ad_app_credential_reset_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -1022,7 +998,7 @@ class az_ad_app_credential_reset_command_builder extends CommandBuilder {
  * @param {string} ownerObjectId Owner's object id.
  */
 class az_ad_app_owner_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, ownerObjectId: string) {
+    constructor(commandPath: string, id: string, ownerObjectId: string) {
         super(commandParent);
         this.id(id)
         this.ownerObjectId(ownerObjectId)
@@ -1053,7 +1029,7 @@ class az_ad_app_owner_add_command_builder extends CommandBuilder {
  * @param {string} id Identifier uri, application id, or object id of the application.
  */
 class az_ad_app_owner_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -1084,7 +1060,7 @@ class az_ad_app_owner_list_command_builder extends CommandBuilder {
  * @param {string} ownerObjectId Owner's object id.
  */
 class az_ad_app_owner_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, ownerObjectId: string) {
+    constructor(commandPath: string, id: string, ownerObjectId: string) {
         super(commandParent);
         this.id(id)
         this.ownerObjectId(ownerObjectId)
@@ -1118,7 +1094,7 @@ class az_ad_app_owner_remove_command_builder extends CommandBuilder {
  * @param {string} id Identifier uri, application id, or object id.
  */
 class az_ad_app_permission_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, api: string, apiPermissions: string, id: string) {
+    constructor(commandPath: string, api: string, apiPermissions: string, id: string) {
         super(commandParent);
         this.api(api)
         this.apiPermissions(apiPermissions)
@@ -1155,7 +1131,7 @@ class az_ad_app_permission_add_command_builder extends CommandBuilder {
  * @param {string} id Identifier uri, application id, or object id.
  */
 class az_ad_app_permission_admin_consent_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -1181,7 +1157,7 @@ class az_ad_app_permission_admin_consent_command_builder extends CommandBuilder 
  * @param {string} id Identifier uri, application id, or object id.
  */
 class az_ad_app_permission_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, api: string, id: string) {
+    constructor(commandPath: string, api: string, id: string) {
         super(commandParent);
         this.api(api)
         this.id(id)
@@ -1223,7 +1199,7 @@ class az_ad_app_permission_delete_command_builder extends CommandBuilder {
  * @param {string} id Identifier uri, application id, or object id.
  */
 class az_ad_app_permission_grant_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, api: string, id: string) {
+    constructor(commandPath: string, api: string, id: string) {
         super(commandParent);
         this.api(api)
         this.id(id)
@@ -1278,7 +1254,7 @@ class az_ad_app_permission_grant_command_builder extends CommandBuilder {
  * @param {string} id Identifier uri, application id, or object id of the associated application.
  */
 class az_ad_app_permission_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -1307,7 +1283,7 @@ class az_ad_app_permission_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_ad_app_permission_list_grants_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1357,7 +1333,7 @@ class az_ad_app_permission_list_grants_command_builder extends CommandBuilder {
  * @param {string} displayName The display name of the application.
  */
 class az_ad_app_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, displayName: string) {
+    constructor(commandPath: string, displayName: string) {
         super(commandParent);
         this.displayName(displayName)
     }
@@ -1476,7 +1452,7 @@ class az_ad_app_create_command_builder extends CommandBuilder {
  * @param {string} id Identifier uri, application id, or object id.
  */
 class az_ad_app_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -1503,7 +1479,7 @@ class az_ad_app_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_ad_app_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1562,7 +1538,7 @@ class az_ad_app_list_command_builder extends CommandBuilder {
  * @param {string} id Identifier uri, application id, or object id.
  */
 class az_ad_app_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -1611,7 +1587,7 @@ class az_ad_app_show_command_builder extends CommandBuilder {
  * @param {string} id Identifier uri, application id, or object id.
  */
 class az_ad_app_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -1757,7 +1733,7 @@ class az_ad_app_update_command_builder extends CommandBuilder {
  * @param {string} memberId The object ID of the contact, group, user, or service principal.
  */
 class az_ad_group_member_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, group: string, memberId: string) {
+    constructor(commandPath: string, group: string, memberId: string) {
         super(commandParent);
         this.group(group)
         this.memberId(memberId)
@@ -1795,7 +1771,7 @@ class az_ad_group_member_add_command_builder extends CommandBuilder {
  * @param {string} memberId The object ID of the contact, group, user, or service principal.
  */
 class az_ad_group_member_check_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, group: string, memberId: string) {
+    constructor(commandPath: string, group: string, memberId: string) {
         super(commandParent);
         this.group(group)
         this.memberId(memberId)
@@ -1826,7 +1802,7 @@ class az_ad_group_member_check_command_builder extends CommandBuilder {
  * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
  */
 class az_ad_group_member_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, group: string) {
+    constructor(commandPath: string, group: string) {
         super(commandParent);
         this.group(group)
     }
@@ -1857,7 +1833,7 @@ class az_ad_group_member_list_command_builder extends CommandBuilder {
  * @param {string} memberId The object ID of the contact, group, user, or service principal.
  */
 class az_ad_group_member_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, group: string, memberId: string) {
+    constructor(commandPath: string, group: string, memberId: string) {
         super(commandParent);
         this.group(group)
         this.memberId(memberId)
@@ -1889,7 +1865,7 @@ class az_ad_group_member_remove_command_builder extends CommandBuilder {
  * @param {string} ownerObjectId Owner's object id.
  */
 class az_ad_group_owner_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, group: string, ownerObjectId: string) {
+    constructor(commandPath: string, group: string, ownerObjectId: string) {
         super(commandParent);
         this.group(group)
         this.ownerObjectId(ownerObjectId)
@@ -1920,7 +1896,7 @@ class az_ad_group_owner_add_command_builder extends CommandBuilder {
  * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
  */
 class az_ad_group_owner_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, group: string) {
+    constructor(commandPath: string, group: string) {
         super(commandParent);
         this.group(group)
     }
@@ -1951,7 +1927,7 @@ class az_ad_group_owner_list_command_builder extends CommandBuilder {
  * @param {string} ownerObjectId Owner's object id.
  */
 class az_ad_group_owner_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, group: string, ownerObjectId: string) {
+    constructor(commandPath: string, group: string, ownerObjectId: string) {
         super(commandParent);
         this.group(group)
         this.ownerObjectId(ownerObjectId)
@@ -1985,7 +1961,7 @@ class az_ad_group_owner_remove_command_builder extends CommandBuilder {
  * @param {string} mailNickname Mail nickname.
  */
 class az_ad_group_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, displayName: string, mailNickname: string) {
+    constructor(commandPath: string, displayName: string, mailNickname: string) {
         super(commandParent);
         this.displayName(displayName)
         this.mailNickname(mailNickname)
@@ -2027,7 +2003,7 @@ class az_ad_group_create_command_builder extends CommandBuilder {
  * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
  */
 class az_ad_group_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, group: string) {
+    constructor(commandPath: string, group: string) {
         super(commandParent);
         this.group(group)
     }
@@ -2052,7 +2028,7 @@ class az_ad_group_delete_command_builder extends CommandBuilder {
  * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
  */
 class az_ad_group_get_member_groups_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, group: string) {
+    constructor(commandPath: string, group: string) {
         super(commandParent);
         this.group(group)
     }
@@ -2087,7 +2063,7 @@ class az_ad_group_get_member_groups_command_builder extends CommandBuilder {
  * ```
  */
 class az_ad_group_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2122,7 +2098,7 @@ class az_ad_group_list_command_builder extends CommandBuilder {
  * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
  */
 class az_ad_group_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, group: string) {
+    constructor(commandPath: string, group: string) {
         super(commandParent);
         this.group(group)
     }
@@ -2149,7 +2125,7 @@ class az_ad_group_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_ad_signed_in_user_list_owned_objects_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2169,7 +2145,7 @@ class az_ad_signed_in_user_list_owned_objects_command_builder extends CommandBui
  * ```
  */
 class az_ad_signed_in_user_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2194,7 +2170,7 @@ class az_ad_signed_in_user_show_command_builder extends CommandBuilder {
  * @param {string} keyId Credential key id.
  */
 class az_ad_sp_credential_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, keyId: string) {
+    constructor(commandPath: string, id: string, keyId: string) {
         super(commandParent);
         this.id(id)
         this.keyId(keyId)
@@ -2232,7 +2208,7 @@ class az_ad_sp_credential_delete_command_builder extends CommandBuilder {
  * @param {string} id Service principal name, or object id.
  */
 class az_ad_sp_credential_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -2275,7 +2251,7 @@ class az_ad_sp_credential_list_command_builder extends CommandBuilder {
  * @param {string} name Name or app ID of the service principal.
  */
 class az_ad_sp_credential_reset_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2347,7 +2323,7 @@ class az_ad_sp_credential_reset_command_builder extends CommandBuilder {
  * @param {string} id Service principal name, or object id or the service principal.
  */
 class az_ad_sp_owner_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -2376,7 +2352,7 @@ class az_ad_sp_owner_list_command_builder extends CommandBuilder {
  * @param {string} id Identifier uri, application id, or object id of the associated application.
  */
 class az_ad_sp_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -2405,7 +2381,7 @@ class az_ad_sp_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_ad_sp_create_for_rbac_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2475,7 +2451,7 @@ class az_ad_sp_create_for_rbac_command_builder extends CommandBuilder {
  * @param {string} id Service principal name, or object id.
  */
 class az_ad_sp_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -2501,7 +2477,7 @@ class az_ad_sp_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_ad_sp_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2554,7 +2530,7 @@ class az_ad_sp_list_command_builder extends CommandBuilder {
  * @param {string} id Service principal name, or object id.
  */
 class az_ad_sp_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -2587,7 +2563,7 @@ class az_ad_sp_show_command_builder extends CommandBuilder {
  * @param {string} id Service principal name, or object id.
  */
 class az_ad_sp_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -2641,7 +2617,7 @@ class az_ad_sp_update_command_builder extends CommandBuilder {
  * @param {string} userPrincipalName Required. The user principal name (someuser@contoso.com). It must contain one of the verified domains for the tenant.
  */
 class az_ad_user_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, displayName: string, password: string, userPrincipalName: string) {
+    constructor(commandPath: string, displayName: string, password: string, userPrincipalName: string) {
         super(commandParent);
         this.displayName(displayName)
         this.password(password)
@@ -2696,7 +2672,7 @@ class az_ad_user_create_command_builder extends CommandBuilder {
  * @param {string} id The object ID or principal name of the user for which to get information.
  */
 class az_ad_user_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -2720,7 +2696,7 @@ class az_ad_user_delete_command_builder extends CommandBuilder {
  * @param {string} id The object ID or principal name of the user for which to get information.
  */
 class az_ad_user_get_member_groups_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -2750,7 +2726,7 @@ class az_ad_user_get_member_groups_command_builder extends CommandBuilder {
  * ```
  */
 class az_ad_user_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2791,7 +2767,7 @@ class az_ad_user_list_command_builder extends CommandBuilder {
  * @param {string} id The object ID or principal name of the user for which to get information.
  */
 class az_ad_user_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -2825,7 +2801,7 @@ class az_ad_user_show_command_builder extends CommandBuilder {
  * @param {string} id The object ID or principal name of the user for which to get information.
  */
 class az_ad_user_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }

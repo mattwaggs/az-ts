@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Get provider operations metadatas. */
-export class az_provider_operation implements ICommandParent<any> {
-    commandPath = "az provider operation";
-
+export class az_provider_operation {
     /**
      * Get operations from all providers.
      *
@@ -13,8 +11,8 @@ export class az_provider_operation implements ICommandParent<any> {
      *                            [--subscription]
      * ```
      */
-    az_provider_operation_list(): az_provider_operation_list_command_builder {
-        return new az_provider_operation_list_command_builder(this);
+    static az_provider_operation_list(): az_provider_operation_list_command_builder {
+        return new az_provider_operation_list_command_builder("az provider operation list");
     }
 
     /**
@@ -29,15 +27,13 @@ export class az_provider_operation implements ICommandParent<any> {
      *
      * @param {string} namespace The resource namespace, aka 'provider'.
      */
-    az_provider_operation_show(namespace: string): az_provider_operation_show_command_builder {
-        return new az_provider_operation_show_command_builder(this, namespace);
+    static az_provider_operation_show(namespace: string): az_provider_operation_show_command_builder {
+        return new az_provider_operation_show_command_builder("az provider operation show", namespace);
     }
 }
 
 /** Manage resource providers. */
-export class az_provider implements ICommandParent<any> {
-    commandPath = "az provider";
-
+export class az_provider {
     /**
      * Gets all resource providers for a subscription.
      *
@@ -48,8 +44,8 @@ export class az_provider implements ICommandParent<any> {
      *                  [--subscription]
      * ```
      */
-    az_provider_list(): az_provider_list_command_builder {
-        return new az_provider_list_command_builder(this);
+    static az_provider_list(): az_provider_list_command_builder {
+        return new az_provider_list_command_builder("az provider list");
     }
 
     /**
@@ -64,8 +60,8 @@ export class az_provider implements ICommandParent<any> {
      *
      * @param {string} namespace The resource namespace, aka 'provider'.
      */
-    az_provider_register(namespace: string): az_provider_register_command_builder {
-        return new az_provider_register_command_builder(this, namespace);
+    static az_provider_register(namespace: string): az_provider_register_command_builder {
+        return new az_provider_register_command_builder("az provider register", namespace);
     }
 
     /**
@@ -81,8 +77,8 @@ export class az_provider implements ICommandParent<any> {
      *
      * @param {string} namespace The resource namespace, aka 'provider'.
      */
-    az_provider_show(namespace: string): az_provider_show_command_builder {
-        return new az_provider_show_command_builder(this, namespace);
+    static az_provider_show(namespace: string): az_provider_show_command_builder {
+        return new az_provider_show_command_builder("az provider show", namespace);
     }
 
     /**
@@ -97,8 +93,8 @@ export class az_provider implements ICommandParent<any> {
      *
      * @param {string} namespace The resource namespace, aka 'provider'.
      */
-    az_provider_unregister(namespace: string): az_provider_unregister_command_builder {
-        return new az_provider_unregister_command_builder(this, namespace);
+    static az_provider_unregister(namespace: string): az_provider_unregister_command_builder {
+        return new az_provider_unregister_command_builder("az provider unregister", namespace);
     }
 }
 
@@ -112,7 +108,7 @@ export class az_provider implements ICommandParent<any> {
  * ```
  */
 class az_provider_operation_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -142,7 +138,7 @@ class az_provider_operation_list_command_builder extends CommandBuilder {
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
 class az_provider_operation_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespace: string) {
+    constructor(commandPath: string, namespace: string) {
         super(commandParent);
         this.namespace(namespace)
     }
@@ -177,7 +173,7 @@ class az_provider_operation_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_provider_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -213,7 +209,7 @@ class az_provider_list_command_builder extends CommandBuilder {
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
 class az_provider_register_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespace: string) {
+    constructor(commandPath: string, namespace: string) {
         super(commandParent);
         this.namespace(namespace)
     }
@@ -251,7 +247,7 @@ class az_provider_register_command_builder extends CommandBuilder {
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
 class az_provider_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespace: string) {
+    constructor(commandPath: string, namespace: string) {
         super(commandParent);
         this.namespace(namespace)
     }
@@ -294,7 +290,7 @@ class az_provider_show_command_builder extends CommandBuilder {
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
 class az_provider_unregister_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespace: string) {
+    constructor(commandPath: string, namespace: string) {
         super(commandParent);
         this.namespace(namespace)
     }

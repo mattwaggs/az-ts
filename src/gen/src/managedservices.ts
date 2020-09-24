@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage the registration assignments in Azure. */
-export class az_managedservices_assignment implements ICommandParent<any> {
-    commandPath = "az managedservices assignment";
-
+export class az_managedservices_assignment {
     /**
      * Creates a new registration assignment.
      *
@@ -17,8 +15,8 @@ export class az_managedservices_assignment implements ICommandParent<any> {
      *
      * @param {string} definition The fully qualified resource id of the registration definition.
      */
-    az_managedservices_assignment_create(definition: string): az_managedservices_assignment_create_command_builder {
-        return new az_managedservices_assignment_create_command_builder(this, definition);
+    static az_managedservices_assignment_create(definition: string): az_managedservices_assignment_create_command_builder {
+        return new az_managedservices_assignment_create_command_builder("az managedservices assignment create", definition);
     }
 
     /**
@@ -33,8 +31,8 @@ export class az_managedservices_assignment implements ICommandParent<any> {
      *
      * @param {string} assignment The identifier (guid) or the fully qualified resource id of the registration assignment. When resource id is used, subscription id and resource group parameters are ignored.
      */
-    az_managedservices_assignment_delete(assignment: string): az_managedservices_assignment_delete_command_builder {
-        return new az_managedservices_assignment_delete_command_builder(this, assignment);
+    static az_managedservices_assignment_delete(assignment: string): az_managedservices_assignment_delete_command_builder {
+        return new az_managedservices_assignment_delete_command_builder("az managedservices assignment delete", assignment);
     }
 
     /**
@@ -48,8 +46,8 @@ export class az_managedservices_assignment implements ICommandParent<any> {
      *                                    [--subscription]
      * ```
      */
-    az_managedservices_assignment_list(): az_managedservices_assignment_list_command_builder {
-        return new az_managedservices_assignment_list_command_builder(this);
+    static az_managedservices_assignment_list(): az_managedservices_assignment_list_command_builder {
+        return new az_managedservices_assignment_list_command_builder("az managedservices assignment list");
     }
 
     /**
@@ -66,15 +64,13 @@ export class az_managedservices_assignment implements ICommandParent<any> {
      *
      * @param {string} assignment The identifier (guid) or the fully qualified resource id of the registration assignment. When resource id is used, subscription id and resource group parameters are ignored.
      */
-    az_managedservices_assignment_show(assignment: string): az_managedservices_assignment_show_command_builder {
-        return new az_managedservices_assignment_show_command_builder(this, assignment);
+    static az_managedservices_assignment_show(assignment: string): az_managedservices_assignment_show_command_builder {
+        return new az_managedservices_assignment_show_command_builder("az managedservices assignment show", assignment);
     }
 }
 
 /** Manage the registration definitions in Azure. */
-export class az_managedservices_definition implements ICommandParent<any> {
-    commandPath = "az managedservices definition";
-
+export class az_managedservices_definition {
     /**
      * Creates a new registration definition.
      *
@@ -98,8 +94,8 @@ export class az_managedservices_definition implements ICommandParent<any> {
      * @param {string} roleDefinitionId The role definition id.
      * @param {string} tenantId The managed by tenant id.
      */
-    az_managedservices_definition_create(name: string, principalId: string, roleDefinitionId: string, tenantId: string): az_managedservices_definition_create_command_builder {
-        return new az_managedservices_definition_create_command_builder(this, name, principalId, roleDefinitionId, tenantId);
+    static az_managedservices_definition_create(name: string, principalId: string, roleDefinitionId: string, tenantId: string): az_managedservices_definition_create_command_builder {
+        return new az_managedservices_definition_create_command_builder("az managedservices definition create", name, principalId, roleDefinitionId, tenantId);
     }
 
     /**
@@ -113,8 +109,8 @@ export class az_managedservices_definition implements ICommandParent<any> {
      *
      * @param {string} definition The identifier (guid) or the fully qualified resource id of the registration definition. When resource id is used, subscription id and resource group parameters are ignored.
      */
-    az_managedservices_definition_delete(definition: string): az_managedservices_definition_delete_command_builder {
-        return new az_managedservices_definition_delete_command_builder(this, definition);
+    static az_managedservices_definition_delete(definition: string): az_managedservices_definition_delete_command_builder {
+        return new az_managedservices_definition_delete_command_builder("az managedservices definition delete", definition);
     }
 
     /**
@@ -126,8 +122,8 @@ export class az_managedservices_definition implements ICommandParent<any> {
      *                                    [--subscription]
      * ```
      */
-    az_managedservices_definition_list(): az_managedservices_definition_list_command_builder {
-        return new az_managedservices_definition_list_command_builder(this);
+    static az_managedservices_definition_list(): az_managedservices_definition_list_command_builder {
+        return new az_managedservices_definition_list_command_builder("az managedservices definition list");
     }
 
     /**
@@ -142,8 +138,8 @@ export class az_managedservices_definition implements ICommandParent<any> {
      *
      * @param {string} definition The identifier (guid) or the fully qualified resource id of the registration definition. When resource id is used, subscription id and resource group parameters are ignored.
      */
-    az_managedservices_definition_show(definition: string): az_managedservices_definition_show_command_builder {
-        return new az_managedservices_definition_show_command_builder(this, definition);
+    static az_managedservices_definition_show(definition: string): az_managedservices_definition_show_command_builder {
+        return new az_managedservices_definition_show_command_builder("az managedservices definition show", definition);
     }
 }
 
@@ -165,7 +161,7 @@ export class az_managedservices {
  * @param {string} definition The fully qualified resource id of the registration definition.
  */
 class az_managedservices_assignment_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, definition: string) {
+    constructor(commandPath: string, definition: string) {
         super(commandParent);
         this.definition(definition)
     }
@@ -208,7 +204,7 @@ class az_managedservices_assignment_create_command_builder extends CommandBuilde
  * @param {string} assignment The identifier (guid) or the fully qualified resource id of the registration assignment. When resource id is used, subscription id and resource group parameters are ignored.
  */
 class az_managedservices_assignment_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, assignment: string) {
+    constructor(commandPath: string, assignment: string) {
         super(commandParent);
         this.assignment(assignment)
     }
@@ -244,7 +240,7 @@ class az_managedservices_assignment_delete_command_builder extends CommandBuilde
  * ```
  */
 class az_managedservices_assignment_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -288,7 +284,7 @@ class az_managedservices_assignment_list_command_builder extends CommandBuilder 
  * @param {string} assignment The identifier (guid) or the fully qualified resource id of the registration assignment. When resource id is used, subscription id and resource group parameters are ignored.
  */
 class az_managedservices_assignment_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, assignment: string) {
+    constructor(commandPath: string, assignment: string) {
         super(commandParent);
         this.assignment(assignment)
     }
@@ -348,7 +344,7 @@ class az_managedservices_assignment_show_command_builder extends CommandBuilder 
  * @param {string} tenantId The managed by tenant id.
  */
 class az_managedservices_definition_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, principalId: string, roleDefinitionId: string, tenantId: string) {
+    constructor(commandPath: string, name: string, principalId: string, roleDefinitionId: string, tenantId: string) {
         super(commandParent);
         this.name(name)
         this.principalId(principalId)
@@ -435,7 +431,7 @@ class az_managedservices_definition_create_command_builder extends CommandBuilde
  * @param {string} definition The identifier (guid) or the fully qualified resource id of the registration definition. When resource id is used, subscription id and resource group parameters are ignored.
  */
 class az_managedservices_definition_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, definition: string) {
+    constructor(commandPath: string, definition: string) {
         super(commandParent);
         this.definition(definition)
     }
@@ -463,7 +459,7 @@ class az_managedservices_definition_delete_command_builder extends CommandBuilde
  * ```
  */
 class az_managedservices_definition_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -493,7 +489,7 @@ class az_managedservices_definition_list_command_builder extends CommandBuilder 
  * @param {string} definition The identifier (guid) or the fully qualified resource id of the registration definition. When resource id is used, subscription id and resource group parameters are ignored.
  */
 class az_managedservices_definition_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, definition: string) {
+    constructor(commandPath: string, definition: string) {
         super(commandParent);
         this.definition(definition)
     }

@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Azure subscription level locks. */
-export class az_account_lock implements ICommandParent<any> {
-    commandPath = "az account lock";
-
+export class az_account_lock {
     /**
      * Create a subscription lock.
      *
@@ -17,8 +15,8 @@ export class az_account_lock implements ICommandParent<any> {
      * @param {'CanNotDelete' | 'ReadOnly'} lockType The type of lock restriction.
      * @param {string} name Name of the lock.
      */
-    az_account_lock_create(lockType: 'CanNotDelete' | 'ReadOnly', name: string): az_account_lock_create_command_builder {
-        return new az_account_lock_create_command_builder(this, lockType, name);
+    static az_account_lock_create(lockType: 'CanNotDelete' | 'ReadOnly', name: string): az_account_lock_create_command_builder {
+        return new az_account_lock_create_command_builder("az account lock create", lockType, name);
     }
 
     /**
@@ -30,8 +28,8 @@ export class az_account_lock implements ICommandParent<any> {
      *                        [--name]
      * ```
      */
-    az_account_lock_delete(): az_account_lock_delete_command_builder {
-        return new az_account_lock_delete_command_builder(this);
+    static az_account_lock_delete(): az_account_lock_delete_command_builder {
+        return new az_account_lock_delete_command_builder("az account lock delete");
     }
 
     /**
@@ -43,8 +41,8 @@ export class az_account_lock implements ICommandParent<any> {
      *                      [--query-examples]
      * ```
      */
-    az_account_lock_list(): az_account_lock_list_command_builder {
-        return new az_account_lock_list_command_builder(this);
+    static az_account_lock_list(): az_account_lock_list_command_builder {
+        return new az_account_lock_list_command_builder("az account lock list");
     }
 
     /**
@@ -57,8 +55,8 @@ export class az_account_lock implements ICommandParent<any> {
      *                      [--query-examples]
      * ```
      */
-    az_account_lock_show(): az_account_lock_show_command_builder {
-        return new az_account_lock_show_command_builder(this);
+    static az_account_lock_show(): az_account_lock_show_command_builder {
+        return new az_account_lock_show_command_builder("az account lock show");
     }
 
     /**
@@ -72,15 +70,13 @@ export class az_account_lock implements ICommandParent<any> {
      *                        [--notes]
      * ```
      */
-    az_account_lock_update(): az_account_lock_update_command_builder {
-        return new az_account_lock_update_command_builder(this);
+    static az_account_lock_update(): az_account_lock_update_command_builder {
+        return new az_account_lock_update_command_builder("az account lock update");
     }
 }
 
 /** Subscription operations for Management Groups. */
-export class az_account_management_group_subscription implements ICommandParent<any> {
-    commandPath = "az account management-group subscription";
-
+export class az_account_management_group_subscription {
     /**
      * Add a subscription to a management group.
      *
@@ -93,8 +89,8 @@ export class az_account_management_group_subscription implements ICommandParent<
      * @param {string} name Name of the management group.
      * @param {string} subscription Subscription Id or Name.
      */
-    az_account_management_group_subscription_add(name: string, subscription: string): az_account_management_group_subscription_add_command_builder {
-        return new az_account_management_group_subscription_add_command_builder(this, name, subscription);
+    static az_account_management_group_subscription_add(name: string, subscription: string): az_account_management_group_subscription_add_command_builder {
+        return new az_account_management_group_subscription_add_command_builder("az account management-group subscription add", name, subscription);
     }
 
     /**
@@ -109,15 +105,13 @@ export class az_account_management_group_subscription implements ICommandParent<
      * @param {string} name Name of the management group.
      * @param {string} subscription Subscription Id or Name.
      */
-    az_account_management_group_subscription_remove(name: string, subscription: string): az_account_management_group_subscription_remove_command_builder {
-        return new az_account_management_group_subscription_remove_command_builder(this, name, subscription);
+    static az_account_management_group_subscription_remove(name: string, subscription: string): az_account_management_group_subscription_remove_command_builder {
+        return new az_account_management_group_subscription_remove_command_builder("az account management-group subscription remove", name, subscription);
     }
 }
 
 /** Manage Azure Management Groups. */
-export class az_account_management_group implements ICommandParent<any> {
-    commandPath = "az account management-group";
-
+export class az_account_management_group {
     /**
      * Create a new management group.
      *
@@ -130,8 +124,8 @@ export class az_account_management_group implements ICommandParent<any> {
      *
      * @param {string} name Name of the management group.
      */
-    az_account_management_group_create(name: string): az_account_management_group_create_command_builder {
-        return new az_account_management_group_create_command_builder(this, name);
+    static az_account_management_group_create(name: string): az_account_management_group_create_command_builder {
+        return new az_account_management_group_create_command_builder("az account management-group create", name);
     }
 
     /**
@@ -144,8 +138,8 @@ export class az_account_management_group implements ICommandParent<any> {
      *
      * @param {string} name Name of the management group.
      */
-    az_account_management_group_delete(name: string): az_account_management_group_delete_command_builder {
-        return new az_account_management_group_delete_command_builder(this, name);
+    static az_account_management_group_delete(name: string): az_account_management_group_delete_command_builder {
+        return new az_account_management_group_delete_command_builder("az account management-group delete", name);
     }
 
     /**
@@ -156,8 +150,8 @@ export class az_account_management_group implements ICommandParent<any> {
      * az account management-group list [--query-examples]
      * ```
      */
-    az_account_management_group_list(): az_account_management_group_list_command_builder {
-        return new az_account_management_group_list_command_builder(this);
+    static az_account_management_group_list(): az_account_management_group_list_command_builder {
+        return new az_account_management_group_list_command_builder("az account management-group list");
     }
 
     /**
@@ -173,8 +167,8 @@ export class az_account_management_group implements ICommandParent<any> {
      *
      * @param {string} name Name of the management group.
      */
-    az_account_management_group_show(name: string): az_account_management_group_show_command_builder {
-        return new az_account_management_group_show_command_builder(this, name);
+    static az_account_management_group_show(name: string): az_account_management_group_show_command_builder {
+        return new az_account_management_group_show_command_builder("az account management-group show", name);
     }
 
     /**
@@ -193,15 +187,13 @@ export class az_account_management_group implements ICommandParent<any> {
      *
      * @param {string} name Name of the management group.
      */
-    az_account_management_group_update(name: string): az_account_management_group_update_command_builder {
-        return new az_account_management_group_update_command_builder(this, name);
+    static az_account_management_group_update(name: string): az_account_management_group_update_command_builder {
+        return new az_account_management_group_update_command_builder("az account management-group update", name);
     }
 }
 
 /** Manage Azure subscription information. */
-export class az_account implements ICommandParent<any> {
-    commandPath = "az account";
-
+export class az_account {
     /**
      * Clear all subscriptions from the CLI's local cache.
      *
@@ -210,8 +202,8 @@ export class az_account implements ICommandParent<any> {
      * az account clear
      * ```
      */
-    az_account_clear(): az_account_clear_command_builder {
-        return new az_account_clear_command_builder(this);
+    static az_account_clear(): az_account_clear_command_builder {
+        return new az_account_clear_command_builder("az account clear");
     }
 
     /**
@@ -225,8 +217,8 @@ export class az_account implements ICommandParent<any> {
      *                             [--tenant]
      * ```
      */
-    az_account_get_access_token(): az_account_get_access_token_command_builder {
-        return new az_account_get_access_token_command_builder(this);
+    static az_account_get_access_token(): az_account_get_access_token_command_builder {
+        return new az_account_get_access_token_command_builder("az account get-access-token");
     }
 
     /**
@@ -239,8 +231,8 @@ export class az_account implements ICommandParent<any> {
      *                 [--refresh]
      * ```
      */
-    az_account_list(): az_account_list_command_builder {
-        return new az_account_list_command_builder(this);
+    static az_account_list(): az_account_list_command_builder {
+        return new az_account_list_command_builder("az account list");
     }
 
     /**
@@ -251,8 +243,8 @@ export class az_account implements ICommandParent<any> {
      * az account list-locations
      * ```
      */
-    az_account_list_locations(): az_account_list_locations_command_builder {
-        return new az_account_list_locations_command_builder(this);
+    static az_account_list_locations(): az_account_list_locations_command_builder {
+        return new az_account_list_locations_command_builder("az account list-locations");
     }
 
     /**
@@ -265,8 +257,8 @@ export class az_account implements ICommandParent<any> {
      *
      * @param {string} subscription Name or ID of subscription.
      */
-    az_account_set(subscription: string): az_account_set_command_builder {
-        return new az_account_set_command_builder(this, subscription);
+    static az_account_set(subscription: string): az_account_set_command_builder {
+        return new az_account_set_command_builder("az account set", subscription);
     }
 
     /**
@@ -279,8 +271,8 @@ export class az_account implements ICommandParent<any> {
      *                 [--subscription]
      * ```
      */
-    az_account_show(): az_account_show_command_builder {
-        return new az_account_show_command_builder(this);
+    static az_account_show(): az_account_show_command_builder {
+        return new az_account_show_command_builder("az account show");
     }
 }
 
@@ -298,7 +290,7 @@ export class az_account implements ICommandParent<any> {
  * @param {string} name Name of the lock.
  */
 class az_account_lock_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, lockType: 'CanNotDelete' | 'ReadOnly', name: string) {
+    constructor(commandPath: string, lockType: 'CanNotDelete' | 'ReadOnly', name: string) {
         super(commandParent);
         this.lockType(lockType)
         this.name(name)
@@ -333,7 +325,7 @@ class az_account_lock_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_account_lock_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -360,7 +352,7 @@ class az_account_lock_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_account_lock_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -388,7 +380,7 @@ class az_account_lock_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_account_lock_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -423,7 +415,7 @@ class az_account_lock_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_account_lock_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -465,7 +457,7 @@ class az_account_lock_update_command_builder extends CommandBuilder {
  * @param {string} subscription Subscription Id or Name.
  */
 class az_account_management_group_subscription_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, subscription: string) {
+    constructor(commandPath: string, name: string, subscription: string) {
         super(commandParent);
         this.name(name)
         this.subscription(subscription)
@@ -497,7 +489,7 @@ class az_account_management_group_subscription_add_command_builder extends Comma
  * @param {string} subscription Subscription Id or Name.
  */
 class az_account_management_group_subscription_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, subscription: string) {
+    constructor(commandPath: string, name: string, subscription: string) {
         super(commandParent);
         this.name(name)
         this.subscription(subscription)
@@ -529,7 +521,7 @@ class az_account_management_group_subscription_remove_command_builder extends Co
  * @param {string} name Name of the management group.
  */
 class az_account_management_group_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -564,7 +556,7 @@ class az_account_management_group_create_command_builder extends CommandBuilder 
  * @param {string} name Name of the management group.
  */
 class az_account_management_group_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -585,7 +577,7 @@ class az_account_management_group_delete_command_builder extends CommandBuilder 
  * ```
  */
 class az_account_management_group_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -610,7 +602,7 @@ class az_account_management_group_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the management group.
  */
 class az_account_management_group_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -657,7 +649,7 @@ class az_account_management_group_show_command_builder extends CommandBuilder {
  * @param {string} name Name of the management group.
  */
 class az_account_management_group_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -714,7 +706,7 @@ class az_account_management_group_update_command_builder extends CommandBuilder 
  * ```
  */
 class az_account_clear_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 }
@@ -731,7 +723,7 @@ class az_account_clear_command_builder extends CommandBuilder {
  * ```
  */
 class az_account_get_access_token_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -771,7 +763,7 @@ class az_account_get_access_token_command_builder extends CommandBuilder {
  * ```
  */
 class az_account_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -803,7 +795,7 @@ class az_account_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_account_list_locations_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 }
@@ -819,7 +811,7 @@ class az_account_list_locations_command_builder extends CommandBuilder {
  * @param {string} subscription Name or ID of subscription.
  */
 class az_account_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, subscription: string) {
+    constructor(commandPath: string, subscription: string) {
         super(commandParent);
         this.subscription(subscription)
     }
@@ -842,7 +834,7 @@ class az_account_set_command_builder extends CommandBuilder {
  * ```
  */
 class az_account_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

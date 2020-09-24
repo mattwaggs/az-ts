@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Commands to manage CLI objects cached using the `--defer` argument. */
-export class az_cache implements ICommandParent<any> {
-    commandPath = "az cache";
-
+export class az_cache {
     /**
      * Delete an object from the cache.
      *
@@ -19,8 +17,8 @@ export class az_cache implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} resourceType The resource type.
      */
-    az_cache_delete(name: string, resourceGroup: string, resourceType: string): az_cache_delete_command_builder {
-        return new az_cache_delete_command_builder(this, name, resourceGroup, resourceType);
+    static az_cache_delete(name: string, resourceGroup: string, resourceType: string): az_cache_delete_command_builder {
+        return new az_cache_delete_command_builder("az cache delete", name, resourceGroup, resourceType);
     }
 
     /**
@@ -32,8 +30,8 @@ export class az_cache implements ICommandParent<any> {
      *               [--subscription]
      * ```
      */
-    az_cache_list(): az_cache_list_command_builder {
-        return new az_cache_list_command_builder(this);
+    static az_cache_list(): az_cache_list_command_builder {
+        return new az_cache_list_command_builder("az cache list");
     }
 
     /**
@@ -44,8 +42,8 @@ export class az_cache implements ICommandParent<any> {
      * az cache purge [--subscription]
      * ```
      */
-    az_cache_purge(): az_cache_purge_command_builder {
-        return new az_cache_purge_command_builder(this);
+    static az_cache_purge(): az_cache_purge_command_builder {
+        return new az_cache_purge_command_builder("az cache purge");
     }
 
     /**
@@ -64,8 +62,8 @@ export class az_cache implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} resourceType The resource type.
      */
-    az_cache_show(name: string, resourceGroup: string, resourceType: string): az_cache_show_command_builder {
-        return new az_cache_show_command_builder(this, name, resourceGroup, resourceType);
+    static az_cache_show(name: string, resourceGroup: string, resourceType: string): az_cache_show_command_builder {
+        return new az_cache_show_command_builder("az cache show", name, resourceGroup, resourceType);
     }
 }
 
@@ -85,7 +83,7 @@ export class az_cache implements ICommandParent<any> {
  * @param {string} resourceType The resource type.
  */
 class az_cache_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, resourceType: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, resourceType: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -127,7 +125,7 @@ class az_cache_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_cache_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -153,7 +151,7 @@ class az_cache_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_cache_purge_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -181,7 +179,7 @@ class az_cache_purge_command_builder extends CommandBuilder {
  * @param {string} resourceType The resource type.
  */
 class az_cache_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, resourceType: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, resourceType: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)

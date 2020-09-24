@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Configure the Azure Virtual Machine Scale Set diagnostics extension. */
-export class az_vmss_diagnostics implements ICommandParent<any> {
-    commandPath = "az vmss diagnostics";
-
+export class az_vmss_diagnostics {
     /**
      * Show the default config file which defines data to be collected.
      *
@@ -13,8 +11,8 @@ export class az_vmss_diagnostics implements ICommandParent<any> {
      *                                        [--subscription]
      * ```
      */
-    az_vmss_diagnostics_get_default_config(): az_vmss_diagnostics_get_default_config_command_builder {
-        return new az_vmss_diagnostics_get_default_config_command_builder(this);
+    static az_vmss_diagnostics_get_default_config(): az_vmss_diagnostics_get_default_config_command_builder {
+        return new az_vmss_diagnostics_get_default_config_command_builder("az vmss diagnostics get-default-config");
     }
 
     /**
@@ -35,15 +33,13 @@ export class az_vmss_diagnostics implements ICommandParent<any> {
      * @param {string} settings Json string or a file path, which defines data to be collected.
      * @param {string} vmssName Scale set name.
      */
-    az_vmss_diagnostics_set(resourceGroup: string, settings: string, vmssName: string): az_vmss_diagnostics_set_command_builder {
-        return new az_vmss_diagnostics_set_command_builder(this, resourceGroup, settings, vmssName);
+    static az_vmss_diagnostics_set(resourceGroup: string, settings: string, vmssName: string): az_vmss_diagnostics_set_command_builder {
+        return new az_vmss_diagnostics_set_command_builder("az vmss diagnostics set", resourceGroup, settings, vmssName);
     }
 }
 
 /** Manage data disks of a VMSS. */
-export class az_vmss_disk implements ICommandParent<any> {
-    commandPath = "az vmss disk";
-
+export class az_vmss_disk {
     /**
      * Attach managed data disks to a scale set or its instances.
      *
@@ -61,8 +57,8 @@ export class az_vmss_disk implements ICommandParent<any> {
      *                     [--vmss-name]
      * ```
      */
-    az_vmss_disk_attach(): az_vmss_disk_attach_command_builder {
-        return new az_vmss_disk_attach_command_builder(this);
+    static az_vmss_disk_attach(): az_vmss_disk_attach_command_builder {
+        return new az_vmss_disk_attach_command_builder("az vmss disk attach");
     }
 
     /**
@@ -80,15 +76,13 @@ export class az_vmss_disk implements ICommandParent<any> {
      *
      * @param {string} lun 0-based logical unit number (LUN). Max value depends on the Virtual Machine instance size.
      */
-    az_vmss_disk_detach(lun: string): az_vmss_disk_detach_command_builder {
-        return new az_vmss_disk_detach_command_builder(this, lun);
+    static az_vmss_disk_detach(lun: string): az_vmss_disk_detach_command_builder {
+        return new az_vmss_disk_detach_command_builder("az vmss disk detach", lun);
     }
 }
 
 /** Manage encryption of VMSS. */
-export class az_vmss_encryption implements ICommandParent<any> {
-    commandPath = "az vmss encryption";
-
+export class az_vmss_encryption {
     /**
      * Disable the encryption on a VMSS with managed disks.
      *
@@ -102,8 +96,8 @@ export class az_vmss_encryption implements ICommandParent<any> {
      *                            [--volume-type {ALL, DATA, OS}]
      * ```
      */
-    az_vmss_encryption_disable(): az_vmss_encryption_disable_command_builder {
-        return new az_vmss_encryption_disable_command_builder(this);
+    static az_vmss_encryption_disable(): az_vmss_encryption_disable_command_builder {
+        return new az_vmss_encryption_disable_command_builder("az vmss encryption disable");
     }
 
     /**
@@ -125,8 +119,8 @@ export class az_vmss_encryption implements ICommandParent<any> {
      *
      * @param {string} diskEncryptionKeyvault Name or ID of the key vault where the generated encryption key will be placed.
      */
-    az_vmss_encryption_enable(diskEncryptionKeyvault: string): az_vmss_encryption_enable_command_builder {
-        return new az_vmss_encryption_enable_command_builder(this, diskEncryptionKeyvault);
+    static az_vmss_encryption_enable(diskEncryptionKeyvault: string): az_vmss_encryption_enable_command_builder {
+        return new az_vmss_encryption_enable_command_builder("az vmss encryption enable", diskEncryptionKeyvault);
     }
 
     /**
@@ -141,15 +135,13 @@ export class az_vmss_encryption implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_vmss_encryption_show(): az_vmss_encryption_show_command_builder {
-        return new az_vmss_encryption_show_command_builder(this);
+    static az_vmss_encryption_show(): az_vmss_encryption_show_command_builder {
+        return new az_vmss_encryption_show_command_builder("az vmss encryption show");
     }
 }
 
 /** Find the available VM extensions for a subscription and region. */
-export class az_vmss_extension_image implements ICommandParent<any> {
-    commandPath = "az vmss extension image";
-
+export class az_vmss_extension_image {
     /**
      * List the information on available extensions.
      *
@@ -164,8 +156,8 @@ export class az_vmss_extension_image implements ICommandParent<any> {
      *                              [--version]
      * ```
      */
-    az_vmss_extension_image_list(): az_vmss_extension_image_list_command_builder {
-        return new az_vmss_extension_image_list_command_builder(this);
+    static az_vmss_extension_image_list(): az_vmss_extension_image_list_command_builder {
+        return new az_vmss_extension_image_list_command_builder("az vmss extension image list");
     }
 
     /**
@@ -181,8 +173,8 @@ export class az_vmss_extension_image implements ICommandParent<any> {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      * @param {string} publisher Image publisher name.
      */
-    az_vmss_extension_image_list_names(location: string, publisher: string): az_vmss_extension_image_list_names_command_builder {
-        return new az_vmss_extension_image_list_names_command_builder(this, location, publisher);
+    static az_vmss_extension_image_list_names(location: string, publisher: string): az_vmss_extension_image_list_names_command_builder {
+        return new az_vmss_extension_image_list_names_command_builder("az vmss extension image list-names", location, publisher);
     }
 
     /**
@@ -203,8 +195,8 @@ export class az_vmss_extension_image implements ICommandParent<any> {
      * @param {string} name Name of the extension.
      * @param {string} publisher Image publisher name.
      */
-    az_vmss_extension_image_list_versions(location: string, name: string, publisher: string): az_vmss_extension_image_list_versions_command_builder {
-        return new az_vmss_extension_image_list_versions_command_builder(this, location, name, publisher);
+    static az_vmss_extension_image_list_versions(location: string, name: string, publisher: string): az_vmss_extension_image_list_versions_command_builder {
+        return new az_vmss_extension_image_list_versions_command_builder("az vmss extension image list-versions", location, name, publisher);
     }
 
     /**
@@ -225,15 +217,13 @@ export class az_vmss_extension_image implements ICommandParent<any> {
      * @param {string} publisher Image publisher name.
      * @param {string} version Extension version.
      */
-    az_vmss_extension_image_show(location: string, name: string, publisher: string, version: string): az_vmss_extension_image_show_command_builder {
-        return new az_vmss_extension_image_show_command_builder(this, location, name, publisher, version);
+    static az_vmss_extension_image_show(location: string, name: string, publisher: string, version: string): az_vmss_extension_image_show_command_builder {
+        return new az_vmss_extension_image_show_command_builder("az vmss extension image show", location, name, publisher, version);
     }
 }
 
 /** Manage extensions on a VM scale set. */
-export class az_vmss_extension implements ICommandParent<any> {
-    commandPath = "az vmss extension";
-
+export class az_vmss_extension {
     /**
      * Delete an extension from a VMSS.
      *
@@ -250,8 +240,8 @@ export class az_vmss_extension implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      */
-    az_vmss_extension_delete(name: string, resourceGroup: string, vmssName: string): az_vmss_extension_delete_command_builder {
-        return new az_vmss_extension_delete_command_builder(this, name, resourceGroup, vmssName);
+    static az_vmss_extension_delete(name: string, resourceGroup: string, vmssName: string): az_vmss_extension_delete_command_builder {
+        return new az_vmss_extension_delete_command_builder("az vmss extension delete", name, resourceGroup, vmssName);
     }
 
     /**
@@ -268,8 +258,8 @@ export class az_vmss_extension implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      */
-    az_vmss_extension_list(resourceGroup: string, vmssName: string): az_vmss_extension_list_command_builder {
-        return new az_vmss_extension_list_command_builder(this, resourceGroup, vmssName);
+    static az_vmss_extension_list(resourceGroup: string, vmssName: string): az_vmss_extension_list_command_builder {
+        return new az_vmss_extension_list_command_builder("az vmss extension list", resourceGroup, vmssName);
     }
 
     /**
@@ -297,8 +287,8 @@ export class az_vmss_extension implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      */
-    az_vmss_extension_set(name: string, publisher: string, resourceGroup: string, vmssName: string): az_vmss_extension_set_command_builder {
-        return new az_vmss_extension_set_command_builder(this, name, publisher, resourceGroup, vmssName);
+    static az_vmss_extension_set(name: string, publisher: string, resourceGroup: string, vmssName: string): az_vmss_extension_set_command_builder {
+        return new az_vmss_extension_set_command_builder("az vmss extension set", name, publisher, resourceGroup, vmssName);
     }
 
     /**
@@ -317,15 +307,13 @@ export class az_vmss_extension implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      */
-    az_vmss_extension_show(name: string, resourceGroup: string, vmssName: string): az_vmss_extension_show_command_builder {
-        return new az_vmss_extension_show_command_builder(this, name, resourceGroup, vmssName);
+    static az_vmss_extension_show(name: string, resourceGroup: string, vmssName: string): az_vmss_extension_show_command_builder {
+        return new az_vmss_extension_show_command_builder("az vmss extension show", name, resourceGroup, vmssName);
     }
 }
 
 /** Manage service identities of a VM scaleset. */
-export class az_vmss_identity implements ICommandParent<any> {
-    commandPath = "az vmss identity";
-
+export class az_vmss_identity {
     /**
      * Enable managed service identity on a VMSS.
      *
@@ -340,8 +328,8 @@ export class az_vmss_identity implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_vmss_identity_assign(): az_vmss_identity_assign_command_builder {
-        return new az_vmss_identity_assign_command_builder(this);
+    static az_vmss_identity_assign(): az_vmss_identity_assign_command_builder {
+        return new az_vmss_identity_assign_command_builder("az vmss identity assign");
     }
 
     /**
@@ -356,8 +344,8 @@ export class az_vmss_identity implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_vmss_identity_remove(): az_vmss_identity_remove_command_builder {
-        return new az_vmss_identity_remove_command_builder(this);
+    static az_vmss_identity_remove(): az_vmss_identity_remove_command_builder {
+        return new az_vmss_identity_remove_command_builder("az vmss identity remove");
     }
 
     /**
@@ -372,15 +360,13 @@ export class az_vmss_identity implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_vmss_identity_show(): az_vmss_identity_show_command_builder {
-        return new az_vmss_identity_show_command_builder(this);
+    static az_vmss_identity_show(): az_vmss_identity_show_command_builder {
+        return new az_vmss_identity_show_command_builder("az vmss identity show");
     }
 }
 
 /** Manage network interfaces of a VMSS. */
-export class az_vmss_nic implements ICommandParent<any> {
-    commandPath = "az vmss nic";
-
+export class az_vmss_nic {
     /**
      * Gets all network interfaces in a virtual machine scale set.
      *
@@ -395,8 +381,8 @@ export class az_vmss_nic implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      */
-    az_vmss_nic_list(resourceGroup: string, vmssName: string): az_vmss_nic_list_command_builder {
-        return new az_vmss_nic_list_command_builder(this, resourceGroup, vmssName);
+    static az_vmss_nic_list(resourceGroup: string, vmssName: string): az_vmss_nic_list_command_builder {
+        return new az_vmss_nic_list_command_builder("az vmss nic list", resourceGroup, vmssName);
     }
 
     /**
@@ -411,8 +397,8 @@ export class az_vmss_nic implements ICommandParent<any> {
      *                          [--vmss-name]
      * ```
      */
-    az_vmss_nic_list_vm_nics(): az_vmss_nic_list_vm_nics_command_builder {
-        return new az_vmss_nic_list_vm_nics_command_builder(this);
+    static az_vmss_nic_list_vm_nics(): az_vmss_nic_list_vm_nics_command_builder {
+        return new az_vmss_nic_list_vm_nics_command_builder("az vmss nic list-vm-nics");
     }
 
     /**
@@ -430,15 +416,13 @@ export class az_vmss_nic implements ICommandParent<any> {
      *                  [--vmss-name]
      * ```
      */
-    az_vmss_nic_show(): az_vmss_nic_show_command_builder {
-        return new az_vmss_nic_show_command_builder(this);
+    static az_vmss_nic_show(): az_vmss_nic_show_command_builder {
+        return new az_vmss_nic_show_command_builder("az vmss nic show");
     }
 }
 
 /** Manage rolling upgrades. */
-export class az_vmss_rolling_upgrade implements ICommandParent<any> {
-    commandPath = "az vmss rolling-upgrade";
-
+export class az_vmss_rolling_upgrade {
     /**
      * Cancels the current virtual machine scale set rolling upgrade.
      *
@@ -450,8 +434,8 @@ export class az_vmss_rolling_upgrade implements ICommandParent<any> {
      *                                [--subscription]
      * ```
      */
-    az_vmss_rolling_upgrade_cancel(): az_vmss_rolling_upgrade_cancel_command_builder {
-        return new az_vmss_rolling_upgrade_cancel_command_builder(this);
+    static az_vmss_rolling_upgrade_cancel(): az_vmss_rolling_upgrade_cancel_command_builder {
+        return new az_vmss_rolling_upgrade_cancel_command_builder("az vmss rolling-upgrade cancel");
     }
 
     /**
@@ -465,8 +449,8 @@ export class az_vmss_rolling_upgrade implements ICommandParent<any> {
      *                                    [--subscription]
      * ```
      */
-    az_vmss_rolling_upgrade_get_latest(): az_vmss_rolling_upgrade_get_latest_command_builder {
-        return new az_vmss_rolling_upgrade_get_latest_command_builder(this);
+    static az_vmss_rolling_upgrade_get_latest(): az_vmss_rolling_upgrade_get_latest_command_builder {
+        return new az_vmss_rolling_upgrade_get_latest_command_builder("az vmss rolling-upgrade get-latest");
     }
 
     /**
@@ -480,15 +464,13 @@ export class az_vmss_rolling_upgrade implements ICommandParent<any> {
      *                               [--subscription]
      * ```
      */
-    az_vmss_rolling_upgrade_start(): az_vmss_rolling_upgrade_start_command_builder {
-        return new az_vmss_rolling_upgrade_start_command_builder(this);
+    static az_vmss_rolling_upgrade_start(): az_vmss_rolling_upgrade_start_command_builder {
+        return new az_vmss_rolling_upgrade_start_command_builder("az vmss rolling-upgrade start");
     }
 }
 
 /** Manage run commands on a Virtual Machine Scale Set. */
-export class az_vmss_run_command implements ICommandParent<any> {
-    commandPath = "az vmss run-command";
-
+export class az_vmss_run_command {
     /**
      * Execute a specific run command on a Virtual Machine Scale Set instance.
      *
@@ -506,8 +488,8 @@ export class az_vmss_run_command implements ICommandParent<any> {
      *
      * @param {string} commandId The command id.
      */
-    az_vmss_run_command_invoke(commandId: string): az_vmss_run_command_invoke_command_builder {
-        return new az_vmss_run_command_invoke_command_builder(this, commandId);
+    static az_vmss_run_command_invoke(commandId: string): az_vmss_run_command_invoke_command_builder {
+        return new az_vmss_run_command_invoke_command_builder("az vmss run-command invoke", commandId);
     }
 
     /**
@@ -522,8 +504,8 @@ export class az_vmss_run_command implements ICommandParent<any> {
      *
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
-    az_vmss_run_command_list(location: string): az_vmss_run_command_list_command_builder {
-        return new az_vmss_run_command_list_command_builder(this, location);
+    static az_vmss_run_command_list(location: string): az_vmss_run_command_list_command_builder {
+        return new az_vmss_run_command_list_command_builder("az vmss run-command list", location);
     }
 
     /**
@@ -540,15 +522,13 @@ export class az_vmss_run_command implements ICommandParent<any> {
      * @param {string} commandId The command id.
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
-    az_vmss_run_command_show(commandId: string, location: string): az_vmss_run_command_show_command_builder {
-        return new az_vmss_run_command_show_command_builder(this, commandId, location);
+    static az_vmss_run_command_show(commandId: string, location: string): az_vmss_run_command_show_command_builder {
+        return new az_vmss_run_command_show_command_builder("az vmss run-command show", commandId, location);
     }
 }
 
 /** Manage groupings of virtual machines in an Azure Virtual Machine Scale Set (VMSS). */
-export class az_vmss implements ICommandParent<any> {
-    commandPath = "az vmss";
-
+export class az_vmss {
     /**
      * Create an Azure Virtual Machine Scale Set.
      *
@@ -640,8 +620,8 @@ export class az_vmss implements ICommandParent<any> {
      * @param {string} name Name of the virtual machine scale set.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_vmss_create(name: string, resourceGroup: string): az_vmss_create_command_builder {
-        return new az_vmss_create_command_builder(this, name, resourceGroup);
+    static az_vmss_create(name: string, resourceGroup: string): az_vmss_create_command_builder {
+        return new az_vmss_create_command_builder("az vmss create", name, resourceGroup);
     }
 
     /**
@@ -659,8 +639,8 @@ export class az_vmss implements ICommandParent<any> {
      * @param {string} name Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_vmss_deallocate(name: string, resourceGroup: string): az_vmss_deallocate_command_builder {
-        return new az_vmss_deallocate_command_builder(this, name, resourceGroup);
+    static az_vmss_deallocate(name: string, resourceGroup: string): az_vmss_deallocate_command_builder {
+        return new az_vmss_deallocate_command_builder("az vmss deallocate", name, resourceGroup);
     }
 
     /**
@@ -675,8 +655,8 @@ export class az_vmss implements ICommandParent<any> {
      *                [--subscription]
      * ```
      */
-    az_vmss_delete(): az_vmss_delete_command_builder {
-        return new az_vmss_delete_command_builder(this);
+    static az_vmss_delete(): az_vmss_delete_command_builder {
+        return new az_vmss_delete_command_builder("az vmss delete");
     }
 
     /**
@@ -695,8 +675,8 @@ export class az_vmss implements ICommandParent<any> {
      * @param {string} name Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_vmss_delete_instances(instanceIds: string, name: string, resourceGroup: string): az_vmss_delete_instances_command_builder {
-        return new az_vmss_delete_instances_command_builder(this, instanceIds, name, resourceGroup);
+    static az_vmss_delete_instances(instanceIds: string, name: string, resourceGroup: string): az_vmss_delete_instances_command_builder {
+        return new az_vmss_delete_instances_command_builder("az vmss delete-instances", instanceIds, name, resourceGroup);
     }
 
     /**
@@ -711,8 +691,8 @@ export class az_vmss implements ICommandParent<any> {
      *                           [--subscription]
      * ```
      */
-    az_vmss_get_instance_view(): az_vmss_get_instance_view_command_builder {
-        return new az_vmss_get_instance_view_command_builder(this);
+    static az_vmss_get_instance_view(): az_vmss_get_instance_view_command_builder {
+        return new az_vmss_get_instance_view_command_builder("az vmss get-instance-view");
     }
 
     /**
@@ -726,8 +706,8 @@ export class az_vmss implements ICommandParent<any> {
      *                                [--subscription]
      * ```
      */
-    az_vmss_get_os_upgrade_history(): az_vmss_get_os_upgrade_history_command_builder {
-        return new az_vmss_get_os_upgrade_history_command_builder(this);
+    static az_vmss_get_os_upgrade_history(): az_vmss_get_os_upgrade_history_command_builder {
+        return new az_vmss_get_os_upgrade_history_command_builder("az vmss get-os-upgrade-history");
     }
 
     /**
@@ -740,8 +720,8 @@ export class az_vmss implements ICommandParent<any> {
      *              [--subscription]
      * ```
      */
-    az_vmss_list(): az_vmss_list_command_builder {
-        return new az_vmss_list_command_builder(this);
+    static az_vmss_list(): az_vmss_list_command_builder {
+        return new az_vmss_list_command_builder("az vmss list");
     }
 
     /**
@@ -755,8 +735,8 @@ export class az_vmss implements ICommandParent<any> {
      *                                       [--subscription]
      * ```
      */
-    az_vmss_list_instance_connection_info(): az_vmss_list_instance_connection_info_command_builder {
-        return new az_vmss_list_instance_connection_info_command_builder(this);
+    static az_vmss_list_instance_connection_info(): az_vmss_list_instance_connection_info_command_builder {
+        return new az_vmss_list_instance_connection_info_command_builder("az vmss list-instance-connection-info");
     }
 
     /**
@@ -770,8 +750,8 @@ export class az_vmss implements ICommandParent<any> {
      *                                  [--subscription]
      * ```
      */
-    az_vmss_list_instance_public_ips(): az_vmss_list_instance_public_ips_command_builder {
-        return new az_vmss_list_instance_public_ips_command_builder(this);
+    static az_vmss_list_instance_public_ips(): az_vmss_list_instance_public_ips_command_builder {
+        return new az_vmss_list_instance_public_ips_command_builder("az vmss list-instance-public-ips");
     }
 
     /**
@@ -788,8 +768,8 @@ export class az_vmss implements ICommandParent<any> {
      *                        [--subscription]
      * ```
      */
-    az_vmss_list_instances(): az_vmss_list_instances_command_builder {
-        return new az_vmss_list_instances_command_builder(this);
+    static az_vmss_list_instances(): az_vmss_list_instances_command_builder {
+        return new az_vmss_list_instances_command_builder("az vmss list-instances");
     }
 
     /**
@@ -803,8 +783,8 @@ export class az_vmss implements ICommandParent<any> {
      *                   [--subscription]
      * ```
      */
-    az_vmss_list_skus(): az_vmss_list_skus_command_builder {
-        return new az_vmss_list_skus_command_builder(this);
+    static az_vmss_list_skus(): az_vmss_list_skus_command_builder {
+        return new az_vmss_list_skus_command_builder("az vmss list-skus");
     }
 
     /**
@@ -819,8 +799,8 @@ export class az_vmss implements ICommandParent<any> {
      *                             [--subscription]
      * ```
      */
-    az_vmss_perform_maintenance(): az_vmss_perform_maintenance_command_builder {
-        return new az_vmss_perform_maintenance_command_builder(this);
+    static az_vmss_perform_maintenance(): az_vmss_perform_maintenance_command_builder {
+        return new az_vmss_perform_maintenance_command_builder("az vmss perform-maintenance");
     }
 
     /**
@@ -836,8 +816,8 @@ export class az_vmss implements ICommandParent<any> {
      *                 [--subscription]
      * ```
      */
-    az_vmss_reimage(): az_vmss_reimage_command_builder {
-        return new az_vmss_reimage_command_builder(this);
+    static az_vmss_reimage(): az_vmss_reimage_command_builder {
+        return new az_vmss_reimage_command_builder("az vmss reimage");
     }
 
     /**
@@ -855,8 +835,8 @@ export class az_vmss implements ICommandParent<any> {
      * @param {string} name Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_vmss_restart(name: string, resourceGroup: string): az_vmss_restart_command_builder {
-        return new az_vmss_restart_command_builder(this, name, resourceGroup);
+    static az_vmss_restart(name: string, resourceGroup: string): az_vmss_restart_command_builder {
+        return new az_vmss_restart_command_builder("az vmss restart", name, resourceGroup);
     }
 
     /**
@@ -874,8 +854,8 @@ export class az_vmss implements ICommandParent<any> {
      *
      * @param {string} newCapacity Number of VMs in the VMSS.
      */
-    az_vmss_scale(newCapacity: string): az_vmss_scale_command_builder {
-        return new az_vmss_scale_command_builder(this, newCapacity);
+    static az_vmss_scale(newCapacity: string): az_vmss_scale_command_builder {
+        return new az_vmss_scale_command_builder("az vmss scale", newCapacity);
     }
 
     /**
@@ -895,8 +875,8 @@ export class az_vmss implements ICommandParent<any> {
      * @param {'Resume' | 'Suspend'} action The action to be performed.
      * @param {'AutomaticRepairs'} serviceName The name of the orchestration service.
      */
-    az_vmss_set_orchestration_service_state(action: 'Resume' | 'Suspend', serviceName: 'AutomaticRepairs'): az_vmss_set_orchestration_service_state_command_builder {
-        return new az_vmss_set_orchestration_service_state_command_builder(this, action, serviceName);
+    static az_vmss_set_orchestration_service_state(action: 'Resume' | 'Suspend', serviceName: 'AutomaticRepairs'): az_vmss_set_orchestration_service_state_command_builder {
+        return new az_vmss_set_orchestration_service_state_command_builder("az vmss set-orchestration-service-state", action, serviceName);
     }
 
     /**
@@ -914,8 +894,8 @@ export class az_vmss implements ICommandParent<any> {
      * @param {string} name Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_vmss_show(name: string, resourceGroup: string): az_vmss_show_command_builder {
-        return new az_vmss_show_command_builder(this, name, resourceGroup);
+    static az_vmss_show(name: string, resourceGroup: string): az_vmss_show_command_builder {
+        return new az_vmss_show_command_builder("az vmss show", name, resourceGroup);
     }
 
     /**
@@ -933,8 +913,8 @@ export class az_vmss implements ICommandParent<any> {
      * @param {string} name Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_vmss_simulate_eviction(instanceId: string, name: string, resourceGroup: string): az_vmss_simulate_eviction_command_builder {
-        return new az_vmss_simulate_eviction_command_builder(this, instanceId, name, resourceGroup);
+    static az_vmss_simulate_eviction(instanceId: string, name: string, resourceGroup: string): az_vmss_simulate_eviction_command_builder {
+        return new az_vmss_simulate_eviction_command_builder("az vmss simulate-eviction", instanceId, name, resourceGroup);
     }
 
     /**
@@ -952,8 +932,8 @@ export class az_vmss implements ICommandParent<any> {
      * @param {string} name Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_vmss_start(name: string, resourceGroup: string): az_vmss_start_command_builder {
-        return new az_vmss_start_command_builder(this, name, resourceGroup);
+    static az_vmss_start(name: string, resourceGroup: string): az_vmss_start_command_builder {
+        return new az_vmss_start_command_builder("az vmss start", name, resourceGroup);
     }
 
     /**
@@ -972,8 +952,8 @@ export class az_vmss implements ICommandParent<any> {
      * @param {string} name Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_vmss_stop(name: string, resourceGroup: string): az_vmss_stop_command_builder {
-        return new az_vmss_stop_command_builder(this, name, resourceGroup);
+    static az_vmss_stop(name: string, resourceGroup: string): az_vmss_stop_command_builder {
+        return new az_vmss_stop_command_builder("az vmss stop", name, resourceGroup);
     }
 
     /**
@@ -1005,8 +985,8 @@ export class az_vmss implements ICommandParent<any> {
      *                [--ultra-ssd-enabled {false, true}]
      * ```
      */
-    az_vmss_update(): az_vmss_update_command_builder {
-        return new az_vmss_update_command_builder(this);
+    static az_vmss_update(): az_vmss_update_command_builder {
+        return new az_vmss_update_command_builder("az vmss update");
     }
 
     /**
@@ -1025,8 +1005,8 @@ export class az_vmss implements ICommandParent<any> {
      * @param {string} name Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_vmss_update_instances(instanceIds: string, name: string, resourceGroup: string): az_vmss_update_instances_command_builder {
-        return new az_vmss_update_instances_command_builder(this, instanceIds, name, resourceGroup);
+    static az_vmss_update_instances(instanceIds: string, name: string, resourceGroup: string): az_vmss_update_instances_command_builder {
+        return new az_vmss_update_instances_command_builder("az vmss update-instances", instanceIds, name, resourceGroup);
     }
 
     /**
@@ -1048,8 +1028,8 @@ export class az_vmss implements ICommandParent<any> {
      *              [--updated]
      * ```
      */
-    az_vmss_wait(): az_vmss_wait_command_builder {
-        return new az_vmss_wait_command_builder(this);
+    static az_vmss_wait(): az_vmss_wait_command_builder {
+        return new az_vmss_wait_command_builder("az vmss wait");
     }
 }
 
@@ -1063,7 +1043,7 @@ export class az_vmss implements ICommandParent<any> {
  * ```
  */
 class az_vmss_diagnostics_get_default_config_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1099,7 +1079,7 @@ class az_vmss_diagnostics_get_default_config_command_builder extends CommandBuil
  * @param {string} vmssName Scale set name.
  */
 class az_vmss_diagnostics_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, settings: string, vmssName: string) {
+    constructor(commandPath: string, resourceGroup: string, settings: string, vmssName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.settings(settings)
@@ -1167,7 +1147,7 @@ class az_vmss_diagnostics_set_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_disk_attach_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1248,7 +1228,7 @@ class az_vmss_disk_attach_command_builder extends CommandBuilder {
  * @param {string} lun 0-based logical unit number (LUN). Max value depends on the Virtual Machine instance size.
  */
 class az_vmss_disk_detach_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, lun: string) {
+    constructor(commandPath: string, lun: string) {
         super(commandParent);
         this.lun(lun)
     }
@@ -1304,7 +1284,7 @@ class az_vmss_disk_detach_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_encryption_disable_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1365,7 +1345,7 @@ class az_vmss_encryption_disable_command_builder extends CommandBuilder {
  * @param {string} diskEncryptionKeyvault Name or ID of the key vault where the generated encryption key will be placed.
  */
 class az_vmss_encryption_enable_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, diskEncryptionKeyvault: string) {
+    constructor(commandPath: string, diskEncryptionKeyvault: string) {
         super(commandParent);
         this.diskEncryptionKeyvault(diskEncryptionKeyvault)
     }
@@ -1444,7 +1424,7 @@ class az_vmss_encryption_enable_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_encryption_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1494,7 +1474,7 @@ class az_vmss_encryption_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_extension_image_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1555,7 +1535,7 @@ class az_vmss_extension_image_list_command_builder extends CommandBuilder {
  * @param {string} publisher Image publisher name.
  */
 class az_vmss_extension_image_list_names_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string, publisher: string) {
+    constructor(commandPath: string, location: string, publisher: string) {
         super(commandParent);
         this.location(location)
         this.publisher(publisher)
@@ -1599,7 +1579,7 @@ class az_vmss_extension_image_list_names_command_builder extends CommandBuilder 
  * @param {string} publisher Image publisher name.
  */
 class az_vmss_extension_image_list_versions_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string, name: string, publisher: string) {
+    constructor(commandPath: string, location: string, name: string, publisher: string) {
         super(commandParent);
         this.location(location)
         this.name(name)
@@ -1668,7 +1648,7 @@ class az_vmss_extension_image_list_versions_command_builder extends CommandBuild
  * @param {string} version Extension version.
  */
 class az_vmss_extension_image_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string, name: string, publisher: string, version: string) {
+    constructor(commandPath: string, location: string, name: string, publisher: string, version: string) {
         super(commandParent);
         this.location(location)
         this.name(name)
@@ -1730,7 +1710,7 @@ class az_vmss_extension_image_show_command_builder extends CommandBuilder {
  * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
  */
 class az_vmss_extension_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, vmssName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, vmssName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1783,7 +1763,7 @@ class az_vmss_extension_delete_command_builder extends CommandBuilder {
  * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
  */
 class az_vmss_extension_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, vmssName: string) {
+    constructor(commandPath: string, resourceGroup: string, vmssName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.vmssName(vmssName)
@@ -1840,7 +1820,7 @@ class az_vmss_extension_list_command_builder extends CommandBuilder {
  * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
  */
 class az_vmss_extension_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, publisher: string, resourceGroup: string, vmssName: string) {
+    constructor(commandPath: string, name: string, publisher: string, resourceGroup: string, vmssName: string) {
         super(commandParent);
         this.name(name)
         this.publisher(publisher)
@@ -1944,7 +1924,7 @@ class az_vmss_extension_set_command_builder extends CommandBuilder {
  * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
  */
 class az_vmss_extension_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, vmssName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, vmssName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1997,7 +1977,7 @@ class az_vmss_extension_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_identity_assign_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2057,7 +2037,7 @@ class az_vmss_identity_assign_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_identity_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2105,7 +2085,7 @@ class az_vmss_identity_remove_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_identity_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2155,7 +2135,7 @@ class az_vmss_identity_show_command_builder extends CommandBuilder {
  * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
  */
 class az_vmss_nic_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, vmssName: string) {
+    constructor(commandPath: string, resourceGroup: string, vmssName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.vmssName(vmssName)
@@ -2199,7 +2179,7 @@ class az_vmss_nic_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_nic_list_vm_nics_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2250,7 +2230,7 @@ class az_vmss_nic_list_vm_nics_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_nic_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2315,7 +2295,7 @@ class az_vmss_nic_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_rolling_upgrade_cancel_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2356,7 +2336,7 @@ class az_vmss_rolling_upgrade_cancel_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_rolling_upgrade_get_latest_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2397,7 +2377,7 @@ class az_vmss_rolling_upgrade_get_latest_command_builder extends CommandBuilder 
  * ```
  */
 class az_vmss_rolling_upgrade_start_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2444,7 +2424,7 @@ class az_vmss_rolling_upgrade_start_command_builder extends CommandBuilder {
  * @param {string} commandId The command id.
  */
 class az_vmss_run_command_invoke_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, commandId: string) {
+    constructor(commandPath: string, commandId: string) {
         super(commandParent);
         this.commandId(commandId)
     }
@@ -2511,7 +2491,7 @@ class az_vmss_run_command_invoke_command_builder extends CommandBuilder {
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_vmss_run_command_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string) {
+    constructor(commandPath: string, location: string) {
         super(commandParent);
         this.location(location)
     }
@@ -2550,7 +2530,7 @@ class az_vmss_run_command_list_command_builder extends CommandBuilder {
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_vmss_run_command_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, commandId: string, location: string) {
+    constructor(commandPath: string, commandId: string, location: string) {
         super(commandParent);
         this.commandId(commandId)
         this.location(location)
@@ -2673,7 +2653,7 @@ class az_vmss_run_command_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3182,7 +3162,7 @@ class az_vmss_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_deallocate_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3232,7 +3212,7 @@ class az_vmss_deallocate_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3284,7 +3264,7 @@ class az_vmss_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_delete_instances_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, instanceIds: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, instanceIds: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.instanceIds(instanceIds)
         this.name(name)
@@ -3335,7 +3315,7 @@ class az_vmss_delete_instances_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_get_instance_view_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3382,7 +3362,7 @@ class az_vmss_get_instance_view_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_get_os_upgrade_history_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3422,7 +3402,7 @@ class az_vmss_get_os_upgrade_history_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3457,7 +3437,7 @@ class az_vmss_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_list_instance_connection_info_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3498,7 +3478,7 @@ class az_vmss_list_instance_connection_info_command_builder extends CommandBuild
  * ```
  */
 class az_vmss_list_instance_public_ips_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3542,7 +3522,7 @@ class az_vmss_list_instance_public_ips_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_list_instances_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3601,7 +3581,7 @@ class az_vmss_list_instances_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_list_skus_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3643,7 +3623,7 @@ class az_vmss_list_skus_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_perform_maintenance_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3692,7 +3672,7 @@ class az_vmss_perform_maintenance_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_reimage_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3749,7 +3729,7 @@ class az_vmss_reimage_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_restart_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3802,7 +3782,7 @@ class az_vmss_restart_command_builder extends CommandBuilder {
  * @param {string} newCapacity Number of VMs in the VMSS.
  */
 class az_vmss_scale_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, newCapacity: string) {
+    constructor(commandPath: string, newCapacity: string) {
         super(commandParent);
         this.newCapacity(newCapacity)
     }
@@ -3862,7 +3842,7 @@ class az_vmss_scale_command_builder extends CommandBuilder {
  * @param {'AutomaticRepairs'} serviceName The name of the orchestration service.
  */
 class az_vmss_set_orchestration_service_state_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, action: 'Resume' | 'Suspend', serviceName: 'AutomaticRepairs') {
+    constructor(commandPath: string, action: 'Resume' | 'Suspend', serviceName: 'AutomaticRepairs') {
         super(commandParent);
         this.action(action)
         this.serviceName(serviceName)
@@ -3927,7 +3907,7 @@ class az_vmss_set_orchestration_service_state_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3980,7 +3960,7 @@ class az_vmss_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_simulate_eviction_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, instanceId: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, instanceId: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.instanceId(instanceId)
         this.name(name)
@@ -4028,7 +4008,7 @@ class az_vmss_simulate_eviction_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_start_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4082,7 +4062,7 @@ class az_vmss_start_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_stop_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4155,7 +4135,7 @@ class az_vmss_stop_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4309,7 +4289,7 @@ class az_vmss_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_update_instances_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, instanceIds: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, instanceIds: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.instanceIds(instanceIds)
         this.name(name)
@@ -4367,7 +4347,7 @@ class az_vmss_update_instances_command_builder extends CommandBuilder {
  * ```
  */
 class az_vmss_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

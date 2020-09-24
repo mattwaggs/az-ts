@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage links between Data Lake Analytics accounts and Azure Storage. */
-export class az_dla_account_blob_storage implements ICommandParent<any> {
-    commandPath = "az dla account blob-storage";
-
+export class az_dla_account_blob_storage {
     /**
      * Links an Azure Storage account to the specified Data Lake Analytics account.
      *
@@ -21,8 +19,8 @@ export class az_dla_account_blob_storage implements ICommandParent<any> {
      * @param {string} accessKey The access key associated with this Azure Storage account that will be used to connect to it.
      * @param {string} storageAccountName Name of an existing storage account to link to.
      */
-    az_dla_account_blob_storage_add(accessKey: string, storageAccountName: string): az_dla_account_blob_storage_add_command_builder {
-        return new az_dla_account_blob_storage_add_command_builder(this, accessKey, storageAccountName);
+    static az_dla_account_blob_storage_add(accessKey: string, storageAccountName: string): az_dla_account_blob_storage_add_command_builder {
+        return new az_dla_account_blob_storage_add_command_builder("az dla account blob-storage add", accessKey, storageAccountName);
     }
 
     /**
@@ -39,8 +37,8 @@ export class az_dla_account_blob_storage implements ICommandParent<any> {
      *
      * @param {string} storageAccountName Name of an existing storage account to link to.
      */
-    az_dla_account_blob_storage_delete(storageAccountName: string): az_dla_account_blob_storage_delete_command_builder {
-        return new az_dla_account_blob_storage_delete_command_builder(this, storageAccountName);
+    static az_dla_account_blob_storage_delete(storageAccountName: string): az_dla_account_blob_storage_delete_command_builder {
+        return new az_dla_account_blob_storage_delete_command_builder("az dla account blob-storage delete", storageAccountName);
     }
 
     /**
@@ -61,8 +59,8 @@ export class az_dla_account_blob_storage implements ICommandParent<any> {
      *                                  [--top]
      * ```
      */
-    az_dla_account_blob_storage_list(): az_dla_account_blob_storage_list_command_builder {
-        return new az_dla_account_blob_storage_list_command_builder(this);
+    static az_dla_account_blob_storage_list(): az_dla_account_blob_storage_list_command_builder {
+        return new az_dla_account_blob_storage_list_command_builder("az dla account blob-storage list");
     }
 
     /**
@@ -80,8 +78,8 @@ export class az_dla_account_blob_storage implements ICommandParent<any> {
      *
      * @param {string} storageAccountName Name of an existing storage account to link to.
      */
-    az_dla_account_blob_storage_show(storageAccountName: string): az_dla_account_blob_storage_show_command_builder {
-        return new az_dla_account_blob_storage_show_command_builder(this, storageAccountName);
+    static az_dla_account_blob_storage_show(storageAccountName: string): az_dla_account_blob_storage_show_command_builder {
+        return new az_dla_account_blob_storage_show_command_builder("az dla account blob-storage show", storageAccountName);
     }
 
     /**
@@ -101,15 +99,13 @@ export class az_dla_account_blob_storage implements ICommandParent<any> {
      * @param {string} accessKey The access key associated with this Azure Storage account that will be used to connect to it.
      * @param {string} storageAccountName Name of an existing storage account to link to.
      */
-    az_dla_account_blob_storage_update(accessKey: string, storageAccountName: string): az_dla_account_blob_storage_update_command_builder {
-        return new az_dla_account_blob_storage_update_command_builder(this, accessKey, storageAccountName);
+    static az_dla_account_blob_storage_update(accessKey: string, storageAccountName: string): az_dla_account_blob_storage_update_command_builder {
+        return new az_dla_account_blob_storage_update_command_builder("az dla account blob-storage update", accessKey, storageAccountName);
     }
 }
 
 /** Manage Data Lake Analytics account compute policies. */
-export class az_dla_account_compute_policy implements ICommandParent<any> {
-    commandPath = "az dla account compute-policy";
-
+export class az_dla_account_compute_policy {
     /**
      * Create a compute policy in the Data Lake Analytics account.
      *
@@ -130,8 +126,8 @@ export class az_dla_account_compute_policy implements ICommandParent<any> {
      * @param {string} objectId The Azure Active Directory object ID of the user, group, or service principal to apply the policy to.
      * @param {string} objectType The Azure Active Directory object type associated with the supplied object ID.
      */
-    az_dla_account_compute_policy_create(account: string, computePolicyName: string, objectId: string, objectType: string): az_dla_account_compute_policy_create_command_builder {
-        return new az_dla_account_compute_policy_create_command_builder(this, account, computePolicyName, objectId, objectType);
+    static az_dla_account_compute_policy_create(account: string, computePolicyName: string, objectId: string, objectType: string): az_dla_account_compute_policy_create_command_builder {
+        return new az_dla_account_compute_policy_create_command_builder("az dla account compute-policy create", account, computePolicyName, objectId, objectType);
     }
 
     /**
@@ -148,8 +144,8 @@ export class az_dla_account_compute_policy implements ICommandParent<any> {
      *
      * @param {string} computePolicyName The name of the compute policy to delete.
      */
-    az_dla_account_compute_policy_delete(computePolicyName: string): az_dla_account_compute_policy_delete_command_builder {
-        return new az_dla_account_compute_policy_delete_command_builder(this, computePolicyName);
+    static az_dla_account_compute_policy_delete(computePolicyName: string): az_dla_account_compute_policy_delete_command_builder {
+        return new az_dla_account_compute_policy_delete_command_builder("az dla account compute-policy delete", computePolicyName);
     }
 
     /**
@@ -164,8 +160,8 @@ export class az_dla_account_compute_policy implements ICommandParent<any> {
      *                                    [--subscription]
      * ```
      */
-    az_dla_account_compute_policy_list(): az_dla_account_compute_policy_list_command_builder {
-        return new az_dla_account_compute_policy_list_command_builder(this);
+    static az_dla_account_compute_policy_list(): az_dla_account_compute_policy_list_command_builder {
+        return new az_dla_account_compute_policy_list_command_builder("az dla account compute-policy list");
     }
 
     /**
@@ -183,8 +179,8 @@ export class az_dla_account_compute_policy implements ICommandParent<any> {
      *
      * @param {string} computePolicyName The name of the compute policy to retrieve.
      */
-    az_dla_account_compute_policy_show(computePolicyName: string): az_dla_account_compute_policy_show_command_builder {
-        return new az_dla_account_compute_policy_show_command_builder(this, computePolicyName);
+    static az_dla_account_compute_policy_show(computePolicyName: string): az_dla_account_compute_policy_show_command_builder {
+        return new az_dla_account_compute_policy_show_command_builder("az dla account compute-policy show", computePolicyName);
     }
 
     /**
@@ -203,15 +199,13 @@ export class az_dla_account_compute_policy implements ICommandParent<any> {
      *
      * @param {string} computePolicyName The name of the compute policy to update.
      */
-    az_dla_account_compute_policy_update(computePolicyName: string): az_dla_account_compute_policy_update_command_builder {
-        return new az_dla_account_compute_policy_update_command_builder(this, computePolicyName);
+    static az_dla_account_compute_policy_update(computePolicyName: string): az_dla_account_compute_policy_update_command_builder {
+        return new az_dla_account_compute_policy_update_command_builder("az dla account compute-policy update", computePolicyName);
     }
 }
 
 /** Manage links between Data Lake Analytics and Data Lake Store accounts. */
-export class az_dla_account_data_lake_store implements ICommandParent<any> {
-    commandPath = "az dla account data-lake-store";
-
+export class az_dla_account_data_lake_store {
     /**
      * Updates the specified Data Lake Analytics account to include the additional Data Lake Store account.
      *
@@ -227,8 +221,8 @@ export class az_dla_account_data_lake_store implements ICommandParent<any> {
      *
      * @param {string} dataLakeStoreAccountName The name of the Data Lake Store account to add.
      */
-    az_dla_account_data_lake_store_add(dataLakeStoreAccountName: string): az_dla_account_data_lake_store_add_command_builder {
-        return new az_dla_account_data_lake_store_add_command_builder(this, dataLakeStoreAccountName);
+    static az_dla_account_data_lake_store_add(dataLakeStoreAccountName: string): az_dla_account_data_lake_store_add_command_builder {
+        return new az_dla_account_data_lake_store_add_command_builder("az dla account data-lake-store add", dataLakeStoreAccountName);
     }
 
     /**
@@ -245,8 +239,8 @@ export class az_dla_account_data_lake_store implements ICommandParent<any> {
      *
      * @param {string} dataLakeStoreAccountName The name of the Data Lake Store account to remove.
      */
-    az_dla_account_data_lake_store_delete(dataLakeStoreAccountName: string): az_dla_account_data_lake_store_delete_command_builder {
-        return new az_dla_account_data_lake_store_delete_command_builder(this, dataLakeStoreAccountName);
+    static az_dla_account_data_lake_store_delete(dataLakeStoreAccountName: string): az_dla_account_data_lake_store_delete_command_builder {
+        return new az_dla_account_data_lake_store_delete_command_builder("az dla account data-lake-store delete", dataLakeStoreAccountName);
     }
 
     /**
@@ -267,8 +261,8 @@ export class az_dla_account_data_lake_store implements ICommandParent<any> {
      *                                     [--top]
      * ```
      */
-    az_dla_account_data_lake_store_list(): az_dla_account_data_lake_store_list_command_builder {
-        return new az_dla_account_data_lake_store_list_command_builder(this);
+    static az_dla_account_data_lake_store_list(): az_dla_account_data_lake_store_list_command_builder {
+        return new az_dla_account_data_lake_store_list_command_builder("az dla account data-lake-store list");
     }
 
     /**
@@ -286,15 +280,13 @@ export class az_dla_account_data_lake_store implements ICommandParent<any> {
      *
      * @param {string} dataLakeStoreAccountName The name of the Data Lake Store account to retrieve.
      */
-    az_dla_account_data_lake_store_show(dataLakeStoreAccountName: string): az_dla_account_data_lake_store_show_command_builder {
-        return new az_dla_account_data_lake_store_show_command_builder(this, dataLakeStoreAccountName);
+    static az_dla_account_data_lake_store_show(dataLakeStoreAccountName: string): az_dla_account_data_lake_store_show_command_builder {
+        return new az_dla_account_data_lake_store_show_command_builder("az dla account data-lake-store show", dataLakeStoreAccountName);
     }
 }
 
 /** Manage Data Lake Analytics account firewall rules. */
-export class az_dla_account_firewall implements ICommandParent<any> {
-    commandPath = "az dla account firewall";
-
+export class az_dla_account_firewall {
     /**
      * Create a firewall rule in a Data Lake Analytics account.
      *
@@ -313,8 +305,8 @@ export class az_dla_account_firewall implements ICommandParent<any> {
      * @param {string} firewallRuleName The name of the firewall rule.
      * @param {string} startIpAddress The start of the valid IP range for the firewall rule.
      */
-    az_dla_account_firewall_create(account: string, endIpAddress: string, firewallRuleName: string, startIpAddress: string): az_dla_account_firewall_create_command_builder {
-        return new az_dla_account_firewall_create_command_builder(this, account, endIpAddress, firewallRuleName, startIpAddress);
+    static az_dla_account_firewall_create(account: string, endIpAddress: string, firewallRuleName: string, startIpAddress: string): az_dla_account_firewall_create_command_builder {
+        return new az_dla_account_firewall_create_command_builder("az dla account firewall create", account, endIpAddress, firewallRuleName, startIpAddress);
     }
 
     /**
@@ -331,8 +323,8 @@ export class az_dla_account_firewall implements ICommandParent<any> {
      *
      * @param {string} firewallRuleName The name of the firewall rule to delete.
      */
-    az_dla_account_firewall_delete(firewallRuleName: string): az_dla_account_firewall_delete_command_builder {
-        return new az_dla_account_firewall_delete_command_builder(this, firewallRuleName);
+    static az_dla_account_firewall_delete(firewallRuleName: string): az_dla_account_firewall_delete_command_builder {
+        return new az_dla_account_firewall_delete_command_builder("az dla account firewall delete", firewallRuleName);
     }
 
     /**
@@ -347,8 +339,8 @@ export class az_dla_account_firewall implements ICommandParent<any> {
      *                              [--subscription]
      * ```
      */
-    az_dla_account_firewall_list(): az_dla_account_firewall_list_command_builder {
-        return new az_dla_account_firewall_list_command_builder(this);
+    static az_dla_account_firewall_list(): az_dla_account_firewall_list_command_builder {
+        return new az_dla_account_firewall_list_command_builder("az dla account firewall list");
     }
 
     /**
@@ -366,8 +358,8 @@ export class az_dla_account_firewall implements ICommandParent<any> {
      *
      * @param {string} firewallRuleName The name of the firewall rule to retrieve.
      */
-    az_dla_account_firewall_show(firewallRuleName: string): az_dla_account_firewall_show_command_builder {
-        return new az_dla_account_firewall_show_command_builder(this, firewallRuleName);
+    static az_dla_account_firewall_show(firewallRuleName: string): az_dla_account_firewall_show_command_builder {
+        return new az_dla_account_firewall_show_command_builder("az dla account firewall show", firewallRuleName);
     }
 
     /**
@@ -386,15 +378,13 @@ export class az_dla_account_firewall implements ICommandParent<any> {
      *
      * @param {string} firewallRuleName The name of the firewall rule to update.
      */
-    az_dla_account_firewall_update(firewallRuleName: string): az_dla_account_firewall_update_command_builder {
-        return new az_dla_account_firewall_update_command_builder(this, firewallRuleName);
+    static az_dla_account_firewall_update(firewallRuleName: string): az_dla_account_firewall_update_command_builder {
+        return new az_dla_account_firewall_update_command_builder("az dla account firewall update", firewallRuleName);
     }
 }
 
 /** Manage Data Lake Analytics accounts. */
-export class az_dla_account implements ICommandParent<any> {
-    commandPath = "az dla account";
-
+export class az_dla_account {
     /**
      * Create a Data Lake Analytics account.
      *
@@ -415,8 +405,8 @@ export class az_dla_account implements ICommandParent<any> {
      * @param {string} account Name of the Data Lake Analytics account.
      * @param {string} defaultDataLakeStore The default Data Lake Store account to associate with the created account.
      */
-    az_dla_account_create(account: string, defaultDataLakeStore: string): az_dla_account_create_command_builder {
-        return new az_dla_account_create_command_builder(this, account, defaultDataLakeStore);
+    static az_dla_account_create(account: string, defaultDataLakeStore: string): az_dla_account_create_command_builder {
+        return new az_dla_account_create_command_builder("az dla account create", account, defaultDataLakeStore);
     }
 
     /**
@@ -430,8 +420,8 @@ export class az_dla_account implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_dla_account_delete(): az_dla_account_delete_command_builder {
-        return new az_dla_account_delete_command_builder(this);
+    static az_dla_account_delete(): az_dla_account_delete_command_builder {
+        return new az_dla_account_delete_command_builder("az dla account delete");
     }
 
     /**
@@ -444,8 +434,8 @@ export class az_dla_account implements ICommandParent<any> {
      *                     [--subscription]
      * ```
      */
-    az_dla_account_list(): az_dla_account_list_command_builder {
-        return new az_dla_account_list_command_builder(this);
+    static az_dla_account_list(): az_dla_account_list_command_builder {
+        return new az_dla_account_list_command_builder("az dla account list");
     }
 
     /**
@@ -460,8 +450,8 @@ export class az_dla_account implements ICommandParent<any> {
      *                     [--subscription]
      * ```
      */
-    az_dla_account_show(): az_dla_account_show_command_builder {
-        return new az_dla_account_show_command_builder(this);
+    static az_dla_account_show(): az_dla_account_show_command_builder {
+        return new az_dla_account_show_command_builder("az dla account show");
     }
 
     /**
@@ -482,15 +472,13 @@ export class az_dla_account implements ICommandParent<any> {
      *                       [--tier {Commitment_100000AUHours, Commitment_10000AUHours, Commitment_1000AUHours, Commitment_100AUHours, Commitment_500000AUHours, Commitment_50000AUHours, Commitment_5000AUHours, Commitment_500AUHours, Consumption}]
      * ```
      */
-    az_dla_account_update(): az_dla_account_update_command_builder {
-        return new az_dla_account_update_command_builder(this);
+    static az_dla_account_update(): az_dla_account_update_command_builder {
+        return new az_dla_account_update_command_builder("az dla account update");
     }
 }
 
 /** Manage Data Lake Analytics catalog assemblies. */
-export class az_dla_catalog_assembly implements ICommandParent<any> {
-    commandPath = "az dla catalog assembly";
-
+export class az_dla_catalog_assembly {
     /**
      * Retrieves the list of assemblies from the Data Lake Analytics catalog.
      *
@@ -511,8 +499,8 @@ export class az_dla_catalog_assembly implements ICommandParent<any> {
      *
      * @param {string} databaseName The name of the database containing the assembly.
      */
-    az_dla_catalog_assembly_list(databaseName: string): az_dla_catalog_assembly_list_command_builder {
-        return new az_dla_catalog_assembly_list_command_builder(this, databaseName);
+    static az_dla_catalog_assembly_list(databaseName: string): az_dla_catalog_assembly_list_command_builder {
+        return new az_dla_catalog_assembly_list_command_builder("az dla catalog assembly list", databaseName);
     }
 
     /**
@@ -531,15 +519,13 @@ export class az_dla_catalog_assembly implements ICommandParent<any> {
      * @param {string} assemblyName The name of the assembly.
      * @param {string} databaseName The name of the database containing the assembly.
      */
-    az_dla_catalog_assembly_show(assemblyName: string, databaseName: string): az_dla_catalog_assembly_show_command_builder {
-        return new az_dla_catalog_assembly_show_command_builder(this, assemblyName, databaseName);
+    static az_dla_catalog_assembly_show(assemblyName: string, databaseName: string): az_dla_catalog_assembly_show_command_builder {
+        return new az_dla_catalog_assembly_show_command_builder("az dla catalog assembly show", assemblyName, databaseName);
     }
 }
 
 /** Manage Data Lake Analytics catalog credentials. */
-export class az_dla_catalog_credential implements ICommandParent<any> {
-    commandPath = "az dla catalog credential";
-
+export class az_dla_catalog_credential {
     /**
      * Create a new catalog credential for use with an external data source.
      *
@@ -560,8 +546,8 @@ export class az_dla_catalog_credential implements ICommandParent<any> {
      * @param {string} uri URI of the external data source.
      * @param {string} userName The user name that will be used when authenticating with this credential.
      */
-    az_dla_catalog_credential_create(account: string, credentialName: string, databaseName: string, uri: string, userName: string): az_dla_catalog_credential_create_command_builder {
-        return new az_dla_catalog_credential_create_command_builder(this, account, credentialName, databaseName, uri, userName);
+    static az_dla_catalog_credential_create(account: string, credentialName: string, databaseName: string, uri: string, userName: string): az_dla_catalog_credential_create_command_builder {
+        return new az_dla_catalog_credential_create_command_builder("az dla catalog credential create", account, credentialName, databaseName, uri, userName);
     }
 
     /**
@@ -581,8 +567,8 @@ export class az_dla_catalog_credential implements ICommandParent<any> {
      * @param {string} credentialName The name of the credential to delete.
      * @param {string} databaseName The name of the database containing the credential.
      */
-    az_dla_catalog_credential_delete(credentialName: string, databaseName: string): az_dla_catalog_credential_delete_command_builder {
-        return new az_dla_catalog_credential_delete_command_builder(this, credentialName, databaseName);
+    static az_dla_catalog_credential_delete(credentialName: string, databaseName: string): az_dla_catalog_credential_delete_command_builder {
+        return new az_dla_catalog_credential_delete_command_builder("az dla catalog credential delete", credentialName, databaseName);
     }
 
     /**
@@ -605,8 +591,8 @@ export class az_dla_catalog_credential implements ICommandParent<any> {
      *
      * @param {string} databaseName The name of the database containing the schema.
      */
-    az_dla_catalog_credential_list(databaseName: string): az_dla_catalog_credential_list_command_builder {
-        return new az_dla_catalog_credential_list_command_builder(this, databaseName);
+    static az_dla_catalog_credential_list(databaseName: string): az_dla_catalog_credential_list_command_builder {
+        return new az_dla_catalog_credential_list_command_builder("az dla catalog credential list", databaseName);
     }
 
     /**
@@ -625,8 +611,8 @@ export class az_dla_catalog_credential implements ICommandParent<any> {
      * @param {string} credentialName The name of the credential.
      * @param {string} databaseName The name of the database containing the schema.
      */
-    az_dla_catalog_credential_show(credentialName: string, databaseName: string): az_dla_catalog_credential_show_command_builder {
-        return new az_dla_catalog_credential_show_command_builder(this, credentialName, databaseName);
+    static az_dla_catalog_credential_show(credentialName: string, databaseName: string): az_dla_catalog_credential_show_command_builder {
+        return new az_dla_catalog_credential_show_command_builder("az dla catalog credential show", credentialName, databaseName);
     }
 
     /**
@@ -650,15 +636,13 @@ export class az_dla_catalog_credential implements ICommandParent<any> {
      * @param {string} uri URI of the external data source.
      * @param {string} userName The user name associated with the credential that will have its password updated.
      */
-    az_dla_catalog_credential_update(credentialName: string, databaseName: string, uri: string, userName: string): az_dla_catalog_credential_update_command_builder {
-        return new az_dla_catalog_credential_update_command_builder(this, credentialName, databaseName, uri, userName);
+    static az_dla_catalog_credential_update(credentialName: string, databaseName: string, uri: string, userName: string): az_dla_catalog_credential_update_command_builder {
+        return new az_dla_catalog_credential_update_command_builder("az dla catalog credential update", credentialName, databaseName, uri, userName);
     }
 }
 
 /** Manage Data Lake Analytics catalog databases. */
-export class az_dla_catalog_database implements ICommandParent<any> {
-    commandPath = "az dla catalog database";
-
+export class az_dla_catalog_database {
     /**
      * Retrieves the list of databases from the Data Lake Analytics catalog.
      *
@@ -676,8 +660,8 @@ export class az_dla_catalog_database implements ICommandParent<any> {
      *                              [--top]
      * ```
      */
-    az_dla_catalog_database_list(): az_dla_catalog_database_list_command_builder {
-        return new az_dla_catalog_database_list_command_builder(this);
+    static az_dla_catalog_database_list(): az_dla_catalog_database_list_command_builder {
+        return new az_dla_catalog_database_list_command_builder("az dla catalog database list");
     }
 
     /**
@@ -694,15 +678,13 @@ export class az_dla_catalog_database implements ICommandParent<any> {
      *
      * @param {string} databaseName The name of the database.
      */
-    az_dla_catalog_database_show(databaseName: string): az_dla_catalog_database_show_command_builder {
-        return new az_dla_catalog_database_show_command_builder(this, databaseName);
+    static az_dla_catalog_database_show(databaseName: string): az_dla_catalog_database_show_command_builder {
+        return new az_dla_catalog_database_show_command_builder("az dla catalog database show", databaseName);
     }
 }
 
 /** Manage Data Lake Analytics catalog external data sources. */
-export class az_dla_catalog_external_data_source implements ICommandParent<any> {
-    commandPath = "az dla catalog external-data-source";
-
+export class az_dla_catalog_external_data_source {
     /**
      * Retrieves the list of external data sources from the Data Lake Analytics catalog.
      *
@@ -723,8 +705,8 @@ export class az_dla_catalog_external_data_source implements ICommandParent<any> 
      *
      * @param {string} databaseName The name of the database containing the external data sources.
      */
-    az_dla_catalog_external_data_source_list(databaseName: string): az_dla_catalog_external_data_source_list_command_builder {
-        return new az_dla_catalog_external_data_source_list_command_builder(this, databaseName);
+    static az_dla_catalog_external_data_source_list(databaseName: string): az_dla_catalog_external_data_source_list_command_builder {
+        return new az_dla_catalog_external_data_source_list_command_builder("az dla catalog external-data-source list", databaseName);
     }
 
     /**
@@ -743,15 +725,13 @@ export class az_dla_catalog_external_data_source implements ICommandParent<any> 
      * @param {string} databaseName The name of the database containing the external data source.
      * @param {string} externalDataSourceName The name of the external data source.
      */
-    az_dla_catalog_external_data_source_show(databaseName: string, externalDataSourceName: string): az_dla_catalog_external_data_source_show_command_builder {
-        return new az_dla_catalog_external_data_source_show_command_builder(this, databaseName, externalDataSourceName);
+    static az_dla_catalog_external_data_source_show(databaseName: string, externalDataSourceName: string): az_dla_catalog_external_data_source_show_command_builder {
+        return new az_dla_catalog_external_data_source_show_command_builder("az dla catalog external-data-source show", databaseName, externalDataSourceName);
     }
 }
 
 /** Manage Data Lake Analytics catalog packages. */
-export class az_dla_catalog_package implements ICommandParent<any> {
-    commandPath = "az dla catalog package";
-
+export class az_dla_catalog_package {
     /**
      * Retrieves the list of packages from the Data Lake Analytics catalog.
      *
@@ -774,8 +754,8 @@ export class az_dla_catalog_package implements ICommandParent<any> {
      * @param {string} databaseName The name of the database containing the packages.
      * @param {string} schemaName The name of the schema containing the packages.
      */
-    az_dla_catalog_package_list(databaseName: string, schemaName: string): az_dla_catalog_package_list_command_builder {
-        return new az_dla_catalog_package_list_command_builder(this, databaseName, schemaName);
+    static az_dla_catalog_package_list(databaseName: string, schemaName: string): az_dla_catalog_package_list_command_builder {
+        return new az_dla_catalog_package_list_command_builder("az dla catalog package list", databaseName, schemaName);
     }
 
     /**
@@ -796,15 +776,13 @@ export class az_dla_catalog_package implements ICommandParent<any> {
      * @param {string} packageName The name of the package.
      * @param {string} schemaName The name of the schema containing the package.
      */
-    az_dla_catalog_package_show(databaseName: string, packageName: string, schemaName: string): az_dla_catalog_package_show_command_builder {
-        return new az_dla_catalog_package_show_command_builder(this, databaseName, packageName, schemaName);
+    static az_dla_catalog_package_show(databaseName: string, packageName: string, schemaName: string): az_dla_catalog_package_show_command_builder {
+        return new az_dla_catalog_package_show_command_builder("az dla catalog package show", databaseName, packageName, schemaName);
     }
 }
 
 /** Manage Data Lake Analytics catalog stored procedures. */
-export class az_dla_catalog_procedure implements ICommandParent<any> {
-    commandPath = "az dla catalog procedure";
-
+export class az_dla_catalog_procedure {
     /**
      * Retrieves the list of procedures from the Data Lake Analytics catalog.
      *
@@ -827,8 +805,8 @@ export class az_dla_catalog_procedure implements ICommandParent<any> {
      * @param {string} databaseName The name of the database containing the procedures.
      * @param {string} schemaName The name of the schema containing the procedures.
      */
-    az_dla_catalog_procedure_list(databaseName: string, schemaName: string): az_dla_catalog_procedure_list_command_builder {
-        return new az_dla_catalog_procedure_list_command_builder(this, databaseName, schemaName);
+    static az_dla_catalog_procedure_list(databaseName: string, schemaName: string): az_dla_catalog_procedure_list_command_builder {
+        return new az_dla_catalog_procedure_list_command_builder("az dla catalog procedure list", databaseName, schemaName);
     }
 
     /**
@@ -849,15 +827,13 @@ export class az_dla_catalog_procedure implements ICommandParent<any> {
      * @param {string} procedureName The name of the procedure.
      * @param {string} schemaName The name of the schema containing the procedure.
      */
-    az_dla_catalog_procedure_show(databaseName: string, procedureName: string, schemaName: string): az_dla_catalog_procedure_show_command_builder {
-        return new az_dla_catalog_procedure_show_command_builder(this, databaseName, procedureName, schemaName);
+    static az_dla_catalog_procedure_show(databaseName: string, procedureName: string, schemaName: string): az_dla_catalog_procedure_show_command_builder {
+        return new az_dla_catalog_procedure_show_command_builder("az dla catalog procedure show", databaseName, procedureName, schemaName);
     }
 }
 
 /** Manage Data Lake Analytics catalog schemas. */
-export class az_dla_catalog_schema implements ICommandParent<any> {
-    commandPath = "az dla catalog schema";
-
+export class az_dla_catalog_schema {
     /**
      * Retrieves the list of schemas from the Data Lake Analytics catalog.
      *
@@ -878,8 +854,8 @@ export class az_dla_catalog_schema implements ICommandParent<any> {
      *
      * @param {string} databaseName The name of the database containing the schema.
      */
-    az_dla_catalog_schema_list(databaseName: string): az_dla_catalog_schema_list_command_builder {
-        return new az_dla_catalog_schema_list_command_builder(this, databaseName);
+    static az_dla_catalog_schema_list(databaseName: string): az_dla_catalog_schema_list_command_builder {
+        return new az_dla_catalog_schema_list_command_builder("az dla catalog schema list", databaseName);
     }
 
     /**
@@ -898,15 +874,13 @@ export class az_dla_catalog_schema implements ICommandParent<any> {
      * @param {string} databaseName The name of the database containing the schema.
      * @param {string} schemaName The name of the schema.
      */
-    az_dla_catalog_schema_show(databaseName: string, schemaName: string): az_dla_catalog_schema_show_command_builder {
-        return new az_dla_catalog_schema_show_command_builder(this, databaseName, schemaName);
+    static az_dla_catalog_schema_show(databaseName: string, schemaName: string): az_dla_catalog_schema_show_command_builder {
+        return new az_dla_catalog_schema_show_command_builder("az dla catalog schema show", databaseName, schemaName);
     }
 }
 
 /** Manage Data Lake Analytics catalog table partitions. */
-export class az_dla_catalog_table_partition implements ICommandParent<any> {
-    commandPath = "az dla catalog table-partition";
-
+export class az_dla_catalog_table_partition {
     /**
      * Retrieves the list of table partitions from the Data Lake Analytics catalog.
      *
@@ -931,8 +905,8 @@ export class az_dla_catalog_table_partition implements ICommandParent<any> {
      * @param {string} schemaName The name of the schema containing the partitions.
      * @param {string} tableName The name of the table containing the partitions.
      */
-    az_dla_catalog_table_partition_list(databaseName: string, schemaName: string, tableName: string): az_dla_catalog_table_partition_list_command_builder {
-        return new az_dla_catalog_table_partition_list_command_builder(this, databaseName, schemaName, tableName);
+    static az_dla_catalog_table_partition_list(databaseName: string, schemaName: string, tableName: string): az_dla_catalog_table_partition_list_command_builder {
+        return new az_dla_catalog_table_partition_list_command_builder("az dla catalog table-partition list", databaseName, schemaName, tableName);
     }
 
     /**
@@ -955,15 +929,13 @@ export class az_dla_catalog_table_partition implements ICommandParent<any> {
      * @param {string} schemaName The name of the schema containing the partition.
      * @param {string} tableName The name of the table containing the partition.
      */
-    az_dla_catalog_table_partition_show(databaseName: string, partitionName: string, schemaName: string, tableName: string): az_dla_catalog_table_partition_show_command_builder {
-        return new az_dla_catalog_table_partition_show_command_builder(this, databaseName, partitionName, schemaName, tableName);
+    static az_dla_catalog_table_partition_show(databaseName: string, partitionName: string, schemaName: string, tableName: string): az_dla_catalog_table_partition_show_command_builder {
+        return new az_dla_catalog_table_partition_show_command_builder("az dla catalog table-partition show", databaseName, partitionName, schemaName, tableName);
     }
 }
 
 /** Manage Data Lake Analytics catalog table statistics. */
-export class az_dla_catalog_table_stats implements ICommandParent<any> {
-    commandPath = "az dla catalog table-stats";
-
+export class az_dla_catalog_table_stats {
     /**
      * List table statistics in a database, table, or schema.
      *
@@ -980,8 +952,8 @@ export class az_dla_catalog_table_stats implements ICommandParent<any> {
      *
      * @param {string} databaseName The name of the database.
      */
-    az_dla_catalog_table_stats_list(databaseName: string): az_dla_catalog_table_stats_list_command_builder {
-        return new az_dla_catalog_table_stats_list_command_builder(this, databaseName);
+    static az_dla_catalog_table_stats_list(databaseName: string): az_dla_catalog_table_stats_list_command_builder {
+        return new az_dla_catalog_table_stats_list_command_builder("az dla catalog table-stats list", databaseName);
     }
 
     /**
@@ -1004,15 +976,13 @@ export class az_dla_catalog_table_stats implements ICommandParent<any> {
      * @param {string} statisticsName The name of the table statistics.
      * @param {string} tableName The name of the table containing the statistics.
      */
-    az_dla_catalog_table_stats_show(databaseName: string, schemaName: string, statisticsName: string, tableName: string): az_dla_catalog_table_stats_show_command_builder {
-        return new az_dla_catalog_table_stats_show_command_builder(this, databaseName, schemaName, statisticsName, tableName);
+    static az_dla_catalog_table_stats_show(databaseName: string, schemaName: string, statisticsName: string, tableName: string): az_dla_catalog_table_stats_show_command_builder {
+        return new az_dla_catalog_table_stats_show_command_builder("az dla catalog table-stats show", databaseName, schemaName, statisticsName, tableName);
     }
 }
 
 /** Manage Data Lake Analytics catalog table types. */
-export class az_dla_catalog_table_type implements ICommandParent<any> {
-    commandPath = "az dla catalog table-type";
-
+export class az_dla_catalog_table_type {
     /**
      * Retrieves the list of table types from the Data Lake Analytics catalog.
      *
@@ -1035,8 +1005,8 @@ export class az_dla_catalog_table_type implements ICommandParent<any> {
      * @param {string} databaseName The name of the database containing the table types.
      * @param {string} schemaName The name of the schema containing the table types.
      */
-    az_dla_catalog_table_type_list(databaseName: string, schemaName: string): az_dla_catalog_table_type_list_command_builder {
-        return new az_dla_catalog_table_type_list_command_builder(this, databaseName, schemaName);
+    static az_dla_catalog_table_type_list(databaseName: string, schemaName: string): az_dla_catalog_table_type_list_command_builder {
+        return new az_dla_catalog_table_type_list_command_builder("az dla catalog table-type list", databaseName, schemaName);
     }
 
     /**
@@ -1057,15 +1027,13 @@ export class az_dla_catalog_table_type implements ICommandParent<any> {
      * @param {string} schemaName The name of the schema containing the table type.
      * @param {string} tableTypeName The name of the table type to retrieve.
      */
-    az_dla_catalog_table_type_show(databaseName: string, schemaName: string, tableTypeName: string): az_dla_catalog_table_type_show_command_builder {
-        return new az_dla_catalog_table_type_show_command_builder(this, databaseName, schemaName, tableTypeName);
+    static az_dla_catalog_table_type_show(databaseName: string, schemaName: string, tableTypeName: string): az_dla_catalog_table_type_show_command_builder {
+        return new az_dla_catalog_table_type_show_command_builder("az dla catalog table-type show", databaseName, schemaName, tableTypeName);
     }
 }
 
 /** Manage Data Lake Analytics catalog tables. */
-export class az_dla_catalog_table implements ICommandParent<any> {
-    commandPath = "az dla catalog table";
-
+export class az_dla_catalog_table {
     /**
      * List tables in a database or schema.
      *
@@ -1081,8 +1049,8 @@ export class az_dla_catalog_table implements ICommandParent<any> {
      *
      * @param {string} databaseName The name of the database.
      */
-    az_dla_catalog_table_list(databaseName: string): az_dla_catalog_table_list_command_builder {
-        return new az_dla_catalog_table_list_command_builder(this, databaseName);
+    static az_dla_catalog_table_list(databaseName: string): az_dla_catalog_table_list_command_builder {
+        return new az_dla_catalog_table_list_command_builder("az dla catalog table list", databaseName);
     }
 
     /**
@@ -1103,15 +1071,13 @@ export class az_dla_catalog_table implements ICommandParent<any> {
      * @param {string} schemaName The name of the schema containing the table.
      * @param {string} tableName The name of the table.
      */
-    az_dla_catalog_table_show(databaseName: string, schemaName: string, tableName: string): az_dla_catalog_table_show_command_builder {
-        return new az_dla_catalog_table_show_command_builder(this, databaseName, schemaName, tableName);
+    static az_dla_catalog_table_show(databaseName: string, schemaName: string, tableName: string): az_dla_catalog_table_show_command_builder {
+        return new az_dla_catalog_table_show_command_builder("az dla catalog table show", databaseName, schemaName, tableName);
     }
 }
 
 /** Manage Data Lake Analytics catalog table valued functions. */
-export class az_dla_catalog_tvf implements ICommandParent<any> {
-    commandPath = "az dla catalog tvf";
-
+export class az_dla_catalog_tvf {
     /**
      * List table valued functions in a database or schema.
      *
@@ -1127,8 +1093,8 @@ export class az_dla_catalog_tvf implements ICommandParent<any> {
      *
      * @param {string} databaseName The name of the database.
      */
-    az_dla_catalog_tvf_list(databaseName: string): az_dla_catalog_tvf_list_command_builder {
-        return new az_dla_catalog_tvf_list_command_builder(this, databaseName);
+    static az_dla_catalog_tvf_list(databaseName: string): az_dla_catalog_tvf_list_command_builder {
+        return new az_dla_catalog_tvf_list_command_builder("az dla catalog tvf list", databaseName);
     }
 
     /**
@@ -1149,15 +1115,13 @@ export class az_dla_catalog_tvf implements ICommandParent<any> {
      * @param {string} schemaName The name of the schema containing the table valued function.
      * @param {string} tableValuedFunctionName The name of the tableValuedFunction.
      */
-    az_dla_catalog_tvf_show(databaseName: string, schemaName: string, tableValuedFunctionName: string): az_dla_catalog_tvf_show_command_builder {
-        return new az_dla_catalog_tvf_show_command_builder(this, databaseName, schemaName, tableValuedFunctionName);
+    static az_dla_catalog_tvf_show(databaseName: string, schemaName: string, tableValuedFunctionName: string): az_dla_catalog_tvf_show_command_builder {
+        return new az_dla_catalog_tvf_show_command_builder("az dla catalog tvf show", databaseName, schemaName, tableValuedFunctionName);
     }
 }
 
 /** Manage Data Lake Analytics catalog views. */
-export class az_dla_catalog_view implements ICommandParent<any> {
-    commandPath = "az dla catalog view";
-
+export class az_dla_catalog_view {
     /**
      * List views in a database or schema.
      *
@@ -1173,8 +1137,8 @@ export class az_dla_catalog_view implements ICommandParent<any> {
      *
      * @param {string} databaseName The name of the database.
      */
-    az_dla_catalog_view_list(databaseName: string): az_dla_catalog_view_list_command_builder {
-        return new az_dla_catalog_view_list_command_builder(this, databaseName);
+    static az_dla_catalog_view_list(databaseName: string): az_dla_catalog_view_list_command_builder {
+        return new az_dla_catalog_view_list_command_builder("az dla catalog view list", databaseName);
     }
 
     /**
@@ -1195,8 +1159,8 @@ export class az_dla_catalog_view implements ICommandParent<any> {
      * @param {string} schemaName The name of the schema containing the view.
      * @param {string} viewName The name of the view.
      */
-    az_dla_catalog_view_show(databaseName: string, schemaName: string, viewName: string): az_dla_catalog_view_show_command_builder {
-        return new az_dla_catalog_view_show_command_builder(this, databaseName, schemaName, viewName);
+    static az_dla_catalog_view_show(databaseName: string, schemaName: string, viewName: string): az_dla_catalog_view_show_command_builder {
+        return new az_dla_catalog_view_show_command_builder("az dla catalog view show", databaseName, schemaName, viewName);
     }
 }
 
@@ -1205,9 +1169,7 @@ export class az_dla_catalog {
 }
 
 /** Manage Data Lake Analytics job pipelines. */
-export class az_dla_job_pipeline implements ICommandParent<any> {
-    commandPath = "az dla job pipeline";
-
+export class az_dla_job_pipeline {
     /**
      * List job pipelines in a Data Lake Analytics account.
      *
@@ -1221,8 +1183,8 @@ export class az_dla_job_pipeline implements ICommandParent<any> {
      *                          [--subscription]
      * ```
      */
-    az_dla_job_pipeline_list(): az_dla_job_pipeline_list_command_builder {
-        return new az_dla_job_pipeline_list_command_builder(this);
+    static az_dla_job_pipeline_list(): az_dla_job_pipeline_list_command_builder {
+        return new az_dla_job_pipeline_list_command_builder("az dla job pipeline list");
     }
 
     /**
@@ -1241,15 +1203,13 @@ export class az_dla_job_pipeline implements ICommandParent<any> {
      *
      * @param {string} pipelineIdentity Pipeline ID.
      */
-    az_dla_job_pipeline_show(pipelineIdentity: string): az_dla_job_pipeline_show_command_builder {
-        return new az_dla_job_pipeline_show_command_builder(this, pipelineIdentity);
+    static az_dla_job_pipeline_show(pipelineIdentity: string): az_dla_job_pipeline_show_command_builder {
+        return new az_dla_job_pipeline_show_command_builder("az dla job pipeline show", pipelineIdentity);
     }
 }
 
 /** Manage Data Lake Analytics job recurrences. */
-export class az_dla_job_recurrence implements ICommandParent<any> {
-    commandPath = "az dla job recurrence";
-
+export class az_dla_job_recurrence {
     /**
      * List job recurrences in a Data Lake Analytics account.
      *
@@ -1263,8 +1223,8 @@ export class az_dla_job_recurrence implements ICommandParent<any> {
      *                            [--subscription]
      * ```
      */
-    az_dla_job_recurrence_list(): az_dla_job_recurrence_list_command_builder {
-        return new az_dla_job_recurrence_list_command_builder(this);
+    static az_dla_job_recurrence_list(): az_dla_job_recurrence_list_command_builder {
+        return new az_dla_job_recurrence_list_command_builder("az dla job recurrence list");
     }
 
     /**
@@ -1283,15 +1243,13 @@ export class az_dla_job_recurrence implements ICommandParent<any> {
      *
      * @param {string} recurrenceIdentity Recurrence ID.
      */
-    az_dla_job_recurrence_show(recurrenceIdentity: string): az_dla_job_recurrence_show_command_builder {
-        return new az_dla_job_recurrence_show_command_builder(this, recurrenceIdentity);
+    static az_dla_job_recurrence_show(recurrenceIdentity: string): az_dla_job_recurrence_show_command_builder {
+        return new az_dla_job_recurrence_show_command_builder("az dla job recurrence show", recurrenceIdentity);
     }
 }
 
 /** Manage Data Lake Analytics jobs. */
-export class az_dla_job implements ICommandParent<any> {
-    commandPath = "az dla job";
-
+export class az_dla_job {
     /**
      * Cancel a Data Lake Analytics job.
      *
@@ -1305,8 +1263,8 @@ export class az_dla_job implements ICommandParent<any> {
      *
      * @param {string} jobIdentity JobInfo ID to cancel.
      */
-    az_dla_job_cancel(jobIdentity: string): az_dla_job_cancel_command_builder {
-        return new az_dla_job_cancel_command_builder(this, jobIdentity);
+    static az_dla_job_cancel(jobIdentity: string): az_dla_job_cancel_command_builder {
+        return new az_dla_job_cancel_command_builder("az dla job cancel", jobIdentity);
     }
 
     /**
@@ -1329,8 +1287,8 @@ export class az_dla_job implements ICommandParent<any> {
      *                 [--top]
      * ```
      */
-    az_dla_job_list(): az_dla_job_list_command_builder {
-        return new az_dla_job_list_command_builder(this);
+    static az_dla_job_list(): az_dla_job_list_command_builder {
+        return new az_dla_job_list_command_builder("az dla job list");
     }
 
     /**
@@ -1347,8 +1305,8 @@ export class az_dla_job implements ICommandParent<any> {
      *
      * @param {string} jobIdentity JobInfo ID.
      */
-    az_dla_job_show(jobIdentity: string): az_dla_job_show_command_builder {
-        return new az_dla_job_show_command_builder(this, jobIdentity);
+    static az_dla_job_show(jobIdentity: string): az_dla_job_show_command_builder {
+        return new az_dla_job_show_command_builder("az dla job show", jobIdentity);
     }
 
     /**
@@ -1377,8 +1335,8 @@ export class az_dla_job implements ICommandParent<any> {
      * @param {string} jobName Name for the submitted job.
      * @param {string} script Script to submit. This may be '@{file}' to load from a file.
      */
-    az_dla_job_submit(jobName: string, script: string): az_dla_job_submit_command_builder {
-        return new az_dla_job_submit_command_builder(this, jobName, script);
+    static az_dla_job_submit(jobName: string, script: string): az_dla_job_submit_command_builder {
+        return new az_dla_job_submit_command_builder("az dla job submit", jobName, script);
     }
 
     /**
@@ -1396,8 +1354,8 @@ export class az_dla_job implements ICommandParent<any> {
      *
      * @param {string} jobId Job ID to poll for completion.
      */
-    az_dla_job_wait(jobId: string): az_dla_job_wait_command_builder {
-        return new az_dla_job_wait_command_builder(this, jobId);
+    static az_dla_job_wait(jobId: string): az_dla_job_wait_command_builder {
+        return new az_dla_job_wait_command_builder("az dla job wait", jobId);
     }
 }
 
@@ -1423,7 +1381,7 @@ export class az_dla {
  * @param {string} storageAccountName Name of an existing storage account to link to.
  */
 class az_dla_account_blob_storage_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accessKey: string, storageAccountName: string) {
+    constructor(commandPath: string, accessKey: string, storageAccountName: string) {
         super(commandParent);
         this.accessKey(accessKey)
         this.storageAccountName(storageAccountName)
@@ -1487,7 +1445,7 @@ class az_dla_account_blob_storage_add_command_builder extends CommandBuilder {
  * @param {string} storageAccountName Name of an existing storage account to link to.
  */
 class az_dla_account_blob_storage_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, storageAccountName: string) {
+    constructor(commandPath: string, storageAccountName: string) {
         super(commandParent);
         this.storageAccountName(storageAccountName)
     }
@@ -1542,7 +1500,7 @@ class az_dla_account_blob_storage_delete_command_builder extends CommandBuilder 
  * ```
  */
 class az_dla_account_blob_storage_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1629,7 +1587,7 @@ class az_dla_account_blob_storage_list_command_builder extends CommandBuilder {
  * @param {string} storageAccountName Name of an existing storage account to link to.
  */
 class az_dla_account_blob_storage_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, storageAccountName: string) {
+    constructor(commandPath: string, storageAccountName: string) {
         super(commandParent);
         this.storageAccountName(storageAccountName)
     }
@@ -1689,7 +1647,7 @@ class az_dla_account_blob_storage_show_command_builder extends CommandBuilder {
  * @param {string} storageAccountName Name of an existing storage account to link to.
  */
 class az_dla_account_blob_storage_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accessKey: string, storageAccountName: string) {
+    constructor(commandPath: string, accessKey: string, storageAccountName: string) {
         super(commandParent);
         this.accessKey(accessKey)
         this.storageAccountName(storageAccountName)
@@ -1759,7 +1717,7 @@ class az_dla_account_blob_storage_update_command_builder extends CommandBuilder 
  * @param {string} objectType The Azure Active Directory object type associated with the supplied object ID.
  */
 class az_dla_account_compute_policy_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, account: string, computePolicyName: string, objectId: string, objectType: string) {
+    constructor(commandPath: string, account: string, computePolicyName: string, objectId: string, objectType: string) {
         super(commandParent);
         this.account(account)
         this.computePolicyName(computePolicyName)
@@ -1831,7 +1789,7 @@ class az_dla_account_compute_policy_create_command_builder extends CommandBuilde
  * @param {string} computePolicyName The name of the compute policy to delete.
  */
 class az_dla_account_compute_policy_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, computePolicyName: string) {
+    constructor(commandPath: string, computePolicyName: string) {
         super(commandParent);
         this.computePolicyName(computePolicyName)
     }
@@ -1880,7 +1838,7 @@ class az_dla_account_compute_policy_delete_command_builder extends CommandBuilde
  * ```
  */
 class az_dla_account_compute_policy_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1931,7 +1889,7 @@ class az_dla_account_compute_policy_list_command_builder extends CommandBuilder 
  * @param {string} computePolicyName The name of the compute policy to retrieve.
  */
 class az_dla_account_compute_policy_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, computePolicyName: string) {
+    constructor(commandPath: string, computePolicyName: string) {
         super(commandParent);
         this.computePolicyName(computePolicyName)
     }
@@ -1990,7 +1948,7 @@ class az_dla_account_compute_policy_show_command_builder extends CommandBuilder 
  * @param {string} computePolicyName The name of the compute policy to update.
  */
 class az_dla_account_compute_policy_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, computePolicyName: string) {
+    constructor(commandPath: string, computePolicyName: string) {
         super(commandParent);
         this.computePolicyName(computePolicyName)
     }
@@ -2054,7 +2012,7 @@ class az_dla_account_compute_policy_update_command_builder extends CommandBuilde
  * @param {string} dataLakeStoreAccountName The name of the Data Lake Store account to add.
  */
 class az_dla_account_data_lake_store_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, dataLakeStoreAccountName: string) {
+    constructor(commandPath: string, dataLakeStoreAccountName: string) {
         super(commandParent);
         this.dataLakeStoreAccountName(dataLakeStoreAccountName)
     }
@@ -2111,7 +2069,7 @@ class az_dla_account_data_lake_store_add_command_builder extends CommandBuilder 
  * @param {string} dataLakeStoreAccountName The name of the Data Lake Store account to remove.
  */
 class az_dla_account_data_lake_store_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, dataLakeStoreAccountName: string) {
+    constructor(commandPath: string, dataLakeStoreAccountName: string) {
         super(commandParent);
         this.dataLakeStoreAccountName(dataLakeStoreAccountName)
     }
@@ -2166,7 +2124,7 @@ class az_dla_account_data_lake_store_delete_command_builder extends CommandBuild
  * ```
  */
 class az_dla_account_data_lake_store_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2253,7 +2211,7 @@ class az_dla_account_data_lake_store_list_command_builder extends CommandBuilder
  * @param {string} dataLakeStoreAccountName The name of the Data Lake Store account to retrieve.
  */
 class az_dla_account_data_lake_store_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, dataLakeStoreAccountName: string) {
+    constructor(commandPath: string, dataLakeStoreAccountName: string) {
         super(commandParent);
         this.dataLakeStoreAccountName(dataLakeStoreAccountName)
     }
@@ -2314,7 +2272,7 @@ class az_dla_account_data_lake_store_show_command_builder extends CommandBuilder
  * @param {string} startIpAddress The start of the valid IP range for the firewall rule.
  */
 class az_dla_account_firewall_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, account: string, endIpAddress: string, firewallRuleName: string, startIpAddress: string) {
+    constructor(commandPath: string, account: string, endIpAddress: string, firewallRuleName: string, startIpAddress: string) {
         super(commandParent);
         this.account(account)
         this.endIpAddress(endIpAddress)
@@ -2374,7 +2332,7 @@ class az_dla_account_firewall_create_command_builder extends CommandBuilder {
  * @param {string} firewallRuleName The name of the firewall rule to delete.
  */
 class az_dla_account_firewall_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, firewallRuleName: string) {
+    constructor(commandPath: string, firewallRuleName: string) {
         super(commandParent);
         this.firewallRuleName(firewallRuleName)
     }
@@ -2423,7 +2381,7 @@ class az_dla_account_firewall_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_dla_account_firewall_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2474,7 +2432,7 @@ class az_dla_account_firewall_list_command_builder extends CommandBuilder {
  * @param {string} firewallRuleName The name of the firewall rule to retrieve.
  */
 class az_dla_account_firewall_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, firewallRuleName: string) {
+    constructor(commandPath: string, firewallRuleName: string) {
         super(commandParent);
         this.firewallRuleName(firewallRuleName)
     }
@@ -2533,7 +2491,7 @@ class az_dla_account_firewall_show_command_builder extends CommandBuilder {
  * @param {string} firewallRuleName The name of the firewall rule to update.
  */
 class az_dla_account_firewall_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, firewallRuleName: string) {
+    constructor(commandPath: string, firewallRuleName: string) {
         super(commandParent);
         this.firewallRuleName(firewallRuleName)
     }
@@ -2602,7 +2560,7 @@ class az_dla_account_firewall_update_command_builder extends CommandBuilder {
  * @param {string} defaultDataLakeStore The default Data Lake Store account to associate with the created account.
  */
 class az_dla_account_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, account: string, defaultDataLakeStore: string) {
+    constructor(commandPath: string, account: string, defaultDataLakeStore: string) {
         super(commandParent);
         this.account(account)
         this.defaultDataLakeStore(defaultDataLakeStore)
@@ -2681,7 +2639,7 @@ class az_dla_account_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_dla_account_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2721,7 +2679,7 @@ class az_dla_account_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_dla_account_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2757,7 +2715,7 @@ class az_dla_account_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_dla_account_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2811,7 +2769,7 @@ class az_dla_account_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_dla_account_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2903,7 +2861,7 @@ class az_dla_account_update_command_builder extends CommandBuilder {
  * @param {string} databaseName The name of the database containing the assembly.
  */
 class az_dla_catalog_assembly_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string) {
+    constructor(commandPath: string, databaseName: string) {
         super(commandParent);
         this.databaseName(databaseName)
     }
@@ -2992,7 +2950,7 @@ class az_dla_catalog_assembly_list_command_builder extends CommandBuilder {
  * @param {string} databaseName The name of the database containing the assembly.
  */
 class az_dla_catalog_assembly_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, assemblyName: string, databaseName: string) {
+    constructor(commandPath: string, assemblyName: string, databaseName: string) {
         super(commandParent);
         this.assemblyName(assemblyName)
         this.databaseName(databaseName)
@@ -3056,7 +3014,7 @@ class az_dla_catalog_assembly_show_command_builder extends CommandBuilder {
  * @param {string} userName The user name that will be used when authenticating with this credential.
  */
 class az_dla_catalog_credential_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, account: string, credentialName: string, databaseName: string, uri: string, userName: string) {
+    constructor(commandPath: string, account: string, credentialName: string, databaseName: string, uri: string, userName: string) {
         super(commandParent);
         this.account(account)
         this.credentialName(credentialName)
@@ -3126,7 +3084,7 @@ class az_dla_catalog_credential_create_command_builder extends CommandBuilder {
  * @param {string} databaseName The name of the database containing the credential.
  */
 class az_dla_catalog_credential_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, credentialName: string, databaseName: string) {
+    constructor(commandPath: string, credentialName: string, databaseName: string) {
         super(commandParent);
         this.credentialName(credentialName)
         this.databaseName(databaseName)
@@ -3196,7 +3154,7 @@ class az_dla_catalog_credential_delete_command_builder extends CommandBuilder {
  * @param {string} databaseName The name of the database containing the schema.
  */
 class az_dla_catalog_credential_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string) {
+    constructor(commandPath: string, databaseName: string) {
         super(commandParent);
         this.databaseName(databaseName)
     }
@@ -3285,7 +3243,7 @@ class az_dla_catalog_credential_list_command_builder extends CommandBuilder {
  * @param {string} databaseName The name of the database containing the schema.
  */
 class az_dla_catalog_credential_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, credentialName: string, databaseName: string) {
+    constructor(commandPath: string, credentialName: string, databaseName: string) {
         super(commandParent);
         this.credentialName(credentialName)
         this.databaseName(databaseName)
@@ -3350,7 +3308,7 @@ class az_dla_catalog_credential_show_command_builder extends CommandBuilder {
  * @param {string} userName The user name associated with the credential that will have its password updated.
  */
 class az_dla_catalog_credential_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, credentialName: string, databaseName: string, uri: string, userName: string) {
+    constructor(commandPath: string, credentialName: string, databaseName: string, uri: string, userName: string) {
         super(commandParent);
         this.credentialName(credentialName)
         this.databaseName(databaseName)
@@ -3431,7 +3389,7 @@ class az_dla_catalog_credential_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_dla_catalog_database_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3511,7 +3469,7 @@ class az_dla_catalog_database_list_command_builder extends CommandBuilder {
  * @param {string} databaseName The name of the database.
  */
 class az_dla_catalog_database_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string) {
+    constructor(commandPath: string, databaseName: string) {
         super(commandParent);
         this.databaseName(databaseName)
     }
@@ -3568,7 +3526,7 @@ class az_dla_catalog_database_show_command_builder extends CommandBuilder {
  * @param {string} databaseName The name of the database containing the external data sources.
  */
 class az_dla_catalog_external_data_source_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string) {
+    constructor(commandPath: string, databaseName: string) {
         super(commandParent);
         this.databaseName(databaseName)
     }
@@ -3657,7 +3615,7 @@ class az_dla_catalog_external_data_source_list_command_builder extends CommandBu
  * @param {string} externalDataSourceName The name of the external data source.
  */
 class az_dla_catalog_external_data_source_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string, externalDataSourceName: string) {
+    constructor(commandPath: string, databaseName: string, externalDataSourceName: string) {
         super(commandParent);
         this.databaseName(databaseName)
         this.externalDataSourceName(externalDataSourceName)
@@ -3723,7 +3681,7 @@ class az_dla_catalog_external_data_source_show_command_builder extends CommandBu
  * @param {string} schemaName The name of the schema containing the packages.
  */
 class az_dla_catalog_package_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string, schemaName: string) {
+    constructor(commandPath: string, databaseName: string, schemaName: string) {
         super(commandParent);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
@@ -3821,7 +3779,7 @@ class az_dla_catalog_package_list_command_builder extends CommandBuilder {
  * @param {string} schemaName The name of the schema containing the package.
  */
 class az_dla_catalog_package_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string, packageName: string, schemaName: string) {
+    constructor(commandPath: string, databaseName: string, packageName: string, schemaName: string) {
         super(commandParent);
         this.databaseName(databaseName)
         this.packageName(packageName)
@@ -3894,7 +3852,7 @@ class az_dla_catalog_package_show_command_builder extends CommandBuilder {
  * @param {string} schemaName The name of the schema containing the procedures.
  */
 class az_dla_catalog_procedure_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string, schemaName: string) {
+    constructor(commandPath: string, databaseName: string, schemaName: string) {
         super(commandParent);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
@@ -3992,7 +3950,7 @@ class az_dla_catalog_procedure_list_command_builder extends CommandBuilder {
  * @param {string} schemaName The name of the schema containing the procedure.
  */
 class az_dla_catalog_procedure_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string, procedureName: string, schemaName: string) {
+    constructor(commandPath: string, databaseName: string, procedureName: string, schemaName: string) {
         super(commandParent);
         this.databaseName(databaseName)
         this.procedureName(procedureName)
@@ -4063,7 +4021,7 @@ class az_dla_catalog_procedure_show_command_builder extends CommandBuilder {
  * @param {string} databaseName The name of the database containing the schema.
  */
 class az_dla_catalog_schema_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string) {
+    constructor(commandPath: string, databaseName: string) {
         super(commandParent);
         this.databaseName(databaseName)
     }
@@ -4152,7 +4110,7 @@ class az_dla_catalog_schema_list_command_builder extends CommandBuilder {
  * @param {string} schemaName The name of the schema.
  */
 class az_dla_catalog_schema_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string, schemaName: string) {
+    constructor(commandPath: string, databaseName: string, schemaName: string) {
         super(commandParent);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
@@ -4220,7 +4178,7 @@ class az_dla_catalog_schema_show_command_builder extends CommandBuilder {
  * @param {string} tableName The name of the table containing the partitions.
  */
 class az_dla_catalog_table_partition_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string, schemaName: string, tableName: string) {
+    constructor(commandPath: string, databaseName: string, schemaName: string, tableName: string) {
         super(commandParent);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
@@ -4327,7 +4285,7 @@ class az_dla_catalog_table_partition_list_command_builder extends CommandBuilder
  * @param {string} tableName The name of the table containing the partition.
  */
 class az_dla_catalog_table_partition_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string, partitionName: string, schemaName: string, tableName: string) {
+    constructor(commandPath: string, databaseName: string, partitionName: string, schemaName: string, tableName: string) {
         super(commandParent);
         this.databaseName(databaseName)
         this.partitionName(partitionName)
@@ -4401,7 +4359,7 @@ class az_dla_catalog_table_partition_show_command_builder extends CommandBuilder
  * @param {string} databaseName The name of the database.
  */
 class az_dla_catalog_table_stats_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string) {
+    constructor(commandPath: string, databaseName: string) {
         super(commandParent);
         this.databaseName(databaseName)
     }
@@ -4470,7 +4428,7 @@ class az_dla_catalog_table_stats_list_command_builder extends CommandBuilder {
  * @param {string} tableName The name of the table containing the statistics.
  */
 class az_dla_catalog_table_stats_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string, schemaName: string, statisticsName: string, tableName: string) {
+    constructor(commandPath: string, databaseName: string, schemaName: string, statisticsName: string, tableName: string) {
         super(commandParent);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
@@ -4550,7 +4508,7 @@ class az_dla_catalog_table_stats_show_command_builder extends CommandBuilder {
  * @param {string} schemaName The name of the schema containing the table types.
  */
 class az_dla_catalog_table_type_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string, schemaName: string) {
+    constructor(commandPath: string, databaseName: string, schemaName: string) {
         super(commandParent);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
@@ -4648,7 +4606,7 @@ class az_dla_catalog_table_type_list_command_builder extends CommandBuilder {
  * @param {string} tableTypeName The name of the table type to retrieve.
  */
 class az_dla_catalog_table_type_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string, schemaName: string, tableTypeName: string) {
+    constructor(commandPath: string, databaseName: string, schemaName: string, tableTypeName: string) {
         super(commandParent);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
@@ -4714,7 +4672,7 @@ class az_dla_catalog_table_type_show_command_builder extends CommandBuilder {
  * @param {string} databaseName The name of the database.
  */
 class az_dla_catalog_table_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string) {
+    constructor(commandPath: string, databaseName: string) {
         super(commandParent);
         this.databaseName(databaseName)
     }
@@ -4775,7 +4733,7 @@ class az_dla_catalog_table_list_command_builder extends CommandBuilder {
  * @param {string} tableName The name of the table.
  */
 class az_dla_catalog_table_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string, schemaName: string, tableName: string) {
+    constructor(commandPath: string, databaseName: string, schemaName: string, tableName: string) {
         super(commandParent);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
@@ -4841,7 +4799,7 @@ class az_dla_catalog_table_show_command_builder extends CommandBuilder {
  * @param {string} databaseName The name of the database.
  */
 class az_dla_catalog_tvf_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string) {
+    constructor(commandPath: string, databaseName: string) {
         super(commandParent);
         this.databaseName(databaseName)
     }
@@ -4902,7 +4860,7 @@ class az_dla_catalog_tvf_list_command_builder extends CommandBuilder {
  * @param {string} tableValuedFunctionName The name of the tableValuedFunction.
  */
 class az_dla_catalog_tvf_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string, schemaName: string, tableValuedFunctionName: string) {
+    constructor(commandPath: string, databaseName: string, schemaName: string, tableValuedFunctionName: string) {
         super(commandParent);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
@@ -4968,7 +4926,7 @@ class az_dla_catalog_tvf_show_command_builder extends CommandBuilder {
  * @param {string} databaseName The name of the database.
  */
 class az_dla_catalog_view_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string) {
+    constructor(commandPath: string, databaseName: string) {
         super(commandParent);
         this.databaseName(databaseName)
     }
@@ -5029,7 +4987,7 @@ class az_dla_catalog_view_list_command_builder extends CommandBuilder {
  * @param {string} viewName The name of the view.
  */
 class az_dla_catalog_view_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseName: string, schemaName: string, viewName: string) {
+    constructor(commandPath: string, databaseName: string, schemaName: string, viewName: string) {
         super(commandParent);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
@@ -5093,7 +5051,7 @@ class az_dla_catalog_view_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_dla_job_pipeline_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5151,7 +5109,7 @@ class az_dla_job_pipeline_list_command_builder extends CommandBuilder {
  * @param {string} pipelineIdentity Pipeline ID.
  */
 class az_dla_job_pipeline_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, pipelineIdentity: string) {
+    constructor(commandPath: string, pipelineIdentity: string) {
         super(commandParent);
         this.pipelineIdentity(pipelineIdentity)
     }
@@ -5213,7 +5171,7 @@ class az_dla_job_pipeline_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_dla_job_recurrence_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5271,7 +5229,7 @@ class az_dla_job_recurrence_list_command_builder extends CommandBuilder {
  * @param {string} recurrenceIdentity Recurrence ID.
  */
 class az_dla_job_recurrence_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, recurrenceIdentity: string) {
+    constructor(commandPath: string, recurrenceIdentity: string) {
         super(commandParent);
         this.recurrenceIdentity(recurrenceIdentity)
     }
@@ -5333,7 +5291,7 @@ class az_dla_job_recurrence_show_command_builder extends CommandBuilder {
  * @param {string} jobIdentity JobInfo ID to cancel.
  */
 class az_dla_job_cancel_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, jobIdentity: string) {
+    constructor(commandPath: string, jobIdentity: string) {
         super(commandParent);
         this.jobIdentity(jobIdentity)
     }
@@ -5384,7 +5342,7 @@ class az_dla_job_cancel_command_builder extends CommandBuilder {
  * ```
  */
 class az_dla_job_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5482,7 +5440,7 @@ class az_dla_job_list_command_builder extends CommandBuilder {
  * @param {string} jobIdentity JobInfo ID.
  */
 class az_dla_job_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, jobIdentity: string) {
+    constructor(commandPath: string, jobIdentity: string) {
         super(commandParent);
         this.jobIdentity(jobIdentity)
     }
@@ -5545,7 +5503,7 @@ class az_dla_job_show_command_builder extends CommandBuilder {
  * @param {string} script Script to submit. This may be '@{file}' to load from a file.
  */
 class az_dla_job_submit_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, jobName: string, script: string) {
+    constructor(commandPath: string, jobName: string, script: string) {
         super(commandParent);
         this.jobName(jobName)
         this.script(script)
@@ -5664,7 +5622,7 @@ class az_dla_job_submit_command_builder extends CommandBuilder {
  * @param {string} jobId Job ID to poll for completion.
  */
 class az_dla_job_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, jobId: string) {
+    constructor(commandPath: string, jobId: string) {
         super(commandParent);
         this.jobId(jobId)
     }

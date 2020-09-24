@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Commands to manage Log Analytics monitoring. Requires "--workspace-id". */
-export class az_openshift_monitor implements ICommandParent<any> {
-    commandPath = "az openshift monitor";
-
+export class az_openshift_monitor {
     /**
      * Disable Log Analytics monitoring.
      *
@@ -18,8 +16,8 @@ export class az_openshift_monitor implements ICommandParent<any> {
      * @param {string} name Name of the managed OpenShift cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_openshift_monitor_disable(name: string, resourceGroup: string): az_openshift_monitor_disable_command_builder {
-        return new az_openshift_monitor_disable_command_builder(this, name, resourceGroup);
+    static az_openshift_monitor_disable(name: string, resourceGroup: string): az_openshift_monitor_disable_command_builder {
+        return new az_openshift_monitor_disable_command_builder("az openshift monitor disable", name, resourceGroup);
     }
 
     /**
@@ -38,15 +36,13 @@ export class az_openshift_monitor implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceId The resource ID of an existing Log Analytics Workspace to use for storing monitoring data.
      */
-    az_openshift_monitor_enable(name: string, resourceGroup: string, workspaceId: string): az_openshift_monitor_enable_command_builder {
-        return new az_openshift_monitor_enable_command_builder(this, name, resourceGroup, workspaceId);
+    static az_openshift_monitor_enable(name: string, resourceGroup: string, workspaceId: string): az_openshift_monitor_enable_command_builder {
+        return new az_openshift_monitor_enable_command_builder("az openshift monitor enable", name, resourceGroup, workspaceId);
     }
 }
 
 /** Manage Azure Red Hat OpenShift Services. */
-export class az_openshift implements ICommandParent<any> {
-    commandPath = "az openshift";
-
+export class az_openshift {
     /**
      * Create a new managed OpenShift cluster.
      *
@@ -73,8 +69,8 @@ export class az_openshift implements ICommandParent<any> {
      * @param {string} name Name of the managed OpenShift cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_openshift_create(name: string, resourceGroup: string): az_openshift_create_command_builder {
-        return new az_openshift_create_command_builder(this, name, resourceGroup);
+    static az_openshift_create(name: string, resourceGroup: string): az_openshift_create_command_builder {
+        return new az_openshift_create_command_builder("az openshift create", name, resourceGroup);
     }
 
     /**
@@ -92,8 +88,8 @@ export class az_openshift implements ICommandParent<any> {
      * @param {string} name Name of the managed OpenShift cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_openshift_delete(name: string, resourceGroup: string): az_openshift_delete_command_builder {
-        return new az_openshift_delete_command_builder(this, name, resourceGroup);
+    static az_openshift_delete(name: string, resourceGroup: string): az_openshift_delete_command_builder {
+        return new az_openshift_delete_command_builder("az openshift delete", name, resourceGroup);
     }
 
     /**
@@ -106,8 +102,8 @@ export class az_openshift implements ICommandParent<any> {
      *                   [--subscription]
      * ```
      */
-    az_openshift_list(): az_openshift_list_command_builder {
-        return new az_openshift_list_command_builder(this);
+    static az_openshift_list(): az_openshift_list_command_builder {
+        return new az_openshift_list_command_builder("az openshift list");
     }
 
     /**
@@ -126,8 +122,8 @@ export class az_openshift implements ICommandParent<any> {
      * @param {string} name Name of the managed OpenShift cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_openshift_scale(computeCount: string, name: string, resourceGroup: string): az_openshift_scale_command_builder {
-        return new az_openshift_scale_command_builder(this, computeCount, name, resourceGroup);
+    static az_openshift_scale(computeCount: string, name: string, resourceGroup: string): az_openshift_scale_command_builder {
+        return new az_openshift_scale_command_builder("az openshift scale", computeCount, name, resourceGroup);
     }
 
     /**
@@ -144,8 +140,8 @@ export class az_openshift implements ICommandParent<any> {
      * @param {string} name Name of the managed OpenShift cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_openshift_show(name: string, resourceGroup: string): az_openshift_show_command_builder {
-        return new az_openshift_show_command_builder(this, name, resourceGroup);
+    static az_openshift_show(name: string, resourceGroup: string): az_openshift_show_command_builder {
+        return new az_openshift_show_command_builder("az openshift show", name, resourceGroup);
     }
 
     /**
@@ -168,8 +164,8 @@ export class az_openshift implements ICommandParent<any> {
      * @param {string} name Name of the managed OpenShift cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_openshift_wait(name: string, resourceGroup: string): az_openshift_wait_command_builder {
-        return new az_openshift_wait_command_builder(this, name, resourceGroup);
+    static az_openshift_wait(name: string, resourceGroup: string): az_openshift_wait_command_builder {
+        return new az_openshift_wait_command_builder("az openshift wait", name, resourceGroup);
     }
 }
 
@@ -188,7 +184,7 @@ export class az_openshift implements ICommandParent<any> {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_openshift_monitor_disable_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -236,7 +232,7 @@ class az_openshift_monitor_disable_command_builder extends CommandBuilder {
  * @param {string} workspaceId The resource ID of an existing Log Analytics Workspace to use for storing monitoring data.
  */
 class az_openshift_monitor_enable_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, workspaceId: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, workspaceId: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -301,7 +297,7 @@ class az_openshift_monitor_enable_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_openshift_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -420,7 +416,7 @@ class az_openshift_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_openshift_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -468,7 +464,7 @@ class az_openshift_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_openshift_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -508,7 +504,7 @@ class az_openshift_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_openshift_scale_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, computeCount: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, computeCount: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.computeCount(computeCount)
         this.name(name)
@@ -561,7 +557,7 @@ class az_openshift_scale_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_openshift_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -613,7 +609,7 @@ class az_openshift_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_openshift_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)

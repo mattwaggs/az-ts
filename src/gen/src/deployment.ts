@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Azure Resource Manager template deployment at resource group. */
-export class az_deployment_group implements ICommandParent<any> {
-    commandPath = "az deployment group";
-
+export class az_deployment_group {
     /**
      * Cancel a deployment at resource group.
      *
@@ -17,8 +15,8 @@ export class az_deployment_group implements ICommandParent<any> {
      * @param {string} name The deployment name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_deployment_group_cancel(name: string, resourceGroup: string): az_deployment_group_cancel_command_builder {
-        return new az_deployment_group_cancel_command_builder(this, name, resourceGroup);
+    static az_deployment_group_cancel(name: string, resourceGroup: string): az_deployment_group_cancel_command_builder {
+        return new az_deployment_group_cancel_command_builder("az deployment group cancel", name, resourceGroup);
     }
 
     /**
@@ -46,8 +44,8 @@ export class az_deployment_group implements ICommandParent<any> {
      *
      * @param {string} resourceGroup The resource group to create deployment at.
      */
-    az_deployment_group_create(resourceGroup: string): az_deployment_group_create_command_builder {
-        return new az_deployment_group_create_command_builder(this, resourceGroup);
+    static az_deployment_group_create(resourceGroup: string): az_deployment_group_create_command_builder {
+        return new az_deployment_group_create_command_builder("az deployment group create", resourceGroup);
     }
 
     /**
@@ -64,8 +62,8 @@ export class az_deployment_group implements ICommandParent<any> {
      * @param {string} name The deployment name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_deployment_group_delete(name: string, resourceGroup: string): az_deployment_group_delete_command_builder {
-        return new az_deployment_group_delete_command_builder(this, name, resourceGroup);
+    static az_deployment_group_delete(name: string, resourceGroup: string): az_deployment_group_delete_command_builder {
+        return new az_deployment_group_delete_command_builder("az deployment group delete", name, resourceGroup);
     }
 
     /**
@@ -81,8 +79,8 @@ export class az_deployment_group implements ICommandParent<any> {
      * @param {string} name The deployment name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_deployment_group_export(name: string, resourceGroup: string): az_deployment_group_export_command_builder {
-        return new az_deployment_group_export_command_builder(this, name, resourceGroup);
+    static az_deployment_group_export(name: string, resourceGroup: string): az_deployment_group_export_command_builder {
+        return new az_deployment_group_export_command_builder("az deployment group export", name, resourceGroup);
     }
 
     /**
@@ -98,8 +96,8 @@ export class az_deployment_group implements ICommandParent<any> {
      *
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_deployment_group_list(resourceGroup: string): az_deployment_group_list_command_builder {
-        return new az_deployment_group_list_command_builder(this, resourceGroup);
+    static az_deployment_group_list(resourceGroup: string): az_deployment_group_list_command_builder {
+        return new az_deployment_group_list_command_builder("az deployment group list", resourceGroup);
     }
 
     /**
@@ -116,8 +114,8 @@ export class az_deployment_group implements ICommandParent<any> {
      * @param {string} name The deployment name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_deployment_group_show(name: string, resourceGroup: string): az_deployment_group_show_command_builder {
-        return new az_deployment_group_show_command_builder(this, name, resourceGroup);
+    static az_deployment_group_show(name: string, resourceGroup: string): az_deployment_group_show_command_builder {
+        return new az_deployment_group_show_command_builder("az deployment group show", name, resourceGroup);
     }
 
     /**
@@ -139,8 +137,8 @@ export class az_deployment_group implements ICommandParent<any> {
      *
      * @param {string} resourceGroup The resource group to create deployment at.
      */
-    az_deployment_group_validate(resourceGroup: string): az_deployment_group_validate_command_builder {
-        return new az_deployment_group_validate_command_builder(this, resourceGroup);
+    static az_deployment_group_validate(resourceGroup: string): az_deployment_group_validate_command_builder {
+        return new az_deployment_group_validate_command_builder("az deployment group validate", resourceGroup);
     }
 
     /**
@@ -163,8 +161,8 @@ export class az_deployment_group implements ICommandParent<any> {
      * @param {string} name The deployment name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_deployment_group_wait(name: string, resourceGroup: string): az_deployment_group_wait_command_builder {
-        return new az_deployment_group_wait_command_builder(this, name, resourceGroup);
+    static az_deployment_group_wait(name: string, resourceGroup: string): az_deployment_group_wait_command_builder {
+        return new az_deployment_group_wait_command_builder("az deployment group wait", name, resourceGroup);
     }
 
     /**
@@ -188,15 +186,13 @@ export class az_deployment_group implements ICommandParent<any> {
      *
      * @param {string} resourceGroup The resource group to execute deployment What-If operation at.
      */
-    az_deployment_group_what_if(resourceGroup: string): az_deployment_group_what_if_command_builder {
-        return new az_deployment_group_what_if_command_builder(this, resourceGroup);
+    static az_deployment_group_what_if(resourceGroup: string): az_deployment_group_what_if_command_builder {
+        return new az_deployment_group_what_if_command_builder("az deployment group what-if", resourceGroup);
     }
 }
 
 /** Manage Azure Resource Manager template deployment at management group. */
-export class az_deployment_mg implements ICommandParent<any> {
-    commandPath = "az deployment mg";
-
+export class az_deployment_mg {
     /**
      * Cancel a deployment at management group.
      *
@@ -210,8 +206,8 @@ export class az_deployment_mg implements ICommandParent<any> {
      * @param {string} managementGroupId The management group id.
      * @param {string} name The deployment name.
      */
-    az_deployment_mg_cancel(managementGroupId: string, name: string): az_deployment_mg_cancel_command_builder {
-        return new az_deployment_mg_cancel_command_builder(this, managementGroupId, name);
+    static az_deployment_mg_cancel(managementGroupId: string, name: string): az_deployment_mg_cancel_command_builder {
+        return new az_deployment_mg_cancel_command_builder("az deployment mg cancel", managementGroupId, name);
     }
 
     /**
@@ -237,8 +233,8 @@ export class az_deployment_mg implements ICommandParent<any> {
      * @param {string} location The location to store the deployment metadata.
      * @param {string} managementGroupId The management group id to create deployment at.
      */
-    az_deployment_mg_create(location: string, managementGroupId: string): az_deployment_mg_create_command_builder {
-        return new az_deployment_mg_create_command_builder(this, location, managementGroupId);
+    static az_deployment_mg_create(location: string, managementGroupId: string): az_deployment_mg_create_command_builder {
+        return new az_deployment_mg_create_command_builder("az deployment mg create", location, managementGroupId);
     }
 
     /**
@@ -255,8 +251,8 @@ export class az_deployment_mg implements ICommandParent<any> {
      * @param {string} managementGroupId The management group id.
      * @param {string} name The deployment name.
      */
-    az_deployment_mg_delete(managementGroupId: string, name: string): az_deployment_mg_delete_command_builder {
-        return new az_deployment_mg_delete_command_builder(this, managementGroupId, name);
+    static az_deployment_mg_delete(managementGroupId: string, name: string): az_deployment_mg_delete_command_builder {
+        return new az_deployment_mg_delete_command_builder("az deployment mg delete", managementGroupId, name);
     }
 
     /**
@@ -272,8 +268,8 @@ export class az_deployment_mg implements ICommandParent<any> {
      * @param {string} managementGroupId The management group id.
      * @param {string} name The deployment name.
      */
-    az_deployment_mg_export(managementGroupId: string, name: string): az_deployment_mg_export_command_builder {
-        return new az_deployment_mg_export_command_builder(this, managementGroupId, name);
+    static az_deployment_mg_export(managementGroupId: string, name: string): az_deployment_mg_export_command_builder {
+        return new az_deployment_mg_export_command_builder("az deployment mg export", managementGroupId, name);
     }
 
     /**
@@ -289,8 +285,8 @@ export class az_deployment_mg implements ICommandParent<any> {
      *
      * @param {string} managementGroupId The management group id.
      */
-    az_deployment_mg_list(managementGroupId: string): az_deployment_mg_list_command_builder {
-        return new az_deployment_mg_list_command_builder(this, managementGroupId);
+    static az_deployment_mg_list(managementGroupId: string): az_deployment_mg_list_command_builder {
+        return new az_deployment_mg_list_command_builder("az deployment mg list", managementGroupId);
     }
 
     /**
@@ -307,8 +303,8 @@ export class az_deployment_mg implements ICommandParent<any> {
      * @param {string} managementGroupId The management group id.
      * @param {string} name The deployment name.
      */
-    az_deployment_mg_show(managementGroupId: string, name: string): az_deployment_mg_show_command_builder {
-        return new az_deployment_mg_show_command_builder(this, managementGroupId, name);
+    static az_deployment_mg_show(managementGroupId: string, name: string): az_deployment_mg_show_command_builder {
+        return new az_deployment_mg_show_command_builder("az deployment mg show", managementGroupId, name);
     }
 
     /**
@@ -330,8 +326,8 @@ export class az_deployment_mg implements ICommandParent<any> {
      * @param {string} location The location to store the deployment metadata.
      * @param {string} managementGroupId The management group id to create deployment at.
      */
-    az_deployment_mg_validate(location: string, managementGroupId: string): az_deployment_mg_validate_command_builder {
-        return new az_deployment_mg_validate_command_builder(this, location, managementGroupId);
+    static az_deployment_mg_validate(location: string, managementGroupId: string): az_deployment_mg_validate_command_builder {
+        return new az_deployment_mg_validate_command_builder("az deployment mg validate", location, managementGroupId);
     }
 
     /**
@@ -354,8 +350,8 @@ export class az_deployment_mg implements ICommandParent<any> {
      * @param {string} managementGroupId The management group id.
      * @param {string} name The deployment name.
      */
-    az_deployment_mg_wait(managementGroupId: string, name: string): az_deployment_mg_wait_command_builder {
-        return new az_deployment_mg_wait_command_builder(this, managementGroupId, name);
+    static az_deployment_mg_wait(managementGroupId: string, name: string): az_deployment_mg_wait_command_builder {
+        return new az_deployment_mg_wait_command_builder("az deployment mg wait", managementGroupId, name);
     }
 
     /**
@@ -379,15 +375,13 @@ export class az_deployment_mg implements ICommandParent<any> {
      * @param {string} location The location to store the deployment metadata.
      * @param {string} managementGroupId The management group id to create deployment at.
      */
-    az_deployment_mg_what_if(location: string, managementGroupId: string): az_deployment_mg_what_if_command_builder {
-        return new az_deployment_mg_what_if_command_builder(this, location, managementGroupId);
+    static az_deployment_mg_what_if(location: string, managementGroupId: string): az_deployment_mg_what_if_command_builder {
+        return new az_deployment_mg_what_if_command_builder("az deployment mg what-if", location, managementGroupId);
     }
 }
 
 /** Manage deployment operations at resource group. */
-export class az_deployment_operation_group implements ICommandParent<any> {
-    commandPath = "az deployment operation group";
-
+export class az_deployment_operation_group {
     /**
      * List deployment operations at resource group.
      *
@@ -402,8 +396,8 @@ export class az_deployment_operation_group implements ICommandParent<any> {
      * @param {string} name The deployment name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_deployment_operation_group_list(name: string, resourceGroup: string): az_deployment_operation_group_list_command_builder {
-        return new az_deployment_operation_group_list_command_builder(this, name, resourceGroup);
+    static az_deployment_operation_group_list(name: string, resourceGroup: string): az_deployment_operation_group_list_command_builder {
+        return new az_deployment_operation_group_list_command_builder("az deployment operation group list", name, resourceGroup);
     }
 
     /**
@@ -422,15 +416,13 @@ export class az_deployment_operation_group implements ICommandParent<any> {
      * @param {string} operationIds A list of operation ids to show.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_deployment_operation_group_show(name: string, operationIds: string, resourceGroup: string): az_deployment_operation_group_show_command_builder {
-        return new az_deployment_operation_group_show_command_builder(this, name, operationIds, resourceGroup);
+    static az_deployment_operation_group_show(name: string, operationIds: string, resourceGroup: string): az_deployment_operation_group_show_command_builder {
+        return new az_deployment_operation_group_show_command_builder("az deployment operation group show", name, operationIds, resourceGroup);
     }
 }
 
 /** Manage deployment operations at management group. */
-export class az_deployment_operation_mg implements ICommandParent<any> {
-    commandPath = "az deployment operation mg";
-
+export class az_deployment_operation_mg {
     /**
      * List deployment operations at management group.
      *
@@ -445,8 +437,8 @@ export class az_deployment_operation_mg implements ICommandParent<any> {
      * @param {string} managementGroupId The management group id.
      * @param {string} name The deployment name.
      */
-    az_deployment_operation_mg_list(managementGroupId: string, name: string): az_deployment_operation_mg_list_command_builder {
-        return new az_deployment_operation_mg_list_command_builder(this, managementGroupId, name);
+    static az_deployment_operation_mg_list(managementGroupId: string, name: string): az_deployment_operation_mg_list_command_builder {
+        return new az_deployment_operation_mg_list_command_builder("az deployment operation mg list", managementGroupId, name);
     }
 
     /**
@@ -465,15 +457,13 @@ export class az_deployment_operation_mg implements ICommandParent<any> {
      * @param {string} name The deployment name.
      * @param {string} operationIds A list of operation ids to show.
      */
-    az_deployment_operation_mg_show(managementGroupId: string, name: string, operationIds: string): az_deployment_operation_mg_show_command_builder {
-        return new az_deployment_operation_mg_show_command_builder(this, managementGroupId, name, operationIds);
+    static az_deployment_operation_mg_show(managementGroupId: string, name: string, operationIds: string): az_deployment_operation_mg_show_command_builder {
+        return new az_deployment_operation_mg_show_command_builder("az deployment operation mg show", managementGroupId, name, operationIds);
     }
 }
 
 /** Manage deployment operations at subscription scope. */
-export class az_deployment_operation_sub implements ICommandParent<any> {
-    commandPath = "az deployment operation sub";
-
+export class az_deployment_operation_sub {
     /**
      * List deployment operations at subscription scope.
      *
@@ -486,8 +476,8 @@ export class az_deployment_operation_sub implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_operation_sub_list(name: string): az_deployment_operation_sub_list_command_builder {
-        return new az_deployment_operation_sub_list_command_builder(this, name);
+    static az_deployment_operation_sub_list(name: string): az_deployment_operation_sub_list_command_builder {
+        return new az_deployment_operation_sub_list_command_builder("az deployment operation sub list", name);
     }
 
     /**
@@ -504,15 +494,13 @@ export class az_deployment_operation_sub implements ICommandParent<any> {
      * @param {string} name The deployment name.
      * @param {string} operationIds A list of operation ids to show.
      */
-    az_deployment_operation_sub_show(name: string, operationIds: string): az_deployment_operation_sub_show_command_builder {
-        return new az_deployment_operation_sub_show_command_builder(this, name, operationIds);
+    static az_deployment_operation_sub_show(name: string, operationIds: string): az_deployment_operation_sub_show_command_builder {
+        return new az_deployment_operation_sub_show_command_builder("az deployment operation sub show", name, operationIds);
     }
 }
 
 /** Manage deployment operations at tenant scope. */
-export class az_deployment_operation_tenant implements ICommandParent<any> {
-    commandPath = "az deployment operation tenant";
-
+export class az_deployment_operation_tenant {
     /**
      * List deployment operations at tenant scope.
      *
@@ -525,8 +513,8 @@ export class az_deployment_operation_tenant implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_operation_tenant_list(name: string): az_deployment_operation_tenant_list_command_builder {
-        return new az_deployment_operation_tenant_list_command_builder(this, name);
+    static az_deployment_operation_tenant_list(name: string): az_deployment_operation_tenant_list_command_builder {
+        return new az_deployment_operation_tenant_list_command_builder("az deployment operation tenant list", name);
     }
 
     /**
@@ -543,15 +531,13 @@ export class az_deployment_operation_tenant implements ICommandParent<any> {
      * @param {string} name The deployment name.
      * @param {string} operationIds A list of operation ids to show.
      */
-    az_deployment_operation_tenant_show(name: string, operationIds: string): az_deployment_operation_tenant_show_command_builder {
-        return new az_deployment_operation_tenant_show_command_builder(this, name, operationIds);
+    static az_deployment_operation_tenant_show(name: string, operationIds: string): az_deployment_operation_tenant_show_command_builder {
+        return new az_deployment_operation_tenant_show_command_builder("az deployment operation tenant show", name, operationIds);
     }
 }
 
 /** Manage deployment operations at subscription scope. */
-export class az_deployment_operation implements ICommandParent<any> {
-    commandPath = "az deployment operation";
-
+export class az_deployment_operation {
     /**
      * List deployment operations at subscription scope.
      *
@@ -564,8 +550,8 @@ export class az_deployment_operation implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_operation_list(name: string): az_deployment_operation_list_command_builder {
-        return new az_deployment_operation_list_command_builder(this, name);
+    static az_deployment_operation_list(name: string): az_deployment_operation_list_command_builder {
+        return new az_deployment_operation_list_command_builder("az deployment operation list", name);
     }
 
     /**
@@ -582,15 +568,13 @@ export class az_deployment_operation implements ICommandParent<any> {
      * @param {string} name The deployment name.
      * @param {string} operationIds A list of operation ids to show.
      */
-    az_deployment_operation_show(name: string, operationIds: string): az_deployment_operation_show_command_builder {
-        return new az_deployment_operation_show_command_builder(this, name, operationIds);
+    static az_deployment_operation_show(name: string, operationIds: string): az_deployment_operation_show_command_builder {
+        return new az_deployment_operation_show_command_builder("az deployment operation show", name, operationIds);
     }
 }
 
 /** Manage Azure Resource Manager template deployment at subscription scope. */
-export class az_deployment_sub implements ICommandParent<any> {
-    commandPath = "az deployment sub";
-
+export class az_deployment_sub {
     /**
      * Cancel a deployment at subscription scope.
      *
@@ -602,8 +586,8 @@ export class az_deployment_sub implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_sub_cancel(name: string): az_deployment_sub_cancel_command_builder {
-        return new az_deployment_sub_cancel_command_builder(this, name);
+    static az_deployment_sub_cancel(name: string): az_deployment_sub_cancel_command_builder {
+        return new az_deployment_sub_cancel_command_builder("az deployment sub cancel", name);
     }
 
     /**
@@ -627,8 +611,8 @@ export class az_deployment_sub implements ICommandParent<any> {
      *
      * @param {string} location The location to store the deployment metadata.
      */
-    az_deployment_sub_create(location: string): az_deployment_sub_create_command_builder {
-        return new az_deployment_sub_create_command_builder(this, location);
+    static az_deployment_sub_create(location: string): az_deployment_sub_create_command_builder {
+        return new az_deployment_sub_create_command_builder("az deployment sub create", location);
     }
 
     /**
@@ -643,8 +627,8 @@ export class az_deployment_sub implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_sub_delete(name: string): az_deployment_sub_delete_command_builder {
-        return new az_deployment_sub_delete_command_builder(this, name);
+    static az_deployment_sub_delete(name: string): az_deployment_sub_delete_command_builder {
+        return new az_deployment_sub_delete_command_builder("az deployment sub delete", name);
     }
 
     /**
@@ -658,8 +642,8 @@ export class az_deployment_sub implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_sub_export(name: string): az_deployment_sub_export_command_builder {
-        return new az_deployment_sub_export_command_builder(this, name);
+    static az_deployment_sub_export(name: string): az_deployment_sub_export_command_builder {
+        return new az_deployment_sub_export_command_builder("az deployment sub export", name);
     }
 
     /**
@@ -672,8 +656,8 @@ export class az_deployment_sub implements ICommandParent<any> {
      *                        [--subscription]
      * ```
      */
-    az_deployment_sub_list(): az_deployment_sub_list_command_builder {
-        return new az_deployment_sub_list_command_builder(this);
+    static az_deployment_sub_list(): az_deployment_sub_list_command_builder {
+        return new az_deployment_sub_list_command_builder("az deployment sub list");
     }
 
     /**
@@ -688,8 +672,8 @@ export class az_deployment_sub implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_sub_show(name: string): az_deployment_sub_show_command_builder {
-        return new az_deployment_sub_show_command_builder(this, name);
+    static az_deployment_sub_show(name: string): az_deployment_sub_show_command_builder {
+        return new az_deployment_sub_show_command_builder("az deployment sub show", name);
     }
 
     /**
@@ -709,8 +693,8 @@ export class az_deployment_sub implements ICommandParent<any> {
      *
      * @param {string} location The location to store the deployment metadata.
      */
-    az_deployment_sub_validate(location: string): az_deployment_sub_validate_command_builder {
-        return new az_deployment_sub_validate_command_builder(this, location);
+    static az_deployment_sub_validate(location: string): az_deployment_sub_validate_command_builder {
+        return new az_deployment_sub_validate_command_builder("az deployment sub validate", location);
     }
 
     /**
@@ -731,8 +715,8 @@ export class az_deployment_sub implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_sub_wait(name: string): az_deployment_sub_wait_command_builder {
-        return new az_deployment_sub_wait_command_builder(this, name);
+    static az_deployment_sub_wait(name: string): az_deployment_sub_wait_command_builder {
+        return new az_deployment_sub_wait_command_builder("az deployment sub wait", name);
     }
 
     /**
@@ -754,15 +738,13 @@ export class az_deployment_sub implements ICommandParent<any> {
      *
      * @param {string} location The location to store the deployment What-If operation metadata.
      */
-    az_deployment_sub_what_if(location: string): az_deployment_sub_what_if_command_builder {
-        return new az_deployment_sub_what_if_command_builder(this, location);
+    static az_deployment_sub_what_if(location: string): az_deployment_sub_what_if_command_builder {
+        return new az_deployment_sub_what_if_command_builder("az deployment sub what-if", location);
     }
 }
 
 /** Manage Azure Resource Manager template deployment at tenant scope. */
-export class az_deployment_tenant implements ICommandParent<any> {
-    commandPath = "az deployment tenant";
-
+export class az_deployment_tenant {
     /**
      * Cancel a deployment at tenant scope.
      *
@@ -774,8 +756,8 @@ export class az_deployment_tenant implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_tenant_cancel(name: string): az_deployment_tenant_cancel_command_builder {
-        return new az_deployment_tenant_cancel_command_builder(this, name);
+    static az_deployment_tenant_cancel(name: string): az_deployment_tenant_cancel_command_builder {
+        return new az_deployment_tenant_cancel_command_builder("az deployment tenant cancel", name);
     }
 
     /**
@@ -799,8 +781,8 @@ export class az_deployment_tenant implements ICommandParent<any> {
      *
      * @param {string} location The location to store the deployment metadata.
      */
-    az_deployment_tenant_create(location: string): az_deployment_tenant_create_command_builder {
-        return new az_deployment_tenant_create_command_builder(this, location);
+    static az_deployment_tenant_create(location: string): az_deployment_tenant_create_command_builder {
+        return new az_deployment_tenant_create_command_builder("az deployment tenant create", location);
     }
 
     /**
@@ -815,8 +797,8 @@ export class az_deployment_tenant implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_tenant_delete(name: string): az_deployment_tenant_delete_command_builder {
-        return new az_deployment_tenant_delete_command_builder(this, name);
+    static az_deployment_tenant_delete(name: string): az_deployment_tenant_delete_command_builder {
+        return new az_deployment_tenant_delete_command_builder("az deployment tenant delete", name);
     }
 
     /**
@@ -830,8 +812,8 @@ export class az_deployment_tenant implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_tenant_export(name: string): az_deployment_tenant_export_command_builder {
-        return new az_deployment_tenant_export_command_builder(this, name);
+    static az_deployment_tenant_export(name: string): az_deployment_tenant_export_command_builder {
+        return new az_deployment_tenant_export_command_builder("az deployment tenant export", name);
     }
 
     /**
@@ -844,8 +826,8 @@ export class az_deployment_tenant implements ICommandParent<any> {
      *                           [--subscription]
      * ```
      */
-    az_deployment_tenant_list(): az_deployment_tenant_list_command_builder {
-        return new az_deployment_tenant_list_command_builder(this);
+    static az_deployment_tenant_list(): az_deployment_tenant_list_command_builder {
+        return new az_deployment_tenant_list_command_builder("az deployment tenant list");
     }
 
     /**
@@ -860,8 +842,8 @@ export class az_deployment_tenant implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_tenant_show(name: string): az_deployment_tenant_show_command_builder {
-        return new az_deployment_tenant_show_command_builder(this, name);
+    static az_deployment_tenant_show(name: string): az_deployment_tenant_show_command_builder {
+        return new az_deployment_tenant_show_command_builder("az deployment tenant show", name);
     }
 
     /**
@@ -881,8 +863,8 @@ export class az_deployment_tenant implements ICommandParent<any> {
      *
      * @param {string} location The location to store the deployment metadata.
      */
-    az_deployment_tenant_validate(location: string): az_deployment_tenant_validate_command_builder {
-        return new az_deployment_tenant_validate_command_builder(this, location);
+    static az_deployment_tenant_validate(location: string): az_deployment_tenant_validate_command_builder {
+        return new az_deployment_tenant_validate_command_builder("az deployment tenant validate", location);
     }
 
     /**
@@ -903,8 +885,8 @@ export class az_deployment_tenant implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_tenant_wait(name: string): az_deployment_tenant_wait_command_builder {
-        return new az_deployment_tenant_wait_command_builder(this, name);
+    static az_deployment_tenant_wait(name: string): az_deployment_tenant_wait_command_builder {
+        return new az_deployment_tenant_wait_command_builder("az deployment tenant wait", name);
     }
 
     /**
@@ -926,15 +908,13 @@ export class az_deployment_tenant implements ICommandParent<any> {
      *
      * @param {string} location The location to store the deployment What-If operation metadata.
      */
-    az_deployment_tenant_what_if(location: string): az_deployment_tenant_what_if_command_builder {
-        return new az_deployment_tenant_what_if_command_builder(this, location);
+    static az_deployment_tenant_what_if(location: string): az_deployment_tenant_what_if_command_builder {
+        return new az_deployment_tenant_what_if_command_builder("az deployment tenant what-if", location);
     }
 }
 
 /** Manage deployment scripts at subscription or resource group scope. */
-export class az_deployment_scripts implements ICommandParent<any> {
-    commandPath = "az deployment-scripts";
-
+export class az_deployment_scripts {
     /**
      * Delete a deployment script.
      *
@@ -949,8 +929,8 @@ export class az_deployment_scripts implements ICommandParent<any> {
      * @param {string} name Deployment script resource name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_deployment_scripts_delete(name: string, resourceGroup: string): az_deployment_scripts_delete_command_builder {
-        return new az_deployment_scripts_delete_command_builder(this, name, resourceGroup);
+    static az_deployment_scripts_delete(name: string, resourceGroup: string): az_deployment_scripts_delete_command_builder {
+        return new az_deployment_scripts_delete_command_builder("az deployment-scripts delete", name, resourceGroup);
     }
 
     /**
@@ -963,8 +943,8 @@ export class az_deployment_scripts implements ICommandParent<any> {
      *                            [--subscription]
      * ```
      */
-    az_deployment_scripts_list(): az_deployment_scripts_list_command_builder {
-        return new az_deployment_scripts_list_command_builder(this);
+    static az_deployment_scripts_list(): az_deployment_scripts_list_command_builder {
+        return new az_deployment_scripts_list_command_builder("az deployment-scripts list");
     }
 
     /**
@@ -981,8 +961,8 @@ export class az_deployment_scripts implements ICommandParent<any> {
      * @param {string} name Deployment script resource name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_deployment_scripts_show(name: string, resourceGroup: string): az_deployment_scripts_show_command_builder {
-        return new az_deployment_scripts_show_command_builder(this, name, resourceGroup);
+    static az_deployment_scripts_show(name: string, resourceGroup: string): az_deployment_scripts_show_command_builder {
+        return new az_deployment_scripts_show_command_builder("az deployment-scripts show", name, resourceGroup);
     }
 
     /**
@@ -998,15 +978,13 @@ export class az_deployment_scripts implements ICommandParent<any> {
      * @param {string} name Deployment script resource name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_deployment_scripts_show_log(name: string, resourceGroup: string): az_deployment_scripts_show_log_command_builder {
-        return new az_deployment_scripts_show_log_command_builder(this, name, resourceGroup);
+    static az_deployment_scripts_show_log(name: string, resourceGroup: string): az_deployment_scripts_show_log_command_builder {
+        return new az_deployment_scripts_show_log_command_builder("az deployment-scripts show-log", name, resourceGroup);
     }
 }
 
 /** Manage Azure Resource Manager template deployment at subscription scope. */
-export class az_deployment implements ICommandParent<any> {
-    commandPath = "az deployment";
-
+export class az_deployment {
     /**
      * Cancel a deployment at subscription scope.
      *
@@ -1018,8 +996,8 @@ export class az_deployment implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_cancel(name: string): az_deployment_cancel_command_builder {
-        return new az_deployment_cancel_command_builder(this, name);
+    static az_deployment_cancel(name: string): az_deployment_cancel_command_builder {
+        return new az_deployment_cancel_command_builder("az deployment cancel", name);
     }
 
     /**
@@ -1043,8 +1021,8 @@ export class az_deployment implements ICommandParent<any> {
      *
      * @param {string} location The location to store the deployment metadata.
      */
-    az_deployment_create(location: string): az_deployment_create_command_builder {
-        return new az_deployment_create_command_builder(this, location);
+    static az_deployment_create(location: string): az_deployment_create_command_builder {
+        return new az_deployment_create_command_builder("az deployment create", location);
     }
 
     /**
@@ -1059,8 +1037,8 @@ export class az_deployment implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_delete(name: string): az_deployment_delete_command_builder {
-        return new az_deployment_delete_command_builder(this, name);
+    static az_deployment_delete(name: string): az_deployment_delete_command_builder {
+        return new az_deployment_delete_command_builder("az deployment delete", name);
     }
 
     /**
@@ -1074,8 +1052,8 @@ export class az_deployment implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_export(name: string): az_deployment_export_command_builder {
-        return new az_deployment_export_command_builder(this, name);
+    static az_deployment_export(name: string): az_deployment_export_command_builder {
+        return new az_deployment_export_command_builder("az deployment export", name);
     }
 
     /**
@@ -1088,8 +1066,8 @@ export class az_deployment implements ICommandParent<any> {
      *                    [--subscription]
      * ```
      */
-    az_deployment_list(): az_deployment_list_command_builder {
-        return new az_deployment_list_command_builder(this);
+    static az_deployment_list(): az_deployment_list_command_builder {
+        return new az_deployment_list_command_builder("az deployment list");
     }
 
     /**
@@ -1104,8 +1082,8 @@ export class az_deployment implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_show(name: string): az_deployment_show_command_builder {
-        return new az_deployment_show_command_builder(this, name);
+    static az_deployment_show(name: string): az_deployment_show_command_builder {
+        return new az_deployment_show_command_builder("az deployment show", name);
     }
 
     /**
@@ -1125,8 +1103,8 @@ export class az_deployment implements ICommandParent<any> {
      *
      * @param {string} location The location to store the deployment metadata.
      */
-    az_deployment_validate(location: string): az_deployment_validate_command_builder {
-        return new az_deployment_validate_command_builder(this, location);
+    static az_deployment_validate(location: string): az_deployment_validate_command_builder {
+        return new az_deployment_validate_command_builder("az deployment validate", location);
     }
 
     /**
@@ -1147,8 +1125,8 @@ export class az_deployment implements ICommandParent<any> {
      *
      * @param {string} name The deployment name.
      */
-    az_deployment_wait(name: string): az_deployment_wait_command_builder {
-        return new az_deployment_wait_command_builder(this, name);
+    static az_deployment_wait(name: string): az_deployment_wait_command_builder {
+        return new az_deployment_wait_command_builder("az deployment wait", name);
     }
 }
 
@@ -1166,7 +1144,7 @@ export class az_deployment implements ICommandParent<any> {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_group_cancel_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1217,7 +1195,7 @@ class az_deployment_group_cancel_command_builder extends CommandBuilder {
  * @param {string} resourceGroup The resource group to create deployment at.
  */
 class az_deployment_group_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string) {
+    constructor(commandPath: string, resourceGroup: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
     }
@@ -1334,7 +1312,7 @@ class az_deployment_group_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_group_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1379,7 +1357,7 @@ class az_deployment_group_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_group_export_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1418,7 +1396,7 @@ class az_deployment_group_export_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_group_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string) {
+    constructor(commandPath: string, resourceGroup: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
     }
@@ -1463,7 +1441,7 @@ class az_deployment_group_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_group_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1514,7 +1492,7 @@ class az_deployment_group_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup The resource group to create deployment at.
  */
 class az_deployment_group_validate_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string) {
+    constructor(commandPath: string, resourceGroup: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
     }
@@ -1601,7 +1579,7 @@ class az_deployment_group_validate_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_group_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1690,7 +1668,7 @@ class az_deployment_group_wait_command_builder extends CommandBuilder {
  * @param {string} resourceGroup The resource group to execute deployment What-If operation at.
  */
 class az_deployment_group_what_if_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string) {
+    constructor(commandPath: string, resourceGroup: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
     }
@@ -1782,7 +1760,7 @@ class az_deployment_group_what_if_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_mg_cancel_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, managementGroupId: string, name: string) {
+    constructor(commandPath: string, managementGroupId: string, name: string) {
         super(commandParent);
         this.managementGroupId(managementGroupId)
         this.name(name)
@@ -1831,7 +1809,7 @@ class az_deployment_mg_cancel_command_builder extends CommandBuilder {
  * @param {string} managementGroupId The management group id to create deployment at.
  */
 class az_deployment_mg_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string, managementGroupId: string) {
+    constructor(commandPath: string, location: string, managementGroupId: string) {
         super(commandParent);
         this.location(location)
         this.managementGroupId(managementGroupId)
@@ -1931,7 +1909,7 @@ class az_deployment_mg_create_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_mg_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, managementGroupId: string, name: string) {
+    constructor(commandPath: string, managementGroupId: string, name: string) {
         super(commandParent);
         this.managementGroupId(managementGroupId)
         this.name(name)
@@ -1976,7 +1954,7 @@ class az_deployment_mg_delete_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_mg_export_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, managementGroupId: string, name: string) {
+    constructor(commandPath: string, managementGroupId: string, name: string) {
         super(commandParent);
         this.managementGroupId(managementGroupId)
         this.name(name)
@@ -2015,7 +1993,7 @@ class az_deployment_mg_export_command_builder extends CommandBuilder {
  * @param {string} managementGroupId The management group id.
  */
 class az_deployment_mg_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, managementGroupId: string) {
+    constructor(commandPath: string, managementGroupId: string) {
         super(commandParent);
         this.managementGroupId(managementGroupId)
     }
@@ -2060,7 +2038,7 @@ class az_deployment_mg_list_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_mg_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, managementGroupId: string, name: string) {
+    constructor(commandPath: string, managementGroupId: string, name: string) {
         super(commandParent);
         this.managementGroupId(managementGroupId)
         this.name(name)
@@ -2111,7 +2089,7 @@ class az_deployment_mg_show_command_builder extends CommandBuilder {
  * @param {string} managementGroupId The management group id to create deployment at.
  */
 class az_deployment_mg_validate_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string, managementGroupId: string) {
+    constructor(commandPath: string, location: string, managementGroupId: string) {
         super(commandParent);
         this.location(location)
         this.managementGroupId(managementGroupId)
@@ -2193,7 +2171,7 @@ class az_deployment_mg_validate_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_mg_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, managementGroupId: string, name: string) {
+    constructor(commandPath: string, managementGroupId: string, name: string) {
         super(commandParent);
         this.managementGroupId(managementGroupId)
         this.name(name)
@@ -2282,7 +2260,7 @@ class az_deployment_mg_wait_command_builder extends CommandBuilder {
  * @param {string} managementGroupId The management group id to create deployment at.
  */
 class az_deployment_mg_what_if_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string, managementGroupId: string) {
+    constructor(commandPath: string, location: string, managementGroupId: string) {
         super(commandParent);
         this.location(location)
         this.managementGroupId(managementGroupId)
@@ -2370,7 +2348,7 @@ class az_deployment_mg_what_if_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_operation_group_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2418,7 +2396,7 @@ class az_deployment_operation_group_list_command_builder extends CommandBuilder 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_operation_group_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, operationIds: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, operationIds: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.operationIds(operationIds)
@@ -2471,7 +2449,7 @@ class az_deployment_operation_group_show_command_builder extends CommandBuilder 
  * @param {string} name The deployment name.
  */
 class az_deployment_operation_mg_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, managementGroupId: string, name: string) {
+    constructor(commandPath: string, managementGroupId: string, name: string) {
         super(commandParent);
         this.managementGroupId(managementGroupId)
         this.name(name)
@@ -2519,7 +2497,7 @@ class az_deployment_operation_mg_list_command_builder extends CommandBuilder {
  * @param {string} operationIds A list of operation ids to show.
  */
 class az_deployment_operation_mg_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, managementGroupId: string, name: string, operationIds: string) {
+    constructor(commandPath: string, managementGroupId: string, name: string, operationIds: string) {
         super(commandParent);
         this.managementGroupId(managementGroupId)
         this.name(name)
@@ -2570,7 +2548,7 @@ class az_deployment_operation_mg_show_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_operation_sub_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2609,7 +2587,7 @@ class az_deployment_operation_sub_list_command_builder extends CommandBuilder {
  * @param {string} operationIds A list of operation ids to show.
  */
 class az_deployment_operation_sub_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, operationIds: string) {
+    constructor(commandPath: string, name: string, operationIds: string) {
         super(commandParent);
         this.name(name)
         this.operationIds(operationIds)
@@ -2653,7 +2631,7 @@ class az_deployment_operation_sub_show_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_operation_tenant_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2692,7 +2670,7 @@ class az_deployment_operation_tenant_list_command_builder extends CommandBuilder
  * @param {string} operationIds A list of operation ids to show.
  */
 class az_deployment_operation_tenant_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, operationIds: string) {
+    constructor(commandPath: string, name: string, operationIds: string) {
         super(commandParent);
         this.name(name)
         this.operationIds(operationIds)
@@ -2736,7 +2714,7 @@ class az_deployment_operation_tenant_show_command_builder extends CommandBuilder
  * @param {string} name The deployment name.
  */
 class az_deployment_operation_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2775,7 +2753,7 @@ class az_deployment_operation_list_command_builder extends CommandBuilder {
  * @param {string} operationIds A list of operation ids to show.
  */
 class az_deployment_operation_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, operationIds: string) {
+    constructor(commandPath: string, name: string, operationIds: string) {
         super(commandParent);
         this.name(name)
         this.operationIds(operationIds)
@@ -2818,7 +2796,7 @@ class az_deployment_operation_show_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_sub_cancel_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2858,7 +2836,7 @@ class az_deployment_sub_cancel_command_builder extends CommandBuilder {
  * @param {string} location The location to store the deployment metadata.
  */
 class az_deployment_sub_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string) {
+    constructor(commandPath: string, location: string) {
         super(commandParent);
         this.location(location)
     }
@@ -2949,7 +2927,7 @@ class az_deployment_sub_create_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_sub_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2985,7 +2963,7 @@ class az_deployment_sub_delete_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_sub_export_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3014,7 +2992,7 @@ class az_deployment_sub_export_command_builder extends CommandBuilder {
  * ```
  */
 class az_deployment_sub_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3050,7 +3028,7 @@ class az_deployment_sub_list_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_sub_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3092,7 +3070,7 @@ class az_deployment_sub_show_command_builder extends CommandBuilder {
  * @param {string} location The location to store the deployment metadata.
  */
 class az_deployment_sub_validate_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string) {
+    constructor(commandPath: string, location: string) {
         super(commandParent);
         this.location(location)
     }
@@ -3165,7 +3143,7 @@ class az_deployment_sub_validate_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_sub_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3245,7 +3223,7 @@ class az_deployment_sub_wait_command_builder extends CommandBuilder {
  * @param {string} location The location to store the deployment What-If operation metadata.
  */
 class az_deployment_sub_what_if_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string) {
+    constructor(commandPath: string, location: string) {
         super(commandParent);
         this.location(location)
     }
@@ -3323,7 +3301,7 @@ class az_deployment_sub_what_if_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_tenant_cancel_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3363,7 +3341,7 @@ class az_deployment_tenant_cancel_command_builder extends CommandBuilder {
  * @param {string} location The location to store the deployment metadata.
  */
 class az_deployment_tenant_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string) {
+    constructor(commandPath: string, location: string) {
         super(commandParent);
         this.location(location)
     }
@@ -3454,7 +3432,7 @@ class az_deployment_tenant_create_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_tenant_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3490,7 +3468,7 @@ class az_deployment_tenant_delete_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_tenant_export_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3519,7 +3497,7 @@ class az_deployment_tenant_export_command_builder extends CommandBuilder {
  * ```
  */
 class az_deployment_tenant_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3555,7 +3533,7 @@ class az_deployment_tenant_list_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_tenant_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3597,7 +3575,7 @@ class az_deployment_tenant_show_command_builder extends CommandBuilder {
  * @param {string} location The location to store the deployment metadata.
  */
 class az_deployment_tenant_validate_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string) {
+    constructor(commandPath: string, location: string) {
         super(commandParent);
         this.location(location)
     }
@@ -3670,7 +3648,7 @@ class az_deployment_tenant_validate_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_tenant_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3750,7 +3728,7 @@ class az_deployment_tenant_wait_command_builder extends CommandBuilder {
  * @param {string} location The location to store the deployment What-If operation metadata.
  */
 class az_deployment_tenant_what_if_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string) {
+    constructor(commandPath: string, location: string) {
         super(commandParent);
         this.location(location)
     }
@@ -3831,7 +3809,7 @@ class az_deployment_tenant_what_if_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_scripts_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3873,7 +3851,7 @@ class az_deployment_scripts_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_deployment_scripts_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3911,7 +3889,7 @@ class az_deployment_scripts_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_scripts_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3956,7 +3934,7 @@ class az_deployment_scripts_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_scripts_show_log_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3993,7 +3971,7 @@ class az_deployment_scripts_show_log_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_cancel_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4033,7 +4011,7 @@ class az_deployment_cancel_command_builder extends CommandBuilder {
  * @param {string} location The location to store the deployment metadata.
  */
 class az_deployment_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string) {
+    constructor(commandPath: string, location: string) {
         super(commandParent);
         this.location(location)
     }
@@ -4124,7 +4102,7 @@ class az_deployment_create_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4160,7 +4138,7 @@ class az_deployment_delete_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_export_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4189,7 +4167,7 @@ class az_deployment_export_command_builder extends CommandBuilder {
  * ```
  */
 class az_deployment_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4225,7 +4203,7 @@ class az_deployment_list_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4267,7 +4245,7 @@ class az_deployment_show_command_builder extends CommandBuilder {
  * @param {string} location The location to store the deployment metadata.
  */
 class az_deployment_validate_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string) {
+    constructor(commandPath: string, location: string) {
         super(commandParent);
         this.location(location)
     }
@@ -4340,7 +4318,7 @@ class az_deployment_validate_command_builder extends CommandBuilder {
  * @param {string} name The deployment name.
  */
 class az_deployment_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }

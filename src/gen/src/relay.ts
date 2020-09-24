@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Azure Authorization Rule keys for Relay Service Hybrid Connection. */
-export class az_relay_hyco_authorization_rule_keys implements ICommandParent<any> {
-    commandPath = "az relay hyco authorization-rule keys";
-
+export class az_relay_hyco_authorization_rule_keys {
     /**
      * List the keys and connection strings of Authorization Rule for Relay Service Hybrid Connection.
      *
@@ -22,8 +20,8 @@ export class az_relay_hyco_authorization_rule_keys implements ICommandParent<any
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_relay_hyco_authorization_rule_keys_list(hybridConnectionName: string, name: string, namespaceName: string, resourceGroup: string): az_relay_hyco_authorization_rule_keys_list_command_builder {
-        return new az_relay_hyco_authorization_rule_keys_list_command_builder(this, hybridConnectionName, name, namespaceName, resourceGroup);
+    static az_relay_hyco_authorization_rule_keys_list(hybridConnectionName: string, name: string, namespaceName: string, resourceGroup: string): az_relay_hyco_authorization_rule_keys_list_command_builder {
+        return new az_relay_hyco_authorization_rule_keys_list_command_builder("az relay hyco authorization-rule keys list", hybridConnectionName, name, namespaceName, resourceGroup);
     }
 
     /**
@@ -43,15 +41,13 @@ export class az_relay_hyco_authorization_rule_keys implements ICommandParent<any
      *
      * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
      */
-    az_relay_hyco_authorization_rule_keys_renew(key: 'PrimaryKey' | 'SecondaryKey'): az_relay_hyco_authorization_rule_keys_renew_command_builder {
-        return new az_relay_hyco_authorization_rule_keys_renew_command_builder(this, key);
+    static az_relay_hyco_authorization_rule_keys_renew(key: 'PrimaryKey' | 'SecondaryKey'): az_relay_hyco_authorization_rule_keys_renew_command_builder {
+        return new az_relay_hyco_authorization_rule_keys_renew_command_builder("az relay hyco authorization-rule keys renew", key);
     }
 }
 
 /** Manage Azure Relay Service Hybrid Connection Authorization Rule. */
-export class az_relay_hyco_authorization_rule implements ICommandParent<any> {
-    commandPath = "az relay hyco authorization-rule";
-
+export class az_relay_hyco_authorization_rule {
     /**
      * Create Authorization Rule for given Relay Service Hybrid Connection.
      *
@@ -70,8 +66,8 @@ export class az_relay_hyco_authorization_rule implements ICommandParent<any> {
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_relay_hyco_authorization_rule_create(hybridConnectionName: string, name: string, namespaceName: string, resourceGroup: string): az_relay_hyco_authorization_rule_create_command_builder {
-        return new az_relay_hyco_authorization_rule_create_command_builder(this, hybridConnectionName, name, namespaceName, resourceGroup);
+    static az_relay_hyco_authorization_rule_create(hybridConnectionName: string, name: string, namespaceName: string, resourceGroup: string): az_relay_hyco_authorization_rule_create_command_builder {
+        return new az_relay_hyco_authorization_rule_create_command_builder("az relay hyco authorization-rule create", hybridConnectionName, name, namespaceName, resourceGroup);
     }
 
     /**
@@ -87,8 +83,8 @@ export class az_relay_hyco_authorization_rule implements ICommandParent<any> {
      *                                         [--subscription]
      * ```
      */
-    az_relay_hyco_authorization_rule_delete(): az_relay_hyco_authorization_rule_delete_command_builder {
-        return new az_relay_hyco_authorization_rule_delete_command_builder(this);
+    static az_relay_hyco_authorization_rule_delete(): az_relay_hyco_authorization_rule_delete_command_builder {
+        return new az_relay_hyco_authorization_rule_delete_command_builder("az relay hyco authorization-rule delete");
     }
 
     /**
@@ -107,8 +103,8 @@ export class az_relay_hyco_authorization_rule implements ICommandParent<any> {
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_relay_hyco_authorization_rule_list(hybridConnectionName: string, namespaceName: string, resourceGroup: string): az_relay_hyco_authorization_rule_list_command_builder {
-        return new az_relay_hyco_authorization_rule_list_command_builder(this, hybridConnectionName, namespaceName, resourceGroup);
+    static az_relay_hyco_authorization_rule_list(hybridConnectionName: string, namespaceName: string, resourceGroup: string): az_relay_hyco_authorization_rule_list_command_builder {
+        return new az_relay_hyco_authorization_rule_list_command_builder("az relay hyco authorization-rule list", hybridConnectionName, namespaceName, resourceGroup);
     }
 
     /**
@@ -125,8 +121,8 @@ export class az_relay_hyco_authorization_rule implements ICommandParent<any> {
      *                                       [--subscription]
      * ```
      */
-    az_relay_hyco_authorization_rule_show(): az_relay_hyco_authorization_rule_show_command_builder {
-        return new az_relay_hyco_authorization_rule_show_command_builder(this);
+    static az_relay_hyco_authorization_rule_show(): az_relay_hyco_authorization_rule_show_command_builder {
+        return new az_relay_hyco_authorization_rule_show_command_builder("az relay hyco authorization-rule show");
     }
 
     /**
@@ -149,15 +145,13 @@ export class az_relay_hyco_authorization_rule implements ICommandParent<any> {
      *
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      */
-    az_relay_hyco_authorization_rule_update(rights: 'Listen' | 'Manage' | 'Send'): az_relay_hyco_authorization_rule_update_command_builder {
-        return new az_relay_hyco_authorization_rule_update_command_builder(this, rights);
+    static az_relay_hyco_authorization_rule_update(rights: 'Listen' | 'Manage' | 'Send'): az_relay_hyco_authorization_rule_update_command_builder {
+        return new az_relay_hyco_authorization_rule_update_command_builder("az relay hyco authorization-rule update", rights);
     }
 }
 
 /** Manage Azure Relay Service Hybrid Connection and Authorization Rule. */
-export class az_relay_hyco implements ICommandParent<any> {
-    commandPath = "az relay hyco";
-
+export class az_relay_hyco {
     /**
      * Create the Relay Service Hybrid Connection.
      *
@@ -175,8 +169,8 @@ export class az_relay_hyco implements ICommandParent<any> {
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_relay_hyco_create(name: string, namespaceName: string, resourceGroup: string): az_relay_hyco_create_command_builder {
-        return new az_relay_hyco_create_command_builder(this, name, namespaceName, resourceGroup);
+    static az_relay_hyco_create(name: string, namespaceName: string, resourceGroup: string): az_relay_hyco_create_command_builder {
+        return new az_relay_hyco_create_command_builder("az relay hyco create", name, namespaceName, resourceGroup);
     }
 
     /**
@@ -191,8 +185,8 @@ export class az_relay_hyco implements ICommandParent<any> {
      *                      [--subscription]
      * ```
      */
-    az_relay_hyco_delete(): az_relay_hyco_delete_command_builder {
-        return new az_relay_hyco_delete_command_builder(this);
+    static az_relay_hyco_delete(): az_relay_hyco_delete_command_builder {
+        return new az_relay_hyco_delete_command_builder("az relay hyco delete");
     }
 
     /**
@@ -209,8 +203,8 @@ export class az_relay_hyco implements ICommandParent<any> {
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_relay_hyco_list(namespaceName: string, resourceGroup: string): az_relay_hyco_list_command_builder {
-        return new az_relay_hyco_list_command_builder(this, namespaceName, resourceGroup);
+    static az_relay_hyco_list(namespaceName: string, resourceGroup: string): az_relay_hyco_list_command_builder {
+        return new az_relay_hyco_list_command_builder("az relay hyco list", namespaceName, resourceGroup);
     }
 
     /**
@@ -226,8 +220,8 @@ export class az_relay_hyco implements ICommandParent<any> {
      *                    [--subscription]
      * ```
      */
-    az_relay_hyco_show(): az_relay_hyco_show_command_builder {
-        return new az_relay_hyco_show_command_builder(this);
+    static az_relay_hyco_show(): az_relay_hyco_show_command_builder {
+        return new az_relay_hyco_show_command_builder("az relay hyco show");
     }
 
     /**
@@ -249,15 +243,13 @@ export class az_relay_hyco implements ICommandParent<any> {
      *                      [--user-metadata]
      * ```
      */
-    az_relay_hyco_update(): az_relay_hyco_update_command_builder {
-        return new az_relay_hyco_update_command_builder(this);
+    static az_relay_hyco_update(): az_relay_hyco_update_command_builder {
+        return new az_relay_hyco_update_command_builder("az relay hyco update");
     }
 }
 
 /** Manage Azure Authorization Rule connection strings for Namespace. */
-export class az_relay_namespace_authorization_rule_keys implements ICommandParent<any> {
-    commandPath = "az relay namespace authorization-rule keys";
-
+export class az_relay_namespace_authorization_rule_keys {
     /**
      * List the keys and connection strings of Authorization Rule for Relay Service Namespace.
      *
@@ -274,8 +266,8 @@ export class az_relay_namespace_authorization_rule_keys implements ICommandParen
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_relay_namespace_authorization_rule_keys_list(name: string, namespaceName: string, resourceGroup: string): az_relay_namespace_authorization_rule_keys_list_command_builder {
-        return new az_relay_namespace_authorization_rule_keys_list_command_builder(this, name, namespaceName, resourceGroup);
+    static az_relay_namespace_authorization_rule_keys_list(name: string, namespaceName: string, resourceGroup: string): az_relay_namespace_authorization_rule_keys_list_command_builder {
+        return new az_relay_namespace_authorization_rule_keys_list_command_builder("az relay namespace authorization-rule keys list", name, namespaceName, resourceGroup);
     }
 
     /**
@@ -294,15 +286,13 @@ export class az_relay_namespace_authorization_rule_keys implements ICommandParen
      *
      * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
      */
-    az_relay_namespace_authorization_rule_keys_renew(key: 'PrimaryKey' | 'SecondaryKey'): az_relay_namespace_authorization_rule_keys_renew_command_builder {
-        return new az_relay_namespace_authorization_rule_keys_renew_command_builder(this, key);
+    static az_relay_namespace_authorization_rule_keys_renew(key: 'PrimaryKey' | 'SecondaryKey'): az_relay_namespace_authorization_rule_keys_renew_command_builder {
+        return new az_relay_namespace_authorization_rule_keys_renew_command_builder("az relay namespace authorization-rule keys renew", key);
     }
 }
 
 /** Manage Azure Relay Service Namespace Authorization Rule. */
-export class az_relay_namespace_authorization_rule implements ICommandParent<any> {
-    commandPath = "az relay namespace authorization-rule";
-
+export class az_relay_namespace_authorization_rule {
     /**
      * Create Authorization Rule for the given Relay Service Namespace.
      *
@@ -319,8 +309,8 @@ export class az_relay_namespace_authorization_rule implements ICommandParent<any
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_relay_namespace_authorization_rule_create(name: string, namespaceName: string, resourceGroup: string): az_relay_namespace_authorization_rule_create_command_builder {
-        return new az_relay_namespace_authorization_rule_create_command_builder(this, name, namespaceName, resourceGroup);
+    static az_relay_namespace_authorization_rule_create(name: string, namespaceName: string, resourceGroup: string): az_relay_namespace_authorization_rule_create_command_builder {
+        return new az_relay_namespace_authorization_rule_create_command_builder("az relay namespace authorization-rule create", name, namespaceName, resourceGroup);
     }
 
     /**
@@ -335,8 +325,8 @@ export class az_relay_namespace_authorization_rule implements ICommandParent<any
      *                                              [--subscription]
      * ```
      */
-    az_relay_namespace_authorization_rule_delete(): az_relay_namespace_authorization_rule_delete_command_builder {
-        return new az_relay_namespace_authorization_rule_delete_command_builder(this);
+    static az_relay_namespace_authorization_rule_delete(): az_relay_namespace_authorization_rule_delete_command_builder {
+        return new az_relay_namespace_authorization_rule_delete_command_builder("az relay namespace authorization-rule delete");
     }
 
     /**
@@ -353,8 +343,8 @@ export class az_relay_namespace_authorization_rule implements ICommandParent<any
      * @param {string} namespaceName Name of the Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_relay_namespace_authorization_rule_list(namespaceName: string, resourceGroup: string): az_relay_namespace_authorization_rule_list_command_builder {
-        return new az_relay_namespace_authorization_rule_list_command_builder(this, namespaceName, resourceGroup);
+    static az_relay_namespace_authorization_rule_list(namespaceName: string, resourceGroup: string): az_relay_namespace_authorization_rule_list_command_builder {
+        return new az_relay_namespace_authorization_rule_list_command_builder("az relay namespace authorization-rule list", namespaceName, resourceGroup);
     }
 
     /**
@@ -370,8 +360,8 @@ export class az_relay_namespace_authorization_rule implements ICommandParent<any
      *                                            [--subscription]
      * ```
      */
-    az_relay_namespace_authorization_rule_show(): az_relay_namespace_authorization_rule_show_command_builder {
-        return new az_relay_namespace_authorization_rule_show_command_builder(this);
+    static az_relay_namespace_authorization_rule_show(): az_relay_namespace_authorization_rule_show_command_builder {
+        return new az_relay_namespace_authorization_rule_show_command_builder("az relay namespace authorization-rule show");
     }
 
     /**
@@ -393,15 +383,13 @@ export class az_relay_namespace_authorization_rule implements ICommandParent<any
      *
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      */
-    az_relay_namespace_authorization_rule_update(rights: 'Listen' | 'Manage' | 'Send'): az_relay_namespace_authorization_rule_update_command_builder {
-        return new az_relay_namespace_authorization_rule_update_command_builder(this, rights);
+    static az_relay_namespace_authorization_rule_update(rights: 'Listen' | 'Manage' | 'Send'): az_relay_namespace_authorization_rule_update_command_builder {
+        return new az_relay_namespace_authorization_rule_update_command_builder("az relay namespace authorization-rule update", rights);
     }
 }
 
 /** Manage Azure Relay Service Namespace. */
-export class az_relay_namespace implements ICommandParent<any> {
-    commandPath = "az relay namespace";
-
+export class az_relay_namespace {
     /**
      * Create a Relay Service Namespace.
      *
@@ -417,8 +405,8 @@ export class az_relay_namespace implements ICommandParent<any> {
      * @param {string} name Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_relay_namespace_create(name: string, resourceGroup: string): az_relay_namespace_create_command_builder {
-        return new az_relay_namespace_create_command_builder(this, name, resourceGroup);
+    static az_relay_namespace_create(name: string, resourceGroup: string): az_relay_namespace_create_command_builder {
+        return new az_relay_namespace_create_command_builder("az relay namespace create", name, resourceGroup);
     }
 
     /**
@@ -432,8 +420,8 @@ export class az_relay_namespace implements ICommandParent<any> {
      *                           [--subscription]
      * ```
      */
-    az_relay_namespace_delete(): az_relay_namespace_delete_command_builder {
-        return new az_relay_namespace_delete_command_builder(this);
+    static az_relay_namespace_delete(): az_relay_namespace_delete_command_builder {
+        return new az_relay_namespace_delete_command_builder("az relay namespace delete");
     }
 
     /**
@@ -447,8 +435,8 @@ export class az_relay_namespace implements ICommandParent<any> {
      *
      * @param {string} name Namespace name. Name can contain only letters, numbers, and hyphens. The namespace must start with a letter, and it must end with a letter or number.
      */
-    az_relay_namespace_exists(name: string): az_relay_namespace_exists_command_builder {
-        return new az_relay_namespace_exists_command_builder(this, name);
+    static az_relay_namespace_exists(name: string): az_relay_namespace_exists_command_builder {
+        return new az_relay_namespace_exists_command_builder("az relay namespace exists", name);
     }
 
     /**
@@ -461,8 +449,8 @@ export class az_relay_namespace implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_relay_namespace_list(): az_relay_namespace_list_command_builder {
-        return new az_relay_namespace_list_command_builder(this);
+    static az_relay_namespace_list(): az_relay_namespace_list_command_builder {
+        return new az_relay_namespace_list_command_builder("az relay namespace list");
     }
 
     /**
@@ -477,8 +465,8 @@ export class az_relay_namespace implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_relay_namespace_show(): az_relay_namespace_show_command_builder {
-        return new az_relay_namespace_show_command_builder(this);
+    static az_relay_namespace_show(): az_relay_namespace_show_command_builder {
+        return new az_relay_namespace_show_command_builder("az relay namespace show");
     }
 
     /**
@@ -497,15 +485,13 @@ export class az_relay_namespace implements ICommandParent<any> {
      *                           [--tags]
      * ```
      */
-    az_relay_namespace_update(): az_relay_namespace_update_command_builder {
-        return new az_relay_namespace_update_command_builder(this);
+    static az_relay_namespace_update(): az_relay_namespace_update_command_builder {
+        return new az_relay_namespace_update_command_builder("az relay namespace update");
     }
 }
 
 /** Manage Azure Authorization Rule keys for Relay Service WCF Relay. */
-export class az_relay_wcfrelay_authorization_rule_keys implements ICommandParent<any> {
-    commandPath = "az relay wcfrelay authorization-rule keys";
-
+export class az_relay_wcfrelay_authorization_rule_keys {
     /**
      * List the keys and connection strings of Authorization Rule for the given Relay Service WCF Relay.
      *
@@ -524,8 +510,8 @@ export class az_relay_wcfrelay_authorization_rule_keys implements ICommandParent
      * @param {string} relayName Name of WCF Relay.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_relay_wcfrelay_authorization_rule_keys_list(name: string, namespaceName: string, relayName: string, resourceGroup: string): az_relay_wcfrelay_authorization_rule_keys_list_command_builder {
-        return new az_relay_wcfrelay_authorization_rule_keys_list_command_builder(this, name, namespaceName, relayName, resourceGroup);
+    static az_relay_wcfrelay_authorization_rule_keys_list(name: string, namespaceName: string, relayName: string, resourceGroup: string): az_relay_wcfrelay_authorization_rule_keys_list_command_builder {
+        return new az_relay_wcfrelay_authorization_rule_keys_list_command_builder("az relay wcfrelay authorization-rule keys list", name, namespaceName, relayName, resourceGroup);
     }
 
     /**
@@ -545,15 +531,13 @@ export class az_relay_wcfrelay_authorization_rule_keys implements ICommandParent
      *
      * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
      */
-    az_relay_wcfrelay_authorization_rule_keys_renew(key: 'PrimaryKey' | 'SecondaryKey'): az_relay_wcfrelay_authorization_rule_keys_renew_command_builder {
-        return new az_relay_wcfrelay_authorization_rule_keys_renew_command_builder(this, key);
+    static az_relay_wcfrelay_authorization_rule_keys_renew(key: 'PrimaryKey' | 'SecondaryKey'): az_relay_wcfrelay_authorization_rule_keys_renew_command_builder {
+        return new az_relay_wcfrelay_authorization_rule_keys_renew_command_builder("az relay wcfrelay authorization-rule keys renew", key);
     }
 }
 
 /** Manage Azure Relay Service WCF Relay Authorization Rule. */
-export class az_relay_wcfrelay_authorization_rule implements ICommandParent<any> {
-    commandPath = "az relay wcfrelay authorization-rule";
-
+export class az_relay_wcfrelay_authorization_rule {
     /**
      * Create Authorization Rule for the given Relay Service WCF Relay.
      *
@@ -572,8 +556,8 @@ export class az_relay_wcfrelay_authorization_rule implements ICommandParent<any>
      * @param {string} relayName Name of WCF Relay.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_relay_wcfrelay_authorization_rule_create(name: string, namespaceName: string, relayName: string, resourceGroup: string): az_relay_wcfrelay_authorization_rule_create_command_builder {
-        return new az_relay_wcfrelay_authorization_rule_create_command_builder(this, name, namespaceName, relayName, resourceGroup);
+    static az_relay_wcfrelay_authorization_rule_create(name: string, namespaceName: string, relayName: string, resourceGroup: string): az_relay_wcfrelay_authorization_rule_create_command_builder {
+        return new az_relay_wcfrelay_authorization_rule_create_command_builder("az relay wcfrelay authorization-rule create", name, namespaceName, relayName, resourceGroup);
     }
 
     /**
@@ -589,8 +573,8 @@ export class az_relay_wcfrelay_authorization_rule implements ICommandParent<any>
      *                                             [--subscription]
      * ```
      */
-    az_relay_wcfrelay_authorization_rule_delete(): az_relay_wcfrelay_authorization_rule_delete_command_builder {
-        return new az_relay_wcfrelay_authorization_rule_delete_command_builder(this);
+    static az_relay_wcfrelay_authorization_rule_delete(): az_relay_wcfrelay_authorization_rule_delete_command_builder {
+        return new az_relay_wcfrelay_authorization_rule_delete_command_builder("az relay wcfrelay authorization-rule delete");
     }
 
     /**
@@ -609,8 +593,8 @@ export class az_relay_wcfrelay_authorization_rule implements ICommandParent<any>
      * @param {string} relayName Name of WCF Relay.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_relay_wcfrelay_authorization_rule_list(namespaceName: string, relayName: string, resourceGroup: string): az_relay_wcfrelay_authorization_rule_list_command_builder {
-        return new az_relay_wcfrelay_authorization_rule_list_command_builder(this, namespaceName, relayName, resourceGroup);
+    static az_relay_wcfrelay_authorization_rule_list(namespaceName: string, relayName: string, resourceGroup: string): az_relay_wcfrelay_authorization_rule_list_command_builder {
+        return new az_relay_wcfrelay_authorization_rule_list_command_builder("az relay wcfrelay authorization-rule list", namespaceName, relayName, resourceGroup);
     }
 
     /**
@@ -627,8 +611,8 @@ export class az_relay_wcfrelay_authorization_rule implements ICommandParent<any>
      *                                           [--subscription]
      * ```
      */
-    az_relay_wcfrelay_authorization_rule_show(): az_relay_wcfrelay_authorization_rule_show_command_builder {
-        return new az_relay_wcfrelay_authorization_rule_show_command_builder(this);
+    static az_relay_wcfrelay_authorization_rule_show(): az_relay_wcfrelay_authorization_rule_show_command_builder {
+        return new az_relay_wcfrelay_authorization_rule_show_command_builder("az relay wcfrelay authorization-rule show");
     }
 
     /**
@@ -651,15 +635,13 @@ export class az_relay_wcfrelay_authorization_rule implements ICommandParent<any>
      *
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      */
-    az_relay_wcfrelay_authorization_rule_update(rights: 'Listen' | 'Manage' | 'Send'): az_relay_wcfrelay_authorization_rule_update_command_builder {
-        return new az_relay_wcfrelay_authorization_rule_update_command_builder(this, rights);
+    static az_relay_wcfrelay_authorization_rule_update(rights: 'Listen' | 'Manage' | 'Send'): az_relay_wcfrelay_authorization_rule_update_command_builder {
+        return new az_relay_wcfrelay_authorization_rule_update_command_builder("az relay wcfrelay authorization-rule update", rights);
     }
 }
 
 /** Manage Azure Relay Service WCF Relay and Authorization Rule. */
-export class az_relay_wcfrelay implements ICommandParent<any> {
-    commandPath = "az relay wcfrelay";
-
+export class az_relay_wcfrelay {
     /**
      * Create the Relay Service WCF Relay.
      *
@@ -680,8 +662,8 @@ export class az_relay_wcfrelay implements ICommandParent<any> {
      * @param {'Http' | 'NetTcp'} relayType Relay type.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_relay_wcfrelay_create(name: string, namespaceName: string, relayType: 'Http' | 'NetTcp', resourceGroup: string): az_relay_wcfrelay_create_command_builder {
-        return new az_relay_wcfrelay_create_command_builder(this, name, namespaceName, relayType, resourceGroup);
+    static az_relay_wcfrelay_create(name: string, namespaceName: string, relayType: 'Http' | 'NetTcp', resourceGroup: string): az_relay_wcfrelay_create_command_builder {
+        return new az_relay_wcfrelay_create_command_builder("az relay wcfrelay create", name, namespaceName, relayType, resourceGroup);
     }
 
     /**
@@ -696,8 +678,8 @@ export class az_relay_wcfrelay implements ICommandParent<any> {
      *                          [--subscription]
      * ```
      */
-    az_relay_wcfrelay_delete(): az_relay_wcfrelay_delete_command_builder {
-        return new az_relay_wcfrelay_delete_command_builder(this);
+    static az_relay_wcfrelay_delete(): az_relay_wcfrelay_delete_command_builder {
+        return new az_relay_wcfrelay_delete_command_builder("az relay wcfrelay delete");
     }
 
     /**
@@ -714,8 +696,8 @@ export class az_relay_wcfrelay implements ICommandParent<any> {
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_relay_wcfrelay_list(namespaceName: string, resourceGroup: string): az_relay_wcfrelay_list_command_builder {
-        return new az_relay_wcfrelay_list_command_builder(this, namespaceName, resourceGroup);
+    static az_relay_wcfrelay_list(namespaceName: string, resourceGroup: string): az_relay_wcfrelay_list_command_builder {
+        return new az_relay_wcfrelay_list_command_builder("az relay wcfrelay list", namespaceName, resourceGroup);
     }
 
     /**
@@ -731,8 +713,8 @@ export class az_relay_wcfrelay implements ICommandParent<any> {
      *                        [--subscription]
      * ```
      */
-    az_relay_wcfrelay_show(): az_relay_wcfrelay_show_command_builder {
-        return new az_relay_wcfrelay_show_command_builder(this);
+    static az_relay_wcfrelay_show(): az_relay_wcfrelay_show_command_builder {
+        return new az_relay_wcfrelay_show_command_builder("az relay wcfrelay show");
     }
 
     /**
@@ -754,8 +736,8 @@ export class az_relay_wcfrelay implements ICommandParent<any> {
      *                          [--user-metadata]
      * ```
      */
-    az_relay_wcfrelay_update(): az_relay_wcfrelay_update_command_builder {
-        return new az_relay_wcfrelay_update_command_builder(this);
+    static az_relay_wcfrelay_update(): az_relay_wcfrelay_update_command_builder {
+        return new az_relay_wcfrelay_update_command_builder("az relay wcfrelay update");
     }
 }
 
@@ -782,7 +764,7 @@ export class az_relay {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_relay_hyco_authorization_rule_keys_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, hybridConnectionName: string, name: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, hybridConnectionName: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.hybridConnectionName(hybridConnectionName)
         this.name(name)
@@ -845,7 +827,7 @@ class az_relay_hyco_authorization_rule_keys_list_command_builder extends Command
  * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
  */
 class az_relay_hyco_authorization_rule_keys_renew_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, key: 'PrimaryKey' | 'SecondaryKey') {
+    constructor(commandPath: string, key: 'PrimaryKey' | 'SecondaryKey') {
         super(commandParent);
         this.key(key)
     }
@@ -918,7 +900,7 @@ class az_relay_hyco_authorization_rule_keys_renew_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_relay_hyco_authorization_rule_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, hybridConnectionName: string, name: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, hybridConnectionName: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.hybridConnectionName(hybridConnectionName)
         this.name(name)
@@ -977,7 +959,7 @@ class az_relay_hyco_authorization_rule_create_command_builder extends CommandBui
  * ```
  */
 class az_relay_hyco_authorization_rule_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1035,7 +1017,7 @@ class az_relay_hyco_authorization_rule_delete_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_relay_hyco_authorization_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, hybridConnectionName: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, hybridConnectionName: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.hybridConnectionName(hybridConnectionName)
         this.namespaceName(namespaceName)
@@ -1088,7 +1070,7 @@ class az_relay_hyco_authorization_rule_list_command_builder extends CommandBuild
  * ```
  */
 class az_relay_hyco_authorization_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1156,7 +1138,7 @@ class az_relay_hyco_authorization_rule_show_command_builder extends CommandBuild
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
 class az_relay_hyco_authorization_rule_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, rights: 'Listen' | 'Manage' | 'Send') {
+    constructor(commandPath: string, rights: 'Listen' | 'Manage' | 'Send') {
         super(commandParent);
         this.rights(rights)
     }
@@ -1246,7 +1228,7 @@ class az_relay_hyco_authorization_rule_update_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_relay_hyco_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -1303,7 +1285,7 @@ class az_relay_hyco_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_relay_hyco_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1353,7 +1335,7 @@ class az_relay_hyco_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_relay_hyco_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -1398,7 +1380,7 @@ class az_relay_hyco_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_relay_hyco_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1459,7 +1441,7 @@ class az_relay_hyco_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_relay_hyco_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1553,7 +1535,7 @@ class az_relay_hyco_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_relay_namespace_authorization_rule_keys_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -1608,7 +1590,7 @@ class az_relay_namespace_authorization_rule_keys_list_command_builder extends Co
  * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
  */
 class az_relay_namespace_authorization_rule_keys_renew_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, key: 'PrimaryKey' | 'SecondaryKey') {
+    constructor(commandPath: string, key: 'PrimaryKey' | 'SecondaryKey') {
         super(commandParent);
         this.key(key)
     }
@@ -1673,7 +1655,7 @@ class az_relay_namespace_authorization_rule_keys_renew_command_builder extends C
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_relay_namespace_authorization_rule_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -1724,7 +1706,7 @@ class az_relay_namespace_authorization_rule_create_command_builder extends Comma
  * ```
  */
 class az_relay_namespace_authorization_rule_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1774,7 +1756,7 @@ class az_relay_namespace_authorization_rule_delete_command_builder extends Comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_relay_namespace_authorization_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -1819,7 +1801,7 @@ class az_relay_namespace_authorization_rule_list_command_builder extends Command
  * ```
  */
 class az_relay_namespace_authorization_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1880,7 +1862,7 @@ class az_relay_namespace_authorization_rule_show_command_builder extends Command
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
 class az_relay_namespace_authorization_rule_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, rights: 'Listen' | 'Manage' | 'Send') {
+    constructor(commandPath: string, rights: 'Listen' | 'Manage' | 'Send') {
         super(commandParent);
         this.rights(rights)
     }
@@ -1962,7 +1944,7 @@ class az_relay_namespace_authorization_rule_update_command_builder extends Comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_relay_namespace_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2011,7 +1993,7 @@ class az_relay_namespace_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_relay_namespace_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2052,7 +2034,7 @@ class az_relay_namespace_delete_command_builder extends CommandBuilder {
  * @param {string} name Namespace name. Name can contain only letters, numbers, and hyphens. The namespace must start with a letter, and it must end with a letter or number.
  */
 class az_relay_namespace_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2081,7 +2063,7 @@ class az_relay_namespace_exists_command_builder extends CommandBuilder {
  * ```
  */
 class az_relay_namespace_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2117,7 +2099,7 @@ class az_relay_namespace_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_relay_namespace_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2169,7 +2151,7 @@ class az_relay_namespace_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_relay_namespace_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2247,7 +2229,7 @@ class az_relay_namespace_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_relay_wcfrelay_authorization_rule_keys_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, relayName: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, namespaceName: string, relayName: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -2310,7 +2292,7 @@ class az_relay_wcfrelay_authorization_rule_keys_list_command_builder extends Com
  * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
  */
 class az_relay_wcfrelay_authorization_rule_keys_renew_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, key: 'PrimaryKey' | 'SecondaryKey') {
+    constructor(commandPath: string, key: 'PrimaryKey' | 'SecondaryKey') {
         super(commandParent);
         this.key(key)
     }
@@ -2383,7 +2365,7 @@ class az_relay_wcfrelay_authorization_rule_keys_renew_command_builder extends Co
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_relay_wcfrelay_authorization_rule_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, relayName: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, namespaceName: string, relayName: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -2442,7 +2424,7 @@ class az_relay_wcfrelay_authorization_rule_create_command_builder extends Comman
  * ```
  */
 class az_relay_wcfrelay_authorization_rule_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2500,7 +2482,7 @@ class az_relay_wcfrelay_authorization_rule_delete_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_relay_wcfrelay_authorization_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, relayName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, relayName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.relayName(relayName)
@@ -2553,7 +2535,7 @@ class az_relay_wcfrelay_authorization_rule_list_command_builder extends CommandB
  * ```
  */
 class az_relay_wcfrelay_authorization_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2621,7 +2603,7 @@ class az_relay_wcfrelay_authorization_rule_show_command_builder extends CommandB
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
 class az_relay_wcfrelay_authorization_rule_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, rights: 'Listen' | 'Manage' | 'Send') {
+    constructor(commandPath: string, rights: 'Listen' | 'Manage' | 'Send') {
         super(commandParent);
         this.rights(rights)
     }
@@ -2714,7 +2696,7 @@ class az_relay_wcfrelay_authorization_rule_update_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_relay_wcfrelay_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, relayType: 'Http' | 'NetTcp', resourceGroup: string) {
+    constructor(commandPath: string, name: string, namespaceName: string, relayType: 'Http' | 'NetTcp', resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -2784,7 +2766,7 @@ class az_relay_wcfrelay_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_relay_wcfrelay_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2834,7 +2816,7 @@ class az_relay_wcfrelay_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_relay_wcfrelay_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -2879,7 +2861,7 @@ class az_relay_wcfrelay_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_relay_wcfrelay_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2940,7 +2922,7 @@ class az_relay_wcfrelay_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_relay_wcfrelay_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

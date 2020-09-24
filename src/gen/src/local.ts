@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Local Context. */
-export class az_local_context implements ICommandParent<any> {
-    commandPath = "az local-context";
-
+export class az_local_context {
     /**
      * Delete local context data.
      *
@@ -17,8 +15,8 @@ export class az_local_context implements ICommandParent<any> {
      *                         [--yes]
      * ```
      */
-    az_local_context_delete(): az_local_context_delete_command_builder {
-        return new az_local_context_delete_command_builder(this);
+    static az_local_context_delete(): az_local_context_delete_command_builder {
+        return new az_local_context_delete_command_builder("az local-context delete");
     }
 
     /**
@@ -29,8 +27,8 @@ export class az_local_context implements ICommandParent<any> {
      * az local-context off [--subscription]
      * ```
      */
-    az_local_context_off(): az_local_context_off_command_builder {
-        return new az_local_context_off_command_builder(this);
+    static az_local_context_off(): az_local_context_off_command_builder {
+        return new az_local_context_off_command_builder("az local-context off");
     }
 
     /**
@@ -41,8 +39,8 @@ export class az_local_context implements ICommandParent<any> {
      * az local-context on [--subscription]
      * ```
      */
-    az_local_context_on(): az_local_context_on_command_builder {
-        return new az_local_context_on_command_builder(this);
+    static az_local_context_on(): az_local_context_on_command_builder {
+        return new az_local_context_on_command_builder("az local-context on");
     }
 
     /**
@@ -55,8 +53,8 @@ export class az_local_context implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_local_context_show(): az_local_context_show_command_builder {
-        return new az_local_context_show_command_builder(this);
+    static az_local_context_show(): az_local_context_show_command_builder {
+        return new az_local_context_show_command_builder("az local-context show");
     }
 }
 
@@ -74,7 +72,7 @@ export class az_local_context implements ICommandParent<any> {
  * ```
  */
 class az_local_context_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -124,7 +122,7 @@ class az_local_context_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_local_context_off_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -144,7 +142,7 @@ class az_local_context_off_command_builder extends CommandBuilder {
  * ```
  */
 class az_local_context_on_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -166,7 +164,7 @@ class az_local_context_on_command_builder extends CommandBuilder {
  * ```
  */
 class az_local_context_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

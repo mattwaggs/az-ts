@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Azure CDN Custom Domains to provide custom host names for endpoints. */
-export class az_cdn_custom_domain implements ICommandParent<any> {
-    commandPath = "az cdn custom-domain";
-
+export class az_cdn_custom_domain {
     /**
      * Create a new custom domain to provide a hostname for a CDN endpoint.
      *
@@ -25,8 +23,8 @@ export class az_cdn_custom_domain implements ICommandParent<any> {
      * @param {string} profileName Name of the CDN profile which is unique within the resource group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cdn_custom_domain_create(endpointName: string, hostname: string, name: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_create_command_builder {
-        return new az_cdn_custom_domain_create_command_builder(this, endpointName, hostname, name, profileName, resourceGroup);
+    static az_cdn_custom_domain_create(endpointName: string, hostname: string, name: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_create_command_builder {
+        return new az_cdn_custom_domain_create_command_builder("az cdn custom-domain create", endpointName, hostname, name, profileName, resourceGroup);
     }
 
     /**
@@ -46,8 +44,8 @@ export class az_cdn_custom_domain implements ICommandParent<any> {
      * @param {string} profileName Name of the CDN profile which is unique within the resource group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cdn_custom_domain_delete(endpointName: string, name: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_delete_command_builder {
-        return new az_cdn_custom_domain_delete_command_builder(this, endpointName, name, profileName, resourceGroup);
+    static az_cdn_custom_domain_delete(endpointName: string, name: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_delete_command_builder {
+        return new az_cdn_custom_domain_delete_command_builder("az cdn custom-domain delete", endpointName, name, profileName, resourceGroup);
     }
 
     /**
@@ -67,8 +65,8 @@ export class az_cdn_custom_domain implements ICommandParent<any> {
      * @param {string} profileName Name of the CDN profile which is unique within the resource group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cdn_custom_domain_disable_https(endpointName: string, name: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_disable_https_command_builder {
-        return new az_cdn_custom_domain_disable_https_command_builder(this, endpointName, name, profileName, resourceGroup);
+    static az_cdn_custom_domain_disable_https(endpointName: string, name: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_disable_https_command_builder {
+        return new az_cdn_custom_domain_disable_https_command_builder("az cdn custom-domain disable-https", endpointName, name, profileName, resourceGroup);
     }
 
     /**
@@ -95,8 +93,8 @@ export class az_cdn_custom_domain implements ICommandParent<any> {
      * @param {string} profileName Name of the parent profile.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cdn_custom_domain_enable_https(endpointName: string, name: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_enable_https_command_builder {
-        return new az_cdn_custom_domain_enable_https_command_builder(this, endpointName, name, profileName, resourceGroup);
+    static az_cdn_custom_domain_enable_https(endpointName: string, name: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_enable_https_command_builder {
+        return new az_cdn_custom_domain_enable_https_command_builder("az cdn custom-domain enable-https", endpointName, name, profileName, resourceGroup);
     }
 
     /**
@@ -115,8 +113,8 @@ export class az_cdn_custom_domain implements ICommandParent<any> {
      * @param {string} profileName Name of the CDN profile which is unique within the resource group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cdn_custom_domain_list(endpointName: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_list_command_builder {
-        return new az_cdn_custom_domain_list_command_builder(this, endpointName, profileName, resourceGroup);
+    static az_cdn_custom_domain_list(endpointName: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_list_command_builder {
+        return new az_cdn_custom_domain_list_command_builder("az cdn custom-domain list", endpointName, profileName, resourceGroup);
     }
 
     /**
@@ -137,15 +135,13 @@ export class az_cdn_custom_domain implements ICommandParent<any> {
      * @param {string} profileName Name of the CDN profile which is unique within the resource group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cdn_custom_domain_show(endpointName: string, name: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_show_command_builder {
-        return new az_cdn_custom_domain_show_command_builder(this, endpointName, name, profileName, resourceGroup);
+    static az_cdn_custom_domain_show(endpointName: string, name: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_show_command_builder {
+        return new az_cdn_custom_domain_show_command_builder("az cdn custom-domain show", endpointName, name, profileName, resourceGroup);
     }
 }
 
 /** View all available CDN edge nodes. */
-export class az_cdn_edge_node implements ICommandParent<any> {
-    commandPath = "az cdn edge-node";
-
+export class az_cdn_edge_node {
     /**
      * Edgenodes are the global Point of Presence (POP) locations used to deliver CDN content to end users.
      *
@@ -155,15 +151,13 @@ export class az_cdn_edge_node implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_cdn_edge_node_list(): az_cdn_edge_node_list_command_builder {
-        return new az_cdn_edge_node_list_command_builder(this);
+    static az_cdn_edge_node_list(): az_cdn_edge_node_list_command_builder {
+        return new az_cdn_edge_node_list_command_builder("az cdn edge-node list");
     }
 }
 
 /** Manage delivery rule actions for an endpoint. */
-export class az_cdn_endpoint_rule_action implements ICommandParent<any> {
-    commandPath = "az cdn endpoint rule action";
-
+export class az_cdn_endpoint_rule_action {
     /**
      * Add an action to a delivery rule.
      *
@@ -197,8 +191,8 @@ export class az_cdn_endpoint_rule_action implements ICommandParent<any> {
      * @param {string} actionName Name of the action.
      * @param {string} ruleName Name of the rule.
      */
-    az_cdn_endpoint_rule_action_add(actionName: string, ruleName: string): az_cdn_endpoint_rule_action_add_command_builder {
-        return new az_cdn_endpoint_rule_action_add_command_builder(this, actionName, ruleName);
+    static az_cdn_endpoint_rule_action_add(actionName: string, ruleName: string): az_cdn_endpoint_rule_action_add_command_builder {
+        return new az_cdn_endpoint_rule_action_add_command_builder("az cdn endpoint rule action add", actionName, ruleName);
     }
 
     /**
@@ -218,8 +212,8 @@ export class az_cdn_endpoint_rule_action implements ICommandParent<any> {
      * @param {string} index The index of the condition/action.
      * @param {string} ruleName Name of the rule.
      */
-    az_cdn_endpoint_rule_action_remove(index: string, ruleName: string): az_cdn_endpoint_rule_action_remove_command_builder {
-        return new az_cdn_endpoint_rule_action_remove_command_builder(this, index, ruleName);
+    static az_cdn_endpoint_rule_action_remove(index: string, ruleName: string): az_cdn_endpoint_rule_action_remove_command_builder {
+        return new az_cdn_endpoint_rule_action_remove_command_builder("az cdn endpoint rule action remove", index, ruleName);
     }
 
     /**
@@ -235,15 +229,13 @@ export class az_cdn_endpoint_rule_action implements ICommandParent<any> {
      *                                  [--subscription]
      * ```
      */
-    az_cdn_endpoint_rule_action_show(): az_cdn_endpoint_rule_action_show_command_builder {
-        return new az_cdn_endpoint_rule_action_show_command_builder(this);
+    static az_cdn_endpoint_rule_action_show(): az_cdn_endpoint_rule_action_show_command_builder {
+        return new az_cdn_endpoint_rule_action_show_command_builder("az cdn endpoint rule action show");
     }
 }
 
 /** Manage delivery rule conditions for an endpoint. */
-export class az_cdn_endpoint_rule_condition implements ICommandParent<any> {
-    commandPath = "az cdn endpoint rule condition";
-
+export class az_cdn_endpoint_rule_condition {
     /**
      * Add a condition to a delivery rule.
      *
@@ -267,8 +259,8 @@ export class az_cdn_endpoint_rule_condition implements ICommandParent<any> {
      * @param {string} operator Operator of the match condition.
      * @param {string} ruleName Name of the rule.
      */
-    az_cdn_endpoint_rule_condition_add(matchVariable: string, operator: string, ruleName: string): az_cdn_endpoint_rule_condition_add_command_builder {
-        return new az_cdn_endpoint_rule_condition_add_command_builder(this, matchVariable, operator, ruleName);
+    static az_cdn_endpoint_rule_condition_add(matchVariable: string, operator: string, ruleName: string): az_cdn_endpoint_rule_condition_add_command_builder {
+        return new az_cdn_endpoint_rule_condition_add_command_builder("az cdn endpoint rule condition add", matchVariable, operator, ruleName);
     }
 
     /**
@@ -288,8 +280,8 @@ export class az_cdn_endpoint_rule_condition implements ICommandParent<any> {
      * @param {string} index The index of the condition/action.
      * @param {string} ruleName Name of the rule.
      */
-    az_cdn_endpoint_rule_condition_remove(index: string, ruleName: string): az_cdn_endpoint_rule_condition_remove_command_builder {
-        return new az_cdn_endpoint_rule_condition_remove_command_builder(this, index, ruleName);
+    static az_cdn_endpoint_rule_condition_remove(index: string, ruleName: string): az_cdn_endpoint_rule_condition_remove_command_builder {
+        return new az_cdn_endpoint_rule_condition_remove_command_builder("az cdn endpoint rule condition remove", index, ruleName);
     }
 
     /**
@@ -305,15 +297,13 @@ export class az_cdn_endpoint_rule_condition implements ICommandParent<any> {
      *                                     [--subscription]
      * ```
      */
-    az_cdn_endpoint_rule_condition_show(): az_cdn_endpoint_rule_condition_show_command_builder {
-        return new az_cdn_endpoint_rule_condition_show_command_builder(this);
+    static az_cdn_endpoint_rule_condition_show(): az_cdn_endpoint_rule_condition_show_command_builder {
+        return new az_cdn_endpoint_rule_condition_show_command_builder("az cdn endpoint rule condition show");
     }
 }
 
 /** Manage delivery rules for an endpoint. */
-export class az_cdn_endpoint_rule implements ICommandParent<any> {
-    commandPath = "az cdn endpoint rule";
-
+export class az_cdn_endpoint_rule {
     /**
      * Add a delivery rule to a CDN endpoint.
      *
@@ -355,8 +345,8 @@ export class az_cdn_endpoint_rule implements ICommandParent<any> {
      * @param {string} order The order of the rule. The order number must start from 0 and consecutive.                    Rule with higher order will be applied later.
      * @param {string} ruleName Name of the rule.
      */
-    az_cdn_endpoint_rule_add(actionName: string, order: string, ruleName: string): az_cdn_endpoint_rule_add_command_builder {
-        return new az_cdn_endpoint_rule_add_command_builder(this, actionName, order, ruleName);
+    static az_cdn_endpoint_rule_add(actionName: string, order: string, ruleName: string): az_cdn_endpoint_rule_add_command_builder {
+        return new az_cdn_endpoint_rule_add_command_builder("az cdn endpoint rule add", actionName, order, ruleName);
     }
 
     /**
@@ -374,8 +364,8 @@ export class az_cdn_endpoint_rule implements ICommandParent<any> {
      *
      * @param {string} ruleName Name of the rule.
      */
-    az_cdn_endpoint_rule_remove(ruleName: string): az_cdn_endpoint_rule_remove_command_builder {
-        return new az_cdn_endpoint_rule_remove_command_builder(this, ruleName);
+    static az_cdn_endpoint_rule_remove(ruleName: string): az_cdn_endpoint_rule_remove_command_builder {
+        return new az_cdn_endpoint_rule_remove_command_builder("az cdn endpoint rule remove", ruleName);
     }
 
     /**
@@ -391,15 +381,13 @@ export class az_cdn_endpoint_rule implements ICommandParent<any> {
      *                           [--subscription]
      * ```
      */
-    az_cdn_endpoint_rule_show(): az_cdn_endpoint_rule_show_command_builder {
-        return new az_cdn_endpoint_rule_show_command_builder(this);
+    static az_cdn_endpoint_rule_show(): az_cdn_endpoint_rule_show_command_builder {
+        return new az_cdn_endpoint_rule_show_command_builder("az cdn endpoint rule show");
     }
 }
 
 /** Apply a CDN WAF policy to a CDN endpoint. */
-export class az_cdn_endpoint_waf_policy implements ICommandParent<any> {
-    commandPath = "az cdn endpoint waf policy";
-
+export class az_cdn_endpoint_waf_policy {
     /**
      * Remove a CDN WAF policy from a CDN endpoint.
      *
@@ -413,8 +401,8 @@ export class az_cdn_endpoint_waf_policy implements ICommandParent<any> {
      *                                   [--yes]
      * ```
      */
-    az_cdn_endpoint_waf_policy_remove(): az_cdn_endpoint_waf_policy_remove_command_builder {
-        return new az_cdn_endpoint_waf_policy_remove_command_builder(this);
+    static az_cdn_endpoint_waf_policy_remove(): az_cdn_endpoint_waf_policy_remove_command_builder {
+        return new az_cdn_endpoint_waf_policy_remove_command_builder("az cdn endpoint waf policy remove");
     }
 
     /**
@@ -433,8 +421,8 @@ export class az_cdn_endpoint_waf_policy implements ICommandParent<any> {
      *                                [--waf-policy-subscription-id]
      * ```
      */
-    az_cdn_endpoint_waf_policy_set(): az_cdn_endpoint_waf_policy_set_command_builder {
-        return new az_cdn_endpoint_waf_policy_set_command_builder(this);
+    static az_cdn_endpoint_waf_policy_set(): az_cdn_endpoint_waf_policy_set_command_builder {
+        return new az_cdn_endpoint_waf_policy_set_command_builder("az cdn endpoint waf policy set");
     }
 
     /**
@@ -450,8 +438,8 @@ export class az_cdn_endpoint_waf_policy implements ICommandParent<any> {
      *                                 [--subscription]
      * ```
      */
-    az_cdn_endpoint_waf_policy_show(): az_cdn_endpoint_waf_policy_show_command_builder {
-        return new az_cdn_endpoint_waf_policy_show_command_builder(this);
+    static az_cdn_endpoint_waf_policy_show(): az_cdn_endpoint_waf_policy_show_command_builder {
+        return new az_cdn_endpoint_waf_policy_show_command_builder("az cdn endpoint waf policy show");
     }
 }
 
@@ -460,9 +448,7 @@ export class az_cdn_endpoint_waf {
 }
 
 /** Manage CDN endpoints. */
-export class az_cdn_endpoint implements ICommandParent<any> {
-    commandPath = "az cdn endpoint";
-
+export class az_cdn_endpoint {
     /**
      * Create a named endpoint to connect to a CDN.
      *
@@ -490,8 +476,8 @@ export class az_cdn_endpoint implements ICommandParent<any> {
      * @param {string} profileName Name of the CDN profile which is unique within the resource group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cdn_endpoint_create(name: string, origin: string, profileName: string, resourceGroup: string): az_cdn_endpoint_create_command_builder {
-        return new az_cdn_endpoint_create_command_builder(this, name, origin, profileName, resourceGroup);
+    static az_cdn_endpoint_create(name: string, origin: string, profileName: string, resourceGroup: string): az_cdn_endpoint_create_command_builder {
+        return new az_cdn_endpoint_create_command_builder("az cdn endpoint create", name, origin, profileName, resourceGroup);
     }
 
     /**
@@ -507,8 +493,8 @@ export class az_cdn_endpoint implements ICommandParent<any> {
      *                        [--subscription]
      * ```
      */
-    az_cdn_endpoint_delete(): az_cdn_endpoint_delete_command_builder {
-        return new az_cdn_endpoint_delete_command_builder(this);
+    static az_cdn_endpoint_delete(): az_cdn_endpoint_delete_command_builder {
+        return new az_cdn_endpoint_delete_command_builder("az cdn endpoint delete");
     }
 
     /**
@@ -525,8 +511,8 @@ export class az_cdn_endpoint implements ICommandParent<any> {
      * @param {string} profileName Name of the CDN profile which is unique within the resource group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cdn_endpoint_list(profileName: string, resourceGroup: string): az_cdn_endpoint_list_command_builder {
-        return new az_cdn_endpoint_list_command_builder(this, profileName, resourceGroup);
+    static az_cdn_endpoint_list(profileName: string, resourceGroup: string): az_cdn_endpoint_list_command_builder {
+        return new az_cdn_endpoint_list_command_builder("az cdn endpoint list", profileName, resourceGroup);
     }
 
     /**
@@ -545,8 +531,8 @@ export class az_cdn_endpoint implements ICommandParent<any> {
      *
      * @param {string} contentPaths The path to the content to be loaded. Path should be a relative file URL of the origin.
      */
-    az_cdn_endpoint_load(contentPaths: string): az_cdn_endpoint_load_command_builder {
-        return new az_cdn_endpoint_load_command_builder(this, contentPaths);
+    static az_cdn_endpoint_load(contentPaths: string): az_cdn_endpoint_load_command_builder {
+        return new az_cdn_endpoint_load_command_builder("az cdn endpoint load", contentPaths);
     }
 
     /**
@@ -565,8 +551,8 @@ export class az_cdn_endpoint implements ICommandParent<any> {
      *
      * @param {string} contentPaths The path to the content to be purged. Can describe a file path or a wild card directory.
      */
-    az_cdn_endpoint_purge(contentPaths: string): az_cdn_endpoint_purge_command_builder {
-        return new az_cdn_endpoint_purge_command_builder(this, contentPaths);
+    static az_cdn_endpoint_purge(contentPaths: string): az_cdn_endpoint_purge_command_builder {
+        return new az_cdn_endpoint_purge_command_builder("az cdn endpoint purge", contentPaths);
     }
 
     /**
@@ -582,8 +568,8 @@ export class az_cdn_endpoint implements ICommandParent<any> {
      *                      [--subscription]
      * ```
      */
-    az_cdn_endpoint_show(): az_cdn_endpoint_show_command_builder {
-        return new az_cdn_endpoint_show_command_builder(this);
+    static az_cdn_endpoint_show(): az_cdn_endpoint_show_command_builder {
+        return new az_cdn_endpoint_show_command_builder("az cdn endpoint show");
     }
 
     /**
@@ -599,8 +585,8 @@ export class az_cdn_endpoint implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_cdn_endpoint_start(): az_cdn_endpoint_start_command_builder {
-        return new az_cdn_endpoint_start_command_builder(this);
+    static az_cdn_endpoint_start(): az_cdn_endpoint_start_command_builder {
+        return new az_cdn_endpoint_start_command_builder("az cdn endpoint start");
     }
 
     /**
@@ -616,8 +602,8 @@ export class az_cdn_endpoint implements ICommandParent<any> {
      *                      [--subscription]
      * ```
      */
-    az_cdn_endpoint_stop(): az_cdn_endpoint_stop_command_builder {
-        return new az_cdn_endpoint_stop_command_builder(this);
+    static az_cdn_endpoint_stop(): az_cdn_endpoint_stop_command_builder {
+        return new az_cdn_endpoint_stop_command_builder("az cdn endpoint stop");
     }
 
     /**
@@ -645,8 +631,8 @@ export class az_cdn_endpoint implements ICommandParent<any> {
      *                        [--tags]
      * ```
      */
-    az_cdn_endpoint_update(): az_cdn_endpoint_update_command_builder {
-        return new az_cdn_endpoint_update_command_builder(this);
+    static az_cdn_endpoint_update(): az_cdn_endpoint_update_command_builder {
+        return new az_cdn_endpoint_update_command_builder("az cdn endpoint update");
     }
 
     /**
@@ -664,15 +650,13 @@ export class az_cdn_endpoint implements ICommandParent<any> {
      *
      * @param {string} hostName The host name of the custom domain. Must be a domain name.
      */
-    az_cdn_endpoint_validate_custom_domain(hostName: string): az_cdn_endpoint_validate_custom_domain_command_builder {
-        return new az_cdn_endpoint_validate_custom_domain_command_builder(this, hostName);
+    static az_cdn_endpoint_validate_custom_domain(hostName: string): az_cdn_endpoint_validate_custom_domain_command_builder {
+        return new az_cdn_endpoint_validate_custom_domain_command_builder("az cdn endpoint validate-custom-domain", hostName);
     }
 }
 
 /** List or show existing origins related to CDN endpoints. */
-export class az_cdn_origin implements ICommandParent<any> {
-    commandPath = "az cdn origin";
-
+export class az_cdn_origin {
     /**
      * Lists all of the existing origins within an endpoint.
      *
@@ -689,8 +673,8 @@ export class az_cdn_origin implements ICommandParent<any> {
      * @param {string} profileName Name of the CDN profile which is unique within the resource group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cdn_origin_list(endpointName: string, profileName: string, resourceGroup: string): az_cdn_origin_list_command_builder {
-        return new az_cdn_origin_list_command_builder(this, endpointName, profileName, resourceGroup);
+    static az_cdn_origin_list(endpointName: string, profileName: string, resourceGroup: string): az_cdn_origin_list_command_builder {
+        return new az_cdn_origin_list_command_builder("az cdn origin list", endpointName, profileName, resourceGroup);
     }
 
     /**
@@ -707,8 +691,8 @@ export class az_cdn_origin implements ICommandParent<any> {
      *                    [--subscription]
      * ```
      */
-    az_cdn_origin_show(): az_cdn_origin_show_command_builder {
-        return new az_cdn_origin_show_command_builder(this);
+    static az_cdn_origin_show(): az_cdn_origin_show_command_builder {
+        return new az_cdn_origin_show_command_builder("az cdn origin show");
     }
 
     /**
@@ -729,15 +713,13 @@ export class az_cdn_origin implements ICommandParent<any> {
      *                      [--subscription]
      * ```
      */
-    az_cdn_origin_update(): az_cdn_origin_update_command_builder {
-        return new az_cdn_origin_update_command_builder(this);
+    static az_cdn_origin_update(): az_cdn_origin_update_command_builder {
+        return new az_cdn_origin_update_command_builder("az cdn origin update");
     }
 }
 
 /** Manage CDN profiles to define an edge network. */
-export class az_cdn_profile implements ICommandParent<any> {
-    commandPath = "az cdn profile";
-
+export class az_cdn_profile {
     /**
      * Create a new CDN profile.
      *
@@ -754,8 +736,8 @@ export class az_cdn_profile implements ICommandParent<any> {
      * @param {string} name Name of the CDN profile which is unique within the resource group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cdn_profile_create(name: string, resourceGroup: string): az_cdn_profile_create_command_builder {
-        return new az_cdn_profile_create_command_builder(this, name, resourceGroup);
+    static az_cdn_profile_create(name: string, resourceGroup: string): az_cdn_profile_create_command_builder {
+        return new az_cdn_profile_create_command_builder("az cdn profile create", name, resourceGroup);
     }
 
     /**
@@ -769,8 +751,8 @@ export class az_cdn_profile implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_cdn_profile_delete(): az_cdn_profile_delete_command_builder {
-        return new az_cdn_profile_delete_command_builder(this);
+    static az_cdn_profile_delete(): az_cdn_profile_delete_command_builder {
+        return new az_cdn_profile_delete_command_builder("az cdn profile delete");
     }
 
     /**
@@ -783,8 +765,8 @@ export class az_cdn_profile implements ICommandParent<any> {
      *                     [--subscription]
      * ```
      */
-    az_cdn_profile_list(): az_cdn_profile_list_command_builder {
-        return new az_cdn_profile_list_command_builder(this);
+    static az_cdn_profile_list(): az_cdn_profile_list_command_builder {
+        return new az_cdn_profile_list_command_builder("az cdn profile list");
     }
 
     /**
@@ -799,8 +781,8 @@ export class az_cdn_profile implements ICommandParent<any> {
      *                     [--subscription]
      * ```
      */
-    az_cdn_profile_show(): az_cdn_profile_show_command_builder {
-        return new az_cdn_profile_show_command_builder(this);
+    static az_cdn_profile_show(): az_cdn_profile_show_command_builder {
+        return new az_cdn_profile_show_command_builder("az cdn profile show");
     }
 
     /**
@@ -819,8 +801,8 @@ export class az_cdn_profile implements ICommandParent<any> {
      *                       [--tags]
      * ```
      */
-    az_cdn_profile_update(): az_cdn_profile_update_command_builder {
-        return new az_cdn_profile_update_command_builder(this);
+    static az_cdn_profile_update(): az_cdn_profile_update_command_builder {
+        return new az_cdn_profile_update_command_builder("az cdn profile update");
     }
 
     /**
@@ -834,15 +816,13 @@ export class az_cdn_profile implements ICommandParent<any> {
      *                      [--subscription]
      * ```
      */
-    az_cdn_profile_usage(): az_cdn_profile_usage_command_builder {
-        return new az_cdn_profile_usage_command_builder(this);
+    static az_cdn_profile_usage(): az_cdn_profile_usage_command_builder {
+        return new az_cdn_profile_usage_command_builder("az cdn profile usage");
     }
 }
 
 /** Manage custom rules of a CDN WAF policy. */
-export class az_cdn_waf_policy_custom_rule implements ICommandParent<any> {
-    commandPath = "az cdn waf policy custom-rule";
-
+export class az_cdn_waf_policy_custom_rule {
     /**
      * Remove a custom rule from a CDN WAF policy.
      *
@@ -858,8 +838,8 @@ export class az_cdn_waf_policy_custom_rule implements ICommandParent<any> {
      *
      * @param {string} name The name of the custom rule.
      */
-    az_cdn_waf_policy_custom_rule_delete(name: string): az_cdn_waf_policy_custom_rule_delete_command_builder {
-        return new az_cdn_waf_policy_custom_rule_delete_command_builder(this, name);
+    static az_cdn_waf_policy_custom_rule_delete(name: string): az_cdn_waf_policy_custom_rule_delete_command_builder {
+        return new az_cdn_waf_policy_custom_rule_delete_command_builder("az cdn waf policy custom-rule delete", name);
     }
 
     /**
@@ -876,8 +856,8 @@ export class az_cdn_waf_policy_custom_rule implements ICommandParent<any> {
      * @param {string} policyName Name of the CDN WAF policy.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cdn_waf_policy_custom_rule_list(policyName: string, resourceGroup: string): az_cdn_waf_policy_custom_rule_list_command_builder {
-        return new az_cdn_waf_policy_custom_rule_list_command_builder(this, policyName, resourceGroup);
+    static az_cdn_waf_policy_custom_rule_list(policyName: string, resourceGroup: string): az_cdn_waf_policy_custom_rule_list_command_builder {
+        return new az_cdn_waf_policy_custom_rule_list_command_builder("az cdn waf policy custom-rule list", policyName, resourceGroup);
     }
 
     /**
@@ -901,8 +881,8 @@ export class az_cdn_waf_policy_custom_rule implements ICommandParent<any> {
      * @param {string} name The name of the custom rule.
      * @param {string} priority The priority of the custom rule as a non-negative integer.
      */
-    az_cdn_waf_policy_custom_rule_set(action: 'Allow' | 'Block' | 'Log' | 'Redirect', matchCondition: string, name: string, priority: string): az_cdn_waf_policy_custom_rule_set_command_builder {
-        return new az_cdn_waf_policy_custom_rule_set_command_builder(this, action, matchCondition, name, priority);
+    static az_cdn_waf_policy_custom_rule_set(action: 'Allow' | 'Block' | 'Log' | 'Redirect', matchCondition: string, name: string, priority: string): az_cdn_waf_policy_custom_rule_set_command_builder {
+        return new az_cdn_waf_policy_custom_rule_set_command_builder("az cdn waf policy custom-rule set", action, matchCondition, name, priority);
     }
 
     /**
@@ -920,15 +900,13 @@ export class az_cdn_waf_policy_custom_rule implements ICommandParent<any> {
      *
      * @param {string} name The name of the custom rule.
      */
-    az_cdn_waf_policy_custom_rule_show(name: string): az_cdn_waf_policy_custom_rule_show_command_builder {
-        return new az_cdn_waf_policy_custom_rule_show_command_builder(this, name);
+    static az_cdn_waf_policy_custom_rule_show(name: string): az_cdn_waf_policy_custom_rule_show_command_builder {
+        return new az_cdn_waf_policy_custom_rule_show_command_builder("az cdn waf policy custom-rule show", name);
     }
 }
 
 /** Manage rule group overrides of a managed rule on a CDN WAF policy. */
-export class az_cdn_waf_policy_managed_rule_set_rule_group_override implements ICommandParent<any> {
-    commandPath = "az cdn waf policy managed-rule-set rule-group-override";
-
+export class az_cdn_waf_policy_managed_rule_set_rule_group_override {
     /**
      * Remove a rule group override from a managed rule set on a CDN WAF policy.
      *
@@ -948,8 +926,8 @@ export class az_cdn_waf_policy_managed_rule_set_rule_group_override implements I
      * @param {string} ruleSetType The type of the managed rule set.
      * @param {string} ruleSetVersion The version of the managed rule set.
      */
-    az_cdn_waf_policy_managed_rule_set_rule_group_override_delete(name: string, ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_rule_group_override_delete_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_delete_command_builder(this, name, ruleSetType, ruleSetVersion);
+    static az_cdn_waf_policy_managed_rule_set_rule_group_override_delete(name: string, ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_rule_group_override_delete_command_builder {
+        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_delete_command_builder("az cdn waf policy managed-rule-set rule-group-override delete", name, ruleSetType, ruleSetVersion);
     }
 
     /**
@@ -970,8 +948,8 @@ export class az_cdn_waf_policy_managed_rule_set_rule_group_override implements I
      * @param {string} ruleSetType The type of the managed rule set.
      * @param {string} ruleSetVersion The version of the managed rule set.
      */
-    az_cdn_waf_policy_managed_rule_set_rule_group_override_list(policyName: string, resourceGroup: string, ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_rule_group_override_list_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_list_command_builder(this, policyName, resourceGroup, ruleSetType, ruleSetVersion);
+    static az_cdn_waf_policy_managed_rule_set_rule_group_override_list(policyName: string, resourceGroup: string, ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_rule_group_override_list_command_builder {
+        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_list_command_builder("az cdn waf policy managed-rule-set rule-group-override list", policyName, resourceGroup, ruleSetType, ruleSetVersion);
     }
 
     /**
@@ -987,8 +965,8 @@ export class az_cdn_waf_policy_managed_rule_set_rule_group_override implements I
      * @param {string} ruleSetType The type of the managed rule set.
      * @param {string} ruleSetVersion The version of the managed rule set.
      */
-    az_cdn_waf_policy_managed_rule_set_rule_group_override_list_available(ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_rule_group_override_list_available_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_list_available_command_builder(this, ruleSetType, ruleSetVersion);
+    static az_cdn_waf_policy_managed_rule_set_rule_group_override_list_available(ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_rule_group_override_list_available_command_builder {
+        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_list_available_command_builder("az cdn waf policy managed-rule-set rule-group-override list-available", ruleSetType, ruleSetVersion);
     }
 
     /**
@@ -1011,8 +989,8 @@ export class az_cdn_waf_policy_managed_rule_set_rule_group_override implements I
      * @param {string} ruleSetType The type of the managed rule set.
      * @param {string} ruleSetVersion The version of the managed rule set.
      */
-    az_cdn_waf_policy_managed_rule_set_rule_group_override_set(name: string, ruleOverride: string, ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_rule_group_override_set_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_set_command_builder(this, name, ruleOverride, ruleSetType, ruleSetVersion);
+    static az_cdn_waf_policy_managed_rule_set_rule_group_override_set(name: string, ruleOverride: string, ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_rule_group_override_set_command_builder {
+        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_set_command_builder("az cdn waf policy managed-rule-set rule-group-override set", name, ruleOverride, ruleSetType, ruleSetVersion);
     }
 
     /**
@@ -1034,15 +1012,13 @@ export class az_cdn_waf_policy_managed_rule_set_rule_group_override implements I
      * @param {string} ruleSetType The type of the managed rule set.
      * @param {string} ruleSetVersion The version of the managed rule set.
      */
-    az_cdn_waf_policy_managed_rule_set_rule_group_override_show(name: string, ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_rule_group_override_show_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_show_command_builder(this, name, ruleSetType, ruleSetVersion);
+    static az_cdn_waf_policy_managed_rule_set_rule_group_override_show(name: string, ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_rule_group_override_show_command_builder {
+        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_show_command_builder("az cdn waf policy managed-rule-set rule-group-override show", name, ruleSetType, ruleSetVersion);
     }
 }
 
 /** Manage managed rule sets of a CDN WAF policy. */
-export class az_cdn_waf_policy_managed_rule_set implements ICommandParent<any> {
-    commandPath = "az cdn waf policy managed-rule-set";
-
+export class az_cdn_waf_policy_managed_rule_set {
     /**
      * Add a managed rule set to a CDN WAF policy.
      *
@@ -1059,8 +1035,8 @@ export class az_cdn_waf_policy_managed_rule_set implements ICommandParent<any> {
      * @param {string} ruleSetType The type of the managed rule set.
      * @param {string} ruleSetVersion The version of the managed rule set.
      */
-    az_cdn_waf_policy_managed_rule_set_add(ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_add_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_add_command_builder(this, ruleSetType, ruleSetVersion);
+    static az_cdn_waf_policy_managed_rule_set_add(ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_add_command_builder {
+        return new az_cdn_waf_policy_managed_rule_set_add_command_builder("az cdn waf policy managed-rule-set add", ruleSetType, ruleSetVersion);
     }
 
     /**
@@ -1077,8 +1053,8 @@ export class az_cdn_waf_policy_managed_rule_set implements ICommandParent<any> {
      * @param {string} policyName Name of the CDN WAF policy.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cdn_waf_policy_managed_rule_set_list(policyName: string, resourceGroup: string): az_cdn_waf_policy_managed_rule_set_list_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_list_command_builder(this, policyName, resourceGroup);
+    static az_cdn_waf_policy_managed_rule_set_list(policyName: string, resourceGroup: string): az_cdn_waf_policy_managed_rule_set_list_command_builder {
+        return new az_cdn_waf_policy_managed_rule_set_list_command_builder("az cdn waf policy managed-rule-set list", policyName, resourceGroup);
     }
 
     /**
@@ -1089,8 +1065,8 @@ export class az_cdn_waf_policy_managed_rule_set implements ICommandParent<any> {
      * az cdn waf policy managed-rule-set list-available [--subscription]
      * ```
      */
-    az_cdn_waf_policy_managed_rule_set_list_available(): az_cdn_waf_policy_managed_rule_set_list_available_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_list_available_command_builder(this);
+    static az_cdn_waf_policy_managed_rule_set_list_available(): az_cdn_waf_policy_managed_rule_set_list_available_command_builder {
+        return new az_cdn_waf_policy_managed_rule_set_list_available_command_builder("az cdn waf policy managed-rule-set list-available");
     }
 
     /**
@@ -1110,8 +1086,8 @@ export class az_cdn_waf_policy_managed_rule_set implements ICommandParent<any> {
      * @param {string} ruleSetType The type of the managed rule set.
      * @param {string} ruleSetVersion The version of the managed rule set.
      */
-    az_cdn_waf_policy_managed_rule_set_remove(ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_remove_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_remove_command_builder(this, ruleSetType, ruleSetVersion);
+    static az_cdn_waf_policy_managed_rule_set_remove(ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_remove_command_builder {
+        return new az_cdn_waf_policy_managed_rule_set_remove_command_builder("az cdn waf policy managed-rule-set remove", ruleSetType, ruleSetVersion);
     }
 
     /**
@@ -1131,15 +1107,13 @@ export class az_cdn_waf_policy_managed_rule_set implements ICommandParent<any> {
      * @param {string} ruleSetType The type of the managed rule set.
      * @param {string} ruleSetVersion The version of the managed rule set.
      */
-    az_cdn_waf_policy_managed_rule_set_show(ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_show_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_show_command_builder(this, ruleSetType, ruleSetVersion);
+    static az_cdn_waf_policy_managed_rule_set_show(ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_show_command_builder {
+        return new az_cdn_waf_policy_managed_rule_set_show_command_builder("az cdn waf policy managed-rule-set show", ruleSetType, ruleSetVersion);
     }
 }
 
 /** Manage rate limit rules of a CDN WAF policy. */
-export class az_cdn_waf_policy_rate_limit_rule implements ICommandParent<any> {
-    commandPath = "az cdn waf policy rate-limit-rule";
-
+export class az_cdn_waf_policy_rate_limit_rule {
     /**
      * Remove a rate limit rule from a CDN WAF policy.
      *
@@ -1155,8 +1129,8 @@ export class az_cdn_waf_policy_rate_limit_rule implements ICommandParent<any> {
      *
      * @param {string} name The name of the rate limit rule.
      */
-    az_cdn_waf_policy_rate_limit_rule_delete(name: string): az_cdn_waf_policy_rate_limit_rule_delete_command_builder {
-        return new az_cdn_waf_policy_rate_limit_rule_delete_command_builder(this, name);
+    static az_cdn_waf_policy_rate_limit_rule_delete(name: string): az_cdn_waf_policy_rate_limit_rule_delete_command_builder {
+        return new az_cdn_waf_policy_rate_limit_rule_delete_command_builder("az cdn waf policy rate-limit-rule delete", name);
     }
 
     /**
@@ -1173,8 +1147,8 @@ export class az_cdn_waf_policy_rate_limit_rule implements ICommandParent<any> {
      * @param {string} policyName Name of the CDN WAF policy.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cdn_waf_policy_rate_limit_rule_list(policyName: string, resourceGroup: string): az_cdn_waf_policy_rate_limit_rule_list_command_builder {
-        return new az_cdn_waf_policy_rate_limit_rule_list_command_builder(this, policyName, resourceGroup);
+    static az_cdn_waf_policy_rate_limit_rule_list(policyName: string, resourceGroup: string): az_cdn_waf_policy_rate_limit_rule_list_command_builder {
+        return new az_cdn_waf_policy_rate_limit_rule_list_command_builder("az cdn waf policy rate-limit-rule list", policyName, resourceGroup);
     }
 
     /**
@@ -1202,8 +1176,8 @@ export class az_cdn_waf_policy_rate_limit_rule implements ICommandParent<any> {
      * @param {string} priority The priority of the rate limit rule as a non-negative integer.
      * @param {string} requestThreshold The request threshold to trigger rate limiting.
      */
-    az_cdn_waf_policy_rate_limit_rule_set(action: 'Allow' | 'Block' | 'Log' | 'Redirect', duration: string, matchCondition: string, name: string, priority: string, requestThreshold: string): az_cdn_waf_policy_rate_limit_rule_set_command_builder {
-        return new az_cdn_waf_policy_rate_limit_rule_set_command_builder(this, action, duration, matchCondition, name, priority, requestThreshold);
+    static az_cdn_waf_policy_rate_limit_rule_set(action: 'Allow' | 'Block' | 'Log' | 'Redirect', duration: string, matchCondition: string, name: string, priority: string, requestThreshold: string): az_cdn_waf_policy_rate_limit_rule_set_command_builder {
+        return new az_cdn_waf_policy_rate_limit_rule_set_command_builder("az cdn waf policy rate-limit-rule set", action, duration, matchCondition, name, priority, requestThreshold);
     }
 
     /**
@@ -1221,15 +1195,13 @@ export class az_cdn_waf_policy_rate_limit_rule implements ICommandParent<any> {
      *
      * @param {string} name The name of the rate limit rule.
      */
-    az_cdn_waf_policy_rate_limit_rule_show(name: string): az_cdn_waf_policy_rate_limit_rule_show_command_builder {
-        return new az_cdn_waf_policy_rate_limit_rule_show_command_builder(this, name);
+    static az_cdn_waf_policy_rate_limit_rule_show(name: string): az_cdn_waf_policy_rate_limit_rule_show_command_builder {
+        return new az_cdn_waf_policy_rate_limit_rule_show_command_builder("az cdn waf policy rate-limit-rule show", name);
     }
 }
 
 /** Manage CDN WAF policies. */
-export class az_cdn_waf_policy implements ICommandParent<any> {
-    commandPath = "az cdn waf policy";
-
+export class az_cdn_waf_policy {
     /**
      * Delete a CDN WAF policy.
      *
@@ -1242,8 +1214,8 @@ export class az_cdn_waf_policy implements ICommandParent<any> {
      *                          [--yes]
      * ```
      */
-    az_cdn_waf_policy_delete(): az_cdn_waf_policy_delete_command_builder {
-        return new az_cdn_waf_policy_delete_command_builder(this);
+    static az_cdn_waf_policy_delete(): az_cdn_waf_policy_delete_command_builder {
+        return new az_cdn_waf_policy_delete_command_builder("az cdn waf policy delete");
     }
 
     /**
@@ -1258,8 +1230,8 @@ export class az_cdn_waf_policy implements ICommandParent<any> {
      *
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cdn_waf_policy_list(resourceGroup: string): az_cdn_waf_policy_list_command_builder {
-        return new az_cdn_waf_policy_list_command_builder(this, resourceGroup);
+    static az_cdn_waf_policy_list(resourceGroup: string): az_cdn_waf_policy_list_command_builder {
+        return new az_cdn_waf_policy_list_command_builder("az cdn waf policy list", resourceGroup);
     }
 
     /**
@@ -1280,8 +1252,8 @@ export class az_cdn_waf_policy implements ICommandParent<any> {
      *                       [--tags]
      * ```
      */
-    az_cdn_waf_policy_set(): az_cdn_waf_policy_set_command_builder {
-        return new az_cdn_waf_policy_set_command_builder(this);
+    static az_cdn_waf_policy_set(): az_cdn_waf_policy_set_command_builder {
+        return new az_cdn_waf_policy_set_command_builder("az cdn waf policy set");
     }
 
     /**
@@ -1296,8 +1268,8 @@ export class az_cdn_waf_policy implements ICommandParent<any> {
      *                        [--subscription]
      * ```
      */
-    az_cdn_waf_policy_show(): az_cdn_waf_policy_show_command_builder {
-        return new az_cdn_waf_policy_show_command_builder(this);
+    static az_cdn_waf_policy_show(): az_cdn_waf_policy_show_command_builder {
+        return new az_cdn_waf_policy_show_command_builder("az cdn waf policy show");
     }
 }
 
@@ -1306,9 +1278,7 @@ export class az_cdn_waf {
 }
 
 /** Manage Azure Content Delivery Networks (CDNs). */
-export class az_cdn implements ICommandParent<any> {
-    commandPath = "az cdn";
-
+export class az_cdn {
     /**
      * Check the availability of a resource name.
      *
@@ -1319,8 +1289,8 @@ export class az_cdn implements ICommandParent<any> {
      *                    [--subscription]
      * ```
      */
-    az_cdn_name_exists(): az_cdn_name_exists_command_builder {
-        return new az_cdn_name_exists_command_builder(this);
+    static az_cdn_name_exists(): az_cdn_name_exists_command_builder {
+        return new az_cdn_name_exists_command_builder("az cdn name-exists");
     }
 
     /**
@@ -1331,8 +1301,8 @@ export class az_cdn implements ICommandParent<any> {
      * az cdn usage [--subscription]
      * ```
      */
-    az_cdn_usage(): az_cdn_usage_command_builder {
-        return new az_cdn_usage_command_builder(this);
+    static az_cdn_usage(): az_cdn_usage_command_builder {
+        return new az_cdn_usage_command_builder("az cdn usage");
     }
 }
 
@@ -1358,7 +1328,7 @@ export class az_cdn implements ICommandParent<any> {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_custom_domain_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, endpointName: string, hostname: string, name: string, profileName: string, resourceGroup: string) {
+    constructor(commandPath: string, endpointName: string, hostname: string, name: string, profileName: string, resourceGroup: string) {
         super(commandParent);
         this.endpointName(endpointName)
         this.hostname(hostname)
@@ -1434,7 +1404,7 @@ class az_cdn_custom_domain_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_custom_domain_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, endpointName: string, name: string, profileName: string, resourceGroup: string) {
+    constructor(commandPath: string, endpointName: string, name: string, profileName: string, resourceGroup: string) {
         super(commandParent);
         this.endpointName(endpointName)
         this.name(name)
@@ -1491,7 +1461,7 @@ class az_cdn_custom_domain_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_custom_domain_disable_https_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, endpointName: string, name: string, profileName: string, resourceGroup: string) {
+    constructor(commandPath: string, endpointName: string, name: string, profileName: string, resourceGroup: string) {
         super(commandParent);
         this.endpointName(endpointName)
         this.name(name)
@@ -1555,7 +1525,7 @@ class az_cdn_custom_domain_disable_https_command_builder extends CommandBuilder 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_custom_domain_enable_https_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, endpointName: string, name: string, profileName: string, resourceGroup: string) {
+    constructor(commandPath: string, endpointName: string, name: string, profileName: string, resourceGroup: string) {
         super(commandParent);
         this.endpointName(endpointName)
         this.name(name)
@@ -1653,7 +1623,7 @@ class az_cdn_custom_domain_enable_https_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_custom_domain_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, endpointName: string, profileName: string, resourceGroup: string) {
+    constructor(commandPath: string, endpointName: string, profileName: string, resourceGroup: string) {
         super(commandParent);
         this.endpointName(endpointName)
         this.profileName(profileName)
@@ -1710,7 +1680,7 @@ class az_cdn_custom_domain_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_custom_domain_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, endpointName: string, name: string, profileName: string, resourceGroup: string) {
+    constructor(commandPath: string, endpointName: string, name: string, profileName: string, resourceGroup: string) {
         super(commandParent);
         this.endpointName(endpointName)
         this.name(name)
@@ -1765,7 +1735,7 @@ class az_cdn_custom_domain_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_edge_node_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1816,7 +1786,7 @@ class az_cdn_edge_node_list_command_builder extends CommandBuilder {
  * @param {string} ruleName Name of the rule.
  */
 class az_cdn_endpoint_rule_action_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, actionName: string, ruleName: string) {
+    constructor(commandPath: string, actionName: string, ruleName: string) {
         super(commandParent);
         this.actionName(actionName)
         this.ruleName(ruleName)
@@ -1979,7 +1949,7 @@ class az_cdn_endpoint_rule_action_add_command_builder extends CommandBuilder {
  * @param {string} ruleName Name of the rule.
  */
 class az_cdn_endpoint_rule_action_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, index: string, ruleName: string) {
+    constructor(commandPath: string, index: string, ruleName: string) {
         super(commandParent);
         this.index(index)
         this.ruleName(ruleName)
@@ -2042,7 +2012,7 @@ class az_cdn_endpoint_rule_action_remove_command_builder extends CommandBuilder 
  * ```
  */
 class az_cdn_endpoint_rule_action_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2107,7 +2077,7 @@ class az_cdn_endpoint_rule_action_show_command_builder extends CommandBuilder {
  * @param {string} ruleName Name of the rule.
  */
 class az_cdn_endpoint_rule_condition_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, matchVariable: string, operator: string, ruleName: string) {
+    constructor(commandPath: string, matchVariable: string, operator: string, ruleName: string) {
         super(commandParent);
         this.matchVariable(matchVariable)
         this.operator(operator)
@@ -2205,7 +2175,7 @@ class az_cdn_endpoint_rule_condition_add_command_builder extends CommandBuilder 
  * @param {string} ruleName Name of the rule.
  */
 class az_cdn_endpoint_rule_condition_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, index: string, ruleName: string) {
+    constructor(commandPath: string, index: string, ruleName: string) {
         super(commandParent);
         this.index(index)
         this.ruleName(ruleName)
@@ -2268,7 +2238,7 @@ class az_cdn_endpoint_rule_condition_remove_command_builder extends CommandBuild
  * ```
  */
 class az_cdn_endpoint_rule_condition_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2351,7 +2321,7 @@ class az_cdn_endpoint_rule_condition_show_command_builder extends CommandBuilder
  * @param {string} ruleName Name of the rule.
  */
 class az_cdn_endpoint_rule_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, actionName: string, order: string, ruleName: string) {
+    constructor(commandPath: string, actionName: string, order: string, ruleName: string) {
         super(commandParent);
         this.actionName(actionName)
         this.order(order)
@@ -2555,7 +2525,7 @@ class az_cdn_endpoint_rule_add_command_builder extends CommandBuilder {
  * @param {string} ruleName Name of the rule.
  */
 class az_cdn_endpoint_rule_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, ruleName: string) {
+    constructor(commandPath: string, ruleName: string) {
         super(commandParent);
         this.ruleName(ruleName)
     }
@@ -2611,7 +2581,7 @@ class az_cdn_endpoint_rule_remove_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_endpoint_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2666,7 +2636,7 @@ class az_cdn_endpoint_rule_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_endpoint_waf_policy_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2724,7 +2694,7 @@ class az_cdn_endpoint_waf_policy_remove_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_endpoint_waf_policy_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2797,7 +2767,7 @@ class az_cdn_endpoint_waf_policy_set_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_endpoint_waf_policy_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2866,7 +2836,7 @@ class az_cdn_endpoint_waf_policy_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_endpoint_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, origin: string, profileName: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, origin: string, profileName: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.origin(origin)
@@ -2979,7 +2949,7 @@ class az_cdn_endpoint_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_endpoint_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3035,7 +3005,7 @@ class az_cdn_endpoint_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_endpoint_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, profileName: string, resourceGroup: string) {
+    constructor(commandPath: string, profileName: string, resourceGroup: string) {
         super(commandParent);
         this.profileName(profileName)
         this.resourceGroup(resourceGroup)
@@ -3083,7 +3053,7 @@ class az_cdn_endpoint_list_command_builder extends CommandBuilder {
  * @param {string} contentPaths The path to the content to be loaded. Path should be a relative file URL of the origin.
  */
 class az_cdn_endpoint_load_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, contentPaths: string) {
+    constructor(commandPath: string, contentPaths: string) {
         super(commandParent);
         this.contentPaths(contentPaths)
     }
@@ -3148,7 +3118,7 @@ class az_cdn_endpoint_load_command_builder extends CommandBuilder {
  * @param {string} contentPaths The path to the content to be purged. Can describe a file path or a wild card directory.
  */
 class az_cdn_endpoint_purge_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, contentPaths: string) {
+    constructor(commandPath: string, contentPaths: string) {
         super(commandParent);
         this.contentPaths(contentPaths)
     }
@@ -3210,7 +3180,7 @@ class az_cdn_endpoint_purge_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_endpoint_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3265,7 +3235,7 @@ class az_cdn_endpoint_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_endpoint_start_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3320,7 +3290,7 @@ class az_cdn_endpoint_start_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_endpoint_stop_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3387,7 +3357,7 @@ class az_cdn_endpoint_stop_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_endpoint_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3516,7 +3486,7 @@ class az_cdn_endpoint_update_command_builder extends CommandBuilder {
  * @param {string} hostName The host name of the custom domain. Must be a domain name.
  */
 class az_cdn_endpoint_validate_custom_domain_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, hostName: string) {
+    constructor(commandPath: string, hostName: string) {
         super(commandParent);
         this.hostName(hostName)
     }
@@ -3575,7 +3545,7 @@ class az_cdn_endpoint_validate_custom_domain_command_builder extends CommandBuil
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_origin_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, endpointName: string, profileName: string, resourceGroup: string) {
+    constructor(commandPath: string, endpointName: string, profileName: string, resourceGroup: string) {
         super(commandParent);
         this.endpointName(endpointName)
         this.profileName(profileName)
@@ -3628,7 +3598,7 @@ class az_cdn_origin_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_origin_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3694,7 +3664,7 @@ class az_cdn_origin_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_origin_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3782,7 +3752,7 @@ class az_cdn_origin_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_profile_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3837,7 +3807,7 @@ class az_cdn_profile_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_profile_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3877,7 +3847,7 @@ class az_cdn_profile_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_profile_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3913,7 +3883,7 @@ class az_cdn_profile_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_profile_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3965,7 +3935,7 @@ class az_cdn_profile_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_profile_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4036,7 +4006,7 @@ class az_cdn_profile_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_profile_usage_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4081,7 +4051,7 @@ class az_cdn_profile_usage_command_builder extends CommandBuilder {
  * @param {string} name The name of the custom rule.
  */
 class az_cdn_waf_policy_custom_rule_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4138,7 +4108,7 @@ class az_cdn_waf_policy_custom_rule_delete_command_builder extends CommandBuilde
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_waf_policy_custom_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, policyName: string, resourceGroup: string) {
+    constructor(commandPath: string, policyName: string, resourceGroup: string) {
         super(commandParent);
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
@@ -4191,7 +4161,7 @@ class az_cdn_waf_policy_custom_rule_list_command_builder extends CommandBuilder 
  * @param {string} priority The priority of the custom rule as a non-negative integer.
  */
 class az_cdn_waf_policy_custom_rule_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, action: 'Allow' | 'Block' | 'Log' | 'Redirect', matchCondition: string, name: string, priority: string) {
+    constructor(commandPath: string, action: 'Allow' | 'Block' | 'Log' | 'Redirect', matchCondition: string, name: string, priority: string) {
         super(commandParent);
         this.action(action)
         this.matchCondition(matchCondition)
@@ -4270,7 +4240,7 @@ class az_cdn_waf_policy_custom_rule_set_command_builder extends CommandBuilder {
  * @param {string} name The name of the custom rule.
  */
 class az_cdn_waf_policy_custom_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4332,7 +4302,7 @@ class az_cdn_waf_policy_custom_rule_show_command_builder extends CommandBuilder 
  * @param {string} ruleSetVersion The version of the managed rule set.
  */
 class az_cdn_waf_policy_managed_rule_set_rule_group_override_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, ruleSetType: string, ruleSetVersion: string) {
+    constructor(commandPath: string, name: string, ruleSetType: string, ruleSetVersion: string) {
         super(commandParent);
         this.name(name)
         this.ruleSetType(ruleSetType)
@@ -4407,7 +4377,7 @@ class az_cdn_waf_policy_managed_rule_set_rule_group_override_delete_command_buil
  * @param {string} ruleSetVersion The version of the managed rule set.
  */
 class az_cdn_waf_policy_managed_rule_set_rule_group_override_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, policyName: string, resourceGroup: string, ruleSetType: string, ruleSetVersion: string) {
+    constructor(commandPath: string, policyName: string, resourceGroup: string, ruleSetType: string, ruleSetVersion: string) {
         super(commandParent);
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
@@ -4466,7 +4436,7 @@ class az_cdn_waf_policy_managed_rule_set_rule_group_override_list_command_builde
  * @param {string} ruleSetVersion The version of the managed rule set.
  */
 class az_cdn_waf_policy_managed_rule_set_rule_group_override_list_available_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, ruleSetType: string, ruleSetVersion: string) {
+    constructor(commandPath: string, ruleSetType: string, ruleSetVersion: string) {
         super(commandParent);
         this.ruleSetType(ruleSetType)
         this.ruleSetVersion(ruleSetVersion)
@@ -4512,7 +4482,7 @@ class az_cdn_waf_policy_managed_rule_set_rule_group_override_list_available_comm
  * @param {string} ruleSetVersion The version of the managed rule set.
  */
 class az_cdn_waf_policy_managed_rule_set_rule_group_override_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, ruleOverride: string, ruleSetType: string, ruleSetVersion: string) {
+    constructor(commandPath: string, name: string, ruleOverride: string, ruleSetType: string, ruleSetVersion: string) {
         super(commandParent);
         this.name(name)
         this.ruleOverride(ruleOverride)
@@ -4589,7 +4559,7 @@ class az_cdn_waf_policy_managed_rule_set_rule_group_override_set_command_builder
  * @param {string} ruleSetVersion The version of the managed rule set.
  */
 class az_cdn_waf_policy_managed_rule_set_rule_group_override_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, ruleSetType: string, ruleSetVersion: string) {
+    constructor(commandPath: string, name: string, ruleSetType: string, ruleSetVersion: string) {
         super(commandParent);
         this.name(name)
         this.ruleSetType(ruleSetType)
@@ -4662,7 +4632,7 @@ class az_cdn_waf_policy_managed_rule_set_rule_group_override_show_command_builde
  * @param {string} ruleSetVersion The version of the managed rule set.
  */
 class az_cdn_waf_policy_managed_rule_set_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, ruleSetType: string, ruleSetVersion: string) {
+    constructor(commandPath: string, ruleSetType: string, ruleSetVersion: string) {
         super(commandParent);
         this.ruleSetType(ruleSetType)
         this.ruleSetVersion(ruleSetVersion)
@@ -4720,7 +4690,7 @@ class az_cdn_waf_policy_managed_rule_set_add_command_builder extends CommandBuil
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_waf_policy_managed_rule_set_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, policyName: string, resourceGroup: string) {
+    constructor(commandPath: string, policyName: string, resourceGroup: string) {
         super(commandParent);
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
@@ -4760,7 +4730,7 @@ class az_cdn_waf_policy_managed_rule_set_list_command_builder extends CommandBui
  * ```
  */
 class az_cdn_waf_policy_managed_rule_set_list_available_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4789,7 +4759,7 @@ class az_cdn_waf_policy_managed_rule_set_list_available_command_builder extends 
  * @param {string} ruleSetVersion The version of the managed rule set.
  */
 class az_cdn_waf_policy_managed_rule_set_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, ruleSetType: string, ruleSetVersion: string) {
+    constructor(commandPath: string, ruleSetType: string, ruleSetVersion: string) {
         super(commandParent);
         this.ruleSetType(ruleSetType)
         this.ruleSetVersion(ruleSetVersion)
@@ -4856,7 +4826,7 @@ class az_cdn_waf_policy_managed_rule_set_remove_command_builder extends CommandB
  * @param {string} ruleSetVersion The version of the managed rule set.
  */
 class az_cdn_waf_policy_managed_rule_set_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, ruleSetType: string, ruleSetVersion: string) {
+    constructor(commandPath: string, ruleSetType: string, ruleSetVersion: string) {
         super(commandParent);
         this.ruleSetType(ruleSetType)
         this.ruleSetVersion(ruleSetVersion)
@@ -4921,7 +4891,7 @@ class az_cdn_waf_policy_managed_rule_set_show_command_builder extends CommandBui
  * @param {string} name The name of the rate limit rule.
  */
 class az_cdn_waf_policy_rate_limit_rule_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4978,7 +4948,7 @@ class az_cdn_waf_policy_rate_limit_rule_delete_command_builder extends CommandBu
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_waf_policy_rate_limit_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, policyName: string, resourceGroup: string) {
+    constructor(commandPath: string, policyName: string, resourceGroup: string) {
         super(commandParent);
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
@@ -5035,7 +5005,7 @@ class az_cdn_waf_policy_rate_limit_rule_list_command_builder extends CommandBuil
  * @param {string} requestThreshold The request threshold to trigger rate limiting.
  */
 class az_cdn_waf_policy_rate_limit_rule_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, action: 'Allow' | 'Block' | 'Log' | 'Redirect', duration: string, matchCondition: string, name: string, priority: string, requestThreshold: string) {
+    constructor(commandPath: string, action: 'Allow' | 'Block' | 'Log' | 'Redirect', duration: string, matchCondition: string, name: string, priority: string, requestThreshold: string) {
         super(commandParent);
         this.action(action)
         this.duration(duration)
@@ -5128,7 +5098,7 @@ class az_cdn_waf_policy_rate_limit_rule_set_command_builder extends CommandBuild
  * @param {string} name The name of the rate limit rule.
  */
 class az_cdn_waf_policy_rate_limit_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -5183,7 +5153,7 @@ class az_cdn_waf_policy_rate_limit_rule_show_command_builder extends CommandBuil
  * ```
  */
 class az_cdn_waf_policy_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5231,7 +5201,7 @@ class az_cdn_waf_policy_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_waf_policy_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string) {
+    constructor(commandPath: string, resourceGroup: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
     }
@@ -5274,7 +5244,7 @@ class az_cdn_waf_policy_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_waf_policy_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5358,7 +5328,7 @@ class az_cdn_waf_policy_set_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_waf_policy_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5404,7 +5374,7 @@ class az_cdn_waf_policy_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_name_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5436,7 +5406,7 @@ class az_cdn_name_exists_command_builder extends CommandBuilder {
  * ```
  */
 class az_cdn_usage_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

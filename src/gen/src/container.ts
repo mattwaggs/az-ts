@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Azure Container Instances. */
-export class az_container implements ICommandParent<any> {
-    commandPath = "az container";
-
+export class az_container {
     /**
      * Attach local standard output and error streams to a container in a container group.
      *
@@ -16,8 +14,8 @@ export class az_container implements ICommandParent<any> {
      *                     [--subscription]
      * ```
      */
-    az_container_attach(): az_container_attach_command_builder {
-        return new az_container_attach_command_builder(this);
+    static az_container_attach(): az_container_attach_command_builder {
+        return new az_container_attach_command_builder("az container attach");
     }
 
     /**
@@ -71,8 +69,8 @@ export class az_container implements ICommandParent<any> {
      *
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_container_create(resourceGroup: string): az_container_create_command_builder {
-        return new az_container_create_command_builder(this, resourceGroup);
+    static az_container_create(resourceGroup: string): az_container_create_command_builder {
+        return new az_container_create_command_builder("az container create", resourceGroup);
     }
 
     /**
@@ -87,8 +85,8 @@ export class az_container implements ICommandParent<any> {
      *                     [--yes]
      * ```
      */
-    az_container_delete(): az_container_delete_command_builder {
-        return new az_container_delete_command_builder(this);
+    static az_container_delete(): az_container_delete_command_builder {
+        return new az_container_delete_command_builder("az container delete");
     }
 
     /**
@@ -108,8 +106,8 @@ export class az_container implements ICommandParent<any> {
      *
      * @param {string} execCommand The command to run from within the container.
      */
-    az_container_exec(execCommand: string): az_container_exec_command_builder {
-        return new az_container_exec_command_builder(this, execCommand);
+    static az_container_exec(execCommand: string): az_container_exec_command_builder {
+        return new az_container_exec_command_builder("az container exec", execCommand);
     }
 
     /**
@@ -126,8 +124,8 @@ export class az_container implements ICommandParent<any> {
      *
      * @param {string} file The file path to export the container group.
      */
-    az_container_export(file: string): az_container_export_command_builder {
-        return new az_container_export_command_builder(this, file);
+    static az_container_export(file: string): az_container_export_command_builder {
+        return new az_container_export_command_builder("az container export", file);
     }
 
     /**
@@ -140,8 +138,8 @@ export class az_container implements ICommandParent<any> {
      *                   [--subscription]
      * ```
      */
-    az_container_list(): az_container_list_command_builder {
-        return new az_container_list_command_builder(this);
+    static az_container_list(): az_container_list_command_builder {
+        return new az_container_list_command_builder("az container list");
     }
 
     /**
@@ -157,8 +155,8 @@ export class az_container implements ICommandParent<any> {
      *                   [--subscription]
      * ```
      */
-    az_container_logs(): az_container_logs_command_builder {
-        return new az_container_logs_command_builder(this);
+    static az_container_logs(): az_container_logs_command_builder {
+        return new az_container_logs_command_builder("az container logs");
     }
 
     /**
@@ -175,8 +173,8 @@ export class az_container implements ICommandParent<any> {
      * @param {string} name The name of the container group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_container_restart(name: string, resourceGroup: string): az_container_restart_command_builder {
-        return new az_container_restart_command_builder(this, name, resourceGroup);
+    static az_container_restart(name: string, resourceGroup: string): az_container_restart_command_builder {
+        return new az_container_restart_command_builder("az container restart", name, resourceGroup);
     }
 
     /**
@@ -191,8 +189,8 @@ export class az_container implements ICommandParent<any> {
      *                   [--subscription]
      * ```
      */
-    az_container_show(): az_container_show_command_builder {
-        return new az_container_show_command_builder(this);
+    static az_container_show(): az_container_show_command_builder {
+        return new az_container_show_command_builder("az container show");
     }
 
     /**
@@ -209,8 +207,8 @@ export class az_container implements ICommandParent<any> {
      * @param {string} name The name of the container group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_container_start(name: string, resourceGroup: string): az_container_start_command_builder {
-        return new az_container_start_command_builder(this, name, resourceGroup);
+    static az_container_start(name: string, resourceGroup: string): az_container_start_command_builder {
+        return new az_container_start_command_builder("az container start", name, resourceGroup);
     }
 
     /**
@@ -226,8 +224,8 @@ export class az_container implements ICommandParent<any> {
      * @param {string} name The name of the container group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_container_stop(name: string, resourceGroup: string): az_container_stop_command_builder {
-        return new az_container_stop_command_builder(this, name, resourceGroup);
+    static az_container_stop(name: string, resourceGroup: string): az_container_stop_command_builder {
+        return new az_container_stop_command_builder("az container stop", name, resourceGroup);
     }
 }
 
@@ -244,7 +242,7 @@ export class az_container implements ICommandParent<any> {
  * ```
  */
 class az_container_attach_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -331,7 +329,7 @@ class az_container_attach_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_container_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string) {
+    constructor(commandPath: string, resourceGroup: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
     }
@@ -602,7 +600,7 @@ class az_container_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_container_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -655,7 +653,7 @@ class az_container_delete_command_builder extends CommandBuilder {
  * @param {string} execCommand The command to run from within the container.
  */
 class az_container_exec_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, execCommand: string) {
+    constructor(commandPath: string, execCommand: string) {
         super(commandParent);
         this.execCommand(execCommand)
     }
@@ -724,7 +722,7 @@ class az_container_exec_command_builder extends CommandBuilder {
  * @param {string} file The file path to export the container group.
  */
 class az_container_export_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, file: string) {
+    constructor(commandPath: string, file: string) {
         super(commandParent);
         this.file(file)
     }
@@ -771,7 +769,7 @@ class az_container_export_command_builder extends CommandBuilder {
  * ```
  */
 class az_container_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -808,7 +806,7 @@ class az_container_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_container_logs_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -864,7 +862,7 @@ class az_container_logs_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_container_restart_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -908,7 +906,7 @@ class az_container_restart_command_builder extends CommandBuilder {
  * ```
  */
 class az_container_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -958,7 +956,7 @@ class az_container_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_container_start_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1003,7 +1001,7 @@ class az_container_start_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_container_stop_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)

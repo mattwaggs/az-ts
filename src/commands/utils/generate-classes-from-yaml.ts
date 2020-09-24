@@ -12,8 +12,12 @@ import {
   MethodDeclarationStructure,
   ParameterDeclarationStructure,
   ClassDeclarationStructure,
+  VariableDeclarationKind,
+  PropertyDeclarationStructure,
 } from "ts-morph";
 import _ from "lodash";
+
+import fs from "fs";
 
 export const generateClassesFromYaml = (yamlNodes: Node[]): void => {
   const project = new Project();
@@ -36,11 +40,19 @@ export const generateClassesFromYaml = (yamlNodes: Node[]): void => {
     getGroupIdentifierName(node.uid)
   );
 
+  const generatedFileNames = []; // tracking these since I need to import them later
+
   Object.keys(groups).forEach((key) => {
     const nodes = groups[key];
     const fileName = path.join(generatedSourceDir, `${key}.ts`);
     generateProjectFileForGroupOfNodes(project, fileName, nodes);
+    generatedFileNames.push(`./src/${key}.ts`);
   });
+
+  // after the individual modules have been created we need to create
+  // the master object heirarchy.  This is what allows us to write
+  // `az.keyvault.secret` and have it return a `new az_keyvault_secret();`
+  buildMasterHeirarchy(project, generatedFileNames, yamlNodes);
 
   project.save();
 };
@@ -54,7 +66,7 @@ const generateProjectFileForGroupOfNodes = (
     fileName,
     {
       statements: [
-        "import { CommandBuilder, ICommandParent } from '../base';",
+        "import { CommandBuilder } from '../base';",
         ...nodes.map(generateClassFromNode),
         ...nodes
           .map((n) => n?.directCommands || [])
@@ -80,23 +92,13 @@ const generateClassFromNode = (node: Node): StatementStructures => {
     methods: node.directCommands?.map(generateCommand) || [],
   };
 
-  if (node.directCommands?.length > 0) {
-    generatedClass.implements = ["ICommandParent<any>"]; // <any> becuase no response data types yet
-    generatedClass.properties = [
-      {
-        kind: StructureKind.Property,
-        name: "commandPath",
-        initializer: `"${node.name}"`,
-      },
-    ];
-  }
-
   return generatedClass;
 };
 
 const generateCommand = (node: DirectCommand): MethodDeclarationStructure => {
   const commandBuilderClassName = `${node.uid}_command_builder`;
-  let returnedCommandBuilder = `return new ${commandBuilderClassName}(this);`;
+  const commandPath = `"${node.name}"`;
+  let returnedCommandBuilder = `return new ${commandBuilderClassName}(${commandPath});`;
   if (node.requiredParameters?.length > 0) {
     const params = node.requiredParameters
       .map((p) => {
@@ -104,13 +106,14 @@ const generateCommand = (node: DirectCommand): MethodDeclarationStructure => {
       })
       .join(", ");
 
-    returnedCommandBuilder = `return new ${commandBuilderClassName}(this, ${params});`;
+    returnedCommandBuilder = `return new ${commandBuilderClassName}(${commandPath}, ${params});`;
   }
 
   return {
     kind: StructureKind.Method,
     name: node.uid,
     docs: [generateDocCommentsForCommand(node)],
+    isStatic: true,
     returnType: commandBuilderClassName,
     parameters: node.requiredParameters?.map(generateParameters) || [],
     statements: [returnedCommandBuilder],
@@ -188,8 +191,8 @@ const generateCommandBuilderClass = (
         parameters: [
           {
             kind: StructureKind.Parameter,
-            name: "commandParent",
-            type: "ICommandParent<any>", // any because we dont have response data types yet
+            name: "commandPath",
+            type: "string", // any because we dont have response data types yet
           },
           ...(node.requiredParameters?.map(generateParameters) || []),
         ],
@@ -253,4 +256,158 @@ const getParameterTypeFrom = (
   } else {
     return "string";
   }
+};
+
+const buildMasterHeirarchy = (
+  project: Project,
+  filesToImport: string[],
+  nodes: Node[]
+): void => {
+  const classTree = generateNestedCommandStructure(nodes);
+
+  project.createSourceFile(
+    path.join(__dirname, "../../gen/az.ts"),
+    {
+      statements: [
+        ...filesToImport.map((fileName) => {
+          return `import '${fileName.replace(".ts", "")}';`;
+        }),
+        ...recursivelyGetStatementsFromClassTree(classTree),
+      ],
+    },
+    {
+      overwrite: true,
+    }
+  );
+};
+
+class VerboseClassStructure {
+  path: string;
+  shouldExtend?: string;
+  commands: string[] = [];
+  nestedClasses: VerboseClassStructure[] = [];
+}
+
+const generateNestedCommandStructure = (nodes: Node[]): any => {
+  // we should order the objects like this:
+  // ```
+  // az_webapp
+  // az_webapp_auth
+  // az_webapp_auth_update
+  // ```
+  // so that way when we use lodash's set method, we aren't erasing deeper
+  // objects.
+  //
+  // otherwise I imagine it would do this:
+  // ```
+  // object['az']['webapp']['auth']['update'] = function() { /* etc */};
+  // object['az']['webapp'] = function() { /* etc */};
+  // ```
+  // and obviously that erases the earlier thing...
+
+  const orderedNodes = _.sortBy(nodes, (n) => n.uid);
+  const output = {};
+
+  orderedNodes.forEach((node) => {
+    const path = node.uid.replace(/_/g, ".");
+    _.set(output, path, node.uid);
+  });
+
+  // we have to output this in reverse order now, because if we start with the
+  // root az class, its properties (webapp) will complain im using it before
+  // the class is declared...
+  // order needs to be
+  //
+  // class az_webapp_auth
+  // class az_webapp
+  // class az
+
+  const commandNodeIds = orderedNodes.map((n) => n.uid);
+  const results = recursivelyGenerateMoreVerboseTreeStructure(
+    commandNodeIds,
+    output
+  );
+
+  return results;
+};
+
+const recursivelyGenerateMoreVerboseTreeStructure = (
+  commandNodeIds: string[],
+  object: any,
+  pathSoFar?: string
+): VerboseClassStructure[] => {
+  return Object.keys(object).map((key) => {
+    const outputClass = new VerboseClassStructure();
+    outputClass.path = pathSoFar ? pathSoFar + "_" + key : key;
+
+    if (typeof object[key] === "string") {
+      // this is the furthest depth
+      outputClass.commands.push(object[key]);
+    } else {
+      if (commandNodeIds.indexOf(outputClass.path) > -1) {
+        outputClass.shouldExtend = outputClass.path;
+      }
+      outputClass.nestedClasses = recursivelyGenerateMoreVerboseTreeStructure(
+        commandNodeIds,
+        object[key],
+        outputClass.path
+      );
+    }
+    return outputClass;
+  });
+};
+
+const recursivelyGetStatementsFromClassTree = (
+  classTree: VerboseClassStructure[]
+): ClassDeclarationStructure[] => {
+  // gross code becuase lame exception, cannot `.reduce` on empty array
+  const dependenciesPlural: ClassDeclarationStructure[][] =
+    classTree.map((c) =>
+      recursivelyGetStatementsFromClassTree(c.nestedClasses)
+    ) || [];
+
+  const dependencies: ClassDeclarationStructure[] =
+    dependenciesPlural?.length > 0
+      ? dependenciesPlural.reduce((a, b) => a.concat(b))
+      : [];
+
+  const currentClasses: ClassDeclarationStructure[] = classTree.map((c) => {
+    const exportedClass: ClassDeclarationStructure = {
+      kind: StructureKind.Class,
+      name: _.camelCase(c.path),
+      docs: [], // tbd
+      properties: [
+        ...c.commands.map((command) => {
+          const prop: PropertyDeclarationStructure = {
+            kind: StructureKind.Property,
+            name: _.camelCase(command.replace(c.path, "")),
+            isStatic: true,
+            docs: [], // tbd
+            initializer: command,
+          };
+
+          return prop;
+        }),
+        ...c.nestedClasses.map((nested) => {
+          const prop: PropertyDeclarationStructure = {
+            kind: StructureKind.Property,
+            name: _.camelCase(nested.path.replace(c.path, "")),
+            isStatic: true,
+            docs: [], // tbd
+            initializer: _.camelCase(nested.path),
+          };
+
+          return prop;
+        }),
+      ],
+    };
+
+    if (c.shouldExtend) {
+      exportedClass.extends = c.shouldExtend;
+    }
+
+    return exportedClass;
+  });
+
+  return dependencies.concat(currentClasses);
 };

@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage a policy assignment's managed identity. */
-export class az_policy_assignment_identity implements ICommandParent<any> {
-    commandPath = "az policy assignment identity";
-
+export class az_policy_assignment_identity {
     /**
      * Add a system assigned identity to a policy assignment.
      *
@@ -18,8 +16,8 @@ export class az_policy_assignment_identity implements ICommandParent<any> {
      *
      * @param {string} name Name of the policy assignment.
      */
-    az_policy_assignment_identity_assign(name: string): az_policy_assignment_identity_assign_command_builder {
-        return new az_policy_assignment_identity_assign_command_builder(this, name);
+    static az_policy_assignment_identity_assign(name: string): az_policy_assignment_identity_assign_command_builder {
+        return new az_policy_assignment_identity_assign_command_builder("az policy assignment identity assign", name);
     }
 
     /**
@@ -34,8 +32,8 @@ export class az_policy_assignment_identity implements ICommandParent<any> {
      *
      * @param {string} name Name of the policy assignment.
      */
-    az_policy_assignment_identity_remove(name: string): az_policy_assignment_identity_remove_command_builder {
-        return new az_policy_assignment_identity_remove_command_builder(this, name);
+    static az_policy_assignment_identity_remove(name: string): az_policy_assignment_identity_remove_command_builder {
+        return new az_policy_assignment_identity_remove_command_builder("az policy assignment identity remove", name);
     }
 
     /**
@@ -51,15 +49,13 @@ export class az_policy_assignment_identity implements ICommandParent<any> {
      *
      * @param {string} name Name of the policy assignment.
      */
-    az_policy_assignment_identity_show(name: string): az_policy_assignment_identity_show_command_builder {
-        return new az_policy_assignment_identity_show_command_builder(this, name);
+    static az_policy_assignment_identity_show(name: string): az_policy_assignment_identity_show_command_builder {
+        return new az_policy_assignment_identity_show_command_builder("az policy assignment identity show", name);
     }
 }
 
 /** Manage resource policy assignments. */
-export class az_policy_assignment implements ICommandParent<any> {
-    commandPath = "az policy assignment";
-
+export class az_policy_assignment {
     /**
      * Create a resource policy assignment.
      *
@@ -81,8 +77,8 @@ export class az_policy_assignment implements ICommandParent<any> {
      *                             [--sku {free, standard}]
      * ```
      */
-    az_policy_assignment_create(): az_policy_assignment_create_command_builder {
-        return new az_policy_assignment_create_command_builder(this);
+    static az_policy_assignment_create(): az_policy_assignment_create_command_builder {
+        return new az_policy_assignment_create_command_builder("az policy assignment create");
     }
 
     /**
@@ -97,8 +93,8 @@ export class az_policy_assignment implements ICommandParent<any> {
      *
      * @param {string} name Name of the policy assignment.
      */
-    az_policy_assignment_delete(name: string): az_policy_assignment_delete_command_builder {
-        return new az_policy_assignment_delete_command_builder(this, name);
+    static az_policy_assignment_delete(name: string): az_policy_assignment_delete_command_builder {
+        return new az_policy_assignment_delete_command_builder("az policy assignment delete", name);
     }
 
     /**
@@ -112,8 +108,8 @@ export class az_policy_assignment implements ICommandParent<any> {
      *                           [--scope]
      * ```
      */
-    az_policy_assignment_list(): az_policy_assignment_list_command_builder {
-        return new az_policy_assignment_list_command_builder(this);
+    static az_policy_assignment_list(): az_policy_assignment_list_command_builder {
+        return new az_policy_assignment_list_command_builder("az policy assignment list");
     }
 
     /**
@@ -129,15 +125,13 @@ export class az_policy_assignment implements ICommandParent<any> {
      *
      * @param {string} name Name of the policy assignment.
      */
-    az_policy_assignment_show(name: string): az_policy_assignment_show_command_builder {
-        return new az_policy_assignment_show_command_builder(this, name);
+    static az_policy_assignment_show(name: string): az_policy_assignment_show_command_builder {
+        return new az_policy_assignment_show_command_builder("az policy assignment show", name);
     }
 }
 
 /** Manage resource policy definitions. */
-export class az_policy_definition implements ICommandParent<any> {
-    commandPath = "az policy definition";
-
+export class az_policy_definition {
     /**
      * Create a policy definition.
      *
@@ -156,8 +150,8 @@ export class az_policy_definition implements ICommandParent<any> {
      *
      * @param {string} name Name of the new policy definition.
      */
-    az_policy_definition_create(name: string): az_policy_definition_create_command_builder {
-        return new az_policy_definition_create_command_builder(this, name);
+    static az_policy_definition_create(name: string): az_policy_definition_create_command_builder {
+        return new az_policy_definition_create_command_builder("az policy definition create", name);
     }
 
     /**
@@ -172,8 +166,8 @@ export class az_policy_definition implements ICommandParent<any> {
      *
      * @param {string} name The policy definition name.
      */
-    az_policy_definition_delete(name: string): az_policy_definition_delete_command_builder {
-        return new az_policy_definition_delete_command_builder(this, name);
+    static az_policy_definition_delete(name: string): az_policy_definition_delete_command_builder {
+        return new az_policy_definition_delete_command_builder("az policy definition delete", name);
     }
 
     /**
@@ -186,8 +180,8 @@ export class az_policy_definition implements ICommandParent<any> {
      *                           [--subscription]
      * ```
      */
-    az_policy_definition_list(): az_policy_definition_list_command_builder {
-        return new az_policy_definition_list_command_builder(this);
+    static az_policy_definition_list(): az_policy_definition_list_command_builder {
+        return new az_policy_definition_list_command_builder("az policy definition list");
     }
 
     /**
@@ -203,8 +197,8 @@ export class az_policy_definition implements ICommandParent<any> {
      *
      * @param {string} name The policy definition name.
      */
-    az_policy_definition_show(name: string): az_policy_definition_show_command_builder {
-        return new az_policy_definition_show_command_builder(this, name);
+    static az_policy_definition_show(name: string): az_policy_definition_show_command_builder {
+        return new az_policy_definition_show_command_builder("az policy definition show", name);
     }
 
     /**
@@ -225,15 +219,13 @@ export class az_policy_definition implements ICommandParent<any> {
      *
      * @param {string} name The policy definition name.
      */
-    az_policy_definition_update(name: string): az_policy_definition_update_command_builder {
-        return new az_policy_definition_update_command_builder(this, name);
+    static az_policy_definition_update(name: string): az_policy_definition_update_command_builder {
+        return new az_policy_definition_update_command_builder("az policy definition update", name);
     }
 }
 
 /** Manage policy events. */
-export class az_policy_event implements ICommandParent<any> {
-    commandPath = "az policy event";
-
+export class az_policy_event {
     /**
      * List policy events.
      *
@@ -259,15 +251,13 @@ export class az_policy_event implements ICommandParent<any> {
      *                      [--top]
      * ```
      */
-    az_policy_event_list(): az_policy_event_list_command_builder {
-        return new az_policy_event_list_command_builder(this);
+    static az_policy_event_list(): az_policy_event_list_command_builder {
+        return new az_policy_event_list_command_builder("az policy event list");
     }
 }
 
 /** Get policy metadata resources. */
-export class az_policy_metadata implements ICommandParent<any> {
-    commandPath = "az policy metadata";
-
+export class az_policy_metadata {
     /**
      * List policy metadata resources.
      *
@@ -278,8 +268,8 @@ export class az_policy_metadata implements ICommandParent<any> {
      *                         [--top]
      * ```
      */
-    az_policy_metadata_list(): az_policy_metadata_list_command_builder {
-        return new az_policy_metadata_list_command_builder(this);
+    static az_policy_metadata_list(): az_policy_metadata_list_command_builder {
+        return new az_policy_metadata_list_command_builder("az policy metadata list");
     }
 
     /**
@@ -294,15 +284,13 @@ export class az_policy_metadata implements ICommandParent<any> {
      *
      * @param {string} name The name of the metadata resource.
      */
-    az_policy_metadata_show(name: string): az_policy_metadata_show_command_builder {
-        return new az_policy_metadata_show_command_builder(this, name);
+    static az_policy_metadata_show(name: string): az_policy_metadata_show_command_builder {
+        return new az_policy_metadata_show_command_builder("az policy metadata show", name);
     }
 }
 
 /** Manage resource policy remediation deployments. */
-export class az_policy_remediation_deployment implements ICommandParent<any> {
-    commandPath = "az policy remediation deployment";
-
+export class az_policy_remediation_deployment {
     /**
      * Lists deployments for a resource policy remediation.
      *
@@ -321,15 +309,13 @@ export class az_policy_remediation_deployment implements ICommandParent<any> {
      *
      * @param {string} name Name of the remediation.
      */
-    az_policy_remediation_deployment_list(name: string): az_policy_remediation_deployment_list_command_builder {
-        return new az_policy_remediation_deployment_list_command_builder(this, name);
+    static az_policy_remediation_deployment_list(name: string): az_policy_remediation_deployment_list_command_builder {
+        return new az_policy_remediation_deployment_list_command_builder("az policy remediation deployment list", name);
     }
 }
 
 /** Manage resource policy remediations. */
-export class az_policy_remediation implements ICommandParent<any> {
-    commandPath = "az policy remediation";
-
+export class az_policy_remediation {
     /**
      * Cancel a resource policy remediation.
      *
@@ -347,8 +333,8 @@ export class az_policy_remediation implements ICommandParent<any> {
      *
      * @param {string} name Name of the remediation.
      */
-    az_policy_remediation_cancel(name: string): az_policy_remediation_cancel_command_builder {
-        return new az_policy_remediation_cancel_command_builder(this, name);
+    static az_policy_remediation_cancel(name: string): az_policy_remediation_cancel_command_builder {
+        return new az_policy_remediation_cancel_command_builder("az policy remediation cancel", name);
     }
 
     /**
@@ -373,8 +359,8 @@ export class az_policy_remediation implements ICommandParent<any> {
      * @param {string} name Name of the remediation.
      * @param {string} policyAssignment Name or resource ID of the policy assignment.
      */
-    az_policy_remediation_create(name: string, policyAssignment: string): az_policy_remediation_create_command_builder {
-        return new az_policy_remediation_create_command_builder(this, name, policyAssignment);
+    static az_policy_remediation_create(name: string, policyAssignment: string): az_policy_remediation_create_command_builder {
+        return new az_policy_remediation_create_command_builder("az policy remediation create", name, policyAssignment);
     }
 
     /**
@@ -394,8 +380,8 @@ export class az_policy_remediation implements ICommandParent<any> {
      *
      * @param {string} name Name of the remediation.
      */
-    az_policy_remediation_delete(name: string): az_policy_remediation_delete_command_builder {
-        return new az_policy_remediation_delete_command_builder(this, name);
+    static az_policy_remediation_delete(name: string): az_policy_remediation_delete_command_builder {
+        return new az_policy_remediation_delete_command_builder("az policy remediation delete", name);
     }
 
     /**
@@ -413,8 +399,8 @@ export class az_policy_remediation implements ICommandParent<any> {
      *                            [--subscription]
      * ```
      */
-    az_policy_remediation_list(): az_policy_remediation_list_command_builder {
-        return new az_policy_remediation_list_command_builder(this);
+    static az_policy_remediation_list(): az_policy_remediation_list_command_builder {
+        return new az_policy_remediation_list_command_builder("az policy remediation list");
     }
 
     /**
@@ -435,15 +421,13 @@ export class az_policy_remediation implements ICommandParent<any> {
      *
      * @param {string} name Name of the remediation.
      */
-    az_policy_remediation_show(name: string): az_policy_remediation_show_command_builder {
-        return new az_policy_remediation_show_command_builder(this, name);
+    static az_policy_remediation_show(name: string): az_policy_remediation_show_command_builder {
+        return new az_policy_remediation_show_command_builder("az policy remediation show", name);
     }
 }
 
 /** Manage resource policy set definitions. */
-export class az_policy_set_definition implements ICommandParent<any> {
-    commandPath = "az policy set-definition";
-
+export class az_policy_set_definition {
     /**
      * Create a policy set definition.
      *
@@ -463,8 +447,8 @@ export class az_policy_set_definition implements ICommandParent<any> {
      * @param {string} definitions Policy definitions in JSON format, or a path to a file or URI containing JSON rules.
      * @param {string} name Name of the new policy set definition.
      */
-    az_policy_set_definition_create(definitions: string, name: string): az_policy_set_definition_create_command_builder {
-        return new az_policy_set_definition_create_command_builder(this, definitions, name);
+    static az_policy_set_definition_create(definitions: string, name: string): az_policy_set_definition_create_command_builder {
+        return new az_policy_set_definition_create_command_builder("az policy set-definition create", definitions, name);
     }
 
     /**
@@ -479,8 +463,8 @@ export class az_policy_set_definition implements ICommandParent<any> {
      *
      * @param {string} name The policy set definition name.
      */
-    az_policy_set_definition_delete(name: string): az_policy_set_definition_delete_command_builder {
-        return new az_policy_set_definition_delete_command_builder(this, name);
+    static az_policy_set_definition_delete(name: string): az_policy_set_definition_delete_command_builder {
+        return new az_policy_set_definition_delete_command_builder("az policy set-definition delete", name);
     }
 
     /**
@@ -493,8 +477,8 @@ export class az_policy_set_definition implements ICommandParent<any> {
      *                               [--subscription]
      * ```
      */
-    az_policy_set_definition_list(): az_policy_set_definition_list_command_builder {
-        return new az_policy_set_definition_list_command_builder(this);
+    static az_policy_set_definition_list(): az_policy_set_definition_list_command_builder {
+        return new az_policy_set_definition_list_command_builder("az policy set-definition list");
     }
 
     /**
@@ -510,8 +494,8 @@ export class az_policy_set_definition implements ICommandParent<any> {
      *
      * @param {string} name The policy set definition name.
      */
-    az_policy_set_definition_show(name: string): az_policy_set_definition_show_command_builder {
-        return new az_policy_set_definition_show_command_builder(this, name);
+    static az_policy_set_definition_show(name: string): az_policy_set_definition_show_command_builder {
+        return new az_policy_set_definition_show_command_builder("az policy set-definition show", name);
     }
 
     /**
@@ -532,15 +516,13 @@ export class az_policy_set_definition implements ICommandParent<any> {
      *
      * @param {string} name The policy set definition name.
      */
-    az_policy_set_definition_update(name: string): az_policy_set_definition_update_command_builder {
-        return new az_policy_set_definition_update_command_builder(this, name);
+    static az_policy_set_definition_update(name: string): az_policy_set_definition_update_command_builder {
+        return new az_policy_set_definition_update_command_builder("az policy set-definition update", name);
     }
 }
 
 /** Manage policy compliance states. */
-export class az_policy_state implements ICommandParent<any> {
-    commandPath = "az policy state";
-
+export class az_policy_state {
     /**
      * List policy compliance states.
      *
@@ -568,8 +550,8 @@ export class az_policy_state implements ICommandParent<any> {
      *                      [--top]
      * ```
      */
-    az_policy_state_list(): az_policy_state_list_command_builder {
-        return new az_policy_state_list_command_builder(this);
+    static az_policy_state_list(): az_policy_state_list_command_builder {
+        return new az_policy_state_list_command_builder("az policy state list");
     }
 
     /**
@@ -593,8 +575,8 @@ export class az_policy_state implements ICommandParent<any> {
      *                           [--top]
      * ```
      */
-    az_policy_state_summarize(): az_policy_state_summarize_command_builder {
-        return new az_policy_state_summarize_command_builder(this);
+    static az_policy_state_summarize(): az_policy_state_summarize_command_builder {
+        return new az_policy_state_summarize_command_builder("az policy state summarize");
     }
 
     /**
@@ -607,8 +589,8 @@ export class az_policy_state implements ICommandParent<any> {
      *                              [--subscription]
      * ```
      */
-    az_policy_state_trigger_scan(): az_policy_state_trigger_scan_command_builder {
-        return new az_policy_state_trigger_scan_command_builder(this);
+    static az_policy_state_trigger_scan(): az_policy_state_trigger_scan_command_builder {
+        return new az_policy_state_trigger_scan_command_builder("az policy state trigger-scan");
     }
 }
 
@@ -631,7 +613,7 @@ export class az_policy {
  * @param {string} name Name of the policy assignment.
  */
 class az_policy_assignment_identity_assign_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -680,7 +662,7 @@ class az_policy_assignment_identity_assign_command_builder extends CommandBuilde
  * @param {string} name Name of the policy assignment.
  */
 class az_policy_assignment_identity_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -718,7 +700,7 @@ class az_policy_assignment_identity_remove_command_builder extends CommandBuilde
  * @param {string} name Name of the policy assignment.
  */
 class az_policy_assignment_identity_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -770,7 +752,7 @@ class az_policy_assignment_identity_show_command_builder extends CommandBuilder 
  * ```
  */
 class az_policy_assignment_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -872,7 +854,7 @@ class az_policy_assignment_create_command_builder extends CommandBuilder {
  * @param {string} name Name of the policy assignment.
  */
 class az_policy_assignment_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -908,7 +890,7 @@ class az_policy_assignment_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_policy_assignment_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -951,7 +933,7 @@ class az_policy_assignment_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the policy assignment.
  */
 class az_policy_assignment_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -1000,7 +982,7 @@ class az_policy_assignment_show_command_builder extends CommandBuilder {
  * @param {string} name Name of the new policy definition.
  */
 class az_policy_definition_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -1073,7 +1055,7 @@ class az_policy_definition_create_command_builder extends CommandBuilder {
  * @param {string} name The policy definition name.
  */
 class az_policy_definition_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -1108,7 +1090,7 @@ class az_policy_definition_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_policy_definition_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1145,7 +1127,7 @@ class az_policy_definition_list_command_builder extends CommandBuilder {
  * @param {string} name The policy definition name.
  */
 class az_policy_definition_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -1194,7 +1176,7 @@ class az_policy_definition_show_command_builder extends CommandBuilder {
  * @param {string} name The policy definition name.
  */
 class az_policy_definition_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -1280,7 +1262,7 @@ class az_policy_definition_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_policy_event_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1404,7 +1386,7 @@ class az_policy_event_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_policy_metadata_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1440,7 +1422,7 @@ class az_policy_metadata_list_command_builder extends CommandBuilder {
  * @param {string} name The name of the metadata resource.
  */
 class az_policy_metadata_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -1483,7 +1465,7 @@ class az_policy_metadata_show_command_builder extends CommandBuilder {
  * @param {string} name Name of the remediation.
  */
 class az_policy_remediation_deployment_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -1561,7 +1543,7 @@ class az_policy_remediation_deployment_list_command_builder extends CommandBuild
  * @param {string} name Name of the remediation.
  */
 class az_policy_remediation_cancel_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -1638,7 +1620,7 @@ class az_policy_remediation_cancel_command_builder extends CommandBuilder {
  * @param {string} policyAssignment Name or resource ID of the policy assignment.
  */
 class az_policy_remediation_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, policyAssignment: string) {
+    constructor(commandPath: string, name: string, policyAssignment: string) {
         super(commandParent);
         this.name(name)
         this.policyAssignment(policyAssignment)
@@ -1735,7 +1717,7 @@ class az_policy_remediation_create_command_builder extends CommandBuilder {
  * @param {string} name Name of the remediation.
  */
 class az_policy_remediation_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -1805,7 +1787,7 @@ class az_policy_remediation_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_policy_remediation_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1877,7 +1859,7 @@ class az_policy_remediation_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the remediation.
  */
 class az_policy_remediation_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -1957,7 +1939,7 @@ class az_policy_remediation_show_command_builder extends CommandBuilder {
  * @param {string} name Name of the new policy set definition.
  */
 class az_policy_set_definition_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, definitions: string, name: string) {
+    constructor(commandPath: string, definitions: string, name: string) {
         super(commandParent);
         this.definitions(definitions)
         this.name(name)
@@ -2031,7 +2013,7 @@ class az_policy_set_definition_create_command_builder extends CommandBuilder {
  * @param {string} name The policy set definition name.
  */
 class az_policy_set_definition_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2066,7 +2048,7 @@ class az_policy_set_definition_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_policy_set_definition_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2103,7 +2085,7 @@ class az_policy_set_definition_list_command_builder extends CommandBuilder {
  * @param {string} name The policy set definition name.
  */
 class az_policy_set_definition_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2152,7 +2134,7 @@ class az_policy_set_definition_show_command_builder extends CommandBuilder {
  * @param {string} name The policy set definition name.
  */
 class az_policy_set_definition_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2240,7 +2222,7 @@ class az_policy_set_definition_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_policy_state_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2387,7 +2369,7 @@ class az_policy_state_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_policy_state_summarize_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2487,7 +2469,7 @@ class az_policy_state_summarize_command_builder extends CommandBuilder {
  * ```
  */
 class az_policy_state_trigger_scan_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

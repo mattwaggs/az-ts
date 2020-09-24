@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage action groups. */
-export class az_monitor_action_group implements ICommandParent<any> {
-    commandPath = "az monitor action-group";
-
+export class az_monitor_action_group {
     /**
      * Create a new action group.
      *
@@ -20,8 +18,8 @@ export class az_monitor_action_group implements ICommandParent<any> {
      * @param {string} name The name of the action group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_action_group_create(name: string, resourceGroup: string): az_monitor_action_group_create_command_builder {
-        return new az_monitor_action_group_create_command_builder(this, name, resourceGroup);
+    static az_monitor_action_group_create(name: string, resourceGroup: string): az_monitor_action_group_create_command_builder {
+        return new az_monitor_action_group_create_command_builder("az monitor action-group create", name, resourceGroup);
     }
 
     /**
@@ -35,8 +33,8 @@ export class az_monitor_action_group implements ICommandParent<any> {
      *                                [--subscription]
      * ```
      */
-    az_monitor_action_group_delete(): az_monitor_action_group_delete_command_builder {
-        return new az_monitor_action_group_delete_command_builder(this);
+    static az_monitor_action_group_delete(): az_monitor_action_group_delete_command_builder {
+        return new az_monitor_action_group_delete_command_builder("az monitor action-group delete");
     }
 
     /**
@@ -53,8 +51,8 @@ export class az_monitor_action_group implements ICommandParent<any> {
      *
      * @param {string} name The name of the receiver to resubscribe.
      */
-    az_monitor_action_group_enable_receiver(name: string): az_monitor_action_group_enable_receiver_command_builder {
-        return new az_monitor_action_group_enable_receiver_command_builder(this, name);
+    static az_monitor_action_group_enable_receiver(name: string): az_monitor_action_group_enable_receiver_command_builder {
+        return new az_monitor_action_group_enable_receiver_command_builder("az monitor action-group enable-receiver", name);
     }
 
     /**
@@ -67,8 +65,8 @@ export class az_monitor_action_group implements ICommandParent<any> {
      *                              [--subscription]
      * ```
      */
-    az_monitor_action_group_list(): az_monitor_action_group_list_command_builder {
-        return new az_monitor_action_group_list_command_builder(this);
+    static az_monitor_action_group_list(): az_monitor_action_group_list_command_builder {
+        return new az_monitor_action_group_list_command_builder("az monitor action-group list");
     }
 
     /**
@@ -83,8 +81,8 @@ export class az_monitor_action_group implements ICommandParent<any> {
      *                              [--subscription]
      * ```
      */
-    az_monitor_action_group_show(): az_monitor_action_group_show_command_builder {
-        return new az_monitor_action_group_show_command_builder(this);
+    static az_monitor_action_group_show(): az_monitor_action_group_show_command_builder {
+        return new az_monitor_action_group_show_command_builder("az monitor action-group show");
     }
 
     /**
@@ -106,15 +104,13 @@ export class az_monitor_action_group implements ICommandParent<any> {
      *                                [--tags]
      * ```
      */
-    az_monitor_action_group_update(): az_monitor_action_group_update_command_builder {
-        return new az_monitor_action_group_update_command_builder(this);
+    static az_monitor_action_group_update(): az_monitor_action_group_update_command_builder {
+        return new az_monitor_action_group_update_command_builder("az monitor action-group update");
     }
 }
 
 /** Manage action groups for activity log alerts. */
-export class az_monitor_activity_log_alert_action_group implements ICommandParent<any> {
-    commandPath = "az monitor activity-log alert action-group";
-
+export class az_monitor_activity_log_alert_action_group {
     /**
      * Add action groups to this activity log alert. It can also be used to overwrite existing webhook properties of particular action groups.
      *
@@ -132,8 +128,8 @@ export class az_monitor_activity_log_alert_action_group implements ICommandParen
      *
      * @param {string} actionGroup The names or the resource ids of the action groups to be added.
      */
-    az_monitor_activity_log_alert_action_group_add(actionGroup: string): az_monitor_activity_log_alert_action_group_add_command_builder {
-        return new az_monitor_activity_log_alert_action_group_add_command_builder(this, actionGroup);
+    static az_monitor_activity_log_alert_action_group_add(actionGroup: string): az_monitor_activity_log_alert_action_group_add_command_builder {
+        return new az_monitor_activity_log_alert_action_group_add_command_builder("az monitor activity-log alert action-group add", actionGroup);
     }
 
     /**
@@ -150,15 +146,13 @@ export class az_monitor_activity_log_alert_action_group implements ICommandParen
      *
      * @param {string} actionGroup The names or the resource ids of the action groups to be added.
      */
-    az_monitor_activity_log_alert_action_group_remove(actionGroup: string): az_monitor_activity_log_alert_action_group_remove_command_builder {
-        return new az_monitor_activity_log_alert_action_group_remove_command_builder(this, actionGroup);
+    static az_monitor_activity_log_alert_action_group_remove(actionGroup: string): az_monitor_activity_log_alert_action_group_remove_command_builder {
+        return new az_monitor_activity_log_alert_action_group_remove_command_builder("az monitor activity-log alert action-group remove", actionGroup);
     }
 }
 
 /** Manage scopes for activity log alerts. */
-export class az_monitor_activity_log_alert_scope implements ICommandParent<any> {
-    commandPath = "az monitor activity-log alert scope";
-
+export class az_monitor_activity_log_alert_scope {
     /**
      * Add scopes to this activity log alert.
      *
@@ -174,8 +168,8 @@ export class az_monitor_activity_log_alert_scope implements ICommandParent<any> 
      *
      * @param {string} scope List of scopes to add. Each scope could be a resource ID, a resource group ID or a subscription ID.
      */
-    az_monitor_activity_log_alert_scope_add(scope: string): az_monitor_activity_log_alert_scope_add_command_builder {
-        return new az_monitor_activity_log_alert_scope_add_command_builder(this, scope);
+    static az_monitor_activity_log_alert_scope_add(scope: string): az_monitor_activity_log_alert_scope_add_command_builder {
+        return new az_monitor_activity_log_alert_scope_add_command_builder("az monitor activity-log alert scope add", scope);
     }
 
     /**
@@ -192,15 +186,13 @@ export class az_monitor_activity_log_alert_scope implements ICommandParent<any> 
      *
      * @param {string} scope The scopes to remove.
      */
-    az_monitor_activity_log_alert_scope_remove(scope: string): az_monitor_activity_log_alert_scope_remove_command_builder {
-        return new az_monitor_activity_log_alert_scope_remove_command_builder(this, scope);
+    static az_monitor_activity_log_alert_scope_remove(scope: string): az_monitor_activity_log_alert_scope_remove_command_builder {
+        return new az_monitor_activity_log_alert_scope_remove_command_builder("az monitor activity-log alert scope remove", scope);
     }
 }
 
 /** Manage activity log alerts. */
-export class az_monitor_activity_log_alert implements ICommandParent<any> {
-    commandPath = "az monitor activity-log alert";
-
+export class az_monitor_activity_log_alert {
     /**
      * Create a default activity log alert.
      *
@@ -221,8 +213,8 @@ export class az_monitor_activity_log_alert implements ICommandParent<any> {
      * @param {string} name Name of the activity log alerts.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_activity_log_alert_create(name: string, resourceGroup: string): az_monitor_activity_log_alert_create_command_builder {
-        return new az_monitor_activity_log_alert_create_command_builder(this, name, resourceGroup);
+    static az_monitor_activity_log_alert_create(name: string, resourceGroup: string): az_monitor_activity_log_alert_create_command_builder {
+        return new az_monitor_activity_log_alert_create_command_builder("az monitor activity-log alert create", name, resourceGroup);
     }
 
     /**
@@ -236,8 +228,8 @@ export class az_monitor_activity_log_alert implements ICommandParent<any> {
      *                                      [--subscription]
      * ```
      */
-    az_monitor_activity_log_alert_delete(): az_monitor_activity_log_alert_delete_command_builder {
-        return new az_monitor_activity_log_alert_delete_command_builder(this);
+    static az_monitor_activity_log_alert_delete(): az_monitor_activity_log_alert_delete_command_builder {
+        return new az_monitor_activity_log_alert_delete_command_builder("az monitor activity-log alert delete");
     }
 
     /**
@@ -250,8 +242,8 @@ export class az_monitor_activity_log_alert implements ICommandParent<any> {
      *                                    [--subscription]
      * ```
      */
-    az_monitor_activity_log_alert_list(): az_monitor_activity_log_alert_list_command_builder {
-        return new az_monitor_activity_log_alert_list_command_builder(this);
+    static az_monitor_activity_log_alert_list(): az_monitor_activity_log_alert_list_command_builder {
+        return new az_monitor_activity_log_alert_list_command_builder("az monitor activity-log alert list");
     }
 
     /**
@@ -266,8 +258,8 @@ export class az_monitor_activity_log_alert implements ICommandParent<any> {
      *                                    [--subscription]
      * ```
      */
-    az_monitor_activity_log_alert_show(): az_monitor_activity_log_alert_show_command_builder {
-        return new az_monitor_activity_log_alert_show_command_builder(this);
+    static az_monitor_activity_log_alert_show(): az_monitor_activity_log_alert_show_command_builder {
+        return new az_monitor_activity_log_alert_show_command_builder("az monitor activity-log alert show");
     }
 
     /**
@@ -289,15 +281,13 @@ export class az_monitor_activity_log_alert implements ICommandParent<any> {
      *                                      [--tags]
      * ```
      */
-    az_monitor_activity_log_alert_update(): az_monitor_activity_log_alert_update_command_builder {
-        return new az_monitor_activity_log_alert_update_command_builder(this);
+    static az_monitor_activity_log_alert_update(): az_monitor_activity_log_alert_update_command_builder {
+        return new az_monitor_activity_log_alert_update_command_builder("az monitor activity-log alert update");
     }
 }
 
 /** Manage activity logs. */
-export class az_monitor_activity_log implements ICommandParent<any> {
-    commandPath = "az monitor activity-log";
-
+export class az_monitor_activity_log {
     /**
      * List and query activity log events.
      *
@@ -319,8 +309,8 @@ export class az_monitor_activity_log implements ICommandParent<any> {
      *                              [--subscription]
      * ```
      */
-    az_monitor_activity_log_list(): az_monitor_activity_log_list_command_builder {
-        return new az_monitor_activity_log_list_command_builder(this);
+    static az_monitor_activity_log_list(): az_monitor_activity_log_list_command_builder {
+        return new az_monitor_activity_log_list_command_builder("az monitor activity-log list");
     }
 
     /**
@@ -331,15 +321,13 @@ export class az_monitor_activity_log implements ICommandParent<any> {
      * az monitor activity-log list-categories [--subscription]
      * ```
      */
-    az_monitor_activity_log_list_categories(): az_monitor_activity_log_list_categories_command_builder {
-        return new az_monitor_activity_log_list_categories_command_builder(this);
+    static az_monitor_activity_log_list_categories(): az_monitor_activity_log_list_categories_command_builder {
+        return new az_monitor_activity_log_list_categories_command_builder("az monitor activity-log list-categories");
     }
 }
 
 /** Manage classic metric-based alert rules. */
-export class az_monitor_alert implements ICommandParent<any> {
-    commandPath = "az monitor alert";
-
+export class az_monitor_alert {
     /**
      * Create a classic metric-based alert rule.
      *
@@ -365,8 +353,8 @@ export class az_monitor_alert implements ICommandParent<any> {
      * @param {string} name Name of the alert rule.
      * @param {string} target Name or ID of the target resource.
      */
-    az_monitor_alert_create(condition: string, name: string, target: string): az_monitor_alert_create_command_builder {
-        return new az_monitor_alert_create_command_builder(this, condition, name, target);
+    static az_monitor_alert_create(condition: string, name: string, target: string): az_monitor_alert_create_command_builder {
+        return new az_monitor_alert_create_command_builder("az monitor alert create", condition, name, target);
     }
 
     /**
@@ -380,8 +368,8 @@ export class az_monitor_alert implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_monitor_alert_delete(): az_monitor_alert_delete_command_builder {
-        return new az_monitor_alert_delete_command_builder(this);
+    static az_monitor_alert_delete(): az_monitor_alert_delete_command_builder {
+        return new az_monitor_alert_delete_command_builder("az monitor alert delete");
     }
 
     /**
@@ -396,8 +384,8 @@ export class az_monitor_alert implements ICommandParent<any> {
      *
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_alert_list(resourceGroup: string): az_monitor_alert_list_command_builder {
-        return new az_monitor_alert_list_command_builder(this, resourceGroup);
+    static az_monitor_alert_list(resourceGroup: string): az_monitor_alert_list_command_builder {
+        return new az_monitor_alert_list_command_builder("az monitor alert list", resourceGroup);
     }
 
     /**
@@ -413,8 +401,8 @@ export class az_monitor_alert implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} ruleName Name of the alert rule.
      */
-    az_monitor_alert_list_incidents(resourceGroup: string, ruleName: string): az_monitor_alert_list_incidents_command_builder {
-        return new az_monitor_alert_list_incidents_command_builder(this, resourceGroup, ruleName);
+    static az_monitor_alert_list_incidents(resourceGroup: string, ruleName: string): az_monitor_alert_list_incidents_command_builder {
+        return new az_monitor_alert_list_incidents_command_builder("az monitor alert list-incidents", resourceGroup, ruleName);
     }
 
     /**
@@ -429,8 +417,8 @@ export class az_monitor_alert implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_monitor_alert_show(): az_monitor_alert_show_command_builder {
-        return new az_monitor_alert_show_command_builder(this);
+    static az_monitor_alert_show(): az_monitor_alert_show_command_builder {
+        return new az_monitor_alert_show_command_builder("az monitor alert show");
     }
 
     /**
@@ -445,8 +433,8 @@ export class az_monitor_alert implements ICommandParent<any> {
      *                                [--subscription]
      * ```
      */
-    az_monitor_alert_show_incident(): az_monitor_alert_show_incident_command_builder {
-        return new az_monitor_alert_show_incident_command_builder(this);
+    static az_monitor_alert_show_incident(): az_monitor_alert_show_incident_command_builder {
+        return new az_monitor_alert_show_incident_command_builder("az monitor alert show-incident");
     }
 
     /**
@@ -480,15 +468,13 @@ export class az_monitor_alert implements ICommandParent<any> {
      *                         [--threshold]
      * ```
      */
-    az_monitor_alert_update(): az_monitor_alert_update_command_builder {
-        return new az_monitor_alert_update_command_builder(this);
+    static az_monitor_alert_update(): az_monitor_alert_update_command_builder {
+        return new az_monitor_alert_update_command_builder("az monitor alert update");
     }
 }
 
 /** Manage autoscaling profiles. */
-export class az_monitor_autoscale_profile implements ICommandParent<any> {
-    commandPath = "az monitor autoscale profile";
-
+export class az_monitor_autoscale_profile {
     /**
      * Create a fixed or recurring autoscale profile.
      *
@@ -514,8 +500,8 @@ export class az_monitor_autoscale_profile implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} timezone Timezone name.
      */
-    az_monitor_autoscale_profile_create(autoscaleName: string, count: string, name: string, resourceGroup: string, timezone: string): az_monitor_autoscale_profile_create_command_builder {
-        return new az_monitor_autoscale_profile_create_command_builder(this, autoscaleName, count, name, resourceGroup, timezone);
+    static az_monitor_autoscale_profile_create(autoscaleName: string, count: string, name: string, resourceGroup: string, timezone: string): az_monitor_autoscale_profile_create_command_builder {
+        return new az_monitor_autoscale_profile_create_command_builder("az monitor autoscale profile create", autoscaleName, count, name, resourceGroup, timezone);
     }
 
     /**
@@ -533,8 +519,8 @@ export class az_monitor_autoscale_profile implements ICommandParent<any> {
      * @param {string} name Name of the autoscale profile.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_autoscale_profile_delete(autoscaleName: string, name: string, resourceGroup: string): az_monitor_autoscale_profile_delete_command_builder {
-        return new az_monitor_autoscale_profile_delete_command_builder(this, autoscaleName, name, resourceGroup);
+    static az_monitor_autoscale_profile_delete(autoscaleName: string, name: string, resourceGroup: string): az_monitor_autoscale_profile_delete_command_builder {
+        return new az_monitor_autoscale_profile_delete_command_builder("az monitor autoscale profile delete", autoscaleName, name, resourceGroup);
     }
 
     /**
@@ -551,8 +537,8 @@ export class az_monitor_autoscale_profile implements ICommandParent<any> {
      * @param {string} autoscaleName Name of the autoscale settings.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_autoscale_profile_list(autoscaleName: string, resourceGroup: string): az_monitor_autoscale_profile_list_command_builder {
-        return new az_monitor_autoscale_profile_list_command_builder(this, autoscaleName, resourceGroup);
+    static az_monitor_autoscale_profile_list(autoscaleName: string, resourceGroup: string): az_monitor_autoscale_profile_list_command_builder {
+        return new az_monitor_autoscale_profile_list_command_builder("az monitor autoscale profile list", autoscaleName, resourceGroup);
     }
 
     /**
@@ -565,8 +551,8 @@ export class az_monitor_autoscale_profile implements ICommandParent<any> {
      *                                             [--subscription]
      * ```
      */
-    az_monitor_autoscale_profile_list_timezones(): az_monitor_autoscale_profile_list_timezones_command_builder {
-        return new az_monitor_autoscale_profile_list_timezones_command_builder(this);
+    static az_monitor_autoscale_profile_list_timezones(): az_monitor_autoscale_profile_list_timezones_command_builder {
+        return new az_monitor_autoscale_profile_list_timezones_command_builder("az monitor autoscale profile list-timezones");
     }
 
     /**
@@ -585,15 +571,13 @@ export class az_monitor_autoscale_profile implements ICommandParent<any> {
      * @param {string} name Name of the autoscale profile.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_autoscale_profile_show(autoscaleName: string, name: string, resourceGroup: string): az_monitor_autoscale_profile_show_command_builder {
-        return new az_monitor_autoscale_profile_show_command_builder(this, autoscaleName, name, resourceGroup);
+    static az_monitor_autoscale_profile_show(autoscaleName: string, name: string, resourceGroup: string): az_monitor_autoscale_profile_show_command_builder {
+        return new az_monitor_autoscale_profile_show_command_builder("az monitor autoscale profile show", autoscaleName, name, resourceGroup);
     }
 }
 
 /** Manage autoscale scaling rules. */
-export class az_monitor_autoscale_rule implements ICommandParent<any> {
-    commandPath = "az monitor autoscale rule";
-
+export class az_monitor_autoscale_rule {
     /**
      * Copy autoscale rules from one profile to another.
      *
@@ -612,8 +596,8 @@ export class az_monitor_autoscale_rule implements ICommandParent<any> {
      * @param {string} index Space-separated list of rule indices to copy, or '\*' to copy all rules.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_autoscale_rule_copy(autoscaleName: string, destSchedule: string, index: string, resourceGroup: string): az_monitor_autoscale_rule_copy_command_builder {
-        return new az_monitor_autoscale_rule_copy_command_builder(this, autoscaleName, destSchedule, index, resourceGroup);
+    static az_monitor_autoscale_rule_copy(autoscaleName: string, destSchedule: string, index: string, resourceGroup: string): az_monitor_autoscale_rule_copy_command_builder {
+        return new az_monitor_autoscale_rule_copy_command_builder("az monitor autoscale rule copy", autoscaleName, destSchedule, index, resourceGroup);
     }
 
     /**
@@ -639,8 +623,8 @@ export class az_monitor_autoscale_rule implements ICommandParent<any> {
      * @param {string} condition The condition which triggers the scaling action.
      * @param {string} scale The direction and amount to scale.
      */
-    az_monitor_autoscale_rule_create(autoscaleName: string, condition: string, scale: string): az_monitor_autoscale_rule_create_command_builder {
-        return new az_monitor_autoscale_rule_create_command_builder(this, autoscaleName, condition, scale);
+    static az_monitor_autoscale_rule_create(autoscaleName: string, condition: string, scale: string): az_monitor_autoscale_rule_create_command_builder {
+        return new az_monitor_autoscale_rule_create_command_builder("az monitor autoscale rule create", autoscaleName, condition, scale);
     }
 
     /**
@@ -659,8 +643,8 @@ export class az_monitor_autoscale_rule implements ICommandParent<any> {
      * @param {string} index Space-separated list of rule indices to remove, or '\*' to clear all rules.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_autoscale_rule_delete(autoscaleName: string, index: string, resourceGroup: string): az_monitor_autoscale_rule_delete_command_builder {
-        return new az_monitor_autoscale_rule_delete_command_builder(this, autoscaleName, index, resourceGroup);
+    static az_monitor_autoscale_rule_delete(autoscaleName: string, index: string, resourceGroup: string): az_monitor_autoscale_rule_delete_command_builder {
+        return new az_monitor_autoscale_rule_delete_command_builder("az monitor autoscale rule delete", autoscaleName, index, resourceGroup);
     }
 
     /**
@@ -678,15 +662,13 @@ export class az_monitor_autoscale_rule implements ICommandParent<any> {
      * @param {string} autoscaleName Name of the autoscale settings.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_autoscale_rule_list(autoscaleName: string, resourceGroup: string): az_monitor_autoscale_rule_list_command_builder {
-        return new az_monitor_autoscale_rule_list_command_builder(this, autoscaleName, resourceGroup);
+    static az_monitor_autoscale_rule_list(autoscaleName: string, resourceGroup: string): az_monitor_autoscale_rule_list_command_builder {
+        return new az_monitor_autoscale_rule_list_command_builder("az monitor autoscale rule list", autoscaleName, resourceGroup);
     }
 }
 
 /** Manage autoscale settings. */
-export class az_monitor_autoscale_settings implements ICommandParent<any> {
-    commandPath = "az monitor autoscale-settings";
-
+export class az_monitor_autoscale_settings {
     /**
      * Creates or updates an autoscale setting.
      *
@@ -702,8 +684,8 @@ export class az_monitor_autoscale_settings implements ICommandParent<any> {
      * @param {string} parameters JSON encoded parameters configuration. Use @{file} to load from a file. Use az autoscale-settings get-parameters-template to export json template.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_autoscale_settings_create(name: string, parameters: string, resourceGroup: string): az_monitor_autoscale_settings_create_command_builder {
-        return new az_monitor_autoscale_settings_create_command_builder(this, name, parameters, resourceGroup);
+    static az_monitor_autoscale_settings_create(name: string, parameters: string, resourceGroup: string): az_monitor_autoscale_settings_create_command_builder {
+        return new az_monitor_autoscale_settings_create_command_builder("az monitor autoscale-settings create", name, parameters, resourceGroup);
     }
 
     /**
@@ -717,8 +699,8 @@ export class az_monitor_autoscale_settings implements ICommandParent<any> {
      *                                      [--subscription]
      * ```
      */
-    az_monitor_autoscale_settings_delete(): az_monitor_autoscale_settings_delete_command_builder {
-        return new az_monitor_autoscale_settings_delete_command_builder(this);
+    static az_monitor_autoscale_settings_delete(): az_monitor_autoscale_settings_delete_command_builder {
+        return new az_monitor_autoscale_settings_delete_command_builder("az monitor autoscale-settings delete");
     }
 
     /**
@@ -729,8 +711,8 @@ export class az_monitor_autoscale_settings implements ICommandParent<any> {
      * az monitor autoscale-settings get-parameters-template [--subscription]
      * ```
      */
-    az_monitor_autoscale_settings_get_parameters_template(): az_monitor_autoscale_settings_get_parameters_template_command_builder {
-        return new az_monitor_autoscale_settings_get_parameters_template_command_builder(this);
+    static az_monitor_autoscale_settings_get_parameters_template(): az_monitor_autoscale_settings_get_parameters_template_command_builder {
+        return new az_monitor_autoscale_settings_get_parameters_template_command_builder("az monitor autoscale-settings get-parameters-template");
     }
 
     /**
@@ -745,8 +727,8 @@ export class az_monitor_autoscale_settings implements ICommandParent<any> {
      *
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_autoscale_settings_list(resourceGroup: string): az_monitor_autoscale_settings_list_command_builder {
-        return new az_monitor_autoscale_settings_list_command_builder(this, resourceGroup);
+    static az_monitor_autoscale_settings_list(resourceGroup: string): az_monitor_autoscale_settings_list_command_builder {
+        return new az_monitor_autoscale_settings_list_command_builder("az monitor autoscale-settings list", resourceGroup);
     }
 
     /**
@@ -761,8 +743,8 @@ export class az_monitor_autoscale_settings implements ICommandParent<any> {
      *                                    [--subscription]
      * ```
      */
-    az_monitor_autoscale_settings_show(): az_monitor_autoscale_settings_show_command_builder {
-        return new az_monitor_autoscale_settings_show_command_builder(this);
+    static az_monitor_autoscale_settings_show(): az_monitor_autoscale_settings_show_command_builder {
+        return new az_monitor_autoscale_settings_show_command_builder("az monitor autoscale-settings show");
     }
 
     /**
@@ -782,15 +764,13 @@ export class az_monitor_autoscale_settings implements ICommandParent<any> {
      * @param {string} name The autoscale setting name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_autoscale_settings_update(name: string, resourceGroup: string): az_monitor_autoscale_settings_update_command_builder {
-        return new az_monitor_autoscale_settings_update_command_builder(this, name, resourceGroup);
+    static az_monitor_autoscale_settings_update(name: string, resourceGroup: string): az_monitor_autoscale_settings_update_command_builder {
+        return new az_monitor_autoscale_settings_update_command_builder("az monitor autoscale-settings update", name, resourceGroup);
     }
 }
 
 /** Manage autoscale settings. */
-export class az_monitor_autoscale implements ICommandParent<any> {
-    commandPath = "az monitor autoscale";
-
+export class az_monitor_autoscale {
     /**
      * Create new autoscale settings.
      *
@@ -817,8 +797,8 @@ export class az_monitor_autoscale implements ICommandParent<any> {
      * @param {string} count The numer of instances to use. If used with --min/max-count, the default number of instances to use.
      * @param {string} resource Name or ID of the target resource.
      */
-    az_monitor_autoscale_create(count: string, resource: string): az_monitor_autoscale_create_command_builder {
-        return new az_monitor_autoscale_create_command_builder(this, count, resource);
+    static az_monitor_autoscale_create(count: string, resource: string): az_monitor_autoscale_create_command_builder {
+        return new az_monitor_autoscale_create_command_builder("az monitor autoscale create", count, resource);
     }
 
     /**
@@ -832,8 +812,8 @@ export class az_monitor_autoscale implements ICommandParent<any> {
      *                             [--subscription]
      * ```
      */
-    az_monitor_autoscale_delete(): az_monitor_autoscale_delete_command_builder {
-        return new az_monitor_autoscale_delete_command_builder(this);
+    static az_monitor_autoscale_delete(): az_monitor_autoscale_delete_command_builder {
+        return new az_monitor_autoscale_delete_command_builder("az monitor autoscale delete");
     }
 
     /**
@@ -848,8 +828,8 @@ export class az_monitor_autoscale implements ICommandParent<any> {
      *
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_autoscale_list(resourceGroup: string): az_monitor_autoscale_list_command_builder {
-        return new az_monitor_autoscale_list_command_builder(this, resourceGroup);
+    static az_monitor_autoscale_list(resourceGroup: string): az_monitor_autoscale_list_command_builder {
+        return new az_monitor_autoscale_list_command_builder("az monitor autoscale list", resourceGroup);
     }
 
     /**
@@ -864,8 +844,8 @@ export class az_monitor_autoscale implements ICommandParent<any> {
      *                           [--subscription]
      * ```
      */
-    az_monitor_autoscale_show(): az_monitor_autoscale_show_command_builder {
-        return new az_monitor_autoscale_show_command_builder(this);
+    static az_monitor_autoscale_show(): az_monitor_autoscale_show_command_builder {
+        return new az_monitor_autoscale_show_command_builder("az monitor autoscale show");
     }
 
     /**
@@ -892,15 +872,13 @@ export class az_monitor_autoscale implements ICommandParent<any> {
      *                             [--tags]
      * ```
      */
-    az_monitor_autoscale_update(): az_monitor_autoscale_update_command_builder {
-        return new az_monitor_autoscale_update_command_builder(this);
+    static az_monitor_autoscale_update(): az_monitor_autoscale_update_command_builder {
+        return new az_monitor_autoscale_update_command_builder("az monitor autoscale update");
     }
 }
 
 /** Retrieve service diagnostic settings categories. */
-export class az_monitor_diagnostic_settings_categories implements ICommandParent<any> {
-    commandPath = "az monitor diagnostic-settings categories";
-
+export class az_monitor_diagnostic_settings_categories {
     /**
      * List the diagnostic settings categories for the specified resource.
      *
@@ -917,8 +895,8 @@ export class az_monitor_diagnostic_settings_categories implements ICommandParent
      *
      * @param {string} resource Name or ID of the target resource.
      */
-    az_monitor_diagnostic_settings_categories_list(resource: string): az_monitor_diagnostic_settings_categories_list_command_builder {
-        return new az_monitor_diagnostic_settings_categories_list_command_builder(this, resource);
+    static az_monitor_diagnostic_settings_categories_list(resource: string): az_monitor_diagnostic_settings_categories_list_command_builder {
+        return new az_monitor_diagnostic_settings_categories_list_command_builder("az monitor diagnostic-settings categories list", resource);
     }
 
     /**
@@ -939,15 +917,13 @@ export class az_monitor_diagnostic_settings_categories implements ICommandParent
      * @param {string} name The name of the diagnostic setting.
      * @param {string} resource Name or ID of the target resource.
      */
-    az_monitor_diagnostic_settings_categories_show(name: string, resource: string): az_monitor_diagnostic_settings_categories_show_command_builder {
-        return new az_monitor_diagnostic_settings_categories_show_command_builder(this, name, resource);
+    static az_monitor_diagnostic_settings_categories_show(name: string, resource: string): az_monitor_diagnostic_settings_categories_show_command_builder {
+        return new az_monitor_diagnostic_settings_categories_show_command_builder("az monitor diagnostic-settings categories show", name, resource);
     }
 }
 
 /** Manage diagnostic settings for subscription. */
-export class az_monitor_diagnostic_settings_subscription implements ICommandParent<any> {
-    commandPath = "az monitor diagnostic-settings subscription";
-
+export class az_monitor_diagnostic_settings_subscription {
     /**
      * Create diagnostic settings for a subscription.
      *
@@ -968,8 +944,8 @@ export class az_monitor_diagnostic_settings_subscription implements ICommandPare
      * @param {string} logs JSON encoded list of logs settings. Use '@{file}' to load from a file.
      * @param {string} name The name of the diagnostic setting.
      */
-    az_monitor_diagnostic_settings_subscription_create(location: string, logs: string, name: string): az_monitor_diagnostic_settings_subscription_create_command_builder {
-        return new az_monitor_diagnostic_settings_subscription_create_command_builder(this, location, logs, name);
+    static az_monitor_diagnostic_settings_subscription_create(location: string, logs: string, name: string): az_monitor_diagnostic_settings_subscription_create_command_builder {
+        return new az_monitor_diagnostic_settings_subscription_create_command_builder("az monitor diagnostic-settings subscription create", location, logs, name);
     }
 
     /**
@@ -984,8 +960,8 @@ export class az_monitor_diagnostic_settings_subscription implements ICommandPare
      *
      * @param {string} name The name of the diagnostic setting.
      */
-    az_monitor_diagnostic_settings_subscription_delete(name: string): az_monitor_diagnostic_settings_subscription_delete_command_builder {
-        return new az_monitor_diagnostic_settings_subscription_delete_command_builder(this, name);
+    static az_monitor_diagnostic_settings_subscription_delete(name: string): az_monitor_diagnostic_settings_subscription_delete_command_builder {
+        return new az_monitor_diagnostic_settings_subscription_delete_command_builder("az monitor diagnostic-settings subscription delete", name);
     }
 
     /**
@@ -997,8 +973,8 @@ export class az_monitor_diagnostic_settings_subscription implements ICommandPare
      *                                                  [--subscription]
      * ```
      */
-    az_monitor_diagnostic_settings_subscription_list(): az_monitor_diagnostic_settings_subscription_list_command_builder {
-        return new az_monitor_diagnostic_settings_subscription_list_command_builder(this);
+    static az_monitor_diagnostic_settings_subscription_list(): az_monitor_diagnostic_settings_subscription_list_command_builder {
+        return new az_monitor_diagnostic_settings_subscription_list_command_builder("az monitor diagnostic-settings subscription list");
     }
 
     /**
@@ -1013,8 +989,8 @@ export class az_monitor_diagnostic_settings_subscription implements ICommandPare
      *
      * @param {string} name The name of the diagnostic setting.
      */
-    az_monitor_diagnostic_settings_subscription_show(name: string): az_monitor_diagnostic_settings_subscription_show_command_builder {
-        return new az_monitor_diagnostic_settings_subscription_show_command_builder(this, name);
+    static az_monitor_diagnostic_settings_subscription_show(name: string): az_monitor_diagnostic_settings_subscription_show_command_builder {
+        return new az_monitor_diagnostic_settings_subscription_show_command_builder("az monitor diagnostic-settings subscription show", name);
     }
 
     /**
@@ -1038,15 +1014,13 @@ export class az_monitor_diagnostic_settings_subscription implements ICommandPare
      *
      * @param {string} name The name of the diagnostic setting.
      */
-    az_monitor_diagnostic_settings_subscription_update(name: string): az_monitor_diagnostic_settings_subscription_update_command_builder {
-        return new az_monitor_diagnostic_settings_subscription_update_command_builder(this, name);
+    static az_monitor_diagnostic_settings_subscription_update(name: string): az_monitor_diagnostic_settings_subscription_update_command_builder {
+        return new az_monitor_diagnostic_settings_subscription_update_command_builder("az monitor diagnostic-settings subscription update", name);
     }
 }
 
 /** Manage service diagnostic settings. */
-export class az_monitor_diagnostic_settings implements ICommandParent<any> {
-    commandPath = "az monitor diagnostic-settings";
-
+export class az_monitor_diagnostic_settings {
     /**
      * Create diagnostic settings for the specified resource.
      *
@@ -1071,8 +1045,8 @@ export class az_monitor_diagnostic_settings implements ICommandParent<any> {
      * @param {string} name The name of the diagnostic settings.
      * @param {string} resource Name or ID of the target resource.
      */
-    az_monitor_diagnostic_settings_create(name: string, resource: string): az_monitor_diagnostic_settings_create_command_builder {
-        return new az_monitor_diagnostic_settings_create_command_builder(this, name, resource);
+    static az_monitor_diagnostic_settings_create(name: string, resource: string): az_monitor_diagnostic_settings_create_command_builder {
+        return new az_monitor_diagnostic_settings_create_command_builder("az monitor diagnostic-settings create", name, resource);
     }
 
     /**
@@ -1092,8 +1066,8 @@ export class az_monitor_diagnostic_settings implements ICommandParent<any> {
      * @param {string} name The name of the diagnostic setting.
      * @param {string} resource Name or ID of the target resource.
      */
-    az_monitor_diagnostic_settings_delete(name: string, resource: string): az_monitor_diagnostic_settings_delete_command_builder {
-        return new az_monitor_diagnostic_settings_delete_command_builder(this, name, resource);
+    static az_monitor_diagnostic_settings_delete(name: string, resource: string): az_monitor_diagnostic_settings_delete_command_builder {
+        return new az_monitor_diagnostic_settings_delete_command_builder("az monitor diagnostic-settings delete", name, resource);
     }
 
     /**
@@ -1112,8 +1086,8 @@ export class az_monitor_diagnostic_settings implements ICommandParent<any> {
      *
      * @param {string} resource Name or ID of the target resource.
      */
-    az_monitor_diagnostic_settings_list(resource: string): az_monitor_diagnostic_settings_list_command_builder {
-        return new az_monitor_diagnostic_settings_list_command_builder(this, resource);
+    static az_monitor_diagnostic_settings_list(resource: string): az_monitor_diagnostic_settings_list_command_builder {
+        return new az_monitor_diagnostic_settings_list_command_builder("az monitor diagnostic-settings list", resource);
     }
 
     /**
@@ -1134,8 +1108,8 @@ export class az_monitor_diagnostic_settings implements ICommandParent<any> {
      * @param {string} name The name of the diagnostic setting.
      * @param {string} resource Name or ID of the target resource.
      */
-    az_monitor_diagnostic_settings_show(name: string, resource: string): az_monitor_diagnostic_settings_show_command_builder {
-        return new az_monitor_diagnostic_settings_show_command_builder(this, name, resource);
+    static az_monitor_diagnostic_settings_show(name: string, resource: string): az_monitor_diagnostic_settings_show_command_builder {
+        return new az_monitor_diagnostic_settings_show_command_builder("az monitor diagnostic-settings show", name, resource);
     }
 
     /**
@@ -1159,15 +1133,13 @@ export class az_monitor_diagnostic_settings implements ICommandParent<any> {
      * @param {string} name The name of the diagnostic setting.
      * @param {string} resource Name or ID of the target resource.
      */
-    az_monitor_diagnostic_settings_update(name: string, resource: string): az_monitor_diagnostic_settings_update_command_builder {
-        return new az_monitor_diagnostic_settings_update_command_builder(this, name, resource);
+    static az_monitor_diagnostic_settings_update(name: string, resource: string): az_monitor_diagnostic_settings_update_command_builder {
+        return new az_monitor_diagnostic_settings_update_command_builder("az monitor diagnostic-settings update", name, resource);
     }
 }
 
 /** Manage Azure log analytics cluster. */
-export class az_monitor_log_analytics_cluster implements ICommandParent<any> {
-    commandPath = "az monitor log-analytics cluster";
-
+export class az_monitor_log_analytics_cluster {
     /**
      * Create a cluster instance.
      *
@@ -1188,8 +1160,8 @@ export class az_monitor_log_analytics_cluster implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} skuCapacity The capacity of the SKU. It must be in the range of 1000-2000 per day and must be in multiples of 100. If you want to increase the limit, please contact LAIngestionRate@microsoft.com. It can be decreased only after 31 days.
      */
-    az_monitor_log_analytics_cluster_create(name: string, resourceGroup: string, skuCapacity: string): az_monitor_log_analytics_cluster_create_command_builder {
-        return new az_monitor_log_analytics_cluster_create_command_builder(this, name, resourceGroup, skuCapacity);
+    static az_monitor_log_analytics_cluster_create(name: string, resourceGroup: string, skuCapacity: string): az_monitor_log_analytics_cluster_create_command_builder {
+        return new az_monitor_log_analytics_cluster_create_command_builder("az monitor log-analytics cluster create", name, resourceGroup, skuCapacity);
     }
 
     /**
@@ -1207,8 +1179,8 @@ export class az_monitor_log_analytics_cluster implements ICommandParent<any> {
      * @param {string} name The name of the Log Analytics cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_log_analytics_cluster_delete(name: string, resourceGroup: string): az_monitor_log_analytics_cluster_delete_command_builder {
-        return new az_monitor_log_analytics_cluster_delete_command_builder(this, name, resourceGroup);
+    static az_monitor_log_analytics_cluster_delete(name: string, resourceGroup: string): az_monitor_log_analytics_cluster_delete_command_builder {
+        return new az_monitor_log_analytics_cluster_delete_command_builder("az monitor log-analytics cluster delete", name, resourceGroup);
     }
 
     /**
@@ -1221,8 +1193,8 @@ export class az_monitor_log_analytics_cluster implements ICommandParent<any> {
      *                                       [--subscription]
      * ```
      */
-    az_monitor_log_analytics_cluster_list(): az_monitor_log_analytics_cluster_list_command_builder {
-        return new az_monitor_log_analytics_cluster_list_command_builder(this);
+    static az_monitor_log_analytics_cluster_list(): az_monitor_log_analytics_cluster_list_command_builder {
+        return new az_monitor_log_analytics_cluster_list_command_builder("az monitor log-analytics cluster list");
     }
 
     /**
@@ -1239,8 +1211,8 @@ export class az_monitor_log_analytics_cluster implements ICommandParent<any> {
      * @param {string} name The name of the Log Analytics cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_log_analytics_cluster_show(name: string, resourceGroup: string): az_monitor_log_analytics_cluster_show_command_builder {
-        return new az_monitor_log_analytics_cluster_show_command_builder(this, name, resourceGroup);
+    static az_monitor_log_analytics_cluster_show(name: string, resourceGroup: string): az_monitor_log_analytics_cluster_show_command_builder {
+        return new az_monitor_log_analytics_cluster_show_command_builder("az monitor log-analytics cluster show", name, resourceGroup);
     }
 
     /**
@@ -1261,8 +1233,8 @@ export class az_monitor_log_analytics_cluster implements ICommandParent<any> {
      * @param {string} name The name of the Log Analytics cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_log_analytics_cluster_update(name: string, resourceGroup: string): az_monitor_log_analytics_cluster_update_command_builder {
-        return new az_monitor_log_analytics_cluster_update_command_builder(this, name, resourceGroup);
+    static az_monitor_log_analytics_cluster_update(name: string, resourceGroup: string): az_monitor_log_analytics_cluster_update_command_builder {
+        return new az_monitor_log_analytics_cluster_update_command_builder("az monitor log-analytics cluster update", name, resourceGroup);
     }
 
     /**
@@ -1285,15 +1257,13 @@ export class az_monitor_log_analytics_cluster implements ICommandParent<any> {
      * @param {string} name The name of the Log Analytics cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_log_analytics_cluster_wait(name: string, resourceGroup: string): az_monitor_log_analytics_cluster_wait_command_builder {
-        return new az_monitor_log_analytics_cluster_wait_command_builder(this, name, resourceGroup);
+    static az_monitor_log_analytics_cluster_wait(name: string, resourceGroup: string): az_monitor_log_analytics_cluster_wait_command_builder {
+        return new az_monitor_log_analytics_cluster_wait_command_builder("az monitor log-analytics cluster wait", name, resourceGroup);
     }
 }
 
 /** Manage data export ruls for log analytics workspace. */
-export class az_monitor_log_analytics_workspace_data_export implements ICommandParent<any> {
-    commandPath = "az monitor log-analytics workspace data-export";
-
+export class az_monitor_log_analytics_workspace_data_export {
     /**
      * Create a data export rule for a given workspace.
      *
@@ -1314,8 +1284,8 @@ export class az_monitor_log_analytics_workspace_data_export implements ICommandP
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_data_export_create(destination: string, name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_data_export_create_command_builder {
-        return new az_monitor_log_analytics_workspace_data_export_create_command_builder(this, destination, name, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_data_export_create(destination: string, name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_data_export_create_command_builder {
+        return new az_monitor_log_analytics_workspace_data_export_create_command_builder("az monitor log-analytics workspace data-export create", destination, name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1334,8 +1304,8 @@ export class az_monitor_log_analytics_workspace_data_export implements ICommandP
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_data_export_delete(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_data_export_delete_command_builder {
-        return new az_monitor_log_analytics_workspace_data_export_delete_command_builder(this, name, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_data_export_delete(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_data_export_delete_command_builder {
+        return new az_monitor_log_analytics_workspace_data_export_delete_command_builder("az monitor log-analytics workspace data-export delete", name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1352,8 +1322,8 @@ export class az_monitor_log_analytics_workspace_data_export implements ICommandP
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_data_export_list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_data_export_list_command_builder {
-        return new az_monitor_log_analytics_workspace_data_export_list_command_builder(this, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_data_export_list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_data_export_list_command_builder {
+        return new az_monitor_log_analytics_workspace_data_export_list_command_builder("az monitor log-analytics workspace data-export list", resourceGroup, workspaceName);
     }
 
     /**
@@ -1372,8 +1342,8 @@ export class az_monitor_log_analytics_workspace_data_export implements ICommandP
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_data_export_show(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_data_export_show_command_builder {
-        return new az_monitor_log_analytics_workspace_data_export_show_command_builder(this, name, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_data_export_show(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_data_export_show_command_builder {
+        return new az_monitor_log_analytics_workspace_data_export_show_command_builder("az monitor log-analytics workspace data-export show", name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1399,15 +1369,13 @@ export class az_monitor_log_analytics_workspace_data_export implements ICommandP
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_data_export_update(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_data_export_update_command_builder {
-        return new az_monitor_log_analytics_workspace_data_export_update_command_builder(this, name, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_data_export_update(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_data_export_update_command_builder {
+        return new az_monitor_log_analytics_workspace_data_export_update_command_builder("az monitor log-analytics workspace data-export update", name, resourceGroup, workspaceName);
     }
 }
 
 /** Manage linked service for log analytics workspace. */
-export class az_monitor_log_analytics_workspace_linked_service implements ICommandParent<any> {
-    commandPath = "az monitor log-analytics workspace linked-service";
-
+export class az_monitor_log_analytics_workspace_linked_service {
     /**
      * Create a linked service.
      *
@@ -1426,8 +1394,8 @@ export class az_monitor_log_analytics_workspace_linked_service implements IComma
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_linked_service_create(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_create_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_service_create_command_builder(this, name, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_linked_service_create(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_create_command_builder {
+        return new az_monitor_log_analytics_workspace_linked_service_create_command_builder("az monitor log-analytics workspace linked-service create", name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1447,8 +1415,8 @@ export class az_monitor_log_analytics_workspace_linked_service implements IComma
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_linked_service_delete(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_delete_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_service_delete_command_builder(this, name, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_linked_service_delete(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_delete_command_builder {
+        return new az_monitor_log_analytics_workspace_linked_service_delete_command_builder("az monitor log-analytics workspace linked-service delete", name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1465,8 +1433,8 @@ export class az_monitor_log_analytics_workspace_linked_service implements IComma
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_linked_service_list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_list_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_service_list_command_builder(this, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_linked_service_list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_list_command_builder {
+        return new az_monitor_log_analytics_workspace_linked_service_list_command_builder("az monitor log-analytics workspace linked-service list", resourceGroup, workspaceName);
     }
 
     /**
@@ -1485,8 +1453,8 @@ export class az_monitor_log_analytics_workspace_linked_service implements IComma
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_linked_service_show(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_show_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_service_show_command_builder(this, name, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_linked_service_show(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_show_command_builder {
+        return new az_monitor_log_analytics_workspace_linked_service_show_command_builder("az monitor log-analytics workspace linked-service show", name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1511,8 +1479,8 @@ export class az_monitor_log_analytics_workspace_linked_service implements IComma
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_linked_service_update(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_update_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_service_update_command_builder(this, name, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_linked_service_update(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_update_command_builder {
+        return new az_monitor_log_analytics_workspace_linked_service_update_command_builder("az monitor log-analytics workspace linked-service update", name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1537,15 +1505,13 @@ export class az_monitor_log_analytics_workspace_linked_service implements IComma
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_linked_service_wait(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_wait_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_service_wait_command_builder(this, name, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_linked_service_wait(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_wait_command_builder {
+        return new az_monitor_log_analytics_workspace_linked_service_wait_command_builder("az monitor log-analytics workspace linked-service wait", name, resourceGroup, workspaceName);
     }
 }
 
 /** Manage linked storage account for log analytics workspace. */
-export class az_monitor_log_analytics_workspace_linked_storage implements ICommandParent<any> {
-    commandPath = "az monitor log-analytics workspace linked-storage";
-
+export class az_monitor_log_analytics_workspace_linked_storage {
     /**
      * Add some linked storage accounts with specific data source type for log analytics workspace.
      *
@@ -1563,8 +1529,8 @@ export class az_monitor_log_analytics_workspace_linked_storage implements IComma
      * @param {'AzureWatson' | 'CustomLogs'} type Data source type for the linked storage account.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_linked_storage_add(resourceGroup: string, storageAccounts: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_add_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_storage_add_command_builder(this, resourceGroup, storageAccounts, type, workspaceName);
+    static az_monitor_log_analytics_workspace_linked_storage_add(resourceGroup: string, storageAccounts: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_add_command_builder {
+        return new az_monitor_log_analytics_workspace_linked_storage_add_command_builder("az monitor log-analytics workspace linked-storage add", resourceGroup, storageAccounts, type, workspaceName);
     }
 
     /**
@@ -1583,8 +1549,8 @@ export class az_monitor_log_analytics_workspace_linked_storage implements IComma
      * @param {'AzureWatson' | 'CustomLogs'} type Data source type for the linked storage account.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_linked_storage_create(resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_create_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_storage_create_command_builder(this, resourceGroup, type, workspaceName);
+    static az_monitor_log_analytics_workspace_linked_storage_create(resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_create_command_builder {
+        return new az_monitor_log_analytics_workspace_linked_storage_create_command_builder("az monitor log-analytics workspace linked-storage create", resourceGroup, type, workspaceName);
     }
 
     /**
@@ -1603,8 +1569,8 @@ export class az_monitor_log_analytics_workspace_linked_storage implements IComma
      * @param {'AzureWatson' | 'CustomLogs'} type Data source type for the linked storage account.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_linked_storage_delete(resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_delete_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_storage_delete_command_builder(this, resourceGroup, type, workspaceName);
+    static az_monitor_log_analytics_workspace_linked_storage_delete(resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_delete_command_builder {
+        return new az_monitor_log_analytics_workspace_linked_storage_delete_command_builder("az monitor log-analytics workspace linked-storage delete", resourceGroup, type, workspaceName);
     }
 
     /**
@@ -1621,8 +1587,8 @@ export class az_monitor_log_analytics_workspace_linked_storage implements IComma
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_linked_storage_list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_list_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_storage_list_command_builder(this, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_linked_storage_list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_list_command_builder {
+        return new az_monitor_log_analytics_workspace_linked_storage_list_command_builder("az monitor log-analytics workspace linked-storage list", resourceGroup, workspaceName);
     }
 
     /**
@@ -1642,8 +1608,8 @@ export class az_monitor_log_analytics_workspace_linked_storage implements IComma
      * @param {'AzureWatson' | 'CustomLogs'} type Data source type for the linked storage account.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_linked_storage_remove(resourceGroup: string, storageAccounts: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_remove_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_storage_remove_command_builder(this, resourceGroup, storageAccounts, type, workspaceName);
+    static az_monitor_log_analytics_workspace_linked_storage_remove(resourceGroup: string, storageAccounts: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_remove_command_builder {
+        return new az_monitor_log_analytics_workspace_linked_storage_remove_command_builder("az monitor log-analytics workspace linked-storage remove", resourceGroup, storageAccounts, type, workspaceName);
     }
 
     /**
@@ -1662,15 +1628,13 @@ export class az_monitor_log_analytics_workspace_linked_storage implements IComma
      * @param {'AzureWatson' | 'CustomLogs'} type Data source type for the linked storage account.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_linked_storage_show(resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_show_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_storage_show_command_builder(this, resourceGroup, type, workspaceName);
+    static az_monitor_log_analytics_workspace_linked_storage_show(resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_show_command_builder {
+        return new az_monitor_log_analytics_workspace_linked_storage_show_command_builder("az monitor log-analytics workspace linked-storage show", resourceGroup, type, workspaceName);
     }
 }
 
 /** Manage intelligent packs for log analytics workspace. */
-export class az_monitor_log_analytics_workspace_pack implements ICommandParent<any> {
-    commandPath = "az monitor log-analytics workspace pack";
-
+export class az_monitor_log_analytics_workspace_pack {
     /**
      * Disable an intelligence pack for a given workspace.
      *
@@ -1686,8 +1650,8 @@ export class az_monitor_log_analytics_workspace_pack implements ICommandParent<a
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_pack_disable(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_pack_disable_command_builder {
-        return new az_monitor_log_analytics_workspace_pack_disable_command_builder(this, name, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_pack_disable(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_pack_disable_command_builder {
+        return new az_monitor_log_analytics_workspace_pack_disable_command_builder("az monitor log-analytics workspace pack disable", name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1705,8 +1669,8 @@ export class az_monitor_log_analytics_workspace_pack implements ICommandParent<a
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_pack_enable(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_pack_enable_command_builder {
-        return new az_monitor_log_analytics_workspace_pack_enable_command_builder(this, name, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_pack_enable(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_pack_enable_command_builder {
+        return new az_monitor_log_analytics_workspace_pack_enable_command_builder("az monitor log-analytics workspace pack enable", name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1723,15 +1687,13 @@ export class az_monitor_log_analytics_workspace_pack implements ICommandParent<a
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_pack_list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_pack_list_command_builder {
-        return new az_monitor_log_analytics_workspace_pack_list_command_builder(this, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_pack_list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_pack_list_command_builder {
+        return new az_monitor_log_analytics_workspace_pack_list_command_builder("az monitor log-analytics workspace pack list", resourceGroup, workspaceName);
     }
 }
 
 /** Manage saved search for log analytics workspace. */
-export class az_monitor_log_analytics_workspace_saved_search implements ICommandParent<any> {
-    commandPath = "az monitor log-analytics workspace saved-search";
-
+export class az_monitor_log_analytics_workspace_saved_search {
     /**
      * Create a saved search for a given workspace.
      *
@@ -1756,8 +1718,8 @@ export class az_monitor_log_analytics_workspace_saved_search implements ICommand
      * @param {string} savedQuery The query expression for the saved search.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_saved_search_create(category: string, displayName: string, name: string, resourceGroup: string, savedQuery: string, workspaceName: string): az_monitor_log_analytics_workspace_saved_search_create_command_builder {
-        return new az_monitor_log_analytics_workspace_saved_search_create_command_builder(this, category, displayName, name, resourceGroup, savedQuery, workspaceName);
+    static az_monitor_log_analytics_workspace_saved_search_create(category: string, displayName: string, name: string, resourceGroup: string, savedQuery: string, workspaceName: string): az_monitor_log_analytics_workspace_saved_search_create_command_builder {
+        return new az_monitor_log_analytics_workspace_saved_search_create_command_builder("az monitor log-analytics workspace saved-search create", category, displayName, name, resourceGroup, savedQuery, workspaceName);
     }
 
     /**
@@ -1776,8 +1738,8 @@ export class az_monitor_log_analytics_workspace_saved_search implements ICommand
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_saved_search_delete(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_saved_search_delete_command_builder {
-        return new az_monitor_log_analytics_workspace_saved_search_delete_command_builder(this, name, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_saved_search_delete(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_saved_search_delete_command_builder {
+        return new az_monitor_log_analytics_workspace_saved_search_delete_command_builder("az monitor log-analytics workspace saved-search delete", name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1794,8 +1756,8 @@ export class az_monitor_log_analytics_workspace_saved_search implements ICommand
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_saved_search_list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_saved_search_list_command_builder {
-        return new az_monitor_log_analytics_workspace_saved_search_list_command_builder(this, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_saved_search_list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_saved_search_list_command_builder {
+        return new az_monitor_log_analytics_workspace_saved_search_list_command_builder("az monitor log-analytics workspace saved-search list", resourceGroup, workspaceName);
     }
 
     /**
@@ -1814,8 +1776,8 @@ export class az_monitor_log_analytics_workspace_saved_search implements ICommand
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_saved_search_show(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_saved_search_show_command_builder {
-        return new az_monitor_log_analytics_workspace_saved_search_show_command_builder(this, name, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_saved_search_show(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_saved_search_show_command_builder {
+        return new az_monitor_log_analytics_workspace_saved_search_show_command_builder("az monitor log-analytics workspace saved-search show", name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1843,15 +1805,13 @@ export class az_monitor_log_analytics_workspace_saved_search implements ICommand
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_saved_search_update(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_saved_search_update_command_builder {
-        return new az_monitor_log_analytics_workspace_saved_search_update_command_builder(this, name, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_saved_search_update(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_saved_search_update_command_builder {
+        return new az_monitor_log_analytics_workspace_saved_search_update_command_builder("az monitor log-analytics workspace saved-search update", name, resourceGroup, workspaceName);
     }
 }
 
 /** Manage tables for log analytics workspace. */
-export class az_monitor_log_analytics_workspace_table implements ICommandParent<any> {
-    commandPath = "az monitor log-analytics workspace table";
-
+export class az_monitor_log_analytics_workspace_table {
     /**
      * List all the tables for the given Log Analytics workspace.
      *
@@ -1866,8 +1826,8 @@ export class az_monitor_log_analytics_workspace_table implements ICommandParent<
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_table_list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_table_list_command_builder {
-        return new az_monitor_log_analytics_workspace_table_list_command_builder(this, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_table_list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_table_list_command_builder {
+        return new az_monitor_log_analytics_workspace_table_list_command_builder("az monitor log-analytics workspace table list", resourceGroup, workspaceName);
     }
 
     /**
@@ -1886,8 +1846,8 @@ export class az_monitor_log_analytics_workspace_table implements ICommandParent<
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_table_show(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_table_show_command_builder {
-        return new az_monitor_log_analytics_workspace_table_show_command_builder(this, name, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_table_show(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_table_show_command_builder {
+        return new az_monitor_log_analytics_workspace_table_show_command_builder("az monitor log-analytics workspace table show", name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1907,15 +1867,13 @@ export class az_monitor_log_analytics_workspace_table implements ICommandParent<
      * @param {string} retentionTime The data table data retention in days, between 30 and 730. Setting this property to null will default to the workspace retention.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_table_update(name: string, resourceGroup: string, retentionTime: string, workspaceName: string): az_monitor_log_analytics_workspace_table_update_command_builder {
-        return new az_monitor_log_analytics_workspace_table_update_command_builder(this, name, resourceGroup, retentionTime, workspaceName);
+    static az_monitor_log_analytics_workspace_table_update(name: string, resourceGroup: string, retentionTime: string, workspaceName: string): az_monitor_log_analytics_workspace_table_update_command_builder {
+        return new az_monitor_log_analytics_workspace_table_update_command_builder("az monitor log-analytics workspace table update", name, resourceGroup, retentionTime, workspaceName);
     }
 }
 
 /** Manage Azure log analytics workspace. */
-export class az_monitor_log_analytics_workspace implements ICommandParent<any> {
-    commandPath = "az monitor log-analytics workspace";
-
+export class az_monitor_log_analytics_workspace {
     /**
      * Create a workspace instance.
      *
@@ -1938,8 +1896,8 @@ export class az_monitor_log_analytics_workspace implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_create(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_create_command_builder {
-        return new az_monitor_log_analytics_workspace_create_command_builder(this, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_create(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_create_command_builder {
+        return new az_monitor_log_analytics_workspace_create_command_builder("az monitor log-analytics workspace create", resourceGroup, workspaceName);
     }
 
     /**
@@ -1957,8 +1915,8 @@ export class az_monitor_log_analytics_workspace implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_delete(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_delete_command_builder {
-        return new az_monitor_log_analytics_workspace_delete_command_builder(this, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_delete(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_delete_command_builder {
+        return new az_monitor_log_analytics_workspace_delete_command_builder("az monitor log-analytics workspace delete", resourceGroup, workspaceName);
     }
 
     /**
@@ -1974,8 +1932,8 @@ export class az_monitor_log_analytics_workspace implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_get_schema(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_get_schema_command_builder {
-        return new az_monitor_log_analytics_workspace_get_schema_command_builder(this, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_get_schema(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_get_schema_command_builder {
+        return new az_monitor_log_analytics_workspace_get_schema_command_builder("az monitor log-analytics workspace get-schema", resourceGroup, workspaceName);
     }
 
     /**
@@ -1991,8 +1949,8 @@ export class az_monitor_log_analytics_workspace implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_get_shared_keys(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_get_shared_keys_command_builder {
-        return new az_monitor_log_analytics_workspace_get_shared_keys_command_builder(this, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_get_shared_keys(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_get_shared_keys_command_builder {
+        return new az_monitor_log_analytics_workspace_get_shared_keys_command_builder("az monitor log-analytics workspace get-shared-keys", resourceGroup, workspaceName);
     }
 
     /**
@@ -2005,8 +1963,8 @@ export class az_monitor_log_analytics_workspace implements ICommandParent<any> {
      *                                         [--subscription]
      * ```
      */
-    az_monitor_log_analytics_workspace_list(): az_monitor_log_analytics_workspace_list_command_builder {
-        return new az_monitor_log_analytics_workspace_list_command_builder(this);
+    static az_monitor_log_analytics_workspace_list(): az_monitor_log_analytics_workspace_list_command_builder {
+        return new az_monitor_log_analytics_workspace_list_command_builder("az monitor log-analytics workspace list");
     }
 
     /**
@@ -2018,8 +1976,8 @@ export class az_monitor_log_analytics_workspace implements ICommandParent<any> {
      *                                                            [--subscription]
      * ```
      */
-    az_monitor_log_analytics_workspace_list_deleted_workspaces(): az_monitor_log_analytics_workspace_list_deleted_workspaces_command_builder {
-        return new az_monitor_log_analytics_workspace_list_deleted_workspaces_command_builder(this);
+    static az_monitor_log_analytics_workspace_list_deleted_workspaces(): az_monitor_log_analytics_workspace_list_deleted_workspaces_command_builder {
+        return new az_monitor_log_analytics_workspace_list_deleted_workspaces_command_builder("az monitor log-analytics workspace list-deleted-workspaces");
     }
 
     /**
@@ -2035,8 +1993,8 @@ export class az_monitor_log_analytics_workspace implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_list_management_groups(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_list_management_groups_command_builder {
-        return new az_monitor_log_analytics_workspace_list_management_groups_command_builder(this, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_list_management_groups(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_list_management_groups_command_builder {
+        return new az_monitor_log_analytics_workspace_list_management_groups_command_builder("az monitor log-analytics workspace list-management-groups", resourceGroup, workspaceName);
     }
 
     /**
@@ -2052,8 +2010,8 @@ export class az_monitor_log_analytics_workspace implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_list_usages(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_list_usages_command_builder {
-        return new az_monitor_log_analytics_workspace_list_usages_command_builder(this, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_list_usages(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_list_usages_command_builder {
+        return new az_monitor_log_analytics_workspace_list_usages_command_builder("az monitor log-analytics workspace list-usages", resourceGroup, workspaceName);
     }
 
     /**
@@ -2069,8 +2027,8 @@ export class az_monitor_log_analytics_workspace implements ICommandParent<any> {
      *
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_recover(workspaceName: string): az_monitor_log_analytics_workspace_recover_command_builder {
-        return new az_monitor_log_analytics_workspace_recover_command_builder(this, workspaceName);
+    static az_monitor_log_analytics_workspace_recover(workspaceName: string): az_monitor_log_analytics_workspace_recover_command_builder {
+        return new az_monitor_log_analytics_workspace_recover_command_builder("az monitor log-analytics workspace recover", workspaceName);
     }
 
     /**
@@ -2087,8 +2045,8 @@ export class az_monitor_log_analytics_workspace implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_show(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_show_command_builder {
-        return new az_monitor_log_analytics_workspace_show_command_builder(this, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_show(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_show_command_builder {
+        return new az_monitor_log_analytics_workspace_show_command_builder("az monitor log-analytics workspace show", resourceGroup, workspaceName);
     }
 
     /**
@@ -2114,8 +2072,8 @@ export class az_monitor_log_analytics_workspace implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
-    az_monitor_log_analytics_workspace_update(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_update_command_builder {
-        return new az_monitor_log_analytics_workspace_update_command_builder(this, resourceGroup, workspaceName);
+    static az_monitor_log_analytics_workspace_update(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_update_command_builder {
+        return new az_monitor_log_analytics_workspace_update_command_builder("az monitor log-analytics workspace update", resourceGroup, workspaceName);
     }
 }
 
@@ -2124,9 +2082,7 @@ export class az_monitor_log_analytics {
 }
 
 /** Manage log profiles. */
-export class az_monitor_log_profiles implements ICommandParent<any> {
-    commandPath = "az monitor log-profiles";
-
+export class az_monitor_log_profiles {
     /**
      * Create a log profile.
      *
@@ -2151,8 +2107,8 @@ export class az_monitor_log_profiles implements ICommandParent<any> {
      * @param {string} locations Space-separated list of regions for which Activity Log events should be stored.
      * @param {string} name The name of the log profile.
      */
-    az_monitor_log_profiles_create(categories: string, days: string, enabled: boolean, location: string, locations: string, name: string): az_monitor_log_profiles_create_command_builder {
-        return new az_monitor_log_profiles_create_command_builder(this, categories, days, enabled, location, locations, name);
+    static az_monitor_log_profiles_create(categories: string, days: string, enabled: boolean, location: string, locations: string, name: string): az_monitor_log_profiles_create_command_builder {
+        return new az_monitor_log_profiles_create_command_builder("az monitor log-profiles create", categories, days, enabled, location, locations, name);
     }
 
     /**
@@ -2166,8 +2122,8 @@ export class az_monitor_log_profiles implements ICommandParent<any> {
      *
      * @param {string} name The name of the log profile.
      */
-    az_monitor_log_profiles_delete(name: string): az_monitor_log_profiles_delete_command_builder {
-        return new az_monitor_log_profiles_delete_command_builder(this, name);
+    static az_monitor_log_profiles_delete(name: string): az_monitor_log_profiles_delete_command_builder {
+        return new az_monitor_log_profiles_delete_command_builder("az monitor log-profiles delete", name);
     }
 
     /**
@@ -2179,8 +2135,8 @@ export class az_monitor_log_profiles implements ICommandParent<any> {
      *                              [--subscription]
      * ```
      */
-    az_monitor_log_profiles_list(): az_monitor_log_profiles_list_command_builder {
-        return new az_monitor_log_profiles_list_command_builder(this);
+    static az_monitor_log_profiles_list(): az_monitor_log_profiles_list_command_builder {
+        return new az_monitor_log_profiles_list_command_builder("az monitor log-profiles list");
     }
 
     /**
@@ -2195,8 +2151,8 @@ export class az_monitor_log_profiles implements ICommandParent<any> {
      *
      * @param {string} name The name of the log profile.
      */
-    az_monitor_log_profiles_show(name: string): az_monitor_log_profiles_show_command_builder {
-        return new az_monitor_log_profiles_show_command_builder(this, name);
+    static az_monitor_log_profiles_show(name: string): az_monitor_log_profiles_show_command_builder {
+        return new az_monitor_log_profiles_show_command_builder("az monitor log-profiles show", name);
     }
 
     /**
@@ -2214,15 +2170,13 @@ export class az_monitor_log_profiles implements ICommandParent<any> {
      *
      * @param {string} name The name of the log profile.
      */
-    az_monitor_log_profiles_update(name: string): az_monitor_log_profiles_update_command_builder {
-        return new az_monitor_log_profiles_update_command_builder(this, name);
+    static az_monitor_log_profiles_update(name: string): az_monitor_log_profiles_update_command_builder {
+        return new az_monitor_log_profiles_update_command_builder("az monitor log-profiles update", name);
     }
 }
 
 /** Manage near-realtime metric alert rules. */
-export class az_monitor_metrics_alert implements ICommandParent<any> {
-    commandPath = "az monitor metrics alert";
-
+export class az_monitor_metrics_alert {
     /**
      * Create a metric-based alert rule.
      *
@@ -2250,8 +2204,8 @@ export class az_monitor_metrics_alert implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} scopes Space-separated list of scopes the rule applies to. The resources specified in this parameter must be of the same type and exist in the same location.
      */
-    az_monitor_metrics_alert_create(condition: string, name: string, resourceGroup: string, scopes: string): az_monitor_metrics_alert_create_command_builder {
-        return new az_monitor_metrics_alert_create_command_builder(this, condition, name, resourceGroup, scopes);
+    static az_monitor_metrics_alert_create(condition: string, name: string, resourceGroup: string, scopes: string): az_monitor_metrics_alert_create_command_builder {
+        return new az_monitor_metrics_alert_create_command_builder("az monitor metrics alert create", condition, name, resourceGroup, scopes);
     }
 
     /**
@@ -2265,8 +2219,8 @@ export class az_monitor_metrics_alert implements ICommandParent<any> {
      *                                 [--subscription]
      * ```
      */
-    az_monitor_metrics_alert_delete(): az_monitor_metrics_alert_delete_command_builder {
-        return new az_monitor_metrics_alert_delete_command_builder(this);
+    static az_monitor_metrics_alert_delete(): az_monitor_metrics_alert_delete_command_builder {
+        return new az_monitor_metrics_alert_delete_command_builder("az monitor metrics alert delete");
     }
 
     /**
@@ -2279,8 +2233,8 @@ export class az_monitor_metrics_alert implements ICommandParent<any> {
      *                               [--subscription]
      * ```
      */
-    az_monitor_metrics_alert_list(): az_monitor_metrics_alert_list_command_builder {
-        return new az_monitor_metrics_alert_list_command_builder(this);
+    static az_monitor_metrics_alert_list(): az_monitor_metrics_alert_list_command_builder {
+        return new az_monitor_metrics_alert_list_command_builder("az monitor metrics alert list");
     }
 
     /**
@@ -2295,8 +2249,8 @@ export class az_monitor_metrics_alert implements ICommandParent<any> {
      *                               [--subscription]
      * ```
      */
-    az_monitor_metrics_alert_show(): az_monitor_metrics_alert_show_command_builder {
-        return new az_monitor_metrics_alert_show_command_builder(this);
+    static az_monitor_metrics_alert_show(): az_monitor_metrics_alert_show_command_builder {
+        return new az_monitor_metrics_alert_show_command_builder("az monitor metrics alert show");
     }
 
     /**
@@ -2326,15 +2280,13 @@ export class az_monitor_metrics_alert implements ICommandParent<any> {
      *                                 [--window-size]
      * ```
      */
-    az_monitor_metrics_alert_update(): az_monitor_metrics_alert_update_command_builder {
-        return new az_monitor_metrics_alert_update_command_builder(this);
+    static az_monitor_metrics_alert_update(): az_monitor_metrics_alert_update_command_builder {
+        return new az_monitor_metrics_alert_update_command_builder("az monitor metrics alert update");
     }
 }
 
 /** View Azure resource metrics. */
-export class az_monitor_metrics implements ICommandParent<any> {
-    commandPath = "az monitor metrics";
-
+export class az_monitor_metrics {
     /**
      * List the metric values for a resource.
      *
@@ -2363,8 +2315,8 @@ export class az_monitor_metrics implements ICommandParent<any> {
      *
      * @param {string} resource Name or ID of the target resource.
      */
-    az_monitor_metrics_list(resource: string): az_monitor_metrics_list_command_builder {
-        return new az_monitor_metrics_list_command_builder(this, resource);
+    static az_monitor_metrics_list(resource: string): az_monitor_metrics_list_command_builder {
+        return new az_monitor_metrics_list_command_builder("az monitor metrics list", resource);
     }
 
     /**
@@ -2383,15 +2335,13 @@ export class az_monitor_metrics implements ICommandParent<any> {
      *
      * @param {string} resource Name or ID of the target resource.
      */
-    az_monitor_metrics_list_definitions(resource: string): az_monitor_metrics_list_definitions_command_builder {
-        return new az_monitor_metrics_list_definitions_command_builder(this, resource);
+    static az_monitor_metrics_list_definitions(resource: string): az_monitor_metrics_list_definitions_command_builder {
+        return new az_monitor_metrics_list_definitions_command_builder("az monitor metrics list-definitions", resource);
     }
 }
 
 /** Manage private endpoint connection of a private link scope resource. */
-export class az_monitor_private_link_scope_private_endpoint_connection implements ICommandParent<any> {
-    commandPath = "az monitor private-link-scope private-endpoint-connection";
-
+export class az_monitor_private_link_scope_private_endpoint_connection {
     /**
      * Approve a private endpoint connection of a private link scope resource.
      *
@@ -2405,8 +2355,8 @@ export class az_monitor_private_link_scope_private_endpoint_connection implement
      *                                                                   [--subscription]
      * ```
      */
-    az_monitor_private_link_scope_private_endpoint_connection_approve(): az_monitor_private_link_scope_private_endpoint_connection_approve_command_builder {
-        return new az_monitor_private_link_scope_private_endpoint_connection_approve_command_builder(this);
+    static az_monitor_private_link_scope_private_endpoint_connection_approve(): az_monitor_private_link_scope_private_endpoint_connection_approve_command_builder {
+        return new az_monitor_private_link_scope_private_endpoint_connection_approve_command_builder("az monitor private-link-scope private-endpoint-connection approve");
     }
 
     /**
@@ -2422,8 +2372,8 @@ export class az_monitor_private_link_scope_private_endpoint_connection implement
      *                                                                  [--yes]
      * ```
      */
-    az_monitor_private_link_scope_private_endpoint_connection_delete(): az_monitor_private_link_scope_private_endpoint_connection_delete_command_builder {
-        return new az_monitor_private_link_scope_private_endpoint_connection_delete_command_builder(this);
+    static az_monitor_private_link_scope_private_endpoint_connection_delete(): az_monitor_private_link_scope_private_endpoint_connection_delete_command_builder {
+        return new az_monitor_private_link_scope_private_endpoint_connection_delete_command_builder("az monitor private-link-scope private-endpoint-connection delete");
     }
 
     /**
@@ -2440,8 +2390,8 @@ export class az_monitor_private_link_scope_private_endpoint_connection implement
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
      */
-    az_monitor_private_link_scope_private_endpoint_connection_list(resourceGroup: string, scopeName: string): az_monitor_private_link_scope_private_endpoint_connection_list_command_builder {
-        return new az_monitor_private_link_scope_private_endpoint_connection_list_command_builder(this, resourceGroup, scopeName);
+    static az_monitor_private_link_scope_private_endpoint_connection_list(resourceGroup: string, scopeName: string): az_monitor_private_link_scope_private_endpoint_connection_list_command_builder {
+        return new az_monitor_private_link_scope_private_endpoint_connection_list_command_builder("az monitor private-link-scope private-endpoint-connection list", resourceGroup, scopeName);
     }
 
     /**
@@ -2457,8 +2407,8 @@ export class az_monitor_private_link_scope_private_endpoint_connection implement
      *                                                                  [--subscription]
      * ```
      */
-    az_monitor_private_link_scope_private_endpoint_connection_reject(): az_monitor_private_link_scope_private_endpoint_connection_reject_command_builder {
-        return new az_monitor_private_link_scope_private_endpoint_connection_reject_command_builder(this);
+    static az_monitor_private_link_scope_private_endpoint_connection_reject(): az_monitor_private_link_scope_private_endpoint_connection_reject_command_builder {
+        return new az_monitor_private_link_scope_private_endpoint_connection_reject_command_builder("az monitor private-link-scope private-endpoint-connection reject");
     }
 
     /**
@@ -2474,15 +2424,13 @@ export class az_monitor_private_link_scope_private_endpoint_connection implement
      *                                                                [--subscription]
      * ```
      */
-    az_monitor_private_link_scope_private_endpoint_connection_show(): az_monitor_private_link_scope_private_endpoint_connection_show_command_builder {
-        return new az_monitor_private_link_scope_private_endpoint_connection_show_command_builder(this);
+    static az_monitor_private_link_scope_private_endpoint_connection_show(): az_monitor_private_link_scope_private_endpoint_connection_show_command_builder {
+        return new az_monitor_private_link_scope_private_endpoint_connection_show_command_builder("az monitor private-link-scope private-endpoint-connection show");
     }
 }
 
 /** Manage private link resource of a private link scope resource. */
-export class az_monitor_private_link_scope_private_link_resource implements ICommandParent<any> {
-    commandPath = "az monitor private-link-scope private-link-resource";
-
+export class az_monitor_private_link_scope_private_link_resource {
     /**
      * List all private link resources of a private link scope resource.
      *
@@ -2497,8 +2445,8 @@ export class az_monitor_private_link_scope_private_link_resource implements ICom
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
      */
-    az_monitor_private_link_scope_private_link_resource_list(resourceGroup: string, scopeName: string): az_monitor_private_link_scope_private_link_resource_list_command_builder {
-        return new az_monitor_private_link_scope_private_link_resource_list_command_builder(this, resourceGroup, scopeName);
+    static az_monitor_private_link_scope_private_link_resource_list(resourceGroup: string, scopeName: string): az_monitor_private_link_scope_private_link_resource_list_command_builder {
+        return new az_monitor_private_link_scope_private_link_resource_list_command_builder("az monitor private-link-scope private-link-resource list", resourceGroup, scopeName);
     }
 
     /**
@@ -2517,15 +2465,13 @@ export class az_monitor_private_link_scope_private_link_resource implements ICom
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
      */
-    az_monitor_private_link_scope_private_link_resource_show(name: string, resourceGroup: string, scopeName: string): az_monitor_private_link_scope_private_link_resource_show_command_builder {
-        return new az_monitor_private_link_scope_private_link_resource_show_command_builder(this, name, resourceGroup, scopeName);
+    static az_monitor_private_link_scope_private_link_resource_show(name: string, resourceGroup: string, scopeName: string): az_monitor_private_link_scope_private_link_resource_show_command_builder {
+        return new az_monitor_private_link_scope_private_link_resource_show_command_builder("az monitor private-link-scope private-link-resource show", name, resourceGroup, scopeName);
     }
 }
 
 /** Manage scoped resource of a private link scope resource. */
-export class az_monitor_private_link_scope_scoped_resource implements ICommandParent<any> {
-    commandPath = "az monitor private-link-scope scoped-resource";
-
+export class az_monitor_private_link_scope_scoped_resource {
     /**
      * Create a scoped resource for a private link scope resource.
      *
@@ -2543,8 +2489,8 @@ export class az_monitor_private_link_scope_scoped_resource implements ICommandPa
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
      */
-    az_monitor_private_link_scope_scoped_resource_create(linkedResource: string, name: string, resourceGroup: string, scopeName: string): az_monitor_private_link_scope_scoped_resource_create_command_builder {
-        return new az_monitor_private_link_scope_scoped_resource_create_command_builder(this, linkedResource, name, resourceGroup, scopeName);
+    static az_monitor_private_link_scope_scoped_resource_create(linkedResource: string, name: string, resourceGroup: string, scopeName: string): az_monitor_private_link_scope_scoped_resource_create_command_builder {
+        return new az_monitor_private_link_scope_scoped_resource_create_command_builder("az monitor private-link-scope scoped-resource create", linkedResource, name, resourceGroup, scopeName);
     }
 
     /**
@@ -2563,8 +2509,8 @@ export class az_monitor_private_link_scope_scoped_resource implements ICommandPa
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
      */
-    az_monitor_private_link_scope_scoped_resource_delete(name: string, resourceGroup: string, scopeName: string): az_monitor_private_link_scope_scoped_resource_delete_command_builder {
-        return new az_monitor_private_link_scope_scoped_resource_delete_command_builder(this, name, resourceGroup, scopeName);
+    static az_monitor_private_link_scope_scoped_resource_delete(name: string, resourceGroup: string, scopeName: string): az_monitor_private_link_scope_scoped_resource_delete_command_builder {
+        return new az_monitor_private_link_scope_scoped_resource_delete_command_builder("az monitor private-link-scope scoped-resource delete", name, resourceGroup, scopeName);
     }
 
     /**
@@ -2581,8 +2527,8 @@ export class az_monitor_private_link_scope_scoped_resource implements ICommandPa
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
      */
-    az_monitor_private_link_scope_scoped_resource_list(resourceGroup: string, scopeName: string): az_monitor_private_link_scope_scoped_resource_list_command_builder {
-        return new az_monitor_private_link_scope_scoped_resource_list_command_builder(this, resourceGroup, scopeName);
+    static az_monitor_private_link_scope_scoped_resource_list(resourceGroup: string, scopeName: string): az_monitor_private_link_scope_scoped_resource_list_command_builder {
+        return new az_monitor_private_link_scope_scoped_resource_list_command_builder("az monitor private-link-scope scoped-resource list", resourceGroup, scopeName);
     }
 
     /**
@@ -2601,15 +2547,13 @@ export class az_monitor_private_link_scope_scoped_resource implements ICommandPa
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
      */
-    az_monitor_private_link_scope_scoped_resource_show(name: string, resourceGroup: string, scopeName: string): az_monitor_private_link_scope_scoped_resource_show_command_builder {
-        return new az_monitor_private_link_scope_scoped_resource_show_command_builder(this, name, resourceGroup, scopeName);
+    static az_monitor_private_link_scope_scoped_resource_show(name: string, resourceGroup: string, scopeName: string): az_monitor_private_link_scope_scoped_resource_show_command_builder {
+        return new az_monitor_private_link_scope_scoped_resource_show_command_builder("az monitor private-link-scope scoped-resource show", name, resourceGroup, scopeName);
     }
 }
 
 /** Manage monitor private link scope resource. */
-export class az_monitor_private_link_scope implements ICommandParent<any> {
-    commandPath = "az monitor private-link-scope";
-
+export class az_monitor_private_link_scope {
     /**
      * Create a private link scope resource.
      *
@@ -2624,8 +2568,8 @@ export class az_monitor_private_link_scope implements ICommandParent<any> {
      * @param {string} name Name of the Azure Monitor Private Link Scope.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_private_link_scope_create(name: string, resourceGroup: string): az_monitor_private_link_scope_create_command_builder {
-        return new az_monitor_private_link_scope_create_command_builder(this, name, resourceGroup);
+    static az_monitor_private_link_scope_create(name: string, resourceGroup: string): az_monitor_private_link_scope_create_command_builder {
+        return new az_monitor_private_link_scope_create_command_builder("az monitor private-link-scope create", name, resourceGroup);
     }
 
     /**
@@ -2642,8 +2586,8 @@ export class az_monitor_private_link_scope implements ICommandParent<any> {
      * @param {string} name Name of the Azure Monitor Private Link Scope.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_private_link_scope_delete(name: string, resourceGroup: string): az_monitor_private_link_scope_delete_command_builder {
-        return new az_monitor_private_link_scope_delete_command_builder(this, name, resourceGroup);
+    static az_monitor_private_link_scope_delete(name: string, resourceGroup: string): az_monitor_private_link_scope_delete_command_builder {
+        return new az_monitor_private_link_scope_delete_command_builder("az monitor private-link-scope delete", name, resourceGroup);
     }
 
     /**
@@ -2656,8 +2600,8 @@ export class az_monitor_private_link_scope implements ICommandParent<any> {
      *                                    [--subscription]
      * ```
      */
-    az_monitor_private_link_scope_list(): az_monitor_private_link_scope_list_command_builder {
-        return new az_monitor_private_link_scope_list_command_builder(this);
+    static az_monitor_private_link_scope_list(): az_monitor_private_link_scope_list_command_builder {
+        return new az_monitor_private_link_scope_list_command_builder("az monitor private-link-scope list");
     }
 
     /**
@@ -2674,8 +2618,8 @@ export class az_monitor_private_link_scope implements ICommandParent<any> {
      * @param {string} name Name of the Azure Monitor Private Link Scope.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_monitor_private_link_scope_show(name: string, resourceGroup: string): az_monitor_private_link_scope_show_command_builder {
-        return new az_monitor_private_link_scope_show_command_builder(this, name, resourceGroup);
+    static az_monitor_private_link_scope_show(name: string, resourceGroup: string): az_monitor_private_link_scope_show_command_builder {
+        return new az_monitor_private_link_scope_show_command_builder("az monitor private-link-scope show", name, resourceGroup);
     }
 
     /**
@@ -2693,15 +2637,13 @@ export class az_monitor_private_link_scope implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} tags Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags.
      */
-    az_monitor_private_link_scope_update(name: string, resourceGroup: string, tags: string): az_monitor_private_link_scope_update_command_builder {
-        return new az_monitor_private_link_scope_update_command_builder(this, name, resourceGroup, tags);
+    static az_monitor_private_link_scope_update(name: string, resourceGroup: string, tags: string): az_monitor_private_link_scope_update_command_builder {
+        return new az_monitor_private_link_scope_update_command_builder("az monitor private-link-scope update", name, resourceGroup, tags);
     }
 }
 
 /** Manage the Azure Monitor Service. */
-export class az_monitor implements ICommandParent<any> {
-    commandPath = "az monitor";
-
+export class az_monitor {
     /**
      * Clone metrics alert rules from one resource to another resource.
      *
@@ -2717,8 +2659,8 @@ export class az_monitor implements ICommandParent<any> {
      * @param {string} sourceResource Resource ID of the source resource.
      * @param {string} targetResource Resource ID of the target resource.
      */
-    az_monitor_clone(sourceResource: string, targetResource: string): az_monitor_clone_command_builder {
-        return new az_monitor_clone_command_builder(this, sourceResource, targetResource);
+    static az_monitor_clone(sourceResource: string, targetResource: string): az_monitor_clone_command_builder {
+        return new az_monitor_clone_command_builder("az monitor clone", sourceResource, targetResource);
     }
 }
 
@@ -2739,7 +2681,7 @@ export class az_monitor implements ICommandParent<any> {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_action_group_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2794,7 +2736,7 @@ class az_monitor_action_group_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_monitor_action_group_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2838,7 +2780,7 @@ class az_monitor_action_group_delete_command_builder extends CommandBuilder {
  * @param {string} name The name of the receiver to resubscribe.
  */
 class az_monitor_action_group_enable_receiver_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2885,7 +2827,7 @@ class az_monitor_action_group_enable_receiver_command_builder extends CommandBui
  * ```
  */
 class az_monitor_action_group_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2921,7 +2863,7 @@ class az_monitor_action_group_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_monitor_action_group_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2976,7 +2918,7 @@ class az_monitor_action_group_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_monitor_action_group_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3071,7 +3013,7 @@ class az_monitor_action_group_update_command_builder extends CommandBuilder {
  * @param {string} actionGroup The names or the resource ids of the action groups to be added.
  */
 class az_monitor_activity_log_alert_action_group_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, actionGroup: string) {
+    constructor(commandPath: string, actionGroup: string) {
         super(commandParent);
         this.actionGroup(actionGroup)
     }
@@ -3140,7 +3082,7 @@ class az_monitor_activity_log_alert_action_group_add_command_builder extends Com
  * @param {string} actionGroup The names or the resource ids of the action groups to be added.
  */
 class az_monitor_activity_log_alert_action_group_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, actionGroup: string) {
+    constructor(commandPath: string, actionGroup: string) {
         super(commandParent);
         this.actionGroup(actionGroup)
     }
@@ -3192,7 +3134,7 @@ class az_monitor_activity_log_alert_action_group_remove_command_builder extends 
  * @param {string} scope List of scopes to add. Each scope could be a resource ID, a resource group ID or a subscription ID.
  */
 class az_monitor_activity_log_alert_scope_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, scope: string) {
+    constructor(commandPath: string, scope: string) {
         super(commandParent);
         this.scope(scope)
     }
@@ -3249,7 +3191,7 @@ class az_monitor_activity_log_alert_scope_add_command_builder extends CommandBui
  * @param {string} scope The scopes to remove.
  */
 class az_monitor_activity_log_alert_scope_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, scope: string) {
+    constructor(commandPath: string, scope: string) {
         super(commandParent);
         this.scope(scope)
     }
@@ -3306,7 +3248,7 @@ class az_monitor_activity_log_alert_scope_remove_command_builder extends Command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_activity_log_alert_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3385,7 +3327,7 @@ class az_monitor_activity_log_alert_create_command_builder extends CommandBuilde
  * ```
  */
 class az_monitor_activity_log_alert_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3425,7 +3367,7 @@ class az_monitor_activity_log_alert_delete_command_builder extends CommandBuilde
  * ```
  */
 class az_monitor_activity_log_alert_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3461,7 +3403,7 @@ class az_monitor_activity_log_alert_list_command_builder extends CommandBuilder 
  * ```
  */
 class az_monitor_activity_log_alert_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3516,7 +3458,7 @@ class az_monitor_activity_log_alert_show_command_builder extends CommandBuilder 
  * ```
  */
 class az_monitor_activity_log_alert_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3615,7 +3557,7 @@ class az_monitor_activity_log_alert_update_command_builder extends CommandBuilde
  * ```
  */
 class az_monitor_activity_log_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3713,7 +3655,7 @@ class az_monitor_activity_log_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_monitor_activity_log_list_categories_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3750,7 +3692,7 @@ class az_monitor_activity_log_list_categories_command_builder extends CommandBui
  * @param {string} target Name or ID of the target resource.
  */
 class az_monitor_alert_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, condition: string, name: string, target: string) {
+    constructor(commandPath: string, condition: string, name: string, target: string) {
         super(commandParent);
         this.condition(condition)
         this.name(name)
@@ -3854,7 +3796,7 @@ class az_monitor_alert_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_monitor_alert_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3896,7 +3838,7 @@ class az_monitor_alert_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_alert_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string) {
+    constructor(commandPath: string, resourceGroup: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
     }
@@ -3934,7 +3876,7 @@ class az_monitor_alert_list_command_builder extends CommandBuilder {
  * @param {string} ruleName Name of the alert rule.
  */
 class az_monitor_alert_list_incidents_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, ruleName: string) {
+    constructor(commandPath: string, resourceGroup: string, ruleName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.ruleName(ruleName)
@@ -3972,7 +3914,7 @@ class az_monitor_alert_list_incidents_command_builder extends CommandBuilder {
  * ```
  */
 class az_monitor_alert_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4020,7 +3962,7 @@ class az_monitor_alert_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_monitor_alert_show_incident_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4087,7 +4029,7 @@ class az_monitor_alert_show_incident_command_builder extends CommandBuilder {
  * ```
  */
 class az_monitor_alert_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4262,7 +4204,7 @@ class az_monitor_alert_update_command_builder extends CommandBuilder {
  * @param {string} timezone Timezone name.
  */
 class az_monitor_autoscale_profile_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, autoscaleName: string, count: string, name: string, resourceGroup: string, timezone: string) {
+    constructor(commandPath: string, autoscaleName: string, count: string, name: string, resourceGroup: string, timezone: string) {
         super(commandParent);
         this.autoscaleName(autoscaleName)
         this.count(count)
@@ -4360,7 +4302,7 @@ class az_monitor_autoscale_profile_create_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_profile_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, autoscaleName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, autoscaleName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.autoscaleName(autoscaleName)
         this.name(name)
@@ -4407,7 +4349,7 @@ class az_monitor_autoscale_profile_delete_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_profile_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, autoscaleName: string, resourceGroup: string) {
+    constructor(commandPath: string, autoscaleName: string, resourceGroup: string) {
         super(commandParent);
         this.autoscaleName(autoscaleName)
         this.resourceGroup(resourceGroup)
@@ -4449,7 +4391,7 @@ class az_monitor_autoscale_profile_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_monitor_autoscale_profile_list_timezones_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4489,7 +4431,7 @@ class az_monitor_autoscale_profile_list_timezones_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_profile_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, autoscaleName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, autoscaleName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.autoscaleName(autoscaleName)
         this.name(name)
@@ -4546,7 +4488,7 @@ class az_monitor_autoscale_profile_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_rule_copy_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, autoscaleName: string, destSchedule: string, index: string, resourceGroup: string) {
+    constructor(commandPath: string, autoscaleName: string, destSchedule: string, index: string, resourceGroup: string) {
         super(commandParent);
         this.autoscaleName(autoscaleName)
         this.destSchedule(destSchedule)
@@ -4615,7 +4557,7 @@ class az_monitor_autoscale_rule_copy_command_builder extends CommandBuilder {
  * @param {string} scale The direction and amount to scale.
  */
 class az_monitor_autoscale_rule_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, autoscaleName: string, condition: string, scale: string) {
+    constructor(commandPath: string, autoscaleName: string, condition: string, scale: string) {
         super(commandParent);
         this.autoscaleName(autoscaleName)
         this.condition(condition)
@@ -4712,7 +4654,7 @@ class az_monitor_autoscale_rule_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_rule_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, autoscaleName: string, index: string, resourceGroup: string) {
+    constructor(commandPath: string, autoscaleName: string, index: string, resourceGroup: string) {
         super(commandParent);
         this.autoscaleName(autoscaleName)
         this.index(index)
@@ -4766,7 +4708,7 @@ class az_monitor_autoscale_rule_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, autoscaleName: string, resourceGroup: string) {
+    constructor(commandPath: string, autoscaleName: string, resourceGroup: string) {
         super(commandParent);
         this.autoscaleName(autoscaleName)
         this.resourceGroup(resourceGroup)
@@ -4819,7 +4761,7 @@ class az_monitor_autoscale_rule_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_settings_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, parameters: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, parameters: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.parameters(parameters)
@@ -4863,7 +4805,7 @@ class az_monitor_autoscale_settings_create_command_builder extends CommandBuilde
  * ```
  */
 class az_monitor_autoscale_settings_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4901,7 +4843,7 @@ class az_monitor_autoscale_settings_delete_command_builder extends CommandBuilde
  * ```
  */
 class az_monitor_autoscale_settings_get_parameters_template_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4925,7 +4867,7 @@ class az_monitor_autoscale_settings_get_parameters_template_command_builder exte
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_settings_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string) {
+    constructor(commandPath: string, resourceGroup: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
     }
@@ -4962,7 +4904,7 @@ class az_monitor_autoscale_settings_list_command_builder extends CommandBuilder 
  * ```
  */
 class az_monitor_autoscale_settings_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5015,7 +4957,7 @@ class az_monitor_autoscale_settings_show_command_builder extends CommandBuilder 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_settings_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -5091,7 +5033,7 @@ class az_monitor_autoscale_settings_update_command_builder extends CommandBuilde
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_autoscale_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, count: string, resource: string) {
+    constructor(commandPath: string, count: string, resource: string) {
         super(commandParent);
         this.count(count)
         this.resource(resource)
@@ -5206,7 +5148,7 @@ class az_monitor_autoscale_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_monitor_autoscale_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5248,7 +5190,7 @@ class az_monitor_autoscale_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string) {
+    constructor(commandPath: string, resourceGroup: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
     }
@@ -5285,7 +5227,7 @@ class az_monitor_autoscale_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_monitor_autoscale_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5345,7 +5287,7 @@ class az_monitor_autoscale_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_monitor_autoscale_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5469,7 +5411,7 @@ class az_monitor_autoscale_update_command_builder extends CommandBuilder {
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_diagnostic_settings_categories_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resource: string) {
+    constructor(commandPath: string, resource: string) {
         super(commandParent);
         this.resource(resource)
     }
@@ -5536,7 +5478,7 @@ class az_monitor_diagnostic_settings_categories_list_command_builder extends Com
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_diagnostic_settings_categories_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resource: string) {
+    constructor(commandPath: string, name: string, resource: string) {
         super(commandParent);
         this.name(name)
         this.resource(resource)
@@ -5612,7 +5554,7 @@ class az_monitor_diagnostic_settings_categories_show_command_builder extends Com
  * @param {string} name The name of the diagnostic setting.
  */
 class az_monitor_diagnostic_settings_subscription_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string, logs: string, name: string) {
+    constructor(commandPath: string, location: string, logs: string, name: string) {
         super(commandParent);
         this.location(location)
         this.logs(logs)
@@ -5687,7 +5629,7 @@ class az_monitor_diagnostic_settings_subscription_create_command_builder extends
  * @param {string} name The name of the diagnostic setting.
  */
 class az_monitor_diagnostic_settings_subscription_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -5721,7 +5663,7 @@ class az_monitor_diagnostic_settings_subscription_delete_command_builder extends
  * ```
  */
 class az_monitor_diagnostic_settings_subscription_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5751,7 +5693,7 @@ class az_monitor_diagnostic_settings_subscription_list_command_builder extends C
  * @param {string} name The name of the diagnostic setting.
  */
 class az_monitor_diagnostic_settings_subscription_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -5797,7 +5739,7 @@ class az_monitor_diagnostic_settings_subscription_show_command_builder extends C
  * @param {string} name The name of the diagnostic setting.
  */
 class az_monitor_diagnostic_settings_subscription_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -5900,7 +5842,7 @@ class az_monitor_diagnostic_settings_subscription_update_command_builder extends
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_diagnostic_settings_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resource: string) {
+    constructor(commandPath: string, name: string, resource: string) {
         super(commandParent);
         this.name(name)
         this.resource(resource)
@@ -6009,7 +5951,7 @@ class az_monitor_diagnostic_settings_create_command_builder extends CommandBuild
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_diagnostic_settings_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resource: string) {
+    constructor(commandPath: string, name: string, resource: string) {
         super(commandParent);
         this.name(name)
         this.resource(resource)
@@ -6075,7 +6017,7 @@ class az_monitor_diagnostic_settings_delete_command_builder extends CommandBuild
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_diagnostic_settings_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resource: string) {
+    constructor(commandPath: string, resource: string) {
         super(commandParent);
         this.resource(resource)
     }
@@ -6142,7 +6084,7 @@ class az_monitor_diagnostic_settings_list_command_builder extends CommandBuilder
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_diagnostic_settings_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resource: string) {
+    constructor(commandPath: string, name: string, resource: string) {
         super(commandParent);
         this.name(name)
         this.resource(resource)
@@ -6219,7 +6161,7 @@ class az_monitor_diagnostic_settings_show_command_builder extends CommandBuilder
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_diagnostic_settings_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resource: string) {
+    constructor(commandPath: string, name: string, resource: string) {
         super(commandParent);
         this.name(name)
         this.resource(resource)
@@ -6313,7 +6255,7 @@ class az_monitor_diagnostic_settings_update_command_builder extends CommandBuild
  * @param {string} skuCapacity The capacity of the SKU. It must be in the range of 1000-2000 per day and must be in multiples of 100. If you want to increase the limit, please contact LAIngestionRate@microsoft.com. It can be decreased only after 31 days.
  */
 class az_monitor_log_analytics_cluster_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, skuCapacity: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, skuCapacity: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -6391,7 +6333,7 @@ class az_monitor_log_analytics_cluster_create_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_log_analytics_cluster_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -6439,7 +6381,7 @@ class az_monitor_log_analytics_cluster_delete_command_builder extends CommandBui
  * ```
  */
 class az_monitor_log_analytics_cluster_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -6477,7 +6419,7 @@ class az_monitor_log_analytics_cluster_list_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_log_analytics_cluster_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -6527,7 +6469,7 @@ class az_monitor_log_analytics_cluster_show_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_log_analytics_cluster_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -6603,7 +6545,7 @@ class az_monitor_log_analytics_cluster_update_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_log_analytics_cluster_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -6691,7 +6633,7 @@ class az_monitor_log_analytics_cluster_wait_command_builder extends CommandBuild
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_data_export_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, destination: string, name: string, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, destination: string, name: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.destination(destination)
         this.name(name)
@@ -6765,7 +6707,7 @@ class az_monitor_log_analytics_workspace_data_export_create_command_builder exte
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_data_export_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -6818,7 +6760,7 @@ class az_monitor_log_analytics_workspace_data_export_delete_command_builder exte
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_data_export_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -6866,7 +6808,7 @@ class az_monitor_log_analytics_workspace_data_export_list_command_builder extend
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_data_export_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -6928,7 +6870,7 @@ class az_monitor_log_analytics_workspace_data_export_show_command_builder extend
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_data_export_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -7027,7 +6969,7 @@ class az_monitor_log_analytics_workspace_data_export_update_command_builder exte
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_service_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -7095,7 +7037,7 @@ class az_monitor_log_analytics_workspace_linked_service_create_command_builder e
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_service_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -7154,7 +7096,7 @@ class az_monitor_log_analytics_workspace_linked_service_delete_command_builder e
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_service_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -7202,7 +7144,7 @@ class az_monitor_log_analytics_workspace_linked_service_list_command_builder ext
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_service_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -7263,7 +7205,7 @@ class az_monitor_log_analytics_workspace_linked_service_show_command_builder ext
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_service_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -7360,7 +7302,7 @@ class az_monitor_log_analytics_workspace_linked_service_update_command_builder e
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_service_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -7452,7 +7394,7 @@ class az_monitor_log_analytics_workspace_linked_service_wait_command_builder ext
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_storage_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, storageAccounts: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, storageAccounts: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.storageAccounts(storageAccounts)
@@ -7508,7 +7450,7 @@ class az_monitor_log_analytics_workspace_linked_storage_add_command_builder exte
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_storage_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.type(type)
@@ -7563,7 +7505,7 @@ class az_monitor_log_analytics_workspace_linked_storage_create_command_builder e
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_storage_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.type(type)
@@ -7616,7 +7558,7 @@ class az_monitor_log_analytics_workspace_linked_storage_delete_command_builder e
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_storage_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -7665,7 +7607,7 @@ class az_monitor_log_analytics_workspace_linked_storage_list_command_builder ext
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_storage_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, storageAccounts: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, storageAccounts: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.storageAccounts(storageAccounts)
@@ -7721,7 +7663,7 @@ class az_monitor_log_analytics_workspace_linked_storage_remove_command_builder e
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_storage_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.type(type)
@@ -7775,7 +7717,7 @@ class az_monitor_log_analytics_workspace_linked_storage_show_command_builder ext
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_pack_disable_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -7823,7 +7765,7 @@ class az_monitor_log_analytics_workspace_pack_disable_command_builder extends Co
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_pack_enable_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -7870,7 +7812,7 @@ class az_monitor_log_analytics_workspace_pack_enable_command_builder extends Com
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_pack_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -7926,7 +7868,7 @@ class az_monitor_log_analytics_workspace_pack_list_command_builder extends Comma
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_saved_search_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, category: string, displayName: string, name: string, resourceGroup: string, savedQuery: string, workspaceName: string) {
+    constructor(commandPath: string, category: string, displayName: string, name: string, resourceGroup: string, savedQuery: string, workspaceName: string) {
         super(commandParent);
         this.category(category)
         this.displayName(displayName)
@@ -8014,7 +7956,7 @@ class az_monitor_log_analytics_workspace_saved_search_create_command_builder ext
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_saved_search_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -8067,7 +8009,7 @@ class az_monitor_log_analytics_workspace_saved_search_delete_command_builder ext
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_saved_search_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -8115,7 +8057,7 @@ class az_monitor_log_analytics_workspace_saved_search_list_command_builder exten
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_saved_search_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -8179,7 +8121,7 @@ class az_monitor_log_analytics_workspace_saved_search_show_command_builder exten
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_saved_search_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -8286,7 +8228,7 @@ class az_monitor_log_analytics_workspace_saved_search_update_command_builder ext
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_table_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -8334,7 +8276,7 @@ class az_monitor_log_analytics_workspace_table_list_command_builder extends Comm
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_table_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -8390,7 +8332,7 @@ class az_monitor_log_analytics_workspace_table_show_command_builder extends Comm
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_table_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, retentionTime: string, workspaceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, retentionTime: string, workspaceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -8452,7 +8394,7 @@ class az_monitor_log_analytics_workspace_table_update_command_builder extends Co
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -8547,7 +8489,7 @@ class az_monitor_log_analytics_workspace_create_command_builder extends CommandB
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -8598,7 +8540,7 @@ class az_monitor_log_analytics_workspace_delete_command_builder extends CommandB
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_get_schema_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -8637,7 +8579,7 @@ class az_monitor_log_analytics_workspace_get_schema_command_builder extends Comm
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_get_shared_keys_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -8673,7 +8615,7 @@ class az_monitor_log_analytics_workspace_get_shared_keys_command_builder extends
  * ```
  */
 class az_monitor_log_analytics_workspace_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -8706,7 +8648,7 @@ class az_monitor_log_analytics_workspace_list_command_builder extends CommandBui
  * ```
  */
 class az_monitor_log_analytics_workspace_list_deleted_workspaces_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -8737,7 +8679,7 @@ class az_monitor_log_analytics_workspace_list_deleted_workspaces_command_builder
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_list_management_groups_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -8776,7 +8718,7 @@ class az_monitor_log_analytics_workspace_list_management_groups_command_builder 
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_list_usages_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -8815,7 +8757,7 @@ class az_monitor_log_analytics_workspace_list_usages_command_builder extends Com
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_recover_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, workspaceName: string) {
+    constructor(commandPath: string, workspaceName: string) {
         super(commandParent);
         this.workspaceName(workspaceName)
     }
@@ -8860,7 +8802,7 @@ class az_monitor_log_analytics_workspace_recover_command_builder extends Command
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -8915,7 +8857,7 @@ class az_monitor_log_analytics_workspace_show_command_builder extends CommandBui
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -9025,7 +8967,7 @@ class az_monitor_log_analytics_workspace_update_command_builder extends CommandB
  * @param {string} name The name of the log profile.
  */
 class az_monitor_log_profiles_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, categories: string, days: string, enabled: boolean, location: string, locations: string, name: string) {
+    constructor(commandPath: string, categories: string, days: string, enabled: boolean, location: string, locations: string, name: string) {
         super(commandParent);
         this.categories(categories)
         this.days(days)
@@ -9108,7 +9050,7 @@ class az_monitor_log_profiles_create_command_builder extends CommandBuilder {
  * @param {string} name The name of the log profile.
  */
 class az_monitor_log_profiles_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -9136,7 +9078,7 @@ class az_monitor_log_profiles_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_monitor_log_profiles_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -9166,7 +9108,7 @@ class az_monitor_log_profiles_list_command_builder extends CommandBuilder {
  * @param {string} name The name of the log profile.
  */
 class az_monitor_log_profiles_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -9206,7 +9148,7 @@ class az_monitor_log_profiles_show_command_builder extends CommandBuilder {
  * @param {string} name The name of the log profile.
  */
 class az_monitor_log_profiles_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -9276,7 +9218,7 @@ class az_monitor_log_profiles_update_command_builder extends CommandBuilder {
  * @param {string} scopes Space-separated list of scopes the rule applies to. The resources specified in this parameter must be of the same type and exist in the same location.
  */
 class az_monitor_metrics_alert_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, condition: string, name: string, resourceGroup: string, scopes: string) {
+    constructor(commandPath: string, condition: string, name: string, resourceGroup: string, scopes: string) {
         super(commandParent);
         this.condition(condition)
         this.name(name)
@@ -9387,7 +9329,7 @@ class az_monitor_metrics_alert_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_monitor_metrics_alert_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -9427,7 +9369,7 @@ class az_monitor_metrics_alert_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_monitor_metrics_alert_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -9463,7 +9405,7 @@ class az_monitor_metrics_alert_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_monitor_metrics_alert_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -9526,7 +9468,7 @@ class az_monitor_metrics_alert_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_monitor_metrics_alert_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -9680,7 +9622,7 @@ class az_monitor_metrics_alert_update_command_builder extends CommandBuilder {
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_metrics_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resource: string) {
+    constructor(commandPath: string, resource: string) {
         super(commandParent);
         this.resource(resource)
     }
@@ -9817,7 +9759,7 @@ class az_monitor_metrics_list_command_builder extends CommandBuilder {
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_metrics_list_definitions_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resource: string) {
+    constructor(commandPath: string, resource: string) {
         super(commandParent);
         this.resource(resource)
     }
@@ -9879,7 +9821,7 @@ class az_monitor_metrics_list_definitions_command_builder extends CommandBuilder
  * ```
  */
 class az_monitor_private_link_scope_private_endpoint_connection_approve_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -9934,7 +9876,7 @@ class az_monitor_private_link_scope_private_endpoint_connection_approve_command_
  * ```
  */
 class az_monitor_private_link_scope_private_endpoint_connection_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -9990,7 +9932,7 @@ class az_monitor_private_link_scope_private_endpoint_connection_delete_command_b
  * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
  */
 class az_monitor_private_link_scope_private_endpoint_connection_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, scopeName: string) {
+    constructor(commandPath: string, resourceGroup: string, scopeName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.scopeName(scopeName)
@@ -10035,7 +9977,7 @@ class az_monitor_private_link_scope_private_endpoint_connection_list_command_bui
  * ```
  */
 class az_monitor_private_link_scope_private_endpoint_connection_reject_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -10090,7 +10032,7 @@ class az_monitor_private_link_scope_private_endpoint_connection_reject_command_b
  * ```
  */
 class az_monitor_private_link_scope_private_endpoint_connection_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -10146,7 +10088,7 @@ class az_monitor_private_link_scope_private_endpoint_connection_show_command_bui
  * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
  */
 class az_monitor_private_link_scope_private_link_resource_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, scopeName: string) {
+    constructor(commandPath: string, resourceGroup: string, scopeName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.scopeName(scopeName)
@@ -10194,7 +10136,7 @@ class az_monitor_private_link_scope_private_link_resource_list_command_builder e
  * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
  */
 class az_monitor_private_link_scope_private_link_resource_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, scopeName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, scopeName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -10250,7 +10192,7 @@ class az_monitor_private_link_scope_private_link_resource_show_command_builder e
  * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
  */
 class az_monitor_private_link_scope_scoped_resource_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, linkedResource: string, name: string, resourceGroup: string, scopeName: string) {
+    constructor(commandPath: string, linkedResource: string, name: string, resourceGroup: string, scopeName: string) {
         super(commandParent);
         this.linkedResource(linkedResource)
         this.name(name)
@@ -10306,7 +10248,7 @@ class az_monitor_private_link_scope_scoped_resource_create_command_builder exten
  * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
  */
 class az_monitor_private_link_scope_scoped_resource_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, scopeName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, scopeName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -10359,7 +10301,7 @@ class az_monitor_private_link_scope_scoped_resource_delete_command_builder exten
  * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
  */
 class az_monitor_private_link_scope_scoped_resource_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, scopeName: string) {
+    constructor(commandPath: string, resourceGroup: string, scopeName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.scopeName(scopeName)
@@ -10407,7 +10349,7 @@ class az_monitor_private_link_scope_scoped_resource_list_command_builder extends
  * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
  */
 class az_monitor_private_link_scope_scoped_resource_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, scopeName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, scopeName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -10460,7 +10402,7 @@ class az_monitor_private_link_scope_scoped_resource_show_command_builder extends
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_private_link_scope_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -10506,7 +10448,7 @@ class az_monitor_private_link_scope_create_command_builder extends CommandBuilde
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_private_link_scope_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -10548,7 +10490,7 @@ class az_monitor_private_link_scope_delete_command_builder extends CommandBuilde
  * ```
  */
 class az_monitor_private_link_scope_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -10586,7 +10528,7 @@ class az_monitor_private_link_scope_list_command_builder extends CommandBuilder 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_private_link_scope_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -10633,7 +10575,7 @@ class az_monitor_private_link_scope_show_command_builder extends CommandBuilder 
  * @param {string} tags Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags.
  */
 class az_monitor_private_link_scope_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, tags: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, tags: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -10681,7 +10623,7 @@ class az_monitor_private_link_scope_update_command_builder extends CommandBuilde
  * @param {string} targetResource Resource ID of the target resource.
  */
 class az_monitor_clone_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, sourceResource: string, targetResource: string) {
+    constructor(commandPath: string, sourceResource: string, targetResource: string) {
         super(commandParent);
         this.sourceResource(sourceResource)
         this.targetResource(targetResource)

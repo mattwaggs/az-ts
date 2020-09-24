@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Enable control which applications can run on your Azure and non-Azure machines (Windows and Linux). */
-export class az_security_adaptive_application_controls implements ICommandParent<any> {
-    commandPath = "az security adaptive-application-controls";
-
+export class az_security_adaptive_application_controls {
     /**
      * Adaptive Application Controls - List.
      *
@@ -13,8 +11,8 @@ export class az_security_adaptive_application_controls implements ICommandParent
      *                                                [--subscription]
      * ```
      */
-    az_security_adaptive_application_controls_list(): az_security_adaptive_application_controls_list_command_builder {
-        return new az_security_adaptive_application_controls_list_command_builder(this);
+    static az_security_adaptive_application_controls_list(): az_security_adaptive_application_controls_list_command_builder {
+        return new az_security_adaptive_application_controls_list_command_builder("az security adaptive-application-controls list");
     }
 
     /**
@@ -29,15 +27,13 @@ export class az_security_adaptive_application_controls implements ICommandParent
      *
      * @param {string} groupName Name of an application control VM/server group.
      */
-    az_security_adaptive_application_controls_show(groupName: string): az_security_adaptive_application_controls_show_command_builder {
-        return new az_security_adaptive_application_controls_show_command_builder(this, groupName);
+    static az_security_adaptive_application_controls_show(groupName: string): az_security_adaptive_application_controls_show_command_builder {
+        return new az_security_adaptive_application_controls_show_command_builder("az security adaptive-application-controls show", groupName);
     }
 }
 
 /** View all Adaptive Network Hardening resources. */
-export class az_security_adaptive_network_hardenings implements ICommandParent<any> {
-    commandPath = "az security adaptive_network_hardenings";
-
+export class az_security_adaptive_network_hardenings {
     /**
      * Gets a list of Adaptive Network Hardenings resources in scope of an extended resource.
      *
@@ -56,8 +52,8 @@ export class az_security_adaptive_network_hardenings implements ICommandParent<a
      * @param {string} resourceNamespace The Namespace of the resource.
      * @param {string} resourceType The type of the resource.
      */
-    az_security_adaptive_network_hardenings_list(resourceGroup: string, resourceName: string, resourceNamespace: string, resourceType: string): az_security_adaptive_network_hardenings_list_command_builder {
-        return new az_security_adaptive_network_hardenings_list_command_builder(this, resourceGroup, resourceName, resourceNamespace, resourceType);
+    static az_security_adaptive_network_hardenings_list(resourceGroup: string, resourceName: string, resourceNamespace: string, resourceType: string): az_security_adaptive_network_hardenings_list_command_builder {
+        return new az_security_adaptive_network_hardenings_list_command_builder("az security adaptive_network_hardenings list", resourceGroup, resourceName, resourceNamespace, resourceType);
     }
 
     /**
@@ -80,15 +76,13 @@ export class az_security_adaptive_network_hardenings implements ICommandParent<a
      * @param {string} resourceNamespace The Namespace of the resource.
      * @param {string} resourceType The type of the resource.
      */
-    az_security_adaptive_network_hardenings_show(adaptiveNetworkHardeningsResourceName: string, resourceGroup: string, resourceName: string, resourceNamespace: string, resourceType: string): az_security_adaptive_network_hardenings_show_command_builder {
-        return new az_security_adaptive_network_hardenings_show_command_builder(this, adaptiveNetworkHardeningsResourceName, resourceGroup, resourceName, resourceNamespace, resourceType);
+    static az_security_adaptive_network_hardenings_show(adaptiveNetworkHardeningsResourceName: string, resourceGroup: string, resourceName: string, resourceNamespace: string, resourceType: string): az_security_adaptive_network_hardenings_show_command_builder {
+        return new az_security_adaptive_network_hardenings_show_command_builder("az security adaptive_network_hardenings show", adaptiveNetworkHardeningsResourceName, resourceGroup, resourceName, resourceNamespace, resourceType);
     }
 }
 
 /** View security alerts. */
-export class az_security_alert implements ICommandParent<any> {
-    commandPath = "az security alert";
-
+export class az_security_alert {
     /**
      * List security alerts.
      *
@@ -100,8 +94,8 @@ export class az_security_alert implements ICommandParent<any> {
      *                        [--subscription]
      * ```
      */
-    az_security_alert_list(): az_security_alert_list_command_builder {
-        return new az_security_alert_list_command_builder(this);
+    static az_security_alert_list(): az_security_alert_list_command_builder {
+        return new az_security_alert_list_command_builder("az security alert list");
     }
 
     /**
@@ -119,8 +113,8 @@ export class az_security_alert implements ICommandParent<any> {
      * @param {string} location Location of the resource.
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_alert_show(location: string, name: string): az_security_alert_show_command_builder {
-        return new az_security_alert_show_command_builder(this, location, name);
+    static az_security_alert_show(location: string, name: string): az_security_alert_show_command_builder {
+        return new az_security_alert_show_command_builder("az security alert show", location, name);
     }
 
     /**
@@ -139,15 +133,13 @@ export class az_security_alert implements ICommandParent<any> {
      * @param {string} name Name of the resource to be fetched.
      * @param {string} status Target status of the alert. possible values are "dismiss" and "activate".
      */
-    az_security_alert_update(location: string, name: string, status: string): az_security_alert_update_command_builder {
-        return new az_security_alert_update_command_builder(this, location, name, status);
+    static az_security_alert_update(location: string, name: string, status: string): az_security_alert_update_command_builder {
+        return new az_security_alert_update_command_builder("az security alert update", location, name, status);
     }
 }
 
 /** View all possible traffic between resources for the subscription and location, based on connection type. */
-export class az_security_allowed_connections implements ICommandParent<any> {
-    commandPath = "az security allowed_connections";
-
+export class az_security_allowed_connections {
     /**
      * List of all possible traffic between resources for the subscription.
      *
@@ -157,8 +149,8 @@ export class az_security_allowed_connections implements ICommandParent<any> {
      *                                      [--subscription]
      * ```
      */
-    az_security_allowed_connections_list(): az_security_allowed_connections_list_command_builder {
-        return new az_security_allowed_connections_list_command_builder(this);
+    static az_security_allowed_connections_list(): az_security_allowed_connections_list_command_builder {
+        return new az_security_allowed_connections_list_command_builder("az security allowed_connections list");
     }
 
     /**
@@ -175,15 +167,13 @@ export class az_security_allowed_connections implements ICommandParent<any> {
      * @param {string} name Name of the resource to be fetched.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_security_allowed_connections_show(name: string, resourceGroup: string): az_security_allowed_connections_show_command_builder {
-        return new az_security_allowed_connections_show_command_builder(this, name, resourceGroup);
+    static az_security_allowed_connections_show(name: string, resourceGroup: string): az_security_allowed_connections_show_command_builder {
+        return new az_security_allowed_connections_show_command_builder("az security allowed_connections show", name, resourceGroup);
     }
 }
 
 /** View your security assessment metadata. */
-export class az_security_assessment_metadata implements ICommandParent<any> {
-    commandPath = "az security assessment-metadata";
-
+export class az_security_assessment_metadata {
     /**
      * Creates a customer managed security assessment type.
      *
@@ -202,8 +192,8 @@ export class az_security_assessment_metadata implements ICommandParent<any> {
      * @param {string} name Name of the resource to be fetched.
      * @param {string} severity Indicates the importance of the security risk if the assessment is unhealthy.
      */
-    az_security_assessment_metadata_create(description: string, displayName: string, name: string, severity: string): az_security_assessment_metadata_create_command_builder {
-        return new az_security_assessment_metadata_create_command_builder(this, description, displayName, name, severity);
+    static az_security_assessment_metadata_create(description: string, displayName: string, name: string, severity: string): az_security_assessment_metadata_create_command_builder {
+        return new az_security_assessment_metadata_create_command_builder("az security assessment-metadata create", description, displayName, name, severity);
     }
 
     /**
@@ -217,8 +207,8 @@ export class az_security_assessment_metadata implements ICommandParent<any> {
      *
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_assessment_metadata_delete(name: string): az_security_assessment_metadata_delete_command_builder {
-        return new az_security_assessment_metadata_delete_command_builder(this, name);
+    static az_security_assessment_metadata_delete(name: string): az_security_assessment_metadata_delete_command_builder {
+        return new az_security_assessment_metadata_delete_command_builder("az security assessment-metadata delete", name);
     }
 
     /**
@@ -230,8 +220,8 @@ export class az_security_assessment_metadata implements ICommandParent<any> {
      *                                      [--subscription]
      * ```
      */
-    az_security_assessment_metadata_list(): az_security_assessment_metadata_list_command_builder {
-        return new az_security_assessment_metadata_list_command_builder(this);
+    static az_security_assessment_metadata_list(): az_security_assessment_metadata_list_command_builder {
+        return new az_security_assessment_metadata_list_command_builder("az security assessment-metadata list");
     }
 
     /**
@@ -246,15 +236,13 @@ export class az_security_assessment_metadata implements ICommandParent<any> {
      *
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_assessment_metadata_show(name: string): az_security_assessment_metadata_show_command_builder {
-        return new az_security_assessment_metadata_show_command_builder(this, name);
+    static az_security_assessment_metadata_show(name: string): az_security_assessment_metadata_show_command_builder {
+        return new az_security_assessment_metadata_show_command_builder("az security assessment-metadata show", name);
     }
 }
 
 /** View your security assessment results. */
-export class az_security_assessment implements ICommandParent<any> {
-    commandPath = "az security assessment";
-
+export class az_security_assessment {
     /**
      * Creates a customer managed security assessment.
      *
@@ -272,8 +260,8 @@ export class az_security_assessment implements ICommandParent<any> {
      * @param {string} name Name of the resource to be fetched.
      * @param {string} statusCode Progremmatic code for the result of the assessment. can be "Healthy", "Unhealthy" or "NotApplicable".
      */
-    az_security_assessment_create(name: string, statusCode: string): az_security_assessment_create_command_builder {
-        return new az_security_assessment_create_command_builder(this, name, statusCode);
+    static az_security_assessment_create(name: string, statusCode: string): az_security_assessment_create_command_builder {
+        return new az_security_assessment_create_command_builder("az security assessment create", name, statusCode);
     }
 
     /**
@@ -288,8 +276,8 @@ export class az_security_assessment implements ICommandParent<any> {
      *
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_assessment_delete(name: string): az_security_assessment_delete_command_builder {
-        return new az_security_assessment_delete_command_builder(this, name);
+    static az_security_assessment_delete(name: string): az_security_assessment_delete_command_builder {
+        return new az_security_assessment_delete_command_builder("az security assessment delete", name);
     }
 
     /**
@@ -301,8 +289,8 @@ export class az_security_assessment implements ICommandParent<any> {
      *                             [--subscription]
      * ```
      */
-    az_security_assessment_list(): az_security_assessment_list_command_builder {
-        return new az_security_assessment_list_command_builder(this);
+    static az_security_assessment_list(): az_security_assessment_list_command_builder {
+        return new az_security_assessment_list_command_builder("az security assessment list");
     }
 
     /**
@@ -318,15 +306,13 @@ export class az_security_assessment implements ICommandParent<any> {
      *
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_assessment_show(name: string): az_security_assessment_show_command_builder {
-        return new az_security_assessment_show_command_builder(this, name);
+    static az_security_assessment_show(name: string): az_security_assessment_show_command_builder {
+        return new az_security_assessment_show_command_builder("az security assessment show", name);
     }
 }
 
 /** View and manage Advanced Threat Protection settings for storage accounts. */
-export class az_security_atp_storage implements ICommandParent<any> {
-    commandPath = "az security atp storage";
-
+export class az_security_atp_storage {
     /**
      * Display Advanced Threat Protection settings for a storage account.
      *
@@ -341,8 +327,8 @@ export class az_security_atp_storage implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} storageAccount Name of an existing storage account.
      */
-    az_security_atp_storage_show(resourceGroup: string, storageAccount: string): az_security_atp_storage_show_command_builder {
-        return new az_security_atp_storage_show_command_builder(this, resourceGroup, storageAccount);
+    static az_security_atp_storage_show(resourceGroup: string, storageAccount: string): az_security_atp_storage_show_command_builder {
+        return new az_security_atp_storage_show_command_builder("az security atp storage show", resourceGroup, storageAccount);
     }
 
     /**
@@ -360,8 +346,8 @@ export class az_security_atp_storage implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} storageAccount Name of an existing storage account.
      */
-    az_security_atp_storage_update(isEnabled: boolean, resourceGroup: string, storageAccount: string): az_security_atp_storage_update_command_builder {
-        return new az_security_atp_storage_update_command_builder(this, isEnabled, resourceGroup, storageAccount);
+    static az_security_atp_storage_update(isEnabled: boolean, resourceGroup: string, storageAccount: string): az_security_atp_storage_update_command_builder {
+        return new az_security_atp_storage_update_command_builder("az security atp storage update", isEnabled, resourceGroup, storageAccount);
     }
 }
 
@@ -370,9 +356,7 @@ export class az_security_atp {
 }
 
 /** View your auto provisioning settings. */
-export class az_security_auto_provisioning_setting implements ICommandParent<any> {
-    commandPath = "az security auto-provisioning-setting";
-
+export class az_security_auto_provisioning_setting {
     /**
      * List the auto provisioning settings.
      *
@@ -382,8 +366,8 @@ export class az_security_auto_provisioning_setting implements ICommandParent<any
      *                                            [--subscription]
      * ```
      */
-    az_security_auto_provisioning_setting_list(): az_security_auto_provisioning_setting_list_command_builder {
-        return new az_security_auto_provisioning_setting_list_command_builder(this);
+    static az_security_auto_provisioning_setting_list(): az_security_auto_provisioning_setting_list_command_builder {
+        return new az_security_auto_provisioning_setting_list_command_builder("az security auto-provisioning-setting list");
     }
 
     /**
@@ -398,8 +382,8 @@ export class az_security_auto_provisioning_setting implements ICommandParent<any
      *
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_auto_provisioning_setting_show(name: string): az_security_auto_provisioning_setting_show_command_builder {
-        return new az_security_auto_provisioning_setting_show_command_builder(this, name);
+    static az_security_auto_provisioning_setting_show(name: string): az_security_auto_provisioning_setting_show_command_builder {
+        return new az_security_auto_provisioning_setting_show_command_builder("az security auto-provisioning-setting show", name);
     }
 
     /**
@@ -415,15 +399,13 @@ export class az_security_auto_provisioning_setting implements ICommandParent<any
      * @param {string} autoProvision Automatic provisioning toggle. possible values are "On" or "Off".
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_auto_provisioning_setting_update(autoProvision: string, name: string): az_security_auto_provisioning_setting_update_command_builder {
-        return new az_security_auto_provisioning_setting_update_command_builder(this, autoProvision, name);
+    static az_security_auto_provisioning_setting_update(autoProvision: string, name: string): az_security_auto_provisioning_setting_update_command_builder {
+        return new az_security_auto_provisioning_setting_update_command_builder("az security auto-provisioning-setting update", autoProvision, name);
     }
 }
 
 /** View your security contacts. */
-export class az_security_contact implements ICommandParent<any> {
-    commandPath = "az security contact";
-
+export class az_security_contact {
     /**
      * Creates a security contact.
      *
@@ -440,8 +422,8 @@ export class az_security_contact implements ICommandParent<any> {
      * @param {string} email E-mail of the security contact.
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_contact_create(email: string, name: string): az_security_contact_create_command_builder {
-        return new az_security_contact_create_command_builder(this, email, name);
+    static az_security_contact_create(email: string, name: string): az_security_contact_create_command_builder {
+        return new az_security_contact_create_command_builder("az security contact create", email, name);
     }
 
     /**
@@ -455,8 +437,8 @@ export class az_security_contact implements ICommandParent<any> {
      *
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_contact_delete(name: string): az_security_contact_delete_command_builder {
-        return new az_security_contact_delete_command_builder(this, name);
+    static az_security_contact_delete(name: string): az_security_contact_delete_command_builder {
+        return new az_security_contact_delete_command_builder("az security contact delete", name);
     }
 
     /**
@@ -468,8 +450,8 @@ export class az_security_contact implements ICommandParent<any> {
      *                          [--subscription]
      * ```
      */
-    az_security_contact_list(): az_security_contact_list_command_builder {
-        return new az_security_contact_list_command_builder(this);
+    static az_security_contact_list(): az_security_contact_list_command_builder {
+        return new az_security_contact_list_command_builder("az security contact list");
     }
 
     /**
@@ -484,15 +466,13 @@ export class az_security_contact implements ICommandParent<any> {
      *
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_contact_show(name: string): az_security_contact_show_command_builder {
-        return new az_security_contact_show_command_builder(this, name);
+    static az_security_contact_show(name: string): az_security_contact_show_command_builder {
+        return new az_security_contact_show_command_builder("az security contact show", name);
     }
 }
 
 /** View your discovered security solutions. */
-export class az_security_discovered_security_solution implements ICommandParent<any> {
-    commandPath = "az security discovered-security-solution";
-
+export class az_security_discovered_security_solution {
     /**
      * List the discovered security solutions.
      *
@@ -502,8 +482,8 @@ export class az_security_discovered_security_solution implements ICommandParent<
      *                                               [--subscription]
      * ```
      */
-    az_security_discovered_security_solution_list(): az_security_discovered_security_solution_list_command_builder {
-        return new az_security_discovered_security_solution_list_command_builder(this);
+    static az_security_discovered_security_solution_list(): az_security_discovered_security_solution_list_command_builder {
+        return new az_security_discovered_security_solution_list_command_builder("az security discovered-security-solution list");
     }
 
     /**
@@ -520,15 +500,13 @@ export class az_security_discovered_security_solution implements ICommandParent<
      * @param {string} name Name of the resource to be fetched.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_security_discovered_security_solution_show(name: string, resourceGroup: string): az_security_discovered_security_solution_show_command_builder {
-        return new az_security_discovered_security_solution_show_command_builder(this, name, resourceGroup);
+    static az_security_discovered_security_solution_show(name: string, resourceGroup: string): az_security_discovered_security_solution_show_command_builder {
+        return new az_security_discovered_security_solution_show_command_builder("az security discovered-security-solution show", name, resourceGroup);
     }
 }
 
 /** View your external security solutions. */
-export class az_security_external_security_solution implements ICommandParent<any> {
-    commandPath = "az security external-security-solution";
-
+export class az_security_external_security_solution {
     /**
      * List the external security solutions.
      *
@@ -538,8 +516,8 @@ export class az_security_external_security_solution implements ICommandParent<an
      *                                             [--subscription]
      * ```
      */
-    az_security_external_security_solution_list(): az_security_external_security_solution_list_command_builder {
-        return new az_security_external_security_solution_list_command_builder(this);
+    static az_security_external_security_solution_list(): az_security_external_security_solution_list_command_builder {
+        return new az_security_external_security_solution_list_command_builder("az security external-security-solution list");
     }
 
     /**
@@ -556,15 +534,13 @@ export class az_security_external_security_solution implements ICommandParent<an
      * @param {string} name Name of the resource to be fetched.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_security_external_security_solution_show(name: string, resourceGroup: string): az_security_external_security_solution_show_command_builder {
-        return new az_security_external_security_solution_show_command_builder(this, name, resourceGroup);
+    static az_security_external_security_solution_show(name: string, resourceGroup: string): az_security_external_security_solution_show_command_builder {
+        return new az_security_external_security_solution_show_command_builder("az security external-security-solution show", name, resourceGroup);
     }
 }
 
 /** View IoT Security aggregated alerts. */
-export class az_security_iot_alerts implements ICommandParent<any> {
-    commandPath = "az security iot-alerts";
-
+export class az_security_iot_alerts {
     /**
      * Dismiss an aggregated IoT Security Alert.
      *
@@ -580,8 +556,8 @@ export class az_security_iot_alerts implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} solutionName Name of the IoT Security solution.
      */
-    az_security_iot_alerts_delete(name: string, resourceGroup: string, solutionName: string): az_security_iot_alerts_delete_command_builder {
-        return new az_security_iot_alerts_delete_command_builder(this, name, resourceGroup, solutionName);
+    static az_security_iot_alerts_delete(name: string, resourceGroup: string, solutionName: string): az_security_iot_alerts_delete_command_builder {
+        return new az_security_iot_alerts_delete_command_builder("az security iot-alerts delete", name, resourceGroup, solutionName);
     }
 
     /**
@@ -598,8 +574,8 @@ export class az_security_iot_alerts implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} solutionName Name of the IoT Security solution.
      */
-    az_security_iot_alerts_list(resourceGroup: string, solutionName: string): az_security_iot_alerts_list_command_builder {
-        return new az_security_iot_alerts_list_command_builder(this, resourceGroup, solutionName);
+    static az_security_iot_alerts_list(resourceGroup: string, solutionName: string): az_security_iot_alerts_list_command_builder {
+        return new az_security_iot_alerts_list_command_builder("az security iot-alerts list", resourceGroup, solutionName);
     }
 
     /**
@@ -618,15 +594,13 @@ export class az_security_iot_alerts implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} solutionName Name of the IoT Security solution.
      */
-    az_security_iot_alerts_show(name: string, resourceGroup: string, solutionName: string): az_security_iot_alerts_show_command_builder {
-        return new az_security_iot_alerts_show_command_builder(this, name, resourceGroup, solutionName);
+    static az_security_iot_alerts_show(name: string, resourceGroup: string, solutionName: string): az_security_iot_alerts_show_command_builder {
+        return new az_security_iot_alerts_show_command_builder("az security iot-alerts show", name, resourceGroup, solutionName);
     }
 }
 
 /** View IoT Security Analytics metrics. */
-export class az_security_iot_analytics implements ICommandParent<any> {
-    commandPath = "az security iot-analytics";
-
+export class az_security_iot_analytics {
     /**
      * List all IoT security Analytics metrics.
      *
@@ -641,8 +615,8 @@ export class az_security_iot_analytics implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} solutionName Name of the IoT Security solution.
      */
-    az_security_iot_analytics_list(resourceGroup: string, solutionName: string): az_security_iot_analytics_list_command_builder {
-        return new az_security_iot_analytics_list_command_builder(this, resourceGroup, solutionName);
+    static az_security_iot_analytics_list(resourceGroup: string, solutionName: string): az_security_iot_analytics_list_command_builder {
+        return new az_security_iot_analytics_list_command_builder("az security iot-analytics list", resourceGroup, solutionName);
     }
 
     /**
@@ -659,15 +633,13 @@ export class az_security_iot_analytics implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} solutionName Name of the IoT Security solution.
      */
-    az_security_iot_analytics_show(resourceGroup: string, solutionName: string): az_security_iot_analytics_show_command_builder {
-        return new az_security_iot_analytics_show_command_builder(this, resourceGroup, solutionName);
+    static az_security_iot_analytics_show(resourceGroup: string, solutionName: string): az_security_iot_analytics_show_command_builder {
+        return new az_security_iot_analytics_show_command_builder("az security iot-analytics show", resourceGroup, solutionName);
     }
 }
 
 /** View IoT Security aggregated recommendations. */
-export class az_security_iot_recommendations implements ICommandParent<any> {
-    commandPath = "az security iot-recommendations";
-
+export class az_security_iot_recommendations {
     /**
      * List all yours IoT Security solution aggregated recommendations.
      *
@@ -682,8 +654,8 @@ export class az_security_iot_recommendations implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} solutionName Name of the IoT Security solution.
      */
-    az_security_iot_recommendations_list(resourceGroup: string, solutionName: string): az_security_iot_recommendations_list_command_builder {
-        return new az_security_iot_recommendations_list_command_builder(this, resourceGroup, solutionName);
+    static az_security_iot_recommendations_list(resourceGroup: string, solutionName: string): az_security_iot_recommendations_list_command_builder {
+        return new az_security_iot_recommendations_list_command_builder("az security iot-recommendations list", resourceGroup, solutionName);
     }
 
     /**
@@ -702,15 +674,13 @@ export class az_security_iot_recommendations implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} solutionName Name of the IoT Security solution.
      */
-    az_security_iot_recommendations_show(name: string, resourceGroup: string, solutionName: string): az_security_iot_recommendations_show_command_builder {
-        return new az_security_iot_recommendations_show_command_builder(this, name, resourceGroup, solutionName);
+    static az_security_iot_recommendations_show(name: string, resourceGroup: string, solutionName: string): az_security_iot_recommendations_show_command_builder {
+        return new az_security_iot_recommendations_show_command_builder("az security iot-recommendations show", name, resourceGroup, solutionName);
     }
 }
 
 /** Manage your IoT Security solution. */
-export class az_security_iot_solution implements ICommandParent<any> {
-    commandPath = "az security iot-solution";
-
+export class az_security_iot_solution {
     /**
      * Create your IoT Security solution.
      *
@@ -730,8 +700,8 @@ export class az_security_iot_solution implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} solutionName Name of the IoT Security solution.
      */
-    az_security_iot_solution_create(displayName: string, iotHubs: string, location: string, resourceGroup: string, solutionName: string): az_security_iot_solution_create_command_builder {
-        return new az_security_iot_solution_create_command_builder(this, displayName, iotHubs, location, resourceGroup, solutionName);
+    static az_security_iot_solution_create(displayName: string, iotHubs: string, location: string, resourceGroup: string, solutionName: string): az_security_iot_solution_create_command_builder {
+        return new az_security_iot_solution_create_command_builder("az security iot-solution create", displayName, iotHubs, location, resourceGroup, solutionName);
     }
 
     /**
@@ -747,8 +717,8 @@ export class az_security_iot_solution implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} solutionName Name of the IoT Security solution.
      */
-    az_security_iot_solution_delete(resourceGroup: string, solutionName: string): az_security_iot_solution_delete_command_builder {
-        return new az_security_iot_solution_delete_command_builder(this, resourceGroup, solutionName);
+    static az_security_iot_solution_delete(resourceGroup: string, solutionName: string): az_security_iot_solution_delete_command_builder {
+        return new az_security_iot_solution_delete_command_builder("az security iot-solution delete", resourceGroup, solutionName);
     }
 
     /**
@@ -761,8 +731,8 @@ export class az_security_iot_solution implements ICommandParent<any> {
      *                               [--subscription]
      * ```
      */
-    az_security_iot_solution_list(): az_security_iot_solution_list_command_builder {
-        return new az_security_iot_solution_list_command_builder(this);
+    static az_security_iot_solution_list(): az_security_iot_solution_list_command_builder {
+        return new az_security_iot_solution_list_command_builder("az security iot-solution list");
     }
 
     /**
@@ -779,8 +749,8 @@ export class az_security_iot_solution implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} solutionName Name of the IoT Security solution.
      */
-    az_security_iot_solution_show(resourceGroup: string, solutionName: string): az_security_iot_solution_show_command_builder {
-        return new az_security_iot_solution_show_command_builder(this, resourceGroup, solutionName);
+    static az_security_iot_solution_show(resourceGroup: string, solutionName: string): az_security_iot_solution_show_command_builder {
+        return new az_security_iot_solution_show_command_builder("az security iot-solution show", resourceGroup, solutionName);
     }
 
     /**
@@ -798,15 +768,13 @@ export class az_security_iot_solution implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} solutionName Name of the IoT Security solution.
      */
-    az_security_iot_solution_update(resourceGroup: string, solutionName: string): az_security_iot_solution_update_command_builder {
-        return new az_security_iot_solution_update_command_builder(this, resourceGroup, solutionName);
+    static az_security_iot_solution_update(resourceGroup: string, solutionName: string): az_security_iot_solution_update_command_builder {
+        return new az_security_iot_solution_update_command_builder("az security iot-solution update", resourceGroup, solutionName);
     }
 }
 
 /** Manage your Just in Time network access policies. */
-export class az_security_jit_policy implements ICommandParent<any> {
-    commandPath = "az security jit-policy";
-
+export class az_security_jit_policy {
     /**
      * List your Just in Time network access policies.
      *
@@ -818,8 +786,8 @@ export class az_security_jit_policy implements ICommandParent<any> {
      *                             [--subscription]
      * ```
      */
-    az_security_jit_policy_list(): az_security_jit_policy_list_command_builder {
-        return new az_security_jit_policy_list_command_builder(this);
+    static az_security_jit_policy_list(): az_security_jit_policy_list_command_builder {
+        return new az_security_jit_policy_list_command_builder("az security jit-policy list");
     }
 
     /**
@@ -838,15 +806,13 @@ export class az_security_jit_policy implements ICommandParent<any> {
      * @param {string} name Name of the resource to be fetched.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_security_jit_policy_show(location: string, name: string, resourceGroup: string): az_security_jit_policy_show_command_builder {
-        return new az_security_jit_policy_show_command_builder(this, location, name, resourceGroup);
+    static az_security_jit_policy_show(location: string, name: string, resourceGroup: string): az_security_jit_policy_show_command_builder {
+        return new az_security_jit_policy_show_command_builder("az security jit-policy show", location, name, resourceGroup);
     }
 }
 
 /** Shows the Azure Security Center Home region location. */
-export class az_security_location implements ICommandParent<any> {
-    commandPath = "az security location";
-
+export class az_security_location {
     /**
      * Shows the Azure Security Center Home region location.
      *
@@ -856,8 +822,8 @@ export class az_security_location implements ICommandParent<any> {
      *                           [--subscription]
      * ```
      */
-    az_security_location_list(): az_security_location_list_command_builder {
-        return new az_security_location_list_command_builder(this);
+    static az_security_location_list(): az_security_location_list_command_builder {
+        return new az_security_location_list_command_builder("az security location list");
     }
 
     /**
@@ -872,15 +838,13 @@ export class az_security_location implements ICommandParent<any> {
      *
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_location_show(name: string): az_security_location_show_command_builder {
-        return new az_security_location_show_command_builder(this, name);
+    static az_security_location_show(name: string): az_security_location_show_command_builder {
+        return new az_security_location_show_command_builder("az security location show", name);
     }
 }
 
 /** Shows the Azure Security Center Pricing tier for the subscription. */
-export class az_security_pricing implements ICommandParent<any> {
-    commandPath = "az security pricing";
-
+export class az_security_pricing {
     /**
      * Updates the Azure Security Center Pricing tier for the subscription.
      *
@@ -895,8 +859,8 @@ export class az_security_pricing implements ICommandParent<any> {
      * @param {string} name Name of the resource to be fetched.
      * @param {string} tier Pricing tier type.
      */
-    az_security_pricing_create(name: string, tier: string): az_security_pricing_create_command_builder {
-        return new az_security_pricing_create_command_builder(this, name, tier);
+    static az_security_pricing_create(name: string, tier: string): az_security_pricing_create_command_builder {
+        return new az_security_pricing_create_command_builder("az security pricing create", name, tier);
     }
 
     /**
@@ -908,8 +872,8 @@ export class az_security_pricing implements ICommandParent<any> {
      *                          [--subscription]
      * ```
      */
-    az_security_pricing_list(): az_security_pricing_list_command_builder {
-        return new az_security_pricing_list_command_builder(this);
+    static az_security_pricing_list(): az_security_pricing_list_command_builder {
+        return new az_security_pricing_list_command_builder("az security pricing list");
     }
 
     /**
@@ -925,15 +889,13 @@ export class az_security_pricing implements ICommandParent<any> {
      *
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_pricing_show(name: string): az_security_pricing_show_command_builder {
-        return new az_security_pricing_show_command_builder(this, name);
+    static az_security_pricing_show(name: string): az_security_pricing_show_command_builder {
+        return new az_security_pricing_show_command_builder("az security pricing show", name);
     }
 }
 
 /** Regulatory compliance assessments. */
-export class az_security_regulatory_compliance_assessments implements ICommandParent<any> {
-    commandPath = "az security regulatory-compliance-assessments";
-
+export class az_security_regulatory_compliance_assessments {
     /**
      * Get details and state of assessments mapped to selected regulatory compliance control.
      *
@@ -948,8 +910,8 @@ export class az_security_regulatory_compliance_assessments implements ICommandPa
      * @param {string} controlName The compliance control name.
      * @param {string} standardName The compliance standard name.
      */
-    az_security_regulatory_compliance_assessments_list(controlName: string, standardName: string): az_security_regulatory_compliance_assessments_list_command_builder {
-        return new az_security_regulatory_compliance_assessments_list_command_builder(this, controlName, standardName);
+    static az_security_regulatory_compliance_assessments_list(controlName: string, standardName: string): az_security_regulatory_compliance_assessments_list_command_builder {
+        return new az_security_regulatory_compliance_assessments_list_command_builder("az security regulatory-compliance-assessments list", controlName, standardName);
     }
 
     /**
@@ -968,15 +930,13 @@ export class az_security_regulatory_compliance_assessments implements ICommandPa
      * @param {string} name Name of the resource to be fetched.
      * @param {string} standardName The compliance standard name.
      */
-    az_security_regulatory_compliance_assessments_show(controlName: string, name: string, standardName: string): az_security_regulatory_compliance_assessments_show_command_builder {
-        return new az_security_regulatory_compliance_assessments_show_command_builder(this, controlName, name, standardName);
+    static az_security_regulatory_compliance_assessments_show(controlName: string, name: string, standardName: string): az_security_regulatory_compliance_assessments_show_command_builder {
+        return new az_security_regulatory_compliance_assessments_show_command_builder("az security regulatory-compliance-assessments show", controlName, name, standardName);
     }
 }
 
 /** Regulatory compliance controls. */
-export class az_security_regulatory_compliance_controls implements ICommandParent<any> {
-    commandPath = "az security regulatory-compliance-controls";
-
+export class az_security_regulatory_compliance_controls {
     /**
      * List supported of regulatory compliance controls details and state for selected standard.
      *
@@ -989,8 +949,8 @@ export class az_security_regulatory_compliance_controls implements ICommandParen
      *
      * @param {string} standardName The compliance standard name.
      */
-    az_security_regulatory_compliance_controls_list(standardName: string): az_security_regulatory_compliance_controls_list_command_builder {
-        return new az_security_regulatory_compliance_controls_list_command_builder(this, standardName);
+    static az_security_regulatory_compliance_controls_list(standardName: string): az_security_regulatory_compliance_controls_list_command_builder {
+        return new az_security_regulatory_compliance_controls_list_command_builder("az security regulatory-compliance-controls list", standardName);
     }
 
     /**
@@ -1007,15 +967,13 @@ export class az_security_regulatory_compliance_controls implements ICommandParen
      * @param {string} name Name of the resource to be fetched.
      * @param {string} standardName The compliance standard name.
      */
-    az_security_regulatory_compliance_controls_show(name: string, standardName: string): az_security_regulatory_compliance_controls_show_command_builder {
-        return new az_security_regulatory_compliance_controls_show_command_builder(this, name, standardName);
+    static az_security_regulatory_compliance_controls_show(name: string, standardName: string): az_security_regulatory_compliance_controls_show_command_builder {
+        return new az_security_regulatory_compliance_controls_show_command_builder("az security regulatory-compliance-controls show", name, standardName);
     }
 }
 
 /** Regulatory compliance standards. */
-export class az_security_regulatory_compliance_standards implements ICommandParent<any> {
-    commandPath = "az security regulatory-compliance-standards";
-
+export class az_security_regulatory_compliance_standards {
     /**
      * List supported regulatory compliance standards details and state results.
      *
@@ -1025,8 +983,8 @@ export class az_security_regulatory_compliance_standards implements ICommandPare
      *                                                  [--subscription]
      * ```
      */
-    az_security_regulatory_compliance_standards_list(): az_security_regulatory_compliance_standards_list_command_builder {
-        return new az_security_regulatory_compliance_standards_list_command_builder(this);
+    static az_security_regulatory_compliance_standards_list(): az_security_regulatory_compliance_standards_list_command_builder {
+        return new az_security_regulatory_compliance_standards_list_command_builder("az security regulatory-compliance-standards list");
     }
 
     /**
@@ -1041,15 +999,13 @@ export class az_security_regulatory_compliance_standards implements ICommandPare
      *
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_regulatory_compliance_standards_show(name: string): az_security_regulatory_compliance_standards_show_command_builder {
-        return new az_security_regulatory_compliance_standards_show_command_builder(this, name);
+    static az_security_regulatory_compliance_standards_show(name: string): az_security_regulatory_compliance_standards_show_command_builder {
+        return new az_security_regulatory_compliance_standards_show_command_builder("az security regulatory-compliance-standards show", name);
     }
 }
 
 /** View your security settings. */
-export class az_security_setting implements ICommandParent<any> {
-    commandPath = "az security setting";
-
+export class az_security_setting {
     /**
      * List security settings.
      *
@@ -1059,8 +1015,8 @@ export class az_security_setting implements ICommandParent<any> {
      *                          [--subscription]
      * ```
      */
-    az_security_setting_list(): az_security_setting_list_command_builder {
-        return new az_security_setting_list_command_builder(this);
+    static az_security_setting_list(): az_security_setting_list_command_builder {
+        return new az_security_setting_list_command_builder("az security setting list");
     }
 
     /**
@@ -1075,15 +1031,13 @@ export class az_security_setting implements ICommandParent<any> {
      *
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_setting_show(name: string): az_security_setting_show_command_builder {
-        return new az_security_setting_show_command_builder(this, name);
+    static az_security_setting_show(name: string): az_security_setting_show_command_builder {
+        return new az_security_setting_show_command_builder("az security setting show", name);
     }
 }
 
 /** View your security sub assessments. */
-export class az_security_sub_assessment implements ICommandParent<any> {
-    commandPath = "az security sub-assessment";
-
+export class az_security_sub_assessment {
     /**
      * List all security sub assessment results.
      *
@@ -1095,8 +1049,8 @@ export class az_security_sub_assessment implements ICommandParent<any> {
      *                                 [--subscription]
      * ```
      */
-    az_security_sub_assessment_list(): az_security_sub_assessment_list_command_builder {
-        return new az_security_sub_assessment_list_command_builder(this);
+    static az_security_sub_assessment_list(): az_security_sub_assessment_list_command_builder {
+        return new az_security_sub_assessment_list_command_builder("az security sub-assessment list");
     }
 
     /**
@@ -1114,15 +1068,13 @@ export class az_security_sub_assessment implements ICommandParent<any> {
      * @param {string} assessmentName Name of the assessment resource.
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_sub_assessment_show(assessmentName: string, name: string): az_security_sub_assessment_show_command_builder {
-        return new az_security_sub_assessment_show_command_builder(this, assessmentName, name);
+    static az_security_sub_assessment_show(assessmentName: string, name: string): az_security_sub_assessment_show_command_builder {
+        return new az_security_sub_assessment_show_command_builder("az security sub-assessment show", assessmentName, name);
     }
 }
 
 /** View security tasks (recommendations). */
-export class az_security_task implements ICommandParent<any> {
-    commandPath = "az security task";
-
+export class az_security_task {
     /**
      * List security tasks (recommendations).
      *
@@ -1133,8 +1085,8 @@ export class az_security_task implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_security_task_list(): az_security_task_list_command_builder {
-        return new az_security_task_list_command_builder(this);
+    static az_security_task_list(): az_security_task_list_command_builder {
+        return new az_security_task_list_command_builder("az security task list");
     }
 
     /**
@@ -1150,15 +1102,13 @@ export class az_security_task implements ICommandParent<any> {
      *
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_task_show(name: string): az_security_task_show_command_builder {
-        return new az_security_task_show_command_builder(this, name);
+    static az_security_task_show(name: string): az_security_task_show_command_builder {
+        return new az_security_task_show_command_builder("az security task show", name);
     }
 }
 
 /** Shows the network topology in your subscription. */
-export class az_security_topology implements ICommandParent<any> {
-    commandPath = "az security topology";
-
+export class az_security_topology {
     /**
      * Shows the network topology in your subscription.
      *
@@ -1168,8 +1118,8 @@ export class az_security_topology implements ICommandParent<any> {
      *                           [--subscription]
      * ```
      */
-    az_security_topology_list(): az_security_topology_list_command_builder {
-        return new az_security_topology_list_command_builder(this);
+    static az_security_topology_list(): az_security_topology_list_command_builder {
+        return new az_security_topology_list_command_builder("az security topology list");
     }
 
     /**
@@ -1186,15 +1136,13 @@ export class az_security_topology implements ICommandParent<any> {
      * @param {string} name Name of the resource to be fetched.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_security_topology_show(name: string, resourceGroup: string): az_security_topology_show_command_builder {
-        return new az_security_topology_show_command_builder(this, name, resourceGroup);
+    static az_security_topology_show(name: string, resourceGroup: string): az_security_topology_show_command_builder {
+        return new az_security_topology_show_command_builder("az security topology show", name, resourceGroup);
     }
 }
 
 /** Shows the workspace settings in your subscription - these settings let you control which workspace will hold your security data. */
-export class az_security_workspace_setting implements ICommandParent<any> {
-    commandPath = "az security workspace-setting";
-
+export class az_security_workspace_setting {
     /**
      * Creates a workspace settings in your subscription - these settings let you control which workspace will hold your security data.
      *
@@ -1208,8 +1156,8 @@ export class az_security_workspace_setting implements ICommandParent<any> {
      * @param {string} name Name of the resource to be fetched.
      * @param {string} targetWorkspace An ID of the workspace resource that will hold the security data.
      */
-    az_security_workspace_setting_create(name: string, targetWorkspace: string): az_security_workspace_setting_create_command_builder {
-        return new az_security_workspace_setting_create_command_builder(this, name, targetWorkspace);
+    static az_security_workspace_setting_create(name: string, targetWorkspace: string): az_security_workspace_setting_create_command_builder {
+        return new az_security_workspace_setting_create_command_builder("az security workspace-setting create", name, targetWorkspace);
     }
 
     /**
@@ -1223,8 +1171,8 @@ export class az_security_workspace_setting implements ICommandParent<any> {
      *
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_workspace_setting_delete(name: string): az_security_workspace_setting_delete_command_builder {
-        return new az_security_workspace_setting_delete_command_builder(this, name);
+    static az_security_workspace_setting_delete(name: string): az_security_workspace_setting_delete_command_builder {
+        return new az_security_workspace_setting_delete_command_builder("az security workspace-setting delete", name);
     }
 
     /**
@@ -1236,8 +1184,8 @@ export class az_security_workspace_setting implements ICommandParent<any> {
      *                                    [--subscription]
      * ```
      */
-    az_security_workspace_setting_list(): az_security_workspace_setting_list_command_builder {
-        return new az_security_workspace_setting_list_command_builder(this);
+    static az_security_workspace_setting_list(): az_security_workspace_setting_list_command_builder {
+        return new az_security_workspace_setting_list_command_builder("az security workspace-setting list");
     }
 
     /**
@@ -1252,8 +1200,8 @@ export class az_security_workspace_setting implements ICommandParent<any> {
      *
      * @param {string} name Name of the resource to be fetched.
      */
-    az_security_workspace_setting_show(name: string): az_security_workspace_setting_show_command_builder {
-        return new az_security_workspace_setting_show_command_builder(this, name);
+    static az_security_workspace_setting_show(name: string): az_security_workspace_setting_show_command_builder {
+        return new az_security_workspace_setting_show_command_builder("az security workspace-setting show", name);
     }
 }
 
@@ -1271,7 +1219,7 @@ export class az_security {
  * ```
  */
 class az_security_adaptive_application_controls_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1301,7 +1249,7 @@ class az_security_adaptive_application_controls_list_command_builder extends Com
  * @param {string} groupName Name of an application control VM/server group.
  */
 class az_security_adaptive_application_controls_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, groupName: string) {
+    constructor(commandPath: string, groupName: string) {
         super(commandParent);
         this.groupName(groupName)
     }
@@ -1344,7 +1292,7 @@ class az_security_adaptive_application_controls_show_command_builder extends Com
  * @param {string} resourceType The type of the resource.
  */
 class az_security_adaptive_network_hardenings_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, resourceName: string, resourceNamespace: string, resourceType: string) {
+    constructor(commandPath: string, resourceGroup: string, resourceName: string, resourceNamespace: string, resourceType: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.resourceName(resourceName)
@@ -1410,7 +1358,7 @@ class az_security_adaptive_network_hardenings_list_command_builder extends Comma
  * @param {string} resourceType The type of the resource.
  */
 class az_security_adaptive_network_hardenings_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, adaptiveNetworkHardeningsResourceName: string, resourceGroup: string, resourceName: string, resourceNamespace: string, resourceType: string) {
+    constructor(commandPath: string, adaptiveNetworkHardeningsResourceName: string, resourceGroup: string, resourceName: string, resourceNamespace: string, resourceType: string) {
         super(commandParent);
         this.adaptiveNetworkHardeningsResourceName(adaptiveNetworkHardeningsResourceName)
         this.resourceGroup(resourceGroup)
@@ -1474,7 +1422,7 @@ class az_security_adaptive_network_hardenings_show_command_builder extends Comma
  * ```
  */
 class az_security_alert_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1519,7 +1467,7 @@ class az_security_alert_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_alert_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string, name: string) {
+    constructor(commandPath: string, location: string, name: string) {
         super(commandParent);
         this.location(location)
         this.name(name)
@@ -1573,7 +1521,7 @@ class az_security_alert_show_command_builder extends CommandBuilder {
  * @param {string} status Target status of the alert. possible values are "dismiss" and "activate".
  */
 class az_security_alert_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string, name: string, status: string) {
+    constructor(commandPath: string, location: string, name: string, status: string) {
         super(commandParent);
         this.location(location)
         this.name(name)
@@ -1621,7 +1569,7 @@ class az_security_alert_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_security_allowed_connections_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1653,7 +1601,7 @@ class az_security_allowed_connections_list_command_builder extends CommandBuilde
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_security_allowed_connections_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1703,7 +1651,7 @@ class az_security_allowed_connections_show_command_builder extends CommandBuilde
  * @param {string} severity Indicates the importance of the security risk if the assessment is unhealthy.
  */
 class az_security_assessment_metadata_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, description: string, displayName: string, name: string, severity: string) {
+    constructor(commandPath: string, description: string, displayName: string, name: string, severity: string) {
         super(commandParent);
         this.description(description)
         this.displayName(displayName)
@@ -1760,7 +1708,7 @@ class az_security_assessment_metadata_create_command_builder extends CommandBuil
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_assessment_metadata_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -1788,7 +1736,7 @@ class az_security_assessment_metadata_delete_command_builder extends CommandBuil
  * ```
  */
 class az_security_assessment_metadata_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1818,7 +1766,7 @@ class az_security_assessment_metadata_list_command_builder extends CommandBuilde
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_assessment_metadata_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -1860,7 +1808,7 @@ class az_security_assessment_metadata_show_command_builder extends CommandBuilde
  * @param {string} statusCode Progremmatic code for the result of the assessment. can be "Healthy", "Unhealthy" or "NotApplicable".
  */
 class az_security_assessment_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, statusCode: string) {
+    constructor(commandPath: string, name: string, statusCode: string) {
         super(commandParent);
         this.name(name)
         this.statusCode(statusCode)
@@ -1922,7 +1870,7 @@ class az_security_assessment_create_command_builder extends CommandBuilder {
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_assessment_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -1956,7 +1904,7 @@ class az_security_assessment_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_security_assessment_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1987,7 +1935,7 @@ class az_security_assessment_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_assessment_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2032,7 +1980,7 @@ class az_security_assessment_show_command_builder extends CommandBuilder {
  * @param {string} storageAccount Name of an existing storage account.
  */
 class az_security_atp_storage_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, storageAccount: string) {
+    constructor(commandPath: string, resourceGroup: string, storageAccount: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.storageAccount(storageAccount)
@@ -2079,7 +2027,7 @@ class az_security_atp_storage_show_command_builder extends CommandBuilder {
  * @param {string} storageAccount Name of an existing storage account.
  */
 class az_security_atp_storage_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, isEnabled: boolean, resourceGroup: string, storageAccount: string) {
+    constructor(commandPath: string, isEnabled: boolean, resourceGroup: string, storageAccount: string) {
         super(commandParent);
         this.isEnabled(isEnabled)
         this.resourceGroup(resourceGroup)
@@ -2121,7 +2069,7 @@ class az_security_atp_storage_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_security_auto_provisioning_setting_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2151,7 +2099,7 @@ class az_security_auto_provisioning_setting_list_command_builder extends Command
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_auto_provisioning_setting_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2189,7 +2137,7 @@ class az_security_auto_provisioning_setting_show_command_builder extends Command
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_auto_provisioning_setting_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, autoProvision: string, name: string) {
+    constructor(commandPath: string, autoProvision: string, name: string) {
         super(commandParent);
         this.autoProvision(autoProvision)
         this.name(name)
@@ -2231,7 +2179,7 @@ class az_security_auto_provisioning_setting_update_command_builder extends Comma
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_contact_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, email: string, name: string) {
+    constructor(commandPath: string, email: string, name: string) {
         super(commandParent);
         this.email(email)
         this.name(name)
@@ -2286,7 +2234,7 @@ class az_security_contact_create_command_builder extends CommandBuilder {
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_contact_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2314,7 +2262,7 @@ class az_security_contact_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_security_contact_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2344,7 +2292,7 @@ class az_security_contact_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_contact_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2378,7 +2326,7 @@ class az_security_contact_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_security_discovered_security_solution_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2410,7 +2358,7 @@ class az_security_discovered_security_solution_list_command_builder extends Comm
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_security_discovered_security_solution_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2451,7 +2399,7 @@ class az_security_discovered_security_solution_show_command_builder extends Comm
  * ```
  */
 class az_security_external_security_solution_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2483,7 +2431,7 @@ class az_security_external_security_solution_list_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_security_external_security_solution_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2530,7 +2478,7 @@ class az_security_external_security_solution_show_command_builder extends Comman
  * @param {string} solutionName Name of the IoT Security solution.
  */
 class az_security_iot_alerts_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, solutionName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, solutionName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2577,7 +2525,7 @@ class az_security_iot_alerts_delete_command_builder extends CommandBuilder {
  * @param {string} solutionName Name of the IoT Security solution.
  */
 class az_security_iot_alerts_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, solutionName: string) {
+    constructor(commandPath: string, resourceGroup: string, solutionName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.solutionName(solutionName)
@@ -2625,7 +2573,7 @@ class az_security_iot_alerts_list_command_builder extends CommandBuilder {
  * @param {string} solutionName Name of the IoT Security solution.
  */
 class az_security_iot_alerts_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, solutionName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, solutionName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2678,7 +2626,7 @@ class az_security_iot_alerts_show_command_builder extends CommandBuilder {
  * @param {string} solutionName Name of the IoT Security solution.
  */
 class az_security_iot_analytics_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, solutionName: string) {
+    constructor(commandPath: string, resourceGroup: string, solutionName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.solutionName(solutionName)
@@ -2724,7 +2672,7 @@ class az_security_iot_analytics_list_command_builder extends CommandBuilder {
  * @param {string} solutionName Name of the IoT Security solution.
  */
 class az_security_iot_analytics_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, solutionName: string) {
+    constructor(commandPath: string, resourceGroup: string, solutionName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.solutionName(solutionName)
@@ -2770,7 +2718,7 @@ class az_security_iot_analytics_show_command_builder extends CommandBuilder {
  * @param {string} solutionName Name of the IoT Security solution.
  */
 class az_security_iot_recommendations_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, solutionName: string) {
+    constructor(commandPath: string, resourceGroup: string, solutionName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.solutionName(solutionName)
@@ -2818,7 +2766,7 @@ class az_security_iot_recommendations_list_command_builder extends CommandBuilde
  * @param {string} solutionName Name of the IoT Security solution.
  */
 class az_security_iot_recommendations_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, solutionName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, solutionName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2876,7 +2824,7 @@ class az_security_iot_recommendations_show_command_builder extends CommandBuilde
  * @param {string} solutionName Name of the IoT Security solution.
  */
 class az_security_iot_solution_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, displayName: string, iotHubs: string, location: string, resourceGroup: string, solutionName: string) {
+    constructor(commandPath: string, displayName: string, iotHubs: string, location: string, resourceGroup: string, solutionName: string) {
         super(commandParent);
         this.displayName(displayName)
         this.iotHubs(iotHubs)
@@ -2936,7 +2884,7 @@ class az_security_iot_solution_create_command_builder extends CommandBuilder {
  * @param {string} solutionName Name of the IoT Security solution.
  */
 class az_security_iot_solution_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, solutionName: string) {
+    constructor(commandPath: string, resourceGroup: string, solutionName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.solutionName(solutionName)
@@ -2972,7 +2920,7 @@ class az_security_iot_solution_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_security_iot_solution_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3010,7 +2958,7 @@ class az_security_iot_solution_list_command_builder extends CommandBuilder {
  * @param {string} solutionName Name of the IoT Security solution.
  */
 class az_security_iot_solution_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, solutionName: string) {
+    constructor(commandPath: string, resourceGroup: string, solutionName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.solutionName(solutionName)
@@ -3057,7 +3005,7 @@ class az_security_iot_solution_show_command_builder extends CommandBuilder {
  * @param {string} solutionName Name of the IoT Security solution.
  */
 class az_security_iot_solution_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, solutionName: string) {
+    constructor(commandPath: string, resourceGroup: string, solutionName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.solutionName(solutionName)
@@ -3106,7 +3054,7 @@ class az_security_iot_solution_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_security_jit_policy_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3152,7 +3100,7 @@ class az_security_jit_policy_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_security_jit_policy_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, location: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.location(location)
         this.name(name)
@@ -3200,7 +3148,7 @@ class az_security_jit_policy_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_security_location_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3230,7 +3178,7 @@ class az_security_location_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_location_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3269,7 +3217,7 @@ class az_security_location_show_command_builder extends CommandBuilder {
  * @param {string} tier Pricing tier type.
  */
 class az_security_pricing_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, tier: string) {
+    constructor(commandPath: string, name: string, tier: string) {
         super(commandParent);
         this.name(name)
         this.tier(tier)
@@ -3310,7 +3258,7 @@ class az_security_pricing_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_security_pricing_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3341,7 +3289,7 @@ class az_security_pricing_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_pricing_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3386,7 +3334,7 @@ class az_security_pricing_show_command_builder extends CommandBuilder {
  * @param {string} standardName The compliance standard name.
  */
 class az_security_regulatory_compliance_assessments_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, controlName: string, standardName: string) {
+    constructor(commandPath: string, controlName: string, standardName: string) {
         super(commandParent);
         this.controlName(controlName)
         this.standardName(standardName)
@@ -3434,7 +3382,7 @@ class az_security_regulatory_compliance_assessments_list_command_builder extends
  * @param {string} standardName The compliance standard name.
  */
 class az_security_regulatory_compliance_assessments_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, controlName: string, name: string, standardName: string) {
+    constructor(commandPath: string, controlName: string, name: string, standardName: string) {
         super(commandParent);
         this.controlName(controlName)
         this.name(name)
@@ -3485,7 +3433,7 @@ class az_security_regulatory_compliance_assessments_show_command_builder extends
  * @param {string} standardName The compliance standard name.
  */
 class az_security_regulatory_compliance_controls_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, standardName: string) {
+    constructor(commandPath: string, standardName: string) {
         super(commandParent);
         this.standardName(standardName)
     }
@@ -3524,7 +3472,7 @@ class az_security_regulatory_compliance_controls_list_command_builder extends Co
  * @param {string} standardName The compliance standard name.
  */
 class az_security_regulatory_compliance_controls_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, standardName: string) {
+    constructor(commandPath: string, name: string, standardName: string) {
         super(commandParent);
         this.name(name)
         this.standardName(standardName)
@@ -3565,7 +3513,7 @@ class az_security_regulatory_compliance_controls_show_command_builder extends Co
  * ```
  */
 class az_security_regulatory_compliance_standards_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3595,7 +3543,7 @@ class az_security_regulatory_compliance_standards_list_command_builder extends C
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_regulatory_compliance_standards_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3629,7 +3577,7 @@ class az_security_regulatory_compliance_standards_show_command_builder extends C
  * ```
  */
 class az_security_setting_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3659,7 +3607,7 @@ class az_security_setting_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_setting_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3695,7 +3643,7 @@ class az_security_setting_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_security_sub_assessment_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3740,7 +3688,7 @@ class az_security_sub_assessment_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_sub_assessment_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, assessmentName: string, name: string) {
+    constructor(commandPath: string, assessmentName: string, name: string) {
         super(commandParent);
         this.assessmentName(assessmentName)
         this.name(name)
@@ -3788,7 +3736,7 @@ class az_security_sub_assessment_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_security_task_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3825,7 +3773,7 @@ class az_security_task_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_task_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3865,7 +3813,7 @@ class az_security_task_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_security_topology_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3897,7 +3845,7 @@ class az_security_topology_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_security_topology_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3942,7 +3890,7 @@ class az_security_topology_show_command_builder extends CommandBuilder {
  * @param {string} targetWorkspace An ID of the workspace resource that will hold the security data.
  */
 class az_security_workspace_setting_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, targetWorkspace: string) {
+    constructor(commandPath: string, name: string, targetWorkspace: string) {
         super(commandParent);
         this.name(name)
         this.targetWorkspace(targetWorkspace)
@@ -3979,7 +3927,7 @@ class az_security_workspace_setting_create_command_builder extends CommandBuilde
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_workspace_setting_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4007,7 +3955,7 @@ class az_security_workspace_setting_delete_command_builder extends CommandBuilde
  * ```
  */
 class az_security_workspace_setting_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4037,7 +3985,7 @@ class az_security_workspace_setting_list_command_builder extends CommandBuilder 
  * @param {string} name Name of the resource to be fetched.
  */
 class az_security_workspace_setting_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }

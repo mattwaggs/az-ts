@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage private Tasks agent pools with Azure Container Registries. */
-export class az_acr_agentpool implements ICommandParent<any> {
-    commandPath = "az acr agentpool";
-
+export class az_acr_agentpool {
     /**
      * Create an agent pool for an Azure Container Registry.
      *
@@ -23,8 +21,8 @@ export class az_acr_agentpool implements ICommandParent<any> {
      * @param {string} name The name of the agent pool.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_agentpool_create(name: string, registry: string): az_acr_agentpool_create_command_builder {
-        return new az_acr_agentpool_create_command_builder(this, name, registry);
+    static az_acr_agentpool_create(name: string, registry: string): az_acr_agentpool_create_command_builder {
+        return new az_acr_agentpool_create_command_builder("az acr agentpool create", name, registry);
     }
 
     /**
@@ -43,8 +41,8 @@ export class az_acr_agentpool implements ICommandParent<any> {
      * @param {string} name The name of the agent pool.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_agentpool_delete(name: string, registry: string): az_acr_agentpool_delete_command_builder {
-        return new az_acr_agentpool_delete_command_builder(this, name, registry);
+    static az_acr_agentpool_delete(name: string, registry: string): az_acr_agentpool_delete_command_builder {
+        return new az_acr_agentpool_delete_command_builder("az acr agentpool delete", name, registry);
     }
 
     /**
@@ -60,8 +58,8 @@ export class az_acr_agentpool implements ICommandParent<any> {
      *
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_agentpool_list(registry: string): az_acr_agentpool_list_command_builder {
-        return new az_acr_agentpool_list_command_builder(this, registry);
+    static az_acr_agentpool_list(registry: string): az_acr_agentpool_list_command_builder {
+        return new az_acr_agentpool_list_command_builder("az acr agentpool list", registry);
     }
 
     /**
@@ -80,8 +78,8 @@ export class az_acr_agentpool implements ICommandParent<any> {
      * @param {string} name The name of the agent pool.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_agentpool_show(name: string, registry: string): az_acr_agentpool_show_command_builder {
-        return new az_acr_agentpool_show_command_builder(this, name, registry);
+    static az_acr_agentpool_show(name: string, registry: string): az_acr_agentpool_show_command_builder {
+        return new az_acr_agentpool_show_command_builder("az acr agentpool show", name, registry);
     }
 
     /**
@@ -100,15 +98,13 @@ export class az_acr_agentpool implements ICommandParent<any> {
      * @param {string} name The name of the agent pool.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_agentpool_update(name: string, registry: string): az_acr_agentpool_update_command_builder {
-        return new az_acr_agentpool_update_command_builder(this, name, registry);
+    static az_acr_agentpool_update(name: string, registry: string): az_acr_agentpool_update_command_builder {
+        return new az_acr_agentpool_update_command_builder("az acr agentpool update", name, registry);
     }
 }
 
 /** Manage content-trust policy for Azure Container Registries. */
-export class az_acr_config_content_trust implements ICommandParent<any> {
-    commandPath = "az acr config content-trust";
-
+export class az_acr_config_content_trust {
     /**
      * Show the configured content-trust policy for an Azure Container Registry.
      *
@@ -122,8 +118,8 @@ export class az_acr_config_content_trust implements ICommandParent<any> {
      *
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_config_content_trust_show(registry: string): az_acr_config_content_trust_show_command_builder {
-        return new az_acr_config_content_trust_show_command_builder(this, registry);
+    static az_acr_config_content_trust_show(registry: string): az_acr_config_content_trust_show_command_builder {
+        return new az_acr_config_content_trust_show_command_builder("az acr config content-trust show", registry);
     }
 
     /**
@@ -139,15 +135,13 @@ export class az_acr_config_content_trust implements ICommandParent<any> {
      *
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_config_content_trust_update(registry: string): az_acr_config_content_trust_update_command_builder {
-        return new az_acr_config_content_trust_update_command_builder(this, registry);
+    static az_acr_config_content_trust_update(registry: string): az_acr_config_content_trust_update_command_builder {
+        return new az_acr_config_content_trust_update_command_builder("az acr config content-trust update", registry);
     }
 }
 
 /** Manage retention policy for Azure Container Registries. */
-export class az_acr_config_retention implements ICommandParent<any> {
-    commandPath = "az acr config retention";
-
+export class az_acr_config_retention {
     /**
      * Show the configured retention policy for an Azure Container Registry.
      *
@@ -161,8 +155,8 @@ export class az_acr_config_retention implements ICommandParent<any> {
      *
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_config_retention_show(registry: string): az_acr_config_retention_show_command_builder {
-        return new az_acr_config_retention_show_command_builder(this, registry);
+    static az_acr_config_retention_show(registry: string): az_acr_config_retention_show_command_builder {
+        return new az_acr_config_retention_show_command_builder("az acr config retention show", registry);
     }
 
     /**
@@ -181,8 +175,8 @@ export class az_acr_config_retention implements ICommandParent<any> {
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      * @param {'UntaggedManifests'} type The type of retention policy.
      */
-    az_acr_config_retention_update(registry: string, type: 'UntaggedManifests'): az_acr_config_retention_update_command_builder {
-        return new az_acr_config_retention_update_command_builder(this, registry, type);
+    static az_acr_config_retention_update(registry: string, type: 'UntaggedManifests'): az_acr_config_retention_update_command_builder {
+        return new az_acr_config_retention_update_command_builder("az acr config retention update", registry, type);
     }
 }
 
@@ -191,9 +185,7 @@ export class az_acr_config {
 }
 
 /** Manage login credentials for Azure Container Registries. */
-export class az_acr_credential implements ICommandParent<any> {
-    commandPath = "az acr credential";
-
+export class az_acr_credential {
     /**
      * Regenerate login credentials for an Azure Container Registry.
      *
@@ -208,8 +200,8 @@ export class az_acr_credential implements ICommandParent<any> {
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      * @param {'password' | 'password2'} passwordName The name of password to regenerate.
      */
-    az_acr_credential_renew(name: string, passwordName: 'password' | 'password2'): az_acr_credential_renew_command_builder {
-        return new az_acr_credential_renew_command_builder(this, name, passwordName);
+    static az_acr_credential_renew(name: string, passwordName: 'password' | 'password2'): az_acr_credential_renew_command_builder {
+        return new az_acr_credential_renew_command_builder("az acr credential renew", name, passwordName);
     }
 
     /**
@@ -225,15 +217,13 @@ export class az_acr_credential implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_credential_show(name: string): az_acr_credential_show_command_builder {
-        return new az_acr_credential_show_command_builder(this, name);
+    static az_acr_credential_show(name: string): az_acr_credential_show_command_builder {
+        return new az_acr_credential_show_command_builder("az acr credential show", name);
     }
 }
 
 /** Manage container registry encryption. */
-export class az_acr_encryption implements ICommandParent<any> {
-    commandPath = "az acr encryption";
-
+export class az_acr_encryption {
     /**
      * Rotate (update) the container registry's encryption key.
      *
@@ -248,8 +238,8 @@ export class az_acr_encryption implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_encryption_rotate_key(name: string): az_acr_encryption_rotate_key_command_builder {
-        return new az_acr_encryption_rotate_key_command_builder(this, name);
+    static az_acr_encryption_rotate_key(name: string): az_acr_encryption_rotate_key_command_builder {
+        return new az_acr_encryption_rotate_key_command_builder("az acr encryption rotate-key", name);
     }
 
     /**
@@ -265,15 +255,13 @@ export class az_acr_encryption implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_encryption_show(name: string): az_acr_encryption_show_command_builder {
-        return new az_acr_encryption_show_command_builder(this, name);
+    static az_acr_encryption_show(name: string): az_acr_encryption_show_command_builder {
+        return new az_acr_encryption_show_command_builder("az acr encryption show", name);
     }
 }
 
 /** Manage helm chart repositories for Azure Container Registries. */
-export class az_acr_helm_repo implements ICommandParent<any> {
-    commandPath = "az acr helm repo";
-
+export class az_acr_helm_repo {
     /**
      * Add a helm chart repository from an Azure Container Registry through the Helm CLI.
      *
@@ -289,15 +277,13 @@ export class az_acr_helm_repo implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_helm_repo_add(name: string): az_acr_helm_repo_add_command_builder {
-        return new az_acr_helm_repo_add_command_builder(this, name);
+    static az_acr_helm_repo_add(name: string): az_acr_helm_repo_add_command_builder {
+        return new az_acr_helm_repo_add_command_builder("az acr helm repo add", name);
     }
 }
 
 /** Manage helm charts for Azure Container Registries. */
-export class az_acr_helm implements ICommandParent<any> {
-    commandPath = "az acr helm";
-
+export class az_acr_helm {
     /**
      * Delete a helm chart version in an Azure Container Registry.
      *
@@ -317,8 +303,8 @@ export class az_acr_helm implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_helm_delete(name: string): az_acr_helm_delete_command_builder {
-        return new az_acr_helm_delete_command_builder(this, name);
+    static az_acr_helm_delete(name: string): az_acr_helm_delete_command_builder {
+        return new az_acr_helm_delete_command_builder("az acr helm delete", name);
     }
 
     /**
@@ -332,8 +318,8 @@ export class az_acr_helm implements ICommandParent<any> {
      *                         [--yes]
      * ```
      */
-    az_acr_helm_install_cli(): az_acr_helm_install_cli_command_builder {
-        return new az_acr_helm_install_cli_command_builder(this);
+    static az_acr_helm_install_cli(): az_acr_helm_install_cli_command_builder {
+        return new az_acr_helm_install_cli_command_builder("az acr helm install-cli");
     }
 
     /**
@@ -352,8 +338,8 @@ export class az_acr_helm implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_helm_list(name: string): az_acr_helm_list_command_builder {
-        return new az_acr_helm_list_command_builder(this, name);
+    static az_acr_helm_list(name: string): az_acr_helm_list_command_builder {
+        return new az_acr_helm_list_command_builder("az acr helm list", name);
     }
 
     /**
@@ -373,8 +359,8 @@ export class az_acr_helm implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_helm_push(name: string): az_acr_helm_push_command_builder {
-        return new az_acr_helm_push_command_builder(this, name);
+    static az_acr_helm_push(name: string): az_acr_helm_push_command_builder {
+        return new az_acr_helm_push_command_builder("az acr helm push", name);
     }
 
     /**
@@ -395,15 +381,13 @@ export class az_acr_helm implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_helm_show(name: string): az_acr_helm_show_command_builder {
-        return new az_acr_helm_show_command_builder(this, name);
+    static az_acr_helm_show(name: string): az_acr_helm_show_command_builder {
+        return new az_acr_helm_show_command_builder("az acr helm show", name);
     }
 }
 
 /** Manage service (managed) identities for a container registry. */
-export class az_acr_identity implements ICommandParent<any> {
-    commandPath = "az acr identity";
-
+export class az_acr_identity {
     /**
      * Assign a managed identity to a container registry.
      *
@@ -418,8 +402,8 @@ export class az_acr_identity implements ICommandParent<any> {
      * @param {string} identities Space-separated identities. Use '[system]' to refer to the system assigned identity.
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_identity_assign(identities: string, name: string): az_acr_identity_assign_command_builder {
-        return new az_acr_identity_assign_command_builder(this, identities, name);
+    static az_acr_identity_assign(identities: string, name: string): az_acr_identity_assign_command_builder {
+        return new az_acr_identity_assign_command_builder("az acr identity assign", identities, name);
     }
 
     /**
@@ -436,8 +420,8 @@ export class az_acr_identity implements ICommandParent<any> {
      * @param {string} identities Space-separated identities. Use '[system]' to refer to the system assigned identity.
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_identity_remove(identities: string, name: string): az_acr_identity_remove_command_builder {
-        return new az_acr_identity_remove_command_builder(this, identities, name);
+    static az_acr_identity_remove(identities: string, name: string): az_acr_identity_remove_command_builder {
+        return new az_acr_identity_remove_command_builder("az acr identity remove", identities, name);
     }
 
     /**
@@ -453,15 +437,13 @@ export class az_acr_identity implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_identity_show(name: string): az_acr_identity_show_command_builder {
-        return new az_acr_identity_show_command_builder(this, name);
+    static az_acr_identity_show(name: string): az_acr_identity_show_command_builder {
+        return new az_acr_identity_show_command_builder("az acr identity show", name);
     }
 }
 
 /** Manage network rules for Azure Container Registries. */
-export class az_acr_network_rule implements ICommandParent<any> {
-    commandPath = "az acr network-rule";
-
+export class az_acr_network_rule {
     /**
      * Add a network rule.
      *
@@ -477,8 +459,8 @@ export class az_acr_network_rule implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_network_rule_add(name: string): az_acr_network_rule_add_command_builder {
-        return new az_acr_network_rule_add_command_builder(this, name);
+    static az_acr_network_rule_add(name: string): az_acr_network_rule_add_command_builder {
+        return new az_acr_network_rule_add_command_builder("az acr network-rule add", name);
     }
 
     /**
@@ -494,8 +476,8 @@ export class az_acr_network_rule implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_network_rule_list(name: string): az_acr_network_rule_list_command_builder {
-        return new az_acr_network_rule_list_command_builder(this, name);
+    static az_acr_network_rule_list(name: string): az_acr_network_rule_list_command_builder {
+        return new az_acr_network_rule_list_command_builder("az acr network-rule list", name);
     }
 
     /**
@@ -513,15 +495,13 @@ export class az_acr_network_rule implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_network_rule_remove(name: string): az_acr_network_rule_remove_command_builder {
-        return new az_acr_network_rule_remove_command_builder(this, name);
+    static az_acr_network_rule_remove(name: string): az_acr_network_rule_remove_command_builder {
+        return new az_acr_network_rule_remove_command_builder("az acr network-rule remove", name);
     }
 }
 
 /** Manage Azure Container Registry Tasks that use Cloud Native Buildpacks. */
-export class az_acr_pack implements ICommandParent<any> {
-    commandPath = "az acr pack";
-
+export class az_acr_pack {
     /**
      * Queues a quick build task that builds an app and pushes it into an Azure Container Registry.
      *
@@ -548,15 +528,13 @@ export class az_acr_pack implements ICommandParent<any> {
      * @param {string} image The name and tag of the image using the format: '-t repo/image:tag'.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_pack_build(builder: string, image: string, registry: string): az_acr_pack_build_command_builder {
-        return new az_acr_pack_build_command_builder(this, builder, image, registry);
+    static az_acr_pack_build(builder: string, image: string, registry: string): az_acr_pack_build_command_builder {
+        return new az_acr_pack_build_command_builder("az acr pack build", builder, image, registry);
     }
 }
 
 /** Manage container registry private endpoint connections. */
-export class az_acr_private_endpoint_connection implements ICommandParent<any> {
-    commandPath = "az acr private-endpoint-connection";
-
+export class az_acr_private_endpoint_connection {
     /**
      * Approve a private endpoint connection request for a container registry.
      *
@@ -572,8 +550,8 @@ export class az_acr_private_endpoint_connection implements ICommandParent<any> {
      * @param {string} name The name of the private endpoint connection.
      * @param {string} registryName The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_private_endpoint_connection_approve(name: string, registryName: string): az_acr_private_endpoint_connection_approve_command_builder {
-        return new az_acr_private_endpoint_connection_approve_command_builder(this, name, registryName);
+    static az_acr_private_endpoint_connection_approve(name: string, registryName: string): az_acr_private_endpoint_connection_approve_command_builder {
+        return new az_acr_private_endpoint_connection_approve_command_builder("az acr private-endpoint-connection approve", name, registryName);
     }
 
     /**
@@ -590,8 +568,8 @@ export class az_acr_private_endpoint_connection implements ICommandParent<any> {
      * @param {string} name The name of the private endpoint connection.
      * @param {string} registryName The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_private_endpoint_connection_delete(name: string, registryName: string): az_acr_private_endpoint_connection_delete_command_builder {
-        return new az_acr_private_endpoint_connection_delete_command_builder(this, name, registryName);
+    static az_acr_private_endpoint_connection_delete(name: string, registryName: string): az_acr_private_endpoint_connection_delete_command_builder {
+        return new az_acr_private_endpoint_connection_delete_command_builder("az acr private-endpoint-connection delete", name, registryName);
     }
 
     /**
@@ -607,8 +585,8 @@ export class az_acr_private_endpoint_connection implements ICommandParent<any> {
      *
      * @param {string} registryName The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_private_endpoint_connection_list(registryName: string): az_acr_private_endpoint_connection_list_command_builder {
-        return new az_acr_private_endpoint_connection_list_command_builder(this, registryName);
+    static az_acr_private_endpoint_connection_list(registryName: string): az_acr_private_endpoint_connection_list_command_builder {
+        return new az_acr_private_endpoint_connection_list_command_builder("az acr private-endpoint-connection list", registryName);
     }
 
     /**
@@ -626,8 +604,8 @@ export class az_acr_private_endpoint_connection implements ICommandParent<any> {
      * @param {string} name The name of the private endpoint connection.
      * @param {string} registryName The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_private_endpoint_connection_reject(name: string, registryName: string): az_acr_private_endpoint_connection_reject_command_builder {
-        return new az_acr_private_endpoint_connection_reject_command_builder(this, name, registryName);
+    static az_acr_private_endpoint_connection_reject(name: string, registryName: string): az_acr_private_endpoint_connection_reject_command_builder {
+        return new az_acr_private_endpoint_connection_reject_command_builder("az acr private-endpoint-connection reject", name, registryName);
     }
 
     /**
@@ -645,15 +623,13 @@ export class az_acr_private_endpoint_connection implements ICommandParent<any> {
      * @param {string} name The name of the private endpoint connection.
      * @param {string} registryName The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_private_endpoint_connection_show(name: string, registryName: string): az_acr_private_endpoint_connection_show_command_builder {
-        return new az_acr_private_endpoint_connection_show_command_builder(this, name, registryName);
+    static az_acr_private_endpoint_connection_show(name: string, registryName: string): az_acr_private_endpoint_connection_show_command_builder {
+        return new az_acr_private_endpoint_connection_show_command_builder("az acr private-endpoint-connection show", name, registryName);
     }
 }
 
 /** Manage registry private link resources. */
-export class az_acr_private_link_resource implements ICommandParent<any> {
-    commandPath = "az acr private-link-resource";
-
+export class az_acr_private_link_resource {
     /**
      * List the private link resources supported for a registry.
      *
@@ -667,15 +643,13 @@ export class az_acr_private_link_resource implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_private_link_resource_list(name: string): az_acr_private_link_resource_list_command_builder {
-        return new az_acr_private_link_resource_list_command_builder(this, name);
+    static az_acr_private_link_resource_list(name: string): az_acr_private_link_resource_list_command_builder {
+        return new az_acr_private_link_resource_list_command_builder("az acr private-link-resource list", name);
     }
 }
 
 /** Manage geo-replicated regions of Azure Container Registries. */
-export class az_acr_replication implements ICommandParent<any> {
-    commandPath = "az acr replication";
-
+export class az_acr_replication {
     /**
      * Create a replicated region for an Azure Container Registry.
      *
@@ -693,8 +667,8 @@ export class az_acr_replication implements ICommandParent<any> {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_replication_create(location: string, registry: string): az_acr_replication_create_command_builder {
-        return new az_acr_replication_create_command_builder(this, location, registry);
+    static az_acr_replication_create(location: string, registry: string): az_acr_replication_create_command_builder {
+        return new az_acr_replication_create_command_builder("az acr replication create", location, registry);
     }
 
     /**
@@ -711,8 +685,8 @@ export class az_acr_replication implements ICommandParent<any> {
      * @param {string} name The name of the replication.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_replication_delete(name: string, registry: string): az_acr_replication_delete_command_builder {
-        return new az_acr_replication_delete_command_builder(this, name, registry);
+    static az_acr_replication_delete(name: string, registry: string): az_acr_replication_delete_command_builder {
+        return new az_acr_replication_delete_command_builder("az acr replication delete", name, registry);
     }
 
     /**
@@ -728,8 +702,8 @@ export class az_acr_replication implements ICommandParent<any> {
      *
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_replication_list(registry: string): az_acr_replication_list_command_builder {
-        return new az_acr_replication_list_command_builder(this, registry);
+    static az_acr_replication_list(registry: string): az_acr_replication_list_command_builder {
+        return new az_acr_replication_list_command_builder("az acr replication list", registry);
     }
 
     /**
@@ -747,8 +721,8 @@ export class az_acr_replication implements ICommandParent<any> {
      * @param {string} name The name of the replication.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_replication_show(name: string, registry: string): az_acr_replication_show_command_builder {
-        return new az_acr_replication_show_command_builder(this, name, registry);
+    static az_acr_replication_show(name: string, registry: string): az_acr_replication_show_command_builder {
+        return new az_acr_replication_show_command_builder("az acr replication show", name, registry);
     }
 
     /**
@@ -771,15 +745,13 @@ export class az_acr_replication implements ICommandParent<any> {
      * @param {string} name The name of the replication.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_replication_update(name: string, registry: string): az_acr_replication_update_command_builder {
-        return new az_acr_replication_update_command_builder(this, name, registry);
+    static az_acr_replication_update(name: string, registry: string): az_acr_replication_update_command_builder {
+        return new az_acr_replication_update_command_builder("az acr replication update", name, registry);
     }
 }
 
 /** Manage repositories (image names) for Azure Container Registries. */
-export class az_acr_repository implements ICommandParent<any> {
-    commandPath = "az acr repository";
-
+export class az_acr_repository {
     /**
      * Delete a repository or image in an Azure Container Registry.
      *
@@ -798,8 +770,8 @@ export class az_acr_repository implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_repository_delete(name: string): az_acr_repository_delete_command_builder {
-        return new az_acr_repository_delete_command_builder(this, name);
+    static az_acr_repository_delete(name: string): az_acr_repository_delete_command_builder {
+        return new az_acr_repository_delete_command_builder("az acr repository delete", name);
     }
 
     /**
@@ -819,8 +791,8 @@ export class az_acr_repository implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_repository_list(name: string): az_acr_repository_list_command_builder {
-        return new az_acr_repository_list_command_builder(this, name);
+    static az_acr_repository_list(name: string): az_acr_repository_list_command_builder {
+        return new az_acr_repository_list_command_builder("az acr repository list", name);
     }
 
     /**
@@ -841,8 +813,8 @@ export class az_acr_repository implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_repository_show(name: string): az_acr_repository_show_command_builder {
-        return new az_acr_repository_show_command_builder(this, name);
+    static az_acr_repository_show(name: string): az_acr_repository_show_command_builder {
+        return new az_acr_repository_show_command_builder("az acr repository show", name);
     }
 
     /**
@@ -865,8 +837,8 @@ export class az_acr_repository implements ICommandParent<any> {
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      * @param {string} repository The name of the repository.
      */
-    az_acr_repository_show_manifests(name: string, repository: string): az_acr_repository_show_manifests_command_builder {
-        return new az_acr_repository_show_manifests_command_builder(this, name, repository);
+    static az_acr_repository_show_manifests(name: string, repository: string): az_acr_repository_show_manifests_command_builder {
+        return new az_acr_repository_show_manifests_command_builder("az acr repository show-manifests", name, repository);
     }
 
     /**
@@ -889,8 +861,8 @@ export class az_acr_repository implements ICommandParent<any> {
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      * @param {string} repository The name of the repository.
      */
-    az_acr_repository_show_tags(name: string, repository: string): az_acr_repository_show_tags_command_builder {
-        return new az_acr_repository_show_tags_command_builder(this, name, repository);
+    static az_acr_repository_show_tags(name: string, repository: string): az_acr_repository_show_tags_command_builder {
+        return new az_acr_repository_show_tags_command_builder("az acr repository show-tags", name, repository);
     }
 
     /**
@@ -910,8 +882,8 @@ export class az_acr_repository implements ICommandParent<any> {
      * @param {string} image The name of the image. May include a tag in the format 'name:tag'.
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_repository_untag(image: string, name: string): az_acr_repository_untag_command_builder {
-        return new az_acr_repository_untag_command_builder(this, image, name);
+    static az_acr_repository_untag(image: string, name: string): az_acr_repository_untag_command_builder {
+        return new az_acr_repository_untag_command_builder("az acr repository untag", image, name);
     }
 
     /**
@@ -935,15 +907,13 @@ export class az_acr_repository implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_repository_update(name: string): az_acr_repository_update_command_builder {
-        return new az_acr_repository_update_command_builder(this, name);
+    static az_acr_repository_update(name: string): az_acr_repository_update_command_builder {
+        return new az_acr_repository_update_command_builder("az acr repository update", name);
     }
 }
 
 /** Manage scope access maps for Azure Container Registries. */
-export class az_acr_scope_map implements ICommandParent<any> {
-    commandPath = "az acr scope-map";
-
+export class az_acr_scope_map {
     /**
      * Create a scope map for an Azure Container Registry.
      *
@@ -959,10 +929,10 @@ export class az_acr_scope_map implements ICommandParent<any> {
      *
      * @param {string} name The name of the scope map.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
-     * @param {string} repository Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/write', 'content/read', 'metadata/read', 'metadata/write', 'content/delete'}.
+     * @param {string} repository Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/write', 'content/delete', 'content/write', 'metadata/read', 'content/read'}.
      */
-    az_acr_scope_map_create(name: string, registry: string, repository: string): az_acr_scope_map_create_command_builder {
-        return new az_acr_scope_map_create_command_builder(this, name, registry, repository);
+    static az_acr_scope_map_create(name: string, registry: string, repository: string): az_acr_scope_map_create_command_builder {
+        return new az_acr_scope_map_create_command_builder("az acr scope-map create", name, registry, repository);
     }
 
     /**
@@ -980,8 +950,8 @@ export class az_acr_scope_map implements ICommandParent<any> {
      * @param {string} name The name of the scope map.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_scope_map_delete(name: string, registry: string): az_acr_scope_map_delete_command_builder {
-        return new az_acr_scope_map_delete_command_builder(this, name, registry);
+    static az_acr_scope_map_delete(name: string, registry: string): az_acr_scope_map_delete_command_builder {
+        return new az_acr_scope_map_delete_command_builder("az acr scope-map delete", name, registry);
     }
 
     /**
@@ -997,8 +967,8 @@ export class az_acr_scope_map implements ICommandParent<any> {
      *
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_scope_map_list(registry: string): az_acr_scope_map_list_command_builder {
-        return new az_acr_scope_map_list_command_builder(this, registry);
+    static az_acr_scope_map_list(registry: string): az_acr_scope_map_list_command_builder {
+        return new az_acr_scope_map_list_command_builder("az acr scope-map list", registry);
     }
 
     /**
@@ -1016,8 +986,8 @@ export class az_acr_scope_map implements ICommandParent<any> {
      * @param {string} name The name of the scope map.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_scope_map_show(name: string, registry: string): az_acr_scope_map_show_command_builder {
-        return new az_acr_scope_map_show_command_builder(this, name, registry);
+    static az_acr_scope_map_show(name: string, registry: string): az_acr_scope_map_show_command_builder {
+        return new az_acr_scope_map_show_command_builder("az acr scope-map show", name, registry);
     }
 
     /**
@@ -1037,15 +1007,13 @@ export class az_acr_scope_map implements ICommandParent<any> {
      * @param {string} name The name of the scope map.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_scope_map_update(name: string, registry: string): az_acr_scope_map_update_command_builder {
-        return new az_acr_scope_map_update_command_builder(this, name, registry);
+    static az_acr_scope_map_update(name: string, registry: string): az_acr_scope_map_update_command_builder {
+        return new az_acr_scope_map_update_command_builder("az acr scope-map update", name, registry);
     }
 }
 
 /** Manage credentials for a task. Please see <a href="https://aka.ms/acr/tasks/cross-registry-authentication">https://aka.ms/acr/tasks/cross-registry-authentication</a> for more information. */
-export class az_acr_task_credential implements ICommandParent<any> {
-    commandPath = "az acr task credential";
-
+export class az_acr_task_credential {
     /**
      * Add a custom registry login credential to the task.
      *
@@ -1065,8 +1033,8 @@ export class az_acr_task_credential implements ICommandParent<any> {
      * @param {string} name The name of the task.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_task_credential_add(loginServer: string, name: string, registry: string): az_acr_task_credential_add_command_builder {
-        return new az_acr_task_credential_add_command_builder(this, loginServer, name, registry);
+    static az_acr_task_credential_add(loginServer: string, name: string, registry: string): az_acr_task_credential_add_command_builder {
+        return new az_acr_task_credential_add_command_builder("az acr task credential add", loginServer, name, registry);
     }
 
     /**
@@ -1084,8 +1052,8 @@ export class az_acr_task_credential implements ICommandParent<any> {
      * @param {string} name The name of the task.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_task_credential_list(name: string, registry: string): az_acr_task_credential_list_command_builder {
-        return new az_acr_task_credential_list_command_builder(this, name, registry);
+    static az_acr_task_credential_list(name: string, registry: string): az_acr_task_credential_list_command_builder {
+        return new az_acr_task_credential_list_command_builder("az acr task credential list", name, registry);
     }
 
     /**
@@ -1104,8 +1072,8 @@ export class az_acr_task_credential implements ICommandParent<any> {
      * @param {string} name The name of the task.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_task_credential_remove(loginServer: string, name: string, registry: string): az_acr_task_credential_remove_command_builder {
-        return new az_acr_task_credential_remove_command_builder(this, loginServer, name, registry);
+    static az_acr_task_credential_remove(loginServer: string, name: string, registry: string): az_acr_task_credential_remove_command_builder {
+        return new az_acr_task_credential_remove_command_builder("az acr task credential remove", loginServer, name, registry);
     }
 
     /**
@@ -1127,15 +1095,13 @@ export class az_acr_task_credential implements ICommandParent<any> {
      * @param {string} name The name of the task.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_task_credential_update(loginServer: string, name: string, registry: string): az_acr_task_credential_update_command_builder {
-        return new az_acr_task_credential_update_command_builder(this, loginServer, name, registry);
+    static az_acr_task_credential_update(loginServer: string, name: string, registry: string): az_acr_task_credential_update_command_builder {
+        return new az_acr_task_credential_update_command_builder("az acr task credential update", loginServer, name, registry);
     }
 }
 
 /** Managed Identities for Task. Please see <a href="https://aka.ms/acr/tasks/task-create-managed-identity">https://aka.ms/acr/tasks/task-create-managed-identity</a> for more information. */
-export class az_acr_task_identity implements ICommandParent<any> {
-    commandPath = "az acr task identity";
-
+export class az_acr_task_identity {
     /**
      * Update the managed identity for a task.
      *
@@ -1151,8 +1117,8 @@ export class az_acr_task_identity implements ICommandParent<any> {
      * @param {string} name The name of the task.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_task_identity_assign(name: string, registry: string): az_acr_task_identity_assign_command_builder {
-        return new az_acr_task_identity_assign_command_builder(this, name, registry);
+    static az_acr_task_identity_assign(name: string, registry: string): az_acr_task_identity_assign_command_builder {
+        return new az_acr_task_identity_assign_command_builder("az acr task identity assign", name, registry);
     }
 
     /**
@@ -1170,8 +1136,8 @@ export class az_acr_task_identity implements ICommandParent<any> {
      * @param {string} name The name of the task.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_task_identity_remove(name: string, registry: string): az_acr_task_identity_remove_command_builder {
-        return new az_acr_task_identity_remove_command_builder(this, name, registry);
+    static az_acr_task_identity_remove(name: string, registry: string): az_acr_task_identity_remove_command_builder {
+        return new az_acr_task_identity_remove_command_builder("az acr task identity remove", name, registry);
     }
 
     /**
@@ -1189,15 +1155,13 @@ export class az_acr_task_identity implements ICommandParent<any> {
      * @param {string} name The name of the task.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_task_identity_show(name: string, registry: string): az_acr_task_identity_show_command_builder {
-        return new az_acr_task_identity_show_command_builder(this, name, registry);
+    static az_acr_task_identity_show(name: string, registry: string): az_acr_task_identity_show_command_builder {
+        return new az_acr_task_identity_show_command_builder("az acr task identity show", name, registry);
     }
 }
 
 /** Manage timer triggers for a task. */
-export class az_acr_task_timer implements ICommandParent<any> {
-    commandPath = "az acr task timer";
-
+export class az_acr_task_timer {
     /**
      * Add a timer trigger to a task.
      *
@@ -1217,8 +1181,8 @@ export class az_acr_task_timer implements ICommandParent<any> {
      * @param {string} schedule The schedule of the timer trigger represented as a cron expression.
      * @param {string} timerName The name of the timer trigger.
      */
-    az_acr_task_timer_add(name: string, registry: string, schedule: string, timerName: string): az_acr_task_timer_add_command_builder {
-        return new az_acr_task_timer_add_command_builder(this, name, registry, schedule, timerName);
+    static az_acr_task_timer_add(name: string, registry: string, schedule: string, timerName: string): az_acr_task_timer_add_command_builder {
+        return new az_acr_task_timer_add_command_builder("az acr task timer add", name, registry, schedule, timerName);
     }
 
     /**
@@ -1236,8 +1200,8 @@ export class az_acr_task_timer implements ICommandParent<any> {
      * @param {string} name The name of the task.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_task_timer_list(name: string, registry: string): az_acr_task_timer_list_command_builder {
-        return new az_acr_task_timer_list_command_builder(this, name, registry);
+    static az_acr_task_timer_list(name: string, registry: string): az_acr_task_timer_list_command_builder {
+        return new az_acr_task_timer_list_command_builder("az acr task timer list", name, registry);
     }
 
     /**
@@ -1256,8 +1220,8 @@ export class az_acr_task_timer implements ICommandParent<any> {
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      * @param {string} timerName The name of the timer trigger.
      */
-    az_acr_task_timer_remove(name: string, registry: string, timerName: string): az_acr_task_timer_remove_command_builder {
-        return new az_acr_task_timer_remove_command_builder(this, name, registry, timerName);
+    static az_acr_task_timer_remove(name: string, registry: string, timerName: string): az_acr_task_timer_remove_command_builder {
+        return new az_acr_task_timer_remove_command_builder("az acr task timer remove", name, registry, timerName);
     }
 
     /**
@@ -1278,15 +1242,13 @@ export class az_acr_task_timer implements ICommandParent<any> {
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      * @param {string} timerName The name of the timer trigger.
      */
-    az_acr_task_timer_update(name: string, registry: string, timerName: string): az_acr_task_timer_update_command_builder {
-        return new az_acr_task_timer_update_command_builder(this, name, registry, timerName);
+    static az_acr_task_timer_update(name: string, registry: string, timerName: string): az_acr_task_timer_update_command_builder {
+        return new az_acr_task_timer_update_command_builder("az acr task timer update", name, registry, timerName);
     }
 }
 
 /** Manage a collection of steps for building, testing and OS & Framework patching container images using Azure Container Registries. */
-export class az_acr_task implements ICommandParent<any> {
-    commandPath = "az acr task";
-
+export class az_acr_task {
     /**
      * Cancel a specified run of an Azure Container Registry.
      *
@@ -1301,8 +1263,8 @@ export class az_acr_task implements ICommandParent<any> {
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      * @param {string} runId The unique run identifier.
      */
-    az_acr_task_cancel_run(registry: string, runId: string): az_acr_task_cancel_run_command_builder {
-        return new az_acr_task_cancel_run_command_builder(this, registry, runId);
+    static az_acr_task_cancel_run(registry: string, runId: string): az_acr_task_cancel_run_command_builder {
+        return new az_acr_task_cancel_run_command_builder("az acr task cancel-run", registry, runId);
     }
 
     /**
@@ -1349,8 +1311,8 @@ export class az_acr_task implements ICommandParent<any> {
      * @param {string} name The name of the task.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_task_create(context: string, name: string, registry: string): az_acr_task_create_command_builder {
-        return new az_acr_task_create_command_builder(this, context, name, registry);
+    static az_acr_task_create(context: string, name: string, registry: string): az_acr_task_create_command_builder {
+        return new az_acr_task_create_command_builder("az acr task create", context, name, registry);
     }
 
     /**
@@ -1368,8 +1330,8 @@ export class az_acr_task implements ICommandParent<any> {
      * @param {string} name The name of the task.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_task_delete(name: string, registry: string): az_acr_task_delete_command_builder {
-        return new az_acr_task_delete_command_builder(this, name, registry);
+    static az_acr_task_delete(name: string, registry: string): az_acr_task_delete_command_builder {
+        return new az_acr_task_delete_command_builder("az acr task delete", name, registry);
     }
 
     /**
@@ -1385,8 +1347,8 @@ export class az_acr_task implements ICommandParent<any> {
      *
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_task_list(registry: string): az_acr_task_list_command_builder {
-        return new az_acr_task_list_command_builder(this, registry);
+    static az_acr_task_list(registry: string): az_acr_task_list_command_builder {
+        return new az_acr_task_list_command_builder("az acr task list", registry);
     }
 
     /**
@@ -1405,8 +1367,8 @@ export class az_acr_task implements ICommandParent<any> {
      *
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_task_list_runs(registry: string): az_acr_task_list_runs_command_builder {
-        return new az_acr_task_list_runs_command_builder(this, registry);
+    static az_acr_task_list_runs(registry: string): az_acr_task_list_runs_command_builder {
+        return new az_acr_task_list_runs_command_builder("az acr task list-runs", registry);
     }
 
     /**
@@ -1424,8 +1386,8 @@ export class az_acr_task implements ICommandParent<any> {
      *
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_task_logs(registry: string): az_acr_task_logs_command_builder {
-        return new az_acr_task_logs_command_builder(this, registry);
+    static az_acr_task_logs(registry: string): az_acr_task_logs_command_builder {
+        return new az_acr_task_logs_command_builder("az acr task logs", registry);
     }
 
     /**
@@ -1453,8 +1415,8 @@ export class az_acr_task implements ICommandParent<any> {
      * @param {string} name The name of the task.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_task_run(name: string, registry: string): az_acr_task_run_command_builder {
-        return new az_acr_task_run_command_builder(this, name, registry);
+    static az_acr_task_run(name: string, registry: string): az_acr_task_run_command_builder {
+        return new az_acr_task_run_command_builder("az acr task run", name, registry);
     }
 
     /**
@@ -1473,8 +1435,8 @@ export class az_acr_task implements ICommandParent<any> {
      * @param {string} name The name of the task.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_task_show(name: string, registry: string): az_acr_task_show_command_builder {
-        return new az_acr_task_show_command_builder(this, name, registry);
+    static az_acr_task_show(name: string, registry: string): az_acr_task_show_command_builder {
+        return new az_acr_task_show_command_builder("az acr task show", name, registry);
     }
 
     /**
@@ -1491,8 +1453,8 @@ export class az_acr_task implements ICommandParent<any> {
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      * @param {string} runId The unique run identifier.
      */
-    az_acr_task_show_run(registry: string, runId: string): az_acr_task_show_run_command_builder {
-        return new az_acr_task_show_run_command_builder(this, registry, runId);
+    static az_acr_task_show_run(registry: string, runId: string): az_acr_task_show_run_command_builder {
+        return new az_acr_task_show_run_command_builder("az acr task show-run", registry, runId);
     }
 
     /**
@@ -1533,8 +1495,8 @@ export class az_acr_task implements ICommandParent<any> {
      * @param {string} name The name of the task.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_task_update(name: string, registry: string): az_acr_task_update_command_builder {
-        return new az_acr_task_update_command_builder(this, name, registry);
+    static az_acr_task_update(name: string, registry: string): az_acr_task_update_command_builder {
+        return new az_acr_task_update_command_builder("az acr task update", name, registry);
     }
 
     /**
@@ -1552,15 +1514,13 @@ export class az_acr_task implements ICommandParent<any> {
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      * @param {string} runId The unique run identifier.
      */
-    az_acr_task_update_run(registry: string, runId: string): az_acr_task_update_run_command_builder {
-        return new az_acr_task_update_run_command_builder(this, registry, runId);
+    static az_acr_task_update_run(registry: string, runId: string): az_acr_task_update_run_command_builder {
+        return new az_acr_task_update_run_command_builder("az acr task update-run", registry, runId);
     }
 }
 
 /** Manage taskruns using Azure Container Registries. */
-export class az_acr_taskrun implements ICommandParent<any> {
-    commandPath = "az acr taskrun";
-
+export class az_acr_taskrun {
     /**
      * Delete a taskrun from an Azure Container Registry.
      *
@@ -1576,8 +1536,8 @@ export class az_acr_taskrun implements ICommandParent<any> {
      * @param {string} name The name of the taskrun.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_taskrun_delete(name: string, registry: string): az_acr_taskrun_delete_command_builder {
-        return new az_acr_taskrun_delete_command_builder(this, name, registry);
+    static az_acr_taskrun_delete(name: string, registry: string): az_acr_taskrun_delete_command_builder {
+        return new az_acr_taskrun_delete_command_builder("az acr taskrun delete", name, registry);
     }
 
     /**
@@ -1593,8 +1553,8 @@ export class az_acr_taskrun implements ICommandParent<any> {
      *
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_taskrun_list(registry: string): az_acr_taskrun_list_command_builder {
-        return new az_acr_taskrun_list_command_builder(this, registry);
+    static az_acr_taskrun_list(registry: string): az_acr_taskrun_list_command_builder {
+        return new az_acr_taskrun_list_command_builder("az acr taskrun list", registry);
     }
 
     /**
@@ -1611,8 +1571,8 @@ export class az_acr_taskrun implements ICommandParent<any> {
      * @param {string} name The name of the taskrun.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_taskrun_logs(name: string, registry: string): az_acr_taskrun_logs_command_builder {
-        return new az_acr_taskrun_logs_command_builder(this, name, registry);
+    static az_acr_taskrun_logs(name: string, registry: string): az_acr_taskrun_logs_command_builder {
+        return new az_acr_taskrun_logs_command_builder("az acr taskrun logs", name, registry);
     }
 
     /**
@@ -1630,15 +1590,13 @@ export class az_acr_taskrun implements ICommandParent<any> {
      * @param {string} name The name of the taskrun.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_taskrun_show(name: string, registry: string): az_acr_taskrun_show_command_builder {
-        return new az_acr_taskrun_show_command_builder(this, name, registry);
+    static az_acr_taskrun_show(name: string, registry: string): az_acr_taskrun_show_command_builder {
+        return new az_acr_taskrun_show_command_builder("az acr taskrun show", name, registry);
     }
 }
 
 /** Manage credentials of a token for an Azure Container Registry. */
-export class az_acr_token_credential implements ICommandParent<any> {
-    commandPath = "az acr token credential";
-
+export class az_acr_token_credential {
     /**
      * Delete a token credential.
      *
@@ -1655,8 +1613,8 @@ export class az_acr_token_credential implements ICommandParent<any> {
      * @param {string} name The name of the token.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_token_credential_delete(name: string, registry: string): az_acr_token_credential_delete_command_builder {
-        return new az_acr_token_credential_delete_command_builder(this, name, registry);
+    static az_acr_token_credential_delete(name: string, registry: string): az_acr_token_credential_delete_command_builder {
+        return new az_acr_token_credential_delete_command_builder("az acr token credential delete", name, registry);
     }
 
     /**
@@ -1677,15 +1635,13 @@ export class az_acr_token_credential implements ICommandParent<any> {
      * @param {string} name The name of the token.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_token_credential_generate(name: string, registry: string): az_acr_token_credential_generate_command_builder {
-        return new az_acr_token_credential_generate_command_builder(this, name, registry);
+    static az_acr_token_credential_generate(name: string, registry: string): az_acr_token_credential_generate_command_builder {
+        return new az_acr_token_credential_generate_command_builder("az acr token credential generate", name, registry);
     }
 }
 
 /** Manage tokens for an Azure Container Registry. */
-export class az_acr_token implements ICommandParent<any> {
-    commandPath = "az acr token";
-
+export class az_acr_token {
     /**
      * Create a token associated with a scope map for an Azure Container Registry.
      *
@@ -1706,8 +1662,8 @@ export class az_acr_token implements ICommandParent<any> {
      * @param {string} name The name of the token.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_token_create(name: string, registry: string): az_acr_token_create_command_builder {
-        return new az_acr_token_create_command_builder(this, name, registry);
+    static az_acr_token_create(name: string, registry: string): az_acr_token_create_command_builder {
+        return new az_acr_token_create_command_builder("az acr token create", name, registry);
     }
 
     /**
@@ -1725,8 +1681,8 @@ export class az_acr_token implements ICommandParent<any> {
      * @param {string} name The name of the token.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_token_delete(name: string, registry: string): az_acr_token_delete_command_builder {
-        return new az_acr_token_delete_command_builder(this, name, registry);
+    static az_acr_token_delete(name: string, registry: string): az_acr_token_delete_command_builder {
+        return new az_acr_token_delete_command_builder("az acr token delete", name, registry);
     }
 
     /**
@@ -1742,8 +1698,8 @@ export class az_acr_token implements ICommandParent<any> {
      *
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_token_list(registry: string): az_acr_token_list_command_builder {
-        return new az_acr_token_list_command_builder(this, registry);
+    static az_acr_token_list(registry: string): az_acr_token_list_command_builder {
+        return new az_acr_token_list_command_builder("az acr token list", registry);
     }
 
     /**
@@ -1761,8 +1717,8 @@ export class az_acr_token implements ICommandParent<any> {
      * @param {string} name The name of the token.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_token_show(name: string, registry: string): az_acr_token_show_command_builder {
-        return new az_acr_token_show_command_builder(this, name, registry);
+    static az_acr_token_show(name: string, registry: string): az_acr_token_show_command_builder {
+        return new az_acr_token_show_command_builder("az acr token show", name, registry);
     }
 
     /**
@@ -1781,15 +1737,13 @@ export class az_acr_token implements ICommandParent<any> {
      * @param {string} name The name of the token.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_token_update(name: string, registry: string): az_acr_token_update_command_builder {
-        return new az_acr_token_update_command_builder(this, name, registry);
+    static az_acr_token_update(name: string, registry: string): az_acr_token_update_command_builder {
+        return new az_acr_token_update_command_builder("az acr token update", name, registry);
     }
 }
 
 /** Manage webhooks for Azure Container Registries. */
-export class az_acr_webhook implements ICommandParent<any> {
-    commandPath = "az acr webhook";
-
+export class az_acr_webhook {
     /**
      * Create a webhook for an Azure Container Registry.
      *
@@ -1813,8 +1767,8 @@ export class az_acr_webhook implements ICommandParent<any> {
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      * @param {string} uri The service URI for the webhook to post notifications.
      */
-    az_acr_webhook_create(actions: 'chart_delete' | 'chart_push' | 'delete' | 'push' | 'quarantine', name: string, registry: string, uri: string): az_acr_webhook_create_command_builder {
-        return new az_acr_webhook_create_command_builder(this, actions, name, registry, uri);
+    static az_acr_webhook_create(actions: 'chart_delete' | 'chart_push' | 'delete' | 'push' | 'quarantine', name: string, registry: string, uri: string): az_acr_webhook_create_command_builder {
+        return new az_acr_webhook_create_command_builder("az acr webhook create", actions, name, registry, uri);
     }
 
     /**
@@ -1831,8 +1785,8 @@ export class az_acr_webhook implements ICommandParent<any> {
      * @param {string} name The name of the webhook.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_webhook_delete(name: string, registry: string): az_acr_webhook_delete_command_builder {
-        return new az_acr_webhook_delete_command_builder(this, name, registry);
+    static az_acr_webhook_delete(name: string, registry: string): az_acr_webhook_delete_command_builder {
+        return new az_acr_webhook_delete_command_builder("az acr webhook delete", name, registry);
     }
 
     /**
@@ -1849,8 +1803,8 @@ export class az_acr_webhook implements ICommandParent<any> {
      * @param {string} name The name of the webhook.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_webhook_get_config(name: string, registry: string): az_acr_webhook_get_config_command_builder {
-        return new az_acr_webhook_get_config_command_builder(this, name, registry);
+    static az_acr_webhook_get_config(name: string, registry: string): az_acr_webhook_get_config_command_builder {
+        return new az_acr_webhook_get_config_command_builder("az acr webhook get-config", name, registry);
     }
 
     /**
@@ -1866,8 +1820,8 @@ export class az_acr_webhook implements ICommandParent<any> {
      *
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_webhook_list(registry: string): az_acr_webhook_list_command_builder {
-        return new az_acr_webhook_list_command_builder(this, registry);
+    static az_acr_webhook_list(registry: string): az_acr_webhook_list_command_builder {
+        return new az_acr_webhook_list_command_builder("az acr webhook list", registry);
     }
 
     /**
@@ -1884,8 +1838,8 @@ export class az_acr_webhook implements ICommandParent<any> {
      * @param {string} name The name of the webhook.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_webhook_list_events(name: string, registry: string): az_acr_webhook_list_events_command_builder {
-        return new az_acr_webhook_list_events_command_builder(this, name, registry);
+    static az_acr_webhook_list_events(name: string, registry: string): az_acr_webhook_list_events_command_builder {
+        return new az_acr_webhook_list_events_command_builder("az acr webhook list-events", name, registry);
     }
 
     /**
@@ -1902,8 +1856,8 @@ export class az_acr_webhook implements ICommandParent<any> {
      * @param {string} name The name of the webhook.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_webhook_ping(name: string, registry: string): az_acr_webhook_ping_command_builder {
-        return new az_acr_webhook_ping_command_builder(this, name, registry);
+    static az_acr_webhook_ping(name: string, registry: string): az_acr_webhook_ping_command_builder {
+        return new az_acr_webhook_ping_command_builder("az acr webhook ping", name, registry);
     }
 
     /**
@@ -1921,8 +1875,8 @@ export class az_acr_webhook implements ICommandParent<any> {
      * @param {string} name The name of the webhook.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_webhook_show(name: string, registry: string): az_acr_webhook_show_command_builder {
-        return new az_acr_webhook_show_command_builder(this, name, registry);
+    static az_acr_webhook_show(name: string, registry: string): az_acr_webhook_show_command_builder {
+        return new az_acr_webhook_show_command_builder("az acr webhook show", name, registry);
     }
 
     /**
@@ -1949,15 +1903,13 @@ export class az_acr_webhook implements ICommandParent<any> {
      * @param {string} name The name of the webhook.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_webhook_update(name: string, registry: string): az_acr_webhook_update_command_builder {
-        return new az_acr_webhook_update_command_builder(this, name, registry);
+    static az_acr_webhook_update(name: string, registry: string): az_acr_webhook_update_command_builder {
+        return new az_acr_webhook_update_command_builder("az acr webhook update", name, registry);
     }
 }
 
 /** Manage private registries with Azure Container Registries. */
-export class az_acr implements ICommandParent<any> {
-    commandPath = "az acr";
-
+export class az_acr {
     /**
      * Queues a quick build, providing streaming logs for an Azure Container Registry.
      *
@@ -1984,8 +1936,8 @@ export class az_acr implements ICommandParent<any> {
      *
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_build(registry: string): az_acr_build_command_builder {
-        return new az_acr_build_command_builder(this, registry);
+    static az_acr_build(registry: string): az_acr_build_command_builder {
+        return new az_acr_build_command_builder("az acr build", registry);
     }
 
     /**
@@ -1999,8 +1951,8 @@ export class az_acr implements ICommandParent<any> {
      *                     [--yes]
      * ```
      */
-    az_acr_check_health(): az_acr_check_health_command_builder {
-        return new az_acr_check_health_command_builder(this);
+    static az_acr_check_health(): az_acr_check_health_command_builder {
+        return new az_acr_check_health_command_builder("az acr check-health");
     }
 
     /**
@@ -2014,8 +1966,8 @@ export class az_acr implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_check_name(name: string): az_acr_check_name_command_builder {
-        return new az_acr_check_name_command_builder(this, name);
+    static az_acr_check_name(name: string): az_acr_check_name_command_builder {
+        return new az_acr_check_name_command_builder("az acr check-name", name);
     }
 
     /**
@@ -2041,8 +1993,8 @@ export class az_acr implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'Basic' | 'Classic' | 'Premium' | 'Standard'} sku The SKU of the container registry.
      */
-    az_acr_create(name: string, resourceGroup: string, sku: 'Basic' | 'Classic' | 'Premium' | 'Standard'): az_acr_create_command_builder {
-        return new az_acr_create_command_builder(this, name, resourceGroup, sku);
+    static az_acr_create(name: string, resourceGroup: string, sku: 'Basic' | 'Classic' | 'Premium' | 'Standard'): az_acr_create_command_builder {
+        return new az_acr_create_command_builder("az acr create", name, resourceGroup, sku);
     }
 
     /**
@@ -2058,8 +2010,8 @@ export class az_acr implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_delete(name: string): az_acr_delete_command_builder {
-        return new az_acr_delete_command_builder(this, name);
+    static az_acr_delete(name: string): az_acr_delete_command_builder {
+        return new az_acr_delete_command_builder("az acr delete", name);
     }
 
     /**
@@ -2082,8 +2034,8 @@ export class az_acr implements ICommandParent<any> {
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      * @param {string} source Source image name or fully qualified source containing the registry login server. If `--registry` is used, `--source` will always be interpreted as a source image, even if it contains the login server.
      */
-    az_acr_import(name: string, source: string): az_acr_import_command_builder {
-        return new az_acr_import_command_builder(this, name, source);
+    static az_acr_import(name: string, source: string): az_acr_import_command_builder {
+        return new az_acr_import_command_builder("az acr import", name, source);
     }
 
     /**
@@ -2096,8 +2048,8 @@ export class az_acr implements ICommandParent<any> {
      *             [--subscription]
      * ```
      */
-    az_acr_list(): az_acr_list_command_builder {
-        return new az_acr_list_command_builder(this);
+    static az_acr_list(): az_acr_list_command_builder {
+        return new az_acr_list_command_builder("az acr list");
     }
 
     /**
@@ -2116,8 +2068,8 @@ export class az_acr implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_login(name: string): az_acr_login_command_builder {
-        return new az_acr_login_command_builder(this, name);
+    static az_acr_login(name: string): az_acr_login_command_builder {
+        return new az_acr_login_command_builder("az acr login", name);
     }
 
     /**
@@ -2145,8 +2097,8 @@ export class az_acr implements ICommandParent<any> {
      *
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_run(registry: string): az_acr_run_command_builder {
-        return new az_acr_run_command_builder(this, registry);
+    static az_acr_run(registry: string): az_acr_run_command_builder {
+        return new az_acr_run_command_builder("az acr run", registry);
     }
 
     /**
@@ -2162,8 +2114,8 @@ export class az_acr implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_show(name: string): az_acr_show_command_builder {
-        return new az_acr_show_command_builder(this, name);
+    static az_acr_show(name: string): az_acr_show_command_builder {
+        return new az_acr_show_command_builder("az acr show", name);
     }
 
     /**
@@ -2178,8 +2130,8 @@ export class az_acr implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_show_endpoints(name: string): az_acr_show_endpoints_command_builder {
-        return new az_acr_show_endpoints_command_builder(this, name);
+    static az_acr_show_endpoints(name: string): az_acr_show_endpoints_command_builder {
+        return new az_acr_show_endpoints_command_builder("az acr show-endpoints", name);
     }
 
     /**
@@ -2194,8 +2146,8 @@ export class az_acr implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_show_usage(name: string): az_acr_show_usage_command_builder {
-        return new az_acr_show_usage_command_builder(this, name);
+    static az_acr_show_usage(name: string): az_acr_show_usage_command_builder {
+        return new az_acr_show_usage_command_builder("az acr show-usage", name);
     }
 
     /**
@@ -2220,8 +2172,8 @@ export class az_acr implements ICommandParent<any> {
      *
      * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    az_acr_update(name: string): az_acr_update_command_builder {
-        return new az_acr_update_command_builder(this, name);
+    static az_acr_update(name: string): az_acr_update_command_builder {
+        return new az_acr_update_command_builder("az acr update", name);
     }
 }
 
@@ -2245,7 +2197,7 @@ export class az_acr implements ICommandParent<any> {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_agentpool_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -2323,7 +2275,7 @@ class az_acr_agentpool_create_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_agentpool_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -2380,7 +2332,7 @@ class az_acr_agentpool_delete_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_agentpool_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string) {
+    constructor(commandPath: string, registry: string) {
         super(commandParent);
         this.registry(registry)
     }
@@ -2427,7 +2379,7 @@ class az_acr_agentpool_list_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_agentpool_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -2487,7 +2439,7 @@ class az_acr_agentpool_show_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_agentpool_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -2544,7 +2496,7 @@ class az_acr_agentpool_update_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_config_content_trust_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string) {
+    constructor(commandPath: string, registry: string) {
         super(commandParent);
         this.registry(registry)
     }
@@ -2588,7 +2540,7 @@ class az_acr_config_content_trust_show_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_config_content_trust_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string) {
+    constructor(commandPath: string, registry: string) {
         super(commandParent);
         this.registry(registry)
     }
@@ -2632,7 +2584,7 @@ class az_acr_config_content_trust_update_command_builder extends CommandBuilder 
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_config_retention_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string) {
+    constructor(commandPath: string, registry: string) {
         super(commandParent);
         this.registry(registry)
     }
@@ -2679,7 +2631,7 @@ class az_acr_config_retention_show_command_builder extends CommandBuilder {
  * @param {'UntaggedManifests'} type The type of retention policy.
  */
 class az_acr_config_retention_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string, type: 'UntaggedManifests') {
+    constructor(commandPath: string, registry: string, type: 'UntaggedManifests') {
         super(commandParent);
         this.registry(registry)
         this.type(type)
@@ -2737,7 +2689,7 @@ class az_acr_config_retention_update_command_builder extends CommandBuilder {
  * @param {'password' | 'password2'} passwordName The name of password to regenerate.
  */
 class az_acr_credential_renew_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, passwordName: 'password' | 'password2') {
+    constructor(commandPath: string, name: string, passwordName: 'password' | 'password2') {
         super(commandParent);
         this.name(name)
         this.passwordName(passwordName)
@@ -2782,7 +2734,7 @@ class az_acr_credential_renew_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_credential_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2827,7 +2779,7 @@ class az_acr_credential_show_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_encryption_rotate_key_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2877,7 +2829,7 @@ class az_acr_encryption_rotate_key_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_encryption_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2923,7 +2875,7 @@ class az_acr_encryption_show_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_helm_repo_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2985,7 +2937,7 @@ class az_acr_helm_repo_add_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_helm_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3063,7 +3015,7 @@ class az_acr_helm_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_acr_helm_install_cli_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3109,7 +3061,7 @@ class az_acr_helm_install_cli_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_helm_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3175,7 +3127,7 @@ class az_acr_helm_list_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_helm_push_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3248,7 +3200,7 @@ class az_acr_helm_push_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_helm_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3323,7 +3275,7 @@ class az_acr_helm_show_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_identity_assign_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, identities: string, name: string) {
+    constructor(commandPath: string, identities: string, name: string) {
         super(commandParent);
         this.identities(identities)
         this.name(name)
@@ -3369,7 +3321,7 @@ class az_acr_identity_assign_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_identity_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, identities: string, name: string) {
+    constructor(commandPath: string, identities: string, name: string) {
         super(commandParent);
         this.identities(identities)
         this.name(name)
@@ -3414,7 +3366,7 @@ class az_acr_identity_remove_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_identity_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3460,7 +3412,7 @@ class az_acr_identity_show_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_network_rule_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3516,7 +3468,7 @@ class az_acr_network_rule_add_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_network_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3562,7 +3514,7 @@ class az_acr_network_rule_list_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_network_rule_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3631,7 +3583,7 @@ class az_acr_network_rule_remove_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_pack_build_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, builder: string, image: string, registry: string) {
+    constructor(commandPath: string, builder: string, image: string, registry: string) {
         super(commandParent);
         this.builder(builder)
         this.image(image)
@@ -3745,7 +3697,7 @@ class az_acr_pack_build_command_builder extends CommandBuilder {
  * @param {string} registryName The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_private_endpoint_connection_approve_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registryName: string) {
+    constructor(commandPath: string, name: string, registryName: string) {
         super(commandParent);
         this.name(name)
         this.registryName(registryName)
@@ -3797,7 +3749,7 @@ class az_acr_private_endpoint_connection_approve_command_builder extends Command
  * @param {string} registryName The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_private_endpoint_connection_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registryName: string) {
+    constructor(commandPath: string, name: string, registryName: string) {
         super(commandParent);
         this.name(name)
         this.registryName(registryName)
@@ -3842,7 +3794,7 @@ class az_acr_private_endpoint_connection_delete_command_builder extends CommandB
  * @param {string} registryName The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_private_endpoint_connection_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registryName: string) {
+    constructor(commandPath: string, registryName: string) {
         super(commandParent);
         this.registryName(registryName)
     }
@@ -3888,7 +3840,7 @@ class az_acr_private_endpoint_connection_list_command_builder extends CommandBui
  * @param {string} registryName The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_private_endpoint_connection_reject_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registryName: string) {
+    constructor(commandPath: string, name: string, registryName: string) {
         super(commandParent);
         this.name(name)
         this.registryName(registryName)
@@ -3941,7 +3893,7 @@ class az_acr_private_endpoint_connection_reject_command_builder extends CommandB
  * @param {string} registryName The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_private_endpoint_connection_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registryName: string) {
+    constructor(commandPath: string, name: string, registryName: string) {
         super(commandParent);
         this.name(name)
         this.registryName(registryName)
@@ -3992,7 +3944,7 @@ class az_acr_private_endpoint_connection_show_command_builder extends CommandBui
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_private_link_resource_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4040,7 +3992,7 @@ class az_acr_private_link_resource_list_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_replication_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string, registry: string) {
+    constructor(commandPath: string, location: string, registry: string) {
         super(commandParent);
         this.location(location)
         this.registry(registry)
@@ -4104,7 +4056,7 @@ class az_acr_replication_create_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_replication_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -4149,7 +4101,7 @@ class az_acr_replication_delete_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_replication_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string) {
+    constructor(commandPath: string, registry: string) {
         super(commandParent);
         this.registry(registry)
     }
@@ -4195,7 +4147,7 @@ class az_acr_replication_list_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_replication_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -4253,7 +4205,7 @@ class az_acr_replication_show_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_replication_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -4339,7 +4291,7 @@ class az_acr_replication_update_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_repository_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4417,7 +4369,7 @@ class az_acr_repository_delete_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_repository_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4490,7 +4442,7 @@ class az_acr_repository_list_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_repository_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4571,7 +4523,7 @@ class az_acr_repository_show_command_builder extends CommandBuilder {
  * @param {string} repository The name of the repository.
  */
 class az_acr_repository_show_manifests_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, repository: string) {
+    constructor(commandPath: string, name: string, repository: string) {
         super(commandParent);
         this.name(name)
         this.repository(repository)
@@ -4659,7 +4611,7 @@ class az_acr_repository_show_manifests_command_builder extends CommandBuilder {
  * @param {string} repository The name of the repository.
  */
 class az_acr_repository_show_tags_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, repository: string) {
+    constructor(commandPath: string, name: string, repository: string) {
         super(commandParent);
         this.name(name)
         this.repository(repository)
@@ -4744,7 +4696,7 @@ class az_acr_repository_show_tags_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_repository_untag_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, image: string, name: string) {
+    constructor(commandPath: string, image: string, name: string) {
         super(commandParent);
         this.image(image)
         this.name(name)
@@ -4815,7 +4767,7 @@ class az_acr_repository_untag_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_repository_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4908,10 +4860,10 @@ class az_acr_repository_update_command_builder extends CommandBuilder {
  *
  * @param {string} name The name of the scope map.
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
- * @param {string} repository Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/write', 'content/read', 'metadata/read', 'metadata/write', 'content/delete'}.
+ * @param {string} repository Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/write', 'content/delete', 'content/write', 'metadata/read', 'content/read'}.
  */
 class az_acr_scope_map_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string, repository: string) {
+    constructor(commandPath: string, name: string, registry: string, repository: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -4930,7 +4882,7 @@ class az_acr_scope_map_create_command_builder extends CommandBuilder {
         return this;
     }
 
-    /** Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/write', 'content/read', 'metadata/read', 'metadata/write', 'content/delete'}. */
+    /** Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/write', 'content/delete', 'content/write', 'metadata/read', 'content/read'}. */
     repository(value: string): az_acr_scope_map_create_command_builder {
         this.setFlag("--repository", value);
         return this;
@@ -4971,7 +4923,7 @@ class az_acr_scope_map_create_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_scope_map_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -5022,7 +4974,7 @@ class az_acr_scope_map_delete_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_scope_map_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string) {
+    constructor(commandPath: string, registry: string) {
         super(commandParent);
         this.registry(registry)
     }
@@ -5068,7 +5020,7 @@ class az_acr_scope_map_list_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_scope_map_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -5123,7 +5075,7 @@ class az_acr_scope_map_show_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_scope_map_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -5141,7 +5093,7 @@ class az_acr_scope_map_update_command_builder extends CommandBuilder {
         return this;
     }
 
-    /** Repository permissions to be added. Use the format "--add REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/write', 'content/read', 'metadata/read', 'metadata/write', 'content/delete'}. */
+    /** Repository permissions to be added. Use the format "--add REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/write', 'content/delete', 'content/write', 'metadata/read', 'content/read'}. */
     add(value: string): az_acr_scope_map_update_command_builder {
         this.setFlag("--add", value);
         return this;
@@ -5153,7 +5105,7 @@ class az_acr_scope_map_update_command_builder extends CommandBuilder {
         return this;
     }
 
-    /** Respsitory permissions to be removed. Use the format "--remove REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/write', 'content/read', 'metadata/read', 'metadata/write', 'content/delete'}. */
+    /** Respsitory permissions to be removed. Use the format "--remove REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/write', 'content/delete', 'content/write', 'metadata/read', 'content/read'}. */
     remove(value: string): az_acr_scope_map_update_command_builder {
         this.setFlag("--remove", value);
         return this;
@@ -5192,7 +5144,7 @@ class az_acr_scope_map_update_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_task_credential_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, loginServer: string, name: string, registry: string) {
+    constructor(commandPath: string, loginServer: string, name: string, registry: string) {
         super(commandParent);
         this.loginServer(loginServer)
         this.name(name)
@@ -5264,7 +5216,7 @@ class az_acr_task_credential_add_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_task_credential_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -5318,7 +5270,7 @@ class az_acr_task_credential_list_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_task_credential_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, loginServer: string, name: string, registry: string) {
+    constructor(commandPath: string, loginServer: string, name: string, registry: string) {
         super(commandParent);
         this.loginServer(loginServer)
         this.name(name)
@@ -5376,7 +5328,7 @@ class az_acr_task_credential_remove_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_task_credential_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, loginServer: string, name: string, registry: string) {
+    constructor(commandPath: string, loginServer: string, name: string, registry: string) {
         super(commandParent);
         this.loginServer(loginServer)
         this.name(name)
@@ -5448,7 +5400,7 @@ class az_acr_task_credential_update_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_task_identity_assign_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -5501,7 +5453,7 @@ class az_acr_task_identity_assign_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_task_identity_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -5554,7 +5506,7 @@ class az_acr_task_identity_remove_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_task_identity_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -5611,7 +5563,7 @@ class az_acr_task_identity_show_command_builder extends CommandBuilder {
  * @param {string} timerName The name of the timer trigger.
  */
 class az_acr_task_timer_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string, schedule: string, timerName: string) {
+    constructor(commandPath: string, name: string, registry: string, schedule: string, timerName: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -5678,7 +5630,7 @@ class az_acr_task_timer_add_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_task_timer_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -5732,7 +5684,7 @@ class az_acr_task_timer_list_command_builder extends CommandBuilder {
  * @param {string} timerName The name of the timer trigger.
  */
 class az_acr_task_timer_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string, timerName: string) {
+    constructor(commandPath: string, name: string, registry: string, timerName: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -5789,7 +5741,7 @@ class az_acr_task_timer_remove_command_builder extends CommandBuilder {
  * @param {string} timerName The name of the timer trigger.
  */
 class az_acr_task_timer_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string, timerName: string) {
+    constructor(commandPath: string, name: string, registry: string, timerName: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -5854,7 +5806,7 @@ class az_acr_task_timer_update_command_builder extends CommandBuilder {
  * @param {string} runId The unique run identifier.
  */
 class az_acr_task_cancel_run_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string, runId: string) {
+    constructor(commandPath: string, registry: string, runId: string) {
         super(commandParent);
         this.registry(registry)
         this.runId(runId)
@@ -5930,7 +5882,7 @@ class az_acr_task_cancel_run_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_task_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, context: string, name: string, registry: string) {
+    constructor(commandPath: string, context: string, name: string, registry: string) {
         super(commandParent);
         this.context(context)
         this.name(name)
@@ -6152,7 +6104,7 @@ class az_acr_task_create_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_task_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -6203,7 +6155,7 @@ class az_acr_task_delete_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_task_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string) {
+    constructor(commandPath: string, registry: string) {
         super(commandParent);
         this.registry(registry)
     }
@@ -6250,7 +6202,7 @@ class az_acr_task_list_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_task_list_runs_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string) {
+    constructor(commandPath: string, registry: string) {
         super(commandParent);
         this.registry(registry)
     }
@@ -6314,7 +6266,7 @@ class az_acr_task_list_runs_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_task_logs_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string) {
+    constructor(commandPath: string, registry: string) {
         super(commandParent);
         this.registry(registry)
     }
@@ -6382,7 +6334,7 @@ class az_acr_task_logs_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_task_run_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -6496,7 +6448,7 @@ class az_acr_task_run_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_task_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -6554,7 +6506,7 @@ class az_acr_task_show_command_builder extends CommandBuilder {
  * @param {string} runId The unique run identifier.
  */
 class az_acr_task_show_run_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string, runId: string) {
+    constructor(commandPath: string, registry: string, runId: string) {
         super(commandParent);
         this.registry(registry)
         this.runId(runId)
@@ -6624,7 +6576,7 @@ class az_acr_task_show_run_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_task_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -6815,7 +6767,7 @@ class az_acr_task_update_command_builder extends CommandBuilder {
  * @param {string} runId The unique run identifier.
  */
 class az_acr_task_update_run_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string, runId: string) {
+    constructor(commandPath: string, registry: string, runId: string) {
         super(commandParent);
         this.registry(registry)
         this.runId(runId)
@@ -6868,7 +6820,7 @@ class az_acr_task_update_run_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_taskrun_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -6919,7 +6871,7 @@ class az_acr_taskrun_delete_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_taskrun_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string) {
+    constructor(commandPath: string, registry: string) {
         super(commandParent);
         this.registry(registry)
     }
@@ -6964,7 +6916,7 @@ class az_acr_taskrun_list_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_taskrun_logs_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -7011,7 +6963,7 @@ class az_acr_taskrun_logs_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_taskrun_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -7065,7 +7017,7 @@ class az_acr_taskrun_show_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_token_credential_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -7127,7 +7079,7 @@ class az_acr_token_credential_delete_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_token_credential_generate_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -7203,7 +7155,7 @@ class az_acr_token_credential_generate_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_token_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -7239,7 +7191,7 @@ class az_acr_token_create_command_builder extends CommandBuilder {
         return this;
     }
 
-    /** Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/write', 'content/read', 'metadata/read', 'metadata/write', 'content/delete'}. */
+    /** Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/write', 'content/delete', 'content/write', 'metadata/read', 'content/read'}. */
     repository(value: string): az_acr_token_create_command_builder {
         this.setFlag("--repository", value);
         return this;
@@ -7286,7 +7238,7 @@ class az_acr_token_create_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_token_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -7337,7 +7289,7 @@ class az_acr_token_delete_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_token_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string) {
+    constructor(commandPath: string, registry: string) {
         super(commandParent);
         this.registry(registry)
     }
@@ -7383,7 +7335,7 @@ class az_acr_token_list_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_token_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -7437,7 +7389,7 @@ class az_acr_token_show_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_token_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -7504,7 +7456,7 @@ class az_acr_token_update_command_builder extends CommandBuilder {
  * @param {string} uri The service URI for the webhook to post notifications.
  */
 class az_acr_webhook_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, actions: 'chart_delete' | 'chart_push' | 'delete' | 'push' | 'quarantine', name: string, registry: string, uri: string) {
+    constructor(commandPath: string, actions: 'chart_delete' | 'chart_push' | 'delete' | 'push' | 'quarantine', name: string, registry: string, uri: string) {
         super(commandParent);
         this.actions(actions)
         this.name(name)
@@ -7594,7 +7546,7 @@ class az_acr_webhook_create_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_webhook_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -7640,7 +7592,7 @@ class az_acr_webhook_delete_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_webhook_get_config_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -7685,7 +7637,7 @@ class az_acr_webhook_get_config_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_webhook_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string) {
+    constructor(commandPath: string, registry: string) {
         super(commandParent);
         this.registry(registry)
     }
@@ -7730,7 +7682,7 @@ class az_acr_webhook_list_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_webhook_list_events_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -7776,7 +7728,7 @@ class az_acr_webhook_list_events_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_webhook_ping_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -7823,7 +7775,7 @@ class az_acr_webhook_ping_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_webhook_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -7885,7 +7837,7 @@ class az_acr_webhook_show_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_webhook_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, registry: string) {
+    constructor(commandPath: string, name: string, registry: string) {
         super(commandParent);
         this.name(name)
         this.registry(registry)
@@ -8003,7 +7955,7 @@ class az_acr_webhook_update_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_build_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string) {
+    constructor(commandPath: string, registry: string) {
         super(commandParent);
         this.registry(registry)
     }
@@ -8123,7 +8075,7 @@ class az_acr_build_command_builder extends CommandBuilder {
  * ```
  */
 class az_acr_check_health_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -8164,7 +8116,7 @@ class az_acr_check_health_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_check_name_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -8206,7 +8158,7 @@ class az_acr_check_name_command_builder extends CommandBuilder {
  * @param {'Basic' | 'Classic' | 'Premium' | 'Standard'} sku The SKU of the container registry.
  */
 class az_acr_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, sku: 'Basic' | 'Classic' | 'Premium' | 'Standard') {
+    constructor(commandPath: string, name: string, resourceGroup: string, sku: 'Basic' | 'Classic' | 'Premium' | 'Standard') {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -8300,7 +8252,7 @@ class az_acr_create_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -8351,7 +8303,7 @@ class az_acr_delete_command_builder extends CommandBuilder {
  * @param {string} source Source image name or fully qualified source containing the registry login server. If `--registry` is used, `--source` will always be interpreted as a source image, even if it contains the login server.
  */
 class az_acr_import_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, source: string) {
+    constructor(commandPath: string, name: string, source: string) {
         super(commandParent);
         this.name(name)
         this.source(source)
@@ -8429,7 +8381,7 @@ class az_acr_import_command_builder extends CommandBuilder {
  * ```
  */
 class az_acr_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -8469,7 +8421,7 @@ class az_acr_list_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_login_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -8543,7 +8495,7 @@ class az_acr_login_command_builder extends CommandBuilder {
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_run_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, registry: string) {
+    constructor(commandPath: string, registry: string) {
         super(commandParent);
         this.registry(registry)
     }
@@ -8659,7 +8611,7 @@ class az_acr_run_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -8702,7 +8654,7 @@ class az_acr_show_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_show_endpoints_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -8739,7 +8691,7 @@ class az_acr_show_endpoints_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_show_usage_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -8786,7 +8738,7 @@ class az_acr_show_usage_command_builder extends CommandBuilder {
  * @param {string} name The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 class az_acr_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }

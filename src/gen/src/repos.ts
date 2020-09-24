@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Git repositories import. */
-export class az_repos_import implements ICommandParent<any> {
-    commandPath = "az repos import";
-
+export class az_repos_import {
     /**
      * Create a git import request.
      *
@@ -22,15 +20,13 @@ export class az_repos_import implements ICommandParent<any> {
      *
      * @param {string} gitSourceUrl Url of the source git repository.
      */
-    az_repos_import_create(gitSourceUrl: string): az_repos_import_create_command_builder {
-        return new az_repos_import_create_command_builder(this, gitSourceUrl);
+    static az_repos_import_create(gitSourceUrl: string): az_repos_import_create_command_builder {
+        return new az_repos_import_create_command_builder("az repos import create", gitSourceUrl);
     }
 }
 
 /** Manage approver count policy. */
-export class az_repos_policy_approver_count implements ICommandParent<any> {
-    commandPath = "az repos policy approver-count";
-
+export class az_repos_policy_approver_count {
     /**
      * Create approver count policy.
      *
@@ -60,8 +56,8 @@ export class az_repos_policy_approver_count implements ICommandParent<any> {
      * @param {string} repositoryId Id of the repository on which to apply the policy.
      * @param {boolean} resetOnSourcePush Whether to reset source on push.
      */
-    az_repos_policy_approver_count_create(allowDownvotes: boolean, blocking: boolean, branch: string, creatorVoteCounts: boolean, enabled: boolean, minimumApproverCount: string, repositoryId: string, resetOnSourcePush: boolean): az_repos_policy_approver_count_create_command_builder {
-        return new az_repos_policy_approver_count_create_command_builder(this, allowDownvotes, blocking, branch, creatorVoteCounts, enabled, minimumApproverCount, repositoryId, resetOnSourcePush);
+    static az_repos_policy_approver_count_create(allowDownvotes: boolean, blocking: boolean, branch: string, creatorVoteCounts: boolean, enabled: boolean, minimumApproverCount: string, repositoryId: string, resetOnSourcePush: boolean): az_repos_policy_approver_count_create_command_builder {
+        return new az_repos_policy_approver_count_create_command_builder("az repos policy approver-count create", allowDownvotes, blocking, branch, creatorVoteCounts, enabled, minimumApproverCount, repositoryId, resetOnSourcePush);
     }
 
     /**
@@ -87,15 +83,13 @@ export class az_repos_policy_approver_count implements ICommandParent<any> {
      *
      * @param {string} policyId ID of the policy.
      */
-    az_repos_policy_approver_count_update(policyId: string): az_repos_policy_approver_count_update_command_builder {
-        return new az_repos_policy_approver_count_update_command_builder(this, policyId);
+    static az_repos_policy_approver_count_update(policyId: string): az_repos_policy_approver_count_update_command_builder {
+        return new az_repos_policy_approver_count_update_command_builder("az repos policy approver-count update", policyId);
     }
 }
 
 /** Manage build policy. */
-export class az_repos_policy_build implements ICommandParent<any> {
-    commandPath = "az repos policy build";
-
+export class az_repos_policy_build {
     /**
      * Create build policy.
      *
@@ -128,8 +122,8 @@ export class az_repos_policy_build implements ICommandParent<any> {
      * @param {string} repositoryId Id of the repository on which to apply the policy.
      * @param {string} validDuration Policy validity duration (in minutes).
      */
-    az_repos_policy_build_create(blocking: boolean, branch: string, buildDefinitionId: string, displayName: string, enabled: boolean, manualQueueOnly: boolean, queueOnSourceUpdateOnly: boolean, repositoryId: string, validDuration: string): az_repos_policy_build_create_command_builder {
-        return new az_repos_policy_build_create_command_builder(this, blocking, branch, buildDefinitionId, displayName, enabled, manualQueueOnly, queueOnSourceUpdateOnly, repositoryId, validDuration);
+    static az_repos_policy_build_create(blocking: boolean, branch: string, buildDefinitionId: string, displayName: string, enabled: boolean, manualQueueOnly: boolean, queueOnSourceUpdateOnly: boolean, repositoryId: string, validDuration: string): az_repos_policy_build_create_command_builder {
+        return new az_repos_policy_build_create_command_builder("az repos policy build create", blocking, branch, buildDefinitionId, displayName, enabled, manualQueueOnly, queueOnSourceUpdateOnly, repositoryId, validDuration);
     }
 
     /**
@@ -157,15 +151,13 @@ export class az_repos_policy_build implements ICommandParent<any> {
      *
      * @param {string} policyId ID of the policy.
      */
-    az_repos_policy_build_update(policyId: string): az_repos_policy_build_update_command_builder {
-        return new az_repos_policy_build_update_command_builder(this, policyId);
+    static az_repos_policy_build_update(policyId: string): az_repos_policy_build_update_command_builder {
+        return new az_repos_policy_build_update_command_builder("az repos policy build update", policyId);
     }
 }
 
 /** Manage case enforcement policy. */
-export class az_repos_policy_case_enforcement implements ICommandParent<any> {
-    commandPath = "az repos policy case-enforcement";
-
+export class az_repos_policy_case_enforcement {
     /**
      * Create case enforcement policy.
      *
@@ -184,8 +176,8 @@ export class az_repos_policy_case_enforcement implements ICommandParent<any> {
      * @param {boolean} enabled Whether the policy is enabled or not.
      * @param {string} repositoryId Id of the repository on which to apply the policy.
      */
-    az_repos_policy_case_enforcement_create(blocking: boolean, enabled: boolean, repositoryId: string): az_repos_policy_case_enforcement_create_command_builder {
-        return new az_repos_policy_case_enforcement_create_command_builder(this, blocking, enabled, repositoryId);
+    static az_repos_policy_case_enforcement_create(blocking: boolean, enabled: boolean, repositoryId: string): az_repos_policy_case_enforcement_create_command_builder {
+        return new az_repos_policy_case_enforcement_create_command_builder("az repos policy case-enforcement create", blocking, enabled, repositoryId);
     }
 
     /**
@@ -205,15 +197,13 @@ export class az_repos_policy_case_enforcement implements ICommandParent<any> {
      *
      * @param {string} policyId ID of the policy.
      */
-    az_repos_policy_case_enforcement_update(policyId: string): az_repos_policy_case_enforcement_update_command_builder {
-        return new az_repos_policy_case_enforcement_update_command_builder(this, policyId);
+    static az_repos_policy_case_enforcement_update(policyId: string): az_repos_policy_case_enforcement_update_command_builder {
+        return new az_repos_policy_case_enforcement_update_command_builder("az repos policy case-enforcement update", policyId);
     }
 }
 
 /** Manage comment required policy. */
-export class az_repos_policy_comment_required implements ICommandParent<any> {
-    commandPath = "az repos policy comment-required";
-
+export class az_repos_policy_comment_required {
     /**
      * Create comment resolution required policy.
      *
@@ -235,8 +225,8 @@ export class az_repos_policy_comment_required implements ICommandParent<any> {
      * @param {boolean} enabled Whether the policy is enabled or not.
      * @param {string} repositoryId Id of the repository on which to apply the policy.
      */
-    az_repos_policy_comment_required_create(blocking: boolean, branch: string, enabled: boolean, repositoryId: string): az_repos_policy_comment_required_create_command_builder {
-        return new az_repos_policy_comment_required_create_command_builder(this, blocking, branch, enabled, repositoryId);
+    static az_repos_policy_comment_required_create(blocking: boolean, branch: string, enabled: boolean, repositoryId: string): az_repos_policy_comment_required_create_command_builder {
+        return new az_repos_policy_comment_required_create_command_builder("az repos policy comment-required create", blocking, branch, enabled, repositoryId);
     }
 
     /**
@@ -258,15 +248,13 @@ export class az_repos_policy_comment_required implements ICommandParent<any> {
      *
      * @param {string} policyId ID of the policy.
      */
-    az_repos_policy_comment_required_update(policyId: string): az_repos_policy_comment_required_update_command_builder {
-        return new az_repos_policy_comment_required_update_command_builder(this, policyId);
+    static az_repos_policy_comment_required_update(policyId: string): az_repos_policy_comment_required_update_command_builder {
+        return new az_repos_policy_comment_required_update_command_builder("az repos policy comment-required update", policyId);
     }
 }
 
 /** Manage file size policy. */
-export class az_repos_policy_file_size implements ICommandParent<any> {
-    commandPath = "az repos policy file-size";
-
+export class az_repos_policy_file_size {
     /**
      * Create file size policy.
      *
@@ -289,8 +277,8 @@ export class az_repos_policy_file_size implements ICommandParent<any> {
      * @param {string} repositoryId Id of the repository on which to apply the policy.
      * @param {boolean} useUncompressedSize Whether to use uncompressed size.
      */
-    az_repos_policy_file_size_create(blocking: boolean, enabled: boolean, maximumGitBlobSize: string, repositoryId: string, useUncompressedSize: boolean): az_repos_policy_file_size_create_command_builder {
-        return new az_repos_policy_file_size_create_command_builder(this, blocking, enabled, maximumGitBlobSize, repositoryId, useUncompressedSize);
+    static az_repos_policy_file_size_create(blocking: boolean, enabled: boolean, maximumGitBlobSize: string, repositoryId: string, useUncompressedSize: boolean): az_repos_policy_file_size_create_command_builder {
+        return new az_repos_policy_file_size_create_command_builder("az repos policy file-size create", blocking, enabled, maximumGitBlobSize, repositoryId, useUncompressedSize);
     }
 
     /**
@@ -312,15 +300,13 @@ export class az_repos_policy_file_size implements ICommandParent<any> {
      *
      * @param {string} policyId ID of the policy.
      */
-    az_repos_policy_file_size_update(policyId: string): az_repos_policy_file_size_update_command_builder {
-        return new az_repos_policy_file_size_update_command_builder(this, policyId);
+    static az_repos_policy_file_size_update(policyId: string): az_repos_policy_file_size_update_command_builder {
+        return new az_repos_policy_file_size_update_command_builder("az repos policy file-size update", policyId);
     }
 }
 
 /** Manage merge strategy policy. */
-export class az_repos_policy_merge_strategy implements ICommandParent<any> {
-    commandPath = "az repos policy merge-strategy";
-
+export class az_repos_policy_merge_strategy {
     /**
      * Create merge strategy policy.
      *
@@ -347,8 +333,8 @@ export class az_repos_policy_merge_strategy implements ICommandParent<any> {
      * @param {boolean} enabled Whether the policy is enabled or not.
      * @param {string} repositoryId Id of the repository on which to apply the policy.
      */
-    az_repos_policy_merge_strategy_create(blocking: boolean, branch: string, enabled: boolean, repositoryId: string): az_repos_policy_merge_strategy_create_command_builder {
-        return new az_repos_policy_merge_strategy_create_command_builder(this, blocking, branch, enabled, repositoryId);
+    static az_repos_policy_merge_strategy_create(blocking: boolean, branch: string, enabled: boolean, repositoryId: string): az_repos_policy_merge_strategy_create_command_builder {
+        return new az_repos_policy_merge_strategy_create_command_builder("az repos policy merge-strategy create", blocking, branch, enabled, repositoryId);
     }
 
     /**
@@ -375,15 +361,13 @@ export class az_repos_policy_merge_strategy implements ICommandParent<any> {
      *
      * @param {string} policyId ID of the policy.
      */
-    az_repos_policy_merge_strategy_update(policyId: string): az_repos_policy_merge_strategy_update_command_builder {
-        return new az_repos_policy_merge_strategy_update_command_builder(this, policyId);
+    static az_repos_policy_merge_strategy_update(policyId: string): az_repos_policy_merge_strategy_update_command_builder {
+        return new az_repos_policy_merge_strategy_update_command_builder("az repos policy merge-strategy update", policyId);
     }
 }
 
 /** Manage required reviewer policy. */
-export class az_repos_policy_required_reviewer implements ICommandParent<any> {
-    commandPath = "az repos policy required-reviewer";
-
+export class az_repos_policy_required_reviewer {
     /**
      * Create required reviewer policy.
      *
@@ -410,8 +394,8 @@ export class az_repos_policy_required_reviewer implements ICommandParent<any> {
      * @param {string} repositoryId Id of the repository on which to apply the policy.
      * @param {string} requiredReviewerIds Required reviewers email addresses separated by ';'. For example: john@contoso.com;alice@contoso.com.
      */
-    az_repos_policy_required_reviewer_create(blocking: boolean, branch: string, enabled: boolean, message: string, repositoryId: string, requiredReviewerIds: string): az_repos_policy_required_reviewer_create_command_builder {
-        return new az_repos_policy_required_reviewer_create_command_builder(this, blocking, branch, enabled, message, repositoryId, requiredReviewerIds);
+    static az_repos_policy_required_reviewer_create(blocking: boolean, branch: string, enabled: boolean, message: string, repositoryId: string, requiredReviewerIds: string): az_repos_policy_required_reviewer_create_command_builder {
+        return new az_repos_policy_required_reviewer_create_command_builder("az repos policy required-reviewer create", blocking, branch, enabled, message, repositoryId, requiredReviewerIds);
     }
 
     /**
@@ -436,15 +420,13 @@ export class az_repos_policy_required_reviewer implements ICommandParent<any> {
      *
      * @param {string} policyId ID of the policy.
      */
-    az_repos_policy_required_reviewer_update(policyId: string): az_repos_policy_required_reviewer_update_command_builder {
-        return new az_repos_policy_required_reviewer_update_command_builder(this, policyId);
+    static az_repos_policy_required_reviewer_update(policyId: string): az_repos_policy_required_reviewer_update_command_builder {
+        return new az_repos_policy_required_reviewer_update_command_builder("az repos policy required-reviewer update", policyId);
     }
 }
 
 /** Manage work item linking policy. */
-export class az_repos_policy_work_item_linking implements ICommandParent<any> {
-    commandPath = "az repos policy work-item-linking";
-
+export class az_repos_policy_work_item_linking {
     /**
      * Create work item linking policy.
      *
@@ -466,8 +448,8 @@ export class az_repos_policy_work_item_linking implements ICommandParent<any> {
      * @param {boolean} enabled Whether the policy is enabled or not.
      * @param {string} repositoryId Id of the repository on which to apply the policy.
      */
-    az_repos_policy_work_item_linking_create(blocking: boolean, branch: string, enabled: boolean, repositoryId: string): az_repos_policy_work_item_linking_create_command_builder {
-        return new az_repos_policy_work_item_linking_create_command_builder(this, blocking, branch, enabled, repositoryId);
+    static az_repos_policy_work_item_linking_create(blocking: boolean, branch: string, enabled: boolean, repositoryId: string): az_repos_policy_work_item_linking_create_command_builder {
+        return new az_repos_policy_work_item_linking_create_command_builder("az repos policy work-item-linking create", blocking, branch, enabled, repositoryId);
     }
 
     /**
@@ -489,15 +471,13 @@ export class az_repos_policy_work_item_linking implements ICommandParent<any> {
      *
      * @param {string} policyId ID of the policy.
      */
-    az_repos_policy_work_item_linking_update(policyId: string): az_repos_policy_work_item_linking_update_command_builder {
-        return new az_repos_policy_work_item_linking_update_command_builder(this, policyId);
+    static az_repos_policy_work_item_linking_update(policyId: string): az_repos_policy_work_item_linking_update_command_builder {
+        return new az_repos_policy_work_item_linking_update_command_builder("az repos policy work-item-linking update", policyId);
     }
 }
 
 /** Manage branch policy. */
-export class az_repos_policy implements ICommandParent<any> {
-    commandPath = "az repos policy";
-
+export class az_repos_policy {
     /**
      * Create a policy using a configuration file.
      *
@@ -512,8 +492,8 @@ export class az_repos_policy implements ICommandParent<any> {
      *
      * @param {string} policyConfiguration Local file path for configuration file. Please use / backslash when typing in directory path.
      */
-    az_repos_policy_create(policyConfiguration: string): az_repos_policy_create_command_builder {
-        return new az_repos_policy_create_command_builder(this, policyConfiguration);
+    static az_repos_policy_create(policyConfiguration: string): az_repos_policy_create_command_builder {
+        return new az_repos_policy_create_command_builder("az repos policy create", policyConfiguration);
     }
 
     /**
@@ -531,8 +511,8 @@ export class az_repos_policy implements ICommandParent<any> {
      *
      * @param {string} policyId ID of the policy.
      */
-    az_repos_policy_delete(policyId: string): az_repos_policy_delete_command_builder {
-        return new az_repos_policy_delete_command_builder(this, policyId);
+    static az_repos_policy_delete(policyId: string): az_repos_policy_delete_command_builder {
+        return new az_repos_policy_delete_command_builder("az repos policy delete", policyId);
     }
 
     /**
@@ -549,8 +529,8 @@ export class az_repos_policy implements ICommandParent<any> {
      *                      [--subscription]
      * ```
      */
-    az_repos_policy_list(): az_repos_policy_list_command_builder {
-        return new az_repos_policy_list_command_builder(this);
+    static az_repos_policy_list(): az_repos_policy_list_command_builder {
+        return new az_repos_policy_list_command_builder("az repos policy list");
     }
 
     /**
@@ -568,8 +548,8 @@ export class az_repos_policy implements ICommandParent<any> {
      *
      * @param {string} policyId ID of the policy.
      */
-    az_repos_policy_show(policyId: string): az_repos_policy_show_command_builder {
-        return new az_repos_policy_show_command_builder(this, policyId);
+    static az_repos_policy_show(policyId: string): az_repos_policy_show_command_builder {
+        return new az_repos_policy_show_command_builder("az repos policy show", policyId);
     }
 
     /**
@@ -588,15 +568,13 @@ export class az_repos_policy implements ICommandParent<any> {
      * @param {string} policyConfiguration Local file path for configuration file. Please use / backslash when typing in directory path.
      * @param {string} policyId ID of the policy.
      */
-    az_repos_policy_update(policyConfiguration: string, policyId: string): az_repos_policy_update_command_builder {
-        return new az_repos_policy_update_command_builder(this, policyConfiguration, policyId);
+    static az_repos_policy_update(policyConfiguration: string, policyId: string): az_repos_policy_update_command_builder {
+        return new az_repos_policy_update_command_builder("az repos policy update", policyConfiguration, policyId);
     }
 }
 
 /** Manage pull request policy. */
-export class az_repos_pr_policy implements ICommandParent<any> {
-    commandPath = "az repos pr policy";
-
+export class az_repos_pr_policy {
     /**
      * List policies of a pull request.
      *
@@ -613,8 +591,8 @@ export class az_repos_pr_policy implements ICommandParent<any> {
      *
      * @param {string} id ID of the pull request.
      */
-    az_repos_pr_policy_list(id: string): az_repos_pr_policy_list_command_builder {
-        return new az_repos_pr_policy_list_command_builder(this, id);
+    static az_repos_pr_policy_list(id: string): az_repos_pr_policy_list_command_builder {
+        return new az_repos_pr_policy_list_command_builder("az repos pr policy list", id);
     }
 
     /**
@@ -632,15 +610,13 @@ export class az_repos_pr_policy implements ICommandParent<any> {
      * @param {string} evaluationId ID of the policy evaluation to queue.
      * @param {string} id ID of the pull request.
      */
-    az_repos_pr_policy_queue(evaluationId: string, id: string): az_repos_pr_policy_queue_command_builder {
-        return new az_repos_pr_policy_queue_command_builder(this, evaluationId, id);
+    static az_repos_pr_policy_queue(evaluationId: string, id: string): az_repos_pr_policy_queue_command_builder {
+        return new az_repos_pr_policy_queue_command_builder("az repos pr policy queue", evaluationId, id);
     }
 }
 
 /** Manage pull request reviewers. */
-export class az_repos_pr_reviewer implements ICommandParent<any> {
-    commandPath = "az repos pr reviewer";
-
+export class az_repos_pr_reviewer {
     /**
      * Add one or more reviewers to a pull request.
      *
@@ -656,8 +632,8 @@ export class az_repos_pr_reviewer implements ICommandParent<any> {
      * @param {string} id ID of the pull request.
      * @param {string} reviewers Users or groups to include as reviewers on a pull request. Space separated.
      */
-    az_repos_pr_reviewer_add(id: string, reviewers: string): az_repos_pr_reviewer_add_command_builder {
-        return new az_repos_pr_reviewer_add_command_builder(this, id, reviewers);
+    static az_repos_pr_reviewer_add(id: string, reviewers: string): az_repos_pr_reviewer_add_command_builder {
+        return new az_repos_pr_reviewer_add_command_builder("az repos pr reviewer add", id, reviewers);
     }
 
     /**
@@ -674,8 +650,8 @@ export class az_repos_pr_reviewer implements ICommandParent<any> {
      *
      * @param {string} id ID of the pull request.
      */
-    az_repos_pr_reviewer_list(id: string): az_repos_pr_reviewer_list_command_builder {
-        return new az_repos_pr_reviewer_list_command_builder(this, id);
+    static az_repos_pr_reviewer_list(id: string): az_repos_pr_reviewer_list_command_builder {
+        return new az_repos_pr_reviewer_list_command_builder("az repos pr reviewer list", id);
     }
 
     /**
@@ -693,15 +669,13 @@ export class az_repos_pr_reviewer implements ICommandParent<any> {
      * @param {string} id ID of the pull request.
      * @param {string} reviewers Users or groups to remove as reviewers on a pull request. Space separated.
      */
-    az_repos_pr_reviewer_remove(id: string, reviewers: string): az_repos_pr_reviewer_remove_command_builder {
-        return new az_repos_pr_reviewer_remove_command_builder(this, id, reviewers);
+    static az_repos_pr_reviewer_remove(id: string, reviewers: string): az_repos_pr_reviewer_remove_command_builder {
+        return new az_repos_pr_reviewer_remove_command_builder("az repos pr reviewer remove", id, reviewers);
     }
 }
 
 /** Manage work items associated with pull requests. */
-export class az_repos_pr_work_item implements ICommandParent<any> {
-    commandPath = "az repos pr work-item";
-
+export class az_repos_pr_work_item {
     /**
      * Link one or more work items to a pull request.
      *
@@ -717,8 +691,8 @@ export class az_repos_pr_work_item implements ICommandParent<any> {
      * @param {string} id ID of the pull request.
      * @param {string} workItems IDs of the work items to link. Space separated.
      */
-    az_repos_pr_work_item_add(id: string, workItems: string): az_repos_pr_work_item_add_command_builder {
-        return new az_repos_pr_work_item_add_command_builder(this, id, workItems);
+    static az_repos_pr_work_item_add(id: string, workItems: string): az_repos_pr_work_item_add_command_builder {
+        return new az_repos_pr_work_item_add_command_builder("az repos pr work-item add", id, workItems);
     }
 
     /**
@@ -735,8 +709,8 @@ export class az_repos_pr_work_item implements ICommandParent<any> {
      *
      * @param {string} id ID of the pull request.
      */
-    az_repos_pr_work_item_list(id: string): az_repos_pr_work_item_list_command_builder {
-        return new az_repos_pr_work_item_list_command_builder(this, id);
+    static az_repos_pr_work_item_list(id: string): az_repos_pr_work_item_list_command_builder {
+        return new az_repos_pr_work_item_list_command_builder("az repos pr work-item list", id);
     }
 
     /**
@@ -754,15 +728,13 @@ export class az_repos_pr_work_item implements ICommandParent<any> {
      * @param {string} id ID of the pull request.
      * @param {string} workItems IDs of the work items to unlink. Space separated.
      */
-    az_repos_pr_work_item_remove(id: string, workItems: string): az_repos_pr_work_item_remove_command_builder {
-        return new az_repos_pr_work_item_remove_command_builder(this, id, workItems);
+    static az_repos_pr_work_item_remove(id: string, workItems: string): az_repos_pr_work_item_remove_command_builder {
+        return new az_repos_pr_work_item_remove_command_builder("az repos pr work-item remove", id, workItems);
     }
 }
 
 /** Manage pull requests. */
-export class az_repos_pr implements ICommandParent<any> {
-    commandPath = "az repos pr";
-
+export class az_repos_pr {
     /**
      * Checkout the PR source branch locally, if no local changes are present.
      *
@@ -775,8 +747,8 @@ export class az_repos_pr implements ICommandParent<any> {
      *
      * @param {string} id ID of the pull request.
      */
-    az_repos_pr_checkout(id: string): az_repos_pr_checkout_command_builder {
-        return new az_repos_pr_checkout_command_builder(this, id);
+    static az_repos_pr_checkout(id: string): az_repos_pr_checkout_command_builder {
+        return new az_repos_pr_checkout_command_builder("az repos pr checkout", id);
     }
 
     /**
@@ -806,8 +778,8 @@ export class az_repos_pr implements ICommandParent<any> {
      *                    [--work-items]
      * ```
      */
-    az_repos_pr_create(): az_repos_pr_create_command_builder {
-        return new az_repos_pr_create_command_builder(this);
+    static az_repos_pr_create(): az_repos_pr_create_command_builder {
+        return new az_repos_pr_create_command_builder("az repos pr create");
     }
 
     /**
@@ -831,8 +803,8 @@ export class az_repos_pr implements ICommandParent<any> {
      *                  [--top]
      * ```
      */
-    az_repos_pr_list(): az_repos_pr_list_command_builder {
-        return new az_repos_pr_list_command_builder(this);
+    static az_repos_pr_list(): az_repos_pr_list_command_builder {
+        return new az_repos_pr_list_command_builder("az repos pr list");
     }
 
     /**
@@ -850,8 +822,8 @@ export class az_repos_pr implements ICommandParent<any> {
      * @param {string} id ID of the pull request.
      * @param {'approve' | 'approve-with-suggestions' | 'reject' | 'reset' | 'wait-for-author'} vote New vote value for the pull request.
      */
-    az_repos_pr_set_vote(id: string, vote: 'approve' | 'approve-with-suggestions' | 'reject' | 'reset' | 'wait-for-author'): az_repos_pr_set_vote_command_builder {
-        return new az_repos_pr_set_vote_command_builder(this, id, vote);
+    static az_repos_pr_set_vote(id: string, vote: 'approve' | 'approve-with-suggestions' | 'reject' | 'reset' | 'wait-for-author'): az_repos_pr_set_vote_command_builder {
+        return new az_repos_pr_set_vote_command_builder("az repos pr set-vote", id, vote);
     }
 
     /**
@@ -869,8 +841,8 @@ export class az_repos_pr implements ICommandParent<any> {
      *
      * @param {string} id ID of the pull request.
      */
-    az_repos_pr_show(id: string): az_repos_pr_show_command_builder {
-        return new az_repos_pr_show_command_builder(this, id);
+    static az_repos_pr_show(id: string): az_repos_pr_show_command_builder {
+        return new az_repos_pr_show_command_builder("az repos pr show", id);
     }
 
     /**
@@ -897,15 +869,13 @@ export class az_repos_pr implements ICommandParent<any> {
      *
      * @param {string} id ID of the pull request.
      */
-    az_repos_pr_update(id: string): az_repos_pr_update_command_builder {
-        return new az_repos_pr_update_command_builder(this, id);
+    static az_repos_pr_update(id: string): az_repos_pr_update_command_builder {
+        return new az_repos_pr_update_command_builder("az repos pr update", id);
     }
 }
 
 /** Manage Git references. */
-export class az_repos_ref implements ICommandParent<any> {
-    commandPath = "az repos ref";
-
+export class az_repos_ref {
     /**
      * Create a reference.
      *
@@ -923,8 +893,8 @@ export class az_repos_ref implements ICommandParent<any> {
      * @param {string} name Name of the reference to create (example: heads/my_branch or tags/my_tag).
      * @param {string} objectId Id of the object to create the reference from.
      */
-    az_repos_ref_create(name: string, objectId: string): az_repos_ref_create_command_builder {
-        return new az_repos_ref_create_command_builder(this, name, objectId);
+    static az_repos_ref_create(name: string, objectId: string): az_repos_ref_create_command_builder {
+        return new az_repos_ref_create_command_builder("az repos ref create", name, objectId);
     }
 
     /**
@@ -944,8 +914,8 @@ export class az_repos_ref implements ICommandParent<any> {
      * @param {string} name Name of the reference to delete (example: heads/my_branch).
      * @param {string} objectId Id of the reference to delete.
      */
-    az_repos_ref_delete(name: string, objectId: string): az_repos_ref_delete_command_builder {
-        return new az_repos_ref_delete_command_builder(this, name, objectId);
+    static az_repos_ref_delete(name: string, objectId: string): az_repos_ref_delete_command_builder {
+        return new az_repos_ref_delete_command_builder("az repos ref delete", name, objectId);
     }
 
     /**
@@ -962,8 +932,8 @@ export class az_repos_ref implements ICommandParent<any> {
      *                   [--subscription]
      * ```
      */
-    az_repos_ref_list(): az_repos_ref_list_command_builder {
-        return new az_repos_ref_list_command_builder(this);
+    static az_repos_ref_list(): az_repos_ref_list_command_builder {
+        return new az_repos_ref_list_command_builder("az repos ref list");
     }
 
     /**
@@ -981,8 +951,8 @@ export class az_repos_ref implements ICommandParent<any> {
      *
      * @param {string} name Name of the reference to update (example: heads/my_branch).
      */
-    az_repos_ref_lock(name: string): az_repos_ref_lock_command_builder {
-        return new az_repos_ref_lock_command_builder(this, name);
+    static az_repos_ref_lock(name: string): az_repos_ref_lock_command_builder {
+        return new az_repos_ref_lock_command_builder("az repos ref lock", name);
     }
 
     /**
@@ -1000,15 +970,13 @@ export class az_repos_ref implements ICommandParent<any> {
      *
      * @param {string} name Name of the reference to update (example: heads/my_branch).
      */
-    az_repos_ref_unlock(name: string): az_repos_ref_unlock_command_builder {
-        return new az_repos_ref_unlock_command_builder(this, name);
+    static az_repos_ref_unlock(name: string): az_repos_ref_unlock_command_builder {
+        return new az_repos_ref_unlock_command_builder("az repos ref unlock", name);
     }
 }
 
 /** Manage Azure Repos. */
-export class az_repos implements ICommandParent<any> {
-    commandPath = "az repos";
-
+export class az_repos {
     /**
      * Create a Git repository in a team project.
      *
@@ -1024,8 +992,8 @@ export class az_repos implements ICommandParent<any> {
      *
      * @param {string} name Name for the new repository.
      */
-    az_repos_create(name: string): az_repos_create_command_builder {
-        return new az_repos_create_command_builder(this, name);
+    static az_repos_create(name: string): az_repos_create_command_builder {
+        return new az_repos_create_command_builder("az repos create", name);
     }
 
     /**
@@ -1043,8 +1011,8 @@ export class az_repos implements ICommandParent<any> {
      *
      * @param {string} id ID of the repository.
      */
-    az_repos_delete(id: string): az_repos_delete_command_builder {
-        return new az_repos_delete_command_builder(this, id);
+    static az_repos_delete(id: string): az_repos_delete_command_builder {
+        return new az_repos_delete_command_builder("az repos delete", id);
     }
 
     /**
@@ -1059,8 +1027,8 @@ export class az_repos implements ICommandParent<any> {
      *               [--subscription]
      * ```
      */
-    az_repos_list(): az_repos_list_command_builder {
-        return new az_repos_list_command_builder(this);
+    static az_repos_list(): az_repos_list_command_builder {
+        return new az_repos_list_command_builder("az repos list");
     }
 
     /**
@@ -1079,8 +1047,8 @@ export class az_repos implements ICommandParent<any> {
      *
      * @param {string} repository Name or ID of the repository.
      */
-    az_repos_show(repository: string): az_repos_show_command_builder {
-        return new az_repos_show_command_builder(this, repository);
+    static az_repos_show(repository: string): az_repos_show_command_builder {
+        return new az_repos_show_command_builder("az repos show", repository);
     }
 
     /**
@@ -1099,8 +1067,8 @@ export class az_repos implements ICommandParent<any> {
      *
      * @param {string} repository Name or ID of the repository.
      */
-    az_repos_update(repository: string): az_repos_update_command_builder {
-        return new az_repos_update_command_builder(this, repository);
+    static az_repos_update(repository: string): az_repos_update_command_builder {
+        return new az_repos_update_command_builder("az repos update", repository);
     }
 }
 
@@ -1123,7 +1091,7 @@ export class az_repos implements ICommandParent<any> {
  * @param {string} gitSourceUrl Url of the source git repository.
  */
 class az_repos_import_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, gitSourceUrl: string) {
+    constructor(commandPath: string, gitSourceUrl: string) {
         super(commandParent);
         this.gitSourceUrl(gitSourceUrl)
     }
@@ -1213,7 +1181,7 @@ class az_repos_import_create_command_builder extends CommandBuilder {
  * @param {boolean} resetOnSourcePush Whether to reset source on push.
  */
 class az_repos_policy_approver_count_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, allowDownvotes: boolean, blocking: boolean, branch: string, creatorVoteCounts: boolean, enabled: boolean, minimumApproverCount: string, repositoryId: string, resetOnSourcePush: boolean) {
+    constructor(commandPath: string, allowDownvotes: boolean, blocking: boolean, branch: string, creatorVoteCounts: boolean, enabled: boolean, minimumApproverCount: string, repositoryId: string, resetOnSourcePush: boolean) {
         super(commandParent);
         this.allowDownvotes(allowDownvotes)
         this.blocking(blocking)
@@ -1328,7 +1296,7 @@ class az_repos_policy_approver_count_create_command_builder extends CommandBuild
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_approver_count_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, policyId: string) {
+    constructor(commandPath: string, policyId: string) {
         super(commandParent);
         this.policyId(policyId)
     }
@@ -1451,7 +1419,7 @@ class az_repos_policy_approver_count_update_command_builder extends CommandBuild
  * @param {string} validDuration Policy validity duration (in minutes).
  */
 class az_repos_policy_build_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, blocking: boolean, branch: string, buildDefinitionId: string, displayName: string, enabled: boolean, manualQueueOnly: boolean, queueOnSourceUpdateOnly: boolean, repositoryId: string, validDuration: string) {
+    constructor(commandPath: string, blocking: boolean, branch: string, buildDefinitionId: string, displayName: string, enabled: boolean, manualQueueOnly: boolean, queueOnSourceUpdateOnly: boolean, repositoryId: string, validDuration: string) {
         super(commandParent);
         this.blocking(blocking)
         this.branch(branch)
@@ -1581,7 +1549,7 @@ class az_repos_policy_build_create_command_builder extends CommandBuilder {
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_build_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, policyId: string) {
+    constructor(commandPath: string, policyId: string) {
         super(commandParent);
         this.policyId(policyId)
     }
@@ -1702,7 +1670,7 @@ class az_repos_policy_build_update_command_builder extends CommandBuilder {
  * @param {string} repositoryId Id of the repository on which to apply the policy.
  */
 class az_repos_policy_case_enforcement_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, blocking: boolean, enabled: boolean, repositoryId: string) {
+    constructor(commandPath: string, blocking: boolean, enabled: boolean, repositoryId: string) {
         super(commandParent);
         this.blocking(blocking)
         this.enabled(enabled)
@@ -1770,7 +1738,7 @@ class az_repos_policy_case_enforcement_create_command_builder extends CommandBui
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_case_enforcement_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, policyId: string) {
+    constructor(commandPath: string, policyId: string) {
         super(commandParent);
         this.policyId(policyId)
     }
@@ -1846,7 +1814,7 @@ class az_repos_policy_case_enforcement_update_command_builder extends CommandBui
  * @param {string} repositoryId Id of the repository on which to apply the policy.
  */
 class az_repos_policy_comment_required_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, blocking: boolean, branch: string, enabled: boolean, repositoryId: string) {
+    constructor(commandPath: string, blocking: boolean, branch: string, enabled: boolean, repositoryId: string) {
         super(commandParent);
         this.blocking(blocking)
         this.branch(branch)
@@ -1929,7 +1897,7 @@ class az_repos_policy_comment_required_create_command_builder extends CommandBui
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_comment_required_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, policyId: string) {
+    constructor(commandPath: string, policyId: string) {
         super(commandParent);
         this.policyId(policyId)
     }
@@ -2018,7 +1986,7 @@ class az_repos_policy_comment_required_update_command_builder extends CommandBui
  * @param {boolean} useUncompressedSize Whether to use uncompressed size.
  */
 class az_repos_policy_file_size_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, blocking: boolean, enabled: boolean, maximumGitBlobSize: string, repositoryId: string, useUncompressedSize: boolean) {
+    constructor(commandPath: string, blocking: boolean, enabled: boolean, maximumGitBlobSize: string, repositoryId: string, useUncompressedSize: boolean) {
         super(commandParent);
         this.blocking(blocking)
         this.enabled(enabled)
@@ -2102,7 +2070,7 @@ class az_repos_policy_file_size_create_command_builder extends CommandBuilder {
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_file_size_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, policyId: string) {
+    constructor(commandPath: string, policyId: string) {
         super(commandParent);
         this.policyId(policyId)
     }
@@ -2195,7 +2163,7 @@ class az_repos_policy_file_size_update_command_builder extends CommandBuilder {
  * @param {string} repositoryId Id of the repository on which to apply the policy.
  */
 class az_repos_policy_merge_strategy_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, blocking: boolean, branch: string, enabled: boolean, repositoryId: string) {
+    constructor(commandPath: string, blocking: boolean, branch: string, enabled: boolean, repositoryId: string) {
         super(commandParent);
         this.blocking(blocking)
         this.branch(branch)
@@ -2313,7 +2281,7 @@ class az_repos_policy_merge_strategy_create_command_builder extends CommandBuild
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_merge_strategy_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, policyId: string) {
+    constructor(commandPath: string, policyId: string) {
         super(commandParent);
         this.policyId(policyId)
     }
@@ -2436,7 +2404,7 @@ class az_repos_policy_merge_strategy_update_command_builder extends CommandBuild
  * @param {string} requiredReviewerIds Required reviewers email addresses separated by ';'. For example: john@contoso.com;alice@contoso.com.
  */
 class az_repos_policy_required_reviewer_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, blocking: boolean, branch: string, enabled: boolean, message: string, repositoryId: string, requiredReviewerIds: string) {
+    constructor(commandPath: string, blocking: boolean, branch: string, enabled: boolean, message: string, repositoryId: string, requiredReviewerIds: string) {
         super(commandParent);
         this.blocking(blocking)
         this.branch(branch)
@@ -2542,7 +2510,7 @@ class az_repos_policy_required_reviewer_create_command_builder extends CommandBu
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_required_reviewer_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, policyId: string) {
+    constructor(commandPath: string, policyId: string) {
         super(commandParent);
         this.policyId(policyId)
     }
@@ -2648,7 +2616,7 @@ class az_repos_policy_required_reviewer_update_command_builder extends CommandBu
  * @param {string} repositoryId Id of the repository on which to apply the policy.
  */
 class az_repos_policy_work_item_linking_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, blocking: boolean, branch: string, enabled: boolean, repositoryId: string) {
+    constructor(commandPath: string, blocking: boolean, branch: string, enabled: boolean, repositoryId: string) {
         super(commandParent);
         this.blocking(blocking)
         this.branch(branch)
@@ -2731,7 +2699,7 @@ class az_repos_policy_work_item_linking_create_command_builder extends CommandBu
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_work_item_linking_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, policyId: string) {
+    constructor(commandPath: string, policyId: string) {
         super(commandParent);
         this.policyId(policyId)
     }
@@ -2812,7 +2780,7 @@ class az_repos_policy_work_item_linking_update_command_builder extends CommandBu
  * @param {string} policyConfiguration Local file path for configuration file. Please use / backslash when typing in directory path.
  */
 class az_repos_policy_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, policyConfiguration: string) {
+    constructor(commandPath: string, policyConfiguration: string) {
         super(commandParent);
         this.policyConfiguration(policyConfiguration)
     }
@@ -2864,7 +2832,7 @@ class az_repos_policy_create_command_builder extends CommandBuilder {
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, policyId: string) {
+    constructor(commandPath: string, policyId: string) {
         super(commandParent);
         this.policyId(policyId)
     }
@@ -2921,7 +2889,7 @@ class az_repos_policy_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_repos_policy_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2984,7 +2952,7 @@ class az_repos_policy_list_command_builder extends CommandBuilder {
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, policyId: string) {
+    constructor(commandPath: string, policyId: string) {
         super(commandParent);
         this.policyId(policyId)
     }
@@ -3043,7 +3011,7 @@ class az_repos_policy_show_command_builder extends CommandBuilder {
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, policyConfiguration: string, policyId: string) {
+    constructor(commandPath: string, policyConfiguration: string, policyId: string) {
         super(commandParent);
         this.policyConfiguration(policyConfiguration)
         this.policyId(policyId)
@@ -3103,7 +3071,7 @@ class az_repos_policy_update_command_builder extends CommandBuilder {
  * @param {string} id ID of the pull request.
  */
 class az_repos_pr_policy_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -3167,7 +3135,7 @@ class az_repos_pr_policy_list_command_builder extends CommandBuilder {
  * @param {string} id ID of the pull request.
  */
 class az_repos_pr_policy_queue_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, evaluationId: string, id: string) {
+    constructor(commandPath: string, evaluationId: string, id: string) {
         super(commandParent);
         this.evaluationId(evaluationId)
         this.id(id)
@@ -3220,7 +3188,7 @@ class az_repos_pr_policy_queue_command_builder extends CommandBuilder {
  * @param {string} reviewers Users or groups to include as reviewers on a pull request. Space separated.
  */
 class az_repos_pr_reviewer_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, reviewers: string) {
+    constructor(commandPath: string, id: string, reviewers: string) {
         super(commandParent);
         this.id(id)
         this.reviewers(reviewers)
@@ -3272,7 +3240,7 @@ class az_repos_pr_reviewer_add_command_builder extends CommandBuilder {
  * @param {string} id ID of the pull request.
  */
 class az_repos_pr_reviewer_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -3324,7 +3292,7 @@ class az_repos_pr_reviewer_list_command_builder extends CommandBuilder {
  * @param {string} reviewers Users or groups to remove as reviewers on a pull request. Space separated.
  */
 class az_repos_pr_reviewer_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, reviewers: string) {
+    constructor(commandPath: string, id: string, reviewers: string) {
         super(commandParent);
         this.id(id)
         this.reviewers(reviewers)
@@ -3377,7 +3345,7 @@ class az_repos_pr_reviewer_remove_command_builder extends CommandBuilder {
  * @param {string} workItems IDs of the work items to link. Space separated.
  */
 class az_repos_pr_work_item_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, workItems: string) {
+    constructor(commandPath: string, id: string, workItems: string) {
         super(commandParent);
         this.id(id)
         this.workItems(workItems)
@@ -3429,7 +3397,7 @@ class az_repos_pr_work_item_add_command_builder extends CommandBuilder {
  * @param {string} id ID of the pull request.
  */
 class az_repos_pr_work_item_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -3481,7 +3449,7 @@ class az_repos_pr_work_item_list_command_builder extends CommandBuilder {
  * @param {string} workItems IDs of the work items to unlink. Space separated.
  */
 class az_repos_pr_work_item_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, workItems: string) {
+    constructor(commandPath: string, id: string, workItems: string) {
         super(commandParent);
         this.id(id)
         this.workItems(workItems)
@@ -3531,7 +3499,7 @@ class az_repos_pr_work_item_remove_command_builder extends CommandBuilder {
  * @param {string} id ID of the pull request.
  */
 class az_repos_pr_checkout_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -3583,7 +3551,7 @@ class az_repos_pr_checkout_command_builder extends CommandBuilder {
  * ```
  */
 class az_repos_pr_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3730,7 +3698,7 @@ class az_repos_pr_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_repos_pr_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3835,7 +3803,7 @@ class az_repos_pr_list_command_builder extends CommandBuilder {
  * @param {'approve' | 'approve-with-suggestions' | 'reject' | 'reset' | 'wait-for-author'} vote New vote value for the pull request.
  */
 class az_repos_pr_set_vote_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, vote: 'approve' | 'approve-with-suggestions' | 'reject' | 'reset' | 'wait-for-author') {
+    constructor(commandPath: string, id: string, vote: 'approve' | 'approve-with-suggestions' | 'reject' | 'reset' | 'wait-for-author') {
         super(commandParent);
         this.id(id)
         this.vote(vote)
@@ -3888,7 +3856,7 @@ class az_repos_pr_set_vote_command_builder extends CommandBuilder {
  * @param {string} id ID of the pull request.
  */
 class az_repos_pr_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -3955,7 +3923,7 @@ class az_repos_pr_show_command_builder extends CommandBuilder {
  * @param {string} id ID of the pull request.
  */
 class az_repos_pr_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -4069,7 +4037,7 @@ class az_repos_pr_update_command_builder extends CommandBuilder {
  * @param {string} objectId Id of the object to create the reference from.
  */
 class az_repos_ref_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, objectId: string) {
+    constructor(commandPath: string, name: string, objectId: string) {
         super(commandParent);
         this.name(name)
         this.objectId(objectId)
@@ -4136,7 +4104,7 @@ class az_repos_ref_create_command_builder extends CommandBuilder {
  * @param {string} objectId Id of the reference to delete.
  */
 class az_repos_ref_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, objectId: string) {
+    constructor(commandPath: string, name: string, objectId: string) {
         super(commandParent);
         this.name(name)
         this.objectId(objectId)
@@ -4200,7 +4168,7 @@ class az_repos_ref_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_repos_ref_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4263,7 +4231,7 @@ class az_repos_ref_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the reference to update (example: heads/my_branch).
  */
 class az_repos_ref_lock_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4321,7 +4289,7 @@ class az_repos_ref_lock_command_builder extends CommandBuilder {
  * @param {string} name Name of the reference to update (example: heads/my_branch).
  */
 class az_repos_ref_unlock_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4379,7 +4347,7 @@ class az_repos_ref_unlock_command_builder extends CommandBuilder {
  * @param {string} name Name for the new repository.
  */
 class az_repos_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4437,7 +4405,7 @@ class az_repos_create_command_builder extends CommandBuilder {
  * @param {string} id ID of the repository.
  */
 class az_repos_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -4492,7 +4460,7 @@ class az_repos_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_repos_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4544,7 +4512,7 @@ class az_repos_list_command_builder extends CommandBuilder {
  * @param {string} repository Name or ID of the repository.
  */
 class az_repos_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, repository: string) {
+    constructor(commandPath: string, repository: string) {
         super(commandParent);
         this.repository(repository)
     }
@@ -4609,7 +4577,7 @@ class az_repos_show_command_builder extends CommandBuilder {
  * @param {string} repository Name or ID of the repository.
  */
 class az_repos_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, repository: string) {
+    constructor(commandPath: string, repository: string) {
         super(commandParent);
         this.repository(repository)
     }

@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Azure locks. */
-export class az_lock implements ICommandParent<any> {
-    commandPath = "az lock";
-
+export class az_lock {
     /**
      * Create a lock.
      *
@@ -23,8 +21,8 @@ export class az_lock implements ICommandParent<any> {
      * @param {'CanNotDelete' | 'ReadOnly'} lockType The type of lock restriction.
      * @param {string} name Name of the lock.
      */
-    az_lock_create(lockType: 'CanNotDelete' | 'ReadOnly', name: string): az_lock_create_command_builder {
-        return new az_lock_create_command_builder(this, lockType, name);
+    static az_lock_create(lockType: 'CanNotDelete' | 'ReadOnly', name: string): az_lock_create_command_builder {
+        return new az_lock_create_command_builder("az lock create", lockType, name);
     }
 
     /**
@@ -42,8 +40,8 @@ export class az_lock implements ICommandParent<any> {
      *                [--subscription]
      * ```
      */
-    az_lock_delete(): az_lock_delete_command_builder {
-        return new az_lock_delete_command_builder(this);
+    static az_lock_delete(): az_lock_delete_command_builder {
+        return new az_lock_delete_command_builder("az lock delete");
     }
 
     /**
@@ -61,8 +59,8 @@ export class az_lock implements ICommandParent<any> {
      *              [--subscription]
      * ```
      */
-    az_lock_list(): az_lock_list_command_builder {
-        return new az_lock_list_command_builder(this);
+    static az_lock_list(): az_lock_list_command_builder {
+        return new az_lock_list_command_builder("az lock list");
     }
 
     /**
@@ -81,8 +79,8 @@ export class az_lock implements ICommandParent<any> {
      *              [--subscription]
      * ```
      */
-    az_lock_show(): az_lock_show_command_builder {
-        return new az_lock_show_command_builder(this);
+    static az_lock_show(): az_lock_show_command_builder {
+        return new az_lock_show_command_builder("az lock show");
     }
 
     /**
@@ -102,8 +100,8 @@ export class az_lock implements ICommandParent<any> {
      *                [--subscription]
      * ```
      */
-    az_lock_update(): az_lock_update_command_builder {
-        return new az_lock_update_command_builder(this);
+    static az_lock_update(): az_lock_update_command_builder {
+        return new az_lock_update_command_builder("az lock update");
     }
 }
 
@@ -127,7 +125,7 @@ export class az_lock implements ICommandParent<any> {
  * @param {string} name Name of the lock.
  */
 class az_lock_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, lockType: 'CanNotDelete' | 'ReadOnly', name: string) {
+    constructor(commandPath: string, lockType: 'CanNotDelete' | 'ReadOnly', name: string) {
         super(commandParent);
         this.lockType(lockType)
         this.name(name)
@@ -204,7 +202,7 @@ class az_lock_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_lock_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -273,7 +271,7 @@ class az_lock_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_lock_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -343,7 +341,7 @@ class az_lock_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_lock_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -420,7 +418,7 @@ class az_lock_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_lock_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

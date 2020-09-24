@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Azure EventHubs Cluster for namespace. */
-export class az_eventhubs_cluster_namespace implements ICommandParent<any> {
-    commandPath = "az eventhubs cluster namespace";
-
+export class az_eventhubs_cluster_namespace {
     /**
      * List of Namespaces within given Cluster.
      *
@@ -18,15 +16,13 @@ export class az_eventhubs_cluster_namespace implements ICommandParent<any> {
      * @param {string} name Name of Cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_cluster_namespace_list(name: string, resourceGroup: string): az_eventhubs_cluster_namespace_list_command_builder {
-        return new az_eventhubs_cluster_namespace_list_command_builder(this, name, resourceGroup);
+    static az_eventhubs_cluster_namespace_list(name: string, resourceGroup: string): az_eventhubs_cluster_namespace_list_command_builder {
+        return new az_eventhubs_cluster_namespace_list_command_builder("az eventhubs cluster namespace list", name, resourceGroup);
     }
 }
 
 /** Manage Azure EventHubs Clusters. */
-export class az_eventhubs_cluster implements ICommandParent<any> {
-    commandPath = "az eventhubs cluster";
-
+export class az_eventhubs_cluster {
     /**
      * List the quantity of available pre-provisioned Event Hubs Clusters, indexed by Azure region.
      *
@@ -35,8 +31,8 @@ export class az_eventhubs_cluster implements ICommandParent<any> {
      * az eventhubs cluster available-region [--subscription]
      * ```
      */
-    az_eventhubs_cluster_available_region(): az_eventhubs_cluster_available_region_command_builder {
-        return new az_eventhubs_cluster_available_region_command_builder(this);
+    static az_eventhubs_cluster_available_region(): az_eventhubs_cluster_available_region_command_builder {
+        return new az_eventhubs_cluster_available_region_command_builder("az eventhubs cluster available-region");
     }
 
     /**
@@ -55,8 +51,8 @@ export class az_eventhubs_cluster implements ICommandParent<any> {
      * @param {string} name Name of Cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_cluster_create(name: string, resourceGroup: string): az_eventhubs_cluster_create_command_builder {
-        return new az_eventhubs_cluster_create_command_builder(this, name, resourceGroup);
+    static az_eventhubs_cluster_create(name: string, resourceGroup: string): az_eventhubs_cluster_create_command_builder {
+        return new az_eventhubs_cluster_create_command_builder("az eventhubs cluster create", name, resourceGroup);
     }
 
     /**
@@ -74,8 +70,8 @@ export class az_eventhubs_cluster implements ICommandParent<any> {
      * @param {string} name Name of Cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_cluster_delete(name: string, resourceGroup: string): az_eventhubs_cluster_delete_command_builder {
-        return new az_eventhubs_cluster_delete_command_builder(this, name, resourceGroup);
+    static az_eventhubs_cluster_delete(name: string, resourceGroup: string): az_eventhubs_cluster_delete_command_builder {
+        return new az_eventhubs_cluster_delete_command_builder("az eventhubs cluster delete", name, resourceGroup);
     }
 
     /**
@@ -90,8 +86,8 @@ export class az_eventhubs_cluster implements ICommandParent<any> {
      *
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_cluster_list(resourceGroup: string): az_eventhubs_cluster_list_command_builder {
-        return new az_eventhubs_cluster_list_command_builder(this, resourceGroup);
+    static az_eventhubs_cluster_list(resourceGroup: string): az_eventhubs_cluster_list_command_builder {
+        return new az_eventhubs_cluster_list_command_builder("az eventhubs cluster list", resourceGroup);
     }
 
     /**
@@ -108,8 +104,8 @@ export class az_eventhubs_cluster implements ICommandParent<any> {
      * @param {string} name Name of Cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_cluster_show(name: string, resourceGroup: string): az_eventhubs_cluster_show_command_builder {
-        return new az_eventhubs_cluster_show_command_builder(this, name, resourceGroup);
+    static az_eventhubs_cluster_show(name: string, resourceGroup: string): az_eventhubs_cluster_show_command_builder {
+        return new az_eventhubs_cluster_show_command_builder("az eventhubs cluster show", name, resourceGroup);
     }
 
     /**
@@ -130,8 +126,8 @@ export class az_eventhubs_cluster implements ICommandParent<any> {
      * @param {string} name Name of Cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_cluster_update(name: string, resourceGroup: string): az_eventhubs_cluster_update_command_builder {
-        return new az_eventhubs_cluster_update_command_builder(this, name, resourceGroup);
+    static az_eventhubs_cluster_update(name: string, resourceGroup: string): az_eventhubs_cluster_update_command_builder {
+        return new az_eventhubs_cluster_update_command_builder("az eventhubs cluster update", name, resourceGroup);
     }
 
     /**
@@ -154,15 +150,13 @@ export class az_eventhubs_cluster implements ICommandParent<any> {
      * @param {string} name Name of Cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_cluster_wait(name: string, resourceGroup: string): az_eventhubs_cluster_wait_command_builder {
-        return new az_eventhubs_cluster_wait_command_builder(this, name, resourceGroup);
+    static az_eventhubs_cluster_wait(name: string, resourceGroup: string): az_eventhubs_cluster_wait_command_builder {
+        return new az_eventhubs_cluster_wait_command_builder("az eventhubs cluster wait", name, resourceGroup);
     }
 }
 
 /** Manage Azure Authorizationrule connection strings for Eventhub. */
-export class az_eventhubs_eventhub_authorization_rule_keys implements ICommandParent<any> {
-    commandPath = "az eventhubs eventhub authorization-rule keys";
-
+export class az_eventhubs_eventhub_authorization_rule_keys {
     /**
      * Shows the connection strings of Authorizationrule for the Eventhub.
      *
@@ -181,8 +175,8 @@ export class az_eventhubs_eventhub_authorization_rule_keys implements ICommandPa
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_eventhub_authorization_rule_keys_list(eventhubName: string, name: string, namespaceName: string, resourceGroup: string): az_eventhubs_eventhub_authorization_rule_keys_list_command_builder {
-        return new az_eventhubs_eventhub_authorization_rule_keys_list_command_builder(this, eventhubName, name, namespaceName, resourceGroup);
+    static az_eventhubs_eventhub_authorization_rule_keys_list(eventhubName: string, name: string, namespaceName: string, resourceGroup: string): az_eventhubs_eventhub_authorization_rule_keys_list_command_builder {
+        return new az_eventhubs_eventhub_authorization_rule_keys_list_command_builder("az eventhubs eventhub authorization-rule keys list", eventhubName, name, namespaceName, resourceGroup);
     }
 
     /**
@@ -202,15 +196,13 @@ export class az_eventhubs_eventhub_authorization_rule_keys implements ICommandPa
      *
      * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
      */
-    az_eventhubs_eventhub_authorization_rule_keys_renew(key: 'PrimaryKey' | 'SecondaryKey'): az_eventhubs_eventhub_authorization_rule_keys_renew_command_builder {
-        return new az_eventhubs_eventhub_authorization_rule_keys_renew_command_builder(this, key);
+    static az_eventhubs_eventhub_authorization_rule_keys_renew(key: 'PrimaryKey' | 'SecondaryKey'): az_eventhubs_eventhub_authorization_rule_keys_renew_command_builder {
+        return new az_eventhubs_eventhub_authorization_rule_keys_renew_command_builder("az eventhubs eventhub authorization-rule keys renew", key);
     }
 }
 
 /** Manage Azure Service Bus Authorizationrule for Eventhub. */
-export class az_eventhubs_eventhub_authorization_rule implements ICommandParent<any> {
-    commandPath = "az eventhubs eventhub authorization-rule";
-
+export class az_eventhubs_eventhub_authorization_rule {
     /**
      * Creates Authorizationrule for the given Eventhub.
      *
@@ -230,8 +222,8 @@ export class az_eventhubs_eventhub_authorization_rule implements ICommandParent<
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      */
-    az_eventhubs_eventhub_authorization_rule_create(eventhubName: string, name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send'): az_eventhubs_eventhub_authorization_rule_create_command_builder {
-        return new az_eventhubs_eventhub_authorization_rule_create_command_builder(this, eventhubName, name, namespaceName, resourceGroup, rights);
+    static az_eventhubs_eventhub_authorization_rule_create(eventhubName: string, name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send'): az_eventhubs_eventhub_authorization_rule_create_command_builder {
+        return new az_eventhubs_eventhub_authorization_rule_create_command_builder("az eventhubs eventhub authorization-rule create", eventhubName, name, namespaceName, resourceGroup, rights);
     }
 
     /**
@@ -247,8 +239,8 @@ export class az_eventhubs_eventhub_authorization_rule implements ICommandParent<
      *                                                 [--subscription]
      * ```
      */
-    az_eventhubs_eventhub_authorization_rule_delete(): az_eventhubs_eventhub_authorization_rule_delete_command_builder {
-        return new az_eventhubs_eventhub_authorization_rule_delete_command_builder(this);
+    static az_eventhubs_eventhub_authorization_rule_delete(): az_eventhubs_eventhub_authorization_rule_delete_command_builder {
+        return new az_eventhubs_eventhub_authorization_rule_delete_command_builder("az eventhubs eventhub authorization-rule delete");
     }
 
     /**
@@ -267,8 +259,8 @@ export class az_eventhubs_eventhub_authorization_rule implements ICommandParent<
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_eventhub_authorization_rule_list(eventhubName: string, namespaceName: string, resourceGroup: string): az_eventhubs_eventhub_authorization_rule_list_command_builder {
-        return new az_eventhubs_eventhub_authorization_rule_list_command_builder(this, eventhubName, namespaceName, resourceGroup);
+    static az_eventhubs_eventhub_authorization_rule_list(eventhubName: string, namespaceName: string, resourceGroup: string): az_eventhubs_eventhub_authorization_rule_list_command_builder {
+        return new az_eventhubs_eventhub_authorization_rule_list_command_builder("az eventhubs eventhub authorization-rule list", eventhubName, namespaceName, resourceGroup);
     }
 
     /**
@@ -285,8 +277,8 @@ export class az_eventhubs_eventhub_authorization_rule implements ICommandParent<
      *                                               [--subscription]
      * ```
      */
-    az_eventhubs_eventhub_authorization_rule_show(): az_eventhubs_eventhub_authorization_rule_show_command_builder {
-        return new az_eventhubs_eventhub_authorization_rule_show_command_builder(this);
+    static az_eventhubs_eventhub_authorization_rule_show(): az_eventhubs_eventhub_authorization_rule_show_command_builder {
+        return new az_eventhubs_eventhub_authorization_rule_show_command_builder("az eventhubs eventhub authorization-rule show");
     }
 
     /**
@@ -309,15 +301,13 @@ export class az_eventhubs_eventhub_authorization_rule implements ICommandParent<
      *
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      */
-    az_eventhubs_eventhub_authorization_rule_update(rights: 'Listen' | 'Manage' | 'Send'): az_eventhubs_eventhub_authorization_rule_update_command_builder {
-        return new az_eventhubs_eventhub_authorization_rule_update_command_builder(this, rights);
+    static az_eventhubs_eventhub_authorization_rule_update(rights: 'Listen' | 'Manage' | 'Send'): az_eventhubs_eventhub_authorization_rule_update_command_builder {
+        return new az_eventhubs_eventhub_authorization_rule_update_command_builder("az eventhubs eventhub authorization-rule update", rights);
     }
 }
 
 /** Manage Azure Event Hubs consumergroup. */
-export class az_eventhubs_eventhub_consumer_group implements ICommandParent<any> {
-    commandPath = "az eventhubs eventhub consumer-group";
-
+export class az_eventhubs_eventhub_consumer_group {
     /**
      * Creates the EventHub ConsumerGroup.
      *
@@ -336,8 +326,8 @@ export class az_eventhubs_eventhub_consumer_group implements ICommandParent<any>
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_eventhub_consumer_group_create(eventhubName: string, name: string, namespaceName: string, resourceGroup: string): az_eventhubs_eventhub_consumer_group_create_command_builder {
-        return new az_eventhubs_eventhub_consumer_group_create_command_builder(this, eventhubName, name, namespaceName, resourceGroup);
+    static az_eventhubs_eventhub_consumer_group_create(eventhubName: string, name: string, namespaceName: string, resourceGroup: string): az_eventhubs_eventhub_consumer_group_create_command_builder {
+        return new az_eventhubs_eventhub_consumer_group_create_command_builder("az eventhubs eventhub consumer-group create", eventhubName, name, namespaceName, resourceGroup);
     }
 
     /**
@@ -353,8 +343,8 @@ export class az_eventhubs_eventhub_consumer_group implements ICommandParent<any>
      *                                             [--subscription]
      * ```
      */
-    az_eventhubs_eventhub_consumer_group_delete(): az_eventhubs_eventhub_consumer_group_delete_command_builder {
-        return new az_eventhubs_eventhub_consumer_group_delete_command_builder(this);
+    static az_eventhubs_eventhub_consumer_group_delete(): az_eventhubs_eventhub_consumer_group_delete_command_builder {
+        return new az_eventhubs_eventhub_consumer_group_delete_command_builder("az eventhubs eventhub consumer-group delete");
     }
 
     /**
@@ -375,8 +365,8 @@ export class az_eventhubs_eventhub_consumer_group implements ICommandParent<any>
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_eventhub_consumer_group_list(eventhubName: string, namespaceName: string, resourceGroup: string): az_eventhubs_eventhub_consumer_group_list_command_builder {
-        return new az_eventhubs_eventhub_consumer_group_list_command_builder(this, eventhubName, namespaceName, resourceGroup);
+    static az_eventhubs_eventhub_consumer_group_list(eventhubName: string, namespaceName: string, resourceGroup: string): az_eventhubs_eventhub_consumer_group_list_command_builder {
+        return new az_eventhubs_eventhub_consumer_group_list_command_builder("az eventhubs eventhub consumer-group list", eventhubName, namespaceName, resourceGroup);
     }
 
     /**
@@ -393,8 +383,8 @@ export class az_eventhubs_eventhub_consumer_group implements ICommandParent<any>
      *                                           [--subscription]
      * ```
      */
-    az_eventhubs_eventhub_consumer_group_show(): az_eventhubs_eventhub_consumer_group_show_command_builder {
-        return new az_eventhubs_eventhub_consumer_group_show_command_builder(this);
+    static az_eventhubs_eventhub_consumer_group_show(): az_eventhubs_eventhub_consumer_group_show_command_builder {
+        return new az_eventhubs_eventhub_consumer_group_show_command_builder("az eventhubs eventhub consumer-group show");
     }
 
     /**
@@ -415,15 +405,13 @@ export class az_eventhubs_eventhub_consumer_group implements ICommandParent<any>
      *                                             [--user-metadata]
      * ```
      */
-    az_eventhubs_eventhub_consumer_group_update(): az_eventhubs_eventhub_consumer_group_update_command_builder {
-        return new az_eventhubs_eventhub_consumer_group_update_command_builder(this);
+    static az_eventhubs_eventhub_consumer_group_update(): az_eventhubs_eventhub_consumer_group_update_command_builder {
+        return new az_eventhubs_eventhub_consumer_group_update_command_builder("az eventhubs eventhub consumer-group update");
     }
 }
 
 /** Manage Azure EventHubs eventhub and authorization-rule. */
-export class az_eventhubs_eventhub implements ICommandParent<any> {
-    commandPath = "az eventhubs eventhub";
-
+export class az_eventhubs_eventhub {
     /**
      * Creates the EventHubs Eventhub.
      *
@@ -450,8 +438,8 @@ export class az_eventhubs_eventhub implements ICommandParent<any> {
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_eventhub_create(name: string, namespaceName: string, resourceGroup: string): az_eventhubs_eventhub_create_command_builder {
-        return new az_eventhubs_eventhub_create_command_builder(this, name, namespaceName, resourceGroup);
+    static az_eventhubs_eventhub_create(name: string, namespaceName: string, resourceGroup: string): az_eventhubs_eventhub_create_command_builder {
+        return new az_eventhubs_eventhub_create_command_builder("az eventhubs eventhub create", name, namespaceName, resourceGroup);
     }
 
     /**
@@ -466,8 +454,8 @@ export class az_eventhubs_eventhub implements ICommandParent<any> {
      *                              [--subscription]
      * ```
      */
-    az_eventhubs_eventhub_delete(): az_eventhubs_eventhub_delete_command_builder {
-        return new az_eventhubs_eventhub_delete_command_builder(this);
+    static az_eventhubs_eventhub_delete(): az_eventhubs_eventhub_delete_command_builder {
+        return new az_eventhubs_eventhub_delete_command_builder("az eventhubs eventhub delete");
     }
 
     /**
@@ -486,8 +474,8 @@ export class az_eventhubs_eventhub implements ICommandParent<any> {
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_eventhub_list(namespaceName: string, resourceGroup: string): az_eventhubs_eventhub_list_command_builder {
-        return new az_eventhubs_eventhub_list_command_builder(this, namespaceName, resourceGroup);
+    static az_eventhubs_eventhub_list(namespaceName: string, resourceGroup: string): az_eventhubs_eventhub_list_command_builder {
+        return new az_eventhubs_eventhub_list_command_builder("az eventhubs eventhub list", namespaceName, resourceGroup);
     }
 
     /**
@@ -503,8 +491,8 @@ export class az_eventhubs_eventhub implements ICommandParent<any> {
      *                            [--subscription]
      * ```
      */
-    az_eventhubs_eventhub_show(): az_eventhubs_eventhub_show_command_builder {
-        return new az_eventhubs_eventhub_show_command_builder(this);
+    static az_eventhubs_eventhub_show(): az_eventhubs_eventhub_show_command_builder {
+        return new az_eventhubs_eventhub_show_command_builder("az eventhubs eventhub show");
     }
 
     /**
@@ -534,15 +522,13 @@ export class az_eventhubs_eventhub implements ICommandParent<any> {
      *                              [--subscription]
      * ```
      */
-    az_eventhubs_eventhub_update(): az_eventhubs_eventhub_update_command_builder {
-        return new az_eventhubs_eventhub_update_command_builder(this);
+    static az_eventhubs_eventhub_update(): az_eventhubs_eventhub_update_command_builder {
+        return new az_eventhubs_eventhub_update_command_builder("az eventhubs eventhub update");
     }
 }
 
 /** Manage Azure Event Hubs Authorizationrule connection strings for Geo Recovery configuration Alias. */
-export class az_eventhubs_georecovery_alias_authorization_rule_keys implements ICommandParent<any> {
-    commandPath = "az eventhubs georecovery-alias authorization-rule keys";
-
+export class az_eventhubs_georecovery_alias_authorization_rule_keys {
     /**
      * Shows the keys and connection strings of Authorizationrule for the EventHubs Namespace.
      *
@@ -561,15 +547,13 @@ export class az_eventhubs_georecovery_alias_authorization_rule_keys implements I
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_georecovery_alias_authorization_rule_keys_list(alias: string, name: string, namespaceName: string, resourceGroup: string): az_eventhubs_georecovery_alias_authorization_rule_keys_list_command_builder {
-        return new az_eventhubs_georecovery_alias_authorization_rule_keys_list_command_builder(this, alias, name, namespaceName, resourceGroup);
+    static az_eventhubs_georecovery_alias_authorization_rule_keys_list(alias: string, name: string, namespaceName: string, resourceGroup: string): az_eventhubs_georecovery_alias_authorization_rule_keys_list_command_builder {
+        return new az_eventhubs_georecovery_alias_authorization_rule_keys_list_command_builder("az eventhubs georecovery-alias authorization-rule keys list", alias, name, namespaceName, resourceGroup);
     }
 }
 
 /** Manage Azure EventHubs Authorizationrule for Geo Recovery configuration Alias. */
-export class az_eventhubs_georecovery_alias_authorization_rule implements ICommandParent<any> {
-    commandPath = "az eventhubs georecovery-alias authorization-rule";
-
+export class az_eventhubs_georecovery_alias_authorization_rule {
     /**
      * List of Authorizationrule by EventHubs Namespace.
      *
@@ -586,8 +570,8 @@ export class az_eventhubs_georecovery_alias_authorization_rule implements IComma
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_georecovery_alias_authorization_rule_list(alias: string, namespaceName: string, resourceGroup: string): az_eventhubs_georecovery_alias_authorization_rule_list_command_builder {
-        return new az_eventhubs_georecovery_alias_authorization_rule_list_command_builder(this, alias, namespaceName, resourceGroup);
+    static az_eventhubs_georecovery_alias_authorization_rule_list(alias: string, namespaceName: string, resourceGroup: string): az_eventhubs_georecovery_alias_authorization_rule_list_command_builder {
+        return new az_eventhubs_georecovery_alias_authorization_rule_list_command_builder("az eventhubs georecovery-alias authorization-rule list", alias, namespaceName, resourceGroup);
     }
 
     /**
@@ -604,15 +588,13 @@ export class az_eventhubs_georecovery_alias_authorization_rule implements IComma
      *                                                        [--subscription]
      * ```
      */
-    az_eventhubs_georecovery_alias_authorization_rule_show(): az_eventhubs_georecovery_alias_authorization_rule_show_command_builder {
-        return new az_eventhubs_georecovery_alias_authorization_rule_show_command_builder(this);
+    static az_eventhubs_georecovery_alias_authorization_rule_show(): az_eventhubs_georecovery_alias_authorization_rule_show_command_builder {
+        return new az_eventhubs_georecovery_alias_authorization_rule_show_command_builder("az eventhubs georecovery-alias authorization-rule show");
     }
 }
 
 /** Manage Azure EventHubs Geo Recovery configuration Alias. */
-export class az_eventhubs_georecovery_alias implements ICommandParent<any> {
-    commandPath = "az eventhubs georecovery-alias";
-
+export class az_eventhubs_georecovery_alias {
     /**
      * Disables Geo-Disaster Recovery Configuration Alias and stops replicating changes from primary to secondary namespaces.
      *
@@ -625,8 +607,8 @@ export class az_eventhubs_georecovery_alias implements ICommandParent<any> {
      *                                           [--subscription]
      * ```
      */
-    az_eventhubs_georecovery_alias_break_pair(): az_eventhubs_georecovery_alias_break_pair_command_builder {
-        return new az_eventhubs_georecovery_alias_break_pair_command_builder(this);
+    static az_eventhubs_georecovery_alias_break_pair(): az_eventhubs_georecovery_alias_break_pair_command_builder {
+        return new az_eventhubs_georecovery_alias_break_pair_command_builder("az eventhubs georecovery-alias break-pair");
     }
 
     /**
@@ -641,8 +623,8 @@ export class az_eventhubs_georecovery_alias implements ICommandParent<any> {
      *                                       [--subscription]
      * ```
      */
-    az_eventhubs_georecovery_alias_delete(): az_eventhubs_georecovery_alias_delete_command_builder {
-        return new az_eventhubs_georecovery_alias_delete_command_builder(this);
+    static az_eventhubs_georecovery_alias_delete(): az_eventhubs_georecovery_alias_delete_command_builder {
+        return new az_eventhubs_georecovery_alias_delete_command_builder("az eventhubs georecovery-alias delete");
     }
 
     /**
@@ -660,8 +642,8 @@ export class az_eventhubs_georecovery_alias implements ICommandParent<any> {
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_georecovery_alias_exists(alias: string, namespaceName: string, resourceGroup: string): az_eventhubs_georecovery_alias_exists_command_builder {
-        return new az_eventhubs_georecovery_alias_exists_command_builder(this, alias, namespaceName, resourceGroup);
+    static az_eventhubs_georecovery_alias_exists(alias: string, namespaceName: string, resourceGroup: string): az_eventhubs_georecovery_alias_exists_command_builder {
+        return new az_eventhubs_georecovery_alias_exists_command_builder("az eventhubs georecovery-alias exists", alias, namespaceName, resourceGroup);
     }
 
     /**
@@ -676,8 +658,8 @@ export class az_eventhubs_georecovery_alias implements ICommandParent<any> {
      *                                          [--subscription]
      * ```
      */
-    az_eventhubs_georecovery_alias_fail_over(): az_eventhubs_georecovery_alias_fail_over_command_builder {
-        return new az_eventhubs_georecovery_alias_fail_over_command_builder(this);
+    static az_eventhubs_georecovery_alias_fail_over(): az_eventhubs_georecovery_alias_fail_over_command_builder {
+        return new az_eventhubs_georecovery_alias_fail_over_command_builder("az eventhubs georecovery-alias fail-over");
     }
 
     /**
@@ -694,8 +676,8 @@ export class az_eventhubs_georecovery_alias implements ICommandParent<any> {
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_georecovery_alias_list(namespaceName: string, resourceGroup: string): az_eventhubs_georecovery_alias_list_command_builder {
-        return new az_eventhubs_georecovery_alias_list_command_builder(this, namespaceName, resourceGroup);
+    static az_eventhubs_georecovery_alias_list(namespaceName: string, resourceGroup: string): az_eventhubs_georecovery_alias_list_command_builder {
+        return new az_eventhubs_georecovery_alias_list_command_builder("az eventhubs georecovery-alias list", namespaceName, resourceGroup);
     }
 
     /**
@@ -714,8 +696,8 @@ export class az_eventhubs_georecovery_alias implements ICommandParent<any> {
      *
      * @param {string} partnerNamespace Name (if within the same resource group) or ARM Id of the Primary/Secondary eventhub namespace name, which is part of GEO DR pairing.
      */
-    az_eventhubs_georecovery_alias_set(partnerNamespace: string): az_eventhubs_georecovery_alias_set_command_builder {
-        return new az_eventhubs_georecovery_alias_set_command_builder(this, partnerNamespace);
+    static az_eventhubs_georecovery_alias_set(partnerNamespace: string): az_eventhubs_georecovery_alias_set_command_builder {
+        return new az_eventhubs_georecovery_alias_set_command_builder("az eventhubs georecovery-alias set", partnerNamespace);
     }
 
     /**
@@ -731,15 +713,13 @@ export class az_eventhubs_georecovery_alias implements ICommandParent<any> {
      *                                     [--subscription]
      * ```
      */
-    az_eventhubs_georecovery_alias_show(): az_eventhubs_georecovery_alias_show_command_builder {
-        return new az_eventhubs_georecovery_alias_show_command_builder(this);
+    static az_eventhubs_georecovery_alias_show(): az_eventhubs_georecovery_alias_show_command_builder {
+        return new az_eventhubs_georecovery_alias_show_command_builder("az eventhubs georecovery-alias show");
     }
 }
 
 /** Manage Azure EventHubs Authorizationrule connection strings for Namespace. */
-export class az_eventhubs_namespace_authorization_rule_keys implements ICommandParent<any> {
-    commandPath = "az eventhubs namespace authorization-rule keys";
-
+export class az_eventhubs_namespace_authorization_rule_keys {
     /**
      * Shows the connection strings for namespace.
      *
@@ -756,8 +736,8 @@ export class az_eventhubs_namespace_authorization_rule_keys implements ICommandP
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_namespace_authorization_rule_keys_list(name: string, namespaceName: string, resourceGroup: string): az_eventhubs_namespace_authorization_rule_keys_list_command_builder {
-        return new az_eventhubs_namespace_authorization_rule_keys_list_command_builder(this, name, namespaceName, resourceGroup);
+    static az_eventhubs_namespace_authorization_rule_keys_list(name: string, namespaceName: string, resourceGroup: string): az_eventhubs_namespace_authorization_rule_keys_list_command_builder {
+        return new az_eventhubs_namespace_authorization_rule_keys_list_command_builder("az eventhubs namespace authorization-rule keys list", name, namespaceName, resourceGroup);
     }
 
     /**
@@ -776,15 +756,13 @@ export class az_eventhubs_namespace_authorization_rule_keys implements ICommandP
      *
      * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
      */
-    az_eventhubs_namespace_authorization_rule_keys_renew(key: 'PrimaryKey' | 'SecondaryKey'): az_eventhubs_namespace_authorization_rule_keys_renew_command_builder {
-        return new az_eventhubs_namespace_authorization_rule_keys_renew_command_builder(this, key);
+    static az_eventhubs_namespace_authorization_rule_keys_renew(key: 'PrimaryKey' | 'SecondaryKey'): az_eventhubs_namespace_authorization_rule_keys_renew_command_builder {
+        return new az_eventhubs_namespace_authorization_rule_keys_renew_command_builder("az eventhubs namespace authorization-rule keys renew", key);
     }
 }
 
 /** Manage Azure EventHubs Authorizationrule for Namespace. */
-export class az_eventhubs_namespace_authorization_rule implements ICommandParent<any> {
-    commandPath = "az eventhubs namespace authorization-rule";
-
+export class az_eventhubs_namespace_authorization_rule {
     /**
      * Creates Authorizationrule for the given Namespace.
      *
@@ -802,8 +780,8 @@ export class az_eventhubs_namespace_authorization_rule implements ICommandParent
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      */
-    az_eventhubs_namespace_authorization_rule_create(name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send'): az_eventhubs_namespace_authorization_rule_create_command_builder {
-        return new az_eventhubs_namespace_authorization_rule_create_command_builder(this, name, namespaceName, resourceGroup, rights);
+    static az_eventhubs_namespace_authorization_rule_create(name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send'): az_eventhubs_namespace_authorization_rule_create_command_builder {
+        return new az_eventhubs_namespace_authorization_rule_create_command_builder("az eventhubs namespace authorization-rule create", name, namespaceName, resourceGroup, rights);
     }
 
     /**
@@ -818,8 +796,8 @@ export class az_eventhubs_namespace_authorization_rule implements ICommandParent
      *                                                  [--subscription]
      * ```
      */
-    az_eventhubs_namespace_authorization_rule_delete(): az_eventhubs_namespace_authorization_rule_delete_command_builder {
-        return new az_eventhubs_namespace_authorization_rule_delete_command_builder(this);
+    static az_eventhubs_namespace_authorization_rule_delete(): az_eventhubs_namespace_authorization_rule_delete_command_builder {
+        return new az_eventhubs_namespace_authorization_rule_delete_command_builder("az eventhubs namespace authorization-rule delete");
     }
 
     /**
@@ -836,8 +814,8 @@ export class az_eventhubs_namespace_authorization_rule implements ICommandParent
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_namespace_authorization_rule_list(namespaceName: string, resourceGroup: string): az_eventhubs_namespace_authorization_rule_list_command_builder {
-        return new az_eventhubs_namespace_authorization_rule_list_command_builder(this, namespaceName, resourceGroup);
+    static az_eventhubs_namespace_authorization_rule_list(namespaceName: string, resourceGroup: string): az_eventhubs_namespace_authorization_rule_list_command_builder {
+        return new az_eventhubs_namespace_authorization_rule_list_command_builder("az eventhubs namespace authorization-rule list", namespaceName, resourceGroup);
     }
 
     /**
@@ -853,8 +831,8 @@ export class az_eventhubs_namespace_authorization_rule implements ICommandParent
      *                                                [--subscription]
      * ```
      */
-    az_eventhubs_namespace_authorization_rule_show(): az_eventhubs_namespace_authorization_rule_show_command_builder {
-        return new az_eventhubs_namespace_authorization_rule_show_command_builder(this);
+    static az_eventhubs_namespace_authorization_rule_show(): az_eventhubs_namespace_authorization_rule_show_command_builder {
+        return new az_eventhubs_namespace_authorization_rule_show_command_builder("az eventhubs namespace authorization-rule show");
     }
 
     /**
@@ -876,15 +854,13 @@ export class az_eventhubs_namespace_authorization_rule implements ICommandParent
      *
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      */
-    az_eventhubs_namespace_authorization_rule_update(rights: 'Listen' | 'Manage' | 'Send'): az_eventhubs_namespace_authorization_rule_update_command_builder {
-        return new az_eventhubs_namespace_authorization_rule_update_command_builder(this, rights);
+    static az_eventhubs_namespace_authorization_rule_update(rights: 'Listen' | 'Manage' | 'Send'): az_eventhubs_namespace_authorization_rule_update_command_builder {
+        return new az_eventhubs_namespace_authorization_rule_update_command_builder("az eventhubs namespace authorization-rule update", rights);
     }
 }
 
 /** Manage Azure EventHubs networkruleset for namespace. */
-export class az_eventhubs_namespace_network_rule implements ICommandParent<any> {
-    commandPath = "az eventhubs namespace network-rule";
-
+export class az_eventhubs_namespace_network_rule {
     /**
      * Add a network rule for a namespace.
      *
@@ -903,8 +879,8 @@ export class az_eventhubs_namespace_network_rule implements ICommandParent<any> 
      * @param {string} namespaceName Name of the Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_namespace_network_rule_add(namespaceName: string, resourceGroup: string): az_eventhubs_namespace_network_rule_add_command_builder {
-        return new az_eventhubs_namespace_network_rule_add_command_builder(this, namespaceName, resourceGroup);
+    static az_eventhubs_namespace_network_rule_add(namespaceName: string, resourceGroup: string): az_eventhubs_namespace_network_rule_add_command_builder {
+        return new az_eventhubs_namespace_network_rule_add_command_builder("az eventhubs namespace network-rule add", namespaceName, resourceGroup);
     }
 
     /**
@@ -921,8 +897,8 @@ export class az_eventhubs_namespace_network_rule implements ICommandParent<any> 
      * @param {string} namespaceName Name of the Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_namespace_network_rule_list(namespaceName: string, resourceGroup: string): az_eventhubs_namespace_network_rule_list_command_builder {
-        return new az_eventhubs_namespace_network_rule_list_command_builder(this, namespaceName, resourceGroup);
+    static az_eventhubs_namespace_network_rule_list(namespaceName: string, resourceGroup: string): az_eventhubs_namespace_network_rule_list_command_builder {
+        return new az_eventhubs_namespace_network_rule_list_command_builder("az eventhubs namespace network-rule list", namespaceName, resourceGroup);
     }
 
     /**
@@ -941,15 +917,13 @@ export class az_eventhubs_namespace_network_rule implements ICommandParent<any> 
      * @param {string} namespaceName Name of the Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_namespace_network_rule_remove(namespaceName: string, resourceGroup: string): az_eventhubs_namespace_network_rule_remove_command_builder {
-        return new az_eventhubs_namespace_network_rule_remove_command_builder(this, namespaceName, resourceGroup);
+    static az_eventhubs_namespace_network_rule_remove(namespaceName: string, resourceGroup: string): az_eventhubs_namespace_network_rule_remove_command_builder {
+        return new az_eventhubs_namespace_network_rule_remove_command_builder("az eventhubs namespace network-rule remove", namespaceName, resourceGroup);
     }
 }
 
 /** Manage Azure EventHubs namespace and Authorizationrule. */
-export class az_eventhubs_namespace implements ICommandParent<any> {
-    commandPath = "az eventhubs namespace";
-
+export class az_eventhubs_namespace {
     /**
      * Creates the EventHubs Namespace.
      *
@@ -975,8 +949,8 @@ export class az_eventhubs_namespace implements ICommandParent<any> {
      * @param {string} name Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_eventhubs_namespace_create(name: string, resourceGroup: string): az_eventhubs_namespace_create_command_builder {
-        return new az_eventhubs_namespace_create_command_builder(this, name, resourceGroup);
+    static az_eventhubs_namespace_create(name: string, resourceGroup: string): az_eventhubs_namespace_create_command_builder {
+        return new az_eventhubs_namespace_create_command_builder("az eventhubs namespace create", name, resourceGroup);
     }
 
     /**
@@ -990,8 +964,8 @@ export class az_eventhubs_namespace implements ICommandParent<any> {
      *                               [--subscription]
      * ```
      */
-    az_eventhubs_namespace_delete(): az_eventhubs_namespace_delete_command_builder {
-        return new az_eventhubs_namespace_delete_command_builder(this);
+    static az_eventhubs_namespace_delete(): az_eventhubs_namespace_delete_command_builder {
+        return new az_eventhubs_namespace_delete_command_builder("az eventhubs namespace delete");
     }
 
     /**
@@ -1005,8 +979,8 @@ export class az_eventhubs_namespace implements ICommandParent<any> {
      *
      * @param {string} name Name to check the namespace name availability.
      */
-    az_eventhubs_namespace_exists(name: string): az_eventhubs_namespace_exists_command_builder {
-        return new az_eventhubs_namespace_exists_command_builder(this, name);
+    static az_eventhubs_namespace_exists(name: string): az_eventhubs_namespace_exists_command_builder {
+        return new az_eventhubs_namespace_exists_command_builder("az eventhubs namespace exists", name);
     }
 
     /**
@@ -1019,8 +993,8 @@ export class az_eventhubs_namespace implements ICommandParent<any> {
      *                             [--subscription]
      * ```
      */
-    az_eventhubs_namespace_list(): az_eventhubs_namespace_list_command_builder {
-        return new az_eventhubs_namespace_list_command_builder(this);
+    static az_eventhubs_namespace_list(): az_eventhubs_namespace_list_command_builder {
+        return new az_eventhubs_namespace_list_command_builder("az eventhubs namespace list");
     }
 
     /**
@@ -1035,8 +1009,8 @@ export class az_eventhubs_namespace implements ICommandParent<any> {
      *                             [--subscription]
      * ```
      */
-    az_eventhubs_namespace_show(): az_eventhubs_namespace_show_command_builder {
-        return new az_eventhubs_namespace_show_command_builder(this);
+    static az_eventhubs_namespace_show(): az_eventhubs_namespace_show_command_builder {
+        return new az_eventhubs_namespace_show_command_builder("az eventhubs namespace show");
     }
 
     /**
@@ -1067,8 +1041,8 @@ export class az_eventhubs_namespace implements ICommandParent<any> {
      *                               [--tags]
      * ```
      */
-    az_eventhubs_namespace_update(): az_eventhubs_namespace_update_command_builder {
-        return new az_eventhubs_namespace_update_command_builder(this);
+    static az_eventhubs_namespace_update(): az_eventhubs_namespace_update_command_builder {
+        return new az_eventhubs_namespace_update_command_builder("az eventhubs namespace update");
     }
 }
 
@@ -1091,7 +1065,7 @@ export class az_eventhubs {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_cluster_namespace_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1131,7 +1105,7 @@ class az_eventhubs_cluster_namespace_list_command_builder extends CommandBuilder
  * ```
  */
 class az_eventhubs_cluster_available_region_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1159,7 +1133,7 @@ class az_eventhubs_cluster_available_region_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_cluster_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1218,7 +1192,7 @@ class az_eventhubs_cluster_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_cluster_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1268,7 +1242,7 @@ class az_eventhubs_cluster_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_cluster_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string) {
+    constructor(commandPath: string, resourceGroup: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
     }
@@ -1307,7 +1281,7 @@ class az_eventhubs_cluster_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_cluster_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1357,7 +1331,7 @@ class az_eventhubs_cluster_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_cluster_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1433,7 +1407,7 @@ class az_eventhubs_cluster_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_cluster_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1519,7 +1493,7 @@ class az_eventhubs_cluster_wait_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_eventhub_authorization_rule_keys_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, eventhubName: string, name: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, eventhubName: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.eventhubName(eventhubName)
         this.name(name)
@@ -1582,7 +1556,7 @@ class az_eventhubs_eventhub_authorization_rule_keys_list_command_builder extends
  * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
  */
 class az_eventhubs_eventhub_authorization_rule_keys_renew_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, key: 'PrimaryKey' | 'SecondaryKey') {
+    constructor(commandPath: string, key: 'PrimaryKey' | 'SecondaryKey') {
         super(commandParent);
         this.key(key)
     }
@@ -1656,7 +1630,7 @@ class az_eventhubs_eventhub_authorization_rule_keys_renew_command_builder extend
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
 class az_eventhubs_eventhub_authorization_rule_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, eventhubName: string, name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send') {
+    constructor(commandPath: string, eventhubName: string, name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send') {
         super(commandParent);
         this.eventhubName(eventhubName)
         this.name(name)
@@ -1716,7 +1690,7 @@ class az_eventhubs_eventhub_authorization_rule_create_command_builder extends Co
  * ```
  */
 class az_eventhubs_eventhub_authorization_rule_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1774,7 +1748,7 @@ class az_eventhubs_eventhub_authorization_rule_delete_command_builder extends Co
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_eventhub_authorization_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, eventhubName: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, eventhubName: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.eventhubName(eventhubName)
         this.namespaceName(namespaceName)
@@ -1827,7 +1801,7 @@ class az_eventhubs_eventhub_authorization_rule_list_command_builder extends Comm
  * ```
  */
 class az_eventhubs_eventhub_authorization_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1895,7 +1869,7 @@ class az_eventhubs_eventhub_authorization_rule_show_command_builder extends Comm
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
 class az_eventhubs_eventhub_authorization_rule_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, rights: 'Listen' | 'Manage' | 'Send') {
+    constructor(commandPath: string, rights: 'Listen' | 'Manage' | 'Send') {
         super(commandParent);
         this.rights(rights)
     }
@@ -1986,7 +1960,7 @@ class az_eventhubs_eventhub_authorization_rule_update_command_builder extends Co
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_eventhub_consumer_group_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, eventhubName: string, name: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, eventhubName: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.eventhubName(eventhubName)
         this.name(name)
@@ -2045,7 +2019,7 @@ class az_eventhubs_eventhub_consumer_group_create_command_builder extends Comman
  * ```
  */
 class az_eventhubs_eventhub_consumer_group_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2105,7 +2079,7 @@ class az_eventhubs_eventhub_consumer_group_delete_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_eventhub_consumer_group_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, eventhubName: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, eventhubName: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.eventhubName(eventhubName)
         this.namespaceName(namespaceName)
@@ -2170,7 +2144,7 @@ class az_eventhubs_eventhub_consumer_group_list_command_builder extends CommandB
  * ```
  */
 class az_eventhubs_eventhub_consumer_group_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2236,7 +2210,7 @@ class az_eventhubs_eventhub_consumer_group_show_command_builder extends CommandB
  * ```
  */
 class az_eventhubs_eventhub_consumer_group_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2334,7 +2308,7 @@ class az_eventhubs_eventhub_consumer_group_update_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_eventhub_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -2445,7 +2419,7 @@ class az_eventhubs_eventhub_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_eventhubs_eventhub_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2497,7 +2471,7 @@ class az_eventhubs_eventhub_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_eventhub_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -2554,7 +2528,7 @@ class az_eventhubs_eventhub_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_eventhubs_eventhub_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2623,7 +2597,7 @@ class az_eventhubs_eventhub_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_eventhubs_eventhub_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2767,7 +2741,7 @@ class az_eventhubs_eventhub_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_georecovery_alias_authorization_rule_keys_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, alias: string, name: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, alias: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.alias(alias)
         this.name(name)
@@ -2829,7 +2803,7 @@ class az_eventhubs_georecovery_alias_authorization_rule_keys_list_command_builde
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_georecovery_alias_authorization_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, alias: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, alias: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.alias(alias)
         this.namespaceName(namespaceName)
@@ -2882,7 +2856,7 @@ class az_eventhubs_georecovery_alias_authorization_rule_list_command_builder ext
  * ```
  */
 class az_eventhubs_georecovery_alias_authorization_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2942,7 +2916,7 @@ class az_eventhubs_georecovery_alias_authorization_rule_show_command_builder ext
  * ```
  */
 class az_eventhubs_georecovery_alias_break_pair_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2990,7 +2964,7 @@ class az_eventhubs_georecovery_alias_break_pair_command_builder extends CommandB
  * ```
  */
 class az_eventhubs_georecovery_alias_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3041,7 +3015,7 @@ class az_eventhubs_georecovery_alias_delete_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_georecovery_alias_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, alias: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, alias: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.alias(alias)
         this.namespaceName(namespaceName)
@@ -3086,7 +3060,7 @@ class az_eventhubs_georecovery_alias_exists_command_builder extends CommandBuild
  * ```
  */
 class az_eventhubs_georecovery_alias_fail_over_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3136,7 +3110,7 @@ class az_eventhubs_georecovery_alias_fail_over_command_builder extends CommandBu
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_georecovery_alias_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -3184,7 +3158,7 @@ class az_eventhubs_georecovery_alias_list_command_builder extends CommandBuilder
  * @param {string} partnerNamespace Name (if within the same resource group) or ARM Id of the Primary/Secondary eventhub namespace name, which is part of GEO DR pairing.
  */
 class az_eventhubs_georecovery_alias_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, partnerNamespace: string) {
+    constructor(commandPath: string, partnerNamespace: string) {
         super(commandParent);
         this.partnerNamespace(partnerNamespace)
     }
@@ -3246,7 +3220,7 @@ class az_eventhubs_georecovery_alias_set_command_builder extends CommandBuilder 
  * ```
  */
 class az_eventhubs_georecovery_alias_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3304,7 +3278,7 @@ class az_eventhubs_georecovery_alias_show_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_namespace_authorization_rule_keys_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -3359,7 +3333,7 @@ class az_eventhubs_namespace_authorization_rule_keys_list_command_builder extend
  * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
  */
 class az_eventhubs_namespace_authorization_rule_keys_renew_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, key: 'PrimaryKey' | 'SecondaryKey') {
+    constructor(commandPath: string, key: 'PrimaryKey' | 'SecondaryKey') {
         super(commandParent);
         this.key(key)
     }
@@ -3425,7 +3399,7 @@ class az_eventhubs_namespace_authorization_rule_keys_renew_command_builder exten
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
 class az_eventhubs_namespace_authorization_rule_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send') {
+    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send') {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -3477,7 +3451,7 @@ class az_eventhubs_namespace_authorization_rule_create_command_builder extends C
  * ```
  */
 class az_eventhubs_namespace_authorization_rule_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3527,7 +3501,7 @@ class az_eventhubs_namespace_authorization_rule_delete_command_builder extends C
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_namespace_authorization_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -3572,7 +3546,7 @@ class az_eventhubs_namespace_authorization_rule_list_command_builder extends Com
  * ```
  */
 class az_eventhubs_namespace_authorization_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3633,7 +3607,7 @@ class az_eventhubs_namespace_authorization_rule_show_command_builder extends Com
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
 class az_eventhubs_namespace_authorization_rule_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, rights: 'Listen' | 'Manage' | 'Send') {
+    constructor(commandPath: string, rights: 'Listen' | 'Manage' | 'Send') {
         super(commandParent);
         this.rights(rights)
     }
@@ -3718,7 +3692,7 @@ class az_eventhubs_namespace_authorization_rule_update_command_builder extends C
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_namespace_network_rule_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -3788,7 +3762,7 @@ class az_eventhubs_namespace_network_rule_add_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_namespace_network_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -3836,7 +3810,7 @@ class az_eventhubs_namespace_network_rule_list_command_builder extends CommandBu
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_namespace_network_rule_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -3905,7 +3879,7 @@ class az_eventhubs_namespace_network_rule_remove_command_builder extends Command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventhubs_namespace_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4014,7 +3988,7 @@ class az_eventhubs_namespace_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_eventhubs_namespace_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4055,7 +4029,7 @@ class az_eventhubs_namespace_delete_command_builder extends CommandBuilder {
  * @param {string} name Name to check the namespace name availability.
  */
 class az_eventhubs_namespace_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4084,7 +4058,7 @@ class az_eventhubs_namespace_exists_command_builder extends CommandBuilder {
  * ```
  */
 class az_eventhubs_namespace_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4120,7 +4094,7 @@ class az_eventhubs_namespace_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_eventhubs_namespace_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4184,7 +4158,7 @@ class az_eventhubs_namespace_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_eventhubs_namespace_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

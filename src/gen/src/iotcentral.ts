@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage IoT Central applications. */
-export class az_iotcentral_app implements ICommandParent<any> {
-    commandPath = "az iotcentral app";
-
+export class az_iotcentral_app {
     /**
      * Create an IoT Central application.
      *
@@ -23,8 +21,8 @@ export class az_iotcentral_app implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} subdomain Subdomain for the IoT Central URL. Each application must have a unique subdomain.
      */
-    az_iotcentral_app_create(name: string, resourceGroup: string, subdomain: string): az_iotcentral_app_create_command_builder {
-        return new az_iotcentral_app_create_command_builder(this, name, resourceGroup, subdomain);
+    static az_iotcentral_app_create(name: string, resourceGroup: string, subdomain: string): az_iotcentral_app_create_command_builder {
+        return new az_iotcentral_app_create_command_builder("az iotcentral app create", name, resourceGroup, subdomain);
     }
 
     /**
@@ -40,8 +38,8 @@ export class az_iotcentral_app implements ICommandParent<any> {
      * @param {string} name IoT Central application name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iotcentral_app_delete(name: string, resourceGroup: string): az_iotcentral_app_delete_command_builder {
-        return new az_iotcentral_app_delete_command_builder(this, name, resourceGroup);
+    static az_iotcentral_app_delete(name: string, resourceGroup: string): az_iotcentral_app_delete_command_builder {
+        return new az_iotcentral_app_delete_command_builder("az iotcentral app delete", name, resourceGroup);
     }
 
     /**
@@ -54,8 +52,8 @@ export class az_iotcentral_app implements ICommandParent<any> {
      *                        [--subscription]
      * ```
      */
-    az_iotcentral_app_list(): az_iotcentral_app_list_command_builder {
-        return new az_iotcentral_app_list_command_builder(this);
+    static az_iotcentral_app_list(): az_iotcentral_app_list_command_builder {
+        return new az_iotcentral_app_list_command_builder("az iotcentral app list");
     }
 
     /**
@@ -71,8 +69,8 @@ export class az_iotcentral_app implements ICommandParent<any> {
      *
      * @param {string} name IoT Central application name.
      */
-    az_iotcentral_app_show(name: string): az_iotcentral_app_show_command_builder {
-        return new az_iotcentral_app_show_command_builder(this, name);
+    static az_iotcentral_app_show(name: string): az_iotcentral_app_show_command_builder {
+        return new az_iotcentral_app_show_command_builder("az iotcentral app show", name);
     }
 
     /**
@@ -92,8 +90,8 @@ export class az_iotcentral_app implements ICommandParent<any> {
      * @param {string} name IoT Central application name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iotcentral_app_update(name: string, resourceGroup: string): az_iotcentral_app_update_command_builder {
-        return new az_iotcentral_app_update_command_builder(this, name, resourceGroup);
+    static az_iotcentral_app_update(name: string, resourceGroup: string): az_iotcentral_app_update_command_builder {
+        return new az_iotcentral_app_update_command_builder("az iotcentral app update", name, resourceGroup);
     }
 }
 
@@ -121,7 +119,7 @@ export class az_iotcentral {
  * @param {string} subdomain Subdomain for the IoT Central URL. Each application must have a unique subdomain.
  */
 class az_iotcentral_app_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, subdomain: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, subdomain: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -191,7 +189,7 @@ class az_iotcentral_app_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iotcentral_app_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -227,7 +225,7 @@ class az_iotcentral_app_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_iotcentral_app_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -264,7 +262,7 @@ class az_iotcentral_app_list_command_builder extends CommandBuilder {
  * @param {string} name IoT Central application name.
  */
 class az_iotcentral_app_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -312,7 +310,7 @@ class az_iotcentral_app_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iotcentral_app_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)

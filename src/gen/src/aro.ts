@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Azure Red Hat OpenShift clusters. */
-export class az_aro implements ICommandParent<any> {
-    commandPath = "az aro";
-
+export class az_aro {
     /**
      * Create a cluster.
      *
@@ -39,8 +37,8 @@ export class az_aro implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workerSubnet Name or ID of worker vnet subnet.  If name is supplied, `--vnet` must be supplied.
      */
-    az_aro_create(masterSubnet: string, name: string, resourceGroup: string, workerSubnet: string): az_aro_create_command_builder {
-        return new az_aro_create_command_builder(this, masterSubnet, name, resourceGroup, workerSubnet);
+    static az_aro_create(masterSubnet: string, name: string, resourceGroup: string, workerSubnet: string): az_aro_create_command_builder {
+        return new az_aro_create_command_builder("az aro create", masterSubnet, name, resourceGroup, workerSubnet);
     }
 
     /**
@@ -58,8 +56,8 @@ export class az_aro implements ICommandParent<any> {
      * @param {string} name Name of cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_aro_delete(name: string, resourceGroup: string): az_aro_delete_command_builder {
-        return new az_aro_delete_command_builder(this, name, resourceGroup);
+    static az_aro_delete(name: string, resourceGroup: string): az_aro_delete_command_builder {
+        return new az_aro_delete_command_builder("az aro delete", name, resourceGroup);
     }
 
     /**
@@ -72,8 +70,8 @@ export class az_aro implements ICommandParent<any> {
      *             [--subscription]
      * ```
      */
-    az_aro_list(): az_aro_list_command_builder {
-        return new az_aro_list_command_builder(this);
+    static az_aro_list(): az_aro_list_command_builder {
+        return new az_aro_list_command_builder("az aro list");
     }
 
     /**
@@ -89,8 +87,8 @@ export class az_aro implements ICommandParent<any> {
      * @param {string} name Name of cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_aro_list_credentials(name: string, resourceGroup: string): az_aro_list_credentials_command_builder {
-        return new az_aro_list_credentials_command_builder(this, name, resourceGroup);
+    static az_aro_list_credentials(name: string, resourceGroup: string): az_aro_list_credentials_command_builder {
+        return new az_aro_list_credentials_command_builder("az aro list-credentials", name, resourceGroup);
     }
 
     /**
@@ -107,8 +105,8 @@ export class az_aro implements ICommandParent<any> {
      * @param {string} name Name of cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_aro_show(name: string, resourceGroup: string): az_aro_show_command_builder {
-        return new az_aro_show_command_builder(this, name, resourceGroup);
+    static az_aro_show(name: string, resourceGroup: string): az_aro_show_command_builder {
+        return new az_aro_show_command_builder("az aro show", name, resourceGroup);
     }
 
     /**
@@ -125,8 +123,8 @@ export class az_aro implements ICommandParent<any> {
      * @param {string} name Name of cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_aro_update(name: string, resourceGroup: string): az_aro_update_command_builder {
-        return new az_aro_update_command_builder(this, name, resourceGroup);
+    static az_aro_update(name: string, resourceGroup: string): az_aro_update_command_builder {
+        return new az_aro_update_command_builder("az aro update", name, resourceGroup);
     }
 
     /**
@@ -149,8 +147,8 @@ export class az_aro implements ICommandParent<any> {
      * @param {string} name Name of cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_aro_wait(name: string, resourceGroup: string): az_aro_wait_command_builder {
-        return new az_aro_wait_command_builder(this, name, resourceGroup);
+    static az_aro_wait(name: string, resourceGroup: string): az_aro_wait_command_builder {
+        return new az_aro_wait_command_builder("az aro wait", name, resourceGroup);
     }
 }
 
@@ -190,7 +188,7 @@ export class az_aro implements ICommandParent<any> {
  * @param {string} workerSubnet Name or ID of worker vnet subnet.  If name is supplied, `--vnet` must be supplied.
  */
 class az_aro_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, masterSubnet: string, name: string, resourceGroup: string, workerSubnet: string) {
+    constructor(commandPath: string, masterSubnet: string, name: string, resourceGroup: string, workerSubnet: string) {
         super(commandParent);
         this.masterSubnet(masterSubnet)
         this.name(name)
@@ -353,7 +351,7 @@ class az_aro_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aro_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -401,7 +399,7 @@ class az_aro_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_aro_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -438,7 +436,7 @@ class az_aro_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aro_list_credentials_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -478,7 +476,7 @@ class az_aro_list_credentials_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aro_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -524,7 +522,7 @@ class az_aro_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aro_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -576,7 +574,7 @@ class az_aro_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aro_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)

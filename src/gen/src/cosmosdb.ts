@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage throughput of Cassandra keyspace under an Azure Cosmos DB account. */
-export class az_cosmosdb_cassandra_keyspace_throughput implements ICommandParent<any> {
-    commandPath = "az cosmosdb cassandra keyspace throughput";
-
+export class az_cosmosdb_cassandra_keyspace_throughput {
     /**
      * Migrate the throughput of the Cassandra keyspace between autoscale and manually provisioned.
      *
@@ -21,8 +19,8 @@ export class az_cosmosdb_cassandra_keyspace_throughput implements ICommandParent
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
      */
-    az_cosmosdb_cassandra_keyspace_throughput_migrate(accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_cassandra_keyspace_throughput_migrate_command_builder {
-        return new az_cosmosdb_cassandra_keyspace_throughput_migrate_command_builder(this, accountName, name, resourceGroup, throughputType);
+    static az_cosmosdb_cassandra_keyspace_throughput_migrate(accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_cassandra_keyspace_throughput_migrate_command_builder {
+        return new az_cosmosdb_cassandra_keyspace_throughput_migrate_command_builder("az cosmosdb cassandra keyspace throughput migrate", accountName, name, resourceGroup, throughputType);
     }
 
     /**
@@ -41,8 +39,8 @@ export class az_cosmosdb_cassandra_keyspace_throughput implements ICommandParent
      * @param {string} name Keyspace name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_cassandra_keyspace_throughput_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_keyspace_throughput_show_command_builder {
-        return new az_cosmosdb_cassandra_keyspace_throughput_show_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_cassandra_keyspace_throughput_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_keyspace_throughput_show_command_builder {
+        return new az_cosmosdb_cassandra_keyspace_throughput_show_command_builder("az cosmosdb cassandra keyspace throughput show", accountName, name, resourceGroup);
     }
 
     /**
@@ -62,15 +60,13 @@ export class az_cosmosdb_cassandra_keyspace_throughput implements ICommandParent
      * @param {string} name Keyspace name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_cassandra_keyspace_throughput_update(accountName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_keyspace_throughput_update_command_builder {
-        return new az_cosmosdb_cassandra_keyspace_throughput_update_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_cassandra_keyspace_throughput_update(accountName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_keyspace_throughput_update_command_builder {
+        return new az_cosmosdb_cassandra_keyspace_throughput_update_command_builder("az cosmosdb cassandra keyspace throughput update", accountName, name, resourceGroup);
     }
 }
 
 /** Manage Azure Cosmos DB Cassandra keyspaces. */
-export class az_cosmosdb_cassandra_keyspace implements ICommandParent<any> {
-    commandPath = "az cosmosdb cassandra keyspace";
-
+export class az_cosmosdb_cassandra_keyspace {
     /**
      * Create an Cassandra keyspace under an Azure Cosmos DB account.
      *
@@ -88,8 +84,8 @@ export class az_cosmosdb_cassandra_keyspace implements ICommandParent<any> {
      * @param {string} name Keyspace name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_cassandra_keyspace_create(accountName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_keyspace_create_command_builder {
-        return new az_cosmosdb_cassandra_keyspace_create_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_cassandra_keyspace_create(accountName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_keyspace_create_command_builder {
+        return new az_cosmosdb_cassandra_keyspace_create_command_builder("az cosmosdb cassandra keyspace create", accountName, name, resourceGroup);
     }
 
     /**
@@ -108,8 +104,8 @@ export class az_cosmosdb_cassandra_keyspace implements ICommandParent<any> {
      * @param {string} name Keyspace name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_cassandra_keyspace_delete(accountName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_keyspace_delete_command_builder {
-        return new az_cosmosdb_cassandra_keyspace_delete_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_cassandra_keyspace_delete(accountName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_keyspace_delete_command_builder {
+        return new az_cosmosdb_cassandra_keyspace_delete_command_builder("az cosmosdb cassandra keyspace delete", accountName, name, resourceGroup);
     }
 
     /**
@@ -127,8 +123,8 @@ export class az_cosmosdb_cassandra_keyspace implements ICommandParent<any> {
      * @param {string} name Keyspace name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_cassandra_keyspace_exists(accountName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_keyspace_exists_command_builder {
-        return new az_cosmosdb_cassandra_keyspace_exists_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_cassandra_keyspace_exists(accountName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_keyspace_exists_command_builder {
+        return new az_cosmosdb_cassandra_keyspace_exists_command_builder("az cosmosdb cassandra keyspace exists", accountName, name, resourceGroup);
     }
 
     /**
@@ -145,8 +141,8 @@ export class az_cosmosdb_cassandra_keyspace implements ICommandParent<any> {
      * @param {string} accountName Cosmosdb account name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_cassandra_keyspace_list(accountName: string, resourceGroup: string): az_cosmosdb_cassandra_keyspace_list_command_builder {
-        return new az_cosmosdb_cassandra_keyspace_list_command_builder(this, accountName, resourceGroup);
+    static az_cosmosdb_cassandra_keyspace_list(accountName: string, resourceGroup: string): az_cosmosdb_cassandra_keyspace_list_command_builder {
+        return new az_cosmosdb_cassandra_keyspace_list_command_builder("az cosmosdb cassandra keyspace list", accountName, resourceGroup);
     }
 
     /**
@@ -165,15 +161,13 @@ export class az_cosmosdb_cassandra_keyspace implements ICommandParent<any> {
      * @param {string} name Keyspace name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_cassandra_keyspace_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_keyspace_show_command_builder {
-        return new az_cosmosdb_cassandra_keyspace_show_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_cassandra_keyspace_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_keyspace_show_command_builder {
+        return new az_cosmosdb_cassandra_keyspace_show_command_builder("az cosmosdb cassandra keyspace show", accountName, name, resourceGroup);
     }
 }
 
 /** Manage throughput of Cassandra table under an Azure Cosmos DB account. */
-export class az_cosmosdb_cassandra_table_throughput implements ICommandParent<any> {
-    commandPath = "az cosmosdb cassandra table throughput";
-
+export class az_cosmosdb_cassandra_table_throughput {
     /**
      * Migrate the throughput of the Cassandra table between autoscale and manually provisioned.
      *
@@ -193,8 +187,8 @@ export class az_cosmosdb_cassandra_table_throughput implements ICommandParent<an
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
      */
-    az_cosmosdb_cassandra_table_throughput_migrate(accountName: string, keyspaceName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_cassandra_table_throughput_migrate_command_builder {
-        return new az_cosmosdb_cassandra_table_throughput_migrate_command_builder(this, accountName, keyspaceName, name, resourceGroup, throughputType);
+    static az_cosmosdb_cassandra_table_throughput_migrate(accountName: string, keyspaceName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_cassandra_table_throughput_migrate_command_builder {
+        return new az_cosmosdb_cassandra_table_throughput_migrate_command_builder("az cosmosdb cassandra table throughput migrate", accountName, keyspaceName, name, resourceGroup, throughputType);
     }
 
     /**
@@ -215,8 +209,8 @@ export class az_cosmosdb_cassandra_table_throughput implements ICommandParent<an
      * @param {string} name Table name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_cassandra_table_throughput_show(accountName: string, keyspaceName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_table_throughput_show_command_builder {
-        return new az_cosmosdb_cassandra_table_throughput_show_command_builder(this, accountName, keyspaceName, name, resourceGroup);
+    static az_cosmosdb_cassandra_table_throughput_show(accountName: string, keyspaceName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_table_throughput_show_command_builder {
+        return new az_cosmosdb_cassandra_table_throughput_show_command_builder("az cosmosdb cassandra table throughput show", accountName, keyspaceName, name, resourceGroup);
     }
 
     /**
@@ -238,15 +232,13 @@ export class az_cosmosdb_cassandra_table_throughput implements ICommandParent<an
      * @param {string} name Table name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_cassandra_table_throughput_update(accountName: string, keyspaceName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_table_throughput_update_command_builder {
-        return new az_cosmosdb_cassandra_table_throughput_update_command_builder(this, accountName, keyspaceName, name, resourceGroup);
+    static az_cosmosdb_cassandra_table_throughput_update(accountName: string, keyspaceName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_table_throughput_update_command_builder {
+        return new az_cosmosdb_cassandra_table_throughput_update_command_builder("az cosmosdb cassandra table throughput update", accountName, keyspaceName, name, resourceGroup);
     }
 }
 
 /** Manage Azure Cosmos DB Cassandra tables. */
-export class az_cosmosdb_cassandra_table implements ICommandParent<any> {
-    commandPath = "az cosmosdb cassandra table";
-
+export class az_cosmosdb_cassandra_table {
     /**
      * Create an Cassandra table under an Azure Cosmos DB Cassandra keyspace.
      *
@@ -270,8 +262,8 @@ export class az_cosmosdb_cassandra_table implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} schema Schema, you can enter it as a string or as a file, e.g., --schema @schema-file.json or --schema "{"columns": [{"name": "columnA","type": "uuid"}, {"name": "columnB","type": "Ascii"}],"partitionKeys": [{"name": "columnA"}]}".
      */
-    az_cosmosdb_cassandra_table_create(accountName: string, keyspaceName: string, name: string, resourceGroup: string, schema: string): az_cosmosdb_cassandra_table_create_command_builder {
-        return new az_cosmosdb_cassandra_table_create_command_builder(this, accountName, keyspaceName, name, resourceGroup, schema);
+    static az_cosmosdb_cassandra_table_create(accountName: string, keyspaceName: string, name: string, resourceGroup: string, schema: string): az_cosmosdb_cassandra_table_create_command_builder {
+        return new az_cosmosdb_cassandra_table_create_command_builder("az cosmosdb cassandra table create", accountName, keyspaceName, name, resourceGroup, schema);
     }
 
     /**
@@ -292,8 +284,8 @@ export class az_cosmosdb_cassandra_table implements ICommandParent<any> {
      * @param {string} name Table name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_cassandra_table_delete(accountName: string, keyspaceName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_table_delete_command_builder {
-        return new az_cosmosdb_cassandra_table_delete_command_builder(this, accountName, keyspaceName, name, resourceGroup);
+    static az_cosmosdb_cassandra_table_delete(accountName: string, keyspaceName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_table_delete_command_builder {
+        return new az_cosmosdb_cassandra_table_delete_command_builder("az cosmosdb cassandra table delete", accountName, keyspaceName, name, resourceGroup);
     }
 
     /**
@@ -313,8 +305,8 @@ export class az_cosmosdb_cassandra_table implements ICommandParent<any> {
      * @param {string} name Table name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_cassandra_table_exists(accountName: string, keyspaceName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_table_exists_command_builder {
-        return new az_cosmosdb_cassandra_table_exists_command_builder(this, accountName, keyspaceName, name, resourceGroup);
+    static az_cosmosdb_cassandra_table_exists(accountName: string, keyspaceName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_table_exists_command_builder {
+        return new az_cosmosdb_cassandra_table_exists_command_builder("az cosmosdb cassandra table exists", accountName, keyspaceName, name, resourceGroup);
     }
 
     /**
@@ -333,8 +325,8 @@ export class az_cosmosdb_cassandra_table implements ICommandParent<any> {
      * @param {string} keyspaceName Keyspace name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_cassandra_table_list(accountName: string, keyspaceName: string, resourceGroup: string): az_cosmosdb_cassandra_table_list_command_builder {
-        return new az_cosmosdb_cassandra_table_list_command_builder(this, accountName, keyspaceName, resourceGroup);
+    static az_cosmosdb_cassandra_table_list(accountName: string, keyspaceName: string, resourceGroup: string): az_cosmosdb_cassandra_table_list_command_builder {
+        return new az_cosmosdb_cassandra_table_list_command_builder("az cosmosdb cassandra table list", accountName, keyspaceName, resourceGroup);
     }
 
     /**
@@ -355,8 +347,8 @@ export class az_cosmosdb_cassandra_table implements ICommandParent<any> {
      * @param {string} name Table name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_cassandra_table_show(accountName: string, keyspaceName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_table_show_command_builder {
-        return new az_cosmosdb_cassandra_table_show_command_builder(this, accountName, keyspaceName, name, resourceGroup);
+    static az_cosmosdb_cassandra_table_show(accountName: string, keyspaceName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_table_show_command_builder {
+        return new az_cosmosdb_cassandra_table_show_command_builder("az cosmosdb cassandra table show", accountName, keyspaceName, name, resourceGroup);
     }
 
     /**
@@ -379,8 +371,8 @@ export class az_cosmosdb_cassandra_table implements ICommandParent<any> {
      * @param {string} name Table name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_cassandra_table_update(accountName: string, keyspaceName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_table_update_command_builder {
-        return new az_cosmosdb_cassandra_table_update_command_builder(this, accountName, keyspaceName, name, resourceGroup);
+    static az_cosmosdb_cassandra_table_update(accountName: string, keyspaceName: string, name: string, resourceGroup: string): az_cosmosdb_cassandra_table_update_command_builder {
+        return new az_cosmosdb_cassandra_table_update_command_builder("az cosmosdb cassandra table update", accountName, keyspaceName, name, resourceGroup);
     }
 }
 
@@ -389,9 +381,7 @@ export class az_cosmosdb_cassandra {
 }
 
 /** Manage Azure Cosmos DB collections. */
-export class az_cosmosdb_collection implements ICommandParent<any> {
-    commandPath = "az cosmosdb collection";
-
+export class az_cosmosdb_collection {
     /**
      * Creates an Azure Cosmos DB collection.
      *
@@ -413,8 +403,8 @@ export class az_cosmosdb_collection implements ICommandParent<any> {
      * @param {string} collectionName Collection Name.
      * @param {string} dbName Database Name.
      */
-    az_cosmosdb_collection_create(collectionName: string, dbName: string): az_cosmosdb_collection_create_command_builder {
-        return new az_cosmosdb_collection_create_command_builder(this, collectionName, dbName);
+    static az_cosmosdb_collection_create(collectionName: string, dbName: string): az_cosmosdb_collection_create_command_builder {
+        return new az_cosmosdb_collection_create_command_builder("az cosmosdb collection create", collectionName, dbName);
     }
 
     /**
@@ -435,8 +425,8 @@ export class az_cosmosdb_collection implements ICommandParent<any> {
      * @param {string} collectionName Collection Name.
      * @param {string} dbName Database Name.
      */
-    az_cosmosdb_collection_delete(collectionName: string, dbName: string): az_cosmosdb_collection_delete_command_builder {
-        return new az_cosmosdb_collection_delete_command_builder(this, collectionName, dbName);
+    static az_cosmosdb_collection_delete(collectionName: string, dbName: string): az_cosmosdb_collection_delete_command_builder {
+        return new az_cosmosdb_collection_delete_command_builder("az cosmosdb collection delete", collectionName, dbName);
     }
 
     /**
@@ -456,8 +446,8 @@ export class az_cosmosdb_collection implements ICommandParent<any> {
      * @param {string} collectionName Collection Name.
      * @param {string} dbName Database Name.
      */
-    az_cosmosdb_collection_exists(collectionName: string, dbName: string): az_cosmosdb_collection_exists_command_builder {
-        return new az_cosmosdb_collection_exists_command_builder(this, collectionName, dbName);
+    static az_cosmosdb_collection_exists(collectionName: string, dbName: string): az_cosmosdb_collection_exists_command_builder {
+        return new az_cosmosdb_collection_exists_command_builder("az cosmosdb collection exists", collectionName, dbName);
     }
 
     /**
@@ -476,8 +466,8 @@ export class az_cosmosdb_collection implements ICommandParent<any> {
      *
      * @param {string} dbName Database Name.
      */
-    az_cosmosdb_collection_list(dbName: string): az_cosmosdb_collection_list_command_builder {
-        return new az_cosmosdb_collection_list_command_builder(this, dbName);
+    static az_cosmosdb_collection_list(dbName: string): az_cosmosdb_collection_list_command_builder {
+        return new az_cosmosdb_collection_list_command_builder("az cosmosdb collection list", dbName);
     }
 
     /**
@@ -498,8 +488,8 @@ export class az_cosmosdb_collection implements ICommandParent<any> {
      * @param {string} collectionName Collection Name.
      * @param {string} dbName Database Name.
      */
-    az_cosmosdb_collection_show(collectionName: string, dbName: string): az_cosmosdb_collection_show_command_builder {
-        return new az_cosmosdb_collection_show_command_builder(this, collectionName, dbName);
+    static az_cosmosdb_collection_show(collectionName: string, dbName: string): az_cosmosdb_collection_show_command_builder {
+        return new az_cosmosdb_collection_show_command_builder("az cosmosdb collection show", collectionName, dbName);
     }
 
     /**
@@ -522,15 +512,13 @@ export class az_cosmosdb_collection implements ICommandParent<any> {
      * @param {string} collectionName Collection Name.
      * @param {string} dbName Database Name.
      */
-    az_cosmosdb_collection_update(collectionName: string, dbName: string): az_cosmosdb_collection_update_command_builder {
-        return new az_cosmosdb_collection_update_command_builder(this, collectionName, dbName);
+    static az_cosmosdb_collection_update(collectionName: string, dbName: string): az_cosmosdb_collection_update_command_builder {
+        return new az_cosmosdb_collection_update_command_builder("az cosmosdb collection update", collectionName, dbName);
     }
 }
 
 /** Manage Azure Cosmos DB databases. */
-export class az_cosmosdb_database implements ICommandParent<any> {
-    commandPath = "az cosmosdb database";
-
+export class az_cosmosdb_database {
     /**
      * Creates an Azure Cosmos DB database.
      *
@@ -547,8 +535,8 @@ export class az_cosmosdb_database implements ICommandParent<any> {
      *
      * @param {string} dbName Database Name.
      */
-    az_cosmosdb_database_create(dbName: string): az_cosmosdb_database_create_command_builder {
-        return new az_cosmosdb_database_create_command_builder(this, dbName);
+    static az_cosmosdb_database_create(dbName: string): az_cosmosdb_database_create_command_builder {
+        return new az_cosmosdb_database_create_command_builder("az cosmosdb database create", dbName);
     }
 
     /**
@@ -567,8 +555,8 @@ export class az_cosmosdb_database implements ICommandParent<any> {
      *
      * @param {string} dbName Database Name.
      */
-    az_cosmosdb_database_delete(dbName: string): az_cosmosdb_database_delete_command_builder {
-        return new az_cosmosdb_database_delete_command_builder(this, dbName);
+    static az_cosmosdb_database_delete(dbName: string): az_cosmosdb_database_delete_command_builder {
+        return new az_cosmosdb_database_delete_command_builder("az cosmosdb database delete", dbName);
     }
 
     /**
@@ -586,8 +574,8 @@ export class az_cosmosdb_database implements ICommandParent<any> {
      *
      * @param {string} dbName Database Name.
      */
-    az_cosmosdb_database_exists(dbName: string): az_cosmosdb_database_exists_command_builder {
-        return new az_cosmosdb_database_exists_command_builder(this, dbName);
+    static az_cosmosdb_database_exists(dbName: string): az_cosmosdb_database_exists_command_builder {
+        return new az_cosmosdb_database_exists_command_builder("az cosmosdb database exists", dbName);
     }
 
     /**
@@ -603,8 +591,8 @@ export class az_cosmosdb_database implements ICommandParent<any> {
      *                           [--url-connection]
      * ```
      */
-    az_cosmosdb_database_list(): az_cosmosdb_database_list_command_builder {
-        return new az_cosmosdb_database_list_command_builder(this);
+    static az_cosmosdb_database_list(): az_cosmosdb_database_list_command_builder {
+        return new az_cosmosdb_database_list_command_builder("az cosmosdb database list");
     }
 
     /**
@@ -623,15 +611,13 @@ export class az_cosmosdb_database implements ICommandParent<any> {
      *
      * @param {string} dbName Database Name.
      */
-    az_cosmosdb_database_show(dbName: string): az_cosmosdb_database_show_command_builder {
-        return new az_cosmosdb_database_show_command_builder(this, dbName);
+    static az_cosmosdb_database_show(dbName: string): az_cosmosdb_database_show_command_builder {
+        return new az_cosmosdb_database_show_command_builder("az cosmosdb database show", dbName);
     }
 }
 
 /** Manage throughput of Gremlin database under an Azure Cosmos DB account. */
-export class az_cosmosdb_gremlin_database_throughput implements ICommandParent<any> {
-    commandPath = "az cosmosdb gremlin database throughput";
-
+export class az_cosmosdb_gremlin_database_throughput {
     /**
      * Migrate the throughput of the Gremlin database between autoscale and manually provisioned.
      *
@@ -649,8 +635,8 @@ export class az_cosmosdb_gremlin_database_throughput implements ICommandParent<a
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
      */
-    az_cosmosdb_gremlin_database_throughput_migrate(accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_gremlin_database_throughput_migrate_command_builder {
-        return new az_cosmosdb_gremlin_database_throughput_migrate_command_builder(this, accountName, name, resourceGroup, throughputType);
+    static az_cosmosdb_gremlin_database_throughput_migrate(accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_gremlin_database_throughput_migrate_command_builder {
+        return new az_cosmosdb_gremlin_database_throughput_migrate_command_builder("az cosmosdb gremlin database throughput migrate", accountName, name, resourceGroup, throughputType);
     }
 
     /**
@@ -669,8 +655,8 @@ export class az_cosmosdb_gremlin_database_throughput implements ICommandParent<a
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_gremlin_database_throughput_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_database_throughput_show_command_builder {
-        return new az_cosmosdb_gremlin_database_throughput_show_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_gremlin_database_throughput_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_database_throughput_show_command_builder {
+        return new az_cosmosdb_gremlin_database_throughput_show_command_builder("az cosmosdb gremlin database throughput show", accountName, name, resourceGroup);
     }
 
     /**
@@ -690,15 +676,13 @@ export class az_cosmosdb_gremlin_database_throughput implements ICommandParent<a
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_gremlin_database_throughput_update(accountName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_database_throughput_update_command_builder {
-        return new az_cosmosdb_gremlin_database_throughput_update_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_gremlin_database_throughput_update(accountName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_database_throughput_update_command_builder {
+        return new az_cosmosdb_gremlin_database_throughput_update_command_builder("az cosmosdb gremlin database throughput update", accountName, name, resourceGroup);
     }
 }
 
 /** Manage Azure Cosmos DB Gremlin databases. */
-export class az_cosmosdb_gremlin_database implements ICommandParent<any> {
-    commandPath = "az cosmosdb gremlin database";
-
+export class az_cosmosdb_gremlin_database {
     /**
      * Create an Gremlin database under an Azure Cosmos DB account.
      *
@@ -716,8 +700,8 @@ export class az_cosmosdb_gremlin_database implements ICommandParent<any> {
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_gremlin_database_create(accountName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_database_create_command_builder {
-        return new az_cosmosdb_gremlin_database_create_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_gremlin_database_create(accountName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_database_create_command_builder {
+        return new az_cosmosdb_gremlin_database_create_command_builder("az cosmosdb gremlin database create", accountName, name, resourceGroup);
     }
 
     /**
@@ -736,8 +720,8 @@ export class az_cosmosdb_gremlin_database implements ICommandParent<any> {
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_gremlin_database_delete(accountName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_database_delete_command_builder {
-        return new az_cosmosdb_gremlin_database_delete_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_gremlin_database_delete(accountName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_database_delete_command_builder {
+        return new az_cosmosdb_gremlin_database_delete_command_builder("az cosmosdb gremlin database delete", accountName, name, resourceGroup);
     }
 
     /**
@@ -755,8 +739,8 @@ export class az_cosmosdb_gremlin_database implements ICommandParent<any> {
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_gremlin_database_exists(accountName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_database_exists_command_builder {
-        return new az_cosmosdb_gremlin_database_exists_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_gremlin_database_exists(accountName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_database_exists_command_builder {
+        return new az_cosmosdb_gremlin_database_exists_command_builder("az cosmosdb gremlin database exists", accountName, name, resourceGroup);
     }
 
     /**
@@ -773,8 +757,8 @@ export class az_cosmosdb_gremlin_database implements ICommandParent<any> {
      * @param {string} accountName Cosmosdb account name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_gremlin_database_list(accountName: string, resourceGroup: string): az_cosmosdb_gremlin_database_list_command_builder {
-        return new az_cosmosdb_gremlin_database_list_command_builder(this, accountName, resourceGroup);
+    static az_cosmosdb_gremlin_database_list(accountName: string, resourceGroup: string): az_cosmosdb_gremlin_database_list_command_builder {
+        return new az_cosmosdb_gremlin_database_list_command_builder("az cosmosdb gremlin database list", accountName, resourceGroup);
     }
 
     /**
@@ -793,15 +777,13 @@ export class az_cosmosdb_gremlin_database implements ICommandParent<any> {
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_gremlin_database_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_database_show_command_builder {
-        return new az_cosmosdb_gremlin_database_show_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_gremlin_database_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_database_show_command_builder {
+        return new az_cosmosdb_gremlin_database_show_command_builder("az cosmosdb gremlin database show", accountName, name, resourceGroup);
     }
 }
 
 /** Manage throughput of Gremlin graph under an Azure Cosmos DB account. */
-export class az_cosmosdb_gremlin_graph_throughput implements ICommandParent<any> {
-    commandPath = "az cosmosdb gremlin graph throughput";
-
+export class az_cosmosdb_gremlin_graph_throughput {
     /**
      * Migrate the throughput of the Gremlin Graph between autoscale and manually provisioned.
      *
@@ -821,8 +803,8 @@ export class az_cosmosdb_gremlin_graph_throughput implements ICommandParent<any>
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
      */
-    az_cosmosdb_gremlin_graph_throughput_migrate(accountName: string, databaseName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_gremlin_graph_throughput_migrate_command_builder {
-        return new az_cosmosdb_gremlin_graph_throughput_migrate_command_builder(this, accountName, databaseName, name, resourceGroup, throughputType);
+    static az_cosmosdb_gremlin_graph_throughput_migrate(accountName: string, databaseName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_gremlin_graph_throughput_migrate_command_builder {
+        return new az_cosmosdb_gremlin_graph_throughput_migrate_command_builder("az cosmosdb gremlin graph throughput migrate", accountName, databaseName, name, resourceGroup, throughputType);
     }
 
     /**
@@ -843,8 +825,8 @@ export class az_cosmosdb_gremlin_graph_throughput implements ICommandParent<any>
      * @param {string} name Graph name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_gremlin_graph_throughput_show(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_graph_throughput_show_command_builder {
-        return new az_cosmosdb_gremlin_graph_throughput_show_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_gremlin_graph_throughput_show(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_graph_throughput_show_command_builder {
+        return new az_cosmosdb_gremlin_graph_throughput_show_command_builder("az cosmosdb gremlin graph throughput show", accountName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -866,15 +848,13 @@ export class az_cosmosdb_gremlin_graph_throughput implements ICommandParent<any>
      * @param {string} name Graph name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_gremlin_graph_throughput_update(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_graph_throughput_update_command_builder {
-        return new az_cosmosdb_gremlin_graph_throughput_update_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_gremlin_graph_throughput_update(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_graph_throughput_update_command_builder {
+        return new az_cosmosdb_gremlin_graph_throughput_update_command_builder("az cosmosdb gremlin graph throughput update", accountName, databaseName, name, resourceGroup);
     }
 }
 
 /** Manage Azure Cosmos DB Gremlin graphs. */
-export class az_cosmosdb_gremlin_graph implements ICommandParent<any> {
-    commandPath = "az cosmosdb gremlin graph";
-
+export class az_cosmosdb_gremlin_graph {
     /**
      * Create an Gremlin graph under an Azure Cosmos DB Gremlin database.
      *
@@ -899,8 +879,8 @@ export class az_cosmosdb_gremlin_graph implements ICommandParent<any> {
      * @param {string} partitionKeyPath Partition Key Path, e.g., '/address/zipcode'.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_gremlin_graph_create(accountName: string, databaseName: string, name: string, partitionKeyPath: string, resourceGroup: string): az_cosmosdb_gremlin_graph_create_command_builder {
-        return new az_cosmosdb_gremlin_graph_create_command_builder(this, accountName, databaseName, name, partitionKeyPath, resourceGroup);
+    static az_cosmosdb_gremlin_graph_create(accountName: string, databaseName: string, name: string, partitionKeyPath: string, resourceGroup: string): az_cosmosdb_gremlin_graph_create_command_builder {
+        return new az_cosmosdb_gremlin_graph_create_command_builder("az cosmosdb gremlin graph create", accountName, databaseName, name, partitionKeyPath, resourceGroup);
     }
 
     /**
@@ -921,8 +901,8 @@ export class az_cosmosdb_gremlin_graph implements ICommandParent<any> {
      * @param {string} name Graph name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_gremlin_graph_delete(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_graph_delete_command_builder {
-        return new az_cosmosdb_gremlin_graph_delete_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_gremlin_graph_delete(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_graph_delete_command_builder {
+        return new az_cosmosdb_gremlin_graph_delete_command_builder("az cosmosdb gremlin graph delete", accountName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -942,8 +922,8 @@ export class az_cosmosdb_gremlin_graph implements ICommandParent<any> {
      * @param {string} name Graph name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_gremlin_graph_exists(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_graph_exists_command_builder {
-        return new az_cosmosdb_gremlin_graph_exists_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_gremlin_graph_exists(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_graph_exists_command_builder {
+        return new az_cosmosdb_gremlin_graph_exists_command_builder("az cosmosdb gremlin graph exists", accountName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -962,8 +942,8 @@ export class az_cosmosdb_gremlin_graph implements ICommandParent<any> {
      * @param {string} databaseName Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_gremlin_graph_list(accountName: string, databaseName: string, resourceGroup: string): az_cosmosdb_gremlin_graph_list_command_builder {
-        return new az_cosmosdb_gremlin_graph_list_command_builder(this, accountName, databaseName, resourceGroup);
+    static az_cosmosdb_gremlin_graph_list(accountName: string, databaseName: string, resourceGroup: string): az_cosmosdb_gremlin_graph_list_command_builder {
+        return new az_cosmosdb_gremlin_graph_list_command_builder("az cosmosdb gremlin graph list", accountName, databaseName, resourceGroup);
     }
 
     /**
@@ -984,8 +964,8 @@ export class az_cosmosdb_gremlin_graph implements ICommandParent<any> {
      * @param {string} name Graph name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_gremlin_graph_show(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_graph_show_command_builder {
-        return new az_cosmosdb_gremlin_graph_show_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_gremlin_graph_show(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_graph_show_command_builder {
+        return new az_cosmosdb_gremlin_graph_show_command_builder("az cosmosdb gremlin graph show", accountName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -1007,8 +987,8 @@ export class az_cosmosdb_gremlin_graph implements ICommandParent<any> {
      * @param {string} name Graph name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_gremlin_graph_update(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_graph_update_command_builder {
-        return new az_cosmosdb_gremlin_graph_update_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_gremlin_graph_update(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_gremlin_graph_update_command_builder {
+        return new az_cosmosdb_gremlin_graph_update_command_builder("az cosmosdb gremlin graph update", accountName, databaseName, name, resourceGroup);
     }
 }
 
@@ -1017,9 +997,7 @@ export class az_cosmosdb_gremlin {
 }
 
 /** Manage Azure Comsos DB keys. */
-export class az_cosmosdb_keys implements ICommandParent<any> {
-    commandPath = "az cosmosdb keys";
-
+export class az_cosmosdb_keys {
     /**
      * List the access keys or connection strings for a Azure Cosmos DB database account.
      *
@@ -1035,8 +1013,8 @@ export class az_cosmosdb_keys implements ICommandParent<any> {
      * @param {string} name Cosmosdb account name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_keys_list(name: string, resourceGroup: string): az_cosmosdb_keys_list_command_builder {
-        return new az_cosmosdb_keys_list_command_builder(this, name, resourceGroup);
+    static az_cosmosdb_keys_list(name: string, resourceGroup: string): az_cosmosdb_keys_list_command_builder {
+        return new az_cosmosdb_keys_list_command_builder("az cosmosdb keys list", name, resourceGroup);
     }
 
     /**
@@ -1053,15 +1031,13 @@ export class az_cosmosdb_keys implements ICommandParent<any> {
      *
      * @param {'primary' | 'primaryReadonly' | 'secondary' | 'secondaryReadonly'} keyKind The access key to regenerate.
      */
-    az_cosmosdb_keys_regenerate(keyKind: 'primary' | 'primaryReadonly' | 'secondary' | 'secondaryReadonly'): az_cosmosdb_keys_regenerate_command_builder {
-        return new az_cosmosdb_keys_regenerate_command_builder(this, keyKind);
+    static az_cosmosdb_keys_regenerate(keyKind: 'primary' | 'primaryReadonly' | 'secondary' | 'secondaryReadonly'): az_cosmosdb_keys_regenerate_command_builder {
+        return new az_cosmosdb_keys_regenerate_command_builder("az cosmosdb keys regenerate", keyKind);
     }
 }
 
 /** Manage throughput of MongoDB collection under an Azure Cosmos DB account. */
-export class az_cosmosdb_mongodb_collection_throughput implements ICommandParent<any> {
-    commandPath = "az cosmosdb mongodb collection throughput";
-
+export class az_cosmosdb_mongodb_collection_throughput {
     /**
      * Migrate the throughput of the MongoDB collection between autoscale and manually provisioned.
      *
@@ -1081,8 +1057,8 @@ export class az_cosmosdb_mongodb_collection_throughput implements ICommandParent
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
      */
-    az_cosmosdb_mongodb_collection_throughput_migrate(accountName: string, databaseName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_mongodb_collection_throughput_migrate_command_builder {
-        return new az_cosmosdb_mongodb_collection_throughput_migrate_command_builder(this, accountName, databaseName, name, resourceGroup, throughputType);
+    static az_cosmosdb_mongodb_collection_throughput_migrate(accountName: string, databaseName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_mongodb_collection_throughput_migrate_command_builder {
+        return new az_cosmosdb_mongodb_collection_throughput_migrate_command_builder("az cosmosdb mongodb collection throughput migrate", accountName, databaseName, name, resourceGroup, throughputType);
     }
 
     /**
@@ -1103,8 +1079,8 @@ export class az_cosmosdb_mongodb_collection_throughput implements ICommandParent
      * @param {string} name Collection name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_mongodb_collection_throughput_show(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_collection_throughput_show_command_builder {
-        return new az_cosmosdb_mongodb_collection_throughput_show_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_mongodb_collection_throughput_show(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_collection_throughput_show_command_builder {
+        return new az_cosmosdb_mongodb_collection_throughput_show_command_builder("az cosmosdb mongodb collection throughput show", accountName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -1126,15 +1102,13 @@ export class az_cosmosdb_mongodb_collection_throughput implements ICommandParent
      * @param {string} name Collection name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_mongodb_collection_throughput_update(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_collection_throughput_update_command_builder {
-        return new az_cosmosdb_mongodb_collection_throughput_update_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_mongodb_collection_throughput_update(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_collection_throughput_update_command_builder {
+        return new az_cosmosdb_mongodb_collection_throughput_update_command_builder("az cosmosdb mongodb collection throughput update", accountName, databaseName, name, resourceGroup);
     }
 }
 
 /** Manage Azure Cosmos DB MongoDB collections. */
-export class az_cosmosdb_mongodb_collection implements ICommandParent<any> {
-    commandPath = "az cosmosdb mongodb collection";
-
+export class az_cosmosdb_mongodb_collection {
     /**
      * Create an MongoDB collection under an Azure Cosmos DB MongoDB database.
      *
@@ -1157,8 +1131,8 @@ export class az_cosmosdb_mongodb_collection implements ICommandParent<any> {
      * @param {string} name Collection name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_mongodb_collection_create(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_collection_create_command_builder {
-        return new az_cosmosdb_mongodb_collection_create_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_mongodb_collection_create(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_collection_create_command_builder {
+        return new az_cosmosdb_mongodb_collection_create_command_builder("az cosmosdb mongodb collection create", accountName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -1179,8 +1153,8 @@ export class az_cosmosdb_mongodb_collection implements ICommandParent<any> {
      * @param {string} name Collection name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_mongodb_collection_delete(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_collection_delete_command_builder {
-        return new az_cosmosdb_mongodb_collection_delete_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_mongodb_collection_delete(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_collection_delete_command_builder {
+        return new az_cosmosdb_mongodb_collection_delete_command_builder("az cosmosdb mongodb collection delete", accountName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -1200,8 +1174,8 @@ export class az_cosmosdb_mongodb_collection implements ICommandParent<any> {
      * @param {string} name Collection name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_mongodb_collection_exists(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_collection_exists_command_builder {
-        return new az_cosmosdb_mongodb_collection_exists_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_mongodb_collection_exists(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_collection_exists_command_builder {
+        return new az_cosmosdb_mongodb_collection_exists_command_builder("az cosmosdb mongodb collection exists", accountName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -1220,8 +1194,8 @@ export class az_cosmosdb_mongodb_collection implements ICommandParent<any> {
      * @param {string} databaseName Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_mongodb_collection_list(accountName: string, databaseName: string, resourceGroup: string): az_cosmosdb_mongodb_collection_list_command_builder {
-        return new az_cosmosdb_mongodb_collection_list_command_builder(this, accountName, databaseName, resourceGroup);
+    static az_cosmosdb_mongodb_collection_list(accountName: string, databaseName: string, resourceGroup: string): az_cosmosdb_mongodb_collection_list_command_builder {
+        return new az_cosmosdb_mongodb_collection_list_command_builder("az cosmosdb mongodb collection list", accountName, databaseName, resourceGroup);
     }
 
     /**
@@ -1242,8 +1216,8 @@ export class az_cosmosdb_mongodb_collection implements ICommandParent<any> {
      * @param {string} name Collection name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_mongodb_collection_show(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_collection_show_command_builder {
-        return new az_cosmosdb_mongodb_collection_show_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_mongodb_collection_show(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_collection_show_command_builder {
+        return new az_cosmosdb_mongodb_collection_show_command_builder("az cosmosdb mongodb collection show", accountName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -1265,15 +1239,13 @@ export class az_cosmosdb_mongodb_collection implements ICommandParent<any> {
      * @param {string} name Collection name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_mongodb_collection_update(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_collection_update_command_builder {
-        return new az_cosmosdb_mongodb_collection_update_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_mongodb_collection_update(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_collection_update_command_builder {
+        return new az_cosmosdb_mongodb_collection_update_command_builder("az cosmosdb mongodb collection update", accountName, databaseName, name, resourceGroup);
     }
 }
 
 /** Manage throughput of MongoDB database under an Azure Cosmos DB account. */
-export class az_cosmosdb_mongodb_database_throughput implements ICommandParent<any> {
-    commandPath = "az cosmosdb mongodb database throughput";
-
+export class az_cosmosdb_mongodb_database_throughput {
     /**
      * Migrate the throughput of the MongoDB database between autoscale and manually provisioned.
      *
@@ -1291,8 +1263,8 @@ export class az_cosmosdb_mongodb_database_throughput implements ICommandParent<a
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
      */
-    az_cosmosdb_mongodb_database_throughput_migrate(accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_mongodb_database_throughput_migrate_command_builder {
-        return new az_cosmosdb_mongodb_database_throughput_migrate_command_builder(this, accountName, name, resourceGroup, throughputType);
+    static az_cosmosdb_mongodb_database_throughput_migrate(accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_mongodb_database_throughput_migrate_command_builder {
+        return new az_cosmosdb_mongodb_database_throughput_migrate_command_builder("az cosmosdb mongodb database throughput migrate", accountName, name, resourceGroup, throughputType);
     }
 
     /**
@@ -1311,8 +1283,8 @@ export class az_cosmosdb_mongodb_database_throughput implements ICommandParent<a
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_mongodb_database_throughput_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_database_throughput_show_command_builder {
-        return new az_cosmosdb_mongodb_database_throughput_show_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_mongodb_database_throughput_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_database_throughput_show_command_builder {
+        return new az_cosmosdb_mongodb_database_throughput_show_command_builder("az cosmosdb mongodb database throughput show", accountName, name, resourceGroup);
     }
 
     /**
@@ -1332,15 +1304,13 @@ export class az_cosmosdb_mongodb_database_throughput implements ICommandParent<a
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_mongodb_database_throughput_update(accountName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_database_throughput_update_command_builder {
-        return new az_cosmosdb_mongodb_database_throughput_update_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_mongodb_database_throughput_update(accountName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_database_throughput_update_command_builder {
+        return new az_cosmosdb_mongodb_database_throughput_update_command_builder("az cosmosdb mongodb database throughput update", accountName, name, resourceGroup);
     }
 }
 
 /** Manage Azure Cosmos DB MongoDB databases. */
-export class az_cosmosdb_mongodb_database implements ICommandParent<any> {
-    commandPath = "az cosmosdb mongodb database";
-
+export class az_cosmosdb_mongodb_database {
     /**
      * Create an MongoDB database under an Azure Cosmos DB account.
      *
@@ -1358,8 +1328,8 @@ export class az_cosmosdb_mongodb_database implements ICommandParent<any> {
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_mongodb_database_create(accountName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_database_create_command_builder {
-        return new az_cosmosdb_mongodb_database_create_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_mongodb_database_create(accountName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_database_create_command_builder {
+        return new az_cosmosdb_mongodb_database_create_command_builder("az cosmosdb mongodb database create", accountName, name, resourceGroup);
     }
 
     /**
@@ -1378,8 +1348,8 @@ export class az_cosmosdb_mongodb_database implements ICommandParent<any> {
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_mongodb_database_delete(accountName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_database_delete_command_builder {
-        return new az_cosmosdb_mongodb_database_delete_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_mongodb_database_delete(accountName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_database_delete_command_builder {
+        return new az_cosmosdb_mongodb_database_delete_command_builder("az cosmosdb mongodb database delete", accountName, name, resourceGroup);
     }
 
     /**
@@ -1397,8 +1367,8 @@ export class az_cosmosdb_mongodb_database implements ICommandParent<any> {
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_mongodb_database_exists(accountName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_database_exists_command_builder {
-        return new az_cosmosdb_mongodb_database_exists_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_mongodb_database_exists(accountName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_database_exists_command_builder {
+        return new az_cosmosdb_mongodb_database_exists_command_builder("az cosmosdb mongodb database exists", accountName, name, resourceGroup);
     }
 
     /**
@@ -1415,8 +1385,8 @@ export class az_cosmosdb_mongodb_database implements ICommandParent<any> {
      * @param {string} accountName Cosmosdb account name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_mongodb_database_list(accountName: string, resourceGroup: string): az_cosmosdb_mongodb_database_list_command_builder {
-        return new az_cosmosdb_mongodb_database_list_command_builder(this, accountName, resourceGroup);
+    static az_cosmosdb_mongodb_database_list(accountName: string, resourceGroup: string): az_cosmosdb_mongodb_database_list_command_builder {
+        return new az_cosmosdb_mongodb_database_list_command_builder("az cosmosdb mongodb database list", accountName, resourceGroup);
     }
 
     /**
@@ -1435,8 +1405,8 @@ export class az_cosmosdb_mongodb_database implements ICommandParent<any> {
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_mongodb_database_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_database_show_command_builder {
-        return new az_cosmosdb_mongodb_database_show_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_mongodb_database_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_mongodb_database_show_command_builder {
+        return new az_cosmosdb_mongodb_database_show_command_builder("az cosmosdb mongodb database show", accountName, name, resourceGroup);
     }
 }
 
@@ -1445,9 +1415,7 @@ export class az_cosmosdb_mongodb {
 }
 
 /** Manage Azure Comsos DB network rules. */
-export class az_cosmosdb_network_rule implements ICommandParent<any> {
-    commandPath = "az cosmosdb network-rule";
-
+export class az_cosmosdb_network_rule {
     /**
      * Adds a virtual network rule to an existing Cosmos DB database account.
      *
@@ -1464,8 +1432,8 @@ export class az_cosmosdb_network_rule implements ICommandParent<any> {
      *
      * @param {string} subnet Name or ID of the subnet.
      */
-    az_cosmosdb_network_rule_add(subnet: string): az_cosmosdb_network_rule_add_command_builder {
-        return new az_cosmosdb_network_rule_add_command_builder(this, subnet);
+    static az_cosmosdb_network_rule_add(subnet: string): az_cosmosdb_network_rule_add_command_builder {
+        return new az_cosmosdb_network_rule_add_command_builder("az cosmosdb network-rule add", subnet);
     }
 
     /**
@@ -1482,8 +1450,8 @@ export class az_cosmosdb_network_rule implements ICommandParent<any> {
      * @param {string} name Name of the Cosmos DB database account.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_network_rule_list(name: string, resourceGroup: string): az_cosmosdb_network_rule_list_command_builder {
-        return new az_cosmosdb_network_rule_list_command_builder(this, name, resourceGroup);
+    static az_cosmosdb_network_rule_list(name: string, resourceGroup: string): az_cosmosdb_network_rule_list_command_builder {
+        return new az_cosmosdb_network_rule_list_command_builder("az cosmosdb network-rule list", name, resourceGroup);
     }
 
     /**
@@ -1501,15 +1469,13 @@ export class az_cosmosdb_network_rule implements ICommandParent<any> {
      *
      * @param {string} subnet Name or ID of the subnet.
      */
-    az_cosmosdb_network_rule_remove(subnet: string): az_cosmosdb_network_rule_remove_command_builder {
-        return new az_cosmosdb_network_rule_remove_command_builder(this, subnet);
+    static az_cosmosdb_network_rule_remove(subnet: string): az_cosmosdb_network_rule_remove_command_builder {
+        return new az_cosmosdb_network_rule_remove_command_builder("az cosmosdb network-rule remove", subnet);
     }
 }
 
 /** Manage Azure Comsos DB private endpoint connections. */
-export class az_cosmosdb_private_endpoint_connection implements ICommandParent<any> {
-    commandPath = "az cosmosdb private-endpoint-connection";
-
+export class az_cosmosdb_private_endpoint_connection {
     /**
      * Approve the specified private endpoint connection associated with Azure Comsos DB.
      *
@@ -1524,8 +1490,8 @@ export class az_cosmosdb_private_endpoint_connection implements ICommandParent<a
      *                                                 [--subscription]
      * ```
      */
-    az_cosmosdb_private_endpoint_connection_approve(): az_cosmosdb_private_endpoint_connection_approve_command_builder {
-        return new az_cosmosdb_private_endpoint_connection_approve_command_builder(this);
+    static az_cosmosdb_private_endpoint_connection_approve(): az_cosmosdb_private_endpoint_connection_approve_command_builder {
+        return new az_cosmosdb_private_endpoint_connection_approve_command_builder("az cosmosdb private-endpoint-connection approve");
     }
 
     /**
@@ -1541,8 +1507,8 @@ export class az_cosmosdb_private_endpoint_connection implements ICommandParent<a
      *                                                [--subscription]
      * ```
      */
-    az_cosmosdb_private_endpoint_connection_delete(): az_cosmosdb_private_endpoint_connection_delete_command_builder {
-        return new az_cosmosdb_private_endpoint_connection_delete_command_builder(this);
+    static az_cosmosdb_private_endpoint_connection_delete(): az_cosmosdb_private_endpoint_connection_delete_command_builder {
+        return new az_cosmosdb_private_endpoint_connection_delete_command_builder("az cosmosdb private-endpoint-connection delete");
     }
 
     /**
@@ -1559,8 +1525,8 @@ export class az_cosmosdb_private_endpoint_connection implements ICommandParent<a
      *                                                [--subscription]
      * ```
      */
-    az_cosmosdb_private_endpoint_connection_reject(): az_cosmosdb_private_endpoint_connection_reject_command_builder {
-        return new az_cosmosdb_private_endpoint_connection_reject_command_builder(this);
+    static az_cosmosdb_private_endpoint_connection_reject(): az_cosmosdb_private_endpoint_connection_reject_command_builder {
+        return new az_cosmosdb_private_endpoint_connection_reject_command_builder("az cosmosdb private-endpoint-connection reject");
     }
 
     /**
@@ -1577,15 +1543,13 @@ export class az_cosmosdb_private_endpoint_connection implements ICommandParent<a
      *                                              [--subscription]
      * ```
      */
-    az_cosmosdb_private_endpoint_connection_show(): az_cosmosdb_private_endpoint_connection_show_command_builder {
-        return new az_cosmosdb_private_endpoint_connection_show_command_builder(this);
+    static az_cosmosdb_private_endpoint_connection_show(): az_cosmosdb_private_endpoint_connection_show_command_builder {
+        return new az_cosmosdb_private_endpoint_connection_show_command_builder("az cosmosdb private-endpoint-connection show");
     }
 }
 
 /** Manage Azure Comsos DB private link resources. */
-export class az_cosmosdb_private_link_resource implements ICommandParent<any> {
-    commandPath = "az cosmosdb private-link-resource";
-
+export class az_cosmosdb_private_link_resource {
     /**
      * List the private link resources supported for Azure Comsos DB.
      *
@@ -1600,15 +1564,13 @@ export class az_cosmosdb_private_link_resource implements ICommandParent<any> {
      * @param {string} accountName Cosmosdb account name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_private_link_resource_list(accountName: string, resourceGroup: string): az_cosmosdb_private_link_resource_list_command_builder {
-        return new az_cosmosdb_private_link_resource_list_command_builder(this, accountName, resourceGroup);
+    static az_cosmosdb_private_link_resource_list(accountName: string, resourceGroup: string): az_cosmosdb_private_link_resource_list_command_builder {
+        return new az_cosmosdb_private_link_resource_list_command_builder("az cosmosdb private-link-resource list", accountName, resourceGroup);
     }
 }
 
 /** Manage throughput of SQL container under an Azure Cosmos DB account. */
-export class az_cosmosdb_sql_container_throughput implements ICommandParent<any> {
-    commandPath = "az cosmosdb sql container throughput";
-
+export class az_cosmosdb_sql_container_throughput {
     /**
      * Migrate the throughput of the SQL container between autoscale and manually provisioned.
      *
@@ -1628,8 +1590,8 @@ export class az_cosmosdb_sql_container_throughput implements ICommandParent<any>
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
      */
-    az_cosmosdb_sql_container_throughput_migrate(accountName: string, databaseName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_sql_container_throughput_migrate_command_builder {
-        return new az_cosmosdb_sql_container_throughput_migrate_command_builder(this, accountName, databaseName, name, resourceGroup, throughputType);
+    static az_cosmosdb_sql_container_throughput_migrate(accountName: string, databaseName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_sql_container_throughput_migrate_command_builder {
+        return new az_cosmosdb_sql_container_throughput_migrate_command_builder("az cosmosdb sql container throughput migrate", accountName, databaseName, name, resourceGroup, throughputType);
     }
 
     /**
@@ -1650,8 +1612,8 @@ export class az_cosmosdb_sql_container_throughput implements ICommandParent<any>
      * @param {string} name Container name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_container_throughput_show(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_container_throughput_show_command_builder {
-        return new az_cosmosdb_sql_container_throughput_show_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_container_throughput_show(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_container_throughput_show_command_builder {
+        return new az_cosmosdb_sql_container_throughput_show_command_builder("az cosmosdb sql container throughput show", accountName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -1673,15 +1635,13 @@ export class az_cosmosdb_sql_container_throughput implements ICommandParent<any>
      * @param {string} name Container name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_container_throughput_update(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_container_throughput_update_command_builder {
-        return new az_cosmosdb_sql_container_throughput_update_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_container_throughput_update(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_container_throughput_update_command_builder {
+        return new az_cosmosdb_sql_container_throughput_update_command_builder("az cosmosdb sql container throughput update", accountName, databaseName, name, resourceGroup);
     }
 }
 
 /** Manage Azure Cosmos DB SQL containers. */
-export class az_cosmosdb_sql_container implements ICommandParent<any> {
-    commandPath = "az cosmosdb sql container";
-
+export class az_cosmosdb_sql_container {
     /**
      * Create an SQL container under an Azure Cosmos DB SQL database.
      *
@@ -1708,8 +1668,8 @@ export class az_cosmosdb_sql_container implements ICommandParent<any> {
      * @param {string} partitionKeyPath Partition Key Path, e.g., '/address/zipcode'.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_container_create(accountName: string, databaseName: string, name: string, partitionKeyPath: string, resourceGroup: string): az_cosmosdb_sql_container_create_command_builder {
-        return new az_cosmosdb_sql_container_create_command_builder(this, accountName, databaseName, name, partitionKeyPath, resourceGroup);
+    static az_cosmosdb_sql_container_create(accountName: string, databaseName: string, name: string, partitionKeyPath: string, resourceGroup: string): az_cosmosdb_sql_container_create_command_builder {
+        return new az_cosmosdb_sql_container_create_command_builder("az cosmosdb sql container create", accountName, databaseName, name, partitionKeyPath, resourceGroup);
     }
 
     /**
@@ -1730,8 +1690,8 @@ export class az_cosmosdb_sql_container implements ICommandParent<any> {
      * @param {string} name Container name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_container_delete(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_container_delete_command_builder {
-        return new az_cosmosdb_sql_container_delete_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_container_delete(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_container_delete_command_builder {
+        return new az_cosmosdb_sql_container_delete_command_builder("az cosmosdb sql container delete", accountName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -1751,8 +1711,8 @@ export class az_cosmosdb_sql_container implements ICommandParent<any> {
      * @param {string} name Container name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_container_exists(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_container_exists_command_builder {
-        return new az_cosmosdb_sql_container_exists_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_container_exists(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_container_exists_command_builder {
+        return new az_cosmosdb_sql_container_exists_command_builder("az cosmosdb sql container exists", accountName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -1771,8 +1731,8 @@ export class az_cosmosdb_sql_container implements ICommandParent<any> {
      * @param {string} databaseName Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_container_list(accountName: string, databaseName: string, resourceGroup: string): az_cosmosdb_sql_container_list_command_builder {
-        return new az_cosmosdb_sql_container_list_command_builder(this, accountName, databaseName, resourceGroup);
+    static az_cosmosdb_sql_container_list(accountName: string, databaseName: string, resourceGroup: string): az_cosmosdb_sql_container_list_command_builder {
+        return new az_cosmosdb_sql_container_list_command_builder("az cosmosdb sql container list", accountName, databaseName, resourceGroup);
     }
 
     /**
@@ -1793,8 +1753,8 @@ export class az_cosmosdb_sql_container implements ICommandParent<any> {
      * @param {string} name Container name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_container_show(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_container_show_command_builder {
-        return new az_cosmosdb_sql_container_show_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_container_show(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_container_show_command_builder {
+        return new az_cosmosdb_sql_container_show_command_builder("az cosmosdb sql container show", accountName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -1816,15 +1776,13 @@ export class az_cosmosdb_sql_container implements ICommandParent<any> {
      * @param {string} name Container name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_container_update(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_container_update_command_builder {
-        return new az_cosmosdb_sql_container_update_command_builder(this, accountName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_container_update(accountName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_container_update_command_builder {
+        return new az_cosmosdb_sql_container_update_command_builder("az cosmosdb sql container update", accountName, databaseName, name, resourceGroup);
     }
 }
 
 /** Manage throughput of SQL database under an Azure Cosmos DB account. */
-export class az_cosmosdb_sql_database_throughput implements ICommandParent<any> {
-    commandPath = "az cosmosdb sql database throughput";
-
+export class az_cosmosdb_sql_database_throughput {
     /**
      * Migrate the throughput of the SQL database between autoscale and manually provisioned.
      *
@@ -1842,8 +1800,8 @@ export class az_cosmosdb_sql_database_throughput implements ICommandParent<any> 
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
      */
-    az_cosmosdb_sql_database_throughput_migrate(accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_sql_database_throughput_migrate_command_builder {
-        return new az_cosmosdb_sql_database_throughput_migrate_command_builder(this, accountName, name, resourceGroup, throughputType);
+    static az_cosmosdb_sql_database_throughput_migrate(accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_sql_database_throughput_migrate_command_builder {
+        return new az_cosmosdb_sql_database_throughput_migrate_command_builder("az cosmosdb sql database throughput migrate", accountName, name, resourceGroup, throughputType);
     }
 
     /**
@@ -1862,8 +1820,8 @@ export class az_cosmosdb_sql_database_throughput implements ICommandParent<any> 
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_database_throughput_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_sql_database_throughput_show_command_builder {
-        return new az_cosmosdb_sql_database_throughput_show_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_sql_database_throughput_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_sql_database_throughput_show_command_builder {
+        return new az_cosmosdb_sql_database_throughput_show_command_builder("az cosmosdb sql database throughput show", accountName, name, resourceGroup);
     }
 
     /**
@@ -1883,15 +1841,13 @@ export class az_cosmosdb_sql_database_throughput implements ICommandParent<any> 
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_database_throughput_update(accountName: string, name: string, resourceGroup: string): az_cosmosdb_sql_database_throughput_update_command_builder {
-        return new az_cosmosdb_sql_database_throughput_update_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_sql_database_throughput_update(accountName: string, name: string, resourceGroup: string): az_cosmosdb_sql_database_throughput_update_command_builder {
+        return new az_cosmosdb_sql_database_throughput_update_command_builder("az cosmosdb sql database throughput update", accountName, name, resourceGroup);
     }
 }
 
 /** Manage Azure Cosmos DB SQL databases. */
-export class az_cosmosdb_sql_database implements ICommandParent<any> {
-    commandPath = "az cosmosdb sql database";
-
+export class az_cosmosdb_sql_database {
     /**
      * Create an SQL database under an Azure Cosmos DB account.
      *
@@ -1909,8 +1865,8 @@ export class az_cosmosdb_sql_database implements ICommandParent<any> {
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_database_create(accountName: string, name: string, resourceGroup: string): az_cosmosdb_sql_database_create_command_builder {
-        return new az_cosmosdb_sql_database_create_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_sql_database_create(accountName: string, name: string, resourceGroup: string): az_cosmosdb_sql_database_create_command_builder {
+        return new az_cosmosdb_sql_database_create_command_builder("az cosmosdb sql database create", accountName, name, resourceGroup);
     }
 
     /**
@@ -1929,8 +1885,8 @@ export class az_cosmosdb_sql_database implements ICommandParent<any> {
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_database_delete(accountName: string, name: string, resourceGroup: string): az_cosmosdb_sql_database_delete_command_builder {
-        return new az_cosmosdb_sql_database_delete_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_sql_database_delete(accountName: string, name: string, resourceGroup: string): az_cosmosdb_sql_database_delete_command_builder {
+        return new az_cosmosdb_sql_database_delete_command_builder("az cosmosdb sql database delete", accountName, name, resourceGroup);
     }
 
     /**
@@ -1948,8 +1904,8 @@ export class az_cosmosdb_sql_database implements ICommandParent<any> {
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_database_exists(accountName: string, name: string, resourceGroup: string): az_cosmosdb_sql_database_exists_command_builder {
-        return new az_cosmosdb_sql_database_exists_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_sql_database_exists(accountName: string, name: string, resourceGroup: string): az_cosmosdb_sql_database_exists_command_builder {
+        return new az_cosmosdb_sql_database_exists_command_builder("az cosmosdb sql database exists", accountName, name, resourceGroup);
     }
 
     /**
@@ -1966,8 +1922,8 @@ export class az_cosmosdb_sql_database implements ICommandParent<any> {
      * @param {string} accountName Cosmosdb account name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_database_list(accountName: string, resourceGroup: string): az_cosmosdb_sql_database_list_command_builder {
-        return new az_cosmosdb_sql_database_list_command_builder(this, accountName, resourceGroup);
+    static az_cosmosdb_sql_database_list(accountName: string, resourceGroup: string): az_cosmosdb_sql_database_list_command_builder {
+        return new az_cosmosdb_sql_database_list_command_builder("az cosmosdb sql database list", accountName, resourceGroup);
     }
 
     /**
@@ -1986,15 +1942,13 @@ export class az_cosmosdb_sql_database implements ICommandParent<any> {
      * @param {string} name Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_database_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_sql_database_show_command_builder {
-        return new az_cosmosdb_sql_database_show_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_sql_database_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_sql_database_show_command_builder {
+        return new az_cosmosdb_sql_database_show_command_builder("az cosmosdb sql database show", accountName, name, resourceGroup);
     }
 }
 
 /** Manage Azure Cosmos DB SQL stored procedures. */
-export class az_cosmosdb_sql_stored_procedure implements ICommandParent<any> {
-    commandPath = "az cosmosdb sql stored-procedure";
-
+export class az_cosmosdb_sql_stored_procedure {
     /**
      * Create an SQL stored procedure under an Azure Cosmos DB SQL container.
      *
@@ -2016,8 +1970,8 @@ export class az_cosmosdb_sql_stored_procedure implements ICommandParent<any> {
      * @param {string} name StoredProcedure name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_stored_procedure_create(accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_stored_procedure_create_command_builder {
-        return new az_cosmosdb_sql_stored_procedure_create_command_builder(this, accountName, body, containerName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_stored_procedure_create(accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_stored_procedure_create_command_builder {
+        return new az_cosmosdb_sql_stored_procedure_create_command_builder("az cosmosdb sql stored-procedure create", accountName, body, containerName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -2040,8 +1994,8 @@ export class az_cosmosdb_sql_stored_procedure implements ICommandParent<any> {
      * @param {string} name StoredProcedure name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_stored_procedure_delete(accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_stored_procedure_delete_command_builder {
-        return new az_cosmosdb_sql_stored_procedure_delete_command_builder(this, accountName, containerName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_stored_procedure_delete(accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_stored_procedure_delete_command_builder {
+        return new az_cosmosdb_sql_stored_procedure_delete_command_builder("az cosmosdb sql stored-procedure delete", accountName, containerName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -2062,8 +2016,8 @@ export class az_cosmosdb_sql_stored_procedure implements ICommandParent<any> {
      * @param {string} databaseName Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_stored_procedure_list(accountName: string, containerName: string, databaseName: string, resourceGroup: string): az_cosmosdb_sql_stored_procedure_list_command_builder {
-        return new az_cosmosdb_sql_stored_procedure_list_command_builder(this, accountName, containerName, databaseName, resourceGroup);
+    static az_cosmosdb_sql_stored_procedure_list(accountName: string, containerName: string, databaseName: string, resourceGroup: string): az_cosmosdb_sql_stored_procedure_list_command_builder {
+        return new az_cosmosdb_sql_stored_procedure_list_command_builder("az cosmosdb sql stored-procedure list", accountName, containerName, databaseName, resourceGroup);
     }
 
     /**
@@ -2086,8 +2040,8 @@ export class az_cosmosdb_sql_stored_procedure implements ICommandParent<any> {
      * @param {string} name StoredProcedure name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_stored_procedure_show(accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_stored_procedure_show_command_builder {
-        return new az_cosmosdb_sql_stored_procedure_show_command_builder(this, accountName, containerName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_stored_procedure_show(accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_stored_procedure_show_command_builder {
+        return new az_cosmosdb_sql_stored_procedure_show_command_builder("az cosmosdb sql stored-procedure show", accountName, containerName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -2111,15 +2065,13 @@ export class az_cosmosdb_sql_stored_procedure implements ICommandParent<any> {
      * @param {string} name StoredProcedure name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_stored_procedure_update(accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_stored_procedure_update_command_builder {
-        return new az_cosmosdb_sql_stored_procedure_update_command_builder(this, accountName, body, containerName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_stored_procedure_update(accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_stored_procedure_update_command_builder {
+        return new az_cosmosdb_sql_stored_procedure_update_command_builder("az cosmosdb sql stored-procedure update", accountName, body, containerName, databaseName, name, resourceGroup);
     }
 }
 
 /** Manage Azure Cosmos DB SQL triggers. */
-export class az_cosmosdb_sql_trigger implements ICommandParent<any> {
-    commandPath = "az cosmosdb sql trigger";
-
+export class az_cosmosdb_sql_trigger {
     /**
      * Create an SQL trigger under an Azure Cosmos DB SQL container.
      *
@@ -2143,8 +2095,8 @@ export class az_cosmosdb_sql_trigger implements ICommandParent<any> {
      * @param {string} name Trigger name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_trigger_create(accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_trigger_create_command_builder {
-        return new az_cosmosdb_sql_trigger_create_command_builder(this, accountName, body, containerName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_trigger_create(accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_trigger_create_command_builder {
+        return new az_cosmosdb_sql_trigger_create_command_builder("az cosmosdb sql trigger create", accountName, body, containerName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -2167,8 +2119,8 @@ export class az_cosmosdb_sql_trigger implements ICommandParent<any> {
      * @param {string} name Trigger name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_trigger_delete(accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_trigger_delete_command_builder {
-        return new az_cosmosdb_sql_trigger_delete_command_builder(this, accountName, containerName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_trigger_delete(accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_trigger_delete_command_builder {
+        return new az_cosmosdb_sql_trigger_delete_command_builder("az cosmosdb sql trigger delete", accountName, containerName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -2189,8 +2141,8 @@ export class az_cosmosdb_sql_trigger implements ICommandParent<any> {
      * @param {string} databaseName Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_trigger_list(accountName: string, containerName: string, databaseName: string, resourceGroup: string): az_cosmosdb_sql_trigger_list_command_builder {
-        return new az_cosmosdb_sql_trigger_list_command_builder(this, accountName, containerName, databaseName, resourceGroup);
+    static az_cosmosdb_sql_trigger_list(accountName: string, containerName: string, databaseName: string, resourceGroup: string): az_cosmosdb_sql_trigger_list_command_builder {
+        return new az_cosmosdb_sql_trigger_list_command_builder("az cosmosdb sql trigger list", accountName, containerName, databaseName, resourceGroup);
     }
 
     /**
@@ -2213,8 +2165,8 @@ export class az_cosmosdb_sql_trigger implements ICommandParent<any> {
      * @param {string} name Trigger name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_trigger_show(accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_trigger_show_command_builder {
-        return new az_cosmosdb_sql_trigger_show_command_builder(this, accountName, containerName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_trigger_show(accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_trigger_show_command_builder {
+        return new az_cosmosdb_sql_trigger_show_command_builder("az cosmosdb sql trigger show", accountName, containerName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -2239,15 +2191,13 @@ export class az_cosmosdb_sql_trigger implements ICommandParent<any> {
      * @param {string} name Trigger name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_trigger_update(accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_trigger_update_command_builder {
-        return new az_cosmosdb_sql_trigger_update_command_builder(this, accountName, containerName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_trigger_update(accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_trigger_update_command_builder {
+        return new az_cosmosdb_sql_trigger_update_command_builder("az cosmosdb sql trigger update", accountName, containerName, databaseName, name, resourceGroup);
     }
 }
 
 /** Manage Azure Cosmos DB SQL user defined functions. */
-export class az_cosmosdb_sql_user_defined_function implements ICommandParent<any> {
-    commandPath = "az cosmosdb sql user-defined-function";
-
+export class az_cosmosdb_sql_user_defined_function {
     /**
      * Create an SQL user defined function under an Azure Cosmos DB SQL container.
      *
@@ -2269,8 +2219,8 @@ export class az_cosmosdb_sql_user_defined_function implements ICommandParent<any
      * @param {string} name UserDefinedFunction name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_user_defined_function_create(accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_user_defined_function_create_command_builder {
-        return new az_cosmosdb_sql_user_defined_function_create_command_builder(this, accountName, body, containerName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_user_defined_function_create(accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_user_defined_function_create_command_builder {
+        return new az_cosmosdb_sql_user_defined_function_create_command_builder("az cosmosdb sql user-defined-function create", accountName, body, containerName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -2293,8 +2243,8 @@ export class az_cosmosdb_sql_user_defined_function implements ICommandParent<any
      * @param {string} name UserDefinedFunction name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_user_defined_function_delete(accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_user_defined_function_delete_command_builder {
-        return new az_cosmosdb_sql_user_defined_function_delete_command_builder(this, accountName, containerName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_user_defined_function_delete(accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_user_defined_function_delete_command_builder {
+        return new az_cosmosdb_sql_user_defined_function_delete_command_builder("az cosmosdb sql user-defined-function delete", accountName, containerName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -2315,8 +2265,8 @@ export class az_cosmosdb_sql_user_defined_function implements ICommandParent<any
      * @param {string} databaseName Database name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_user_defined_function_list(accountName: string, containerName: string, databaseName: string, resourceGroup: string): az_cosmosdb_sql_user_defined_function_list_command_builder {
-        return new az_cosmosdb_sql_user_defined_function_list_command_builder(this, accountName, containerName, databaseName, resourceGroup);
+    static az_cosmosdb_sql_user_defined_function_list(accountName: string, containerName: string, databaseName: string, resourceGroup: string): az_cosmosdb_sql_user_defined_function_list_command_builder {
+        return new az_cosmosdb_sql_user_defined_function_list_command_builder("az cosmosdb sql user-defined-function list", accountName, containerName, databaseName, resourceGroup);
     }
 
     /**
@@ -2339,8 +2289,8 @@ export class az_cosmosdb_sql_user_defined_function implements ICommandParent<any
      * @param {string} name UserDefinedFunction name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_user_defined_function_show(accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_user_defined_function_show_command_builder {
-        return new az_cosmosdb_sql_user_defined_function_show_command_builder(this, accountName, containerName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_user_defined_function_show(accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_user_defined_function_show_command_builder {
+        return new az_cosmosdb_sql_user_defined_function_show_command_builder("az cosmosdb sql user-defined-function show", accountName, containerName, databaseName, name, resourceGroup);
     }
 
     /**
@@ -2364,8 +2314,8 @@ export class az_cosmosdb_sql_user_defined_function implements ICommandParent<any
      * @param {string} name UserDefinedFunction name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_sql_user_defined_function_update(accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_user_defined_function_update_command_builder {
-        return new az_cosmosdb_sql_user_defined_function_update_command_builder(this, accountName, body, containerName, databaseName, name, resourceGroup);
+    static az_cosmosdb_sql_user_defined_function_update(accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string): az_cosmosdb_sql_user_defined_function_update_command_builder {
+        return new az_cosmosdb_sql_user_defined_function_update_command_builder("az cosmosdb sql user-defined-function update", accountName, body, containerName, databaseName, name, resourceGroup);
     }
 }
 
@@ -2374,9 +2324,7 @@ export class az_cosmosdb_sql {
 }
 
 /** Manage throughput of Table under an Azure Cosmos DB account. */
-export class az_cosmosdb_table_throughput implements ICommandParent<any> {
-    commandPath = "az cosmosdb table throughput";
-
+export class az_cosmosdb_table_throughput {
     /**
      * Migrate the throughput of the Table between autoscale and manually provisioned.
      *
@@ -2394,8 +2342,8 @@ export class az_cosmosdb_table_throughput implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
      */
-    az_cosmosdb_table_throughput_migrate(accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_table_throughput_migrate_command_builder {
-        return new az_cosmosdb_table_throughput_migrate_command_builder(this, accountName, name, resourceGroup, throughputType);
+    static az_cosmosdb_table_throughput_migrate(accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual'): az_cosmosdb_table_throughput_migrate_command_builder {
+        return new az_cosmosdb_table_throughput_migrate_command_builder("az cosmosdb table throughput migrate", accountName, name, resourceGroup, throughputType);
     }
 
     /**
@@ -2414,8 +2362,8 @@ export class az_cosmosdb_table_throughput implements ICommandParent<any> {
      * @param {string} name Table name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_table_throughput_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_table_throughput_show_command_builder {
-        return new az_cosmosdb_table_throughput_show_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_table_throughput_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_table_throughput_show_command_builder {
+        return new az_cosmosdb_table_throughput_show_command_builder("az cosmosdb table throughput show", accountName, name, resourceGroup);
     }
 
     /**
@@ -2435,15 +2383,13 @@ export class az_cosmosdb_table_throughput implements ICommandParent<any> {
      * @param {string} name Table name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_table_throughput_update(accountName: string, name: string, resourceGroup: string): az_cosmosdb_table_throughput_update_command_builder {
-        return new az_cosmosdb_table_throughput_update_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_table_throughput_update(accountName: string, name: string, resourceGroup: string): az_cosmosdb_table_throughput_update_command_builder {
+        return new az_cosmosdb_table_throughput_update_command_builder("az cosmosdb table throughput update", accountName, name, resourceGroup);
     }
 }
 
 /** Manage Table resources of Azure Cosmos DB account. */
-export class az_cosmosdb_table implements ICommandParent<any> {
-    commandPath = "az cosmosdb table";
-
+export class az_cosmosdb_table {
     /**
      * Create an Table under an Azure Cosmos DB account.
      *
@@ -2461,8 +2407,8 @@ export class az_cosmosdb_table implements ICommandParent<any> {
      * @param {string} name Table name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_table_create(accountName: string, name: string, resourceGroup: string): az_cosmosdb_table_create_command_builder {
-        return new az_cosmosdb_table_create_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_table_create(accountName: string, name: string, resourceGroup: string): az_cosmosdb_table_create_command_builder {
+        return new az_cosmosdb_table_create_command_builder("az cosmosdb table create", accountName, name, resourceGroup);
     }
 
     /**
@@ -2481,8 +2427,8 @@ export class az_cosmosdb_table implements ICommandParent<any> {
      * @param {string} name Table name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_table_delete(accountName: string, name: string, resourceGroup: string): az_cosmosdb_table_delete_command_builder {
-        return new az_cosmosdb_table_delete_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_table_delete(accountName: string, name: string, resourceGroup: string): az_cosmosdb_table_delete_command_builder {
+        return new az_cosmosdb_table_delete_command_builder("az cosmosdb table delete", accountName, name, resourceGroup);
     }
 
     /**
@@ -2500,8 +2446,8 @@ export class az_cosmosdb_table implements ICommandParent<any> {
      * @param {string} name Table name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_table_exists(accountName: string, name: string, resourceGroup: string): az_cosmosdb_table_exists_command_builder {
-        return new az_cosmosdb_table_exists_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_table_exists(accountName: string, name: string, resourceGroup: string): az_cosmosdb_table_exists_command_builder {
+        return new az_cosmosdb_table_exists_command_builder("az cosmosdb table exists", accountName, name, resourceGroup);
     }
 
     /**
@@ -2518,8 +2464,8 @@ export class az_cosmosdb_table implements ICommandParent<any> {
      * @param {string} accountName Cosmosdb account name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_table_list(accountName: string, resourceGroup: string): az_cosmosdb_table_list_command_builder {
-        return new az_cosmosdb_table_list_command_builder(this, accountName, resourceGroup);
+    static az_cosmosdb_table_list(accountName: string, resourceGroup: string): az_cosmosdb_table_list_command_builder {
+        return new az_cosmosdb_table_list_command_builder("az cosmosdb table list", accountName, resourceGroup);
     }
 
     /**
@@ -2538,15 +2484,13 @@ export class az_cosmosdb_table implements ICommandParent<any> {
      * @param {string} name Table name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_table_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_table_show_command_builder {
-        return new az_cosmosdb_table_show_command_builder(this, accountName, name, resourceGroup);
+    static az_cosmosdb_table_show(accountName: string, name: string, resourceGroup: string): az_cosmosdb_table_show_command_builder {
+        return new az_cosmosdb_table_show_command_builder("az cosmosdb table show", accountName, name, resourceGroup);
     }
 }
 
 /** Manage Azure Cosmos DB database accounts. */
-export class az_cosmosdb implements ICommandParent<any> {
-    commandPath = "az cosmosdb";
-
+export class az_cosmosdb {
     /**
      * Checks if an Azure Cosmos DB account name exists.
      *
@@ -2557,8 +2501,8 @@ export class az_cosmosdb implements ICommandParent<any> {
      *                               [--subscription]
      * ```
      */
-    az_cosmosdb_check_name_exists(): az_cosmosdb_check_name_exists_command_builder {
-        return new az_cosmosdb_check_name_exists_command_builder(this);
+    static az_cosmosdb_check_name_exists(): az_cosmosdb_check_name_exists_command_builder {
+        return new az_cosmosdb_check_name_exists_command_builder("az cosmosdb check-name-exists");
     }
 
     /**
@@ -2592,8 +2536,8 @@ export class az_cosmosdb implements ICommandParent<any> {
      * @param {string} name Name of the Cosmos DB database account.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_cosmosdb_create(name: string, resourceGroup: string): az_cosmosdb_create_command_builder {
-        return new az_cosmosdb_create_command_builder(this, name, resourceGroup);
+    static az_cosmosdb_create(name: string, resourceGroup: string): az_cosmosdb_create_command_builder {
+        return new az_cosmosdb_create_command_builder("az cosmosdb create", name, resourceGroup);
     }
 
     /**
@@ -2608,8 +2552,8 @@ export class az_cosmosdb implements ICommandParent<any> {
      *                    [--yes]
      * ```
      */
-    az_cosmosdb_delete(): az_cosmosdb_delete_command_builder {
-        return new az_cosmosdb_delete_command_builder(this);
+    static az_cosmosdb_delete(): az_cosmosdb_delete_command_builder {
+        return new az_cosmosdb_delete_command_builder("az cosmosdb delete");
     }
 
     /**
@@ -2626,8 +2570,8 @@ export class az_cosmosdb implements ICommandParent<any> {
      *
      * @param {string} failoverPolicies Space-separated failover policies in 'regionName=failoverPriority' format. E.g eastus=0 westus=1.
      */
-    az_cosmosdb_failover_priority_change(failoverPolicies: string): az_cosmosdb_failover_priority_change_command_builder {
-        return new az_cosmosdb_failover_priority_change_command_builder(this, failoverPolicies);
+    static az_cosmosdb_failover_priority_change(failoverPolicies: string): az_cosmosdb_failover_priority_change_command_builder {
+        return new az_cosmosdb_failover_priority_change_command_builder("az cosmosdb failover-priority-change", failoverPolicies);
     }
 
     /**
@@ -2640,8 +2584,8 @@ export class az_cosmosdb implements ICommandParent<any> {
      *                  [--subscription]
      * ```
      */
-    az_cosmosdb_list(): az_cosmosdb_list_command_builder {
-        return new az_cosmosdb_list_command_builder(this);
+    static az_cosmosdb_list(): az_cosmosdb_list_command_builder {
+        return new az_cosmosdb_list_command_builder("az cosmosdb list");
     }
 
     /**
@@ -2655,8 +2599,8 @@ export class az_cosmosdb implements ICommandParent<any> {
      *                                     [--subscription]
      * ```
      */
-    az_cosmosdb_list_connection_strings(): az_cosmosdb_list_connection_strings_command_builder {
-        return new az_cosmosdb_list_connection_strings_command_builder(this);
+    static az_cosmosdb_list_connection_strings(): az_cosmosdb_list_connection_strings_command_builder {
+        return new az_cosmosdb_list_connection_strings_command_builder("az cosmosdb list-connection-strings");
     }
 
     /**
@@ -2670,8 +2614,8 @@ export class az_cosmosdb implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_cosmosdb_list_keys(): az_cosmosdb_list_keys_command_builder {
-        return new az_cosmosdb_list_keys_command_builder(this);
+    static az_cosmosdb_list_keys(): az_cosmosdb_list_keys_command_builder {
+        return new az_cosmosdb_list_keys_command_builder("az cosmosdb list-keys");
     }
 
     /**
@@ -2685,8 +2629,8 @@ export class az_cosmosdb implements ICommandParent<any> {
      *                                 [--subscription]
      * ```
      */
-    az_cosmosdb_list_read_only_keys(): az_cosmosdb_list_read_only_keys_command_builder {
-        return new az_cosmosdb_list_read_only_keys_command_builder(this);
+    static az_cosmosdb_list_read_only_keys(): az_cosmosdb_list_read_only_keys_command_builder {
+        return new az_cosmosdb_list_read_only_keys_command_builder("az cosmosdb list-read-only-keys");
     }
 
     /**
@@ -2703,8 +2647,8 @@ export class az_cosmosdb implements ICommandParent<any> {
      *
      * @param {'primary' | 'primaryReadonly' | 'secondary' | 'secondaryReadonly'} keyKind The access key to regenerate.
      */
-    az_cosmosdb_regenerate_key(keyKind: 'primary' | 'primaryReadonly' | 'secondary' | 'secondaryReadonly'): az_cosmosdb_regenerate_key_command_builder {
-        return new az_cosmosdb_regenerate_key_command_builder(this, keyKind);
+    static az_cosmosdb_regenerate_key(keyKind: 'primary' | 'primaryReadonly' | 'secondary' | 'secondaryReadonly'): az_cosmosdb_regenerate_key_command_builder {
+        return new az_cosmosdb_regenerate_key_command_builder("az cosmosdb regenerate-key", keyKind);
     }
 
     /**
@@ -2719,8 +2663,8 @@ export class az_cosmosdb implements ICommandParent<any> {
      *                  [--subscription]
      * ```
      */
-    az_cosmosdb_show(): az_cosmosdb_show_command_builder {
-        return new az_cosmosdb_show_command_builder(this);
+    static az_cosmosdb_show(): az_cosmosdb_show_command_builder {
+        return new az_cosmosdb_show_command_builder("az cosmosdb show");
     }
 
     /**
@@ -2748,8 +2692,8 @@ export class az_cosmosdb implements ICommandParent<any> {
      *                    [--virtual-network-rules]
      * ```
      */
-    az_cosmosdb_update(): az_cosmosdb_update_command_builder {
-        return new az_cosmosdb_update_command_builder(this);
+    static az_cosmosdb_update(): az_cosmosdb_update_command_builder {
+        return new az_cosmosdb_update_command_builder("az cosmosdb update");
     }
 }
 
@@ -2771,7 +2715,7 @@ export class az_cosmosdb implements ICommandParent<any> {
  * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
  */
 class az_cosmosdb_cassandra_keyspace_throughput_migrate_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -2827,7 +2771,7 @@ class az_cosmosdb_cassandra_keyspace_throughput_migrate_command_builder extends 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_cassandra_keyspace_throughput_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -2883,7 +2827,7 @@ class az_cosmosdb_cassandra_keyspace_throughput_show_command_builder extends Com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_cassandra_keyspace_throughput_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -2945,7 +2889,7 @@ class az_cosmosdb_cassandra_keyspace_throughput_update_command_builder extends C
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_cassandra_keyspace_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -3006,7 +2950,7 @@ class az_cosmosdb_cassandra_keyspace_create_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_cassandra_keyspace_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -3060,7 +3004,7 @@ class az_cosmosdb_cassandra_keyspace_delete_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_cassandra_keyspace_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -3107,7 +3051,7 @@ class az_cosmosdb_cassandra_keyspace_exists_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_cassandra_keyspace_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
@@ -3155,7 +3099,7 @@ class az_cosmosdb_cassandra_keyspace_list_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_cassandra_keyspace_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -3213,7 +3157,7 @@ class az_cosmosdb_cassandra_keyspace_show_command_builder extends CommandBuilder
  * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
  */
 class az_cosmosdb_cassandra_table_throughput_migrate_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, keyspaceName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
+    constructor(commandPath: string, accountName: string, keyspaceName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
         super(commandParent);
         this.accountName(accountName)
         this.keyspaceName(keyspaceName)
@@ -3278,7 +3222,7 @@ class az_cosmosdb_cassandra_table_throughput_migrate_command_builder extends Com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_cassandra_table_throughput_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, keyspaceName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, keyspaceName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.keyspaceName(keyspaceName)
@@ -3343,7 +3287,7 @@ class az_cosmosdb_cassandra_table_throughput_show_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_cassandra_table_throughput_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, keyspaceName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, keyspaceName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.keyspaceName(keyspaceName)
@@ -3418,7 +3362,7 @@ class az_cosmosdb_cassandra_table_throughput_update_command_builder extends Comm
  * @param {string} schema Schema, you can enter it as a string or as a file, e.g., --schema @schema-file.json or --schema "{"columns": [{"name": "columnA","type": "uuid"}, {"name": "columnB","type": "Ascii"}],"partitionKeys": [{"name": "columnA"}]}".
  */
 class az_cosmosdb_cassandra_table_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, keyspaceName: string, name: string, resourceGroup: string, schema: string) {
+    constructor(commandPath: string, accountName: string, keyspaceName: string, name: string, resourceGroup: string, schema: string) {
         super(commandParent);
         this.accountName(accountName)
         this.keyspaceName(keyspaceName)
@@ -3507,7 +3451,7 @@ class az_cosmosdb_cassandra_table_create_command_builder extends CommandBuilder 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_cassandra_table_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, keyspaceName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, keyspaceName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.keyspaceName(keyspaceName)
@@ -3570,7 +3514,7 @@ class az_cosmosdb_cassandra_table_delete_command_builder extends CommandBuilder 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_cassandra_table_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, keyspaceName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, keyspaceName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.keyspaceName(keyspaceName)
@@ -3626,7 +3570,7 @@ class az_cosmosdb_cassandra_table_exists_command_builder extends CommandBuilder 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_cassandra_table_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, keyspaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, keyspaceName: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.keyspaceName(keyspaceName)
@@ -3683,7 +3627,7 @@ class az_cosmosdb_cassandra_table_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_cassandra_table_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, keyspaceName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, keyspaceName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.keyspaceName(keyspaceName)
@@ -3749,7 +3693,7 @@ class az_cosmosdb_cassandra_table_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_cassandra_table_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, keyspaceName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, keyspaceName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.keyspaceName(keyspaceName)
@@ -3828,7 +3772,7 @@ class az_cosmosdb_cassandra_table_update_command_builder extends CommandBuilder 
  * @param {string} dbName Database Name.
  */
 class az_cosmosdb_collection_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, collectionName: string, dbName: string) {
+    constructor(commandPath: string, collectionName: string, dbName: string) {
         super(commandParent);
         this.collectionName(collectionName)
         this.dbName(dbName)
@@ -3920,7 +3864,7 @@ class az_cosmosdb_collection_create_command_builder extends CommandBuilder {
  * @param {string} dbName Database Name.
  */
 class az_cosmosdb_collection_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, collectionName: string, dbName: string) {
+    constructor(commandPath: string, collectionName: string, dbName: string) {
         super(commandParent);
         this.collectionName(collectionName)
         this.dbName(dbName)
@@ -3993,7 +3937,7 @@ class az_cosmosdb_collection_delete_command_builder extends CommandBuilder {
  * @param {string} dbName Database Name.
  */
 class az_cosmosdb_collection_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, collectionName: string, dbName: string) {
+    constructor(commandPath: string, collectionName: string, dbName: string) {
         super(commandParent);
         this.collectionName(collectionName)
         this.dbName(dbName)
@@ -4059,7 +4003,7 @@ class az_cosmosdb_collection_exists_command_builder extends CommandBuilder {
  * @param {string} dbName Database Name.
  */
 class az_cosmosdb_collection_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, dbName: string) {
+    constructor(commandPath: string, dbName: string) {
         super(commandParent);
         this.dbName(dbName)
     }
@@ -4126,7 +4070,7 @@ class az_cosmosdb_collection_list_command_builder extends CommandBuilder {
  * @param {string} dbName Database Name.
  */
 class az_cosmosdb_collection_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, collectionName: string, dbName: string) {
+    constructor(commandPath: string, collectionName: string, dbName: string) {
         super(commandParent);
         this.collectionName(collectionName)
         this.dbName(dbName)
@@ -4202,7 +4146,7 @@ class az_cosmosdb_collection_show_command_builder extends CommandBuilder {
  * @param {string} dbName Database Name.
  */
 class az_cosmosdb_collection_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, collectionName: string, dbName: string) {
+    constructor(commandPath: string, collectionName: string, dbName: string) {
         super(commandParent);
         this.collectionName(collectionName)
         this.dbName(dbName)
@@ -4286,7 +4230,7 @@ class az_cosmosdb_collection_update_command_builder extends CommandBuilder {
  * @param {string} dbName Database Name.
  */
 class az_cosmosdb_database_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, dbName: string) {
+    constructor(commandPath: string, dbName: string) {
         super(commandParent);
         this.dbName(dbName)
     }
@@ -4351,7 +4295,7 @@ class az_cosmosdb_database_create_command_builder extends CommandBuilder {
  * @param {string} dbName Database Name.
  */
 class az_cosmosdb_database_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, dbName: string) {
+    constructor(commandPath: string, dbName: string) {
         super(commandParent);
         this.dbName(dbName)
     }
@@ -4415,7 +4359,7 @@ class az_cosmosdb_database_delete_command_builder extends CommandBuilder {
  * @param {string} dbName Database Name.
  */
 class az_cosmosdb_database_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, dbName: string) {
+    constructor(commandPath: string, dbName: string) {
         super(commandParent);
         this.dbName(dbName)
     }
@@ -4471,7 +4415,7 @@ class az_cosmosdb_database_exists_command_builder extends CommandBuilder {
  * ```
  */
 class az_cosmosdb_database_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4529,7 +4473,7 @@ class az_cosmosdb_database_list_command_builder extends CommandBuilder {
  * @param {string} dbName Database Name.
  */
 class az_cosmosdb_database_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, dbName: string) {
+    constructor(commandPath: string, dbName: string) {
         super(commandParent);
         this.dbName(dbName)
     }
@@ -4595,7 +4539,7 @@ class az_cosmosdb_database_show_command_builder extends CommandBuilder {
  * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
  */
 class az_cosmosdb_gremlin_database_throughput_migrate_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -4651,7 +4595,7 @@ class az_cosmosdb_gremlin_database_throughput_migrate_command_builder extends Co
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_gremlin_database_throughput_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -4707,7 +4651,7 @@ class az_cosmosdb_gremlin_database_throughput_show_command_builder extends Comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_gremlin_database_throughput_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -4769,7 +4713,7 @@ class az_cosmosdb_gremlin_database_throughput_update_command_builder extends Com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_gremlin_database_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -4830,7 +4774,7 @@ class az_cosmosdb_gremlin_database_create_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_gremlin_database_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -4884,7 +4828,7 @@ class az_cosmosdb_gremlin_database_delete_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_gremlin_database_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -4931,7 +4875,7 @@ class az_cosmosdb_gremlin_database_exists_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_gremlin_database_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
@@ -4979,7 +4923,7 @@ class az_cosmosdb_gremlin_database_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_gremlin_database_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -5037,7 +4981,7 @@ class az_cosmosdb_gremlin_database_show_command_builder extends CommandBuilder {
  * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
  */
 class az_cosmosdb_gremlin_graph_throughput_migrate_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -5102,7 +5046,7 @@ class az_cosmosdb_gremlin_graph_throughput_migrate_command_builder extends Comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_gremlin_graph_throughput_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -5167,7 +5111,7 @@ class az_cosmosdb_gremlin_graph_throughput_show_command_builder extends CommandB
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_gremlin_graph_throughput_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -5243,7 +5187,7 @@ class az_cosmosdb_gremlin_graph_throughput_update_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_gremlin_graph_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, partitionKeyPath: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, partitionKeyPath: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -5338,7 +5282,7 @@ class az_cosmosdb_gremlin_graph_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_gremlin_graph_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -5401,7 +5345,7 @@ class az_cosmosdb_gremlin_graph_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_gremlin_graph_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -5457,7 +5401,7 @@ class az_cosmosdb_gremlin_graph_exists_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_gremlin_graph_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -5514,7 +5458,7 @@ class az_cosmosdb_gremlin_graph_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_gremlin_graph_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -5579,7 +5523,7 @@ class az_cosmosdb_gremlin_graph_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_gremlin_graph_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -5646,7 +5590,7 @@ class az_cosmosdb_gremlin_graph_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_keys_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -5698,7 +5642,7 @@ class az_cosmosdb_keys_list_command_builder extends CommandBuilder {
  * @param {'primary' | 'primaryReadonly' | 'secondary' | 'secondaryReadonly'} keyKind The access key to regenerate.
  */
 class az_cosmosdb_keys_regenerate_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, keyKind: 'primary' | 'primaryReadonly' | 'secondary' | 'secondaryReadonly') {
+    constructor(commandPath: string, keyKind: 'primary' | 'primaryReadonly' | 'secondary' | 'secondaryReadonly') {
         super(commandParent);
         this.keyKind(keyKind)
     }
@@ -5754,7 +5698,7 @@ class az_cosmosdb_keys_regenerate_command_builder extends CommandBuilder {
  * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
  */
 class az_cosmosdb_mongodb_collection_throughput_migrate_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -5819,7 +5763,7 @@ class az_cosmosdb_mongodb_collection_throughput_migrate_command_builder extends 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_mongodb_collection_throughput_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -5884,7 +5828,7 @@ class az_cosmosdb_mongodb_collection_throughput_show_command_builder extends Com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_mongodb_collection_throughput_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -5958,7 +5902,7 @@ class az_cosmosdb_mongodb_collection_throughput_update_command_builder extends C
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_mongodb_collection_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -6046,7 +5990,7 @@ class az_cosmosdb_mongodb_collection_create_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_mongodb_collection_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -6109,7 +6053,7 @@ class az_cosmosdb_mongodb_collection_delete_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_mongodb_collection_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -6165,7 +6109,7 @@ class az_cosmosdb_mongodb_collection_exists_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_mongodb_collection_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -6222,7 +6166,7 @@ class az_cosmosdb_mongodb_collection_list_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_mongodb_collection_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -6287,7 +6231,7 @@ class az_cosmosdb_mongodb_collection_show_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_mongodb_collection_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -6356,7 +6300,7 @@ class az_cosmosdb_mongodb_collection_update_command_builder extends CommandBuild
  * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
  */
 class az_cosmosdb_mongodb_database_throughput_migrate_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -6412,7 +6356,7 @@ class az_cosmosdb_mongodb_database_throughput_migrate_command_builder extends Co
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_mongodb_database_throughput_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -6468,7 +6412,7 @@ class az_cosmosdb_mongodb_database_throughput_show_command_builder extends Comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_mongodb_database_throughput_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -6530,7 +6474,7 @@ class az_cosmosdb_mongodb_database_throughput_update_command_builder extends Com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_mongodb_database_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -6591,7 +6535,7 @@ class az_cosmosdb_mongodb_database_create_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_mongodb_database_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -6645,7 +6589,7 @@ class az_cosmosdb_mongodb_database_delete_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_mongodb_database_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -6692,7 +6636,7 @@ class az_cosmosdb_mongodb_database_exists_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_mongodb_database_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
@@ -6740,7 +6684,7 @@ class az_cosmosdb_mongodb_database_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_mongodb_database_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -6795,7 +6739,7 @@ class az_cosmosdb_mongodb_database_show_command_builder extends CommandBuilder {
  * @param {string} subnet Name or ID of the subnet.
  */
 class az_cosmosdb_network_rule_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, subnet: string) {
+    constructor(commandPath: string, subnet: string) {
         super(commandParent);
         this.subnet(subnet)
     }
@@ -6858,7 +6802,7 @@ class az_cosmosdb_network_rule_add_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_network_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -6905,7 +6849,7 @@ class az_cosmosdb_network_rule_list_command_builder extends CommandBuilder {
  * @param {string} subnet Name or ID of the subnet.
  */
 class az_cosmosdb_network_rule_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, subnet: string) {
+    constructor(commandPath: string, subnet: string) {
         super(commandParent);
         this.subnet(subnet)
     }
@@ -6962,7 +6906,7 @@ class az_cosmosdb_network_rule_remove_command_builder extends CommandBuilder {
  * ```
  */
 class az_cosmosdb_private_endpoint_connection_approve_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -7023,7 +6967,7 @@ class az_cosmosdb_private_endpoint_connection_approve_command_builder extends Co
  * ```
  */
 class az_cosmosdb_private_endpoint_connection_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -7079,7 +7023,7 @@ class az_cosmosdb_private_endpoint_connection_delete_command_builder extends Com
  * ```
  */
 class az_cosmosdb_private_endpoint_connection_reject_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -7141,7 +7085,7 @@ class az_cosmosdb_private_endpoint_connection_reject_command_builder extends Com
  * ```
  */
 class az_cosmosdb_private_endpoint_connection_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -7203,7 +7147,7 @@ class az_cosmosdb_private_endpoint_connection_show_command_builder extends Comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_private_link_resource_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
@@ -7254,7 +7198,7 @@ class az_cosmosdb_private_link_resource_list_command_builder extends CommandBuil
  * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
  */
 class az_cosmosdb_sql_container_throughput_migrate_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -7319,7 +7263,7 @@ class az_cosmosdb_sql_container_throughput_migrate_command_builder extends Comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_container_throughput_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -7384,7 +7328,7 @@ class az_cosmosdb_sql_container_throughput_show_command_builder extends CommandB
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_container_throughput_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -7462,7 +7406,7 @@ class az_cosmosdb_sql_container_throughput_update_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_container_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, partitionKeyPath: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, partitionKeyPath: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -7569,7 +7513,7 @@ class az_cosmosdb_sql_container_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_container_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -7632,7 +7576,7 @@ class az_cosmosdb_sql_container_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_container_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -7688,7 +7632,7 @@ class az_cosmosdb_sql_container_exists_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_container_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -7745,7 +7689,7 @@ class az_cosmosdb_sql_container_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_container_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -7810,7 +7754,7 @@ class az_cosmosdb_sql_container_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_container_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.databaseName(databaseName)
@@ -7879,7 +7823,7 @@ class az_cosmosdb_sql_container_update_command_builder extends CommandBuilder {
  * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
  */
 class az_cosmosdb_sql_database_throughput_migrate_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -7935,7 +7879,7 @@ class az_cosmosdb_sql_database_throughput_migrate_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_database_throughput_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -7991,7 +7935,7 @@ class az_cosmosdb_sql_database_throughput_show_command_builder extends CommandBu
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_database_throughput_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -8053,7 +7997,7 @@ class az_cosmosdb_sql_database_throughput_update_command_builder extends Command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_database_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -8114,7 +8058,7 @@ class az_cosmosdb_sql_database_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_database_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -8168,7 +8112,7 @@ class az_cosmosdb_sql_database_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_database_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -8215,7 +8159,7 @@ class az_cosmosdb_sql_database_exists_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_database_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
@@ -8263,7 +8207,7 @@ class az_cosmosdb_sql_database_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_database_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -8323,7 +8267,7 @@ class az_cosmosdb_sql_database_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_stored_procedure_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.body(body)
@@ -8397,7 +8341,7 @@ class az_cosmosdb_sql_stored_procedure_create_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_stored_procedure_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -8468,7 +8412,7 @@ class az_cosmosdb_sql_stored_procedure_delete_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_stored_procedure_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string, databaseName: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, containerName: string, databaseName: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -8534,7 +8478,7 @@ class az_cosmosdb_sql_stored_procedure_list_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_stored_procedure_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -8608,7 +8552,7 @@ class az_cosmosdb_sql_stored_procedure_show_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_stored_procedure_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.body(body)
@@ -8685,7 +8629,7 @@ class az_cosmosdb_sql_stored_procedure_update_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_trigger_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.body(body)
@@ -8771,7 +8715,7 @@ class az_cosmosdb_sql_trigger_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_trigger_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -8842,7 +8786,7 @@ class az_cosmosdb_sql_trigger_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_trigger_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string, databaseName: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, containerName: string, databaseName: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -8908,7 +8852,7 @@ class az_cosmosdb_sql_trigger_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_trigger_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -8983,7 +8927,7 @@ class az_cosmosdb_sql_trigger_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_trigger_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -9069,7 +9013,7 @@ class az_cosmosdb_sql_trigger_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_user_defined_function_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.body(body)
@@ -9143,7 +9087,7 @@ class az_cosmosdb_sql_user_defined_function_create_command_builder extends Comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_user_defined_function_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -9214,7 +9158,7 @@ class az_cosmosdb_sql_user_defined_function_delete_command_builder extends Comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_user_defined_function_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string, databaseName: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, containerName: string, databaseName: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -9280,7 +9224,7 @@ class az_cosmosdb_sql_user_defined_function_list_command_builder extends Command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_user_defined_function_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.containerName(containerName)
@@ -9354,7 +9298,7 @@ class az_cosmosdb_sql_user_defined_function_show_command_builder extends Command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_sql_user_defined_function_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, body: string, containerName: string, databaseName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.body(body)
@@ -9425,7 +9369,7 @@ class az_cosmosdb_sql_user_defined_function_update_command_builder extends Comma
  * @param {'autoscale' | 'manual'} throughputType The type of throughput to migrate to.
  */
 class az_cosmosdb_table_throughput_migrate_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string, throughputType: 'autoscale' | 'manual') {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -9481,7 +9425,7 @@ class az_cosmosdb_table_throughput_migrate_command_builder extends CommandBuilde
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_table_throughput_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -9537,7 +9481,7 @@ class az_cosmosdb_table_throughput_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_table_throughput_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -9599,7 +9543,7 @@ class az_cosmosdb_table_throughput_update_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_table_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -9660,7 +9604,7 @@ class az_cosmosdb_table_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_table_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -9714,7 +9658,7 @@ class az_cosmosdb_table_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_table_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -9761,7 +9705,7 @@ class az_cosmosdb_table_exists_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_table_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
@@ -9809,7 +9753,7 @@ class az_cosmosdb_table_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_table_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -9858,7 +9802,7 @@ class az_cosmosdb_table_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_cosmosdb_check_name_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -9913,7 +9857,7 @@ class az_cosmosdb_check_name_exists_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cosmosdb_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -10059,7 +10003,7 @@ class az_cosmosdb_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_cosmosdb_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -10109,7 +10053,7 @@ class az_cosmosdb_delete_command_builder extends CommandBuilder {
  * @param {string} failoverPolicies Space-separated failover policies in 'regionName=failoverPriority' format. E.g eastus=0 westus=1.
  */
 class az_cosmosdb_failover_priority_change_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, failoverPolicies: string) {
+    constructor(commandPath: string, failoverPolicies: string) {
         super(commandParent);
         this.failoverPolicies(failoverPolicies)
     }
@@ -10156,7 +10100,7 @@ class az_cosmosdb_failover_priority_change_command_builder extends CommandBuilde
  * ```
  */
 class az_cosmosdb_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -10191,7 +10135,7 @@ class az_cosmosdb_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_cosmosdb_list_connection_strings_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -10232,7 +10176,7 @@ class az_cosmosdb_list_connection_strings_command_builder extends CommandBuilder
  * ```
  */
 class az_cosmosdb_list_keys_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -10273,7 +10217,7 @@ class az_cosmosdb_list_keys_command_builder extends CommandBuilder {
  * ```
  */
 class az_cosmosdb_list_read_only_keys_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -10317,7 +10261,7 @@ class az_cosmosdb_list_read_only_keys_command_builder extends CommandBuilder {
  * @param {'primary' | 'primaryReadonly' | 'secondary' | 'secondaryReadonly'} keyKind The access key to regenerate.
  */
 class az_cosmosdb_regenerate_key_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, keyKind: 'primary' | 'primaryReadonly' | 'secondary' | 'secondaryReadonly') {
+    constructor(commandPath: string, keyKind: 'primary' | 'primaryReadonly' | 'secondary' | 'secondaryReadonly') {
         super(commandParent);
         this.keyKind(keyKind)
     }
@@ -10366,7 +10310,7 @@ class az_cosmosdb_regenerate_key_command_builder extends CommandBuilder {
  * ```
  */
 class az_cosmosdb_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -10427,7 +10371,7 @@ class az_cosmosdb_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_cosmosdb_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

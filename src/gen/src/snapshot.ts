@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage point-in-time copies of managed disks, native blobs, or other snapshots. */
-export class az_snapshot implements ICommandParent<any> {
-    commandPath = "az snapshot";
-
+export class az_snapshot {
     /**
      * Create a snapshot.
      *
@@ -31,8 +29,8 @@ export class az_snapshot implements ICommandParent<any> {
      * @param {string} name The name of the snapshot.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_snapshot_create(name: string, resourceGroup: string): az_snapshot_create_command_builder {
-        return new az_snapshot_create_command_builder(this, name, resourceGroup);
+    static az_snapshot_create(name: string, resourceGroup: string): az_snapshot_create_command_builder {
+        return new az_snapshot_create_command_builder("az snapshot create", name, resourceGroup);
     }
 
     /**
@@ -46,8 +44,8 @@ export class az_snapshot implements ICommandParent<any> {
      *                    [--subscription]
      * ```
      */
-    az_snapshot_delete(): az_snapshot_delete_command_builder {
-        return new az_snapshot_delete_command_builder(this);
+    static az_snapshot_delete(): az_snapshot_delete_command_builder {
+        return new az_snapshot_delete_command_builder("az snapshot delete");
     }
 
     /**
@@ -65,8 +63,8 @@ export class az_snapshot implements ICommandParent<any> {
      *
      * @param {string} durationInSeconds Time duration in seconds until the SAS access expires.
      */
-    az_snapshot_grant_access(durationInSeconds: string): az_snapshot_grant_access_command_builder {
-        return new az_snapshot_grant_access_command_builder(this, durationInSeconds);
+    static az_snapshot_grant_access(durationInSeconds: string): az_snapshot_grant_access_command_builder {
+        return new az_snapshot_grant_access_command_builder("az snapshot grant-access", durationInSeconds);
     }
 
     /**
@@ -79,8 +77,8 @@ export class az_snapshot implements ICommandParent<any> {
      *                  [--subscription]
      * ```
      */
-    az_snapshot_list(): az_snapshot_list_command_builder {
-        return new az_snapshot_list_command_builder(this);
+    static az_snapshot_list(): az_snapshot_list_command_builder {
+        return new az_snapshot_list_command_builder("az snapshot list");
     }
 
     /**
@@ -94,8 +92,8 @@ export class az_snapshot implements ICommandParent<any> {
      *                           [--subscription]
      * ```
      */
-    az_snapshot_revoke_access(): az_snapshot_revoke_access_command_builder {
-        return new az_snapshot_revoke_access_command_builder(this);
+    static az_snapshot_revoke_access(): az_snapshot_revoke_access_command_builder {
+        return new az_snapshot_revoke_access_command_builder("az snapshot revoke-access");
     }
 
     /**
@@ -110,8 +108,8 @@ export class az_snapshot implements ICommandParent<any> {
      *                  [--subscription]
      * ```
      */
-    az_snapshot_show(): az_snapshot_show_command_builder {
-        return new az_snapshot_show_command_builder(this);
+    static az_snapshot_show(): az_snapshot_show_command_builder {
+        return new az_snapshot_show_command_builder("az snapshot show");
     }
 
     /**
@@ -135,8 +133,8 @@ export class az_snapshot implements ICommandParent<any> {
      *                    [--subscription]
      * ```
      */
-    az_snapshot_update(): az_snapshot_update_command_builder {
-        return new az_snapshot_update_command_builder(this);
+    static az_snapshot_update(): az_snapshot_update_command_builder {
+        return new az_snapshot_update_command_builder("az snapshot update");
     }
 
     /**
@@ -157,8 +155,8 @@ export class az_snapshot implements ICommandParent<any> {
      *                  [--updated]
      * ```
      */
-    az_snapshot_wait(): az_snapshot_wait_command_builder {
-        return new az_snapshot_wait_command_builder(this);
+    static az_snapshot_wait(): az_snapshot_wait_command_builder {
+        return new az_snapshot_wait_command_builder("az snapshot wait");
     }
 }
 
@@ -190,7 +188,7 @@ export class az_snapshot implements ICommandParent<any> {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_snapshot_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -311,7 +309,7 @@ class az_snapshot_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_snapshot_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -356,7 +354,7 @@ class az_snapshot_delete_command_builder extends CommandBuilder {
  * @param {string} durationInSeconds Time duration in seconds until the SAS access expires.
  */
 class az_snapshot_grant_access_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, durationInSeconds: string) {
+    constructor(commandPath: string, durationInSeconds: string) {
         super(commandParent);
         this.durationInSeconds(durationInSeconds)
     }
@@ -409,7 +407,7 @@ class az_snapshot_grant_access_command_builder extends CommandBuilder {
  * ```
  */
 class az_snapshot_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -444,7 +442,7 @@ class az_snapshot_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_snapshot_revoke_access_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -486,7 +484,7 @@ class az_snapshot_revoke_access_command_builder extends CommandBuilder {
  * ```
  */
 class az_snapshot_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -543,7 +541,7 @@ class az_snapshot_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_snapshot_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -651,7 +649,7 @@ class az_snapshot_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_snapshot_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

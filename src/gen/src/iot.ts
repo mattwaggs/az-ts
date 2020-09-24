@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage IoT Central applications. */
-export class az_iot_central_app implements ICommandParent<any> {
-    commandPath = "az iot central app";
-
+export class az_iot_central_app {
     /**
      * Create an IoT Central application.
      *
@@ -24,8 +22,8 @@ export class az_iot_central_app implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} subdomain Enter a unique URL. Your app will be accessible via https://<subdomain>.azureiotcentral.com/. Avoid special characters `-` instead, use lower case letters (a-z), numbers (0-9), and dashes (-).
      */
-    az_iot_central_app_create(name: string, resourceGroup: string, subdomain: string): az_iot_central_app_create_command_builder {
-        return new az_iot_central_app_create_command_builder(this, name, resourceGroup, subdomain);
+    static az_iot_central_app_create(name: string, resourceGroup: string, subdomain: string): az_iot_central_app_create_command_builder {
+        return new az_iot_central_app_create_command_builder("az iot central app create", name, resourceGroup, subdomain);
     }
 
     /**
@@ -43,8 +41,8 @@ export class az_iot_central_app implements ICommandParent<any> {
      * @param {string} name IoT Central application name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_central_app_delete(name: string, resourceGroup: string): az_iot_central_app_delete_command_builder {
-        return new az_iot_central_app_delete_command_builder(this, name, resourceGroup);
+    static az_iot_central_app_delete(name: string, resourceGroup: string): az_iot_central_app_delete_command_builder {
+        return new az_iot_central_app_delete_command_builder("az iot central app delete", name, resourceGroup);
     }
 
     /**
@@ -57,8 +55,8 @@ export class az_iot_central_app implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_iot_central_app_list(): az_iot_central_app_list_command_builder {
-        return new az_iot_central_app_list_command_builder(this);
+    static az_iot_central_app_list(): az_iot_central_app_list_command_builder {
+        return new az_iot_central_app_list_command_builder("az iot central app list");
     }
 
     /**
@@ -74,8 +72,8 @@ export class az_iot_central_app implements ICommandParent<any> {
      *
      * @param {string} name IoT Central application name.
      */
-    az_iot_central_app_show(name: string): az_iot_central_app_show_command_builder {
-        return new az_iot_central_app_show_command_builder(this, name);
+    static az_iot_central_app_show(name: string): az_iot_central_app_show_command_builder {
+        return new az_iot_central_app_show_command_builder("az iot central app show", name);
     }
 
     /**
@@ -95,8 +93,8 @@ export class az_iot_central_app implements ICommandParent<any> {
      * @param {string} name IoT Central application name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_central_app_update(name: string, resourceGroup: string): az_iot_central_app_update_command_builder {
-        return new az_iot_central_app_update_command_builder(this, name, resourceGroup);
+    static az_iot_central_app_update(name: string, resourceGroup: string): az_iot_central_app_update_command_builder {
+        return new az_iot_central_app_update_command_builder("az iot central app update", name, resourceGroup);
     }
 }
 
@@ -105,9 +103,7 @@ export class az_iot_central {
 }
 
 /** Manage Azure IoT Hub Device Provisioning Service access policies. */
-export class az_iot_dps_access_policy implements ICommandParent<any> {
-    commandPath = "az iot dps access-policy";
-
+export class az_iot_dps_access_policy {
     /**
      * Create a new shared access policy in an Azure IoT Hub device provisioning service.
      *
@@ -128,8 +124,8 @@ export class az_iot_dps_access_policy implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'DeviceConnect' | 'EnrollmentRead' | 'EnrollmentWrite' | 'RegistrationStatusRead' | 'RegistrationStatusWrite' | 'ServiceConfig'} rights Access rights for the IoT provisioning service. Use space-separated list for multiple rights.
      */
-    az_iot_dps_access_policy_create(accessPolicyName: string, dpsName: string, resourceGroup: string, rights: 'DeviceConnect' | 'EnrollmentRead' | 'EnrollmentWrite' | 'RegistrationStatusRead' | 'RegistrationStatusWrite' | 'ServiceConfig'): az_iot_dps_access_policy_create_command_builder {
-        return new az_iot_dps_access_policy_create_command_builder(this, accessPolicyName, dpsName, resourceGroup, rights);
+    static az_iot_dps_access_policy_create(accessPolicyName: string, dpsName: string, resourceGroup: string, rights: 'DeviceConnect' | 'EnrollmentRead' | 'EnrollmentWrite' | 'RegistrationStatusRead' | 'RegistrationStatusWrite' | 'ServiceConfig'): az_iot_dps_access_policy_create_command_builder {
+        return new az_iot_dps_access_policy_create_command_builder("az iot dps access-policy create", accessPolicyName, dpsName, resourceGroup, rights);
     }
 
     /**
@@ -148,8 +144,8 @@ export class az_iot_dps_access_policy implements ICommandParent<any> {
      * @param {string} dpsName IoT Provisioning Service name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_dps_access_policy_delete(accessPolicyName: string, dpsName: string, resourceGroup: string): az_iot_dps_access_policy_delete_command_builder {
-        return new az_iot_dps_access_policy_delete_command_builder(this, accessPolicyName, dpsName, resourceGroup);
+    static az_iot_dps_access_policy_delete(accessPolicyName: string, dpsName: string, resourceGroup: string): az_iot_dps_access_policy_delete_command_builder {
+        return new az_iot_dps_access_policy_delete_command_builder("az iot dps access-policy delete", accessPolicyName, dpsName, resourceGroup);
     }
 
     /**
@@ -166,8 +162,8 @@ export class az_iot_dps_access_policy implements ICommandParent<any> {
      * @param {string} dpsName IoT Provisioning Service name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_dps_access_policy_list(dpsName: string, resourceGroup: string): az_iot_dps_access_policy_list_command_builder {
-        return new az_iot_dps_access_policy_list_command_builder(this, dpsName, resourceGroup);
+    static az_iot_dps_access_policy_list(dpsName: string, resourceGroup: string): az_iot_dps_access_policy_list_command_builder {
+        return new az_iot_dps_access_policy_list_command_builder("az iot dps access-policy list", dpsName, resourceGroup);
     }
 
     /**
@@ -186,8 +182,8 @@ export class az_iot_dps_access_policy implements ICommandParent<any> {
      * @param {string} dpsName IoT Provisioning Service name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_dps_access_policy_show(accessPolicyName: string, dpsName: string, resourceGroup: string): az_iot_dps_access_policy_show_command_builder {
-        return new az_iot_dps_access_policy_show_command_builder(this, accessPolicyName, dpsName, resourceGroup);
+    static az_iot_dps_access_policy_show(accessPolicyName: string, dpsName: string, resourceGroup: string): az_iot_dps_access_policy_show_command_builder {
+        return new az_iot_dps_access_policy_show_command_builder("az iot dps access-policy show", accessPolicyName, dpsName, resourceGroup);
     }
 
     /**
@@ -209,15 +205,13 @@ export class az_iot_dps_access_policy implements ICommandParent<any> {
      * @param {string} dpsName IoT Provisioning Service name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_dps_access_policy_update(accessPolicyName: string, dpsName: string, resourceGroup: string): az_iot_dps_access_policy_update_command_builder {
-        return new az_iot_dps_access_policy_update_command_builder(this, accessPolicyName, dpsName, resourceGroup);
+    static az_iot_dps_access_policy_update(accessPolicyName: string, dpsName: string, resourceGroup: string): az_iot_dps_access_policy_update_command_builder {
+        return new az_iot_dps_access_policy_update_command_builder("az iot dps access-policy update", accessPolicyName, dpsName, resourceGroup);
     }
 }
 
 /** Manage Azure IoT Hub Device Provisioning Service certificates. */
-export class az_iot_dps_certificate implements ICommandParent<any> {
-    commandPath = "az iot dps certificate";
-
+export class az_iot_dps_certificate {
     /**
      * Create/upload an Azure IoT Hub Device Provisioning Service certificate.
      *
@@ -235,8 +229,8 @@ export class az_iot_dps_certificate implements ICommandParent<any> {
      * @param {string} path The path to the file containing the certificate.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_dps_certificate_create(certificateName: string, dpsName: string, path: string, resourceGroup: string): az_iot_dps_certificate_create_command_builder {
-        return new az_iot_dps_certificate_create_command_builder(this, certificateName, dpsName, path, resourceGroup);
+    static az_iot_dps_certificate_create(certificateName: string, dpsName: string, path: string, resourceGroup: string): az_iot_dps_certificate_create_command_builder {
+        return new az_iot_dps_certificate_create_command_builder("az iot dps certificate create", certificateName, dpsName, path, resourceGroup);
     }
 
     /**
@@ -256,8 +250,8 @@ export class az_iot_dps_certificate implements ICommandParent<any> {
      * @param {string} etag Entity Tag (etag) of the object.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_dps_certificate_delete(certificateName: string, dpsName: string, etag: string, resourceGroup: string): az_iot_dps_certificate_delete_command_builder {
-        return new az_iot_dps_certificate_delete_command_builder(this, certificateName, dpsName, etag, resourceGroup);
+    static az_iot_dps_certificate_delete(certificateName: string, dpsName: string, etag: string, resourceGroup: string): az_iot_dps_certificate_delete_command_builder {
+        return new az_iot_dps_certificate_delete_command_builder("az iot dps certificate delete", certificateName, dpsName, etag, resourceGroup);
     }
 
     /**
@@ -277,8 +271,8 @@ export class az_iot_dps_certificate implements ICommandParent<any> {
      * @param {string} etag Entity Tag (etag) of the object.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_dps_certificate_generate_verification_code(certificateName: string, dpsName: string, etag: string, resourceGroup: string): az_iot_dps_certificate_generate_verification_code_command_builder {
-        return new az_iot_dps_certificate_generate_verification_code_command_builder(this, certificateName, dpsName, etag, resourceGroup);
+    static az_iot_dps_certificate_generate_verification_code(certificateName: string, dpsName: string, etag: string, resourceGroup: string): az_iot_dps_certificate_generate_verification_code_command_builder {
+        return new az_iot_dps_certificate_generate_verification_code_command_builder("az iot dps certificate generate-verification-code", certificateName, dpsName, etag, resourceGroup);
     }
 
     /**
@@ -295,8 +289,8 @@ export class az_iot_dps_certificate implements ICommandParent<any> {
      * @param {string} dpsName IoT Provisioning Service name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_dps_certificate_list(dpsName: string, resourceGroup: string): az_iot_dps_certificate_list_command_builder {
-        return new az_iot_dps_certificate_list_command_builder(this, dpsName, resourceGroup);
+    static az_iot_dps_certificate_list(dpsName: string, resourceGroup: string): az_iot_dps_certificate_list_command_builder {
+        return new az_iot_dps_certificate_list_command_builder("az iot dps certificate list", dpsName, resourceGroup);
     }
 
     /**
@@ -315,8 +309,8 @@ export class az_iot_dps_certificate implements ICommandParent<any> {
      * @param {string} dpsName IoT Provisioning Service name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_dps_certificate_show(certificateName: string, dpsName: string, resourceGroup: string): az_iot_dps_certificate_show_command_builder {
-        return new az_iot_dps_certificate_show_command_builder(this, certificateName, dpsName, resourceGroup);
+    static az_iot_dps_certificate_show(certificateName: string, dpsName: string, resourceGroup: string): az_iot_dps_certificate_show_command_builder {
+        return new az_iot_dps_certificate_show_command_builder("az iot dps certificate show", certificateName, dpsName, resourceGroup);
     }
 
     /**
@@ -338,8 +332,8 @@ export class az_iot_dps_certificate implements ICommandParent<any> {
      * @param {string} path The path to the file containing the certificate.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_dps_certificate_update(certificateName: string, dpsName: string, etag: string, path: string, resourceGroup: string): az_iot_dps_certificate_update_command_builder {
-        return new az_iot_dps_certificate_update_command_builder(this, certificateName, dpsName, etag, path, resourceGroup);
+    static az_iot_dps_certificate_update(certificateName: string, dpsName: string, etag: string, path: string, resourceGroup: string): az_iot_dps_certificate_update_command_builder {
+        return new az_iot_dps_certificate_update_command_builder("az iot dps certificate update", certificateName, dpsName, etag, path, resourceGroup);
     }
 
     /**
@@ -361,15 +355,13 @@ export class az_iot_dps_certificate implements ICommandParent<any> {
      * @param {string} path The path to the file containing the certificate.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_dps_certificate_verify(certificateName: string, dpsName: string, etag: string, path: string, resourceGroup: string): az_iot_dps_certificate_verify_command_builder {
-        return new az_iot_dps_certificate_verify_command_builder(this, certificateName, dpsName, etag, path, resourceGroup);
+    static az_iot_dps_certificate_verify(certificateName: string, dpsName: string, etag: string, path: string, resourceGroup: string): az_iot_dps_certificate_verify_command_builder {
+        return new az_iot_dps_certificate_verify_command_builder("az iot dps certificate verify", certificateName, dpsName, etag, path, resourceGroup);
     }
 }
 
 /** Manage Azure IoT Hub Device Provisioning Service linked IoT hubs. */
-export class az_iot_dps_linked_hub implements ICommandParent<any> {
-    commandPath = "az iot dps linked-hub";
-
+export class az_iot_dps_linked_hub {
     /**
      * Create a linked IoT hub in an Azure IoT Hub device provisioning service.
      *
@@ -390,8 +382,8 @@ export class az_iot_dps_linked_hub implements ICommandParent<any> {
      * @param {string} location Location of the IoT hub.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_dps_linked_hub_create(connectionString: string, dpsName: string, location: string, resourceGroup: string): az_iot_dps_linked_hub_create_command_builder {
-        return new az_iot_dps_linked_hub_create_command_builder(this, connectionString, dpsName, location, resourceGroup);
+    static az_iot_dps_linked_hub_create(connectionString: string, dpsName: string, location: string, resourceGroup: string): az_iot_dps_linked_hub_create_command_builder {
+        return new az_iot_dps_linked_hub_create_command_builder("az iot dps linked-hub create", connectionString, dpsName, location, resourceGroup);
     }
 
     /**
@@ -410,8 +402,8 @@ export class az_iot_dps_linked_hub implements ICommandParent<any> {
      * @param {string} linkedHub Host name of linked IoT Hub.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_dps_linked_hub_delete(dpsName: string, linkedHub: string, resourceGroup: string): az_iot_dps_linked_hub_delete_command_builder {
-        return new az_iot_dps_linked_hub_delete_command_builder(this, dpsName, linkedHub, resourceGroup);
+    static az_iot_dps_linked_hub_delete(dpsName: string, linkedHub: string, resourceGroup: string): az_iot_dps_linked_hub_delete_command_builder {
+        return new az_iot_dps_linked_hub_delete_command_builder("az iot dps linked-hub delete", dpsName, linkedHub, resourceGroup);
     }
 
     /**
@@ -428,8 +420,8 @@ export class az_iot_dps_linked_hub implements ICommandParent<any> {
      * @param {string} dpsName IoT Provisioning Service name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_dps_linked_hub_list(dpsName: string, resourceGroup: string): az_iot_dps_linked_hub_list_command_builder {
-        return new az_iot_dps_linked_hub_list_command_builder(this, dpsName, resourceGroup);
+    static az_iot_dps_linked_hub_list(dpsName: string, resourceGroup: string): az_iot_dps_linked_hub_list_command_builder {
+        return new az_iot_dps_linked_hub_list_command_builder("az iot dps linked-hub list", dpsName, resourceGroup);
     }
 
     /**
@@ -448,8 +440,8 @@ export class az_iot_dps_linked_hub implements ICommandParent<any> {
      * @param {string} linkedHub Host name of linked IoT Hub.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_dps_linked_hub_show(dpsName: string, linkedHub: string, resourceGroup: string): az_iot_dps_linked_hub_show_command_builder {
-        return new az_iot_dps_linked_hub_show_command_builder(this, dpsName, linkedHub, resourceGroup);
+    static az_iot_dps_linked_hub_show(dpsName: string, linkedHub: string, resourceGroup: string): az_iot_dps_linked_hub_show_command_builder {
+        return new az_iot_dps_linked_hub_show_command_builder("az iot dps linked-hub show", dpsName, linkedHub, resourceGroup);
     }
 
     /**
@@ -470,15 +462,13 @@ export class az_iot_dps_linked_hub implements ICommandParent<any> {
      * @param {string} linkedHub Host name of linked IoT Hub.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_dps_linked_hub_update(dpsName: string, linkedHub: string, resourceGroup: string): az_iot_dps_linked_hub_update_command_builder {
-        return new az_iot_dps_linked_hub_update_command_builder(this, dpsName, linkedHub, resourceGroup);
+    static az_iot_dps_linked_hub_update(dpsName: string, linkedHub: string, resourceGroup: string): az_iot_dps_linked_hub_update_command_builder {
+        return new az_iot_dps_linked_hub_update_command_builder("az iot dps linked-hub update", dpsName, linkedHub, resourceGroup);
     }
 }
 
 /** Manage Azure IoT Hub Device Provisioning Service. */
-export class az_iot_dps implements ICommandParent<any> {
-    commandPath = "az iot dps";
-
+export class az_iot_dps {
     /**
      * Create an Azure IoT Hub device provisioning service.
      *
@@ -495,8 +485,8 @@ export class az_iot_dps implements ICommandParent<any> {
      * @param {string} name IoT Provisioning Service name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_dps_create(name: string, resourceGroup: string): az_iot_dps_create_command_builder {
-        return new az_iot_dps_create_command_builder(this, name, resourceGroup);
+    static az_iot_dps_create(name: string, resourceGroup: string): az_iot_dps_create_command_builder {
+        return new az_iot_dps_create_command_builder("az iot dps create", name, resourceGroup);
     }
 
     /**
@@ -510,8 +500,8 @@ export class az_iot_dps implements ICommandParent<any> {
      *                   [--subscription]
      * ```
      */
-    az_iot_dps_delete(): az_iot_dps_delete_command_builder {
-        return new az_iot_dps_delete_command_builder(this);
+    static az_iot_dps_delete(): az_iot_dps_delete_command_builder {
+        return new az_iot_dps_delete_command_builder("az iot dps delete");
     }
 
     /**
@@ -524,8 +514,8 @@ export class az_iot_dps implements ICommandParent<any> {
      *                 [--subscription]
      * ```
      */
-    az_iot_dps_list(): az_iot_dps_list_command_builder {
-        return new az_iot_dps_list_command_builder(this);
+    static az_iot_dps_list(): az_iot_dps_list_command_builder {
+        return new az_iot_dps_list_command_builder("az iot dps list");
     }
 
     /**
@@ -540,8 +530,8 @@ export class az_iot_dps implements ICommandParent<any> {
      *                 [--subscription]
      * ```
      */
-    az_iot_dps_show(): az_iot_dps_show_command_builder {
-        return new az_iot_dps_show_command_builder(this);
+    static az_iot_dps_show(): az_iot_dps_show_command_builder {
+        return new az_iot_dps_show_command_builder("az iot dps show");
     }
 
     /**
@@ -559,15 +549,13 @@ export class az_iot_dps implements ICommandParent<any> {
      *                   [--subscription]
      * ```
      */
-    az_iot_dps_update(): az_iot_dps_update_command_builder {
-        return new az_iot_dps_update_command_builder(this);
+    static az_iot_dps_update(): az_iot_dps_update_command_builder {
+        return new az_iot_dps_update_command_builder("az iot dps update");
     }
 }
 
 /** Manage IoT Hub certificates. */
-export class az_iot_hub_certificate implements ICommandParent<any> {
-    commandPath = "az iot hub certificate";
-
+export class az_iot_hub_certificate {
     /**
      * Create/upload an Azure IoT Hub certificate.
      *
@@ -584,8 +572,8 @@ export class az_iot_hub_certificate implements ICommandParent<any> {
      * @param {string} name A friendly name for the certificate.
      * @param {string} path The path to the file containing the certificate.
      */
-    az_iot_hub_certificate_create(hubName: string, name: string, path: string): az_iot_hub_certificate_create_command_builder {
-        return new az_iot_hub_certificate_create_command_builder(this, hubName, name, path);
+    static az_iot_hub_certificate_create(hubName: string, name: string, path: string): az_iot_hub_certificate_create_command_builder {
+        return new az_iot_hub_certificate_create_command_builder("az iot hub certificate create", hubName, name, path);
     }
 
     /**
@@ -604,8 +592,8 @@ export class az_iot_hub_certificate implements ICommandParent<any> {
      * @param {string} etag Entity Tag (etag) of the object.
      * @param {string} name A friendly name for the certificate.
      */
-    az_iot_hub_certificate_delete(etag: string, name: string): az_iot_hub_certificate_delete_command_builder {
-        return new az_iot_hub_certificate_delete_command_builder(this, etag, name);
+    static az_iot_hub_certificate_delete(etag: string, name: string): az_iot_hub_certificate_delete_command_builder {
+        return new az_iot_hub_certificate_delete_command_builder("az iot hub certificate delete", etag, name);
     }
 
     /**
@@ -624,8 +612,8 @@ export class az_iot_hub_certificate implements ICommandParent<any> {
      * @param {string} etag Entity Tag (etag) of the object.
      * @param {string} name A friendly name for the certificate.
      */
-    az_iot_hub_certificate_generate_verification_code(etag: string, name: string): az_iot_hub_certificate_generate_verification_code_command_builder {
-        return new az_iot_hub_certificate_generate_verification_code_command_builder(this, etag, name);
+    static az_iot_hub_certificate_generate_verification_code(etag: string, name: string): az_iot_hub_certificate_generate_verification_code_command_builder {
+        return new az_iot_hub_certificate_generate_verification_code_command_builder("az iot hub certificate generate-verification-code", etag, name);
     }
 
     /**
@@ -640,8 +628,8 @@ export class az_iot_hub_certificate implements ICommandParent<any> {
      *                             [--subscription]
      * ```
      */
-    az_iot_hub_certificate_list(): az_iot_hub_certificate_list_command_builder {
-        return new az_iot_hub_certificate_list_command_builder(this);
+    static az_iot_hub_certificate_list(): az_iot_hub_certificate_list_command_builder {
+        return new az_iot_hub_certificate_list_command_builder("az iot hub certificate list");
     }
 
     /**
@@ -659,8 +647,8 @@ export class az_iot_hub_certificate implements ICommandParent<any> {
      *
      * @param {string} name A friendly name for the certificate.
      */
-    az_iot_hub_certificate_show(name: string): az_iot_hub_certificate_show_command_builder {
-        return new az_iot_hub_certificate_show_command_builder(this, name);
+    static az_iot_hub_certificate_show(name: string): az_iot_hub_certificate_show_command_builder {
+        return new az_iot_hub_certificate_show_command_builder("az iot hub certificate show", name);
     }
 
     /**
@@ -681,8 +669,8 @@ export class az_iot_hub_certificate implements ICommandParent<any> {
      * @param {string} name A friendly name for the certificate.
      * @param {string} path The path to the file containing the certificate.
      */
-    az_iot_hub_certificate_update(etag: string, name: string, path: string): az_iot_hub_certificate_update_command_builder {
-        return new az_iot_hub_certificate_update_command_builder(this, etag, name, path);
+    static az_iot_hub_certificate_update(etag: string, name: string, path: string): az_iot_hub_certificate_update_command_builder {
+        return new az_iot_hub_certificate_update_command_builder("az iot hub certificate update", etag, name, path);
     }
 
     /**
@@ -703,15 +691,13 @@ export class az_iot_hub_certificate implements ICommandParent<any> {
      * @param {string} name A friendly name for the certificate.
      * @param {string} path The path to the file containing the certificate.
      */
-    az_iot_hub_certificate_verify(etag: string, name: string, path: string): az_iot_hub_certificate_verify_command_builder {
-        return new az_iot_hub_certificate_verify_command_builder(this, etag, name, path);
+    static az_iot_hub_certificate_verify(etag: string, name: string, path: string): az_iot_hub_certificate_verify_command_builder {
+        return new az_iot_hub_certificate_verify_command_builder("az iot hub certificate verify", etag, name, path);
     }
 }
 
 /** Manage the event hub consumer groups of an IoT hub. */
-export class az_iot_hub_consumer_group implements ICommandParent<any> {
-    commandPath = "az iot hub consumer-group";
-
+export class az_iot_hub_consumer_group {
     /**
      * Create an event hub consumer group.
      *
@@ -727,8 +713,8 @@ export class az_iot_hub_consumer_group implements ICommandParent<any> {
      * @param {string} hubName IoT Hub name.
      * @param {string} name Event hub consumer group name.
      */
-    az_iot_hub_consumer_group_create(hubName: string, name: string): az_iot_hub_consumer_group_create_command_builder {
-        return new az_iot_hub_consumer_group_create_command_builder(this, hubName, name);
+    static az_iot_hub_consumer_group_create(hubName: string, name: string): az_iot_hub_consumer_group_create_command_builder {
+        return new az_iot_hub_consumer_group_create_command_builder("az iot hub consumer-group create", hubName, name);
     }
 
     /**
@@ -744,8 +730,8 @@ export class az_iot_hub_consumer_group implements ICommandParent<any> {
      *                                  [--subscription]
      * ```
      */
-    az_iot_hub_consumer_group_delete(): az_iot_hub_consumer_group_delete_command_builder {
-        return new az_iot_hub_consumer_group_delete_command_builder(this);
+    static az_iot_hub_consumer_group_delete(): az_iot_hub_consumer_group_delete_command_builder {
+        return new az_iot_hub_consumer_group_delete_command_builder("az iot hub consumer-group delete");
     }
 
     /**
@@ -761,8 +747,8 @@ export class az_iot_hub_consumer_group implements ICommandParent<any> {
      *                                [--subscription]
      * ```
      */
-    az_iot_hub_consumer_group_list(): az_iot_hub_consumer_group_list_command_builder {
-        return new az_iot_hub_consumer_group_list_command_builder(this);
+    static az_iot_hub_consumer_group_list(): az_iot_hub_consumer_group_list_command_builder {
+        return new az_iot_hub_consumer_group_list_command_builder("az iot hub consumer-group list");
     }
 
     /**
@@ -779,15 +765,13 @@ export class az_iot_hub_consumer_group implements ICommandParent<any> {
      *                                [--subscription]
      * ```
      */
-    az_iot_hub_consumer_group_show(): az_iot_hub_consumer_group_show_command_builder {
-        return new az_iot_hub_consumer_group_show_command_builder(this);
+    static az_iot_hub_consumer_group_show(): az_iot_hub_consumer_group_show_command_builder {
+        return new az_iot_hub_consumer_group_show_command_builder("az iot hub consumer-group show");
     }
 }
 
 /** Manage device streams of an IoT hub. */
-export class az_iot_hub_devicestream implements ICommandParent<any> {
-    commandPath = "az iot hub devicestream";
-
+export class az_iot_hub_devicestream {
     /**
      * Get IoT Hub's device streams endpoints.
      *
@@ -800,15 +784,13 @@ export class az_iot_hub_devicestream implements ICommandParent<any> {
      *                              [--subscription]
      * ```
      */
-    az_iot_hub_devicestream_show(): az_iot_hub_devicestream_show_command_builder {
-        return new az_iot_hub_devicestream_show_command_builder(this);
+    static az_iot_hub_devicestream_show(): az_iot_hub_devicestream_show_command_builder {
+        return new az_iot_hub_devicestream_show_command_builder("az iot hub devicestream show");
     }
 }
 
 /** Manage message enrichments for endpoints of an IoT Hub. */
-export class az_iot_hub_message_enrichment implements ICommandParent<any> {
-    commandPath = "az iot hub message-enrichment";
-
+export class az_iot_hub_message_enrichment {
     /**
      * Create a message enrichment for chosen endpoints in your IoT Hub.
      *
@@ -827,8 +809,8 @@ export class az_iot_hub_message_enrichment implements ICommandParent<any> {
      * @param {string} name IoT Hub name.
      * @param {string} value The enrichment's value.
      */
-    az_iot_hub_message_enrichment_create(endpoints: string, key: string, name: string, value: string): az_iot_hub_message_enrichment_create_command_builder {
-        return new az_iot_hub_message_enrichment_create_command_builder(this, endpoints, key, name, value);
+    static az_iot_hub_message_enrichment_create(endpoints: string, key: string, name: string, value: string): az_iot_hub_message_enrichment_create_command_builder {
+        return new az_iot_hub_message_enrichment_create_command_builder("az iot hub message-enrichment create", endpoints, key, name, value);
     }
 
     /**
@@ -845,8 +827,8 @@ export class az_iot_hub_message_enrichment implements ICommandParent<any> {
      *
      * @param {string} key The enrichment's key.
      */
-    az_iot_hub_message_enrichment_delete(key: string): az_iot_hub_message_enrichment_delete_command_builder {
-        return new az_iot_hub_message_enrichment_delete_command_builder(this, key);
+    static az_iot_hub_message_enrichment_delete(key: string): az_iot_hub_message_enrichment_delete_command_builder {
+        return new az_iot_hub_message_enrichment_delete_command_builder("az iot hub message-enrichment delete", key);
     }
 
     /**
@@ -861,8 +843,8 @@ export class az_iot_hub_message_enrichment implements ICommandParent<any> {
      *                                    [--subscription]
      * ```
      */
-    az_iot_hub_message_enrichment_list(): az_iot_hub_message_enrichment_list_command_builder {
-        return new az_iot_hub_message_enrichment_list_command_builder(this);
+    static az_iot_hub_message_enrichment_list(): az_iot_hub_message_enrichment_list_command_builder {
+        return new az_iot_hub_message_enrichment_list_command_builder("az iot hub message-enrichment list");
     }
 
     /**
@@ -883,15 +865,13 @@ export class az_iot_hub_message_enrichment implements ICommandParent<any> {
      * @param {string} key The enrichment's key.
      * @param {string} value The enrichment's value.
      */
-    az_iot_hub_message_enrichment_update(endpoints: string, key: string, value: string): az_iot_hub_message_enrichment_update_command_builder {
-        return new az_iot_hub_message_enrichment_update_command_builder(this, endpoints, key, value);
+    static az_iot_hub_message_enrichment_update(endpoints: string, key: string, value: string): az_iot_hub_message_enrichment_update_command_builder {
+        return new az_iot_hub_message_enrichment_update_command_builder("az iot hub message-enrichment update", endpoints, key, value);
     }
 }
 
 /** Manage shared access policies of an IoT hub. */
-export class az_iot_hub_policy implements ICommandParent<any> {
-    commandPath = "az iot hub policy";
-
+export class az_iot_hub_policy {
     /**
      * Create a new shared access policy in an IoT hub.
      *
@@ -908,8 +888,8 @@ export class az_iot_hub_policy implements ICommandParent<any> {
      * @param {string} name Shared access policy name.
      * @param {string} permissions Permissions of shared access policy. Use space-separated list for multiple permissions. Possible values: RegistryRead, RegistryWrite, ServiceConnect, DeviceConnect.
      */
-    az_iot_hub_policy_create(hubName: string, name: string, permissions: string): az_iot_hub_policy_create_command_builder {
-        return new az_iot_hub_policy_create_command_builder(this, hubName, name, permissions);
+    static az_iot_hub_policy_create(hubName: string, name: string, permissions: string): az_iot_hub_policy_create_command_builder {
+        return new az_iot_hub_policy_create_command_builder("az iot hub policy create", hubName, name, permissions);
     }
 
     /**
@@ -924,8 +904,8 @@ export class az_iot_hub_policy implements ICommandParent<any> {
      *                          [--subscription]
      * ```
      */
-    az_iot_hub_policy_delete(): az_iot_hub_policy_delete_command_builder {
-        return new az_iot_hub_policy_delete_command_builder(this);
+    static az_iot_hub_policy_delete(): az_iot_hub_policy_delete_command_builder {
+        return new az_iot_hub_policy_delete_command_builder("az iot hub policy delete");
     }
 
     /**
@@ -940,8 +920,8 @@ export class az_iot_hub_policy implements ICommandParent<any> {
      *                        [--subscription]
      * ```
      */
-    az_iot_hub_policy_list(): az_iot_hub_policy_list_command_builder {
-        return new az_iot_hub_policy_list_command_builder(this);
+    static az_iot_hub_policy_list(): az_iot_hub_policy_list_command_builder {
+        return new az_iot_hub_policy_list_command_builder("az iot hub policy list");
     }
 
     /**
@@ -960,8 +940,8 @@ export class az_iot_hub_policy implements ICommandParent<any> {
      *
      * @param {'primary' | 'secondary' | 'swap'} renewKey Regenerate keys.
      */
-    az_iot_hub_policy_renew_key(renewKey: 'primary' | 'secondary' | 'swap'): az_iot_hub_policy_renew_key_command_builder {
-        return new az_iot_hub_policy_renew_key_command_builder(this, renewKey);
+    static az_iot_hub_policy_renew_key(renewKey: 'primary' | 'secondary' | 'swap'): az_iot_hub_policy_renew_key_command_builder {
+        return new az_iot_hub_policy_renew_key_command_builder("az iot hub policy renew-key", renewKey);
     }
 
     /**
@@ -977,15 +957,13 @@ export class az_iot_hub_policy implements ICommandParent<any> {
      *                        [--subscription]
      * ```
      */
-    az_iot_hub_policy_show(): az_iot_hub_policy_show_command_builder {
-        return new az_iot_hub_policy_show_command_builder(this);
+    static az_iot_hub_policy_show(): az_iot_hub_policy_show_command_builder {
+        return new az_iot_hub_policy_show_command_builder("az iot hub policy show");
     }
 }
 
 /** Manage routes of an IoT hub. */
-export class az_iot_hub_route implements ICommandParent<any> {
-    commandPath = "az iot hub route";
-
+export class az_iot_hub_route {
     /**
      * Create a route in IoT Hub.
      *
@@ -1006,8 +984,8 @@ export class az_iot_hub_route implements ICommandParent<any> {
      * @param {string} routeName Name of the Route.
      * @param {'devicejoblifecycleevents' | 'devicelifecycleevents' | 'devicemessages' | 'digitaltwinchangeevents' | 'invalid' | 'twinchangeevents'} sourceType Source of the route.
      */
-    az_iot_hub_route_create(endpointName: string, hubName: string, routeName: string, sourceType: 'devicejoblifecycleevents' | 'devicelifecycleevents' | 'devicemessages' | 'digitaltwinchangeevents' | 'invalid' | 'twinchangeevents'): az_iot_hub_route_create_command_builder {
-        return new az_iot_hub_route_create_command_builder(this, endpointName, hubName, routeName, sourceType);
+    static az_iot_hub_route_create(endpointName: string, hubName: string, routeName: string, sourceType: 'devicejoblifecycleevents' | 'devicelifecycleevents' | 'devicemessages' | 'digitaltwinchangeevents' | 'invalid' | 'twinchangeevents'): az_iot_hub_route_create_command_builder {
+        return new az_iot_hub_route_create_command_builder("az iot hub route create", endpointName, hubName, routeName, sourceType);
     }
 
     /**
@@ -1023,8 +1001,8 @@ export class az_iot_hub_route implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_iot_hub_route_delete(): az_iot_hub_route_delete_command_builder {
-        return new az_iot_hub_route_delete_command_builder(this);
+    static az_iot_hub_route_delete(): az_iot_hub_route_delete_command_builder {
+        return new az_iot_hub_route_delete_command_builder("az iot hub route delete");
     }
 
     /**
@@ -1040,8 +1018,8 @@ export class az_iot_hub_route implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_iot_hub_route_list(): az_iot_hub_route_list_command_builder {
-        return new az_iot_hub_route_list_command_builder(this);
+    static az_iot_hub_route_list(): az_iot_hub_route_list_command_builder {
+        return new az_iot_hub_route_list_command_builder("az iot hub route list");
     }
 
     /**
@@ -1059,8 +1037,8 @@ export class az_iot_hub_route implements ICommandParent<any> {
      *
      * @param {string} routeName Name of the Route.
      */
-    az_iot_hub_route_show(routeName: string): az_iot_hub_route_show_command_builder {
-        return new az_iot_hub_route_show_command_builder(this, routeName);
+    static az_iot_hub_route_show(routeName: string): az_iot_hub_route_show_command_builder {
+        return new az_iot_hub_route_show_command_builder("az iot hub route show", routeName);
     }
 
     /**
@@ -1079,8 +1057,8 @@ export class az_iot_hub_route implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_iot_hub_route_test(): az_iot_hub_route_test_command_builder {
-        return new az_iot_hub_route_test_command_builder(this);
+    static az_iot_hub_route_test(): az_iot_hub_route_test_command_builder {
+        return new az_iot_hub_route_test_command_builder("az iot hub route test");
     }
 
     /**
@@ -1101,15 +1079,13 @@ export class az_iot_hub_route implements ICommandParent<any> {
      *
      * @param {string} routeName Name of the Route.
      */
-    az_iot_hub_route_update(routeName: string): az_iot_hub_route_update_command_builder {
-        return new az_iot_hub_route_update_command_builder(this, routeName);
+    static az_iot_hub_route_update(routeName: string): az_iot_hub_route_update_command_builder {
+        return new az_iot_hub_route_update_command_builder("az iot hub route update", routeName);
     }
 }
 
 /** Manage custom endpoints of an IoT hub. */
-export class az_iot_hub_routing_endpoint implements ICommandParent<any> {
-    commandPath = "az iot hub routing-endpoint";
-
+export class az_iot_hub_routing_endpoint {
     /**
      * Add an endpoint to your IoT Hub.
      *
@@ -1139,8 +1115,8 @@ export class az_iot_hub_routing_endpoint implements ICommandParent<any> {
      * @param {'azurestoragecontainer' | 'eventhub' | 'servicebusqueue' | 'servicebustopic'} endpointType Type of the Routing Endpoint.
      * @param {string} hubName IoT Hub name.
      */
-    az_iot_hub_routing_endpoint_create(endpointName: string, endpointResourceGroup: string, endpointSubscriptionId: string, endpointType: 'azurestoragecontainer' | 'eventhub' | 'servicebusqueue' | 'servicebustopic', hubName: string): az_iot_hub_routing_endpoint_create_command_builder {
-        return new az_iot_hub_routing_endpoint_create_command_builder(this, endpointName, endpointResourceGroup, endpointSubscriptionId, endpointType, hubName);
+    static az_iot_hub_routing_endpoint_create(endpointName: string, endpointResourceGroup: string, endpointSubscriptionId: string, endpointType: 'azurestoragecontainer' | 'eventhub' | 'servicebusqueue' | 'servicebustopic', hubName: string): az_iot_hub_routing_endpoint_create_command_builder {
+        return new az_iot_hub_routing_endpoint_create_command_builder("az iot hub routing-endpoint create", endpointName, endpointResourceGroup, endpointSubscriptionId, endpointType, hubName);
     }
 
     /**
@@ -1156,8 +1132,8 @@ export class az_iot_hub_routing_endpoint implements ICommandParent<any> {
      *                                    [--subscription]
      * ```
      */
-    az_iot_hub_routing_endpoint_delete(): az_iot_hub_routing_endpoint_delete_command_builder {
-        return new az_iot_hub_routing_endpoint_delete_command_builder(this);
+    static az_iot_hub_routing_endpoint_delete(): az_iot_hub_routing_endpoint_delete_command_builder {
+        return new az_iot_hub_routing_endpoint_delete_command_builder("az iot hub routing-endpoint delete");
     }
 
     /**
@@ -1173,8 +1149,8 @@ export class az_iot_hub_routing_endpoint implements ICommandParent<any> {
      *                                  [--subscription]
      * ```
      */
-    az_iot_hub_routing_endpoint_list(): az_iot_hub_routing_endpoint_list_command_builder {
-        return new az_iot_hub_routing_endpoint_list_command_builder(this);
+    static az_iot_hub_routing_endpoint_list(): az_iot_hub_routing_endpoint_list_command_builder {
+        return new az_iot_hub_routing_endpoint_list_command_builder("az iot hub routing-endpoint list");
     }
 
     /**
@@ -1192,15 +1168,13 @@ export class az_iot_hub_routing_endpoint implements ICommandParent<any> {
      *
      * @param {string} endpointName Name of the Routing Endpoint.
      */
-    az_iot_hub_routing_endpoint_show(endpointName: string): az_iot_hub_routing_endpoint_show_command_builder {
-        return new az_iot_hub_routing_endpoint_show_command_builder(this, endpointName);
+    static az_iot_hub_routing_endpoint_show(endpointName: string): az_iot_hub_routing_endpoint_show_command_builder {
+        return new az_iot_hub_routing_endpoint_show_command_builder("az iot hub routing-endpoint show", endpointName);
     }
 }
 
 /** Manage Azure IoT hubs. */
-export class az_iot_hub implements ICommandParent<any> {
-    commandPath = "az iot hub";
-
+export class az_iot_hub {
     /**
      * Create an Azure IoT hub.
      *
@@ -1233,8 +1207,8 @@ export class az_iot_hub implements ICommandParent<any> {
      * @param {string} name IoT Hub name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_iot_hub_create(name: string, resourceGroup: string): az_iot_hub_create_command_builder {
-        return new az_iot_hub_create_command_builder(this, name, resourceGroup);
+    static az_iot_hub_create(name: string, resourceGroup: string): az_iot_hub_create_command_builder {
+        return new az_iot_hub_create_command_builder("az iot hub create", name, resourceGroup);
     }
 
     /**
@@ -1248,8 +1222,8 @@ export class az_iot_hub implements ICommandParent<any> {
      *                   [--subscription]
      * ```
      */
-    az_iot_hub_delete(): az_iot_hub_delete_command_builder {
-        return new az_iot_hub_delete_command_builder(this);
+    static az_iot_hub_delete(): az_iot_hub_delete_command_builder {
+        return new az_iot_hub_delete_command_builder("az iot hub delete");
     }
 
     /**
@@ -1262,8 +1236,8 @@ export class az_iot_hub implements ICommandParent<any> {
      *                 [--subscription]
      * ```
      */
-    az_iot_hub_list(): az_iot_hub_list_command_builder {
-        return new az_iot_hub_list_command_builder(this);
+    static az_iot_hub_list(): az_iot_hub_list_command_builder {
+        return new az_iot_hub_list_command_builder("az iot hub list");
     }
 
     /**
@@ -1277,8 +1251,8 @@ export class az_iot_hub implements ICommandParent<any> {
      *                      [--subscription]
      * ```
      */
-    az_iot_hub_list_skus(): az_iot_hub_list_skus_command_builder {
-        return new az_iot_hub_list_skus_command_builder(this);
+    static az_iot_hub_list_skus(): az_iot_hub_list_skus_command_builder {
+        return new az_iot_hub_list_skus_command_builder("az iot hub list-skus");
     }
 
     /**
@@ -1293,8 +1267,8 @@ export class az_iot_hub implements ICommandParent<any> {
      *                            [--subscription]
      * ```
      */
-    az_iot_hub_manual_failover(): az_iot_hub_manual_failover_command_builder {
-        return new az_iot_hub_manual_failover_command_builder(this);
+    static az_iot_hub_manual_failover(): az_iot_hub_manual_failover_command_builder {
+        return new az_iot_hub_manual_failover_command_builder("az iot hub manual-failover");
     }
 
     /**
@@ -1309,8 +1283,8 @@ export class az_iot_hub implements ICommandParent<any> {
      *                 [--subscription]
      * ```
      */
-    az_iot_hub_show(): az_iot_hub_show_command_builder {
-        return new az_iot_hub_show_command_builder(this);
+    static az_iot_hub_show(): az_iot_hub_show_command_builder {
+        return new az_iot_hub_show_command_builder("az iot hub show");
     }
 
     /**
@@ -1327,8 +1301,8 @@ export class az_iot_hub implements ICommandParent<any> {
      *                                   [--subscription]
      * ```
      */
-    az_iot_hub_show_connection_string(): az_iot_hub_show_connection_string_command_builder {
-        return new az_iot_hub_show_connection_string_command_builder(this);
+    static az_iot_hub_show_connection_string(): az_iot_hub_show_connection_string_command_builder {
+        return new az_iot_hub_show_connection_string_command_builder("az iot hub show-connection-string");
     }
 
     /**
@@ -1342,8 +1316,8 @@ export class az_iot_hub implements ICommandParent<any> {
      *                               [--subscription]
      * ```
      */
-    az_iot_hub_show_quota_metrics(): az_iot_hub_show_quota_metrics_command_builder {
-        return new az_iot_hub_show_quota_metrics_command_builder(this);
+    static az_iot_hub_show_quota_metrics(): az_iot_hub_show_quota_metrics_command_builder {
+        return new az_iot_hub_show_quota_metrics_command_builder("az iot hub show-quota-metrics");
     }
 
     /**
@@ -1357,8 +1331,8 @@ export class az_iot_hub implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_iot_hub_show_stats(): az_iot_hub_show_stats_command_builder {
-        return new az_iot_hub_show_stats_command_builder(this);
+    static az_iot_hub_show_stats(): az_iot_hub_show_stats_command_builder {
+        return new az_iot_hub_show_stats_command_builder("az iot hub show-stats");
     }
 
     /**
@@ -1392,8 +1366,8 @@ export class az_iot_hub implements ICommandParent<any> {
      *                   [--unit]
      * ```
      */
-    az_iot_hub_update(): az_iot_hub_update_command_builder {
-        return new az_iot_hub_update_command_builder(this);
+    static az_iot_hub_update(): az_iot_hub_update_command_builder {
+        return new az_iot_hub_update_command_builder("az iot hub update");
     }
 }
 
@@ -1422,7 +1396,7 @@ export class az_iot {
  * @param {string} subdomain Enter a unique URL. Your app will be accessible via https://<subdomain>.azureiotcentral.com/. Avoid special characters `-` instead, use lower case letters (a-z), numbers (0-9), and dashes (-).
  */
 class az_iot_central_app_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, subdomain: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, subdomain: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1500,7 +1474,7 @@ class az_iot_central_app_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_central_app_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1548,7 +1522,7 @@ class az_iot_central_app_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_central_app_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1585,7 +1559,7 @@ class az_iot_central_app_list_command_builder extends CommandBuilder {
  * @param {string} name IoT Central application name.
  */
 class az_iot_central_app_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -1633,7 +1607,7 @@ class az_iot_central_app_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_central_app_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1703,7 +1677,7 @@ class az_iot_central_app_update_command_builder extends CommandBuilder {
  * @param {'DeviceConnect' | 'EnrollmentRead' | 'EnrollmentWrite' | 'RegistrationStatusRead' | 'RegistrationStatusWrite' | 'ServiceConfig'} rights Access rights for the IoT provisioning service. Use space-separated list for multiple rights.
  */
 class az_iot_dps_access_policy_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accessPolicyName: string, dpsName: string, resourceGroup: string, rights: 'DeviceConnect' | 'EnrollmentRead' | 'EnrollmentWrite' | 'RegistrationStatusRead' | 'RegistrationStatusWrite' | 'ServiceConfig') {
+    constructor(commandPath: string, accessPolicyName: string, dpsName: string, resourceGroup: string, rights: 'DeviceConnect' | 'EnrollmentRead' | 'EnrollmentWrite' | 'RegistrationStatusRead' | 'RegistrationStatusWrite' | 'ServiceConfig') {
         super(commandParent);
         this.accessPolicyName(accessPolicyName)
         this.dpsName(dpsName)
@@ -1777,7 +1751,7 @@ class az_iot_dps_access_policy_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_dps_access_policy_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accessPolicyName: string, dpsName: string, resourceGroup: string) {
+    constructor(commandPath: string, accessPolicyName: string, dpsName: string, resourceGroup: string) {
         super(commandParent);
         this.accessPolicyName(accessPolicyName)
         this.dpsName(dpsName)
@@ -1830,7 +1804,7 @@ class az_iot_dps_access_policy_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_dps_access_policy_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, dpsName: string, resourceGroup: string) {
+    constructor(commandPath: string, dpsName: string, resourceGroup: string) {
         super(commandParent);
         this.dpsName(dpsName)
         this.resourceGroup(resourceGroup)
@@ -1878,7 +1852,7 @@ class az_iot_dps_access_policy_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_dps_access_policy_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accessPolicyName: string, dpsName: string, resourceGroup: string) {
+    constructor(commandPath: string, accessPolicyName: string, dpsName: string, resourceGroup: string) {
         super(commandParent);
         this.accessPolicyName(accessPolicyName)
         this.dpsName(dpsName)
@@ -1936,7 +1910,7 @@ class az_iot_dps_access_policy_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_dps_access_policy_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accessPolicyName: string, dpsName: string, resourceGroup: string) {
+    constructor(commandPath: string, accessPolicyName: string, dpsName: string, resourceGroup: string) {
         super(commandParent);
         this.accessPolicyName(accessPolicyName)
         this.dpsName(dpsName)
@@ -2010,7 +1984,7 @@ class az_iot_dps_access_policy_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_dps_certificate_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, certificateName: string, dpsName: string, path: string, resourceGroup: string) {
+    constructor(commandPath: string, certificateName: string, dpsName: string, path: string, resourceGroup: string) {
         super(commandParent);
         this.certificateName(certificateName)
         this.dpsName(dpsName)
@@ -2067,7 +2041,7 @@ class az_iot_dps_certificate_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_dps_certificate_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, certificateName: string, dpsName: string, etag: string, resourceGroup: string) {
+    constructor(commandPath: string, certificateName: string, dpsName: string, etag: string, resourceGroup: string) {
         super(commandParent);
         this.certificateName(certificateName)
         this.dpsName(dpsName)
@@ -2124,7 +2098,7 @@ class az_iot_dps_certificate_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_dps_certificate_generate_verification_code_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, certificateName: string, dpsName: string, etag: string, resourceGroup: string) {
+    constructor(commandPath: string, certificateName: string, dpsName: string, etag: string, resourceGroup: string) {
         super(commandParent);
         this.certificateName(certificateName)
         this.dpsName(dpsName)
@@ -2178,7 +2152,7 @@ class az_iot_dps_certificate_generate_verification_code_command_builder extends 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_dps_certificate_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, dpsName: string, resourceGroup: string) {
+    constructor(commandPath: string, dpsName: string, resourceGroup: string) {
         super(commandParent);
         this.dpsName(dpsName)
         this.resourceGroup(resourceGroup)
@@ -2226,7 +2200,7 @@ class az_iot_dps_certificate_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_dps_certificate_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, certificateName: string, dpsName: string, resourceGroup: string) {
+    constructor(commandPath: string, certificateName: string, dpsName: string, resourceGroup: string) {
         super(commandParent);
         this.certificateName(certificateName)
         this.dpsName(dpsName)
@@ -2284,7 +2258,7 @@ class az_iot_dps_certificate_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_dps_certificate_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, certificateName: string, dpsName: string, etag: string, path: string, resourceGroup: string) {
+    constructor(commandPath: string, certificateName: string, dpsName: string, etag: string, path: string, resourceGroup: string) {
         super(commandParent);
         this.certificateName(certificateName)
         this.dpsName(dpsName)
@@ -2350,7 +2324,7 @@ class az_iot_dps_certificate_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_dps_certificate_verify_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, certificateName: string, dpsName: string, etag: string, path: string, resourceGroup: string) {
+    constructor(commandPath: string, certificateName: string, dpsName: string, etag: string, path: string, resourceGroup: string) {
         super(commandParent);
         this.certificateName(certificateName)
         this.dpsName(dpsName)
@@ -2417,7 +2391,7 @@ class az_iot_dps_certificate_verify_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_dps_linked_hub_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, connectionString: string, dpsName: string, location: string, resourceGroup: string) {
+    constructor(commandPath: string, connectionString: string, dpsName: string, location: string, resourceGroup: string) {
         super(commandParent);
         this.connectionString(connectionString)
         this.dpsName(dpsName)
@@ -2491,7 +2465,7 @@ class az_iot_dps_linked_hub_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_dps_linked_hub_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, dpsName: string, linkedHub: string, resourceGroup: string) {
+    constructor(commandPath: string, dpsName: string, linkedHub: string, resourceGroup: string) {
         super(commandParent);
         this.dpsName(dpsName)
         this.linkedHub(linkedHub)
@@ -2544,7 +2518,7 @@ class az_iot_dps_linked_hub_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_dps_linked_hub_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, dpsName: string, resourceGroup: string) {
+    constructor(commandPath: string, dpsName: string, resourceGroup: string) {
         super(commandParent);
         this.dpsName(dpsName)
         this.resourceGroup(resourceGroup)
@@ -2592,7 +2566,7 @@ class az_iot_dps_linked_hub_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_dps_linked_hub_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, dpsName: string, linkedHub: string, resourceGroup: string) {
+    constructor(commandPath: string, dpsName: string, linkedHub: string, resourceGroup: string) {
         super(commandParent);
         this.dpsName(dpsName)
         this.linkedHub(linkedHub)
@@ -2649,7 +2623,7 @@ class az_iot_dps_linked_hub_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_dps_linked_hub_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, dpsName: string, linkedHub: string, resourceGroup: string) {
+    constructor(commandPath: string, dpsName: string, linkedHub: string, resourceGroup: string) {
         super(commandParent);
         this.dpsName(dpsName)
         this.linkedHub(linkedHub)
@@ -2716,7 +2690,7 @@ class az_iot_dps_linked_hub_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_dps_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2771,7 +2745,7 @@ class az_iot_dps_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_dps_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2811,7 +2785,7 @@ class az_iot_dps_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_dps_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2847,7 +2821,7 @@ class az_iot_dps_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_dps_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2898,7 +2872,7 @@ class az_iot_dps_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_dps_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2968,7 +2942,7 @@ class az_iot_dps_update_command_builder extends CommandBuilder {
  * @param {string} path The path to the file containing the certificate.
  */
 class az_iot_hub_certificate_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, hubName: string, name: string, path: string) {
+    constructor(commandPath: string, hubName: string, name: string, path: string) {
         super(commandParent);
         this.hubName(hubName)
         this.name(name)
@@ -3023,7 +2997,7 @@ class az_iot_hub_certificate_create_command_builder extends CommandBuilder {
  * @param {string} name A friendly name for the certificate.
  */
 class az_iot_hub_certificate_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, etag: string, name: string) {
+    constructor(commandPath: string, etag: string, name: string) {
         super(commandParent);
         this.etag(etag)
         this.name(name)
@@ -3083,7 +3057,7 @@ class az_iot_hub_certificate_delete_command_builder extends CommandBuilder {
  * @param {string} name A friendly name for the certificate.
  */
 class az_iot_hub_certificate_generate_verification_code_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, etag: string, name: string) {
+    constructor(commandPath: string, etag: string, name: string) {
         super(commandParent);
         this.etag(etag)
         this.name(name)
@@ -3139,7 +3113,7 @@ class az_iot_hub_certificate_generate_verification_code_command_builder extends 
  * ```
  */
 class az_iot_hub_certificate_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3190,7 +3164,7 @@ class az_iot_hub_certificate_list_command_builder extends CommandBuilder {
  * @param {string} name A friendly name for the certificate.
  */
 class az_iot_hub_certificate_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3251,7 +3225,7 @@ class az_iot_hub_certificate_show_command_builder extends CommandBuilder {
  * @param {string} path The path to the file containing the certificate.
  */
 class az_iot_hub_certificate_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, etag: string, name: string, path: string) {
+    constructor(commandPath: string, etag: string, name: string, path: string) {
         super(commandParent);
         this.etag(etag)
         this.name(name)
@@ -3320,7 +3294,7 @@ class az_iot_hub_certificate_update_command_builder extends CommandBuilder {
  * @param {string} path The path to the file containing the certificate.
  */
 class az_iot_hub_certificate_verify_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, etag: string, name: string, path: string) {
+    constructor(commandPath: string, etag: string, name: string, path: string) {
         super(commandParent);
         this.etag(etag)
         this.name(name)
@@ -3386,7 +3360,7 @@ class az_iot_hub_certificate_verify_command_builder extends CommandBuilder {
  * @param {string} name Event hub consumer group name.
  */
 class az_iot_hub_consumer_group_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, hubName: string, name: string) {
+    constructor(commandPath: string, hubName: string, name: string) {
         super(commandParent);
         this.hubName(hubName)
         this.name(name)
@@ -3437,7 +3411,7 @@ class az_iot_hub_consumer_group_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_consumer_group_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3492,7 +3466,7 @@ class az_iot_hub_consumer_group_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_consumer_group_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3548,7 +3522,7 @@ class az_iot_hub_consumer_group_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_consumer_group_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3608,7 +3582,7 @@ class az_iot_hub_consumer_group_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_devicestream_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3662,7 +3636,7 @@ class az_iot_hub_devicestream_show_command_builder extends CommandBuilder {
  * @param {string} value The enrichment's value.
  */
 class az_iot_hub_message_enrichment_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, endpoints: string, key: string, name: string, value: string) {
+    constructor(commandPath: string, endpoints: string, key: string, name: string, value: string) {
         super(commandParent);
         this.endpoints(endpoints)
         this.key(key)
@@ -3722,7 +3696,7 @@ class az_iot_hub_message_enrichment_create_command_builder extends CommandBuilde
  * @param {string} key The enrichment's key.
  */
 class az_iot_hub_message_enrichment_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, key: string) {
+    constructor(commandPath: string, key: string) {
         super(commandParent);
         this.key(key)
     }
@@ -3771,7 +3745,7 @@ class az_iot_hub_message_enrichment_delete_command_builder extends CommandBuilde
  * ```
  */
 class az_iot_hub_message_enrichment_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3825,7 +3799,7 @@ class az_iot_hub_message_enrichment_list_command_builder extends CommandBuilder 
  * @param {string} value The enrichment's value.
  */
 class az_iot_hub_message_enrichment_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, endpoints: string, key: string, value: string) {
+    constructor(commandPath: string, endpoints: string, key: string, value: string) {
         super(commandParent);
         this.endpoints(endpoints)
         this.key(key)
@@ -3892,7 +3866,7 @@ class az_iot_hub_message_enrichment_update_command_builder extends CommandBuilde
  * @param {string} permissions Permissions of shared access policy. Use space-separated list for multiple permissions. Possible values: RegistryRead, RegistryWrite, ServiceConnect, DeviceConnect.
  */
 class az_iot_hub_policy_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, hubName: string, name: string, permissions: string) {
+    constructor(commandPath: string, hubName: string, name: string, permissions: string) {
         super(commandParent);
         this.hubName(hubName)
         this.name(name)
@@ -3943,7 +3917,7 @@ class az_iot_hub_policy_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_policy_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3991,7 +3965,7 @@ class az_iot_hub_policy_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_policy_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4043,7 +4017,7 @@ class az_iot_hub_policy_list_command_builder extends CommandBuilder {
  * @param {'primary' | 'secondary' | 'swap'} renewKey Regenerate keys.
  */
 class az_iot_hub_policy_renew_key_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, renewKey: 'primary' | 'secondary' | 'swap') {
+    constructor(commandPath: string, renewKey: 'primary' | 'secondary' | 'swap') {
         super(commandParent);
         this.renewKey(renewKey)
     }
@@ -4105,7 +4079,7 @@ class az_iot_hub_policy_renew_key_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_policy_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4167,7 +4141,7 @@ class az_iot_hub_policy_show_command_builder extends CommandBuilder {
  * @param {'devicejoblifecycleevents' | 'devicelifecycleevents' | 'devicemessages' | 'digitaltwinchangeevents' | 'invalid' | 'twinchangeevents'} sourceType Source of the route.
  */
 class az_iot_hub_route_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, endpointName: string, hubName: string, routeName: string, sourceType: 'devicejoblifecycleevents' | 'devicelifecycleevents' | 'devicemessages' | 'digitaltwinchangeevents' | 'invalid' | 'twinchangeevents') {
+    constructor(commandPath: string, endpointName: string, hubName: string, routeName: string, sourceType: 'devicejoblifecycleevents' | 'devicelifecycleevents' | 'devicemessages' | 'digitaltwinchangeevents' | 'invalid' | 'twinchangeevents') {
         super(commandParent);
         this.endpointName(endpointName)
         this.hubName(hubName)
@@ -4238,7 +4212,7 @@ class az_iot_hub_route_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_route_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4293,7 +4267,7 @@ class az_iot_hub_route_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_route_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4350,7 +4324,7 @@ class az_iot_hub_route_list_command_builder extends CommandBuilder {
  * @param {string} routeName Name of the Route.
  */
 class az_iot_hub_route_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, routeName: string) {
+    constructor(commandPath: string, routeName: string) {
         super(commandParent);
         this.routeName(routeName)
     }
@@ -4409,7 +4383,7 @@ class az_iot_hub_route_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_route_test_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4487,7 +4461,7 @@ class az_iot_hub_route_test_command_builder extends CommandBuilder {
  * @param {string} routeName Name of the Route.
  */
 class az_iot_hub_route_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, routeName: string) {
+    constructor(commandPath: string, routeName: string) {
         super(commandParent);
         this.routeName(routeName)
     }
@@ -4577,7 +4551,7 @@ class az_iot_hub_route_update_command_builder extends CommandBuilder {
  * @param {string} hubName IoT Hub name.
  */
 class az_iot_hub_routing_endpoint_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, endpointName: string, endpointResourceGroup: string, endpointSubscriptionId: string, endpointType: 'azurestoragecontainer' | 'eventhub' | 'servicebusqueue' | 'servicebustopic', hubName: string) {
+    constructor(commandPath: string, endpointName: string, endpointResourceGroup: string, endpointSubscriptionId: string, endpointType: 'azurestoragecontainer' | 'eventhub' | 'servicebusqueue' | 'servicebustopic', hubName: string) {
         super(commandParent);
         this.endpointName(endpointName)
         this.endpointResourceGroup(endpointResourceGroup)
@@ -4697,7 +4671,7 @@ class az_iot_hub_routing_endpoint_create_command_builder extends CommandBuilder 
  * ```
  */
 class az_iot_hub_routing_endpoint_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4752,7 +4726,7 @@ class az_iot_hub_routing_endpoint_delete_command_builder extends CommandBuilder 
  * ```
  */
 class az_iot_hub_routing_endpoint_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4809,7 +4783,7 @@ class az_iot_hub_routing_endpoint_list_command_builder extends CommandBuilder {
  * @param {string} endpointName Name of the Routing Endpoint.
  */
 class az_iot_hub_routing_endpoint_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, endpointName: string) {
+    constructor(commandPath: string, endpointName: string) {
         super(commandParent);
         this.endpointName(endpointName)
     }
@@ -4884,7 +4858,7 @@ class az_iot_hub_routing_endpoint_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_iot_hub_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -5035,7 +5009,7 @@ class az_iot_hub_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5075,7 +5049,7 @@ class az_iot_hub_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5110,7 +5084,7 @@ class az_iot_hub_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_list_skus_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5152,7 +5126,7 @@ class az_iot_hub_list_skus_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_manual_failover_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5200,7 +5174,7 @@ class az_iot_hub_manual_failover_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5250,7 +5224,7 @@ class az_iot_hub_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_show_connection_string_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5309,7 +5283,7 @@ class az_iot_hub_show_connection_string_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_show_quota_metrics_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5350,7 +5324,7 @@ class az_iot_hub_show_quota_metrics_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_show_stats_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5411,7 +5385,7 @@ class az_iot_hub_show_stats_command_builder extends CommandBuilder {
  * ```
  */
 class az_iot_hub_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

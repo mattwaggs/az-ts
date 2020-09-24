@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Universal Packages. */
-export class az_artifacts_universal implements ICommandParent<any> {
-    commandPath = "az artifacts universal";
-
+export class az_artifacts_universal {
     /**
      * Download a package.
      *
@@ -26,8 +24,8 @@ export class az_artifacts_universal implements ICommandParent<any> {
      * @param {string} path Directory to place the package contents.
      * @param {string} version Version of the package, e.g. 1.0.0.
      */
-    az_artifacts_universal_download(feed: string, name: string, path: string, version: string): az_artifacts_universal_download_command_builder {
-        return new az_artifacts_universal_download_command_builder(this, feed, name, path, version);
+    static az_artifacts_universal_download(feed: string, name: string, path: string, version: string): az_artifacts_universal_download_command_builder {
+        return new az_artifacts_universal_download_command_builder("az artifacts universal download", feed, name, path, version);
     }
 
     /**
@@ -52,8 +50,8 @@ export class az_artifacts_universal implements ICommandParent<any> {
      * @param {string} path Directory containing the package contents.
      * @param {string} version Version of the package, e.g. '1.0.0'.
      */
-    az_artifacts_universal_publish(feed: string, name: string, path: string, version: string): az_artifacts_universal_publish_command_builder {
-        return new az_artifacts_universal_publish_command_builder(this, feed, name, path, version);
+    static az_artifacts_universal_publish(feed: string, name: string, path: string, version: string): az_artifacts_universal_publish_command_builder {
+        return new az_artifacts_universal_publish_command_builder("az artifacts universal publish", feed, name, path, version);
     }
 }
 
@@ -84,7 +82,7 @@ export class az_artifacts {
  * @param {string} version Version of the package, e.g. 1.0.0.
  */
 class az_artifacts_universal_download_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, feed: string, name: string, path: string, version: string) {
+    constructor(commandPath: string, feed: string, name: string, path: string, version: string) {
         super(commandParent);
         this.feed(feed)
         this.name(name)
@@ -176,7 +174,7 @@ class az_artifacts_universal_download_command_builder extends CommandBuilder {
  * @param {string} version Version of the package, e.g. '1.0.0'.
  */
 class az_artifacts_universal_publish_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, feed: string, name: string, path: string, version: string) {
+    constructor(commandPath: string, feed: string, name: string, path: string, version: string) {
         super(commandParent);
         this.feed(feed)
         this.name(name)

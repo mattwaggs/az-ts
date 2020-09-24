@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage and update CLI extensions. */
-export class az_extension implements ICommandParent<any> {
-    commandPath = "az extension";
-
+export class az_extension {
     /**
      * Add an extension.
      *
@@ -19,8 +17,8 @@ export class az_extension implements ICommandParent<any> {
      *                  [--yes]
      * ```
      */
-    az_extension_add(): az_extension_add_command_builder {
-        return new az_extension_add_command_builder(this);
+    static az_extension_add(): az_extension_add_command_builder {
+        return new az_extension_add_command_builder("az extension add");
     }
 
     /**
@@ -31,8 +29,8 @@ export class az_extension implements ICommandParent<any> {
      * az extension list [--query-examples]
      * ```
      */
-    az_extension_list(): az_extension_list_command_builder {
-        return new az_extension_list_command_builder(this);
+    static az_extension_list(): az_extension_list_command_builder {
+        return new az_extension_list_command_builder("az extension list");
     }
 
     /**
@@ -43,8 +41,8 @@ export class az_extension implements ICommandParent<any> {
      * az extension list-available [--show-details]
      * ```
      */
-    az_extension_list_available(): az_extension_list_available_command_builder {
-        return new az_extension_list_available_command_builder(this);
+    static az_extension_list_available(): az_extension_list_available_command_builder {
+        return new az_extension_list_available_command_builder("az extension list-available");
     }
 
     /**
@@ -57,8 +55,8 @@ export class az_extension implements ICommandParent<any> {
      *
      * @param {string} name Name of extension.
      */
-    az_extension_list_versions(name: string): az_extension_list_versions_command_builder {
-        return new az_extension_list_versions_command_builder(this, name);
+    static az_extension_list_versions(name: string): az_extension_list_versions_command_builder {
+        return new az_extension_list_versions_command_builder("az extension list-versions", name);
     }
 
     /**
@@ -71,8 +69,8 @@ export class az_extension implements ICommandParent<any> {
      *
      * @param {string} name Name of extension.
      */
-    az_extension_remove(name: string): az_extension_remove_command_builder {
-        return new az_extension_remove_command_builder(this, name);
+    static az_extension_remove(name: string): az_extension_remove_command_builder {
+        return new az_extension_remove_command_builder("az extension remove", name);
     }
 
     /**
@@ -86,8 +84,8 @@ export class az_extension implements ICommandParent<any> {
      *
      * @param {string} name Name of extension.
      */
-    az_extension_show(name: string): az_extension_show_command_builder {
-        return new az_extension_show_command_builder(this, name);
+    static az_extension_show(name: string): az_extension_show_command_builder {
+        return new az_extension_show_command_builder("az extension show", name);
     }
 
     /**
@@ -102,8 +100,8 @@ export class az_extension implements ICommandParent<any> {
      *
      * @param {string} name Name of extension.
      */
-    az_extension_update(name: string): az_extension_update_command_builder {
-        return new az_extension_update_command_builder(this, name);
+    static az_extension_update(name: string): az_extension_update_command_builder {
+        return new az_extension_update_command_builder("az extension update", name);
     }
 }
 
@@ -123,7 +121,7 @@ export class az_extension implements ICommandParent<any> {
  * ```
  */
 class az_extension_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -185,7 +183,7 @@ class az_extension_add_command_builder extends CommandBuilder {
  * ```
  */
 class az_extension_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -205,7 +203,7 @@ class az_extension_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_extension_list_available_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -227,7 +225,7 @@ class az_extension_list_available_command_builder extends CommandBuilder {
  * @param {string} name Name of extension.
  */
 class az_extension_list_versions_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -250,7 +248,7 @@ class az_extension_list_versions_command_builder extends CommandBuilder {
  * @param {string} name Name of extension.
  */
 class az_extension_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -274,7 +272,7 @@ class az_extension_remove_command_builder extends CommandBuilder {
  * @param {string} name Name of extension.
  */
 class az_extension_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -305,7 +303,7 @@ class az_extension_show_command_builder extends CommandBuilder {
  * @param {string} name Name of extension.
  */
 class az_extension_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }

@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Azure Advisor configuration. */
-export class az_advisor_configuration implements ICommandParent<any> {
-    commandPath = "az advisor configuration";
-
+export class az_advisor_configuration {
     /**
      * List Azure Advisor configuration for the entire subscription.
      *
@@ -13,8 +11,8 @@ export class az_advisor_configuration implements ICommandParent<any> {
      *                               [--subscription]
      * ```
      */
-    az_advisor_configuration_list(): az_advisor_configuration_list_command_builder {
-        return new az_advisor_configuration_list_command_builder(this);
+    static az_advisor_configuration_list(): az_advisor_configuration_list_command_builder {
+        return new az_advisor_configuration_list_command_builder("az advisor configuration list");
     }
 
     /**
@@ -27,8 +25,8 @@ export class az_advisor_configuration implements ICommandParent<any> {
      *                               [--subscription]
      * ```
      */
-    az_advisor_configuration_show(): az_advisor_configuration_show_command_builder {
-        return new az_advisor_configuration_show_command_builder(this);
+    static az_advisor_configuration_show(): az_advisor_configuration_show_command_builder {
+        return new az_advisor_configuration_show_command_builder("az advisor configuration show");
     }
 
     /**
@@ -47,15 +45,13 @@ export class az_advisor_configuration implements ICommandParent<any> {
      *                                 [--subscription]
      * ```
      */
-    az_advisor_configuration_update(): az_advisor_configuration_update_command_builder {
-        return new az_advisor_configuration_update_command_builder(this);
+    static az_advisor_configuration_update(): az_advisor_configuration_update_command_builder {
+        return new az_advisor_configuration_update_command_builder("az advisor configuration update");
     }
 }
 
 /** Review Azure Advisor recommendations. */
-export class az_advisor_recommendation implements ICommandParent<any> {
-    commandPath = "az advisor recommendation";
-
+export class az_advisor_recommendation {
     /**
      * Disable Azure Advisor recommendations.
      *
@@ -68,8 +64,8 @@ export class az_advisor_recommendation implements ICommandParent<any> {
      *                                   [--subscription]
      * ```
      */
-    az_advisor_recommendation_disable(): az_advisor_recommendation_disable_command_builder {
-        return new az_advisor_recommendation_disable_command_builder(this);
+    static az_advisor_recommendation_disable(): az_advisor_recommendation_disable_command_builder {
+        return new az_advisor_recommendation_disable_command_builder("az advisor recommendation disable");
     }
 
     /**
@@ -83,8 +79,8 @@ export class az_advisor_recommendation implements ICommandParent<any> {
      *                                  [--subscription]
      * ```
      */
-    az_advisor_recommendation_enable(): az_advisor_recommendation_enable_command_builder {
-        return new az_advisor_recommendation_enable_command_builder(this);
+    static az_advisor_recommendation_enable(): az_advisor_recommendation_enable_command_builder {
+        return new az_advisor_recommendation_enable_command_builder("az advisor recommendation enable");
     }
 
     /**
@@ -100,8 +96,8 @@ export class az_advisor_recommendation implements ICommandParent<any> {
      *                                [--subscription]
      * ```
      */
-    az_advisor_recommendation_list(): az_advisor_recommendation_list_command_builder {
-        return new az_advisor_recommendation_list_command_builder(this);
+    static az_advisor_recommendation_list(): az_advisor_recommendation_list_command_builder {
+        return new az_advisor_recommendation_list_command_builder("az advisor recommendation list");
     }
 }
 
@@ -119,7 +115,7 @@ export class az_advisor {
  * ```
  */
 class az_advisor_configuration_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -147,7 +143,7 @@ class az_advisor_configuration_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_advisor_configuration_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -187,7 +183,7 @@ class az_advisor_configuration_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_advisor_configuration_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -259,7 +255,7 @@ class az_advisor_configuration_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_advisor_recommendation_disable_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -306,7 +302,7 @@ class az_advisor_recommendation_disable_command_builder extends CommandBuilder {
  * ```
  */
 class az_advisor_recommendation_enable_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -349,7 +345,7 @@ class az_advisor_recommendation_enable_command_builder extends CommandBuilder {
  * ```
  */
 class az_advisor_recommendation_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

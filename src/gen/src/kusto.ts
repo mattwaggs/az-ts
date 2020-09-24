@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Azure Kusto clusters. */
-export class az_kusto_cluster implements ICommandParent<any> {
-    commandPath = "az kusto cluster";
-
+export class az_kusto_cluster {
     /**
      * Create a Kusto cluster.
      *
@@ -22,8 +20,8 @@ export class az_kusto_cluster implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'Dev(No SLA)_Standard_D11_v2' | 'Dev(No SLA)_Standard_E2a_v4' | 'Standard_D11_v2' | 'Standard_D12_v2' | 'Standard_D13_v2' | 'Standard_D14_v2' | 'Standard_DS13_v2+1TB_PS' | 'Standard_DS13_v2+2TB_PS' | 'Standard_DS14_v2+3TB_PS' | 'Standard_DS14_v2+4TB_PS' | 'Standard_E16a_v4' | 'Standard_E16as_v4+3TB_PS' | 'Standard_E16as_v4+4TB_PS' | 'Standard_E2a_v4' | 'Standard_E4a_v4' | 'Standard_E8a_v4' | 'Standard_E8as_v4+1TB_PS' | 'Standard_E8as_v4+2TB_PS' | 'Standard_L16s' | 'Standard_L4s' | 'Standard_L8s'} sku The name of the sku.
      */
-    az_kusto_cluster_create(name: string, resourceGroup: string, sku: 'Dev(No SLA)_Standard_D11_v2' | 'Dev(No SLA)_Standard_E2a_v4' | 'Standard_D11_v2' | 'Standard_D12_v2' | 'Standard_D13_v2' | 'Standard_D14_v2' | 'Standard_DS13_v2+1TB_PS' | 'Standard_DS13_v2+2TB_PS' | 'Standard_DS14_v2+3TB_PS' | 'Standard_DS14_v2+4TB_PS' | 'Standard_E16a_v4' | 'Standard_E16as_v4+3TB_PS' | 'Standard_E16as_v4+4TB_PS' | 'Standard_E2a_v4' | 'Standard_E4a_v4' | 'Standard_E8a_v4' | 'Standard_E8as_v4+1TB_PS' | 'Standard_E8as_v4+2TB_PS' | 'Standard_L16s' | 'Standard_L4s' | 'Standard_L8s'): az_kusto_cluster_create_command_builder {
-        return new az_kusto_cluster_create_command_builder(this, name, resourceGroup, sku);
+    static az_kusto_cluster_create(name: string, resourceGroup: string, sku: 'Dev(No SLA)_Standard_D11_v2' | 'Dev(No SLA)_Standard_E2a_v4' | 'Standard_D11_v2' | 'Standard_D12_v2' | 'Standard_D13_v2' | 'Standard_D14_v2' | 'Standard_DS13_v2+1TB_PS' | 'Standard_DS13_v2+2TB_PS' | 'Standard_DS14_v2+3TB_PS' | 'Standard_DS14_v2+4TB_PS' | 'Standard_E16a_v4' | 'Standard_E16as_v4+3TB_PS' | 'Standard_E16as_v4+4TB_PS' | 'Standard_E2a_v4' | 'Standard_E4a_v4' | 'Standard_E8a_v4' | 'Standard_E8as_v4+1TB_PS' | 'Standard_E8as_v4+2TB_PS' | 'Standard_L16s' | 'Standard_L4s' | 'Standard_L8s'): az_kusto_cluster_create_command_builder {
+        return new az_kusto_cluster_create_command_builder("az kusto cluster create", name, resourceGroup, sku);
     }
 
     /**
@@ -38,8 +36,8 @@ export class az_kusto_cluster implements ICommandParent<any> {
      *                         [--yes]
      * ```
      */
-    az_kusto_cluster_delete(): az_kusto_cluster_delete_command_builder {
-        return new az_kusto_cluster_delete_command_builder(this);
+    static az_kusto_cluster_delete(): az_kusto_cluster_delete_command_builder {
+        return new az_kusto_cluster_delete_command_builder("az kusto cluster delete");
     }
 
     /**
@@ -54,8 +52,8 @@ export class az_kusto_cluster implements ICommandParent<any> {
      *
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_kusto_cluster_list(resourceGroup: string): az_kusto_cluster_list_command_builder {
-        return new az_kusto_cluster_list_command_builder(this, resourceGroup);
+    static az_kusto_cluster_list(resourceGroup: string): az_kusto_cluster_list_command_builder {
+        return new az_kusto_cluster_list_command_builder("az kusto cluster list", resourceGroup);
     }
 
     /**
@@ -70,8 +68,8 @@ export class az_kusto_cluster implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_kusto_cluster_show(): az_kusto_cluster_show_command_builder {
-        return new az_kusto_cluster_show_command_builder(this);
+    static az_kusto_cluster_show(): az_kusto_cluster_show_command_builder {
+        return new az_kusto_cluster_show_command_builder("az kusto cluster show");
     }
 
     /**
@@ -86,8 +84,8 @@ export class az_kusto_cluster implements ICommandParent<any> {
      *                        [--subscription]
      * ```
      */
-    az_kusto_cluster_start(): az_kusto_cluster_start_command_builder {
-        return new az_kusto_cluster_start_command_builder(this);
+    static az_kusto_cluster_start(): az_kusto_cluster_start_command_builder {
+        return new az_kusto_cluster_start_command_builder("az kusto cluster start");
     }
 
     /**
@@ -102,8 +100,8 @@ export class az_kusto_cluster implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_kusto_cluster_stop(): az_kusto_cluster_stop_command_builder {
-        return new az_kusto_cluster_stop_command_builder(this);
+    static az_kusto_cluster_stop(): az_kusto_cluster_stop_command_builder {
+        return new az_kusto_cluster_stop_command_builder("az kusto cluster stop");
     }
 
     /**
@@ -123,8 +121,8 @@ export class az_kusto_cluster implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_kusto_cluster_update(): az_kusto_cluster_update_command_builder {
-        return new az_kusto_cluster_update_command_builder(this);
+    static az_kusto_cluster_update(): az_kusto_cluster_update_command_builder {
+        return new az_kusto_cluster_update_command_builder("az kusto cluster update");
     }
 
     /**
@@ -145,15 +143,13 @@ export class az_kusto_cluster implements ICommandParent<any> {
      *                       [--updated]
      * ```
      */
-    az_kusto_cluster_wait(): az_kusto_cluster_wait_command_builder {
-        return new az_kusto_cluster_wait_command_builder(this);
+    static az_kusto_cluster_wait(): az_kusto_cluster_wait_command_builder {
+        return new az_kusto_cluster_wait_command_builder("az kusto cluster wait");
     }
 }
 
 /** Manage Azure Kusto databases. */
-export class az_kusto_database implements ICommandParent<any> {
-    commandPath = "az kusto database";
-
+export class az_kusto_database {
     /**
      * Create a Kusto database.
      *
@@ -172,8 +168,8 @@ export class az_kusto_database implements ICommandParent<any> {
      * @param {string} name The name of the database.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_kusto_database_create(clusterName: string, name: string, resourceGroup: string): az_kusto_database_create_command_builder {
-        return new az_kusto_database_create_command_builder(this, clusterName, name, resourceGroup);
+    static az_kusto_database_create(clusterName: string, name: string, resourceGroup: string): az_kusto_database_create_command_builder {
+        return new az_kusto_database_create_command_builder("az kusto database create", clusterName, name, resourceGroup);
     }
 
     /**
@@ -189,8 +185,8 @@ export class az_kusto_database implements ICommandParent<any> {
      *                          [--yes]
      * ```
      */
-    az_kusto_database_delete(): az_kusto_database_delete_command_builder {
-        return new az_kusto_database_delete_command_builder(this);
+    static az_kusto_database_delete(): az_kusto_database_delete_command_builder {
+        return new az_kusto_database_delete_command_builder("az kusto database delete");
     }
 
     /**
@@ -207,8 +203,8 @@ export class az_kusto_database implements ICommandParent<any> {
      * @param {string} clusterName The name of the cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_kusto_database_list(clusterName: string, resourceGroup: string): az_kusto_database_list_command_builder {
-        return new az_kusto_database_list_command_builder(this, clusterName, resourceGroup);
+    static az_kusto_database_list(clusterName: string, resourceGroup: string): az_kusto_database_list_command_builder {
+        return new az_kusto_database_list_command_builder("az kusto database list", clusterName, resourceGroup);
     }
 
     /**
@@ -224,8 +220,8 @@ export class az_kusto_database implements ICommandParent<any> {
      *                        [--subscription]
      * ```
      */
-    az_kusto_database_show(): az_kusto_database_show_command_builder {
-        return new az_kusto_database_show_command_builder(this);
+    static az_kusto_database_show(): az_kusto_database_show_command_builder {
+        return new az_kusto_database_show_command_builder("az kusto database show");
     }
 
     /**
@@ -249,8 +245,8 @@ export class az_kusto_database implements ICommandParent<any> {
      *
      * @param {string} softDeletePeriod Amount of time that data should be kept so it is available to query. Duration in ISO8601 format (for example, 100 days would be P100D).
      */
-    az_kusto_database_update(softDeletePeriod: string): az_kusto_database_update_command_builder {
-        return new az_kusto_database_update_command_builder(this, softDeletePeriod);
+    static az_kusto_database_update(softDeletePeriod: string): az_kusto_database_update_command_builder {
+        return new az_kusto_database_update_command_builder("az kusto database update", softDeletePeriod);
     }
 
     /**
@@ -272,8 +268,8 @@ export class az_kusto_database implements ICommandParent<any> {
      *                        [--updated]
      * ```
      */
-    az_kusto_database_wait(): az_kusto_database_wait_command_builder {
-        return new az_kusto_database_wait_command_builder(this);
+    static az_kusto_database_wait(): az_kusto_database_wait_command_builder {
+        return new az_kusto_database_wait_command_builder("az kusto database wait");
     }
 }
 
@@ -300,7 +296,7 @@ export class az_kusto {
  * @param {'Dev(No SLA)_Standard_D11_v2' | 'Dev(No SLA)_Standard_E2a_v4' | 'Standard_D11_v2' | 'Standard_D12_v2' | 'Standard_D13_v2' | 'Standard_D14_v2' | 'Standard_DS13_v2+1TB_PS' | 'Standard_DS13_v2+2TB_PS' | 'Standard_DS14_v2+3TB_PS' | 'Standard_DS14_v2+4TB_PS' | 'Standard_E16a_v4' | 'Standard_E16as_v4+3TB_PS' | 'Standard_E16as_v4+4TB_PS' | 'Standard_E2a_v4' | 'Standard_E4a_v4' | 'Standard_E8a_v4' | 'Standard_E8as_v4+1TB_PS' | 'Standard_E8as_v4+2TB_PS' | 'Standard_L16s' | 'Standard_L4s' | 'Standard_L8s'} sku The name of the sku.
  */
 class az_kusto_cluster_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, sku: 'Dev(No SLA)_Standard_D11_v2' | 'Dev(No SLA)_Standard_E2a_v4' | 'Standard_D11_v2' | 'Standard_D12_v2' | 'Standard_D13_v2' | 'Standard_D14_v2' | 'Standard_DS13_v2+1TB_PS' | 'Standard_DS13_v2+2TB_PS' | 'Standard_DS14_v2+3TB_PS' | 'Standard_DS14_v2+4TB_PS' | 'Standard_E16a_v4' | 'Standard_E16as_v4+3TB_PS' | 'Standard_E16as_v4+4TB_PS' | 'Standard_E2a_v4' | 'Standard_E4a_v4' | 'Standard_E8a_v4' | 'Standard_E8as_v4+1TB_PS' | 'Standard_E8as_v4+2TB_PS' | 'Standard_L16s' | 'Standard_L4s' | 'Standard_L8s') {
+    constructor(commandPath: string, name: string, resourceGroup: string, sku: 'Dev(No SLA)_Standard_D11_v2' | 'Dev(No SLA)_Standard_E2a_v4' | 'Standard_D11_v2' | 'Standard_D12_v2' | 'Standard_D13_v2' | 'Standard_D14_v2' | 'Standard_DS13_v2+1TB_PS' | 'Standard_DS13_v2+2TB_PS' | 'Standard_DS14_v2+3TB_PS' | 'Standard_DS14_v2+4TB_PS' | 'Standard_E16a_v4' | 'Standard_E16as_v4+3TB_PS' | 'Standard_E16as_v4+4TB_PS' | 'Standard_E2a_v4' | 'Standard_E4a_v4' | 'Standard_E8a_v4' | 'Standard_E8as_v4+1TB_PS' | 'Standard_E8as_v4+2TB_PS' | 'Standard_L16s' | 'Standard_L4s' | 'Standard_L8s') {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -363,7 +359,7 @@ class az_kusto_cluster_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_kusto_cluster_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -411,7 +407,7 @@ class az_kusto_cluster_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_kusto_cluster_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string) {
+    constructor(commandPath: string, resourceGroup: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
     }
@@ -448,7 +444,7 @@ class az_kusto_cluster_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_kusto_cluster_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -496,7 +492,7 @@ class az_kusto_cluster_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_kusto_cluster_start_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -544,7 +540,7 @@ class az_kusto_cluster_start_command_builder extends CommandBuilder {
  * ```
  */
 class az_kusto_cluster_stop_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -597,7 +593,7 @@ class az_kusto_cluster_stop_command_builder extends CommandBuilder {
  * ```
  */
 class az_kusto_cluster_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -681,7 +677,7 @@ class az_kusto_cluster_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_kusto_cluster_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -771,7 +767,7 @@ class az_kusto_cluster_wait_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_kusto_database_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, clusterName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.clusterName(clusterName)
         this.name(name)
@@ -835,7 +831,7 @@ class az_kusto_database_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_kusto_database_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -891,7 +887,7 @@ class az_kusto_database_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_kusto_database_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, clusterName: string, resourceGroup: string) {
+    constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandParent);
         this.clusterName(clusterName)
         this.resourceGroup(resourceGroup)
@@ -936,7 +932,7 @@ class az_kusto_database_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_kusto_database_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -999,7 +995,7 @@ class az_kusto_database_show_command_builder extends CommandBuilder {
  * @param {string} softDeletePeriod Amount of time that data should be kept so it is available to query. Duration in ISO8601 format (for example, 100 days would be P100D).
  */
 class az_kusto_database_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, softDeletePeriod: string) {
+    constructor(commandPath: string, softDeletePeriod: string) {
         super(commandParent);
         this.softDeletePeriod(softDeletePeriod)
     }
@@ -1097,7 +1093,7 @@ class az_kusto_database_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_kusto_database_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

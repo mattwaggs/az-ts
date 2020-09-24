@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage parameter persistence. */
-export class az_config_param_persist implements ICommandParent<any> {
-    commandPath = "az config param-persist";
-
+export class az_config_param_persist {
     /**
      * Delete parameter persistence data.
      *
@@ -16,8 +14,8 @@ export class az_config_param_persist implements ICommandParent<any> {
      *                                [<NAME>]
      * ```
      */
-    az_config_param_persist_delete(): az_config_param_persist_delete_command_builder {
-        return new az_config_param_persist_delete_command_builder(this);
+    static az_config_param_persist_delete(): az_config_param_persist_delete_command_builder {
+        return new az_config_param_persist_delete_command_builder("az config param-persist delete");
     }
 
     /**
@@ -28,8 +26,8 @@ export class az_config_param_persist implements ICommandParent<any> {
      * az config param-persist off
      * ```
      */
-    az_config_param_persist_off(): az_config_param_persist_off_command_builder {
-        return new az_config_param_persist_off_command_builder(this);
+    static az_config_param_persist_off(): az_config_param_persist_off_command_builder {
+        return new az_config_param_persist_off_command_builder("az config param-persist off");
     }
 
     /**
@@ -40,8 +38,8 @@ export class az_config_param_persist implements ICommandParent<any> {
      * az config param-persist on
      * ```
      */
-    az_config_param_persist_on(): az_config_param_persist_on_command_builder {
-        return new az_config_param_persist_on_command_builder(this);
+    static az_config_param_persist_on(): az_config_param_persist_on_command_builder {
+        return new az_config_param_persist_on_command_builder("az config param-persist on");
     }
 
     /**
@@ -53,15 +51,13 @@ export class az_config_param_persist implements ICommandParent<any> {
      *                              [<NAME>]
      * ```
      */
-    az_config_param_persist_show(): az_config_param_persist_show_command_builder {
-        return new az_config_param_persist_show_command_builder(this);
+    static az_config_param_persist_show(): az_config_param_persist_show_command_builder {
+        return new az_config_param_persist_show_command_builder("az config param-persist show");
     }
 }
 
 /** Manage Azure CLI configuration. */
-export class az_config implements ICommandParent<any> {
-    commandPath = "az config";
-
+export class az_config {
     /**
      * Get a configuration.
      *
@@ -71,8 +67,8 @@ export class az_config implements ICommandParent<any> {
      *               [<KEY>]
      * ```
      */
-    az_config_get(): az_config_get_command_builder {
-        return new az_config_get_command_builder(this);
+    static az_config_get(): az_config_get_command_builder {
+        return new az_config_get_command_builder("az config get");
     }
 
     /**
@@ -84,8 +80,8 @@ export class az_config implements ICommandParent<any> {
      *               [<KEY_VALUE>]
      * ```
      */
-    az_config_set(): az_config_set_command_builder {
-        return new az_config_set_command_builder(this);
+    static az_config_set(): az_config_set_command_builder {
+        return new az_config_set_command_builder("az config set");
     }
 
     /**
@@ -97,8 +93,8 @@ export class az_config implements ICommandParent<any> {
      *                 [<KEY>]
      * ```
      */
-    az_config_unset(): az_config_unset_command_builder {
-        return new az_config_unset_command_builder(this);
+    static az_config_unset(): az_config_unset_command_builder {
+        return new az_config_unset_command_builder("az config unset");
     }
 }
 
@@ -115,7 +111,7 @@ export class az_config implements ICommandParent<any> {
  * ```
  */
 class az_config_param_persist_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -159,7 +155,7 @@ class az_config_param_persist_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_config_param_persist_off_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 }
@@ -173,7 +169,7 @@ class az_config_param_persist_off_command_builder extends CommandBuilder {
  * ```
  */
 class az_config_param_persist_on_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 }
@@ -188,7 +184,7 @@ class az_config_param_persist_on_command_builder extends CommandBuilder {
  * ```
  */
 class az_config_param_persist_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -215,7 +211,7 @@ class az_config_param_persist_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_config_get_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -242,7 +238,7 @@ class az_config_get_command_builder extends CommandBuilder {
  * ```
  */
 class az_config_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -269,7 +265,7 @@ class az_config_set_command_builder extends CommandBuilder {
  * ```
  */
 class az_config_unset_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

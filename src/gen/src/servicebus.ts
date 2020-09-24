@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Azure Authorization Rule keys for Service Bus Namespace. */
-export class az_servicebus_georecovery_alias_authorization_rule_keys implements ICommandParent<any> {
-    commandPath = "az servicebus georecovery-alias authorization-rule keys";
-
+export class az_servicebus_georecovery_alias_authorization_rule_keys {
     /**
      * List the keys and connection strings of Authorization Rule for the Service Bus Namespace.
      *
@@ -22,15 +20,13 @@ export class az_servicebus_georecovery_alias_authorization_rule_keys implements 
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_servicebus_georecovery_alias_authorization_rule_keys_list(alias: string, name: string, namespaceName: string, resourceGroup: string): az_servicebus_georecovery_alias_authorization_rule_keys_list_command_builder {
-        return new az_servicebus_georecovery_alias_authorization_rule_keys_list_command_builder(this, alias, name, namespaceName, resourceGroup);
+    static az_servicebus_georecovery_alias_authorization_rule_keys_list(alias: string, name: string, namespaceName: string, resourceGroup: string): az_servicebus_georecovery_alias_authorization_rule_keys_list_command_builder {
+        return new az_servicebus_georecovery_alias_authorization_rule_keys_list_command_builder("az servicebus georecovery-alias authorization-rule keys list", alias, name, namespaceName, resourceGroup);
     }
 }
 
 /** Manage Azure Service Bus Authorization Rule for Namespace with Geo-Disaster Recovery Configuration Alias. */
-export class az_servicebus_georecovery_alias_authorization_rule implements ICommandParent<any> {
-    commandPath = "az servicebus georecovery-alias authorization-rule";
-
+export class az_servicebus_georecovery_alias_authorization_rule {
     /**
      * Shows the list of Authorization Rule by Service Bus Namespace.
      *
@@ -47,8 +43,8 @@ export class az_servicebus_georecovery_alias_authorization_rule implements IComm
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_servicebus_georecovery_alias_authorization_rule_list(alias: string, namespaceName: string, resourceGroup: string): az_servicebus_georecovery_alias_authorization_rule_list_command_builder {
-        return new az_servicebus_georecovery_alias_authorization_rule_list_command_builder(this, alias, namespaceName, resourceGroup);
+    static az_servicebus_georecovery_alias_authorization_rule_list(alias: string, namespaceName: string, resourceGroup: string): az_servicebus_georecovery_alias_authorization_rule_list_command_builder {
+        return new az_servicebus_georecovery_alias_authorization_rule_list_command_builder("az servicebus georecovery-alias authorization-rule list", alias, namespaceName, resourceGroup);
     }
 
     /**
@@ -65,15 +61,13 @@ export class az_servicebus_georecovery_alias_authorization_rule implements IComm
      *                                                         [--subscription]
      * ```
      */
-    az_servicebus_georecovery_alias_authorization_rule_show(): az_servicebus_georecovery_alias_authorization_rule_show_command_builder {
-        return new az_servicebus_georecovery_alias_authorization_rule_show_command_builder(this);
+    static az_servicebus_georecovery_alias_authorization_rule_show(): az_servicebus_georecovery_alias_authorization_rule_show_command_builder {
+        return new az_servicebus_georecovery_alias_authorization_rule_show_command_builder("az servicebus georecovery-alias authorization-rule show");
     }
 }
 
 /** Manage Azure Service Bus Geo-Disaster Recovery Configuration Alias. */
-export class az_servicebus_georecovery_alias implements ICommandParent<any> {
-    commandPath = "az servicebus georecovery-alias";
-
+export class az_servicebus_georecovery_alias {
     /**
      * Disables Service Bus Geo-Disaster Recovery Configuration Alias and stops replicating changes from primary to secondary namespaces.
      *
@@ -86,8 +80,8 @@ export class az_servicebus_georecovery_alias implements ICommandParent<any> {
      *                                            [--subscription]
      * ```
      */
-    az_servicebus_georecovery_alias_break_pair(): az_servicebus_georecovery_alias_break_pair_command_builder {
-        return new az_servicebus_georecovery_alias_break_pair_command_builder(this);
+    static az_servicebus_georecovery_alias_break_pair(): az_servicebus_georecovery_alias_break_pair_command_builder {
+        return new az_servicebus_georecovery_alias_break_pair_command_builder("az servicebus georecovery-alias break-pair");
     }
 
     /**
@@ -102,8 +96,8 @@ export class az_servicebus_georecovery_alias implements ICommandParent<any> {
      *                                        [--subscription]
      * ```
      */
-    az_servicebus_georecovery_alias_delete(): az_servicebus_georecovery_alias_delete_command_builder {
-        return new az_servicebus_georecovery_alias_delete_command_builder(this);
+    static az_servicebus_georecovery_alias_delete(): az_servicebus_georecovery_alias_delete_command_builder {
+        return new az_servicebus_georecovery_alias_delete_command_builder("az servicebus georecovery-alias delete");
     }
 
     /**
@@ -121,8 +115,8 @@ export class az_servicebus_georecovery_alias implements ICommandParent<any> {
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_servicebus_georecovery_alias_exists(alias: string, namespaceName: string, resourceGroup: string): az_servicebus_georecovery_alias_exists_command_builder {
-        return new az_servicebus_georecovery_alias_exists_command_builder(this, alias, namespaceName, resourceGroup);
+    static az_servicebus_georecovery_alias_exists(alias: string, namespaceName: string, resourceGroup: string): az_servicebus_georecovery_alias_exists_command_builder {
+        return new az_servicebus_georecovery_alias_exists_command_builder("az servicebus georecovery-alias exists", alias, namespaceName, resourceGroup);
     }
 
     /**
@@ -137,8 +131,8 @@ export class az_servicebus_georecovery_alias implements ICommandParent<any> {
      *                                           [--subscription]
      * ```
      */
-    az_servicebus_georecovery_alias_fail_over(): az_servicebus_georecovery_alias_fail_over_command_builder {
-        return new az_servicebus_georecovery_alias_fail_over_command_builder(this);
+    static az_servicebus_georecovery_alias_fail_over(): az_servicebus_georecovery_alias_fail_over_command_builder {
+        return new az_servicebus_georecovery_alias_fail_over_command_builder("az servicebus georecovery-alias fail-over");
     }
 
     /**
@@ -155,8 +149,8 @@ export class az_servicebus_georecovery_alias implements ICommandParent<any> {
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_servicebus_georecovery_alias_list(namespaceName: string, resourceGroup: string): az_servicebus_georecovery_alias_list_command_builder {
-        return new az_servicebus_georecovery_alias_list_command_builder(this, namespaceName, resourceGroup);
+    static az_servicebus_georecovery_alias_list(namespaceName: string, resourceGroup: string): az_servicebus_georecovery_alias_list_command_builder {
+        return new az_servicebus_georecovery_alias_list_command_builder("az servicebus georecovery-alias list", namespaceName, resourceGroup);
     }
 
     /**
@@ -175,8 +169,8 @@ export class az_servicebus_georecovery_alias implements ICommandParent<any> {
      *
      * @param {string} partnerNamespace Name (if within the same resource group) or ARM Id of Primary/Secondary Service Bus  namespace name, which is part of GEO DR pairing.
      */
-    az_servicebus_georecovery_alias_set(partnerNamespace: string): az_servicebus_georecovery_alias_set_command_builder {
-        return new az_servicebus_georecovery_alias_set_command_builder(this, partnerNamespace);
+    static az_servicebus_georecovery_alias_set(partnerNamespace: string): az_servicebus_georecovery_alias_set_command_builder {
+        return new az_servicebus_georecovery_alias_set_command_builder("az servicebus georecovery-alias set", partnerNamespace);
     }
 
     /**
@@ -192,15 +186,13 @@ export class az_servicebus_georecovery_alias implements ICommandParent<any> {
      *                                      [--subscription]
      * ```
      */
-    az_servicebus_georecovery_alias_show(): az_servicebus_georecovery_alias_show_command_builder {
-        return new az_servicebus_georecovery_alias_show_command_builder(this);
+    static az_servicebus_georecovery_alias_show(): az_servicebus_georecovery_alias_show_command_builder {
+        return new az_servicebus_georecovery_alias_show_command_builder("az servicebus georecovery-alias show");
     }
 }
 
 /** Manage Azure Service Bus Migration of Standard to Premium. */
-export class az_servicebus_migration implements ICommandParent<any> {
-    commandPath = "az servicebus migration";
-
+export class az_servicebus_migration {
     /**
      * Disable the Service Bus Migration of Standard to Premium namespace.
      *
@@ -212,8 +204,8 @@ export class az_servicebus_migration implements ICommandParent<any> {
      *                               [--subscription]
      * ```
      */
-    az_servicebus_migration_abort(): az_servicebus_migration_abort_command_builder {
-        return new az_servicebus_migration_abort_command_builder(this);
+    static az_servicebus_migration_abort(): az_servicebus_migration_abort_command_builder {
+        return new az_servicebus_migration_abort_command_builder("az servicebus migration abort");
     }
 
     /**
@@ -227,8 +219,8 @@ export class az_servicebus_migration implements ICommandParent<any> {
      *                                  [--subscription]
      * ```
      */
-    az_servicebus_migration_complete(): az_servicebus_migration_complete_command_builder {
-        return new az_servicebus_migration_complete_command_builder(this);
+    static az_servicebus_migration_complete(): az_servicebus_migration_complete_command_builder {
+        return new az_servicebus_migration_complete_command_builder("az servicebus migration complete");
     }
 
     /**
@@ -243,8 +235,8 @@ export class az_servicebus_migration implements ICommandParent<any> {
      *                              [--subscription]
      * ```
      */
-    az_servicebus_migration_show(): az_servicebus_migration_show_command_builder {
-        return new az_servicebus_migration_show_command_builder(this);
+    static az_servicebus_migration_show(): az_servicebus_migration_show_command_builder {
+        return new az_servicebus_migration_show_command_builder("az servicebus migration show");
     }
 
     /**
@@ -263,15 +255,13 @@ export class az_servicebus_migration implements ICommandParent<any> {
      * @param {string} postMigrationName Post migration name is the name that can be used to connect to standard namespace after migration is complete.
      * @param {string} targetNamespace Name (if within the same resource group) or ARM Id of empty Premium Service Bus namespace name that will be target of the migration.
      */
-    az_servicebus_migration_start(postMigrationName: string, targetNamespace: string): az_servicebus_migration_start_command_builder {
-        return new az_servicebus_migration_start_command_builder(this, postMigrationName, targetNamespace);
+    static az_servicebus_migration_start(postMigrationName: string, targetNamespace: string): az_servicebus_migration_start_command_builder {
+        return new az_servicebus_migration_start_command_builder("az servicebus migration start", postMigrationName, targetNamespace);
     }
 }
 
 /** Manage Azure Authorization Rule connection strings for Namespace. */
-export class az_servicebus_namespace_authorization_rule_keys implements ICommandParent<any> {
-    commandPath = "az servicebus namespace authorization-rule keys";
-
+export class az_servicebus_namespace_authorization_rule_keys {
     /**
      * List the keys and connection strings of Authorization Rule for Service Bus Namespace.
      *
@@ -288,8 +278,8 @@ export class az_servicebus_namespace_authorization_rule_keys implements ICommand
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_servicebus_namespace_authorization_rule_keys_list(name: string, namespaceName: string, resourceGroup: string): az_servicebus_namespace_authorization_rule_keys_list_command_builder {
-        return new az_servicebus_namespace_authorization_rule_keys_list_command_builder(this, name, namespaceName, resourceGroup);
+    static az_servicebus_namespace_authorization_rule_keys_list(name: string, namespaceName: string, resourceGroup: string): az_servicebus_namespace_authorization_rule_keys_list_command_builder {
+        return new az_servicebus_namespace_authorization_rule_keys_list_command_builder("az servicebus namespace authorization-rule keys list", name, namespaceName, resourceGroup);
     }
 
     /**
@@ -308,15 +298,13 @@ export class az_servicebus_namespace_authorization_rule_keys implements ICommand
      *
      * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
      */
-    az_servicebus_namespace_authorization_rule_keys_renew(key: 'PrimaryKey' | 'SecondaryKey'): az_servicebus_namespace_authorization_rule_keys_renew_command_builder {
-        return new az_servicebus_namespace_authorization_rule_keys_renew_command_builder(this, key);
+    static az_servicebus_namespace_authorization_rule_keys_renew(key: 'PrimaryKey' | 'SecondaryKey'): az_servicebus_namespace_authorization_rule_keys_renew_command_builder {
+        return new az_servicebus_namespace_authorization_rule_keys_renew_command_builder("az servicebus namespace authorization-rule keys renew", key);
     }
 }
 
 /** Manage Azure Service Bus Namespace Authorization Rule. */
-export class az_servicebus_namespace_authorization_rule implements ICommandParent<any> {
-    commandPath = "az servicebus namespace authorization-rule";
-
+export class az_servicebus_namespace_authorization_rule {
     /**
      * Create Authorization Rule for the given Service Bus Namespace.
      *
@@ -334,8 +322,8 @@ export class az_servicebus_namespace_authorization_rule implements ICommandParen
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      */
-    az_servicebus_namespace_authorization_rule_create(name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send'): az_servicebus_namespace_authorization_rule_create_command_builder {
-        return new az_servicebus_namespace_authorization_rule_create_command_builder(this, name, namespaceName, resourceGroup, rights);
+    static az_servicebus_namespace_authorization_rule_create(name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send'): az_servicebus_namespace_authorization_rule_create_command_builder {
+        return new az_servicebus_namespace_authorization_rule_create_command_builder("az servicebus namespace authorization-rule create", name, namespaceName, resourceGroup, rights);
     }
 
     /**
@@ -350,8 +338,8 @@ export class az_servicebus_namespace_authorization_rule implements ICommandParen
      *                                                   [--subscription]
      * ```
      */
-    az_servicebus_namespace_authorization_rule_delete(): az_servicebus_namespace_authorization_rule_delete_command_builder {
-        return new az_servicebus_namespace_authorization_rule_delete_command_builder(this);
+    static az_servicebus_namespace_authorization_rule_delete(): az_servicebus_namespace_authorization_rule_delete_command_builder {
+        return new az_servicebus_namespace_authorization_rule_delete_command_builder("az servicebus namespace authorization-rule delete");
     }
 
     /**
@@ -368,8 +356,8 @@ export class az_servicebus_namespace_authorization_rule implements ICommandParen
      * @param {string} namespaceName Name of the Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_servicebus_namespace_authorization_rule_list(namespaceName: string, resourceGroup: string): az_servicebus_namespace_authorization_rule_list_command_builder {
-        return new az_servicebus_namespace_authorization_rule_list_command_builder(this, namespaceName, resourceGroup);
+    static az_servicebus_namespace_authorization_rule_list(namespaceName: string, resourceGroup: string): az_servicebus_namespace_authorization_rule_list_command_builder {
+        return new az_servicebus_namespace_authorization_rule_list_command_builder("az servicebus namespace authorization-rule list", namespaceName, resourceGroup);
     }
 
     /**
@@ -385,8 +373,8 @@ export class az_servicebus_namespace_authorization_rule implements ICommandParen
      *                                                 [--subscription]
      * ```
      */
-    az_servicebus_namespace_authorization_rule_show(): az_servicebus_namespace_authorization_rule_show_command_builder {
-        return new az_servicebus_namespace_authorization_rule_show_command_builder(this);
+    static az_servicebus_namespace_authorization_rule_show(): az_servicebus_namespace_authorization_rule_show_command_builder {
+        return new az_servicebus_namespace_authorization_rule_show_command_builder("az servicebus namespace authorization-rule show");
     }
 
     /**
@@ -408,15 +396,13 @@ export class az_servicebus_namespace_authorization_rule implements ICommandParen
      *
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      */
-    az_servicebus_namespace_authorization_rule_update(rights: 'Listen' | 'Manage' | 'Send'): az_servicebus_namespace_authorization_rule_update_command_builder {
-        return new az_servicebus_namespace_authorization_rule_update_command_builder(this, rights);
+    static az_servicebus_namespace_authorization_rule_update(rights: 'Listen' | 'Manage' | 'Send'): az_servicebus_namespace_authorization_rule_update_command_builder {
+        return new az_servicebus_namespace_authorization_rule_update_command_builder("az servicebus namespace authorization-rule update", rights);
     }
 }
 
 /** Manage Azure ServiceBus networkruleSet for namespace. */
-export class az_servicebus_namespace_network_rule implements ICommandParent<any> {
-    commandPath = "az servicebus namespace network-rule";
-
+export class az_servicebus_namespace_network_rule {
     /**
      * Add a network rule for a namespace.
      *
@@ -435,8 +421,8 @@ export class az_servicebus_namespace_network_rule implements ICommandParent<any>
      * @param {string} namespaceName Name of the Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_servicebus_namespace_network_rule_add(namespaceName: string, resourceGroup: string): az_servicebus_namespace_network_rule_add_command_builder {
-        return new az_servicebus_namespace_network_rule_add_command_builder(this, namespaceName, resourceGroup);
+    static az_servicebus_namespace_network_rule_add(namespaceName: string, resourceGroup: string): az_servicebus_namespace_network_rule_add_command_builder {
+        return new az_servicebus_namespace_network_rule_add_command_builder("az servicebus namespace network-rule add", namespaceName, resourceGroup);
     }
 
     /**
@@ -453,8 +439,8 @@ export class az_servicebus_namespace_network_rule implements ICommandParent<any>
      * @param {string} namespaceName Name of the Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_servicebus_namespace_network_rule_list(namespaceName: string, resourceGroup: string): az_servicebus_namespace_network_rule_list_command_builder {
-        return new az_servicebus_namespace_network_rule_list_command_builder(this, namespaceName, resourceGroup);
+    static az_servicebus_namespace_network_rule_list(namespaceName: string, resourceGroup: string): az_servicebus_namespace_network_rule_list_command_builder {
+        return new az_servicebus_namespace_network_rule_list_command_builder("az servicebus namespace network-rule list", namespaceName, resourceGroup);
     }
 
     /**
@@ -473,15 +459,13 @@ export class az_servicebus_namespace_network_rule implements ICommandParent<any>
      * @param {string} namespaceName Name of the Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_servicebus_namespace_network_rule_remove(namespaceName: string, resourceGroup: string): az_servicebus_namespace_network_rule_remove_command_builder {
-        return new az_servicebus_namespace_network_rule_remove_command_builder(this, namespaceName, resourceGroup);
+    static az_servicebus_namespace_network_rule_remove(namespaceName: string, resourceGroup: string): az_servicebus_namespace_network_rule_remove_command_builder {
+        return new az_servicebus_namespace_network_rule_remove_command_builder("az servicebus namespace network-rule remove", namespaceName, resourceGroup);
     }
 }
 
 /** Manage Azure Service Bus Namespace. */
-export class az_servicebus_namespace implements ICommandParent<any> {
-    commandPath = "az servicebus namespace";
-
+export class az_servicebus_namespace {
     /**
      * Create a Service Bus Namespace.
      *
@@ -500,8 +484,8 @@ export class az_servicebus_namespace implements ICommandParent<any> {
      * @param {string} name Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_servicebus_namespace_create(name: string, resourceGroup: string): az_servicebus_namespace_create_command_builder {
-        return new az_servicebus_namespace_create_command_builder(this, name, resourceGroup);
+    static az_servicebus_namespace_create(name: string, resourceGroup: string): az_servicebus_namespace_create_command_builder {
+        return new az_servicebus_namespace_create_command_builder("az servicebus namespace create", name, resourceGroup);
     }
 
     /**
@@ -515,8 +499,8 @@ export class az_servicebus_namespace implements ICommandParent<any> {
      *                                [--subscription]
      * ```
      */
-    az_servicebus_namespace_delete(): az_servicebus_namespace_delete_command_builder {
-        return new az_servicebus_namespace_delete_command_builder(this);
+    static az_servicebus_namespace_delete(): az_servicebus_namespace_delete_command_builder {
+        return new az_servicebus_namespace_delete_command_builder("az servicebus namespace delete");
     }
 
     /**
@@ -530,8 +514,8 @@ export class az_servicebus_namespace implements ICommandParent<any> {
      *
      * @param {string} name Namespace name. Name can contain only letters, numbers, and hyphens. The namespace must start with a letter, and it must end with a letter or number.
      */
-    az_servicebus_namespace_exists(name: string): az_servicebus_namespace_exists_command_builder {
-        return new az_servicebus_namespace_exists_command_builder(this, name);
+    static az_servicebus_namespace_exists(name: string): az_servicebus_namespace_exists_command_builder {
+        return new az_servicebus_namespace_exists_command_builder("az servicebus namespace exists", name);
     }
 
     /**
@@ -544,8 +528,8 @@ export class az_servicebus_namespace implements ICommandParent<any> {
      *                              [--subscription]
      * ```
      */
-    az_servicebus_namespace_list(): az_servicebus_namespace_list_command_builder {
-        return new az_servicebus_namespace_list_command_builder(this);
+    static az_servicebus_namespace_list(): az_servicebus_namespace_list_command_builder {
+        return new az_servicebus_namespace_list_command_builder("az servicebus namespace list");
     }
 
     /**
@@ -560,8 +544,8 @@ export class az_servicebus_namespace implements ICommandParent<any> {
      *                              [--subscription]
      * ```
      */
-    az_servicebus_namespace_show(): az_servicebus_namespace_show_command_builder {
-        return new az_servicebus_namespace_show_command_builder(this);
+    static az_servicebus_namespace_show(): az_servicebus_namespace_show_command_builder {
+        return new az_servicebus_namespace_show_command_builder("az servicebus namespace show");
     }
 
     /**
@@ -583,15 +567,13 @@ export class az_servicebus_namespace implements ICommandParent<any> {
      *                                [--tags]
      * ```
      */
-    az_servicebus_namespace_update(): az_servicebus_namespace_update_command_builder {
-        return new az_servicebus_namespace_update_command_builder(this);
+    static az_servicebus_namespace_update(): az_servicebus_namespace_update_command_builder {
+        return new az_servicebus_namespace_update_command_builder("az servicebus namespace update");
     }
 }
 
 /** Manage Azure Authorization Rule keys for Service Bus Queue. */
-export class az_servicebus_queue_authorization_rule_keys implements ICommandParent<any> {
-    commandPath = "az servicebus queue authorization-rule keys";
-
+export class az_servicebus_queue_authorization_rule_keys {
     /**
      * List the keys and connection strings of Authorization Rule for the given Service Bus Queue.
      *
@@ -610,8 +592,8 @@ export class az_servicebus_queue_authorization_rule_keys implements ICommandPare
      * @param {string} queueName Name of Queue.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_servicebus_queue_authorization_rule_keys_list(name: string, namespaceName: string, queueName: string, resourceGroup: string): az_servicebus_queue_authorization_rule_keys_list_command_builder {
-        return new az_servicebus_queue_authorization_rule_keys_list_command_builder(this, name, namespaceName, queueName, resourceGroup);
+    static az_servicebus_queue_authorization_rule_keys_list(name: string, namespaceName: string, queueName: string, resourceGroup: string): az_servicebus_queue_authorization_rule_keys_list_command_builder {
+        return new az_servicebus_queue_authorization_rule_keys_list_command_builder("az servicebus queue authorization-rule keys list", name, namespaceName, queueName, resourceGroup);
     }
 
     /**
@@ -631,15 +613,13 @@ export class az_servicebus_queue_authorization_rule_keys implements ICommandPare
      *
      * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
      */
-    az_servicebus_queue_authorization_rule_keys_renew(key: 'PrimaryKey' | 'SecondaryKey'): az_servicebus_queue_authorization_rule_keys_renew_command_builder {
-        return new az_servicebus_queue_authorization_rule_keys_renew_command_builder(this, key);
+    static az_servicebus_queue_authorization_rule_keys_renew(key: 'PrimaryKey' | 'SecondaryKey'): az_servicebus_queue_authorization_rule_keys_renew_command_builder {
+        return new az_servicebus_queue_authorization_rule_keys_renew_command_builder("az servicebus queue authorization-rule keys renew", key);
     }
 }
 
 /** Manage Azure Service Bus Queue Authorization Rule. */
-export class az_servicebus_queue_authorization_rule implements ICommandParent<any> {
-    commandPath = "az servicebus queue authorization-rule";
-
+export class az_servicebus_queue_authorization_rule {
     /**
      * Create Authorization Rule for the given Service Bus Queue.
      *
@@ -659,8 +639,8 @@ export class az_servicebus_queue_authorization_rule implements ICommandParent<an
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      */
-    az_servicebus_queue_authorization_rule_create(name: string, namespaceName: string, queueName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send'): az_servicebus_queue_authorization_rule_create_command_builder {
-        return new az_servicebus_queue_authorization_rule_create_command_builder(this, name, namespaceName, queueName, resourceGroup, rights);
+    static az_servicebus_queue_authorization_rule_create(name: string, namespaceName: string, queueName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send'): az_servicebus_queue_authorization_rule_create_command_builder {
+        return new az_servicebus_queue_authorization_rule_create_command_builder("az servicebus queue authorization-rule create", name, namespaceName, queueName, resourceGroup, rights);
     }
 
     /**
@@ -676,8 +656,8 @@ export class az_servicebus_queue_authorization_rule implements ICommandParent<an
      *                                               [--subscription]
      * ```
      */
-    az_servicebus_queue_authorization_rule_delete(): az_servicebus_queue_authorization_rule_delete_command_builder {
-        return new az_servicebus_queue_authorization_rule_delete_command_builder(this);
+    static az_servicebus_queue_authorization_rule_delete(): az_servicebus_queue_authorization_rule_delete_command_builder {
+        return new az_servicebus_queue_authorization_rule_delete_command_builder("az servicebus queue authorization-rule delete");
     }
 
     /**
@@ -696,8 +676,8 @@ export class az_servicebus_queue_authorization_rule implements ICommandParent<an
      * @param {string} queueName Name of Queue.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_servicebus_queue_authorization_rule_list(namespaceName: string, queueName: string, resourceGroup: string): az_servicebus_queue_authorization_rule_list_command_builder {
-        return new az_servicebus_queue_authorization_rule_list_command_builder(this, namespaceName, queueName, resourceGroup);
+    static az_servicebus_queue_authorization_rule_list(namespaceName: string, queueName: string, resourceGroup: string): az_servicebus_queue_authorization_rule_list_command_builder {
+        return new az_servicebus_queue_authorization_rule_list_command_builder("az servicebus queue authorization-rule list", namespaceName, queueName, resourceGroup);
     }
 
     /**
@@ -714,8 +694,8 @@ export class az_servicebus_queue_authorization_rule implements ICommandParent<an
      *                                             [--subscription]
      * ```
      */
-    az_servicebus_queue_authorization_rule_show(): az_servicebus_queue_authorization_rule_show_command_builder {
-        return new az_servicebus_queue_authorization_rule_show_command_builder(this);
+    static az_servicebus_queue_authorization_rule_show(): az_servicebus_queue_authorization_rule_show_command_builder {
+        return new az_servicebus_queue_authorization_rule_show_command_builder("az servicebus queue authorization-rule show");
     }
 
     /**
@@ -738,15 +718,13 @@ export class az_servicebus_queue_authorization_rule implements ICommandParent<an
      *
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      */
-    az_servicebus_queue_authorization_rule_update(rights: 'Listen' | 'Manage' | 'Send'): az_servicebus_queue_authorization_rule_update_command_builder {
-        return new az_servicebus_queue_authorization_rule_update_command_builder(this, rights);
+    static az_servicebus_queue_authorization_rule_update(rights: 'Listen' | 'Manage' | 'Send'): az_servicebus_queue_authorization_rule_update_command_builder {
+        return new az_servicebus_queue_authorization_rule_update_command_builder("az servicebus queue authorization-rule update", rights);
     }
 }
 
 /** Manage Azure Service Bus Queue and Authorization Rule. */
-export class az_servicebus_queue implements ICommandParent<any> {
-    commandPath = "az servicebus queue";
-
+export class az_servicebus_queue {
     /**
      * Create the Service Bus Queue.
      *
@@ -777,8 +755,8 @@ export class az_servicebus_queue implements ICommandParent<any> {
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_servicebus_queue_create(name: string, namespaceName: string, resourceGroup: string): az_servicebus_queue_create_command_builder {
-        return new az_servicebus_queue_create_command_builder(this, name, namespaceName, resourceGroup);
+    static az_servicebus_queue_create(name: string, namespaceName: string, resourceGroup: string): az_servicebus_queue_create_command_builder {
+        return new az_servicebus_queue_create_command_builder("az servicebus queue create", name, namespaceName, resourceGroup);
     }
 
     /**
@@ -793,8 +771,8 @@ export class az_servicebus_queue implements ICommandParent<any> {
      *                            [--subscription]
      * ```
      */
-    az_servicebus_queue_delete(): az_servicebus_queue_delete_command_builder {
-        return new az_servicebus_queue_delete_command_builder(this);
+    static az_servicebus_queue_delete(): az_servicebus_queue_delete_command_builder {
+        return new az_servicebus_queue_delete_command_builder("az servicebus queue delete");
     }
 
     /**
@@ -813,8 +791,8 @@ export class az_servicebus_queue implements ICommandParent<any> {
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_servicebus_queue_list(namespaceName: string, resourceGroup: string): az_servicebus_queue_list_command_builder {
-        return new az_servicebus_queue_list_command_builder(this, namespaceName, resourceGroup);
+    static az_servicebus_queue_list(namespaceName: string, resourceGroup: string): az_servicebus_queue_list_command_builder {
+        return new az_servicebus_queue_list_command_builder("az servicebus queue list", namespaceName, resourceGroup);
     }
 
     /**
@@ -830,8 +808,8 @@ export class az_servicebus_queue implements ICommandParent<any> {
      *                          [--subscription]
      * ```
      */
-    az_servicebus_queue_show(): az_servicebus_queue_show_command_builder {
-        return new az_servicebus_queue_show_command_builder(this);
+    static az_servicebus_queue_show(): az_servicebus_queue_show_command_builder {
+        return new az_servicebus_queue_show_command_builder("az servicebus queue show");
     }
 
     /**
@@ -865,15 +843,13 @@ export class az_servicebus_queue implements ICommandParent<any> {
      *                            [--subscription]
      * ```
      */
-    az_servicebus_queue_update(): az_servicebus_queue_update_command_builder {
-        return new az_servicebus_queue_update_command_builder(this);
+    static az_servicebus_queue_update(): az_servicebus_queue_update_command_builder {
+        return new az_servicebus_queue_update_command_builder("az servicebus queue update");
     }
 }
 
 /** Manage Azure Authorization Rule keys for Service Bus Topic. */
-export class az_servicebus_topic_authorization_rule_keys implements ICommandParent<any> {
-    commandPath = "az servicebus topic authorization-rule keys";
-
+export class az_servicebus_topic_authorization_rule_keys {
     /**
      * List the keys and connection strings of Authorization Rule for Service Bus Topic.
      *
@@ -892,8 +868,8 @@ export class az_servicebus_topic_authorization_rule_keys implements ICommandPare
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} topicName Name of Topic.
      */
-    az_servicebus_topic_authorization_rule_keys_list(name: string, namespaceName: string, resourceGroup: string, topicName: string): az_servicebus_topic_authorization_rule_keys_list_command_builder {
-        return new az_servicebus_topic_authorization_rule_keys_list_command_builder(this, name, namespaceName, resourceGroup, topicName);
+    static az_servicebus_topic_authorization_rule_keys_list(name: string, namespaceName: string, resourceGroup: string, topicName: string): az_servicebus_topic_authorization_rule_keys_list_command_builder {
+        return new az_servicebus_topic_authorization_rule_keys_list_command_builder("az servicebus topic authorization-rule keys list", name, namespaceName, resourceGroup, topicName);
     }
 
     /**
@@ -913,15 +889,13 @@ export class az_servicebus_topic_authorization_rule_keys implements ICommandPare
      *
      * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
      */
-    az_servicebus_topic_authorization_rule_keys_renew(key: 'PrimaryKey' | 'SecondaryKey'): az_servicebus_topic_authorization_rule_keys_renew_command_builder {
-        return new az_servicebus_topic_authorization_rule_keys_renew_command_builder(this, key);
+    static az_servicebus_topic_authorization_rule_keys_renew(key: 'PrimaryKey' | 'SecondaryKey'): az_servicebus_topic_authorization_rule_keys_renew_command_builder {
+        return new az_servicebus_topic_authorization_rule_keys_renew_command_builder("az servicebus topic authorization-rule keys renew", key);
     }
 }
 
 /** Manage Azure Service Bus Topic Authorization Rule. */
-export class az_servicebus_topic_authorization_rule implements ICommandParent<any> {
-    commandPath = "az servicebus topic authorization-rule";
-
+export class az_servicebus_topic_authorization_rule {
     /**
      * Create Authorization Rule for given Service Bus Topic.
      *
@@ -941,8 +915,8 @@ export class az_servicebus_topic_authorization_rule implements ICommandParent<an
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      * @param {string} topicName Name of Topic.
      */
-    az_servicebus_topic_authorization_rule_create(name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send', topicName: string): az_servicebus_topic_authorization_rule_create_command_builder {
-        return new az_servicebus_topic_authorization_rule_create_command_builder(this, name, namespaceName, resourceGroup, rights, topicName);
+    static az_servicebus_topic_authorization_rule_create(name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send', topicName: string): az_servicebus_topic_authorization_rule_create_command_builder {
+        return new az_servicebus_topic_authorization_rule_create_command_builder("az servicebus topic authorization-rule create", name, namespaceName, resourceGroup, rights, topicName);
     }
 
     /**
@@ -958,8 +932,8 @@ export class az_servicebus_topic_authorization_rule implements ICommandParent<an
      *                                               [--topic-name]
      * ```
      */
-    az_servicebus_topic_authorization_rule_delete(): az_servicebus_topic_authorization_rule_delete_command_builder {
-        return new az_servicebus_topic_authorization_rule_delete_command_builder(this);
+    static az_servicebus_topic_authorization_rule_delete(): az_servicebus_topic_authorization_rule_delete_command_builder {
+        return new az_servicebus_topic_authorization_rule_delete_command_builder("az servicebus topic authorization-rule delete");
     }
 
     /**
@@ -978,8 +952,8 @@ export class az_servicebus_topic_authorization_rule implements ICommandParent<an
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} topicName Name of Topic.
      */
-    az_servicebus_topic_authorization_rule_list(namespaceName: string, resourceGroup: string, topicName: string): az_servicebus_topic_authorization_rule_list_command_builder {
-        return new az_servicebus_topic_authorization_rule_list_command_builder(this, namespaceName, resourceGroup, topicName);
+    static az_servicebus_topic_authorization_rule_list(namespaceName: string, resourceGroup: string, topicName: string): az_servicebus_topic_authorization_rule_list_command_builder {
+        return new az_servicebus_topic_authorization_rule_list_command_builder("az servicebus topic authorization-rule list", namespaceName, resourceGroup, topicName);
     }
 
     /**
@@ -996,8 +970,8 @@ export class az_servicebus_topic_authorization_rule implements ICommandParent<an
      *                                             [--topic-name]
      * ```
      */
-    az_servicebus_topic_authorization_rule_show(): az_servicebus_topic_authorization_rule_show_command_builder {
-        return new az_servicebus_topic_authorization_rule_show_command_builder(this);
+    static az_servicebus_topic_authorization_rule_show(): az_servicebus_topic_authorization_rule_show_command_builder {
+        return new az_servicebus_topic_authorization_rule_show_command_builder("az servicebus topic authorization-rule show");
     }
 
     /**
@@ -1020,15 +994,13 @@ export class az_servicebus_topic_authorization_rule implements ICommandParent<an
      *
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      */
-    az_servicebus_topic_authorization_rule_update(rights: 'Listen' | 'Manage' | 'Send'): az_servicebus_topic_authorization_rule_update_command_builder {
-        return new az_servicebus_topic_authorization_rule_update_command_builder(this, rights);
+    static az_servicebus_topic_authorization_rule_update(rights: 'Listen' | 'Manage' | 'Send'): az_servicebus_topic_authorization_rule_update_command_builder {
+        return new az_servicebus_topic_authorization_rule_update_command_builder("az servicebus topic authorization-rule update", rights);
     }
 }
 
 /** Manage Azure Service Bus Rule. */
-export class az_servicebus_topic_subscription_rule implements ICommandParent<any> {
-    commandPath = "az servicebus topic subscription rule";
-
+export class az_servicebus_topic_subscription_rule {
     /**
      * Create the ServiceBus Rule for Subscription.
      *
@@ -1062,8 +1034,8 @@ export class az_servicebus_topic_subscription_rule implements ICommandParent<any
      * @param {string} subscriptionName Name of Subscription.
      * @param {string} topicName Name of Topic.
      */
-    az_servicebus_topic_subscription_rule_create(name: string, namespaceName: string, resourceGroup: string, subscriptionName: string, topicName: string): az_servicebus_topic_subscription_rule_create_command_builder {
-        return new az_servicebus_topic_subscription_rule_create_command_builder(this, name, namespaceName, resourceGroup, subscriptionName, topicName);
+    static az_servicebus_topic_subscription_rule_create(name: string, namespaceName: string, resourceGroup: string, subscriptionName: string, topicName: string): az_servicebus_topic_subscription_rule_create_command_builder {
+        return new az_servicebus_topic_subscription_rule_create_command_builder("az servicebus topic subscription rule create", name, namespaceName, resourceGroup, subscriptionName, topicName);
     }
 
     /**
@@ -1080,8 +1052,8 @@ export class az_servicebus_topic_subscription_rule implements ICommandParent<any
      *                                              [--topic-name]
      * ```
      */
-    az_servicebus_topic_subscription_rule_delete(): az_servicebus_topic_subscription_rule_delete_command_builder {
-        return new az_servicebus_topic_subscription_rule_delete_command_builder(this);
+    static az_servicebus_topic_subscription_rule_delete(): az_servicebus_topic_subscription_rule_delete_command_builder {
+        return new az_servicebus_topic_subscription_rule_delete_command_builder("az servicebus topic subscription rule delete");
     }
 
     /**
@@ -1104,8 +1076,8 @@ export class az_servicebus_topic_subscription_rule implements ICommandParent<any
      * @param {string} subscriptionName Name of Subscription.
      * @param {string} topicName Name of Topic.
      */
-    az_servicebus_topic_subscription_rule_list(namespaceName: string, resourceGroup: string, subscriptionName: string, topicName: string): az_servicebus_topic_subscription_rule_list_command_builder {
-        return new az_servicebus_topic_subscription_rule_list_command_builder(this, namespaceName, resourceGroup, subscriptionName, topicName);
+    static az_servicebus_topic_subscription_rule_list(namespaceName: string, resourceGroup: string, subscriptionName: string, topicName: string): az_servicebus_topic_subscription_rule_list_command_builder {
+        return new az_servicebus_topic_subscription_rule_list_command_builder("az servicebus topic subscription rule list", namespaceName, resourceGroup, subscriptionName, topicName);
     }
 
     /**
@@ -1123,8 +1095,8 @@ export class az_servicebus_topic_subscription_rule implements ICommandParent<any
      *                                            [--topic-name]
      * ```
      */
-    az_servicebus_topic_subscription_rule_show(): az_servicebus_topic_subscription_rule_show_command_builder {
-        return new az_servicebus_topic_subscription_rule_show_command_builder(this);
+    static az_servicebus_topic_subscription_rule_show(): az_servicebus_topic_subscription_rule_show_command_builder {
+        return new az_servicebus_topic_subscription_rule_show_command_builder("az servicebus topic subscription rule show");
     }
 
     /**
@@ -1159,15 +1131,13 @@ export class az_servicebus_topic_subscription_rule implements ICommandParent<any
      *                                              [--topic-name]
      * ```
      */
-    az_servicebus_topic_subscription_rule_update(): az_servicebus_topic_subscription_rule_update_command_builder {
-        return new az_servicebus_topic_subscription_rule_update_command_builder(this);
+    static az_servicebus_topic_subscription_rule_update(): az_servicebus_topic_subscription_rule_update_command_builder {
+        return new az_servicebus_topic_subscription_rule_update_command_builder("az servicebus topic subscription rule update");
     }
 }
 
 /** Manage Azure Service Bus Subscription. */
-export class az_servicebus_topic_subscription implements ICommandParent<any> {
-    commandPath = "az servicebus topic subscription";
-
+export class az_servicebus_topic_subscription {
     /**
      * Create the ServiceBus Subscription.
      *
@@ -1196,8 +1166,8 @@ export class az_servicebus_topic_subscription implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} topicName Name of Topic.
      */
-    az_servicebus_topic_subscription_create(name: string, namespaceName: string, resourceGroup: string, topicName: string): az_servicebus_topic_subscription_create_command_builder {
-        return new az_servicebus_topic_subscription_create_command_builder(this, name, namespaceName, resourceGroup, topicName);
+    static az_servicebus_topic_subscription_create(name: string, namespaceName: string, resourceGroup: string, topicName: string): az_servicebus_topic_subscription_create_command_builder {
+        return new az_servicebus_topic_subscription_create_command_builder("az servicebus topic subscription create", name, namespaceName, resourceGroup, topicName);
     }
 
     /**
@@ -1213,8 +1183,8 @@ export class az_servicebus_topic_subscription implements ICommandParent<any> {
      *                                         [--topic-name]
      * ```
      */
-    az_servicebus_topic_subscription_delete(): az_servicebus_topic_subscription_delete_command_builder {
-        return new az_servicebus_topic_subscription_delete_command_builder(this);
+    static az_servicebus_topic_subscription_delete(): az_servicebus_topic_subscription_delete_command_builder {
+        return new az_servicebus_topic_subscription_delete_command_builder("az servicebus topic subscription delete");
     }
 
     /**
@@ -1235,8 +1205,8 @@ export class az_servicebus_topic_subscription implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} topicName Name of Topic.
      */
-    az_servicebus_topic_subscription_list(namespaceName: string, resourceGroup: string, topicName: string): az_servicebus_topic_subscription_list_command_builder {
-        return new az_servicebus_topic_subscription_list_command_builder(this, namespaceName, resourceGroup, topicName);
+    static az_servicebus_topic_subscription_list(namespaceName: string, resourceGroup: string, topicName: string): az_servicebus_topic_subscription_list_command_builder {
+        return new az_servicebus_topic_subscription_list_command_builder("az servicebus topic subscription list", namespaceName, resourceGroup, topicName);
     }
 
     /**
@@ -1253,8 +1223,8 @@ export class az_servicebus_topic_subscription implements ICommandParent<any> {
      *                                       [--topic-name]
      * ```
      */
-    az_servicebus_topic_subscription_show(): az_servicebus_topic_subscription_show_command_builder {
-        return new az_servicebus_topic_subscription_show_command_builder(this);
+    static az_servicebus_topic_subscription_show(): az_servicebus_topic_subscription_show_command_builder {
+        return new az_servicebus_topic_subscription_show_command_builder("az servicebus topic subscription show");
     }
 
     /**
@@ -1285,15 +1255,13 @@ export class az_servicebus_topic_subscription implements ICommandParent<any> {
      *                                         [--topic-name]
      * ```
      */
-    az_servicebus_topic_subscription_update(): az_servicebus_topic_subscription_update_command_builder {
-        return new az_servicebus_topic_subscription_update_command_builder(this);
+    static az_servicebus_topic_subscription_update(): az_servicebus_topic_subscription_update_command_builder {
+        return new az_servicebus_topic_subscription_update_command_builder("az servicebus topic subscription update");
     }
 }
 
 /** Manage Azure Service Bus Topic and Authorization Rule. */
-export class az_servicebus_topic implements ICommandParent<any> {
-    commandPath = "az servicebus topic";
-
+export class az_servicebus_topic {
     /**
      * Create the Service Bus Topic.
      *
@@ -1319,8 +1287,8 @@ export class az_servicebus_topic implements ICommandParent<any> {
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_servicebus_topic_create(name: string, namespaceName: string, resourceGroup: string): az_servicebus_topic_create_command_builder {
-        return new az_servicebus_topic_create_command_builder(this, name, namespaceName, resourceGroup);
+    static az_servicebus_topic_create(name: string, namespaceName: string, resourceGroup: string): az_servicebus_topic_create_command_builder {
+        return new az_servicebus_topic_create_command_builder("az servicebus topic create", name, namespaceName, resourceGroup);
     }
 
     /**
@@ -1335,8 +1303,8 @@ export class az_servicebus_topic implements ICommandParent<any> {
      *                            [--subscription]
      * ```
      */
-    az_servicebus_topic_delete(): az_servicebus_topic_delete_command_builder {
-        return new az_servicebus_topic_delete_command_builder(this);
+    static az_servicebus_topic_delete(): az_servicebus_topic_delete_command_builder {
+        return new az_servicebus_topic_delete_command_builder("az servicebus topic delete");
     }
 
     /**
@@ -1355,8 +1323,8 @@ export class az_servicebus_topic implements ICommandParent<any> {
      * @param {string} namespaceName Name of Namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_servicebus_topic_list(namespaceName: string, resourceGroup: string): az_servicebus_topic_list_command_builder {
-        return new az_servicebus_topic_list_command_builder(this, namespaceName, resourceGroup);
+    static az_servicebus_topic_list(namespaceName: string, resourceGroup: string): az_servicebus_topic_list_command_builder {
+        return new az_servicebus_topic_list_command_builder("az servicebus topic list", namespaceName, resourceGroup);
     }
 
     /**
@@ -1372,8 +1340,8 @@ export class az_servicebus_topic implements ICommandParent<any> {
      *                          [--subscription]
      * ```
      */
-    az_servicebus_topic_show(): az_servicebus_topic_show_command_builder {
-        return new az_servicebus_topic_show_command_builder(this);
+    static az_servicebus_topic_show(): az_servicebus_topic_show_command_builder {
+        return new az_servicebus_topic_show_command_builder("az servicebus topic show");
     }
 
     /**
@@ -1402,8 +1370,8 @@ export class az_servicebus_topic implements ICommandParent<any> {
      *                            [--subscription]
      * ```
      */
-    az_servicebus_topic_update(): az_servicebus_topic_update_command_builder {
-        return new az_servicebus_topic_update_command_builder(this);
+    static az_servicebus_topic_update(): az_servicebus_topic_update_command_builder {
+        return new az_servicebus_topic_update_command_builder("az servicebus topic update");
     }
 }
 
@@ -1430,7 +1398,7 @@ export class az_servicebus {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_georecovery_alias_authorization_rule_keys_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, alias: string, name: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, alias: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.alias(alias)
         this.name(name)
@@ -1492,7 +1460,7 @@ class az_servicebus_georecovery_alias_authorization_rule_keys_list_command_build
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_georecovery_alias_authorization_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, alias: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, alias: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.alias(alias)
         this.namespaceName(namespaceName)
@@ -1545,7 +1513,7 @@ class az_servicebus_georecovery_alias_authorization_rule_list_command_builder ex
  * ```
  */
 class az_servicebus_georecovery_alias_authorization_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1605,7 +1573,7 @@ class az_servicebus_georecovery_alias_authorization_rule_show_command_builder ex
  * ```
  */
 class az_servicebus_georecovery_alias_break_pair_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1653,7 +1621,7 @@ class az_servicebus_georecovery_alias_break_pair_command_builder extends Command
  * ```
  */
 class az_servicebus_georecovery_alias_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1704,7 +1672,7 @@ class az_servicebus_georecovery_alias_delete_command_builder extends CommandBuil
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_georecovery_alias_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, alias: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, alias: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.alias(alias)
         this.namespaceName(namespaceName)
@@ -1749,7 +1717,7 @@ class az_servicebus_georecovery_alias_exists_command_builder extends CommandBuil
  * ```
  */
 class az_servicebus_georecovery_alias_fail_over_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1799,7 +1767,7 @@ class az_servicebus_georecovery_alias_fail_over_command_builder extends CommandB
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_georecovery_alias_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -1847,7 +1815,7 @@ class az_servicebus_georecovery_alias_list_command_builder extends CommandBuilde
  * @param {string} partnerNamespace Name (if within the same resource group) or ARM Id of Primary/Secondary Service Bus  namespace name, which is part of GEO DR pairing.
  */
 class az_servicebus_georecovery_alias_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, partnerNamespace: string) {
+    constructor(commandPath: string, partnerNamespace: string) {
         super(commandParent);
         this.partnerNamespace(partnerNamespace)
     }
@@ -1909,7 +1877,7 @@ class az_servicebus_georecovery_alias_set_command_builder extends CommandBuilder
  * ```
  */
 class az_servicebus_georecovery_alias_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1962,7 +1930,7 @@ class az_servicebus_georecovery_alias_show_command_builder extends CommandBuilde
  * ```
  */
 class az_servicebus_migration_abort_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2003,7 +1971,7 @@ class az_servicebus_migration_abort_command_builder extends CommandBuilder {
  * ```
  */
 class az_servicebus_migration_complete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2045,7 +2013,7 @@ class az_servicebus_migration_complete_command_builder extends CommandBuilder {
  * ```
  */
 class az_servicebus_migration_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2097,7 +2065,7 @@ class az_servicebus_migration_show_command_builder extends CommandBuilder {
  * @param {string} targetNamespace Name (if within the same resource group) or ARM Id of empty Premium Service Bus namespace name that will be target of the migration.
  */
 class az_servicebus_migration_start_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, postMigrationName: string, targetNamespace: string) {
+    constructor(commandPath: string, postMigrationName: string, targetNamespace: string) {
         super(commandParent);
         this.postMigrationName(postMigrationName)
         this.targetNamespace(targetNamespace)
@@ -2157,7 +2125,7 @@ class az_servicebus_migration_start_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_namespace_authorization_rule_keys_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -2212,7 +2180,7 @@ class az_servicebus_namespace_authorization_rule_keys_list_command_builder exten
  * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
  */
 class az_servicebus_namespace_authorization_rule_keys_renew_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, key: 'PrimaryKey' | 'SecondaryKey') {
+    constructor(commandPath: string, key: 'PrimaryKey' | 'SecondaryKey') {
         super(commandParent);
         this.key(key)
     }
@@ -2278,7 +2246,7 @@ class az_servicebus_namespace_authorization_rule_keys_renew_command_builder exte
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
 class az_servicebus_namespace_authorization_rule_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send') {
+    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send') {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -2330,7 +2298,7 @@ class az_servicebus_namespace_authorization_rule_create_command_builder extends 
  * ```
  */
 class az_servicebus_namespace_authorization_rule_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2380,7 +2348,7 @@ class az_servicebus_namespace_authorization_rule_delete_command_builder extends 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_namespace_authorization_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -2425,7 +2393,7 @@ class az_servicebus_namespace_authorization_rule_list_command_builder extends Co
  * ```
  */
 class az_servicebus_namespace_authorization_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2486,7 +2454,7 @@ class az_servicebus_namespace_authorization_rule_show_command_builder extends Co
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
 class az_servicebus_namespace_authorization_rule_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, rights: 'Listen' | 'Manage' | 'Send') {
+    constructor(commandPath: string, rights: 'Listen' | 'Manage' | 'Send') {
         super(commandParent);
         this.rights(rights)
     }
@@ -2571,7 +2539,7 @@ class az_servicebus_namespace_authorization_rule_update_command_builder extends 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_namespace_network_rule_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -2641,7 +2609,7 @@ class az_servicebus_namespace_network_rule_add_command_builder extends CommandBu
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_namespace_network_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -2689,7 +2657,7 @@ class az_servicebus_namespace_network_rule_list_command_builder extends CommandB
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_namespace_network_rule_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -2751,7 +2719,7 @@ class az_servicebus_namespace_network_rule_remove_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_namespace_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2818,7 +2786,7 @@ class az_servicebus_namespace_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_servicebus_namespace_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2859,7 +2827,7 @@ class az_servicebus_namespace_delete_command_builder extends CommandBuilder {
  * @param {string} name Namespace name. Name can contain only letters, numbers, and hyphens. The namespace must start with a letter, and it must end with a letter or number.
  */
 class az_servicebus_namespace_exists_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -2888,7 +2856,7 @@ class az_servicebus_namespace_exists_command_builder extends CommandBuilder {
  * ```
  */
 class az_servicebus_namespace_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2924,7 +2892,7 @@ class az_servicebus_namespace_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_servicebus_namespace_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2979,7 +2947,7 @@ class az_servicebus_namespace_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_servicebus_namespace_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3075,7 +3043,7 @@ class az_servicebus_namespace_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_queue_authorization_rule_keys_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, queueName: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, namespaceName: string, queueName: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -3138,7 +3106,7 @@ class az_servicebus_queue_authorization_rule_keys_list_command_builder extends C
  * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
  */
 class az_servicebus_queue_authorization_rule_keys_renew_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, key: 'PrimaryKey' | 'SecondaryKey') {
+    constructor(commandPath: string, key: 'PrimaryKey' | 'SecondaryKey') {
         super(commandParent);
         this.key(key)
     }
@@ -3212,7 +3180,7 @@ class az_servicebus_queue_authorization_rule_keys_renew_command_builder extends 
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
 class az_servicebus_queue_authorization_rule_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, queueName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send') {
+    constructor(commandPath: string, name: string, namespaceName: string, queueName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send') {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -3272,7 +3240,7 @@ class az_servicebus_queue_authorization_rule_create_command_builder extends Comm
  * ```
  */
 class az_servicebus_queue_authorization_rule_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3330,7 +3298,7 @@ class az_servicebus_queue_authorization_rule_delete_command_builder extends Comm
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_queue_authorization_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, queueName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, queueName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.queueName(queueName)
@@ -3383,7 +3351,7 @@ class az_servicebus_queue_authorization_rule_list_command_builder extends Comman
  * ```
  */
 class az_servicebus_queue_authorization_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3451,7 +3419,7 @@ class az_servicebus_queue_authorization_rule_show_command_builder extends Comman
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
 class az_servicebus_queue_authorization_rule_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, rights: 'Listen' | 'Manage' | 'Send') {
+    constructor(commandPath: string, rights: 'Listen' | 'Manage' | 'Send') {
         super(commandParent);
         this.rights(rights)
     }
@@ -3554,7 +3522,7 @@ class az_servicebus_queue_authorization_rule_update_command_builder extends Comm
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_queue_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -3689,7 +3657,7 @@ class az_servicebus_queue_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_servicebus_queue_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3741,7 +3709,7 @@ class az_servicebus_queue_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_queue_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -3798,7 +3766,7 @@ class az_servicebus_queue_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_servicebus_queue_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3871,7 +3839,7 @@ class az_servicebus_queue_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_servicebus_queue_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4039,7 +4007,7 @@ class az_servicebus_queue_update_command_builder extends CommandBuilder {
  * @param {string} topicName Name of Topic.
  */
 class az_servicebus_topic_authorization_rule_keys_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, resourceGroup: string, topicName: string) {
+    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string, topicName: string) {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -4102,7 +4070,7 @@ class az_servicebus_topic_authorization_rule_keys_list_command_builder extends C
  * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
  */
 class az_servicebus_topic_authorization_rule_keys_renew_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, key: 'PrimaryKey' | 'SecondaryKey') {
+    constructor(commandPath: string, key: 'PrimaryKey' | 'SecondaryKey') {
         super(commandParent);
         this.key(key)
     }
@@ -4176,7 +4144,7 @@ class az_servicebus_topic_authorization_rule_keys_renew_command_builder extends 
  * @param {string} topicName Name of Topic.
  */
 class az_servicebus_topic_authorization_rule_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send', topicName: string) {
+    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send', topicName: string) {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -4236,7 +4204,7 @@ class az_servicebus_topic_authorization_rule_create_command_builder extends Comm
  * ```
  */
 class az_servicebus_topic_authorization_rule_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4294,7 +4262,7 @@ class az_servicebus_topic_authorization_rule_delete_command_builder extends Comm
  * @param {string} topicName Name of Topic.
  */
 class az_servicebus_topic_authorization_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string, topicName: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string, topicName: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -4347,7 +4315,7 @@ class az_servicebus_topic_authorization_rule_list_command_builder extends Comman
  * ```
  */
 class az_servicebus_topic_authorization_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4415,7 +4383,7 @@ class az_servicebus_topic_authorization_rule_show_command_builder extends Comman
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
 class az_servicebus_topic_authorization_rule_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, rights: 'Listen' | 'Manage' | 'Send') {
+    constructor(commandPath: string, rights: 'Listen' | 'Manage' | 'Send') {
         super(commandParent);
         this.rights(rights)
     }
@@ -4521,7 +4489,7 @@ class az_servicebus_topic_authorization_rule_update_command_builder extends Comm
  * @param {string} topicName Name of Topic.
  */
 class az_servicebus_topic_subscription_rule_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, resourceGroup: string, subscriptionName: string, topicName: string) {
+    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string, subscriptionName: string, topicName: string) {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -4666,7 +4634,7 @@ class az_servicebus_topic_subscription_rule_create_command_builder extends Comma
  * ```
  */
 class az_servicebus_topic_subscription_rule_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4734,7 +4702,7 @@ class az_servicebus_topic_subscription_rule_delete_command_builder extends Comma
  * @param {string} topicName Name of Topic.
  */
 class az_servicebus_topic_subscription_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string, subscriptionName: string, topicName: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string, subscriptionName: string, topicName: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -4807,7 +4775,7 @@ class az_servicebus_topic_subscription_rule_list_command_builder extends Command
  * ```
  */
 class az_servicebus_topic_subscription_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4893,7 +4861,7 @@ class az_servicebus_topic_subscription_rule_show_command_builder extends Command
  * ```
  */
 class az_servicebus_topic_subscription_rule_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5077,7 +5045,7 @@ class az_servicebus_topic_subscription_rule_update_command_builder extends Comma
  * @param {string} topicName Name of Topic.
  */
 class az_servicebus_topic_subscription_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, resourceGroup: string, topicName: string) {
+    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string, topicName: string) {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -5196,7 +5164,7 @@ class az_servicebus_topic_subscription_create_command_builder extends CommandBui
  * ```
  */
 class az_servicebus_topic_subscription_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5256,7 +5224,7 @@ class az_servicebus_topic_subscription_delete_command_builder extends CommandBui
  * @param {string} topicName Name of Topic.
  */
 class az_servicebus_topic_subscription_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string, topicName: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string, topicName: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -5321,7 +5289,7 @@ class az_servicebus_topic_subscription_list_command_builder extends CommandBuild
  * ```
  */
 class az_servicebus_topic_subscription_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5397,7 +5365,7 @@ class az_servicebus_topic_subscription_show_command_builder extends CommandBuild
  * ```
  */
 class az_servicebus_topic_subscription_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5554,7 +5522,7 @@ class az_servicebus_topic_subscription_update_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_topic_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.namespaceName(namespaceName)
@@ -5659,7 +5627,7 @@ class az_servicebus_topic_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_servicebus_topic_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5711,7 +5679,7 @@ class az_servicebus_topic_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_topic_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namespaceName: string, resourceGroup: string) {
+    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandParent);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -5768,7 +5736,7 @@ class az_servicebus_topic_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_servicebus_topic_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5836,7 +5804,7 @@ class az_servicebus_topic_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_servicebus_topic_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

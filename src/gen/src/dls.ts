@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Data Lake Store account firewall rules. */
-export class az_dls_account_firewall implements ICommandParent<any> {
-    commandPath = "az dls account firewall";
-
+export class az_dls_account_firewall {
     /**
      * Creates a firewall rule in a Data Lake Store account.
      *
@@ -22,8 +20,8 @@ export class az_dls_account_firewall implements ICommandParent<any> {
      * @param {string} firewallRuleName The name of the firewall rule.
      * @param {string} startIpAddress The start of the valid ip range for the firewall rule.
      */
-    az_dls_account_firewall_create(account: string, endIpAddress: string, firewallRuleName: string, startIpAddress: string): az_dls_account_firewall_create_command_builder {
-        return new az_dls_account_firewall_create_command_builder(this, account, endIpAddress, firewallRuleName, startIpAddress);
+    static az_dls_account_firewall_create(account: string, endIpAddress: string, firewallRuleName: string, startIpAddress: string): az_dls_account_firewall_create_command_builder {
+        return new az_dls_account_firewall_create_command_builder("az dls account firewall create", account, endIpAddress, firewallRuleName, startIpAddress);
     }
 
     /**
@@ -40,8 +38,8 @@ export class az_dls_account_firewall implements ICommandParent<any> {
      *
      * @param {string} firewallRuleName The name of the firewall rule to delete.
      */
-    az_dls_account_firewall_delete(firewallRuleName: string): az_dls_account_firewall_delete_command_builder {
-        return new az_dls_account_firewall_delete_command_builder(this, firewallRuleName);
+    static az_dls_account_firewall_delete(firewallRuleName: string): az_dls_account_firewall_delete_command_builder {
+        return new az_dls_account_firewall_delete_command_builder("az dls account firewall delete", firewallRuleName);
     }
 
     /**
@@ -56,8 +54,8 @@ export class az_dls_account_firewall implements ICommandParent<any> {
      *                              [--subscription]
      * ```
      */
-    az_dls_account_firewall_list(): az_dls_account_firewall_list_command_builder {
-        return new az_dls_account_firewall_list_command_builder(this);
+    static az_dls_account_firewall_list(): az_dls_account_firewall_list_command_builder {
+        return new az_dls_account_firewall_list_command_builder("az dls account firewall list");
     }
 
     /**
@@ -75,8 +73,8 @@ export class az_dls_account_firewall implements ICommandParent<any> {
      *
      * @param {string} firewallRuleName The name of the firewall rule to retrieve.
      */
-    az_dls_account_firewall_show(firewallRuleName: string): az_dls_account_firewall_show_command_builder {
-        return new az_dls_account_firewall_show_command_builder(this, firewallRuleName);
+    static az_dls_account_firewall_show(firewallRuleName: string): az_dls_account_firewall_show_command_builder {
+        return new az_dls_account_firewall_show_command_builder("az dls account firewall show", firewallRuleName);
     }
 
     /**
@@ -95,15 +93,13 @@ export class az_dls_account_firewall implements ICommandParent<any> {
      *
      * @param {string} firewallRuleName The name of the firewall rule to update.
      */
-    az_dls_account_firewall_update(firewallRuleName: string): az_dls_account_firewall_update_command_builder {
-        return new az_dls_account_firewall_update_command_builder(this, firewallRuleName);
+    static az_dls_account_firewall_update(firewallRuleName: string): az_dls_account_firewall_update_command_builder {
+        return new az_dls_account_firewall_update_command_builder("az dls account firewall update", firewallRuleName);
     }
 }
 
 /** Manage Data Lake Store account virtual network rules. */
-export class az_dls_account_network_rule implements ICommandParent<any> {
-    commandPath = "az dls account network-rule";
-
+export class az_dls_account_network_rule {
     /**
      * Creates a virtual network rule in a Data Lake Store account.
      *
@@ -121,8 +117,8 @@ export class az_dls_account_network_rule implements ICommandParent<any> {
      * @param {string} name The virtual network rule name.
      * @param {string} subnet The subnet name or id for the virtual network rule.
      */
-    az_dls_account_network_rule_create(accountName: string, name: string, subnet: string): az_dls_account_network_rule_create_command_builder {
-        return new az_dls_account_network_rule_create_command_builder(this, accountName, name, subnet);
+    static az_dls_account_network_rule_create(accountName: string, name: string, subnet: string): az_dls_account_network_rule_create_command_builder {
+        return new az_dls_account_network_rule_create_command_builder("az dls account network-rule create", accountName, name, subnet);
     }
 
     /**
@@ -139,8 +135,8 @@ export class az_dls_account_network_rule implements ICommandParent<any> {
      *
      * @param {string} accountName Name of the Data Lake Store account.
      */
-    az_dls_account_network_rule_delete(accountName: string): az_dls_account_network_rule_delete_command_builder {
-        return new az_dls_account_network_rule_delete_command_builder(this, accountName);
+    static az_dls_account_network_rule_delete(accountName: string): az_dls_account_network_rule_delete_command_builder {
+        return new az_dls_account_network_rule_delete_command_builder("az dls account network-rule delete", accountName);
     }
 
     /**
@@ -156,8 +152,8 @@ export class az_dls_account_network_rule implements ICommandParent<any> {
      *
      * @param {string} accountName Name of the Data Lake Store account.
      */
-    az_dls_account_network_rule_list(accountName: string): az_dls_account_network_rule_list_command_builder {
-        return new az_dls_account_network_rule_list_command_builder(this, accountName);
+    static az_dls_account_network_rule_list(accountName: string): az_dls_account_network_rule_list_command_builder {
+        return new az_dls_account_network_rule_list_command_builder("az dls account network-rule list", accountName);
     }
 
     /**
@@ -175,8 +171,8 @@ export class az_dls_account_network_rule implements ICommandParent<any> {
      *
      * @param {string} accountName Name of the Data Lake Store account.
      */
-    az_dls_account_network_rule_show(accountName: string): az_dls_account_network_rule_show_command_builder {
-        return new az_dls_account_network_rule_show_command_builder(this, accountName);
+    static az_dls_account_network_rule_show(accountName: string): az_dls_account_network_rule_show_command_builder {
+        return new az_dls_account_network_rule_show_command_builder("az dls account network-rule show", accountName);
     }
 
     /**
@@ -200,15 +196,13 @@ export class az_dls_account_network_rule implements ICommandParent<any> {
      * @param {string} accountName Name of the Data Lake Store account.
      * @param {string} subnet Name or ID of the subnet that allows access to DLS. If subnet name is provided, --name must be provided.
      */
-    az_dls_account_network_rule_update(accountName: string, subnet: string): az_dls_account_network_rule_update_command_builder {
-        return new az_dls_account_network_rule_update_command_builder(this, accountName, subnet);
+    static az_dls_account_network_rule_update(accountName: string, subnet: string): az_dls_account_network_rule_update_command_builder {
+        return new az_dls_account_network_rule_update_command_builder("az dls account network-rule update", accountName, subnet);
     }
 }
 
 /** Manage Data Lake Store account trusted identity providers. */
-export class az_dls_account_trusted_provider implements ICommandParent<any> {
-    commandPath = "az dls account trusted-provider";
-
+export class az_dls_account_trusted_provider {
     /**
      * Creates or updates the specified trusted identity provider.
      *
@@ -225,8 +219,8 @@ export class az_dls_account_trusted_provider implements ICommandParent<any> {
      * @param {string} idProvider The URL of this trusted identity provider.
      * @param {string} trustedIdProviderName The name of the trusted identity provider. This is used for differentiation of providers in the account.
      */
-    az_dls_account_trusted_provider_create(account: string, idProvider: string, trustedIdProviderName: string): az_dls_account_trusted_provider_create_command_builder {
-        return new az_dls_account_trusted_provider_create_command_builder(this, account, idProvider, trustedIdProviderName);
+    static az_dls_account_trusted_provider_create(account: string, idProvider: string, trustedIdProviderName: string): az_dls_account_trusted_provider_create_command_builder {
+        return new az_dls_account_trusted_provider_create_command_builder("az dls account trusted-provider create", account, idProvider, trustedIdProviderName);
     }
 
     /**
@@ -243,8 +237,8 @@ export class az_dls_account_trusted_provider implements ICommandParent<any> {
      *
      * @param {string} trustedIdProviderName The name of the trusted identity provider to delete.
      */
-    az_dls_account_trusted_provider_delete(trustedIdProviderName: string): az_dls_account_trusted_provider_delete_command_builder {
-        return new az_dls_account_trusted_provider_delete_command_builder(this, trustedIdProviderName);
+    static az_dls_account_trusted_provider_delete(trustedIdProviderName: string): az_dls_account_trusted_provider_delete_command_builder {
+        return new az_dls_account_trusted_provider_delete_command_builder("az dls account trusted-provider delete", trustedIdProviderName);
     }
 
     /**
@@ -259,8 +253,8 @@ export class az_dls_account_trusted_provider implements ICommandParent<any> {
      *                                      [--subscription]
      * ```
      */
-    az_dls_account_trusted_provider_list(): az_dls_account_trusted_provider_list_command_builder {
-        return new az_dls_account_trusted_provider_list_command_builder(this);
+    static az_dls_account_trusted_provider_list(): az_dls_account_trusted_provider_list_command_builder {
+        return new az_dls_account_trusted_provider_list_command_builder("az dls account trusted-provider list");
     }
 
     /**
@@ -278,8 +272,8 @@ export class az_dls_account_trusted_provider implements ICommandParent<any> {
      *
      * @param {string} trustedIdProviderName The name of the trusted identity provider to retrieve.
      */
-    az_dls_account_trusted_provider_show(trustedIdProviderName: string): az_dls_account_trusted_provider_show_command_builder {
-        return new az_dls_account_trusted_provider_show_command_builder(this, trustedIdProviderName);
+    static az_dls_account_trusted_provider_show(trustedIdProviderName: string): az_dls_account_trusted_provider_show_command_builder {
+        return new az_dls_account_trusted_provider_show_command_builder("az dls account trusted-provider show", trustedIdProviderName);
     }
 
     /**
@@ -297,15 +291,13 @@ export class az_dls_account_trusted_provider implements ICommandParent<any> {
      *
      * @param {string} trustedIdProviderName The name of the trusted identity provider. This is used for differentiation of providers in the account.
      */
-    az_dls_account_trusted_provider_update(trustedIdProviderName: string): az_dls_account_trusted_provider_update_command_builder {
-        return new az_dls_account_trusted_provider_update_command_builder(this, trustedIdProviderName);
+    static az_dls_account_trusted_provider_update(trustedIdProviderName: string): az_dls_account_trusted_provider_update_command_builder {
+        return new az_dls_account_trusted_provider_update_command_builder("az dls account trusted-provider update", trustedIdProviderName);
     }
 }
 
 /** Manage Data Lake Store accounts. */
-export class az_dls_account implements ICommandParent<any> {
-    commandPath = "az dls account";
-
+export class az_dls_account {
     /**
      * Creates a Data Lake Store account.
      *
@@ -327,8 +319,8 @@ export class az_dls_account implements ICommandParent<any> {
      *
      * @param {string} account Name of the Data Lake Store account.
      */
-    az_dls_account_create(account: string): az_dls_account_create_command_builder {
-        return new az_dls_account_create_command_builder(this, account);
+    static az_dls_account_create(account: string): az_dls_account_create_command_builder {
+        return new az_dls_account_create_command_builder("az dls account create", account);
     }
 
     /**
@@ -342,8 +334,8 @@ export class az_dls_account implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_dls_account_delete(): az_dls_account_delete_command_builder {
-        return new az_dls_account_delete_command_builder(this);
+    static az_dls_account_delete(): az_dls_account_delete_command_builder {
+        return new az_dls_account_delete_command_builder("az dls account delete");
     }
 
     /**
@@ -357,8 +349,8 @@ export class az_dls_account implements ICommandParent<any> {
      *                                 [--subscription]
      * ```
      */
-    az_dls_account_enable_key_vault(): az_dls_account_enable_key_vault_command_builder {
-        return new az_dls_account_enable_key_vault_command_builder(this);
+    static az_dls_account_enable_key_vault(): az_dls_account_enable_key_vault_command_builder {
+        return new az_dls_account_enable_key_vault_command_builder("az dls account enable-key-vault");
     }
 
     /**
@@ -371,8 +363,8 @@ export class az_dls_account implements ICommandParent<any> {
      *                     [--subscription]
      * ```
      */
-    az_dls_account_list(): az_dls_account_list_command_builder {
-        return new az_dls_account_list_command_builder(this);
+    static az_dls_account_list(): az_dls_account_list_command_builder {
+        return new az_dls_account_list_command_builder("az dls account list");
     }
 
     /**
@@ -387,8 +379,8 @@ export class az_dls_account implements ICommandParent<any> {
      *                     [--subscription]
      * ```
      */
-    az_dls_account_show(): az_dls_account_show_command_builder {
-        return new az_dls_account_show_command_builder(this);
+    static az_dls_account_show(): az_dls_account_show_command_builder {
+        return new az_dls_account_show_command_builder("az dls account show");
     }
 
     /**
@@ -409,15 +401,13 @@ export class az_dls_account implements ICommandParent<any> {
      *                       [--trusted-id-provider-state {Disabled, Enabled}]
      * ```
      */
-    az_dls_account_update(): az_dls_account_update_command_builder {
-        return new az_dls_account_update_command_builder(this);
+    static az_dls_account_update(): az_dls_account_update_command_builder {
+        return new az_dls_account_update_command_builder("az dls account update");
     }
 }
 
 /** Manage Data Lake Store filesystem access and permissions. */
-export class az_dls_fs_access implements ICommandParent<any> {
-    commandPath = "az dls fs access";
-
+export class az_dls_fs_access {
     /**
      * Remove the access control list for a file or folder.
      *
@@ -432,8 +422,8 @@ export class az_dls_fs_access implements ICommandParent<any> {
      *
      * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
      */
-    az_dls_fs_access_remove_all(path: string): az_dls_fs_access_remove_all_command_builder {
-        return new az_dls_fs_access_remove_all_command_builder(this, path);
+    static az_dls_fs_access_remove_all(path: string): az_dls_fs_access_remove_all_command_builder {
+        return new az_dls_fs_access_remove_all_command_builder("az dls fs access remove-all", path);
     }
 
     /**
@@ -451,8 +441,8 @@ export class az_dls_fs_access implements ICommandParent<any> {
      * @param {string} aclSpec The ACL specification to set on the path in the format '[default:]user|group|other:[entity id or UPN]:r|-w|-x|-,[default:]user|group|other:[entity id or UPN]:r|-w|-x|-,...'.
      * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
      */
-    az_dls_fs_access_remove_entry(aclSpec: string, path: string): az_dls_fs_access_remove_entry_command_builder {
-        return new az_dls_fs_access_remove_entry_command_builder(this, aclSpec, path);
+    static az_dls_fs_access_remove_entry(aclSpec: string, path: string): az_dls_fs_access_remove_entry_command_builder {
+        return new az_dls_fs_access_remove_entry_command_builder("az dls fs access remove-entry", aclSpec, path);
     }
 
     /**
@@ -470,8 +460,8 @@ export class az_dls_fs_access implements ICommandParent<any> {
      * @param {string} aclSpec The ACL specification to set on the path in the format '[default:]user|group|other:[entity id or UPN]:r|-w|-x|-,[default:]user|group|other:[entity id or UPN]:r|-w|-x|-,...'.
      * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
      */
-    az_dls_fs_access_set(aclSpec: string, path: string): az_dls_fs_access_set_command_builder {
-        return new az_dls_fs_access_set_command_builder(this, aclSpec, path);
+    static az_dls_fs_access_set(aclSpec: string, path: string): az_dls_fs_access_set_command_builder {
+        return new az_dls_fs_access_set_command_builder("az dls fs access set", aclSpec, path);
     }
 
     /**
@@ -489,8 +479,8 @@ export class az_dls_fs_access implements ICommandParent<any> {
      * @param {string} aclSpec The ACL specification to set on the path in the format '[default:]user|group|other:[entity id or UPN]:r|-w|-x|-,[default:]user|group|other:[entity id or UPN]:r|-w|-x|-,...'.
      * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
      */
-    az_dls_fs_access_set_entry(aclSpec: string, path: string): az_dls_fs_access_set_entry_command_builder {
-        return new az_dls_fs_access_set_entry_command_builder(this, aclSpec, path);
+    static az_dls_fs_access_set_entry(aclSpec: string, path: string): az_dls_fs_access_set_entry_command_builder {
+        return new az_dls_fs_access_set_entry_command_builder("az dls fs access set-entry", aclSpec, path);
     }
 
     /**
@@ -508,8 +498,8 @@ export class az_dls_fs_access implements ICommandParent<any> {
      *
      * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
      */
-    az_dls_fs_access_set_owner(path: string): az_dls_fs_access_set_owner_command_builder {
-        return new az_dls_fs_access_set_owner_command_builder(this, path);
+    static az_dls_fs_access_set_owner(path: string): az_dls_fs_access_set_owner_command_builder {
+        return new az_dls_fs_access_set_owner_command_builder("az dls fs access set-owner", path);
     }
 
     /**
@@ -527,8 +517,8 @@ export class az_dls_fs_access implements ICommandParent<any> {
      * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
      * @param {string} permission The octal representation of the permissions for user, group and mask.
      */
-    az_dls_fs_access_set_permission(path: string, permission: string): az_dls_fs_access_set_permission_command_builder {
-        return new az_dls_fs_access_set_permission_command_builder(this, path, permission);
+    static az_dls_fs_access_set_permission(path: string, permission: string): az_dls_fs_access_set_permission_command_builder {
+        return new az_dls_fs_access_set_permission_command_builder("az dls fs access set-permission", path, permission);
     }
 
     /**
@@ -545,15 +535,13 @@ export class az_dls_fs_access implements ICommandParent<any> {
      *
      * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
      */
-    az_dls_fs_access_show(path: string): az_dls_fs_access_show_command_builder {
-        return new az_dls_fs_access_show_command_builder(this, path);
+    static az_dls_fs_access_show(path: string): az_dls_fs_access_show_command_builder {
+        return new az_dls_fs_access_show_command_builder("az dls fs access show", path);
     }
 }
 
 /** Manage a Data Lake Store filesystem. */
-export class az_dls_fs implements ICommandParent<any> {
-    commandPath = "az dls fs";
-
+export class az_dls_fs {
     /**
      * Append content to a file in a Data Lake Store account.
      *
@@ -569,8 +557,8 @@ export class az_dls_fs implements ICommandParent<any> {
      * @param {string} content Content to be appended to the file.
      * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
      */
-    az_dls_fs_append(content: string, path: string): az_dls_fs_append_command_builder {
-        return new az_dls_fs_append_command_builder(this, content, path);
+    static az_dls_fs_append(content: string, path: string): az_dls_fs_append_command_builder {
+        return new az_dls_fs_append_command_builder("az dls fs append", content, path);
     }
 
     /**
@@ -589,8 +577,8 @@ export class az_dls_fs implements ICommandParent<any> {
      * @param {string} account Name of the Data Lake Store account.
      * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
      */
-    az_dls_fs_create(account: string, path: string): az_dls_fs_create_command_builder {
-        return new az_dls_fs_create_command_builder(this, account, path);
+    static az_dls_fs_create(account: string, path: string): az_dls_fs_create_command_builder {
+        return new az_dls_fs_create_command_builder("az dls fs create", account, path);
     }
 
     /**
@@ -607,8 +595,8 @@ export class az_dls_fs implements ICommandParent<any> {
      *
      * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
      */
-    az_dls_fs_delete(path: string): az_dls_fs_delete_command_builder {
-        return new az_dls_fs_delete_command_builder(this, path);
+    static az_dls_fs_delete(path: string): az_dls_fs_delete_command_builder {
+        return new az_dls_fs_delete_command_builder("az dls fs delete", path);
     }
 
     /**
@@ -631,8 +619,8 @@ export class az_dls_fs implements ICommandParent<any> {
      * @param {string} destinationPath The local path where the file or folder will be downloaded to.
      * @param {string} sourcePath The full path in the Data Lake Store filesystem to download the file or folder from.
      */
-    az_dls_fs_download(destinationPath: string, sourcePath: string): az_dls_fs_download_command_builder {
-        return new az_dls_fs_download_command_builder(this, destinationPath, sourcePath);
+    static az_dls_fs_download(destinationPath: string, sourcePath: string): az_dls_fs_download_command_builder {
+        return new az_dls_fs_download_command_builder("az dls fs download", destinationPath, sourcePath);
     }
 
     /**
@@ -651,8 +639,8 @@ export class az_dls_fs implements ICommandParent<any> {
      * @param {string} destinationPath The destination path in the Data Lake Store account.
      * @param {string} sourcePaths The space-separated list of files in the Data Lake Store account to join.
      */
-    az_dls_fs_join(destinationPath: string, sourcePaths: string): az_dls_fs_join_command_builder {
-        return new az_dls_fs_join_command_builder(this, destinationPath, sourcePaths);
+    static az_dls_fs_join(destinationPath: string, sourcePaths: string): az_dls_fs_join_command_builder {
+        return new az_dls_fs_join_command_builder("az dls fs join", destinationPath, sourcePaths);
     }
 
     /**
@@ -669,8 +657,8 @@ export class az_dls_fs implements ICommandParent<any> {
      *
      * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
      */
-    az_dls_fs_list(path: string): az_dls_fs_list_command_builder {
-        return new az_dls_fs_list_command_builder(this, path);
+    static az_dls_fs_list(path: string): az_dls_fs_list_command_builder {
+        return new az_dls_fs_list_command_builder("az dls fs list", path);
     }
 
     /**
@@ -689,8 +677,8 @@ export class az_dls_fs implements ICommandParent<any> {
      * @param {string} destinationPath The destination path in the Data Lake Store account.
      * @param {string} sourcePath The file or folder to move.
      */
-    az_dls_fs_move(destinationPath: string, sourcePath: string): az_dls_fs_move_command_builder {
-        return new az_dls_fs_move_command_builder(this, destinationPath, sourcePath);
+    static az_dls_fs_move(destinationPath: string, sourcePath: string): az_dls_fs_move_command_builder {
+        return new az_dls_fs_move_command_builder("az dls fs move", destinationPath, sourcePath);
     }
 
     /**
@@ -709,8 +697,8 @@ export class az_dls_fs implements ICommandParent<any> {
      *
      * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
      */
-    az_dls_fs_preview(path: string): az_dls_fs_preview_command_builder {
-        return new az_dls_fs_preview_command_builder(this, path);
+    static az_dls_fs_preview(path: string): az_dls_fs_preview_command_builder {
+        return new az_dls_fs_preview_command_builder("az dls fs preview", path);
     }
 
     /**
@@ -726,8 +714,8 @@ export class az_dls_fs implements ICommandParent<any> {
      *
      * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
      */
-    az_dls_fs_remove_expiry(path: string): az_dls_fs_remove_expiry_command_builder {
-        return new az_dls_fs_remove_expiry_command_builder(this, path);
+    static az_dls_fs_remove_expiry(path: string): az_dls_fs_remove_expiry_command_builder {
+        return new az_dls_fs_remove_expiry_command_builder("az dls fs remove-expiry", path);
     }
 
     /**
@@ -745,8 +733,8 @@ export class az_dls_fs implements ICommandParent<any> {
      * @param {string} expirationTime The absolute value of the expiration time expressed as milliseconds since the epoch.
      * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
      */
-    az_dls_fs_set_expiry(expirationTime: string, path: string): az_dls_fs_set_expiry_command_builder {
-        return new az_dls_fs_set_expiry_command_builder(this, expirationTime, path);
+    static az_dls_fs_set_expiry(expirationTime: string, path: string): az_dls_fs_set_expiry_command_builder {
+        return new az_dls_fs_set_expiry_command_builder("az dls fs set-expiry", expirationTime, path);
     }
 
     /**
@@ -763,8 +751,8 @@ export class az_dls_fs implements ICommandParent<any> {
      *
      * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
      */
-    az_dls_fs_show(path: string): az_dls_fs_show_command_builder {
-        return new az_dls_fs_show_command_builder(this, path);
+    static az_dls_fs_show(path: string): az_dls_fs_show_command_builder {
+        return new az_dls_fs_show_command_builder("az dls fs show", path);
     }
 
     /**
@@ -780,8 +768,8 @@ export class az_dls_fs implements ICommandParent<any> {
      *
      * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
      */
-    az_dls_fs_test(path: string): az_dls_fs_test_command_builder {
-        return new az_dls_fs_test_command_builder(this, path);
+    static az_dls_fs_test(path: string): az_dls_fs_test_command_builder {
+        return new az_dls_fs_test_command_builder("az dls fs test", path);
     }
 
     /**
@@ -804,8 +792,8 @@ export class az_dls_fs implements ICommandParent<any> {
      * @param {string} destinationPath The full path in the Data Lake Store filesystem to upload the file or folder to.
      * @param {string} sourcePath The path to the file or folder to upload.
      */
-    az_dls_fs_upload(destinationPath: string, sourcePath: string): az_dls_fs_upload_command_builder {
-        return new az_dls_fs_upload_command_builder(this, destinationPath, sourcePath);
+    static az_dls_fs_upload(destinationPath: string, sourcePath: string): az_dls_fs_upload_command_builder {
+        return new az_dls_fs_upload_command_builder("az dls fs upload", destinationPath, sourcePath);
     }
 }
 
@@ -832,7 +820,7 @@ export class az_dls {
  * @param {string} startIpAddress The start of the valid ip range for the firewall rule.
  */
 class az_dls_account_firewall_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, account: string, endIpAddress: string, firewallRuleName: string, startIpAddress: string) {
+    constructor(commandPath: string, account: string, endIpAddress: string, firewallRuleName: string, startIpAddress: string) {
         super(commandParent);
         this.account(account)
         this.endIpAddress(endIpAddress)
@@ -892,7 +880,7 @@ class az_dls_account_firewall_create_command_builder extends CommandBuilder {
  * @param {string} firewallRuleName The name of the firewall rule to delete.
  */
 class az_dls_account_firewall_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, firewallRuleName: string) {
+    constructor(commandPath: string, firewallRuleName: string) {
         super(commandParent);
         this.firewallRuleName(firewallRuleName)
     }
@@ -941,7 +929,7 @@ class az_dls_account_firewall_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_dls_account_firewall_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -992,7 +980,7 @@ class az_dls_account_firewall_list_command_builder extends CommandBuilder {
  * @param {string} firewallRuleName The name of the firewall rule to retrieve.
  */
 class az_dls_account_firewall_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, firewallRuleName: string) {
+    constructor(commandPath: string, firewallRuleName: string) {
         super(commandParent);
         this.firewallRuleName(firewallRuleName)
     }
@@ -1051,7 +1039,7 @@ class az_dls_account_firewall_show_command_builder extends CommandBuilder {
  * @param {string} firewallRuleName The name of the firewall rule to update.
  */
 class az_dls_account_firewall_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, firewallRuleName: string) {
+    constructor(commandPath: string, firewallRuleName: string) {
         super(commandParent);
         this.firewallRuleName(firewallRuleName)
     }
@@ -1117,7 +1105,7 @@ class az_dls_account_firewall_update_command_builder extends CommandBuilder {
  * @param {string} subnet The subnet name or id for the virtual network rule.
  */
 class az_dls_account_network_rule_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, name: string, subnet: string) {
+    constructor(commandPath: string, accountName: string, name: string, subnet: string) {
         super(commandParent);
         this.accountName(accountName)
         this.name(name)
@@ -1176,7 +1164,7 @@ class az_dls_account_network_rule_create_command_builder extends CommandBuilder 
  * @param {string} accountName Name of the Data Lake Store account.
  */
 class az_dls_account_network_rule_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string) {
+    constructor(commandPath: string, accountName: string) {
         super(commandParent);
         this.accountName(accountName)
     }
@@ -1226,7 +1214,7 @@ class az_dls_account_network_rule_delete_command_builder extends CommandBuilder 
  * @param {string} accountName Name of the Data Lake Store account.
  */
 class az_dls_account_network_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string) {
+    constructor(commandPath: string, accountName: string) {
         super(commandParent);
         this.accountName(accountName)
     }
@@ -1272,7 +1260,7 @@ class az_dls_account_network_rule_list_command_builder extends CommandBuilder {
  * @param {string} accountName Name of the Data Lake Store account.
  */
 class az_dls_account_network_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string) {
+    constructor(commandPath: string, accountName: string) {
         super(commandParent);
         this.accountName(accountName)
     }
@@ -1336,7 +1324,7 @@ class az_dls_account_network_rule_show_command_builder extends CommandBuilder {
  * @param {string} subnet Name or ID of the subnet that allows access to DLS. If subnet name is provided, --name must be provided.
  */
 class az_dls_account_network_rule_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, accountName: string, subnet: string) {
+    constructor(commandPath: string, accountName: string, subnet: string) {
         super(commandParent);
         this.accountName(accountName)
         this.subnet(subnet)
@@ -1426,7 +1414,7 @@ class az_dls_account_network_rule_update_command_builder extends CommandBuilder 
  * @param {string} trustedIdProviderName The name of the trusted identity provider. This is used for differentiation of providers in the account.
  */
 class az_dls_account_trusted_provider_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, account: string, idProvider: string, trustedIdProviderName: string) {
+    constructor(commandPath: string, account: string, idProvider: string, trustedIdProviderName: string) {
         super(commandParent);
         this.account(account)
         this.idProvider(idProvider)
@@ -1479,7 +1467,7 @@ class az_dls_account_trusted_provider_create_command_builder extends CommandBuil
  * @param {string} trustedIdProviderName The name of the trusted identity provider to delete.
  */
 class az_dls_account_trusted_provider_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, trustedIdProviderName: string) {
+    constructor(commandPath: string, trustedIdProviderName: string) {
         super(commandParent);
         this.trustedIdProviderName(trustedIdProviderName)
     }
@@ -1528,7 +1516,7 @@ class az_dls_account_trusted_provider_delete_command_builder extends CommandBuil
  * ```
  */
 class az_dls_account_trusted_provider_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1579,7 +1567,7 @@ class az_dls_account_trusted_provider_list_command_builder extends CommandBuilde
  * @param {string} trustedIdProviderName The name of the trusted identity provider to retrieve.
  */
 class az_dls_account_trusted_provider_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, trustedIdProviderName: string) {
+    constructor(commandPath: string, trustedIdProviderName: string) {
         super(commandParent);
         this.trustedIdProviderName(trustedIdProviderName)
     }
@@ -1637,7 +1625,7 @@ class az_dls_account_trusted_provider_show_command_builder extends CommandBuilde
  * @param {string} trustedIdProviderName The name of the trusted identity provider. This is used for differentiation of providers in the account.
  */
 class az_dls_account_trusted_provider_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, trustedIdProviderName: string) {
+    constructor(commandPath: string, trustedIdProviderName: string) {
         super(commandParent);
         this.trustedIdProviderName(trustedIdProviderName)
     }
@@ -1701,7 +1689,7 @@ class az_dls_account_trusted_provider_update_command_builder extends CommandBuil
  * @param {string} account Name of the Data Lake Store account.
  */
 class az_dls_account_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, account: string) {
+    constructor(commandPath: string, account: string) {
         super(commandParent);
         this.account(account)
     }
@@ -1791,7 +1779,7 @@ class az_dls_account_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_dls_account_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1832,7 +1820,7 @@ class az_dls_account_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_dls_account_enable_key_vault_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1872,7 +1860,7 @@ class az_dls_account_enable_key_vault_command_builder extends CommandBuilder {
  * ```
  */
 class az_dls_account_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1908,7 +1896,7 @@ class az_dls_account_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_dls_account_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1962,7 +1950,7 @@ class az_dls_account_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_dls_account_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2048,7 +2036,7 @@ class az_dls_account_update_command_builder extends CommandBuilder {
  * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
  */
 class az_dls_fs_access_remove_all_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string) {
+    constructor(commandPath: string, path: string) {
         super(commandParent);
         this.path(path)
     }
@@ -2100,7 +2088,7 @@ class az_dls_fs_access_remove_all_command_builder extends CommandBuilder {
  * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
  */
 class az_dls_fs_access_remove_entry_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, aclSpec: string, path: string) {
+    constructor(commandPath: string, aclSpec: string, path: string) {
         super(commandParent);
         this.aclSpec(aclSpec)
         this.path(path)
@@ -2153,7 +2141,7 @@ class az_dls_fs_access_remove_entry_command_builder extends CommandBuilder {
  * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
  */
 class az_dls_fs_access_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, aclSpec: string, path: string) {
+    constructor(commandPath: string, aclSpec: string, path: string) {
         super(commandParent);
         this.aclSpec(aclSpec)
         this.path(path)
@@ -2206,7 +2194,7 @@ class az_dls_fs_access_set_command_builder extends CommandBuilder {
  * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
  */
 class az_dls_fs_access_set_entry_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, aclSpec: string, path: string) {
+    constructor(commandPath: string, aclSpec: string, path: string) {
         super(commandParent);
         this.aclSpec(aclSpec)
         this.path(path)
@@ -2259,7 +2247,7 @@ class az_dls_fs_access_set_entry_command_builder extends CommandBuilder {
  * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
  */
 class az_dls_fs_access_set_owner_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string) {
+    constructor(commandPath: string, path: string) {
         super(commandParent);
         this.path(path)
     }
@@ -2317,7 +2305,7 @@ class az_dls_fs_access_set_owner_command_builder extends CommandBuilder {
  * @param {string} permission The octal representation of the permissions for user, group and mask.
  */
 class az_dls_fs_access_set_permission_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string, permission: string) {
+    constructor(commandPath: string, path: string, permission: string) {
         super(commandParent);
         this.path(path)
         this.permission(permission)
@@ -2369,7 +2357,7 @@ class az_dls_fs_access_set_permission_command_builder extends CommandBuilder {
  * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
  */
 class az_dls_fs_access_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string) {
+    constructor(commandPath: string, path: string) {
         super(commandParent);
         this.path(path)
     }
@@ -2421,7 +2409,7 @@ class az_dls_fs_access_show_command_builder extends CommandBuilder {
  * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
  */
 class az_dls_fs_append_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, content: string, path: string) {
+    constructor(commandPath: string, content: string, path: string) {
         super(commandParent);
         this.content(content)
         this.path(path)
@@ -2475,7 +2463,7 @@ class az_dls_fs_append_command_builder extends CommandBuilder {
  * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
  */
 class az_dls_fs_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, account: string, path: string) {
+    constructor(commandPath: string, account: string, path: string) {
         super(commandParent);
         this.account(account)
         this.path(path)
@@ -2533,7 +2521,7 @@ class az_dls_fs_create_command_builder extends CommandBuilder {
  * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
  */
 class az_dls_fs_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string) {
+    constructor(commandPath: string, path: string) {
         super(commandParent);
         this.path(path)
     }
@@ -2590,7 +2578,7 @@ class az_dls_fs_delete_command_builder extends CommandBuilder {
  * @param {string} sourcePath The full path in the Data Lake Store filesystem to download the file or folder from.
  */
 class az_dls_fs_download_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, destinationPath: string, sourcePath: string) {
+    constructor(commandPath: string, destinationPath: string, sourcePath: string) {
         super(commandParent);
         this.destinationPath(destinationPath)
         this.sourcePath(sourcePath)
@@ -2674,7 +2662,7 @@ class az_dls_fs_download_command_builder extends CommandBuilder {
  * @param {string} sourcePaths The space-separated list of files in the Data Lake Store account to join.
  */
 class az_dls_fs_join_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, destinationPath: string, sourcePaths: string) {
+    constructor(commandPath: string, destinationPath: string, sourcePaths: string) {
         super(commandParent);
         this.destinationPath(destinationPath)
         this.sourcePaths(sourcePaths)
@@ -2732,7 +2720,7 @@ class az_dls_fs_join_command_builder extends CommandBuilder {
  * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
  */
 class az_dls_fs_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string) {
+    constructor(commandPath: string, path: string) {
         super(commandParent);
         this.path(path)
     }
@@ -2785,7 +2773,7 @@ class az_dls_fs_list_command_builder extends CommandBuilder {
  * @param {string} sourcePath The file or folder to move.
  */
 class az_dls_fs_move_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, destinationPath: string, sourcePath: string) {
+    constructor(commandPath: string, destinationPath: string, sourcePath: string) {
         super(commandParent);
         this.destinationPath(destinationPath)
         this.sourcePath(sourcePath)
@@ -2845,7 +2833,7 @@ class az_dls_fs_move_command_builder extends CommandBuilder {
  * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
  */
 class az_dls_fs_preview_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string) {
+    constructor(commandPath: string, path: string) {
         super(commandParent);
         this.path(path)
     }
@@ -2907,7 +2895,7 @@ class az_dls_fs_preview_command_builder extends CommandBuilder {
  * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
  */
 class az_dls_fs_remove_expiry_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string) {
+    constructor(commandPath: string, path: string) {
         super(commandParent);
         this.path(path)
     }
@@ -2953,7 +2941,7 @@ class az_dls_fs_remove_expiry_command_builder extends CommandBuilder {
  * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
  */
 class az_dls_fs_set_expiry_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, expirationTime: string, path: string) {
+    constructor(commandPath: string, expirationTime: string, path: string) {
         super(commandParent);
         this.expirationTime(expirationTime)
         this.path(path)
@@ -3005,7 +2993,7 @@ class az_dls_fs_set_expiry_command_builder extends CommandBuilder {
  * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
  */
 class az_dls_fs_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string) {
+    constructor(commandPath: string, path: string) {
         super(commandParent);
         this.path(path)
     }
@@ -3055,7 +3043,7 @@ class az_dls_fs_show_command_builder extends CommandBuilder {
  * @param {string} path The path in the specified Data Lake Store account where the action should take place. In the format '/folder/file.txt', where the first '/' after the DNS indicates the root of the file system.
  */
 class az_dls_fs_test_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string) {
+    constructor(commandPath: string, path: string) {
         super(commandParent);
         this.path(path)
     }
@@ -3106,7 +3094,7 @@ class az_dls_fs_test_command_builder extends CommandBuilder {
  * @param {string} sourcePath The path to the file or folder to upload.
  */
 class az_dls_fs_upload_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, destinationPath: string, sourcePath: string) {
+    constructor(commandPath: string, destinationPath: string, sourcePath: string) {
         super(commandParent);
         this.destinationPath(destinationPath)
         this.sourcePath(sourcePath)

@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Azure Maps account keys. */
-export class az_maps_account_keys implements ICommandParent<any> {
-    commandPath = "az maps account keys";
-
+export class az_maps_account_keys {
     /**
      * List the keys to use with the Maps APIs.
      *
@@ -18,8 +16,8 @@ export class az_maps_account_keys implements ICommandParent<any> {
      * @param {string} name The name of the maps account.
      * @param {string} resourceGroup Resource group name.
      */
-    az_maps_account_keys_list(name: string, resourceGroup: string): az_maps_account_keys_list_command_builder {
-        return new az_maps_account_keys_list_command_builder(this, name, resourceGroup);
+    static az_maps_account_keys_list(name: string, resourceGroup: string): az_maps_account_keys_list_command_builder {
+        return new az_maps_account_keys_list_command_builder("az maps account keys list", name, resourceGroup);
     }
 
     /**
@@ -37,15 +35,13 @@ export class az_maps_account_keys implements ICommandParent<any> {
      * @param {string} name The name of the maps account.
      * @param {string} resourceGroup Resource group name.
      */
-    az_maps_account_keys_renew(key: 'primary' | 'secondary', name: string, resourceGroup: string): az_maps_account_keys_renew_command_builder {
-        return new az_maps_account_keys_renew_command_builder(this, key, name, resourceGroup);
+    static az_maps_account_keys_renew(key: 'primary' | 'secondary', name: string, resourceGroup: string): az_maps_account_keys_renew_command_builder {
+        return new az_maps_account_keys_renew_command_builder("az maps account keys renew", key, name, resourceGroup);
     }
 }
 
 /** Manage Azure Maps accounts. */
-export class az_maps_account implements ICommandParent<any> {
-    commandPath = "az maps account";
-
+export class az_maps_account {
     /**
      * Create a maps account.
      *
@@ -62,8 +58,8 @@ export class az_maps_account implements ICommandParent<any> {
      * @param {string} name The name of the maps account.
      * @param {string} resourceGroup Resource group name.
      */
-    az_maps_account_create(name: string, resourceGroup: string): az_maps_account_create_command_builder {
-        return new az_maps_account_create_command_builder(this, name, resourceGroup);
+    static az_maps_account_create(name: string, resourceGroup: string): az_maps_account_create_command_builder {
+        return new az_maps_account_create_command_builder("az maps account create", name, resourceGroup);
     }
 
     /**
@@ -77,8 +73,8 @@ export class az_maps_account implements ICommandParent<any> {
      *                        [--subscription]
      * ```
      */
-    az_maps_account_delete(): az_maps_account_delete_command_builder {
-        return new az_maps_account_delete_command_builder(this);
+    static az_maps_account_delete(): az_maps_account_delete_command_builder {
+        return new az_maps_account_delete_command_builder("az maps account delete");
     }
 
     /**
@@ -91,8 +87,8 @@ export class az_maps_account implements ICommandParent<any> {
      *                      [--subscription]
      * ```
      */
-    az_maps_account_list(): az_maps_account_list_command_builder {
-        return new az_maps_account_list_command_builder(this);
+    static az_maps_account_list(): az_maps_account_list_command_builder {
+        return new az_maps_account_list_command_builder("az maps account list");
     }
 
     /**
@@ -107,8 +103,8 @@ export class az_maps_account implements ICommandParent<any> {
      *                      [--subscription]
      * ```
      */
-    az_maps_account_show(): az_maps_account_show_command_builder {
-        return new az_maps_account_show_command_builder(this);
+    static az_maps_account_show(): az_maps_account_show_command_builder {
+        return new az_maps_account_show_command_builder("az maps account show");
     }
 
     /**
@@ -128,8 +124,8 @@ export class az_maps_account implements ICommandParent<any> {
      *                        [--tags]
      * ```
      */
-    az_maps_account_update(): az_maps_account_update_command_builder {
-        return new az_maps_account_update_command_builder(this);
+    static az_maps_account_update(): az_maps_account_update_command_builder {
+        return new az_maps_account_update_command_builder("az maps account update");
     }
 }
 
@@ -152,7 +148,7 @@ export class az_maps {
  * @param {string} resourceGroup Resource group name.
  */
 class az_maps_account_keys_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -199,7 +195,7 @@ class az_maps_account_keys_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Resource group name.
  */
 class az_maps_account_keys_renew_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, key: 'primary' | 'secondary', name: string, resourceGroup: string) {
+    constructor(commandPath: string, key: 'primary' | 'secondary', name: string, resourceGroup: string) {
         super(commandParent);
         this.key(key)
         this.name(name)
@@ -248,7 +244,7 @@ class az_maps_account_keys_renew_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Resource group name.
  */
 class az_maps_account_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -303,7 +299,7 @@ class az_maps_account_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_maps_account_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -343,7 +339,7 @@ class az_maps_account_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_maps_account_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -379,7 +375,7 @@ class az_maps_account_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_maps_account_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -432,7 +428,7 @@ class az_maps_account_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_maps_account_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

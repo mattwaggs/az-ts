@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage image builder template customizers. */
-export class az_image_builder_customizer implements ICommandParent<any> {
-    commandPath = "az image builder customizer";
-
+export class az_image_builder_customizer {
     /**
      * Add an image builder customizer to an image builder template.
      *
@@ -32,8 +30,8 @@ export class az_image_builder_customizer implements ICommandParent<any> {
      * @param {string} customizerName Name of the customizer.
      * @param {'file' | 'powershell' | 'shell' | 'windows-restart' | 'windows-update'} type Type of customizer to be added to the image template.
      */
-    az_image_builder_customizer_add(customizerName: string, type: 'file' | 'powershell' | 'shell' | 'windows-restart' | 'windows-update'): az_image_builder_customizer_add_command_builder {
-        return new az_image_builder_customizer_add_command_builder(this, customizerName, type);
+    static az_image_builder_customizer_add(customizerName: string, type: 'file' | 'powershell' | 'shell' | 'windows-restart' | 'windows-update'): az_image_builder_customizer_add_command_builder {
+        return new az_image_builder_customizer_add_command_builder("az image builder customizer add", customizerName, type);
     }
 
     /**
@@ -48,8 +46,8 @@ export class az_image_builder_customizer implements ICommandParent<any> {
      *                                   [--subscription]
      * ```
      */
-    az_image_builder_customizer_clear(): az_image_builder_customizer_clear_command_builder {
-        return new az_image_builder_customizer_clear_command_builder(this);
+    static az_image_builder_customizer_clear(): az_image_builder_customizer_clear_command_builder {
+        return new az_image_builder_customizer_clear_command_builder("az image builder customizer clear");
     }
 
     /**
@@ -67,15 +65,13 @@ export class az_image_builder_customizer implements ICommandParent<any> {
      *
      * @param {string} customizerName Name of the customizer.
      */
-    az_image_builder_customizer_remove(customizerName: string): az_image_builder_customizer_remove_command_builder {
-        return new az_image_builder_customizer_remove_command_builder(this, customizerName);
+    static az_image_builder_customizer_remove(customizerName: string): az_image_builder_customizer_remove_command_builder {
+        return new az_image_builder_customizer_remove_command_builder("az image builder customizer remove", customizerName);
     }
 }
 
 /** Manage image builder template output distributors. */
-export class az_image_builder_output implements ICommandParent<any> {
-    commandPath = "az image builder output";
-
+export class az_image_builder_output {
     /**
      * Add an image builder output distributor to an image builder template.
      *
@@ -96,8 +92,8 @@ export class az_image_builder_output implements ICommandParent<any> {
      *                             [--subscription]
      * ```
      */
-    az_image_builder_output_add(): az_image_builder_output_add_command_builder {
-        return new az_image_builder_output_add_command_builder(this);
+    static az_image_builder_output_add(): az_image_builder_output_add_command_builder {
+        return new az_image_builder_output_add_command_builder("az image builder output add");
     }
 
     /**
@@ -112,8 +108,8 @@ export class az_image_builder_output implements ICommandParent<any> {
      *                               [--subscription]
      * ```
      */
-    az_image_builder_output_clear(): az_image_builder_output_clear_command_builder {
-        return new az_image_builder_output_clear_command_builder(this);
+    static az_image_builder_output_clear(): az_image_builder_output_clear_command_builder {
+        return new az_image_builder_output_clear_command_builder("az image builder output clear");
     }
 
     /**
@@ -131,15 +127,13 @@ export class az_image_builder_output implements ICommandParent<any> {
      *
      * @param {string} outputName Name of the image builder run output.
      */
-    az_image_builder_output_remove(outputName: string): az_image_builder_output_remove_command_builder {
-        return new az_image_builder_output_remove_command_builder(this, outputName);
+    static az_image_builder_output_remove(outputName: string): az_image_builder_output_remove_command_builder {
+        return new az_image_builder_output_remove_command_builder("az image builder output remove", outputName);
     }
 }
 
 /** Manage and build image builder templates. */
-export class az_image_builder implements ICommandParent<any> {
-    commandPath = "az image builder";
-
+export class az_image_builder {
     /**
      * Cancel the long running image build based on the image template.
      *
@@ -151,8 +145,8 @@ export class az_image_builder implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_image_builder_cancel(): az_image_builder_cancel_command_builder {
-        return new az_image_builder_cancel_command_builder(this);
+    static az_image_builder_cancel(): az_image_builder_cancel_command_builder {
+        return new az_image_builder_cancel_command_builder("az image builder cancel");
     }
 
     /**
@@ -184,8 +178,8 @@ export class az_image_builder implements ICommandParent<any> {
      * @param {string} name The name of the image template.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_image_builder_create(name: string, resourceGroup: string): az_image_builder_create_command_builder {
-        return new az_image_builder_create_command_builder(this, name, resourceGroup);
+    static az_image_builder_create(name: string, resourceGroup: string): az_image_builder_create_command_builder {
+        return new az_image_builder_create_command_builder("az image builder create", name, resourceGroup);
     }
 
     /**
@@ -199,8 +193,8 @@ export class az_image_builder implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_image_builder_delete(): az_image_builder_delete_command_builder {
-        return new az_image_builder_delete_command_builder(this);
+    static az_image_builder_delete(): az_image_builder_delete_command_builder {
+        return new az_image_builder_delete_command_builder("az image builder delete");
     }
 
     /**
@@ -213,8 +207,8 @@ export class az_image_builder implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_image_builder_list(): az_image_builder_list_command_builder {
-        return new az_image_builder_list_command_builder(this);
+    static az_image_builder_list(): az_image_builder_list_command_builder {
+        return new az_image_builder_list_command_builder("az image builder list");
     }
 
     /**
@@ -229,8 +223,8 @@ export class az_image_builder implements ICommandParent<any> {
      *                      [--subscription]
      * ```
      */
-    az_image_builder_run(): az_image_builder_run_command_builder {
-        return new az_image_builder_run_command_builder(this);
+    static az_image_builder_run(): az_image_builder_run_command_builder {
+        return new az_image_builder_run_command_builder("az image builder run");
     }
 
     /**
@@ -245,8 +239,8 @@ export class az_image_builder implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_image_builder_show(): az_image_builder_show_command_builder {
-        return new az_image_builder_show_command_builder(this);
+    static az_image_builder_show(): az_image_builder_show_command_builder {
+        return new az_image_builder_show_command_builder("az image builder show");
     }
 
     /**
@@ -261,8 +255,8 @@ export class az_image_builder implements ICommandParent<any> {
      *                            [--subscription]
      * ```
      */
-    az_image_builder_show_runs(): az_image_builder_show_runs_command_builder {
-        return new az_image_builder_show_runs_command_builder(this);
+    static az_image_builder_show_runs(): az_image_builder_show_runs_command_builder {
+        return new az_image_builder_show_runs_command_builder("az image builder show-runs");
     }
 
     /**
@@ -281,8 +275,8 @@ export class az_image_builder implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_image_builder_update(): az_image_builder_update_command_builder {
-        return new az_image_builder_update_command_builder(this);
+    static az_image_builder_update(): az_image_builder_update_command_builder {
+        return new az_image_builder_update_command_builder("az image builder update");
     }
 
     /**
@@ -303,15 +297,13 @@ export class az_image_builder implements ICommandParent<any> {
      *                       [--updated]
      * ```
      */
-    az_image_builder_wait(): az_image_builder_wait_command_builder {
-        return new az_image_builder_wait_command_builder(this);
+    static az_image_builder_wait(): az_image_builder_wait_command_builder {
+        return new az_image_builder_wait_command_builder("az image builder wait");
     }
 }
 
 /** Manage custom virtual machine images. */
-export class az_image implements ICommandParent<any> {
-    commandPath = "az image";
-
+export class az_image {
     /**
      * Create a custom Virtual Machine Image from managed disks or snapshots.
      *
@@ -336,8 +328,8 @@ export class az_image implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} source OS disk source from the same region, including a virtual machine ID or name, OS disk blob URI, managed OS disk ID or name, or OS snapshot ID or name.
      */
-    az_image_create(name: string, resourceGroup: string, source: string): az_image_create_command_builder {
-        return new az_image_create_command_builder(this, name, resourceGroup, source);
+    static az_image_create(name: string, resourceGroup: string, source: string): az_image_create_command_builder {
+        return new az_image_create_command_builder("az image create", name, resourceGroup, source);
     }
 
     /**
@@ -351,8 +343,8 @@ export class az_image implements ICommandParent<any> {
      *                 [--subscription]
      * ```
      */
-    az_image_delete(): az_image_delete_command_builder {
-        return new az_image_delete_command_builder(this);
+    static az_image_delete(): az_image_delete_command_builder {
+        return new az_image_delete_command_builder("az image delete");
     }
 
     /**
@@ -365,8 +357,8 @@ export class az_image implements ICommandParent<any> {
      *               [--subscription]
      * ```
      */
-    az_image_list(): az_image_list_command_builder {
-        return new az_image_list_command_builder(this);
+    static az_image_list(): az_image_list_command_builder {
+        return new az_image_list_command_builder("az image list");
     }
 
     /**
@@ -382,8 +374,8 @@ export class az_image implements ICommandParent<any> {
      *               [--subscription]
      * ```
      */
-    az_image_show(): az_image_show_command_builder {
-        return new az_image_show_command_builder(this);
+    static az_image_show(): az_image_show_command_builder {
+        return new az_image_show_command_builder("az image show");
     }
 
     /**
@@ -402,8 +394,8 @@ export class az_image implements ICommandParent<any> {
      *                 [--tags]
      * ```
      */
-    az_image_update(): az_image_update_command_builder {
-        return new az_image_update_command_builder(this);
+    static az_image_update(): az_image_update_command_builder {
+        return new az_image_update_command_builder("az image update");
     }
 }
 
@@ -436,7 +428,7 @@ export class az_image implements ICommandParent<any> {
  * @param {'file' | 'powershell' | 'shell' | 'windows-restart' | 'windows-update'} type Type of customizer to be added to the image template.
  */
 class az_image_builder_customizer_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, customizerName: string, type: 'file' | 'powershell' | 'shell' | 'windows-restart' | 'windows-update') {
+    constructor(commandPath: string, customizerName: string, type: 'file' | 'powershell' | 'shell' | 'windows-restart' | 'windows-update') {
         super(commandParent);
         this.customizerName(customizerName)
         this.type(type)
@@ -564,7 +556,7 @@ class az_image_builder_customizer_add_command_builder extends CommandBuilder {
  * ```
  */
 class az_image_builder_customizer_clear_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -615,7 +607,7 @@ class az_image_builder_customizer_clear_command_builder extends CommandBuilder {
  * @param {string} customizerName Name of the customizer.
  */
 class az_image_builder_customizer_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, customizerName: string) {
+    constructor(commandPath: string, customizerName: string) {
         super(commandParent);
         this.customizerName(customizerName)
     }
@@ -678,7 +670,7 @@ class az_image_builder_customizer_remove_command_builder extends CommandBuilder 
  * ```
  */
 class az_image_builder_output_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -774,7 +766,7 @@ class az_image_builder_output_add_command_builder extends CommandBuilder {
  * ```
  */
 class az_image_builder_output_clear_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -825,7 +817,7 @@ class az_image_builder_output_clear_command_builder extends CommandBuilder {
  * @param {string} outputName Name of the image builder run output.
  */
 class az_image_builder_output_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, outputName: string) {
+    constructor(commandPath: string, outputName: string) {
         super(commandParent);
         this.outputName(outputName)
     }
@@ -879,7 +871,7 @@ class az_image_builder_output_remove_command_builder extends CommandBuilder {
  * ```
  */
 class az_image_builder_cancel_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -938,7 +930,7 @@ class az_image_builder_cancel_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_image_builder_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1071,7 +1063,7 @@ class az_image_builder_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_image_builder_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1111,7 +1103,7 @@ class az_image_builder_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_image_builder_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1147,7 +1139,7 @@ class az_image_builder_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_image_builder_run_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1195,7 +1187,7 @@ class az_image_builder_run_command_builder extends CommandBuilder {
  * ```
  */
 class az_image_builder_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1243,7 +1235,7 @@ class az_image_builder_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_image_builder_show_runs_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1295,7 +1287,7 @@ class az_image_builder_show_runs_command_builder extends CommandBuilder {
  * ```
  */
 class az_image_builder_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1373,7 +1365,7 @@ class az_image_builder_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_image_builder_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1469,7 +1461,7 @@ class az_image_builder_wait_command_builder extends CommandBuilder {
  * @param {string} source OS disk source from the same region, including a virtual machine ID or name, OS disk blob URI, managed OS disk ID or name, or OS snapshot ID or name.
  */
 class az_image_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, source: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, source: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1567,7 +1559,7 @@ class az_image_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_image_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1607,7 +1599,7 @@ class az_image_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_image_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1644,7 +1636,7 @@ class az_image_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_image_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1702,7 +1694,7 @@ class az_image_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_image_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

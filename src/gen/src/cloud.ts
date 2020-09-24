@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage registered Azure clouds. */
-export class az_cloud implements ICommandParent<any> {
-    commandPath = "az cloud";
-
+export class az_cloud {
     /**
      * List registered clouds.
      *
@@ -12,8 +10,8 @@ export class az_cloud implements ICommandParent<any> {
      * az cloud list [--query-examples]
      * ```
      */
-    az_cloud_list(): az_cloud_list_command_builder {
-        return new az_cloud_list_command_builder(this);
+    static az_cloud_list(): az_cloud_list_command_builder {
+        return new az_cloud_list_command_builder("az cloud list");
     }
 
     /**
@@ -25,8 +23,8 @@ export class az_cloud implements ICommandParent<any> {
      *                        [--show-all]
      * ```
      */
-    az_cloud_list_profiles(): az_cloud_list_profiles_command_builder {
-        return new az_cloud_list_profiles_command_builder(this);
+    static az_cloud_list_profiles(): az_cloud_list_profiles_command_builder {
+        return new az_cloud_list_profiles_command_builder("az cloud list-profiles");
     }
 
     /**
@@ -56,8 +54,8 @@ export class az_cloud implements ICommandParent<any> {
      *
      * @param {string} name Name of a registered cloud.
      */
-    az_cloud_register(name: string): az_cloud_register_command_builder {
-        return new az_cloud_register_command_builder(this, name);
+    static az_cloud_register(name: string): az_cloud_register_command_builder {
+        return new az_cloud_register_command_builder("az cloud register", name);
     }
 
     /**
@@ -71,8 +69,8 @@ export class az_cloud implements ICommandParent<any> {
      *
      * @param {string} name Name of a registered cloud.
      */
-    az_cloud_set(name: string): az_cloud_set_command_builder {
-        return new az_cloud_set_command_builder(this, name);
+    static az_cloud_set(name: string): az_cloud_set_command_builder {
+        return new az_cloud_set_command_builder("az cloud set", name);
     }
 
     /**
@@ -84,8 +82,8 @@ export class az_cloud implements ICommandParent<any> {
      *               [--query-examples]
      * ```
      */
-    az_cloud_show(): az_cloud_show_command_builder {
-        return new az_cloud_show_command_builder(this);
+    static az_cloud_show(): az_cloud_show_command_builder {
+        return new az_cloud_show_command_builder("az cloud show");
     }
 
     /**
@@ -98,8 +96,8 @@ export class az_cloud implements ICommandParent<any> {
      *
      * @param {string} name Name of a registered cloud.
      */
-    az_cloud_unregister(name: string): az_cloud_unregister_command_builder {
-        return new az_cloud_unregister_command_builder(this, name);
+    static az_cloud_unregister(name: string): az_cloud_unregister_command_builder {
+        return new az_cloud_unregister_command_builder("az cloud unregister", name);
     }
 
     /**
@@ -127,8 +125,8 @@ export class az_cloud implements ICommandParent<any> {
      *                 [--suffix-storage-endpoint]
      * ```
      */
-    az_cloud_update(): az_cloud_update_command_builder {
-        return new az_cloud_update_command_builder(this);
+    static az_cloud_update(): az_cloud_update_command_builder {
+        return new az_cloud_update_command_builder("az cloud update");
     }
 }
 
@@ -141,7 +139,7 @@ export class az_cloud implements ICommandParent<any> {
  * ```
  */
 class az_cloud_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -162,7 +160,7 @@ class az_cloud_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_cloud_list_profiles_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -207,7 +205,7 @@ class az_cloud_list_profiles_command_builder extends CommandBuilder {
  * @param {string} name Name of a registered cloud.
  */
 class az_cloud_register_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -333,7 +331,7 @@ class az_cloud_register_command_builder extends CommandBuilder {
  * @param {string} name Name of a registered cloud.
  */
 class az_cloud_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -361,7 +359,7 @@ class az_cloud_set_command_builder extends CommandBuilder {
  * ```
  */
 class az_cloud_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -389,7 +387,7 @@ class az_cloud_show_command_builder extends CommandBuilder {
  * @param {string} name Name of a registered cloud.
  */
 class az_cloud_unregister_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -427,7 +425,7 @@ class az_cloud_unregister_command_builder extends CommandBuilder {
  * ```
  */
 class az_cloud_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

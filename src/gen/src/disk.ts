@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage disk access resources. */
-export class az_disk_access implements ICommandParent<any> {
-    commandPath = "az disk-access";
-
+export class az_disk_access {
     /**
      * Create a disk access resource.
      *
@@ -20,8 +18,8 @@ export class az_disk_access implements ICommandParent<any> {
      * @param {string} name Name of the disk access resource.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_disk_access_create(name: string, resourceGroup: string): az_disk_access_create_command_builder {
-        return new az_disk_access_create_command_builder(this, name, resourceGroup);
+    static az_disk_access_create(name: string, resourceGroup: string): az_disk_access_create_command_builder {
+        return new az_disk_access_create_command_builder("az disk-access create", name, resourceGroup);
     }
 
     /**
@@ -35,8 +33,8 @@ export class az_disk_access implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_disk_access_delete(): az_disk_access_delete_command_builder {
-        return new az_disk_access_delete_command_builder(this);
+    static az_disk_access_delete(): az_disk_access_delete_command_builder {
+        return new az_disk_access_delete_command_builder("az disk-access delete");
     }
 
     /**
@@ -49,8 +47,8 @@ export class az_disk_access implements ICommandParent<any> {
      *                     [--subscription]
      * ```
      */
-    az_disk_access_list(): az_disk_access_list_command_builder {
-        return new az_disk_access_list_command_builder(this);
+    static az_disk_access_list(): az_disk_access_list_command_builder {
+        return new az_disk_access_list_command_builder("az disk-access list");
     }
 
     /**
@@ -65,8 +63,8 @@ export class az_disk_access implements ICommandParent<any> {
      *                     [--subscription]
      * ```
      */
-    az_disk_access_show(): az_disk_access_show_command_builder {
-        return new az_disk_access_show_command_builder(this);
+    static az_disk_access_show(): az_disk_access_show_command_builder {
+        return new az_disk_access_show_command_builder("az disk-access show");
     }
 
     /**
@@ -86,8 +84,8 @@ export class az_disk_access implements ICommandParent<any> {
      *                       [--tags]
      * ```
      */
-    az_disk_access_update(): az_disk_access_update_command_builder {
-        return new az_disk_access_update_command_builder(this);
+    static az_disk_access_update(): az_disk_access_update_command_builder {
+        return new az_disk_access_update_command_builder("az disk-access update");
     }
 
     /**
@@ -108,15 +106,13 @@ export class az_disk_access implements ICommandParent<any> {
      *                     [--updated]
      * ```
      */
-    az_disk_access_wait(): az_disk_access_wait_command_builder {
-        return new az_disk_access_wait_command_builder(this);
+    static az_disk_access_wait(): az_disk_access_wait_command_builder {
+        return new az_disk_access_wait_command_builder("az disk-access wait");
     }
 }
 
 /** Disk Encryption Set resource. */
-export class az_disk_encryption_set implements ICommandParent<any> {
-    commandPath = "az disk-encryption-set";
-
+export class az_disk_encryption_set {
     /**
      * Create a disk encryption set.
      *
@@ -138,8 +134,8 @@ export class az_disk_encryption_set implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} sourceVault Name or ID of the KeyVault containing the key or secret.
      */
-    az_disk_encryption_set_create(keyUrl: string, name: string, resourceGroup: string, sourceVault: string): az_disk_encryption_set_create_command_builder {
-        return new az_disk_encryption_set_create_command_builder(this, keyUrl, name, resourceGroup, sourceVault);
+    static az_disk_encryption_set_create(keyUrl: string, name: string, resourceGroup: string, sourceVault: string): az_disk_encryption_set_create_command_builder {
+        return new az_disk_encryption_set_create_command_builder("az disk-encryption-set create", keyUrl, name, resourceGroup, sourceVault);
     }
 
     /**
@@ -153,8 +149,8 @@ export class az_disk_encryption_set implements ICommandParent<any> {
      *                               [--subscription]
      * ```
      */
-    az_disk_encryption_set_delete(): az_disk_encryption_set_delete_command_builder {
-        return new az_disk_encryption_set_delete_command_builder(this);
+    static az_disk_encryption_set_delete(): az_disk_encryption_set_delete_command_builder {
+        return new az_disk_encryption_set_delete_command_builder("az disk-encryption-set delete");
     }
 
     /**
@@ -167,8 +163,8 @@ export class az_disk_encryption_set implements ICommandParent<any> {
      *                             [--subscription]
      * ```
      */
-    az_disk_encryption_set_list(): az_disk_encryption_set_list_command_builder {
-        return new az_disk_encryption_set_list_command_builder(this);
+    static az_disk_encryption_set_list(): az_disk_encryption_set_list_command_builder {
+        return new az_disk_encryption_set_list_command_builder("az disk-encryption-set list");
     }
 
     /**
@@ -182,8 +178,8 @@ export class az_disk_encryption_set implements ICommandParent<any> {
      *                                                  [--subscription]
      * ```
      */
-    az_disk_encryption_set_list_associated_resources(): az_disk_encryption_set_list_associated_resources_command_builder {
-        return new az_disk_encryption_set_list_associated_resources_command_builder(this);
+    static az_disk_encryption_set_list_associated_resources(): az_disk_encryption_set_list_associated_resources_command_builder {
+        return new az_disk_encryption_set_list_associated_resources_command_builder("az disk-encryption-set list-associated-resources");
     }
 
     /**
@@ -198,8 +194,8 @@ export class az_disk_encryption_set implements ICommandParent<any> {
      *                             [--subscription]
      * ```
      */
-    az_disk_encryption_set_show(): az_disk_encryption_set_show_command_builder {
-        return new az_disk_encryption_set_show_command_builder(this);
+    static az_disk_encryption_set_show(): az_disk_encryption_set_show_command_builder {
+        return new az_disk_encryption_set_show_command_builder("az disk-encryption-set show");
     }
 
     /**
@@ -219,15 +215,13 @@ export class az_disk_encryption_set implements ICommandParent<any> {
      *                               [--subscription]
      * ```
      */
-    az_disk_encryption_set_update(): az_disk_encryption_set_update_command_builder {
-        return new az_disk_encryption_set_update_command_builder(this);
+    static az_disk_encryption_set_update(): az_disk_encryption_set_update_command_builder {
+        return new az_disk_encryption_set_update_command_builder("az disk-encryption-set update");
     }
 }
 
 /** Manage Azure Managed Disks. */
-export class az_disk implements ICommandParent<any> {
-    commandPath = "az disk";
-
+export class az_disk {
     /**
      * Create a managed disk.
      *
@@ -268,8 +262,8 @@ export class az_disk implements ICommandParent<any> {
      * @param {string} name The name of the managed disk.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_disk_create(name: string, resourceGroup: string): az_disk_create_command_builder {
-        return new az_disk_create_command_builder(this, name, resourceGroup);
+    static az_disk_create(name: string, resourceGroup: string): az_disk_create_command_builder {
+        return new az_disk_create_command_builder("az disk create", name, resourceGroup);
     }
 
     /**
@@ -285,8 +279,8 @@ export class az_disk implements ICommandParent<any> {
      *                [--yes]
      * ```
      */
-    az_disk_delete(): az_disk_delete_command_builder {
-        return new az_disk_delete_command_builder(this);
+    static az_disk_delete(): az_disk_delete_command_builder {
+        return new az_disk_delete_command_builder("az disk delete");
     }
 
     /**
@@ -304,8 +298,8 @@ export class az_disk implements ICommandParent<any> {
      *
      * @param {string} durationInSeconds Time duration in seconds until the SAS access expires.
      */
-    az_disk_grant_access(durationInSeconds: string): az_disk_grant_access_command_builder {
-        return new az_disk_grant_access_command_builder(this, durationInSeconds);
+    static az_disk_grant_access(durationInSeconds: string): az_disk_grant_access_command_builder {
+        return new az_disk_grant_access_command_builder("az disk grant-access", durationInSeconds);
     }
 
     /**
@@ -318,8 +312,8 @@ export class az_disk implements ICommandParent<any> {
      *              [--subscription]
      * ```
      */
-    az_disk_list(): az_disk_list_command_builder {
-        return new az_disk_list_command_builder(this);
+    static az_disk_list(): az_disk_list_command_builder {
+        return new az_disk_list_command_builder("az disk list");
     }
 
     /**
@@ -333,8 +327,8 @@ export class az_disk implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_disk_revoke_access(): az_disk_revoke_access_command_builder {
-        return new az_disk_revoke_access_command_builder(this);
+    static az_disk_revoke_access(): az_disk_revoke_access_command_builder {
+        return new az_disk_revoke_access_command_builder("az disk revoke-access");
     }
 
     /**
@@ -349,8 +343,8 @@ export class az_disk implements ICommandParent<any> {
      *              [--subscription]
      * ```
      */
-    az_disk_show(): az_disk_show_command_builder {
-        return new az_disk_show_command_builder(this);
+    static az_disk_show(): az_disk_show_command_builder {
+        return new az_disk_show_command_builder("az disk show");
     }
 
     /**
@@ -380,8 +374,8 @@ export class az_disk implements ICommandParent<any> {
      *                [--subscription]
      * ```
      */
-    az_disk_update(): az_disk_update_command_builder {
-        return new az_disk_update_command_builder(this);
+    static az_disk_update(): az_disk_update_command_builder {
+        return new az_disk_update_command_builder("az disk update");
     }
 
     /**
@@ -402,8 +396,8 @@ export class az_disk implements ICommandParent<any> {
      *              [--updated]
      * ```
      */
-    az_disk_wait(): az_disk_wait_command_builder {
-        return new az_disk_wait_command_builder(this);
+    static az_disk_wait(): az_disk_wait_command_builder {
+        return new az_disk_wait_command_builder("az disk wait");
     }
 }
 
@@ -424,7 +418,7 @@ export class az_disk implements ICommandParent<any> {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_disk_access_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -479,7 +473,7 @@ class az_disk_access_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_disk_access_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -519,7 +513,7 @@ class az_disk_access_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_disk_access_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -555,7 +549,7 @@ class az_disk_access_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_disk_access_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -608,7 +602,7 @@ class az_disk_access_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_disk_access_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -692,7 +686,7 @@ class az_disk_access_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_disk_access_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -785,7 +779,7 @@ class az_disk_access_wait_command_builder extends CommandBuilder {
  * @param {string} sourceVault Name or ID of the KeyVault containing the key or secret.
  */
 class az_disk_encryption_set_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, keyUrl: string, name: string, resourceGroup: string, sourceVault: string) {
+    constructor(commandPath: string, keyUrl: string, name: string, resourceGroup: string, sourceVault: string) {
         super(commandParent);
         this.keyUrl(keyUrl)
         this.name(name)
@@ -860,7 +854,7 @@ class az_disk_encryption_set_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_disk_encryption_set_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -900,7 +894,7 @@ class az_disk_encryption_set_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_disk_encryption_set_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -935,7 +929,7 @@ class az_disk_encryption_set_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_disk_encryption_set_list_associated_resources_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -977,7 +971,7 @@ class az_disk_encryption_set_list_associated_resources_command_builder extends C
  * ```
  */
 class az_disk_encryption_set_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1030,7 +1024,7 @@ class az_disk_encryption_set_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_disk_encryption_set_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1136,7 +1130,7 @@ class az_disk_encryption_set_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_disk_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1337,7 +1331,7 @@ class az_disk_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_disk_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1394,7 +1388,7 @@ class az_disk_delete_command_builder extends CommandBuilder {
  * @param {string} durationInSeconds Time duration in seconds until the SAS access expires.
  */
 class az_disk_grant_access_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, durationInSeconds: string) {
+    constructor(commandPath: string, durationInSeconds: string) {
         super(commandParent);
         this.durationInSeconds(durationInSeconds)
     }
@@ -1447,7 +1441,7 @@ class az_disk_grant_access_command_builder extends CommandBuilder {
  * ```
  */
 class az_disk_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1482,7 +1476,7 @@ class az_disk_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_disk_revoke_access_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1524,7 +1518,7 @@ class az_disk_revoke_access_command_builder extends CommandBuilder {
  * ```
  */
 class az_disk_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1587,7 +1581,7 @@ class az_disk_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_disk_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1731,7 +1725,7 @@ class az_disk_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_disk_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

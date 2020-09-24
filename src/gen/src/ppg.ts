@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Proximity Placement Groups. */
-export class az_ppg implements ICommandParent<any> {
-    commandPath = "az ppg";
-
+export class az_ppg {
     /**
      * Create a proximity placement group.
      *
@@ -20,8 +18,8 @@ export class az_ppg implements ICommandParent<any> {
      * @param {string} name The name of the proximity placement group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_ppg_create(name: string, resourceGroup: string): az_ppg_create_command_builder {
-        return new az_ppg_create_command_builder(this, name, resourceGroup);
+    static az_ppg_create(name: string, resourceGroup: string): az_ppg_create_command_builder {
+        return new az_ppg_create_command_builder("az ppg create", name, resourceGroup);
     }
 
     /**
@@ -37,8 +35,8 @@ export class az_ppg implements ICommandParent<any> {
      * @param {string} name The name of the proximity placement group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_ppg_delete(name: string, resourceGroup: string): az_ppg_delete_command_builder {
-        return new az_ppg_delete_command_builder(this, name, resourceGroup);
+    static az_ppg_delete(name: string, resourceGroup: string): az_ppg_delete_command_builder {
+        return new az_ppg_delete_command_builder("az ppg delete", name, resourceGroup);
     }
 
     /**
@@ -51,8 +49,8 @@ export class az_ppg implements ICommandParent<any> {
      *             [--subscription]
      * ```
      */
-    az_ppg_list(): az_ppg_list_command_builder {
-        return new az_ppg_list_command_builder(this);
+    static az_ppg_list(): az_ppg_list_command_builder {
+        return new az_ppg_list_command_builder("az ppg list");
     }
 
     /**
@@ -70,8 +68,8 @@ export class az_ppg implements ICommandParent<any> {
      * @param {string} name The name of the proximity placement group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_ppg_show(name: string, resourceGroup: string): az_ppg_show_command_builder {
-        return new az_ppg_show_command_builder(this, name, resourceGroup);
+    static az_ppg_show(name: string, resourceGroup: string): az_ppg_show_command_builder {
+        return new az_ppg_show_command_builder("az ppg show", name, resourceGroup);
     }
 
     /**
@@ -92,8 +90,8 @@ export class az_ppg implements ICommandParent<any> {
      * @param {string} name The name of the proximity placement group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_ppg_update(name: string, resourceGroup: string): az_ppg_update_command_builder {
-        return new az_ppg_update_command_builder(this, name, resourceGroup);
+    static az_ppg_update(name: string, resourceGroup: string): az_ppg_update_command_builder {
+        return new az_ppg_update_command_builder("az ppg update", name, resourceGroup);
     }
 }
 
@@ -114,7 +112,7 @@ export class az_ppg implements ICommandParent<any> {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ppg_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -171,7 +169,7 @@ class az_ppg_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ppg_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -207,7 +205,7 @@ class az_ppg_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_ppg_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -246,7 +244,7 @@ class az_ppg_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ppg_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -302,7 +300,7 @@ class az_ppg_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ppg_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)

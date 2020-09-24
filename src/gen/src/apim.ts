@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Azure API Management API Operations. */
-export class az_apim_api_operation implements ICommandParent<any> {
-    commandPath = "az apim api operation";
-
+export class az_apim_api_operation {
     /**
      * Creates a new operation in the API.
      *
@@ -29,8 +27,8 @@ export class az_apim_api_operation implements ICommandParent<any> {
      * @param {string} serviceName The name of the API Management service instance.
      * @param {string} urlTemplate Relative URL template identifying the target resource for this operation. May include parameters.
      */
-    az_apim_api_operation_create(apiId: string, displayName: string, method: string, resourceGroup: string, serviceName: string, urlTemplate: string): az_apim_api_operation_create_command_builder {
-        return new az_apim_api_operation_create_command_builder(this, apiId, displayName, method, resourceGroup, serviceName, urlTemplate);
+    static az_apim_api_operation_create(apiId: string, displayName: string, method: string, resourceGroup: string, serviceName: string, urlTemplate: string): az_apim_api_operation_create_command_builder {
+        return new az_apim_api_operation_create_command_builder("az apim api operation create", apiId, displayName, method, resourceGroup, serviceName, urlTemplate);
     }
 
     /**
@@ -51,8 +49,8 @@ export class az_apim_api_operation implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_api_operation_delete(apiId: string, operationId: string, resourceGroup: string, serviceName: string): az_apim_api_operation_delete_command_builder {
-        return new az_apim_api_operation_delete_command_builder(this, apiId, operationId, resourceGroup, serviceName);
+    static az_apim_api_operation_delete(apiId: string, operationId: string, resourceGroup: string, serviceName: string): az_apim_api_operation_delete_command_builder {
+        return new az_apim_api_operation_delete_command_builder("az apim api operation delete", apiId, operationId, resourceGroup, serviceName);
     }
 
     /**
@@ -71,8 +69,8 @@ export class az_apim_api_operation implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_api_operation_list(apiId: string, resourceGroup: string, serviceName: string): az_apim_api_operation_list_command_builder {
-        return new az_apim_api_operation_list_command_builder(this, apiId, resourceGroup, serviceName);
+    static az_apim_api_operation_list(apiId: string, resourceGroup: string, serviceName: string): az_apim_api_operation_list_command_builder {
+        return new az_apim_api_operation_list_command_builder("az apim api operation list", apiId, resourceGroup, serviceName);
     }
 
     /**
@@ -93,8 +91,8 @@ export class az_apim_api_operation implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_api_operation_show(apiId: string, operationId: string, resourceGroup: string, serviceName: string): az_apim_api_operation_show_command_builder {
-        return new az_apim_api_operation_show_command_builder(this, apiId, operationId, resourceGroup, serviceName);
+    static az_apim_api_operation_show(apiId: string, operationId: string, resourceGroup: string, serviceName: string): az_apim_api_operation_show_command_builder {
+        return new az_apim_api_operation_show_command_builder("az apim api operation show", apiId, operationId, resourceGroup, serviceName);
     }
 
     /**
@@ -123,15 +121,13 @@ export class az_apim_api_operation implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_api_operation_update(apiId: string, operationId: string, resourceGroup: string, serviceName: string): az_apim_api_operation_update_command_builder {
-        return new az_apim_api_operation_update_command_builder(this, apiId, operationId, resourceGroup, serviceName);
+    static az_apim_api_operation_update(apiId: string, operationId: string, resourceGroup: string, serviceName: string): az_apim_api_operation_update_command_builder {
+        return new az_apim_api_operation_update_command_builder("az apim api operation update", apiId, operationId, resourceGroup, serviceName);
     }
 }
 
 /** Manage Azure API Management API Release. */
-export class az_apim_api_release implements ICommandParent<any> {
-    commandPath = "az apim api release";
-
+export class az_apim_api_release {
     /**
      * Creates a new Release for the API.
      *
@@ -152,8 +148,8 @@ export class az_apim_api_release implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_api_release_create(apiId: string, apiRevision: string, resourceGroup: string, serviceName: string): az_apim_api_release_create_command_builder {
-        return new az_apim_api_release_create_command_builder(this, apiId, apiRevision, resourceGroup, serviceName);
+    static az_apim_api_release_create(apiId: string, apiRevision: string, resourceGroup: string, serviceName: string): az_apim_api_release_create_command_builder {
+        return new az_apim_api_release_create_command_builder("az apim api release create", apiId, apiRevision, resourceGroup, serviceName);
     }
 
     /**
@@ -174,8 +170,8 @@ export class az_apim_api_release implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_api_release_delete(apiId: string, releaseId: string, resourceGroup: string, serviceName: string): az_apim_api_release_delete_command_builder {
-        return new az_apim_api_release_delete_command_builder(this, apiId, releaseId, resourceGroup, serviceName);
+    static az_apim_api_release_delete(apiId: string, releaseId: string, resourceGroup: string, serviceName: string): az_apim_api_release_delete_command_builder {
+        return new az_apim_api_release_delete_command_builder("az apim api release delete", apiId, releaseId, resourceGroup, serviceName);
     }
 
     /**
@@ -194,8 +190,8 @@ export class az_apim_api_release implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_api_release_list(apiId: string, resourceGroup: string, serviceName: string): az_apim_api_release_list_command_builder {
-        return new az_apim_api_release_list_command_builder(this, apiId, resourceGroup, serviceName);
+    static az_apim_api_release_list(apiId: string, resourceGroup: string, serviceName: string): az_apim_api_release_list_command_builder {
+        return new az_apim_api_release_list_command_builder("az apim api release list", apiId, resourceGroup, serviceName);
     }
 
     /**
@@ -216,8 +212,8 @@ export class az_apim_api_release implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_api_release_show(apiId: string, releaseId: string, resourceGroup: string, serviceName: string): az_apim_api_release_show_command_builder {
-        return new az_apim_api_release_show_command_builder(this, apiId, releaseId, resourceGroup, serviceName);
+    static az_apim_api_release_show(apiId: string, releaseId: string, resourceGroup: string, serviceName: string): az_apim_api_release_show_command_builder {
+        return new az_apim_api_release_show_command_builder("az apim api release show", apiId, releaseId, resourceGroup, serviceName);
     }
 
     /**
@@ -244,15 +240,13 @@ export class az_apim_api_release implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_api_release_update(apiId: string, releaseId: string, resourceGroup: string, serviceName: string): az_apim_api_release_update_command_builder {
-        return new az_apim_api_release_update_command_builder(this, apiId, releaseId, resourceGroup, serviceName);
+    static az_apim_api_release_update(apiId: string, releaseId: string, resourceGroup: string, serviceName: string): az_apim_api_release_update_command_builder {
+        return new az_apim_api_release_update_command_builder("az apim api release update", apiId, releaseId, resourceGroup, serviceName);
     }
 }
 
 /** Manage Azure API Management API Revision. */
-export class az_apim_api_revision implements ICommandParent<any> {
-    commandPath = "az apim api revision";
-
+export class az_apim_api_revision {
     /**
      * Create API revision.
      *
@@ -271,8 +265,8 @@ export class az_apim_api_revision implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_api_revision_create(apiId: string, apiRevision: string, resourceGroup: string, serviceName: string): az_apim_api_revision_create_command_builder {
-        return new az_apim_api_revision_create_command_builder(this, apiId, apiRevision, resourceGroup, serviceName);
+    static az_apim_api_revision_create(apiId: string, apiRevision: string, resourceGroup: string, serviceName: string): az_apim_api_revision_create_command_builder {
+        return new az_apim_api_revision_create_command_builder("az apim api revision create", apiId, apiRevision, resourceGroup, serviceName);
     }
 
     /**
@@ -291,15 +285,13 @@ export class az_apim_api_revision implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_api_revision_list(apiId: string, resourceGroup: string, serviceName: string): az_apim_api_revision_list_command_builder {
-        return new az_apim_api_revision_list_command_builder(this, apiId, resourceGroup, serviceName);
+    static az_apim_api_revision_list(apiId: string, resourceGroup: string, serviceName: string): az_apim_api_revision_list_command_builder {
+        return new az_apim_api_revision_list_command_builder("az apim api revision list", apiId, resourceGroup, serviceName);
     }
 }
 
 /** Manage Azure API Management API Version Set. */
-export class az_apim_api_versionset implements ICommandParent<any> {
-    commandPath = "az apim api versionset";
-
+export class az_apim_api_versionset {
     /**
      * Creates a Api Version Set.
      *
@@ -322,8 +314,8 @@ export class az_apim_api_versionset implements ICommandParent<any> {
      * @param {string} serviceName The name of the API Management service instance.
      * @param {string} versioningScheme Required. An value that determines where the API Version identifer will be located in a HTTP request.
      */
-    az_apim_api_versionset_create(displayName: string, resourceGroup: string, serviceName: string, versioningScheme: string): az_apim_api_versionset_create_command_builder {
-        return new az_apim_api_versionset_create_command_builder(this, displayName, resourceGroup, serviceName, versioningScheme);
+    static az_apim_api_versionset_create(displayName: string, resourceGroup: string, serviceName: string, versioningScheme: string): az_apim_api_versionset_create_command_builder {
+        return new az_apim_api_versionset_create_command_builder("az apim api versionset create", displayName, resourceGroup, serviceName, versioningScheme);
     }
 
     /**
@@ -342,8 +334,8 @@ export class az_apim_api_versionset implements ICommandParent<any> {
      * @param {string} serviceName The name of the API Management service instance.
      * @param {string} versionSetId A resource identifier for the related ApiVersionSet.
      */
-    az_apim_api_versionset_delete(resourceGroup: string, serviceName: string, versionSetId: string): az_apim_api_versionset_delete_command_builder {
-        return new az_apim_api_versionset_delete_command_builder(this, resourceGroup, serviceName, versionSetId);
+    static az_apim_api_versionset_delete(resourceGroup: string, serviceName: string, versionSetId: string): az_apim_api_versionset_delete_command_builder {
+        return new az_apim_api_versionset_delete_command_builder("az apim api versionset delete", resourceGroup, serviceName, versionSetId);
     }
 
     /**
@@ -360,8 +352,8 @@ export class az_apim_api_versionset implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_api_versionset_list(resourceGroup: string, serviceName: string): az_apim_api_versionset_list_command_builder {
-        return new az_apim_api_versionset_list_command_builder(this, resourceGroup, serviceName);
+    static az_apim_api_versionset_list(resourceGroup: string, serviceName: string): az_apim_api_versionset_list_command_builder {
+        return new az_apim_api_versionset_list_command_builder("az apim api versionset list", resourceGroup, serviceName);
     }
 
     /**
@@ -380,8 +372,8 @@ export class az_apim_api_versionset implements ICommandParent<any> {
      * @param {string} serviceName The name of the API Management service instance.
      * @param {string} versionSetId A resource identifier for the related ApiVersionSet.
      */
-    az_apim_api_versionset_show(resourceGroup: string, serviceName: string, versionSetId: string): az_apim_api_versionset_show_command_builder {
-        return new az_apim_api_versionset_show_command_builder(this, resourceGroup, serviceName, versionSetId);
+    static az_apim_api_versionset_show(resourceGroup: string, serviceName: string, versionSetId: string): az_apim_api_versionset_show_command_builder {
+        return new az_apim_api_versionset_show_command_builder("az apim api versionset show", resourceGroup, serviceName, versionSetId);
     }
 
     /**
@@ -409,15 +401,13 @@ export class az_apim_api_versionset implements ICommandParent<any> {
      * @param {string} serviceName The name of the API Management service instance.
      * @param {string} versionSetId A resource identifier for the related ApiVersionSet.
      */
-    az_apim_api_versionset_update(resourceGroup: string, serviceName: string, versionSetId: string): az_apim_api_versionset_update_command_builder {
-        return new az_apim_api_versionset_update_command_builder(this, resourceGroup, serviceName, versionSetId);
+    static az_apim_api_versionset_update(resourceGroup: string, serviceName: string, versionSetId: string): az_apim_api_versionset_update_command_builder {
+        return new az_apim_api_versionset_update_command_builder("az apim api versionset update", resourceGroup, serviceName, versionSetId);
     }
 }
 
 /** Manage Azure API Management API's. */
-export class az_apim_api implements ICommandParent<any> {
-    commandPath = "az apim api";
-
+export class az_apim_api {
     /**
      * Create an API Management API.
      *
@@ -450,8 +440,8 @@ export class az_apim_api implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_api_create(apiId: string, displayName: string, path: string, resourceGroup: string, serviceName: string): az_apim_api_create_command_builder {
-        return new az_apim_api_create_command_builder(this, apiId, displayName, path, resourceGroup, serviceName);
+    static az_apim_api_create(apiId: string, displayName: string, path: string, resourceGroup: string, serviceName: string): az_apim_api_create_command_builder {
+        return new az_apim_api_create_command_builder("az apim api create", apiId, displayName, path, resourceGroup, serviceName);
     }
 
     /**
@@ -473,8 +463,8 @@ export class az_apim_api implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_api_delete(apiId: string, resourceGroup: string, serviceName: string): az_apim_api_delete_command_builder {
-        return new az_apim_api_delete_command_builder(this, apiId, resourceGroup, serviceName);
+    static az_apim_api_delete(apiId: string, resourceGroup: string, serviceName: string): az_apim_api_delete_command_builder {
+        return new az_apim_api_delete_command_builder("az apim api delete", apiId, resourceGroup, serviceName);
     }
 
     /**
@@ -509,8 +499,8 @@ export class az_apim_api implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the api management service instance.
      */
-    az_apim_api_import(path: string, resourceGroup: string, serviceName: string): az_apim_api_import_command_builder {
-        return new az_apim_api_import_command_builder(this, path, resourceGroup, serviceName);
+    static az_apim_api_import(path: string, resourceGroup: string, serviceName: string): az_apim_api_import_command_builder {
+        return new az_apim_api_import_command_builder("az apim api import", path, resourceGroup, serviceName);
     }
 
     /**
@@ -530,8 +520,8 @@ export class az_apim_api implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_api_list(resourceGroup: string, serviceName: string): az_apim_api_list_command_builder {
-        return new az_apim_api_list_command_builder(this, resourceGroup, serviceName);
+    static az_apim_api_list(resourceGroup: string, serviceName: string): az_apim_api_list_command_builder {
+        return new az_apim_api_list_command_builder("az apim api list", resourceGroup, serviceName);
     }
 
     /**
@@ -550,8 +540,8 @@ export class az_apim_api implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_api_show(apiId: string, resourceGroup: string, serviceName: string): az_apim_api_show_command_builder {
-        return new az_apim_api_show_command_builder(this, apiId, resourceGroup, serviceName);
+    static az_apim_api_show(apiId: string, resourceGroup: string, serviceName: string): az_apim_api_show_command_builder {
+        return new az_apim_api_show_command_builder("az apim api show", apiId, resourceGroup, serviceName);
     }
 
     /**
@@ -585,8 +575,8 @@ export class az_apim_api implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_api_update(apiId: string, resourceGroup: string, serviceName: string): az_apim_api_update_command_builder {
-        return new az_apim_api_update_command_builder(this, apiId, resourceGroup, serviceName);
+    static az_apim_api_update(apiId: string, resourceGroup: string, serviceName: string): az_apim_api_update_command_builder {
+        return new az_apim_api_update_command_builder("az apim api update", apiId, resourceGroup, serviceName);
     }
 
     /**
@@ -611,15 +601,13 @@ export class az_apim_api implements ICommandParent<any> {
      * @param {string} name The name of the api management service instance.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_apim_api_wait(apiId: string, name: string, resourceGroup: string): az_apim_api_wait_command_builder {
-        return new az_apim_api_wait_command_builder(this, apiId, name, resourceGroup);
+    static az_apim_api_wait(apiId: string, name: string, resourceGroup: string): az_apim_api_wait_command_builder {
+        return new az_apim_api_wait_command_builder("az apim api wait", apiId, name, resourceGroup);
     }
 }
 
 /** Manage Azure API Management Named Values. */
-export class az_apim_nv implements ICommandParent<any> {
-    commandPath = "az apim nv";
-
+export class az_apim_nv {
     /**
      * Create an API Management Named Value.
      *
@@ -640,8 +628,8 @@ export class az_apim_nv implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_nv_create(displayName: string, namedValueId: string, resourceGroup: string, serviceName: string): az_apim_nv_create_command_builder {
-        return new az_apim_nv_create_command_builder(this, displayName, namedValueId, resourceGroup, serviceName);
+    static az_apim_nv_create(displayName: string, namedValueId: string, resourceGroup: string, serviceName: string): az_apim_nv_create_command_builder {
+        return new az_apim_nv_create_command_builder("az apim nv create", displayName, namedValueId, resourceGroup, serviceName);
     }
 
     /**
@@ -660,8 +648,8 @@ export class az_apim_nv implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_nv_delete(namedValueId: string, resourceGroup: string, serviceName: string): az_apim_nv_delete_command_builder {
-        return new az_apim_nv_delete_command_builder(this, namedValueId, resourceGroup, serviceName);
+    static az_apim_nv_delete(namedValueId: string, resourceGroup: string, serviceName: string): az_apim_nv_delete_command_builder {
+        return new az_apim_nv_delete_command_builder("az apim nv delete", namedValueId, resourceGroup, serviceName);
     }
 
     /**
@@ -678,8 +666,8 @@ export class az_apim_nv implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_nv_list(resourceGroup: string, serviceName: string): az_apim_nv_list_command_builder {
-        return new az_apim_nv_list_command_builder(this, resourceGroup, serviceName);
+    static az_apim_nv_list(resourceGroup: string, serviceName: string): az_apim_nv_list_command_builder {
+        return new az_apim_nv_list_command_builder("az apim nv list", resourceGroup, serviceName);
     }
 
     /**
@@ -698,8 +686,8 @@ export class az_apim_nv implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_nv_show(namedValueId: string, resourceGroup: string, serviceName: string): az_apim_nv_show_command_builder {
-        return new az_apim_nv_show_command_builder(this, namedValueId, resourceGroup, serviceName);
+    static az_apim_nv_show(namedValueId: string, resourceGroup: string, serviceName: string): az_apim_nv_show_command_builder {
+        return new az_apim_nv_show_command_builder("az apim nv show", namedValueId, resourceGroup, serviceName);
     }
 
     /**
@@ -717,8 +705,8 @@ export class az_apim_nv implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_nv_show_secret(namedValueId: string, resourceGroup: string, serviceName: string): az_apim_nv_show_secret_command_builder {
-        return new az_apim_nv_show_secret_command_builder(this, namedValueId, resourceGroup, serviceName);
+    static az_apim_nv_show_secret(namedValueId: string, resourceGroup: string, serviceName: string): az_apim_nv_show_secret_command_builder {
+        return new az_apim_nv_show_secret_command_builder("az apim nv show-secret", namedValueId, resourceGroup, serviceName);
     }
 
     /**
@@ -744,15 +732,13 @@ export class az_apim_nv implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the API Management service instance.
      */
-    az_apim_nv_update(namedValueId: string, resourceGroup: string, serviceName: string): az_apim_nv_update_command_builder {
-        return new az_apim_nv_update_command_builder(this, namedValueId, resourceGroup, serviceName);
+    static az_apim_nv_update(namedValueId: string, resourceGroup: string, serviceName: string): az_apim_nv_update_command_builder {
+        return new az_apim_nv_update_command_builder("az apim nv update", namedValueId, resourceGroup, serviceName);
     }
 }
 
 /** Manage Azure API Management Product's APIs. */
-export class az_apim_product_api implements ICommandParent<any> {
-    commandPath = "az apim product api";
-
+export class az_apim_product_api {
     /**
      * Add an API to the specified product.
      *
@@ -770,8 +756,8 @@ export class az_apim_product_api implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the api management service instance.
      */
-    az_apim_product_api_add(apiId: string, productId: string, resourceGroup: string, serviceName: string): az_apim_product_api_add_command_builder {
-        return new az_apim_product_api_add_command_builder(this, apiId, productId, resourceGroup, serviceName);
+    static az_apim_product_api_add(apiId: string, productId: string, resourceGroup: string, serviceName: string): az_apim_product_api_add_command_builder {
+        return new az_apim_product_api_add_command_builder("az apim product api add", apiId, productId, resourceGroup, serviceName);
     }
 
     /**
@@ -791,8 +777,8 @@ export class az_apim_product_api implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the api management service instance.
      */
-    az_apim_product_api_check(apiId: string, productId: string, resourceGroup: string, serviceName: string): az_apim_product_api_check_command_builder {
-        return new az_apim_product_api_check_command_builder(this, apiId, productId, resourceGroup, serviceName);
+    static az_apim_product_api_check(apiId: string, productId: string, resourceGroup: string, serviceName: string): az_apim_product_api_check_command_builder {
+        return new az_apim_product_api_check_command_builder("az apim product api check", apiId, productId, resourceGroup, serviceName);
     }
 
     /**
@@ -812,8 +798,8 @@ export class az_apim_product_api implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the api management service instance.
      */
-    az_apim_product_api_delete(apiId: string, productId: string, resourceGroup: string, serviceName: string): az_apim_product_api_delete_command_builder {
-        return new az_apim_product_api_delete_command_builder(this, apiId, productId, resourceGroup, serviceName);
+    static az_apim_product_api_delete(apiId: string, productId: string, resourceGroup: string, serviceName: string): az_apim_product_api_delete_command_builder {
+        return new az_apim_product_api_delete_command_builder("az apim product api delete", apiId, productId, resourceGroup, serviceName);
     }
 
     /**
@@ -832,15 +818,13 @@ export class az_apim_product_api implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the api management service instance.
      */
-    az_apim_product_api_list(productId: string, resourceGroup: string, serviceName: string): az_apim_product_api_list_command_builder {
-        return new az_apim_product_api_list_command_builder(this, productId, resourceGroup, serviceName);
+    static az_apim_product_api_list(productId: string, resourceGroup: string, serviceName: string): az_apim_product_api_list_command_builder {
+        return new az_apim_product_api_list_command_builder("az apim product api list", productId, resourceGroup, serviceName);
     }
 }
 
 /** Manage Azure API Management Product's. */
-export class az_apim_product implements ICommandParent<any> {
-    commandPath = "az apim product";
-
+export class az_apim_product {
     /**
      * Creates a product.
      *
@@ -864,8 +848,8 @@ export class az_apim_product implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the api management service instance.
      */
-    az_apim_product_create(productName: string, resourceGroup: string, serviceName: string): az_apim_product_create_command_builder {
-        return new az_apim_product_create_command_builder(this, productName, resourceGroup, serviceName);
+    static az_apim_product_create(productName: string, resourceGroup: string, serviceName: string): az_apim_product_create_command_builder {
+        return new az_apim_product_create_command_builder("az apim product create", productName, resourceGroup, serviceName);
     }
 
     /**
@@ -887,8 +871,8 @@ export class az_apim_product implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the api management service instance.
      */
-    az_apim_product_delete(productId: string, resourceGroup: string, serviceName: string): az_apim_product_delete_command_builder {
-        return new az_apim_product_delete_command_builder(this, productId, resourceGroup, serviceName);
+    static az_apim_product_delete(productId: string, resourceGroup: string, serviceName: string): az_apim_product_delete_command_builder {
+        return new az_apim_product_delete_command_builder("az apim product delete", productId, resourceGroup, serviceName);
     }
 
     /**
@@ -905,8 +889,8 @@ export class az_apim_product implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the api management service instance.
      */
-    az_apim_product_list(resourceGroup: string, serviceName: string): az_apim_product_list_command_builder {
-        return new az_apim_product_list_command_builder(this, resourceGroup, serviceName);
+    static az_apim_product_list(resourceGroup: string, serviceName: string): az_apim_product_list_command_builder {
+        return new az_apim_product_list_command_builder("az apim product list", resourceGroup, serviceName);
     }
 
     /**
@@ -925,8 +909,8 @@ export class az_apim_product implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the api management service instance.
      */
-    az_apim_product_show(productId: string, resourceGroup: string, serviceName: string): az_apim_product_show_command_builder {
-        return new az_apim_product_show_command_builder(this, productId, resourceGroup, serviceName);
+    static az_apim_product_show(productId: string, resourceGroup: string, serviceName: string): az_apim_product_show_command_builder {
+        return new az_apim_product_show_command_builder("az apim product show", productId, resourceGroup, serviceName);
     }
 
     /**
@@ -957,15 +941,13 @@ export class az_apim_product implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the api management service instance.
      */
-    az_apim_product_update(productId: string, resourceGroup: string, serviceName: string): az_apim_product_update_command_builder {
-        return new az_apim_product_update_command_builder(this, productId, resourceGroup, serviceName);
+    static az_apim_product_update(productId: string, resourceGroup: string, serviceName: string): az_apim_product_update_command_builder {
+        return new az_apim_product_update_command_builder("az apim product update", productId, resourceGroup, serviceName);
     }
 }
 
 /** Manage Azure API Management services. */
-export class az_apim implements ICommandParent<any> {
-    commandPath = "az apim";
-
+export class az_apim {
     /**
      * Back up an API Management service to the configured storage account.
      *
@@ -981,8 +963,8 @@ export class az_apim implements ICommandParent<any> {
      * @param {string} name The name of the api management service instance.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_apim_apply_network_updates(name: string, resourceGroup: string): az_apim_apply_network_updates_command_builder {
-        return new az_apim_apply_network_updates_command_builder(this, name, resourceGroup);
+    static az_apim_apply_network_updates(name: string, resourceGroup: string): az_apim_apply_network_updates_command_builder {
+        return new az_apim_apply_network_updates_command_builder("az apim apply-network-updates", name, resourceGroup);
     }
 
     /**
@@ -1007,8 +989,8 @@ export class az_apim implements ICommandParent<any> {
      * @param {string} storageAccountKey The access key of the storage account used to place the backup.
      * @param {string} storageAccountName The name of the storage account used to place the backup.
      */
-    az_apim_backup(backupName: string, name: string, resourceGroup: string, storageAccountContainer: string, storageAccountKey: string, storageAccountName: string): az_apim_backup_command_builder {
-        return new az_apim_backup_command_builder(this, backupName, name, resourceGroup, storageAccountContainer, storageAccountKey, storageAccountName);
+    static az_apim_backup(backupName: string, name: string, resourceGroup: string, storageAccountContainer: string, storageAccountKey: string, storageAccountName: string): az_apim_backup_command_builder {
+        return new az_apim_backup_command_builder("az apim backup", backupName, name, resourceGroup, storageAccountContainer, storageAccountKey, storageAccountName);
     }
 
     /**
@@ -1022,8 +1004,8 @@ export class az_apim implements ICommandParent<any> {
      *
      * @param {string} name The name of the api management service instance.
      */
-    az_apim_check_name(name: string): az_apim_check_name_command_builder {
-        return new az_apim_check_name_command_builder(this, name);
+    static az_apim_check_name(name: string): az_apim_check_name_command_builder {
+        return new az_apim_check_name_command_builder("az apim check-name", name);
     }
 
     /**
@@ -1051,8 +1033,8 @@ export class az_apim implements ICommandParent<any> {
      * @param {string} publisherName The name of your organization for use in the developer portal and e-mail notifications.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_apim_create(name: string, publisherEmail: string, publisherName: string, resourceGroup: string): az_apim_create_command_builder {
-        return new az_apim_create_command_builder(this, name, publisherEmail, publisherName, resourceGroup);
+    static az_apim_create(name: string, publisherEmail: string, publisherName: string, resourceGroup: string): az_apim_create_command_builder {
+        return new az_apim_create_command_builder("az apim create", name, publisherEmail, publisherName, resourceGroup);
     }
 
     /**
@@ -1070,8 +1052,8 @@ export class az_apim implements ICommandParent<any> {
      * @param {string} name The name of the api management service instance.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_apim_delete(name: string, resourceGroup: string): az_apim_delete_command_builder {
-        return new az_apim_delete_command_builder(this, name, resourceGroup);
+    static az_apim_delete(name: string, resourceGroup: string): az_apim_delete_command_builder {
+        return new az_apim_delete_command_builder("az apim delete", name, resourceGroup);
     }
 
     /**
@@ -1084,8 +1066,8 @@ export class az_apim implements ICommandParent<any> {
      *              [--subscription]
      * ```
      */
-    az_apim_list(): az_apim_list_command_builder {
-        return new az_apim_list_command_builder(this);
+    static az_apim_list(): az_apim_list_command_builder {
+        return new az_apim_list_command_builder("az apim list");
     }
 
     /**
@@ -1102,8 +1084,8 @@ export class az_apim implements ICommandParent<any> {
      * @param {string} name The name of the api management service instance.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_apim_show(name: string, resourceGroup: string): az_apim_show_command_builder {
-        return new az_apim_show_command_builder(this, name, resourceGroup);
+    static az_apim_show(name: string, resourceGroup: string): az_apim_show_command_builder {
+        return new az_apim_show_command_builder("az apim show", name, resourceGroup);
     }
 
     /**
@@ -1132,8 +1114,8 @@ export class az_apim implements ICommandParent<any> {
      * @param {string} name The name of the api management service instance.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_apim_update(name: string, resourceGroup: string): az_apim_update_command_builder {
-        return new az_apim_update_command_builder(this, name, resourceGroup);
+    static az_apim_update(name: string, resourceGroup: string): az_apim_update_command_builder {
+        return new az_apim_update_command_builder("az apim update", name, resourceGroup);
     }
 
     /**
@@ -1156,8 +1138,8 @@ export class az_apim implements ICommandParent<any> {
      * @param {string} name The name of the api management service instance.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_apim_wait(name: string, resourceGroup: string): az_apim_wait_command_builder {
-        return new az_apim_wait_command_builder(this, name, resourceGroup);
+    static az_apim_wait(name: string, resourceGroup: string): az_apim_wait_command_builder {
+        return new az_apim_wait_command_builder("az apim wait", name, resourceGroup);
     }
 }
 
@@ -1187,7 +1169,7 @@ export class az_apim implements ICommandParent<any> {
  * @param {string} urlTemplate Relative URL template identifying the target resource for this operation. May include parameters.
  */
 class az_apim_api_operation_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, displayName: string, method: string, resourceGroup: string, serviceName: string, urlTemplate: string) {
+    constructor(commandPath: string, apiId: string, displayName: string, method: string, resourceGroup: string, serviceName: string, urlTemplate: string) {
         super(commandParent);
         this.apiId(apiId)
         this.displayName(displayName)
@@ -1283,7 +1265,7 @@ class az_apim_api_operation_create_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_api_operation_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, operationId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, operationId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.operationId(operationId)
@@ -1345,7 +1327,7 @@ class az_apim_api_operation_delete_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_api_operation_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.resourceGroup(resourceGroup)
@@ -1402,7 +1384,7 @@ class az_apim_api_operation_list_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_api_operation_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, operationId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, operationId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.operationId(operationId)
@@ -1474,7 +1456,7 @@ class az_apim_api_operation_show_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_api_operation_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, operationId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, operationId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.operationId(operationId)
@@ -1588,7 +1570,7 @@ class az_apim_api_operation_update_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_api_release_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, apiRevision: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, apiRevision: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.apiRevision(apiRevision)
@@ -1664,7 +1646,7 @@ class az_apim_api_release_create_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_api_release_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, releaseId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, releaseId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.releaseId(releaseId)
@@ -1726,7 +1708,7 @@ class az_apim_api_release_delete_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_api_release_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.resourceGroup(resourceGroup)
@@ -1783,7 +1765,7 @@ class az_apim_api_release_list_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_api_release_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, releaseId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, releaseId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.releaseId(releaseId)
@@ -1853,7 +1835,7 @@ class az_apim_api_release_show_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_api_release_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, releaseId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, releaseId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.releaseId(releaseId)
@@ -1953,7 +1935,7 @@ class az_apim_api_release_update_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_api_revision_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, apiRevision: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, apiRevision: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.apiRevision(apiRevision)
@@ -2015,7 +1997,7 @@ class az_apim_api_revision_create_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_api_revision_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.resourceGroup(resourceGroup)
@@ -2076,7 +2058,7 @@ class az_apim_api_revision_list_command_builder extends CommandBuilder {
  * @param {string} versioningScheme Required. An value that determines where the API Version identifer will be located in a HTTP request.
  */
 class az_apim_api_versionset_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, displayName: string, resourceGroup: string, serviceName: string, versioningScheme: string) {
+    constructor(commandPath: string, displayName: string, resourceGroup: string, serviceName: string, versioningScheme: string) {
         super(commandParent);
         this.displayName(displayName)
         this.resourceGroup(resourceGroup)
@@ -2162,7 +2144,7 @@ class az_apim_api_versionset_create_command_builder extends CommandBuilder {
  * @param {string} versionSetId A resource identifier for the related ApiVersionSet.
  */
 class az_apim_api_versionset_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, serviceName: string, versionSetId: string) {
+    constructor(commandPath: string, resourceGroup: string, serviceName: string, versionSetId: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.serviceName(serviceName)
@@ -2215,7 +2197,7 @@ class az_apim_api_versionset_delete_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_api_versionset_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.serviceName(serviceName)
@@ -2263,7 +2245,7 @@ class az_apim_api_versionset_list_command_builder extends CommandBuilder {
  * @param {string} versionSetId A resource identifier for the related ApiVersionSet.
  */
 class az_apim_api_versionset_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, serviceName: string, versionSetId: string) {
+    constructor(commandPath: string, resourceGroup: string, serviceName: string, versionSetId: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.serviceName(serviceName)
@@ -2327,7 +2309,7 @@ class az_apim_api_versionset_show_command_builder extends CommandBuilder {
  * @param {string} versionSetId A resource identifier for the related ApiVersionSet.
  */
 class az_apim_api_versionset_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, serviceName: string, versionSetId: string) {
+    constructor(commandPath: string, resourceGroup: string, serviceName: string, versionSetId: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.serviceName(serviceName)
@@ -2452,7 +2434,7 @@ class az_apim_api_versionset_update_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_api_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, displayName: string, path: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, displayName: string, path: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.displayName(displayName)
@@ -2596,7 +2578,7 @@ class az_apim_api_create_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_api_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.resourceGroup(resourceGroup)
@@ -2685,7 +2667,7 @@ class az_apim_api_delete_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the api management service instance.
  */
 class az_apim_api_import_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, path: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.path(path)
         this.resourceGroup(resourceGroup)
@@ -2837,7 +2819,7 @@ class az_apim_api_import_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_api_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.serviceName(serviceName)
@@ -2903,7 +2885,7 @@ class az_apim_api_list_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_api_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.resourceGroup(resourceGroup)
@@ -2973,7 +2955,7 @@ class az_apim_api_show_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_api_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.resourceGroup(resourceGroup)
@@ -3124,7 +3106,7 @@ class az_apim_api_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_apim_api_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, apiId: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.apiId(apiId)
         this.name(name)
@@ -3219,7 +3201,7 @@ class az_apim_api_wait_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_nv_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, displayName: string, namedValueId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, displayName: string, namedValueId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.displayName(displayName)
         this.namedValueId(namedValueId)
@@ -3293,7 +3275,7 @@ class az_apim_nv_create_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_nv_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namedValueId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, namedValueId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.namedValueId(namedValueId)
         this.resourceGroup(resourceGroup)
@@ -3346,7 +3328,7 @@ class az_apim_nv_delete_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_nv_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.serviceName(serviceName)
@@ -3394,7 +3376,7 @@ class az_apim_nv_list_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_nv_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namedValueId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, namedValueId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.namedValueId(namedValueId)
         this.resourceGroup(resourceGroup)
@@ -3448,7 +3430,7 @@ class az_apim_nv_show_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_nv_show_secret_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namedValueId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, namedValueId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.namedValueId(namedValueId)
         this.resourceGroup(resourceGroup)
@@ -3504,7 +3486,7 @@ class az_apim_nv_show_secret_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  */
 class az_apim_nv_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, namedValueId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, namedValueId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.namedValueId(namedValueId)
         this.resourceGroup(resourceGroup)
@@ -3602,7 +3584,7 @@ class az_apim_nv_update_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the api management service instance.
  */
 class az_apim_product_api_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, productId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, productId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.productId(productId)
@@ -3659,7 +3641,7 @@ class az_apim_product_api_add_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the api management service instance.
  */
 class az_apim_product_api_check_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, productId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, productId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.productId(productId)
@@ -3716,7 +3698,7 @@ class az_apim_product_api_check_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the api management service instance.
  */
 class az_apim_product_api_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, apiId: string, productId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, apiId: string, productId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.apiId(apiId)
         this.productId(productId)
@@ -3772,7 +3754,7 @@ class az_apim_product_api_delete_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the api management service instance.
  */
 class az_apim_product_api_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, productId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, productId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.productId(productId)
         this.resourceGroup(resourceGroup)
@@ -3834,7 +3816,7 @@ class az_apim_product_api_list_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the api management service instance.
  */
 class az_apim_product_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, productName: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, productName: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.productName(productName)
         this.resourceGroup(resourceGroup)
@@ -3934,7 +3916,7 @@ class az_apim_product_create_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the api management service instance.
  */
 class az_apim_product_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, productId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, productId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.productId(productId)
         this.resourceGroup(resourceGroup)
@@ -4005,7 +3987,7 @@ class az_apim_product_delete_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the api management service instance.
  */
 class az_apim_product_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.serviceName(serviceName)
@@ -4053,7 +4035,7 @@ class az_apim_product_list_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the api management service instance.
  */
 class az_apim_product_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, productId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, productId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.productId(productId)
         this.resourceGroup(resourceGroup)
@@ -4120,7 +4102,7 @@ class az_apim_product_show_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the api management service instance.
  */
 class az_apim_product_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, productId: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, productId: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.productId(productId)
         this.resourceGroup(resourceGroup)
@@ -4246,7 +4228,7 @@ class az_apim_product_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_apim_apply_network_updates_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4306,7 +4288,7 @@ class az_apim_apply_network_updates_command_builder extends CommandBuilder {
  * @param {string} storageAccountName The name of the storage account used to place the backup.
  */
 class az_apim_backup_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, backupName: string, name: string, resourceGroup: string, storageAccountContainer: string, storageAccountKey: string, storageAccountName: string) {
+    constructor(commandPath: string, backupName: string, name: string, resourceGroup: string, storageAccountContainer: string, storageAccountKey: string, storageAccountName: string) {
         super(commandParent);
         this.backupName(backupName)
         this.name(name)
@@ -4377,7 +4359,7 @@ class az_apim_backup_command_builder extends CommandBuilder {
  * @param {string} name The name of the api management service instance.
  */
 class az_apim_check_name_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -4421,7 +4403,7 @@ class az_apim_check_name_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_apim_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, publisherEmail: string, publisherName: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, publisherEmail: string, publisherName: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.publisherEmail(publisherEmail)
@@ -4524,7 +4506,7 @@ class az_apim_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_apim_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4572,7 +4554,7 @@ class az_apim_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_apim_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4610,7 +4592,7 @@ class az_apim_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_apim_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4668,7 +4650,7 @@ class az_apim_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_apim_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4792,7 +4774,7 @@ class az_apim_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_apim_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)

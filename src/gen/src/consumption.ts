@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage budgets for an Azure subscription. */
-export class az_consumption_budget implements ICommandParent<any> {
-    commandPath = "az consumption budget";
-
+export class az_consumption_budget {
     /**
      * Create a budget for an Azure subscription.
      *
@@ -29,8 +27,8 @@ export class az_consumption_budget implements ICommandParent<any> {
      * @param {string} startDate Start date (YYYY-MM-DD in UTC) of time period of a budget.
      * @param {'annually' | 'monthly' | 'quarterly'} timeGrain Time grain of the budget can be monthly, quarterly, or annually.
      */
-    az_consumption_budget_create(amount: string, budgetName: string, category: 'cost' | 'usage', endDate: string, startDate: string, timeGrain: 'annually' | 'monthly' | 'quarterly'): az_consumption_budget_create_command_builder {
-        return new az_consumption_budget_create_command_builder(this, amount, budgetName, category, endDate, startDate, timeGrain);
+    static az_consumption_budget_create(amount: string, budgetName: string, category: 'cost' | 'usage', endDate: string, startDate: string, timeGrain: 'annually' | 'monthly' | 'quarterly'): az_consumption_budget_create_command_builder {
+        return new az_consumption_budget_create_command_builder("az consumption budget create", amount, budgetName, category, endDate, startDate, timeGrain);
     }
 
     /**
@@ -45,8 +43,8 @@ export class az_consumption_budget implements ICommandParent<any> {
      *
      * @param {string} budgetName Name of a budget.
      */
-    az_consumption_budget_delete(budgetName: string): az_consumption_budget_delete_command_builder {
-        return new az_consumption_budget_delete_command_builder(this, budgetName);
+    static az_consumption_budget_delete(budgetName: string): az_consumption_budget_delete_command_builder {
+        return new az_consumption_budget_delete_command_builder("az consumption budget delete", budgetName);
     }
 
     /**
@@ -59,8 +57,8 @@ export class az_consumption_budget implements ICommandParent<any> {
      *                            [--subscription]
      * ```
      */
-    az_consumption_budget_list(): az_consumption_budget_list_command_builder {
-        return new az_consumption_budget_list_command_builder(this);
+    static az_consumption_budget_list(): az_consumption_budget_list_command_builder {
+        return new az_consumption_budget_list_command_builder("az consumption budget list");
     }
 
     /**
@@ -76,15 +74,13 @@ export class az_consumption_budget implements ICommandParent<any> {
      *
      * @param {string} budgetName Name of a budget.
      */
-    az_consumption_budget_show(budgetName: string): az_consumption_budget_show_command_builder {
-        return new az_consumption_budget_show_command_builder(this, budgetName);
+    static az_consumption_budget_show(budgetName: string): az_consumption_budget_show_command_builder {
+        return new az_consumption_budget_show_command_builder("az consumption budget show", budgetName);
     }
 }
 
 /** Inspect the marketplace usage data of an Azure subscription within a billing period. */
-export class az_consumption_marketplace implements ICommandParent<any> {
-    commandPath = "az consumption marketplace";
-
+export class az_consumption_marketplace {
     /**
      * List the marketplace for an Azure subscription within a billing period.
      *
@@ -98,15 +94,13 @@ export class az_consumption_marketplace implements ICommandParent<any> {
      *                                 [--top]
      * ```
      */
-    az_consumption_marketplace_list(): az_consumption_marketplace_list_command_builder {
-        return new az_consumption_marketplace_list_command_builder(this);
+    static az_consumption_marketplace_list(): az_consumption_marketplace_list_command_builder {
+        return new az_consumption_marketplace_list_command_builder("az consumption marketplace list");
     }
 }
 
 /** Inspect the price sheet of an Azure subscription within a billing period. */
-export class az_consumption_pricesheet implements ICommandParent<any> {
-    commandPath = "az consumption pricesheet";
-
+export class az_consumption_pricesheet {
     /**
      * Show the price sheet for an Azure subscription within a billing period.
      *
@@ -118,15 +112,13 @@ export class az_consumption_pricesheet implements ICommandParent<any> {
      *                                [--subscription]
      * ```
      */
-    az_consumption_pricesheet_show(): az_consumption_pricesheet_show_command_builder {
-        return new az_consumption_pricesheet_show_command_builder(this);
+    static az_consumption_pricesheet_show(): az_consumption_pricesheet_show_command_builder {
+        return new az_consumption_pricesheet_show_command_builder("az consumption pricesheet show");
     }
 }
 
 /** List reservation details. */
-export class az_consumption_reservation_detail implements ICommandParent<any> {
-    commandPath = "az consumption reservation detail";
-
+export class az_consumption_reservation_detail {
     /**
      * List the details of a reservation by order id or reservation id.
      *
@@ -144,15 +136,13 @@ export class az_consumption_reservation_detail implements ICommandParent<any> {
      * @param {string} reservationOrderId Reservation order id.
      * @param {string} startDate Start date (YYYY-MM-DD in UTC). Only needed for daily grain and if specified, also requires --end-date.
      */
-    az_consumption_reservation_detail_list(endDate: string, reservationOrderId: string, startDate: string): az_consumption_reservation_detail_list_command_builder {
-        return new az_consumption_reservation_detail_list_command_builder(this, endDate, reservationOrderId, startDate);
+    static az_consumption_reservation_detail_list(endDate: string, reservationOrderId: string, startDate: string): az_consumption_reservation_detail_list_command_builder {
+        return new az_consumption_reservation_detail_list_command_builder("az consumption reservation detail list", endDate, reservationOrderId, startDate);
     }
 }
 
 /** List reservation summaries. */
-export class az_consumption_reservation_summary implements ICommandParent<any> {
-    commandPath = "az consumption reservation summary";
-
+export class az_consumption_reservation_summary {
     /**
      * List reservation summaries for daily or monthly by order Id or reservation id.
      *
@@ -170,8 +160,8 @@ export class az_consumption_reservation_summary implements ICommandParent<any> {
      * @param {string} grain Reservation summary grain. Possible values are daily or monthly.
      * @param {string} reservationOrderId Reservation order id.
      */
-    az_consumption_reservation_summary_list(grain: string, reservationOrderId: string): az_consumption_reservation_summary_list_command_builder {
-        return new az_consumption_reservation_summary_list_command_builder(this, grain, reservationOrderId);
+    static az_consumption_reservation_summary_list(grain: string, reservationOrderId: string): az_consumption_reservation_summary_list_command_builder {
+        return new az_consumption_reservation_summary_list_command_builder("az consumption reservation summary list", grain, reservationOrderId);
     }
 }
 
@@ -180,9 +170,7 @@ export class az_consumption_reservation {
 }
 
 /** Inspect the usage of Azure resources. */
-export class az_consumption_usage implements ICommandParent<any> {
-    commandPath = "az consumption usage";
-
+export class az_consumption_usage {
     /**
      * List the details of Azure resource consumption, either as an invoice or within a billing period.
      *
@@ -198,8 +186,8 @@ export class az_consumption_usage implements ICommandParent<any> {
      *                           [--top]
      * ```
      */
-    az_consumption_usage_list(): az_consumption_usage_list_command_builder {
-        return new az_consumption_usage_list_command_builder(this);
+    static az_consumption_usage_list(): az_consumption_usage_list_command_builder {
+        return new az_consumption_usage_list_command_builder("az consumption usage list");
     }
 }
 
@@ -233,7 +221,7 @@ export class az_consumption {
  * @param {'annually' | 'monthly' | 'quarterly'} timeGrain Time grain of the budget can be monthly, quarterly, or annually.
  */
 class az_consumption_budget_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, amount: string, budgetName: string, category: 'cost' | 'usage', endDate: string, startDate: string, timeGrain: 'annually' | 'monthly' | 'quarterly') {
+    constructor(commandPath: string, amount: string, budgetName: string, category: 'cost' | 'usage', endDate: string, startDate: string, timeGrain: 'annually' | 'monthly' | 'quarterly') {
         super(commandParent);
         this.amount(amount)
         this.budgetName(budgetName)
@@ -323,7 +311,7 @@ class az_consumption_budget_create_command_builder extends CommandBuilder {
  * @param {string} budgetName Name of a budget.
  */
 class az_consumption_budget_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, budgetName: string) {
+    constructor(commandPath: string, budgetName: string) {
         super(commandParent);
         this.budgetName(budgetName)
     }
@@ -358,7 +346,7 @@ class az_consumption_budget_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_consumption_budget_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -395,7 +383,7 @@ class az_consumption_budget_list_command_builder extends CommandBuilder {
  * @param {string} budgetName Name of a budget.
  */
 class az_consumption_budget_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, budgetName: string) {
+    constructor(commandPath: string, budgetName: string) {
         super(commandParent);
         this.budgetName(budgetName)
     }
@@ -439,7 +427,7 @@ class az_consumption_budget_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_consumption_marketplace_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -492,7 +480,7 @@ class az_consumption_marketplace_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_consumption_pricesheet_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -539,7 +527,7 @@ class az_consumption_pricesheet_show_command_builder extends CommandBuilder {
  * @param {string} startDate Start date (YYYY-MM-DD in UTC). Only needed for daily grain and if specified, also requires --end-date.
  */
 class az_consumption_reservation_detail_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, endDate: string, reservationOrderId: string, startDate: string) {
+    constructor(commandPath: string, endDate: string, reservationOrderId: string, startDate: string) {
         super(commandParent);
         this.endDate(endDate)
         this.reservationOrderId(reservationOrderId)
@@ -601,7 +589,7 @@ class az_consumption_reservation_detail_list_command_builder extends CommandBuil
  * @param {string} reservationOrderId Reservation order id.
  */
 class az_consumption_reservation_summary_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, grain: string, reservationOrderId: string) {
+    constructor(commandPath: string, grain: string, reservationOrderId: string) {
         super(commandParent);
         this.grain(grain)
         this.reservationOrderId(reservationOrderId)
@@ -666,7 +654,7 @@ class az_consumption_reservation_summary_list_command_builder extends CommandBui
  * ```
  */
 class az_consumption_usage_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

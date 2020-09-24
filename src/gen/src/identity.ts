@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Managed Service Identities. */
-export class az_identity implements ICommandParent<any> {
-    commandPath = "az identity";
-
+export class az_identity {
     /**
      * Create or update an identity in the specified subscription and resource group.
      *
@@ -19,8 +17,8 @@ export class az_identity implements ICommandParent<any> {
      * @param {string} name The name of the identity resource.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_identity_create(name: string, resourceGroup: string): az_identity_create_command_builder {
-        return new az_identity_create_command_builder(this, name, resourceGroup);
+    static az_identity_create(name: string, resourceGroup: string): az_identity_create_command_builder {
+        return new az_identity_create_command_builder("az identity create", name, resourceGroup);
     }
 
     /**
@@ -34,8 +32,8 @@ export class az_identity implements ICommandParent<any> {
      *                    [--subscription]
      * ```
      */
-    az_identity_delete(): az_identity_delete_command_builder {
-        return new az_identity_delete_command_builder(this);
+    static az_identity_delete(): az_identity_delete_command_builder {
+        return new az_identity_delete_command_builder("az identity delete");
     }
 
     /**
@@ -48,8 +46,8 @@ export class az_identity implements ICommandParent<any> {
      *                  [--subscription]
      * ```
      */
-    az_identity_list(): az_identity_list_command_builder {
-        return new az_identity_list_command_builder(this);
+    static az_identity_list(): az_identity_list_command_builder {
+        return new az_identity_list_command_builder("az identity list");
     }
 
     /**
@@ -60,8 +58,8 @@ export class az_identity implements ICommandParent<any> {
      * az identity list-operations [--subscription]
      * ```
      */
-    az_identity_list_operations(): az_identity_list_operations_command_builder {
-        return new az_identity_list_operations_command_builder(this);
+    static az_identity_list_operations(): az_identity_list_operations_command_builder {
+        return new az_identity_list_operations_command_builder("az identity list-operations");
     }
 
     /**
@@ -76,8 +74,8 @@ export class az_identity implements ICommandParent<any> {
      *                  [--subscription]
      * ```
      */
-    az_identity_show(): az_identity_show_command_builder {
-        return new az_identity_show_command_builder(this);
+    static az_identity_show(): az_identity_show_command_builder {
+        return new az_identity_show_command_builder("az identity show");
     }
 }
 
@@ -97,7 +95,7 @@ export class az_identity implements ICommandParent<any> {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_identity_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -146,7 +144,7 @@ class az_identity_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_identity_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -186,7 +184,7 @@ class az_identity_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_identity_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -218,7 +216,7 @@ class az_identity_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_identity_list_operations_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -242,7 +240,7 @@ class az_identity_list_operations_command_builder extends CommandBuilder {
  * ```
  */
 class az_identity_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

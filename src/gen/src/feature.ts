@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage resource provider features. */
-export class az_feature implements ICommandParent<any> {
-    commandPath = "az feature";
-
+export class az_feature {
     /**
      * List preview features.
      *
@@ -14,8 +12,8 @@ export class az_feature implements ICommandParent<any> {
      *                 [--subscription]
      * ```
      */
-    az_feature_list(): az_feature_list_command_builder {
-        return new az_feature_list_command_builder(this);
+    static az_feature_list(): az_feature_list_command_builder {
+        return new az_feature_list_command_builder("az feature list");
     }
 
     /**
@@ -31,8 +29,8 @@ export class az_feature implements ICommandParent<any> {
      * @param {string} name The feature name.
      * @param {string} namespace The resource namespace, aka 'provider'.
      */
-    az_feature_register(name: string, namespace: string): az_feature_register_command_builder {
-        return new az_feature_register_command_builder(this, name, namespace);
+    static az_feature_register(name: string, namespace: string): az_feature_register_command_builder {
+        return new az_feature_register_command_builder("az feature register", name, namespace);
     }
 
     /**
@@ -49,8 +47,8 @@ export class az_feature implements ICommandParent<any> {
      * @param {string} name The feature name.
      * @param {string} namespace The resource namespace, aka 'provider'.
      */
-    az_feature_show(name: string, namespace: string): az_feature_show_command_builder {
-        return new az_feature_show_command_builder(this, name, namespace);
+    static az_feature_show(name: string, namespace: string): az_feature_show_command_builder {
+        return new az_feature_show_command_builder("az feature show", name, namespace);
     }
 
     /**
@@ -66,8 +64,8 @@ export class az_feature implements ICommandParent<any> {
      * @param {string} name The feature name.
      * @param {string} namespace The resource namespace, aka 'provider'.
      */
-    az_feature_unregister(name: string, namespace: string): az_feature_unregister_command_builder {
-        return new az_feature_unregister_command_builder(this, name, namespace);
+    static az_feature_unregister(name: string, namespace: string): az_feature_unregister_command_builder {
+        return new az_feature_unregister_command_builder("az feature unregister", name, namespace);
     }
 }
 
@@ -82,7 +80,7 @@ export class az_feature implements ICommandParent<any> {
  * ```
  */
 class az_feature_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -119,7 +117,7 @@ class az_feature_list_command_builder extends CommandBuilder {
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
 class az_feature_register_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespace: string) {
+    constructor(commandPath: string, name: string, namespace: string) {
         super(commandParent);
         this.name(name)
         this.namespace(namespace)
@@ -159,7 +157,7 @@ class az_feature_register_command_builder extends CommandBuilder {
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
 class az_feature_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespace: string) {
+    constructor(commandPath: string, name: string, namespace: string) {
         super(commandParent);
         this.name(name)
         this.namespace(namespace)
@@ -204,7 +202,7 @@ class az_feature_show_command_builder extends CommandBuilder {
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
 class az_feature_unregister_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, namespace: string) {
+    constructor(commandPath: string, name: string, namespace: string) {
         super(commandParent);
         this.name(name)
         this.namespace(namespace)

@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Get enrollment accounts. */
-export class az_billing_enrollment_account implements ICommandParent<any> {
-    commandPath = "az billing enrollment-account";
-
+export class az_billing_enrollment_account {
     /**
      * Lists the enrollment accounts the caller has access to.
      *
@@ -13,8 +11,8 @@ export class az_billing_enrollment_account implements ICommandParent<any> {
      *                                    [--subscription]
      * ```
      */
-    az_billing_enrollment_account_list(): az_billing_enrollment_account_list_command_builder {
-        return new az_billing_enrollment_account_list_command_builder(this);
+    static az_billing_enrollment_account_list(): az_billing_enrollment_account_list_command_builder {
+        return new az_billing_enrollment_account_list_command_builder("az billing enrollment-account list");
     }
 
     /**
@@ -29,15 +27,13 @@ export class az_billing_enrollment_account implements ICommandParent<any> {
      *
      * @param {string} name Name of the enrollment account.
      */
-    az_billing_enrollment_account_show(name: string): az_billing_enrollment_account_show_command_builder {
-        return new az_billing_enrollment_account_show_command_builder(this, name);
+    static az_billing_enrollment_account_show(name: string): az_billing_enrollment_account_show_command_builder {
+        return new az_billing_enrollment_account_show_command_builder("az billing enrollment-account show", name);
     }
 }
 
 /** Get billing invoices for a subscription. */
-export class az_billing_invoice implements ICommandParent<any> {
-    commandPath = "az billing invoice";
-
+export class az_billing_invoice {
     /**
      * List all available invoices of the subscription.
      *
@@ -48,8 +44,8 @@ export class az_billing_invoice implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_billing_invoice_list(): az_billing_invoice_list_command_builder {
-        return new az_billing_invoice_list_command_builder(this);
+    static az_billing_invoice_list(): az_billing_invoice_list_command_builder {
+        return new az_billing_invoice_list_command_builder("az billing invoice list");
     }
 
     /**
@@ -62,15 +58,13 @@ export class az_billing_invoice implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_billing_invoice_show(): az_billing_invoice_show_command_builder {
-        return new az_billing_invoice_show_command_builder(this);
+    static az_billing_invoice_show(): az_billing_invoice_show_command_builder {
+        return new az_billing_invoice_show_command_builder("az billing invoice show");
     }
 }
 
 /** Get billing periods for a subscription. */
-export class az_billing_period implements ICommandParent<any> {
-    commandPath = "az billing period";
-
+export class az_billing_period {
     /**
      * Lists the available billing periods for a subscription in reverse chronological order.
      *
@@ -83,8 +77,8 @@ export class az_billing_period implements ICommandParent<any> {
      *                        [--top]
      * ```
      */
-    az_billing_period_list(): az_billing_period_list_command_builder {
-        return new az_billing_period_list_command_builder(this);
+    static az_billing_period_list(): az_billing_period_list_command_builder {
+        return new az_billing_period_list_command_builder("az billing period list");
     }
 
     /**
@@ -99,8 +93,8 @@ export class az_billing_period implements ICommandParent<any> {
      *
      * @param {string} name Name of the billing period.
      */
-    az_billing_period_show(name: string): az_billing_period_show_command_builder {
-        return new az_billing_period_show_command_builder(this, name);
+    static az_billing_period_show(name: string): az_billing_period_show_command_builder {
+        return new az_billing_period_show_command_builder("az billing period show", name);
     }
 }
 
@@ -118,7 +112,7 @@ export class az_billing {
  * ```
  */
 class az_billing_enrollment_account_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -148,7 +142,7 @@ class az_billing_enrollment_account_list_command_builder extends CommandBuilder 
  * @param {string} name Name of the enrollment account.
  */
 class az_billing_enrollment_account_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -183,7 +177,7 @@ class az_billing_enrollment_account_show_command_builder extends CommandBuilder 
  * ```
  */
 class az_billing_invoice_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -217,7 +211,7 @@ class az_billing_invoice_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_billing_invoice_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -253,7 +247,7 @@ class az_billing_invoice_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_billing_period_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -301,7 +295,7 @@ class az_billing_period_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the billing period.
  */
 class az_billing_period_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }

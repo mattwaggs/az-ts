@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage areas for a project. */
-export class az_boards_area_project implements ICommandParent<any> {
-    commandPath = "az boards area project";
-
+export class az_boards_area_project {
     /**
      * Create area.
      *
@@ -19,8 +17,8 @@ export class az_boards_area_project implements ICommandParent<any> {
      *
      * @param {string} name Name of the area.
      */
-    az_boards_area_project_create(name: string): az_boards_area_project_create_command_builder {
-        return new az_boards_area_project_create_command_builder(this, name);
+    static az_boards_area_project_create(name: string): az_boards_area_project_create_command_builder {
+        return new az_boards_area_project_create_command_builder("az boards area project create", name);
     }
 
     /**
@@ -38,8 +36,8 @@ export class az_boards_area_project implements ICommandParent<any> {
      *
      * @param {string} path Absolute path of an area. Example:ProjectNameAreaAreaName.
      */
-    az_boards_area_project_delete(path: string): az_boards_area_project_delete_command_builder {
-        return new az_boards_area_project_delete_command_builder(this, path);
+    static az_boards_area_project_delete(path: string): az_boards_area_project_delete_command_builder {
+        return new az_boards_area_project_delete_command_builder("az boards area project delete", path);
     }
 
     /**
@@ -56,8 +54,8 @@ export class az_boards_area_project implements ICommandParent<any> {
      *                             [--subscription]
      * ```
      */
-    az_boards_area_project_list(): az_boards_area_project_list_command_builder {
-        return new az_boards_area_project_list_command_builder(this);
+    static az_boards_area_project_list(): az_boards_area_project_list_command_builder {
+        return new az_boards_area_project_list_command_builder("az boards area project list");
     }
 
     /**
@@ -75,8 +73,8 @@ export class az_boards_area_project implements ICommandParent<any> {
      *
      * @param {string} id Area ID.
      */
-    az_boards_area_project_show(id: string): az_boards_area_project_show_command_builder {
-        return new az_boards_area_project_show_command_builder(this, id);
+    static az_boards_area_project_show(id: string): az_boards_area_project_show_command_builder {
+        return new az_boards_area_project_show_command_builder("az boards area project show", id);
     }
 
     /**
@@ -95,15 +93,13 @@ export class az_boards_area_project implements ICommandParent<any> {
      *
      * @param {string} path Absolute path of an area. Example:ProjectNameAreaAreaName.
      */
-    az_boards_area_project_update(path: string): az_boards_area_project_update_command_builder {
-        return new az_boards_area_project_update_command_builder(this, path);
+    static az_boards_area_project_update(path: string): az_boards_area_project_update_command_builder {
+        return new az_boards_area_project_update_command_builder("az boards area project update", path);
     }
 }
 
 /** Manage areas for a team. */
-export class az_boards_area_team implements ICommandParent<any> {
-    commandPath = "az boards area team";
-
+export class az_boards_area_team {
     /**
      * Add area to a team.
      *
@@ -122,8 +118,8 @@ export class az_boards_area_team implements ICommandParent<any> {
      * @param {string} path Area path. Example:ProjectNameAreaName.
      * @param {string} team The name or id of the team.
      */
-    az_boards_area_team_add(path: string, team: string): az_boards_area_team_add_command_builder {
-        return new az_boards_area_team_add_command_builder(this, path, team);
+    static az_boards_area_team_add(path: string, team: string): az_boards_area_team_add_command_builder {
+        return new az_boards_area_team_add_command_builder("az boards area team add", path, team);
     }
 
     /**
@@ -141,8 +137,8 @@ export class az_boards_area_team implements ICommandParent<any> {
      *
      * @param {string} team The name or id of the team.
      */
-    az_boards_area_team_list(team: string): az_boards_area_team_list_command_builder {
-        return new az_boards_area_team_list_command_builder(this, team);
+    static az_boards_area_team_list(team: string): az_boards_area_team_list_command_builder {
+        return new az_boards_area_team_list_command_builder("az boards area team list", team);
     }
 
     /**
@@ -161,8 +157,8 @@ export class az_boards_area_team implements ICommandParent<any> {
      * @param {string} path Area path. Example:ProjectNameAreaName.
      * @param {string} team The name or id of the team.
      */
-    az_boards_area_team_remove(path: string, team: string): az_boards_area_team_remove_command_builder {
-        return new az_boards_area_team_remove_command_builder(this, path, team);
+    static az_boards_area_team_remove(path: string, team: string): az_boards_area_team_remove_command_builder {
+        return new az_boards_area_team_remove_command_builder("az boards area team remove", path, team);
     }
 
     /**
@@ -183,8 +179,8 @@ export class az_boards_area_team implements ICommandParent<any> {
      * @param {string} path Area path. Example:ProjectNameAreaName.
      * @param {string} team The name or id of the team.
      */
-    az_boards_area_team_update(path: string, team: string): az_boards_area_team_update_command_builder {
-        return new az_boards_area_team_update_command_builder(this, path, team);
+    static az_boards_area_team_update(path: string, team: string): az_boards_area_team_update_command_builder {
+        return new az_boards_area_team_update_command_builder("az boards area team update", path, team);
     }
 }
 
@@ -193,9 +189,7 @@ export class az_boards_area {
 }
 
 /** Manage iterations for a project. */
-export class az_boards_iteration_project implements ICommandParent<any> {
-    commandPath = "az boards iteration project";
-
+export class az_boards_iteration_project {
     /**
      * Create iteration.
      *
@@ -213,8 +207,8 @@ export class az_boards_iteration_project implements ICommandParent<any> {
      *
      * @param {string} name Name of the iteration.
      */
-    az_boards_iteration_project_create(name: string): az_boards_iteration_project_create_command_builder {
-        return new az_boards_iteration_project_create_command_builder(this, name);
+    static az_boards_iteration_project_create(name: string): az_boards_iteration_project_create_command_builder {
+        return new az_boards_iteration_project_create_command_builder("az boards iteration project create", name);
     }
 
     /**
@@ -232,8 +226,8 @@ export class az_boards_iteration_project implements ICommandParent<any> {
      *
      * @param {string} path Absolute path of an iteration. Example:ProjectNameIterationIterationName.
      */
-    az_boards_iteration_project_delete(path: string): az_boards_iteration_project_delete_command_builder {
-        return new az_boards_iteration_project_delete_command_builder(this, path);
+    static az_boards_iteration_project_delete(path: string): az_boards_iteration_project_delete_command_builder {
+        return new az_boards_iteration_project_delete_command_builder("az boards iteration project delete", path);
     }
 
     /**
@@ -250,8 +244,8 @@ export class az_boards_iteration_project implements ICommandParent<any> {
      *                                  [--subscription]
      * ```
      */
-    az_boards_iteration_project_list(): az_boards_iteration_project_list_command_builder {
-        return new az_boards_iteration_project_list_command_builder(this);
+    static az_boards_iteration_project_list(): az_boards_iteration_project_list_command_builder {
+        return new az_boards_iteration_project_list_command_builder("az boards iteration project list");
     }
 
     /**
@@ -269,8 +263,8 @@ export class az_boards_iteration_project implements ICommandParent<any> {
      *
      * @param {string} id Iteration ID.
      */
-    az_boards_iteration_project_show(id: string): az_boards_iteration_project_show_command_builder {
-        return new az_boards_iteration_project_show_command_builder(this, id);
+    static az_boards_iteration_project_show(id: string): az_boards_iteration_project_show_command_builder {
+        return new az_boards_iteration_project_show_command_builder("az boards iteration project show", id);
     }
 
     /**
@@ -291,15 +285,13 @@ export class az_boards_iteration_project implements ICommandParent<any> {
      *
      * @param {string} path Absolute path of an iteration. Example:ProjectNameIterationIterationName.
      */
-    az_boards_iteration_project_update(path: string): az_boards_iteration_project_update_command_builder {
-        return new az_boards_iteration_project_update_command_builder(this, path);
+    static az_boards_iteration_project_update(path: string): az_boards_iteration_project_update_command_builder {
+        return new az_boards_iteration_project_update_command_builder("az boards iteration project update", path);
     }
 }
 
 /** Manage iterations for a team. */
-export class az_boards_iteration_team implements ICommandParent<any> {
-    commandPath = "az boards iteration team";
-
+export class az_boards_iteration_team {
     /**
      * Add iteration to a team.
      *
@@ -316,8 +308,8 @@ export class az_boards_iteration_team implements ICommandParent<any> {
      * @param {string} id Identifier of the iteration.
      * @param {string} team Name or ID of the team.
      */
-    az_boards_iteration_team_add(id: string, team: string): az_boards_iteration_team_add_command_builder {
-        return new az_boards_iteration_team_add_command_builder(this, id, team);
+    static az_boards_iteration_team_add(id: string, team: string): az_boards_iteration_team_add_command_builder {
+        return new az_boards_iteration_team_add_command_builder("az boards iteration team add", id, team);
     }
 
     /**
@@ -336,8 +328,8 @@ export class az_boards_iteration_team implements ICommandParent<any> {
      *
      * @param {string} team The name or id of the team.
      */
-    az_boards_iteration_team_list(team: string): az_boards_iteration_team_list_command_builder {
-        return new az_boards_iteration_team_list_command_builder(this, team);
+    static az_boards_iteration_team_list(team: string): az_boards_iteration_team_list_command_builder {
+        return new az_boards_iteration_team_list_command_builder("az boards iteration team list", team);
     }
 
     /**
@@ -356,8 +348,8 @@ export class az_boards_iteration_team implements ICommandParent<any> {
      * @param {string} id Identifier of the iteration.
      * @param {string} team Name or ID of the team.
      */
-    az_boards_iteration_team_list_work_items(id: string, team: string): az_boards_iteration_team_list_work_items_command_builder {
-        return new az_boards_iteration_team_list_work_items_command_builder(this, id, team);
+    static az_boards_iteration_team_list_work_items(id: string, team: string): az_boards_iteration_team_list_work_items_command_builder {
+        return new az_boards_iteration_team_list_work_items_command_builder("az boards iteration team list-work-items", id, team);
     }
 
     /**
@@ -376,8 +368,8 @@ export class az_boards_iteration_team implements ICommandParent<any> {
      * @param {string} id Identifier of the iteration.
      * @param {string} team Name or ID of the team.
      */
-    az_boards_iteration_team_remove(id: string, team: string): az_boards_iteration_team_remove_command_builder {
-        return new az_boards_iteration_team_remove_command_builder(this, id, team);
+    static az_boards_iteration_team_remove(id: string, team: string): az_boards_iteration_team_remove_command_builder {
+        return new az_boards_iteration_team_remove_command_builder("az boards iteration team remove", id, team);
     }
 
     /**
@@ -396,8 +388,8 @@ export class az_boards_iteration_team implements ICommandParent<any> {
      * @param {string} id Identifier of the iteration which needs to be set as backlog iteration.
      * @param {string} team Name or ID of the team.
      */
-    az_boards_iteration_team_set_backlog_iteration(id: string, team: string): az_boards_iteration_team_set_backlog_iteration_command_builder {
-        return new az_boards_iteration_team_set_backlog_iteration_command_builder(this, id, team);
+    static az_boards_iteration_team_set_backlog_iteration(id: string, team: string): az_boards_iteration_team_set_backlog_iteration_command_builder {
+        return new az_boards_iteration_team_set_backlog_iteration_command_builder("az boards iteration team set-backlog-iteration", id, team);
     }
 
     /**
@@ -416,8 +408,8 @@ export class az_boards_iteration_team implements ICommandParent<any> {
      *
      * @param {string} team Name or ID of the team.
      */
-    az_boards_iteration_team_set_default_iteration(team: string): az_boards_iteration_team_set_default_iteration_command_builder {
-        return new az_boards_iteration_team_set_default_iteration_command_builder(this, team);
+    static az_boards_iteration_team_set_default_iteration(team: string): az_boards_iteration_team_set_default_iteration_command_builder {
+        return new az_boards_iteration_team_set_default_iteration_command_builder("az boards iteration team set-default-iteration", team);
     }
 
     /**
@@ -434,8 +426,8 @@ export class az_boards_iteration_team implements ICommandParent<any> {
      *
      * @param {string} team Name or ID of the team.
      */
-    az_boards_iteration_team_show_backlog_iteration(team: string): az_boards_iteration_team_show_backlog_iteration_command_builder {
-        return new az_boards_iteration_team_show_backlog_iteration_command_builder(this, team);
+    static az_boards_iteration_team_show_backlog_iteration(team: string): az_boards_iteration_team_show_backlog_iteration_command_builder {
+        return new az_boards_iteration_team_show_backlog_iteration_command_builder("az boards iteration team show-backlog-iteration", team);
     }
 
     /**
@@ -452,8 +444,8 @@ export class az_boards_iteration_team implements ICommandParent<any> {
      *
      * @param {string} team Name or ID of the team.
      */
-    az_boards_iteration_team_show_default_iteration(team: string): az_boards_iteration_team_show_default_iteration_command_builder {
-        return new az_boards_iteration_team_show_default_iteration_command_builder(this, team);
+    static az_boards_iteration_team_show_default_iteration(team: string): az_boards_iteration_team_show_default_iteration_command_builder {
+        return new az_boards_iteration_team_show_default_iteration_command_builder("az boards iteration team show-default-iteration", team);
     }
 }
 
@@ -462,9 +454,7 @@ export class az_boards_iteration {
 }
 
 /** Manage work item relations. */
-export class az_boards_work_item_relation implements ICommandParent<any> {
-    commandPath = "az boards work-item relation";
-
+export class az_boards_work_item_relation {
     /**
      * Add relation(s) to work item.
      *
@@ -482,8 +472,8 @@ export class az_boards_work_item_relation implements ICommandParent<any> {
      * @param {string} relationType Relation type to create. Example: parent, child.
      * @param {string} targetId ID(s) of work-items to create relation with.                          Multiple values can be passed comma separated. Example: 1,2.
      */
-    az_boards_work_item_relation_add(id: string, relationType: string, targetId: string): az_boards_work_item_relation_add_command_builder {
-        return new az_boards_work_item_relation_add_command_builder(this, id, relationType, targetId);
+    static az_boards_work_item_relation_add(id: string, relationType: string, targetId: string): az_boards_work_item_relation_add_command_builder {
+        return new az_boards_work_item_relation_add_command_builder("az boards work-item relation add", id, relationType, targetId);
     }
 
     /**
@@ -496,8 +486,8 @@ export class az_boards_work_item_relation implements ICommandParent<any> {
      *                                        [--subscription]
      * ```
      */
-    az_boards_work_item_relation_list_type(): az_boards_work_item_relation_list_type_command_builder {
-        return new az_boards_work_item_relation_list_type_command_builder(this);
+    static az_boards_work_item_relation_list_type(): az_boards_work_item_relation_list_type_command_builder {
+        return new az_boards_work_item_relation_list_type_command_builder("az boards work-item relation list-type");
     }
 
     /**
@@ -518,8 +508,8 @@ export class az_boards_work_item_relation implements ICommandParent<any> {
      * @param {string} relationType Relation type to remove. Example: parent, child.
      * @param {string} targetId ID(s) of work-items to remove relation from.                          Multiple values can be passed comma separated. Example: 1,2.
      */
-    az_boards_work_item_relation_remove(id: string, relationType: string, targetId: string): az_boards_work_item_relation_remove_command_builder {
-        return new az_boards_work_item_relation_remove_command_builder(this, id, relationType, targetId);
+    static az_boards_work_item_relation_remove(id: string, relationType: string, targetId: string): az_boards_work_item_relation_remove_command_builder {
+        return new az_boards_work_item_relation_remove_command_builder("az boards work-item relation remove", id, relationType, targetId);
     }
 
     /**
@@ -536,15 +526,13 @@ export class az_boards_work_item_relation implements ICommandParent<any> {
      *
      * @param {string} id The ID of the work item.
      */
-    az_boards_work_item_relation_show(id: string): az_boards_work_item_relation_show_command_builder {
-        return new az_boards_work_item_relation_show_command_builder(this, id);
+    static az_boards_work_item_relation_show(id: string): az_boards_work_item_relation_show_command_builder {
+        return new az_boards_work_item_relation_show_command_builder("az boards work-item relation show", id);
     }
 }
 
 /** Manage work items. */
-export class az_boards_work_item implements ICommandParent<any> {
-    commandPath = "az boards work-item";
-
+export class az_boards_work_item {
     /**
      * Create a work item.
      *
@@ -569,8 +557,8 @@ export class az_boards_work_item implements ICommandParent<any> {
      * @param {string} title Title of the work item.
      * @param {string} type Name of the work item type (e.g. Bug).
      */
-    az_boards_work_item_create(title: string, type: string): az_boards_work_item_create_command_builder {
-        return new az_boards_work_item_create_command_builder(this, title, type);
+    static az_boards_work_item_create(title: string, type: string): az_boards_work_item_create_command_builder {
+        return new az_boards_work_item_create_command_builder("az boards work-item create", title, type);
     }
 
     /**
@@ -589,8 +577,8 @@ export class az_boards_work_item implements ICommandParent<any> {
      *
      * @param {string} id Unique id of the work item.
      */
-    az_boards_work_item_delete(id: string): az_boards_work_item_delete_command_builder {
-        return new az_boards_work_item_delete_command_builder(this, id);
+    static az_boards_work_item_delete(id: string): az_boards_work_item_delete_command_builder {
+        return new az_boards_work_item_delete_command_builder("az boards work-item delete", id);
     }
 
     /**
@@ -611,8 +599,8 @@ export class az_boards_work_item implements ICommandParent<any> {
      *
      * @param {string} id The ID of the work item.
      */
-    az_boards_work_item_show(id: string): az_boards_work_item_show_command_builder {
-        return new az_boards_work_item_show_command_builder(this, id);
+    static az_boards_work_item_show(id: string): az_boards_work_item_show_command_builder {
+        return new az_boards_work_item_show_command_builder("az boards work-item show", id);
     }
 
     /**
@@ -638,15 +626,13 @@ export class az_boards_work_item implements ICommandParent<any> {
      *
      * @param {string} id The id of the work item to update.
      */
-    az_boards_work_item_update(id: string): az_boards_work_item_update_command_builder {
-        return new az_boards_work_item_update_command_builder(this, id);
+    static az_boards_work_item_update(id: string): az_boards_work_item_update_command_builder {
+        return new az_boards_work_item_update_command_builder("az boards work-item update", id);
     }
 }
 
 /** Manage Azure Boards. */
-export class az_boards implements ICommandParent<any> {
-    commandPath = "az boards";
-
+export class az_boards {
     /**
      * Query for a list of work items.
      *
@@ -661,8 +647,8 @@ export class az_boards implements ICommandParent<any> {
      *                 [--wiql]
      * ```
      */
-    az_boards_query(): az_boards_query_command_builder {
-        return new az_boards_query_command_builder(this);
+    static az_boards_query(): az_boards_query_command_builder {
+        return new az_boards_query_command_builder("az boards query");
     }
 }
 
@@ -682,7 +668,7 @@ export class az_boards implements ICommandParent<any> {
  * @param {string} name Name of the area.
  */
 class az_boards_area_project_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -740,7 +726,7 @@ class az_boards_area_project_create_command_builder extends CommandBuilder {
  * @param {string} path Absolute path of an area. Example:ProjectNameAreaAreaName.
  */
 class az_boards_area_project_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string) {
+    constructor(commandPath: string, path: string) {
         super(commandParent);
         this.path(path)
     }
@@ -797,7 +783,7 @@ class az_boards_area_project_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_boards_area_project_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -860,7 +846,7 @@ class az_boards_area_project_list_command_builder extends CommandBuilder {
  * @param {string} id Area ID.
  */
 class az_boards_area_project_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -919,7 +905,7 @@ class az_boards_area_project_show_command_builder extends CommandBuilder {
  * @param {string} path Absolute path of an area. Example:ProjectNameAreaAreaName.
  */
 class az_boards_area_project_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string) {
+    constructor(commandPath: string, path: string) {
         super(commandParent);
         this.path(path)
     }
@@ -986,7 +972,7 @@ class az_boards_area_project_update_command_builder extends CommandBuilder {
  * @param {string} team The name or id of the team.
  */
 class az_boards_area_team_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string, team: string) {
+    constructor(commandPath: string, path: string, team: string) {
         super(commandParent);
         this.path(path)
         this.team(team)
@@ -1057,7 +1043,7 @@ class az_boards_area_team_add_command_builder extends CommandBuilder {
  * @param {string} team The name or id of the team.
  */
 class az_boards_area_team_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, team: string) {
+    constructor(commandPath: string, team: string) {
         super(commandParent);
         this.team(team)
     }
@@ -1116,7 +1102,7 @@ class az_boards_area_team_list_command_builder extends CommandBuilder {
  * @param {string} team The name or id of the team.
  */
 class az_boards_area_team_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string, team: string) {
+    constructor(commandPath: string, path: string, team: string) {
         super(commandParent);
         this.path(path)
         this.team(team)
@@ -1178,7 +1164,7 @@ class az_boards_area_team_remove_command_builder extends CommandBuilder {
  * @param {string} team The name or id of the team.
  */
 class az_boards_area_team_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string, team: string) {
+    constructor(commandPath: string, path: string, team: string) {
         super(commandParent);
         this.path(path)
         this.team(team)
@@ -1251,7 +1237,7 @@ class az_boards_area_team_update_command_builder extends CommandBuilder {
  * @param {string} name Name of the iteration.
  */
 class az_boards_iteration_project_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -1321,7 +1307,7 @@ class az_boards_iteration_project_create_command_builder extends CommandBuilder 
  * @param {string} path Absolute path of an iteration. Example:ProjectNameIterationIterationName.
  */
 class az_boards_iteration_project_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string) {
+    constructor(commandPath: string, path: string) {
         super(commandParent);
         this.path(path)
     }
@@ -1378,7 +1364,7 @@ class az_boards_iteration_project_delete_command_builder extends CommandBuilder 
  * ```
  */
 class az_boards_iteration_project_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1441,7 +1427,7 @@ class az_boards_iteration_project_list_command_builder extends CommandBuilder {
  * @param {string} id Iteration ID.
  */
 class az_boards_iteration_project_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -1502,7 +1488,7 @@ class az_boards_iteration_project_show_command_builder extends CommandBuilder {
  * @param {string} path Absolute path of an iteration. Example:ProjectNameIterationIterationName.
  */
 class az_boards_iteration_project_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, path: string) {
+    constructor(commandPath: string, path: string) {
         super(commandParent);
         this.path(path)
     }
@@ -1579,7 +1565,7 @@ class az_boards_iteration_project_update_command_builder extends CommandBuilder 
  * @param {string} team Name or ID of the team.
  */
 class az_boards_iteration_team_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, team: string) {
+    constructor(commandPath: string, id: string, team: string) {
         super(commandParent);
         this.id(id)
         this.team(team)
@@ -1639,7 +1625,7 @@ class az_boards_iteration_team_add_command_builder extends CommandBuilder {
  * @param {string} team The name or id of the team.
  */
 class az_boards_iteration_team_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, team: string) {
+    constructor(commandPath: string, team: string) {
         super(commandParent);
         this.team(team)
     }
@@ -1704,7 +1690,7 @@ class az_boards_iteration_team_list_command_builder extends CommandBuilder {
  * @param {string} team Name or ID of the team.
  */
 class az_boards_iteration_team_list_work_items_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, team: string) {
+    constructor(commandPath: string, id: string, team: string) {
         super(commandParent);
         this.id(id)
         this.team(team)
@@ -1764,7 +1750,7 @@ class az_boards_iteration_team_list_work_items_command_builder extends CommandBu
  * @param {string} team Name or ID of the team.
  */
 class az_boards_iteration_team_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, team: string) {
+    constructor(commandPath: string, id: string, team: string) {
         super(commandParent);
         this.id(id)
         this.team(team)
@@ -1824,7 +1810,7 @@ class az_boards_iteration_team_remove_command_builder extends CommandBuilder {
  * @param {string} team Name or ID of the team.
  */
 class az_boards_iteration_team_set_backlog_iteration_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, team: string) {
+    constructor(commandPath: string, id: string, team: string) {
         super(commandParent);
         this.id(id)
         this.team(team)
@@ -1884,7 +1870,7 @@ class az_boards_iteration_team_set_backlog_iteration_command_builder extends Com
  * @param {string} team Name or ID of the team.
  */
 class az_boards_iteration_team_set_default_iteration_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, team: string) {
+    constructor(commandPath: string, team: string) {
         super(commandParent);
         this.team(team)
     }
@@ -1947,7 +1933,7 @@ class az_boards_iteration_team_set_default_iteration_command_builder extends Com
  * @param {string} team Name or ID of the team.
  */
 class az_boards_iteration_team_show_backlog_iteration_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, team: string) {
+    constructor(commandPath: string, team: string) {
         super(commandParent);
         this.team(team)
     }
@@ -1998,7 +1984,7 @@ class az_boards_iteration_team_show_backlog_iteration_command_builder extends Co
  * @param {string} team Name or ID of the team.
  */
 class az_boards_iteration_team_show_default_iteration_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, team: string) {
+    constructor(commandPath: string, team: string) {
         super(commandParent);
         this.team(team)
     }
@@ -2052,7 +2038,7 @@ class az_boards_iteration_team_show_default_iteration_command_builder extends Co
  * @param {string} targetId ID(s) of work-items to create relation with.                          Multiple values can be passed comma separated. Example: 1,2.
  */
 class az_boards_work_item_relation_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, relationType: string, targetId: string) {
+    constructor(commandPath: string, id: string, relationType: string, targetId: string) {
         super(commandParent);
         this.id(id)
         this.relationType(relationType)
@@ -2107,7 +2093,7 @@ class az_boards_work_item_relation_add_command_builder extends CommandBuilder {
  * ```
  */
 class az_boards_work_item_relation_list_type_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2149,7 +2135,7 @@ class az_boards_work_item_relation_list_type_command_builder extends CommandBuil
  * @param {string} targetId ID(s) of work-items to remove relation from.                          Multiple values can be passed comma separated. Example: 1,2.
  */
 class az_boards_work_item_relation_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, relationType: string, targetId: string) {
+    constructor(commandPath: string, id: string, relationType: string, targetId: string) {
         super(commandParent);
         this.id(id)
         this.relationType(relationType)
@@ -2214,7 +2200,7 @@ class az_boards_work_item_relation_remove_command_builder extends CommandBuilder
  * @param {string} id The ID of the work item.
  */
 class az_boards_work_item_relation_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -2275,7 +2261,7 @@ class az_boards_work_item_relation_show_command_builder extends CommandBuilder {
  * @param {string} type Name of the work item type (e.g. Bug).
  */
 class az_boards_work_item_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, title: string, type: string) {
+    constructor(commandPath: string, title: string, type: string) {
         super(commandParent);
         this.title(title)
         this.type(type)
@@ -2383,7 +2369,7 @@ class az_boards_work_item_create_command_builder extends CommandBuilder {
  * @param {string} id Unique id of the work item.
  */
 class az_boards_work_item_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -2450,7 +2436,7 @@ class az_boards_work_item_delete_command_builder extends CommandBuilder {
  * @param {string} id The ID of the work item.
  */
 class az_boards_work_item_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -2534,7 +2520,7 @@ class az_boards_work_item_show_command_builder extends CommandBuilder {
  * @param {string} id The id of the work item to update.
  */
 class az_boards_work_item_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string) {
+    constructor(commandPath: string, id: string) {
         super(commandParent);
         this.id(id)
     }
@@ -2639,7 +2625,7 @@ class az_boards_work_item_update_command_builder extends CommandBuilder {
  * ```
  */
 class az_boards_query_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

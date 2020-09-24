@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Synapse's role assignments. */
-export class az_synapse_role_assignment implements ICommandParent<any> {
-    commandPath = "az synapse role assignment";
-
+export class az_synapse_role_assignment {
     /**
      * Create a role assignment.
      *
@@ -19,8 +17,8 @@ export class az_synapse_role_assignment implements ICommandParent<any> {
      * @param {string} role The role name/id that is assigned to the principal.
      * @param {string} workspaceName The workspace name.
      */
-    az_synapse_role_assignment_create(assignee: string, role: string, workspaceName: string): az_synapse_role_assignment_create_command_builder {
-        return new az_synapse_role_assignment_create_command_builder(this, assignee, role, workspaceName);
+    static az_synapse_role_assignment_create(assignee: string, role: string, workspaceName: string): az_synapse_role_assignment_create_command_builder {
+        return new az_synapse_role_assignment_create_command_builder("az synapse role assignment create", assignee, role, workspaceName);
     }
 
     /**
@@ -38,8 +36,8 @@ export class az_synapse_role_assignment implements ICommandParent<any> {
      *
      * @param {string} workspaceName The workspace name.
      */
-    az_synapse_role_assignment_delete(workspaceName: string): az_synapse_role_assignment_delete_command_builder {
-        return new az_synapse_role_assignment_delete_command_builder(this, workspaceName);
+    static az_synapse_role_assignment_delete(workspaceName: string): az_synapse_role_assignment_delete_command_builder {
+        return new az_synapse_role_assignment_delete_command_builder("az synapse role assignment delete", workspaceName);
     }
 
     /**
@@ -56,8 +54,8 @@ export class az_synapse_role_assignment implements ICommandParent<any> {
      *
      * @param {string} workspaceName The workspace name.
      */
-    az_synapse_role_assignment_list(workspaceName: string): az_synapse_role_assignment_list_command_builder {
-        return new az_synapse_role_assignment_list_command_builder(this, workspaceName);
+    static az_synapse_role_assignment_list(workspaceName: string): az_synapse_role_assignment_list_command_builder {
+        return new az_synapse_role_assignment_list_command_builder("az synapse role assignment list", workspaceName);
     }
 
     /**
@@ -74,15 +72,13 @@ export class az_synapse_role_assignment implements ICommandParent<any> {
      * @param {string} id Id of the role that is assigned to the principal.
      * @param {string} workspaceName The workspace name.
      */
-    az_synapse_role_assignment_show(id: string, workspaceName: string): az_synapse_role_assignment_show_command_builder {
-        return new az_synapse_role_assignment_show_command_builder(this, id, workspaceName);
+    static az_synapse_role_assignment_show(id: string, workspaceName: string): az_synapse_role_assignment_show_command_builder {
+        return new az_synapse_role_assignment_show_command_builder("az synapse role assignment show", id, workspaceName);
     }
 }
 
 /** Manage Synapse's role definitions. */
-export class az_synapse_role_definition implements ICommandParent<any> {
-    commandPath = "az synapse role definition";
-
+export class az_synapse_role_definition {
     /**
      * List role definitions.
      *
@@ -95,8 +91,8 @@ export class az_synapse_role_definition implements ICommandParent<any> {
      *
      * @param {string} workspaceName The workspace name.
      */
-    az_synapse_role_definition_list(workspaceName: string): az_synapse_role_definition_list_command_builder {
-        return new az_synapse_role_definition_list_command_builder(this, workspaceName);
+    static az_synapse_role_definition_list(workspaceName: string): az_synapse_role_definition_list_command_builder {
+        return new az_synapse_role_definition_list_command_builder("az synapse role definition list", workspaceName);
     }
 
     /**
@@ -113,8 +109,8 @@ export class az_synapse_role_definition implements ICommandParent<any> {
      * @param {string} role The role name/id that is assigned to the principal.
      * @param {string} workspaceName The workspace name.
      */
-    az_synapse_role_definition_show(role: string, workspaceName: string): az_synapse_role_definition_show_command_builder {
-        return new az_synapse_role_definition_show_command_builder(this, role, workspaceName);
+    static az_synapse_role_definition_show(role: string, workspaceName: string): az_synapse_role_definition_show_command_builder {
+        return new az_synapse_role_definition_show_command_builder("az synapse role definition show", role, workspaceName);
     }
 }
 
@@ -123,9 +119,7 @@ export class az_synapse_role {
 }
 
 /** Manage Synapse Spark batch jobs. */
-export class az_synapse_spark_job implements ICommandParent<any> {
-    commandPath = "az synapse spark job";
-
+export class az_synapse_spark_job {
     /**
      * Cancel a Spark job.
      *
@@ -142,8 +136,8 @@ export class az_synapse_spark_job implements ICommandParent<any> {
      * @param {string} sparkPoolName The name of the Spark pool.
      * @param {string} workspaceName The name of the workspace.
      */
-    az_synapse_spark_job_cancel(livyId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_job_cancel_command_builder {
-        return new az_synapse_spark_job_cancel_command_builder(this, livyId, sparkPoolName, workspaceName);
+    static az_synapse_spark_job_cancel(livyId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_job_cancel_command_builder {
+        return new az_synapse_spark_job_cancel_command_builder("az synapse spark job cancel", livyId, sparkPoolName, workspaceName);
     }
 
     /**
@@ -162,8 +156,8 @@ export class az_synapse_spark_job implements ICommandParent<any> {
      * @param {string} sparkPoolName The name of the Spark pool.
      * @param {string} workspaceName The name of the workspace.
      */
-    az_synapse_spark_job_list(sparkPoolName: string, workspaceName: string): az_synapse_spark_job_list_command_builder {
-        return new az_synapse_spark_job_list_command_builder(this, sparkPoolName, workspaceName);
+    static az_synapse_spark_job_list(sparkPoolName: string, workspaceName: string): az_synapse_spark_job_list_command_builder {
+        return new az_synapse_spark_job_list_command_builder("az synapse spark job list", sparkPoolName, workspaceName);
     }
 
     /**
@@ -182,8 +176,8 @@ export class az_synapse_spark_job implements ICommandParent<any> {
      * @param {string} sparkPoolName The name of the Spark pool.
      * @param {string} workspaceName The name of the workspace.
      */
-    az_synapse_spark_job_show(livyId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_job_show_command_builder {
-        return new az_synapse_spark_job_show_command_builder(this, livyId, sparkPoolName, workspaceName);
+    static az_synapse_spark_job_show(livyId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_job_show_command_builder {
+        return new az_synapse_spark_job_show_command_builder("az synapse spark job show", livyId, sparkPoolName, workspaceName);
     }
 
     /**
@@ -215,15 +209,13 @@ export class az_synapse_spark_job implements ICommandParent<any> {
      * @param {string} sparkPoolName The name of the Spark pool.
      * @param {string} workspaceName The name of the workspace.
      */
-    az_synapse_spark_job_submit(executorSize: 'Large' | 'Medium' | 'Small', executors: string, mainClassName: string, mainDefinitionFile: string, name: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_job_submit_command_builder {
-        return new az_synapse_spark_job_submit_command_builder(this, executorSize, executors, mainClassName, mainDefinitionFile, name, sparkPoolName, workspaceName);
+    static az_synapse_spark_job_submit(executorSize: 'Large' | 'Medium' | 'Small', executors: string, mainClassName: string, mainDefinitionFile: string, name: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_job_submit_command_builder {
+        return new az_synapse_spark_job_submit_command_builder("az synapse spark job submit", executorSize, executors, mainClassName, mainDefinitionFile, name, sparkPoolName, workspaceName);
     }
 }
 
 /** Manage Spark pools. */
-export class az_synapse_spark_pool implements ICommandParent<any> {
-    commandPath = "az synapse spark pool";
-
+export class az_synapse_spark_pool {
     /**
      * Create a Spark pool.
      *
@@ -256,8 +248,8 @@ export class az_synapse_spark_pool implements ICommandParent<any> {
      * @param {string} sparkVersion The supported Spark version is 2.4 now.
      * @param {string} workspaceName The workspace name.
      */
-    az_synapse_spark_pool_create(name: string, nodeCount: string, nodeSize: 'Large' | 'Medium' | 'Small', resourceGroup: string, sparkVersion: string, workspaceName: string): az_synapse_spark_pool_create_command_builder {
-        return new az_synapse_spark_pool_create_command_builder(this, name, nodeCount, nodeSize, resourceGroup, sparkVersion, workspaceName);
+    static az_synapse_spark_pool_create(name: string, nodeCount: string, nodeSize: 'Large' | 'Medium' | 'Small', resourceGroup: string, sparkVersion: string, workspaceName: string): az_synapse_spark_pool_create_command_builder {
+        return new az_synapse_spark_pool_create_command_builder("az synapse spark pool create", name, nodeCount, nodeSize, resourceGroup, sparkVersion, workspaceName);
     }
 
     /**
@@ -274,8 +266,8 @@ export class az_synapse_spark_pool implements ICommandParent<any> {
      *                              [--yes]
      * ```
      */
-    az_synapse_spark_pool_delete(): az_synapse_spark_pool_delete_command_builder {
-        return new az_synapse_spark_pool_delete_command_builder(this);
+    static az_synapse_spark_pool_delete(): az_synapse_spark_pool_delete_command_builder {
+        return new az_synapse_spark_pool_delete_command_builder("az synapse spark pool delete");
     }
 
     /**
@@ -292,8 +284,8 @@ export class az_synapse_spark_pool implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName The workspace name.
      */
-    az_synapse_spark_pool_list(resourceGroup: string, workspaceName: string): az_synapse_spark_pool_list_command_builder {
-        return new az_synapse_spark_pool_list_command_builder(this, resourceGroup, workspaceName);
+    static az_synapse_spark_pool_list(resourceGroup: string, workspaceName: string): az_synapse_spark_pool_list_command_builder {
+        return new az_synapse_spark_pool_list_command_builder("az synapse spark pool list", resourceGroup, workspaceName);
     }
 
     /**
@@ -309,8 +301,8 @@ export class az_synapse_spark_pool implements ICommandParent<any> {
      *                            [--workspace-name]
      * ```
      */
-    az_synapse_spark_pool_show(): az_synapse_spark_pool_show_command_builder {
-        return new az_synapse_spark_pool_show_command_builder(this);
+    static az_synapse_spark_pool_show(): az_synapse_spark_pool_show_command_builder {
+        return new az_synapse_spark_pool_show_command_builder("az synapse spark pool show");
     }
 
     /**
@@ -336,8 +328,8 @@ export class az_synapse_spark_pool implements ICommandParent<any> {
      *                              [--workspace-name]
      * ```
      */
-    az_synapse_spark_pool_update(): az_synapse_spark_pool_update_command_builder {
-        return new az_synapse_spark_pool_update_command_builder(this);
+    static az_synapse_spark_pool_update(): az_synapse_spark_pool_update_command_builder {
+        return new az_synapse_spark_pool_update_command_builder("az synapse spark pool update");
     }
 
     /**
@@ -361,15 +353,13 @@ export class az_synapse_spark_pool implements ICommandParent<any> {
      *
      * @param {string} bigDataPoolName Big Data pool name.
      */
-    az_synapse_spark_pool_wait(bigDataPoolName: string): az_synapse_spark_pool_wait_command_builder {
-        return new az_synapse_spark_pool_wait_command_builder(this, bigDataPoolName);
+    static az_synapse_spark_pool_wait(bigDataPoolName: string): az_synapse_spark_pool_wait_command_builder {
+        return new az_synapse_spark_pool_wait_command_builder("az synapse spark pool wait", bigDataPoolName);
     }
 }
 
 /** Manage Synapse Spark sessions. */
-export class az_synapse_spark_session implements ICommandParent<any> {
-    commandPath = "az synapse spark session";
-
+export class az_synapse_spark_session {
     /**
      * Cancel a Spark session.
      *
@@ -386,8 +376,8 @@ export class az_synapse_spark_session implements ICommandParent<any> {
      * @param {string} sparkPoolName The name of the Spark pool.
      * @param {string} workspaceName The name of the workspace.
      */
-    az_synapse_spark_session_cancel(livyId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_session_cancel_command_builder {
-        return new az_synapse_spark_session_cancel_command_builder(this, livyId, sparkPoolName, workspaceName);
+    static az_synapse_spark_session_cancel(livyId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_session_cancel_command_builder {
+        return new az_synapse_spark_session_cancel_command_builder("az synapse spark session cancel", livyId, sparkPoolName, workspaceName);
     }
 
     /**
@@ -412,8 +402,8 @@ export class az_synapse_spark_session implements ICommandParent<any> {
      * @param {string} sparkPoolName The name of the Spark pool.
      * @param {string} workspaceName The name of the workspace.
      */
-    az_synapse_spark_session_create(executorSize: 'Large' | 'Medium' | 'Small', executors: string, name: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_session_create_command_builder {
-        return new az_synapse_spark_session_create_command_builder(this, executorSize, executors, name, sparkPoolName, workspaceName);
+    static az_synapse_spark_session_create(executorSize: 'Large' | 'Medium' | 'Small', executors: string, name: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_session_create_command_builder {
+        return new az_synapse_spark_session_create_command_builder("az synapse spark session create", executorSize, executors, name, sparkPoolName, workspaceName);
     }
 
     /**
@@ -432,8 +422,8 @@ export class az_synapse_spark_session implements ICommandParent<any> {
      * @param {string} sparkPoolName The name of the Spark pool.
      * @param {string} workspaceName The name of the workspace.
      */
-    az_synapse_spark_session_list(sparkPoolName: string, workspaceName: string): az_synapse_spark_session_list_command_builder {
-        return new az_synapse_spark_session_list_command_builder(this, sparkPoolName, workspaceName);
+    static az_synapse_spark_session_list(sparkPoolName: string, workspaceName: string): az_synapse_spark_session_list_command_builder {
+        return new az_synapse_spark_session_list_command_builder("az synapse spark session list", sparkPoolName, workspaceName);
     }
 
     /**
@@ -451,8 +441,8 @@ export class az_synapse_spark_session implements ICommandParent<any> {
      * @param {string} sparkPoolName The name of the Spark pool.
      * @param {string} workspaceName The name of the workspace.
      */
-    az_synapse_spark_session_reset_timeout(livyId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_session_reset_timeout_command_builder {
-        return new az_synapse_spark_session_reset_timeout_command_builder(this, livyId, sparkPoolName, workspaceName);
+    static az_synapse_spark_session_reset_timeout(livyId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_session_reset_timeout_command_builder {
+        return new az_synapse_spark_session_reset_timeout_command_builder("az synapse spark session reset-timeout", livyId, sparkPoolName, workspaceName);
     }
 
     /**
@@ -471,15 +461,13 @@ export class az_synapse_spark_session implements ICommandParent<any> {
      * @param {string} sparkPoolName The name of the Spark pool.
      * @param {string} workspaceName The name of the workspace.
      */
-    az_synapse_spark_session_show(livyId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_session_show_command_builder {
-        return new az_synapse_spark_session_show_command_builder(this, livyId, sparkPoolName, workspaceName);
+    static az_synapse_spark_session_show(livyId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_session_show_command_builder {
+        return new az_synapse_spark_session_show_command_builder("az synapse spark session show", livyId, sparkPoolName, workspaceName);
     }
 }
 
 /** Manage Synapse Spark statements. */
-export class az_synapse_spark_statement implements ICommandParent<any> {
-    commandPath = "az synapse spark statement";
-
+export class az_synapse_spark_statement {
     /**
      * Cancel a Spark statement.
      *
@@ -498,8 +486,8 @@ export class az_synapse_spark_statement implements ICommandParent<any> {
      * @param {string} sparkPoolName The name of the Spark pool.
      * @param {string} workspaceName The name of the workspace.
      */
-    az_synapse_spark_statement_cancel(livyId: string, sessionId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_statement_cancel_command_builder {
-        return new az_synapse_spark_statement_cancel_command_builder(this, livyId, sessionId, sparkPoolName, workspaceName);
+    static az_synapse_spark_statement_cancel(livyId: string, sessionId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_statement_cancel_command_builder {
+        return new az_synapse_spark_statement_cancel_command_builder("az synapse spark statement cancel", livyId, sessionId, sparkPoolName, workspaceName);
     }
 
     /**
@@ -521,8 +509,8 @@ export class az_synapse_spark_statement implements ICommandParent<any> {
      * @param {string} sparkPoolName The name of the Spark pool.
      * @param {string} workspaceName The name of the workspace.
      */
-    az_synapse_spark_statement_invoke(code: string, language: 'CSharp' | 'PySpark' | 'Python' | 'SQL' | 'Scala' | 'Spark' | 'SparkDotNet', sessionId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_statement_invoke_command_builder {
-        return new az_synapse_spark_statement_invoke_command_builder(this, code, language, sessionId, sparkPoolName, workspaceName);
+    static az_synapse_spark_statement_invoke(code: string, language: 'CSharp' | 'PySpark' | 'Python' | 'SQL' | 'Scala' | 'Spark' | 'SparkDotNet', sessionId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_statement_invoke_command_builder {
+        return new az_synapse_spark_statement_invoke_command_builder("az synapse spark statement invoke", code, language, sessionId, sparkPoolName, workspaceName);
     }
 
     /**
@@ -541,8 +529,8 @@ export class az_synapse_spark_statement implements ICommandParent<any> {
      * @param {string} sparkPoolName The name of the Spark pool.
      * @param {string} workspaceName The name of the workspace.
      */
-    az_synapse_spark_statement_list(sessionId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_statement_list_command_builder {
-        return new az_synapse_spark_statement_list_command_builder(this, sessionId, sparkPoolName, workspaceName);
+    static az_synapse_spark_statement_list(sessionId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_statement_list_command_builder {
+        return new az_synapse_spark_statement_list_command_builder("az synapse spark statement list", sessionId, sparkPoolName, workspaceName);
     }
 
     /**
@@ -563,8 +551,8 @@ export class az_synapse_spark_statement implements ICommandParent<any> {
      * @param {string} sparkPoolName The name of the Spark pool.
      * @param {string} workspaceName The name of the workspace.
      */
-    az_synapse_spark_statement_show(livyId: string, sessionId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_statement_show_command_builder {
-        return new az_synapse_spark_statement_show_command_builder(this, livyId, sessionId, sparkPoolName, workspaceName);
+    static az_synapse_spark_statement_show(livyId: string, sessionId: string, sparkPoolName: string, workspaceName: string): az_synapse_spark_statement_show_command_builder {
+        return new az_synapse_spark_statement_show_command_builder("az synapse spark statement show", livyId, sessionId, sparkPoolName, workspaceName);
     }
 }
 
@@ -573,9 +561,7 @@ export class az_synapse_spark {
 }
 
 /** Manage SQL pools. */
-export class az_synapse_sql_pool implements ICommandParent<any> {
-    commandPath = "az synapse sql pool";
-
+export class az_synapse_sql_pool {
     /**
      * Create a SQL pool.
      *
@@ -595,8 +581,8 @@ export class az_synapse_sql_pool implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName The workspace name.
      */
-    az_synapse_sql_pool_create(name: string, performanceLevel: string, resourceGroup: string, workspaceName: string): az_synapse_sql_pool_create_command_builder {
-        return new az_synapse_sql_pool_create_command_builder(this, name, performanceLevel, resourceGroup, workspaceName);
+    static az_synapse_sql_pool_create(name: string, performanceLevel: string, resourceGroup: string, workspaceName: string): az_synapse_sql_pool_create_command_builder {
+        return new az_synapse_sql_pool_create_command_builder("az synapse sql pool create", name, performanceLevel, resourceGroup, workspaceName);
     }
 
     /**
@@ -613,8 +599,8 @@ export class az_synapse_sql_pool implements ICommandParent<any> {
      *                            [--yes]
      * ```
      */
-    az_synapse_sql_pool_delete(): az_synapse_sql_pool_delete_command_builder {
-        return new az_synapse_sql_pool_delete_command_builder(this);
+    static az_synapse_sql_pool_delete(): az_synapse_sql_pool_delete_command_builder {
+        return new az_synapse_sql_pool_delete_command_builder("az synapse sql pool delete");
     }
 
     /**
@@ -631,8 +617,8 @@ export class az_synapse_sql_pool implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName The workspace name.
      */
-    az_synapse_sql_pool_list(resourceGroup: string, workspaceName: string): az_synapse_sql_pool_list_command_builder {
-        return new az_synapse_sql_pool_list_command_builder(this, resourceGroup, workspaceName);
+    static az_synapse_sql_pool_list(resourceGroup: string, workspaceName: string): az_synapse_sql_pool_list_command_builder {
+        return new az_synapse_sql_pool_list_command_builder("az synapse sql pool list", resourceGroup, workspaceName);
     }
 
     /**
@@ -647,8 +633,8 @@ export class az_synapse_sql_pool implements ICommandParent<any> {
      *                           [--workspace-name]
      * ```
      */
-    az_synapse_sql_pool_pause(): az_synapse_sql_pool_pause_command_builder {
-        return new az_synapse_sql_pool_pause_command_builder(this);
+    static az_synapse_sql_pool_pause(): az_synapse_sql_pool_pause_command_builder {
+        return new az_synapse_sql_pool_pause_command_builder("az synapse sql pool pause");
     }
 
     /**
@@ -663,8 +649,8 @@ export class az_synapse_sql_pool implements ICommandParent<any> {
      *                            [--workspace-name]
      * ```
      */
-    az_synapse_sql_pool_resume(): az_synapse_sql_pool_resume_command_builder {
-        return new az_synapse_sql_pool_resume_command_builder(this);
+    static az_synapse_sql_pool_resume(): az_synapse_sql_pool_resume_command_builder {
+        return new az_synapse_sql_pool_resume_command_builder("az synapse sql pool resume");
     }
 
     /**
@@ -680,8 +666,8 @@ export class az_synapse_sql_pool implements ICommandParent<any> {
      *                          [--workspace-name]
      * ```
      */
-    az_synapse_sql_pool_show(): az_synapse_sql_pool_show_command_builder {
-        return new az_synapse_sql_pool_show_command_builder(this);
+    static az_synapse_sql_pool_show(): az_synapse_sql_pool_show_command_builder {
+        return new az_synapse_sql_pool_show_command_builder("az synapse sql pool show");
     }
 
     /**
@@ -698,8 +684,8 @@ export class az_synapse_sql_pool implements ICommandParent<any> {
      *                            [--workspace-name]
      * ```
      */
-    az_synapse_sql_pool_update(): az_synapse_sql_pool_update_command_builder {
-        return new az_synapse_sql_pool_update_command_builder(this);
+    static az_synapse_sql_pool_update(): az_synapse_sql_pool_update_command_builder {
+        return new az_synapse_sql_pool_update_command_builder("az synapse sql pool update");
     }
 
     /**
@@ -723,8 +709,8 @@ export class az_synapse_sql_pool implements ICommandParent<any> {
      *
      * @param {string} sqlPoolName SQL pool name.
      */
-    az_synapse_sql_pool_wait(sqlPoolName: string): az_synapse_sql_pool_wait_command_builder {
-        return new az_synapse_sql_pool_wait_command_builder(this, sqlPoolName);
+    static az_synapse_sql_pool_wait(sqlPoolName: string): az_synapse_sql_pool_wait_command_builder {
+        return new az_synapse_sql_pool_wait_command_builder("az synapse sql pool wait", sqlPoolName);
     }
 }
 
@@ -733,9 +719,7 @@ export class az_synapse_sql {
 }
 
 /** Manage a workspace's firewall rules. */
-export class az_synapse_workspace_firewall_rule implements ICommandParent<any> {
-    commandPath = "az synapse workspace firewall-rule";
-
+export class az_synapse_workspace_firewall_rule {
     /**
      * Create a firewall rule.
      *
@@ -756,8 +740,8 @@ export class az_synapse_workspace_firewall_rule implements ICommandParent<any> {
      * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format.
      * @param {string} workspaceName The workspace name.
      */
-    az_synapse_workspace_firewall_rule_create(endIpAddress: string, name: string, resourceGroup: string, startIpAddress: string, workspaceName: string): az_synapse_workspace_firewall_rule_create_command_builder {
-        return new az_synapse_workspace_firewall_rule_create_command_builder(this, endIpAddress, name, resourceGroup, startIpAddress, workspaceName);
+    static az_synapse_workspace_firewall_rule_create(endIpAddress: string, name: string, resourceGroup: string, startIpAddress: string, workspaceName: string): az_synapse_workspace_firewall_rule_create_command_builder {
+        return new az_synapse_workspace_firewall_rule_create_command_builder("az synapse workspace firewall-rule create", endIpAddress, name, resourceGroup, startIpAddress, workspaceName);
     }
 
     /**
@@ -774,8 +758,8 @@ export class az_synapse_workspace_firewall_rule implements ICommandParent<any> {
      *                                           [--yes]
      * ```
      */
-    az_synapse_workspace_firewall_rule_delete(): az_synapse_workspace_firewall_rule_delete_command_builder {
-        return new az_synapse_workspace_firewall_rule_delete_command_builder(this);
+    static az_synapse_workspace_firewall_rule_delete(): az_synapse_workspace_firewall_rule_delete_command_builder {
+        return new az_synapse_workspace_firewall_rule_delete_command_builder("az synapse workspace firewall-rule delete");
     }
 
     /**
@@ -792,8 +776,8 @@ export class az_synapse_workspace_firewall_rule implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName The workspace name.
      */
-    az_synapse_workspace_firewall_rule_list(resourceGroup: string, workspaceName: string): az_synapse_workspace_firewall_rule_list_command_builder {
-        return new az_synapse_workspace_firewall_rule_list_command_builder(this, resourceGroup, workspaceName);
+    static az_synapse_workspace_firewall_rule_list(resourceGroup: string, workspaceName: string): az_synapse_workspace_firewall_rule_list_command_builder {
+        return new az_synapse_workspace_firewall_rule_list_command_builder("az synapse workspace firewall-rule list", resourceGroup, workspaceName);
     }
 
     /**
@@ -809,8 +793,8 @@ export class az_synapse_workspace_firewall_rule implements ICommandParent<any> {
      *                                         [--workspace-name]
      * ```
      */
-    az_synapse_workspace_firewall_rule_show(): az_synapse_workspace_firewall_rule_show_command_builder {
-        return new az_synapse_workspace_firewall_rule_show_command_builder(this);
+    static az_synapse_workspace_firewall_rule_show(): az_synapse_workspace_firewall_rule_show_command_builder {
+        return new az_synapse_workspace_firewall_rule_show_command_builder("az synapse workspace firewall-rule show");
     }
 
     /**
@@ -834,15 +818,13 @@ export class az_synapse_workspace_firewall_rule implements ICommandParent<any> {
      *
      * @param {string} ruleName The IP firewall rule name.
      */
-    az_synapse_workspace_firewall_rule_wait(ruleName: string): az_synapse_workspace_firewall_rule_wait_command_builder {
-        return new az_synapse_workspace_firewall_rule_wait_command_builder(this, ruleName);
+    static az_synapse_workspace_firewall_rule_wait(ruleName: string): az_synapse_workspace_firewall_rule_wait_command_builder {
+        return new az_synapse_workspace_firewall_rule_wait_command_builder("az synapse workspace firewall-rule wait", ruleName);
     }
 }
 
 /** Manage Synapse workspaces. */
-export class az_synapse_workspace implements ICommandParent<any> {
-    commandPath = "az synapse workspace";
-
+export class az_synapse_workspace {
     /**
      * Check if a Synapse workspace name is available or not.
      *
@@ -854,8 +836,8 @@ export class az_synapse_workspace implements ICommandParent<any> {
      *
      * @param {string} name The name you wanted to check.
      */
-    az_synapse_workspace_check_name(name: string): az_synapse_workspace_check_name_command_builder {
-        return new az_synapse_workspace_check_name_command_builder(this, name);
+    static az_synapse_workspace_check_name(name: string): az_synapse_workspace_check_name_command_builder {
+        return new az_synapse_workspace_check_name_command_builder("az synapse workspace check-name", name);
     }
 
     /**
@@ -883,8 +865,8 @@ export class az_synapse_workspace implements ICommandParent<any> {
      * @param {string} sqlAdminLoginUser The sql administrator login user name.
      * @param {string} storageAccount The data lake storage account name or resource id.
      */
-    az_synapse_workspace_create(fileSystem: string, location: string, name: string, resourceGroup: string, sqlAdminLoginPassword: string, sqlAdminLoginUser: string, storageAccount: string): az_synapse_workspace_create_command_builder {
-        return new az_synapse_workspace_create_command_builder(this, fileSystem, location, name, resourceGroup, sqlAdminLoginPassword, sqlAdminLoginUser, storageAccount);
+    static az_synapse_workspace_create(fileSystem: string, location: string, name: string, resourceGroup: string, sqlAdminLoginPassword: string, sqlAdminLoginUser: string, storageAccount: string): az_synapse_workspace_create_command_builder {
+        return new az_synapse_workspace_create_command_builder("az synapse workspace create", fileSystem, location, name, resourceGroup, sqlAdminLoginPassword, sqlAdminLoginUser, storageAccount);
     }
 
     /**
@@ -900,8 +882,8 @@ export class az_synapse_workspace implements ICommandParent<any> {
      *                             [--yes]
      * ```
      */
-    az_synapse_workspace_delete(): az_synapse_workspace_delete_command_builder {
-        return new az_synapse_workspace_delete_command_builder(this);
+    static az_synapse_workspace_delete(): az_synapse_workspace_delete_command_builder {
+        return new az_synapse_workspace_delete_command_builder("az synapse workspace delete");
     }
 
     /**
@@ -914,8 +896,8 @@ export class az_synapse_workspace implements ICommandParent<any> {
      *                           [--subscription]
      * ```
      */
-    az_synapse_workspace_list(): az_synapse_workspace_list_command_builder {
-        return new az_synapse_workspace_list_command_builder(this);
+    static az_synapse_workspace_list(): az_synapse_workspace_list_command_builder {
+        return new az_synapse_workspace_list_command_builder("az synapse workspace list");
     }
 
     /**
@@ -930,8 +912,8 @@ export class az_synapse_workspace implements ICommandParent<any> {
      *                           [--subscription]
      * ```
      */
-    az_synapse_workspace_show(): az_synapse_workspace_show_command_builder {
-        return new az_synapse_workspace_show_command_builder(this);
+    static az_synapse_workspace_show(): az_synapse_workspace_show_command_builder {
+        return new az_synapse_workspace_show_command_builder("az synapse workspace show");
     }
 
     /**
@@ -948,8 +930,8 @@ export class az_synapse_workspace implements ICommandParent<any> {
      *                             [--tags]
      * ```
      */
-    az_synapse_workspace_update(): az_synapse_workspace_update_command_builder {
-        return new az_synapse_workspace_update_command_builder(this);
+    static az_synapse_workspace_update(): az_synapse_workspace_update_command_builder {
+        return new az_synapse_workspace_update_command_builder("az synapse workspace update");
     }
 
     /**
@@ -972,8 +954,8 @@ export class az_synapse_workspace implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} workspaceName The name of the workspace.
      */
-    az_synapse_workspace_wait(resourceGroup: string, workspaceName: string): az_synapse_workspace_wait_command_builder {
-        return new az_synapse_workspace_wait_command_builder(this, resourceGroup, workspaceName);
+    static az_synapse_workspace_wait(resourceGroup: string, workspaceName: string): az_synapse_workspace_wait_command_builder {
+        return new az_synapse_workspace_wait_command_builder("az synapse workspace wait", resourceGroup, workspaceName);
     }
 }
 
@@ -997,7 +979,7 @@ export class az_synapse {
  * @param {string} workspaceName The workspace name.
  */
 class az_synapse_role_assignment_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, assignee: string, role: string, workspaceName: string) {
+    constructor(commandPath: string, assignee: string, role: string, workspaceName: string) {
         super(commandParent);
         this.assignee(assignee)
         this.role(role)
@@ -1045,7 +1027,7 @@ class az_synapse_role_assignment_create_command_builder extends CommandBuilder {
  * @param {string} workspaceName The workspace name.
  */
 class az_synapse_role_assignment_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, workspaceName: string) {
+    constructor(commandPath: string, workspaceName: string) {
         super(commandParent);
         this.workspaceName(workspaceName)
     }
@@ -1102,7 +1084,7 @@ class az_synapse_role_assignment_delete_command_builder extends CommandBuilder {
  * @param {string} workspaceName The workspace name.
  */
 class az_synapse_role_assignment_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, workspaceName: string) {
+    constructor(commandPath: string, workspaceName: string) {
         super(commandParent);
         this.workspaceName(workspaceName)
     }
@@ -1153,7 +1135,7 @@ class az_synapse_role_assignment_list_command_builder extends CommandBuilder {
  * @param {string} workspaceName The workspace name.
  */
 class az_synapse_role_assignment_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, id: string, workspaceName: string) {
+    constructor(commandPath: string, id: string, workspaceName: string) {
         super(commandParent);
         this.id(id)
         this.workspaceName(workspaceName)
@@ -1197,7 +1179,7 @@ class az_synapse_role_assignment_show_command_builder extends CommandBuilder {
  * @param {string} workspaceName The workspace name.
  */
 class az_synapse_role_definition_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, workspaceName: string) {
+    constructor(commandPath: string, workspaceName: string) {
         super(commandParent);
         this.workspaceName(workspaceName)
     }
@@ -1236,7 +1218,7 @@ class az_synapse_role_definition_list_command_builder extends CommandBuilder {
  * @param {string} workspaceName The workspace name.
  */
 class az_synapse_role_definition_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, role: string, workspaceName: string) {
+    constructor(commandPath: string, role: string, workspaceName: string) {
         super(commandParent);
         this.role(role)
         this.workspaceName(workspaceName)
@@ -1284,7 +1266,7 @@ class az_synapse_role_definition_show_command_builder extends CommandBuilder {
  * @param {string} workspaceName The name of the workspace.
  */
 class az_synapse_spark_job_cancel_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, livyId: string, sparkPoolName: string, workspaceName: string) {
+    constructor(commandPath: string, livyId: string, sparkPoolName: string, workspaceName: string) {
         super(commandParent);
         this.livyId(livyId)
         this.sparkPoolName(sparkPoolName)
@@ -1339,7 +1321,7 @@ class az_synapse_spark_job_cancel_command_builder extends CommandBuilder {
  * @param {string} workspaceName The name of the workspace.
  */
 class az_synapse_spark_job_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, sparkPoolName: string, workspaceName: string) {
+    constructor(commandPath: string, sparkPoolName: string, workspaceName: string) {
         super(commandParent);
         this.sparkPoolName(sparkPoolName)
         this.workspaceName(workspaceName)
@@ -1399,7 +1381,7 @@ class az_synapse_spark_job_list_command_builder extends CommandBuilder {
  * @param {string} workspaceName The name of the workspace.
  */
 class az_synapse_spark_job_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, livyId: string, sparkPoolName: string, workspaceName: string) {
+    constructor(commandPath: string, livyId: string, sparkPoolName: string, workspaceName: string) {
         super(commandParent);
         this.livyId(livyId)
         this.sparkPoolName(sparkPoolName)
@@ -1467,7 +1449,7 @@ class az_synapse_spark_job_show_command_builder extends CommandBuilder {
  * @param {string} workspaceName The name of the workspace.
  */
 class az_synapse_spark_job_submit_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, executorSize: 'Large' | 'Medium' | 'Small', executors: string, mainClassName: string, mainDefinitionFile: string, name: string, sparkPoolName: string, workspaceName: string) {
+    constructor(commandPath: string, executorSize: 'Large' | 'Medium' | 'Small', executors: string, mainClassName: string, mainDefinitionFile: string, name: string, sparkPoolName: string, workspaceName: string) {
         super(commandParent);
         this.executorSize(executorSize)
         this.executors(executors)
@@ -1596,7 +1578,7 @@ class az_synapse_spark_job_submit_command_builder extends CommandBuilder {
  * @param {string} workspaceName The workspace name.
  */
 class az_synapse_spark_pool_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, nodeCount: string, nodeSize: 'Large' | 'Medium' | 'Small', resourceGroup: string, sparkVersion: string, workspaceName: string) {
+    constructor(commandPath: string, name: string, nodeCount: string, nodeSize: 'Large' | 'Medium' | 'Small', resourceGroup: string, sparkVersion: string, workspaceName: string) {
         super(commandParent);
         this.name(name)
         this.nodeCount(nodeCount)
@@ -1730,7 +1712,7 @@ class az_synapse_spark_pool_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_synapse_spark_pool_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1792,7 +1774,7 @@ class az_synapse_spark_pool_delete_command_builder extends CommandBuilder {
  * @param {string} workspaceName The workspace name.
  */
 class az_synapse_spark_pool_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -1837,7 +1819,7 @@ class az_synapse_spark_pool_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_synapse_spark_pool_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1902,7 +1884,7 @@ class az_synapse_spark_pool_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_synapse_spark_pool_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2025,7 +2007,7 @@ class az_synapse_spark_pool_update_command_builder extends CommandBuilder {
  * @param {string} bigDataPoolName Big Data pool name.
  */
 class az_synapse_spark_pool_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, bigDataPoolName: string) {
+    constructor(commandPath: string, bigDataPoolName: string) {
         super(commandParent);
         this.bigDataPoolName(bigDataPoolName)
     }
@@ -2120,7 +2102,7 @@ class az_synapse_spark_pool_wait_command_builder extends CommandBuilder {
  * @param {string} workspaceName The name of the workspace.
  */
 class az_synapse_spark_session_cancel_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, livyId: string, sparkPoolName: string, workspaceName: string) {
+    constructor(commandPath: string, livyId: string, sparkPoolName: string, workspaceName: string) {
         super(commandParent);
         this.livyId(livyId)
         this.sparkPoolName(sparkPoolName)
@@ -2181,7 +2163,7 @@ class az_synapse_spark_session_cancel_command_builder extends CommandBuilder {
  * @param {string} workspaceName The name of the workspace.
  */
 class az_synapse_spark_session_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, executorSize: 'Large' | 'Medium' | 'Small', executors: string, name: string, sparkPoolName: string, workspaceName: string) {
+    constructor(commandPath: string, executorSize: 'Large' | 'Medium' | 'Small', executors: string, name: string, sparkPoolName: string, workspaceName: string) {
         super(commandParent);
         this.executorSize(executorSize)
         this.executors(executors)
@@ -2262,7 +2244,7 @@ class az_synapse_spark_session_create_command_builder extends CommandBuilder {
  * @param {string} workspaceName The name of the workspace.
  */
 class az_synapse_spark_session_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, sparkPoolName: string, workspaceName: string) {
+    constructor(commandPath: string, sparkPoolName: string, workspaceName: string) {
         super(commandParent);
         this.sparkPoolName(sparkPoolName)
         this.workspaceName(workspaceName)
@@ -2321,7 +2303,7 @@ class az_synapse_spark_session_list_command_builder extends CommandBuilder {
  * @param {string} workspaceName The name of the workspace.
  */
 class az_synapse_spark_session_reset_timeout_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, livyId: string, sparkPoolName: string, workspaceName: string) {
+    constructor(commandPath: string, livyId: string, sparkPoolName: string, workspaceName: string) {
         super(commandParent);
         this.livyId(livyId)
         this.sparkPoolName(sparkPoolName)
@@ -2370,7 +2352,7 @@ class az_synapse_spark_session_reset_timeout_command_builder extends CommandBuil
  * @param {string} workspaceName The name of the workspace.
  */
 class az_synapse_spark_session_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, livyId: string, sparkPoolName: string, workspaceName: string) {
+    constructor(commandPath: string, livyId: string, sparkPoolName: string, workspaceName: string) {
         super(commandParent);
         this.livyId(livyId)
         this.sparkPoolName(sparkPoolName)
@@ -2427,7 +2409,7 @@ class az_synapse_spark_session_show_command_builder extends CommandBuilder {
  * @param {string} workspaceName The name of the workspace.
  */
 class az_synapse_spark_statement_cancel_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, livyId: string, sessionId: string, sparkPoolName: string, workspaceName: string) {
+    constructor(commandPath: string, livyId: string, sessionId: string, sparkPoolName: string, workspaceName: string) {
         super(commandParent);
         this.livyId(livyId)
         this.sessionId(sessionId)
@@ -2492,7 +2474,7 @@ class az_synapse_spark_statement_cancel_command_builder extends CommandBuilder {
  * @param {string} workspaceName The name of the workspace.
  */
 class az_synapse_spark_statement_invoke_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, code: string, language: 'CSharp' | 'PySpark' | 'Python' | 'SQL' | 'Scala' | 'Spark' | 'SparkDotNet', sessionId: string, sparkPoolName: string, workspaceName: string) {
+    constructor(commandPath: string, code: string, language: 'CSharp' | 'PySpark' | 'Python' | 'SQL' | 'Scala' | 'Spark' | 'SparkDotNet', sessionId: string, sparkPoolName: string, workspaceName: string) {
         super(commandParent);
         this.code(code)
         this.language(language)
@@ -2555,7 +2537,7 @@ class az_synapse_spark_statement_invoke_command_builder extends CommandBuilder {
  * @param {string} workspaceName The name of the workspace.
  */
 class az_synapse_spark_statement_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, sessionId: string, sparkPoolName: string, workspaceName: string) {
+    constructor(commandPath: string, sessionId: string, sparkPoolName: string, workspaceName: string) {
         super(commandParent);
         this.sessionId(sessionId)
         this.sparkPoolName(sparkPoolName)
@@ -2612,7 +2594,7 @@ class az_synapse_spark_statement_list_command_builder extends CommandBuilder {
  * @param {string} workspaceName The name of the workspace.
  */
 class az_synapse_spark_statement_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, livyId: string, sessionId: string, sparkPoolName: string, workspaceName: string) {
+    constructor(commandPath: string, livyId: string, sessionId: string, sparkPoolName: string, workspaceName: string) {
         super(commandParent);
         this.livyId(livyId)
         this.sessionId(sessionId)
@@ -2677,7 +2659,7 @@ class az_synapse_spark_statement_show_command_builder extends CommandBuilder {
  * @param {string} workspaceName The workspace name.
  */
 class az_synapse_sql_pool_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, performanceLevel: string, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, name: string, performanceLevel: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.name(name)
         this.performanceLevel(performanceLevel)
@@ -2743,7 +2725,7 @@ class az_synapse_sql_pool_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_synapse_sql_pool_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2805,7 +2787,7 @@ class az_synapse_sql_pool_delete_command_builder extends CommandBuilder {
  * @param {string} workspaceName The workspace name.
  */
 class az_synapse_sql_pool_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -2849,7 +2831,7 @@ class az_synapse_sql_pool_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_synapse_sql_pool_pause_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2897,7 +2879,7 @@ class az_synapse_sql_pool_pause_command_builder extends CommandBuilder {
  * ```
  */
 class az_synapse_sql_pool_resume_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2946,7 +2928,7 @@ class az_synapse_sql_pool_resume_command_builder extends CommandBuilder {
  * ```
  */
 class az_synapse_sql_pool_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3002,7 +2984,7 @@ class az_synapse_sql_pool_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_synapse_sql_pool_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3071,7 +3053,7 @@ class az_synapse_sql_pool_update_command_builder extends CommandBuilder {
  * @param {string} sqlPoolName SQL pool name.
  */
 class az_synapse_sql_pool_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, sqlPoolName: string) {
+    constructor(commandPath: string, sqlPoolName: string) {
         super(commandParent);
         this.sqlPoolName(sqlPoolName)
     }
@@ -3170,7 +3152,7 @@ class az_synapse_sql_pool_wait_command_builder extends CommandBuilder {
  * @param {string} workspaceName The workspace name.
  */
 class az_synapse_workspace_firewall_rule_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, endIpAddress: string, name: string, resourceGroup: string, startIpAddress: string, workspaceName: string) {
+    constructor(commandPath: string, endIpAddress: string, name: string, resourceGroup: string, startIpAddress: string, workspaceName: string) {
         super(commandParent);
         this.endIpAddress(endIpAddress)
         this.name(name)
@@ -3237,7 +3219,7 @@ class az_synapse_workspace_firewall_rule_create_command_builder extends CommandB
  * ```
  */
 class az_synapse_workspace_firewall_rule_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3299,7 +3281,7 @@ class az_synapse_workspace_firewall_rule_delete_command_builder extends CommandB
  * @param {string} workspaceName The workspace name.
  */
 class az_synapse_workspace_firewall_rule_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -3344,7 +3326,7 @@ class az_synapse_workspace_firewall_rule_list_command_builder extends CommandBui
  * ```
  */
 class az_synapse_workspace_firewall_rule_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3407,7 +3389,7 @@ class az_synapse_workspace_firewall_rule_show_command_builder extends CommandBui
  * @param {string} ruleName The IP firewall rule name.
  */
 class az_synapse_workspace_firewall_rule_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, ruleName: string) {
+    constructor(commandPath: string, ruleName: string) {
         super(commandParent);
         this.ruleName(ruleName)
     }
@@ -3497,7 +3479,7 @@ class az_synapse_workspace_firewall_rule_wait_command_builder extends CommandBui
  * @param {string} name The name you wanted to check.
  */
 class az_synapse_workspace_check_name_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -3541,7 +3523,7 @@ class az_synapse_workspace_check_name_command_builder extends CommandBuilder {
  * @param {string} storageAccount The data lake storage account name or resource id.
  */
 class az_synapse_workspace_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, fileSystem: string, location: string, name: string, resourceGroup: string, sqlAdminLoginPassword: string, sqlAdminLoginUser: string, storageAccount: string) {
+    constructor(commandPath: string, fileSystem: string, location: string, name: string, resourceGroup: string, sqlAdminLoginPassword: string, sqlAdminLoginUser: string, storageAccount: string) {
         super(commandParent);
         this.fileSystem(fileSystem)
         this.location(location)
@@ -3627,7 +3609,7 @@ class az_synapse_workspace_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_synapse_workspace_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3679,7 +3661,7 @@ class az_synapse_workspace_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_synapse_workspace_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3715,7 +3697,7 @@ class az_synapse_workspace_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_synapse_workspace_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3765,7 +3747,7 @@ class az_synapse_workspace_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_synapse_workspace_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3833,7 +3815,7 @@ class az_synapse_workspace_update_command_builder extends CommandBuilder {
  * @param {string} workspaceName The name of the workspace.
  */
 class az_synapse_workspace_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, workspaceName: string) {
+    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)

@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage role assignments. */
-export class az_role_assignment implements ICommandParent<any> {
-    commandPath = "az role assignment";
-
+export class az_role_assignment {
     /**
      * Create a new role assignment for a user, group, or service principal.
      *
@@ -23,8 +21,8 @@ export class az_role_assignment implements ICommandParent<any> {
      *
      * @param {string} role Role name or id.
      */
-    az_role_assignment_create(role: string): az_role_assignment_create_command_builder {
-        return new az_role_assignment_create_command_builder(this, role);
+    static az_role_assignment_create(role: string): az_role_assignment_create_command_builder {
+        return new az_role_assignment_create_command_builder("az role assignment create", role);
     }
 
     /**
@@ -42,8 +40,8 @@ export class az_role_assignment implements ICommandParent<any> {
      *                           [--yes]
      * ```
      */
-    az_role_assignment_delete(): az_role_assignment_delete_command_builder {
-        return new az_role_assignment_delete_command_builder(this);
+    static az_role_assignment_delete(): az_role_assignment_delete_command_builder {
+        return new az_role_assignment_delete_command_builder("az role assignment delete");
     }
 
     /**
@@ -63,8 +61,8 @@ export class az_role_assignment implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_role_assignment_list(): az_role_assignment_list_command_builder {
-        return new az_role_assignment_list_command_builder(this);
+    static az_role_assignment_list(): az_role_assignment_list_command_builder {
+        return new az_role_assignment_list_command_builder("az role assignment list");
     }
 
     /**
@@ -77,8 +75,8 @@ export class az_role_assignment implements ICommandParent<any> {
      *                                    [--subscription]
      * ```
      */
-    az_role_assignment_list_changelogs(): az_role_assignment_list_changelogs_command_builder {
-        return new az_role_assignment_list_changelogs_command_builder(this);
+    static az_role_assignment_list_changelogs(): az_role_assignment_list_changelogs_command_builder {
+        return new az_role_assignment_list_changelogs_command_builder("az role assignment list-changelogs");
     }
 
     /**
@@ -92,15 +90,13 @@ export class az_role_assignment implements ICommandParent<any> {
      *
      * @param {string} roleAssignment Description of an existing role assignment as JSON, or a path to a file containing a JSON description.
      */
-    az_role_assignment_update(roleAssignment: string): az_role_assignment_update_command_builder {
-        return new az_role_assignment_update_command_builder(this, roleAssignment);
+    static az_role_assignment_update(roleAssignment: string): az_role_assignment_update_command_builder {
+        return new az_role_assignment_update_command_builder("az role assignment update", roleAssignment);
     }
 }
 
 /** Manage role definitions. */
-export class az_role_definition implements ICommandParent<any> {
-    commandPath = "az role definition";
-
+export class az_role_definition {
     /**
      * Create a custom role definition.
      *
@@ -112,8 +108,8 @@ export class az_role_definition implements ICommandParent<any> {
      *
      * @param {string} roleDefinition Description of a role as JSON, or a path to a file containing a JSON description.
      */
-    az_role_definition_create(roleDefinition: string): az_role_definition_create_command_builder {
-        return new az_role_definition_create_command_builder(this, roleDefinition);
+    static az_role_definition_create(roleDefinition: string): az_role_definition_create_command_builder {
+        return new az_role_definition_create_command_builder("az role definition create", roleDefinition);
     }
 
     /**
@@ -130,8 +126,8 @@ export class az_role_definition implements ICommandParent<any> {
      *
      * @param {string} name The role's name.
      */
-    az_role_definition_delete(name: string): az_role_definition_delete_command_builder {
-        return new az_role_definition_delete_command_builder(this, name);
+    static az_role_definition_delete(name: string): az_role_definition_delete_command_builder {
+        return new az_role_definition_delete_command_builder("az role definition delete", name);
     }
 
     /**
@@ -147,8 +143,8 @@ export class az_role_definition implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_role_definition_list(): az_role_definition_list_command_builder {
-        return new az_role_definition_list_command_builder(this);
+    static az_role_definition_list(): az_role_definition_list_command_builder {
+        return new az_role_definition_list_command_builder("az role definition list");
     }
 
     /**
@@ -162,8 +158,8 @@ export class az_role_definition implements ICommandParent<any> {
      *
      * @param {string} roleDefinition Description of an existing role as JSON, or a path to a file containing a JSON description.
      */
-    az_role_definition_update(roleDefinition: string): az_role_definition_update_command_builder {
-        return new az_role_definition_update_command_builder(this, roleDefinition);
+    static az_role_definition_update(roleDefinition: string): az_role_definition_update_command_builder {
+        return new az_role_definition_update_command_builder("az role definition update", roleDefinition);
     }
 }
 
@@ -191,7 +187,7 @@ export class az_role {
  * @param {string} role Role name or id.
  */
 class az_role_assignment_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, role: string) {
+    constructor(commandPath: string, role: string) {
         super(commandParent);
         this.role(role)
     }
@@ -273,7 +269,7 @@ class az_role_assignment_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_role_assignment_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -344,7 +340,7 @@ class az_role_assignment_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_role_assignment_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -420,7 +416,7 @@ class az_role_assignment_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_role_assignment_list_changelogs_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -455,7 +451,7 @@ class az_role_assignment_list_changelogs_command_builder extends CommandBuilder 
  * @param {string} roleAssignment Description of an existing role assignment as JSON, or a path to a file containing a JSON description.
  */
 class az_role_assignment_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, roleAssignment: string) {
+    constructor(commandPath: string, roleAssignment: string) {
         super(commandParent);
         this.roleAssignment(roleAssignment)
     }
@@ -485,7 +481,7 @@ class az_role_assignment_update_command_builder extends CommandBuilder {
  * @param {string} roleDefinition Description of a role as JSON, or a path to a file containing a JSON description.
  */
 class az_role_definition_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, roleDefinition: string) {
+    constructor(commandPath: string, roleDefinition: string) {
         super(commandParent);
         this.roleDefinition(roleDefinition)
     }
@@ -518,7 +514,7 @@ class az_role_definition_create_command_builder extends CommandBuilder {
  * @param {string} name The role's name.
  */
 class az_role_definition_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -568,7 +564,7 @@ class az_role_definition_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_role_definition_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -621,7 +617,7 @@ class az_role_definition_list_command_builder extends CommandBuilder {
  * @param {string} roleDefinition Description of an existing role as JSON, or a path to a file containing a JSON description.
  */
 class az_role_definition_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, roleDefinition: string) {
+    constructor(commandPath: string, roleDefinition: string) {
         super(commandParent);
         this.roleDefinition(roleDefinition)
     }

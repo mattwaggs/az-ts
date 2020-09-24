@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage Tasks for a Data Migration Service instance's Project. */
-export class az_dms_project_task implements ICommandParent<any> {
-    commandPath = "az dms project task";
-
+export class az_dms_project_task {
     /**
      * Cancel a Task if it's currently queued or running.
      *
@@ -21,8 +19,8 @@ export class az_dms_project_task implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the Service.
      */
-    az_dms_project_task_cancel(name: string, projectName: string, resourceGroup: string, serviceName: string): az_dms_project_task_cancel_command_builder {
-        return new az_dms_project_task_cancel_command_builder(this, name, projectName, resourceGroup, serviceName);
+    static az_dms_project_task_cancel(name: string, projectName: string, resourceGroup: string, serviceName: string): az_dms_project_task_cancel_command_builder {
+        return new az_dms_project_task_cancel_command_builder("az dms project task cancel", name, projectName, resourceGroup, serviceName);
     }
 
     /**
@@ -42,8 +40,8 @@ export class az_dms_project_task implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the Service.
      */
-    az_dms_project_task_check_name(name: string, projectName: string, resourceGroup: string, serviceName: string): az_dms_project_task_check_name_command_builder {
-        return new az_dms_project_task_check_name_command_builder(this, name, projectName, resourceGroup, serviceName);
+    static az_dms_project_task_check_name(name: string, projectName: string, resourceGroup: string, serviceName: string): az_dms_project_task_check_name_command_builder {
+        return new az_dms_project_task_check_name_command_builder("az dms project task check-name", name, projectName, resourceGroup, serviceName);
     }
 
     /**
@@ -72,8 +70,8 @@ export class az_dms_project_task implements ICommandParent<any> {
      * @param {string} sourceConnectionJson The connection information to the source server. This can be either a JSON-formatted string or the location to a file containing the JSON object. See example below for the format.
      * @param {string} targetConnectionJson The connection information to the target server. This can be either a JSON-formatted string or the location to a file containing the JSON object. See example below for the format.
      */
-    az_dms_project_task_create(databaseOptionsJson: string, name: string, projectName: string, resourceGroup: string, serviceName: string, sourceConnectionJson: string, targetConnectionJson: string): az_dms_project_task_create_command_builder {
-        return new az_dms_project_task_create_command_builder(this, databaseOptionsJson, name, projectName, resourceGroup, serviceName, sourceConnectionJson, targetConnectionJson);
+    static az_dms_project_task_create(databaseOptionsJson: string, name: string, projectName: string, resourceGroup: string, serviceName: string, sourceConnectionJson: string, targetConnectionJson: string): az_dms_project_task_create_command_builder {
+        return new az_dms_project_task_create_command_builder("az dms project task create", databaseOptionsJson, name, projectName, resourceGroup, serviceName, sourceConnectionJson, targetConnectionJson);
     }
 
     /**
@@ -95,8 +93,8 @@ export class az_dms_project_task implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the Service.
      */
-    az_dms_project_task_delete(name: string, projectName: string, resourceGroup: string, serviceName: string): az_dms_project_task_delete_command_builder {
-        return new az_dms_project_task_delete_command_builder(this, name, projectName, resourceGroup, serviceName);
+    static az_dms_project_task_delete(name: string, projectName: string, resourceGroup: string, serviceName: string): az_dms_project_task_delete_command_builder {
+        return new az_dms_project_task_delete_command_builder("az dms project task delete", name, projectName, resourceGroup, serviceName);
     }
 
     /**
@@ -116,8 +114,8 @@ export class az_dms_project_task implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the Service.
      */
-    az_dms_project_task_list(projectName: string, resourceGroup: string, serviceName: string): az_dms_project_task_list_command_builder {
-        return new az_dms_project_task_list_command_builder(this, projectName, resourceGroup, serviceName);
+    static az_dms_project_task_list(projectName: string, resourceGroup: string, serviceName: string): az_dms_project_task_list_command_builder {
+        return new az_dms_project_task_list_command_builder("az dms project task list", projectName, resourceGroup, serviceName);
     }
 
     /**
@@ -139,15 +137,13 @@ export class az_dms_project_task implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the Service.
      */
-    az_dms_project_task_show(name: string, projectName: string, resourceGroup: string, serviceName: string): az_dms_project_task_show_command_builder {
-        return new az_dms_project_task_show_command_builder(this, name, projectName, resourceGroup, serviceName);
+    static az_dms_project_task_show(name: string, projectName: string, resourceGroup: string, serviceName: string): az_dms_project_task_show_command_builder {
+        return new az_dms_project_task_show_command_builder("az dms project task show", name, projectName, resourceGroup, serviceName);
     }
 }
 
 /** Manage Projects for an instance of the Data Migration Service. */
-export class az_dms_project implements ICommandParent<any> {
-    commandPath = "az dms project";
-
+export class az_dms_project {
     /**
      * Check if a given Project name is available within a given instance of DMS as well as the name's validity.
      *
@@ -163,8 +159,8 @@ export class az_dms_project implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the Service.
      */
-    az_dms_project_check_name(name: string, resourceGroup: string, serviceName: string): az_dms_project_check_name_command_builder {
-        return new az_dms_project_check_name_command_builder(this, name, resourceGroup, serviceName);
+    static az_dms_project_check_name(name: string, resourceGroup: string, serviceName: string): az_dms_project_check_name_command_builder {
+        return new az_dms_project_check_name_command_builder("az dms project check-name", name, resourceGroup, serviceName);
     }
 
     /**
@@ -189,8 +185,8 @@ export class az_dms_project implements ICommandParent<any> {
      * @param {string} sourcePlatform The type of server for the source database. The supported types are: SQL.
      * @param {string} targetPlatform The type of service for the target database. The supported types are: SQLDB.
      */
-    az_dms_project_create(location: string, name: string, resourceGroup: string, serviceName: string, sourcePlatform: string, targetPlatform: string): az_dms_project_create_command_builder {
-        return new az_dms_project_create_command_builder(this, location, name, resourceGroup, serviceName, sourcePlatform, targetPlatform);
+    static az_dms_project_create(location: string, name: string, resourceGroup: string, serviceName: string, sourcePlatform: string, targetPlatform: string): az_dms_project_create_command_builder {
+        return new az_dms_project_create_command_builder("az dms project create", location, name, resourceGroup, serviceName, sourcePlatform, targetPlatform);
     }
 
     /**
@@ -210,8 +206,8 @@ export class az_dms_project implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the Service.
      */
-    az_dms_project_delete(name: string, resourceGroup: string, serviceName: string): az_dms_project_delete_command_builder {
-        return new az_dms_project_delete_command_builder(this, name, resourceGroup, serviceName);
+    static az_dms_project_delete(name: string, resourceGroup: string, serviceName: string): az_dms_project_delete_command_builder {
+        return new az_dms_project_delete_command_builder("az dms project delete", name, resourceGroup, serviceName);
     }
 
     /**
@@ -228,8 +224,8 @@ export class az_dms_project implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the Service.
      */
-    az_dms_project_list(resourceGroup: string, serviceName: string): az_dms_project_list_command_builder {
-        return new az_dms_project_list_command_builder(this, resourceGroup, serviceName);
+    static az_dms_project_list(resourceGroup: string, serviceName: string): az_dms_project_list_command_builder {
+        return new az_dms_project_list_command_builder("az dms project list", resourceGroup, serviceName);
     }
 
     /**
@@ -248,15 +244,13 @@ export class az_dms_project implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serviceName The name of the Service.
      */
-    az_dms_project_show(name: string, resourceGroup: string, serviceName: string): az_dms_project_show_command_builder {
-        return new az_dms_project_show_command_builder(this, name, resourceGroup, serviceName);
+    static az_dms_project_show(name: string, resourceGroup: string, serviceName: string): az_dms_project_show_command_builder {
+        return new az_dms_project_show_command_builder("az dms project show", name, resourceGroup, serviceName);
     }
 }
 
 /** Manage Azure Data Migration Service (DMS) instances. */
-export class az_dms implements ICommandParent<any> {
-    commandPath = "az dms";
-
+export class az_dms {
     /**
      * Check if a given DMS instance name is available in a given region as well as the name's validity.
      *
@@ -270,8 +264,8 @@ export class az_dms implements ICommandParent<any> {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      * @param {string} name The Service name to check.
      */
-    az_dms_check_name(location: string, name: string): az_dms_check_name_command_builder {
-        return new az_dms_check_name_command_builder(this, location, name);
+    static az_dms_check_name(location: string, name: string): az_dms_check_name_command_builder {
+        return new az_dms_check_name_command_builder("az dms check-name", location, name);
     }
 
     /**
@@ -287,8 +281,8 @@ export class az_dms implements ICommandParent<any> {
      * @param {string} name The name of the Service.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_dms_check_status(name: string, resourceGroup: string): az_dms_check_status_command_builder {
-        return new az_dms_check_status_command_builder(this, name, resourceGroup);
+    static az_dms_check_status(name: string, resourceGroup: string): az_dms_check_status_command_builder {
+        return new az_dms_check_status_command_builder("az dms check-status", name, resourceGroup);
     }
 
     /**
@@ -312,8 +306,8 @@ export class az_dms implements ICommandParent<any> {
      * @param {string} skuName The name of the CPU SKU on which the service's Virtual Machine will run. Check the name and the availability of SKUs in your area with "az dms list-skus".
      * @param {string} subnet The Resource ID of the VNet's Subnet you will use to connect the source and target DBs. Use "az network vnet subnet show -h" for help to get your subnet's ID.
      */
-    az_dms_create(location: string, name: string, resourceGroup: string, skuName: string, subnet: string): az_dms_create_command_builder {
-        return new az_dms_create_command_builder(this, location, name, resourceGroup, skuName, subnet);
+    static az_dms_create(location: string, name: string, resourceGroup: string, skuName: string, subnet: string): az_dms_create_command_builder {
+        return new az_dms_create_command_builder("az dms create", location, name, resourceGroup, skuName, subnet);
     }
 
     /**
@@ -332,8 +326,8 @@ export class az_dms implements ICommandParent<any> {
      * @param {string} name The name of the Service.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_dms_delete(name: string, resourceGroup: string): az_dms_delete_command_builder {
-        return new az_dms_delete_command_builder(this, name, resourceGroup);
+    static az_dms_delete(name: string, resourceGroup: string): az_dms_delete_command_builder {
+        return new az_dms_delete_command_builder("az dms delete", name, resourceGroup);
     }
 
     /**
@@ -346,8 +340,8 @@ export class az_dms implements ICommandParent<any> {
      *             [--subscription]
      * ```
      */
-    az_dms_list(): az_dms_list_command_builder {
-        return new az_dms_list_command_builder(this);
+    static az_dms_list(): az_dms_list_command_builder {
+        return new az_dms_list_command_builder("az dms list");
     }
 
     /**
@@ -358,8 +352,8 @@ export class az_dms implements ICommandParent<any> {
      * az dms list-skus [--subscription]
      * ```
      */
-    az_dms_list_skus(): az_dms_list_skus_command_builder {
-        return new az_dms_list_skus_command_builder(this);
+    static az_dms_list_skus(): az_dms_list_skus_command_builder {
+        return new az_dms_list_skus_command_builder("az dms list-skus");
     }
 
     /**
@@ -376,8 +370,8 @@ export class az_dms implements ICommandParent<any> {
      * @param {string} name The name of the Service.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_dms_show(name: string, resourceGroup: string): az_dms_show_command_builder {
-        return new az_dms_show_command_builder(this, name, resourceGroup);
+    static az_dms_show(name: string, resourceGroup: string): az_dms_show_command_builder {
+        return new az_dms_show_command_builder("az dms show", name, resourceGroup);
     }
 
     /**
@@ -394,8 +388,8 @@ export class az_dms implements ICommandParent<any> {
      * @param {string} name The name of the Service.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_dms_start(name: string, resourceGroup: string): az_dms_start_command_builder {
-        return new az_dms_start_command_builder(this, name, resourceGroup);
+    static az_dms_start(name: string, resourceGroup: string): az_dms_start_command_builder {
+        return new az_dms_start_command_builder("az dms start", name, resourceGroup);
     }
 
     /**
@@ -412,8 +406,8 @@ export class az_dms implements ICommandParent<any> {
      * @param {string} name The name of the Service.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_dms_stop(name: string, resourceGroup: string): az_dms_stop_command_builder {
-        return new az_dms_stop_command_builder(this, name, resourceGroup);
+    static az_dms_stop(name: string, resourceGroup: string): az_dms_stop_command_builder {
+        return new az_dms_stop_command_builder("az dms stop", name, resourceGroup);
     }
 
     /**
@@ -436,8 +430,8 @@ export class az_dms implements ICommandParent<any> {
      * @param {string} name The name of the Service.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_dms_wait(name: string, resourceGroup: string): az_dms_wait_command_builder {
-        return new az_dms_wait_command_builder(this, name, resourceGroup);
+    static az_dms_wait(name: string, resourceGroup: string): az_dms_wait_command_builder {
+        return new az_dms_wait_command_builder("az dms wait", name, resourceGroup);
     }
 }
 
@@ -459,7 +453,7 @@ export class az_dms implements ICommandParent<any> {
  * @param {string} serviceName The name of the Service.
  */
 class az_dms_project_task_cancel_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, projectName: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, name: string, projectName: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.name(name)
         this.projectName(projectName)
@@ -516,7 +510,7 @@ class az_dms_project_task_cancel_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the Service.
  */
 class az_dms_project_task_check_name_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, projectName: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, name: string, projectName: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.name(name)
         this.projectName(projectName)
@@ -582,7 +576,7 @@ class az_dms_project_task_check_name_command_builder extends CommandBuilder {
  * @param {string} targetConnectionJson The connection information to the target server. This can be either a JSON-formatted string or the location to a file containing the JSON object. See example below for the format.
  */
 class az_dms_project_task_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, databaseOptionsJson: string, name: string, projectName: string, resourceGroup: string, serviceName: string, sourceConnectionJson: string, targetConnectionJson: string) {
+    constructor(commandPath: string, databaseOptionsJson: string, name: string, projectName: string, resourceGroup: string, serviceName: string, sourceConnectionJson: string, targetConnectionJson: string) {
         super(commandParent);
         this.databaseOptionsJson(databaseOptionsJson)
         this.name(name)
@@ -680,7 +674,7 @@ class az_dms_project_task_create_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the Service.
  */
 class az_dms_project_task_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, projectName: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, name: string, projectName: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.name(name)
         this.projectName(projectName)
@@ -749,7 +743,7 @@ class az_dms_project_task_delete_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the Service.
  */
 class az_dms_project_task_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, projectName: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, projectName: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.projectName(projectName)
         this.resourceGroup(resourceGroup)
@@ -813,7 +807,7 @@ class az_dms_project_task_list_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the Service.
  */
 class az_dms_project_task_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, projectName: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, name: string, projectName: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.name(name)
         this.projectName(projectName)
@@ -880,7 +874,7 @@ class az_dms_project_task_show_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the Service.
  */
 class az_dms_project_check_name_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -935,7 +929,7 @@ class az_dms_project_check_name_command_builder extends CommandBuilder {
  * @param {string} targetPlatform The type of service for the target database. The supported types are: SQLDB.
  */
 class az_dms_project_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string, name: string, resourceGroup: string, serviceName: string, sourcePlatform: string, targetPlatform: string) {
+    constructor(commandPath: string, location: string, name: string, resourceGroup: string, serviceName: string, sourcePlatform: string, targetPlatform: string) {
         super(commandParent);
         this.location(location)
         this.name(name)
@@ -1012,7 +1006,7 @@ class az_dms_project_create_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the Service.
  */
 class az_dms_project_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1071,7 +1065,7 @@ class az_dms_project_delete_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the Service.
  */
 class az_dms_project_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.serviceName(serviceName)
@@ -1119,7 +1113,7 @@ class az_dms_project_list_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the Service.
  */
 class az_dms_project_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, serviceName: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, serviceName: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1171,7 +1165,7 @@ class az_dms_project_show_command_builder extends CommandBuilder {
  * @param {string} name The Service name to check.
  */
 class az_dms_check_name_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string, name: string) {
+    constructor(commandPath: string, location: string, name: string) {
         super(commandParent);
         this.location(location)
         this.name(name)
@@ -1210,7 +1204,7 @@ class az_dms_check_name_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_dms_check_status_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1257,7 +1251,7 @@ class az_dms_check_status_command_builder extends CommandBuilder {
  * @param {string} subnet The Resource ID of the VNet's Subnet you will use to connect the source and target DBs. Use "az network vnet subnet show -h" for help to get your subnet's ID.
  */
 class az_dms_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, location: string, name: string, resourceGroup: string, skuName: string, subnet: string) {
+    constructor(commandPath: string, location: string, name: string, resourceGroup: string, skuName: string, subnet: string) {
         super(commandParent);
         this.location(location)
         this.name(name)
@@ -1332,7 +1326,7 @@ class az_dms_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_dms_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1386,7 +1380,7 @@ class az_dms_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_dms_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1418,7 +1412,7 @@ class az_dms_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_dms_list_skus_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1444,7 +1438,7 @@ class az_dms_list_skus_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_dms_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1490,7 +1484,7 @@ class az_dms_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_dms_start_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1536,7 +1530,7 @@ class az_dms_start_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_dms_stop_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1588,7 +1582,7 @@ class az_dms_stop_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_dms_wait_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)

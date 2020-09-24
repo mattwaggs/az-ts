@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Tag Management on a resource. */
-export class az_tag implements ICommandParent<any> {
-    commandPath = "az tag";
-
+export class az_tag {
     /**
      * Create a tag value.
      *
@@ -17,8 +15,8 @@ export class az_tag implements ICommandParent<any> {
      * @param {string} name The tag name.
      * @param {string} value The tag value.
      */
-    az_tag_add_value(name: string, value: string): az_tag_add_value_command_builder {
-        return new az_tag_add_value_command_builder(this, name, value);
+    static az_tag_add_value(name: string, value: string): az_tag_add_value_command_builder {
+        return new az_tag_add_value_command_builder("az tag add-value", name, value);
     }
 
     /**
@@ -32,8 +30,8 @@ export class az_tag implements ICommandParent<any> {
      *               [--tags]
      * ```
      */
-    az_tag_create(): az_tag_create_command_builder {
-        return new az_tag_create_command_builder(this);
+    static az_tag_create(): az_tag_create_command_builder {
+        return new az_tag_create_command_builder("az tag create");
     }
 
     /**
@@ -47,8 +45,8 @@ export class az_tag implements ICommandParent<any> {
      *               [--yes]
      * ```
      */
-    az_tag_delete(): az_tag_delete_command_builder {
-        return new az_tag_delete_command_builder(this);
+    static az_tag_delete(): az_tag_delete_command_builder {
+        return new az_tag_delete_command_builder("az tag delete");
     }
 
     /**
@@ -61,8 +59,8 @@ export class az_tag implements ICommandParent<any> {
      *             [--subscription]
      * ```
      */
-    az_tag_list(): az_tag_list_command_builder {
-        return new az_tag_list_command_builder(this);
+    static az_tag_list(): az_tag_list_command_builder {
+        return new az_tag_list_command_builder("az tag list");
     }
 
     /**
@@ -78,8 +76,8 @@ export class az_tag implements ICommandParent<any> {
      * @param {string} name The tag name.
      * @param {string} value The tag value.
      */
-    az_tag_remove_value(name: string, value: string): az_tag_remove_value_command_builder {
-        return new az_tag_remove_value_command_builder(this, name, value);
+    static az_tag_remove_value(name: string, value: string): az_tag_remove_value_command_builder {
+        return new az_tag_remove_value_command_builder("az tag remove-value", name, value);
     }
 
     /**
@@ -97,8 +95,8 @@ export class az_tag implements ICommandParent<any> {
      * @param {string} resourceId The resource identifier for the entity being tagged. A resource, a resource group or a subscription may be tagged.
      * @param {string} tags The tags to be updated on the resource.
      */
-    az_tag_update(operation: 'Delete' | 'Merge' | 'Replace', resourceId: string, tags: string): az_tag_update_command_builder {
-        return new az_tag_update_command_builder(this, operation, resourceId, tags);
+    static az_tag_update(operation: 'Delete' | 'Merge' | 'Replace', resourceId: string, tags: string): az_tag_update_command_builder {
+        return new az_tag_update_command_builder("az tag update", operation, resourceId, tags);
     }
 }
 
@@ -116,7 +114,7 @@ export class az_tag implements ICommandParent<any> {
  * @param {string} value The tag value.
  */
 class az_tag_add_value_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, value: string) {
+    constructor(commandPath: string, name: string, value: string) {
         super(commandParent);
         this.name(name)
         this.value(value)
@@ -153,7 +151,7 @@ class az_tag_add_value_command_builder extends CommandBuilder {
  * ```
  */
 class az_tag_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -194,7 +192,7 @@ class az_tag_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_tag_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -234,7 +232,7 @@ class az_tag_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_tag_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -271,7 +269,7 @@ class az_tag_list_command_builder extends CommandBuilder {
  * @param {string} value The tag value.
  */
 class az_tag_remove_value_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, value: string) {
+    constructor(commandPath: string, name: string, value: string) {
         super(commandParent);
         this.name(name)
         this.value(value)
@@ -312,7 +310,7 @@ class az_tag_remove_value_command_builder extends CommandBuilder {
  * @param {string} tags The tags to be updated on the resource.
  */
 class az_tag_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, operation: 'Delete' | 'Merge' | 'Replace', resourceId: string, tags: string) {
+    constructor(commandPath: string, operation: 'Delete' | 'Merge' | 'Replace', resourceId: string, tags: string) {
         super(commandParent);
         this.operation(operation)
         this.resourceId(resourceId)

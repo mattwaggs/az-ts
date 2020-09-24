@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Methods that show, set, add, and remove access restrictions on a functionapp. */
-export class az_functionapp_config_access_restriction implements ICommandParent<any> {
-    commandPath = "az functionapp config access-restriction";
-
+export class az_functionapp_config_access_restriction {
     /**
      * Adds an Access Restriction to the functionapp.
      *
@@ -27,8 +25,8 @@ export class az_functionapp_config_access_restriction implements ICommandParent<
      *
      * @param {string} priority Priority of the access restriction rule.
      */
-    az_functionapp_config_access_restriction_add(priority: string): az_functionapp_config_access_restriction_add_command_builder {
-        return new az_functionapp_config_access_restriction_add_command_builder(this, priority);
+    static az_functionapp_config_access_restriction_add(priority: string): az_functionapp_config_access_restriction_add_command_builder {
+        return new az_functionapp_config_access_restriction_add_command_builder("az functionapp config access-restriction add", priority);
     }
 
     /**
@@ -49,8 +47,8 @@ export class az_functionapp_config_access_restriction implements ICommandParent<
      *                                                 [--vnet-name]
      * ```
      */
-    az_functionapp_config_access_restriction_remove(): az_functionapp_config_access_restriction_remove_command_builder {
-        return new az_functionapp_config_access_restriction_remove_command_builder(this);
+    static az_functionapp_config_access_restriction_remove(): az_functionapp_config_access_restriction_remove_command_builder {
+        return new az_functionapp_config_access_restriction_remove_command_builder("az functionapp config access-restriction remove");
     }
 
     /**
@@ -68,8 +66,8 @@ export class az_functionapp_config_access_restriction implements ICommandParent<
      *
      * @param {boolean} useSameRestrictionsForScmSite Use same access restrictions for scm site.
      */
-    az_functionapp_config_access_restriction_set(useSameRestrictionsForScmSite: boolean): az_functionapp_config_access_restriction_set_command_builder {
-        return new az_functionapp_config_access_restriction_set_command_builder(this, useSameRestrictionsForScmSite);
+    static az_functionapp_config_access_restriction_set(useSameRestrictionsForScmSite: boolean): az_functionapp_config_access_restriction_set_command_builder {
+        return new az_functionapp_config_access_restriction_set_command_builder("az functionapp config access-restriction set", useSameRestrictionsForScmSite);
     }
 
     /**
@@ -85,15 +83,13 @@ export class az_functionapp_config_access_restriction implements ICommandParent<
      *                                               [--subscription]
      * ```
      */
-    az_functionapp_config_access_restriction_show(): az_functionapp_config_access_restriction_show_command_builder {
-        return new az_functionapp_config_access_restriction_show_command_builder(this);
+    static az_functionapp_config_access_restriction_show(): az_functionapp_config_access_restriction_show_command_builder {
+        return new az_functionapp_config_access_restriction_show_command_builder("az functionapp config access-restriction show");
     }
 }
 
 /** Configure function app settings. */
-export class az_functionapp_config_appsettings implements ICommandParent<any> {
-    commandPath = "az functionapp config appsettings";
-
+export class az_functionapp_config_appsettings {
     /**
      * Delete a function app's settings.
      *
@@ -109,8 +105,8 @@ export class az_functionapp_config_appsettings implements ICommandParent<any> {
      *
      * @param {string} settingNames Space-separated app setting names.
      */
-    az_functionapp_config_appsettings_delete(settingNames: string): az_functionapp_config_appsettings_delete_command_builder {
-        return new az_functionapp_config_appsettings_delete_command_builder(this, settingNames);
+    static az_functionapp_config_appsettings_delete(settingNames: string): az_functionapp_config_appsettings_delete_command_builder {
+        return new az_functionapp_config_appsettings_delete_command_builder("az functionapp config appsettings delete", settingNames);
     }
 
     /**
@@ -128,8 +124,8 @@ export class az_functionapp_config_appsettings implements ICommandParent<any> {
      * @param {string} name Name of the function app.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_config_appsettings_list(name: string, resourceGroup: string): az_functionapp_config_appsettings_list_command_builder {
-        return new az_functionapp_config_appsettings_list_command_builder(this, name, resourceGroup);
+    static az_functionapp_config_appsettings_list(name: string, resourceGroup: string): az_functionapp_config_appsettings_list_command_builder {
+        return new az_functionapp_config_appsettings_list_command_builder("az functionapp config appsettings list", name, resourceGroup);
     }
 
     /**
@@ -146,15 +142,13 @@ export class az_functionapp_config_appsettings implements ICommandParent<any> {
      *                                       [--subscription]
      * ```
      */
-    az_functionapp_config_appsettings_set(): az_functionapp_config_appsettings_set_command_builder {
-        return new az_functionapp_config_appsettings_set_command_builder(this);
+    static az_functionapp_config_appsettings_set(): az_functionapp_config_appsettings_set_command_builder {
+        return new az_functionapp_config_appsettings_set_command_builder("az functionapp config appsettings set");
     }
 }
 
 /** Manage function app container settings. */
-export class az_functionapp_config_container implements ICommandParent<any> {
-    commandPath = "az functionapp config container";
-
+export class az_functionapp_config_container {
     /**
      * Delete a function app container's settings.
      *
@@ -167,8 +161,8 @@ export class az_functionapp_config_container implements ICommandParent<any> {
      *                                        [--subscription]
      * ```
      */
-    az_functionapp_config_container_delete(): az_functionapp_config_container_delete_command_builder {
-        return new az_functionapp_config_container_delete_command_builder(this);
+    static az_functionapp_config_container_delete(): az_functionapp_config_container_delete_command_builder {
+        return new az_functionapp_config_container_delete_command_builder("az functionapp config container delete");
     }
 
     /**
@@ -187,8 +181,8 @@ export class az_functionapp_config_container implements ICommandParent<any> {
      *                                     [--subscription]
      * ```
      */
-    az_functionapp_config_container_set(): az_functionapp_config_container_set_command_builder {
-        return new az_functionapp_config_container_set_command_builder(this);
+    static az_functionapp_config_container_set(): az_functionapp_config_container_set_command_builder {
+        return new az_functionapp_config_container_set_command_builder("az functionapp config container set");
     }
 
     /**
@@ -204,15 +198,13 @@ export class az_functionapp_config_container implements ICommandParent<any> {
      *                                      [--subscription]
      * ```
      */
-    az_functionapp_config_container_show(): az_functionapp_config_container_show_command_builder {
-        return new az_functionapp_config_container_show_command_builder(this);
+    static az_functionapp_config_container_show(): az_functionapp_config_container_show_command_builder {
+        return new az_functionapp_config_container_show_command_builder("az functionapp config container show");
     }
 }
 
 /** Configure hostnames for a function app. */
-export class az_functionapp_config_hostname implements ICommandParent<any> {
-    commandPath = "az functionapp config hostname";
-
+export class az_functionapp_config_hostname {
     /**
      * Bind a hostname to a function app.
      *
@@ -226,8 +218,8 @@ export class az_functionapp_config_hostname implements ICommandParent<any> {
      *                                    [--subscription]
      * ```
      */
-    az_functionapp_config_hostname_add(): az_functionapp_config_hostname_add_command_builder {
-        return new az_functionapp_config_hostname_add_command_builder(this);
+    static az_functionapp_config_hostname_add(): az_functionapp_config_hostname_add_command_builder {
+        return new az_functionapp_config_hostname_add_command_builder("az functionapp config hostname add");
     }
 
     /**
@@ -243,8 +235,8 @@ export class az_functionapp_config_hostname implements ICommandParent<any> {
      *                                       [--subscription]
      * ```
      */
-    az_functionapp_config_hostname_delete(): az_functionapp_config_hostname_delete_command_builder {
-        return new az_functionapp_config_hostname_delete_command_builder(this);
+    static az_functionapp_config_hostname_delete(): az_functionapp_config_hostname_delete_command_builder {
+        return new az_functionapp_config_hostname_delete_command_builder("az functionapp config hostname delete");
     }
 
     /**
@@ -258,8 +250,8 @@ export class az_functionapp_config_hostname implements ICommandParent<any> {
      *                                                [--subscription]
      * ```
      */
-    az_functionapp_config_hostname_get_external_ip(): az_functionapp_config_hostname_get_external_ip_command_builder {
-        return new az_functionapp_config_hostname_get_external_ip_command_builder(this);
+    static az_functionapp_config_hostname_get_external_ip(): az_functionapp_config_hostname_get_external_ip_command_builder {
+        return new az_functionapp_config_hostname_get_external_ip_command_builder("az functionapp config hostname get-external-ip");
     }
 
     /**
@@ -277,15 +269,13 @@ export class az_functionapp_config_hostname implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} webappName Name of the web app. You can configure the default using `az configure --defaults web=<name>`.
      */
-    az_functionapp_config_hostname_list(resourceGroup: string, webappName: string): az_functionapp_config_hostname_list_command_builder {
-        return new az_functionapp_config_hostname_list_command_builder(this, resourceGroup, webappName);
+    static az_functionapp_config_hostname_list(resourceGroup: string, webappName: string): az_functionapp_config_hostname_list_command_builder {
+        return new az_functionapp_config_hostname_list_command_builder("az functionapp config hostname list", resourceGroup, webappName);
     }
 }
 
 /** Configure SSL certificates. */
-export class az_functionapp_config_ssl implements ICommandParent<any> {
-    commandPath = "az functionapp config ssl";
-
+export class az_functionapp_config_ssl {
     /**
      * Bind an SSL certificate to a function app.
      *
@@ -303,8 +293,8 @@ export class az_functionapp_config_ssl implements ICommandParent<any> {
      * @param {string} certificateThumbprint The ssl cert thumbprint.
      * @param {'IP' | 'SNI'} sslType The ssl cert type.
      */
-    az_functionapp_config_ssl_bind(certificateThumbprint: string, sslType: 'IP' | 'SNI'): az_functionapp_config_ssl_bind_command_builder {
-        return new az_functionapp_config_ssl_bind_command_builder(this, certificateThumbprint, sslType);
+    static az_functionapp_config_ssl_bind(certificateThumbprint: string, sslType: 'IP' | 'SNI'): az_functionapp_config_ssl_bind_command_builder {
+        return new az_functionapp_config_ssl_bind_command_builder("az functionapp config ssl bind", certificateThumbprint, sslType);
     }
 
     /**
@@ -323,8 +313,8 @@ export class az_functionapp_config_ssl implements ICommandParent<any> {
      * @param {string} name Name of the function app.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_config_ssl_create(hostname: string, name: string, resourceGroup: string): az_functionapp_config_ssl_create_command_builder {
-        return new az_functionapp_config_ssl_create_command_builder(this, hostname, name, resourceGroup);
+    static az_functionapp_config_ssl_create(hostname: string, name: string, resourceGroup: string): az_functionapp_config_ssl_create_command_builder {
+        return new az_functionapp_config_ssl_create_command_builder("az functionapp config ssl create", hostname, name, resourceGroup);
     }
 
     /**
@@ -340,8 +330,8 @@ export class az_functionapp_config_ssl implements ICommandParent<any> {
      * @param {string} certificateThumbprint The ssl cert thumbprint.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_config_ssl_delete(certificateThumbprint: string, resourceGroup: string): az_functionapp_config_ssl_delete_command_builder {
-        return new az_functionapp_config_ssl_delete_command_builder(this, certificateThumbprint, resourceGroup);
+    static az_functionapp_config_ssl_delete(certificateThumbprint: string, resourceGroup: string): az_functionapp_config_ssl_delete_command_builder {
+        return new az_functionapp_config_ssl_delete_command_builder("az functionapp config ssl delete", certificateThumbprint, resourceGroup);
     }
 
     /**
@@ -360,8 +350,8 @@ export class az_functionapp_config_ssl implements ICommandParent<any> {
      * @param {string} keyVault The name or resource ID of the Key Vault.
      * @param {string} keyVaultCertificateName The name of the certificate in Key Vault.
      */
-    az_functionapp_config_ssl_import(keyVault: string, keyVaultCertificateName: string): az_functionapp_config_ssl_import_command_builder {
-        return new az_functionapp_config_ssl_import_command_builder(this, keyVault, keyVaultCertificateName);
+    static az_functionapp_config_ssl_import(keyVault: string, keyVaultCertificateName: string): az_functionapp_config_ssl_import_command_builder {
+        return new az_functionapp_config_ssl_import_command_builder("az functionapp config ssl import", keyVault, keyVaultCertificateName);
     }
 
     /**
@@ -376,8 +366,8 @@ export class az_functionapp_config_ssl implements ICommandParent<any> {
      *
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_config_ssl_list(resourceGroup: string): az_functionapp_config_ssl_list_command_builder {
-        return new az_functionapp_config_ssl_list_command_builder(this, resourceGroup);
+    static az_functionapp_config_ssl_list(resourceGroup: string): az_functionapp_config_ssl_list_command_builder {
+        return new az_functionapp_config_ssl_list_command_builder("az functionapp config ssl list", resourceGroup);
     }
 
     /**
@@ -395,8 +385,8 @@ export class az_functionapp_config_ssl implements ICommandParent<any> {
      *
      * @param {string} certificateThumbprint The ssl cert thumbprint.
      */
-    az_functionapp_config_ssl_unbind(certificateThumbprint: string): az_functionapp_config_ssl_unbind_command_builder {
-        return new az_functionapp_config_ssl_unbind_command_builder(this, certificateThumbprint);
+    static az_functionapp_config_ssl_unbind(certificateThumbprint: string): az_functionapp_config_ssl_unbind_command_builder {
+        return new az_functionapp_config_ssl_unbind_command_builder("az functionapp config ssl unbind", certificateThumbprint);
     }
 
     /**
@@ -416,15 +406,13 @@ export class az_functionapp_config_ssl implements ICommandParent<any> {
      * @param {string} certificateFile The filepath for the .pfx file.
      * @param {string} certificatePassword The ssl cert password.
      */
-    az_functionapp_config_ssl_upload(certificateFile: string, certificatePassword: string): az_functionapp_config_ssl_upload_command_builder {
-        return new az_functionapp_config_ssl_upload_command_builder(this, certificateFile, certificatePassword);
+    static az_functionapp_config_ssl_upload(certificateFile: string, certificatePassword: string): az_functionapp_config_ssl_upload_command_builder {
+        return new az_functionapp_config_ssl_upload_command_builder("az functionapp config ssl upload", certificateFile, certificatePassword);
     }
 }
 
 /** Configure a function app. */
-export class az_functionapp_config implements ICommandParent<any> {
-    commandPath = "az functionapp config";
-
+export class az_functionapp_config {
     /**
      * Set the function app's configuration.
      *
@@ -456,8 +444,8 @@ export class az_functionapp_config implements ICommandParent<any> {
      *                           [--web-sockets-enabled {false, true}]
      * ```
      */
-    az_functionapp_config_set(): az_functionapp_config_set_command_builder {
-        return new az_functionapp_config_set_command_builder(this);
+    static az_functionapp_config_set(): az_functionapp_config_set_command_builder {
+        return new az_functionapp_config_set_command_builder("az functionapp config set");
     }
 
     /**
@@ -473,15 +461,13 @@ export class az_functionapp_config implements ICommandParent<any> {
      *                            [--subscription]
      * ```
      */
-    az_functionapp_config_show(): az_functionapp_config_show_command_builder {
-        return new az_functionapp_config_show_command_builder(this);
+    static az_functionapp_config_show(): az_functionapp_config_show_command_builder {
+        return new az_functionapp_config_show_command_builder("az functionapp config show");
     }
 }
 
 /** Manage Cross-Origin Resource Sharing (CORS). */
-export class az_functionapp_cors implements ICommandParent<any> {
-    commandPath = "az functionapp cors";
-
+export class az_functionapp_cors {
     /**
      * Add allowed origins.
      *
@@ -497,8 +483,8 @@ export class az_functionapp_cors implements ICommandParent<any> {
      *
      * @param {string} allowedOrigins Space separated origins that should be allowed to make cross-origin calls (for example: <a href="http://example.com:12345">http://example.com:12345</a>). To allow all, use "\*" and remove all other origins from the list.
      */
-    az_functionapp_cors_add(allowedOrigins: string): az_functionapp_cors_add_command_builder {
-        return new az_functionapp_cors_add_command_builder(this, allowedOrigins);
+    static az_functionapp_cors_add(allowedOrigins: string): az_functionapp_cors_add_command_builder {
+        return new az_functionapp_cors_add_command_builder("az functionapp cors add", allowedOrigins);
     }
 
     /**
@@ -516,8 +502,8 @@ export class az_functionapp_cors implements ICommandParent<any> {
      *
      * @param {string} allowedOrigins Space separated origins that should be allowed to make cross-origin calls (for example: <a href="http://example.com:12345">http://example.com:12345</a>). To allow all, use "\*" and remove all other origins from the list.
      */
-    az_functionapp_cors_remove(allowedOrigins: string): az_functionapp_cors_remove_command_builder {
-        return new az_functionapp_cors_remove_command_builder(this, allowedOrigins);
+    static az_functionapp_cors_remove(allowedOrigins: string): az_functionapp_cors_remove_command_builder {
+        return new az_functionapp_cors_remove_command_builder("az functionapp cors remove", allowedOrigins);
     }
 
     /**
@@ -533,15 +519,13 @@ export class az_functionapp_cors implements ICommandParent<any> {
      *                          [--subscription]
      * ```
      */
-    az_functionapp_cors_show(): az_functionapp_cors_show_command_builder {
-        return new az_functionapp_cors_show_command_builder(this);
+    static az_functionapp_cors_show(): az_functionapp_cors_show_command_builder {
+        return new az_functionapp_cors_show_command_builder("az functionapp cors show");
     }
 }
 
 /** Manage container-based continuous deployment. */
-export class az_functionapp_deployment_container implements ICommandParent<any> {
-    commandPath = "az functionapp deployment container";
-
+export class az_functionapp_deployment_container {
     /**
      * Configure continuous deployment via containers.
      *
@@ -557,8 +541,8 @@ export class az_functionapp_deployment_container implements ICommandParent<any> 
      *
      * @param {boolean} enableCd Enable/disable continuous deployment.
      */
-    az_functionapp_deployment_container_config(enableCd: boolean): az_functionapp_deployment_container_config_command_builder {
-        return new az_functionapp_deployment_container_config_command_builder(this, enableCd);
+    static az_functionapp_deployment_container_config(enableCd: boolean): az_functionapp_deployment_container_config_command_builder {
+        return new az_functionapp_deployment_container_config_command_builder("az functionapp deployment container config", enableCd);
     }
 
     /**
@@ -573,15 +557,13 @@ export class az_functionapp_deployment_container implements ICommandParent<any> 
      *                                                 [--subscription]
      * ```
      */
-    az_functionapp_deployment_container_show_cd_url(): az_functionapp_deployment_container_show_cd_url_command_builder {
-        return new az_functionapp_deployment_container_show_cd_url_command_builder(this);
+    static az_functionapp_deployment_container_show_cd_url(): az_functionapp_deployment_container_show_cd_url_command_builder {
+        return new az_functionapp_deployment_container_show_cd_url_command_builder("az functionapp deployment container show-cd-url");
     }
 }
 
 /** Manage function app deployment slots. */
-export class az_functionapp_deployment_slot implements ICommandParent<any> {
-    commandPath = "az functionapp deployment slot";
-
+export class az_functionapp_deployment_slot {
     /**
      * Configure deployment slot auto swap.
      *
@@ -598,8 +580,8 @@ export class az_functionapp_deployment_slot implements ICommandParent<any> {
      *
      * @param {string} slot The name of the slot.
      */
-    az_functionapp_deployment_slot_auto_swap(slot: string): az_functionapp_deployment_slot_auto_swap_command_builder {
-        return new az_functionapp_deployment_slot_auto_swap_command_builder(this, slot);
+    static az_functionapp_deployment_slot_auto_swap(slot: string): az_functionapp_deployment_slot_auto_swap_command_builder {
+        return new az_functionapp_deployment_slot_auto_swap_command_builder("az functionapp deployment slot auto-swap", slot);
     }
 
     /**
@@ -618,8 +600,8 @@ export class az_functionapp_deployment_slot implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} slot The name of the slot.
      */
-    az_functionapp_deployment_slot_create(name: string, resourceGroup: string, slot: string): az_functionapp_deployment_slot_create_command_builder {
-        return new az_functionapp_deployment_slot_create_command_builder(this, name, resourceGroup, slot);
+    static az_functionapp_deployment_slot_create(name: string, resourceGroup: string, slot: string): az_functionapp_deployment_slot_create_command_builder {
+        return new az_functionapp_deployment_slot_create_command_builder("az functionapp deployment slot create", name, resourceGroup, slot);
     }
 
     /**
@@ -636,8 +618,8 @@ export class az_functionapp_deployment_slot implements ICommandParent<any> {
      *
      * @param {string} slot The name of the slot.
      */
-    az_functionapp_deployment_slot_delete(slot: string): az_functionapp_deployment_slot_delete_command_builder {
-        return new az_functionapp_deployment_slot_delete_command_builder(this, slot);
+    static az_functionapp_deployment_slot_delete(slot: string): az_functionapp_deployment_slot_delete_command_builder {
+        return new az_functionapp_deployment_slot_delete_command_builder("az functionapp deployment slot delete", slot);
     }
 
     /**
@@ -652,8 +634,8 @@ export class az_functionapp_deployment_slot implements ICommandParent<any> {
      *                                     [--subscription]
      * ```
      */
-    az_functionapp_deployment_slot_list(): az_functionapp_deployment_slot_list_command_builder {
-        return new az_functionapp_deployment_slot_list_command_builder(this);
+    static az_functionapp_deployment_slot_list(): az_functionapp_deployment_slot_list_command_builder {
+        return new az_functionapp_deployment_slot_list_command_builder("az functionapp deployment slot list");
     }
 
     /**
@@ -672,15 +654,13 @@ export class az_functionapp_deployment_slot implements ICommandParent<any> {
      *
      * @param {string} slot The name of the slot.
      */
-    az_functionapp_deployment_slot_swap(slot: string): az_functionapp_deployment_slot_swap_command_builder {
-        return new az_functionapp_deployment_slot_swap_command_builder(this, slot);
+    static az_functionapp_deployment_slot_swap(slot: string): az_functionapp_deployment_slot_swap_command_builder {
+        return new az_functionapp_deployment_slot_swap_command_builder("az functionapp deployment slot swap", slot);
     }
 }
 
 /** Manage function app deployment via source control. */
-export class az_functionapp_deployment_source implements ICommandParent<any> {
-    commandPath = "az functionapp deployment source";
-
+export class az_functionapp_deployment_source {
     /**
      * Manage deployment from git or Mercurial repositories.
      *
@@ -711,8 +691,8 @@ export class az_functionapp_deployment_source implements ICommandParent<any> {
      *
      * @param {string} repoUrl Repository url to pull the latest source from, e.g. <a href="https://github.com/foo/foo-web">https://github.com/foo/foo-web</a>.
      */
-    az_functionapp_deployment_source_config(repoUrl: string): az_functionapp_deployment_source_config_command_builder {
-        return new az_functionapp_deployment_source_config_command_builder(this, repoUrl);
+    static az_functionapp_deployment_source_config(repoUrl: string): az_functionapp_deployment_source_config_command_builder {
+        return new az_functionapp_deployment_source_config_command_builder("az functionapp deployment source config", repoUrl);
     }
 
     /**
@@ -727,8 +707,8 @@ export class az_functionapp_deployment_source implements ICommandParent<any> {
      *                                                   [--subscription]
      * ```
      */
-    az_functionapp_deployment_source_config_local_git(): az_functionapp_deployment_source_config_local_git_command_builder {
-        return new az_functionapp_deployment_source_config_local_git_command_builder(this);
+    static az_functionapp_deployment_source_config_local_git(): az_functionapp_deployment_source_config_local_git_command_builder {
+        return new az_functionapp_deployment_source_config_local_git_command_builder("az functionapp deployment source config-local-git");
     }
 
     /**
@@ -748,8 +728,8 @@ export class az_functionapp_deployment_source implements ICommandParent<any> {
      *
      * @param {string} src A zip file path for deployment.
      */
-    az_functionapp_deployment_source_config_zip(src: string): az_functionapp_deployment_source_config_zip_command_builder {
-        return new az_functionapp_deployment_source_config_zip_command_builder(this, src);
+    static az_functionapp_deployment_source_config_zip(src: string): az_functionapp_deployment_source_config_zip_command_builder {
+        return new az_functionapp_deployment_source_config_zip_command_builder("az functionapp deployment source config-zip", src);
     }
 
     /**
@@ -764,8 +744,8 @@ export class az_functionapp_deployment_source implements ICommandParent<any> {
      *                                         [--subscription]
      * ```
      */
-    az_functionapp_deployment_source_delete(): az_functionapp_deployment_source_delete_command_builder {
-        return new az_functionapp_deployment_source_delete_command_builder(this);
+    static az_functionapp_deployment_source_delete(): az_functionapp_deployment_source_delete_command_builder {
+        return new az_functionapp_deployment_source_delete_command_builder("az functionapp deployment source delete");
     }
 
     /**
@@ -781,8 +761,8 @@ export class az_functionapp_deployment_source implements ICommandParent<any> {
      *                                       [--subscription]
      * ```
      */
-    az_functionapp_deployment_source_show(): az_functionapp_deployment_source_show_command_builder {
-        return new az_functionapp_deployment_source_show_command_builder(this);
+    static az_functionapp_deployment_source_show(): az_functionapp_deployment_source_show_command_builder {
+        return new az_functionapp_deployment_source_show_command_builder("az functionapp deployment source show");
     }
 
     /**
@@ -797,8 +777,8 @@ export class az_functionapp_deployment_source implements ICommandParent<any> {
      *                                       [--subscription]
      * ```
      */
-    az_functionapp_deployment_source_sync(): az_functionapp_deployment_source_sync_command_builder {
-        return new az_functionapp_deployment_source_sync_command_builder(this);
+    static az_functionapp_deployment_source_sync(): az_functionapp_deployment_source_sync_command_builder {
+        return new az_functionapp_deployment_source_sync_command_builder("az functionapp deployment source sync");
     }
 
     /**
@@ -810,15 +790,13 @@ export class az_functionapp_deployment_source implements ICommandParent<any> {
      *                                               [--subscription]
      * ```
      */
-    az_functionapp_deployment_source_update_token(): az_functionapp_deployment_source_update_token_command_builder {
-        return new az_functionapp_deployment_source_update_token_command_builder(this);
+    static az_functionapp_deployment_source_update_token(): az_functionapp_deployment_source_update_token_command_builder {
+        return new az_functionapp_deployment_source_update_token_command_builder("az functionapp deployment source update-token");
     }
 }
 
 /** Manage user credentials for deployment. */
-export class az_functionapp_deployment_user implements ICommandParent<any> {
-    commandPath = "az functionapp deployment user";
-
+export class az_functionapp_deployment_user {
     /**
      * Update deployment credentials.
      *
@@ -831,8 +809,8 @@ export class az_functionapp_deployment_user implements ICommandParent<any> {
      *
      * @param {string} userName User name.
      */
-    az_functionapp_deployment_user_set(userName: string): az_functionapp_deployment_user_set_command_builder {
-        return new az_functionapp_deployment_user_set_command_builder(this, userName);
+    static az_functionapp_deployment_user_set(userName: string): az_functionapp_deployment_user_set_command_builder {
+        return new az_functionapp_deployment_user_set_command_builder("az functionapp deployment user set", userName);
     }
 
     /**
@@ -844,15 +822,13 @@ export class az_functionapp_deployment_user implements ICommandParent<any> {
      *                                     [--subscription]
      * ```
      */
-    az_functionapp_deployment_user_show(): az_functionapp_deployment_user_show_command_builder {
-        return new az_functionapp_deployment_user_show_command_builder(this);
+    static az_functionapp_deployment_user_show(): az_functionapp_deployment_user_show_command_builder {
+        return new az_functionapp_deployment_user_show_command_builder("az functionapp deployment user show");
     }
 }
 
 /** Manage function app deployments. */
-export class az_functionapp_deployment implements ICommandParent<any> {
-    commandPath = "az functionapp deployment";
-
+export class az_functionapp_deployment {
     /**
      * Get the details for available function app publishing credentials.
      *
@@ -865,8 +841,8 @@ export class az_functionapp_deployment implements ICommandParent<any> {
      *                                                       [--subscription]
      * ```
      */
-    az_functionapp_deployment_list_publishing_credentials(): az_functionapp_deployment_list_publishing_credentials_command_builder {
-        return new az_functionapp_deployment_list_publishing_credentials_command_builder(this);
+    static az_functionapp_deployment_list_publishing_credentials(): az_functionapp_deployment_list_publishing_credentials_command_builder {
+        return new az_functionapp_deployment_list_publishing_credentials_command_builder("az functionapp deployment list-publishing-credentials");
     }
 
     /**
@@ -882,15 +858,13 @@ export class az_functionapp_deployment implements ICommandParent<any> {
      *                                                    [--xml]
      * ```
      */
-    az_functionapp_deployment_list_publishing_profiles(): az_functionapp_deployment_list_publishing_profiles_command_builder {
-        return new az_functionapp_deployment_list_publishing_profiles_command_builder(this);
+    static az_functionapp_deployment_list_publishing_profiles(): az_functionapp_deployment_list_publishing_profiles_command_builder {
+        return new az_functionapp_deployment_list_publishing_profiles_command_builder("az functionapp deployment list-publishing-profiles");
     }
 }
 
 /** Azure Function specific integration with Azure DevOps. Please visit <a href="https://aka.ms/functions-azure-devops">https://aka.ms/functions-azure-devops</a> for more information. */
-export class az_functionapp_devops_pipeline implements ICommandParent<any> {
-    commandPath = "az functionapp devops-pipeline";
-
+export class az_functionapp_devops_pipeline {
     /**
      * Create an Azure DevOps pipeline for a function app.
      *
@@ -907,15 +881,13 @@ export class az_functionapp_devops_pipeline implements ICommandParent<any> {
      *                                       [--subscription]
      * ```
      */
-    az_functionapp_devops_pipeline_create(): az_functionapp_devops_pipeline_create_command_builder {
-        return new az_functionapp_devops_pipeline_create_command_builder(this);
+    static az_functionapp_devops_pipeline_create(): az_functionapp_devops_pipeline_create_command_builder {
+        return new az_functionapp_devops_pipeline_create_command_builder("az functionapp devops-pipeline create");
     }
 }
 
 /** Manage function keys. */
-export class az_functionapp_function_keys implements ICommandParent<any> {
-    commandPath = "az functionapp function keys";
-
+export class az_functionapp_function_keys {
     /**
      * Delete a function key.
      *
@@ -933,8 +905,8 @@ export class az_functionapp_function_keys implements ICommandParent<any> {
      * @param {string} name Name of the function app.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_function_keys_delete(keyName: string, name: string, resourceGroup: string): az_functionapp_function_keys_delete_command_builder {
-        return new az_functionapp_function_keys_delete_command_builder(this, keyName, name, resourceGroup);
+    static az_functionapp_function_keys_delete(keyName: string, name: string, resourceGroup: string): az_functionapp_function_keys_delete_command_builder {
+        return new az_functionapp_function_keys_delete_command_builder("az functionapp function keys delete", keyName, name, resourceGroup);
     }
 
     /**
@@ -954,8 +926,8 @@ export class az_functionapp_function_keys implements ICommandParent<any> {
      * @param {string} name Name of the function app.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_function_keys_list(functionName: string, name: string, resourceGroup: string): az_functionapp_function_keys_list_command_builder {
-        return new az_functionapp_function_keys_list_command_builder(this, functionName, name, resourceGroup);
+    static az_functionapp_function_keys_list(functionName: string, name: string, resourceGroup: string): az_functionapp_function_keys_list_command_builder {
+        return new az_functionapp_function_keys_list_command_builder("az functionapp function keys list", functionName, name, resourceGroup);
     }
 
     /**
@@ -977,15 +949,13 @@ export class az_functionapp_function_keys implements ICommandParent<any> {
      * @param {string} name Name of the function app.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_function_keys_set(functionName: string, keyName: string, name: string, resourceGroup: string): az_functionapp_function_keys_set_command_builder {
-        return new az_functionapp_function_keys_set_command_builder(this, functionName, keyName, name, resourceGroup);
+    static az_functionapp_function_keys_set(functionName: string, keyName: string, name: string, resourceGroup: string): az_functionapp_function_keys_set_command_builder {
+        return new az_functionapp_function_keys_set_command_builder("az functionapp function keys set", functionName, keyName, name, resourceGroup);
     }
 }
 
 /** Manage function app functions. */
-export class az_functionapp_function implements ICommandParent<any> {
-    commandPath = "az functionapp function";
-
+export class az_functionapp_function {
     /**
      * Delete a function.
      *
@@ -1001,8 +971,8 @@ export class az_functionapp_function implements ICommandParent<any> {
      * @param {string} name Name of the function app.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_function_delete(functionName: string, name: string, resourceGroup: string): az_functionapp_function_delete_command_builder {
-        return new az_functionapp_function_delete_command_builder(this, functionName, name, resourceGroup);
+    static az_functionapp_function_delete(functionName: string, name: string, resourceGroup: string): az_functionapp_function_delete_command_builder {
+        return new az_functionapp_function_delete_command_builder("az functionapp function delete", functionName, name, resourceGroup);
     }
 
     /**
@@ -1021,15 +991,13 @@ export class az_functionapp_function implements ICommandParent<any> {
      * @param {string} name Name of the function app.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_function_show(functionName: string, name: string, resourceGroup: string): az_functionapp_function_show_command_builder {
-        return new az_functionapp_function_show_command_builder(this, functionName, name, resourceGroup);
+    static az_functionapp_function_show(functionName: string, name: string, resourceGroup: string): az_functionapp_function_show_command_builder {
+        return new az_functionapp_function_show_command_builder("az functionapp function show", functionName, name, resourceGroup);
     }
 }
 
 /** Methods that list, add and remove hybrid-connections from functionapp. */
-export class az_functionapp_hybrid_connection implements ICommandParent<any> {
-    commandPath = "az functionapp hybrid-connection";
-
+export class az_functionapp_hybrid_connection {
     /**
      * Add a hybrid-connection to a functionapp.
      *
@@ -1048,8 +1016,8 @@ export class az_functionapp_hybrid_connection implements ICommandParent<any> {
      * @param {string} namespace Hybrid connection namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_hybrid_connection_add(hybridConnection: string, name: string, namespace: string, resourceGroup: string): az_functionapp_hybrid_connection_add_command_builder {
-        return new az_functionapp_hybrid_connection_add_command_builder(this, hybridConnection, name, namespace, resourceGroup);
+    static az_functionapp_hybrid_connection_add(hybridConnection: string, name: string, namespace: string, resourceGroup: string): az_functionapp_hybrid_connection_add_command_builder {
+        return new az_functionapp_hybrid_connection_add_command_builder("az functionapp hybrid-connection add", hybridConnection, name, namespace, resourceGroup);
     }
 
     /**
@@ -1067,8 +1035,8 @@ export class az_functionapp_hybrid_connection implements ICommandParent<any> {
      * @param {string} name Name of the function app.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_hybrid_connection_list(name: string, resourceGroup: string): az_functionapp_hybrid_connection_list_command_builder {
-        return new az_functionapp_hybrid_connection_list_command_builder(this, name, resourceGroup);
+    static az_functionapp_hybrid_connection_list(name: string, resourceGroup: string): az_functionapp_hybrid_connection_list_command_builder {
+        return new az_functionapp_hybrid_connection_list_command_builder("az functionapp hybrid-connection list", name, resourceGroup);
     }
 
     /**
@@ -1089,15 +1057,13 @@ export class az_functionapp_hybrid_connection implements ICommandParent<any> {
      * @param {string} namespace Hybrid connection namespace.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_hybrid_connection_remove(hybridConnection: string, name: string, namespace: string, resourceGroup: string): az_functionapp_hybrid_connection_remove_command_builder {
-        return new az_functionapp_hybrid_connection_remove_command_builder(this, hybridConnection, name, namespace, resourceGroup);
+    static az_functionapp_hybrid_connection_remove(hybridConnection: string, name: string, namespace: string, resourceGroup: string): az_functionapp_hybrid_connection_remove_command_builder {
+        return new az_functionapp_hybrid_connection_remove_command_builder("az functionapp hybrid-connection remove", hybridConnection, name, namespace, resourceGroup);
     }
 }
 
 /** Manage web app's managed service identity. */
-export class az_functionapp_identity implements ICommandParent<any> {
-    commandPath = "az functionapp identity";
-
+export class az_functionapp_identity {
     /**
      * Assign managed service identity to the web app.
      *
@@ -1113,8 +1079,8 @@ export class az_functionapp_identity implements ICommandParent<any> {
      *                                [--subscription]
      * ```
      */
-    az_functionapp_identity_assign(): az_functionapp_identity_assign_command_builder {
-        return new az_functionapp_identity_assign_command_builder(this);
+    static az_functionapp_identity_assign(): az_functionapp_identity_assign_command_builder {
+        return new az_functionapp_identity_assign_command_builder("az functionapp identity assign");
     }
 
     /**
@@ -1130,8 +1096,8 @@ export class az_functionapp_identity implements ICommandParent<any> {
      *                                [--subscription]
      * ```
      */
-    az_functionapp_identity_remove(): az_functionapp_identity_remove_command_builder {
-        return new az_functionapp_identity_remove_command_builder(this);
+    static az_functionapp_identity_remove(): az_functionapp_identity_remove_command_builder {
+        return new az_functionapp_identity_remove_command_builder("az functionapp identity remove");
     }
 
     /**
@@ -1147,15 +1113,13 @@ export class az_functionapp_identity implements ICommandParent<any> {
      *                              [--subscription]
      * ```
      */
-    az_functionapp_identity_show(): az_functionapp_identity_show_command_builder {
-        return new az_functionapp_identity_show_command_builder(this);
+    static az_functionapp_identity_show(): az_functionapp_identity_show_command_builder {
+        return new az_functionapp_identity_show_command_builder("az functionapp identity show");
     }
 }
 
 /** Manage function app keys. */
-export class az_functionapp_keys implements ICommandParent<any> {
-    commandPath = "az functionapp keys";
-
+export class az_functionapp_keys {
     /**
      * Delete a function app key.
      *
@@ -1174,8 +1138,8 @@ export class az_functionapp_keys implements ICommandParent<any> {
      * @param {string} name Name of the function app.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_keys_delete(keyName: string, keyType: 'functionKeys' | 'masterKey' | 'systemKey', name: string, resourceGroup: string): az_functionapp_keys_delete_command_builder {
-        return new az_functionapp_keys_delete_command_builder(this, keyName, keyType, name, resourceGroup);
+    static az_functionapp_keys_delete(keyName: string, keyType: 'functionKeys' | 'masterKey' | 'systemKey', name: string, resourceGroup: string): az_functionapp_keys_delete_command_builder {
+        return new az_functionapp_keys_delete_command_builder("az functionapp keys delete", keyName, keyType, name, resourceGroup);
     }
 
     /**
@@ -1193,8 +1157,8 @@ export class az_functionapp_keys implements ICommandParent<any> {
      * @param {string} name Name of the function app.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_keys_list(name: string, resourceGroup: string): az_functionapp_keys_list_command_builder {
-        return new az_functionapp_keys_list_command_builder(this, name, resourceGroup);
+    static az_functionapp_keys_list(name: string, resourceGroup: string): az_functionapp_keys_list_command_builder {
+        return new az_functionapp_keys_list_command_builder("az functionapp keys list", name, resourceGroup);
     }
 
     /**
@@ -1216,15 +1180,13 @@ export class az_functionapp_keys implements ICommandParent<any> {
      * @param {string} name Name of the function app.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_keys_set(keyName: string, keyType: 'functionKeys' | 'masterKey' | 'systemKey', name: string, resourceGroup: string): az_functionapp_keys_set_command_builder {
-        return new az_functionapp_keys_set_command_builder(this, keyName, keyType, name, resourceGroup);
+    static az_functionapp_keys_set(keyName: string, keyType: 'functionKeys' | 'masterKey' | 'systemKey', name: string, resourceGroup: string): az_functionapp_keys_set_command_builder {
+        return new az_functionapp_keys_set_command_builder("az functionapp keys set", keyName, keyType, name, resourceGroup);
     }
 }
 
 /** Manage function app deployment logs. */
-export class az_functionapp_log_deployment implements ICommandParent<any> {
-    commandPath = "az functionapp log deployment";
-
+export class az_functionapp_log_deployment {
     /**
      * List deployment logs of the deployments associated with function app.
      *
@@ -1240,8 +1202,8 @@ export class az_functionapp_log_deployment implements ICommandParent<any> {
      * @param {string} name Name of the function app.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_log_deployment_list(name: string, resourceGroup: string): az_functionapp_log_deployment_list_command_builder {
-        return new az_functionapp_log_deployment_list_command_builder(this, name, resourceGroup);
+    static az_functionapp_log_deployment_list(name: string, resourceGroup: string): az_functionapp_log_deployment_list_command_builder {
+        return new az_functionapp_log_deployment_list_command_builder("az functionapp log deployment list", name, resourceGroup);
     }
 
     /**
@@ -1260,8 +1222,8 @@ export class az_functionapp_log_deployment implements ICommandParent<any> {
      * @param {string} name Name of the function app.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_log_deployment_show(name: string, resourceGroup: string): az_functionapp_log_deployment_show_command_builder {
-        return new az_functionapp_log_deployment_show_command_builder(this, name, resourceGroup);
+    static az_functionapp_log_deployment_show(name: string, resourceGroup: string): az_functionapp_log_deployment_show_command_builder {
+        return new az_functionapp_log_deployment_show_command_builder("az functionapp log deployment show", name, resourceGroup);
     }
 }
 
@@ -1270,9 +1232,7 @@ export class az_functionapp_log {
 }
 
 /** Manage App Service Plans for an Azure Function. */
-export class az_functionapp_plan implements ICommandParent<any> {
-    commandPath = "az functionapp plan";
-
+export class az_functionapp_plan {
     /**
      * Create an App Service Plan for an Azure Function.
      *
@@ -1293,8 +1253,8 @@ export class az_functionapp_plan implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} sku The SKU of the app service plan.
      */
-    az_functionapp_plan_create(name: string, resourceGroup: string, sku: string): az_functionapp_plan_create_command_builder {
-        return new az_functionapp_plan_create_command_builder(this, name, resourceGroup, sku);
+    static az_functionapp_plan_create(name: string, resourceGroup: string, sku: string): az_functionapp_plan_create_command_builder {
+        return new az_functionapp_plan_create_command_builder("az functionapp plan create", name, resourceGroup, sku);
     }
 
     /**
@@ -1309,8 +1269,8 @@ export class az_functionapp_plan implements ICommandParent<any> {
      *                            [--yes]
      * ```
      */
-    az_functionapp_plan_delete(): az_functionapp_plan_delete_command_builder {
-        return new az_functionapp_plan_delete_command_builder(this);
+    static az_functionapp_plan_delete(): az_functionapp_plan_delete_command_builder {
+        return new az_functionapp_plan_delete_command_builder("az functionapp plan delete");
     }
 
     /**
@@ -1323,8 +1283,8 @@ export class az_functionapp_plan implements ICommandParent<any> {
      *                          [--subscription]
      * ```
      */
-    az_functionapp_plan_list(): az_functionapp_plan_list_command_builder {
-        return new az_functionapp_plan_list_command_builder(this);
+    static az_functionapp_plan_list(): az_functionapp_plan_list_command_builder {
+        return new az_functionapp_plan_list_command_builder("az functionapp plan list");
     }
 
     /**
@@ -1339,8 +1299,8 @@ export class az_functionapp_plan implements ICommandParent<any> {
      *                          [--subscription]
      * ```
      */
-    az_functionapp_plan_show(): az_functionapp_plan_show_command_builder {
-        return new az_functionapp_plan_show_command_builder(this);
+    static az_functionapp_plan_show(): az_functionapp_plan_show_command_builder {
+        return new az_functionapp_plan_show_command_builder("az functionapp plan show");
     }
 
     /**
@@ -1361,15 +1321,13 @@ export class az_functionapp_plan implements ICommandParent<any> {
      *                            [--subscription]
      * ```
      */
-    az_functionapp_plan_update(): az_functionapp_plan_update_command_builder {
-        return new az_functionapp_plan_update_command_builder(this);
+    static az_functionapp_plan_update(): az_functionapp_plan_update_command_builder {
+        return new az_functionapp_plan_update_command_builder("az functionapp plan update");
     }
 }
 
 /** Methods that list, add, and remove virtual networks integrations from a functionapp. */
-export class az_functionapp_vnet_integration implements ICommandParent<any> {
-    commandPath = "az functionapp vnet-integration";
-
+export class az_functionapp_vnet_integration {
     /**
      * Add a regional virtual network integration to a functionapp.
      *
@@ -1388,8 +1346,8 @@ export class az_functionapp_vnet_integration implements ICommandParent<any> {
      * @param {string} subnet The name of the subnet.
      * @param {string} vnet The name or resource ID of the Vnet.
      */
-    az_functionapp_vnet_integration_add(name: string, resourceGroup: string, subnet: string, vnet: string): az_functionapp_vnet_integration_add_command_builder {
-        return new az_functionapp_vnet_integration_add_command_builder(this, name, resourceGroup, subnet, vnet);
+    static az_functionapp_vnet_integration_add(name: string, resourceGroup: string, subnet: string, vnet: string): az_functionapp_vnet_integration_add_command_builder {
+        return new az_functionapp_vnet_integration_add_command_builder("az functionapp vnet-integration add", name, resourceGroup, subnet, vnet);
     }
 
     /**
@@ -1407,8 +1365,8 @@ export class az_functionapp_vnet_integration implements ICommandParent<any> {
      * @param {string} name Name of the function app.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_vnet_integration_list(name: string, resourceGroup: string): az_functionapp_vnet_integration_list_command_builder {
-        return new az_functionapp_vnet_integration_list_command_builder(this, name, resourceGroup);
+    static az_functionapp_vnet_integration_list(name: string, resourceGroup: string): az_functionapp_vnet_integration_list_command_builder {
+        return new az_functionapp_vnet_integration_list_command_builder("az functionapp vnet-integration list", name, resourceGroup);
     }
 
     /**
@@ -1425,15 +1383,13 @@ export class az_functionapp_vnet_integration implements ICommandParent<any> {
      * @param {string} name Name of the function app.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_functionapp_vnet_integration_remove(name: string, resourceGroup: string): az_functionapp_vnet_integration_remove_command_builder {
-        return new az_functionapp_vnet_integration_remove_command_builder(this, name, resourceGroup);
+    static az_functionapp_vnet_integration_remove(name: string, resourceGroup: string): az_functionapp_vnet_integration_remove_command_builder {
+        return new az_functionapp_vnet_integration_remove_command_builder("az functionapp vnet-integration remove", name, resourceGroup);
     }
 }
 
 /** Manage function apps. To install the Azure Functions Core tools see <a href="https://github.com/Azure/azure-functions-core-tools">https://github.com/Azure/azure-functions-core-tools</a>. */
-export class az_functionapp implements ICommandParent<any> {
-    commandPath = "az functionapp";
-
+export class az_functionapp {
     /**
      * Create a function app.
      *
@@ -1468,8 +1424,8 @@ export class az_functionapp implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} storageAccount Provide a string value of a Storage Account in the provided Resource Group. Or Resource ID of a Storage Account in a different Resource Group.
      */
-    az_functionapp_create(name: string, resourceGroup: string, storageAccount: string): az_functionapp_create_command_builder {
-        return new az_functionapp_create_command_builder(this, name, resourceGroup, storageAccount);
+    static az_functionapp_create(name: string, resourceGroup: string, storageAccount: string): az_functionapp_create_command_builder {
+        return new az_functionapp_create_command_builder("az functionapp create", name, resourceGroup, storageAccount);
     }
 
     /**
@@ -1484,8 +1440,8 @@ export class az_functionapp implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_functionapp_delete(): az_functionapp_delete_command_builder {
-        return new az_functionapp_delete_command_builder(this);
+    static az_functionapp_delete(): az_functionapp_delete_command_builder {
+        return new az_functionapp_delete_command_builder("az functionapp delete");
     }
 
     /**
@@ -1498,8 +1454,8 @@ export class az_functionapp implements ICommandParent<any> {
      *                     [--subscription]
      * ```
      */
-    az_functionapp_list(): az_functionapp_list_command_builder {
-        return new az_functionapp_list_command_builder(this);
+    static az_functionapp_list(): az_functionapp_list_command_builder {
+        return new az_functionapp_list_command_builder("az functionapp list");
     }
 
     /**
@@ -1510,8 +1466,8 @@ export class az_functionapp implements ICommandParent<any> {
      * az functionapp list-consumption-locations [--subscription]
      * ```
      */
-    az_functionapp_list_consumption_locations(): az_functionapp_list_consumption_locations_command_builder {
-        return new az_functionapp_list_consumption_locations_command_builder(this);
+    static az_functionapp_list_consumption_locations(): az_functionapp_list_consumption_locations_command_builder {
+        return new az_functionapp_list_consumption_locations_command_builder("az functionapp list-consumption-locations");
     }
 
     /**
@@ -1526,8 +1482,8 @@ export class az_functionapp implements ICommandParent<any> {
      *                        [--subscription]
      * ```
      */
-    az_functionapp_restart(): az_functionapp_restart_command_builder {
-        return new az_functionapp_restart_command_builder(this);
+    static az_functionapp_restart(): az_functionapp_restart_command_builder {
+        return new az_functionapp_restart_command_builder("az functionapp restart");
     }
 
     /**
@@ -1543,8 +1499,8 @@ export class az_functionapp implements ICommandParent<any> {
      *                     [--subscription]
      * ```
      */
-    az_functionapp_show(): az_functionapp_show_command_builder {
-        return new az_functionapp_show_command_builder(this);
+    static az_functionapp_show(): az_functionapp_show_command_builder {
+        return new az_functionapp_show_command_builder("az functionapp show");
     }
 
     /**
@@ -1559,8 +1515,8 @@ export class az_functionapp implements ICommandParent<any> {
      *                      [--subscription]
      * ```
      */
-    az_functionapp_start(): az_functionapp_start_command_builder {
-        return new az_functionapp_start_command_builder(this);
+    static az_functionapp_start(): az_functionapp_start_command_builder {
+        return new az_functionapp_start_command_builder("az functionapp start");
     }
 
     /**
@@ -1575,8 +1531,8 @@ export class az_functionapp implements ICommandParent<any> {
      *                     [--subscription]
      * ```
      */
-    az_functionapp_stop(): az_functionapp_stop_command_builder {
-        return new az_functionapp_stop_command_builder(this);
+    static az_functionapp_stop(): az_functionapp_stop_command_builder {
+        return new az_functionapp_stop_command_builder("az functionapp stop");
     }
 
     /**
@@ -1595,8 +1551,8 @@ export class az_functionapp implements ICommandParent<any> {
      *                       [--subscription]
      * ```
      */
-    az_functionapp_update(): az_functionapp_update_command_builder {
-        return new az_functionapp_update_command_builder(this);
+    static az_functionapp_update(): az_functionapp_update_command_builder {
+        return new az_functionapp_update_command_builder("az functionapp update");
     }
 }
 
@@ -1624,7 +1580,7 @@ export class az_functionapp implements ICommandParent<any> {
  * @param {string} priority Priority of the access restriction rule.
  */
 class az_functionapp_config_access_restriction_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, priority: string) {
+    constructor(commandPath: string, priority: string) {
         super(commandParent);
         this.priority(priority)
     }
@@ -1733,7 +1689,7 @@ class az_functionapp_config_access_restriction_add_command_builder extends Comma
  * ```
  */
 class az_functionapp_config_access_restriction_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1820,7 +1776,7 @@ class az_functionapp_config_access_restriction_remove_command_builder extends Co
  * @param {boolean} useSameRestrictionsForScmSite Use same access restrictions for scm site.
  */
 class az_functionapp_config_access_restriction_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, useSameRestrictionsForScmSite: boolean) {
+    constructor(commandPath: string, useSameRestrictionsForScmSite: boolean) {
         super(commandParent);
         this.useSameRestrictionsForScmSite(useSameRestrictionsForScmSite)
     }
@@ -1876,7 +1832,7 @@ class az_functionapp_config_access_restriction_set_command_builder extends Comma
  * ```
  */
 class az_functionapp_config_access_restriction_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1933,7 +1889,7 @@ class az_functionapp_config_access_restriction_show_command_builder extends Comm
  * @param {string} settingNames Space-separated app setting names.
  */
 class az_functionapp_config_appsettings_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, settingNames: string) {
+    constructor(commandPath: string, settingNames: string) {
         super(commandParent);
         this.settingNames(settingNames)
     }
@@ -1991,7 +1947,7 @@ class az_functionapp_config_appsettings_delete_command_builder extends CommandBu
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_config_appsettings_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2043,7 +1999,7 @@ class az_functionapp_config_appsettings_list_command_builder extends CommandBuil
  * ```
  */
 class az_functionapp_config_appsettings_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2103,7 +2059,7 @@ class az_functionapp_config_appsettings_set_command_builder extends CommandBuild
  * ```
  */
 class az_functionapp_config_container_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2155,7 +2111,7 @@ class az_functionapp_config_container_delete_command_builder extends CommandBuil
  * ```
  */
 class az_functionapp_config_container_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2228,7 +2184,7 @@ class az_functionapp_config_container_set_command_builder extends CommandBuilder
  * ```
  */
 class az_functionapp_config_container_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2283,7 +2239,7 @@ class az_functionapp_config_container_show_command_builder extends CommandBuilde
  * ```
  */
 class az_functionapp_config_hostname_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2338,7 +2294,7 @@ class az_functionapp_config_hostname_add_command_builder extends CommandBuilder 
  * ```
  */
 class az_functionapp_config_hostname_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2391,7 +2347,7 @@ class az_functionapp_config_hostname_delete_command_builder extends CommandBuild
  * ```
  */
 class az_functionapp_config_hostname_get_external_ip_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -2436,7 +2392,7 @@ class az_functionapp_config_hostname_get_external_ip_command_builder extends Com
  * @param {string} webappName Name of the web app. You can configure the default using `az configure --defaults web=<name>`.
  */
 class az_functionapp_config_hostname_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string, webappName: string) {
+    constructor(commandPath: string, resourceGroup: string, webappName: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
         this.webappName(webappName)
@@ -2491,7 +2447,7 @@ class az_functionapp_config_hostname_list_command_builder extends CommandBuilder
  * @param {'IP' | 'SNI'} sslType The ssl cert type.
  */
 class az_functionapp_config_ssl_bind_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, certificateThumbprint: string, sslType: 'IP' | 'SNI') {
+    constructor(commandPath: string, certificateThumbprint: string, sslType: 'IP' | 'SNI') {
         super(commandParent);
         this.certificateThumbprint(certificateThumbprint)
         this.sslType(sslType)
@@ -2557,7 +2513,7 @@ class az_functionapp_config_ssl_bind_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_config_ssl_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, hostname: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, hostname: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.hostname(hostname)
         this.name(name)
@@ -2609,7 +2565,7 @@ class az_functionapp_config_ssl_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_config_ssl_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, certificateThumbprint: string, resourceGroup: string) {
+    constructor(commandPath: string, certificateThumbprint: string, resourceGroup: string) {
         super(commandParent);
         this.certificateThumbprint(certificateThumbprint)
         this.resourceGroup(resourceGroup)
@@ -2651,7 +2607,7 @@ class az_functionapp_config_ssl_delete_command_builder extends CommandBuilder {
  * @param {string} keyVaultCertificateName The name of the certificate in Key Vault.
  */
 class az_functionapp_config_ssl_import_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, keyVault: string, keyVaultCertificateName: string) {
+    constructor(commandPath: string, keyVault: string, keyVaultCertificateName: string) {
         super(commandParent);
         this.keyVault(keyVault)
         this.keyVaultCertificateName(keyVaultCertificateName)
@@ -2707,7 +2663,7 @@ class az_functionapp_config_ssl_import_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_config_ssl_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, resourceGroup: string) {
+    constructor(commandPath: string, resourceGroup: string) {
         super(commandParent);
         this.resourceGroup(resourceGroup)
     }
@@ -2747,7 +2703,7 @@ class az_functionapp_config_ssl_list_command_builder extends CommandBuilder {
  * @param {string} certificateThumbprint The ssl cert thumbprint.
  */
 class az_functionapp_config_ssl_unbind_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, certificateThumbprint: string) {
+    constructor(commandPath: string, certificateThumbprint: string) {
         super(commandParent);
         this.certificateThumbprint(certificateThumbprint)
     }
@@ -2807,7 +2763,7 @@ class az_functionapp_config_ssl_unbind_command_builder extends CommandBuilder {
  * @param {string} certificatePassword The ssl cert password.
  */
 class az_functionapp_config_ssl_upload_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, certificateFile: string, certificatePassword: string) {
+    constructor(commandPath: string, certificateFile: string, certificatePassword: string) {
         super(commandParent);
         this.certificateFile(certificateFile)
         this.certificatePassword(certificatePassword)
@@ -2888,7 +2844,7 @@ class az_functionapp_config_ssl_upload_command_builder extends CommandBuilder {
  * ```
  */
 class az_functionapp_config_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3051,7 +3007,7 @@ class az_functionapp_config_set_command_builder extends CommandBuilder {
  * ```
  */
 class az_functionapp_config_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3108,7 +3064,7 @@ class az_functionapp_config_show_command_builder extends CommandBuilder {
  * @param {string} allowedOrigins Space separated origins that should be allowed to make cross-origin calls (for example: <a href="http://example.com:12345">http://example.com:12345</a>). To allow all, use "\*" and remove all other origins from the list.
  */
 class az_functionapp_cors_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, allowedOrigins: string) {
+    constructor(commandPath: string, allowedOrigins: string) {
         super(commandParent);
         this.allowedOrigins(allowedOrigins)
     }
@@ -3166,7 +3122,7 @@ class az_functionapp_cors_add_command_builder extends CommandBuilder {
  * @param {string} allowedOrigins Space separated origins that should be allowed to make cross-origin calls (for example: <a href="http://example.com:12345">http://example.com:12345</a>). To allow all, use "\*" and remove all other origins from the list.
  */
 class az_functionapp_cors_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, allowedOrigins: string) {
+    constructor(commandPath: string, allowedOrigins: string) {
         super(commandParent);
         this.allowedOrigins(allowedOrigins)
     }
@@ -3222,7 +3178,7 @@ class az_functionapp_cors_remove_command_builder extends CommandBuilder {
  * ```
  */
 class az_functionapp_cors_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3279,7 +3235,7 @@ class az_functionapp_cors_show_command_builder extends CommandBuilder {
  * @param {boolean} enableCd Enable/disable continuous deployment.
  */
 class az_functionapp_deployment_container_config_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, enableCd: boolean) {
+    constructor(commandPath: string, enableCd: boolean) {
         super(commandParent);
         this.enableCd(enableCd)
     }
@@ -3334,7 +3290,7 @@ class az_functionapp_deployment_container_config_command_builder extends Command
  * ```
  */
 class az_functionapp_deployment_container_show_cd_url_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3386,7 +3342,7 @@ class az_functionapp_deployment_container_show_cd_url_command_builder extends Co
  * @param {string} slot The name of the slot.
  */
 class az_functionapp_deployment_slot_auto_swap_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, slot: string) {
+    constructor(commandPath: string, slot: string) {
         super(commandParent);
         this.slot(slot)
     }
@@ -3451,7 +3407,7 @@ class az_functionapp_deployment_slot_auto_swap_command_builder extends CommandBu
  * @param {string} slot The name of the slot.
  */
 class az_functionapp_deployment_slot_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, slot: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, slot: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3504,7 +3460,7 @@ class az_functionapp_deployment_slot_create_command_builder extends CommandBuild
  * @param {string} slot The name of the slot.
  */
 class az_functionapp_deployment_slot_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, slot: string) {
+    constructor(commandPath: string, slot: string) {
         super(commandParent);
         this.slot(slot)
     }
@@ -3553,7 +3509,7 @@ class az_functionapp_deployment_slot_delete_command_builder extends CommandBuild
  * ```
  */
 class az_functionapp_deployment_slot_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3605,7 +3561,7 @@ class az_functionapp_deployment_slot_list_command_builder extends CommandBuilder
  * @param {string} slot The name of the slot.
  */
 class az_functionapp_deployment_slot_swap_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, slot: string) {
+    constructor(commandPath: string, slot: string) {
         super(commandParent);
         this.slot(slot)
     }
@@ -3684,7 +3640,7 @@ class az_functionapp_deployment_slot_swap_command_builder extends CommandBuilder
  * @param {string} repoUrl Repository url to pull the latest source from, e.g. <a href="https://github.com/foo/foo-web">https://github.com/foo/foo-web</a>.
  */
 class az_functionapp_deployment_source_config_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, repoUrl: string) {
+    constructor(commandPath: string, repoUrl: string) {
         super(commandParent);
         this.repoUrl(repoUrl)
     }
@@ -3829,7 +3785,7 @@ class az_functionapp_deployment_source_config_command_builder extends CommandBui
  * ```
  */
 class az_functionapp_deployment_source_config_local_git_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3882,7 +3838,7 @@ class az_functionapp_deployment_source_config_local_git_command_builder extends 
  * @param {string} src A zip file path for deployment.
  */
 class az_functionapp_deployment_source_config_zip_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, src: string) {
+    constructor(commandPath: string, src: string) {
         super(commandParent);
         this.src(src)
     }
@@ -3949,7 +3905,7 @@ class az_functionapp_deployment_source_config_zip_command_builder extends Comman
  * ```
  */
 class az_functionapp_deployment_source_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -3998,7 +3954,7 @@ class az_functionapp_deployment_source_delete_command_builder extends CommandBui
  * ```
  */
 class az_functionapp_deployment_source_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4052,7 +4008,7 @@ class az_functionapp_deployment_source_show_command_builder extends CommandBuild
  * ```
  */
 class az_functionapp_deployment_source_sync_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4097,7 +4053,7 @@ class az_functionapp_deployment_source_sync_command_builder extends CommandBuild
  * ```
  */
 class az_functionapp_deployment_source_update_token_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4127,7 +4083,7 @@ class az_functionapp_deployment_source_update_token_command_builder extends Comm
  * @param {string} userName User name.
  */
 class az_functionapp_deployment_user_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, userName: string) {
+    constructor(commandPath: string, userName: string) {
         super(commandParent);
         this.userName(userName)
     }
@@ -4161,7 +4117,7 @@ class az_functionapp_deployment_user_set_command_builder extends CommandBuilder 
  * ```
  */
 class az_functionapp_deployment_user_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4191,7 +4147,7 @@ class az_functionapp_deployment_user_show_command_builder extends CommandBuilder
  * ```
  */
 class az_functionapp_deployment_list_publishing_credentials_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4240,7 +4196,7 @@ class az_functionapp_deployment_list_publishing_credentials_command_builder exte
  * ```
  */
 class az_functionapp_deployment_list_publishing_profiles_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4298,7 +4254,7 @@ class az_functionapp_deployment_list_publishing_profiles_command_builder extends
  * ```
  */
 class az_functionapp_devops_pipeline_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4375,7 +4331,7 @@ class az_functionapp_devops_pipeline_create_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_function_keys_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, keyName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, keyName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.keyName(keyName)
         this.name(name)
@@ -4437,7 +4393,7 @@ class az_functionapp_function_keys_delete_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_function_keys_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, functionName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, functionName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.functionName(functionName)
         this.name(name)
@@ -4501,7 +4457,7 @@ class az_functionapp_function_keys_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_function_keys_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, functionName: string, keyName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, functionName: string, keyName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.functionName(functionName)
         this.keyName(keyName)
@@ -4568,7 +4524,7 @@ class az_functionapp_function_keys_set_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_function_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, functionName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, functionName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.functionName(functionName)
         this.name(name)
@@ -4617,7 +4573,7 @@ class az_functionapp_function_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_function_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, functionName: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, functionName: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.functionName(functionName)
         this.name(name)
@@ -4674,7 +4630,7 @@ class az_functionapp_function_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_hybrid_connection_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, hybridConnection: string, name: string, namespace: string, resourceGroup: string) {
+    constructor(commandPath: string, hybridConnection: string, name: string, namespace: string, resourceGroup: string) {
         super(commandParent);
         this.hybridConnection(hybridConnection)
         this.name(name)
@@ -4735,7 +4691,7 @@ class az_functionapp_hybrid_connection_add_command_builder extends CommandBuilde
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_hybrid_connection_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4791,7 +4747,7 @@ class az_functionapp_hybrid_connection_list_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_hybrid_connection_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, hybridConnection: string, name: string, namespace: string, resourceGroup: string) {
+    constructor(commandPath: string, hybridConnection: string, name: string, namespace: string, resourceGroup: string) {
         super(commandParent);
         this.hybridConnection(hybridConnection)
         this.name(name)
@@ -4852,7 +4808,7 @@ class az_functionapp_hybrid_connection_remove_command_builder extends CommandBui
  * ```
  */
 class az_functionapp_identity_assign_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4919,7 +4875,7 @@ class az_functionapp_identity_assign_command_builder extends CommandBuilder {
  * ```
  */
 class az_functionapp_identity_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -4974,7 +4930,7 @@ class az_functionapp_identity_remove_command_builder extends CommandBuilder {
  * ```
  */
 class az_functionapp_identity_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5034,7 +4990,7 @@ class az_functionapp_identity_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_keys_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, keyName: string, keyType: 'functionKeys' | 'masterKey' | 'systemKey', name: string, resourceGroup: string) {
+    constructor(commandPath: string, keyName: string, keyType: 'functionKeys' | 'masterKey' | 'systemKey', name: string, resourceGroup: string) {
         super(commandParent);
         this.keyName(keyName)
         this.keyType(keyType)
@@ -5095,7 +5051,7 @@ class az_functionapp_keys_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_keys_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -5152,7 +5108,7 @@ class az_functionapp_keys_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_keys_set_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, keyName: string, keyType: 'functionKeys' | 'masterKey' | 'systemKey', name: string, resourceGroup: string) {
+    constructor(commandPath: string, keyName: string, keyType: 'functionKeys' | 'masterKey' | 'systemKey', name: string, resourceGroup: string) {
         super(commandParent);
         this.keyName(keyName)
         this.keyType(keyType)
@@ -5219,7 +5175,7 @@ class az_functionapp_keys_set_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_log_deployment_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -5273,7 +5229,7 @@ class az_functionapp_log_deployment_list_command_builder extends CommandBuilder 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_log_deployment_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -5337,7 +5293,7 @@ class az_functionapp_log_deployment_show_command_builder extends CommandBuilder 
  * @param {string} sku The SKU of the app service plan.
  */
 class az_functionapp_plan_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, sku: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, sku: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -5412,7 +5368,7 @@ class az_functionapp_plan_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_functionapp_plan_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5458,7 +5414,7 @@ class az_functionapp_plan_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_functionapp_plan_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5494,7 +5450,7 @@ class az_functionapp_plan_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_functionapp_plan_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5548,7 +5504,7 @@ class az_functionapp_plan_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_functionapp_plan_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -5638,7 +5594,7 @@ class az_functionapp_plan_update_command_builder extends CommandBuilder {
  * @param {string} vnet The name or resource ID of the Vnet.
  */
 class az_functionapp_vnet_integration_add_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, subnet: string, vnet: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, subnet: string, vnet: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -5699,7 +5655,7 @@ class az_functionapp_vnet_integration_add_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_vnet_integration_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -5751,7 +5707,7 @@ class az_functionapp_vnet_integration_list_command_builder extends CommandBuilde
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_functionapp_vnet_integration_remove_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -5817,7 +5773,7 @@ class az_functionapp_vnet_integration_remove_command_builder extends CommandBuil
  * @param {string} storageAccount Provide a string value of a Storage Account in the provided Resource Group. Or Resource ID of a Storage Account in a different Resource Group.
  */
 class az_functionapp_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, storageAccount: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, storageAccount: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -5976,7 +5932,7 @@ class az_functionapp_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_functionapp_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -6022,7 +5978,7 @@ class az_functionapp_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_functionapp_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -6054,7 +6010,7 @@ class az_functionapp_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_functionapp_list_consumption_locations_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -6078,7 +6034,7 @@ class az_functionapp_list_consumption_locations_command_builder extends CommandB
  * ```
  */
 class az_functionapp_restart_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -6127,7 +6083,7 @@ class az_functionapp_restart_command_builder extends CommandBuilder {
  * ```
  */
 class az_functionapp_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -6181,7 +6137,7 @@ class az_functionapp_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_functionapp_start_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -6229,7 +6185,7 @@ class az_functionapp_start_command_builder extends CommandBuilder {
  * ```
  */
 class az_functionapp_stop_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -6281,7 +6237,7 @@ class az_functionapp_stop_command_builder extends CommandBuilder {
  * ```
  */
 class az_functionapp_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 

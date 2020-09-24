@@ -1,9 +1,7 @@
-import { CommandBuilder, ICommandParent } from '../base';
+import { CommandBuilder } from '../base';
 
 /** Manage App Service Environments v2. */
-export class az_appservice_ase implements ICommandParent<any> {
-    commandPath = "az appservice ase";
-
+export class az_appservice_ase {
     /**
      * Create app service environment.
      *
@@ -30,8 +28,8 @@ export class az_appservice_ase implements ICommandParent<any> {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} subnet Name or ID of existing subnet. To create vnet and/or subnet                    use `az network vnet [subnet] create`.
      */
-    az_appservice_ase_create(name: string, resourceGroup: string, subnet: string): az_appservice_ase_create_command_builder {
-        return new az_appservice_ase_create_command_builder(this, name, resourceGroup, subnet);
+    static az_appservice_ase_create(name: string, resourceGroup: string, subnet: string): az_appservice_ase_create_command_builder {
+        return new az_appservice_ase_create_command_builder("az appservice ase create", name, resourceGroup, subnet);
     }
 
     /**
@@ -48,8 +46,8 @@ export class az_appservice_ase implements ICommandParent<any> {
      *
      * @param {string} name Name of the app service environment.
      */
-    az_appservice_ase_delete(name: string): az_appservice_ase_delete_command_builder {
-        return new az_appservice_ase_delete_command_builder(this, name);
+    static az_appservice_ase_delete(name: string): az_appservice_ase_delete_command_builder {
+        return new az_appservice_ase_delete_command_builder("az appservice ase delete", name);
     }
 
     /**
@@ -62,8 +60,8 @@ export class az_appservice_ase implements ICommandParent<any> {
      *                        [--subscription]
      * ```
      */
-    az_appservice_ase_list(): az_appservice_ase_list_command_builder {
-        return new az_appservice_ase_list_command_builder(this);
+    static az_appservice_ase_list(): az_appservice_ase_list_command_builder {
+        return new az_appservice_ase_list_command_builder("az appservice ase list");
     }
 
     /**
@@ -78,8 +76,8 @@ export class az_appservice_ase implements ICommandParent<any> {
      *
      * @param {string} name Name of the app service environment.
      */
-    az_appservice_ase_list_addresses(name: string): az_appservice_ase_list_addresses_command_builder {
-        return new az_appservice_ase_list_addresses_command_builder(this, name);
+    static az_appservice_ase_list_addresses(name: string): az_appservice_ase_list_addresses_command_builder {
+        return new az_appservice_ase_list_addresses_command_builder("az appservice ase list-addresses", name);
     }
 
     /**
@@ -94,8 +92,8 @@ export class az_appservice_ase implements ICommandParent<any> {
      *
      * @param {string} name Name of the app service environment.
      */
-    az_appservice_ase_list_plans(name: string): az_appservice_ase_list_plans_command_builder {
-        return new az_appservice_ase_list_plans_command_builder(this, name);
+    static az_appservice_ase_list_plans(name: string): az_appservice_ase_list_plans_command_builder {
+        return new az_appservice_ase_list_plans_command_builder("az appservice ase list-plans", name);
     }
 
     /**
@@ -111,8 +109,8 @@ export class az_appservice_ase implements ICommandParent<any> {
      *
      * @param {string} name Name of the app service environment.
      */
-    az_appservice_ase_show(name: string): az_appservice_ase_show_command_builder {
-        return new az_appservice_ase_show_command_builder(this, name);
+    static az_appservice_ase_show(name: string): az_appservice_ase_show_command_builder {
+        return new az_appservice_ase_show_command_builder("az appservice ase show", name);
     }
 
     /**
@@ -130,15 +128,13 @@ export class az_appservice_ase implements ICommandParent<any> {
      *
      * @param {string} name Name of the app service environment.
      */
-    az_appservice_ase_update(name: string): az_appservice_ase_update_command_builder {
-        return new az_appservice_ase_update_command_builder(this, name);
+    static az_appservice_ase_update(name: string): az_appservice_ase_update_command_builder {
+        return new az_appservice_ase_update_command_builder("az appservice ase update", name);
     }
 }
 
 /** A method that sets the key a hybrid-connection uses. */
-export class az_appservice_hybrid_connection implements ICommandParent<any> {
-    commandPath = "az appservice hybrid-connection";
-
+export class az_appservice_hybrid_connection {
     /**
      * Set the key that all apps in an appservice plan use to connect to the hybrid-connections in that appservice plan.
      *
@@ -158,15 +154,13 @@ export class az_appservice_hybrid_connection implements ICommandParent<any> {
      * @param {string} plan AppService plan.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_appservice_hybrid_connection_set_key(hybridConnection: string, keyType: string, namespace: string, plan: string, resourceGroup: string): az_appservice_hybrid_connection_set_key_command_builder {
-        return new az_appservice_hybrid_connection_set_key_command_builder(this, hybridConnection, keyType, namespace, plan, resourceGroup);
+    static az_appservice_hybrid_connection_set_key(hybridConnection: string, keyType: string, namespace: string, plan: string, resourceGroup: string): az_appservice_hybrid_connection_set_key_command_builder {
+        return new az_appservice_hybrid_connection_set_key_command_builder("az appservice hybrid-connection set-key", hybridConnection, keyType, namespace, plan, resourceGroup);
     }
 }
 
 /** Manage app service plans. */
-export class az_appservice_plan implements ICommandParent<any> {
-    commandPath = "az appservice plan";
-
+export class az_appservice_plan {
     /**
      * Create an app service plan.
      *
@@ -189,8 +183,8 @@ export class az_appservice_plan implements ICommandParent<any> {
      * @param {string} name Name of the new app service plan.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_appservice_plan_create(name: string, resourceGroup: string): az_appservice_plan_create_command_builder {
-        return new az_appservice_plan_create_command_builder(this, name, resourceGroup);
+    static az_appservice_plan_create(name: string, resourceGroup: string): az_appservice_plan_create_command_builder {
+        return new az_appservice_plan_create_command_builder("az appservice plan create", name, resourceGroup);
     }
 
     /**
@@ -205,8 +199,8 @@ export class az_appservice_plan implements ICommandParent<any> {
      *                           [--yes]
      * ```
      */
-    az_appservice_plan_delete(): az_appservice_plan_delete_command_builder {
-        return new az_appservice_plan_delete_command_builder(this);
+    static az_appservice_plan_delete(): az_appservice_plan_delete_command_builder {
+        return new az_appservice_plan_delete_command_builder("az appservice plan delete");
     }
 
     /**
@@ -219,8 +213,8 @@ export class az_appservice_plan implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_appservice_plan_list(): az_appservice_plan_list_command_builder {
-        return new az_appservice_plan_list_command_builder(this);
+    static az_appservice_plan_list(): az_appservice_plan_list_command_builder {
+        return new az_appservice_plan_list_command_builder("az appservice plan list");
     }
 
     /**
@@ -235,8 +229,8 @@ export class az_appservice_plan implements ICommandParent<any> {
      *                         [--subscription]
      * ```
      */
-    az_appservice_plan_show(): az_appservice_plan_show_command_builder {
-        return new az_appservice_plan_show_command_builder(this);
+    static az_appservice_plan_show(): az_appservice_plan_show_command_builder {
+        return new az_appservice_plan_show_command_builder("az appservice plan show");
     }
 
     /**
@@ -257,15 +251,13 @@ export class az_appservice_plan implements ICommandParent<any> {
      *                           [--subscription]
      * ```
      */
-    az_appservice_plan_update(): az_appservice_plan_update_command_builder {
-        return new az_appservice_plan_update_command_builder(this);
+    static az_appservice_plan_update(): az_appservice_plan_update_command_builder {
+        return new az_appservice_plan_update_command_builder("az appservice plan update");
     }
 }
 
 /** A method that lists the virtual network integrations used in an appservice plan. */
-export class az_appservice_vnet_integration implements ICommandParent<any> {
-    commandPath = "az appservice vnet-integration";
-
+export class az_appservice_vnet_integration {
     /**
      * List the virtual network integrations used in an appservice plan.
      *
@@ -280,15 +272,13 @@ export class az_appservice_vnet_integration implements ICommandParent<any> {
      * @param {string} plan AppService plan.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_appservice_vnet_integration_list(plan: string, resourceGroup: string): az_appservice_vnet_integration_list_command_builder {
-        return new az_appservice_vnet_integration_list_command_builder(this, plan, resourceGroup);
+    static az_appservice_vnet_integration_list(plan: string, resourceGroup: string): az_appservice_vnet_integration_list_command_builder {
+        return new az_appservice_vnet_integration_list_command_builder("az appservice vnet-integration list", plan, resourceGroup);
     }
 }
 
 /** Manage App Service plans. */
-export class az_appservice implements ICommandParent<any> {
-    commandPath = "az appservice";
-
+export class az_appservice {
     /**
      * List regions where a plan sku is available.
      *
@@ -301,8 +291,8 @@ export class az_appservice implements ICommandParent<any> {
      *
      * @param {'B1' | 'B2' | 'B3' | 'D1' | 'F1' | 'FREE' | 'I1' | 'I2' | 'I3' | 'P1V2' | 'P1V3' | 'P2V2' | 'P2V3' | 'P3V2' | 'P3V3' | 'PC2' | 'PC3' | 'PC4' | 'S1' | 'S2' | 'S3' | 'SHARED'} sku The pricing tiers, e.g., F1(Free), D1(Shared), B1(Basic Small), B2(Basic Medium), B3(Basic Large), S1(Standard Small), P1V2(Premium V2 Small), P1V3(Premium V3 Small), P2V3(Premium V3 Medium), P3V3(Premium V3 Large), PC2 (Premium Container Small), PC3 (Premium Container Medium), PC4 (Premium Container Large), I1 (Isolated Small), I2 (Isolated Medium), I3 (Isolated Large).
      */
-    az_appservice_list_locations(sku: 'B1' | 'B2' | 'B3' | 'D1' | 'F1' | 'FREE' | 'I1' | 'I2' | 'I3' | 'P1V2' | 'P1V3' | 'P2V2' | 'P2V3' | 'P3V2' | 'P3V3' | 'PC2' | 'PC3' | 'PC4' | 'S1' | 'S2' | 'S3' | 'SHARED'): az_appservice_list_locations_command_builder {
-        return new az_appservice_list_locations_command_builder(this, sku);
+    static az_appservice_list_locations(sku: 'B1' | 'B2' | 'B3' | 'D1' | 'F1' | 'FREE' | 'I1' | 'I2' | 'I3' | 'P1V2' | 'P1V3' | 'P2V2' | 'P2V3' | 'P3V2' | 'P3V3' | 'PC2' | 'PC3' | 'PC4' | 'S1' | 'S2' | 'S3' | 'SHARED'): az_appservice_list_locations_command_builder {
+        return new az_appservice_list_locations_command_builder("az appservice list-locations", sku);
     }
 }
 
@@ -333,7 +323,7 @@ export class az_appservice implements ICommandParent<any> {
  * @param {string} subnet Name or ID of existing subnet. To create vnet and/or subnet                    use `az network vnet [subnet] create`.
  */
 class az_appservice_ase_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string, subnet: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string, subnet: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -446,7 +436,7 @@ class az_appservice_ase_create_command_builder extends CommandBuilder {
  * @param {string} name Name of the app service environment.
  */
 class az_appservice_ase_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -493,7 +483,7 @@ class az_appservice_ase_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_appservice_ase_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -529,7 +519,7 @@ class az_appservice_ase_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the app service environment.
  */
 class az_appservice_ase_list_addresses_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -566,7 +556,7 @@ class az_appservice_ase_list_addresses_command_builder extends CommandBuilder {
  * @param {string} name Name of the app service environment.
  */
 class az_appservice_ase_list_plans_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -604,7 +594,7 @@ class az_appservice_ase_list_plans_command_builder extends CommandBuilder {
  * @param {string} name Name of the app service environment.
  */
 class az_appservice_ase_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -650,7 +640,7 @@ class az_appservice_ase_show_command_builder extends CommandBuilder {
  * @param {string} name Name of the app service environment.
  */
 class az_appservice_ase_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string) {
+    constructor(commandPath: string, name: string) {
         super(commandParent);
         this.name(name)
     }
@@ -712,7 +702,7 @@ class az_appservice_ase_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_appservice_hybrid_connection_set_key_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, hybridConnection: string, keyType: string, namespace: string, plan: string, resourceGroup: string) {
+    constructor(commandPath: string, hybridConnection: string, keyType: string, namespace: string, plan: string, resourceGroup: string) {
         super(commandParent);
         this.hybridConnection(hybridConnection)
         this.keyType(keyType)
@@ -781,7 +771,7 @@ class az_appservice_hybrid_connection_set_key_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_appservice_plan_create_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, name: string, resourceGroup: string) {
+    constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandParent);
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -873,7 +863,7 @@ class az_appservice_plan_create_command_builder extends CommandBuilder {
  * ```
  */
 class az_appservice_plan_delete_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -919,7 +909,7 @@ class az_appservice_plan_delete_command_builder extends CommandBuilder {
  * ```
  */
 class az_appservice_plan_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -955,7 +945,7 @@ class az_appservice_plan_list_command_builder extends CommandBuilder {
  * ```
  */
 class az_appservice_plan_show_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1009,7 +999,7 @@ class az_appservice_plan_show_command_builder extends CommandBuilder {
  * ```
  */
 class az_appservice_plan_update_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>) {
+    constructor(commandPath: string) {
         super(commandParent);
     }
 
@@ -1095,7 +1085,7 @@ class az_appservice_plan_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_appservice_vnet_integration_list_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, plan: string, resourceGroup: string) {
+    constructor(commandPath: string, plan: string, resourceGroup: string) {
         super(commandParent);
         this.plan(plan)
         this.resourceGroup(resourceGroup)
@@ -1139,7 +1129,7 @@ class az_appservice_vnet_integration_list_command_builder extends CommandBuilder
  * @param {'B1' | 'B2' | 'B3' | 'D1' | 'F1' | 'FREE' | 'I1' | 'I2' | 'I3' | 'P1V2' | 'P1V3' | 'P2V2' | 'P2V3' | 'P3V2' | 'P3V3' | 'PC2' | 'PC3' | 'PC4' | 'S1' | 'S2' | 'S3' | 'SHARED'} sku The pricing tiers, e.g., F1(Free), D1(Shared), B1(Basic Small), B2(Basic Medium), B3(Basic Large), S1(Standard Small), P1V2(Premium V2 Small), P1V3(Premium V3 Small), P2V3(Premium V3 Medium), P3V3(Premium V3 Large), PC2 (Premium Container Small), PC3 (Premium Container Medium), PC4 (Premium Container Large), I1 (Isolated Small), I2 (Isolated Medium), I3 (Isolated Large).
  */
 class az_appservice_list_locations_command_builder extends CommandBuilder {
-    constructor(commandParent: ICommandParent<any>, sku: 'B1' | 'B2' | 'B3' | 'D1' | 'F1' | 'FREE' | 'I1' | 'I2' | 'I3' | 'P1V2' | 'P1V3' | 'P2V2' | 'P2V3' | 'P3V2' | 'P3V3' | 'PC2' | 'PC3' | 'PC4' | 'S1' | 'S2' | 'S3' | 'SHARED') {
+    constructor(commandPath: string, sku: 'B1' | 'B2' | 'B3' | 'D1' | 'F1' | 'FREE' | 'I1' | 'I2' | 'I3' | 'P1V2' | 'P1V3' | 'P2V2' | 'P2V3' | 'P3V2' | 'P3V3' | 'PC2' | 'PC3' | 'PC4' | 'S1' | 'S2' | 'S3' | 'SHARED') {
         super(commandParent);
         this.sku(sku)
     }
