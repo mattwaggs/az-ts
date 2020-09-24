@@ -3,8 +3,8 @@ export interface ICommandParent<T extends any> {
   data?: T;
 }
 
-export abstract class CommandBuilder {
-  constructor(private commandParent: ICommandParent<any>) {}
+export abstract class CommandBuilder<T = any> {
+  constructor(private commandParent: ICommandParent<T>) {}
 
   _flags: { [key: string]: string } = {};
 
@@ -12,7 +12,7 @@ export abstract class CommandBuilder {
     this._flags[key] = value;
   };
 
-  execute = (): void => {
+  execute(): void {
     const commandArgs =
       Object.keys(this._flags)
         .map((flag) => {
@@ -22,5 +22,5 @@ export abstract class CommandBuilder {
 
     const fullCommand = `${this.commandParent.commandPath} ${commandArgs}`;
     console.log("executing command: ", fullCommand);
-  };
+  }
 }
