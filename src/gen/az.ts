@@ -88,18 +88,30 @@ class azAccountManagementGroup {
     static subscription = az_account_management_group_subscription;
 }
 
-class azAccountLock {
-}
-
 class azAccountManagement {
     static group = azAccountManagementGroup;
+}
+
+class azAccount {
+    static lock = az_account_lock;
+    static management = azAccountManagement;
 }
 
 class azAcrConfigContent {
     static trust = az_acr_config_content_trust;
 }
 
-class azAcrConfigRetention {
+class azAcrConfig {
+    static content = azAcrConfigContent;
+    static retention = az_acr_config_retention;
+}
+
+class azAcrHelm {
+    static repo = az_acr_helm_repo;
+}
+
+class azAcrNetwork {
+    static rule = az_acr_network_rule;
 }
 
 class azAcrPrivateEndpoint {
@@ -110,44 +122,9 @@ class azAcrPrivateLink {
     static resource = az_acr_private_link_resource;
 }
 
-class azAcrAgentpool {
-}
-
-class azAcrConfig extends az_acr_config {
-    static retention = az_acr_config_retention;
-    static content = azAcrConfigContent;
-    static retention = azAcrConfigRetention;
-}
-
-class azAcrCredential {
-}
-
-class azAcrEncryption {
-}
-
-class azAcrHelm {
-    static repo = az_acr_helm_repo;
-}
-
-class azAcrIdentity {
-}
-
-class azAcrNetwork {
-    static rule = az_acr_network_rule;
-}
-
-class azAcrPack {
-}
-
 class azAcrPrivate {
     static endpoint = azAcrPrivateEndpoint;
     static link = azAcrPrivateLink;
-}
-
-class azAcrReplication {
-}
-
-class azAcrRepository {
 }
 
 class azAcrScope {
@@ -160,18 +137,32 @@ class azAcrTask {
     static timer = az_acr_task_timer;
 }
 
-class azAcrTaskrun {
-}
-
 class azAcrToken {
     static credential = az_acr_token_credential;
 }
 
-class azAcrWebhook {
+class azAcr {
+    static agentpool = az_acr_agentpool;
+    static config = azAcrConfig;
+    static credential = az_acr_credential;
+    static encryption = az_acr_encryption;
+    static helm = azAcrHelm;
+    static identity = az_acr_identity;
+    static network = azAcrNetwork;
+    static pack = az_acr_pack;
+    static private = azAcrPrivate;
+    static replication = az_acr_replication;
+    static repository = az_acr_repository;
+    static scope = azAcrScope;
+    static task = azAcrTask;
+    static taskrun = az_acr_taskrun;
+    static token = azAcrToken;
+    static webhook = az_acr_webhook;
 }
 
-class azAdSignedIn {
-    static user = az_ad_signed_in_user;
+class azAcs {
+    static dcos = az_acs_dcos;
+    static kubernetes = az_acs_kubernetes;
 }
 
 class azAdApp {
@@ -185,6 +176,10 @@ class azAdGroup {
     static owner = az_ad_group_owner;
 }
 
+class azAdSignedIn {
+    static user = az_ad_signed_in_user;
+}
+
 class azAdSigned {
     static in = azAdSignedIn;
 }
@@ -194,25 +189,21 @@ class azAdSp {
     static owner = az_ad_sp_owner;
 }
 
-class azAdUser {
+class azAd {
+    static app = azAdApp;
+    static group = azAdGroup;
+    static signed = azAdSigned;
+    static sp = azAdSp;
+    static user = az_ad_user;
 }
 
-class azAmsContentKeyPolicy {
-    static option = az_ams_content_key_policy_option;
+class azAdvisor {
+    static configuration = az_advisor_configuration;
+    static recommendation = az_advisor_recommendation;
 }
 
-class azAmsContentKey {
-    static policy = azAmsContentKeyPolicy;
-}
-
-class azAmsStreamingEndpoint {
-    static akamai = az_ams_streaming_endpoint_akamai;
-}
-
-class azAmsStreamingLocator {
-}
-
-class azAmsStreamingPolicy {
+class azAks {
+    static nodepool = az_aks_nodepool;
 }
 
 class azAmsAccount {
@@ -226,11 +217,16 @@ class azAmsAsset {
     static filter = az_ams_asset_filter;
 }
 
-class azAmsContent {
-    static key = azAmsContentKey;
+class azAmsContentKeyPolicy {
+    static option = az_ams_content_key_policy_option;
 }
 
-class azAmsJob {
+class azAmsContentKey {
+    static policy = azAmsContentKeyPolicy;
+}
+
+class azAmsContent {
+    static key = azAmsContentKey;
 }
 
 class azAmsLive {
@@ -238,16 +234,28 @@ class azAmsLive {
     static output = az_ams_live_output;
 }
 
+class azAmsStreamingEndpoint {
+    static akamai = az_ams_streaming_endpoint_akamai;
+}
+
 class azAmsStreaming {
+    static endpoint = azAmsStreamingEndpoint;
     static locator = az_ams_streaming_locator;
     static policy = az_ams_streaming_policy;
-    static endpoint = azAmsStreamingEndpoint;
-    static locator = azAmsStreamingLocator;
-    static policy = azAmsStreamingPolicy;
 }
 
 class azAmsTransform {
     static output = az_ams_transform_output;
+}
+
+class azAms {
+    static account = azAmsAccount;
+    static asset = azAmsAsset;
+    static content = azAmsContent;
+    static job = az_ams_job;
+    static live = azAmsLive;
+    static streaming = azAmsStreaming;
+    static transform = azAmsTransform;
 }
 
 class azApimApi {
@@ -257,137 +265,140 @@ class azApimApi {
     static versionset = az_apim_api_versionset;
 }
 
-class azApimNv {
-}
-
 class azApimProduct {
     static api = az_apim_product_api;
 }
 
-class azAppconfigCredential {
+class azApim {
+    static api = azApimApi;
+    static nv = az_apim_nv;
+    static product = azApimProduct;
 }
 
 class azAppconfigFeature {
     static filter = az_appconfig_feature_filter;
 }
 
-class azAppconfigIdentity {
-}
-
-class azAppconfigKv {
-}
-
-class azAppconfigRevision {
-}
-
-class azAppserviceAse {
+class azAppconfig {
+    static credential = az_appconfig_credential;
+    static feature = azAppconfigFeature;
+    static identity = az_appconfig_identity;
+    static kv = az_appconfig_kv;
+    static revision = az_appconfig_revision;
 }
 
 class azAppserviceHybrid {
     static connection = az_appservice_hybrid_connection;
 }
 
-class azAppservicePlan {
-}
-
 class azAppserviceVnet {
     static integration = az_appservice_vnet_integration;
 }
 
-class azBackupVaultBackup {
-    static properties = az_backup_vault_backup_properties;
+class azAppservice {
+    static ase = az_appservice_ase;
+    static hybrid = azAppserviceHybrid;
+    static plan = az_appservice_plan;
+    static vnet = azAppserviceVnet;
 }
 
-class azBackupContainer {
-}
-
-class azBackupItem {
-}
-
-class azBackupJob {
-}
-
-class azBackupPolicy {
+class azArtifacts {
+    static universal = az_artifacts_universal;
 }
 
 class azBackupProtectable {
     static item = az_backup_protectable_item;
 }
 
-class azBackupProtection {
-}
-
-class azBackupRecoveryconfig {
-}
-
-class azBackupRecoverypoint {
-}
-
 class azBackupRestore {
     static files = az_backup_restore_files;
 }
 
-class azBackupVault extends az_backup_vault {
+class azBackupVaultBackup {
+    static properties = az_backup_vault_backup_properties;
+}
+
+class azBackupVault {
     static backup = azBackupVaultBackup;
+}
+
+class azBackup {
+    static container = az_backup_container;
+    static item = az_backup_item;
+    static job = az_backup_job;
+    static policy = az_backup_policy;
+    static protectable = azBackupProtectable;
+    static protection = az_backup_protection;
+    static recoveryconfig = az_backup_recoveryconfig;
+    static recoverypoint = az_backup_recoverypoint;
+    static restore = azBackupRestore;
+    static vault = azBackupVault;
 }
 
 class azBatchAccountAutostorage {
     static keys = az_batch_account_autostorage_keys;
 }
 
-class azBatchAccountKeys {
+class azBatchAccount {
+    static autostorage = azBatchAccountAutostorage;
+    static keys = az_batch_account_keys;
 }
 
-class azBatchJobPrepRelease {
-    static status = az_batch_job_prep_release_status;
+class azBatchApplication {
+    static package = az_batch_application_package;
+    static summary = az_batch_application_summary;
 }
 
 class azBatchJobAll {
     static statistics = az_batch_job_all_statistics;
 }
 
-class azBatchJobPrep {
-    static release = azBatchJobPrepRelease;
+class azBatchJobPrepRelease {
+    static status = az_batch_job_prep_release_status;
 }
 
-class azBatchJobSchedule {
+class azBatchJobPrep {
+    static release = azBatchJobPrepRelease;
 }
 
 class azBatchJobTask {
     static counts = az_batch_job_task_counts;
 }
 
-class azBatchNodeRemoteDesktop {
+class azBatchJob {
+    static all = azBatchJobAll;
+    static prep = azBatchJobPrep;
+    static schedule = az_batch_job_schedule;
+    static task = azBatchJobTask;
+}
+
+class azBatchLocation {
+    static quotas = az_batch_location_quotas;
 }
 
 class azBatchNodeRemoteLogin {
     static settings = az_batch_node_remote_login_settings;
 }
 
-class azBatchNodeFile {
-}
-
 class azBatchNodeRemote {
     static desktop = az_batch_node_remote_desktop;
-    static desktop = azBatchNodeRemoteDesktop;
     static login = azBatchNodeRemoteLogin;
-}
-
-class azBatchNodeScheduling {
 }
 
 class azBatchNodeService {
     static logs = az_batch_node_service_logs;
 }
 
-class azBatchNodeUser {
+class azBatchNode {
+    static file = az_batch_node_file;
+    static remote = azBatchNodeRemote;
+    static scheduling = az_batch_node_scheduling;
+    static service = azBatchNodeService;
+    static user = az_batch_node_user;
 }
 
 class azBatchPoolAll {
     static statistics = az_batch_pool_all_statistics;
-}
-
-class azBatchPoolAutoscale {
 }
 
 class azBatchPoolNode {
@@ -402,47 +413,9 @@ class azBatchPoolUsage {
     static metrics = az_batch_pool_usage_metrics;
 }
 
-class azBatchAccount extends az_batch_account {
-    static keys = az_batch_account_keys;
-    static autostorage = azBatchAccountAutostorage;
-    static keys = azBatchAccountKeys;
-}
-
-class azBatchApplication {
-    static package = az_batch_application_package;
-    static summary = az_batch_application_summary;
-}
-
-class azBatchCertificate {
-}
-
-class azBatchJob extends az_batch_job {
-    static schedule = az_batch_job_schedule;
-    static all = azBatchJobAll;
-    static prep = azBatchJobPrep;
-    static schedule = azBatchJobSchedule;
-    static task = azBatchJobTask;
-}
-
-class azBatchLocation {
-    static quotas = az_batch_location_quotas;
-}
-
-class azBatchNode extends az_batch_node {
-    static file = az_batch_node_file;
-    static scheduling = az_batch_node_scheduling;
-    static user = az_batch_node_user;
-    static file = azBatchNodeFile;
-    static remote = azBatchNodeRemote;
-    static scheduling = azBatchNodeScheduling;
-    static service = azBatchNodeService;
-    static user = azBatchNodeUser;
-}
-
-class azBatchPool extends az_batch_pool {
-    static autoscale = az_batch_pool_autoscale;
+class azBatchPool {
     static all = azBatchPoolAll;
-    static autoscale = azBatchPoolAutoscale;
+    static autoscale = az_batch_pool_autoscale;
     static node = azBatchPoolNode;
     static supported = azBatchPoolSupported;
     static usage = azBatchPoolUsage;
@@ -453,12 +426,20 @@ class azBatchTask {
     static subtask = az_batch_task_subtask;
 }
 
+class azBatch {
+    static account = azBatchAccount;
+    static application = azBatchApplication;
+    static certificate = az_batch_certificate;
+    static job = azBatchJob;
+    static location = azBatchLocation;
+    static node = azBatchNode;
+    static pool = azBatchPool;
+    static task = azBatchTask;
+}
+
 class azBatchaiCluster {
     static file = az_batchai_cluster_file;
     static node = az_batchai_cluster_node;
-}
-
-class azBatchaiExperiment {
 }
 
 class azBatchaiFile {
@@ -470,21 +451,22 @@ class azBatchaiJob {
     static node = az_batchai_job_node;
 }
 
-class azBatchaiWorkspace {
+class azBatchai {
+    static cluster = azBatchaiCluster;
+    static experiment = az_batchai_experiment;
+    static file = azBatchaiFile;
+    static job = azBatchaiJob;
+    static workspace = az_batchai_workspace;
 }
 
 class azBillingEnrollment {
     static account = az_billing_enrollment_account;
 }
 
-class azBillingInvoice {
-}
-
-class azBillingPeriod {
-}
-
-class azBoardsWorkItem {
-    static relation = az_boards_work_item_relation;
+class azBilling {
+    static enrollment = azBillingEnrollment;
+    static invoice = az_billing_invoice;
+    static period = az_billing_period;
 }
 
 class azBoardsArea {
@@ -497,8 +479,40 @@ class azBoardsIteration {
     static team = az_boards_iteration_team;
 }
 
+class azBoardsWorkItem {
+    static relation = az_boards_work_item_relation;
+}
+
 class azBoardsWork {
     static item = azBoardsWorkItem;
+}
+
+class azBoards {
+    static area = azBoardsArea;
+    static iteration = azBoardsIteration;
+    static work = azBoardsWork;
+}
+
+class azBot {
+    static authsetting = az_bot_authsetting;
+    static directline = az_bot_directline;
+    static email = az_bot_email;
+    static facebook = az_bot_facebook;
+    static kik = az_bot_kik;
+    static msteams = az_bot_msteams;
+    static skype = az_bot_skype;
+    static slack = az_bot_slack;
+    static sms = az_bot_sms;
+    static telegram = az_bot_telegram;
+    static webchat = az_bot_webchat;
+}
+
+class azCdnCustom {
+    static domain = az_cdn_custom_domain;
+}
+
+class azCdnEdge {
+    static node = az_cdn_edge_node;
 }
 
 class azCdnEndpointRule {
@@ -510,6 +524,15 @@ class azCdnEndpointWaf {
     static policy = az_cdn_endpoint_waf_policy;
 }
 
+class azCdnEndpoint {
+    static rule = azCdnEndpointRule;
+    static waf = azCdnEndpointWaf;
+}
+
+class azCdnWafPolicyCustom {
+    static rule = az_cdn_waf_policy_custom_rule;
+}
+
 class azCdnWafPolicyManagedRuleSetRuleGroup {
     static override = az_cdn_waf_policy_managed_rule_set_rule_group_override;
 }
@@ -518,7 +541,7 @@ class azCdnWafPolicyManagedRuleSetRule {
     static group = azCdnWafPolicyManagedRuleSetRuleGroup;
 }
 
-class azCdnWafPolicyManagedRuleSet extends az_cdn_waf_policy_managed_rule_set {
+class azCdnWafPolicyManagedRuleSet {
     static rule = azCdnWafPolicyManagedRuleSetRule;
 }
 
@@ -526,80 +549,57 @@ class azCdnWafPolicyManagedRule {
     static set = azCdnWafPolicyManagedRuleSet;
 }
 
-class azCdnWafPolicyRateLimit {
-    static rule = az_cdn_waf_policy_rate_limit_rule;
-}
-
-class azCdnWafPolicyCustom {
-    static rule = az_cdn_waf_policy_custom_rule;
-}
-
 class azCdnWafPolicyManaged {
     static rule = azCdnWafPolicyManagedRule;
+}
+
+class azCdnWafPolicyRateLimit {
+    static rule = az_cdn_waf_policy_rate_limit_rule;
 }
 
 class azCdnWafPolicyRate {
     static limit = azCdnWafPolicyRateLimit;
 }
 
-class azCdnWafPolicy extends az_cdn_waf_policy {
+class azCdnWafPolicy {
     static custom = azCdnWafPolicyCustom;
     static managed = azCdnWafPolicyManaged;
     static rate = azCdnWafPolicyRate;
 }
 
-class azCdnCustom {
-    static domain = az_cdn_custom_domain;
-}
-
-class azCdnEdge {
-    static node = az_cdn_edge_node;
-}
-
-class azCdnEndpoint extends az_cdn_endpoint {
-    static rule = azCdnEndpointRule;
-    static waf = azCdnEndpointWaf;
-}
-
-class azCdnOrigin {
-}
-
-class azCdnProfile {
-}
-
-class azCdnWaf extends az_cdn_waf {
+class azCdnWaf {
     static policy = azCdnWafPolicy;
 }
 
-class azCognitiveservicesAccountIdentity {
-}
-
-class azCognitiveservicesAccountKeys {
+class azCdn {
+    static custom = azCdnCustom;
+    static edge = azCdnEdge;
+    static endpoint = azCdnEndpoint;
+    static origin = az_cdn_origin;
+    static profile = az_cdn_profile;
+    static waf = azCdnWaf;
 }
 
 class azCognitiveservicesAccountNetwork {
     static rule = az_cognitiveservices_account_network_rule;
 }
 
-class azCognitiveservicesAccount extends az_cognitiveservices_account {
+class azCognitiveservicesAccount {
     static identity = az_cognitiveservices_account_identity;
     static keys = az_cognitiveservices_account_keys;
-    static identity = azCognitiveservicesAccountIdentity;
-    static keys = azCognitiveservicesAccountKeys;
     static network = azCognitiveservicesAccountNetwork;
+}
+
+class azCognitiveservices {
+    static account = azCognitiveservicesAccount;
 }
 
 class azConfigParam {
     static persist = az_config_param_persist;
 }
 
-class azConsumptionBudget {
-}
-
-class azConsumptionMarketplace {
-}
-
-class azConsumptionPricesheet {
+class azConfig {
+    static param = azConfigParam;
 }
 
 class azConsumptionReservation {
@@ -607,7 +607,12 @@ class azConsumptionReservation {
     static summary = az_consumption_reservation_summary;
 }
 
-class azConsumptionUsage {
+class azConsumption {
+    static budget = az_consumption_budget;
+    static marketplace = az_consumption_marketplace;
+    static pricesheet = az_consumption_pricesheet;
+    static reservation = azConsumptionReservation;
+    static usage = az_consumption_usage;
 }
 
 class azCosmosdbCassandraKeyspace {
@@ -618,12 +623,22 @@ class azCosmosdbCassandraTable {
     static throughput = az_cosmosdb_cassandra_table_throughput;
 }
 
+class azCosmosdbCassandra {
+    static keyspace = azCosmosdbCassandraKeyspace;
+    static table = azCosmosdbCassandraTable;
+}
+
 class azCosmosdbGremlinDatabase {
     static throughput = az_cosmosdb_gremlin_database_throughput;
 }
 
 class azCosmosdbGremlinGraph {
     static throughput = az_cosmosdb_gremlin_graph_throughput;
+}
+
+class azCosmosdbGremlin {
+    static database = azCosmosdbGremlinDatabase;
+    static graph = azCosmosdbGremlinGraph;
 }
 
 class azCosmosdbMongodbCollection {
@@ -634,6 +649,15 @@ class azCosmosdbMongodbDatabase {
     static throughput = az_cosmosdb_mongodb_database_throughput;
 }
 
+class azCosmosdbMongodb {
+    static collection = azCosmosdbMongodbCollection;
+    static database = azCosmosdbMongodbDatabase;
+}
+
+class azCosmosdbNetwork {
+    static rule = az_cosmosdb_network_rule;
+}
+
 class azCosmosdbPrivateEndpoint {
     static connection = az_cosmosdb_private_endpoint_connection;
 }
@@ -642,8 +666,9 @@ class azCosmosdbPrivateLink {
     static resource = az_cosmosdb_private_link_resource;
 }
 
-class azCosmosdbSqlUserDefined {
-    static function = az_cosmosdb_sql_user_defined_function;
+class azCosmosdbPrivate {
+    static endpoint = azCosmosdbPrivateEndpoint;
+    static link = azCosmosdbPrivateLink;
 }
 
 class azCosmosdbSqlContainer {
@@ -658,52 +683,19 @@ class azCosmosdbSqlStored {
     static procedure = az_cosmosdb_sql_stored_procedure;
 }
 
-class azCosmosdbSqlTrigger {
+class azCosmosdbSqlUserDefined {
+    static function = az_cosmosdb_sql_user_defined_function;
 }
 
 class azCosmosdbSqlUser {
     static defined = azCosmosdbSqlUserDefined;
 }
 
-class azCosmosdbCassandra extends az_cosmosdb_cassandra {
-    static keyspace = azCosmosdbCassandraKeyspace;
-    static table = azCosmosdbCassandraTable;
-}
-
-class azCosmosdbCollection {
-}
-
-class azCosmosdbDatabase {
-}
-
-class azCosmosdbGremlin extends az_cosmosdb_gremlin {
-    static database = azCosmosdbGremlinDatabase;
-    static graph = azCosmosdbGremlinGraph;
-}
-
-class azCosmosdbKeys {
-}
-
-class azCosmosdbMongodb extends az_cosmosdb_mongodb {
-    static collection = azCosmosdbMongodbCollection;
-    static database = azCosmosdbMongodbDatabase;
-}
-
-class azCosmosdbNetwork {
-    static rule = az_cosmosdb_network_rule;
-}
-
-class azCosmosdbPrivate {
-    static endpoint = azCosmosdbPrivateEndpoint;
-    static link = azCosmosdbPrivateLink;
-}
-
-class azCosmosdbSql extends az_cosmosdb_sql {
-    static trigger = az_cosmosdb_sql_trigger;
+class azCosmosdbSql {
     static container = azCosmosdbSqlContainer;
     static database = azCosmosdbSqlDatabase;
     static stored = azCosmosdbSqlStored;
-    static trigger = azCosmosdbSqlTrigger;
+    static trigger = az_cosmosdb_sql_trigger;
     static user = azCosmosdbSqlUser;
 }
 
@@ -711,10 +703,17 @@ class azCosmosdbTable {
     static throughput = az_cosmosdb_table_throughput;
 }
 
-class azDeploymentGroup {
-}
-
-class azDeploymentMg {
+class azCosmosdb {
+    static cassandra = azCosmosdbCassandra;
+    static collection = az_cosmosdb_collection;
+    static database = az_cosmosdb_database;
+    static gremlin = azCosmosdbGremlin;
+    static keys = az_cosmosdb_keys;
+    static mongodb = azCosmosdbMongodb;
+    static network = azCosmosdbNetwork;
+    static private = azCosmosdbPrivate;
+    static sql = azCosmosdbSql;
+    static table = azCosmosdbTable;
 }
 
 class azDeploymentOperation {
@@ -724,20 +723,17 @@ class azDeploymentOperation {
     static tenant = az_deployment_operation_tenant;
 }
 
-class azDeploymentScripts {
-}
-
-class azDeploymentSub {
-}
-
-class azDeploymentTenant {
+class azDeployment {
+    static group = az_deployment_group;
+    static mg = az_deployment_mg;
+    static operation = azDeploymentOperation;
+    static scripts = az_deployment_scripts;
+    static sub = az_deployment_sub;
+    static tenant = az_deployment_tenant;
 }
 
 class azDeploymentmanagerArtifact {
     static source = az_deploymentmanager_artifact_source;
-}
-
-class azDeploymentmanagerRollout {
 }
 
 class azDeploymentmanagerService {
@@ -745,7 +741,15 @@ class azDeploymentmanagerService {
     static unit = az_deploymentmanager_service_unit;
 }
 
-class azDeploymentmanagerStep {
+class azDeploymentmanager {
+    static artifact = azDeploymentmanagerArtifact;
+    static rollout = az_deploymentmanager_rollout;
+    static service = azDeploymentmanagerService;
+    static step = az_deploymentmanager_step;
+}
+
+class azDevopsAdmin {
+    static banner = az_devops_admin_banner;
 }
 
 class azDevopsSecurityGroup {
@@ -756,49 +760,42 @@ class azDevopsSecurityPermission {
     static namespace = az_devops_security_permission_namespace;
 }
 
+class azDevopsSecurity {
+    static group = azDevopsSecurityGroup;
+    static permission = azDevopsSecurityPermission;
+}
+
 class azDevopsServiceEndpoint {
     static azurerm = az_devops_service_endpoint_azurerm;
     static github = az_devops_service_endpoint_github;
-}
-
-class azDevopsAdmin {
-    static banner = az_devops_admin_banner;
-}
-
-class azDevopsExtension {
-}
-
-class azDevopsProject {
-}
-
-class azDevopsSecurity extends az_devops_security {
-    static group = azDevopsSecurityGroup;
-    static permission = azDevopsSecurityPermission;
 }
 
 class azDevopsService {
     static endpoint = azDevopsServiceEndpoint;
 }
 
-class azDevopsTeam {
-}
-
-class azDevopsUser {
-}
-
 class azDevopsWiki {
     static page = az_devops_wiki_page;
 }
 
-class azDiskAccess {
+class azDevops {
+    static admin = azDevopsAdmin;
+    static extension = az_devops_extension;
+    static project = az_devops_project;
+    static security = azDevopsSecurity;
+    static service = azDevopsService;
+    static team = az_devops_team;
+    static user = az_devops_user;
+    static wiki = azDevopsWiki;
 }
 
 class azDiskEncryption {
     static set = az_disk_encryption_set;
 }
 
-class azDlaAccountDataLake {
-    static store = az_dla_account_data_lake_store;
+class azDisk {
+    static access = az_disk_access;
+    static encryption = azDiskEncryption;
 }
 
 class azDlaAccountBlob {
@@ -809,37 +806,27 @@ class azDlaAccountCompute {
     static policy = az_dla_account_compute_policy;
 }
 
+class azDlaAccountDataLake {
+    static store = az_dla_account_data_lake_store;
+}
+
 class azDlaAccountData {
     static lake = azDlaAccountDataLake;
 }
 
-class azDlaAccountFirewall {
+class azDlaAccount {
+    static blob = azDlaAccountBlob;
+    static compute = azDlaAccountCompute;
+    static data = azDlaAccountData;
+    static firewall = az_dla_account_firewall;
 }
 
 class azDlaCatalogExternalData {
     static source = az_dla_catalog_external_data_source;
 }
 
-class azDlaCatalogAssembly {
-}
-
-class azDlaCatalogCredential {
-}
-
-class azDlaCatalogDatabase {
-}
-
 class azDlaCatalogExternal {
     static data = azDlaCatalogExternalData;
-}
-
-class azDlaCatalogPackage {
-}
-
-class azDlaCatalogProcedure {
-}
-
-class azDlaCatalogSchema {
 }
 
 class azDlaCatalogTable {
@@ -848,39 +835,17 @@ class azDlaCatalogTable {
     static type = az_dla_catalog_table_type;
 }
 
-class azDlaCatalogTvf {
-}
-
-class azDlaCatalogView {
-}
-
-class azDlaAccount extends az_dla_account {
-    static firewall = az_dla_account_firewall;
-    static blob = azDlaAccountBlob;
-    static compute = azDlaAccountCompute;
-    static data = azDlaAccountData;
-    static firewall = azDlaAccountFirewall;
-}
-
-class azDlaCatalog extends az_dla_catalog {
+class azDlaCatalog {
     static assembly = az_dla_catalog_assembly;
     static credential = az_dla_catalog_credential;
     static database = az_dla_catalog_database;
+    static external = azDlaCatalogExternal;
     static package = az_dla_catalog_package;
     static procedure = az_dla_catalog_procedure;
     static schema = az_dla_catalog_schema;
+    static table = azDlaCatalogTable;
     static tvf = az_dla_catalog_tvf;
     static view = az_dla_catalog_view;
-    static assembly = azDlaCatalogAssembly;
-    static credential = azDlaCatalogCredential;
-    static database = azDlaCatalogDatabase;
-    static external = azDlaCatalogExternal;
-    static package = azDlaCatalogPackage;
-    static procedure = azDlaCatalogProcedure;
-    static schema = azDlaCatalogSchema;
-    static table = azDlaCatalogTable;
-    static tvf = azDlaCatalogTvf;
-    static view = azDlaCatalogView;
 }
 
 class azDlaJob {
@@ -888,7 +853,10 @@ class azDlaJob {
     static recurrence = az_dla_job_recurrence;
 }
 
-class azDlsAccountFirewall {
+class azDla {
+    static account = azDlaAccount;
+    static catalog = azDlaCatalog;
+    static job = azDlaJob;
 }
 
 class azDlsAccountNetwork {
@@ -899,9 +867,8 @@ class azDlsAccountTrusted {
     static provider = az_dls_account_trusted_provider;
 }
 
-class azDlsAccount extends az_dls_account {
+class azDlsAccount {
     static firewall = az_dls_account_firewall;
-    static firewall = azDlsAccountFirewall;
     static network = azDlsAccountNetwork;
     static trusted = azDlsAccountTrusted;
 }
@@ -910,40 +877,17 @@ class azDlsFs {
     static access = az_dls_fs_access;
 }
 
+class azDls {
+    static account = azDlsAccount;
+    static fs = azDlsFs;
+}
+
 class azDmsProject {
     static task = az_dms_project_task;
 }
 
-class azEventgridPartnerNamespaceEvent {
-    static channel = az_eventgrid_partner_namespace_event_channel;
-}
-
-class azEventgridPartnerNamespaceKey {
-}
-
-class azEventgridPartnerTopicEvent {
-    static subscription = az_eventgrid_partner_topic_event_subscription;
-}
-
-class azEventgridPartnerNamespace extends az_eventgrid_partner_namespace {
-    static key = az_eventgrid_partner_namespace_key;
-    static event = azEventgridPartnerNamespaceEvent;
-    static key = azEventgridPartnerNamespaceKey;
-}
-
-class azEventgridPartnerRegistration {
-}
-
-class azEventgridPartnerTopic extends az_eventgrid_partner_topic {
-    static event = azEventgridPartnerTopicEvent;
-}
-
-class azEventgridSystemTopicEvent {
-    static subscription = az_eventgrid_system_topic_event_subscription;
-}
-
-class azEventgridSystemTopic extends az_eventgrid_system_topic {
-    static event = azEventgridSystemTopicEvent;
+class azDms {
+    static project = azDmsProject;
 }
 
 class azEventgridDomain {
@@ -959,11 +903,35 @@ class azEventgridExtension {
     static topic = az_eventgrid_extension_topic;
 }
 
-class azEventgridPartner extends az_eventgrid_partner {
-    static registration = az_eventgrid_partner_registration;
+class azEventgridPartnerNamespaceEvent {
+    static channel = az_eventgrid_partner_namespace_event_channel;
+}
+
+class azEventgridPartnerNamespace {
+    static event = azEventgridPartnerNamespaceEvent;
+    static key = az_eventgrid_partner_namespace_key;
+}
+
+class azEventgridPartnerTopicEvent {
+    static subscription = az_eventgrid_partner_topic_event_subscription;
+}
+
+class azEventgridPartnerTopic {
+    static event = azEventgridPartnerTopicEvent;
+}
+
+class azEventgridPartner {
     static namespace = azEventgridPartnerNamespace;
-    static registration = azEventgridPartnerRegistration;
+    static registration = az_eventgrid_partner_registration;
     static topic = azEventgridPartnerTopic;
+}
+
+class azEventgridSystemTopicEvent {
+    static subscription = az_eventgrid_system_topic_event_subscription;
+}
+
+class azEventgridSystemTopic {
+    static event = azEventgridSystemTopicEvent;
 }
 
 class azEventgridSystem {
@@ -973,6 +941,19 @@ class azEventgridSystem {
 class azEventgridTopic {
     static key = az_eventgrid_topic_key;
     static type = az_eventgrid_topic_type;
+}
+
+class azEventgrid {
+    static domain = azEventgridDomain;
+    static event = azEventgridEvent;
+    static extension = azEventgridExtension;
+    static partner = azEventgridPartner;
+    static system = azEventgridSystem;
+    static topic = azEventgridTopic;
+}
+
+class azEventhubsCluster {
+    static namespace = az_eventhubs_cluster_namespace;
 }
 
 class azEventhubsEventhubAuthorizationRule {
@@ -987,6 +968,11 @@ class azEventhubsEventhubConsumer {
     static group = az_eventhubs_eventhub_consumer_group;
 }
 
+class azEventhubsEventhub {
+    static authorization = azEventhubsEventhubAuthorization;
+    static consumer = azEventhubsEventhubConsumer;
+}
+
 class azEventhubsGeorecoveryAliasAuthorizationRule {
     static keys = az_eventhubs_georecovery_alias_authorization_rule_keys;
 }
@@ -995,8 +981,12 @@ class azEventhubsGeorecoveryAliasAuthorization {
     static rule = azEventhubsGeorecoveryAliasAuthorizationRule;
 }
 
-class azEventhubsGeorecoveryAlias extends az_eventhubs_georecovery_alias {
+class azEventhubsGeorecoveryAlias {
     static authorization = azEventhubsGeorecoveryAliasAuthorization;
+}
+
+class azEventhubsGeorecovery {
+    static alias = azEventhubsGeorecoveryAlias;
 }
 
 class azEventhubsNamespaceAuthorizationRule {
@@ -1011,53 +1001,28 @@ class azEventhubsNamespaceNetwork {
     static rule = az_eventhubs_namespace_network_rule;
 }
 
-class azEventhubsCluster {
-    static namespace = az_eventhubs_cluster_namespace;
-}
-
-class azEventhubsEventhub extends az_eventhubs_eventhub {
-    static authorization = azEventhubsEventhubAuthorization;
-    static consumer = azEventhubsEventhubConsumer;
-}
-
-class azEventhubsGeorecovery {
-    static alias = azEventhubsGeorecoveryAlias;
-}
-
-class azEventhubsNamespace extends az_eventhubs_namespace {
+class azEventhubsNamespace {
     static authorization = azEventhubsNamespaceAuthorization;
     static network = azEventhubsNamespaceNetwork;
+}
+
+class azEventhubs {
+    static cluster = azEventhubsCluster;
+    static eventhub = azEventhubsEventhub;
+    static georecovery = azEventhubsGeorecovery;
+    static namespace = azEventhubsNamespace;
 }
 
 class azFunctionappConfigAccess {
     static restriction = az_functionapp_config_access_restriction;
 }
 
-class azFunctionappConfigAppsettings {
-}
-
-class azFunctionappConfigContainer {
-}
-
-class azFunctionappConfigHostname {
-}
-
-class azFunctionappConfigSsl {
-}
-
-class azFunctionappConfig extends az_functionapp_config {
+class azFunctionappConfig {
+    static access = azFunctionappConfigAccess;
     static appsettings = az_functionapp_config_appsettings;
     static container = az_functionapp_config_container;
     static hostname = az_functionapp_config_hostname;
     static ssl = az_functionapp_config_ssl;
-    static access = azFunctionappConfigAccess;
-    static appsettings = azFunctionappConfigAppsettings;
-    static container = azFunctionappConfigContainer;
-    static hostname = azFunctionappConfigHostname;
-    static ssl = azFunctionappConfigSsl;
-}
-
-class azFunctionappCors {
 }
 
 class azFunctionappDeployment {
@@ -1079,45 +1044,51 @@ class azFunctionappHybrid {
     static connection = az_functionapp_hybrid_connection;
 }
 
-class azFunctionappIdentity {
-}
-
-class azFunctionappKeys {
-}
-
 class azFunctionappLog {
     static deployment = az_functionapp_log_deployment;
-}
-
-class azFunctionappPlan {
 }
 
 class azFunctionappVnet {
     static integration = az_functionapp_vnet_integration;
 }
 
+class azFunctionapp {
+    static config = azFunctionappConfig;
+    static cors = az_functionapp_cors;
+    static deployment = azFunctionappDeployment;
+    static devops = azFunctionappDevops;
+    static function = azFunctionappFunction;
+    static hybrid = azFunctionappHybrid;
+    static identity = az_functionapp_identity;
+    static keys = az_functionapp_keys;
+    static log = azFunctionappLog;
+    static plan = az_functionapp_plan;
+    static vnet = azFunctionappVnet;
+}
+
 class azGroupDeployment {
     static operation = az_group_deployment_operation;
 }
 
-class azGroupLock {
-}
-
-class azHdinsightApplication {
+class azGroup {
+    static deployment = azGroupDeployment;
+    static lock = az_group_lock;
 }
 
 class azHdinsightAutoscale {
     static condition = az_hdinsight_autoscale_condition;
 }
 
-class azHdinsightHost {
-}
-
-class azHdinsightMonitor {
-}
-
 class azHdinsightScript {
     static action = az_hdinsight_script_action;
+}
+
+class azHdinsight {
+    static application = az_hdinsight_application;
+    static autoscale = azHdinsightAutoscale;
+    static host = az_hdinsight_host;
+    static monitor = az_hdinsight_monitor;
+    static script = azHdinsightScript;
 }
 
 class azImageBuilder {
@@ -1125,74 +1096,72 @@ class azImageBuilder {
     static output = az_image_builder_output;
 }
 
-class azIotDpsAccess {
-    static policy = az_iot_dps_access_policy;
-}
-
-class azIotDpsCertificate {
-}
-
-class azIotDpsLinked {
-    static hub = az_iot_dps_linked_hub;
-}
-
-class azIotHubCertificate {
-}
-
-class azIotHubConsumer {
-    static group = az_iot_hub_consumer_group;
-}
-
-class azIotHubDevicestream {
-}
-
-class azIotHubMessage {
-    static enrichment = az_iot_hub_message_enrichment;
-}
-
-class azIotHubPolicy {
-}
-
-class azIotHubRoute {
-}
-
-class azIotHubRouting {
-    static endpoint = az_iot_hub_routing_endpoint;
+class azImage {
+    static builder = azImageBuilder;
 }
 
 class azIotCentral {
     static app = az_iot_central_app;
 }
 
-class azIotDps extends az_iot_dps {
-    static certificate = az_iot_dps_certificate;
+class azIotDpsAccess {
+    static policy = az_iot_dps_access_policy;
+}
+
+class azIotDpsLinked {
+    static hub = az_iot_dps_linked_hub;
+}
+
+class azIotDps {
     static access = azIotDpsAccess;
-    static certificate = azIotDpsCertificate;
+    static certificate = az_iot_dps_certificate;
     static linked = azIotDpsLinked;
 }
 
-class azIotHub extends az_iot_hub {
+class azIotHubConsumer {
+    static group = az_iot_hub_consumer_group;
+}
+
+class azIotHubMessage {
+    static enrichment = az_iot_hub_message_enrichment;
+}
+
+class azIotHubRouting {
+    static endpoint = az_iot_hub_routing_endpoint;
+}
+
+class azIotHub {
     static certificate = az_iot_hub_certificate;
+    static consumer = azIotHubConsumer;
     static devicestream = az_iot_hub_devicestream;
+    static message = azIotHubMessage;
     static policy = az_iot_hub_policy;
     static route = az_iot_hub_route;
-    static certificate = azIotHubCertificate;
-    static consumer = azIotHubConsumer;
-    static devicestream = azIotHubDevicestream;
-    static message = azIotHubMessage;
-    static policy = azIotHubPolicy;
-    static route = azIotHubRoute;
     static routing = azIotHubRouting;
 }
 
-class azKeyvaultCertificateContact {
+class azIot {
+    static central = azIotCentral;
+    static dps = azIotDps;
+    static hub = azIotHub;
+}
+
+class azIotcentral {
+    static app = az_iotcentral_app;
 }
 
 class azKeyvaultCertificateIssuer {
     static admin = az_keyvault_certificate_issuer_admin;
 }
 
-class azKeyvaultCertificatePending {
+class azKeyvaultCertificate {
+    static contact = az_keyvault_certificate_contact;
+    static issuer = azKeyvaultCertificateIssuer;
+    static pending = az_keyvault_certificate_pending;
+}
+
+class azKeyvaultNetwork {
+    static rule = az_keyvault_network_rule;
 }
 
 class azKeyvaultPrivateEndpoint {
@@ -1203,34 +1172,9 @@ class azKeyvaultPrivateLink {
     static resource = az_keyvault_private_link_resource;
 }
 
-class azKeyvaultStorageSas {
-    static definition = az_keyvault_storage_sas_definition;
-}
-
-class azKeyvaultBackup {
-}
-
-class azKeyvaultCertificate extends az_keyvault_certificate {
-    static contact = az_keyvault_certificate_contact;
-    static pending = az_keyvault_certificate_pending;
-    static contact = azKeyvaultCertificateContact;
-    static issuer = azKeyvaultCertificateIssuer;
-    static pending = azKeyvaultCertificatePending;
-}
-
-class azKeyvaultKey {
-}
-
-class azKeyvaultNetwork {
-    static rule = az_keyvault_network_rule;
-}
-
 class azKeyvaultPrivate {
     static endpoint = azKeyvaultPrivateEndpoint;
     static link = azKeyvaultPrivateLink;
-}
-
-class azKeyvaultRestore {
 }
 
 class azKeyvaultRole {
@@ -1238,15 +1182,34 @@ class azKeyvaultRole {
     static definition = az_keyvault_role_definition;
 }
 
-class azKeyvaultSecret {
-}
-
 class azKeyvaultSecurity {
     static domain = az_keyvault_security_domain;
 }
 
-class azKeyvaultStorage extends az_keyvault_storage {
+class azKeyvaultStorageSas {
+    static definition = az_keyvault_storage_sas_definition;
+}
+
+class azKeyvaultStorage {
     static sas = azKeyvaultStorageSas;
+}
+
+class azKeyvault {
+    static backup = az_keyvault_backup;
+    static certificate = azKeyvaultCertificate;
+    static key = az_keyvault_key;
+    static network = azKeyvaultNetwork;
+    static private = azKeyvaultPrivate;
+    static restore = az_keyvault_restore;
+    static role = azKeyvaultRole;
+    static secret = az_keyvault_secret;
+    static security = azKeyvaultSecurity;
+    static storage = azKeyvaultStorage;
+}
+
+class azKusto {
+    static cluster = az_kusto_cluster;
+    static database = az_kusto_database;
 }
 
 class azLabArm {
@@ -1261,27 +1224,45 @@ class azLabCustom {
     static image = az_lab_custom_image;
 }
 
-class azLabEnvironment {
-}
-
-class azLabFormula {
-}
-
 class azLabGallery {
     static image = az_lab_gallery_image;
 }
 
-class azLabSecret {
+class azLab {
+    static arm = azLabArm;
+    static artifact = azLabArtifact;
+    static custom = azLabCustom;
+    static environment = az_lab_environment;
+    static formula = az_lab_formula;
+    static gallery = azLabGallery;
+    static secret = az_lab_secret;
+    static vm = az_lab_vm;
+    static vnet = az_lab_vnet;
 }
 
-class azLabVm {
+class azLocal {
+    static context = az_local_context;
 }
 
-class azLabVnet {
+class azManagedapp {
+    static definition = az_managedapp_definition;
+}
+
+class azManagedservices {
+    static assignment = az_managedservices_assignment;
+    static definition = az_managedservices_definition;
 }
 
 class azMapsAccount {
     static keys = az_maps_account_keys;
+}
+
+class azMaps {
+    static account = azMapsAccount;
+}
+
+class azMariadbServerFirewall {
+    static rule = az_mariadb_server_firewall_rule;
 }
 
 class azMariadbServerPrivateEndpoint {
@@ -1292,63 +1273,63 @@ class azMariadbServerPrivateLink {
     static resource = az_mariadb_server_private_link_resource;
 }
 
-class azMariadbServerConfiguration {
-}
-
-class azMariadbServerFirewall {
-    static rule = az_mariadb_server_firewall_rule;
-}
-
-class azMariadbServerLogs {
-}
-
 class azMariadbServerPrivate {
     static endpoint = azMariadbServerPrivateEndpoint;
     static link = azMariadbServerPrivateLink;
-}
-
-class azMariadbServerReplica {
 }
 
 class azMariadbServerVnet {
     static rule = az_mariadb_server_vnet_rule;
 }
 
-class azMariadbDb {
+class azMariadbServer {
+    static configuration = az_mariadb_server_configuration;
+    static firewall = azMariadbServerFirewall;
+    static logs = az_mariadb_server_logs;
+    static private = azMariadbServerPrivate;
+    static replica = az_mariadb_server_replica;
+    static vnet = azMariadbServerVnet;
 }
 
-class azMariadbServer extends az_mariadb_server {
-    static configuration = az_mariadb_server_configuration;
-    static logs = az_mariadb_server_logs;
-    static replica = az_mariadb_server_replica;
-    static configuration = azMariadbServerConfiguration;
-    static firewall = azMariadbServerFirewall;
-    static logs = azMariadbServerLogs;
-    static private = azMariadbServerPrivate;
-    static replica = azMariadbServerReplica;
-    static vnet = azMariadbServerVnet;
+class azMariadb {
+    static db = az_mariadb_db;
+    static server = azMariadbServer;
+}
+
+class azMonitorAction {
+    static group = az_monitor_action_group;
 }
 
 class azMonitorActivityLogAlertAction {
     static group = az_monitor_activity_log_alert_action_group;
 }
 
-class azMonitorActivityLogAlertScope {
-}
-
-class azMonitorActivityLogAlert extends az_monitor_activity_log_alert {
-    static scope = az_monitor_activity_log_alert_scope;
+class azMonitorActivityLogAlert {
     static action = azMonitorActivityLogAlertAction;
-    static scope = azMonitorActivityLogAlertScope;
+    static scope = az_monitor_activity_log_alert_scope;
 }
 
-class azMonitorActivityLog extends az_monitor_activity_log {
+class azMonitorActivityLog {
     static alert = azMonitorActivityLogAlert;
+}
+
+class azMonitorActivity {
+    static log = azMonitorActivityLog;
+}
+
+class azMonitorAutoscale {
+    static profile = az_monitor_autoscale_profile;
+    static rule = az_monitor_autoscale_rule;
+    static settings = az_monitor_autoscale_settings;
 }
 
 class azMonitorDiagnosticSettings {
     static categories = az_monitor_diagnostic_settings_categories;
     static subscription = az_monitor_diagnostic_settings_subscription;
+}
+
+class azMonitorDiagnostic {
+    static settings = azMonitorDiagnosticSettings;
 }
 
 class azMonitorLogAnalyticsWorkspaceData {
@@ -1360,36 +1341,30 @@ class azMonitorLogAnalyticsWorkspaceLinked {
     static storage = az_monitor_log_analytics_workspace_linked_storage;
 }
 
-class azMonitorLogAnalyticsWorkspacePack {
-}
-
 class azMonitorLogAnalyticsWorkspaceSaved {
     static search = az_monitor_log_analytics_workspace_saved_search;
 }
 
-class azMonitorLogAnalyticsWorkspaceTable {
-}
-
-class azMonitorLogAnalyticsCluster {
-}
-
-class azMonitorLogAnalyticsWorkspace extends az_monitor_log_analytics_workspace {
-    static pack = az_monitor_log_analytics_workspace_pack;
-    static table = az_monitor_log_analytics_workspace_table;
+class azMonitorLogAnalyticsWorkspace {
     static data = azMonitorLogAnalyticsWorkspaceData;
     static linked = azMonitorLogAnalyticsWorkspaceLinked;
-    static pack = azMonitorLogAnalyticsWorkspacePack;
+    static pack = az_monitor_log_analytics_workspace_pack;
     static saved = azMonitorLogAnalyticsWorkspaceSaved;
-    static table = azMonitorLogAnalyticsWorkspaceTable;
+    static table = az_monitor_log_analytics_workspace_table;
 }
 
-class azMonitorLogAnalytics extends az_monitor_log_analytics {
+class azMonitorLogAnalytics {
     static cluster = az_monitor_log_analytics_cluster;
-    static cluster = azMonitorLogAnalyticsCluster;
     static workspace = azMonitorLogAnalyticsWorkspace;
 }
 
-class azMonitorLogProfiles {
+class azMonitorLog {
+    static analytics = azMonitorLogAnalytics;
+    static profiles = az_monitor_log_profiles;
+}
+
+class azMonitorMetrics {
+    static alert = az_monitor_metrics_alert;
 }
 
 class azMonitorPrivateLinkScopePrivateEndpoint {
@@ -1409,7 +1384,7 @@ class azMonitorPrivateLinkScopeScoped {
     static resource = az_monitor_private_link_scope_scoped_resource;
 }
 
-class azMonitorPrivateLinkScope extends az_monitor_private_link_scope {
+class azMonitorPrivateLinkScope {
     static private = azMonitorPrivateLinkScopePrivate;
     static scoped = azMonitorPrivateLinkScopeScoped;
 }
@@ -1418,62 +1393,42 @@ class azMonitorPrivateLink {
     static scope = azMonitorPrivateLinkScope;
 }
 
-class azMonitorAction {
-    static group = az_monitor_action_group;
-}
-
-class azMonitorActivity {
-    static log = azMonitorActivityLog;
-}
-
-class azMonitorAlert {
-}
-
-class azMonitorAutoscale {
-    static profile = az_monitor_autoscale_profile;
-    static rule = az_monitor_autoscale_rule;
-    static settings = az_monitor_autoscale_settings;
-}
-
-class azMonitorDiagnostic {
-    static settings = azMonitorDiagnosticSettings;
-}
-
-class azMonitorLog {
-    static profiles = az_monitor_log_profiles;
-    static analytics = azMonitorLogAnalytics;
-    static profiles = azMonitorLogProfiles;
-}
-
-class azMonitorMetrics {
-    static alert = az_monitor_metrics_alert;
-}
-
 class azMonitorPrivate {
     static link = azMonitorPrivateLink;
 }
 
-class azMysqlFlexibleServerDb {
+class azMonitor {
+    static action = azMonitorAction;
+    static activity = azMonitorActivity;
+    static alert = az_monitor_alert;
+    static autoscale = azMonitorAutoscale;
+    static diagnostic = azMonitorDiagnostic;
+    static log = azMonitorLog;
+    static metrics = azMonitorMetrics;
+    static private = azMonitorPrivate;
 }
 
 class azMysqlFlexibleServerFirewall {
     static rule = az_mysql_flexible_server_firewall_rule;
 }
 
-class azMysqlFlexibleServerParameter {
-}
-
-class azMysqlFlexibleServerReplica {
-}
-
-class azMysqlFlexibleServer extends az_mysql_flexible_server {
+class azMysqlFlexibleServer {
     static db = az_mysql_flexible_server_db;
+    static firewall = azMysqlFlexibleServerFirewall;
     static parameter = az_mysql_flexible_server_parameter;
     static replica = az_mysql_flexible_server_replica;
-    static db = azMysqlFlexibleServerDb;
-    static firewall = azMysqlFlexibleServerFirewall;
-    static parameter = azMysqlFlexibleServerParameter;
-    static replica = azMysqlFlexibleServerReplica;
+}
+
+class azMysqlFlexible {
+    static server = azMysqlFlexibleServer;
+}
+
+class azMysqlServerAd {
+    static admin = az_mysql_server_ad_admin;
+}
+
+class azMysqlServerFirewall {
+    static rule = az_mysql_server_firewall_rule;
 }
 
 class azMysqlServerPrivateEndpoint {
@@ -1484,148 +1439,50 @@ class azMysqlServerPrivateLink {
     static resource = az_mysql_server_private_link_resource;
 }
 
-class azMysqlServerAd {
-    static admin = az_mysql_server_ad_admin;
-}
-
-class azMysqlServerConfiguration {
-}
-
-class azMysqlServerFirewall {
-    static rule = az_mysql_server_firewall_rule;
-}
-
-class azMysqlServerKey {
-}
-
-class azMysqlServerLogs {
-}
-
 class azMysqlServerPrivate {
     static endpoint = azMysqlServerPrivateEndpoint;
     static link = azMysqlServerPrivateLink;
-}
-
-class azMysqlServerReplica {
 }
 
 class azMysqlServerVnet {
     static rule = az_mysql_server_vnet_rule;
 }
 
-class azMysqlDb {
-}
-
-class azMysqlFlexible {
-    static server = azMysqlFlexibleServer;
-}
-
-class azMysqlServer extends az_mysql_server {
+class azMysqlServer {
+    static ad = azMysqlServerAd;
     static configuration = az_mysql_server_configuration;
+    static firewall = azMysqlServerFirewall;
     static key = az_mysql_server_key;
     static logs = az_mysql_server_logs;
-    static replica = az_mysql_server_replica;
-    static ad = azMysqlServerAd;
-    static configuration = azMysqlServerConfiguration;
-    static firewall = azMysqlServerFirewall;
-    static key = azMysqlServerKey;
-    static logs = azMysqlServerLogs;
     static private = azMysqlServerPrivate;
-    static replica = azMysqlServerReplica;
+    static replica = az_mysql_server_replica;
     static vnet = azMysqlServerVnet;
 }
 
-class azNetappfilesVolumeExport {
-    static policy = az_netappfiles_volume_export_policy;
-}
-
-class azNetappfilesVolumeReplication {
+class azMysql {
+    static db = az_mysql_db;
+    static flexible = azMysqlFlexible;
+    static server = azMysqlServer;
 }
 
 class azNetappfilesAccount {
     static ad = az_netappfiles_account_ad;
 }
 
-class azNetappfilesPool {
+class azNetappfilesVolumeExport {
+    static policy = az_netappfiles_volume_export_policy;
 }
 
-class azNetappfilesSnapshot {
-}
-
-class azNetappfilesVolume extends az_netappfiles_volume {
-    static replication = az_netappfiles_volume_replication;
+class azNetappfilesVolume {
     static export = azNetappfilesVolumeExport;
-    static replication = azNetappfilesVolumeReplication;
+    static replication = az_netappfiles_volume_replication;
 }
 
-class azNetworkApplicationGatewayPrivateLinkIp {
-    static config = az_network_application_gateway_private_link_ip_config;
-}
-
-class azNetworkApplicationGatewayPrivateLink extends az_network_application_gateway_private_link {
-    static ip = azNetworkApplicationGatewayPrivateLinkIp;
-}
-
-class azNetworkApplicationGatewayRewriteRule {
-    static condition = az_network_application_gateway_rewrite_rule_condition;
-    static set = az_network_application_gateway_rewrite_rule_set;
-}
-
-class azNetworkApplicationGatewaySslCert {
-}
-
-class azNetworkApplicationGatewaySslPolicy {
-    static predefined = az_network_application_gateway_ssl_policy_predefined;
-}
-
-class azNetworkApplicationGatewayUrlPathMap {
-    static rule = az_network_application_gateway_url_path_map_rule;
-}
-
-class azNetworkApplicationGatewayUrlPath {
-    static map = azNetworkApplicationGatewayUrlPathMap;
-}
-
-class azNetworkApplicationGatewayWafPolicyCustomRuleMatch {
-    static condition = az_network_application_gateway_waf_policy_custom_rule_match_condition;
-}
-
-class azNetworkApplicationGatewayWafPolicyCustomRule extends az_network_application_gateway_waf_policy_custom_rule {
-    static match = azNetworkApplicationGatewayWafPolicyCustomRuleMatch;
-}
-
-class azNetworkApplicationGatewayWafPolicyManagedRuleExclusion {
-}
-
-class azNetworkApplicationGatewayWafPolicyManagedRuleRule {
-    static set = az_network_application_gateway_waf_policy_managed_rule_rule_set;
-}
-
-class azNetworkApplicationGatewayWafPolicyManagedRule extends az_network_application_gateway_waf_policy_managed_rule {
-    static exclusion = az_network_application_gateway_waf_policy_managed_rule_exclusion;
-    static exclusion = azNetworkApplicationGatewayWafPolicyManagedRuleExclusion;
-    static rule = azNetworkApplicationGatewayWafPolicyManagedRuleRule;
-}
-
-class azNetworkApplicationGatewayWafPolicyCustom {
-    static rule = azNetworkApplicationGatewayWafPolicyCustomRule;
-}
-
-class azNetworkApplicationGatewayWafPolicyManaged {
-    static rule = azNetworkApplicationGatewayWafPolicyManagedRule;
-}
-
-class azNetworkApplicationGatewayWafPolicyPolicy {
-    static setting = az_network_application_gateway_waf_policy_policy_setting;
-}
-
-class azNetworkApplicationGatewayWafConfig {
-}
-
-class azNetworkApplicationGatewayWafPolicy extends az_network_application_gateway_waf_policy {
-    static custom = azNetworkApplicationGatewayWafPolicyCustom;
-    static managed = azNetworkApplicationGatewayWafPolicyManaged;
-    static policy = azNetworkApplicationGatewayWafPolicyPolicy;
+class azNetappfiles {
+    static account = azNetappfilesAccount;
+    static pool = az_netappfiles_pool;
+    static snapshot = az_netappfiles_snapshot;
+    static volume = azNetappfilesVolume;
 }
 
 class azNetworkApplicationGatewayAddress {
@@ -1646,18 +1503,25 @@ class azNetworkApplicationGatewayHttp {
     static settings = az_network_application_gateway_http_settings;
 }
 
-class azNetworkApplicationGatewayIdentity {
+class azNetworkApplicationGatewayPrivateLinkIp {
+    static config = az_network_application_gateway_private_link_ip_config;
+}
+
+class azNetworkApplicationGatewayPrivateLink {
+    static ip = azNetworkApplicationGatewayPrivateLinkIp;
 }
 
 class azNetworkApplicationGatewayPrivate {
     static link = azNetworkApplicationGatewayPrivateLink;
 }
 
-class azNetworkApplicationGatewayProbe {
-}
-
 class azNetworkApplicationGatewayRedirect {
     static config = az_network_application_gateway_redirect_config;
+}
+
+class azNetworkApplicationGatewayRewriteRule {
+    static condition = az_network_application_gateway_rewrite_rule_condition;
+    static set = az_network_application_gateway_rewrite_rule_set;
 }
 
 class azNetworkApplicationGatewayRewrite {
@@ -1668,43 +1532,90 @@ class azNetworkApplicationGatewayRoot {
     static cert = az_network_application_gateway_root_cert;
 }
 
-class azNetworkApplicationGatewayRule {
+class azNetworkApplicationGatewaySslPolicy {
+    static predefined = az_network_application_gateway_ssl_policy_predefined;
 }
 
 class azNetworkApplicationGatewaySsl {
     static cert = az_network_application_gateway_ssl_cert;
-    static cert = azNetworkApplicationGatewaySslCert;
     static policy = azNetworkApplicationGatewaySslPolicy;
+}
+
+class azNetworkApplicationGatewayUrlPathMap {
+    static rule = az_network_application_gateway_url_path_map_rule;
+}
+
+class azNetworkApplicationGatewayUrlPath {
+    static map = azNetworkApplicationGatewayUrlPathMap;
 }
 
 class azNetworkApplicationGatewayUrl {
     static path = azNetworkApplicationGatewayUrlPath;
 }
 
+class azNetworkApplicationGatewayWafPolicyCustomRuleMatch {
+    static condition = az_network_application_gateway_waf_policy_custom_rule_match_condition;
+}
+
+class azNetworkApplicationGatewayWafPolicyCustomRule {
+    static match = azNetworkApplicationGatewayWafPolicyCustomRuleMatch;
+}
+
+class azNetworkApplicationGatewayWafPolicyCustom {
+    static rule = azNetworkApplicationGatewayWafPolicyCustomRule;
+}
+
+class azNetworkApplicationGatewayWafPolicyManagedRuleRule {
+    static set = az_network_application_gateway_waf_policy_managed_rule_rule_set;
+}
+
+class azNetworkApplicationGatewayWafPolicyManagedRule {
+    static exclusion = az_network_application_gateway_waf_policy_managed_rule_exclusion;
+    static rule = azNetworkApplicationGatewayWafPolicyManagedRuleRule;
+}
+
+class azNetworkApplicationGatewayWafPolicyManaged {
+    static rule = azNetworkApplicationGatewayWafPolicyManagedRule;
+}
+
+class azNetworkApplicationGatewayWafPolicyPolicy {
+    static setting = az_network_application_gateway_waf_policy_policy_setting;
+}
+
+class azNetworkApplicationGatewayWafPolicy {
+    static custom = azNetworkApplicationGatewayWafPolicyCustom;
+    static managed = azNetworkApplicationGatewayWafPolicyManaged;
+    static policy = azNetworkApplicationGatewayWafPolicyPolicy;
+}
+
 class azNetworkApplicationGatewayWaf {
     static config = az_network_application_gateway_waf_config;
-    static config = azNetworkApplicationGatewayWafConfig;
     static policy = azNetworkApplicationGatewayWafPolicy;
 }
 
-class azNetworkApplicationGateway extends az_network_application_gateway {
-    static identity = az_network_application_gateway_identity;
-    static probe = az_network_application_gateway_probe;
-    static rule = az_network_application_gateway_rule;
+class azNetworkApplicationGateway {
     static address = azNetworkApplicationGatewayAddress;
     static auth = azNetworkApplicationGatewayAuth;
     static frontend = azNetworkApplicationGatewayFrontend;
     static http = azNetworkApplicationGatewayHttp;
-    static identity = azNetworkApplicationGatewayIdentity;
+    static identity = az_network_application_gateway_identity;
     static private = azNetworkApplicationGatewayPrivate;
-    static probe = azNetworkApplicationGatewayProbe;
+    static probe = az_network_application_gateway_probe;
     static redirect = azNetworkApplicationGatewayRedirect;
     static rewrite = azNetworkApplicationGatewayRewrite;
     static root = azNetworkApplicationGatewayRoot;
-    static rule = azNetworkApplicationGatewayRule;
+    static rule = az_network_application_gateway_rule;
     static ssl = azNetworkApplicationGatewaySsl;
     static url = azNetworkApplicationGatewayUrl;
     static waf = azNetworkApplicationGatewayWaf;
+}
+
+class azNetworkApplication {
+    static gateway = azNetworkApplicationGateway;
+}
+
+class azNetworkDdos {
+    static protection = az_network_ddos_protection;
 }
 
 class azNetworkDnsRecordSet {
@@ -1724,26 +1635,21 @@ class azNetworkDnsRecord {
     static set = azNetworkDnsRecordSet;
 }
 
-class azNetworkDnsZone {
-}
-
-class azNetworkExpressRoutePeeringConnection {
-}
-
-class azNetworkExpressRoutePeeringPeer {
-    static connection = az_network_express_route_peering_peer_connection;
-}
-
-class azNetworkExpressRouteAuth {
+class azNetworkDns {
+    static record = azNetworkDnsRecord;
+    static zone = az_network_dns_zone;
 }
 
 class azNetworkExpressRouteGateway {
     static connection = az_network_express_route_gateway_connection;
 }
 
-class azNetworkExpressRoutePeering extends az_network_express_route_peering {
+class azNetworkExpressRoutePeeringPeer {
+    static connection = az_network_express_route_peering_peer_connection;
+}
+
+class azNetworkExpressRoutePeering {
     static connection = az_network_express_route_peering_connection;
-    static connection = azNetworkExpressRoutePeeringConnection;
     static peer = azNetworkExpressRoutePeeringPeer;
 }
 
@@ -1753,21 +1659,19 @@ class azNetworkExpressRoutePort {
     static location = az_network_express_route_port_location;
 }
 
-class azNetworkExpressRoute extends az_network_express_route {
+class azNetworkExpressRoute {
     static auth = az_network_express_route_auth;
-    static auth = azNetworkExpressRouteAuth;
     static gateway = azNetworkExpressRouteGateway;
     static peering = azNetworkExpressRoutePeering;
     static port = azNetworkExpressRoutePort;
 }
 
-class azNetworkLbAddressPool {
-    static address = az_network_lb_address_pool_address;
+class azNetworkExpress {
+    static route = azNetworkExpressRoute;
 }
 
-class azNetworkLbInboundNat {
-    static pool = az_network_lb_inbound_nat_pool;
-    static rule = az_network_lb_inbound_nat_rule;
+class azNetworkLbAddressPool {
+    static address = az_network_lb_address_pool_address;
 }
 
 class azNetworkLbAddress {
@@ -1778,6 +1682,11 @@ class azNetworkLbFrontend {
     static ip = az_network_lb_frontend_ip;
 }
 
+class azNetworkLbInboundNat {
+    static pool = az_network_lb_inbound_nat_pool;
+    static rule = az_network_lb_inbound_nat_rule;
+}
+
 class azNetworkLbInbound {
     static nat = azNetworkLbInboundNat;
 }
@@ -1786,31 +1695,54 @@ class azNetworkLbOutbound {
     static rule = az_network_lb_outbound_rule;
 }
 
-class azNetworkLbProbe {
+class azNetworkLb {
+    static address = azNetworkLbAddress;
+    static frontend = azNetworkLbFrontend;
+    static inbound = azNetworkLbInbound;
+    static outbound = azNetworkLbOutbound;
+    static probe = az_network_lb_probe;
+    static rule = az_network_lb_rule;
 }
 
-class azNetworkLbRule {
+class azNetworkLocal {
+    static gateway = az_network_local_gateway;
 }
 
-class azNetworkNicIpConfigInboundNat {
-    static rule = az_network_nic_ip_config_inbound_nat_rule;
+class azNetworkNat {
+    static gateway = az_network_nat_gateway;
 }
 
 class azNetworkNicIpConfigAddress {
     static pool = az_network_nic_ip_config_address_pool;
 }
 
+class azNetworkNicIpConfigInboundNat {
+    static rule = az_network_nic_ip_config_inbound_nat_rule;
+}
+
 class azNetworkNicIpConfigInbound {
     static nat = azNetworkNicIpConfigInboundNat;
 }
 
-class azNetworkNicIpConfig extends az_network_nic_ip_config {
+class azNetworkNicIpConfig {
     static address = azNetworkNicIpConfigAddress;
     static inbound = azNetworkNicIpConfigInbound;
 }
 
 class azNetworkNicIp {
     static config = azNetworkNicIpConfig;
+}
+
+class azNetworkNic {
+    static ip = azNetworkNicIp;
+}
+
+class azNetworkNsg {
+    static rule = az_network_nsg_rule;
+}
+
+class azNetworkPrivateDnsLink {
+    static vnet = az_network_private_dns_link_vnet;
 }
 
 class azNetworkPrivateDnsRecordSet {
@@ -1824,56 +1756,50 @@ class azNetworkPrivateDnsRecordSet {
     static txt = az_network_private_dns_record_set_txt;
 }
 
-class azNetworkPrivateDnsLink {
-    static vnet = az_network_private_dns_link_vnet;
-}
-
 class azNetworkPrivateDnsRecord {
     static set = azNetworkPrivateDnsRecordSet;
 }
 
-class azNetworkPrivateDnsZone {
+class azNetworkPrivateDns {
+    static link = azNetworkPrivateDnsLink;
+    static record = azNetworkPrivateDnsRecord;
+    static zone = az_network_private_dns_zone;
 }
 
 class azNetworkPrivateEndpointDnsZone {
     static group = az_network_private_endpoint_dns_zone_group;
 }
 
-class azNetworkPrivateEndpointConnection {
-}
-
 class azNetworkPrivateEndpointDns {
     static zone = azNetworkPrivateEndpointDnsZone;
 }
 
-class azNetworkPrivateLinkResource {
+class azNetworkPrivateEndpoint {
+    static connection = az_network_private_endpoint_connection;
+    static dns = azNetworkPrivateEndpointDns;
 }
 
 class azNetworkPrivateLinkService {
     static connection = az_network_private_link_service_connection;
 }
 
-class azNetworkPrivateDns extends az_network_private_dns {
-    static zone = az_network_private_dns_zone;
-    static link = azNetworkPrivateDnsLink;
-    static record = azNetworkPrivateDnsRecord;
-    static zone = azNetworkPrivateDnsZone;
-}
-
-class azNetworkPrivateEndpoint extends az_network_private_endpoint {
-    static connection = az_network_private_endpoint_connection;
-    static connection = azNetworkPrivateEndpointConnection;
-    static dns = azNetworkPrivateEndpointDns;
-}
-
 class azNetworkPrivateLink {
     static resource = az_network_private_link_resource;
-    static resource = azNetworkPrivateLinkResource;
     static service = azNetworkPrivateLinkService;
+}
+
+class azNetworkPrivate {
+    static dns = azNetworkPrivateDns;
+    static endpoint = azNetworkPrivateEndpoint;
+    static link = azNetworkPrivateLink;
 }
 
 class azNetworkPublicIp {
     static prefix = az_network_public_ip_prefix;
+}
+
+class azNetworkPublic {
+    static ip = azNetworkPublicIp;
 }
 
 class azNetworkRouteFilter {
@@ -1884,16 +1810,29 @@ class azNetworkRouteTable {
     static route = az_network_route_table_route;
 }
 
+class azNetworkRoute {
+    static filter = azNetworkRouteFilter;
+    static table = azNetworkRouteTable;
+}
+
 class azNetworkSecurityPartner {
     static provider = az_network_security_partner_provider;
+}
+
+class azNetworkSecurity {
+    static partner = azNetworkSecurityPartner;
 }
 
 class azNetworkServiceEndpointPolicy {
     static definition = az_network_service_endpoint_policy_definition;
 }
 
-class azNetworkServiceEndpoint extends az_network_service_endpoint {
+class azNetworkServiceEndpoint {
     static policy = azNetworkServiceEndpointPolicy;
+}
+
+class azNetworkService {
+    static endpoint = azNetworkServiceEndpoint;
 }
 
 class azNetworkTrafficManager {
@@ -1901,12 +1840,17 @@ class azNetworkTrafficManager {
     static profile = az_network_traffic_manager_profile;
 }
 
+class azNetworkTraffic {
+    static manager = azNetworkTrafficManager;
+}
+
 class azNetworkVirtualAppliance {
     static site = az_network_virtual_appliance_site;
     static sku = az_network_virtual_appliance_sku;
 }
 
-class azNetworkVnetGatewayAad {
+class azNetworkVirtual {
+    static appliance = azNetworkVirtualAppliance;
 }
 
 class azNetworkVnetGatewayIpsec {
@@ -1925,19 +1869,18 @@ class azNetworkVnetGatewayVpn {
     static client = az_network_vnet_gateway_vpn_client;
 }
 
-class azNetworkVnetGateway extends az_network_vnet_gateway {
+class azNetworkVnetGateway {
     static aad = az_network_vnet_gateway_aad;
-    static aad = azNetworkVnetGatewayAad;
     static ipsec = azNetworkVnetGatewayIpsec;
     static revoked = azNetworkVnetGatewayRevoked;
     static root = azNetworkVnetGatewayRoot;
     static vpn = azNetworkVnetGatewayVpn;
 }
 
-class azNetworkVnetPeering {
-}
-
-class azNetworkVnetSubnet {
+class azNetworkVnet {
+    static gateway = azNetworkVnetGateway;
+    static peering = az_network_vnet_peering;
+    static subnet = az_network_vnet_subnet;
 }
 
 class azNetworkVpnConnectionIpsec {
@@ -1948,15 +1891,17 @@ class azNetworkVpnConnectionShared {
     static key = az_network_vpn_connection_shared_key;
 }
 
-class azNetworkVpnConnection extends az_network_vpn_connection {
+class azNetworkVpnConnection {
     static ipsec = azNetworkVpnConnectionIpsec;
     static shared = azNetworkVpnConnectionShared;
 }
 
-class azNetworkWatcherConnectionMonitorEndpoint {
+class azNetworkVpn {
+    static connection = azNetworkVpnConnection;
 }
 
-class azNetworkWatcherConnectionMonitorOutput {
+class azNetworkVrouter {
+    static peering = az_network_vrouter_peering;
 }
 
 class azNetworkWatcherConnectionMonitorTest {
@@ -1964,11 +1909,9 @@ class azNetworkWatcherConnectionMonitorTest {
     static group = az_network_watcher_connection_monitor_test_group;
 }
 
-class azNetworkWatcherConnectionMonitor extends az_network_watcher_connection_monitor {
+class azNetworkWatcherConnectionMonitor {
     static endpoint = az_network_watcher_connection_monitor_endpoint;
     static output = az_network_watcher_connection_monitor_output;
-    static endpoint = azNetworkWatcherConnectionMonitorEndpoint;
-    static output = azNetworkWatcherConnectionMonitorOutput;
     static test = azNetworkWatcherConnectionMonitorTest;
 }
 
@@ -1984,137 +1927,46 @@ class azNetworkWatcherPacket {
     static capture = az_network_watcher_packet_capture;
 }
 
-class azNetworkWatcherTroubleshooting {
-}
-
-class azNetworkApplication {
-    static gateway = azNetworkApplicationGateway;
-}
-
-class azNetworkAsg {
-}
-
-class azNetworkBastion {
-}
-
-class azNetworkDdos {
-    static protection = az_network_ddos_protection;
-}
-
-class azNetworkDns extends az_network_dns {
-    static zone = az_network_dns_zone;
-    static record = azNetworkDnsRecord;
-    static zone = azNetworkDnsZone;
-}
-
-class azNetworkExpress {
-    static route = azNetworkExpressRoute;
-}
-
-class azNetworkLb extends az_network_lb {
-    static probe = az_network_lb_probe;
-    static rule = az_network_lb_rule;
-    static address = azNetworkLbAddress;
-    static frontend = azNetworkLbFrontend;
-    static inbound = azNetworkLbInbound;
-    static outbound = azNetworkLbOutbound;
-    static probe = azNetworkLbProbe;
-    static rule = azNetworkLbRule;
-}
-
-class azNetworkLocal {
-    static gateway = az_network_local_gateway;
-}
-
-class azNetworkNat {
-    static gateway = az_network_nat_gateway;
-}
-
-class azNetworkNic extends az_network_nic {
-    static ip = azNetworkNicIp;
-}
-
-class azNetworkNsg {
-    static rule = az_network_nsg_rule;
-}
-
-class azNetworkPrivate {
-    static dns = azNetworkPrivateDns;
-    static endpoint = azNetworkPrivateEndpoint;
-    static link = azNetworkPrivateLink;
-}
-
-class azNetworkProfile {
-}
-
-class azNetworkPublic {
-    static ip = azNetworkPublicIp;
-}
-
-class azNetworkRoute {
-    static filter = azNetworkRouteFilter;
-    static table = azNetworkRouteTable;
-}
-
-class azNetworkSecurity {
-    static partner = azNetworkSecurityPartner;
-}
-
-class azNetworkService {
-    static endpoint = azNetworkServiceEndpoint;
-}
-
-class azNetworkTraffic {
-    static manager = azNetworkTrafficManager;
-}
-
-class azNetworkVirtual {
-    static appliance = azNetworkVirtualAppliance;
-}
-
-class azNetworkVnet extends az_network_vnet {
-    static peering = az_network_vnet_peering;
-    static subnet = az_network_vnet_subnet;
-    static gateway = azNetworkVnetGateway;
-    static peering = azNetworkVnetPeering;
-    static subnet = azNetworkVnetSubnet;
-}
-
-class azNetworkVpn {
-    static connection = azNetworkVpnConnection;
-}
-
-class azNetworkVrouter {
-    static peering = az_network_vrouter_peering;
-}
-
-class azNetworkWatcher extends az_network_watcher {
-    static troubleshooting = az_network_watcher_troubleshooting;
+class azNetworkWatcher {
     static connection = azNetworkWatcherConnection;
     static flow = azNetworkWatcherFlow;
     static packet = azNetworkWatcherPacket;
-    static troubleshooting = azNetworkWatcherTroubleshooting;
+    static troubleshooting = az_network_watcher_troubleshooting;
 }
 
-class azPipelinesVariableGroup {
-    static variable = az_pipelines_variable_group_variable;
+class azNetwork {
+    static application = azNetworkApplication;
+    static asg = az_network_asg;
+    static bastion = az_network_bastion;
+    static ddos = azNetworkDdos;
+    static dns = azNetworkDns;
+    static express = azNetworkExpress;
+    static lb = azNetworkLb;
+    static local = azNetworkLocal;
+    static nat = azNetworkNat;
+    static nic = azNetworkNic;
+    static nsg = azNetworkNsg;
+    static private = azNetworkPrivate;
+    static profile = az_network_profile;
+    static public = azNetworkPublic;
+    static route = azNetworkRoute;
+    static security = azNetworkSecurity;
+    static service = azNetworkService;
+    static traffic = azNetworkTraffic;
+    static virtual = azNetworkVirtual;
+    static vnet = azNetworkVnet;
+    static vpn = azNetworkVpn;
+    static vrouter = azNetworkVrouter;
+    static watcher = azNetworkWatcher;
 }
 
-class azPipelinesAgent {
+class azOpenshift {
+    static monitor = az_openshift_monitor;
 }
 
 class azPipelinesBuild {
     static definition = az_pipelines_build_definition;
     static tag = az_pipelines_build_tag;
-}
-
-class azPipelinesFolder {
-}
-
-class azPipelinesPool {
-}
-
-class azPipelinesQueue {
 }
 
 class azPipelinesRelease {
@@ -2126,21 +1978,27 @@ class azPipelinesRuns {
     static tag = az_pipelines_runs_tag;
 }
 
-class azPipelinesVariable extends az_pipelines_variable {
+class azPipelinesVariableGroup {
+    static variable = az_pipelines_variable_group_variable;
+}
+
+class azPipelinesVariable {
     static group = azPipelinesVariableGroup;
+}
+
+class azPipelines {
+    static agent = az_pipelines_agent;
+    static build = azPipelinesBuild;
+    static folder = az_pipelines_folder;
+    static pool = az_pipelines_pool;
+    static queue = az_pipelines_queue;
+    static release = azPipelinesRelease;
+    static runs = azPipelinesRuns;
+    static variable = azPipelinesVariable;
 }
 
 class azPolicyAssignment {
     static identity = az_policy_assignment_identity;
-}
-
-class azPolicyDefinition {
-}
-
-class azPolicyEvent {
-}
-
-class azPolicyMetadata {
 }
 
 class azPolicyRemediation {
@@ -2151,20 +2009,35 @@ class azPolicySet {
     static definition = az_policy_set_definition;
 }
 
-class azPolicyState {
+class azPolicy {
+    static assignment = azPolicyAssignment;
+    static definition = az_policy_definition;
+    static event = az_policy_event;
+    static metadata = az_policy_metadata;
+    static remediation = azPolicyRemediation;
+    static set = azPolicySet;
+    static state = az_policy_state;
 }
 
 class azPostgresFlexibleServerFirewall {
     static rule = az_postgres_flexible_server_firewall_rule;
 }
 
-class azPostgresFlexibleServerParameter {
+class azPostgresFlexibleServer {
+    static firewall = azPostgresFlexibleServerFirewall;
+    static parameter = az_postgres_flexible_server_parameter;
 }
 
-class azPostgresFlexibleServer extends az_postgres_flexible_server {
-    static parameter = az_postgres_flexible_server_parameter;
-    static firewall = azPostgresFlexibleServerFirewall;
-    static parameter = azPostgresFlexibleServerParameter;
+class azPostgresFlexible {
+    static server = azPostgresFlexibleServer;
+}
+
+class azPostgresServerAd {
+    static admin = az_postgres_server_ad_admin;
+}
+
+class azPostgresServerFirewall {
+    static rule = az_postgres_server_firewall_rule;
 }
 
 class azPostgresServerPrivateEndpoint {
@@ -2175,55 +2048,34 @@ class azPostgresServerPrivateLink {
     static resource = az_postgres_server_private_link_resource;
 }
 
-class azPostgresServerAd {
-    static admin = az_postgres_server_ad_admin;
-}
-
-class azPostgresServerConfiguration {
-}
-
-class azPostgresServerFirewall {
-    static rule = az_postgres_server_firewall_rule;
-}
-
-class azPostgresServerKey {
-}
-
-class azPostgresServerLogs {
-}
-
 class azPostgresServerPrivate {
     static endpoint = azPostgresServerPrivateEndpoint;
     static link = azPostgresServerPrivateLink;
-}
-
-class azPostgresServerReplica {
 }
 
 class azPostgresServerVnet {
     static rule = az_postgres_server_vnet_rule;
 }
 
-class azPostgresDb {
-}
-
-class azPostgresFlexible {
-    static server = azPostgresFlexibleServer;
-}
-
-class azPostgresServer extends az_postgres_server {
+class azPostgresServer {
+    static ad = azPostgresServerAd;
     static configuration = az_postgres_server_configuration;
+    static firewall = azPostgresServerFirewall;
     static key = az_postgres_server_key;
     static logs = az_postgres_server_logs;
-    static replica = az_postgres_server_replica;
-    static ad = azPostgresServerAd;
-    static configuration = azPostgresServerConfiguration;
-    static firewall = azPostgresServerFirewall;
-    static key = azPostgresServerKey;
-    static logs = azPostgresServerLogs;
     static private = azPostgresServerPrivate;
-    static replica = azPostgresServerReplica;
+    static replica = az_postgres_server_replica;
     static vnet = azPostgresServerVnet;
+}
+
+class azPostgres {
+    static db = az_postgres_db;
+    static flexible = azPostgresFlexible;
+    static server = azPostgresServer;
+}
+
+class azProvider {
+    static operation = az_provider_operation;
 }
 
 class azRedisFirewall {
@@ -2238,12 +2090,22 @@ class azRedisServer {
     static link = az_redis_server_link;
 }
 
+class azRedis {
+    static firewall = azRedisFirewall;
+    static patch = azRedisPatch;
+    static server = azRedisServer;
+}
+
 class azRelayHycoAuthorizationRule {
     static keys = az_relay_hyco_authorization_rule_keys;
 }
 
 class azRelayHycoAuthorization {
     static rule = azRelayHycoAuthorizationRule;
+}
+
+class azRelayHyco {
+    static authorization = azRelayHycoAuthorization;
 }
 
 class azRelayNamespaceAuthorizationRule {
@@ -2254,6 +2116,10 @@ class azRelayNamespaceAuthorization {
     static rule = azRelayNamespaceAuthorizationRule;
 }
 
+class azRelayNamespace {
+    static authorization = azRelayNamespaceAuthorization;
+}
+
 class azRelayWcfrelayAuthorizationRule {
     static keys = az_relay_wcfrelay_authorization_rule_keys;
 }
@@ -2262,27 +2128,18 @@ class azRelayWcfrelayAuthorization {
     static rule = azRelayWcfrelayAuthorizationRule;
 }
 
-class azRelayHyco extends az_relay_hyco {
-    static authorization = azRelayHycoAuthorization;
-}
-
-class azRelayNamespace extends az_relay_namespace {
-    static authorization = azRelayNamespaceAuthorization;
-}
-
-class azRelayWcfrelay extends az_relay_wcfrelay {
+class azRelayWcfrelay {
     static authorization = azRelayWcfrelayAuthorization;
 }
 
-class azReposPolicyWorkItem {
-    static linking = az_repos_policy_work_item_linking;
+class azRelay {
+    static hyco = azRelayHyco;
+    static namespace = azRelayNamespace;
+    static wcfrelay = azRelayWcfrelay;
 }
 
 class azReposPolicyApprover {
     static count = az_repos_policy_approver_count;
-}
-
-class azReposPolicyBuild {
 }
 
 class azReposPolicyCase {
@@ -2305,27 +2162,17 @@ class azReposPolicyRequired {
     static reviewer = az_repos_policy_required_reviewer;
 }
 
+class azReposPolicyWorkItem {
+    static linking = az_repos_policy_work_item_linking;
+}
+
 class azReposPolicyWork {
     static item = azReposPolicyWorkItem;
 }
 
-class azReposPrPolicy {
-}
-
-class azReposPrReviewer {
-}
-
-class azReposPrWork {
-    static item = az_repos_pr_work_item;
-}
-
-class azReposImport {
-}
-
-class azReposPolicy extends az_repos_policy {
-    static build = az_repos_policy_build;
+class azReposPolicy {
     static approver = azReposPolicyApprover;
-    static build = azReposPolicyBuild;
+    static build = az_repos_policy_build;
     static case = azReposPolicyCase;
     static comment = azReposPolicyComment;
     static file = azReposPolicyFile;
@@ -2334,26 +2181,44 @@ class azReposPolicy extends az_repos_policy {
     static work = azReposPolicyWork;
 }
 
-class azReposPr extends az_repos_pr {
+class azReposPrWork {
+    static item = az_repos_pr_work_item;
+}
+
+class azReposPr {
     static policy = az_repos_pr_policy;
     static reviewer = az_repos_pr_reviewer;
-    static policy = azReposPrPolicy;
-    static reviewer = azReposPrReviewer;
     static work = azReposPrWork;
 }
 
-class azReposRef {
+class azRepos {
+    static import = az_repos_import;
+    static policy = azReposPolicy;
+    static pr = azReposPr;
+    static ref = az_repos_ref;
 }
 
 class azReservationsReservationOrder {
     static id = az_reservations_reservation_order_id;
 }
 
-class azReservationsCatalog {
+class azReservationsReservation {
+    static order = azReservationsReservationOrder;
 }
 
-class azReservationsReservation extends az_reservations_reservation {
-    static order = azReservationsReservationOrder;
+class azReservations {
+    static catalog = az_reservations_catalog;
+    static reservation = azReservationsReservation;
+}
+
+class azResource {
+    static link = az_resource_link;
+    static lock = az_resource_lock;
+}
+
+class azRole {
+    static assignment = az_role_assignment;
+    static definition = az_role_definition;
 }
 
 class azSearchAdmin {
@@ -2364,7 +2229,10 @@ class azSearchQuery {
     static key = az_search_query_key;
 }
 
-class azSearchService {
+class azSearch {
+    static admin = azSearchAdmin;
+    static query = azSearchQuery;
+    static service = az_search_service;
 }
 
 class azSecurityAdaptiveApplication {
@@ -2375,30 +2243,9 @@ class azSecurityAdaptiveNetwork {
     static hardenings = az_security_adaptive_network_hardenings;
 }
 
-class azSecurityAutoProvisioning {
-    static setting = az_security_auto_provisioning_setting;
-}
-
-class azSecurityDiscoveredSecurity {
-    static solution = az_security_discovered_security_solution;
-}
-
-class azSecurityExternalSecurity {
-    static solution = az_security_external_security_solution;
-}
-
-class azSecurityRegulatoryCompliance {
-    static assessments = az_security_regulatory_compliance_assessments;
-    static controls = az_security_regulatory_compliance_controls;
-    static standards = az_security_regulatory_compliance_standards;
-}
-
 class azSecurityAdaptive {
     static application = azSecurityAdaptiveApplication;
     static network = azSecurityAdaptiveNetwork;
-}
-
-class azSecurityAlert {
 }
 
 class azSecurityAllowed {
@@ -2413,15 +2260,24 @@ class azSecurityAtp {
     static storage = az_security_atp_storage;
 }
 
+class azSecurityAutoProvisioning {
+    static setting = az_security_auto_provisioning_setting;
+}
+
 class azSecurityAuto {
     static provisioning = azSecurityAutoProvisioning;
 }
 
-class azSecurityContact {
+class azSecurityDiscoveredSecurity {
+    static solution = az_security_discovered_security_solution;
 }
 
 class azSecurityDiscovered {
     static security = azSecurityDiscoveredSecurity;
+}
+
+class azSecurityExternalSecurity {
+    static solution = az_security_external_security_solution;
 }
 
 class azSecurityExternal {
@@ -2439,31 +2295,44 @@ class azSecurityJit {
     static policy = az_security_jit_policy;
 }
 
-class azSecurityLocation {
-}
-
-class azSecurityPricing {
+class azSecurityRegulatoryCompliance {
+    static assessments = az_security_regulatory_compliance_assessments;
+    static controls = az_security_regulatory_compliance_controls;
+    static standards = az_security_regulatory_compliance_standards;
 }
 
 class azSecurityRegulatory {
     static compliance = azSecurityRegulatoryCompliance;
 }
 
-class azSecuritySetting {
-}
-
 class azSecuritySub {
     static assessment = az_security_sub_assessment;
 }
 
-class azSecurityTask {
-}
-
-class azSecurityTopology {
-}
-
 class azSecurityWorkspace {
     static setting = az_security_workspace_setting;
+}
+
+class azSecurity {
+    static adaptive = azSecurityAdaptive;
+    static alert = az_security_alert;
+    static allowed = azSecurityAllowed;
+    static assessment = azSecurityAssessment;
+    static atp = azSecurityAtp;
+    static auto = azSecurityAuto;
+    static contact = az_security_contact;
+    static discovered = azSecurityDiscovered;
+    static external = azSecurityExternal;
+    static iot = azSecurityIot;
+    static jit = azSecurityJit;
+    static location = az_security_location;
+    static pricing = az_security_pricing;
+    static regulatory = azSecurityRegulatory;
+    static setting = az_security_setting;
+    static sub = azSecuritySub;
+    static task = az_security_task;
+    static topology = az_security_topology;
+    static workspace = azSecurityWorkspace;
 }
 
 class azServicebusGeorecoveryAliasAuthorizationRule {
@@ -2474,8 +2343,12 @@ class azServicebusGeorecoveryAliasAuthorization {
     static rule = azServicebusGeorecoveryAliasAuthorizationRule;
 }
 
-class azServicebusGeorecoveryAlias extends az_servicebus_georecovery_alias {
+class azServicebusGeorecoveryAlias {
     static authorization = azServicebusGeorecoveryAliasAuthorization;
+}
+
+class azServicebusGeorecovery {
+    static alias = azServicebusGeorecoveryAlias;
 }
 
 class azServicebusNamespaceAuthorizationRule {
@@ -2490,12 +2363,21 @@ class azServicebusNamespaceNetwork {
     static rule = az_servicebus_namespace_network_rule;
 }
 
+class azServicebusNamespace {
+    static authorization = azServicebusNamespaceAuthorization;
+    static network = azServicebusNamespaceNetwork;
+}
+
 class azServicebusQueueAuthorizationRule {
     static keys = az_servicebus_queue_authorization_rule_keys;
 }
 
 class azServicebusQueueAuthorization {
     static rule = azServicebusQueueAuthorizationRule;
+}
+
+class azServicebusQueue {
+    static authorization = azServicebusQueueAuthorization;
 }
 
 class azServicebusTopicAuthorizationRule {
@@ -2510,63 +2392,56 @@ class azServicebusTopicSubscription {
     static rule = az_servicebus_topic_subscription_rule;
 }
 
-class azServicebusGeorecovery {
-    static alias = azServicebusGeorecoveryAlias;
-}
-
-class azServicebusMigration {
-}
-
-class azServicebusNamespace extends az_servicebus_namespace {
-    static authorization = azServicebusNamespaceAuthorization;
-    static network = azServicebusNamespaceNetwork;
-}
-
-class azServicebusQueue extends az_servicebus_queue {
-    static authorization = azServicebusQueueAuthorization;
-}
-
-class azServicebusTopic extends az_servicebus_topic {
+class azServicebusTopic {
     static authorization = azServicebusTopicAuthorization;
     static subscription = azServicebusTopicSubscription;
 }
 
-class azSfApplicationCertificate {
+class azServicebus {
+    static georecovery = azServicebusGeorecovery;
+    static migration = az_servicebus_migration;
+    static namespace = azServicebusNamespace;
+    static queue = azServicebusQueue;
+    static topic = azServicebusTopic;
 }
 
 class azSfApplicationType {
     static version = az_sf_application_type_version;
 }
 
-class azSfClusterCertificate {
+class azSfApplication {
+    static certificate = az_sf_application_certificate;
+    static type = azSfApplicationType;
 }
 
 class azSfClusterClient {
     static certificate = az_sf_cluster_client_certificate;
 }
 
-class azSfClusterDurability {
-}
-
 class azSfClusterNode {
     static type = az_sf_cluster_node_type;
-}
-
-class azSfClusterReliability {
-}
-
-class azSfClusterSetting {
 }
 
 class azSfClusterUpgrade {
     static type = az_sf_cluster_upgrade_type;
 }
 
+class azSfCluster {
+    static certificate = az_sf_cluster_certificate;
+    static client = azSfClusterClient;
+    static durability = az_sf_cluster_durability;
+    static node = azSfClusterNode;
+    static reliability = az_sf_cluster_reliability;
+    static setting = az_sf_cluster_setting;
+    static upgrade = azSfClusterUpgrade;
+}
+
 class azSfManagedClusterClient {
     static certificate = az_sf_managed_cluster_client_certificate;
 }
 
-class azSfManagedNodeTypeNode {
+class azSfManagedCluster {
+    static client = azSfManagedClusterClient;
 }
 
 class azSfManagedNodeTypeVm {
@@ -2574,38 +2449,13 @@ class azSfManagedNodeTypeVm {
     static secret = az_sf_managed_node_type_vm_secret;
 }
 
-class azSfManagedNodeType extends az_sf_managed_node_type {
+class azSfManagedNodeType {
     static node = az_sf_managed_node_type_node;
-    static node = azSfManagedNodeTypeNode;
     static vm = azSfManagedNodeTypeVm;
-}
-
-class azSfManagedCluster extends az_sf_managed_cluster {
-    static client = azSfManagedClusterClient;
 }
 
 class azSfManagedNode {
     static type = azSfManagedNodeType;
-}
-
-class azSfApplication extends az_sf_application {
-    static certificate = az_sf_application_certificate;
-    static certificate = azSfApplicationCertificate;
-    static type = azSfApplicationType;
-}
-
-class azSfCluster extends az_sf_cluster {
-    static certificate = az_sf_cluster_certificate;
-    static durability = az_sf_cluster_durability;
-    static reliability = az_sf_cluster_reliability;
-    static setting = az_sf_cluster_setting;
-    static certificate = azSfClusterCertificate;
-    static client = azSfClusterClient;
-    static durability = azSfClusterDurability;
-    static node = azSfClusterNode;
-    static reliability = azSfClusterReliability;
-    static setting = azSfClusterSetting;
-    static upgrade = azSfClusterUpgrade;
 }
 
 class azSfManaged {
@@ -2613,7 +2463,11 @@ class azSfManaged {
     static node = azSfManagedNode;
 }
 
-class azSfService {
+class azSf {
+    static application = azSfApplication;
+    static cluster = azSfCluster;
+    static managed = azSfManaged;
+    static service = az_sf_service;
 }
 
 class azSigImage {
@@ -2621,17 +2475,19 @@ class azSigImage {
     static version = az_sig_image_version;
 }
 
-class azSignalrCors {
-}
-
-class azSignalrKey {
+class azSig {
+    static image = azSigImage;
 }
 
 class azSignalrNetwork {
     static rule = az_signalr_network_rule;
 }
 
-class azSignalrUpstream {
+class azSignalr {
+    static cors = az_signalr_cors;
+    static key = az_signalr_key;
+    static network = azSignalrNetwork;
+    static upstream = az_signalr_upstream;
 }
 
 class azSqlDbAudit {
@@ -2647,42 +2503,59 @@ class azSqlDbLtr {
     static policy = az_sql_db_ltr_policy;
 }
 
-class azSqlDbOp {
-}
-
-class azSqlDbReplica {
-}
-
-class azSqlDbTde {
-}
-
 class azSqlDbThreat {
     static policy = az_sql_db_threat_policy;
+}
+
+class azSqlDb {
+    static audit = azSqlDbAudit;
+    static classification = azSqlDbClassification;
+    static ltr = azSqlDbLtr;
+    static op = az_sql_db_op;
+    static replica = az_sql_db_replica;
+    static tde = az_sql_db_tde;
+    static threat = azSqlDbThreat;
 }
 
 class azSqlElasticPool {
     static op = az_sql_elastic_pool_op;
 }
 
+class azSqlElastic {
+    static pool = azSqlElasticPool;
+}
+
+class azSqlFailover {
+    static group = az_sql_failover_group;
+}
+
 class azSqlInstanceFailover {
     static group = az_sql_instance_failover_group;
 }
 
-class azSqlInstancePool {
+class azSqlInstance {
+    static failover = azSqlInstanceFailover;
+    static pool = az_sql_instance_pool;
 }
 
 class azSqlMiAd {
     static admin = az_sql_mi_ad_admin;
 }
 
-class azSqlMiKey {
-}
-
-class azSqlMiOp {
-}
-
 class azSqlMiTde {
     static key = az_sql_mi_tde_key;
+}
+
+class azSqlMi {
+    static ad = azSqlMiAd;
+    static key = az_sql_mi_key;
+    static op = az_sql_mi_op;
+    static tde = azSqlMiTde;
+}
+
+class azSqlMidbLtr {
+    static backup = az_sql_midb_ltr_backup;
+    static policy = az_sql_midb_ltr_policy;
 }
 
 class azSqlMidbShortTermRetention {
@@ -2693,13 +2566,13 @@ class azSqlMidbShortTerm {
     static retention = azSqlMidbShortTermRetention;
 }
 
-class azSqlMidbLtr {
-    static backup = az_sql_midb_ltr_backup;
-    static policy = az_sql_midb_ltr_policy;
-}
-
 class azSqlMidbShort {
     static term = azSqlMidbShortTerm;
+}
+
+class azSqlMidb {
+    static ltr = azSqlMidbLtr;
+    static short = azSqlMidbShort;
 }
 
 class azSqlServerAd {
@@ -2722,9 +2595,6 @@ class azSqlServerFirewall {
     static rule = az_sql_server_firewall_rule;
 }
 
-class azSqlServerKey {
-}
-
 class azSqlServerTde {
     static key = az_sql_server_tde_key;
 }
@@ -2733,66 +2603,13 @@ class azSqlServerVnet {
     static rule = az_sql_server_vnet_rule;
 }
 
-class azSqlVmGroupAg {
-    static listener = az_sql_vm_group_ag_listener;
-}
-
-class azSqlVmGroup extends az_sql_vm_group {
-    static ag = azSqlVmGroupAg;
-}
-
-class azSqlDb extends az_sql_db {
-    static op = az_sql_db_op;
-    static replica = az_sql_db_replica;
-    static tde = az_sql_db_tde;
-    static audit = azSqlDbAudit;
-    static classification = azSqlDbClassification;
-    static ltr = azSqlDbLtr;
-    static op = azSqlDbOp;
-    static replica = azSqlDbReplica;
-    static tde = azSqlDbTde;
-    static threat = azSqlDbThreat;
-}
-
-class azSqlDw {
-}
-
-class azSqlElastic {
-    static pool = azSqlElasticPool;
-}
-
-class azSqlFailover {
-    static group = az_sql_failover_group;
-}
-
-class azSqlInstance {
-    static pool = az_sql_instance_pool;
-    static failover = azSqlInstanceFailover;
-    static pool = azSqlInstancePool;
-}
-
-class azSqlMi extends az_sql_mi {
-    static key = az_sql_mi_key;
-    static op = az_sql_mi_op;
-    static ad = azSqlMiAd;
-    static key = azSqlMiKey;
-    static op = azSqlMiOp;
-    static tde = azSqlMiTde;
-}
-
-class azSqlMidb extends az_sql_midb {
-    static ltr = azSqlMidbLtr;
-    static short = azSqlMidbShort;
-}
-
-class azSqlServer extends az_sql_server {
-    static key = az_sql_server_key;
+class azSqlServer {
     static ad = azSqlServerAd;
     static audit = azSqlServerAudit;
     static conn = azSqlServerConn;
     static dns = azSqlServerDns;
     static firewall = azSqlServerFirewall;
-    static key = azSqlServerKey;
+    static key = az_sql_server_key;
     static tde = azSqlServerTde;
     static vnet = azSqlServerVnet;
 }
@@ -2801,28 +2618,40 @@ class azSqlVirtual {
     static cluster = az_sql_virtual_cluster;
 }
 
-class azSqlVm extends az_sql_vm {
+class azSqlVmGroupAg {
+    static listener = az_sql_vm_group_ag_listener;
+}
+
+class azSqlVmGroup {
+    static ag = azSqlVmGroupAg;
+}
+
+class azSqlVm {
     static group = azSqlVmGroup;
+}
+
+class azSql {
+    static db = azSqlDb;
+    static dw = az_sql_dw;
+    static elastic = azSqlElastic;
+    static failover = azSqlFailover;
+    static instance = azSqlInstance;
+    static mi = azSqlMi;
+    static midb = azSqlMidb;
+    static server = azSqlServer;
+    static virtual = azSqlVirtual;
+    static vm = azSqlVm;
+}
+
+class azStaticwebapp {
+    static appsettings = az_staticwebapp_appsettings;
+    static environment = az_staticwebapp_environment;
+    static hostname = az_staticwebapp_hostname;
+    static users = az_staticwebapp_users;
 }
 
 class azStorageAccountBlobService {
     static properties = az_storage_account_blob_service_properties;
-}
-
-class azStorageAccountFileService {
-    static properties = az_storage_account_file_service_properties;
-}
-
-class azStorageAccountOrPolicy {
-    static rule = az_storage_account_or_policy_rule;
-}
-
-class azStorageAccountPrivateEndpoint {
-    static connection = az_storage_account_private_endpoint_connection;
-}
-
-class azStorageAccountPrivateLink {
-    static resource = az_storage_account_private_link_resource;
 }
 
 class azStorageAccountBlob {
@@ -2833,11 +2662,12 @@ class azStorageAccountEncryption {
     static scope = az_storage_account_encryption_scope;
 }
 
-class azStorageAccountFile {
-    static service = azStorageAccountFileService;
+class azStorageAccountFileService {
+    static properties = az_storage_account_file_service_properties;
 }
 
-class azStorageAccountKeys {
+class azStorageAccountFile {
+    static service = azStorageAccountFileService;
 }
 
 class azStorageAccountManagement {
@@ -2848,8 +2678,20 @@ class azStorageAccountNetwork {
     static rule = az_storage_account_network_rule;
 }
 
+class azStorageAccountOrPolicy {
+    static rule = az_storage_account_or_policy_rule;
+}
+
 class azStorageAccountOr {
     static policy = azStorageAccountOrPolicy;
+}
+
+class azStorageAccountPrivateEndpoint {
+    static connection = az_storage_account_private_endpoint_connection;
+}
+
+class azStorageAccountPrivateLink {
+    static resource = az_storage_account_private_link_resource;
 }
 
 class azStorageAccountPrivate {
@@ -2857,49 +2699,64 @@ class azStorageAccountPrivate {
     static link = azStorageAccountPrivateLink;
 }
 
-class azStorageBlobServicePropertiesDelete {
-    static policy = az_storage_blob_service_properties_delete_policy;
-}
-
-class azStorageBlobServiceProperties extends az_storage_blob_service_properties {
-    static delete = azStorageBlobServicePropertiesDelete;
-}
-
-class azStorageBlobCopy {
+class azStorageAccount {
+    static blob = azStorageAccountBlob;
+    static encryption = azStorageAccountEncryption;
+    static file = azStorageAccountFile;
+    static keys = az_storage_account_keys;
+    static management = azStorageAccountManagement;
+    static network = azStorageAccountNetwork;
+    static or = azStorageAccountOr;
+    static private = azStorageAccountPrivate;
 }
 
 class azStorageBlobIncremental {
     static copy = az_storage_blob_incremental_copy;
 }
 
-class azStorageBlobLease {
+class azStorageBlobServicePropertiesDelete {
+    static policy = az_storage_blob_service_properties_delete_policy;
 }
 
-class azStorageBlobMetadata {
+class azStorageBlobServiceProperties {
+    static delete = azStorageBlobServicePropertiesDelete;
 }
 
 class azStorageBlobService {
     static properties = azStorageBlobServiceProperties;
 }
 
-class azStorageContainerImmutability {
-    static policy = az_storage_container_immutability_policy;
+class azStorageBlob {
+    static copy = az_storage_blob_copy;
+    static incremental = azStorageBlobIncremental;
+    static lease = az_storage_blob_lease;
+    static metadata = az_storage_blob_metadata;
+    static service = azStorageBlobService;
 }
 
-class azStorageContainerLease {
+class azStorageContainerImmutability {
+    static policy = az_storage_container_immutability_policy;
 }
 
 class azStorageContainerLegal {
     static hold = az_storage_container_legal_hold;
 }
 
-class azStorageContainerMetadata {
+class azStorageContainer {
+    static immutability = azStorageContainerImmutability;
+    static lease = az_storage_container_lease;
+    static legal = azStorageContainerLegal;
+    static metadata = az_storage_container_metadata;
+    static policy = az_storage_container_policy;
 }
 
-class azStorageContainerPolicy {
+class azStorageDirectory {
+    static metadata = az_storage_directory_metadata;
 }
 
-class azStorageFsAccess {
+class azStorageFile {
+    static copy = az_storage_file_copy;
+    static metadata = az_storage_file_metadata;
 }
 
 class azStorageFsDirectory {
@@ -2910,74 +2767,11 @@ class azStorageFsFile {
     static metadata = az_storage_fs_file_metadata;
 }
 
-class azStorageFsMetadata {
-}
-
-class azStorageAccount extends az_storage_account {
-    static keys = az_storage_account_keys;
-    static blob = azStorageAccountBlob;
-    static encryption = azStorageAccountEncryption;
-    static file = azStorageAccountFile;
-    static keys = azStorageAccountKeys;
-    static management = azStorageAccountManagement;
-    static network = azStorageAccountNetwork;
-    static or = azStorageAccountOr;
-    static private = azStorageAccountPrivate;
-}
-
-class azStorageBlob extends az_storage_blob {
-    static copy = az_storage_blob_copy;
-    static lease = az_storage_blob_lease;
-    static metadata = az_storage_blob_metadata;
-    static copy = azStorageBlobCopy;
-    static incremental = azStorageBlobIncremental;
-    static lease = azStorageBlobLease;
-    static metadata = azStorageBlobMetadata;
-    static service = azStorageBlobService;
-}
-
-class azStorageContainer extends az_storage_container {
-    static lease = az_storage_container_lease;
-    static metadata = az_storage_container_metadata;
-    static policy = az_storage_container_policy;
-    static immutability = azStorageContainerImmutability;
-    static lease = azStorageContainerLease;
-    static legal = azStorageContainerLegal;
-    static metadata = azStorageContainerMetadata;
-    static policy = azStorageContainerPolicy;
-}
-
-class azStorageCors {
-}
-
-class azStorageDirectory {
-    static metadata = az_storage_directory_metadata;
-}
-
-class azStorageEntity {
-}
-
-class azStorageFile {
-    static copy = az_storage_file_copy;
-    static metadata = az_storage_file_metadata;
-}
-
-class azStorageFs extends az_storage_fs {
+class azStorageFs {
     static access = az_storage_fs_access;
-    static metadata = az_storage_fs_metadata;
-    static access = azStorageFsAccess;
     static directory = azStorageFsDirectory;
     static file = azStorageFsFile;
-    static metadata = azStorageFsMetadata;
-}
-
-class azStorageLogging {
-}
-
-class azStorageMessage {
-}
-
-class azStorageMetrics {
+    static metadata = az_storage_fs_metadata;
 }
 
 class azStorageQueue {
@@ -2995,8 +2789,21 @@ class azStorageTable {
     static policy = az_storage_table_policy;
 }
 
-class azSynapseWorkspaceFirewall {
-    static rule = az_synapse_workspace_firewall_rule;
+class azStorage {
+    static account = azStorageAccount;
+    static blob = azStorageBlob;
+    static container = azStorageContainer;
+    static cors = az_storage_cors;
+    static directory = azStorageDirectory;
+    static entity = az_storage_entity;
+    static file = azStorageFile;
+    static fs = azStorageFs;
+    static logging = az_storage_logging;
+    static message = az_storage_message;
+    static metrics = az_storage_metrics;
+    static queue = azStorageQueue;
+    static share = azStorageShare;
+    static table = azStorageTable;
 }
 
 class azSynapseRole {
@@ -3015,8 +2822,19 @@ class azSynapseSql {
     static pool = az_synapse_sql_pool;
 }
 
-class azSynapseWorkspace extends az_synapse_workspace {
+class azSynapseWorkspaceFirewall {
+    static rule = az_synapse_workspace_firewall_rule;
+}
+
+class azSynapseWorkspace {
     static firewall = azSynapseWorkspaceFirewall;
+}
+
+class azSynapse {
+    static role = azSynapseRole;
+    static spark = azSynapseSpark;
+    static sql = azSynapseSql;
+    static workspace = azSynapseWorkspace;
 }
 
 class azVmAvailability {
@@ -3027,24 +2845,12 @@ class azVmBoot {
     static diagnostics = az_vm_boot_diagnostics;
 }
 
-class azVmDiagnostics {
-}
-
-class azVmDisk {
-}
-
-class azVmEncryption {
-}
-
 class azVmExtension {
     static image = az_vm_extension_image;
 }
 
 class azVmHost {
     static group = az_vm_host_group;
-}
-
-class azVmIdentity {
 }
 
 class azVmImage {
@@ -3056,40 +2862,34 @@ class azVmMonitor {
     static metrics = az_vm_monitor_metrics;
 }
 
-class azVmNic {
-}
-
 class azVmRun {
     static command = az_vm_run_command;
-}
-
-class azVmSecret {
 }
 
 class azVmUnmanaged {
     static disk = az_vm_unmanaged_disk;
 }
 
-class azVmUser {
-}
-
-class azVmssDiagnostics {
-}
-
-class azVmssDisk {
-}
-
-class azVmssEncryption {
+class azVm {
+    static availability = azVmAvailability;
+    static boot = azVmBoot;
+    static diagnostics = az_vm_diagnostics;
+    static disk = az_vm_disk;
+    static encryption = az_vm_encryption;
+    static extension = azVmExtension;
+    static host = azVmHost;
+    static identity = az_vm_identity;
+    static image = azVmImage;
+    static monitor = azVmMonitor;
+    static nic = az_vm_nic;
+    static run = azVmRun;
+    static secret = az_vm_secret;
+    static unmanaged = azVmUnmanaged;
+    static user = az_vm_user;
 }
 
 class azVmssExtension {
     static image = az_vmss_extension_image;
-}
-
-class azVmssIdentity {
-}
-
-class azVmssNic {
 }
 
 class azVmssRolling {
@@ -3100,61 +2900,39 @@ class azVmssRun {
     static command = az_vmss_run_command;
 }
 
+class azVmss {
+    static diagnostics = az_vmss_diagnostics;
+    static disk = az_vmss_disk;
+    static encryption = az_vmss_encryption;
+    static extension = azVmssExtension;
+    static identity = az_vmss_identity;
+    static nic = az_vmss_nic;
+    static rolling = azVmssRolling;
+    static run = azVmssRun;
+}
+
 class azWebappConfigAccess {
     static restriction = az_webapp_config_access_restriction;
-}
-
-class azWebappConfigAppsettings {
-}
-
-class azWebappConfigBackup {
 }
 
 class azWebappConfigConnection {
     static string = az_webapp_config_connection_string;
 }
 
-class azWebappConfigContainer {
-}
-
-class azWebappConfigHostname {
-}
-
-class azWebappConfigSnapshot {
-}
-
-class azWebappConfigSsl {
-}
-
 class azWebappConfigStorage {
     static account = az_webapp_config_storage_account;
 }
 
-class azWebappAuth {
-}
-
-class azWebappConfig extends az_webapp_config {
+class azWebappConfig {
+    static access = azWebappConfigAccess;
     static appsettings = az_webapp_config_appsettings;
     static backup = az_webapp_config_backup;
+    static connection = azWebappConfigConnection;
     static container = az_webapp_config_container;
     static hostname = az_webapp_config_hostname;
     static snapshot = az_webapp_config_snapshot;
     static ssl = az_webapp_config_ssl;
-    static access = azWebappConfigAccess;
-    static appsettings = azWebappConfigAppsettings;
-    static backup = azWebappConfigBackup;
-    static connection = azWebappConfigConnection;
-    static container = azWebappConfigContainer;
-    static hostname = azWebappConfigHostname;
-    static snapshot = azWebappConfigSnapshot;
-    static ssl = azWebappConfigSsl;
     static storage = azWebappConfigStorage;
-}
-
-class azWebappCors {
-}
-
-class azWebappDeleted {
 }
 
 class azWebappDeployment {
@@ -3166,9 +2944,6 @@ class azWebappDeployment {
 
 class azWebappHybrid {
     static connection = az_webapp_hybrid_connection;
-}
-
-class azWebappIdentity {
 }
 
 class azWebappLog {
@@ -3188,754 +2963,105 @@ class azWebappWebjob {
     static triggered = az_webapp_webjob_triggered;
 }
 
-class azAccount extends az_account {
-    static lock = az_account_lock;
-    static lock = azAccountLock;
-    static management = azAccountManagement;
-}
-
-class azAcr extends az_acr {
-    static agentpool = az_acr_agentpool;
-    static credential = az_acr_credential;
-    static encryption = az_acr_encryption;
-    static identity = az_acr_identity;
-    static pack = az_acr_pack;
-    static replication = az_acr_replication;
-    static repository = az_acr_repository;
-    static taskrun = az_acr_taskrun;
-    static webhook = az_acr_webhook;
-    static agentpool = azAcrAgentpool;
-    static config = azAcrConfig;
-    static credential = azAcrCredential;
-    static encryption = azAcrEncryption;
-    static helm = azAcrHelm;
-    static identity = azAcrIdentity;
-    static network = azAcrNetwork;
-    static pack = azAcrPack;
-    static private = azAcrPrivate;
-    static replication = azAcrReplication;
-    static repository = azAcrRepository;
-    static scope = azAcrScope;
-    static task = azAcrTask;
-    static taskrun = azAcrTaskrun;
-    static token = azAcrToken;
-    static webhook = azAcrWebhook;
-}
-
-class azAcs {
-    static dcos = az_acs_dcos;
-    static kubernetes = az_acs_kubernetes;
-}
-
-class azAd extends az_ad {
-    static user = az_ad_user;
-    static app = azAdApp;
-    static group = azAdGroup;
-    static signed = azAdSigned;
-    static sp = azAdSp;
-    static user = azAdUser;
-}
-
-class azAdvisor {
-    static configuration = az_advisor_configuration;
-    static recommendation = az_advisor_recommendation;
-}
-
-class azAks {
-    static nodepool = az_aks_nodepool;
-}
-
-class azAms extends az_ams {
-    static job = az_ams_job;
-    static account = azAmsAccount;
-    static asset = azAmsAsset;
-    static content = azAmsContent;
-    static job = azAmsJob;
-    static live = azAmsLive;
-    static streaming = azAmsStreaming;
-    static transform = azAmsTransform;
-}
-
-class azApim extends az_apim {
-    static nv = az_apim_nv;
-    static api = azApimApi;
-    static nv = azApimNv;
-    static product = azApimProduct;
-}
-
-class azAppconfig extends az_appconfig {
-    static credential = az_appconfig_credential;
-    static identity = az_appconfig_identity;
-    static kv = az_appconfig_kv;
-    static revision = az_appconfig_revision;
-    static credential = azAppconfigCredential;
-    static feature = azAppconfigFeature;
-    static identity = azAppconfigIdentity;
-    static kv = azAppconfigKv;
-    static revision = azAppconfigRevision;
-}
-
-class azAppservice extends az_appservice {
-    static ase = az_appservice_ase;
-    static plan = az_appservice_plan;
-    static ase = azAppserviceAse;
-    static hybrid = azAppserviceHybrid;
-    static plan = azAppservicePlan;
-    static vnet = azAppserviceVnet;
-}
-
-class azAro {
-}
-
-class azArtifacts {
-    static universal = az_artifacts_universal;
-}
-
-class azBackup extends az_backup {
-    static container = az_backup_container;
-    static item = az_backup_item;
-    static job = az_backup_job;
-    static policy = az_backup_policy;
-    static protection = az_backup_protection;
-    static recoveryconfig = az_backup_recoveryconfig;
-    static recoverypoint = az_backup_recoverypoint;
-    static container = azBackupContainer;
-    static item = azBackupItem;
-    static job = azBackupJob;
-    static policy = azBackupPolicy;
-    static protectable = azBackupProtectable;
-    static protection = azBackupProtection;
-    static recoveryconfig = azBackupRecoveryconfig;
-    static recoverypoint = azBackupRecoverypoint;
-    static restore = azBackupRestore;
-    static vault = azBackupVault;
-}
-
-class azBatch extends az_batch {
-    static certificate = az_batch_certificate;
-    static account = azBatchAccount;
-    static application = azBatchApplication;
-    static certificate = azBatchCertificate;
-    static job = azBatchJob;
-    static location = azBatchLocation;
-    static node = azBatchNode;
-    static pool = azBatchPool;
-    static task = azBatchTask;
-}
-
-class azBatchai extends az_batchai {
-    static experiment = az_batchai_experiment;
-    static workspace = az_batchai_workspace;
-    static cluster = azBatchaiCluster;
-    static experiment = azBatchaiExperiment;
-    static file = azBatchaiFile;
-    static job = azBatchaiJob;
-    static workspace = azBatchaiWorkspace;
-}
-
-class azBilling extends az_billing {
-    static invoice = az_billing_invoice;
-    static period = az_billing_period;
-    static enrollment = azBillingEnrollment;
-    static invoice = azBillingInvoice;
-    static period = azBillingPeriod;
-}
-
-class azBoards extends az_boards {
-    static area = azBoardsArea;
-    static iteration = azBoardsIteration;
-    static work = azBoardsWork;
-}
-
-class azBot {
-    static authsetting = az_bot_authsetting;
-    static directline = az_bot_directline;
-    static email = az_bot_email;
-    static facebook = az_bot_facebook;
-    static kik = az_bot_kik;
-    static msteams = az_bot_msteams;
-    static skype = az_bot_skype;
-    static slack = az_bot_slack;
-    static sms = az_bot_sms;
-    static telegram = az_bot_telegram;
-    static webchat = az_bot_webchat;
-}
-
-class azCache {
-}
-
-class azCdn extends az_cdn {
-    static origin = az_cdn_origin;
-    static profile = az_cdn_profile;
-    static custom = azCdnCustom;
-    static edge = azCdnEdge;
-    static endpoint = azCdnEndpoint;
-    static origin = azCdnOrigin;
-    static profile = azCdnProfile;
-    static waf = azCdnWaf;
-}
-
-class azCloud {
-}
-
-class azCognitiveservices extends az_cognitiveservices {
-    static account = azCognitiveservicesAccount;
-}
-
-class azConfig extends az_config {
-    static param = azConfigParam;
-}
-
-class azConsumption extends az_consumption {
-    static budget = az_consumption_budget;
-    static marketplace = az_consumption_marketplace;
-    static pricesheet = az_consumption_pricesheet;
-    static usage = az_consumption_usage;
-    static budget = azConsumptionBudget;
-    static marketplace = azConsumptionMarketplace;
-    static pricesheet = azConsumptionPricesheet;
-    static reservation = azConsumptionReservation;
-    static usage = azConsumptionUsage;
-}
-
-class azContainer {
-}
-
-class azCosmosdb extends az_cosmosdb {
-    static collection = az_cosmosdb_collection;
-    static database = az_cosmosdb_database;
-    static keys = az_cosmosdb_keys;
-    static cassandra = azCosmosdbCassandra;
-    static collection = azCosmosdbCollection;
-    static database = azCosmosdbDatabase;
-    static gremlin = azCosmosdbGremlin;
-    static keys = azCosmosdbKeys;
-    static mongodb = azCosmosdbMongodb;
-    static network = azCosmosdbNetwork;
-    static private = azCosmosdbPrivate;
-    static sql = azCosmosdbSql;
-    static table = azCosmosdbTable;
-}
-
-class azDeployment extends az_deployment {
-    static group = az_deployment_group;
-    static mg = az_deployment_mg;
-    static scripts = az_deployment_scripts;
-    static sub = az_deployment_sub;
-    static tenant = az_deployment_tenant;
-    static group = azDeploymentGroup;
-    static mg = azDeploymentMg;
-    static operation = azDeploymentOperation;
-    static scripts = azDeploymentScripts;
-    static sub = azDeploymentSub;
-    static tenant = azDeploymentTenant;
-}
-
-class azDeploymentmanager extends az_deploymentmanager {
-    static rollout = az_deploymentmanager_rollout;
-    static step = az_deploymentmanager_step;
-    static artifact = azDeploymentmanagerArtifact;
-    static rollout = azDeploymentmanagerRollout;
-    static service = azDeploymentmanagerService;
-    static step = azDeploymentmanagerStep;
-}
-
-class azDevops extends az_devops {
-    static extension = az_devops_extension;
-    static project = az_devops_project;
-    static team = az_devops_team;
-    static user = az_devops_user;
-    static admin = azDevopsAdmin;
-    static extension = azDevopsExtension;
-    static project = azDevopsProject;
-    static security = azDevopsSecurity;
-    static service = azDevopsService;
-    static team = azDevopsTeam;
-    static user = azDevopsUser;
-    static wiki = azDevopsWiki;
-}
-
-class azDisk extends az_disk {
-    static access = az_disk_access;
-    static access = azDiskAccess;
-    static encryption = azDiskEncryption;
-}
-
-class azDla extends az_dla {
-    static account = azDlaAccount;
-    static catalog = azDlaCatalog;
-    static job = azDlaJob;
-}
-
-class azDls extends az_dls {
-    static account = azDlsAccount;
-    static fs = azDlsFs;
-}
-
-class azDms extends az_dms {
-    static project = azDmsProject;
-}
-
-class azEventgrid extends az_eventgrid {
-    static domain = azEventgridDomain;
-    static event = azEventgridEvent;
-    static extension = azEventgridExtension;
-    static partner = azEventgridPartner;
-    static system = azEventgridSystem;
-    static topic = azEventgridTopic;
-}
-
-class azEventhubs extends az_eventhubs {
-    static cluster = azEventhubsCluster;
-    static eventhub = azEventhubsEventhub;
-    static georecovery = azEventhubsGeorecovery;
-    static namespace = azEventhubsNamespace;
-}
-
-class azExtension {
-}
-
-class azFeature {
-}
-
-class azFunctionapp extends az_functionapp {
-    static cors = az_functionapp_cors;
-    static identity = az_functionapp_identity;
-    static keys = az_functionapp_keys;
-    static plan = az_functionapp_plan;
-    static config = azFunctionappConfig;
-    static cors = azFunctionappCors;
-    static deployment = azFunctionappDeployment;
-    static devops = azFunctionappDevops;
-    static function = azFunctionappFunction;
-    static hybrid = azFunctionappHybrid;
-    static identity = azFunctionappIdentity;
-    static keys = azFunctionappKeys;
-    static log = azFunctionappLog;
-    static plan = azFunctionappPlan;
-    static vnet = azFunctionappVnet;
-}
-
-class azGroup extends az_group {
-    static lock = az_group_lock;
-    static deployment = azGroupDeployment;
-    static lock = azGroupLock;
-}
-
-class azHdinsight extends az_hdinsight {
-    static application = az_hdinsight_application;
-    static host = az_hdinsight_host;
-    static monitor = az_hdinsight_monitor;
-    static application = azHdinsightApplication;
-    static autoscale = azHdinsightAutoscale;
-    static host = azHdinsightHost;
-    static monitor = azHdinsightMonitor;
-    static script = azHdinsightScript;
-}
-
-class azIdentity {
-}
-
-class azImage extends az_image {
-    static builder = azImageBuilder;
-}
-
-class azIot extends az_iot {
-    static central = azIotCentral;
-    static dps = azIotDps;
-    static hub = azIotHub;
-}
-
-class azIotcentral {
-    static app = az_iotcentral_app;
-}
-
-class azKeyvault extends az_keyvault {
-    static backup = az_keyvault_backup;
-    static key = az_keyvault_key;
-    static restore = az_keyvault_restore;
-    static secret = az_keyvault_secret;
-    static backup = azKeyvaultBackup;
-    static certificate = azKeyvaultCertificate;
-    static key = azKeyvaultKey;
-    static network = azKeyvaultNetwork;
-    static private = azKeyvaultPrivate;
-    static restore = azKeyvaultRestore;
-    static role = azKeyvaultRole;
-    static secret = azKeyvaultSecret;
-    static security = azKeyvaultSecurity;
-    static storage = azKeyvaultStorage;
-}
-
-class azKusto {
-    static cluster = az_kusto_cluster;
-    static database = az_kusto_database;
-}
-
-class azLab extends az_lab {
-    static environment = az_lab_environment;
-    static formula = az_lab_formula;
-    static secret = az_lab_secret;
-    static vm = az_lab_vm;
-    static vnet = az_lab_vnet;
-    static arm = azLabArm;
-    static artifact = azLabArtifact;
-    static custom = azLabCustom;
-    static environment = azLabEnvironment;
-    static formula = azLabFormula;
-    static gallery = azLabGallery;
-    static secret = azLabSecret;
-    static vm = azLabVm;
-    static vnet = azLabVnet;
-}
-
-class azLocal {
-    static context = az_local_context;
-}
-
-class azLock {
-}
-
-class azManagedapp {
-    static definition = az_managedapp_definition;
-}
-
-class azManagedservices {
-    static assignment = az_managedservices_assignment;
-    static definition = az_managedservices_definition;
-}
-
-class azMaps extends az_maps {
-    static account = azMapsAccount;
-}
-
-class azMariadb extends az_mariadb {
-    static db = az_mariadb_db;
-    static db = azMariadbDb;
-    static server = azMariadbServer;
-}
-
-class azMonitor extends az_monitor {
-    static alert = az_monitor_alert;
-    static action = azMonitorAction;
-    static activity = azMonitorActivity;
-    static alert = azMonitorAlert;
-    static autoscale = azMonitorAutoscale;
-    static diagnostic = azMonitorDiagnostic;
-    static log = azMonitorLog;
-    static metrics = azMonitorMetrics;
-    static private = azMonitorPrivate;
-}
-
-class azMysql extends az_mysql {
-    static db = az_mysql_db;
-    static db = azMysqlDb;
-    static flexible = azMysqlFlexible;
-    static server = azMysqlServer;
-}
-
-class azNetappfiles extends az_netappfiles {
-    static pool = az_netappfiles_pool;
-    static snapshot = az_netappfiles_snapshot;
-    static account = azNetappfilesAccount;
-    static pool = azNetappfilesPool;
-    static snapshot = azNetappfilesSnapshot;
-    static volume = azNetappfilesVolume;
-}
-
-class azNetwork extends az_network {
-    static asg = az_network_asg;
-    static bastion = az_network_bastion;
-    static profile = az_network_profile;
-    static application = azNetworkApplication;
-    static asg = azNetworkAsg;
-    static bastion = azNetworkBastion;
-    static ddos = azNetworkDdos;
-    static dns = azNetworkDns;
-    static express = azNetworkExpress;
-    static lb = azNetworkLb;
-    static local = azNetworkLocal;
-    static nat = azNetworkNat;
-    static nic = azNetworkNic;
-    static nsg = azNetworkNsg;
-    static private = azNetworkPrivate;
-    static profile = azNetworkProfile;
-    static public = azNetworkPublic;
-    static route = azNetworkRoute;
-    static security = azNetworkSecurity;
-    static service = azNetworkService;
-    static traffic = azNetworkTraffic;
-    static virtual = azNetworkVirtual;
-    static vnet = azNetworkVnet;
-    static vpn = azNetworkVpn;
-    static vrouter = azNetworkVrouter;
-    static watcher = azNetworkWatcher;
-}
-
-class azOpenshift {
-    static monitor = az_openshift_monitor;
-}
-
-class azPipelines extends az_pipelines {
-    static agent = az_pipelines_agent;
-    static folder = az_pipelines_folder;
-    static pool = az_pipelines_pool;
-    static queue = az_pipelines_queue;
-    static agent = azPipelinesAgent;
-    static build = azPipelinesBuild;
-    static folder = azPipelinesFolder;
-    static pool = azPipelinesPool;
-    static queue = azPipelinesQueue;
-    static release = azPipelinesRelease;
-    static runs = azPipelinesRuns;
-    static variable = azPipelinesVariable;
-}
-
-class azPolicy extends az_policy {
-    static definition = az_policy_definition;
-    static event = az_policy_event;
-    static metadata = az_policy_metadata;
-    static state = az_policy_state;
-    static assignment = azPolicyAssignment;
-    static definition = azPolicyDefinition;
-    static event = azPolicyEvent;
-    static metadata = azPolicyMetadata;
-    static remediation = azPolicyRemediation;
-    static set = azPolicySet;
-    static state = azPolicyState;
-}
-
-class azPostgres extends az_postgres {
-    static db = az_postgres_db;
-    static db = azPostgresDb;
-    static flexible = azPostgresFlexible;
-    static server = azPostgresServer;
-}
-
-class azPpg {
-}
-
-class azProvider {
-    static operation = az_provider_operation;
-}
-
-class azRedis extends az_redis {
-    static firewall = azRedisFirewall;
-    static patch = azRedisPatch;
-    static server = azRedisServer;
-}
-
-class azRelay extends az_relay {
-    static hyco = azRelayHyco;
-    static namespace = azRelayNamespace;
-    static wcfrelay = azRelayWcfrelay;
-}
-
-class azRepos extends az_repos {
-    static import = az_repos_import;
-    static ref = az_repos_ref;
-    static import = azReposImport;
-    static policy = azReposPolicy;
-    static pr = azReposPr;
-    static ref = azReposRef;
-}
-
-class azReservations extends az_reservations {
-    static catalog = az_reservations_catalog;
-    static catalog = azReservationsCatalog;
-    static reservation = azReservationsReservation;
-}
-
-class azResource {
-    static link = az_resource_link;
-    static lock = az_resource_lock;
-}
-
-class azRole {
-    static assignment = az_role_assignment;
-    static definition = az_role_definition;
-}
-
-class azSearch extends az_search {
-    static service = az_search_service;
-    static admin = azSearchAdmin;
-    static query = azSearchQuery;
-    static service = azSearchService;
-}
-
-class azSecurity extends az_security {
-    static alert = az_security_alert;
-    static contact = az_security_contact;
-    static location = az_security_location;
-    static pricing = az_security_pricing;
-    static setting = az_security_setting;
-    static task = az_security_task;
-    static topology = az_security_topology;
-    static adaptive = azSecurityAdaptive;
-    static alert = azSecurityAlert;
-    static allowed = azSecurityAllowed;
-    static assessment = azSecurityAssessment;
-    static atp = azSecurityAtp;
-    static auto = azSecurityAuto;
-    static contact = azSecurityContact;
-    static discovered = azSecurityDiscovered;
-    static external = azSecurityExternal;
-    static iot = azSecurityIot;
-    static jit = azSecurityJit;
-    static location = azSecurityLocation;
-    static pricing = azSecurityPricing;
-    static regulatory = azSecurityRegulatory;
-    static setting = azSecuritySetting;
-    static sub = azSecuritySub;
-    static task = azSecurityTask;
-    static topology = azSecurityTopology;
-    static workspace = azSecurityWorkspace;
-}
-
-class azServicebus extends az_servicebus {
-    static migration = az_servicebus_migration;
-    static georecovery = azServicebusGeorecovery;
-    static migration = azServicebusMigration;
-    static namespace = azServicebusNamespace;
-    static queue = azServicebusQueue;
-    static topic = azServicebusTopic;
-}
-
-class azSf extends az_sf {
-    static service = az_sf_service;
-    static application = azSfApplication;
-    static cluster = azSfCluster;
-    static managed = azSfManaged;
-    static service = azSfService;
-}
-
-class azSig extends az_sig {
-    static image = azSigImage;
-}
-
-class azSignalr extends az_signalr {
-    static cors = az_signalr_cors;
-    static key = az_signalr_key;
-    static upstream = az_signalr_upstream;
-    static cors = azSignalrCors;
-    static key = azSignalrKey;
-    static network = azSignalrNetwork;
-    static upstream = azSignalrUpstream;
-}
-
-class azSnapshot {
-}
-
-class azSql extends az_sql {
-    static dw = az_sql_dw;
-    static db = azSqlDb;
-    static dw = azSqlDw;
-    static elastic = azSqlElastic;
-    static failover = azSqlFailover;
-    static instance = azSqlInstance;
-    static mi = azSqlMi;
-    static midb = azSqlMidb;
-    static server = azSqlServer;
-    static virtual = azSqlVirtual;
-    static vm = azSqlVm;
-}
-
-class azStaticwebapp {
-    static appsettings = az_staticwebapp_appsettings;
-    static environment = az_staticwebapp_environment;
-    static hostname = az_staticwebapp_hostname;
-    static users = az_staticwebapp_users;
-}
-
-class azStorage extends az_storage {
-    static cors = az_storage_cors;
-    static entity = az_storage_entity;
-    static logging = az_storage_logging;
-    static message = az_storage_message;
-    static metrics = az_storage_metrics;
-    static account = azStorageAccount;
-    static blob = azStorageBlob;
-    static container = azStorageContainer;
-    static cors = azStorageCors;
-    static directory = azStorageDirectory;
-    static entity = azStorageEntity;
-    static file = azStorageFile;
-    static fs = azStorageFs;
-    static logging = azStorageLogging;
-    static message = azStorageMessage;
-    static metrics = azStorageMetrics;
-    static queue = azStorageQueue;
-    static share = azStorageShare;
-    static table = azStorageTable;
-}
-
-class azSynapse extends az_synapse {
-    static role = azSynapseRole;
-    static spark = azSynapseSpark;
-    static sql = azSynapseSql;
-    static workspace = azSynapseWorkspace;
-}
-
-class azTag {
-}
-
-class azVm extends az_vm {
-    static diagnostics = az_vm_diagnostics;
-    static disk = az_vm_disk;
-    static encryption = az_vm_encryption;
-    static identity = az_vm_identity;
-    static nic = az_vm_nic;
-    static secret = az_vm_secret;
-    static user = az_vm_user;
-    static availability = azVmAvailability;
-    static boot = azVmBoot;
-    static diagnostics = azVmDiagnostics;
-    static disk = azVmDisk;
-    static encryption = azVmEncryption;
-    static extension = azVmExtension;
-    static host = azVmHost;
-    static identity = azVmIdentity;
-    static image = azVmImage;
-    static monitor = azVmMonitor;
-    static nic = azVmNic;
-    static run = azVmRun;
-    static secret = azVmSecret;
-    static unmanaged = azVmUnmanaged;
-    static user = azVmUser;
-}
-
-class azVmss extends az_vmss {
-    static diagnostics = az_vmss_diagnostics;
-    static disk = az_vmss_disk;
-    static encryption = az_vmss_encryption;
-    static identity = az_vmss_identity;
-    static nic = az_vmss_nic;
-    static diagnostics = azVmssDiagnostics;
-    static disk = azVmssDisk;
-    static encryption = azVmssEncryption;
-    static extension = azVmssExtension;
-    static identity = azVmssIdentity;
-    static nic = azVmssNic;
-    static rolling = azVmssRolling;
-    static run = azVmssRun;
-}
-
-class azWebapp extends az_webapp {
+class azWebapp {
     static auth = az_webapp_auth;
+    static config = azWebappConfig;
     static cors = az_webapp_cors;
     static deleted = az_webapp_deleted;
-    static identity = az_webapp_identity;
-    static auth = azWebappAuth;
-    static config = azWebappConfig;
-    static cors = azWebappCors;
-    static deleted = azWebappDeleted;
     static deployment = azWebappDeployment;
     static hybrid = azWebappHybrid;
-    static identity = azWebappIdentity;
+    static identity = az_webapp_identity;
     static log = azWebappLog;
     static traffic = azWebappTraffic;
     static vnet = azWebappVnet;
     static webjob = azWebappWebjob;
+}
+
+class az {
+    static account = account;
+    static acr = acr;
+    static acs = acs;
+    static ad = ad;
+    static advisor = advisor;
+    static aks = aks;
+    static ams = ams;
+    static apim = apim;
+    static appconfig = appconfig;
+    static appservice = appservice;
+    static aro = az_aro;
+    static artifacts = artifacts;
+    static backup = backup;
+    static batch = batch;
+    static batchai = batchai;
+    static billing = billing;
+    static boards = boards;
+    static bot = bot;
+    static cache = az_cache;
+    static cdn = cdn;
+    static cloud = az_cloud;
+    static cognitiveservices = cognitiveservices;
+    static config = config;
+    static consumption = consumption;
+    static container = az_container;
+    static cosmosdb = cosmosdb;
+    static deployment = deployment;
+    static deploymentmanager = deploymentmanager;
+    static devops = devops;
+    static disk = disk;
+    static dla = dla;
+    static dls = dls;
+    static dms = dms;
+    static eventgrid = eventgrid;
+    static eventhubs = eventhubs;
+    static extension = az_extension;
+    static feature = az_feature;
+    static functionapp = functionapp;
+    static group = group;
+    static hdinsight = hdinsight;
+    static identity = az_identity;
+    static image = image;
+    static iot = iot;
+    static iotcentral = iotcentral;
+    static keyvault = keyvault;
+    static kusto = kusto;
+    static lab = lab;
+    static local = local;
+    static lock = az_lock;
+    static managedapp = managedapp;
+    static managedservices = managedservices;
+    static maps = maps;
+    static mariadb = mariadb;
+    static monitor = monitor;
+    static mysql = mysql;
+    static netappfiles = netappfiles;
+    static network = network;
+    static openshift = openshift;
+    static pipelines = pipelines;
+    static policy = policy;
+    static postgres = postgres;
+    static ppg = az_ppg;
+    static provider = provider;
+    static redis = redis;
+    static relay = relay;
+    static repos = repos;
+    static reservations = reservations;
+    static resource = resource;
+    static role = role;
+    static search = search;
+    static security = security;
+    static servicebus = servicebus;
+    static sf = sf;
+    static sig = sig;
+    static signalr = signalr;
+    static snapshot = az_snapshot;
+    static sql = sql;
+    static staticwebapp = staticwebapp;
+    static storage = storage;
+    static synapse = synapse;
+    static tag = az_tag;
+    static vm = vm;
+    static vmss = vmss;
+    static webapp = webapp;
 }
 
 class extAccountAzAccount {
@@ -3944,92 +3070,108 @@ class extAccountAzAccount {
     static tenant = ext_account_az_account_tenant;
 }
 
-class extAccountAz extends ext_account_az {
+class extAccountAz {
     static account = extAccountAzAccount;
+}
+
+class extAccount {
+    static az = extAccountAz;
 }
 
 class extAemAzVm {
     static aem = ext_aem_az_vm_aem;
 }
 
-class extAemAz extends ext_aem_az {
+class extAemAz {
     static vm = extAemAzVm;
+}
+
+class extAem {
+    static az = extAemAz;
 }
 
 class extAiExamplesAzAi {
     static examples = ext_ai-examples_az_ai_examples;
 }
 
-class extAiExamplesAz extends ext_ai-examples_az {
+class extAiExamplesAz {
     static ai = extAiExamplesAzAi;
+}
+
+class extAiExamples {
+    static az = extAiExamplesAz;
 }
 
 class extAksPreviewAzAks {
     static nodepool = ext_aks-preview_az_aks_nodepool;
 }
 
-class extAksPreviewAz extends ext_aks-preview_az {
+class extAksPreviewAz {
     static aks = extAksPreviewAzAks;
+}
+
+class extAksPreview {
+    static az = extAksPreviewAz;
 }
 
 class extAlertsmanagementAzMonitorAction {
     static rule = ext_alertsmanagement_az_monitor_action_rule;
 }
 
-class extAlertsmanagementAzMonitor extends ext_alertsmanagement_az_monitor {
+class extAlertsmanagementAzMonitor {
     static action = extAlertsmanagementAzMonitorAction;
 }
 
-class extAlertsmanagementAz extends ext_alertsmanagement_az {
+class extAlertsmanagementAz {
     static monitor = extAlertsmanagementAzMonitor;
+}
+
+class extAlertsmanagement {
+    static az = extAlertsmanagementAz;
 }
 
 class extAliasAz {
     static alias = ext_alias_az_alias;
 }
 
-class extApplicationInsightsAzMonitorAppInsightsComponentBilling {
-}
-
-class extApplicationInsightsAzMonitorAppInsightsComponentLinked {
-    static storage = ext_application-insights_az_monitor_app_insights_component_linked_storage;
+class extAlias {
+    static az = extAliasAz;
 }
 
 class extApplicationInsightsAzMonitorAppInsightsApi {
     static key = ext_application-insights_az_monitor_app_insights_api_key;
 }
 
-class extApplicationInsightsAzMonitorAppInsightsComponent extends ext_application-insights_az_monitor_app_insights_component {
+class extApplicationInsightsAzMonitorAppInsightsComponentLinked {
+    static storage = ext_application-insights_az_monitor_app_insights_component_linked_storage;
+}
+
+class extApplicationInsightsAzMonitorAppInsightsComponent {
     static billing = ext_application-insights_az_monitor_app_insights_component_billing;
-    static billing = extApplicationInsightsAzMonitorAppInsightsComponentBilling;
     static linked = extApplicationInsightsAzMonitorAppInsightsComponentLinked;
 }
 
-class extApplicationInsightsAzMonitorAppInsightsEvents {
-}
-
-class extApplicationInsightsAzMonitorAppInsightsMetrics {
-}
-
-class extApplicationInsightsAzMonitorAppInsights extends ext_application-insights_az_monitor_app_insights {
-    static events = ext_application-insights_az_monitor_app_insights_events;
-    static metrics = ext_application-insights_az_monitor_app_insights_metrics;
+class extApplicationInsightsAzMonitorAppInsights {
     static api = extApplicationInsightsAzMonitorAppInsightsApi;
     static component = extApplicationInsightsAzMonitorAppInsightsComponent;
-    static events = extApplicationInsightsAzMonitorAppInsightsEvents;
-    static metrics = extApplicationInsightsAzMonitorAppInsightsMetrics;
+    static events = ext_application-insights_az_monitor_app_insights_events;
+    static metrics = ext_application-insights_az_monitor_app_insights_metrics;
 }
 
 class extApplicationInsightsAzMonitorApp {
     static insights = extApplicationInsightsAzMonitorAppInsights;
 }
 
-class extApplicationInsightsAzMonitor extends ext_application-insights_az_monitor {
+class extApplicationInsightsAzMonitor {
     static app = extApplicationInsightsAzMonitorApp;
 }
 
-class extApplicationInsightsAz extends ext_application-insights_az {
+class extApplicationInsightsAz {
     static monitor = extApplicationInsightsAzMonitor;
+}
+
+class extApplicationInsights {
+    static az = extApplicationInsightsAz;
 }
 
 class extAttestationAzAttestation {
@@ -4037,8 +3179,12 @@ class extAttestationAzAttestation {
     static signer = ext_attestation_az_attestation_signer;
 }
 
-class extAttestationAz extends ext_attestation_az {
+class extAttestationAz {
     static attestation = extAttestationAzAttestation;
+}
+
+class extAttestation {
+    static az = extAttestationAz;
 }
 
 class extAzureBatchCliExtensionsAzBatch {
@@ -4047,29 +3193,42 @@ class extAzureBatchCliExtensionsAzBatch {
     static pool = ext_azure-batch-cli-extensions_az_batch_pool;
 }
 
-class extAzureBatchCliExtensionsAz extends ext_azure-batch-cli-extensions_az {
+class extAzureBatchCliExtensionsAz {
     static batch = extAzureBatchCliExtensionsAzBatch;
 }
 
-class extAzureCliIotExtAzIotCentralApp {
+class extAzureBatchCliExtensions {
+    static az = extAzureBatchCliExtensionsAz;
 }
 
 class extAzureCliIotExtAzIotCentralDevice {
     static twin = ext_azure-cli-iot-ext_az_iot_central_device_twin;
 }
 
+class extAzureCliIotExtAzIotCentral {
+    static app = ext_azure-cli-iot-ext_az_iot_central_app;
+    static device = extAzureCliIotExtAzIotCentralDevice;
+}
+
 class extAzureCliIotExtAzIotDeviceC2D {
     static message = ext_azure-cli-iot-ext_az_iot_device_c2d_message;
+}
+
+class extAzureCliIotExtAzIotDevice {
+    static c2d = extAzureCliIotExtAzIotDeviceC2D;
 }
 
 class extAzureCliIotExtAzIotDpsEnrollment {
     static group = ext_azure-cli-iot-ext_az_iot_dps_enrollment_group;
 }
 
-class extAzureCliIotExtAzIotDpsRegistration {
+class extAzureCliIotExtAzIotDps {
+    static enrollment = extAzureCliIotExtAzIotDpsEnrollment;
+    static registration = ext_azure-cli-iot-ext_az_iot_dps_registration;
 }
 
-class extAzureCliIotExtAzIotHubConfiguration {
+class extAzureCliIotExtAzIotEdge {
+    static deployment = ext_azure-cli-iot-ext_az_iot_edge_deployment;
 }
 
 class extAzureCliIotExtAzIotHubDevice {
@@ -4081,159 +3240,85 @@ class extAzureCliIotExtAzIotHubDistributed {
     static tracing = ext_azure-cli-iot-ext_az_iot_hub_distributed_tracing;
 }
 
-class extAzureCliIotExtAzIotHubJob {
-}
-
 class extAzureCliIotExtAzIotHubModule {
     static identity = ext_azure-cli-iot-ext_az_iot_hub_module_identity;
     static twin = ext_azure-cli-iot-ext_az_iot_hub_module_twin;
+}
+
+class extAzureCliIotExtAzIotHub {
+    static configuration = ext_azure-cli-iot-ext_az_iot_hub_configuration;
+    static device = extAzureCliIotExtAzIotHubDevice;
+    static distributed = extAzureCliIotExtAzIotHubDistributed;
+    static job = ext_azure-cli-iot-ext_az_iot_hub_job;
+    static module = extAzureCliIotExtAzIotHubModule;
 }
 
 class extAzureCliIotExtAzIotPnpCapability {
     static model = ext_azure-cli-iot-ext_az_iot_pnp_capability_model;
 }
 
-class extAzureCliIotExtAzIotPnpInterface {
-}
-
-class extAzureCliIotExtAzIotCentral extends ext_azure-cli-iot-ext_az_iot_central {
-    static app = ext_azure-cli-iot-ext_az_iot_central_app;
-    static app = extAzureCliIotExtAzIotCentralApp;
-    static device = extAzureCliIotExtAzIotCentralDevice;
-}
-
-class extAzureCliIotExtAzIotDevice extends ext_azure-cli-iot-ext_az_iot_device {
-    static c2D = extAzureCliIotExtAzIotDeviceC2D;
-}
-
-class extAzureCliIotExtAzIotDps extends ext_azure-cli-iot-ext_az_iot_dps {
-    static registration = ext_azure-cli-iot-ext_az_iot_dps_registration;
-    static enrollment = extAzureCliIotExtAzIotDpsEnrollment;
-    static registration = extAzureCliIotExtAzIotDpsRegistration;
-}
-
-class extAzureCliIotExtAzIotDt {
-}
-
-class extAzureCliIotExtAzIotEdge {
-    static deployment = ext_azure-cli-iot-ext_az_iot_edge_deployment;
-}
-
-class extAzureCliIotExtAzIotHub extends ext_azure-cli-iot-ext_az_iot_hub {
-    static configuration = ext_azure-cli-iot-ext_az_iot_hub_configuration;
-    static job = ext_azure-cli-iot-ext_az_iot_hub_job;
-    static configuration = extAzureCliIotExtAzIotHubConfiguration;
-    static device = extAzureCliIotExtAzIotHubDevice;
-    static distributed = extAzureCliIotExtAzIotHubDistributed;
-    static job = extAzureCliIotExtAzIotHubJob;
-    static module = extAzureCliIotExtAzIotHubModule;
-}
-
-class extAzureCliIotExtAzIotPnp extends ext_azure-cli-iot-ext_az_iot_pnp {
-    static interface = ext_azure-cli-iot-ext_az_iot_pnp_interface;
+class extAzureCliIotExtAzIotPnp {
     static capability = extAzureCliIotExtAzIotPnpCapability;
-    static interface = extAzureCliIotExtAzIotPnpInterface;
+    static interface = ext_azure-cli-iot-ext_az_iot_pnp_interface;
 }
 
-class extAzureCliIotExtAzIotcentralApp {
+class extAzureCliIotExtAzIot {
+    static central = extAzureCliIotExtAzIotCentral;
+    static device = extAzureCliIotExtAzIotDevice;
+    static dps = extAzureCliIotExtAzIotDps;
+    static dt = ext_azure-cli-iot-ext_az_iot_dt;
+    static edge = extAzureCliIotExtAzIotEdge;
+    static hub = extAzureCliIotExtAzIotHub;
+    static pnp = extAzureCliIotExtAzIotPnp;
 }
 
 class extAzureCliIotExtAzIotcentralDevice {
     static twin = ext_azure-cli-iot-ext_az_iotcentral_device_twin;
 }
 
-class extAzureCliIotExtAzIot extends ext_azure-cli-iot-ext_az_iot {
-    static dt = ext_azure-cli-iot-ext_az_iot_dt;
-    static central = extAzureCliIotExtAzIotCentral;
-    static device = extAzureCliIotExtAzIotDevice;
-    static dps = extAzureCliIotExtAzIotDps;
-    static dt = extAzureCliIotExtAzIotDt;
-    static edge = extAzureCliIotExtAzIotEdge;
-    static hub = extAzureCliIotExtAzIotHub;
-    static pnp = extAzureCliIotExtAzIotPnp;
-}
-
-class extAzureCliIotExtAzIotcentral extends ext_azure-cli-iot-ext_az_iotcentral {
+class extAzureCliIotExtAzIotcentral {
     static app = ext_azure-cli-iot-ext_az_iotcentral_app;
-    static app = extAzureCliIotExtAzIotcentralApp;
     static device = extAzureCliIotExtAzIotcentralDevice;
 }
 
-class extAzureCliIotExtAz extends ext_azure-cli-iot-ext_az {
+class extAzureCliIotExtAz {
     static iot = extAzureCliIotExtAzIot;
     static iotcentral = extAzureCliIotExtAzIotcentral;
+}
+
+class extAzureCliIotExt {
+    static az = extAzureCliIotExtAz;
 }
 
 class extAzureCliMlAzMlComputetargetAmlcompute {
     static identity = ext_azure-cli-ml_az_ml_computetarget_amlcompute_identity;
 }
 
-class extAzureCliMlAzMlComputetargetAttach {
-}
-
-class extAzureCliMlAzMlComputetargetComputeinstance {
-}
-
-class extAzureCliMlAzMlComputetargetCreate {
-}
-
-class extAzureCliMlAzMlComputetargetUpdate {
-}
-
-class extAzureCliMlAzMlWorkspacePrivate {
-    static endpoint = ext_azure-cli-ml_az_ml_workspace_private_endpoint;
-}
-
-class extAzureCliMlAzMlComputetarget extends ext_azure-cli-ml_az_ml_computetarget {
+class extAzureCliMlAzMlComputetarget {
+    static amlcompute = extAzureCliMlAzMlComputetargetAmlcompute;
     static attach = ext_azure-cli-ml_az_ml_computetarget_attach;
     static computeinstance = ext_azure-cli-ml_az_ml_computetarget_computeinstance;
     static create = ext_azure-cli-ml_az_ml_computetarget_create;
     static update = ext_azure-cli-ml_az_ml_computetarget_update;
-    static amlcompute = extAzureCliMlAzMlComputetargetAmlcompute;
-    static attach = extAzureCliMlAzMlComputetargetAttach;
-    static computeinstance = extAzureCliMlAzMlComputetargetComputeinstance;
-    static create = extAzureCliMlAzMlComputetargetCreate;
-    static update = extAzureCliMlAzMlComputetargetUpdate;
-}
-
-class extAzureCliMlAzMlDataset {
-}
-
-class extAzureCliMlAzMlDatastore {
 }
 
 class extAzureCliMlAzMlEndpoint {
     static realtime = ext_azure-cli-ml_az_ml_endpoint_realtime;
 }
 
-class extAzureCliMlAzMlEnvironment {
+class extAzureCliMlAzMlWorkspacePrivate {
+    static endpoint = ext_azure-cli-ml_az_ml_workspace_private_endpoint;
 }
 
-class extAzureCliMlAzMlExperiment {
-}
-
-class extAzureCliMlAzMlFolder {
-}
-
-class extAzureCliMlAzMlModel {
-}
-
-class extAzureCliMlAzMlPipeline {
-}
-
-class extAzureCliMlAzMlRun {
-}
-
-class extAzureCliMlAzMlService {
-}
-
-class extAzureCliMlAzMlWorkspace extends ext_azure-cli-ml_az_ml_workspace {
+class extAzureCliMlAzMlWorkspace {
     static private = extAzureCliMlAzMlWorkspacePrivate;
 }
 
-class extAzureCliMlAzMl extends ext_azure-cli-ml_az_ml {
+class extAzureCliMlAzMl {
+    static computetarget = extAzureCliMlAzMlComputetarget;
     static dataset = ext_azure-cli-ml_az_ml_dataset;
     static datastore = ext_azure-cli-ml_az_ml_datastore;
+    static endpoint = extAzureCliMlAzMlEndpoint;
     static environment = ext_azure-cli-ml_az_ml_environment;
     static experiment = ext_azure-cli-ml_az_ml_experiment;
     static folder = ext_azure-cli-ml_az_ml_folder;
@@ -4241,26 +3326,19 @@ class extAzureCliMlAzMl extends ext_azure-cli-ml_az_ml {
     static pipeline = ext_azure-cli-ml_az_ml_pipeline;
     static run = ext_azure-cli-ml_az_ml_run;
     static service = ext_azure-cli-ml_az_ml_service;
-    static computetarget = extAzureCliMlAzMlComputetarget;
-    static dataset = extAzureCliMlAzMlDataset;
-    static datastore = extAzureCliMlAzMlDatastore;
-    static endpoint = extAzureCliMlAzMlEndpoint;
-    static environment = extAzureCliMlAzMlEnvironment;
-    static experiment = extAzureCliMlAzMlExperiment;
-    static folder = extAzureCliMlAzMlFolder;
-    static model = extAzureCliMlAzMlModel;
-    static pipeline = extAzureCliMlAzMlPipeline;
-    static run = extAzureCliMlAzMlRun;
-    static service = extAzureCliMlAzMlService;
     static workspace = extAzureCliMlAzMlWorkspace;
 }
 
-class extAzureCliMlAz extends ext_azure-cli-ml_az {
+class extAzureCliMlAz {
     static ml = extAzureCliMlAzMl;
 }
 
-class extAzureDevopsAzBoardsWorkItem {
-    static relation = ext_azure-devops_az_boards_work_item_relation;
+class extAzureCliMl {
+    static az = extAzureCliMlAz;
+}
+
+class extAzureDevopsAzArtifacts {
+    static universal = ext_azure-devops_az_artifacts_universal;
 }
 
 class extAzureDevopsAzBoardsArea {
@@ -4273,8 +3351,22 @@ class extAzureDevopsAzBoardsIteration {
     static team = ext_azure-devops_az_boards_iteration_team;
 }
 
+class extAzureDevopsAzBoardsWorkItem {
+    static relation = ext_azure-devops_az_boards_work_item_relation;
+}
+
 class extAzureDevopsAzBoardsWork {
     static item = extAzureDevopsAzBoardsWorkItem;
+}
+
+class extAzureDevopsAzBoards {
+    static area = extAzureDevopsAzBoardsArea;
+    static iteration = extAzureDevopsAzBoardsIteration;
+    static work = extAzureDevopsAzBoardsWork;
+}
+
+class extAzureDevopsAzDevopsAdmin {
+    static banner = ext_azure-devops_az_devops_admin_banner;
 }
 
 class extAzureDevopsAzDevopsSecurityGroup {
@@ -4285,59 +3377,38 @@ class extAzureDevopsAzDevopsSecurityPermission {
     static namespace = ext_azure-devops_az_devops_security_permission_namespace;
 }
 
+class extAzureDevopsAzDevopsSecurity {
+    static group = extAzureDevopsAzDevopsSecurityGroup;
+    static permission = extAzureDevopsAzDevopsSecurityPermission;
+}
+
 class extAzureDevopsAzDevopsServiceEndpoint {
     static azurerm = ext_azure-devops_az_devops_service_endpoint_azurerm;
     static github = ext_azure-devops_az_devops_service_endpoint_github;
-}
-
-class extAzureDevopsAzDevopsAdmin {
-    static banner = ext_azure-devops_az_devops_admin_banner;
-}
-
-class extAzureDevopsAzDevopsExtension {
-}
-
-class extAzureDevopsAzDevopsProject {
-}
-
-class extAzureDevopsAzDevopsSecurity extends ext_azure-devops_az_devops_security {
-    static group = extAzureDevopsAzDevopsSecurityGroup;
-    static permission = extAzureDevopsAzDevopsSecurityPermission;
 }
 
 class extAzureDevopsAzDevopsService {
     static endpoint = extAzureDevopsAzDevopsServiceEndpoint;
 }
 
-class extAzureDevopsAzDevopsTeam {
-}
-
-class extAzureDevopsAzDevopsUser {
-}
-
 class extAzureDevopsAzDevopsWiki {
     static page = ext_azure-devops_az_devops_wiki_page;
 }
 
-class extAzureDevopsAzPipelinesVariableGroup {
-    static variable = ext_azure-devops_az_pipelines_variable_group_variable;
-}
-
-class extAzureDevopsAzPipelinesAgent {
+class extAzureDevopsAzDevops {
+    static admin = extAzureDevopsAzDevopsAdmin;
+    static extension = ext_azure-devops_az_devops_extension;
+    static project = ext_azure-devops_az_devops_project;
+    static security = extAzureDevopsAzDevopsSecurity;
+    static service = extAzureDevopsAzDevopsService;
+    static team = ext_azure-devops_az_devops_team;
+    static user = ext_azure-devops_az_devops_user;
+    static wiki = extAzureDevopsAzDevopsWiki;
 }
 
 class extAzureDevopsAzPipelinesBuild {
     static definition = ext_azure-devops_az_pipelines_build_definition;
     static tag = ext_azure-devops_az_pipelines_build_tag;
-}
-
-class extAzureDevopsAzPipelinesFolder {
-}
-
-class extAzureDevopsAzPipelinesPool {
-}
-
-class extAzureDevopsAzPipelinesQueue {
 }
 
 class extAzureDevopsAzPipelinesRelease {
@@ -4349,19 +3420,27 @@ class extAzureDevopsAzPipelinesRuns {
     static tag = ext_azure-devops_az_pipelines_runs_tag;
 }
 
-class extAzureDevopsAzPipelinesVariable extends ext_azure-devops_az_pipelines_variable {
+class extAzureDevopsAzPipelinesVariableGroup {
+    static variable = ext_azure-devops_az_pipelines_variable_group_variable;
+}
+
+class extAzureDevopsAzPipelinesVariable {
     static group = extAzureDevopsAzPipelinesVariableGroup;
 }
 
-class extAzureDevopsAzReposPolicyWorkItem {
-    static linking = ext_azure-devops_az_repos_policy_work_item_linking;
+class extAzureDevopsAzPipelines {
+    static agent = ext_azure-devops_az_pipelines_agent;
+    static build = extAzureDevopsAzPipelinesBuild;
+    static folder = ext_azure-devops_az_pipelines_folder;
+    static pool = ext_azure-devops_az_pipelines_pool;
+    static queue = ext_azure-devops_az_pipelines_queue;
+    static release = extAzureDevopsAzPipelinesRelease;
+    static runs = extAzureDevopsAzPipelinesRuns;
+    static variable = extAzureDevopsAzPipelinesVariable;
 }
 
 class extAzureDevopsAzReposPolicyApprover {
     static count = ext_azure-devops_az_repos_policy_approver_count;
-}
-
-class extAzureDevopsAzReposPolicyBuild {
 }
 
 class extAzureDevopsAzReposPolicyCase {
@@ -4384,27 +3463,17 @@ class extAzureDevopsAzReposPolicyRequired {
     static reviewer = ext_azure-devops_az_repos_policy_required_reviewer;
 }
 
+class extAzureDevopsAzReposPolicyWorkItem {
+    static linking = ext_azure-devops_az_repos_policy_work_item_linking;
+}
+
 class extAzureDevopsAzReposPolicyWork {
     static item = extAzureDevopsAzReposPolicyWorkItem;
 }
 
-class extAzureDevopsAzReposPrPolicy {
-}
-
-class extAzureDevopsAzReposPrReviewer {
-}
-
-class extAzureDevopsAzReposPrWork {
-    static item = ext_azure-devops_az_repos_pr_work_item;
-}
-
-class extAzureDevopsAzReposImport {
-}
-
-class extAzureDevopsAzReposPolicy extends ext_azure-devops_az_repos_policy {
-    static build = ext_azure-devops_az_repos_policy_build;
+class extAzureDevopsAzReposPolicy {
     static approver = extAzureDevopsAzReposPolicyApprover;
-    static build = extAzureDevopsAzReposPolicyBuild;
+    static build = ext_azure-devops_az_repos_policy_build;
     static case = extAzureDevopsAzReposPolicyCase;
     static comment = extAzureDevopsAzReposPolicyComment;
     static file = extAzureDevopsAzReposPolicyFile;
@@ -4413,67 +3482,24 @@ class extAzureDevopsAzReposPolicy extends ext_azure-devops_az_repos_policy {
     static work = extAzureDevopsAzReposPolicyWork;
 }
 
-class extAzureDevopsAzReposPr extends ext_azure-devops_az_repos_pr {
+class extAzureDevopsAzReposPrWork {
+    static item = ext_azure-devops_az_repos_pr_work_item;
+}
+
+class extAzureDevopsAzReposPr {
     static policy = ext_azure-devops_az_repos_pr_policy;
     static reviewer = ext_azure-devops_az_repos_pr_reviewer;
-    static policy = extAzureDevopsAzReposPrPolicy;
-    static reviewer = extAzureDevopsAzReposPrReviewer;
     static work = extAzureDevopsAzReposPrWork;
 }
 
-class extAzureDevopsAzReposRef {
-}
-
-class extAzureDevopsAzArtifacts {
-    static universal = ext_azure-devops_az_artifacts_universal;
-}
-
-class extAzureDevopsAzBoards extends ext_azure-devops_az_boards {
-    static area = extAzureDevopsAzBoardsArea;
-    static iteration = extAzureDevopsAzBoardsIteration;
-    static work = extAzureDevopsAzBoardsWork;
-}
-
-class extAzureDevopsAzDevops extends ext_azure-devops_az_devops {
-    static extension = ext_azure-devops_az_devops_extension;
-    static project = ext_azure-devops_az_devops_project;
-    static team = ext_azure-devops_az_devops_team;
-    static user = ext_azure-devops_az_devops_user;
-    static admin = extAzureDevopsAzDevopsAdmin;
-    static extension = extAzureDevopsAzDevopsExtension;
-    static project = extAzureDevopsAzDevopsProject;
-    static security = extAzureDevopsAzDevopsSecurity;
-    static service = extAzureDevopsAzDevopsService;
-    static team = extAzureDevopsAzDevopsTeam;
-    static user = extAzureDevopsAzDevopsUser;
-    static wiki = extAzureDevopsAzDevopsWiki;
-}
-
-class extAzureDevopsAzPipelines extends ext_azure-devops_az_pipelines {
-    static agent = ext_azure-devops_az_pipelines_agent;
-    static folder = ext_azure-devops_az_pipelines_folder;
-    static pool = ext_azure-devops_az_pipelines_pool;
-    static queue = ext_azure-devops_az_pipelines_queue;
-    static agent = extAzureDevopsAzPipelinesAgent;
-    static build = extAzureDevopsAzPipelinesBuild;
-    static folder = extAzureDevopsAzPipelinesFolder;
-    static pool = extAzureDevopsAzPipelinesPool;
-    static queue = extAzureDevopsAzPipelinesQueue;
-    static release = extAzureDevopsAzPipelinesRelease;
-    static runs = extAzureDevopsAzPipelinesRuns;
-    static variable = extAzureDevopsAzPipelinesVariable;
-}
-
-class extAzureDevopsAzRepos extends ext_azure-devops_az_repos {
+class extAzureDevopsAzRepos {
     static import = ext_azure-devops_az_repos_import;
-    static ref = ext_azure-devops_az_repos_ref;
-    static import = extAzureDevopsAzReposImport;
     static policy = extAzureDevopsAzReposPolicy;
     static pr = extAzureDevopsAzReposPr;
-    static ref = extAzureDevopsAzReposRef;
+    static ref = ext_azure-devops_az_repos_ref;
 }
 
-class extAzureDevopsAz extends ext_azure-devops_az {
+class extAzureDevopsAz {
     static artifacts = extAzureDevopsAzArtifacts;
     static boards = extAzureDevopsAzBoards;
     static devops = extAzureDevopsAzDevops;
@@ -4481,27 +3507,51 @@ class extAzureDevopsAz extends ext_azure-devops_az {
     static repos = extAzureDevopsAzRepos;
 }
 
+class extAzureDevops {
+    static az = extAzureDevopsAz;
+}
+
 class extAzureFirewallAzNetworkFirewallApplicationRule {
     static collection = ext_azure-firewall_az_network_firewall_application_rule_collection;
+}
+
+class extAzureFirewallAzNetworkFirewallApplication {
+    static rule = extAzureFirewallAzNetworkFirewallApplicationRule;
+}
+
+class extAzureFirewallAzNetworkFirewallIp {
+    static config = ext_azure-firewall_az_network_firewall_ip_config;
 }
 
 class extAzureFirewallAzNetworkFirewallManagementIp {
     static config = ext_azure-firewall_az_network_firewall_management_ip_config;
 }
 
+class extAzureFirewallAzNetworkFirewallManagement {
+    static ip = extAzureFirewallAzNetworkFirewallManagementIp;
+}
+
 class extAzureFirewallAzNetworkFirewallNatRule {
     static collection = ext_azure-firewall_az_network_firewall_nat_rule_collection;
+}
+
+class extAzureFirewallAzNetworkFirewallNat {
+    static rule = extAzureFirewallAzNetworkFirewallNatRule;
 }
 
 class extAzureFirewallAzNetworkFirewallNetworkRule {
     static collection = ext_azure-firewall_az_network_firewall_network_rule_collection;
 }
 
+class extAzureFirewallAzNetworkFirewallNetwork {
+    static rule = extAzureFirewallAzNetworkFirewallNetworkRule;
+}
+
 class extAzureFirewallAzNetworkFirewallPolicyRuleCollectionGroupCollection {
     static rule = ext_azure-firewall_az_network_firewall_policy_rule_collection_group_collection_rule;
 }
 
-class extAzureFirewallAzNetworkFirewallPolicyRuleCollectionGroup extends ext_azure-firewall_az_network_firewall_policy_rule_collection_group {
+class extAzureFirewallAzNetworkFirewallPolicyRuleCollectionGroup {
     static collection = extAzureFirewallAzNetworkFirewallPolicyRuleCollectionGroupCollection;
 }
 
@@ -4513,39 +3563,19 @@ class extAzureFirewallAzNetworkFirewallPolicyRule {
     static collection = extAzureFirewallAzNetworkFirewallPolicyRuleCollection;
 }
 
+class extAzureFirewallAzNetworkFirewallPolicy {
+    static rule = extAzureFirewallAzNetworkFirewallPolicyRule;
+}
+
 class extAzureFirewallAzNetworkFirewallThreatIntel {
     static allowlist = ext_azure-firewall_az_network_firewall_threat_intel_allowlist;
-}
-
-class extAzureFirewallAzNetworkFirewallApplication {
-    static rule = extAzureFirewallAzNetworkFirewallApplicationRule;
-}
-
-class extAzureFirewallAzNetworkFirewallIp {
-    static config = ext_azure-firewall_az_network_firewall_ip_config;
-}
-
-class extAzureFirewallAzNetworkFirewallManagement {
-    static ip = extAzureFirewallAzNetworkFirewallManagementIp;
-}
-
-class extAzureFirewallAzNetworkFirewallNat {
-    static rule = extAzureFirewallAzNetworkFirewallNatRule;
-}
-
-class extAzureFirewallAzNetworkFirewallNetwork {
-    static rule = extAzureFirewallAzNetworkFirewallNetworkRule;
-}
-
-class extAzureFirewallAzNetworkFirewallPolicy extends ext_azure-firewall_az_network_firewall_policy {
-    static rule = extAzureFirewallAzNetworkFirewallPolicyRule;
 }
 
 class extAzureFirewallAzNetworkFirewallThreat {
     static intel = extAzureFirewallAzNetworkFirewallThreatIntel;
 }
 
-class extAzureFirewallAzNetworkFirewall extends ext_azure-firewall_az_network_firewall {
+class extAzureFirewallAzNetworkFirewall {
     static application = extAzureFirewallAzNetworkFirewallApplication;
     static ip = extAzureFirewallAzNetworkFirewallIp;
     static management = extAzureFirewallAzNetworkFirewallManagement;
@@ -4555,26 +3585,24 @@ class extAzureFirewallAzNetworkFirewall extends ext_azure-firewall_az_network_fi
     static threat = extAzureFirewallAzNetworkFirewallThreat;
 }
 
-class extAzureFirewallAzNetwork extends ext_azure-firewall_az_network {
+class extAzureFirewallAzNetwork {
     static firewall = extAzureFirewallAzNetworkFirewall;
 }
 
-class extAzureFirewallAz extends ext_azure-firewall_az {
+class extAzureFirewallAz {
     static network = extAzureFirewallAzNetwork;
+}
+
+class extAzureFirewall {
+    static az = extAzureFirewallAz;
 }
 
 class extAzureIotAzDtEndpoint {
     static create = ext_azure-iot_az_dt_endpoint_create;
 }
 
-class extAzureIotAzDtModel {
-}
-
 class extAzureIotAzDtRole {
     static assignment = ext_azure-iot_az_dt_role_assignment;
-}
-
-class extAzureIotAzDtRoute {
 }
 
 class extAzureIotAzDtTwin {
@@ -4583,15 +3611,23 @@ class extAzureIotAzDtTwin {
     static telemetry = ext_azure-iot_az_dt_twin_telemetry;
 }
 
-class extAzureIotAzIotCentralAppDevice {
-    static twin = ext_azure-iot_az_iot_central_app_device_twin;
+class extAzureIotAzDt {
+    static endpoint = extAzureIotAzDtEndpoint;
+    static model = ext_azure-iot_az_dt_model;
+    static role = extAzureIotAzDtRole;
+    static route = ext_azure-iot_az_dt_route;
+    static twin = extAzureIotAzDtTwin;
 }
 
 class extAzureIotAzIotCentralApi {
     static token = ext_azure-iot_az_iot_central_api_token;
 }
 
-class extAzureIotAzIotCentralApp extends ext_azure-iot_az_iot_central_app {
+class extAzureIotAzIotCentralAppDevice {
+    static twin = ext_azure-iot_az_iot_central_app_device_twin;
+}
+
+class extAzureIotAzIotCentralApp {
     static device = extAzureIotAzIotCentralAppDevice;
 }
 
@@ -4601,85 +3637,87 @@ class extAzureIotAzIotCentralDevice {
     static twin = ext_azure-iot_az_iot_central_device_twin;
 }
 
-class extAzureIotAzIotCentralDiagnostics {
-}
-
-class extAzureIotAzIotCentralUser {
+class extAzureIotAzIotCentral {
+    static api = extAzureIotAzIotCentralApi;
+    static app = extAzureIotAzIotCentralApp;
+    static device = extAzureIotAzIotCentralDevice;
+    static diagnostics = ext_azure-iot_az_iot_central_diagnostics;
+    static user = ext_azure-iot_az_iot_central_user;
 }
 
 class extAzureIotAzIotDeviceC2D {
     static message = ext_azure-iot_az_iot_device_c2d_message;
 }
 
+class extAzureIotAzIotDevice {
+    static c2d = extAzureIotAzIotDeviceC2D;
+}
+
 class extAzureIotAzIotDpsEnrollment {
     static group = ext_azure-iot_az_iot_dps_enrollment_group;
 }
 
-class extAzureIotAzIotDpsRegistration {
+class extAzureIotAzIotDps {
+    static enrollment = extAzureIotAzIotDpsEnrollment;
+    static registration = ext_azure-iot_az_iot_dps_registration;
 }
 
-class extAzureIotAzIotHubDeviceIdentityConnection {
-    static string = ext_azure-iot_az_iot_hub_device_identity_connection_string;
-}
-
-class extAzureIotAzIotHubDeviceIdentity extends ext_azure-iot_az_iot_hub_device_identity {
-    static connection = extAzureIotAzIotHubDeviceIdentityConnection;
-}
-
-class extAzureIotAzIotHubDeviceTwin {
-}
-
-class extAzureIotAzIotHubModuleIdentityConnection {
-    static string = ext_azure-iot_az_iot_hub_module_identity_connection_string;
-}
-
-class extAzureIotAzIotHubModuleIdentity extends ext_azure-iot_az_iot_hub_module_identity {
-    static connection = extAzureIotAzIotHubModuleIdentityConnection;
-}
-
-class extAzureIotAzIotHubModuleTwin {
-}
-
-class extAzureIotAzIotHubConfiguration {
+class extAzureIotAzIotEdge {
+    static deployment = ext_azure-iot_az_iot_edge_deployment;
 }
 
 class extAzureIotAzIotHubConnection {
     static string = ext_azure-iot_az_iot_hub_connection_string;
 }
 
+class extAzureIotAzIotHubDeviceIdentityConnection {
+    static string = ext_azure-iot_az_iot_hub_device_identity_connection_string;
+}
+
+class extAzureIotAzIotHubDeviceIdentity {
+    static connection = extAzureIotAzIotHubDeviceIdentityConnection;
+}
+
 class extAzureIotAzIotHubDevice {
-    static twin = ext_azure-iot_az_iot_hub_device_twin;
     static identity = extAzureIotAzIotHubDeviceIdentity;
-    static twin = extAzureIotAzIotHubDeviceTwin;
+    static twin = ext_azure-iot_az_iot_hub_device_twin;
 }
 
 class extAzureIotAzIotHubDistributed {
     static tracing = ext_azure-iot_az_iot_hub_distributed_tracing;
 }
 
-class extAzureIotAzIotHubJob {
+class extAzureIotAzIotHubModuleIdentityConnection {
+    static string = ext_azure-iot_az_iot_hub_module_identity_connection_string;
+}
+
+class extAzureIotAzIotHubModuleIdentity {
+    static connection = extAzureIotAzIotHubModuleIdentityConnection;
 }
 
 class extAzureIotAzIotHubModule {
-    static twin = ext_azure-iot_az_iot_hub_module_twin;
     static identity = extAzureIotAzIotHubModuleIdentity;
-    static twin = extAzureIotAzIotHubModuleTwin;
+    static twin = ext_azure-iot_az_iot_hub_module_twin;
 }
 
-class extAzureIotAzIotPnpModel {
-}
-
-class extAzureIotAzIotPnpRepo {
+class extAzureIotAzIotHub {
+    static configuration = ext_azure-iot_az_iot_hub_configuration;
+    static connection = extAzureIotAzIotHubConnection;
+    static device = extAzureIotAzIotHubDevice;
+    static distributed = extAzureIotAzIotHubDistributed;
+    static job = ext_azure-iot_az_iot_hub_job;
+    static module = extAzureIotAzIotHubModule;
 }
 
 class extAzureIotAzIotPnpRole {
     static assignment = ext_azure-iot_az_iot_pnp_role_assignment;
 }
 
-class extAzureIotAzIotPnpTwin {
-}
-
-class extAzureIotAzIotProductRequirement {
+class extAzureIotAzIotPnp {
+    static model = ext_azure-iot_az_iot_pnp_model;
+    static repo = ext_azure-iot_az_iot_pnp_repo;
+    static role = extAzureIotAzIotPnpRole;
+    static twin = ext_azure-iot_az_iot_pnp_twin;
 }
 
 class extAzureIotAzIotProductTest {
@@ -4688,68 +3726,12 @@ class extAzureIotAzIotProductTest {
     static task = ext_azure-iot_az_iot_product_test_task;
 }
 
-class extAzureIotAzIotCentral extends ext_azure-iot_az_iot_central {
-    static diagnostics = ext_azure-iot_az_iot_central_diagnostics;
-    static user = ext_azure-iot_az_iot_central_user;
-    static api = extAzureIotAzIotCentralApi;
-    static app = extAzureIotAzIotCentralApp;
-    static device = extAzureIotAzIotCentralDevice;
-    static diagnostics = extAzureIotAzIotCentralDiagnostics;
-    static user = extAzureIotAzIotCentralUser;
-}
-
-class extAzureIotAzIotDevice extends ext_azure-iot_az_iot_device {
-    static c2D = extAzureIotAzIotDeviceC2D;
-}
-
-class extAzureIotAzIotDps extends ext_azure-iot_az_iot_dps {
-    static registration = ext_azure-iot_az_iot_dps_registration;
-    static enrollment = extAzureIotAzIotDpsEnrollment;
-    static registration = extAzureIotAzIotDpsRegistration;
-}
-
-class extAzureIotAzIotEdge {
-    static deployment = ext_azure-iot_az_iot_edge_deployment;
-}
-
-class extAzureIotAzIotHub extends ext_azure-iot_az_iot_hub {
-    static configuration = ext_azure-iot_az_iot_hub_configuration;
-    static job = ext_azure-iot_az_iot_hub_job;
-    static configuration = extAzureIotAzIotHubConfiguration;
-    static connection = extAzureIotAzIotHubConnection;
-    static device = extAzureIotAzIotHubDevice;
-    static distributed = extAzureIotAzIotHubDistributed;
-    static job = extAzureIotAzIotHubJob;
-    static module = extAzureIotAzIotHubModule;
-}
-
-class extAzureIotAzIotPnp extends ext_azure-iot_az_iot_pnp {
-    static model = ext_azure-iot_az_iot_pnp_model;
-    static repo = ext_azure-iot_az_iot_pnp_repo;
-    static twin = ext_azure-iot_az_iot_pnp_twin;
-    static model = extAzureIotAzIotPnpModel;
-    static repo = extAzureIotAzIotPnpRepo;
-    static role = extAzureIotAzIotPnpRole;
-    static twin = extAzureIotAzIotPnpTwin;
-}
-
-class extAzureIotAzIotProduct extends ext_azure-iot_az_iot_product {
+class extAzureIotAzIotProduct {
     static requirement = ext_azure-iot_az_iot_product_requirement;
-    static requirement = extAzureIotAzIotProductRequirement;
     static test = extAzureIotAzIotProductTest;
 }
 
-class extAzureIotAzDt extends ext_azure-iot_az_dt {
-    static model = ext_azure-iot_az_dt_model;
-    static route = ext_azure-iot_az_dt_route;
-    static endpoint = extAzureIotAzDtEndpoint;
-    static model = extAzureIotAzDtModel;
-    static role = extAzureIotAzDtRole;
-    static route = extAzureIotAzDtRoute;
-    static twin = extAzureIotAzDtTwin;
-}
-
-class extAzureIotAzIot extends ext_azure-iot_az_iot {
+class extAzureIotAzIot {
     static central = extAzureIotAzIotCentral;
     static device = extAzureIotAzIotDevice;
     static dps = extAzureIotAzIotDps;
@@ -4759,40 +3741,37 @@ class extAzureIotAzIot extends ext_azure-iot_az_iot {
     static product = extAzureIotAzIotProduct;
 }
 
-class extAzureIotAz extends ext_azure-iot_az {
+class extAzureIotAz {
     static dt = extAzureIotAzDt;
     static iot = extAzureIotAzIot;
 }
 
-class extBlockchainAzBlockchainConsortium {
-}
-
-class extBlockchainAzBlockchainMember {
+class extAzureIot {
+    static az = extAzureIotAz;
 }
 
 class extBlockchainAzBlockchainTransaction {
     static node = ext_blockchain_az_blockchain_transaction_node;
 }
 
-class extBlockchainAzBlockchain extends ext_blockchain_az_blockchain {
+class extBlockchainAzBlockchain {
     static consortium = ext_blockchain_az_blockchain_consortium;
     static member = ext_blockchain_az_blockchain_member;
-    static consortium = extBlockchainAzBlockchainConsortium;
-    static member = extBlockchainAzBlockchainMember;
     static transaction = extBlockchainAzBlockchainTransaction;
 }
 
-class extBlockchainAz extends ext_blockchain_az {
+class extBlockchainAz {
     static blockchain = extBlockchainAzBlockchain;
+}
+
+class extBlockchain {
+    static az = extBlockchainAz;
 }
 
 class extBlueprintAzBlueprintArtifact {
     static policy = ext_blueprint_az_blueprint_artifact_policy;
     static role = ext_blueprint_az_blueprint_artifact_role;
     static template = ext_blueprint_az_blueprint_artifact_template;
-}
-
-class extBlueprintAzBlueprintAssignment {
 }
 
 class extBlueprintAzBlueprintResource {
@@ -4803,16 +3782,19 @@ class extBlueprintAzBlueprintVersion {
     static artifact = ext_blueprint_az_blueprint_version_artifact;
 }
 
-class extBlueprintAzBlueprint extends ext_blueprint_az_blueprint {
-    static assignment = ext_blueprint_az_blueprint_assignment;
+class extBlueprintAzBlueprint {
     static artifact = extBlueprintAzBlueprintArtifact;
-    static assignment = extBlueprintAzBlueprintAssignment;
+    static assignment = ext_blueprint_az_blueprint_assignment;
     static resource = extBlueprintAzBlueprintResource;
     static version = extBlueprintAzBlueprintVersion;
 }
 
-class extBlueprintAz extends ext_blueprint_az {
+class extBlueprintAz {
     static blueprint = extBlueprintAzBlueprint;
+}
+
+class extBlueprint {
+    static az = extBlueprintAz;
 }
 
 class extCodespacesAzCodespace {
@@ -4821,32 +3803,48 @@ class extCodespacesAzCodespace {
     static secret = ext_codespaces_az_codespace_secret;
 }
 
-class extCodespacesAz extends ext_codespaces_az {
+class extCodespacesAz {
     static codespace = extCodespacesAzCodespace;
 }
 
+class extCodespaces {
+    static az = extCodespacesAz;
+}
+
 class extConnectedk8SAz {
-    static connectedk8S = ext_connectedk8s_az_connectedk8s;
+    static connectedk8s = ext_connectedk8s_az_connectedk8s;
+}
+
+class extConnectedk8S {
+    static az = extConnectedk8SAz;
 }
 
 class extConnectedmachineAzConnectedmachineMachine {
     static extension = ext_connectedmachine_az_connectedmachine_machine_extension;
 }
 
-class extConnectedmachineAzConnectedmachine extends ext_connectedmachine_az_connectedmachine {
+class extConnectedmachineAzConnectedmachine {
     static machine = extConnectedmachineAzConnectedmachineMachine;
 }
 
-class extConnectedmachineAz extends ext_connectedmachine_az {
+class extConnectedmachineAz {
     static connectedmachine = extConnectedmachineAzConnectedmachine;
+}
+
+class extConnectedmachine {
+    static az = extConnectedmachineAz;
 }
 
 class extCostmanagementAzCostmanagement {
     static export = ext_costmanagement_az_costmanagement_export;
 }
 
-class extCostmanagementAz extends ext_costmanagement_az {
+class extCostmanagementAz {
     static costmanagement = extCostmanagementAzCostmanagement;
+}
+
+class extCostmanagement {
+    static az = extCostmanagementAz;
 }
 
 class extCsvmwareAzCsvmwarePrivate {
@@ -4867,22 +3865,26 @@ class extCsvmwareAzCsvmwareVm {
     static template = ext_csvmware_az_csvmware_vm_template;
 }
 
-class extCsvmwareAzCsvmware extends ext_csvmware_az_csvmware {
+class extCsvmwareAzCsvmware {
     static private = extCsvmwareAzCsvmwarePrivate;
     static resource = extCsvmwareAzCsvmwareResource;
     static virtual = extCsvmwareAzCsvmwareVirtual;
     static vm = extCsvmwareAzCsvmwareVm;
 }
 
-class extCsvmwareAz extends ext_csvmware_az {
+class extCsvmwareAz {
     static csvmware = extCsvmwareAzCsvmware;
+}
+
+class extCsvmware {
+    static az = extCsvmwareAz;
 }
 
 class extCustomProvidersAzCustomProvidersResource {
     static provider = ext_custom-providers_az_custom_providers_resource_provider;
 }
 
-class extCustomProvidersAzCustomProviders extends ext_custom-providers_az_custom_providers {
+class extCustomProvidersAzCustomProviders {
     static resource = extCustomProvidersAzCustomProvidersResource;
 }
 
@@ -4890,32 +3892,48 @@ class extCustomProvidersAzCustom {
     static providers = extCustomProvidersAzCustomProviders;
 }
 
-class extCustomProvidersAz extends ext_custom-providers_az {
+class extCustomProvidersAz {
     static custom = extCustomProvidersAzCustom;
+}
+
+class extCustomProviders {
+    static az = extCustomProvidersAz;
 }
 
 class extDataboxAzDatabox {
     static job = ext_databox_az_databox_job;
 }
 
-class extDataboxAz extends ext_databox_az {
+class extDataboxAz {
     static databox = extDataboxAzDatabox;
+}
+
+class extDatabox {
+    static az = extDataboxAz;
 }
 
 class extDatabricksAzDatabricksWorkspaceVnet {
     static peering = ext_databricks_az_databricks_workspace_vnet_peering;
 }
 
-class extDatabricksAzDatabricksWorkspace extends ext_databricks_az_databricks_workspace {
+class extDatabricksAzDatabricksWorkspace {
     static vnet = extDatabricksAzDatabricksWorkspaceVnet;
 }
 
-class extDatabricksAzDatabricks extends ext_databricks_az_databricks {
+class extDatabricksAzDatabricks {
     static workspace = extDatabricksAzDatabricksWorkspace;
 }
 
-class extDatabricksAz extends ext_databricks_az {
+class extDatabricksAz {
     static databricks = extDatabricksAzDatabricks;
+}
+
+class extDatabricks {
+    static az = extDatabricksAz;
+}
+
+class extDatafactoryAzDatafactoryActivity {
+    static run = ext_datafactory_az_datafactory_activity_run;
 }
 
 class extDatafactoryAzDatafactoryIntegrationRuntimeLinkedIntegration {
@@ -4926,33 +3944,15 @@ class extDatafactoryAzDatafactoryIntegrationRuntimeLinked {
     static integration = extDatafactoryAzDatafactoryIntegrationRuntimeLinkedIntegration;
 }
 
-class extDatafactoryAzDatafactoryIntegrationRuntimeManaged {
-}
-
-class extDatafactoryAzDatafactoryIntegrationRuntimeNode {
-}
-
 class extDatafactoryAzDatafactoryIntegrationRuntimeSelf {
     static hosted = ext_datafactory_az_datafactory_integration_runtime_self_hosted;
 }
 
-class extDatafactoryAzDatafactoryIntegrationRuntime extends ext_datafactory_az_datafactory_integration_runtime {
+class extDatafactoryAzDatafactoryIntegrationRuntime {
+    static linked = extDatafactoryAzDatafactoryIntegrationRuntimeLinked;
     static managed = ext_datafactory_az_datafactory_integration_runtime_managed;
     static node = ext_datafactory_az_datafactory_integration_runtime_node;
-    static linked = extDatafactoryAzDatafactoryIntegrationRuntimeLinked;
-    static managed = extDatafactoryAzDatafactoryIntegrationRuntimeManaged;
-    static node = extDatafactoryAzDatafactoryIntegrationRuntimeNode;
     static self = extDatafactoryAzDatafactoryIntegrationRuntimeSelf;
-}
-
-class extDatafactoryAzDatafactoryActivity {
-    static run = ext_datafactory_az_datafactory_activity_run;
-}
-
-class extDatafactoryAzDatafactoryDataset {
-}
-
-class extDatafactoryAzDatafactoryFactory {
 }
 
 class extDatafactoryAzDatafactoryIntegration {
@@ -4971,60 +3971,45 @@ class extDatafactoryAzDatafactoryTrigger {
     static run = ext_datafactory_az_datafactory_trigger_run;
 }
 
-class extDatafactoryAzDatafactory extends ext_datafactory_az_datafactory {
+class extDatafactoryAzDatafactory {
+    static activity = extDatafactoryAzDatafactoryActivity;
     static dataset = ext_datafactory_az_datafactory_dataset;
     static factory = ext_datafactory_az_datafactory_factory;
-    static activity = extDatafactoryAzDatafactoryActivity;
-    static dataset = extDatafactoryAzDatafactoryDataset;
-    static factory = extDatafactoryAzDatafactoryFactory;
     static integration = extDatafactoryAzDatafactoryIntegration;
     static linked = extDatafactoryAzDatafactoryLinked;
     static pipeline = extDatafactoryAzDatafactoryPipeline;
     static trigger = extDatafactoryAzDatafactoryTrigger;
 }
 
-class extDatafactoryAz extends ext_datafactory_az {
+class extDatafactoryAz {
     static datafactory = extDatafactoryAzDatafactory;
 }
 
-class extDatashareAzDatashareConsumerShareSubscription {
-    static synchronization = ext_datashare_az_datashare_consumer_share_subscription_synchronization;
+class extDatafactory {
+    static az = extDatafactoryAz;
 }
 
 class extDatashareAzDatashareConsumerDataset {
     static mapping = ext_datashare_az_datashare_consumer_dataset_mapping;
 }
 
-class extDatashareAzDatashareConsumerInvitation {
+class extDatashareAzDatashareConsumerShareSubscription {
+    static synchronization = ext_datashare_az_datashare_consumer_share_subscription_synchronization;
 }
 
 class extDatashareAzDatashareConsumerShare {
     static subscription = extDatashareAzDatashareConsumerShareSubscription;
 }
 
-class extDatashareAzDatashareConsumerTrigger {
+class extDatashareAzDatashareConsumer {
+    static dataset = extDatashareAzDatashareConsumerDataset;
+    static invitation = ext_datashare_az_datashare_consumer_invitation;
+    static share = extDatashareAzDatashareConsumerShare;
+    static trigger = ext_datashare_az_datashare_consumer_trigger;
 }
 
 class extDatashareAzDatashareProviderShare {
     static subscription = ext_datashare_az_datashare_provider_share_subscription;
-}
-
-class extDatashareAzDatashareAccount {
-}
-
-class extDatashareAzDatashareConsumer extends ext_datashare_az_datashare_consumer {
-    static invitation = ext_datashare_az_datashare_consumer_invitation;
-    static trigger = ext_datashare_az_datashare_consumer_trigger;
-    static dataset = extDatashareAzDatashareConsumerDataset;
-    static invitation = extDatashareAzDatashareConsumerInvitation;
-    static share = extDatashareAzDatashareConsumerShare;
-    static trigger = extDatashareAzDatashareConsumerTrigger;
-}
-
-class extDatashareAzDatashareDataset {
-}
-
-class extDatashareAzDatashareInvitation {
 }
 
 class extDatashareAzDatashareProvider {
@@ -5035,26 +4020,31 @@ class extDatashareAzDatashareSynchronization {
     static setting = ext_datashare_az_datashare_synchronization_setting;
 }
 
-class extDatashareAzDatashare extends ext_datashare_az_datashare {
+class extDatashareAzDatashare {
     static account = ext_datashare_az_datashare_account;
+    static consumer = extDatashareAzDatashareConsumer;
     static dataset = ext_datashare_az_datashare_dataset;
     static invitation = ext_datashare_az_datashare_invitation;
-    static account = extDatashareAzDatashareAccount;
-    static consumer = extDatashareAzDatashareConsumer;
-    static dataset = extDatashareAzDatashareDataset;
-    static invitation = extDatashareAzDatashareInvitation;
     static provider = extDatashareAzDatashareProvider;
     static synchronization = extDatashareAzDatashareSynchronization;
 }
 
-class extDatashareAz extends ext_datashare_az {
+class extDatashareAz {
     static datashare = extDatashareAzDatashare;
+}
+
+class extDatashare {
+    static az = extDatashareAz;
 }
 
 class extDbUpAz {
     static mysql = ext_db-up_az_mysql;
     static postgres = ext_db-up_az_postgres;
     static sql = ext_db-up_az_sql;
+}
+
+class extDbUp {
+    static az = extDbUpAz;
 }
 
 class extDeployToAzureAzAks {
@@ -5069,10 +4059,14 @@ class extDeployToAzureAzFunctionapp {
     static app = ext_deploy-to-azure_az_functionapp_app;
 }
 
-class extDeployToAzureAz extends ext_deploy-to-azure_az {
+class extDeployToAzureAz {
     static aks = extDeployToAzureAzAks;
     static container = extDeployToAzureAzContainer;
     static functionapp = extDeployToAzureAzFunctionapp;
+}
+
+class extDeployToAzure {
+    static az = extDeployToAzureAz;
 }
 
 class extDesktopvirtualizationAzDesktopvirtualization {
@@ -5081,29 +4075,37 @@ class extDesktopvirtualizationAzDesktopvirtualization {
     static workspace = ext_desktopvirtualization_az_desktopvirtualization_workspace;
 }
 
-class extDesktopvirtualizationAz extends ext_desktopvirtualization_az {
+class extDesktopvirtualizationAz {
     static desktopvirtualization = extDesktopvirtualizationAzDesktopvirtualization;
+}
+
+class extDesktopvirtualization {
+    static az = extDesktopvirtualizationAz;
 }
 
 class extDevSpacesAz {
     static aks = ext_dev-spaces_az_aks;
 }
 
+class extDevSpaces {
+    static az = extDevSpacesAz;
+}
+
 class extDmsPreviewAzDmsProject {
     static task = ext_dms-preview_az_dms_project_task;
 }
 
-class extDmsPreviewAzDmsTask {
-}
-
-class extDmsPreviewAzDms extends ext_dms-preview_az_dms {
-    static task = ext_dms-preview_az_dms_task;
+class extDmsPreviewAzDms {
     static project = extDmsPreviewAzDmsProject;
-    static task = extDmsPreviewAzDmsTask;
+    static task = ext_dms-preview_az_dms_task;
 }
 
-class extDmsPreviewAz extends ext_dms-preview_az {
+class extDmsPreviewAz {
     static dms = extDmsPreviewAzDms;
+}
+
+class extDmsPreview {
+    static az = extDmsPreviewAz;
 }
 
 class extEventgridAzEventgridDomainPrivateEndpoint {
@@ -5114,74 +4116,15 @@ class extEventgridAzEventgridDomainPrivateLink {
     static resource = ext_eventgrid_az_eventgrid_domain_private_link_resource;
 }
 
-class extEventgridAzEventgridDomainKey {
-}
-
 class extEventgridAzEventgridDomainPrivate {
     static endpoint = extEventgridAzEventgridDomainPrivateEndpoint;
     static link = extEventgridAzEventgridDomainPrivateLink;
 }
 
-class extEventgridAzEventgridDomainTopic {
-}
-
-class extEventgridAzEventgridPartnerNamespaceEvent {
-    static channel = ext_eventgrid_az_eventgrid_partner_namespace_event_channel;
-}
-
-class extEventgridAzEventgridPartnerNamespaceKey {
-}
-
-class extEventgridAzEventgridPartnerTopicEvent {
-    static subscription = ext_eventgrid_az_eventgrid_partner_topic_event_subscription;
-}
-
-class extEventgridAzEventgridPartnerNamespace extends ext_eventgrid_az_eventgrid_partner_namespace {
-    static key = ext_eventgrid_az_eventgrid_partner_namespace_key;
-    static event = extEventgridAzEventgridPartnerNamespaceEvent;
-    static key = extEventgridAzEventgridPartnerNamespaceKey;
-}
-
-class extEventgridAzEventgridPartnerRegistration {
-}
-
-class extEventgridAzEventgridPartnerTopic extends ext_eventgrid_az_eventgrid_partner_topic {
-    static event = extEventgridAzEventgridPartnerTopicEvent;
-}
-
-class extEventgridAzEventgridSystemTopicEvent {
-    static subscription = ext_eventgrid_az_eventgrid_system_topic_event_subscription;
-}
-
-class extEventgridAzEventgridSystemTopic extends ext_eventgrid_az_eventgrid_system_topic {
-    static event = extEventgridAzEventgridSystemTopicEvent;
-}
-
-class extEventgridAzEventgridTopicPrivateEndpoint {
-    static connection = ext_eventgrid_az_eventgrid_topic_private_endpoint_connection;
-}
-
-class extEventgridAzEventgridTopicPrivateLink {
-    static resource = ext_eventgrid_az_eventgrid_topic_private_link_resource;
-}
-
-class extEventgridAzEventgridTopicKey {
-}
-
-class extEventgridAzEventgridTopicPrivate {
-    static endpoint = extEventgridAzEventgridTopicPrivateEndpoint;
-    static link = extEventgridAzEventgridTopicPrivateLink;
-}
-
-class extEventgridAzEventgridTopicType {
-}
-
-class extEventgridAzEventgridDomain extends ext_eventgrid_az_eventgrid_domain {
+class extEventgridAzEventgridDomain {
     static key = ext_eventgrid_az_eventgrid_domain_key;
-    static topic = ext_eventgrid_az_eventgrid_domain_topic;
-    static key = extEventgridAzEventgridDomainKey;
     static private = extEventgridAzEventgridDomainPrivate;
-    static topic = extEventgridAzEventgridDomainTopic;
+    static topic = ext_eventgrid_az_eventgrid_domain_topic;
 }
 
 class extEventgridAzEventgridEvent {
@@ -5192,26 +4135,61 @@ class extEventgridAzEventgridExtension {
     static topic = ext_eventgrid_az_eventgrid_extension_topic;
 }
 
-class extEventgridAzEventgridPartner extends ext_eventgrid_az_eventgrid_partner {
-    static registration = ext_eventgrid_az_eventgrid_partner_registration;
+class extEventgridAzEventgridPartnerNamespaceEvent {
+    static channel = ext_eventgrid_az_eventgrid_partner_namespace_event_channel;
+}
+
+class extEventgridAzEventgridPartnerNamespace {
+    static event = extEventgridAzEventgridPartnerNamespaceEvent;
+    static key = ext_eventgrid_az_eventgrid_partner_namespace_key;
+}
+
+class extEventgridAzEventgridPartnerTopicEvent {
+    static subscription = ext_eventgrid_az_eventgrid_partner_topic_event_subscription;
+}
+
+class extEventgridAzEventgridPartnerTopic {
+    static event = extEventgridAzEventgridPartnerTopicEvent;
+}
+
+class extEventgridAzEventgridPartner {
     static namespace = extEventgridAzEventgridPartnerNamespace;
-    static registration = extEventgridAzEventgridPartnerRegistration;
+    static registration = ext_eventgrid_az_eventgrid_partner_registration;
     static topic = extEventgridAzEventgridPartnerTopic;
+}
+
+class extEventgridAzEventgridSystemTopicEvent {
+    static subscription = ext_eventgrid_az_eventgrid_system_topic_event_subscription;
+}
+
+class extEventgridAzEventgridSystemTopic {
+    static event = extEventgridAzEventgridSystemTopicEvent;
 }
 
 class extEventgridAzEventgridSystem {
     static topic = extEventgridAzEventgridSystemTopic;
 }
 
-class extEventgridAzEventgridTopic extends ext_eventgrid_az_eventgrid_topic {
-    static key = ext_eventgrid_az_eventgrid_topic_key;
-    static type = ext_eventgrid_az_eventgrid_topic_type;
-    static key = extEventgridAzEventgridTopicKey;
-    static private = extEventgridAzEventgridTopicPrivate;
-    static type = extEventgridAzEventgridTopicType;
+class extEventgridAzEventgridTopicPrivateEndpoint {
+    static connection = ext_eventgrid_az_eventgrid_topic_private_endpoint_connection;
 }
 
-class extEventgridAzEventgrid extends ext_eventgrid_az_eventgrid {
+class extEventgridAzEventgridTopicPrivateLink {
+    static resource = ext_eventgrid_az_eventgrid_topic_private_link_resource;
+}
+
+class extEventgridAzEventgridTopicPrivate {
+    static endpoint = extEventgridAzEventgridTopicPrivateEndpoint;
+    static link = extEventgridAzEventgridTopicPrivateLink;
+}
+
+class extEventgridAzEventgridTopic {
+    static key = ext_eventgrid_az_eventgrid_topic_key;
+    static private = extEventgridAzEventgridTopicPrivate;
+    static type = ext_eventgrid_az_eventgrid_topic_type;
+}
+
+class extEventgridAzEventgrid {
     static domain = extEventgridAzEventgridDomain;
     static event = extEventgridAzEventgridEvent;
     static extension = extEventgridAzEventgridExtension;
@@ -5220,8 +4198,12 @@ class extEventgridAzEventgrid extends ext_eventgrid_az_eventgrid {
     static topic = extEventgridAzEventgridTopic;
 }
 
-class extEventgridAz extends ext_eventgrid_az {
+class extEventgridAz {
     static eventgrid = extEventgridAzEventgrid;
+}
+
+class extEventgrid {
+    static az = extEventgridAz;
 }
 
 class extExpressRouteCrossConnectionAzNetworkCrossConnection {
@@ -5232,12 +4214,16 @@ class extExpressRouteCrossConnectionAzNetworkCross {
     static connection = extExpressRouteCrossConnectionAzNetworkCrossConnection;
 }
 
-class extExpressRouteCrossConnectionAzNetwork extends ext_express-route-cross-connection_az_network {
+class extExpressRouteCrossConnectionAzNetwork {
     static cross = extExpressRouteCrossConnectionAzNetworkCross;
 }
 
-class extExpressRouteCrossConnectionAz extends ext_express-route-cross-connection_az {
+class extExpressRouteCrossConnectionAz {
     static network = extExpressRouteCrossConnectionAzNetwork;
+}
+
+class extExpressRouteCrossConnection {
+    static az = extExpressRouteCrossConnectionAz;
 }
 
 class extExpressRouteAzNetworkExpressRouteGateway {
@@ -5249,7 +4235,7 @@ class extExpressRouteAzNetworkExpressRoutePort {
     static location = ext_express-route_az_network_express_route_port_location;
 }
 
-class extExpressRouteAzNetworkExpressRoute extends ext_express-route_az_network_express_route {
+class extExpressRouteAzNetworkExpressRoute {
     static gateway = extExpressRouteAzNetworkExpressRouteGateway;
     static port = extExpressRouteAzNetworkExpressRoutePort;
 }
@@ -5258,78 +4244,42 @@ class extExpressRouteAzNetworkExpress {
     static route = extExpressRouteAzNetworkExpressRoute;
 }
 
-class extExpressRouteAzNetwork extends ext_express-route_az_network {
+class extExpressRouteAzNetwork {
     static express = extExpressRouteAzNetworkExpress;
 }
 
-class extExpressRouteAz extends ext_express-route_az {
+class extExpressRouteAz {
     static network = extExpressRouteAzNetwork;
+}
+
+class extExpressRoute {
+    static az = extExpressRouteAz;
 }
 
 class extFootprintAzFootprintMeasurementEndpoint {
     static condition = ext_footprint_az_footprint_measurement_endpoint_condition;
 }
 
-class extFootprintAzFootprintExperiment {
-}
-
 class extFootprintAzFootprintMeasurement {
     static endpoint = extFootprintAzFootprintMeasurementEndpoint;
 }
 
-class extFootprintAzFootprintProfile {
-}
-
-class extFootprintAzFootprint extends ext_footprint_az_footprint {
+class extFootprintAzFootprint {
     static experiment = ext_footprint_az_footprint_experiment;
-    static profile = ext_footprint_az_footprint_profile;
-    static experiment = extFootprintAzFootprintExperiment;
     static measurement = extFootprintAzFootprintMeasurement;
-    static profile = extFootprintAzFootprintProfile;
+    static profile = ext_footprint_az_footprint_profile;
 }
 
-class extFootprintAz extends ext_footprint_az {
+class extFootprintAz {
     static footprint = extFootprintAzFootprint;
+}
+
+class extFootprint {
+    static az = extFootprintAz;
 }
 
 class extFrontDoorAzNetworkFrontDoorBackendPool {
     static backend = ext_front-door_az_network_front_door_backend_pool_backend;
-}
-
-class extFrontDoorAzNetworkFrontDoorRulesEngineRule {
-    static action = ext_front-door_az_network_front_door_rules_engine_rule_action;
-    static condition = ext_front-door_az_network_front_door_rules_engine_rule_condition;
-}
-
-class extFrontDoorAzNetworkFrontDoorRulesEngine extends ext_front-door_az_network_front_door_rules_engine {
-    static rule = extFrontDoorAzNetworkFrontDoorRulesEngineRule;
-}
-
-class extFrontDoorAzNetworkFrontDoorWafPolicyManagedRule {
-    static definition = ext_front-door_az_network_front_door_waf_policy_managed_rule_definition;
-}
-
-class extFrontDoorAzNetworkFrontDoorWafPolicyManagedRules {
-    static exclusion = ext_front-door_az_network_front_door_waf_policy_managed_rules_exclusion;
-    static override = ext_front-door_az_network_front_door_waf_policy_managed_rules_override;
-}
-
-class extFrontDoorAzNetworkFrontDoorWafPolicyRuleMatch {
-    static condition = ext_front-door_az_network_front_door_waf_policy_rule_match_condition;
-}
-
-class extFrontDoorAzNetworkFrontDoorWafPolicyManaged {
-    static rule = extFrontDoorAzNetworkFrontDoorWafPolicyManagedRule;
-    static rules = extFrontDoorAzNetworkFrontDoorWafPolicyManagedRules;
-}
-
-class extFrontDoorAzNetworkFrontDoorWafPolicyRule extends ext_front-door_az_network_front_door_waf_policy_rule {
-    static match = extFrontDoorAzNetworkFrontDoorWafPolicyRuleMatch;
-}
-
-class extFrontDoorAzNetworkFrontDoorWafPolicy extends ext_front-door_az_network_front_door_waf_policy {
-    static managed = extFrontDoorAzNetworkFrontDoorWafPolicyManaged;
-    static rule = extFrontDoorAzNetworkFrontDoorWafPolicyRule;
 }
 
 class extFrontDoorAzNetworkFrontDoorBackend {
@@ -5344,27 +4294,59 @@ class extFrontDoorAzNetworkFrontDoorLoad {
     static balancing = ext_front-door_az_network_front_door_load_balancing;
 }
 
-class extFrontDoorAzNetworkFrontDoorProbe {
-}
-
 class extFrontDoorAzNetworkFrontDoorRouting {
     static rule = ext_front-door_az_network_front_door_routing_rule;
+}
+
+class extFrontDoorAzNetworkFrontDoorRulesEngineRule {
+    static action = ext_front-door_az_network_front_door_rules_engine_rule_action;
+    static condition = ext_front-door_az_network_front_door_rules_engine_rule_condition;
+}
+
+class extFrontDoorAzNetworkFrontDoorRulesEngine {
+    static rule = extFrontDoorAzNetworkFrontDoorRulesEngineRule;
 }
 
 class extFrontDoorAzNetworkFrontDoorRules {
     static engine = extFrontDoorAzNetworkFrontDoorRulesEngine;
 }
 
+class extFrontDoorAzNetworkFrontDoorWafPolicyManagedRule {
+    static definition = ext_front-door_az_network_front_door_waf_policy_managed_rule_definition;
+}
+
+class extFrontDoorAzNetworkFrontDoorWafPolicyManagedRules {
+    static exclusion = ext_front-door_az_network_front_door_waf_policy_managed_rules_exclusion;
+    static override = ext_front-door_az_network_front_door_waf_policy_managed_rules_override;
+}
+
+class extFrontDoorAzNetworkFrontDoorWafPolicyManaged {
+    static rule = extFrontDoorAzNetworkFrontDoorWafPolicyManagedRule;
+    static rules = extFrontDoorAzNetworkFrontDoorWafPolicyManagedRules;
+}
+
+class extFrontDoorAzNetworkFrontDoorWafPolicyRuleMatch {
+    static condition = ext_front-door_az_network_front_door_waf_policy_rule_match_condition;
+}
+
+class extFrontDoorAzNetworkFrontDoorWafPolicyRule {
+    static match = extFrontDoorAzNetworkFrontDoorWafPolicyRuleMatch;
+}
+
+class extFrontDoorAzNetworkFrontDoorWafPolicy {
+    static managed = extFrontDoorAzNetworkFrontDoorWafPolicyManaged;
+    static rule = extFrontDoorAzNetworkFrontDoorWafPolicyRule;
+}
+
 class extFrontDoorAzNetworkFrontDoorWaf {
     static policy = extFrontDoorAzNetworkFrontDoorWafPolicy;
 }
 
-class extFrontDoorAzNetworkFrontDoor extends ext_front-door_az_network_front_door {
-    static probe = ext_front-door_az_network_front_door_probe;
+class extFrontDoorAzNetworkFrontDoor {
     static backend = extFrontDoorAzNetworkFrontDoorBackend;
     static frontend = extFrontDoorAzNetworkFrontDoorFrontend;
     static load = extFrontDoorAzNetworkFrontDoorLoad;
-    static probe = extFrontDoorAzNetworkFrontDoorProbe;
+    static probe = ext_front-door_az_network_front_door_probe;
     static routing = extFrontDoorAzNetworkFrontDoorRouting;
     static rules = extFrontDoorAzNetworkFrontDoorRules;
     static waf = extFrontDoorAzNetworkFrontDoorWaf;
@@ -5374,24 +4356,32 @@ class extFrontDoorAzNetworkFront {
     static door = extFrontDoorAzNetworkFrontDoor;
 }
 
-class extFrontDoorAzNetwork extends ext_front-door_az_network {
+class extFrontDoorAzNetwork {
     static front = extFrontDoorAzNetworkFront;
 }
 
-class extFrontDoorAz extends ext_front-door_az {
+class extFrontDoorAz {
     static network = extFrontDoorAzNetwork;
+}
+
+class extFrontDoor {
+    static az = extFrontDoorAz;
 }
 
 class extFzfAz {
     static fzf = ext_fzf_az_fzf;
 }
 
-class extGuestconfigAzGuestconfigGuestConfigurationHcrpAssignment {
-    static report = ext_guestconfig_az_guestconfig_guest_configuration_hcrp_assignment_report;
+class extFzf {
+    static az = extFzfAz;
 }
 
 class extGuestconfigAzGuestconfigGuestConfigurationAssignment {
     static report = ext_guestconfig_az_guestconfig_guest_configuration_assignment_report;
+}
+
+class extGuestconfigAzGuestconfigGuestConfigurationHcrpAssignment {
+    static report = ext_guestconfig_az_guestconfig_guest_configuration_hcrp_assignment_report;
 }
 
 class extGuestconfigAzGuestconfigGuestConfigurationHcrp {
@@ -5407,60 +4397,69 @@ class extGuestconfigAzGuestconfigGuest {
     static configuration = extGuestconfigAzGuestconfigGuestConfiguration;
 }
 
-class extGuestconfigAzGuestconfig extends ext_guestconfig_az_guestconfig {
+class extGuestconfigAzGuestconfig {
     static guest = extGuestconfigAzGuestconfigGuest;
 }
 
-class extGuestconfigAz extends ext_guestconfig_az {
+class extGuestconfigAz {
     static guestconfig = extGuestconfigAzGuestconfig;
+}
+
+class extGuestconfig {
+    static az = extGuestconfigAz;
 }
 
 class extHackAz {
     static hack = ext_hack_az_hack;
 }
 
+class extHack {
+    static az = extHackAz;
+}
+
 class extHardwareSecurityModulesAzDedicated {
     static hsm = ext_hardware-security-modules_az_dedicated_hsm;
 }
 
-class extHardwareSecurityModulesAz extends ext_hardware-security-modules_az {
+class extHardwareSecurityModulesAz {
     static dedicated = extHardwareSecurityModulesAzDedicated;
+}
+
+class extHardwareSecurityModules {
+    static az = extHardwareSecurityModulesAz;
 }
 
 class extHealthcareapisAzHealthcareapisOperation {
     static result = ext_healthcareapis_az_healthcareapis_operation_result;
 }
 
-class extHealthcareapisAzHealthcareapisService {
-}
-
-class extHealthcareapisAzHealthcareapis extends ext_healthcareapis_az_healthcareapis {
-    static service = ext_healthcareapis_az_healthcareapis_service;
+class extHealthcareapisAzHealthcareapis {
     static operation = extHealthcareapisAzHealthcareapisOperation;
-    static service = extHealthcareapisAzHealthcareapisService;
+    static service = ext_healthcareapis_az_healthcareapis_service;
 }
 
-class extHealthcareapisAz extends ext_healthcareapis_az {
+class extHealthcareapisAz {
     static healthcareapis = extHealthcareapisAzHealthcareapis;
+}
+
+class extHealthcareapis {
+    static az = extHealthcareapisAz;
 }
 
 class extHpcCacheAzHpcCacheBlobStorage {
     static target = ext_hpc-cache_az_hpc_cache_blob_storage_target;
 }
 
-class extHpcCacheAzHpcCacheNfsStorage {
-    static target = ext_hpc-cache_az_hpc_cache_nfs_storage_target;
-}
-
 class extHpcCacheAzHpcCacheBlob {
     static storage = extHpcCacheAzHpcCacheBlobStorage;
 }
 
-class extHpcCacheAzHpcCacheNfs {
-    static storage = extHpcCacheAzHpcCacheNfsStorage;
+class extHpcCacheAzHpcCacheNfsStorage {
+    static target = ext_hpc-cache_az_hpc_cache_nfs_storage_target;
 }
 
-class extHpcCacheAzHpcCacheSkus {
+class extHpcCacheAzHpcCacheNfs {
+    static storage = extHpcCacheAzHpcCacheNfsStorage;
 }
 
 class extHpcCacheAzHpcCacheStorage {
@@ -5471,11 +4470,10 @@ class extHpcCacheAzHpcCacheUsage {
     static model = ext_hpc-cache_az_hpc_cache_usage_model;
 }
 
-class extHpcCacheAzHpcCache extends ext_hpc-cache_az_hpc_cache {
-    static skus = ext_hpc-cache_az_hpc_cache_skus;
+class extHpcCacheAzHpcCache {
     static blob = extHpcCacheAzHpcCacheBlob;
     static nfs = extHpcCacheAzHpcCacheNfs;
-    static skus = extHpcCacheAzHpcCacheSkus;
+    static skus = ext_hpc-cache_az_hpc_cache_skus;
     static storage = extHpcCacheAzHpcCacheStorage;
     static usage = extHpcCacheAzHpcCacheUsage;
 }
@@ -5484,12 +4482,20 @@ class extHpcCacheAzHpc {
     static cache = extHpcCacheAzHpcCache;
 }
 
-class extHpcCacheAz extends ext_hpc-cache_az {
+class extHpcCacheAz {
     static hpc = extHpcCacheAzHpc;
+}
+
+class extHpcCache {
+    static az = extHpcCacheAz;
 }
 
 class extImageCopyExtensionAz {
     static image = ext_image-copy-extension_az_image;
+}
+
+class extImageCopyExtension {
+    static az = extImageCopyExtensionAz;
 }
 
 class extImportExportAzImportExportBitLocker {
@@ -5500,121 +4506,125 @@ class extImportExportAzImportExportBit {
     static locker = extImportExportAzImportExportBitLocker;
 }
 
-class extImportExportAzImportExportLocation {
-}
-
-class extImportExportAzImportExport extends ext_import-export_az_import_export {
-    static location = ext_import-export_az_import_export_location;
+class extImportExportAzImportExport {
     static bit = extImportExportAzImportExportBit;
-    static location = extImportExportAzImportExportLocation;
+    static location = ext_import-export_az_import_export_location;
 }
 
 class extImportExportAzImport {
     static export = extImportExportAzImportExport;
 }
 
-class extImportExportAz extends ext_import-export_az {
+class extImportExportAz {
     static import = extImportExportAzImport;
+}
+
+class extImportExport {
+    static az = extImportExportAz;
+}
+
+class extInteractive {
+    static az = ext_interactive_az;
 }
 
 class extInternetAnalyzerAzInternetAnalyzerPreconfigured {
     static endpoint = ext_internet-analyzer_az_internet_analyzer_preconfigured_endpoint;
 }
 
-class extInternetAnalyzerAzInternetAnalyzerProfile {
-}
-
-class extInternetAnalyzerAzInternetAnalyzerTest {
-}
-
-class extInternetAnalyzerAzInternetAnalyzer extends ext_internet-analyzer_az_internet_analyzer {
+class extInternetAnalyzerAzInternetAnalyzer {
+    static preconfigured = extInternetAnalyzerAzInternetAnalyzerPreconfigured;
     static profile = ext_internet-analyzer_az_internet_analyzer_profile;
     static test = ext_internet-analyzer_az_internet_analyzer_test;
-    static preconfigured = extInternetAnalyzerAzInternetAnalyzerPreconfigured;
-    static profile = extInternetAnalyzerAzInternetAnalyzerProfile;
-    static test = extInternetAnalyzerAzInternetAnalyzerTest;
 }
 
 class extInternetAnalyzerAzInternet {
     static analyzer = extInternetAnalyzerAzInternetAnalyzer;
 }
 
-class extInternetAnalyzerAz extends ext_internet-analyzer_az {
+class extInternetAnalyzerAz {
     static internet = extInternetAnalyzerAzInternet;
+}
+
+class extInternetAnalyzer {
+    static az = extInternetAnalyzerAz;
 }
 
 class extIpGroupAzNetworkIp {
     static group = ext_ip-group_az_network_ip_group;
 }
 
-class extIpGroupAzNetwork extends ext_ip-group_az_network {
+class extIpGroupAzNetwork {
     static ip = extIpGroupAzNetworkIp;
 }
 
-class extIpGroupAz extends ext_ip-group_az {
+class extIpGroupAz {
     static network = extIpGroupAzNetwork;
 }
 
-class extK8SconfigurationAz {
-    static k8Sconfiguration = ext_k8sconfiguration_az_k8sconfiguration;
+class extIpGroup {
+    static az = extIpGroupAz;
 }
 
-class extKeyvaultPreviewAzKeyvaultCertificateContact {
+class extK8SconfigurationAz {
+    static k8sconfiguration = ext_k8sconfiguration_az_k8sconfiguration;
+}
+
+class extK8Sconfiguration {
+    static az = extK8SconfigurationAz;
 }
 
 class extKeyvaultPreviewAzKeyvaultCertificateIssuer {
     static admin = ext_keyvault-preview_az_keyvault_certificate_issuer_admin;
 }
 
-class extKeyvaultPreviewAzKeyvaultCertificatePending {
-}
-
-class extKeyvaultPreviewAzKeyvaultStorageSas {
-    static definition = ext_keyvault-preview_az_keyvault_storage_sas_definition;
-}
-
-class extKeyvaultPreviewAzKeyvaultCertificate extends ext_keyvault-preview_az_keyvault_certificate {
+class extKeyvaultPreviewAzKeyvaultCertificate {
     static contact = ext_keyvault-preview_az_keyvault_certificate_contact;
-    static pending = ext_keyvault-preview_az_keyvault_certificate_pending;
-    static contact = extKeyvaultPreviewAzKeyvaultCertificateContact;
     static issuer = extKeyvaultPreviewAzKeyvaultCertificateIssuer;
-    static pending = extKeyvaultPreviewAzKeyvaultCertificatePending;
-}
-
-class extKeyvaultPreviewAzKeyvaultKey {
+    static pending = ext_keyvault-preview_az_keyvault_certificate_pending;
 }
 
 class extKeyvaultPreviewAzKeyvaultNetwork {
     static rule = ext_keyvault-preview_az_keyvault_network_rule;
 }
 
-class extKeyvaultPreviewAzKeyvaultSecret {
+class extKeyvaultPreviewAzKeyvaultStorageSas {
+    static definition = ext_keyvault-preview_az_keyvault_storage_sas_definition;
 }
 
-class extKeyvaultPreviewAzKeyvaultStorage extends ext_keyvault-preview_az_keyvault_storage {
+class extKeyvaultPreviewAzKeyvaultStorage {
     static sas = extKeyvaultPreviewAzKeyvaultStorageSas;
 }
 
-class extKeyvaultPreviewAzKeyvault extends ext_keyvault-preview_az_keyvault {
-    static key = ext_keyvault-preview_az_keyvault_key;
-    static secret = ext_keyvault-preview_az_keyvault_secret;
+class extKeyvaultPreviewAzKeyvault {
     static certificate = extKeyvaultPreviewAzKeyvaultCertificate;
-    static key = extKeyvaultPreviewAzKeyvaultKey;
+    static key = ext_keyvault-preview_az_keyvault_key;
     static network = extKeyvaultPreviewAzKeyvaultNetwork;
-    static secret = extKeyvaultPreviewAzKeyvaultSecret;
+    static secret = ext_keyvault-preview_az_keyvault_secret;
     static storage = extKeyvaultPreviewAzKeyvaultStorage;
 }
 
-class extKeyvaultPreviewAz extends ext_keyvault-preview_az {
+class extKeyvaultPreviewAz {
     static keyvault = extKeyvaultPreviewAzKeyvault;
+}
+
+class extKeyvaultPreview {
+    static az = extKeyvaultPreviewAz;
 }
 
 class extKustoAzKustoAttachedDatabase {
     static configuration = ext_kusto_az_kusto_attached_database_configuration;
 }
 
+class extKustoAzKustoAttached {
+    static database = extKustoAzKustoAttachedDatabase;
+}
+
 class extKustoAzKustoClusterPrincipal {
     static assignment = ext_kusto_az_kusto_cluster_principal_assignment;
+}
+
+class extKustoAzKustoCluster {
+    static principal = extKustoAzKustoClusterPrincipal;
 }
 
 class extKustoAzKustoDataConnectionEvent {
@@ -5626,40 +4636,36 @@ class extKustoAzKustoDataConnectionIot {
     static hub = ext_kusto_az_kusto_data_connection_iot_hub;
 }
 
-class extKustoAzKustoDataConnection extends ext_kusto_az_kusto_data_connection {
+class extKustoAzKustoDataConnection {
     static event = extKustoAzKustoDataConnectionEvent;
     static iot = extKustoAzKustoDataConnectionIot;
-}
-
-class extKustoAzKustoDatabasePrincipal {
-    static assignment = ext_kusto_az_kusto_database_principal_assignment;
-}
-
-class extKustoAzKustoAttached {
-    static database = extKustoAzKustoAttachedDatabase;
-}
-
-class extKustoAzKustoCluster extends ext_kusto_az_kusto_cluster {
-    static principal = extKustoAzKustoClusterPrincipal;
 }
 
 class extKustoAzKustoData {
     static connection = extKustoAzKustoDataConnection;
 }
 
-class extKustoAzKustoDatabase extends ext_kusto_az_kusto_database {
+class extKustoAzKustoDatabasePrincipal {
+    static assignment = ext_kusto_az_kusto_database_principal_assignment;
+}
+
+class extKustoAzKustoDatabase {
     static principal = extKustoAzKustoDatabasePrincipal;
 }
 
-class extKustoAzKusto extends ext_kusto_az_kusto {
+class extKustoAzKusto {
     static attached = extKustoAzKustoAttached;
     static cluster = extKustoAzKustoCluster;
     static data = extKustoAzKustoData;
     static database = extKustoAzKustoDatabase;
 }
 
-class extKustoAz extends ext_kusto_az {
+class extKustoAz {
     static kusto = extKustoAzKusto;
+}
+
+class extKusto {
+    static az = extKustoAz;
 }
 
 class extLogAnalyticsSolutionAzMonitorLogAnalytics {
@@ -5670,41 +4676,49 @@ class extLogAnalyticsSolutionAzMonitorLog {
     static analytics = extLogAnalyticsSolutionAzMonitorLogAnalytics;
 }
 
-class extLogAnalyticsSolutionAzMonitor extends ext_log-analytics-solution_az_monitor {
+class extLogAnalyticsSolutionAzMonitor {
     static log = extLogAnalyticsSolutionAzMonitorLog;
 }
 
-class extLogAnalyticsSolutionAz extends ext_log-analytics-solution_az {
+class extLogAnalyticsSolutionAz {
     static monitor = extLogAnalyticsSolutionAzMonitor;
+}
+
+class extLogAnalyticsSolution {
+    static az = extLogAnalyticsSolutionAz;
 }
 
 class extLogAnalyticsAzMonitorLog {
     static analytics = ext_log-analytics_az_monitor_log_analytics;
 }
 
-class extLogAnalyticsAzMonitor extends ext_log-analytics_az_monitor {
+class extLogAnalyticsAzMonitor {
     static log = extLogAnalyticsAzMonitorLog;
 }
 
-class extLogAnalyticsAz extends ext_log-analytics_az {
+class extLogAnalyticsAz {
     static monitor = extLogAnalyticsAzMonitor;
+}
+
+class extLogAnalytics {
+    static az = extLogAnalyticsAz;
 }
 
 class extLogicAzLogicIntegration {
     static account = ext_logic_az_logic_integration_account;
 }
 
-class extLogicAzLogicWorkflow {
-}
-
-class extLogicAzLogic extends ext_logic_az_logic {
-    static workflow = ext_logic_az_logic_workflow;
+class extLogicAzLogic {
     static integration = extLogicAzLogicIntegration;
-    static workflow = extLogicAzLogicWorkflow;
+    static workflow = ext_logic_az_logic_workflow;
 }
 
-class extLogicAz extends ext_logic_az {
+class extLogicAz {
     static logic = extLogicAzLogic;
+}
+
+class extLogic {
+    static az = extLogicAz;
 }
 
 class extMaintenanceAzMaintenance {
@@ -5714,73 +4728,53 @@ class extMaintenanceAzMaintenance {
     static update = ext_maintenance_az_maintenance_update;
 }
 
-class extMaintenanceAz extends ext_maintenance_az {
+class extMaintenanceAz {
     static maintenance = extMaintenanceAzMaintenance;
+}
+
+class extMaintenance {
+    static az = extMaintenanceAz;
 }
 
 class extManagementpartnerAz {
     static managementpartner = ext_managementpartner_az_managementpartner;
 }
 
-class extMeshAzMeshCodePackage {
-    static log = ext_mesh_az_mesh_code_package_log;
+class extManagementpartner {
+    static az = extManagementpartnerAz;
 }
 
-class extMeshAzMeshApp {
+class extMeshAzMeshCodePackage {
+    static log = ext_mesh_az_mesh_code_package_log;
 }
 
 class extMeshAzMeshCode {
     static package = extMeshAzMeshCodePackage;
 }
 
-class extMeshAzMeshDeployment {
-}
-
-class extMeshAzMeshGateway {
-}
-
-class extMeshAzMeshGenerate {
-}
-
-class extMeshAzMeshNetwork {
-}
-
-class extMeshAzMeshSecret {
-}
-
-class extMeshAzMeshSecretvalue {
-}
-
 class extMeshAzMeshService {
     static replica = ext_mesh_az_mesh_service_replica;
 }
 
-class extMeshAzMeshVolume {
-}
-
-class extMeshAzMesh extends ext_mesh_az_mesh {
+class extMeshAzMesh {
     static app = ext_mesh_az_mesh_app;
+    static code = extMeshAzMeshCode;
     static deployment = ext_mesh_az_mesh_deployment;
     static gateway = ext_mesh_az_mesh_gateway;
     static generate = ext_mesh_az_mesh_generate;
     static network = ext_mesh_az_mesh_network;
     static secret = ext_mesh_az_mesh_secret;
     static secretvalue = ext_mesh_az_mesh_secretvalue;
-    static volume = ext_mesh_az_mesh_volume;
-    static app = extMeshAzMeshApp;
-    static code = extMeshAzMeshCode;
-    static deployment = extMeshAzMeshDeployment;
-    static gateway = extMeshAzMeshGateway;
-    static generate = extMeshAzMeshGenerate;
-    static network = extMeshAzMeshNetwork;
-    static secret = extMeshAzMeshSecret;
-    static secretvalue = extMeshAzMeshSecretvalue;
     static service = extMeshAzMeshService;
-    static volume = extMeshAzMeshVolume;
+    static volume = ext_mesh_az_mesh_volume;
 }
 
-class extMeshAz extends ext_mesh_az {
+class extMeshAz {
     static mesh = extMeshAzMesh;
+}
+
+class extMesh {
+    static az = extMeshAz;
 }
 
 class extMixedRealityAzSpatialAnchorsAccount {
@@ -5795,44 +4789,32 @@ class extMixedRealityAzSpatial {
     static anchors = extMixedRealityAzSpatialAnchors;
 }
 
-class extMixedRealityAz extends ext_mixed-reality_az {
+class extMixedRealityAz {
     static spatial = extMixedRealityAzSpatial;
 }
 
-class extNetappfilesPreviewAzNetappfilesAccount {
+class extMixedReality {
+    static az = extMixedRealityAz;
 }
 
 class extNetappfilesPreviewAzNetappfilesMount {
     static target = ext_netappfiles-preview_az_netappfiles_mount_target;
 }
 
-class extNetappfilesPreviewAzNetappfilesPool {
-}
-
-class extNetappfilesPreviewAzNetappfilesSnapshot {
-}
-
-class extNetappfilesPreviewAzNetappfilesVolume {
-}
-
-class extNetappfilesPreviewAzNetappfiles extends ext_netappfiles-preview_az_netappfiles {
+class extNetappfilesPreviewAzNetappfiles {
     static account = ext_netappfiles-preview_az_netappfiles_account;
+    static mount = extNetappfilesPreviewAzNetappfilesMount;
     static pool = ext_netappfiles-preview_az_netappfiles_pool;
     static snapshot = ext_netappfiles-preview_az_netappfiles_snapshot;
     static volume = ext_netappfiles-preview_az_netappfiles_volume;
-    static account = extNetappfilesPreviewAzNetappfilesAccount;
-    static mount = extNetappfilesPreviewAzNetappfilesMount;
-    static pool = extNetappfilesPreviewAzNetappfilesPool;
-    static snapshot = extNetappfilesPreviewAzNetappfilesSnapshot;
-    static volume = extNetappfilesPreviewAzNetappfilesVolume;
 }
 
-class extNetappfilesPreviewAz extends ext_netappfiles-preview_az {
+class extNetappfilesPreviewAz {
     static netappfiles = extNetappfilesPreviewAzNetappfiles;
 }
 
-class extNotificationHubAzNotificationHubNamespaceAuthorization {
-    static rule = ext_notification-hub_az_notification_hub_namespace_authorization_rule;
+class extNetappfilesPreview {
+    static az = extNetappfilesPreviewAz;
 }
 
 class extNotificationHubAzNotificationHubAuthorization {
@@ -5848,11 +4830,15 @@ class extNotificationHubAzNotificationHubCredential {
     static wns = ext_notification-hub_az_notification_hub_credential_wns;
 }
 
-class extNotificationHubAzNotificationHubNamespace extends ext_notification-hub_az_notification_hub_namespace {
+class extNotificationHubAzNotificationHubNamespaceAuthorization {
+    static rule = ext_notification-hub_az_notification_hub_namespace_authorization_rule;
+}
+
+class extNotificationHubAzNotificationHubNamespace {
     static authorization = extNotificationHubAzNotificationHubNamespaceAuthorization;
 }
 
-class extNotificationHubAzNotificationHub extends ext_notification-hub_az_notification_hub {
+class extNotificationHubAzNotificationHub {
     static authorization = extNotificationHubAzNotificationHubAuthorization;
     static credential = extNotificationHubAzNotificationHubCredential;
     static namespace = extNotificationHubAzNotificationHubNamespace;
@@ -5862,20 +4848,12 @@ class extNotificationHubAzNotification {
     static hub = extNotificationHubAzNotificationHub;
 }
 
-class extNotificationHubAz extends ext_notification-hub_az {
+class extNotificationHubAz {
     static notification = extNotificationHubAzNotification;
 }
 
-class extPeeringAzPeeringAsn {
-}
-
-class extPeeringAzPeeringLegacy {
-}
-
-class extPeeringAzPeeringLocation {
-}
-
-class extPeeringAzPeeringPeering {
+class extNotificationHub {
+    static az = extNotificationHubAz;
 }
 
 class extPeeringAzPeeringReceived {
@@ -5894,42 +4872,54 @@ class extPeeringAzPeeringService {
     static provider = ext_peering_az_peering_service_provider;
 }
 
-class extPeeringAzPeering extends ext_peering_az_peering {
+class extPeeringAzPeering {
     static asn = ext_peering_az_peering_asn;
     static legacy = ext_peering_az_peering_legacy;
     static location = ext_peering_az_peering_location;
     static peering = ext_peering_az_peering_peering;
-    static asn = extPeeringAzPeeringAsn;
-    static legacy = extPeeringAzPeeringLegacy;
-    static location = extPeeringAzPeeringLocation;
-    static peering = extPeeringAzPeeringPeering;
     static received = extPeeringAzPeeringReceived;
     static registered = extPeeringAzPeeringRegistered;
     static service = extPeeringAzPeeringService;
 }
 
-class extPeeringAz extends ext_peering_az {
+class extPeeringAz {
     static peering = extPeeringAzPeering;
+}
+
+class extPeering {
+    static az = extPeeringAz;
 }
 
 class extPortalAzPortal {
     static dashboard = ext_portal_az_portal_dashboard;
 }
 
-class extPortalAz extends ext_portal_az {
+class extPortalAz {
     static portal = extPortalAzPortal;
+}
+
+class extPortal {
+    static az = extPortalAz;
 }
 
 class extPowerbidedicatedAzPowerbiEmbedded {
     static capacity = ext_powerbidedicated_az_powerbi_embedded_capacity;
 }
 
-class extPowerbidedicatedAzPowerbi extends ext_powerbidedicated_az_powerbi {
+class extPowerbidedicatedAzPowerbi {
     static embedded = extPowerbidedicatedAzPowerbiEmbedded;
 }
 
-class extPowerbidedicatedAz extends ext_powerbidedicated_az {
+class extPowerbidedicatedAz {
     static powerbi = extPowerbidedicatedAzPowerbi;
+}
+
+class extPowerbidedicated {
+    static az = extPowerbidedicatedAz;
+}
+
+class extPrivatednsAzNetworkPrivateDnsLink {
+    static vnet = ext_privatedns_az_network_private_dns_link_vnet;
 }
 
 class extPrivatednsAzNetworkPrivateDnsRecordSet {
@@ -5943,75 +4933,79 @@ class extPrivatednsAzNetworkPrivateDnsRecordSet {
     static txt = ext_privatedns_az_network_private_dns_record_set_txt;
 }
 
-class extPrivatednsAzNetworkPrivateDnsLink {
-    static vnet = ext_privatedns_az_network_private_dns_link_vnet;
-}
-
 class extPrivatednsAzNetworkPrivateDnsRecord {
     static set = extPrivatednsAzNetworkPrivateDnsRecordSet;
 }
 
-class extPrivatednsAzNetworkPrivateDnsZone {
-}
-
-class extPrivatednsAzNetworkPrivateDns extends ext_privatedns_az_network_private_dns {
-    static zone = ext_privatedns_az_network_private_dns_zone;
+class extPrivatednsAzNetworkPrivateDns {
     static link = extPrivatednsAzNetworkPrivateDnsLink;
     static record = extPrivatednsAzNetworkPrivateDnsRecord;
-    static zone = extPrivatednsAzNetworkPrivateDnsZone;
+    static zone = ext_privatedns_az_network_private_dns_zone;
 }
 
 class extPrivatednsAzNetworkPrivate {
     static dns = extPrivatednsAzNetworkPrivateDns;
 }
 
-class extPrivatednsAzNetwork extends ext_privatedns_az_network {
+class extPrivatednsAzNetwork {
     static private = extPrivatednsAzNetworkPrivate;
 }
 
-class extPrivatednsAz extends ext_privatedns_az {
+class extPrivatednsAz {
     static network = extPrivatednsAzNetwork;
+}
+
+class extPrivatedns {
+    static az = extPrivatednsAz;
 }
 
 class extResourceGraphAzGraphShared {
     static query = ext_resource-graph_az_graph_shared_query;
 }
 
-class extResourceGraphAzGraph extends ext_resource-graph_az_graph {
+class extResourceGraphAzGraph {
     static shared = extResourceGraphAzGraphShared;
 }
 
-class extResourceGraphAz extends ext_resource-graph_az {
+class extResourceGraphAz {
     static graph = extResourceGraphAzGraph;
+}
+
+class extResourceGraph {
+    static az = extResourceGraphAz;
 }
 
 class extSapHanaAzSapmonitorProvider {
     static instance = ext_sap-hana_az_sapmonitor_provider_instance;
 }
 
-class extSapHanaAzHanainstance {
-}
-
-class extSapHanaAzSapmonitor extends ext_sap-hana_az_sapmonitor {
+class extSapHanaAzSapmonitor {
     static provider = extSapHanaAzSapmonitorProvider;
 }
 
-class extSapHanaAz extends ext_sap-hana_az {
+class extSapHanaAz {
     static hanainstance = ext_sap-hana_az_hanainstance;
-    static hanainstance = extSapHanaAzHanainstance;
     static sapmonitor = extSapHanaAzSapmonitor;
+}
+
+class extSapHana {
+    static az = extSapHanaAz;
 }
 
 class extScheduledQueryAzMonitorScheduled {
     static query = ext_scheduled-query_az_monitor_scheduled_query;
 }
 
-class extScheduledQueryAzMonitor extends ext_scheduled-query_az_monitor {
+class extScheduledQueryAzMonitor {
     static scheduled = extScheduledQueryAzMonitorScheduled;
 }
 
-class extScheduledQueryAz extends ext_scheduled-query_az {
+class extScheduledQueryAz {
     static monitor = extScheduledQueryAzMonitor;
+}
+
+class extScheduledQuery {
+    static az = extScheduledQueryAz;
 }
 
 class extSpringCloudAzSpringCloudAppBinding {
@@ -6024,35 +5018,20 @@ class extSpringCloudAzSpringCloudAppCustom {
     static domain = ext_spring-cloud_az_spring_cloud_app_custom_domain;
 }
 
-class extSpringCloudAzSpringCloudAppDeployment {
-}
-
-class extSpringCloudAzSpringCloudAppIdentity {
-}
-
-class extSpringCloudAzSpringCloudAppLog {
+class extSpringCloudAzSpringCloudApp {
+    static binding = extSpringCloudAzSpringCloudAppBinding;
+    static custom = extSpringCloudAzSpringCloudAppCustom;
+    static deployment = ext_spring-cloud_az_spring_cloud_app_deployment;
+    static identity = ext_spring-cloud_az_spring_cloud_app_identity;
+    static log = ext_spring-cloud_az_spring_cloud_app_log;
 }
 
 class extSpringCloudAzSpringCloudConfigServerGit {
     static repo = ext_spring-cloud_az_spring_cloud_config_server_git_repo;
 }
 
-class extSpringCloudAzSpringCloudConfigServer extends ext_spring-cloud_az_spring_cloud_config_server {
+class extSpringCloudAzSpringCloudConfigServer {
     static git = extSpringCloudAzSpringCloudConfigServerGit;
-}
-
-class extSpringCloudAzSpringCloudApp extends ext_spring-cloud_az_spring_cloud_app {
-    static deployment = ext_spring-cloud_az_spring_cloud_app_deployment;
-    static identity = ext_spring-cloud_az_spring_cloud_app_identity;
-    static log = ext_spring-cloud_az_spring_cloud_app_log;
-    static binding = extSpringCloudAzSpringCloudAppBinding;
-    static custom = extSpringCloudAzSpringCloudAppCustom;
-    static deployment = extSpringCloudAzSpringCloudAppDeployment;
-    static identity = extSpringCloudAzSpringCloudAppIdentity;
-    static log = extSpringCloudAzSpringCloudAppLog;
-}
-
-class extSpringCloudAzSpringCloudCertificate {
 }
 
 class extSpringCloudAzSpringCloudConfig {
@@ -6063,10 +5042,9 @@ class extSpringCloudAzSpringCloudTest {
     static endpoint = ext_spring-cloud_az_spring_cloud_test_endpoint;
 }
 
-class extSpringCloudAzSpringCloud extends ext_spring-cloud_az_spring_cloud {
-    static certificate = ext_spring-cloud_az_spring_cloud_certificate;
+class extSpringCloudAzSpringCloud {
     static app = extSpringCloudAzSpringCloudApp;
-    static certificate = extSpringCloudAzSpringCloudCertificate;
+    static certificate = ext_spring-cloud_az_spring_cloud_certificate;
     static config = extSpringCloudAzSpringCloudConfig;
     static test = extSpringCloudAzSpringCloudTest;
 }
@@ -6075,12 +5053,20 @@ class extSpringCloudAzSpring {
     static cloud = extSpringCloudAzSpringCloud;
 }
 
-class extSpringCloudAz extends ext_spring-cloud_az {
+class extSpringCloudAz {
     static spring = extSpringCloudAzSpring;
+}
+
+class extSpringCloud {
+    static az = extSpringCloudAz;
 }
 
 class extSshAz {
     static ssh = ext_ssh_az_ssh;
+}
+
+class extSsh {
+    static az = extSshAz;
 }
 
 class extStackHciAzStackHci {
@@ -6091,8 +5077,12 @@ class extStackHciAzStack {
     static hci = extStackHciAzStackHci;
 }
 
-class extStackHciAz extends ext_stack-hci_az {
+class extStackHciAz {
     static stack = extStackHciAzStack;
+}
+
+class extStackHci {
+    static az = extStackHciAz;
 }
 
 class extStorageBlobPreviewAzStorageAccountBlobService {
@@ -6107,7 +5097,7 @@ class extStorageBlobPreviewAzStorageAccountManagement {
     static policy = ext_storage-blob-preview_az_storage_account_management_policy;
 }
 
-class extStorageBlobPreviewAzStorageAccount extends ext_storage-blob-preview_az_storage_account {
+class extStorageBlobPreviewAzStorageAccount {
     static blob = extStorageBlobPreviewAzStorageAccountBlob;
     static management = extStorageBlobPreviewAzStorageAccountManagement;
 }
@@ -6119,18 +5109,18 @@ class extStorageBlobPreviewAzStorageBlob {
     static tag = ext_storage-blob-preview_az_storage_blob_tag;
 }
 
-class extStorageBlobPreviewAzStorageContainer {
-}
-
-class extStorageBlobPreviewAzStorage extends ext_storage-blob-preview_az_storage {
-    static container = ext_storage-blob-preview_az_storage_container;
+class extStorageBlobPreviewAzStorage {
     static account = extStorageBlobPreviewAzStorageAccount;
     static blob = extStorageBlobPreviewAzStorageBlob;
-    static container = extStorageBlobPreviewAzStorageContainer;
+    static container = ext_storage-blob-preview_az_storage_container;
 }
 
-class extStorageBlobPreviewAz extends ext_storage-blob-preview_az {
+class extStorageBlobPreviewAz {
     static storage = extStorageBlobPreviewAzStorage;
+}
+
+class extStorageBlobPreview {
+    static az = extStorageBlobPreviewAz;
 }
 
 class extStorageOrPreviewAzStorageAccountOrPolicy {
@@ -6141,19 +5131,20 @@ class extStorageOrPreviewAzStorageAccountOr {
     static policy = extStorageOrPreviewAzStorageAccountOrPolicy;
 }
 
-class extStorageOrPreviewAzStorageAccount extends ext_storage-or-preview_az_storage_account {
+class extStorageOrPreviewAzStorageAccount {
     static or = extStorageOrPreviewAzStorageAccountOr;
 }
 
-class extStorageOrPreviewAzStorage extends ext_storage-or-preview_az_storage {
+class extStorageOrPreviewAzStorage {
     static account = extStorageOrPreviewAzStorageAccount;
 }
 
-class extStorageOrPreviewAz extends ext_storage-or-preview_az {
+class extStorageOrPreviewAz {
     static storage = extStorageOrPreviewAzStorage;
 }
 
-class extStoragePreviewAzStorageAccountKeys {
+class extStorageOrPreview {
+    static az = extStorageOrPreviewAz;
 }
 
 class extStoragePreviewAzStorageAccountManagement {
@@ -6164,7 +5155,14 @@ class extStoragePreviewAzStorageAccountNetwork {
     static rule = ext_storage-preview_az_storage_account_network_rule;
 }
 
-class extStoragePreviewAzStorageBlobAccess {
+class extStoragePreviewAzStorageAccount {
+    static keys = ext_storage-preview_az_storage_account_keys;
+    static management = extStoragePreviewAzStorageAccountManagement;
+    static network = extStoragePreviewAzStorageAccountNetwork;
+}
+
+class extStoragePreviewAzStorageAzcopy {
+    static blob = ext_storage-preview_az_storage_azcopy_blob;
 }
 
 class extStoragePreviewAzStorageBlobDirectory {
@@ -6176,32 +5174,28 @@ class extStoragePreviewAzStorageBlobService {
     static properties = ext_storage-preview_az_storage_blob_service_properties;
 }
 
-class extStoragePreviewAzStorageAccount extends ext_storage-preview_az_storage_account {
-    static keys = ext_storage-preview_az_storage_account_keys;
-    static keys = extStoragePreviewAzStorageAccountKeys;
-    static management = extStoragePreviewAzStorageAccountManagement;
-    static network = extStoragePreviewAzStorageAccountNetwork;
-}
-
-class extStoragePreviewAzStorageAzcopy {
-    static blob = ext_storage-preview_az_storage_azcopy_blob;
-}
-
-class extStoragePreviewAzStorageBlob extends ext_storage-preview_az_storage_blob {
+class extStoragePreviewAzStorageBlob {
     static access = ext_storage-preview_az_storage_blob_access;
-    static access = extStoragePreviewAzStorageBlobAccess;
     static directory = extStoragePreviewAzStorageBlobDirectory;
     static service = extStoragePreviewAzStorageBlobService;
 }
 
-class extStoragePreviewAzStorage extends ext_storage-preview_az_storage {
+class extStoragePreviewAzStorage {
     static account = extStoragePreviewAzStorageAccount;
     static azcopy = extStoragePreviewAzStorageAzcopy;
     static blob = extStoragePreviewAzStorageBlob;
 }
 
-class extStoragePreviewAz extends ext_storage-preview_az {
+class extStoragePreviewAz {
     static storage = extStoragePreviewAzStorage;
+}
+
+class extStoragePreview {
+    static az = extStoragePreviewAz;
+}
+
+class extStoragesyncAzStoragesyncRegistered {
+    static server = ext_storagesync_az_storagesync_registered_server;
 }
 
 class extStoragesyncAzStoragesyncSyncGroupCloud {
@@ -6212,26 +5206,26 @@ class extStoragesyncAzStoragesyncSyncGroupServer {
     static endpoint = ext_storagesync_az_storagesync_sync_group_server_endpoint;
 }
 
-class extStoragesyncAzStoragesyncSyncGroup extends ext_storagesync_az_storagesync_sync_group {
+class extStoragesyncAzStoragesyncSyncGroup {
     static cloud = extStoragesyncAzStoragesyncSyncGroupCloud;
     static server = extStoragesyncAzStoragesyncSyncGroupServer;
-}
-
-class extStoragesyncAzStoragesyncRegistered {
-    static server = ext_storagesync_az_storagesync_registered_server;
 }
 
 class extStoragesyncAzStoragesyncSync {
     static group = extStoragesyncAzStoragesyncSyncGroup;
 }
 
-class extStoragesyncAzStoragesync extends ext_storagesync_az_storagesync {
+class extStoragesyncAzStoragesync {
     static registered = extStoragesyncAzStoragesyncRegistered;
     static sync = extStoragesyncAzStoragesyncSync;
 }
 
-class extStoragesyncAz extends ext_storagesync_az {
+class extStoragesyncAz {
     static storagesync = extStoragesyncAzStoragesync;
+}
+
+class extStoragesync {
+    static az = extStoragesyncAz;
 }
 
 class extStreamAnalyticsAzStreamAnalytics {
@@ -6247,19 +5241,27 @@ class extStreamAnalyticsAzStream {
     static analytics = extStreamAnalyticsAzStreamAnalytics;
 }
 
-class extStreamAnalyticsAz extends ext_stream-analytics_az {
+class extStreamAnalyticsAz {
     static stream = extStreamAnalyticsAzStream;
+}
+
+class extStreamAnalytics {
+    static az = extStreamAnalyticsAz;
 }
 
 class extSubscriptionAz {
     static account = ext_subscription_az_account;
 }
 
+class extSubscription {
+    static az = extSubscriptionAz;
+}
+
 class extSupportAzSupportServicesProblem {
     static classifications = ext_support_az_support_services_problem_classifications;
 }
 
-class extSupportAzSupportServices extends ext_support_az_support_services {
+class extSupportAzSupportServices {
     static problem = extSupportAzSupportServicesProblem;
 }
 
@@ -6267,17 +5269,17 @@ class extSupportAzSupportTickets {
     static communications = ext_support_az_support_tickets_communications;
 }
 
-class extSupportAzSupport extends ext_support_az_support {
+class extSupportAzSupport {
     static services = extSupportAzSupportServices;
     static tickets = extSupportAzSupportTickets;
 }
 
-class extSupportAz extends ext_support_az {
+class extSupportAz {
     static support = extSupportAzSupport;
 }
 
-class extSynapseAzSynapseWorkspaceFirewall {
-    static rule = ext_synapse_az_synapse_workspace_firewall_rule;
+class extSupport {
+    static az = extSupportAz;
 }
 
 class extSynapseAzSynapseSpark {
@@ -6291,27 +5293,26 @@ class extSynapseAzSynapseSql {
     static pool = ext_synapse_az_synapse_sql_pool;
 }
 
-class extSynapseAzSynapseWorkspace extends ext_synapse_az_synapse_workspace {
+class extSynapseAzSynapseWorkspaceFirewall {
+    static rule = ext_synapse_az_synapse_workspace_firewall_rule;
+}
+
+class extSynapseAzSynapseWorkspace {
     static firewall = extSynapseAzSynapseWorkspaceFirewall;
 }
 
-class extSynapseAzSynapse extends ext_synapse_az_synapse {
+class extSynapseAzSynapse {
     static spark = extSynapseAzSynapseSpark;
     static sql = extSynapseAzSynapseSql;
     static workspace = extSynapseAzSynapseWorkspace;
 }
 
-class extSynapseAz extends ext_synapse_az {
+class extSynapseAz {
     static synapse = extSynapseAzSynapse;
 }
 
-class extTimeseriesinsightsAzTimeseriesinsightsEventSource {
-    static eventhub = ext_timeseriesinsights_az_timeseriesinsights_event_source_eventhub;
-    static iothub = ext_timeseriesinsights_az_timeseriesinsights_event_source_iothub;
-}
-
-class extTimeseriesinsightsAzTimeseriesinsightsReferenceData {
-    static set = ext_timeseriesinsights_az_timeseriesinsights_reference_data_set;
+class extSynapse {
+    static az = extSynapseAz;
 }
 
 class extTimeseriesinsightsAzTimeseriesinsightsAccess {
@@ -6323,30 +5324,43 @@ class extTimeseriesinsightsAzTimeseriesinsightsEnvironment {
     static standard = ext_timeseriesinsights_az_timeseriesinsights_environment_standard;
 }
 
+class extTimeseriesinsightsAzTimeseriesinsightsEventSource {
+    static eventhub = ext_timeseriesinsights_az_timeseriesinsights_event_source_eventhub;
+    static iothub = ext_timeseriesinsights_az_timeseriesinsights_event_source_iothub;
+}
+
 class extTimeseriesinsightsAzTimeseriesinsightsEvent {
     static source = extTimeseriesinsightsAzTimeseriesinsightsEventSource;
+}
+
+class extTimeseriesinsightsAzTimeseriesinsightsReferenceData {
+    static set = ext_timeseriesinsights_az_timeseriesinsights_reference_data_set;
 }
 
 class extTimeseriesinsightsAzTimeseriesinsightsReference {
     static data = extTimeseriesinsightsAzTimeseriesinsightsReferenceData;
 }
 
-class extTimeseriesinsightsAzTimeseriesinsights extends ext_timeseriesinsights_az_timeseriesinsights {
+class extTimeseriesinsightsAzTimeseriesinsights {
     static access = extTimeseriesinsightsAzTimeseriesinsightsAccess;
     static environment = extTimeseriesinsightsAzTimeseriesinsightsEnvironment;
     static event = extTimeseriesinsightsAzTimeseriesinsightsEvent;
     static reference = extTimeseriesinsightsAzTimeseriesinsightsReference;
 }
 
-class extTimeseriesinsightsAz extends ext_timeseriesinsights_az {
+class extTimeseriesinsightsAz {
     static timeseriesinsights = extTimeseriesinsightsAzTimeseriesinsights;
+}
+
+class extTimeseriesinsights {
+    static az = extTimeseriesinsightsAz;
 }
 
 class extVirtualNetworkTapAzNetworkNicVtap {
     static config = ext_virtual-network-tap_az_network_nic_vtap_config;
 }
 
-class extVirtualNetworkTapAzNetworkNic extends ext_virtual-network-tap_az_network_nic {
+class extVirtualNetworkTapAzNetworkNic {
     static vtap = extVirtualNetworkTapAzNetworkNicVtap;
 }
 
@@ -6354,13 +5368,17 @@ class extVirtualNetworkTapAzNetworkVnet {
     static tap = ext_virtual-network-tap_az_network_vnet_tap;
 }
 
-class extVirtualNetworkTapAzNetwork extends ext_virtual-network-tap_az_network {
+class extVirtualNetworkTapAzNetwork {
     static nic = extVirtualNetworkTapAzNetworkNic;
     static vnet = extVirtualNetworkTapAzNetworkVnet;
 }
 
-class extVirtualNetworkTapAz extends ext_virtual-network-tap_az {
+class extVirtualNetworkTapAz {
     static network = extVirtualNetworkTapAzNetwork;
+}
+
+class extVirtualNetworkTap {
+    static az = extVirtualNetworkTapAz;
 }
 
 class extVirtualWanAzNetworkP2SVpnGateway {
@@ -6371,635 +5389,197 @@ class extVirtualWanAzNetworkP2SVpn {
     static gateway = extVirtualWanAzNetworkP2SVpnGateway;
 }
 
+class extVirtualWanAzNetworkP2S {
+    static vpn = extVirtualWanAzNetworkP2SVpn;
+}
+
 class extVirtualWanAzNetworkVhubRouteTable {
     static route = ext_virtual-wan_az_network_vhub_route_table_route;
 }
 
-class extVirtualWanAzNetworkVhubConnection {
+class extVirtualWanAzNetworkVhubRoute {
+    static table = extVirtualWanAzNetworkVhubRouteTable;
 }
 
-class extVirtualWanAzNetworkVhubRoute extends ext_virtual-wan_az_network_vhub_route {
-    static table = extVirtualWanAzNetworkVhubRouteTable;
+class extVirtualWanAzNetworkVhub {
+    static connection = ext_virtual-wan_az_network_vhub_connection;
+    static route = extVirtualWanAzNetworkVhubRoute;
 }
 
 class extVirtualWanAzNetworkVpnGatewayConnectionIpsec {
     static policy = ext_virtual-wan_az_network_vpn_gateway_connection_ipsec_policy;
 }
 
-class extVirtualWanAzNetworkVpnGatewayConnection extends ext_virtual-wan_az_network_vpn_gateway_connection {
+class extVirtualWanAzNetworkVpnGatewayConnection {
     static ipsec = extVirtualWanAzNetworkVpnGatewayConnectionIpsec;
+}
+
+class extVirtualWanAzNetworkVpnGateway {
+    static connection = extVirtualWanAzNetworkVpnGatewayConnection;
 }
 
 class extVirtualWanAzNetworkVpnServerConfigIpsec {
     static policy = ext_virtual-wan_az_network_vpn_server_config_ipsec_policy;
 }
 
-class extVirtualWanAzNetworkVpnServerConfig extends ext_virtual-wan_az_network_vpn_server_config {
+class extVirtualWanAzNetworkVpnServerConfig {
     static ipsec = extVirtualWanAzNetworkVpnServerConfigIpsec;
-}
-
-class extVirtualWanAzNetworkVpnGateway extends ext_virtual-wan_az_network_vpn_gateway {
-    static connection = extVirtualWanAzNetworkVpnGatewayConnection;
 }
 
 class extVirtualWanAzNetworkVpnServer {
     static config = extVirtualWanAzNetworkVpnServerConfig;
 }
 
-class extVirtualWanAzNetworkVpnSite {
-}
-
-class extVirtualWanAzNetworkP2S {
-    static vpn = extVirtualWanAzNetworkP2SVpn;
-}
-
-class extVirtualWanAzNetworkVhub extends ext_virtual-wan_az_network_vhub {
-    static connection = ext_virtual-wan_az_network_vhub_connection;
-    static connection = extVirtualWanAzNetworkVhubConnection;
-    static route = extVirtualWanAzNetworkVhubRoute;
-}
-
 class extVirtualWanAzNetworkVpn {
-    static site = ext_virtual-wan_az_network_vpn_site;
     static gateway = extVirtualWanAzNetworkVpnGateway;
     static server = extVirtualWanAzNetworkVpnServer;
-    static site = extVirtualWanAzNetworkVpnSite;
+    static site = ext_virtual-wan_az_network_vpn_site;
 }
 
-class extVirtualWanAzNetworkVwan {
-}
-
-class extVirtualWanAzNetwork extends ext_virtual-wan_az_network {
-    static vwan = ext_virtual-wan_az_network_vwan;
-    static p2S = extVirtualWanAzNetworkP2S;
+class extVirtualWanAzNetwork {
+    static p2s = extVirtualWanAzNetworkP2S;
     static vhub = extVirtualWanAzNetworkVhub;
     static vpn = extVirtualWanAzNetworkVpn;
-    static vwan = extVirtualWanAzNetworkVwan;
+    static vwan = ext_virtual-wan_az_network_vwan;
 }
 
-class extVirtualWanAz extends ext_virtual-wan_az {
+class extVirtualWanAz {
     static network = extVirtualWanAzNetwork;
-}
-
-class extVmRepairAzVm {
-    static repair = ext_vm-repair_az_vm_repair;
-}
-
-class extVmRepairAz extends ext_vm-repair_az {
-    static vm = extVmRepairAzVm;
-}
-
-class extVmwareAzVmwareCluster {
-}
-
-class extVmwareAzVmwarePrivate {
-    static cloud = ext_vmware_az_vmware_private_cloud;
-}
-
-class extVmwareAzVmware extends ext_vmware_az_vmware {
-    static cluster = ext_vmware_az_vmware_cluster;
-    static cluster = extVmwareAzVmwareCluster;
-    static private = extVmwareAzVmwarePrivate;
-}
-
-class extVmwareAz extends ext_vmware_az {
-    static vmware = extVmwareAzVmware;
-}
-
-class extWebappAzWebappContainer {
-}
-
-class extWebappAzWebappRemote {
-    static connection = ext_webapp_az_webapp_remote_connection;
-}
-
-class extWebappAzWebappScan {
-}
-
-class extWebappAzWebapp extends ext_webapp_az_webapp {
-    static container = ext_webapp_az_webapp_container;
-    static scan = ext_webapp_az_webapp_scan;
-    static container = extWebappAzWebappContainer;
-    static remote = extWebappAzWebappRemote;
-    static scan = extWebappAzWebappScan;
-}
-
-class extWebappAz extends ext_webapp_az {
-    static webapp = extWebappAzWebapp;
-}
-
-class extAccount {
-    static az = extAccountAz;
-}
-
-class extAem {
-    static az = extAemAz;
-}
-
-class extAiExamples {
-    static az = extAiExamplesAz;
-}
-
-class extAksPreview {
-    static az = extAksPreviewAz;
-}
-
-class extAlertsmanagement {
-    static az = extAlertsmanagementAz;
-}
-
-class extAlias {
-    static az = extAliasAz;
-}
-
-class extApplicationInsights {
-    static az = extApplicationInsightsAz;
-}
-
-class extAttestation {
-    static az = extAttestationAz;
-}
-
-class extAzureBatchCliExtensions {
-    static az = extAzureBatchCliExtensionsAz;
-}
-
-class extAzureCliIotExt {
-    static az = extAzureCliIotExtAz;
-}
-
-class extAzureCliMl {
-    static az = extAzureCliMlAz;
-}
-
-class extAzureDevops {
-    static az = extAzureDevopsAz;
-}
-
-class extAzureFirewall {
-    static az = extAzureFirewallAz;
-}
-
-class extAzureIot {
-    static az = extAzureIotAz;
-}
-
-class extBlockchain {
-    static az = extBlockchainAz;
-}
-
-class extBlueprint {
-    static az = extBlueprintAz;
-}
-
-class extCodespaces {
-    static az = extCodespacesAz;
-}
-
-class extConnectedk8S {
-    static az = extConnectedk8SAz;
-}
-
-class extConnectedmachine {
-    static az = extConnectedmachineAz;
-}
-
-class extCostmanagement {
-    static az = extCostmanagementAz;
-}
-
-class extCsvmware {
-    static az = extCsvmwareAz;
-}
-
-class extCustomProviders {
-    static az = extCustomProvidersAz;
-}
-
-class extDatabox {
-    static az = extDataboxAz;
-}
-
-class extDatabricks {
-    static az = extDatabricksAz;
-}
-
-class extDatafactory {
-    static az = extDatafactoryAz;
-}
-
-class extDatashare {
-    static az = extDatashareAz;
-}
-
-class extDbUp {
-    static az = extDbUpAz;
-}
-
-class extDeployToAzure {
-    static az = extDeployToAzureAz;
-}
-
-class extDesktopvirtualization {
-    static az = extDesktopvirtualizationAz;
-}
-
-class extDevSpaces {
-    static az = extDevSpacesAz;
-}
-
-class extDmsPreview {
-    static az = extDmsPreviewAz;
-}
-
-class extEventgrid {
-    static az = extEventgridAz;
-}
-
-class extExpressRouteCrossConnection {
-    static az = extExpressRouteCrossConnectionAz;
-}
-
-class extExpressRoute {
-    static az = extExpressRouteAz;
-}
-
-class extFootprint {
-    static az = extFootprintAz;
-}
-
-class extFrontDoor {
-    static az = extFrontDoorAz;
-}
-
-class extFzf {
-    static az = extFzfAz;
-}
-
-class extGuestconfig {
-    static az = extGuestconfigAz;
-}
-
-class extHack {
-    static az = extHackAz;
-}
-
-class extHardwareSecurityModules {
-    static az = extHardwareSecurityModulesAz;
-}
-
-class extHealthcareapis {
-    static az = extHealthcareapisAz;
-}
-
-class extHpcCache {
-    static az = extHpcCacheAz;
-}
-
-class extImageCopyExtension {
-    static az = extImageCopyExtensionAz;
-}
-
-class extImportExport {
-    static az = extImportExportAz;
-}
-
-class extInteractive {
-    static az = ext_interactive_az;
-}
-
-class extInternetAnalyzer {
-    static az = extInternetAnalyzerAz;
-}
-
-class extIpGroup {
-    static az = extIpGroupAz;
-}
-
-class extK8Sconfiguration {
-    static az = extK8SconfigurationAz;
-}
-
-class extKeyvaultPreview {
-    static az = extKeyvaultPreviewAz;
-}
-
-class extKusto {
-    static az = extKustoAz;
-}
-
-class extLogAnalyticsSolution {
-    static az = extLogAnalyticsSolutionAz;
-}
-
-class extLogAnalytics {
-    static az = extLogAnalyticsAz;
-}
-
-class extLogic {
-    static az = extLogicAz;
-}
-
-class extMaintenance {
-    static az = extMaintenanceAz;
-}
-
-class extManagementpartner {
-    static az = extManagementpartnerAz;
-}
-
-class extMesh {
-    static az = extMeshAz;
-}
-
-class extMixedReality {
-    static az = extMixedRealityAz;
-}
-
-class extNetappfilesPreview {
-    static az = extNetappfilesPreviewAz;
-}
-
-class extNotificationHub {
-    static az = extNotificationHubAz;
-}
-
-class extPeering {
-    static az = extPeeringAz;
-}
-
-class extPortal {
-    static az = extPortalAz;
-}
-
-class extPowerbidedicated {
-    static az = extPowerbidedicatedAz;
-}
-
-class extPrivatedns {
-    static az = extPrivatednsAz;
-}
-
-class extResourceGraph {
-    static az = extResourceGraphAz;
-}
-
-class extSapHana {
-    static az = extSapHanaAz;
-}
-
-class extScheduledQuery {
-    static az = extScheduledQueryAz;
-}
-
-class extSpringCloud {
-    static az = extSpringCloudAz;
-}
-
-class extSsh {
-    static az = extSshAz;
-}
-
-class extStackHci {
-    static az = extStackHciAz;
-}
-
-class extStorageBlobPreview {
-    static az = extStorageBlobPreviewAz;
-}
-
-class extStorageOrPreview {
-    static az = extStorageOrPreviewAz;
-}
-
-class extStoragePreview {
-    static az = extStoragePreviewAz;
-}
-
-class extStoragesync {
-    static az = extStoragesyncAz;
-}
-
-class extStreamAnalytics {
-    static az = extStreamAnalyticsAz;
-}
-
-class extSubscription {
-    static az = extSubscriptionAz;
-}
-
-class extSupport {
-    static az = extSupportAz;
-}
-
-class extSynapse {
-    static az = extSynapseAz;
-}
-
-class extTimeseriesinsights {
-    static az = extTimeseriesinsightsAz;
-}
-
-class extVirtualNetworkTap {
-    static az = extVirtualNetworkTapAz;
 }
 
 class extVirtualWan {
     static az = extVirtualWanAz;
 }
 
+class extVmRepairAzVm {
+    static repair = ext_vm-repair_az_vm_repair;
+}
+
+class extVmRepairAz {
+    static vm = extVmRepairAzVm;
+}
+
 class extVmRepair {
     static az = extVmRepairAz;
+}
+
+class extVmwareAzVmwarePrivate {
+    static cloud = ext_vmware_az_vmware_private_cloud;
+}
+
+class extVmwareAzVmware {
+    static cluster = ext_vmware_az_vmware_cluster;
+    static private = extVmwareAzVmwarePrivate;
+}
+
+class extVmwareAz {
+    static vmware = extVmwareAzVmware;
 }
 
 class extVmware {
     static az = extVmwareAz;
 }
 
+class extWebappAzWebappRemote {
+    static connection = ext_webapp_az_webapp_remote_connection;
+}
+
+class extWebappAzWebapp {
+    static container = ext_webapp_az_webapp_container;
+    static remote = extWebappAzWebappRemote;
+    static scan = ext_webapp_az_webapp_scan;
+}
+
+class extWebappAz {
+    static webapp = extWebappAzWebapp;
+}
+
 class extWebapp {
     static az = extWebappAz;
 }
 
-class az extends az {
-    static aro = az_aro;
-    static cache = az_cache;
-    static cloud = az_cloud;
-    static container = az_container;
-    static extension = az_extension;
-    static feature = az_feature;
-    static identity = az_identity;
-    static lock = az_lock;
-    static ppg = az_ppg;
-    static snapshot = az_snapshot;
-    static tag = az_tag;
-    static account = azAccount;
-    static acr = azAcr;
-    static acs = azAcs;
-    static ad = azAd;
-    static advisor = azAdvisor;
-    static aks = azAks;
-    static ams = azAms;
-    static apim = azApim;
-    static appconfig = azAppconfig;
-    static appservice = azAppservice;
-    static aro = azAro;
-    static artifacts = azArtifacts;
-    static backup = azBackup;
-    static batch = azBatch;
-    static batchai = azBatchai;
-    static billing = azBilling;
-    static boards = azBoards;
-    static bot = azBot;
-    static cache = azCache;
-    static cdn = azCdn;
-    static cloud = azCloud;
-    static cognitiveservices = azCognitiveservices;
-    static config = azConfig;
-    static consumption = azConsumption;
-    static container = azContainer;
-    static cosmosdb = azCosmosdb;
-    static deployment = azDeployment;
-    static deploymentmanager = azDeploymentmanager;
-    static devops = azDevops;
-    static disk = azDisk;
-    static dla = azDla;
-    static dls = azDls;
-    static dms = azDms;
-    static eventgrid = azEventgrid;
-    static eventhubs = azEventhubs;
-    static extension = azExtension;
-    static feature = azFeature;
-    static functionapp = azFunctionapp;
-    static group = azGroup;
-    static hdinsight = azHdinsight;
-    static identity = azIdentity;
-    static image = azImage;
-    static iot = azIot;
-    static iotcentral = azIotcentral;
-    static keyvault = azKeyvault;
-    static kusto = azKusto;
-    static lab = azLab;
-    static local = azLocal;
-    static lock = azLock;
-    static managedapp = azManagedapp;
-    static managedservices = azManagedservices;
-    static maps = azMaps;
-    static mariadb = azMariadb;
-    static monitor = azMonitor;
-    static mysql = azMysql;
-    static netappfiles = azNetappfiles;
-    static network = azNetwork;
-    static openshift = azOpenshift;
-    static pipelines = azPipelines;
-    static policy = azPolicy;
-    static postgres = azPostgres;
-    static ppg = azPpg;
-    static provider = azProvider;
-    static redis = azRedis;
-    static relay = azRelay;
-    static repos = azRepos;
-    static reservations = azReservations;
-    static resource = azResource;
-    static role = azRole;
-    static search = azSearch;
-    static security = azSecurity;
-    static servicebus = azServicebus;
-    static sf = azSf;
-    static sig = azSig;
-    static signalr = azSignalr;
-    static snapshot = azSnapshot;
-    static sql = azSql;
-    static staticwebapp = azStaticwebapp;
-    static storage = azStorage;
-    static synapse = azSynapse;
-    static tag = azTag;
-    static vm = azVm;
-    static vmss = azVmss;
-    static webapp = azWebapp;
-}
-
 class ext {
-    static account = extAccount;
-    static aem = extAem;
-    static aiExamples = extAiExamples;
-    static aksPreview = extAksPreview;
-    static alertsmanagement = extAlertsmanagement;
-    static alias = extAlias;
-    static applicationInsights = extApplicationInsights;
-    static attestation = extAttestation;
-    static azureBatchCliExtensions = extAzureBatchCliExtensions;
-    static azureCliIotExt = extAzureCliIotExt;
-    static azureCliMl = extAzureCliMl;
-    static azureDevops = extAzureDevops;
-    static azureFirewall = extAzureFirewall;
-    static azureIot = extAzureIot;
-    static blockchain = extBlockchain;
-    static blueprint = extBlueprint;
-    static codespaces = extCodespaces;
-    static connectedk8S = extConnectedk8S;
-    static connectedmachine = extConnectedmachine;
-    static costmanagement = extCostmanagement;
-    static csvmware = extCsvmware;
-    static customProviders = extCustomProviders;
-    static databox = extDatabox;
-    static databricks = extDatabricks;
-    static datafactory = extDatafactory;
-    static datashare = extDatashare;
-    static dbUp = extDbUp;
-    static deployToAzure = extDeployToAzure;
-    static desktopvirtualization = extDesktopvirtualization;
-    static devSpaces = extDevSpaces;
-    static dmsPreview = extDmsPreview;
-    static eventgrid = extEventgrid;
-    static expressRouteCrossConnection = extExpressRouteCrossConnection;
-    static expressRoute = extExpressRoute;
-    static footprint = extFootprint;
-    static frontDoor = extFrontDoor;
-    static fzf = extFzf;
-    static guestconfig = extGuestconfig;
-    static hack = extHack;
-    static hardwareSecurityModules = extHardwareSecurityModules;
-    static healthcareapis = extHealthcareapis;
-    static hpcCache = extHpcCache;
-    static imageCopyExtension = extImageCopyExtension;
-    static importExport = extImportExport;
-    static interactive = extInteractive;
-    static internetAnalyzer = extInternetAnalyzer;
-    static ipGroup = extIpGroup;
-    static k8Sconfiguration = extK8Sconfiguration;
-    static keyvaultPreview = extKeyvaultPreview;
-    static kusto = extKusto;
-    static logAnalyticsSolution = extLogAnalyticsSolution;
-    static logAnalytics = extLogAnalytics;
-    static logic = extLogic;
-    static maintenance = extMaintenance;
-    static managementpartner = extManagementpartner;
-    static mesh = extMesh;
-    static mixedReality = extMixedReality;
-    static netappfilesPreview = extNetappfilesPreview;
-    static notificationHub = extNotificationHub;
-    static peering = extPeering;
-    static portal = extPortal;
-    static powerbidedicated = extPowerbidedicated;
-    static privatedns = extPrivatedns;
-    static resourceGraph = extResourceGraph;
-    static sapHana = extSapHana;
-    static scheduledQuery = extScheduledQuery;
-    static springCloud = extSpringCloud;
-    static ssh = extSsh;
-    static stackHci = extStackHci;
-    static storageBlobPreview = extStorageBlobPreview;
-    static storageOrPreview = extStorageOrPreview;
-    static storagePreview = extStoragePreview;
-    static storagesync = extStoragesync;
-    static streamAnalytics = extStreamAnalytics;
-    static subscription = extSubscription;
-    static support = extSupport;
-    static synapse = extSynapse;
-    static timeseriesinsights = extTimeseriesinsights;
-    static virtualNetworkTap = extVirtualNetworkTap;
-    static virtualWan = extVirtualWan;
-    static vmRepair = extVmRepair;
-    static vmware = extVmware;
-    static webapp = extWebapp;
+    static account = account;
+    static aem = aem;
+    static ai-examples = ai-examples;
+    static aks-preview = aks-preview;
+    static alertsmanagement = alertsmanagement;
+    static alias = alias;
+    static application-insights = application-insights;
+    static attestation = attestation;
+    static azure-batch-cli-extensions = azure-batch-cli-extensions;
+    static azure-cli-iot-ext = azure-cli-iot-ext;
+    static azure-cli-ml = azure-cli-ml;
+    static azure-devops = azure-devops;
+    static azure-firewall = azure-firewall;
+    static azure-iot = azure-iot;
+    static blockchain = blockchain;
+    static blueprint = blueprint;
+    static codespaces = codespaces;
+    static connectedk8s = connectedk8s;
+    static connectedmachine = connectedmachine;
+    static costmanagement = costmanagement;
+    static csvmware = csvmware;
+    static custom-providers = custom-providers;
+    static databox = databox;
+    static databricks = databricks;
+    static datafactory = datafactory;
+    static datashare = datashare;
+    static db-up = db-up;
+    static deploy-to-azure = deploy-to-azure;
+    static desktopvirtualization = desktopvirtualization;
+    static dev-spaces = dev-spaces;
+    static dms-preview = dms-preview;
+    static eventgrid = eventgrid;
+    static express-route-cross-connection = express-route-cross-connection;
+    static express-route = express-route;
+    static footprint = footprint;
+    static front-door = front-door;
+    static fzf = fzf;
+    static guestconfig = guestconfig;
+    static hack = hack;
+    static hardware-security-modules = hardware-security-modules;
+    static healthcareapis = healthcareapis;
+    static hpc-cache = hpc-cache;
+    static image-copy-extension = image-copy-extension;
+    static import-export = import-export;
+    static interactive = interactive;
+    static internet-analyzer = internet-analyzer;
+    static ip-group = ip-group;
+    static k8sconfiguration = k8sconfiguration;
+    static keyvault-preview = keyvault-preview;
+    static kusto = kusto;
+    static log-analytics-solution = log-analytics-solution;
+    static log-analytics = log-analytics;
+    static logic = logic;
+    static maintenance = maintenance;
+    static managementpartner = managementpartner;
+    static mesh = mesh;
+    static mixed-reality = mixed-reality;
+    static netappfiles-preview = netappfiles-preview;
+    static notification-hub = notification-hub;
+    static peering = peering;
+    static portal = portal;
+    static powerbidedicated = powerbidedicated;
+    static privatedns = privatedns;
+    static resource-graph = resource-graph;
+    static sap-hana = sap-hana;
+    static scheduled-query = scheduled-query;
+    static spring-cloud = spring-cloud;
+    static ssh = ssh;
+    static stack-hci = stack-hci;
+    static storage-blob-preview = storage-blob-preview;
+    static storage-or-preview = storage-or-preview;
+    static storage-preview = storage-preview;
+    static storagesync = storagesync;
+    static stream-analytics = stream-analytics;
+    static subscription = subscription;
+    static support = support;
+    static synapse = synapse;
+    static timeseriesinsights = timeseriesinsights;
+    static virtual-network-tap = virtual-network-tap;
+    static virtual-wan = virtual-wan;
+    static vm-repair = vm-repair;
+    static vmware = vmware;
+    static webapp = webapp;
 }

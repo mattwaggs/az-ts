@@ -322,75 +322,82 @@ const generateNestedCommandStructure = (nodes: Node[]): any => {
   // class az_webapp
   // class az
 
-  const commandNodeIds = orderedNodes.map((n) => n.uid);
-  const results = recursivelyGenerateMoreVerboseTreeStructure(
-    commandNodeIds,
-    output
-  );
+  //const commandNodeIds = orderedNodes.map((n) => n.uid);
+  //const results = recursivelyGenerateMoreVerboseTreeStructure(
+  //  commandNodeIds,
+  //  output
+  //);
 
-  fs.writeFileSync("./results.json", JSON.stringify(results));
+  //fs.writeFileSync("./results.json", JSON.stringify(results));
 
-  return results;
+  return output;
 };
 
-const recursivelyGenerateMoreVerboseTreeStructure = (
-  commandNodeIds: string[],
-  object: any,
-  pathSoFar?: string
-): VerboseClassStructure[] => {
-  const log = (...data: string[]) => {
-    if (pathSoFar?.indexOf("az_account") > -1) {
-      console.log(...data);
-    }
-  };
-
-  log("working on object: ", object);
-  return Object.keys(object).map((key) => {
-    const outputClass = new VerboseClassStructure();
-    outputClass.path = pathSoFar ? pathSoFar + "_" + key : key;
-    log("currently on key: ", key);
-    log("object at this key:", object[key]);
-    log("type at this key:", typeof object[key]);
-
-    if (typeof object[key] === "object") {
-      log("is object");
-      const properties = Object.keys(object[key]);
-      properties.map((p) => {
-        log(`interating properties ${p} in path: object[${key}]`);
-        if (typeof object[key][p] === "string") {
-          log(`p is string... adding command`);
-          outputClass.commands.push(object[key][p]);
-        } else {
-          log(`p is not string`);
-
-          if (commandNodeIds.indexOf(outputClass.path) > -1) {
-            log(`deciding to extend class`);
-            outputClass.shouldExtend = outputClass.path;
-          }
-
-          log(`recursinging....`);
-          outputClass.nestedClasses = recursivelyGenerateMoreVerboseTreeStructure(
-            commandNodeIds,
-            object[key],
-            outputClass.path
-          );
-        }
-      });
-    } else {
-      log("not object. noop");
-    }
-
-    return outputClass;
-  });
-};
-
+// TODO: THIS DOESN'T WORK YET
+// the root AZ Object isn't naming the properties correctly....
+// also it cannot find any of the imported stuff... maybe thats due to other errors?
 const recursivelyGetStatementsFromClassTree = (
-  classTree: VerboseClassStructure[]
+  classTree: any,
+  pathSoFar?: string
+): ClassDeclarationStructure[] => {
+  console.log("recursively.... pathsofar = ", pathSoFar);
+  return Object.keys(classTree)
+    .map((key) => {
+      const dependencies: ClassDeclarationStructure[] = [];
+      const object = classTree[key];
+
+      if (typeof object === "object") {
+        recursivelyGetStatementsFromClassTree(
+          object,
+          pathSoFar ? pathSoFar + "_" + key : key
+        ).forEach((dep) => {
+          dependencies.push(dep);
+        });
+      }
+
+      if (typeof object === "object") {
+        const thisClassName = pathSoFar
+          ? _.camelCase(pathSoFar + "_" + key)
+          : key;
+
+        const properties = Object.keys(object);
+
+        const thisClass: ClassDeclarationStructure = {
+          kind: StructureKind.Class,
+          name: thisClassName,
+          properties: properties.map((p) => {
+            const initializer =
+              typeof object[p] === "string"
+                ? object[p]
+                : pathSoFar
+                ? _.camelCase(thisClassName + "_" + p)
+                : p;
+
+            const prop: PropertyDeclarationStructure = {
+              name: p,
+              kind: StructureKind.Property,
+              isStatic: true,
+              initializer: initializer,
+            };
+
+            return prop;
+          }),
+        };
+        return [...dependencies, thisClass];
+      }
+
+      return [...dependencies];
+    })
+    .reduce((a, b) => a.concat(b));
+};
+
+const old_recursivelyGetStatementsFromClassTree = (
+  classTree: any
 ): ClassDeclarationStructure[] => {
   // gross code becuase lame exception, cannot `.reduce` on empty array
   const dependenciesPlural: ClassDeclarationStructure[][] =
     classTree.map((c) =>
-      recursivelyGetStatementsFromClassTree(c.nestedClasses)
+      old_recursivelyGetStatementsFromClassTree(c.nestedClasses)
     ) || [];
 
   const dependencies: ClassDeclarationStructure[] =
