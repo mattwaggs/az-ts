@@ -929,7 +929,7 @@ export class az_acr_scope_map {
      *
      * @param {string} name The name of the scope map.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
-     * @param {string} repository Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/write', 'content/delete', 'content/write', 'metadata/read', 'content/read'}.
+     * @param {string} repository Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/read', 'metadata/write', 'content/write', 'content/read', 'content/delete'}.
      */
     static az_acr_scope_map_create(name: string, registry: string, repository: string): az_acr_scope_map_create_command_builder {
         return new az_acr_scope_map_create_command_builder("az acr scope-map create", name, registry, repository);
@@ -4860,7 +4860,7 @@ class az_acr_repository_update_command_builder extends CommandBuilder {
  *
  * @param {string} name The name of the scope map.
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
- * @param {string} repository Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/write', 'content/delete', 'content/write', 'metadata/read', 'content/read'}.
+ * @param {string} repository Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/read', 'metadata/write', 'content/write', 'content/read', 'content/delete'}.
  */
 class az_acr_scope_map_create_command_builder extends CommandBuilder {
     constructor(commandPath: string, name: string, registry: string, repository: string) {
@@ -4882,7 +4882,7 @@ class az_acr_scope_map_create_command_builder extends CommandBuilder {
         return this;
     }
 
-    /** Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/write', 'content/delete', 'content/write', 'metadata/read', 'content/read'}. */
+    /** Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/read', 'metadata/write', 'content/write', 'content/read', 'content/delete'}. */
     repository(value: string): az_acr_scope_map_create_command_builder {
         this.setFlag("--repository", value);
         return this;
@@ -5093,7 +5093,7 @@ class az_acr_scope_map_update_command_builder extends CommandBuilder {
         return this;
     }
 
-    /** Repository permissions to be added. Use the format "--add REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/write', 'content/delete', 'content/write', 'metadata/read', 'content/read'}. */
+    /** Repository permissions to be added. Use the format "--add REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/read', 'metadata/write', 'content/write', 'content/read', 'content/delete'}. */
     add(value: string): az_acr_scope_map_update_command_builder {
         this.setFlag("--add", value);
         return this;
@@ -5105,7 +5105,7 @@ class az_acr_scope_map_update_command_builder extends CommandBuilder {
         return this;
     }
 
-    /** Respsitory permissions to be removed. Use the format "--remove REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/write', 'content/delete', 'content/write', 'metadata/read', 'content/read'}. */
+    /** Respsitory permissions to be removed. Use the format "--remove REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/read', 'metadata/write', 'content/write', 'content/read', 'content/delete'}. */
     remove(value: string): az_acr_scope_map_update_command_builder {
         this.setFlag("--remove", value);
         return this;
@@ -7191,7 +7191,7 @@ class az_acr_token_create_command_builder extends CommandBuilder {
         return this;
     }
 
-    /** Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/write', 'content/delete', 'content/write', 'metadata/read', 'content/read'}. */
+    /** Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'metadata/read', 'metadata/write', 'content/write', 'content/read', 'content/delete'}. */
     repository(value: string): az_acr_token_create_command_builder {
         this.setFlag("--repository", value);
         return this;

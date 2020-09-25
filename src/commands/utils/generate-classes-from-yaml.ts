@@ -328,6 +328,8 @@ const generateNestedCommandStructure = (nodes: Node[]): any => {
     output
   );
 
+  fs.writeFileSync("./results.json", JSON.stringify(results));
+
   return results;
 };
 
@@ -336,23 +338,48 @@ const recursivelyGenerateMoreVerboseTreeStructure = (
   object: any,
   pathSoFar?: string
 ): VerboseClassStructure[] => {
+  const log = (...data: string[]) => {
+    if (pathSoFar?.indexOf("az_account") > -1) {
+      console.log(...data);
+    }
+  };
+
+  log("working on object: ", object);
   return Object.keys(object).map((key) => {
     const outputClass = new VerboseClassStructure();
     outputClass.path = pathSoFar ? pathSoFar + "_" + key : key;
+    log("currently on key: ", key);
+    log("object at this key:", object[key]);
+    log("type at this key:", typeof object[key]);
 
-    if (typeof object[key] === "string") {
-      // this is the furthest depth
-      outputClass.commands.push(object[key]);
+    if (typeof object[key] === "object") {
+      log("is object");
+      const properties = Object.keys(object[key]);
+      properties.map((p) => {
+        log(`interating properties ${p} in path: object[${key}]`);
+        if (typeof object[key][p] === "string") {
+          log(`p is string... adding command`);
+          outputClass.commands.push(object[key][p]);
+        } else {
+          log(`p is not string`);
+
+          if (commandNodeIds.indexOf(outputClass.path) > -1) {
+            log(`deciding to extend class`);
+            outputClass.shouldExtend = outputClass.path;
+          }
+
+          log(`recursinging....`);
+          outputClass.nestedClasses = recursivelyGenerateMoreVerboseTreeStructure(
+            commandNodeIds,
+            object[key],
+            outputClass.path
+          );
+        }
+      });
     } else {
-      if (commandNodeIds.indexOf(outputClass.path) > -1) {
-        outputClass.shouldExtend = outputClass.path;
-      }
-      outputClass.nestedClasses = recursivelyGenerateMoreVerboseTreeStructure(
-        commandNodeIds,
-        object[key],
-        outputClass.path
-      );
+      log("not object. noop");
     }
+
     return outputClass;
   });
 };
