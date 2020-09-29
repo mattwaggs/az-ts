@@ -1,4 +1,8 @@
 import { CommandBuilder } from '../base';
+import { az_feature_list_command_result } from './models/az_feature_list_command_result'
+import { az_feature_register_command_result } from './models/az_feature_register_command_result'
+import { az_feature_show_command_result } from './models/az_feature_show_command_result'
+import { az_feature_unregister_command_result } from './models/az_feature_unregister_command_result'
 
 /** Manage resource provider features. */
 export class az_feature {
@@ -79,7 +83,7 @@ export class az_feature {
  *                 [--subscription]
  * ```
  */
-class az_feature_list_command_builder extends CommandBuilder {
+class az_feature_list_command_builder extends CommandBuilder<az_feature_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -116,7 +120,7 @@ class az_feature_list_command_builder extends CommandBuilder {
  * @param {string} name The feature name.
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
-class az_feature_register_command_builder extends CommandBuilder {
+class az_feature_register_command_builder extends CommandBuilder<az_feature_register_command_result> {
     constructor(commandPath: string, name: string, namespace: string) {
         super(commandPath);
         this.name(name)
@@ -156,7 +160,7 @@ class az_feature_register_command_builder extends CommandBuilder {
  * @param {string} name The feature name.
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
-class az_feature_show_command_builder extends CommandBuilder {
+class az_feature_show_command_builder extends CommandBuilder<az_feature_show_command_result> {
     constructor(commandPath: string, name: string, namespace: string) {
         super(commandPath);
         this.name(name)
@@ -201,7 +205,7 @@ class az_feature_show_command_builder extends CommandBuilder {
  * @param {string} name The feature name.
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
-class az_feature_unregister_command_builder extends CommandBuilder {
+class az_feature_unregister_command_builder extends CommandBuilder<az_feature_unregister_command_result> {
     constructor(commandPath: string, name: string, namespace: string) {
         super(commandPath);
         this.name(name)

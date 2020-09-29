@@ -1,4 +1,55 @@
 import { CommandBuilder } from '../base';
+import { az_sf_application_certificate_add_command_result } from './models/az_sf_application_certificate_add_command_result'
+import { az_sf_application_type_version_create_command_result } from './models/az_sf_application_type_version_create_command_result'
+import { az_sf_application_type_version_delete_command_result } from './models/az_sf_application_type_version_delete_command_result'
+import { az_sf_application_type_version_list_command_result } from './models/az_sf_application_type_version_list_command_result'
+import { az_sf_application_type_version_show_command_result } from './models/az_sf_application_type_version_show_command_result'
+import { az_sf_application_type_create_command_result } from './models/az_sf_application_type_create_command_result'
+import { az_sf_application_type_delete_command_result } from './models/az_sf_application_type_delete_command_result'
+import { az_sf_application_type_list_command_result } from './models/az_sf_application_type_list_command_result'
+import { az_sf_application_type_show_command_result } from './models/az_sf_application_type_show_command_result'
+import { az_sf_application_create_command_result } from './models/az_sf_application_create_command_result'
+import { az_sf_application_delete_command_result } from './models/az_sf_application_delete_command_result'
+import { az_sf_application_list_command_result } from './models/az_sf_application_list_command_result'
+import { az_sf_application_show_command_result } from './models/az_sf_application_show_command_result'
+import { az_sf_application_update_command_result } from './models/az_sf_application_update_command_result'
+import { az_sf_cluster_certificate_add_command_result } from './models/az_sf_cluster_certificate_add_command_result'
+import { az_sf_cluster_certificate_remove_command_result } from './models/az_sf_cluster_certificate_remove_command_result'
+import { az_sf_cluster_client_certificate_add_command_result } from './models/az_sf_cluster_client_certificate_add_command_result'
+import { az_sf_cluster_client_certificate_remove_command_result } from './models/az_sf_cluster_client_certificate_remove_command_result'
+import { az_sf_cluster_durability_update_command_result } from './models/az_sf_cluster_durability_update_command_result'
+import { az_sf_cluster_node_type_add_command_result } from './models/az_sf_cluster_node_type_add_command_result'
+import { az_sf_cluster_node_add_command_result } from './models/az_sf_cluster_node_add_command_result'
+import { az_sf_cluster_node_remove_command_result } from './models/az_sf_cluster_node_remove_command_result'
+import { az_sf_cluster_reliability_update_command_result } from './models/az_sf_cluster_reliability_update_command_result'
+import { az_sf_cluster_setting_remove_command_result } from './models/az_sf_cluster_setting_remove_command_result'
+import { az_sf_cluster_setting_set_command_result } from './models/az_sf_cluster_setting_set_command_result'
+import { az_sf_cluster_upgrade_type_set_command_result } from './models/az_sf_cluster_upgrade_type_set_command_result'
+import { az_sf_cluster_create_command_result } from './models/az_sf_cluster_create_command_result'
+import { az_sf_cluster_list_command_result } from './models/az_sf_cluster_list_command_result'
+import { az_sf_cluster_show_command_result } from './models/az_sf_cluster_show_command_result'
+import { az_sf_managed_cluster_client_certificate_add_command_result } from './models/az_sf_managed_cluster_client_certificate_add_command_result'
+import { az_sf_managed_cluster_client_certificate_delete_command_result } from './models/az_sf_managed_cluster_client_certificate_delete_command_result'
+import { az_sf_managed_cluster_create_command_result } from './models/az_sf_managed_cluster_create_command_result'
+import { az_sf_managed_cluster_delete_command_result } from './models/az_sf_managed_cluster_delete_command_result'
+import { az_sf_managed_cluster_list_command_result } from './models/az_sf_managed_cluster_list_command_result'
+import { az_sf_managed_cluster_show_command_result } from './models/az_sf_managed_cluster_show_command_result'
+import { az_sf_managed_cluster_update_command_result } from './models/az_sf_managed_cluster_update_command_result'
+import { az_sf_managed_node_type_node_delete_command_result } from './models/az_sf_managed_node_type_node_delete_command_result'
+import { az_sf_managed_node_type_node_reimage_command_result } from './models/az_sf_managed_node_type_node_reimage_command_result'
+import { az_sf_managed_node_type_node_restart_command_result } from './models/az_sf_managed_node_type_node_restart_command_result'
+import { az_sf_managed_node_type_vm_extension_add_command_result } from './models/az_sf_managed_node_type_vm_extension_add_command_result'
+import { az_sf_managed_node_type_vm_extension_delete_command_result } from './models/az_sf_managed_node_type_vm_extension_delete_command_result'
+import { az_sf_managed_node_type_vm_secret_add_command_result } from './models/az_sf_managed_node_type_vm_secret_add_command_result'
+import { az_sf_managed_node_type_create_command_result } from './models/az_sf_managed_node_type_create_command_result'
+import { az_sf_managed_node_type_delete_command_result } from './models/az_sf_managed_node_type_delete_command_result'
+import { az_sf_managed_node_type_list_command_result } from './models/az_sf_managed_node_type_list_command_result'
+import { az_sf_managed_node_type_show_command_result } from './models/az_sf_managed_node_type_show_command_result'
+import { az_sf_managed_node_type_update_command_result } from './models/az_sf_managed_node_type_update_command_result'
+import { az_sf_service_create_command_result } from './models/az_sf_service_create_command_result'
+import { az_sf_service_delete_command_result } from './models/az_sf_service_delete_command_result'
+import { az_sf_service_list_command_result } from './models/az_sf_service_list_command_result'
+import { az_sf_service_show_command_result } from './models/az_sf_service_show_command_result'
 
 /** Manage the certificate of an application. */
 export class az_sf_application_certificate {
@@ -1209,7 +1260,7 @@ export class az_sf {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_application_certificate_add_command_builder extends CommandBuilder {
+class az_sf_application_certificate_add_command_builder extends CommandBuilder<az_sf_application_certificate_add_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1296,7 +1347,7 @@ class az_sf_application_certificate_add_command_builder extends CommandBuilder {
  * @param {string} packageUrl Specify the url of the application package sfpkg file.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_application_type_version_create_command_builder extends CommandBuilder {
+class az_sf_application_type_version_create_command_builder extends CommandBuilder<az_sf_application_type_version_create_command_result> {
     constructor(commandPath: string, applicationTypeName: string, applicationTypeVersion: string, clusterName: string, packageUrl: string, resourceGroup: string) {
         super(commandPath);
         this.applicationTypeName(applicationTypeName)
@@ -1360,7 +1411,7 @@ class az_sf_application_type_version_create_command_builder extends CommandBuild
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_application_type_version_delete_command_builder extends CommandBuilder {
+class az_sf_application_type_version_delete_command_builder extends CommandBuilder<az_sf_application_type_version_delete_command_result> {
     constructor(commandPath: string, applicationTypeName: string, applicationTypeVersion: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.applicationTypeName(applicationTypeName)
@@ -1416,7 +1467,7 @@ class az_sf_application_type_version_delete_command_builder extends CommandBuild
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_application_type_version_list_command_builder extends CommandBuilder {
+class az_sf_application_type_version_list_command_builder extends CommandBuilder<az_sf_application_type_version_list_command_result> {
     constructor(commandPath: string, applicationTypeName: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.applicationTypeName(applicationTypeName)
@@ -1473,7 +1524,7 @@ class az_sf_application_type_version_list_command_builder extends CommandBuilder
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_application_type_version_show_command_builder extends CommandBuilder {
+class az_sf_application_type_version_show_command_builder extends CommandBuilder<az_sf_application_type_version_show_command_result> {
     constructor(commandPath: string, applicationTypeName: string, applicationTypeVersion: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.applicationTypeName(applicationTypeName)
@@ -1534,7 +1585,7 @@ class az_sf_application_type_version_show_command_builder extends CommandBuilder
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_application_type_create_command_builder extends CommandBuilder {
+class az_sf_application_type_create_command_builder extends CommandBuilder<az_sf_application_type_create_command_result> {
     constructor(commandPath: string, applicationTypeName: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.applicationTypeName(applicationTypeName)
@@ -1582,7 +1633,7 @@ class az_sf_application_type_create_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_application_type_delete_command_builder extends CommandBuilder {
+class az_sf_application_type_delete_command_builder extends CommandBuilder<az_sf_application_type_delete_command_result> {
     constructor(commandPath: string, applicationTypeName: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.applicationTypeName(applicationTypeName)
@@ -1629,7 +1680,7 @@ class az_sf_application_type_delete_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_application_type_list_command_builder extends CommandBuilder {
+class az_sf_application_type_list_command_builder extends CommandBuilder<az_sf_application_type_list_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1677,7 +1728,7 @@ class az_sf_application_type_list_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_application_type_show_command_builder extends CommandBuilder {
+class az_sf_application_type_show_command_builder extends CommandBuilder<az_sf_application_type_show_command_result> {
     constructor(commandPath: string, applicationTypeName: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.applicationTypeName(applicationTypeName)
@@ -1739,7 +1790,7 @@ class az_sf_application_type_show_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_application_create_command_builder extends CommandBuilder {
+class az_sf_application_create_command_builder extends CommandBuilder<az_sf_application_create_command_result> {
     constructor(commandPath: string, applicationName: string, applicationTypeName: string, applicationTypeVersion: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.applicationName(applicationName)
@@ -1825,7 +1876,7 @@ class az_sf_application_create_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_application_delete_command_builder extends CommandBuilder {
+class az_sf_application_delete_command_builder extends CommandBuilder<az_sf_application_delete_command_result> {
     constructor(commandPath: string, applicationName: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.applicationName(applicationName)
@@ -1872,7 +1923,7 @@ class az_sf_application_delete_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_application_list_command_builder extends CommandBuilder {
+class az_sf_application_list_command_builder extends CommandBuilder<az_sf_application_list_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1920,7 +1971,7 @@ class az_sf_application_list_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_application_show_command_builder extends CommandBuilder {
+class az_sf_application_show_command_builder extends CommandBuilder<az_sf_application_show_command_result> {
     constructor(commandPath: string, applicationName: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.applicationName(applicationName)
@@ -1992,7 +2043,7 @@ class az_sf_application_show_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_application_update_command_builder extends CommandBuilder {
+class az_sf_application_update_command_builder extends CommandBuilder<az_sf_application_update_command_result> {
     constructor(commandPath: string, applicationName: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.applicationName(applicationName)
@@ -2153,7 +2204,7 @@ class az_sf_application_update_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_cluster_certificate_add_command_builder extends CommandBuilder {
+class az_sf_cluster_certificate_add_command_builder extends CommandBuilder<az_sf_cluster_certificate_add_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2236,7 +2287,7 @@ class az_sf_cluster_certificate_add_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} thumbprint The cluster certificate thumbprint to be removed.
  */
-class az_sf_cluster_certificate_remove_command_builder extends CommandBuilder {
+class az_sf_cluster_certificate_remove_command_builder extends CommandBuilder<az_sf_cluster_certificate_remove_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string, thumbprint: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2289,7 +2340,7 @@ class az_sf_cluster_certificate_remove_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_cluster_client_certificate_add_command_builder extends CommandBuilder {
+class az_sf_cluster_client_certificate_add_command_builder extends CommandBuilder<az_sf_cluster_client_certificate_add_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2374,7 +2425,7 @@ class az_sf_cluster_client_certificate_add_command_builder extends CommandBuilde
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_cluster_client_certificate_remove_command_builder extends CommandBuilder {
+class az_sf_cluster_client_certificate_remove_command_builder extends CommandBuilder<az_sf_cluster_client_certificate_remove_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2441,7 +2492,7 @@ class az_sf_cluster_client_certificate_remove_command_builder extends CommandBui
  * @param {string} nodeType The Node type name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_cluster_durability_update_command_builder extends CommandBuilder {
+class az_sf_cluster_durability_update_command_builder extends CommandBuilder<az_sf_cluster_durability_update_command_result> {
     constructor(commandPath: string, clusterName: string, durabilityLevel: 'Bronze' | 'Gold' | 'Silver', nodeType: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2505,7 +2556,7 @@ class az_sf_cluster_durability_update_command_builder extends CommandBuilder {
  * @param {string} vmPassword The password of the Vm.
  * @param {string} vmUserName The user name for logging to Vm. Default will be adminuser.
  */
-class az_sf_cluster_node_type_add_command_builder extends CommandBuilder {
+class az_sf_cluster_node_type_add_command_builder extends CommandBuilder<az_sf_cluster_node_type_add_command_result> {
     constructor(commandPath: string, capacity: string, clusterName: string, nodeType: string, resourceGroup: string, vmPassword: string, vmUserName: string) {
         super(commandPath);
         this.capacity(capacity)
@@ -2594,7 +2645,7 @@ class az_sf_cluster_node_type_add_command_builder extends CommandBuilder {
  * @param {string} numberOfNodesToAdd Number of nodes to add.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_cluster_node_add_command_builder extends CommandBuilder {
+class az_sf_cluster_node_add_command_builder extends CommandBuilder<az_sf_cluster_node_add_command_result> {
     constructor(commandPath: string, clusterName: string, nodeType: string, numberOfNodesToAdd: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2651,7 +2702,7 @@ class az_sf_cluster_node_add_command_builder extends CommandBuilder {
  * @param {string} numberOfNodesToRemove Number of nodes to remove.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_cluster_node_remove_command_builder extends CommandBuilder {
+class az_sf_cluster_node_remove_command_builder extends CommandBuilder<az_sf_cluster_node_remove_command_result> {
     constructor(commandPath: string, clusterName: string, nodeType: string, numberOfNodesToRemove: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2707,7 +2758,7 @@ class az_sf_cluster_node_remove_command_builder extends CommandBuilder {
  * @param {'Bronze' | 'Gold' | 'Platinum' | 'Silver'} reliabilityLevel Durability level.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_cluster_reliability_update_command_builder extends CommandBuilder {
+class az_sf_cluster_reliability_update_command_builder extends CommandBuilder<az_sf_cluster_reliability_update_command_result> {
     constructor(commandPath: string, clusterName: string, reliabilityLevel: 'Bronze' | 'Gold' | 'Platinum' | 'Silver', resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2762,7 +2813,7 @@ class az_sf_cluster_reliability_update_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_cluster_setting_remove_command_builder extends CommandBuilder {
+class az_sf_cluster_setting_remove_command_builder extends CommandBuilder<az_sf_cluster_setting_remove_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2823,7 +2874,7 @@ class az_sf_cluster_setting_remove_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_cluster_setting_set_command_builder extends CommandBuilder {
+class az_sf_cluster_setting_set_command_builder extends CommandBuilder<az_sf_cluster_setting_set_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2889,7 +2940,7 @@ class az_sf_cluster_setting_set_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {'automatic' | 'manual'} upgradeMode Cluster upgrade mode.
  */
-class az_sf_cluster_upgrade_type_set_command_builder extends CommandBuilder {
+class az_sf_cluster_upgrade_type_set_command_builder extends CommandBuilder<az_sf_cluster_upgrade_type_set_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string, upgradeMode: 'automatic' | 'manual') {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2956,7 +3007,7 @@ class az_sf_cluster_upgrade_type_set_command_builder extends CommandBuilder {
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_cluster_create_command_builder extends CommandBuilder {
+class az_sf_cluster_create_command_builder extends CommandBuilder<az_sf_cluster_create_command_result> {
     constructor(commandPath: string, location: string, resourceGroup: string) {
         super(commandPath);
         this.location(location)
@@ -3082,7 +3133,7 @@ class az_sf_cluster_create_command_builder extends CommandBuilder {
  *                    [--subscription]
  * ```
  */
-class az_sf_cluster_list_command_builder extends CommandBuilder {
+class az_sf_cluster_list_command_builder extends CommandBuilder<az_sf_cluster_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3120,7 +3171,7 @@ class az_sf_cluster_list_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_cluster_show_command_builder extends CommandBuilder {
+class az_sf_cluster_show_command_builder extends CommandBuilder<az_sf_cluster_show_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -3169,7 +3220,7 @@ class az_sf_cluster_show_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_managed_cluster_client_certificate_add_command_builder extends CommandBuilder {
+class az_sf_managed_cluster_client_certificate_add_command_builder extends CommandBuilder<az_sf_managed_cluster_client_certificate_add_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -3234,7 +3285,7 @@ class az_sf_managed_cluster_client_certificate_add_command_builder extends Comma
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_managed_cluster_client_certificate_delete_command_builder extends CommandBuilder {
+class az_sf_managed_cluster_client_certificate_delete_command_builder extends CommandBuilder<az_sf_managed_cluster_client_certificate_delete_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -3298,7 +3349,7 @@ class az_sf_managed_cluster_client_certificate_delete_command_builder extends Co
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_managed_cluster_create_command_builder extends CommandBuilder {
+class az_sf_managed_cluster_create_command_builder extends CommandBuilder<az_sf_managed_cluster_create_command_result> {
     constructor(commandPath: string, adminPassword: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.adminPassword(adminPassword)
@@ -3410,7 +3461,7 @@ class az_sf_managed_cluster_create_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_managed_cluster_delete_command_builder extends CommandBuilder {
+class az_sf_managed_cluster_delete_command_builder extends CommandBuilder<az_sf_managed_cluster_delete_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -3446,7 +3497,7 @@ class az_sf_managed_cluster_delete_command_builder extends CommandBuilder {
  *                            [--subscription]
  * ```
  */
-class az_sf_managed_cluster_list_command_builder extends CommandBuilder {
+class az_sf_managed_cluster_list_command_builder extends CommandBuilder<az_sf_managed_cluster_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3484,7 +3535,7 @@ class az_sf_managed_cluster_list_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_managed_cluster_show_command_builder extends CommandBuilder {
+class az_sf_managed_cluster_show_command_builder extends CommandBuilder<az_sf_managed_cluster_show_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -3533,7 +3584,7 @@ class az_sf_managed_cluster_show_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_managed_cluster_update_command_builder extends CommandBuilder {
+class az_sf_managed_cluster_update_command_builder extends CommandBuilder<az_sf_managed_cluster_update_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -3601,7 +3652,7 @@ class az_sf_managed_cluster_update_command_builder extends CommandBuilder {
  * @param {string} nodeName List of target nodes to perform the operation.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_managed_node_type_node_delete_command_builder extends CommandBuilder {
+class az_sf_managed_node_type_node_delete_command_builder extends CommandBuilder<az_sf_managed_node_type_node_delete_command_result> {
     constructor(commandPath: string, clusterName: string, nodeTypeName: string, nodeName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -3665,7 +3716,7 @@ class az_sf_managed_node_type_node_delete_command_builder extends CommandBuilder
  * @param {string} nodeName List of target nodes to perform the operation.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_managed_node_type_node_reimage_command_builder extends CommandBuilder {
+class az_sf_managed_node_type_node_reimage_command_builder extends CommandBuilder<az_sf_managed_node_type_node_reimage_command_result> {
     constructor(commandPath: string, clusterName: string, nodeTypeName: string, nodeName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -3729,7 +3780,7 @@ class az_sf_managed_node_type_node_reimage_command_builder extends CommandBuilde
  * @param {string} nodeName List of target nodes to perform the operation.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_managed_node_type_node_restart_command_builder extends CommandBuilder {
+class az_sf_managed_node_type_node_restart_command_builder extends CommandBuilder<az_sf_managed_node_type_node_restart_command_result> {
     constructor(commandPath: string, clusterName: string, nodeTypeName: string, nodeName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -3803,7 +3854,7 @@ class az_sf_managed_node_type_node_restart_command_builder extends CommandBuilde
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} typeHandlerVersion Specifies the version of the script handler.
  */
-class az_sf_managed_node_type_vm_extension_add_command_builder extends CommandBuilder {
+class az_sf_managed_node_type_vm_extension_add_command_builder extends CommandBuilder<az_sf_managed_node_type_vm_extension_add_command_result> {
     constructor(commandPath: string, clusterName: string, extensionName: string, extensionType: string, nodeTypeName: string, publisher: string, resourceGroup: string, typeHandlerVersion: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -3911,7 +3962,7 @@ class az_sf_managed_node_type_vm_extension_add_command_builder extends CommandBu
  * @param {string} nodeTypeName Node type name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_managed_node_type_vm_extension_delete_command_builder extends CommandBuilder {
+class az_sf_managed_node_type_vm_extension_delete_command_builder extends CommandBuilder<az_sf_managed_node_type_vm_extension_delete_command_result> {
     constructor(commandPath: string, clusterName: string, extensionName: string, nodeTypeName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -3972,7 +4023,7 @@ class az_sf_managed_node_type_vm_extension_delete_command_builder extends Comman
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} sourceVaultId Key Vault resource id containing the certificates.
  */
-class az_sf_managed_node_type_vm_secret_add_command_builder extends CommandBuilder {
+class az_sf_managed_node_type_vm_secret_add_command_builder extends CommandBuilder<az_sf_managed_node_type_vm_secret_add_command_result> {
     constructor(commandPath: string, certificateStore: string, certificateUrl: string, clusterName: string, nodeTypeName: string, resourceGroup: string, sourceVaultId: string) {
         super(commandPath);
         this.certificateStore(certificateStore)
@@ -4056,7 +4107,7 @@ class az_sf_managed_node_type_vm_secret_add_command_builder extends CommandBuild
  * @param {string} nodeTypeName Node type name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_managed_node_type_create_command_builder extends CommandBuilder {
+class az_sf_managed_node_type_create_command_builder extends CommandBuilder<az_sf_managed_node_type_create_command_result> {
     constructor(commandPath: string, clusterName: string, instanceCount: string, nodeTypeName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -4189,7 +4240,7 @@ class az_sf_managed_node_type_create_command_builder extends CommandBuilder {
  * @param {string} nodeTypeName Node type name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_managed_node_type_delete_command_builder extends CommandBuilder {
+class az_sf_managed_node_type_delete_command_builder extends CommandBuilder<az_sf_managed_node_type_delete_command_result> {
     constructor(commandPath: string, clusterName: string, nodeTypeName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -4236,7 +4287,7 @@ class az_sf_managed_node_type_delete_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_managed_node_type_list_command_builder extends CommandBuilder {
+class az_sf_managed_node_type_list_command_builder extends CommandBuilder<az_sf_managed_node_type_list_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -4284,7 +4335,7 @@ class az_sf_managed_node_type_list_command_builder extends CommandBuilder {
  * @param {string} nodeTypeName Node type name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_managed_node_type_show_command_builder extends CommandBuilder {
+class az_sf_managed_node_type_show_command_builder extends CommandBuilder<az_sf_managed_node_type_show_command_result> {
     constructor(commandPath: string, clusterName: string, nodeTypeName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -4345,7 +4396,7 @@ class az_sf_managed_node_type_show_command_builder extends CommandBuilder {
  * @param {string} nodeTypeName Node type name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_managed_node_type_update_command_builder extends CommandBuilder {
+class az_sf_managed_node_type_update_command_builder extends CommandBuilder<az_sf_managed_node_type_update_command_result> {
     constructor(commandPath: string, clusterName: string, nodeTypeName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -4446,7 +4497,7 @@ class az_sf_managed_node_type_update_command_builder extends CommandBuilder {
  * @param {string} serviceType Specify the service type name of the application, it should exist in the application manifest.
  * @param {'stateful' | 'stateless'} state Specify if the service is stateless or stateful.
  */
-class az_sf_service_create_command_builder extends CommandBuilder {
+class az_sf_service_create_command_builder extends CommandBuilder<az_sf_service_create_command_result> {
     constructor(commandPath: string, applicationName: string, clusterName: string, serviceName: string, resourceGroup: string, serviceType: string, state: 'stateful' | 'stateless') {
         super(commandPath);
         this.applicationName(applicationName)
@@ -4547,7 +4598,7 @@ class az_sf_service_create_command_builder extends CommandBuilder {
  * @param {string} serviceName Specify the name of the service. The application name must be a prefix of the service name, for example: appName~serviceName.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_service_delete_command_builder extends CommandBuilder {
+class az_sf_service_delete_command_builder extends CommandBuilder<az_sf_service_delete_command_result> {
     constructor(commandPath: string, applicationName: string, clusterName: string, serviceName: string, resourceGroup: string) {
         super(commandPath);
         this.applicationName(applicationName)
@@ -4603,7 +4654,7 @@ class az_sf_service_delete_command_builder extends CommandBuilder {
  * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_service_list_command_builder extends CommandBuilder {
+class az_sf_service_list_command_builder extends CommandBuilder<az_sf_service_list_command_result> {
     constructor(commandPath: string, applicationName: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.applicationName(applicationName)
@@ -4660,7 +4711,7 @@ class az_sf_service_list_command_builder extends CommandBuilder {
  * @param {string} serviceName Specify the name of the service. The application name must be a prefix of the service name, for example: appName~serviceName.
  * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sf_service_show_command_builder extends CommandBuilder {
+class az_sf_service_show_command_builder extends CommandBuilder<az_sf_service_show_command_result> {
     constructor(commandPath: string, applicationName: string, clusterName: string, serviceName: string, resourceGroup: string) {
         super(commandPath);
         this.applicationName(applicationName)

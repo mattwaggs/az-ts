@@ -1,4 +1,13 @@
 import { CommandBuilder } from '../base';
+import { az_role_assignment_create_command_result } from './models/az_role_assignment_create_command_result'
+import { az_role_assignment_delete_command_result } from './models/az_role_assignment_delete_command_result'
+import { az_role_assignment_list_command_result } from './models/az_role_assignment_list_command_result'
+import { az_role_assignment_list_changelogs_command_result } from './models/az_role_assignment_list_changelogs_command_result'
+import { az_role_assignment_update_command_result } from './models/az_role_assignment_update_command_result'
+import { az_role_definition_create_command_result } from './models/az_role_definition_create_command_result'
+import { az_role_definition_delete_command_result } from './models/az_role_definition_delete_command_result'
+import { az_role_definition_list_command_result } from './models/az_role_definition_list_command_result'
+import { az_role_definition_update_command_result } from './models/az_role_definition_update_command_result'
 
 /** Manage role assignments. */
 export class az_role_assignment {
@@ -186,7 +195,7 @@ export class az_role {
  *
  * @param {string} role Role name or id.
  */
-class az_role_assignment_create_command_builder extends CommandBuilder {
+class az_role_assignment_create_command_builder extends CommandBuilder<az_role_assignment_create_command_result> {
     constructor(commandPath: string, role: string) {
         super(commandPath);
         this.role(role)
@@ -268,7 +277,7 @@ class az_role_assignment_create_command_builder extends CommandBuilder {
  *                           [--yes]
  * ```
  */
-class az_role_assignment_delete_command_builder extends CommandBuilder {
+class az_role_assignment_delete_command_builder extends CommandBuilder<az_role_assignment_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -339,7 +348,7 @@ class az_role_assignment_delete_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_role_assignment_list_command_builder extends CommandBuilder {
+class az_role_assignment_list_command_builder extends CommandBuilder<az_role_assignment_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -415,7 +424,7 @@ class az_role_assignment_list_command_builder extends CommandBuilder {
  *                                    [--subscription]
  * ```
  */
-class az_role_assignment_list_changelogs_command_builder extends CommandBuilder {
+class az_role_assignment_list_changelogs_command_builder extends CommandBuilder<az_role_assignment_list_changelogs_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -450,7 +459,7 @@ class az_role_assignment_list_changelogs_command_builder extends CommandBuilder 
  *
  * @param {string} roleAssignment Description of an existing role assignment as JSON, or a path to a file containing a JSON description.
  */
-class az_role_assignment_update_command_builder extends CommandBuilder {
+class az_role_assignment_update_command_builder extends CommandBuilder<az_role_assignment_update_command_result> {
     constructor(commandPath: string, roleAssignment: string) {
         super(commandPath);
         this.roleAssignment(roleAssignment)
@@ -480,7 +489,7 @@ class az_role_assignment_update_command_builder extends CommandBuilder {
  *
  * @param {string} roleDefinition Description of a role as JSON, or a path to a file containing a JSON description.
  */
-class az_role_definition_create_command_builder extends CommandBuilder {
+class az_role_definition_create_command_builder extends CommandBuilder<az_role_definition_create_command_result> {
     constructor(commandPath: string, roleDefinition: string) {
         super(commandPath);
         this.roleDefinition(roleDefinition)
@@ -513,7 +522,7 @@ class az_role_definition_create_command_builder extends CommandBuilder {
  *
  * @param {string} name The role's name.
  */
-class az_role_definition_delete_command_builder extends CommandBuilder {
+class az_role_definition_delete_command_builder extends CommandBuilder<az_role_definition_delete_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -563,7 +572,7 @@ class az_role_definition_delete_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_role_definition_list_command_builder extends CommandBuilder {
+class az_role_definition_list_command_builder extends CommandBuilder<az_role_definition_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -616,7 +625,7 @@ class az_role_definition_list_command_builder extends CommandBuilder {
  *
  * @param {string} roleDefinition Description of an existing role as JSON, or a path to a file containing a JSON description.
  */
-class az_role_definition_update_command_builder extends CommandBuilder {
+class az_role_definition_update_command_builder extends CommandBuilder<az_role_definition_update_command_result> {
     constructor(commandPath: string, roleDefinition: string) {
         super(commandPath);
         this.roleDefinition(roleDefinition)

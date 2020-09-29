@@ -1,4 +1,23 @@
 import { CommandBuilder } from '../base';
+import { az_resource_link_create_command_result } from './models/az_resource_link_create_command_result'
+import { az_resource_link_delete_command_result } from './models/az_resource_link_delete_command_result'
+import { az_resource_link_list_command_result } from './models/az_resource_link_list_command_result'
+import { az_resource_link_show_command_result } from './models/az_resource_link_show_command_result'
+import { az_resource_link_update_command_result } from './models/az_resource_link_update_command_result'
+import { az_resource_lock_create_command_result } from './models/az_resource_lock_create_command_result'
+import { az_resource_lock_delete_command_result } from './models/az_resource_lock_delete_command_result'
+import { az_resource_lock_list_command_result } from './models/az_resource_lock_list_command_result'
+import { az_resource_lock_show_command_result } from './models/az_resource_lock_show_command_result'
+import { az_resource_lock_update_command_result } from './models/az_resource_lock_update_command_result'
+import { az_resource_create_command_result } from './models/az_resource_create_command_result'
+import { az_resource_delete_command_result } from './models/az_resource_delete_command_result'
+import { az_resource_invoke_action_command_result } from './models/az_resource_invoke_action_command_result'
+import { az_resource_list_command_result } from './models/az_resource_list_command_result'
+import { az_resource_move_command_result } from './models/az_resource_move_command_result'
+import { az_resource_show_command_result } from './models/az_resource_show_command_result'
+import { az_resource_tag_command_result } from './models/az_resource_tag_command_result'
+import { az_resource_update_command_result } from './models/az_resource_update_command_result'
+import { az_resource_wait_command_result } from './models/az_resource_wait_command_result'
 
 /** Manage links between resources. */
 export class az_resource_link {
@@ -410,7 +429,7 @@ export class az_resource {
  * @param {string} link Fully-qualified resource ID of the resource link.
  * @param {string} target Fully-qualified resource ID of the resource link target.
  */
-class az_resource_link_create_command_builder extends CommandBuilder {
+class az_resource_link_create_command_builder extends CommandBuilder<az_resource_link_create_command_result> {
     constructor(commandPath: string, link: string, target: string) {
         super(commandPath);
         this.link(link)
@@ -453,7 +472,7 @@ class az_resource_link_create_command_builder extends CommandBuilder {
  *
  * @param {string} link Fully-qualified resource ID of the resource link.
  */
-class az_resource_link_delete_command_builder extends CommandBuilder {
+class az_resource_link_delete_command_builder extends CommandBuilder<az_resource_link_delete_command_result> {
     constructor(commandPath: string, link: string) {
         super(commandPath);
         this.link(link)
@@ -483,7 +502,7 @@ class az_resource_link_delete_command_builder extends CommandBuilder {
  *                       [--subscription]
  * ```
  */
-class az_resource_link_list_command_builder extends CommandBuilder {
+class az_resource_link_list_command_builder extends CommandBuilder<az_resource_link_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -525,7 +544,7 @@ class az_resource_link_list_command_builder extends CommandBuilder {
  *
  * @param {string} link Fully-qualified resource ID of the resource link.
  */
-class az_resource_link_show_command_builder extends CommandBuilder {
+class az_resource_link_show_command_builder extends CommandBuilder<az_resource_link_show_command_result> {
     constructor(commandPath: string, link: string) {
         super(commandPath);
         this.link(link)
@@ -563,7 +582,7 @@ class az_resource_link_show_command_builder extends CommandBuilder {
  *
  * @param {string} link Fully-qualified resource ID of the resource link.
  */
-class az_resource_link_update_command_builder extends CommandBuilder {
+class az_resource_link_update_command_builder extends CommandBuilder<az_resource_link_update_command_result> {
     constructor(commandPath: string, link: string) {
         super(commandPath);
         this.link(link)
@@ -613,7 +632,7 @@ class az_resource_link_update_command_builder extends CommandBuilder {
  * @param {'CanNotDelete' | 'ReadOnly'} lockType The type of lock restriction.
  * @param {string} name Name of the lock.
  */
-class az_resource_lock_create_command_builder extends CommandBuilder {
+class az_resource_lock_create_command_builder extends CommandBuilder<az_resource_lock_create_command_result> {
     constructor(commandPath: string, lockType: 'CanNotDelete' | 'ReadOnly', name: string) {
         super(commandPath);
         this.lockType(lockType)
@@ -690,7 +709,7 @@ class az_resource_lock_create_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_resource_lock_delete_command_builder extends CommandBuilder {
+class az_resource_lock_delete_command_builder extends CommandBuilder<az_resource_lock_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -759,7 +778,7 @@ class az_resource_lock_delete_command_builder extends CommandBuilder {
  *                       [--subscription]
  * ```
  */
-class az_resource_lock_list_command_builder extends CommandBuilder {
+class az_resource_lock_list_command_builder extends CommandBuilder<az_resource_lock_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -829,7 +848,7 @@ class az_resource_lock_list_command_builder extends CommandBuilder {
  *                       [--subscription]
  * ```
  */
-class az_resource_lock_show_command_builder extends CommandBuilder {
+class az_resource_lock_show_command_builder extends CommandBuilder<az_resource_lock_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -906,7 +925,7 @@ class az_resource_lock_show_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_resource_lock_update_command_builder extends CommandBuilder {
+class az_resource_lock_update_command_builder extends CommandBuilder<az_resource_lock_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -993,7 +1012,7 @@ class az_resource_lock_update_command_builder extends CommandBuilder {
  *
  * @param {string} properties A JSON-formatted string containing resource properties.
  */
-class az_resource_create_command_builder extends CommandBuilder {
+class az_resource_create_command_builder extends CommandBuilder<az_resource_create_command_result> {
     constructor(commandPath: string, properties: string) {
         super(commandPath);
         this.properties(properties)
@@ -1088,7 +1107,7 @@ class az_resource_create_command_builder extends CommandBuilder {
  *                    [--subscription]
  * ```
  */
-class az_resource_delete_command_builder extends CommandBuilder {
+class az_resource_delete_command_builder extends CommandBuilder<az_resource_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1168,7 +1187,7 @@ class az_resource_delete_command_builder extends CommandBuilder {
  *
  * @param {string} action The action that will be invoked on the specified resource.
  */
-class az_resource_invoke_action_command_builder extends CommandBuilder {
+class az_resource_invoke_action_command_builder extends CommandBuilder<az_resource_invoke_action_command_result> {
     constructor(commandPath: string, action: string) {
         super(commandPath);
         this.action(action)
@@ -1256,7 +1275,7 @@ class az_resource_invoke_action_command_builder extends CommandBuilder {
  *                  [--tag]
  * ```
  */
-class az_resource_list_command_builder extends CommandBuilder {
+class az_resource_list_command_builder extends CommandBuilder<az_resource_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1324,7 +1343,7 @@ class az_resource_list_command_builder extends CommandBuilder {
  * @param {string} destinationGroup The destination resource group name.
  * @param {string} ids The space-separated resource ids to be moved.
  */
-class az_resource_move_command_builder extends CommandBuilder {
+class az_resource_move_command_builder extends CommandBuilder<az_resource_move_command_result> {
     constructor(commandPath: string, destinationGroup: string, ids: string) {
         super(commandPath);
         this.destinationGroup(destinationGroup)
@@ -1374,7 +1393,7 @@ class az_resource_move_command_builder extends CommandBuilder {
  *                  [--subscription]
  * ```
  */
-class az_resource_show_command_builder extends CommandBuilder {
+class az_resource_show_command_builder extends CommandBuilder<az_resource_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1466,7 +1485,7 @@ class az_resource_show_command_builder extends CommandBuilder {
  *
  * @param {string} tags Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags.
  */
-class az_resource_tag_command_builder extends CommandBuilder {
+class az_resource_tag_command_builder extends CommandBuilder<az_resource_tag_command_result> {
     constructor(commandPath: string, tags: string) {
         super(commandPath);
         this.tags(tags)
@@ -1560,7 +1579,7 @@ class az_resource_tag_command_builder extends CommandBuilder {
  *                    [--subscription]
  * ```
  */
-class az_resource_update_command_builder extends CommandBuilder {
+class az_resource_update_command_builder extends CommandBuilder<az_resource_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1673,7 +1692,7 @@ class az_resource_update_command_builder extends CommandBuilder {
  *                  [--updated]
  * ```
  */
-class az_resource_wait_command_builder extends CommandBuilder {
+class az_resource_wait_command_builder extends CommandBuilder<az_resource_wait_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }

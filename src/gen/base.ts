@@ -1,3 +1,5 @@
+import { executor } from "../commands/utils/executor";
+
 export abstract class CommandBuilder<T = void> {
   constructor(private commandPath: string) {}
 
@@ -13,10 +15,9 @@ export abstract class CommandBuilder<T = void> {
         .map((flag) => {
           return `${flag} ${this._flags[flag]}`;
         })
-        .reduce((a, b) => `${a} ${b}`) || "";
+        .reduce((a, b) => `${a} ${b}`, "") || "";
 
     const fullCommand = `${this.commandPath} ${commandArgs}`;
-    console.log("executing command: ", fullCommand);
-    return {} as T;
+    return executor.execute(fullCommand) as T;
   }
 }

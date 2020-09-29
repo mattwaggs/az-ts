@@ -1,4 +1,14 @@
 import { CommandBuilder } from '../base';
+import { az_search_admin_key_renew_command_result } from './models/az_search_admin_key_renew_command_result'
+import { az_search_admin_key_show_command_result } from './models/az_search_admin_key_show_command_result'
+import { az_search_query_key_create_command_result } from './models/az_search_query_key_create_command_result'
+import { az_search_query_key_delete_command_result } from './models/az_search_query_key_delete_command_result'
+import { az_search_query_key_list_command_result } from './models/az_search_query_key_list_command_result'
+import { az_search_service_create_command_result } from './models/az_search_service_create_command_result'
+import { az_search_service_delete_command_result } from './models/az_search_service_delete_command_result'
+import { az_search_service_list_command_result } from './models/az_search_service_list_command_result'
+import { az_search_service_show_command_result } from './models/az_search_service_show_command_result'
+import { az_search_service_update_command_result } from './models/az_search_service_update_command_result'
 
 /** Manage Azure Search admin keys. */
 export class az_search_admin_key {
@@ -218,7 +228,7 @@ export class az_search {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the search service.
  */
-class az_search_admin_key_renew_command_builder extends CommandBuilder {
+class az_search_admin_key_renew_command_builder extends CommandBuilder<az_search_admin_key_renew_command_result> {
     constructor(commandPath: string, keyKind: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.keyKind(keyKind)
@@ -265,7 +275,7 @@ class az_search_admin_key_renew_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the search service.
  */
-class az_search_admin_key_show_command_builder extends CommandBuilder {
+class az_search_admin_key_show_command_builder extends CommandBuilder<az_search_admin_key_show_command_result> {
     constructor(commandPath: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -312,7 +322,7 @@ class az_search_admin_key_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the search service.
  */
-class az_search_query_key_create_command_builder extends CommandBuilder {
+class az_search_query_key_create_command_builder extends CommandBuilder<az_search_query_key_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.name(name)
@@ -360,7 +370,7 @@ class az_search_query_key_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the search service.
  */
-class az_search_query_key_delete_command_builder extends CommandBuilder {
+class az_search_query_key_delete_command_builder extends CommandBuilder<az_search_query_key_delete_command_result> {
     constructor(commandPath: string, keyValue: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.keyValue(keyValue)
@@ -407,7 +417,7 @@ class az_search_query_key_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the search service.
  */
-class az_search_query_key_list_command_builder extends CommandBuilder {
+class az_search_query_key_list_command_builder extends CommandBuilder<az_search_query_key_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -457,7 +467,7 @@ class az_search_query_key_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} sku The SKU of the search service, which determines price tier and capacity limits.
  */
-class az_search_service_create_command_builder extends CommandBuilder {
+class az_search_service_create_command_builder extends CommandBuilder<az_search_service_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, sku: string) {
         super(commandPath);
         this.name(name)
@@ -522,7 +532,7 @@ class az_search_service_create_command_builder extends CommandBuilder {
  * @param {string} name The name of the search service.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_search_service_delete_command_builder extends CommandBuilder {
+class az_search_service_delete_command_builder extends CommandBuilder<az_search_service_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -566,7 +576,7 @@ class az_search_service_delete_command_builder extends CommandBuilder {
  *
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_search_service_list_command_builder extends CommandBuilder {
+class az_search_service_list_command_builder extends CommandBuilder<az_search_service_list_command_result> {
     constructor(commandPath: string, resourceGroup: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -605,7 +615,7 @@ class az_search_service_list_command_builder extends CommandBuilder {
  * @param {string} name The name of the search service.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_search_service_show_command_builder extends CommandBuilder {
+class az_search_service_show_command_builder extends CommandBuilder<az_search_service_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -656,7 +666,7 @@ class az_search_service_show_command_builder extends CommandBuilder {
  * @param {string} name The name of the search service.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_search_service_update_command_builder extends CommandBuilder {
+class az_search_service_update_command_builder extends CommandBuilder<az_search_service_update_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)

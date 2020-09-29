@@ -1,4 +1,34 @@
 import { CommandBuilder } from '../base';
+import { az_deploymentmanager_artifact_source_create_command_result } from './models/az_deploymentmanager_artifact_source_create_command_result'
+import { az_deploymentmanager_artifact_source_delete_command_result } from './models/az_deploymentmanager_artifact_source_delete_command_result'
+import { az_deploymentmanager_artifact_source_list_command_result } from './models/az_deploymentmanager_artifact_source_list_command_result'
+import { az_deploymentmanager_artifact_source_show_command_result } from './models/az_deploymentmanager_artifact_source_show_command_result'
+import { az_deploymentmanager_artifact_source_update_command_result } from './models/az_deploymentmanager_artifact_source_update_command_result'
+import { az_deploymentmanager_rollout_delete_command_result } from './models/az_deploymentmanager_rollout_delete_command_result'
+import { az_deploymentmanager_rollout_list_command_result } from './models/az_deploymentmanager_rollout_list_command_result'
+import { az_deploymentmanager_rollout_restart_command_result } from './models/az_deploymentmanager_rollout_restart_command_result'
+import { az_deploymentmanager_rollout_show_command_result } from './models/az_deploymentmanager_rollout_show_command_result'
+import { az_deploymentmanager_rollout_stop_command_result } from './models/az_deploymentmanager_rollout_stop_command_result'
+import { az_deploymentmanager_service_topology_create_command_result } from './models/az_deploymentmanager_service_topology_create_command_result'
+import { az_deploymentmanager_service_topology_delete_command_result } from './models/az_deploymentmanager_service_topology_delete_command_result'
+import { az_deploymentmanager_service_topology_list_command_result } from './models/az_deploymentmanager_service_topology_list_command_result'
+import { az_deploymentmanager_service_topology_show_command_result } from './models/az_deploymentmanager_service_topology_show_command_result'
+import { az_deploymentmanager_service_topology_update_command_result } from './models/az_deploymentmanager_service_topology_update_command_result'
+import { az_deploymentmanager_service_unit_create_command_result } from './models/az_deploymentmanager_service_unit_create_command_result'
+import { az_deploymentmanager_service_unit_delete_command_result } from './models/az_deploymentmanager_service_unit_delete_command_result'
+import { az_deploymentmanager_service_unit_list_command_result } from './models/az_deploymentmanager_service_unit_list_command_result'
+import { az_deploymentmanager_service_unit_show_command_result } from './models/az_deploymentmanager_service_unit_show_command_result'
+import { az_deploymentmanager_service_unit_update_command_result } from './models/az_deploymentmanager_service_unit_update_command_result'
+import { az_deploymentmanager_service_create_command_result } from './models/az_deploymentmanager_service_create_command_result'
+import { az_deploymentmanager_service_delete_command_result } from './models/az_deploymentmanager_service_delete_command_result'
+import { az_deploymentmanager_service_list_command_result } from './models/az_deploymentmanager_service_list_command_result'
+import { az_deploymentmanager_service_show_command_result } from './models/az_deploymentmanager_service_show_command_result'
+import { az_deploymentmanager_service_update_command_result } from './models/az_deploymentmanager_service_update_command_result'
+import { az_deploymentmanager_step_create_command_result } from './models/az_deploymentmanager_step_create_command_result'
+import { az_deploymentmanager_step_delete_command_result } from './models/az_deploymentmanager_step_delete_command_result'
+import { az_deploymentmanager_step_list_command_result } from './models/az_deploymentmanager_step_list_command_result'
+import { az_deploymentmanager_step_show_command_result } from './models/az_deploymentmanager_step_show_command_result'
+import { az_deploymentmanager_step_update_command_result } from './models/az_deploymentmanager_step_update_command_result'
 
 /** Manage artifact sources. */
 export class az_deploymentmanager_artifact_source {
@@ -652,7 +682,7 @@ export class az_deploymentmanager {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} sasUri The SAS Uri to the Azure Storage container where the artifacts are stored.
  */
-class az_deploymentmanager_artifact_source_create_command_builder extends CommandBuilder {
+class az_deploymentmanager_artifact_source_create_command_builder extends CommandBuilder<az_deploymentmanager_artifact_source_create_command_result> {
     constructor(commandPath: string, artifactSourceName: string, location: string, resourceGroup: string, sasUri: string) {
         super(commandPath);
         this.artifactSourceName(artifactSourceName)
@@ -718,7 +748,7 @@ class az_deploymentmanager_artifact_source_create_command_builder extends Comman
  * @param {string} artifactSourceName The name of the artifact source.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_artifact_source_delete_command_builder extends CommandBuilder {
+class az_deploymentmanager_artifact_source_delete_command_builder extends CommandBuilder<az_deploymentmanager_artifact_source_delete_command_result> {
     constructor(commandPath: string, artifactSourceName: string, resourceGroup: string) {
         super(commandPath);
         this.artifactSourceName(artifactSourceName)
@@ -762,7 +792,7 @@ class az_deploymentmanager_artifact_source_delete_command_builder extends Comman
  *
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_artifact_source_list_command_builder extends CommandBuilder {
+class az_deploymentmanager_artifact_source_list_command_builder extends CommandBuilder<az_deploymentmanager_artifact_source_list_command_result> {
     constructor(commandPath: string, resourceGroup: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -801,7 +831,7 @@ class az_deploymentmanager_artifact_source_list_command_builder extends CommandB
  * @param {string} artifactSourceName The name of the artifact source.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_artifact_source_show_command_builder extends CommandBuilder {
+class az_deploymentmanager_artifact_source_show_command_builder extends CommandBuilder<az_deploymentmanager_artifact_source_show_command_result> {
     constructor(commandPath: string, artifactSourceName: string, resourceGroup: string) {
         super(commandPath);
         this.artifactSourceName(artifactSourceName)
@@ -853,7 +883,7 @@ class az_deploymentmanager_artifact_source_show_command_builder extends CommandB
  * @param {string} artifactSourceName The name of the artifact source.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_artifact_source_update_command_builder extends CommandBuilder {
+class az_deploymentmanager_artifact_source_update_command_builder extends CommandBuilder<az_deploymentmanager_artifact_source_update_command_result> {
     constructor(commandPath: string, artifactSourceName: string, resourceGroup: string) {
         super(commandPath);
         this.artifactSourceName(artifactSourceName)
@@ -934,7 +964,7 @@ class az_deploymentmanager_artifact_source_update_command_builder extends Comman
  * @param {string} rolloutName The name of the rollout.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_rollout_delete_command_builder extends CommandBuilder {
+class az_deploymentmanager_rollout_delete_command_builder extends CommandBuilder<az_deploymentmanager_rollout_delete_command_result> {
     constructor(commandPath: string, rolloutName: string, resourceGroup: string) {
         super(commandPath);
         this.rolloutName(rolloutName)
@@ -972,7 +1002,7 @@ class az_deploymentmanager_rollout_delete_command_builder extends CommandBuilder
  *
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_rollout_list_command_builder extends CommandBuilder {
+class az_deploymentmanager_rollout_list_command_builder extends CommandBuilder<az_deploymentmanager_rollout_list_command_result> {
     constructor(commandPath: string, resourceGroup: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -1012,7 +1042,7 @@ class az_deploymentmanager_rollout_list_command_builder extends CommandBuilder {
  * @param {string} rolloutName The name of the rollout.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_rollout_restart_command_builder extends CommandBuilder {
+class az_deploymentmanager_rollout_restart_command_builder extends CommandBuilder<az_deploymentmanager_rollout_restart_command_result> {
     constructor(commandPath: string, rolloutName: string, resourceGroup: string) {
         super(commandPath);
         this.rolloutName(rolloutName)
@@ -1065,7 +1095,7 @@ class az_deploymentmanager_rollout_restart_command_builder extends CommandBuilde
  * @param {string} rolloutName The name of the rollout.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_rollout_show_command_builder extends CommandBuilder {
+class az_deploymentmanager_rollout_show_command_builder extends CommandBuilder<az_deploymentmanager_rollout_show_command_result> {
     constructor(commandPath: string, rolloutName: string, resourceGroup: string) {
         super(commandPath);
         this.rolloutName(rolloutName)
@@ -1117,7 +1147,7 @@ class az_deploymentmanager_rollout_show_command_builder extends CommandBuilder {
  * @param {string} rolloutName The name of the rollout.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_rollout_stop_command_builder extends CommandBuilder {
+class az_deploymentmanager_rollout_stop_command_builder extends CommandBuilder<az_deploymentmanager_rollout_stop_command_result> {
     constructor(commandPath: string, rolloutName: string, resourceGroup: string) {
         super(commandPath);
         this.rolloutName(rolloutName)
@@ -1166,7 +1196,7 @@ class az_deploymentmanager_rollout_stop_command_builder extends CommandBuilder {
  * @param {string} serviceTopologyName The name of the service topology.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_service_topology_create_command_builder extends CommandBuilder {
+class az_deploymentmanager_service_topology_create_command_builder extends CommandBuilder<az_deploymentmanager_service_topology_create_command_result> {
     constructor(commandPath: string, location: string, serviceTopologyName: string, resourceGroup: string) {
         super(commandPath);
         this.location(location)
@@ -1224,7 +1254,7 @@ class az_deploymentmanager_service_topology_create_command_builder extends Comma
  * @param {string} serviceTopologyName The name of the service topology.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_service_topology_delete_command_builder extends CommandBuilder {
+class az_deploymentmanager_service_topology_delete_command_builder extends CommandBuilder<az_deploymentmanager_service_topology_delete_command_result> {
     constructor(commandPath: string, serviceTopologyName: string, resourceGroup: string) {
         super(commandPath);
         this.serviceTopologyName(serviceTopologyName)
@@ -1262,7 +1292,7 @@ class az_deploymentmanager_service_topology_delete_command_builder extends Comma
  *
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_service_topology_list_command_builder extends CommandBuilder {
+class az_deploymentmanager_service_topology_list_command_builder extends CommandBuilder<az_deploymentmanager_service_topology_list_command_result> {
     constructor(commandPath: string, resourceGroup: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -1301,7 +1331,7 @@ class az_deploymentmanager_service_topology_list_command_builder extends Command
  * @param {string} serviceTopologyName The name of the service topology.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_service_topology_show_command_builder extends CommandBuilder {
+class az_deploymentmanager_service_topology_show_command_builder extends CommandBuilder<az_deploymentmanager_service_topology_show_command_result> {
     constructor(commandPath: string, serviceTopologyName: string, resourceGroup: string) {
         super(commandPath);
         this.serviceTopologyName(serviceTopologyName)
@@ -1352,7 +1382,7 @@ class az_deploymentmanager_service_topology_show_command_builder extends Command
  * @param {string} serviceTopologyName The name of the service topology.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_service_topology_update_command_builder extends CommandBuilder {
+class az_deploymentmanager_service_topology_update_command_builder extends CommandBuilder<az_deploymentmanager_service_topology_update_command_result> {
     constructor(commandPath: string, serviceTopologyName: string, resourceGroup: string) {
         super(commandPath);
         this.serviceTopologyName(serviceTopologyName)
@@ -1441,7 +1471,7 @@ class az_deploymentmanager_service_topology_update_command_builder extends Comma
  * @param {string} targetResourceGroup The resource group where the resources in the service unit should be deployed to.
  * @param {string} templatePath The path to the ARM template file. Either the full SAS Uri or the relative path in the artifact source for this topology.
  */
-class az_deploymentmanager_service_unit_create_command_builder extends CommandBuilder {
+class az_deploymentmanager_service_unit_create_command_builder extends CommandBuilder<az_deploymentmanager_service_unit_create_command_result> {
     constructor(commandPath: string, deploymentMode: 'Complete' | 'Incremental', serviceUnitName: string, parametersPath: string, resourceGroup: string, serviceName: string, serviceTopologyName: string, targetResourceGroup: string, templatePath: string) {
         super(commandPath);
         this.deploymentMode(deploymentMode)
@@ -1538,7 +1568,7 @@ class az_deploymentmanager_service_unit_create_command_builder extends CommandBu
  * @param {string} serviceName The name of the service.
  * @param {string} serviceTopologyName The name of the service topology.
  */
-class az_deploymentmanager_service_unit_delete_command_builder extends CommandBuilder {
+class az_deploymentmanager_service_unit_delete_command_builder extends CommandBuilder<az_deploymentmanager_service_unit_delete_command_result> {
     constructor(commandPath: string, serviceUnitName: string, resourceGroup: string, serviceName: string, serviceTopologyName: string) {
         super(commandPath);
         this.serviceUnitName(serviceUnitName)
@@ -1594,7 +1624,7 @@ class az_deploymentmanager_service_unit_delete_command_builder extends CommandBu
  * @param {string} serviceName The name of the service.
  * @param {string} serviceTopologyName The name of the service topology.
  */
-class az_deploymentmanager_service_unit_list_command_builder extends CommandBuilder {
+class az_deploymentmanager_service_unit_list_command_builder extends CommandBuilder<az_deploymentmanager_service_unit_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, serviceName: string, serviceTopologyName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -1651,7 +1681,7 @@ class az_deploymentmanager_service_unit_list_command_builder extends CommandBuil
  * @param {string} serviceName The name of the service.
  * @param {string} serviceTopologyName The name of the service topology.
  */
-class az_deploymentmanager_service_unit_show_command_builder extends CommandBuilder {
+class az_deploymentmanager_service_unit_show_command_builder extends CommandBuilder<az_deploymentmanager_service_unit_show_command_result> {
     constructor(commandPath: string, serviceUnitName: string, resourceGroup: string, serviceName: string, serviceTopologyName: string) {
         super(commandPath);
         this.serviceUnitName(serviceUnitName)
@@ -1723,7 +1753,7 @@ class az_deploymentmanager_service_unit_show_command_builder extends CommandBuil
  * @param {string} serviceName The name of the service.
  * @param {string} serviceTopologyName The name of the service topology.
  */
-class az_deploymentmanager_service_unit_update_command_builder extends CommandBuilder {
+class az_deploymentmanager_service_unit_update_command_builder extends CommandBuilder<az_deploymentmanager_service_unit_update_command_result> {
     constructor(commandPath: string, serviceUnitName: string, resourceGroup: string, serviceName: string, serviceTopologyName: string) {
         super(commandPath);
         this.serviceUnitName(serviceUnitName)
@@ -1839,7 +1869,7 @@ class az_deploymentmanager_service_unit_update_command_builder extends CommandBu
  * @param {string} targetLocation The location where the resources in the service should be deployed to.
  * @param {string} targetSubscriptionId The subscription to which the resources in the service should be deployed to.
  */
-class az_deploymentmanager_service_create_command_builder extends CommandBuilder {
+class az_deploymentmanager_service_create_command_builder extends CommandBuilder<az_deploymentmanager_service_create_command_result> {
     constructor(commandPath: string, location: string, serviceName: string, resourceGroup: string, serviceTopologyName: string, targetLocation: string, targetSubscriptionId: string) {
         super(commandPath);
         this.location(location)
@@ -1914,7 +1944,7 @@ class az_deploymentmanager_service_create_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceTopologyName The name of the service topology.
  */
-class az_deploymentmanager_service_delete_command_builder extends CommandBuilder {
+class az_deploymentmanager_service_delete_command_builder extends CommandBuilder<az_deploymentmanager_service_delete_command_result> {
     constructor(commandPath: string, serviceName: string, resourceGroup: string, serviceTopologyName: string) {
         super(commandPath);
         this.serviceName(serviceName)
@@ -1961,7 +1991,7 @@ class az_deploymentmanager_service_delete_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceTopologyName The name of the service topology.
  */
-class az_deploymentmanager_service_list_command_builder extends CommandBuilder {
+class az_deploymentmanager_service_list_command_builder extends CommandBuilder<az_deploymentmanager_service_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, serviceTopologyName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -2009,7 +2039,7 @@ class az_deploymentmanager_service_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceTopologyName The name of the service topology.
  */
-class az_deploymentmanager_service_show_command_builder extends CommandBuilder {
+class az_deploymentmanager_service_show_command_builder extends CommandBuilder<az_deploymentmanager_service_show_command_result> {
     constructor(commandPath: string, serviceName: string, resourceGroup: string, serviceTopologyName: string) {
         super(commandPath);
         this.serviceName(serviceName)
@@ -2070,7 +2100,7 @@ class az_deploymentmanager_service_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceTopologyName The name of the service topology.
  */
-class az_deploymentmanager_service_update_command_builder extends CommandBuilder {
+class az_deploymentmanager_service_update_command_builder extends CommandBuilder<az_deploymentmanager_service_update_command_result> {
     constructor(commandPath: string, serviceName: string, resourceGroup: string, serviceTopologyName: string) {
         super(commandPath);
         this.serviceName(serviceName)
@@ -2161,7 +2191,7 @@ class az_deploymentmanager_service_update_command_builder extends CommandBuilder
  *
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_step_create_command_builder extends CommandBuilder {
+class az_deploymentmanager_step_create_command_builder extends CommandBuilder<az_deploymentmanager_step_create_command_result> {
     constructor(commandPath: string, resourceGroup: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -2223,7 +2253,7 @@ class az_deploymentmanager_step_create_command_builder extends CommandBuilder {
  * @param {string} stepName The name of the step.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_step_delete_command_builder extends CommandBuilder {
+class az_deploymentmanager_step_delete_command_builder extends CommandBuilder<az_deploymentmanager_step_delete_command_result> {
     constructor(commandPath: string, stepName: string, resourceGroup: string) {
         super(commandPath);
         this.stepName(stepName)
@@ -2261,7 +2291,7 @@ class az_deploymentmanager_step_delete_command_builder extends CommandBuilder {
  *
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_step_list_command_builder extends CommandBuilder {
+class az_deploymentmanager_step_list_command_builder extends CommandBuilder<az_deploymentmanager_step_list_command_result> {
     constructor(commandPath: string, resourceGroup: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -2300,7 +2330,7 @@ class az_deploymentmanager_step_list_command_builder extends CommandBuilder {
  * @param {string} stepName The name of the step.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_step_show_command_builder extends CommandBuilder {
+class az_deploymentmanager_step_show_command_builder extends CommandBuilder<az_deploymentmanager_step_show_command_result> {
     constructor(commandPath: string, stepName: string, resourceGroup: string) {
         super(commandPath);
         this.stepName(stepName)
@@ -2352,7 +2382,7 @@ class az_deploymentmanager_step_show_command_builder extends CommandBuilder {
  * @param {string} stepName The name of the step.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_deploymentmanager_step_update_command_builder extends CommandBuilder {
+class az_deploymentmanager_step_update_command_builder extends CommandBuilder<az_deploymentmanager_step_update_command_result> {
     constructor(commandPath: string, stepName: string, resourceGroup: string) {
         super(commandPath);
         this.stepName(stepName)

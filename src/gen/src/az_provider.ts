@@ -1,4 +1,10 @@
 import { CommandBuilder } from '../base';
+import { az_provider_operation_list_command_result } from './models/az_provider_operation_list_command_result'
+import { az_provider_operation_show_command_result } from './models/az_provider_operation_show_command_result'
+import { az_provider_list_command_result } from './models/az_provider_list_command_result'
+import { az_provider_register_command_result } from './models/az_provider_register_command_result'
+import { az_provider_show_command_result } from './models/az_provider_show_command_result'
+import { az_provider_unregister_command_result } from './models/az_provider_unregister_command_result'
 
 /** Get provider operations metadatas. */
 export class az_provider_operation {
@@ -107,7 +113,7 @@ export class az_provider {
  *                            [--subscription]
  * ```
  */
-class az_provider_operation_list_command_builder extends CommandBuilder {
+class az_provider_operation_list_command_builder extends CommandBuilder<az_provider_operation_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -137,7 +143,7 @@ class az_provider_operation_list_command_builder extends CommandBuilder {
  *
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
-class az_provider_operation_show_command_builder extends CommandBuilder {
+class az_provider_operation_show_command_builder extends CommandBuilder<az_provider_operation_show_command_result> {
     constructor(commandPath: string, namespace: string) {
         super(commandPath);
         this.namespace(namespace)
@@ -172,7 +178,7 @@ class az_provider_operation_show_command_builder extends CommandBuilder {
  *                  [--subscription]
  * ```
  */
-class az_provider_list_command_builder extends CommandBuilder {
+class az_provider_list_command_builder extends CommandBuilder<az_provider_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -208,7 +214,7 @@ class az_provider_list_command_builder extends CommandBuilder {
  *
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
-class az_provider_register_command_builder extends CommandBuilder {
+class az_provider_register_command_builder extends CommandBuilder<az_provider_register_command_result> {
     constructor(commandPath: string, namespace: string) {
         super(commandPath);
         this.namespace(namespace)
@@ -246,7 +252,7 @@ class az_provider_register_command_builder extends CommandBuilder {
  *
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
-class az_provider_show_command_builder extends CommandBuilder {
+class az_provider_show_command_builder extends CommandBuilder<az_provider_show_command_result> {
     constructor(commandPath: string, namespace: string) {
         super(commandPath);
         this.namespace(namespace)
@@ -289,7 +295,7 @@ class az_provider_show_command_builder extends CommandBuilder {
  *
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
-class az_provider_unregister_command_builder extends CommandBuilder {
+class az_provider_unregister_command_builder extends CommandBuilder<az_provider_unregister_command_result> {
     constructor(commandPath: string, namespace: string) {
         super(commandPath);
         this.namespace(namespace)

@@ -1,4 +1,106 @@
 import { CommandBuilder } from '../base';
+import { az_webapp_auth_show_command_result } from './models/az_webapp_auth_show_command_result'
+import { az_webapp_auth_update_command_result } from './models/az_webapp_auth_update_command_result'
+import { az_webapp_config_access_restriction_add_command_result } from './models/az_webapp_config_access_restriction_add_command_result'
+import { az_webapp_config_access_restriction_remove_command_result } from './models/az_webapp_config_access_restriction_remove_command_result'
+import { az_webapp_config_access_restriction_set_command_result } from './models/az_webapp_config_access_restriction_set_command_result'
+import { az_webapp_config_access_restriction_show_command_result } from './models/az_webapp_config_access_restriction_show_command_result'
+import { az_webapp_config_appsettings_delete_command_result } from './models/az_webapp_config_appsettings_delete_command_result'
+import { az_webapp_config_appsettings_list_command_result } from './models/az_webapp_config_appsettings_list_command_result'
+import { az_webapp_config_appsettings_set_command_result } from './models/az_webapp_config_appsettings_set_command_result'
+import { az_webapp_config_backup_create_command_result } from './models/az_webapp_config_backup_create_command_result'
+import { az_webapp_config_backup_list_command_result } from './models/az_webapp_config_backup_list_command_result'
+import { az_webapp_config_backup_restore_command_result } from './models/az_webapp_config_backup_restore_command_result'
+import { az_webapp_config_backup_show_command_result } from './models/az_webapp_config_backup_show_command_result'
+import { az_webapp_config_backup_update_command_result } from './models/az_webapp_config_backup_update_command_result'
+import { az_webapp_config_connection_string_delete_command_result } from './models/az_webapp_config_connection_string_delete_command_result'
+import { az_webapp_config_connection_string_list_command_result } from './models/az_webapp_config_connection_string_list_command_result'
+import { az_webapp_config_connection_string_set_command_result } from './models/az_webapp_config_connection_string_set_command_result'
+import { az_webapp_config_container_delete_command_result } from './models/az_webapp_config_container_delete_command_result'
+import { az_webapp_config_container_set_command_result } from './models/az_webapp_config_container_set_command_result'
+import { az_webapp_config_container_show_command_result } from './models/az_webapp_config_container_show_command_result'
+import { az_webapp_config_hostname_add_command_result } from './models/az_webapp_config_hostname_add_command_result'
+import { az_webapp_config_hostname_delete_command_result } from './models/az_webapp_config_hostname_delete_command_result'
+import { az_webapp_config_hostname_get_external_ip_command_result } from './models/az_webapp_config_hostname_get_external_ip_command_result'
+import { az_webapp_config_hostname_list_command_result } from './models/az_webapp_config_hostname_list_command_result'
+import { az_webapp_config_snapshot_list_command_result } from './models/az_webapp_config_snapshot_list_command_result'
+import { az_webapp_config_snapshot_restore_command_result } from './models/az_webapp_config_snapshot_restore_command_result'
+import { az_webapp_config_ssl_bind_command_result } from './models/az_webapp_config_ssl_bind_command_result'
+import { az_webapp_config_ssl_create_command_result } from './models/az_webapp_config_ssl_create_command_result'
+import { az_webapp_config_ssl_delete_command_result } from './models/az_webapp_config_ssl_delete_command_result'
+import { az_webapp_config_ssl_import_command_result } from './models/az_webapp_config_ssl_import_command_result'
+import { az_webapp_config_ssl_list_command_result } from './models/az_webapp_config_ssl_list_command_result'
+import { az_webapp_config_ssl_unbind_command_result } from './models/az_webapp_config_ssl_unbind_command_result'
+import { az_webapp_config_ssl_upload_command_result } from './models/az_webapp_config_ssl_upload_command_result'
+import { az_webapp_config_storage_account_add_command_result } from './models/az_webapp_config_storage_account_add_command_result'
+import { az_webapp_config_storage_account_delete_command_result } from './models/az_webapp_config_storage_account_delete_command_result'
+import { az_webapp_config_storage_account_list_command_result } from './models/az_webapp_config_storage_account_list_command_result'
+import { az_webapp_config_storage_account_update_command_result } from './models/az_webapp_config_storage_account_update_command_result'
+import { az_webapp_config_set_command_result } from './models/az_webapp_config_set_command_result'
+import { az_webapp_config_show_command_result } from './models/az_webapp_config_show_command_result'
+import { az_webapp_cors_add_command_result } from './models/az_webapp_cors_add_command_result'
+import { az_webapp_cors_remove_command_result } from './models/az_webapp_cors_remove_command_result'
+import { az_webapp_cors_show_command_result } from './models/az_webapp_cors_show_command_result'
+import { az_webapp_deleted_list_command_result } from './models/az_webapp_deleted_list_command_result'
+import { az_webapp_deleted_restore_command_result } from './models/az_webapp_deleted_restore_command_result'
+import { az_webapp_deployment_container_config_command_result } from './models/az_webapp_deployment_container_config_command_result'
+import { az_webapp_deployment_container_show_cd_url_command_result } from './models/az_webapp_deployment_container_show_cd_url_command_result'
+import { az_webapp_deployment_slot_auto_swap_command_result } from './models/az_webapp_deployment_slot_auto_swap_command_result'
+import { az_webapp_deployment_slot_create_command_result } from './models/az_webapp_deployment_slot_create_command_result'
+import { az_webapp_deployment_slot_delete_command_result } from './models/az_webapp_deployment_slot_delete_command_result'
+import { az_webapp_deployment_slot_list_command_result } from './models/az_webapp_deployment_slot_list_command_result'
+import { az_webapp_deployment_slot_swap_command_result } from './models/az_webapp_deployment_slot_swap_command_result'
+import { az_webapp_deployment_source_config_command_result } from './models/az_webapp_deployment_source_config_command_result'
+import { az_webapp_deployment_source_config_local_git_command_result } from './models/az_webapp_deployment_source_config_local_git_command_result'
+import { az_webapp_deployment_source_config_zip_command_result } from './models/az_webapp_deployment_source_config_zip_command_result'
+import { az_webapp_deployment_source_delete_command_result } from './models/az_webapp_deployment_source_delete_command_result'
+import { az_webapp_deployment_source_show_command_result } from './models/az_webapp_deployment_source_show_command_result'
+import { az_webapp_deployment_source_sync_command_result } from './models/az_webapp_deployment_source_sync_command_result'
+import { az_webapp_deployment_source_update_token_command_result } from './models/az_webapp_deployment_source_update_token_command_result'
+import { az_webapp_deployment_user_set_command_result } from './models/az_webapp_deployment_user_set_command_result'
+import { az_webapp_deployment_user_show_command_result } from './models/az_webapp_deployment_user_show_command_result'
+import { az_webapp_deployment_list_publishing_credentials_command_result } from './models/az_webapp_deployment_list_publishing_credentials_command_result'
+import { az_webapp_deployment_list_publishing_profiles_command_result } from './models/az_webapp_deployment_list_publishing_profiles_command_result'
+import { az_webapp_hybrid_connection_add_command_result } from './models/az_webapp_hybrid_connection_add_command_result'
+import { az_webapp_hybrid_connection_list_command_result } from './models/az_webapp_hybrid_connection_list_command_result'
+import { az_webapp_hybrid_connection_remove_command_result } from './models/az_webapp_hybrid_connection_remove_command_result'
+import { az_webapp_identity_assign_command_result } from './models/az_webapp_identity_assign_command_result'
+import { az_webapp_identity_remove_command_result } from './models/az_webapp_identity_remove_command_result'
+import { az_webapp_identity_show_command_result } from './models/az_webapp_identity_show_command_result'
+import { az_webapp_log_deployment_list_command_result } from './models/az_webapp_log_deployment_list_command_result'
+import { az_webapp_log_deployment_show_command_result } from './models/az_webapp_log_deployment_show_command_result'
+import { az_webapp_log_config_command_result } from './models/az_webapp_log_config_command_result'
+import { az_webapp_log_download_command_result } from './models/az_webapp_log_download_command_result'
+import { az_webapp_log_show_command_result } from './models/az_webapp_log_show_command_result'
+import { az_webapp_log_tail_command_result } from './models/az_webapp_log_tail_command_result'
+import { az_webapp_traffic_routing_clear_command_result } from './models/az_webapp_traffic_routing_clear_command_result'
+import { az_webapp_traffic_routing_set_command_result } from './models/az_webapp_traffic_routing_set_command_result'
+import { az_webapp_traffic_routing_show_command_result } from './models/az_webapp_traffic_routing_show_command_result'
+import { az_webapp_vnet_integration_add_command_result } from './models/az_webapp_vnet_integration_add_command_result'
+import { az_webapp_vnet_integration_list_command_result } from './models/az_webapp_vnet_integration_list_command_result'
+import { az_webapp_vnet_integration_remove_command_result } from './models/az_webapp_vnet_integration_remove_command_result'
+import { az_webapp_webjob_continuous_list_command_result } from './models/az_webapp_webjob_continuous_list_command_result'
+import { az_webapp_webjob_continuous_remove_command_result } from './models/az_webapp_webjob_continuous_remove_command_result'
+import { az_webapp_webjob_continuous_start_command_result } from './models/az_webapp_webjob_continuous_start_command_result'
+import { az_webapp_webjob_continuous_stop_command_result } from './models/az_webapp_webjob_continuous_stop_command_result'
+import { az_webapp_webjob_triggered_list_command_result } from './models/az_webapp_webjob_triggered_list_command_result'
+import { az_webapp_webjob_triggered_log_command_result } from './models/az_webapp_webjob_triggered_log_command_result'
+import { az_webapp_webjob_triggered_remove_command_result } from './models/az_webapp_webjob_triggered_remove_command_result'
+import { az_webapp_webjob_triggered_run_command_result } from './models/az_webapp_webjob_triggered_run_command_result'
+import { az_webapp_browse_command_result } from './models/az_webapp_browse_command_result'
+import { az_webapp_create_command_result } from './models/az_webapp_create_command_result'
+import { az_webapp_create_remote_connection_command_result } from './models/az_webapp_create_remote_connection_command_result'
+import { az_webapp_delete_command_result } from './models/az_webapp_delete_command_result'
+import { az_webapp_list_command_result } from './models/az_webapp_list_command_result'
+import { az_webapp_list_instances_command_result } from './models/az_webapp_list_instances_command_result'
+import { az_webapp_list_runtimes_command_result } from './models/az_webapp_list_runtimes_command_result'
+import { az_webapp_restart_command_result } from './models/az_webapp_restart_command_result'
+import { az_webapp_show_command_result } from './models/az_webapp_show_command_result'
+import { az_webapp_ssh_command_result } from './models/az_webapp_ssh_command_result'
+import { az_webapp_start_command_result } from './models/az_webapp_start_command_result'
+import { az_webapp_stop_command_result } from './models/az_webapp_stop_command_result'
+import { az_webapp_up_command_result } from './models/az_webapp_up_command_result'
+import { az_webapp_update_command_result } from './models/az_webapp_update_command_result'
 
 /** Manage webapp authentication and authorization. */
 export class az_webapp_auth {
@@ -2082,7 +2184,7 @@ export class az_webapp {
  *                     [--subscription]
  * ```
  */
-class az_webapp_auth_show_command_builder extends CommandBuilder {
+class az_webapp_auth_show_command_builder extends CommandBuilder<az_webapp_auth_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2158,7 +2260,7 @@ class az_webapp_auth_show_command_builder extends CommandBuilder {
  *                       [--twitter-consumer-secret]
  * ```
  */
-class az_webapp_auth_update_command_builder extends CommandBuilder {
+class az_webapp_auth_update_command_builder extends CommandBuilder<az_webapp_auth_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2349,7 +2451,7 @@ class az_webapp_auth_update_command_builder extends CommandBuilder {
  *
  * @param {string} priority Priority of the access restriction rule.
  */
-class az_webapp_config_access_restriction_add_command_builder extends CommandBuilder {
+class az_webapp_config_access_restriction_add_command_builder extends CommandBuilder<az_webapp_config_access_restriction_add_command_result> {
     constructor(commandPath: string, priority: string) {
         super(commandPath);
         this.priority(priority)
@@ -2458,7 +2560,7 @@ class az_webapp_config_access_restriction_add_command_builder extends CommandBui
  *                                            [--vnet-name]
  * ```
  */
-class az_webapp_config_access_restriction_remove_command_builder extends CommandBuilder {
+class az_webapp_config_access_restriction_remove_command_builder extends CommandBuilder<az_webapp_config_access_restriction_remove_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2545,7 +2647,7 @@ class az_webapp_config_access_restriction_remove_command_builder extends Command
  *
  * @param {boolean} useSameRestrictionsForScmSite Use same access restrictions for scm site.
  */
-class az_webapp_config_access_restriction_set_command_builder extends CommandBuilder {
+class az_webapp_config_access_restriction_set_command_builder extends CommandBuilder<az_webapp_config_access_restriction_set_command_result> {
     constructor(commandPath: string, useSameRestrictionsForScmSite: boolean) {
         super(commandPath);
         this.useSameRestrictionsForScmSite(useSameRestrictionsForScmSite)
@@ -2601,7 +2703,7 @@ class az_webapp_config_access_restriction_set_command_builder extends CommandBui
  *                                          [--subscription]
  * ```
  */
-class az_webapp_config_access_restriction_show_command_builder extends CommandBuilder {
+class az_webapp_config_access_restriction_show_command_builder extends CommandBuilder<az_webapp_config_access_restriction_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2658,7 +2760,7 @@ class az_webapp_config_access_restriction_show_command_builder extends CommandBu
  *
  * @param {string} settingNames Space-separated appsettings names.
  */
-class az_webapp_config_appsettings_delete_command_builder extends CommandBuilder {
+class az_webapp_config_appsettings_delete_command_builder extends CommandBuilder<az_webapp_config_appsettings_delete_command_result> {
     constructor(commandPath: string, settingNames: string) {
         super(commandPath);
         this.settingNames(settingNames)
@@ -2716,7 +2818,7 @@ class az_webapp_config_appsettings_delete_command_builder extends CommandBuilder
  * @param {string} name Name of the web app. You can configure the default using `az configure --defaults web=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_config_appsettings_list_command_builder extends CommandBuilder {
+class az_webapp_config_appsettings_list_command_builder extends CommandBuilder<az_webapp_config_appsettings_list_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2768,7 +2870,7 @@ class az_webapp_config_appsettings_list_command_builder extends CommandBuilder {
  *                                  [--subscription]
  * ```
  */
-class az_webapp_config_appsettings_set_command_builder extends CommandBuilder {
+class az_webapp_config_appsettings_set_command_builder extends CommandBuilder<az_webapp_config_appsettings_set_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2836,7 +2938,7 @@ class az_webapp_config_appsettings_set_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} webappName The name of the web app.
  */
-class az_webapp_config_backup_create_command_builder extends CommandBuilder {
+class az_webapp_config_backup_create_command_builder extends CommandBuilder<az_webapp_config_backup_create_command_result> {
     constructor(commandPath: string, containerUrl: string, resourceGroup: string, webappName: string) {
         super(commandPath);
         this.containerUrl(containerUrl)
@@ -2914,7 +3016,7 @@ class az_webapp_config_backup_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} webappName The name of the web app.
  */
-class az_webapp_config_backup_list_command_builder extends CommandBuilder {
+class az_webapp_config_backup_list_command_builder extends CommandBuilder<az_webapp_config_backup_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, webappName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -2976,7 +3078,7 @@ class az_webapp_config_backup_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} webappName The name of the web app.
  */
-class az_webapp_config_backup_restore_command_builder extends CommandBuilder {
+class az_webapp_config_backup_restore_command_builder extends CommandBuilder<az_webapp_config_backup_restore_command_result> {
     constructor(commandPath: string, backupName: string, containerUrl: string, resourceGroup: string, webappName: string) {
         super(commandPath);
         this.backupName(backupName)
@@ -3073,7 +3175,7 @@ class az_webapp_config_backup_restore_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} webappName The name of the web app.
  */
-class az_webapp_config_backup_show_command_builder extends CommandBuilder {
+class az_webapp_config_backup_show_command_builder extends CommandBuilder<az_webapp_config_backup_show_command_result> {
     constructor(commandPath: string, resourceGroup: string, webappName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -3133,7 +3235,7 @@ class az_webapp_config_backup_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} webappName The name of the web app.
  */
-class az_webapp_config_backup_update_command_builder extends CommandBuilder {
+class az_webapp_config_backup_update_command_builder extends CommandBuilder<az_webapp_config_backup_update_command_result> {
     constructor(commandPath: string, resourceGroup: string, webappName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -3228,7 +3330,7 @@ class az_webapp_config_backup_update_command_builder extends CommandBuilder {
  *
  * @param {string} settingNames Space-separated connection-string names.
  */
-class az_webapp_config_connection_string_delete_command_builder extends CommandBuilder {
+class az_webapp_config_connection_string_delete_command_builder extends CommandBuilder<az_webapp_config_connection_string_delete_command_result> {
     constructor(commandPath: string, settingNames: string) {
         super(commandPath);
         this.settingNames(settingNames)
@@ -3286,7 +3388,7 @@ class az_webapp_config_connection_string_delete_command_builder extends CommandB
  * @param {string} name Name of the web app. You can configure the default using `az configure --defaults web=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_config_connection_string_list_command_builder extends CommandBuilder {
+class az_webapp_config_connection_string_list_command_builder extends CommandBuilder<az_webapp_config_connection_string_list_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -3341,7 +3443,7 @@ class az_webapp_config_connection_string_list_command_builder extends CommandBui
  *
  * @param {'ApiHub' | 'Custom' | 'DocDb' | 'EventHub' | 'MySql' | 'NotificationHub' | 'PostgreSQL' | 'RedisCache' | 'SQLAzure' | 'SQLServer' | 'ServiceBus'} connectionStringType Connection string type.
  */
-class az_webapp_config_connection_string_set_command_builder extends CommandBuilder {
+class az_webapp_config_connection_string_set_command_builder extends CommandBuilder<az_webapp_config_connection_string_set_command_result> {
     constructor(commandPath: string, connectionStringType: 'ApiHub' | 'Custom' | 'DocDb' | 'EventHub' | 'MySql' | 'NotificationHub' | 'PostgreSQL' | 'RedisCache' | 'SQLAzure' | 'SQLServer' | 'ServiceBus') {
         super(commandPath);
         this.connectionStringType(connectionStringType)
@@ -3408,7 +3510,7 @@ class az_webapp_config_connection_string_set_command_builder extends CommandBuil
  *                                   [--subscription]
  * ```
  */
-class az_webapp_config_container_delete_command_builder extends CommandBuilder {
+class az_webapp_config_container_delete_command_builder extends CommandBuilder<az_webapp_config_container_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3463,7 +3565,7 @@ class az_webapp_config_container_delete_command_builder extends CommandBuilder {
  *                                [--subscription]
  * ```
  */
-class az_webapp_config_container_set_command_builder extends CommandBuilder {
+class az_webapp_config_container_set_command_builder extends CommandBuilder<az_webapp_config_container_set_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3555,7 +3657,7 @@ class az_webapp_config_container_set_command_builder extends CommandBuilder {
  *                                 [--subscription]
  * ```
  */
-class az_webapp_config_container_show_command_builder extends CommandBuilder {
+class az_webapp_config_container_show_command_builder extends CommandBuilder<az_webapp_config_container_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3616,7 +3718,7 @@ class az_webapp_config_container_show_command_builder extends CommandBuilder {
  *                               [--webapp-name]
  * ```
  */
-class az_webapp_config_hostname_add_command_builder extends CommandBuilder {
+class az_webapp_config_hostname_add_command_builder extends CommandBuilder<az_webapp_config_hostname_add_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3671,7 +3773,7 @@ class az_webapp_config_hostname_add_command_builder extends CommandBuilder {
  *                                  [--webapp-name]
  * ```
  */
-class az_webapp_config_hostname_delete_command_builder extends CommandBuilder {
+class az_webapp_config_hostname_delete_command_builder extends CommandBuilder<az_webapp_config_hostname_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3724,7 +3826,7 @@ class az_webapp_config_hostname_delete_command_builder extends CommandBuilder {
  *                                           [--webapp-name]
  * ```
  */
-class az_webapp_config_hostname_get_external_ip_command_builder extends CommandBuilder {
+class az_webapp_config_hostname_get_external_ip_command_builder extends CommandBuilder<az_webapp_config_hostname_get_external_ip_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3769,7 +3871,7 @@ class az_webapp_config_hostname_get_external_ip_command_builder extends CommandB
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} webappName Name of the web app. You can configure the default using `az configure --defaults web=<name>`.
  */
-class az_webapp_config_hostname_list_command_builder extends CommandBuilder {
+class az_webapp_config_hostname_list_command_builder extends CommandBuilder<az_webapp_config_hostname_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, webappName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -3822,7 +3924,7 @@ class az_webapp_config_hostname_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the web app. You can configure the default using `az configure --defaults web=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_config_snapshot_list_command_builder extends CommandBuilder {
+class az_webapp_config_snapshot_list_command_builder extends CommandBuilder<az_webapp_config_snapshot_list_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -3879,7 +3981,7 @@ class az_webapp_config_snapshot_list_command_builder extends CommandBuilder {
  *
  * @param {string} time Timestamp of the snapshot to restore.
  */
-class az_webapp_config_snapshot_restore_command_builder extends CommandBuilder {
+class az_webapp_config_snapshot_restore_command_builder extends CommandBuilder<az_webapp_config_snapshot_restore_command_result> {
     constructor(commandPath: string, time: string) {
         super(commandPath);
         this.time(time)
@@ -3963,7 +4065,7 @@ class az_webapp_config_snapshot_restore_command_builder extends CommandBuilder {
  * @param {string} certificateThumbprint The ssl cert thumbprint.
  * @param {'IP' | 'SNI'} sslType The ssl cert type.
  */
-class az_webapp_config_ssl_bind_command_builder extends CommandBuilder {
+class az_webapp_config_ssl_bind_command_builder extends CommandBuilder<az_webapp_config_ssl_bind_command_result> {
     constructor(commandPath: string, certificateThumbprint: string, sslType: 'IP' | 'SNI') {
         super(commandPath);
         this.certificateThumbprint(certificateThumbprint)
@@ -4029,7 +4131,7 @@ class az_webapp_config_ssl_bind_command_builder extends CommandBuilder {
  * @param {string} name Name of the web app. You can configure the default using `az configure --defaults web=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_config_ssl_create_command_builder extends CommandBuilder {
+class az_webapp_config_ssl_create_command_builder extends CommandBuilder<az_webapp_config_ssl_create_command_result> {
     constructor(commandPath: string, hostname: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.hostname(hostname)
@@ -4081,7 +4183,7 @@ class az_webapp_config_ssl_create_command_builder extends CommandBuilder {
  * @param {string} certificateThumbprint The ssl cert thumbprint.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_config_ssl_delete_command_builder extends CommandBuilder {
+class az_webapp_config_ssl_delete_command_builder extends CommandBuilder<az_webapp_config_ssl_delete_command_result> {
     constructor(commandPath: string, certificateThumbprint: string, resourceGroup: string) {
         super(commandPath);
         this.certificateThumbprint(certificateThumbprint)
@@ -4123,7 +4225,7 @@ class az_webapp_config_ssl_delete_command_builder extends CommandBuilder {
  * @param {string} keyVault The name or resource ID of the Key Vault.
  * @param {string} keyVaultCertificateName The name of the certificate in Key Vault.
  */
-class az_webapp_config_ssl_import_command_builder extends CommandBuilder {
+class az_webapp_config_ssl_import_command_builder extends CommandBuilder<az_webapp_config_ssl_import_command_result> {
     constructor(commandPath: string, keyVault: string, keyVaultCertificateName: string) {
         super(commandPath);
         this.keyVault(keyVault)
@@ -4179,7 +4281,7 @@ class az_webapp_config_ssl_import_command_builder extends CommandBuilder {
  *
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_config_ssl_list_command_builder extends CommandBuilder {
+class az_webapp_config_ssl_list_command_builder extends CommandBuilder<az_webapp_config_ssl_list_command_result> {
     constructor(commandPath: string, resourceGroup: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -4219,7 +4321,7 @@ class az_webapp_config_ssl_list_command_builder extends CommandBuilder {
  *
  * @param {string} certificateThumbprint The ssl cert thumbprint.
  */
-class az_webapp_config_ssl_unbind_command_builder extends CommandBuilder {
+class az_webapp_config_ssl_unbind_command_builder extends CommandBuilder<az_webapp_config_ssl_unbind_command_result> {
     constructor(commandPath: string, certificateThumbprint: string) {
         super(commandPath);
         this.certificateThumbprint(certificateThumbprint)
@@ -4279,7 +4381,7 @@ class az_webapp_config_ssl_unbind_command_builder extends CommandBuilder {
  * @param {string} certificateFile The filepath for the .pfx file.
  * @param {string} certificatePassword The ssl cert password.
  */
-class az_webapp_config_ssl_upload_command_builder extends CommandBuilder {
+class az_webapp_config_ssl_upload_command_builder extends CommandBuilder<az_webapp_config_ssl_upload_command_result> {
     constructor(commandPath: string, certificateFile: string, certificatePassword: string) {
         super(commandPath);
         this.certificateFile(certificateFile)
@@ -4354,7 +4456,7 @@ class az_webapp_config_ssl_upload_command_builder extends CommandBuilder {
  * @param {string} shareName Share name (Azure Files) or container name (Azure Blob Storage).
  * @param {'AzureBlob' | 'AzureFiles'} storageType Storage type.
  */
-class az_webapp_config_storage_account_add_command_builder extends CommandBuilder {
+class az_webapp_config_storage_account_add_command_builder extends CommandBuilder<az_webapp_config_storage_account_add_command_result> {
     constructor(commandPath: string, accessKey: string, accountName: string, customId: string, shareName: string, storageType: 'AzureBlob' | 'AzureFiles') {
         super(commandPath);
         this.accessKey(accessKey)
@@ -4452,7 +4554,7 @@ class az_webapp_config_storage_account_add_command_builder extends CommandBuilde
  *
  * @param {string} customId Custom identifier.
  */
-class az_webapp_config_storage_account_delete_command_builder extends CommandBuilder {
+class az_webapp_config_storage_account_delete_command_builder extends CommandBuilder<az_webapp_config_storage_account_delete_command_result> {
     constructor(commandPath: string, customId: string) {
         super(commandPath);
         this.customId(customId)
@@ -4510,7 +4612,7 @@ class az_webapp_config_storage_account_delete_command_builder extends CommandBui
  * @param {string} name Name of the web app. You can configure the default using `az configure --defaults web=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_config_storage_account_list_command_builder extends CommandBuilder {
+class az_webapp_config_storage_account_list_command_builder extends CommandBuilder<az_webapp_config_storage_account_list_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -4569,7 +4671,7 @@ class az_webapp_config_storage_account_list_command_builder extends CommandBuild
  *
  * @param {string} customId Custom identifier.
  */
-class az_webapp_config_storage_account_update_command_builder extends CommandBuilder {
+class az_webapp_config_storage_account_update_command_builder extends CommandBuilder<az_webapp_config_storage_account_update_command_result> {
     constructor(commandPath: string, customId: string) {
         super(commandPath);
         this.customId(customId)
@@ -4680,7 +4782,7 @@ class az_webapp_config_storage_account_update_command_builder extends CommandBui
  *                      [--windows-fx-version]
  * ```
  */
-class az_webapp_config_set_command_builder extends CommandBuilder {
+class az_webapp_config_set_command_builder extends CommandBuilder<az_webapp_config_set_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -4849,7 +4951,7 @@ class az_webapp_config_set_command_builder extends CommandBuilder {
  *                       [--subscription]
  * ```
  */
-class az_webapp_config_show_command_builder extends CommandBuilder {
+class az_webapp_config_show_command_builder extends CommandBuilder<az_webapp_config_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -4906,7 +5008,7 @@ class az_webapp_config_show_command_builder extends CommandBuilder {
  *
  * @param {string} allowedOrigins Space separated origins that should be allowed to make cross-origin calls (for example: <a href="http://example.com:12345">http://example.com:12345</a>). To allow all, use "\*" and remove all other origins from the list.
  */
-class az_webapp_cors_add_command_builder extends CommandBuilder {
+class az_webapp_cors_add_command_builder extends CommandBuilder<az_webapp_cors_add_command_result> {
     constructor(commandPath: string, allowedOrigins: string) {
         super(commandPath);
         this.allowedOrigins(allowedOrigins)
@@ -4964,7 +5066,7 @@ class az_webapp_cors_add_command_builder extends CommandBuilder {
  *
  * @param {string} allowedOrigins Space separated origins that should be allowed to make cross-origin calls (for example: <a href="http://example.com:12345">http://example.com:12345</a>). To allow all, use "\*" and remove all other origins from the list.
  */
-class az_webapp_cors_remove_command_builder extends CommandBuilder {
+class az_webapp_cors_remove_command_builder extends CommandBuilder<az_webapp_cors_remove_command_result> {
     constructor(commandPath: string, allowedOrigins: string) {
         super(commandPath);
         this.allowedOrigins(allowedOrigins)
@@ -5020,7 +5122,7 @@ class az_webapp_cors_remove_command_builder extends CommandBuilder {
  *                     [--subscription]
  * ```
  */
-class az_webapp_cors_show_command_builder extends CommandBuilder {
+class az_webapp_cors_show_command_builder extends CommandBuilder<az_webapp_cors_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -5074,7 +5176,7 @@ class az_webapp_cors_show_command_builder extends CommandBuilder {
  *                        [--subscription]
  * ```
  */
-class az_webapp_deleted_list_command_builder extends CommandBuilder {
+class az_webapp_deleted_list_command_builder extends CommandBuilder<az_webapp_deleted_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -5126,7 +5228,7 @@ class az_webapp_deleted_list_command_builder extends CommandBuilder {
  *
  * @param {string} deletedId Resource ID of the deleted web app.
  */
-class az_webapp_deleted_restore_command_builder extends CommandBuilder {
+class az_webapp_deleted_restore_command_builder extends CommandBuilder<az_webapp_deleted_restore_command_result> {
     constructor(commandPath: string, deletedId: string) {
         super(commandPath);
         this.deletedId(deletedId)
@@ -5190,7 +5292,7 @@ class az_webapp_deleted_restore_command_builder extends CommandBuilder {
  *
  * @param {boolean} enableCd Enable/disable continuous deployment.
  */
-class az_webapp_deployment_container_config_command_builder extends CommandBuilder {
+class az_webapp_deployment_container_config_command_builder extends CommandBuilder<az_webapp_deployment_container_config_command_result> {
     constructor(commandPath: string, enableCd: boolean) {
         super(commandPath);
         this.enableCd(enableCd)
@@ -5245,7 +5347,7 @@ class az_webapp_deployment_container_config_command_builder extends CommandBuild
  *                                            [--subscription]
  * ```
  */
-class az_webapp_deployment_container_show_cd_url_command_builder extends CommandBuilder {
+class az_webapp_deployment_container_show_cd_url_command_builder extends CommandBuilder<az_webapp_deployment_container_show_cd_url_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -5297,7 +5399,7 @@ class az_webapp_deployment_container_show_cd_url_command_builder extends Command
  *
  * @param {string} slot The name of the slot.
  */
-class az_webapp_deployment_slot_auto_swap_command_builder extends CommandBuilder {
+class az_webapp_deployment_slot_auto_swap_command_builder extends CommandBuilder<az_webapp_deployment_slot_auto_swap_command_result> {
     constructor(commandPath: string, slot: string) {
         super(commandPath);
         this.slot(slot)
@@ -5362,7 +5464,7 @@ class az_webapp_deployment_slot_auto_swap_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} slot The name of the slot.
  */
-class az_webapp_deployment_slot_create_command_builder extends CommandBuilder {
+class az_webapp_deployment_slot_create_command_builder extends CommandBuilder<az_webapp_deployment_slot_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, slot: string) {
         super(commandPath);
         this.name(name)
@@ -5415,7 +5517,7 @@ class az_webapp_deployment_slot_create_command_builder extends CommandBuilder {
  *
  * @param {string} slot The name of the slot.
  */
-class az_webapp_deployment_slot_delete_command_builder extends CommandBuilder {
+class az_webapp_deployment_slot_delete_command_builder extends CommandBuilder<az_webapp_deployment_slot_delete_command_result> {
     constructor(commandPath: string, slot: string) {
         super(commandPath);
         this.slot(slot)
@@ -5464,7 +5566,7 @@ class az_webapp_deployment_slot_delete_command_builder extends CommandBuilder {
  *                                [--subscription]
  * ```
  */
-class az_webapp_deployment_slot_list_command_builder extends CommandBuilder {
+class az_webapp_deployment_slot_list_command_builder extends CommandBuilder<az_webapp_deployment_slot_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -5516,7 +5618,7 @@ class az_webapp_deployment_slot_list_command_builder extends CommandBuilder {
  *
  * @param {string} slot The name of the slot.
  */
-class az_webapp_deployment_slot_swap_command_builder extends CommandBuilder {
+class az_webapp_deployment_slot_swap_command_builder extends CommandBuilder<az_webapp_deployment_slot_swap_command_result> {
     constructor(commandPath: string, slot: string) {
         super(commandPath);
         this.slot(slot)
@@ -5595,7 +5697,7 @@ class az_webapp_deployment_slot_swap_command_builder extends CommandBuilder {
  *
  * @param {string} repoUrl Repository url to pull the latest source from, e.g. <a href="https://github.com/foo/foo-web">https://github.com/foo/foo-web</a>.
  */
-class az_webapp_deployment_source_config_command_builder extends CommandBuilder {
+class az_webapp_deployment_source_config_command_builder extends CommandBuilder<az_webapp_deployment_source_config_command_result> {
     constructor(commandPath: string, repoUrl: string) {
         super(commandPath);
         this.repoUrl(repoUrl)
@@ -5740,7 +5842,7 @@ class az_webapp_deployment_source_config_command_builder extends CommandBuilder 
  *                                              [--subscription]
  * ```
  */
-class az_webapp_deployment_source_config_local_git_command_builder extends CommandBuilder {
+class az_webapp_deployment_source_config_local_git_command_builder extends CommandBuilder<az_webapp_deployment_source_config_local_git_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -5792,7 +5894,7 @@ class az_webapp_deployment_source_config_local_git_command_builder extends Comma
  *
  * @param {string} src A zip file path for deployment.
  */
-class az_webapp_deployment_source_config_zip_command_builder extends CommandBuilder {
+class az_webapp_deployment_source_config_zip_command_builder extends CommandBuilder<az_webapp_deployment_source_config_zip_command_result> {
     constructor(commandPath: string, src: string) {
         super(commandPath);
         this.src(src)
@@ -5853,7 +5955,7 @@ class az_webapp_deployment_source_config_zip_command_builder extends CommandBuil
  *                                    [--subscription]
  * ```
  */
-class az_webapp_deployment_source_delete_command_builder extends CommandBuilder {
+class az_webapp_deployment_source_delete_command_builder extends CommandBuilder<az_webapp_deployment_source_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -5902,7 +6004,7 @@ class az_webapp_deployment_source_delete_command_builder extends CommandBuilder 
  *                                  [--subscription]
  * ```
  */
-class az_webapp_deployment_source_show_command_builder extends CommandBuilder {
+class az_webapp_deployment_source_show_command_builder extends CommandBuilder<az_webapp_deployment_source_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -5956,7 +6058,7 @@ class az_webapp_deployment_source_show_command_builder extends CommandBuilder {
  *                                  [--subscription]
  * ```
  */
-class az_webapp_deployment_source_sync_command_builder extends CommandBuilder {
+class az_webapp_deployment_source_sync_command_builder extends CommandBuilder<az_webapp_deployment_source_sync_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6001,7 +6103,7 @@ class az_webapp_deployment_source_sync_command_builder extends CommandBuilder {
  *                                          [--subscription]
  * ```
  */
-class az_webapp_deployment_source_update_token_command_builder extends CommandBuilder {
+class az_webapp_deployment_source_update_token_command_builder extends CommandBuilder<az_webapp_deployment_source_update_token_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6031,7 +6133,7 @@ class az_webapp_deployment_source_update_token_command_builder extends CommandBu
  *
  * @param {string} userName User name.
  */
-class az_webapp_deployment_user_set_command_builder extends CommandBuilder {
+class az_webapp_deployment_user_set_command_builder extends CommandBuilder<az_webapp_deployment_user_set_command_result> {
     constructor(commandPath: string, userName: string) {
         super(commandPath);
         this.userName(userName)
@@ -6065,7 +6167,7 @@ class az_webapp_deployment_user_set_command_builder extends CommandBuilder {
  *                                [--subscription]
  * ```
  */
-class az_webapp_deployment_user_show_command_builder extends CommandBuilder {
+class az_webapp_deployment_user_show_command_builder extends CommandBuilder<az_webapp_deployment_user_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6095,7 +6197,7 @@ class az_webapp_deployment_user_show_command_builder extends CommandBuilder {
  *                                                  [--subscription]
  * ```
  */
-class az_webapp_deployment_list_publishing_credentials_command_builder extends CommandBuilder {
+class az_webapp_deployment_list_publishing_credentials_command_builder extends CommandBuilder<az_webapp_deployment_list_publishing_credentials_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6144,7 +6246,7 @@ class az_webapp_deployment_list_publishing_credentials_command_builder extends C
  *                                               [--xml]
  * ```
  */
-class az_webapp_deployment_list_publishing_profiles_command_builder extends CommandBuilder {
+class az_webapp_deployment_list_publishing_profiles_command_builder extends CommandBuilder<az_webapp_deployment_list_publishing_profiles_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6204,7 +6306,7 @@ class az_webapp_deployment_list_publishing_profiles_command_builder extends Comm
  * @param {string} namespace Hybrid connection namespace.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_hybrid_connection_add_command_builder extends CommandBuilder {
+class az_webapp_hybrid_connection_add_command_builder extends CommandBuilder<az_webapp_hybrid_connection_add_command_result> {
     constructor(commandPath: string, hybridConnection: string, name: string, namespace: string, resourceGroup: string) {
         super(commandPath);
         this.hybridConnection(hybridConnection)
@@ -6265,7 +6367,7 @@ class az_webapp_hybrid_connection_add_command_builder extends CommandBuilder {
  * @param {string} name Name of the web app. You can configure the default using `az configure --defaults web=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_hybrid_connection_list_command_builder extends CommandBuilder {
+class az_webapp_hybrid_connection_list_command_builder extends CommandBuilder<az_webapp_hybrid_connection_list_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -6321,7 +6423,7 @@ class az_webapp_hybrid_connection_list_command_builder extends CommandBuilder {
  * @param {string} namespace Hybrid connection namespace.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_hybrid_connection_remove_command_builder extends CommandBuilder {
+class az_webapp_hybrid_connection_remove_command_builder extends CommandBuilder<az_webapp_hybrid_connection_remove_command_result> {
     constructor(commandPath: string, hybridConnection: string, name: string, namespace: string, resourceGroup: string) {
         super(commandPath);
         this.hybridConnection(hybridConnection)
@@ -6382,7 +6484,7 @@ class az_webapp_hybrid_connection_remove_command_builder extends CommandBuilder 
  *                           [--subscription]
  * ```
  */
-class az_webapp_identity_assign_command_builder extends CommandBuilder {
+class az_webapp_identity_assign_command_builder extends CommandBuilder<az_webapp_identity_assign_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6449,7 +6551,7 @@ class az_webapp_identity_assign_command_builder extends CommandBuilder {
  *                           [--subscription]
  * ```
  */
-class az_webapp_identity_remove_command_builder extends CommandBuilder {
+class az_webapp_identity_remove_command_builder extends CommandBuilder<az_webapp_identity_remove_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6504,7 +6606,7 @@ class az_webapp_identity_remove_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_webapp_identity_show_command_builder extends CommandBuilder {
+class az_webapp_identity_show_command_builder extends CommandBuilder<az_webapp_identity_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6561,7 +6663,7 @@ class az_webapp_identity_show_command_builder extends CommandBuilder {
  * @param {string} name Name of the web app. You can configure the default using `az configure --defaults web=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_log_deployment_list_command_builder extends CommandBuilder {
+class az_webapp_log_deployment_list_command_builder extends CommandBuilder<az_webapp_log_deployment_list_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -6615,7 +6717,7 @@ class az_webapp_log_deployment_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the web app. You can configure the default using `az configure --defaults web=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_log_deployment_show_command_builder extends CommandBuilder {
+class az_webapp_log_deployment_show_command_builder extends CommandBuilder<az_webapp_log_deployment_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -6677,7 +6779,7 @@ class az_webapp_log_deployment_show_command_builder extends CommandBuilder {
  *                      [--web-server-logging {filesystem, off}]
  * ```
  */
-class az_webapp_log_config_command_builder extends CommandBuilder {
+class az_webapp_log_config_command_builder extends CommandBuilder<az_webapp_log_config_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6762,7 +6864,7 @@ class az_webapp_log_config_command_builder extends CommandBuilder {
  *                        [--subscription]
  * ```
  */
-class az_webapp_log_download_command_builder extends CommandBuilder {
+class az_webapp_log_download_command_builder extends CommandBuilder<az_webapp_log_download_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6817,7 +6919,7 @@ class az_webapp_log_download_command_builder extends CommandBuilder {
  *                    [--subscription]
  * ```
  */
-class az_webapp_log_show_command_builder extends CommandBuilder {
+class az_webapp_log_show_command_builder extends CommandBuilder<az_webapp_log_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6872,7 +6974,7 @@ class az_webapp_log_show_command_builder extends CommandBuilder {
  *                    [--subscription]
  * ```
  */
-class az_webapp_log_tail_command_builder extends CommandBuilder {
+class az_webapp_log_tail_command_builder extends CommandBuilder<az_webapp_log_tail_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6925,7 +7027,7 @@ class az_webapp_log_tail_command_builder extends CommandBuilder {
  *                                 [--subscription]
  * ```
  */
-class az_webapp_traffic_routing_clear_command_builder extends CommandBuilder {
+class az_webapp_traffic_routing_clear_command_builder extends CommandBuilder<az_webapp_traffic_routing_clear_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6969,7 +7071,7 @@ class az_webapp_traffic_routing_clear_command_builder extends CommandBuilder {
  *
  * @param {string} distribution Space-separated slot routings in a format of `<slot-name>=<percentage>` e.g. staging=50. Unused traffic percentage will go to the Production slot.
  */
-class az_webapp_traffic_routing_set_command_builder extends CommandBuilder {
+class az_webapp_traffic_routing_set_command_builder extends CommandBuilder<az_webapp_traffic_routing_set_command_result> {
     constructor(commandPath: string, distribution: string) {
         super(commandPath);
         this.distribution(distribution)
@@ -7018,7 +7120,7 @@ class az_webapp_traffic_routing_set_command_builder extends CommandBuilder {
  *                                [--subscription]
  * ```
  */
-class az_webapp_traffic_routing_show_command_builder extends CommandBuilder {
+class az_webapp_traffic_routing_show_command_builder extends CommandBuilder<az_webapp_traffic_routing_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -7072,7 +7174,7 @@ class az_webapp_traffic_routing_show_command_builder extends CommandBuilder {
  * @param {string} subnet The name of the subnet.
  * @param {string} vnet The name or resource ID of the Vnet.
  */
-class az_webapp_vnet_integration_add_command_builder extends CommandBuilder {
+class az_webapp_vnet_integration_add_command_builder extends CommandBuilder<az_webapp_vnet_integration_add_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, subnet: string, vnet: string) {
         super(commandPath);
         this.name(name)
@@ -7133,7 +7235,7 @@ class az_webapp_vnet_integration_add_command_builder extends CommandBuilder {
  * @param {string} name Name of the web app. You can configure the default using `az configure --defaults web=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_vnet_integration_list_command_builder extends CommandBuilder {
+class az_webapp_vnet_integration_list_command_builder extends CommandBuilder<az_webapp_vnet_integration_list_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -7185,7 +7287,7 @@ class az_webapp_vnet_integration_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the web app. You can configure the default using `az configure --defaults web=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_vnet_integration_remove_command_builder extends CommandBuilder {
+class az_webapp_vnet_integration_remove_command_builder extends CommandBuilder<az_webapp_vnet_integration_remove_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -7232,7 +7334,7 @@ class az_webapp_vnet_integration_remove_command_builder extends CommandBuilder {
  * @param {string} name Name of the web app. You can configure the default using `az configure --defaults web=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_webjob_continuous_list_command_builder extends CommandBuilder {
+class az_webapp_webjob_continuous_list_command_builder extends CommandBuilder<az_webapp_webjob_continuous_list_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -7285,7 +7387,7 @@ class az_webapp_webjob_continuous_list_command_builder extends CommandBuilder {
  *
  * @param {string} webjobName The name of the webjob.
  */
-class az_webapp_webjob_continuous_remove_command_builder extends CommandBuilder {
+class az_webapp_webjob_continuous_remove_command_builder extends CommandBuilder<az_webapp_webjob_continuous_remove_command_result> {
     constructor(commandPath: string, webjobName: string) {
         super(commandPath);
         this.webjobName(webjobName)
@@ -7343,7 +7445,7 @@ class az_webapp_webjob_continuous_remove_command_builder extends CommandBuilder 
  *
  * @param {string} webjobName The name of the webjob.
  */
-class az_webapp_webjob_continuous_start_command_builder extends CommandBuilder {
+class az_webapp_webjob_continuous_start_command_builder extends CommandBuilder<az_webapp_webjob_continuous_start_command_result> {
     constructor(commandPath: string, webjobName: string) {
         super(commandPath);
         this.webjobName(webjobName)
@@ -7401,7 +7503,7 @@ class az_webapp_webjob_continuous_start_command_builder extends CommandBuilder {
  *
  * @param {string} webjobName The name of the webjob.
  */
-class az_webapp_webjob_continuous_stop_command_builder extends CommandBuilder {
+class az_webapp_webjob_continuous_stop_command_builder extends CommandBuilder<az_webapp_webjob_continuous_stop_command_result> {
     constructor(commandPath: string, webjobName: string) {
         super(commandPath);
         this.webjobName(webjobName)
@@ -7459,7 +7561,7 @@ class az_webapp_webjob_continuous_stop_command_builder extends CommandBuilder {
  * @param {string} name Name of the web app. You can configure the default using `az configure --defaults web=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_webjob_triggered_list_command_builder extends CommandBuilder {
+class az_webapp_webjob_triggered_list_command_builder extends CommandBuilder<az_webapp_webjob_triggered_list_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -7512,7 +7614,7 @@ class az_webapp_webjob_triggered_list_command_builder extends CommandBuilder {
  *
  * @param {string} webjobName The name of the webjob.
  */
-class az_webapp_webjob_triggered_log_command_builder extends CommandBuilder {
+class az_webapp_webjob_triggered_log_command_builder extends CommandBuilder<az_webapp_webjob_triggered_log_command_result> {
     constructor(commandPath: string, webjobName: string) {
         super(commandPath);
         this.webjobName(webjobName)
@@ -7570,7 +7672,7 @@ class az_webapp_webjob_triggered_log_command_builder extends CommandBuilder {
  *
  * @param {string} webjobName The name of the webjob.
  */
-class az_webapp_webjob_triggered_remove_command_builder extends CommandBuilder {
+class az_webapp_webjob_triggered_remove_command_builder extends CommandBuilder<az_webapp_webjob_triggered_remove_command_result> {
     constructor(commandPath: string, webjobName: string) {
         super(commandPath);
         this.webjobName(webjobName)
@@ -7628,7 +7730,7 @@ class az_webapp_webjob_triggered_remove_command_builder extends CommandBuilder {
  *
  * @param {string} webjobName The name of the webjob.
  */
-class az_webapp_webjob_triggered_run_command_builder extends CommandBuilder {
+class az_webapp_webjob_triggered_run_command_builder extends CommandBuilder<az_webapp_webjob_triggered_run_command_result> {
     constructor(commandPath: string, webjobName: string) {
         super(commandPath);
         this.webjobName(webjobName)
@@ -7684,7 +7786,7 @@ class az_webapp_webjob_triggered_run_command_builder extends CommandBuilder {
  *                  [--subscription]
  * ```
  */
-class az_webapp_browse_command_builder extends CommandBuilder {
+class az_webapp_browse_command_builder extends CommandBuilder<az_webapp_browse_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -7755,7 +7857,7 @@ class az_webapp_browse_command_builder extends CommandBuilder {
  * @param {string} plan Name or resource id of the app service plan. Use 'appservice plan create' to get one.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_create_command_builder extends CommandBuilder {
+class az_webapp_create_command_builder extends CommandBuilder<az_webapp_create_command_result> {
     constructor(commandPath: string, name: string, plan: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -7887,7 +7989,7 @@ class az_webapp_create_command_builder extends CommandBuilder {
  *                                    [--timeout]
  * ```
  */
-class az_webapp_create_remote_connection_command_builder extends CommandBuilder {
+class az_webapp_create_remote_connection_command_builder extends CommandBuilder<az_webapp_create_remote_connection_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -7956,7 +8058,7 @@ class az_webapp_create_remote_connection_command_builder extends CommandBuilder 
  *                  [--subscription]
  * ```
  */
-class az_webapp_delete_command_builder extends CommandBuilder {
+class az_webapp_delete_command_builder extends CommandBuilder<az_webapp_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -8020,7 +8122,7 @@ class az_webapp_delete_command_builder extends CommandBuilder {
  *                [--subscription]
  * ```
  */
-class az_webapp_list_command_builder extends CommandBuilder {
+class az_webapp_list_command_builder extends CommandBuilder<az_webapp_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -8058,7 +8160,7 @@ class az_webapp_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the web app. You can configure the default using `az configure --defaults web=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_webapp_list_instances_command_builder extends CommandBuilder {
+class az_webapp_list_instances_command_builder extends CommandBuilder<az_webapp_list_instances_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -8099,7 +8201,7 @@ class az_webapp_list_instances_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_webapp_list_runtimes_command_builder extends CommandBuilder {
+class az_webapp_list_runtimes_command_builder extends CommandBuilder<az_webapp_list_runtimes_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -8129,7 +8231,7 @@ class az_webapp_list_runtimes_command_builder extends CommandBuilder {
  *                   [--subscription]
  * ```
  */
-class az_webapp_restart_command_builder extends CommandBuilder {
+class az_webapp_restart_command_builder extends CommandBuilder<az_webapp_restart_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -8178,7 +8280,7 @@ class az_webapp_restart_command_builder extends CommandBuilder {
  *                [--subscription]
  * ```
  */
-class az_webapp_show_command_builder extends CommandBuilder {
+class az_webapp_show_command_builder extends CommandBuilder<az_webapp_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -8235,7 +8337,7 @@ class az_webapp_show_command_builder extends CommandBuilder {
  *               [--timeout]
  * ```
  */
-class az_webapp_ssh_command_builder extends CommandBuilder {
+class az_webapp_ssh_command_builder extends CommandBuilder<az_webapp_ssh_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -8301,7 +8403,7 @@ class az_webapp_ssh_command_builder extends CommandBuilder {
  *                 [--subscription]
  * ```
  */
-class az_webapp_start_command_builder extends CommandBuilder {
+class az_webapp_start_command_builder extends CommandBuilder<az_webapp_start_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -8349,7 +8451,7 @@ class az_webapp_start_command_builder extends CommandBuilder {
  *                [--subscription]
  * ```
  */
-class az_webapp_stop_command_builder extends CommandBuilder {
+class az_webapp_stop_command_builder extends CommandBuilder<az_webapp_stop_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -8403,7 +8505,7 @@ class az_webapp_stop_command_builder extends CommandBuilder {
  *              [--subscription]
  * ```
  */
-class az_webapp_up_command_builder extends CommandBuilder {
+class az_webapp_up_command_builder extends CommandBuilder<az_webapp_up_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -8497,7 +8599,7 @@ class az_webapp_up_command_builder extends CommandBuilder {
  *                  [--ttl-in-seconds {false, true}]
  * ```
  */
-class az_webapp_update_command_builder extends CommandBuilder {
+class az_webapp_update_command_builder extends CommandBuilder<az_webapp_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }

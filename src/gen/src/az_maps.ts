@@ -1,4 +1,11 @@
 import { CommandBuilder } from '../base';
+import { az_maps_account_keys_list_command_result } from './models/az_maps_account_keys_list_command_result'
+import { az_maps_account_keys_renew_command_result } from './models/az_maps_account_keys_renew_command_result'
+import { az_maps_account_create_command_result } from './models/az_maps_account_create_command_result'
+import { az_maps_account_delete_command_result } from './models/az_maps_account_delete_command_result'
+import { az_maps_account_list_command_result } from './models/az_maps_account_list_command_result'
+import { az_maps_account_show_command_result } from './models/az_maps_account_show_command_result'
+import { az_maps_account_update_command_result } from './models/az_maps_account_update_command_result'
 
 /** Manage Azure Maps account keys. */
 export class az_maps_account_keys {
@@ -147,7 +154,7 @@ export class az_maps {
  * @param {string} name The name of the maps account.
  * @param {string} resourceGroup Resource group name.
  */
-class az_maps_account_keys_list_command_builder extends CommandBuilder {
+class az_maps_account_keys_list_command_builder extends CommandBuilder<az_maps_account_keys_list_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -194,7 +201,7 @@ class az_maps_account_keys_list_command_builder extends CommandBuilder {
  * @param {string} name The name of the maps account.
  * @param {string} resourceGroup Resource group name.
  */
-class az_maps_account_keys_renew_command_builder extends CommandBuilder {
+class az_maps_account_keys_renew_command_builder extends CommandBuilder<az_maps_account_keys_renew_command_result> {
     constructor(commandPath: string, key: 'primary' | 'secondary', name: string, resourceGroup: string) {
         super(commandPath);
         this.key(key)
@@ -243,7 +250,7 @@ class az_maps_account_keys_renew_command_builder extends CommandBuilder {
  * @param {string} name The name of the maps account.
  * @param {string} resourceGroup Resource group name.
  */
-class az_maps_account_create_command_builder extends CommandBuilder {
+class az_maps_account_create_command_builder extends CommandBuilder<az_maps_account_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -298,7 +305,7 @@ class az_maps_account_create_command_builder extends CommandBuilder {
  *                        [--subscription]
  * ```
  */
-class az_maps_account_delete_command_builder extends CommandBuilder {
+class az_maps_account_delete_command_builder extends CommandBuilder<az_maps_account_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -338,7 +345,7 @@ class az_maps_account_delete_command_builder extends CommandBuilder {
  *                      [--subscription]
  * ```
  */
-class az_maps_account_list_command_builder extends CommandBuilder {
+class az_maps_account_list_command_builder extends CommandBuilder<az_maps_account_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -374,7 +381,7 @@ class az_maps_account_list_command_builder extends CommandBuilder {
  *                      [--subscription]
  * ```
  */
-class az_maps_account_show_command_builder extends CommandBuilder {
+class az_maps_account_show_command_builder extends CommandBuilder<az_maps_account_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -427,7 +434,7 @@ class az_maps_account_show_command_builder extends CommandBuilder {
  *                        [--tags]
  * ```
  */
-class az_maps_account_update_command_builder extends CommandBuilder {
+class az_maps_account_update_command_builder extends CommandBuilder<az_maps_account_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }

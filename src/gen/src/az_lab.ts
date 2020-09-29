@@ -1,4 +1,38 @@
 import { CommandBuilder } from '../base';
+import { az_lab_arm_template_list_command_result } from './models/az_lab_arm_template_list_command_result'
+import { az_lab_arm_template_show_command_result } from './models/az_lab_arm_template_show_command_result'
+import { az_lab_artifact_source_list_command_result } from './models/az_lab_artifact_source_list_command_result'
+import { az_lab_artifact_source_show_command_result } from './models/az_lab_artifact_source_show_command_result'
+import { az_lab_artifact_list_command_result } from './models/az_lab_artifact_list_command_result'
+import { az_lab_custom_image_create_command_result } from './models/az_lab_custom_image_create_command_result'
+import { az_lab_custom_image_delete_command_result } from './models/az_lab_custom_image_delete_command_result'
+import { az_lab_custom_image_list_command_result } from './models/az_lab_custom_image_list_command_result'
+import { az_lab_custom_image_show_command_result } from './models/az_lab_custom_image_show_command_result'
+import { az_lab_environment_create_command_result } from './models/az_lab_environment_create_command_result'
+import { az_lab_environment_delete_command_result } from './models/az_lab_environment_delete_command_result'
+import { az_lab_environment_list_command_result } from './models/az_lab_environment_list_command_result'
+import { az_lab_environment_show_command_result } from './models/az_lab_environment_show_command_result'
+import { az_lab_formula_delete_command_result } from './models/az_lab_formula_delete_command_result'
+import { az_lab_formula_export_artifacts_command_result } from './models/az_lab_formula_export_artifacts_command_result'
+import { az_lab_formula_list_command_result } from './models/az_lab_formula_list_command_result'
+import { az_lab_formula_show_command_result } from './models/az_lab_formula_show_command_result'
+import { az_lab_gallery_image_list_command_result } from './models/az_lab_gallery_image_list_command_result'
+import { az_lab_secret_delete_command_result } from './models/az_lab_secret_delete_command_result'
+import { az_lab_secret_list_command_result } from './models/az_lab_secret_list_command_result'
+import { az_lab_secret_set_command_result } from './models/az_lab_secret_set_command_result'
+import { az_lab_secret_show_command_result } from './models/az_lab_secret_show_command_result'
+import { az_lab_vm_apply_artifacts_command_result } from './models/az_lab_vm_apply_artifacts_command_result'
+import { az_lab_vm_claim_command_result } from './models/az_lab_vm_claim_command_result'
+import { az_lab_vm_create_command_result } from './models/az_lab_vm_create_command_result'
+import { az_lab_vm_delete_command_result } from './models/az_lab_vm_delete_command_result'
+import { az_lab_vm_list_command_result } from './models/az_lab_vm_list_command_result'
+import { az_lab_vm_show_command_result } from './models/az_lab_vm_show_command_result'
+import { az_lab_vm_start_command_result } from './models/az_lab_vm_start_command_result'
+import { az_lab_vm_stop_command_result } from './models/az_lab_vm_stop_command_result'
+import { az_lab_vnet_get_command_result } from './models/az_lab_vnet_get_command_result'
+import { az_lab_vnet_list_command_result } from './models/az_lab_vnet_list_command_result'
+import { az_lab_delete_command_result } from './models/az_lab_delete_command_result'
+import { az_lab_get_command_result } from './models/az_lab_get_command_result'
 
 /** Manage Azure Resource Manager (ARM) templates in an Azure DevTest Lab. */
 export class az_lab_arm_template {
@@ -783,7 +817,7 @@ export class az_lab {
  * @param {string} labName The name of the lab.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_arm_template_list_command_builder extends CommandBuilder {
+class az_lab_arm_template_list_command_builder extends CommandBuilder<az_lab_arm_template_list_command_result> {
     constructor(commandPath: string, artifactSourceName: string, labName: string, resourceGroup: string) {
         super(commandPath);
         this.artifactSourceName(artifactSourceName)
@@ -865,7 +899,7 @@ class az_lab_arm_template_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the Azure Resource Manager template.
  * @param {string} resourceGroup Name of lab's resource group.
  */
-class az_lab_arm_template_show_command_builder extends CommandBuilder {
+class az_lab_arm_template_show_command_builder extends CommandBuilder<az_lab_arm_template_show_command_result> {
     constructor(commandPath: string, artifactSourceName: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.artifactSourceName(artifactSourceName)
@@ -935,7 +969,7 @@ class az_lab_arm_template_show_command_builder extends CommandBuilder {
  * @param {string} labName The name of the lab.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_artifact_source_list_command_builder extends CommandBuilder {
+class az_lab_artifact_source_list_command_builder extends CommandBuilder<az_lab_artifact_source_list_command_result> {
     constructor(commandPath: string, labName: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -1008,7 +1042,7 @@ class az_lab_artifact_source_list_command_builder extends CommandBuilder {
  * @param {string} name The name of the artifact source.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_artifact_source_show_command_builder extends CommandBuilder {
+class az_lab_artifact_source_show_command_builder extends CommandBuilder<az_lab_artifact_source_show_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -1073,7 +1107,7 @@ class az_lab_artifact_source_show_command_builder extends CommandBuilder {
  * @param {string} labName The name of the lab.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_artifact_list_command_builder extends CommandBuilder {
+class az_lab_artifact_list_command_builder extends CommandBuilder<az_lab_artifact_list_command_result> {
     constructor(commandPath: string, artifactSourceName: string, labName: string, resourceGroup: string) {
         super(commandPath);
         this.artifactSourceName(artifactSourceName)
@@ -1159,7 +1193,7 @@ class az_lab_artifact_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} sourceVmId The resource ID of a virtual machine in the provided lab.
  */
-class az_lab_custom_image_create_command_builder extends CommandBuilder {
+class az_lab_custom_image_create_command_builder extends CommandBuilder<az_lab_custom_image_create_command_result> {
     constructor(commandPath: string, labName: string, name: string, osState: string, osType: string, resourceGroup: string, sourceVmId: string) {
         super(commandPath);
         this.labName(labName)
@@ -1240,7 +1274,7 @@ class az_lab_custom_image_create_command_builder extends CommandBuilder {
  * @param {string} name The name of the custom image.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_custom_image_delete_command_builder extends CommandBuilder {
+class az_lab_custom_image_delete_command_builder extends CommandBuilder<az_lab_custom_image_delete_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -1291,7 +1325,7 @@ class az_lab_custom_image_delete_command_builder extends CommandBuilder {
  * @param {string} labName The name of the lab.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_custom_image_list_command_builder extends CommandBuilder {
+class az_lab_custom_image_list_command_builder extends CommandBuilder<az_lab_custom_image_list_command_result> {
     constructor(commandPath: string, labName: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -1364,7 +1398,7 @@ class az_lab_custom_image_list_command_builder extends CommandBuilder {
  * @param {string} name The name of the custom image.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_custom_image_show_command_builder extends CommandBuilder {
+class az_lab_custom_image_show_command_builder extends CommandBuilder<az_lab_custom_image_show_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -1429,7 +1463,7 @@ class az_lab_custom_image_show_command_builder extends CommandBuilder {
  * @param {string} name Name of the environment.
  * @param {string} resourceGroup Name of the lab's resource group.
  */
-class az_lab_environment_create_command_builder extends CommandBuilder {
+class az_lab_environment_create_command_builder extends CommandBuilder<az_lab_environment_create_command_result> {
     constructor(commandPath: string, armTemplate: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.armTemplate(armTemplate)
@@ -1502,7 +1536,7 @@ class az_lab_environment_create_command_builder extends CommandBuilder {
  * @param {string} name The name of the environment.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_environment_delete_command_builder extends CommandBuilder {
+class az_lab_environment_delete_command_builder extends CommandBuilder<az_lab_environment_delete_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -1553,7 +1587,7 @@ class az_lab_environment_delete_command_builder extends CommandBuilder {
  * @param {string} labName The name of the lab.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_environment_list_command_builder extends CommandBuilder {
+class az_lab_environment_list_command_builder extends CommandBuilder<az_lab_environment_list_command_result> {
     constructor(commandPath: string, labName: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -1626,7 +1660,7 @@ class az_lab_environment_list_command_builder extends CommandBuilder {
  * @param {string} name The name of the environment.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_environment_show_command_builder extends CommandBuilder {
+class az_lab_environment_show_command_builder extends CommandBuilder<az_lab_environment_show_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -1686,7 +1720,7 @@ class az_lab_environment_show_command_builder extends CommandBuilder {
  * @param {string} name The name of the formula.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_formula_delete_command_builder extends CommandBuilder {
+class az_lab_formula_delete_command_builder extends CommandBuilder<az_lab_formula_delete_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -1734,7 +1768,7 @@ class az_lab_formula_delete_command_builder extends CommandBuilder {
  * @param {string} name Name of the formula.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_formula_export_artifacts_command_builder extends CommandBuilder {
+class az_lab_formula_export_artifacts_command_builder extends CommandBuilder<az_lab_formula_export_artifacts_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -1785,7 +1819,7 @@ class az_lab_formula_export_artifacts_command_builder extends CommandBuilder {
  * @param {string} labName The name of the lab.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_formula_list_command_builder extends CommandBuilder {
+class az_lab_formula_list_command_builder extends CommandBuilder<az_lab_formula_list_command_result> {
     constructor(commandPath: string, labName: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -1858,7 +1892,7 @@ class az_lab_formula_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the formula.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_formula_show_command_builder extends CommandBuilder {
+class az_lab_formula_show_command_builder extends CommandBuilder<az_lab_formula_show_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -1921,7 +1955,7 @@ class az_lab_formula_show_command_builder extends CommandBuilder {
  * @param {string} labName The name of the lab.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_gallery_image_list_command_builder extends CommandBuilder {
+class az_lab_gallery_image_list_command_builder extends CommandBuilder<az_lab_gallery_image_list_command_result> {
     constructor(commandPath: string, labName: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -1992,7 +2026,7 @@ class az_lab_gallery_image_list_command_builder extends CommandBuilder {
  * @param {string} name The name of the secret.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_secret_delete_command_builder extends CommandBuilder {
+class az_lab_secret_delete_command_builder extends CommandBuilder<az_lab_secret_delete_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -2043,7 +2077,7 @@ class az_lab_secret_delete_command_builder extends CommandBuilder {
  * @param {string} labName The name of the lab.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_secret_list_command_builder extends CommandBuilder {
+class az_lab_secret_list_command_builder extends CommandBuilder<az_lab_secret_list_command_result> {
     constructor(commandPath: string, labName: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -2116,7 +2150,7 @@ class az_lab_secret_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} value Value of the secret.
  */
-class az_lab_secret_set_command_builder extends CommandBuilder {
+class az_lab_secret_set_command_builder extends CommandBuilder<az_lab_secret_set_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string, value: string) {
         super(commandPath);
         this.labName(labName)
@@ -2173,7 +2207,7 @@ class az_lab_secret_set_command_builder extends CommandBuilder {
  * @param {string} name The name of the secret.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_secret_show_command_builder extends CommandBuilder {
+class az_lab_secret_show_command_builder extends CommandBuilder<az_lab_secret_show_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -2234,7 +2268,7 @@ class az_lab_secret_show_command_builder extends CommandBuilder {
  * @param {string} name Name of the virtual machine.
  * @param {string} resourceGroup Name of lab's resource group.
  */
-class az_lab_vm_apply_artifacts_command_builder extends CommandBuilder {
+class az_lab_vm_apply_artifacts_command_builder extends CommandBuilder<az_lab_vm_apply_artifacts_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -2285,7 +2319,7 @@ class az_lab_vm_apply_artifacts_command_builder extends CommandBuilder {
  *                 [--subscription]
  * ```
  */
-class az_lab_vm_claim_command_builder extends CommandBuilder {
+class az_lab_vm_claim_command_builder extends CommandBuilder<az_lab_vm_claim_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2355,7 +2389,7 @@ class az_lab_vm_claim_command_builder extends CommandBuilder {
  * @param {string} name Name of the virtual machine.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_vm_create_command_builder extends CommandBuilder {
+class az_lab_vm_create_command_builder extends CommandBuilder<az_lab_vm_create_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -2517,7 +2551,7 @@ class az_lab_vm_create_command_builder extends CommandBuilder {
  * @param {string} name The name of the virtual machine.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_vm_delete_command_builder extends CommandBuilder {
+class az_lab_vm_delete_command_builder extends CommandBuilder<az_lab_vm_delete_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -2572,7 +2606,7 @@ class az_lab_vm_delete_command_builder extends CommandBuilder {
  * @param {string} labName Name of the lab.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_vm_list_command_builder extends CommandBuilder {
+class az_lab_vm_list_command_builder extends CommandBuilder<az_lab_vm_list_command_result> {
     constructor(commandPath: string, labName: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -2669,7 +2703,7 @@ class az_lab_vm_list_command_builder extends CommandBuilder {
  * @param {string} name The name of the virtual machine.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_vm_show_command_builder extends CommandBuilder {
+class az_lab_vm_show_command_builder extends CommandBuilder<az_lab_vm_show_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -2729,7 +2763,7 @@ class az_lab_vm_show_command_builder extends CommandBuilder {
  * @param {string} name The name of the virtual machine.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_vm_start_command_builder extends CommandBuilder {
+class az_lab_vm_start_command_builder extends CommandBuilder<az_lab_vm_start_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -2777,7 +2811,7 @@ class az_lab_vm_start_command_builder extends CommandBuilder {
  * @param {string} name The name of the virtual machine.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_vm_stop_command_builder extends CommandBuilder {
+class az_lab_vm_stop_command_builder extends CommandBuilder<az_lab_vm_stop_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -2826,7 +2860,7 @@ class az_lab_vm_stop_command_builder extends CommandBuilder {
  * @param {string} name The name of the virtual network.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_vnet_get_command_builder extends CommandBuilder {
+class az_lab_vnet_get_command_builder extends CommandBuilder<az_lab_vnet_get_command_result> {
     constructor(commandPath: string, labName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -2883,7 +2917,7 @@ class az_lab_vnet_get_command_builder extends CommandBuilder {
  * @param {string} labName The name of the lab.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_vnet_list_command_builder extends CommandBuilder {
+class az_lab_vnet_list_command_builder extends CommandBuilder<az_lab_vnet_list_command_result> {
     constructor(commandPath: string, labName: string, resourceGroup: string) {
         super(commandPath);
         this.labName(labName)
@@ -2952,7 +2986,7 @@ class az_lab_vnet_list_command_builder extends CommandBuilder {
  * @param {string} name The name of the lab.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_delete_command_builder extends CommandBuilder {
+class az_lab_delete_command_builder extends CommandBuilder<az_lab_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2992,7 +3026,7 @@ class az_lab_delete_command_builder extends CommandBuilder {
  * @param {string} name The name of the lab.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_lab_get_command_builder extends CommandBuilder {
+class az_lab_get_command_builder extends CommandBuilder<az_lab_get_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)

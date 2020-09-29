@@ -1,4 +1,40 @@
 import { CommandBuilder } from '../base';
+import { az_hdinsight_application_create_command_result } from './models/az_hdinsight_application_create_command_result'
+import { az_hdinsight_application_delete_command_result } from './models/az_hdinsight_application_delete_command_result'
+import { az_hdinsight_application_list_command_result } from './models/az_hdinsight_application_list_command_result'
+import { az_hdinsight_application_show_command_result } from './models/az_hdinsight_application_show_command_result'
+import { az_hdinsight_application_wait_command_result } from './models/az_hdinsight_application_wait_command_result'
+import { az_hdinsight_autoscale_condition_create_command_result } from './models/az_hdinsight_autoscale_condition_create_command_result'
+import { az_hdinsight_autoscale_condition_delete_command_result } from './models/az_hdinsight_autoscale_condition_delete_command_result'
+import { az_hdinsight_autoscale_condition_list_command_result } from './models/az_hdinsight_autoscale_condition_list_command_result'
+import { az_hdinsight_autoscale_condition_update_command_result } from './models/az_hdinsight_autoscale_condition_update_command_result'
+import { az_hdinsight_autoscale_condition_wait_command_result } from './models/az_hdinsight_autoscale_condition_wait_command_result'
+import { az_hdinsight_autoscale_create_command_result } from './models/az_hdinsight_autoscale_create_command_result'
+import { az_hdinsight_autoscale_delete_command_result } from './models/az_hdinsight_autoscale_delete_command_result'
+import { az_hdinsight_autoscale_list_timezones_command_result } from './models/az_hdinsight_autoscale_list_timezones_command_result'
+import { az_hdinsight_autoscale_show_command_result } from './models/az_hdinsight_autoscale_show_command_result'
+import { az_hdinsight_autoscale_update_command_result } from './models/az_hdinsight_autoscale_update_command_result'
+import { az_hdinsight_autoscale_wait_command_result } from './models/az_hdinsight_autoscale_wait_command_result'
+import { az_hdinsight_host_list_command_result } from './models/az_hdinsight_host_list_command_result'
+import { az_hdinsight_host_restart_command_result } from './models/az_hdinsight_host_restart_command_result'
+import { az_hdinsight_monitor_disable_command_result } from './models/az_hdinsight_monitor_disable_command_result'
+import { az_hdinsight_monitor_enable_command_result } from './models/az_hdinsight_monitor_enable_command_result'
+import { az_hdinsight_monitor_show_command_result } from './models/az_hdinsight_monitor_show_command_result'
+import { az_hdinsight_script_action_delete_command_result } from './models/az_hdinsight_script_action_delete_command_result'
+import { az_hdinsight_script_action_execute_command_result } from './models/az_hdinsight_script_action_execute_command_result'
+import { az_hdinsight_script_action_list_command_result } from './models/az_hdinsight_script_action_list_command_result'
+import { az_hdinsight_script_action_list_execution_history_command_result } from './models/az_hdinsight_script_action_list_execution_history_command_result'
+import { az_hdinsight_script_action_promote_command_result } from './models/az_hdinsight_script_action_promote_command_result'
+import { az_hdinsight_script_action_show_execution_details_command_result } from './models/az_hdinsight_script_action_show_execution_details_command_result'
+import { az_hdinsight_create_command_result } from './models/az_hdinsight_create_command_result'
+import { az_hdinsight_delete_command_result } from './models/az_hdinsight_delete_command_result'
+import { az_hdinsight_list_command_result } from './models/az_hdinsight_list_command_result'
+import { az_hdinsight_list_usage_command_result } from './models/az_hdinsight_list_usage_command_result'
+import { az_hdinsight_resize_command_result } from './models/az_hdinsight_resize_command_result'
+import { az_hdinsight_rotate_disk_encryption_key_command_result } from './models/az_hdinsight_rotate_disk_encryption_key_command_result'
+import { az_hdinsight_show_command_result } from './models/az_hdinsight_show_command_result'
+import { az_hdinsight_update_command_result } from './models/az_hdinsight_update_command_result'
+import { az_hdinsight_wait_command_result } from './models/az_hdinsight_wait_command_result'
 
 /** Manage HDInsight applications. */
 export class az_hdinsight_application {
@@ -847,7 +883,7 @@ export class az_hdinsight {
  * @param {string} scriptActionName The name of the script action.
  * @param {string} scriptUri The URI to the script.
  */
-class az_hdinsight_application_create_command_builder extends CommandBuilder {
+class az_hdinsight_application_create_command_builder extends CommandBuilder<az_hdinsight_application_create_command_result> {
     constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string, scriptActionName: string, scriptUri: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1001,7 +1037,7 @@ class az_hdinsight_application_create_command_builder extends CommandBuilder {
  * @param {string} name The constant value for the application name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_application_delete_command_builder extends CommandBuilder {
+class az_hdinsight_application_delete_command_builder extends CommandBuilder<az_hdinsight_application_delete_command_result> {
     constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1060,7 +1096,7 @@ class az_hdinsight_application_delete_command_builder extends CommandBuilder {
  * @param {string} clusterName The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_application_list_command_builder extends CommandBuilder {
+class az_hdinsight_application_list_command_builder extends CommandBuilder<az_hdinsight_application_list_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1108,7 +1144,7 @@ class az_hdinsight_application_list_command_builder extends CommandBuilder {
  * @param {string} name The constant value for the application name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_application_show_command_builder extends CommandBuilder {
+class az_hdinsight_application_show_command_builder extends CommandBuilder<az_hdinsight_application_show_command_result> {
     constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1169,7 +1205,7 @@ class az_hdinsight_application_show_command_builder extends CommandBuilder {
  * @param {string} name The constant value for the application name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_application_wait_command_builder extends CommandBuilder {
+class az_hdinsight_application_wait_command_builder extends CommandBuilder<az_hdinsight_application_wait_command_result> {
     constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1264,7 +1300,7 @@ class az_hdinsight_application_wait_command_builder extends CommandBuilder {
  * @param {string} time The 24-hour time in the form xx:xx in days.
  * @param {string} workernodeCount The schedule workernode count.
  */
-class az_hdinsight_autoscale_condition_create_command_builder extends CommandBuilder {
+class az_hdinsight_autoscale_condition_create_command_builder extends CommandBuilder<az_hdinsight_autoscale_condition_create_command_result> {
     constructor(commandPath: string, clusterName: string, days: 'Friday' | 'Monday' | 'Saturday' | 'Sunday' | 'Thursday' | 'Tuesday' | 'Wednesday', resourceGroup: string, time: string, workernodeCount: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1334,7 +1370,7 @@ class az_hdinsight_autoscale_condition_create_command_builder extends CommandBui
  * @param {string} index The Space-separated list of condition indices which starts with 0 to delete.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_autoscale_condition_delete_command_builder extends CommandBuilder {
+class az_hdinsight_autoscale_condition_delete_command_builder extends CommandBuilder<az_hdinsight_autoscale_condition_delete_command_result> {
     constructor(commandPath: string, clusterName: string, index: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1393,7 +1429,7 @@ class az_hdinsight_autoscale_condition_delete_command_builder extends CommandBui
  * @param {string} clusterName The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_autoscale_condition_list_command_builder extends CommandBuilder {
+class az_hdinsight_autoscale_condition_list_command_builder extends CommandBuilder<az_hdinsight_autoscale_condition_list_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1444,7 +1480,7 @@ class az_hdinsight_autoscale_condition_list_command_builder extends CommandBuild
  * @param {string} index The schedule condition index which starts with 0.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_autoscale_condition_update_command_builder extends CommandBuilder {
+class az_hdinsight_autoscale_condition_update_command_builder extends CommandBuilder<az_hdinsight_autoscale_condition_update_command_result> {
     constructor(commandPath: string, clusterName: string, index: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1521,7 +1557,7 @@ class az_hdinsight_autoscale_condition_update_command_builder extends CommandBui
  * @param {string} name The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_autoscale_condition_wait_command_builder extends CommandBuilder {
+class az_hdinsight_autoscale_condition_wait_command_builder extends CommandBuilder<az_hdinsight_autoscale_condition_wait_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1612,7 +1648,7 @@ class az_hdinsight_autoscale_condition_wait_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {'Load' | 'Schedule'} type The autoscale type.
  */
-class az_hdinsight_autoscale_create_command_builder extends CommandBuilder {
+class az_hdinsight_autoscale_create_command_builder extends CommandBuilder<az_hdinsight_autoscale_create_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string, type: 'Load' | 'Schedule') {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1708,7 +1744,7 @@ class az_hdinsight_autoscale_create_command_builder extends CommandBuilder {
  * @param {string} clusterName The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_autoscale_delete_command_builder extends CommandBuilder {
+class az_hdinsight_autoscale_delete_command_builder extends CommandBuilder<az_hdinsight_autoscale_delete_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1754,7 +1790,7 @@ class az_hdinsight_autoscale_delete_command_builder extends CommandBuilder {
  * az hdinsight autoscale list-timezones [--subscription]
  * ```
  */
-class az_hdinsight_autoscale_list_timezones_command_builder extends CommandBuilder {
+class az_hdinsight_autoscale_list_timezones_command_builder extends CommandBuilder<az_hdinsight_autoscale_list_timezones_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1780,7 +1816,7 @@ class az_hdinsight_autoscale_list_timezones_command_builder extends CommandBuild
  * @param {string} clusterName The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_autoscale_show_command_builder extends CommandBuilder {
+class az_hdinsight_autoscale_show_command_builder extends CommandBuilder<az_hdinsight_autoscale_show_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1829,7 +1865,7 @@ class az_hdinsight_autoscale_show_command_builder extends CommandBuilder {
  * @param {string} clusterName The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_autoscale_update_command_builder extends CommandBuilder {
+class az_hdinsight_autoscale_update_command_builder extends CommandBuilder<az_hdinsight_autoscale_update_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1899,7 +1935,7 @@ class az_hdinsight_autoscale_update_command_builder extends CommandBuilder {
  * @param {string} name The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_autoscale_wait_command_builder extends CommandBuilder {
+class az_hdinsight_autoscale_wait_command_builder extends CommandBuilder<az_hdinsight_autoscale_wait_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1981,7 +2017,7 @@ class az_hdinsight_autoscale_wait_command_builder extends CommandBuilder {
  * @param {string} clusterName The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_host_list_command_builder extends CommandBuilder {
+class az_hdinsight_host_list_command_builder extends CommandBuilder<az_hdinsight_host_list_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2029,7 +2065,7 @@ class az_hdinsight_host_list_command_builder extends CommandBuilder {
  * @param {string} hostNames A space-delimited list of host names that need to be restarted.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_host_restart_command_builder extends CommandBuilder {
+class az_hdinsight_host_restart_command_builder extends CommandBuilder<az_hdinsight_host_restart_command_result> {
     constructor(commandPath: string, clusterName: string, hostNames: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2081,7 +2117,7 @@ class az_hdinsight_host_restart_command_builder extends CommandBuilder {
  * @param {string} name The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_monitor_disable_command_builder extends CommandBuilder {
+class az_hdinsight_monitor_disable_command_builder extends CommandBuilder<az_hdinsight_monitor_disable_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2124,7 +2160,7 @@ class az_hdinsight_monitor_disable_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} workspace The name, resource ID or workspace ID of Log Analytics workspace.
  */
-class az_hdinsight_monitor_enable_command_builder extends CommandBuilder {
+class az_hdinsight_monitor_enable_command_builder extends CommandBuilder<az_hdinsight_monitor_enable_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, workspace: string) {
         super(commandPath);
         this.name(name)
@@ -2183,7 +2219,7 @@ class az_hdinsight_monitor_enable_command_builder extends CommandBuilder {
  * @param {string} name The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_monitor_show_command_builder extends CommandBuilder {
+class az_hdinsight_monitor_show_command_builder extends CommandBuilder<az_hdinsight_monitor_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2230,7 +2266,7 @@ class az_hdinsight_monitor_show_command_builder extends CommandBuilder {
  * @param {string} name The name of the script.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_script_action_delete_command_builder extends CommandBuilder {
+class az_hdinsight_script_action_delete_command_builder extends CommandBuilder<az_hdinsight_script_action_delete_command_result> {
     constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2284,7 +2320,7 @@ class az_hdinsight_script_action_delete_command_builder extends CommandBuilder {
  * @param {string} roles A space-delimited list of roles (nodes) where the script will be executed. Valid roles are headnode, workernode, zookeepernode, edgenode.
  * @param {string} scriptUri The URI to the script.
  */
-class az_hdinsight_script_action_execute_command_builder extends CommandBuilder {
+class az_hdinsight_script_action_execute_command_builder extends CommandBuilder<az_hdinsight_script_action_execute_command_result> {
     constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string, roles: string, scriptUri: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2357,7 +2393,7 @@ class az_hdinsight_script_action_execute_command_builder extends CommandBuilder 
  * @param {string} clusterName The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_script_action_list_command_builder extends CommandBuilder {
+class az_hdinsight_script_action_list_command_builder extends CommandBuilder<az_hdinsight_script_action_list_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2402,7 +2438,7 @@ class az_hdinsight_script_action_list_command_builder extends CommandBuilder {
  * @param {string} clusterName The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_script_action_list_execution_history_command_builder extends CommandBuilder {
+class az_hdinsight_script_action_list_execution_history_command_builder extends CommandBuilder<az_hdinsight_script_action_list_execution_history_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2443,7 +2479,7 @@ class az_hdinsight_script_action_list_execution_history_command_builder extends 
  * @param {string} executionId The script execution id.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_script_action_promote_command_builder extends CommandBuilder {
+class az_hdinsight_script_action_promote_command_builder extends CommandBuilder<az_hdinsight_script_action_promote_command_result> {
     constructor(commandPath: string, clusterName: string, executionId: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2491,7 +2527,7 @@ class az_hdinsight_script_action_promote_command_builder extends CommandBuilder 
  * @param {string} executionId The script execution id.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_script_action_show_execution_details_command_builder extends CommandBuilder {
+class az_hdinsight_script_action_show_execution_details_command_builder extends CommandBuilder<az_hdinsight_script_action_show_execution_details_command_result> {
     constructor(commandPath: string, clusterName: string, executionId: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -2594,7 +2630,7 @@ class az_hdinsight_script_action_show_execution_details_command_builder extends 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} type Type of HDInsight cluster, like: hadoop, interactivehive, hbase, kafka, storm, spark, rserver, mlservices. See also: <a href="https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-provision-linux-clusters#cluster-types">https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-provision-linux-clusters#cluster-types</a>.
  */
-class az_hdinsight_create_command_builder extends CommandBuilder {
+class az_hdinsight_create_command_builder extends CommandBuilder<az_hdinsight_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, type: string) {
         super(commandPath);
         this.name(name)
@@ -2972,7 +3008,7 @@ class az_hdinsight_create_command_builder extends CommandBuilder {
  * @param {string} name The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_delete_command_builder extends CommandBuilder {
+class az_hdinsight_delete_command_builder extends CommandBuilder<az_hdinsight_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -3020,7 +3056,7 @@ class az_hdinsight_delete_command_builder extends CommandBuilder {
  *                   [--subscription]
  * ```
  */
-class az_hdinsight_list_command_builder extends CommandBuilder {
+class az_hdinsight_list_command_builder extends CommandBuilder<az_hdinsight_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3055,7 +3091,7 @@ class az_hdinsight_list_command_builder extends CommandBuilder {
  *
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
-class az_hdinsight_list_usage_command_builder extends CommandBuilder {
+class az_hdinsight_list_usage_command_builder extends CommandBuilder<az_hdinsight_list_usage_command_result> {
     constructor(commandPath: string, location: string) {
         super(commandPath);
         this.location(location)
@@ -3090,7 +3126,7 @@ class az_hdinsight_list_usage_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} workernodeCount The target worker node instance count for the operation.
  */
-class az_hdinsight_resize_command_builder extends CommandBuilder {
+class az_hdinsight_resize_command_builder extends CommandBuilder<az_hdinsight_resize_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, workernodeCount: string) {
         super(commandPath);
         this.name(name)
@@ -3149,7 +3185,7 @@ class az_hdinsight_resize_command_builder extends CommandBuilder {
  * @param {string} name The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_rotate_disk_encryption_key_command_builder extends CommandBuilder {
+class az_hdinsight_rotate_disk_encryption_key_command_builder extends CommandBuilder<az_hdinsight_rotate_disk_encryption_key_command_result> {
     constructor(commandPath: string, encryptionKeyName: string, encryptionKeyVersion: string, encryptionVaultUri: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.encryptionKeyName(encryptionKeyName)
@@ -3216,7 +3252,7 @@ class az_hdinsight_rotate_disk_encryption_key_command_builder extends CommandBui
  * @param {string} name The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_show_command_builder extends CommandBuilder {
+class az_hdinsight_show_command_builder extends CommandBuilder<az_hdinsight_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -3263,7 +3299,7 @@ class az_hdinsight_show_command_builder extends CommandBuilder {
  * @param {string} name The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_update_command_builder extends CommandBuilder {
+class az_hdinsight_update_command_builder extends CommandBuilder<az_hdinsight_update_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -3321,7 +3357,7 @@ class az_hdinsight_update_command_builder extends CommandBuilder {
  * @param {string} name The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_hdinsight_wait_command_builder extends CommandBuilder {
+class az_hdinsight_wait_command_builder extends CommandBuilder<az_hdinsight_wait_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)

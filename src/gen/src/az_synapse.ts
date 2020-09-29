@@ -1,4 +1,49 @@
 import { CommandBuilder } from '../base';
+import { az_synapse_role_assignment_create_command_result } from './models/az_synapse_role_assignment_create_command_result'
+import { az_synapse_role_assignment_delete_command_result } from './models/az_synapse_role_assignment_delete_command_result'
+import { az_synapse_role_assignment_list_command_result } from './models/az_synapse_role_assignment_list_command_result'
+import { az_synapse_role_assignment_show_command_result } from './models/az_synapse_role_assignment_show_command_result'
+import { az_synapse_role_definition_list_command_result } from './models/az_synapse_role_definition_list_command_result'
+import { az_synapse_role_definition_show_command_result } from './models/az_synapse_role_definition_show_command_result'
+import { az_synapse_spark_job_cancel_command_result } from './models/az_synapse_spark_job_cancel_command_result'
+import { az_synapse_spark_job_list_command_result } from './models/az_synapse_spark_job_list_command_result'
+import { az_synapse_spark_job_show_command_result } from './models/az_synapse_spark_job_show_command_result'
+import { az_synapse_spark_job_submit_command_result } from './models/az_synapse_spark_job_submit_command_result'
+import { az_synapse_spark_pool_create_command_result } from './models/az_synapse_spark_pool_create_command_result'
+import { az_synapse_spark_pool_delete_command_result } from './models/az_synapse_spark_pool_delete_command_result'
+import { az_synapse_spark_pool_list_command_result } from './models/az_synapse_spark_pool_list_command_result'
+import { az_synapse_spark_pool_show_command_result } from './models/az_synapse_spark_pool_show_command_result'
+import { az_synapse_spark_pool_update_command_result } from './models/az_synapse_spark_pool_update_command_result'
+import { az_synapse_spark_pool_wait_command_result } from './models/az_synapse_spark_pool_wait_command_result'
+import { az_synapse_spark_session_cancel_command_result } from './models/az_synapse_spark_session_cancel_command_result'
+import { az_synapse_spark_session_create_command_result } from './models/az_synapse_spark_session_create_command_result'
+import { az_synapse_spark_session_list_command_result } from './models/az_synapse_spark_session_list_command_result'
+import { az_synapse_spark_session_reset_timeout_command_result } from './models/az_synapse_spark_session_reset_timeout_command_result'
+import { az_synapse_spark_session_show_command_result } from './models/az_synapse_spark_session_show_command_result'
+import { az_synapse_spark_statement_cancel_command_result } from './models/az_synapse_spark_statement_cancel_command_result'
+import { az_synapse_spark_statement_invoke_command_result } from './models/az_synapse_spark_statement_invoke_command_result'
+import { az_synapse_spark_statement_list_command_result } from './models/az_synapse_spark_statement_list_command_result'
+import { az_synapse_spark_statement_show_command_result } from './models/az_synapse_spark_statement_show_command_result'
+import { az_synapse_sql_pool_create_command_result } from './models/az_synapse_sql_pool_create_command_result'
+import { az_synapse_sql_pool_delete_command_result } from './models/az_synapse_sql_pool_delete_command_result'
+import { az_synapse_sql_pool_list_command_result } from './models/az_synapse_sql_pool_list_command_result'
+import { az_synapse_sql_pool_pause_command_result } from './models/az_synapse_sql_pool_pause_command_result'
+import { az_synapse_sql_pool_resume_command_result } from './models/az_synapse_sql_pool_resume_command_result'
+import { az_synapse_sql_pool_show_command_result } from './models/az_synapse_sql_pool_show_command_result'
+import { az_synapse_sql_pool_update_command_result } from './models/az_synapse_sql_pool_update_command_result'
+import { az_synapse_sql_pool_wait_command_result } from './models/az_synapse_sql_pool_wait_command_result'
+import { az_synapse_workspace_firewall_rule_create_command_result } from './models/az_synapse_workspace_firewall_rule_create_command_result'
+import { az_synapse_workspace_firewall_rule_delete_command_result } from './models/az_synapse_workspace_firewall_rule_delete_command_result'
+import { az_synapse_workspace_firewall_rule_list_command_result } from './models/az_synapse_workspace_firewall_rule_list_command_result'
+import { az_synapse_workspace_firewall_rule_show_command_result } from './models/az_synapse_workspace_firewall_rule_show_command_result'
+import { az_synapse_workspace_firewall_rule_wait_command_result } from './models/az_synapse_workspace_firewall_rule_wait_command_result'
+import { az_synapse_workspace_check_name_command_result } from './models/az_synapse_workspace_check_name_command_result'
+import { az_synapse_workspace_create_command_result } from './models/az_synapse_workspace_create_command_result'
+import { az_synapse_workspace_delete_command_result } from './models/az_synapse_workspace_delete_command_result'
+import { az_synapse_workspace_list_command_result } from './models/az_synapse_workspace_list_command_result'
+import { az_synapse_workspace_show_command_result } from './models/az_synapse_workspace_show_command_result'
+import { az_synapse_workspace_update_command_result } from './models/az_synapse_workspace_update_command_result'
+import { az_synapse_workspace_wait_command_result } from './models/az_synapse_workspace_wait_command_result'
 
 /** Manage Synapse's role assignments. */
 export class az_synapse_role_assignment {
@@ -978,7 +1023,7 @@ export class az_synapse {
  * @param {string} role The role name/id that is assigned to the principal.
  * @param {string} workspaceName The workspace name.
  */
-class az_synapse_role_assignment_create_command_builder extends CommandBuilder {
+class az_synapse_role_assignment_create_command_builder extends CommandBuilder<az_synapse_role_assignment_create_command_result> {
     constructor(commandPath: string, assignee: string, role: string, workspaceName: string) {
         super(commandPath);
         this.assignee(assignee)
@@ -1026,7 +1071,7 @@ class az_synapse_role_assignment_create_command_builder extends CommandBuilder {
  *
  * @param {string} workspaceName The workspace name.
  */
-class az_synapse_role_assignment_delete_command_builder extends CommandBuilder {
+class az_synapse_role_assignment_delete_command_builder extends CommandBuilder<az_synapse_role_assignment_delete_command_result> {
     constructor(commandPath: string, workspaceName: string) {
         super(commandPath);
         this.workspaceName(workspaceName)
@@ -1083,7 +1128,7 @@ class az_synapse_role_assignment_delete_command_builder extends CommandBuilder {
  *
  * @param {string} workspaceName The workspace name.
  */
-class az_synapse_role_assignment_list_command_builder extends CommandBuilder {
+class az_synapse_role_assignment_list_command_builder extends CommandBuilder<az_synapse_role_assignment_list_command_result> {
     constructor(commandPath: string, workspaceName: string) {
         super(commandPath);
         this.workspaceName(workspaceName)
@@ -1134,7 +1179,7 @@ class az_synapse_role_assignment_list_command_builder extends CommandBuilder {
  * @param {string} id Id of the role that is assigned to the principal.
  * @param {string} workspaceName The workspace name.
  */
-class az_synapse_role_assignment_show_command_builder extends CommandBuilder {
+class az_synapse_role_assignment_show_command_builder extends CommandBuilder<az_synapse_role_assignment_show_command_result> {
     constructor(commandPath: string, id: string, workspaceName: string) {
         super(commandPath);
         this.id(id)
@@ -1178,7 +1223,7 @@ class az_synapse_role_assignment_show_command_builder extends CommandBuilder {
  *
  * @param {string} workspaceName The workspace name.
  */
-class az_synapse_role_definition_list_command_builder extends CommandBuilder {
+class az_synapse_role_definition_list_command_builder extends CommandBuilder<az_synapse_role_definition_list_command_result> {
     constructor(commandPath: string, workspaceName: string) {
         super(commandPath);
         this.workspaceName(workspaceName)
@@ -1217,7 +1262,7 @@ class az_synapse_role_definition_list_command_builder extends CommandBuilder {
  * @param {string} role The role name/id that is assigned to the principal.
  * @param {string} workspaceName The workspace name.
  */
-class az_synapse_role_definition_show_command_builder extends CommandBuilder {
+class az_synapse_role_definition_show_command_builder extends CommandBuilder<az_synapse_role_definition_show_command_result> {
     constructor(commandPath: string, role: string, workspaceName: string) {
         super(commandPath);
         this.role(role)
@@ -1265,7 +1310,7 @@ class az_synapse_role_definition_show_command_builder extends CommandBuilder {
  * @param {string} sparkPoolName The name of the Spark pool.
  * @param {string} workspaceName The name of the workspace.
  */
-class az_synapse_spark_job_cancel_command_builder extends CommandBuilder {
+class az_synapse_spark_job_cancel_command_builder extends CommandBuilder<az_synapse_spark_job_cancel_command_result> {
     constructor(commandPath: string, livyId: string, sparkPoolName: string, workspaceName: string) {
         super(commandPath);
         this.livyId(livyId)
@@ -1320,7 +1365,7 @@ class az_synapse_spark_job_cancel_command_builder extends CommandBuilder {
  * @param {string} sparkPoolName The name of the Spark pool.
  * @param {string} workspaceName The name of the workspace.
  */
-class az_synapse_spark_job_list_command_builder extends CommandBuilder {
+class az_synapse_spark_job_list_command_builder extends CommandBuilder<az_synapse_spark_job_list_command_result> {
     constructor(commandPath: string, sparkPoolName: string, workspaceName: string) {
         super(commandPath);
         this.sparkPoolName(sparkPoolName)
@@ -1380,7 +1425,7 @@ class az_synapse_spark_job_list_command_builder extends CommandBuilder {
  * @param {string} sparkPoolName The name of the Spark pool.
  * @param {string} workspaceName The name of the workspace.
  */
-class az_synapse_spark_job_show_command_builder extends CommandBuilder {
+class az_synapse_spark_job_show_command_builder extends CommandBuilder<az_synapse_spark_job_show_command_result> {
     constructor(commandPath: string, livyId: string, sparkPoolName: string, workspaceName: string) {
         super(commandPath);
         this.livyId(livyId)
@@ -1448,7 +1493,7 @@ class az_synapse_spark_job_show_command_builder extends CommandBuilder {
  * @param {string} sparkPoolName The name of the Spark pool.
  * @param {string} workspaceName The name of the workspace.
  */
-class az_synapse_spark_job_submit_command_builder extends CommandBuilder {
+class az_synapse_spark_job_submit_command_builder extends CommandBuilder<az_synapse_spark_job_submit_command_result> {
     constructor(commandPath: string, executorSize: 'Large' | 'Medium' | 'Small', executors: string, mainClassName: string, mainDefinitionFile: string, name: string, sparkPoolName: string, workspaceName: string) {
         super(commandPath);
         this.executorSize(executorSize)
@@ -1577,7 +1622,7 @@ class az_synapse_spark_job_submit_command_builder extends CommandBuilder {
  * @param {string} sparkVersion The supported Spark version is 2.4 now.
  * @param {string} workspaceName The workspace name.
  */
-class az_synapse_spark_pool_create_command_builder extends CommandBuilder {
+class az_synapse_spark_pool_create_command_builder extends CommandBuilder<az_synapse_spark_pool_create_command_result> {
     constructor(commandPath: string, name: string, nodeCount: string, nodeSize: 'Large' | 'Medium' | 'Small', resourceGroup: string, sparkVersion: string, workspaceName: string) {
         super(commandPath);
         this.name(name)
@@ -1711,7 +1756,7 @@ class az_synapse_spark_pool_create_command_builder extends CommandBuilder {
  *                              [--yes]
  * ```
  */
-class az_synapse_spark_pool_delete_command_builder extends CommandBuilder {
+class az_synapse_spark_pool_delete_command_builder extends CommandBuilder<az_synapse_spark_pool_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1773,7 +1818,7 @@ class az_synapse_spark_pool_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} workspaceName The workspace name.
  */
-class az_synapse_spark_pool_list_command_builder extends CommandBuilder {
+class az_synapse_spark_pool_list_command_builder extends CommandBuilder<az_synapse_spark_pool_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -1818,7 +1863,7 @@ class az_synapse_spark_pool_list_command_builder extends CommandBuilder {
  *                            [--workspace-name]
  * ```
  */
-class az_synapse_spark_pool_show_command_builder extends CommandBuilder {
+class az_synapse_spark_pool_show_command_builder extends CommandBuilder<az_synapse_spark_pool_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1883,7 +1928,7 @@ class az_synapse_spark_pool_show_command_builder extends CommandBuilder {
  *                              [--workspace-name]
  * ```
  */
-class az_synapse_spark_pool_update_command_builder extends CommandBuilder {
+class az_synapse_spark_pool_update_command_builder extends CommandBuilder<az_synapse_spark_pool_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2006,7 +2051,7 @@ class az_synapse_spark_pool_update_command_builder extends CommandBuilder {
  *
  * @param {string} bigDataPoolName Big Data pool name.
  */
-class az_synapse_spark_pool_wait_command_builder extends CommandBuilder {
+class az_synapse_spark_pool_wait_command_builder extends CommandBuilder<az_synapse_spark_pool_wait_command_result> {
     constructor(commandPath: string, bigDataPoolName: string) {
         super(commandPath);
         this.bigDataPoolName(bigDataPoolName)
@@ -2101,7 +2146,7 @@ class az_synapse_spark_pool_wait_command_builder extends CommandBuilder {
  * @param {string} sparkPoolName The name of the Spark pool.
  * @param {string} workspaceName The name of the workspace.
  */
-class az_synapse_spark_session_cancel_command_builder extends CommandBuilder {
+class az_synapse_spark_session_cancel_command_builder extends CommandBuilder<az_synapse_spark_session_cancel_command_result> {
     constructor(commandPath: string, livyId: string, sparkPoolName: string, workspaceName: string) {
         super(commandPath);
         this.livyId(livyId)
@@ -2162,7 +2207,7 @@ class az_synapse_spark_session_cancel_command_builder extends CommandBuilder {
  * @param {string} sparkPoolName The name of the Spark pool.
  * @param {string} workspaceName The name of the workspace.
  */
-class az_synapse_spark_session_create_command_builder extends CommandBuilder {
+class az_synapse_spark_session_create_command_builder extends CommandBuilder<az_synapse_spark_session_create_command_result> {
     constructor(commandPath: string, executorSize: 'Large' | 'Medium' | 'Small', executors: string, name: string, sparkPoolName: string, workspaceName: string) {
         super(commandPath);
         this.executorSize(executorSize)
@@ -2243,7 +2288,7 @@ class az_synapse_spark_session_create_command_builder extends CommandBuilder {
  * @param {string} sparkPoolName The name of the Spark pool.
  * @param {string} workspaceName The name of the workspace.
  */
-class az_synapse_spark_session_list_command_builder extends CommandBuilder {
+class az_synapse_spark_session_list_command_builder extends CommandBuilder<az_synapse_spark_session_list_command_result> {
     constructor(commandPath: string, sparkPoolName: string, workspaceName: string) {
         super(commandPath);
         this.sparkPoolName(sparkPoolName)
@@ -2302,7 +2347,7 @@ class az_synapse_spark_session_list_command_builder extends CommandBuilder {
  * @param {string} sparkPoolName The name of the Spark pool.
  * @param {string} workspaceName The name of the workspace.
  */
-class az_synapse_spark_session_reset_timeout_command_builder extends CommandBuilder {
+class az_synapse_spark_session_reset_timeout_command_builder extends CommandBuilder<az_synapse_spark_session_reset_timeout_command_result> {
     constructor(commandPath: string, livyId: string, sparkPoolName: string, workspaceName: string) {
         super(commandPath);
         this.livyId(livyId)
@@ -2351,7 +2396,7 @@ class az_synapse_spark_session_reset_timeout_command_builder extends CommandBuil
  * @param {string} sparkPoolName The name of the Spark pool.
  * @param {string} workspaceName The name of the workspace.
  */
-class az_synapse_spark_session_show_command_builder extends CommandBuilder {
+class az_synapse_spark_session_show_command_builder extends CommandBuilder<az_synapse_spark_session_show_command_result> {
     constructor(commandPath: string, livyId: string, sparkPoolName: string, workspaceName: string) {
         super(commandPath);
         this.livyId(livyId)
@@ -2408,7 +2453,7 @@ class az_synapse_spark_session_show_command_builder extends CommandBuilder {
  * @param {string} sparkPoolName The name of the Spark pool.
  * @param {string} workspaceName The name of the workspace.
  */
-class az_synapse_spark_statement_cancel_command_builder extends CommandBuilder {
+class az_synapse_spark_statement_cancel_command_builder extends CommandBuilder<az_synapse_spark_statement_cancel_command_result> {
     constructor(commandPath: string, livyId: string, sessionId: string, sparkPoolName: string, workspaceName: string) {
         super(commandPath);
         this.livyId(livyId)
@@ -2473,7 +2518,7 @@ class az_synapse_spark_statement_cancel_command_builder extends CommandBuilder {
  * @param {string} sparkPoolName The name of the Spark pool.
  * @param {string} workspaceName The name of the workspace.
  */
-class az_synapse_spark_statement_invoke_command_builder extends CommandBuilder {
+class az_synapse_spark_statement_invoke_command_builder extends CommandBuilder<az_synapse_spark_statement_invoke_command_result> {
     constructor(commandPath: string, code: string, language: 'CSharp' | 'PySpark' | 'Python' | 'SQL' | 'Scala' | 'Spark' | 'SparkDotNet', sessionId: string, sparkPoolName: string, workspaceName: string) {
         super(commandPath);
         this.code(code)
@@ -2536,7 +2581,7 @@ class az_synapse_spark_statement_invoke_command_builder extends CommandBuilder {
  * @param {string} sparkPoolName The name of the Spark pool.
  * @param {string} workspaceName The name of the workspace.
  */
-class az_synapse_spark_statement_list_command_builder extends CommandBuilder {
+class az_synapse_spark_statement_list_command_builder extends CommandBuilder<az_synapse_spark_statement_list_command_result> {
     constructor(commandPath: string, sessionId: string, sparkPoolName: string, workspaceName: string) {
         super(commandPath);
         this.sessionId(sessionId)
@@ -2593,7 +2638,7 @@ class az_synapse_spark_statement_list_command_builder extends CommandBuilder {
  * @param {string} sparkPoolName The name of the Spark pool.
  * @param {string} workspaceName The name of the workspace.
  */
-class az_synapse_spark_statement_show_command_builder extends CommandBuilder {
+class az_synapse_spark_statement_show_command_builder extends CommandBuilder<az_synapse_spark_statement_show_command_result> {
     constructor(commandPath: string, livyId: string, sessionId: string, sparkPoolName: string, workspaceName: string) {
         super(commandPath);
         this.livyId(livyId)
@@ -2658,7 +2703,7 @@ class az_synapse_spark_statement_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} workspaceName The workspace name.
  */
-class az_synapse_sql_pool_create_command_builder extends CommandBuilder {
+class az_synapse_sql_pool_create_command_builder extends CommandBuilder<az_synapse_sql_pool_create_command_result> {
     constructor(commandPath: string, name: string, performanceLevel: string, resourceGroup: string, workspaceName: string) {
         super(commandPath);
         this.name(name)
@@ -2724,7 +2769,7 @@ class az_synapse_sql_pool_create_command_builder extends CommandBuilder {
  *                            [--yes]
  * ```
  */
-class az_synapse_sql_pool_delete_command_builder extends CommandBuilder {
+class az_synapse_sql_pool_delete_command_builder extends CommandBuilder<az_synapse_sql_pool_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2786,7 +2831,7 @@ class az_synapse_sql_pool_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} workspaceName The workspace name.
  */
-class az_synapse_sql_pool_list_command_builder extends CommandBuilder {
+class az_synapse_sql_pool_list_command_builder extends CommandBuilder<az_synapse_sql_pool_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -2830,7 +2875,7 @@ class az_synapse_sql_pool_list_command_builder extends CommandBuilder {
  *                           [--workspace-name]
  * ```
  */
-class az_synapse_sql_pool_pause_command_builder extends CommandBuilder {
+class az_synapse_sql_pool_pause_command_builder extends CommandBuilder<az_synapse_sql_pool_pause_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2878,7 +2923,7 @@ class az_synapse_sql_pool_pause_command_builder extends CommandBuilder {
  *                            [--workspace-name]
  * ```
  */
-class az_synapse_sql_pool_resume_command_builder extends CommandBuilder {
+class az_synapse_sql_pool_resume_command_builder extends CommandBuilder<az_synapse_sql_pool_resume_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2927,7 +2972,7 @@ class az_synapse_sql_pool_resume_command_builder extends CommandBuilder {
  *                          [--workspace-name]
  * ```
  */
-class az_synapse_sql_pool_show_command_builder extends CommandBuilder {
+class az_synapse_sql_pool_show_command_builder extends CommandBuilder<az_synapse_sql_pool_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2983,7 +3028,7 @@ class az_synapse_sql_pool_show_command_builder extends CommandBuilder {
  *                            [--workspace-name]
  * ```
  */
-class az_synapse_sql_pool_update_command_builder extends CommandBuilder {
+class az_synapse_sql_pool_update_command_builder extends CommandBuilder<az_synapse_sql_pool_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3052,7 +3097,7 @@ class az_synapse_sql_pool_update_command_builder extends CommandBuilder {
  *
  * @param {string} sqlPoolName SQL pool name.
  */
-class az_synapse_sql_pool_wait_command_builder extends CommandBuilder {
+class az_synapse_sql_pool_wait_command_builder extends CommandBuilder<az_synapse_sql_pool_wait_command_result> {
     constructor(commandPath: string, sqlPoolName: string) {
         super(commandPath);
         this.sqlPoolName(sqlPoolName)
@@ -3151,7 +3196,7 @@ class az_synapse_sql_pool_wait_command_builder extends CommandBuilder {
  * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format.
  * @param {string} workspaceName The workspace name.
  */
-class az_synapse_workspace_firewall_rule_create_command_builder extends CommandBuilder {
+class az_synapse_workspace_firewall_rule_create_command_builder extends CommandBuilder<az_synapse_workspace_firewall_rule_create_command_result> {
     constructor(commandPath: string, endIpAddress: string, name: string, resourceGroup: string, startIpAddress: string, workspaceName: string) {
         super(commandPath);
         this.endIpAddress(endIpAddress)
@@ -3218,7 +3263,7 @@ class az_synapse_workspace_firewall_rule_create_command_builder extends CommandB
  *                                           [--yes]
  * ```
  */
-class az_synapse_workspace_firewall_rule_delete_command_builder extends CommandBuilder {
+class az_synapse_workspace_firewall_rule_delete_command_builder extends CommandBuilder<az_synapse_workspace_firewall_rule_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3280,7 +3325,7 @@ class az_synapse_workspace_firewall_rule_delete_command_builder extends CommandB
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} workspaceName The workspace name.
  */
-class az_synapse_workspace_firewall_rule_list_command_builder extends CommandBuilder {
+class az_synapse_workspace_firewall_rule_list_command_builder extends CommandBuilder<az_synapse_workspace_firewall_rule_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -3325,7 +3370,7 @@ class az_synapse_workspace_firewall_rule_list_command_builder extends CommandBui
  *                                         [--workspace-name]
  * ```
  */
-class az_synapse_workspace_firewall_rule_show_command_builder extends CommandBuilder {
+class az_synapse_workspace_firewall_rule_show_command_builder extends CommandBuilder<az_synapse_workspace_firewall_rule_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3388,7 +3433,7 @@ class az_synapse_workspace_firewall_rule_show_command_builder extends CommandBui
  *
  * @param {string} ruleName The IP firewall rule name.
  */
-class az_synapse_workspace_firewall_rule_wait_command_builder extends CommandBuilder {
+class az_synapse_workspace_firewall_rule_wait_command_builder extends CommandBuilder<az_synapse_workspace_firewall_rule_wait_command_result> {
     constructor(commandPath: string, ruleName: string) {
         super(commandPath);
         this.ruleName(ruleName)
@@ -3478,7 +3523,7 @@ class az_synapse_workspace_firewall_rule_wait_command_builder extends CommandBui
  *
  * @param {string} name The name you wanted to check.
  */
-class az_synapse_workspace_check_name_command_builder extends CommandBuilder {
+class az_synapse_workspace_check_name_command_builder extends CommandBuilder<az_synapse_workspace_check_name_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -3522,7 +3567,7 @@ class az_synapse_workspace_check_name_command_builder extends CommandBuilder {
  * @param {string} sqlAdminLoginUser The sql administrator login user name.
  * @param {string} storageAccount The data lake storage account name or resource id.
  */
-class az_synapse_workspace_create_command_builder extends CommandBuilder {
+class az_synapse_workspace_create_command_builder extends CommandBuilder<az_synapse_workspace_create_command_result> {
     constructor(commandPath: string, fileSystem: string, location: string, name: string, resourceGroup: string, sqlAdminLoginPassword: string, sqlAdminLoginUser: string, storageAccount: string) {
         super(commandPath);
         this.fileSystem(fileSystem)
@@ -3608,7 +3653,7 @@ class az_synapse_workspace_create_command_builder extends CommandBuilder {
  *                             [--yes]
  * ```
  */
-class az_synapse_workspace_delete_command_builder extends CommandBuilder {
+class az_synapse_workspace_delete_command_builder extends CommandBuilder<az_synapse_workspace_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3660,7 +3705,7 @@ class az_synapse_workspace_delete_command_builder extends CommandBuilder {
  *                           [--subscription]
  * ```
  */
-class az_synapse_workspace_list_command_builder extends CommandBuilder {
+class az_synapse_workspace_list_command_builder extends CommandBuilder<az_synapse_workspace_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3696,7 +3741,7 @@ class az_synapse_workspace_list_command_builder extends CommandBuilder {
  *                           [--subscription]
  * ```
  */
-class az_synapse_workspace_show_command_builder extends CommandBuilder {
+class az_synapse_workspace_show_command_builder extends CommandBuilder<az_synapse_workspace_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3746,7 +3791,7 @@ class az_synapse_workspace_show_command_builder extends CommandBuilder {
  *                             [--tags]
  * ```
  */
-class az_synapse_workspace_update_command_builder extends CommandBuilder {
+class az_synapse_workspace_update_command_builder extends CommandBuilder<az_synapse_workspace_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3814,7 +3859,7 @@ class az_synapse_workspace_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} workspaceName The name of the workspace.
  */
-class az_synapse_workspace_wait_command_builder extends CommandBuilder {
+class az_synapse_workspace_wait_command_builder extends CommandBuilder<az_synapse_workspace_wait_command_result> {
     constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)

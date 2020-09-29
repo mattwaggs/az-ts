@@ -1,4 +1,11 @@
 import { CommandBuilder } from '../base';
+import { az_aro_create_command_result } from './models/az_aro_create_command_result'
+import { az_aro_delete_command_result } from './models/az_aro_delete_command_result'
+import { az_aro_list_command_result } from './models/az_aro_list_command_result'
+import { az_aro_list_credentials_command_result } from './models/az_aro_list_credentials_command_result'
+import { az_aro_show_command_result } from './models/az_aro_show_command_result'
+import { az_aro_update_command_result } from './models/az_aro_update_command_result'
+import { az_aro_wait_command_result } from './models/az_aro_wait_command_result'
 
 /** Manage Azure Red Hat OpenShift clusters. */
 export class az_aro {
@@ -187,7 +194,7 @@ export class az_aro {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} workerSubnet Name or ID of worker vnet subnet.  If name is supplied, `--vnet` must be supplied.
  */
-class az_aro_create_command_builder extends CommandBuilder {
+class az_aro_create_command_builder extends CommandBuilder<az_aro_create_command_result> {
     constructor(commandPath: string, masterSubnet: string, name: string, resourceGroup: string, workerSubnet: string) {
         super(commandPath);
         this.masterSubnet(masterSubnet)
@@ -350,7 +357,7 @@ class az_aro_create_command_builder extends CommandBuilder {
  * @param {string} name Name of cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aro_delete_command_builder extends CommandBuilder {
+class az_aro_delete_command_builder extends CommandBuilder<az_aro_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -398,7 +405,7 @@ class az_aro_delete_command_builder extends CommandBuilder {
  *             [--subscription]
  * ```
  */
-class az_aro_list_command_builder extends CommandBuilder {
+class az_aro_list_command_builder extends CommandBuilder<az_aro_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -435,7 +442,7 @@ class az_aro_list_command_builder extends CommandBuilder {
  * @param {string} name Name of cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aro_list_credentials_command_builder extends CommandBuilder {
+class az_aro_list_credentials_command_builder extends CommandBuilder<az_aro_list_credentials_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -475,7 +482,7 @@ class az_aro_list_credentials_command_builder extends CommandBuilder {
  * @param {string} name Name of cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aro_show_command_builder extends CommandBuilder {
+class az_aro_show_command_builder extends CommandBuilder<az_aro_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -521,7 +528,7 @@ class az_aro_show_command_builder extends CommandBuilder {
  * @param {string} name Name of cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aro_update_command_builder extends CommandBuilder {
+class az_aro_update_command_builder extends CommandBuilder<az_aro_update_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -573,7 +580,7 @@ class az_aro_update_command_builder extends CommandBuilder {
  * @param {string} name Name of cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aro_wait_command_builder extends CommandBuilder {
+class az_aro_wait_command_builder extends CommandBuilder<az_aro_wait_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)

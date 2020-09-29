@@ -1,4 +1,52 @@
 import { CommandBuilder } from '../base';
+import { az_apim_api_operation_create_command_result } from './models/az_apim_api_operation_create_command_result'
+import { az_apim_api_operation_delete_command_result } from './models/az_apim_api_operation_delete_command_result'
+import { az_apim_api_operation_list_command_result } from './models/az_apim_api_operation_list_command_result'
+import { az_apim_api_operation_show_command_result } from './models/az_apim_api_operation_show_command_result'
+import { az_apim_api_operation_update_command_result } from './models/az_apim_api_operation_update_command_result'
+import { az_apim_api_release_create_command_result } from './models/az_apim_api_release_create_command_result'
+import { az_apim_api_release_delete_command_result } from './models/az_apim_api_release_delete_command_result'
+import { az_apim_api_release_list_command_result } from './models/az_apim_api_release_list_command_result'
+import { az_apim_api_release_show_command_result } from './models/az_apim_api_release_show_command_result'
+import { az_apim_api_release_update_command_result } from './models/az_apim_api_release_update_command_result'
+import { az_apim_api_revision_create_command_result } from './models/az_apim_api_revision_create_command_result'
+import { az_apim_api_revision_list_command_result } from './models/az_apim_api_revision_list_command_result'
+import { az_apim_api_versionset_create_command_result } from './models/az_apim_api_versionset_create_command_result'
+import { az_apim_api_versionset_delete_command_result } from './models/az_apim_api_versionset_delete_command_result'
+import { az_apim_api_versionset_list_command_result } from './models/az_apim_api_versionset_list_command_result'
+import { az_apim_api_versionset_show_command_result } from './models/az_apim_api_versionset_show_command_result'
+import { az_apim_api_versionset_update_command_result } from './models/az_apim_api_versionset_update_command_result'
+import { az_apim_api_create_command_result } from './models/az_apim_api_create_command_result'
+import { az_apim_api_delete_command_result } from './models/az_apim_api_delete_command_result'
+import { az_apim_api_import_command_result } from './models/az_apim_api_import_command_result'
+import { az_apim_api_list_command_result } from './models/az_apim_api_list_command_result'
+import { az_apim_api_show_command_result } from './models/az_apim_api_show_command_result'
+import { az_apim_api_update_command_result } from './models/az_apim_api_update_command_result'
+import { az_apim_api_wait_command_result } from './models/az_apim_api_wait_command_result'
+import { az_apim_nv_create_command_result } from './models/az_apim_nv_create_command_result'
+import { az_apim_nv_delete_command_result } from './models/az_apim_nv_delete_command_result'
+import { az_apim_nv_list_command_result } from './models/az_apim_nv_list_command_result'
+import { az_apim_nv_show_command_result } from './models/az_apim_nv_show_command_result'
+import { az_apim_nv_show_secret_command_result } from './models/az_apim_nv_show_secret_command_result'
+import { az_apim_nv_update_command_result } from './models/az_apim_nv_update_command_result'
+import { az_apim_product_api_add_command_result } from './models/az_apim_product_api_add_command_result'
+import { az_apim_product_api_check_command_result } from './models/az_apim_product_api_check_command_result'
+import { az_apim_product_api_delete_command_result } from './models/az_apim_product_api_delete_command_result'
+import { az_apim_product_api_list_command_result } from './models/az_apim_product_api_list_command_result'
+import { az_apim_product_create_command_result } from './models/az_apim_product_create_command_result'
+import { az_apim_product_delete_command_result } from './models/az_apim_product_delete_command_result'
+import { az_apim_product_list_command_result } from './models/az_apim_product_list_command_result'
+import { az_apim_product_show_command_result } from './models/az_apim_product_show_command_result'
+import { az_apim_product_update_command_result } from './models/az_apim_product_update_command_result'
+import { az_apim_apply_network_updates_command_result } from './models/az_apim_apply_network_updates_command_result'
+import { az_apim_backup_command_result } from './models/az_apim_backup_command_result'
+import { az_apim_check_name_command_result } from './models/az_apim_check_name_command_result'
+import { az_apim_create_command_result } from './models/az_apim_create_command_result'
+import { az_apim_delete_command_result } from './models/az_apim_delete_command_result'
+import { az_apim_list_command_result } from './models/az_apim_list_command_result'
+import { az_apim_show_command_result } from './models/az_apim_show_command_result'
+import { az_apim_update_command_result } from './models/az_apim_update_command_result'
+import { az_apim_wait_command_result } from './models/az_apim_wait_command_result'
 
 /** Manage Azure API Management API Operations. */
 export class az_apim_api_operation {
@@ -1168,7 +1216,7 @@ export class az_apim {
  * @param {string} serviceName The name of the API Management service instance.
  * @param {string} urlTemplate Relative URL template identifying the target resource for this operation. May include parameters.
  */
-class az_apim_api_operation_create_command_builder extends CommandBuilder {
+class az_apim_api_operation_create_command_builder extends CommandBuilder<az_apim_api_operation_create_command_result> {
     constructor(commandPath: string, apiId: string, displayName: string, method: string, resourceGroup: string, serviceName: string, urlTemplate: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -1264,7 +1312,7 @@ class az_apim_api_operation_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_api_operation_delete_command_builder extends CommandBuilder {
+class az_apim_api_operation_delete_command_builder extends CommandBuilder<az_apim_api_operation_delete_command_result> {
     constructor(commandPath: string, apiId: string, operationId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -1326,7 +1374,7 @@ class az_apim_api_operation_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_api_operation_list_command_builder extends CommandBuilder {
+class az_apim_api_operation_list_command_builder extends CommandBuilder<az_apim_api_operation_list_command_result> {
     constructor(commandPath: string, apiId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -1383,7 +1431,7 @@ class az_apim_api_operation_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_api_operation_show_command_builder extends CommandBuilder {
+class az_apim_api_operation_show_command_builder extends CommandBuilder<az_apim_api_operation_show_command_result> {
     constructor(commandPath: string, apiId: string, operationId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -1455,7 +1503,7 @@ class az_apim_api_operation_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_api_operation_update_command_builder extends CommandBuilder {
+class az_apim_api_operation_update_command_builder extends CommandBuilder<az_apim_api_operation_update_command_result> {
     constructor(commandPath: string, apiId: string, operationId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -1569,7 +1617,7 @@ class az_apim_api_operation_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_api_release_create_command_builder extends CommandBuilder {
+class az_apim_api_release_create_command_builder extends CommandBuilder<az_apim_api_release_create_command_result> {
     constructor(commandPath: string, apiId: string, apiRevision: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -1645,7 +1693,7 @@ class az_apim_api_release_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_api_release_delete_command_builder extends CommandBuilder {
+class az_apim_api_release_delete_command_builder extends CommandBuilder<az_apim_api_release_delete_command_result> {
     constructor(commandPath: string, apiId: string, releaseId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -1707,7 +1755,7 @@ class az_apim_api_release_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_api_release_list_command_builder extends CommandBuilder {
+class az_apim_api_release_list_command_builder extends CommandBuilder<az_apim_api_release_list_command_result> {
     constructor(commandPath: string, apiId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -1764,7 +1812,7 @@ class az_apim_api_release_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_api_release_show_command_builder extends CommandBuilder {
+class az_apim_api_release_show_command_builder extends CommandBuilder<az_apim_api_release_show_command_result> {
     constructor(commandPath: string, apiId: string, releaseId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -1834,7 +1882,7 @@ class az_apim_api_release_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_api_release_update_command_builder extends CommandBuilder {
+class az_apim_api_release_update_command_builder extends CommandBuilder<az_apim_api_release_update_command_result> {
     constructor(commandPath: string, apiId: string, releaseId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -1934,7 +1982,7 @@ class az_apim_api_release_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_api_revision_create_command_builder extends CommandBuilder {
+class az_apim_api_revision_create_command_builder extends CommandBuilder<az_apim_api_revision_create_command_result> {
     constructor(commandPath: string, apiId: string, apiRevision: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -1996,7 +2044,7 @@ class az_apim_api_revision_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_api_revision_list_command_builder extends CommandBuilder {
+class az_apim_api_revision_list_command_builder extends CommandBuilder<az_apim_api_revision_list_command_result> {
     constructor(commandPath: string, apiId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -2057,7 +2105,7 @@ class az_apim_api_revision_list_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  * @param {string} versioningScheme Required. An value that determines where the API Version identifer will be located in a HTTP request.
  */
-class az_apim_api_versionset_create_command_builder extends CommandBuilder {
+class az_apim_api_versionset_create_command_builder extends CommandBuilder<az_apim_api_versionset_create_command_result> {
     constructor(commandPath: string, displayName: string, resourceGroup: string, serviceName: string, versioningScheme: string) {
         super(commandPath);
         this.displayName(displayName)
@@ -2143,7 +2191,7 @@ class az_apim_api_versionset_create_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  * @param {string} versionSetId A resource identifier for the related ApiVersionSet.
  */
-class az_apim_api_versionset_delete_command_builder extends CommandBuilder {
+class az_apim_api_versionset_delete_command_builder extends CommandBuilder<az_apim_api_versionset_delete_command_result> {
     constructor(commandPath: string, resourceGroup: string, serviceName: string, versionSetId: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -2196,7 +2244,7 @@ class az_apim_api_versionset_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_api_versionset_list_command_builder extends CommandBuilder {
+class az_apim_api_versionset_list_command_builder extends CommandBuilder<az_apim_api_versionset_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -2244,7 +2292,7 @@ class az_apim_api_versionset_list_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  * @param {string} versionSetId A resource identifier for the related ApiVersionSet.
  */
-class az_apim_api_versionset_show_command_builder extends CommandBuilder {
+class az_apim_api_versionset_show_command_builder extends CommandBuilder<az_apim_api_versionset_show_command_result> {
     constructor(commandPath: string, resourceGroup: string, serviceName: string, versionSetId: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -2308,7 +2356,7 @@ class az_apim_api_versionset_show_command_builder extends CommandBuilder {
  * @param {string} serviceName The name of the API Management service instance.
  * @param {string} versionSetId A resource identifier for the related ApiVersionSet.
  */
-class az_apim_api_versionset_update_command_builder extends CommandBuilder {
+class az_apim_api_versionset_update_command_builder extends CommandBuilder<az_apim_api_versionset_update_command_result> {
     constructor(commandPath: string, resourceGroup: string, serviceName: string, versionSetId: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -2433,7 +2481,7 @@ class az_apim_api_versionset_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_api_create_command_builder extends CommandBuilder {
+class az_apim_api_create_command_builder extends CommandBuilder<az_apim_api_create_command_result> {
     constructor(commandPath: string, apiId: string, displayName: string, path: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -2577,7 +2625,7 @@ class az_apim_api_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_api_delete_command_builder extends CommandBuilder {
+class az_apim_api_delete_command_builder extends CommandBuilder<az_apim_api_delete_command_result> {
     constructor(commandPath: string, apiId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -2666,7 +2714,7 @@ class az_apim_api_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the api management service instance.
  */
-class az_apim_api_import_command_builder extends CommandBuilder {
+class az_apim_api_import_command_builder extends CommandBuilder<az_apim_api_import_command_result> {
     constructor(commandPath: string, path: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.path(path)
@@ -2818,7 +2866,7 @@ class az_apim_api_import_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_api_list_command_builder extends CommandBuilder {
+class az_apim_api_list_command_builder extends CommandBuilder<az_apim_api_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -2884,7 +2932,7 @@ class az_apim_api_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_api_show_command_builder extends CommandBuilder {
+class az_apim_api_show_command_builder extends CommandBuilder<az_apim_api_show_command_result> {
     constructor(commandPath: string, apiId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -2954,7 +3002,7 @@ class az_apim_api_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_api_update_command_builder extends CommandBuilder {
+class az_apim_api_update_command_builder extends CommandBuilder<az_apim_api_update_command_result> {
     constructor(commandPath: string, apiId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -3105,7 +3153,7 @@ class az_apim_api_update_command_builder extends CommandBuilder {
  * @param {string} name The name of the api management service instance.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_apim_api_wait_command_builder extends CommandBuilder {
+class az_apim_api_wait_command_builder extends CommandBuilder<az_apim_api_wait_command_result> {
     constructor(commandPath: string, apiId: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -3200,7 +3248,7 @@ class az_apim_api_wait_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_nv_create_command_builder extends CommandBuilder {
+class az_apim_nv_create_command_builder extends CommandBuilder<az_apim_nv_create_command_result> {
     constructor(commandPath: string, displayName: string, namedValueId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.displayName(displayName)
@@ -3274,7 +3322,7 @@ class az_apim_nv_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_nv_delete_command_builder extends CommandBuilder {
+class az_apim_nv_delete_command_builder extends CommandBuilder<az_apim_nv_delete_command_result> {
     constructor(commandPath: string, namedValueId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.namedValueId(namedValueId)
@@ -3327,7 +3375,7 @@ class az_apim_nv_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_nv_list_command_builder extends CommandBuilder {
+class az_apim_nv_list_command_builder extends CommandBuilder<az_apim_nv_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -3375,7 +3423,7 @@ class az_apim_nv_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_nv_show_command_builder extends CommandBuilder {
+class az_apim_nv_show_command_builder extends CommandBuilder<az_apim_nv_show_command_result> {
     constructor(commandPath: string, namedValueId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.namedValueId(namedValueId)
@@ -3429,7 +3477,7 @@ class az_apim_nv_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_nv_show_secret_command_builder extends CommandBuilder {
+class az_apim_nv_show_secret_command_builder extends CommandBuilder<az_apim_nv_show_secret_command_result> {
     constructor(commandPath: string, namedValueId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.namedValueId(namedValueId)
@@ -3485,7 +3533,7 @@ class az_apim_nv_show_secret_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the API Management service instance.
  */
-class az_apim_nv_update_command_builder extends CommandBuilder {
+class az_apim_nv_update_command_builder extends CommandBuilder<az_apim_nv_update_command_result> {
     constructor(commandPath: string, namedValueId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.namedValueId(namedValueId)
@@ -3583,7 +3631,7 @@ class az_apim_nv_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the api management service instance.
  */
-class az_apim_product_api_add_command_builder extends CommandBuilder {
+class az_apim_product_api_add_command_builder extends CommandBuilder<az_apim_product_api_add_command_result> {
     constructor(commandPath: string, apiId: string, productId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -3640,7 +3688,7 @@ class az_apim_product_api_add_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the api management service instance.
  */
-class az_apim_product_api_check_command_builder extends CommandBuilder {
+class az_apim_product_api_check_command_builder extends CommandBuilder<az_apim_product_api_check_command_result> {
     constructor(commandPath: string, apiId: string, productId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -3697,7 +3745,7 @@ class az_apim_product_api_check_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the api management service instance.
  */
-class az_apim_product_api_delete_command_builder extends CommandBuilder {
+class az_apim_product_api_delete_command_builder extends CommandBuilder<az_apim_product_api_delete_command_result> {
     constructor(commandPath: string, apiId: string, productId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.apiId(apiId)
@@ -3753,7 +3801,7 @@ class az_apim_product_api_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the api management service instance.
  */
-class az_apim_product_api_list_command_builder extends CommandBuilder {
+class az_apim_product_api_list_command_builder extends CommandBuilder<az_apim_product_api_list_command_result> {
     constructor(commandPath: string, productId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.productId(productId)
@@ -3815,7 +3863,7 @@ class az_apim_product_api_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the api management service instance.
  */
-class az_apim_product_create_command_builder extends CommandBuilder {
+class az_apim_product_create_command_builder extends CommandBuilder<az_apim_product_create_command_result> {
     constructor(commandPath: string, productName: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.productName(productName)
@@ -3915,7 +3963,7 @@ class az_apim_product_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the api management service instance.
  */
-class az_apim_product_delete_command_builder extends CommandBuilder {
+class az_apim_product_delete_command_builder extends CommandBuilder<az_apim_product_delete_command_result> {
     constructor(commandPath: string, productId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.productId(productId)
@@ -3986,7 +4034,7 @@ class az_apim_product_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the api management service instance.
  */
-class az_apim_product_list_command_builder extends CommandBuilder {
+class az_apim_product_list_command_builder extends CommandBuilder<az_apim_product_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -4034,7 +4082,7 @@ class az_apim_product_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the api management service instance.
  */
-class az_apim_product_show_command_builder extends CommandBuilder {
+class az_apim_product_show_command_builder extends CommandBuilder<az_apim_product_show_command_result> {
     constructor(commandPath: string, productId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.productId(productId)
@@ -4101,7 +4149,7 @@ class az_apim_product_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serviceName The name of the api management service instance.
  */
-class az_apim_product_update_command_builder extends CommandBuilder {
+class az_apim_product_update_command_builder extends CommandBuilder<az_apim_product_update_command_result> {
     constructor(commandPath: string, productId: string, resourceGroup: string, serviceName: string) {
         super(commandPath);
         this.productId(productId)
@@ -4227,7 +4275,7 @@ class az_apim_product_update_command_builder extends CommandBuilder {
  * @param {string} name The name of the api management service instance.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_apim_apply_network_updates_command_builder extends CommandBuilder {
+class az_apim_apply_network_updates_command_builder extends CommandBuilder<az_apim_apply_network_updates_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -4287,7 +4335,7 @@ class az_apim_apply_network_updates_command_builder extends CommandBuilder {
  * @param {string} storageAccountKey The access key of the storage account used to place the backup.
  * @param {string} storageAccountName The name of the storage account used to place the backup.
  */
-class az_apim_backup_command_builder extends CommandBuilder {
+class az_apim_backup_command_builder extends CommandBuilder<az_apim_backup_command_result> {
     constructor(commandPath: string, backupName: string, name: string, resourceGroup: string, storageAccountContainer: string, storageAccountKey: string, storageAccountName: string) {
         super(commandPath);
         this.backupName(backupName)
@@ -4358,7 +4406,7 @@ class az_apim_backup_command_builder extends CommandBuilder {
  *
  * @param {string} name The name of the api management service instance.
  */
-class az_apim_check_name_command_builder extends CommandBuilder {
+class az_apim_check_name_command_builder extends CommandBuilder<az_apim_check_name_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -4402,7 +4450,7 @@ class az_apim_check_name_command_builder extends CommandBuilder {
  * @param {string} publisherName The name of your organization for use in the developer portal and e-mail notifications.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_apim_create_command_builder extends CommandBuilder {
+class az_apim_create_command_builder extends CommandBuilder<az_apim_create_command_result> {
     constructor(commandPath: string, name: string, publisherEmail: string, publisherName: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -4505,7 +4553,7 @@ class az_apim_create_command_builder extends CommandBuilder {
  * @param {string} name The name of the api management service instance.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_apim_delete_command_builder extends CommandBuilder {
+class az_apim_delete_command_builder extends CommandBuilder<az_apim_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -4553,7 +4601,7 @@ class az_apim_delete_command_builder extends CommandBuilder {
  *              [--subscription]
  * ```
  */
-class az_apim_list_command_builder extends CommandBuilder {
+class az_apim_list_command_builder extends CommandBuilder<az_apim_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -4591,7 +4639,7 @@ class az_apim_list_command_builder extends CommandBuilder {
  * @param {string} name The name of the api management service instance.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_apim_show_command_builder extends CommandBuilder {
+class az_apim_show_command_builder extends CommandBuilder<az_apim_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -4649,7 +4697,7 @@ class az_apim_show_command_builder extends CommandBuilder {
  * @param {string} name The name of the api management service instance.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_apim_update_command_builder extends CommandBuilder {
+class az_apim_update_command_builder extends CommandBuilder<az_apim_update_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -4773,7 +4821,7 @@ class az_apim_update_command_builder extends CommandBuilder {
  * @param {string} name The name of the api management service instance.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_apim_wait_command_builder extends CommandBuilder {
+class az_apim_wait_command_builder extends CommandBuilder<az_apim_wait_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)

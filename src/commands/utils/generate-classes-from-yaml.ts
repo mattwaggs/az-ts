@@ -45,8 +45,6 @@ export const generateClassesFromYaml = (yamlNodes: Node[]): void => {
     getGroupIdentifierName(node.uid)
   );
 
-  console.log(`groups: ${Object.keys(groups).length}`);
-
   const generatedFileNames = []; // tracking these since I need to import them later
 
   Object.keys(groups).forEach((key) => {
@@ -54,6 +52,12 @@ export const generateClassesFromYaml = (yamlNodes: Node[]): void => {
     const fileName = path.join(generatedSourceDir, `${key}.ts`);
     generateProjectFileForGroupOfNodes(project, fileName, nodes);
     generatedFileNames.push(`./src/${key}.ts`);
+
+    nodes.forEach((node) => {
+      node.directCommands?.forEach((dc) => {
+        generateModelFileForNode(project, "./src/gen/src/models", dc);
+      });
+    });
   });
 
   // after the individual modules have been created we need to create
@@ -64,8 +68,42 @@ export const generateClassesFromYaml = (yamlNodes: Node[]): void => {
   project.save();
 };
 
+const generateModelFileForNode = (
+  project: Project,
+  dir: string,
+  node: DirectCommand
+) => {
+  const nameOfType = `${node.uid}_command_result`;
+
+  if (!project.getDirectory(dir)) {
+    project.createDirectory(dir);
+  }
+
+  const filePath = path.join(dir, `${nameOfType}.ts`);
+  try {
+    project.createSourceFile(
+      filePath,
+      {
+        statements: [`export type ${nameOfType} = Record<string, unknown>`],
+      },
+      {
+        overwrite: true,
+      }
+    );
+  } catch (e) {
+    // would have preferred to not use try catch, but was having trouble
+    // detecting if file exists
+  }
+};
+
 const noDashes = (input: string) => {
-  return input.replace(/-/g, "_");
+  const result = input.replace(/-/g, "_");
+  if (result.match(/^\d/)) {
+    // starts with a number, like az_storage.404Document(); ughh..
+    return `_${result}`;
+  }
+
+  return result;
 };
 
 const generateProjectFileForGroupOfNodes = (
@@ -78,6 +116,11 @@ const generateProjectFileForGroupOfNodes = (
     {
       statements: [
         "import { CommandBuilder } from '../base';",
+        ...nodes
+          .map((n) => n?.directCommands || [])
+          .filter((n) => n?.length > 0)
+          .reduce((a, b) => a.concat(b), [])
+          .map(generateImportForNode),
         ...nodes.map(generateClassFromNode),
         ...nodes
           .map((n) => n?.directCommands || [])
@@ -92,6 +135,11 @@ const generateProjectFileForGroupOfNodes = (
       overwrite: true,
     }
   );
+};
+
+const generateImportForNode = (node: DirectCommand): string => {
+  const nameOfType = `${node.uid}_command_result`;
+  return `import { ${nameOfType} } from './models/${nameOfType}'`;
 };
 
 const generateClassFromNode = (node: Node): StatementStructures => {
@@ -197,7 +245,7 @@ const generateCommandBuilderClass = (
   return {
     kind: StructureKind.Class,
     name: noDashes(className),
-    extends: "CommandBuilder",
+    extends: `CommandBuilder<${node.uid}_command_result>`,
     docs: [generateDocCommentsForCommand(node)],
     ctors: [
       {
@@ -242,7 +290,7 @@ const generateCommandBuilderMethodFromParam = (
 
   return {
     kind: StructureKind.Method,
-    name: _.camelCase(parameterNameToUseableName(node.name)),
+    name: noDashes(_.camelCase(parameterNameToUseableName(node.name))),
     docs: [node.summary],
     parameters: [
       {
@@ -438,10 +486,6 @@ const getImportedClassName = (className: string) => {
   const regex = RegExp(/^([a-z]+_[a-z-]+)_?(?:.*)$/, "i");
   const results = regex.exec(className);
   const namespace = results?.[1];
-
-  if (!namespace) {
-    console.log(`couldn't find namespace of ${className}`);
-  }
 
   return namespace
     ? `_${_.camelCase(namespace)}.${noDashes(className)}`

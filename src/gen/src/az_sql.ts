@@ -1,4 +1,170 @@
 import { CommandBuilder } from '../base';
+import { az_sql_db_audit_policy_show_command_result } from './models/az_sql_db_audit_policy_show_command_result'
+import { az_sql_db_audit_policy_update_command_result } from './models/az_sql_db_audit_policy_update_command_result'
+import { az_sql_db_classification_recommendation_disable_command_result } from './models/az_sql_db_classification_recommendation_disable_command_result'
+import { az_sql_db_classification_recommendation_enable_command_result } from './models/az_sql_db_classification_recommendation_enable_command_result'
+import { az_sql_db_classification_recommendation_list_command_result } from './models/az_sql_db_classification_recommendation_list_command_result'
+import { az_sql_db_classification_delete_command_result } from './models/az_sql_db_classification_delete_command_result'
+import { az_sql_db_classification_list_command_result } from './models/az_sql_db_classification_list_command_result'
+import { az_sql_db_classification_show_command_result } from './models/az_sql_db_classification_show_command_result'
+import { az_sql_db_classification_update_command_result } from './models/az_sql_db_classification_update_command_result'
+import { az_sql_db_ltr_backup_delete_command_result } from './models/az_sql_db_ltr_backup_delete_command_result'
+import { az_sql_db_ltr_backup_list_command_result } from './models/az_sql_db_ltr_backup_list_command_result'
+import { az_sql_db_ltr_backup_restore_command_result } from './models/az_sql_db_ltr_backup_restore_command_result'
+import { az_sql_db_ltr_backup_show_command_result } from './models/az_sql_db_ltr_backup_show_command_result'
+import { az_sql_db_ltr_backup_wait_command_result } from './models/az_sql_db_ltr_backup_wait_command_result'
+import { az_sql_db_ltr_policy_set_command_result } from './models/az_sql_db_ltr_policy_set_command_result'
+import { az_sql_db_ltr_policy_show_command_result } from './models/az_sql_db_ltr_policy_show_command_result'
+import { az_sql_db_op_cancel_command_result } from './models/az_sql_db_op_cancel_command_result'
+import { az_sql_db_op_list_command_result } from './models/az_sql_db_op_list_command_result'
+import { az_sql_db_replica_create_command_result } from './models/az_sql_db_replica_create_command_result'
+import { az_sql_db_replica_delete_link_command_result } from './models/az_sql_db_replica_delete_link_command_result'
+import { az_sql_db_replica_list_links_command_result } from './models/az_sql_db_replica_list_links_command_result'
+import { az_sql_db_replica_set_primary_command_result } from './models/az_sql_db_replica_set_primary_command_result'
+import { az_sql_db_tde_list_activity_command_result } from './models/az_sql_db_tde_list_activity_command_result'
+import { az_sql_db_tde_set_command_result } from './models/az_sql_db_tde_set_command_result'
+import { az_sql_db_tde_show_command_result } from './models/az_sql_db_tde_show_command_result'
+import { az_sql_db_threat_policy_show_command_result } from './models/az_sql_db_threat_policy_show_command_result'
+import { az_sql_db_threat_policy_update_command_result } from './models/az_sql_db_threat_policy_update_command_result'
+import { az_sql_db_copy_command_result } from './models/az_sql_db_copy_command_result'
+import { az_sql_db_create_command_result } from './models/az_sql_db_create_command_result'
+import { az_sql_db_delete_command_result } from './models/az_sql_db_delete_command_result'
+import { az_sql_db_export_command_result } from './models/az_sql_db_export_command_result'
+import { az_sql_db_import_command_result } from './models/az_sql_db_import_command_result'
+import { az_sql_db_list_command_result } from './models/az_sql_db_list_command_result'
+import { az_sql_db_list_deleted_command_result } from './models/az_sql_db_list_deleted_command_result'
+import { az_sql_db_list_editions_command_result } from './models/az_sql_db_list_editions_command_result'
+import { az_sql_db_list_usages_command_result } from './models/az_sql_db_list_usages_command_result'
+import { az_sql_db_rename_command_result } from './models/az_sql_db_rename_command_result'
+import { az_sql_db_restore_command_result } from './models/az_sql_db_restore_command_result'
+import { az_sql_db_show_command_result } from './models/az_sql_db_show_command_result'
+import { az_sql_db_show_connection_string_command_result } from './models/az_sql_db_show_connection_string_command_result'
+import { az_sql_db_update_command_result } from './models/az_sql_db_update_command_result'
+import { az_sql_dw_create_command_result } from './models/az_sql_dw_create_command_result'
+import { az_sql_dw_delete_command_result } from './models/az_sql_dw_delete_command_result'
+import { az_sql_dw_list_command_result } from './models/az_sql_dw_list_command_result'
+import { az_sql_dw_pause_command_result } from './models/az_sql_dw_pause_command_result'
+import { az_sql_dw_resume_command_result } from './models/az_sql_dw_resume_command_result'
+import { az_sql_dw_show_command_result } from './models/az_sql_dw_show_command_result'
+import { az_sql_dw_update_command_result } from './models/az_sql_dw_update_command_result'
+import { az_sql_elastic_pool_op_cancel_command_result } from './models/az_sql_elastic_pool_op_cancel_command_result'
+import { az_sql_elastic_pool_op_list_command_result } from './models/az_sql_elastic_pool_op_list_command_result'
+import { az_sql_elastic_pool_create_command_result } from './models/az_sql_elastic_pool_create_command_result'
+import { az_sql_elastic_pool_delete_command_result } from './models/az_sql_elastic_pool_delete_command_result'
+import { az_sql_elastic_pool_list_command_result } from './models/az_sql_elastic_pool_list_command_result'
+import { az_sql_elastic_pool_list_dbs_command_result } from './models/az_sql_elastic_pool_list_dbs_command_result'
+import { az_sql_elastic_pool_list_editions_command_result } from './models/az_sql_elastic_pool_list_editions_command_result'
+import { az_sql_elastic_pool_show_command_result } from './models/az_sql_elastic_pool_show_command_result'
+import { az_sql_elastic_pool_update_command_result } from './models/az_sql_elastic_pool_update_command_result'
+import { az_sql_failover_group_create_command_result } from './models/az_sql_failover_group_create_command_result'
+import { az_sql_failover_group_delete_command_result } from './models/az_sql_failover_group_delete_command_result'
+import { az_sql_failover_group_list_command_result } from './models/az_sql_failover_group_list_command_result'
+import { az_sql_failover_group_set_primary_command_result } from './models/az_sql_failover_group_set_primary_command_result'
+import { az_sql_failover_group_show_command_result } from './models/az_sql_failover_group_show_command_result'
+import { az_sql_failover_group_update_command_result } from './models/az_sql_failover_group_update_command_result'
+import { az_sql_instance_failover_group_create_command_result } from './models/az_sql_instance_failover_group_create_command_result'
+import { az_sql_instance_failover_group_delete_command_result } from './models/az_sql_instance_failover_group_delete_command_result'
+import { az_sql_instance_failover_group_set_primary_command_result } from './models/az_sql_instance_failover_group_set_primary_command_result'
+import { az_sql_instance_failover_group_show_command_result } from './models/az_sql_instance_failover_group_show_command_result'
+import { az_sql_instance_failover_group_update_command_result } from './models/az_sql_instance_failover_group_update_command_result'
+import { az_sql_instance_pool_create_command_result } from './models/az_sql_instance_pool_create_command_result'
+import { az_sql_instance_pool_delete_command_result } from './models/az_sql_instance_pool_delete_command_result'
+import { az_sql_instance_pool_list_command_result } from './models/az_sql_instance_pool_list_command_result'
+import { az_sql_instance_pool_show_command_result } from './models/az_sql_instance_pool_show_command_result'
+import { az_sql_instance_pool_update_command_result } from './models/az_sql_instance_pool_update_command_result'
+import { az_sql_instance_pool_wait_command_result } from './models/az_sql_instance_pool_wait_command_result'
+import { az_sql_mi_ad_admin_create_command_result } from './models/az_sql_mi_ad_admin_create_command_result'
+import { az_sql_mi_ad_admin_delete_command_result } from './models/az_sql_mi_ad_admin_delete_command_result'
+import { az_sql_mi_ad_admin_list_command_result } from './models/az_sql_mi_ad_admin_list_command_result'
+import { az_sql_mi_ad_admin_update_command_result } from './models/az_sql_mi_ad_admin_update_command_result'
+import { az_sql_mi_key_create_command_result } from './models/az_sql_mi_key_create_command_result'
+import { az_sql_mi_key_delete_command_result } from './models/az_sql_mi_key_delete_command_result'
+import { az_sql_mi_key_list_command_result } from './models/az_sql_mi_key_list_command_result'
+import { az_sql_mi_key_show_command_result } from './models/az_sql_mi_key_show_command_result'
+import { az_sql_mi_op_cancel_command_result } from './models/az_sql_mi_op_cancel_command_result'
+import { az_sql_mi_op_list_command_result } from './models/az_sql_mi_op_list_command_result'
+import { az_sql_mi_op_show_command_result } from './models/az_sql_mi_op_show_command_result'
+import { az_sql_mi_tde_key_set_command_result } from './models/az_sql_mi_tde_key_set_command_result'
+import { az_sql_mi_tde_key_show_command_result } from './models/az_sql_mi_tde_key_show_command_result'
+import { az_sql_mi_create_command_result } from './models/az_sql_mi_create_command_result'
+import { az_sql_mi_delete_command_result } from './models/az_sql_mi_delete_command_result'
+import { az_sql_mi_failover_command_result } from './models/az_sql_mi_failover_command_result'
+import { az_sql_mi_list_command_result } from './models/az_sql_mi_list_command_result'
+import { az_sql_mi_show_command_result } from './models/az_sql_mi_show_command_result'
+import { az_sql_mi_update_command_result } from './models/az_sql_mi_update_command_result'
+import { az_sql_midb_ltr_backup_delete_command_result } from './models/az_sql_midb_ltr_backup_delete_command_result'
+import { az_sql_midb_ltr_backup_list_command_result } from './models/az_sql_midb_ltr_backup_list_command_result'
+import { az_sql_midb_ltr_backup_restore_command_result } from './models/az_sql_midb_ltr_backup_restore_command_result'
+import { az_sql_midb_ltr_backup_show_command_result } from './models/az_sql_midb_ltr_backup_show_command_result'
+import { az_sql_midb_ltr_backup_wait_command_result } from './models/az_sql_midb_ltr_backup_wait_command_result'
+import { az_sql_midb_ltr_policy_set_command_result } from './models/az_sql_midb_ltr_policy_set_command_result'
+import { az_sql_midb_ltr_policy_show_command_result } from './models/az_sql_midb_ltr_policy_show_command_result'
+import { az_sql_midb_short_term_retention_policy_set_command_result } from './models/az_sql_midb_short_term_retention_policy_set_command_result'
+import { az_sql_midb_short_term_retention_policy_show_command_result } from './models/az_sql_midb_short_term_retention_policy_show_command_result'
+import { az_sql_midb_create_command_result } from './models/az_sql_midb_create_command_result'
+import { az_sql_midb_delete_command_result } from './models/az_sql_midb_delete_command_result'
+import { az_sql_midb_list_command_result } from './models/az_sql_midb_list_command_result'
+import { az_sql_midb_list_deleted_command_result } from './models/az_sql_midb_list_deleted_command_result'
+import { az_sql_midb_restore_command_result } from './models/az_sql_midb_restore_command_result'
+import { az_sql_midb_show_command_result } from './models/az_sql_midb_show_command_result'
+import { az_sql_server_ad_admin_create_command_result } from './models/az_sql_server_ad_admin_create_command_result'
+import { az_sql_server_ad_admin_delete_command_result } from './models/az_sql_server_ad_admin_delete_command_result'
+import { az_sql_server_ad_admin_list_command_result } from './models/az_sql_server_ad_admin_list_command_result'
+import { az_sql_server_ad_admin_update_command_result } from './models/az_sql_server_ad_admin_update_command_result'
+import { az_sql_server_audit_policy_show_command_result } from './models/az_sql_server_audit_policy_show_command_result'
+import { az_sql_server_audit_policy_update_command_result } from './models/az_sql_server_audit_policy_update_command_result'
+import { az_sql_server_conn_policy_show_command_result } from './models/az_sql_server_conn_policy_show_command_result'
+import { az_sql_server_conn_policy_update_command_result } from './models/az_sql_server_conn_policy_update_command_result'
+import { az_sql_server_dns_alias_create_command_result } from './models/az_sql_server_dns_alias_create_command_result'
+import { az_sql_server_dns_alias_delete_command_result } from './models/az_sql_server_dns_alias_delete_command_result'
+import { az_sql_server_dns_alias_list_command_result } from './models/az_sql_server_dns_alias_list_command_result'
+import { az_sql_server_dns_alias_set_command_result } from './models/az_sql_server_dns_alias_set_command_result'
+import { az_sql_server_dns_alias_show_command_result } from './models/az_sql_server_dns_alias_show_command_result'
+import { az_sql_server_firewall_rule_create_command_result } from './models/az_sql_server_firewall_rule_create_command_result'
+import { az_sql_server_firewall_rule_delete_command_result } from './models/az_sql_server_firewall_rule_delete_command_result'
+import { az_sql_server_firewall_rule_list_command_result } from './models/az_sql_server_firewall_rule_list_command_result'
+import { az_sql_server_firewall_rule_show_command_result } from './models/az_sql_server_firewall_rule_show_command_result'
+import { az_sql_server_firewall_rule_update_command_result } from './models/az_sql_server_firewall_rule_update_command_result'
+import { az_sql_server_key_create_command_result } from './models/az_sql_server_key_create_command_result'
+import { az_sql_server_key_delete_command_result } from './models/az_sql_server_key_delete_command_result'
+import { az_sql_server_key_list_command_result } from './models/az_sql_server_key_list_command_result'
+import { az_sql_server_key_show_command_result } from './models/az_sql_server_key_show_command_result'
+import { az_sql_server_tde_key_set_command_result } from './models/az_sql_server_tde_key_set_command_result'
+import { az_sql_server_tde_key_show_command_result } from './models/az_sql_server_tde_key_show_command_result'
+import { az_sql_server_vnet_rule_create_command_result } from './models/az_sql_server_vnet_rule_create_command_result'
+import { az_sql_server_vnet_rule_delete_command_result } from './models/az_sql_server_vnet_rule_delete_command_result'
+import { az_sql_server_vnet_rule_list_command_result } from './models/az_sql_server_vnet_rule_list_command_result'
+import { az_sql_server_vnet_rule_show_command_result } from './models/az_sql_server_vnet_rule_show_command_result'
+import { az_sql_server_vnet_rule_update_command_result } from './models/az_sql_server_vnet_rule_update_command_result'
+import { az_sql_server_create_command_result } from './models/az_sql_server_create_command_result'
+import { az_sql_server_delete_command_result } from './models/az_sql_server_delete_command_result'
+import { az_sql_server_list_command_result } from './models/az_sql_server_list_command_result'
+import { az_sql_server_list_usages_command_result } from './models/az_sql_server_list_usages_command_result'
+import { az_sql_server_show_command_result } from './models/az_sql_server_show_command_result'
+import { az_sql_server_update_command_result } from './models/az_sql_server_update_command_result'
+import { az_sql_server_wait_command_result } from './models/az_sql_server_wait_command_result'
+import { az_sql_virtual_cluster_delete_command_result } from './models/az_sql_virtual_cluster_delete_command_result'
+import { az_sql_virtual_cluster_list_command_result } from './models/az_sql_virtual_cluster_list_command_result'
+import { az_sql_virtual_cluster_show_command_result } from './models/az_sql_virtual_cluster_show_command_result'
+import { az_sql_vm_group_ag_listener_create_command_result } from './models/az_sql_vm_group_ag_listener_create_command_result'
+import { az_sql_vm_group_ag_listener_delete_command_result } from './models/az_sql_vm_group_ag_listener_delete_command_result'
+import { az_sql_vm_group_ag_listener_list_command_result } from './models/az_sql_vm_group_ag_listener_list_command_result'
+import { az_sql_vm_group_ag_listener_show_command_result } from './models/az_sql_vm_group_ag_listener_show_command_result'
+import { az_sql_vm_group_ag_listener_update_command_result } from './models/az_sql_vm_group_ag_listener_update_command_result'
+import { az_sql_vm_group_create_command_result } from './models/az_sql_vm_group_create_command_result'
+import { az_sql_vm_group_delete_command_result } from './models/az_sql_vm_group_delete_command_result'
+import { az_sql_vm_group_list_command_result } from './models/az_sql_vm_group_list_command_result'
+import { az_sql_vm_group_show_command_result } from './models/az_sql_vm_group_show_command_result'
+import { az_sql_vm_group_update_command_result } from './models/az_sql_vm_group_update_command_result'
+import { az_sql_vm_add_to_group_command_result } from './models/az_sql_vm_add_to_group_command_result'
+import { az_sql_vm_create_command_result } from './models/az_sql_vm_create_command_result'
+import { az_sql_vm_delete_command_result } from './models/az_sql_vm_delete_command_result'
+import { az_sql_vm_list_command_result } from './models/az_sql_vm_list_command_result'
+import { az_sql_vm_remove_from_group_command_result } from './models/az_sql_vm_remove_from_group_command_result'
+import { az_sql_vm_show_command_result } from './models/az_sql_vm_show_command_result'
+import { az_sql_vm_update_command_result } from './models/az_sql_vm_update_command_result'
+import { az_sql_list_usages_command_result } from './models/az_sql_list_usages_command_result'
+import { az_sql_show_usage_command_result } from './models/az_sql_show_usage_command_result'
 
 /** Manage a database's auditing policy. */
 export class az_sql_db_audit_policy {
@@ -3524,7 +3690,7 @@ export class az_sql {
  *                             [--subscription]
  * ```
  */
-class az_sql_db_audit_policy_show_command_builder extends CommandBuilder {
+class az_sql_db_audit_policy_show_command_builder extends CommandBuilder<az_sql_db_audit_policy_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3588,7 +3754,7 @@ class az_sql_db_audit_policy_show_command_builder extends CommandBuilder {
  *                               [--subscription]
  * ```
  */
-class az_sql_db_audit_policy_update_command_builder extends CommandBuilder {
+class az_sql_db_audit_policy_update_command_builder extends CommandBuilder<az_sql_db_audit_policy_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3703,7 +3869,7 @@ class az_sql_db_audit_policy_update_command_builder extends CommandBuilder {
  * @param {string} schema The name of the schema.
  * @param {string} table The name of the table.
  */
-class az_sql_db_classification_recommendation_disable_command_builder extends CommandBuilder {
+class az_sql_db_classification_recommendation_disable_command_builder extends CommandBuilder<az_sql_db_classification_recommendation_disable_command_result> {
     constructor(commandPath: string, column: string, schema: string, table: string) {
         super(commandPath);
         this.column(column)
@@ -3779,7 +3945,7 @@ class az_sql_db_classification_recommendation_disable_command_builder extends Co
  * @param {string} schema The name of the schema.
  * @param {string} table The name of the table.
  */
-class az_sql_db_classification_recommendation_enable_command_builder extends CommandBuilder {
+class az_sql_db_classification_recommendation_enable_command_builder extends CommandBuilder<az_sql_db_classification_recommendation_enable_command_result> {
     constructor(commandPath: string, column: string, schema: string, table: string) {
         super(commandPath);
         this.column(column)
@@ -3851,7 +4017,7 @@ class az_sql_db_classification_recommendation_enable_command_builder extends Com
  *                                              [--subscription]
  * ```
  */
-class az_sql_db_classification_recommendation_list_command_builder extends CommandBuilder {
+class az_sql_db_classification_recommendation_list_command_builder extends CommandBuilder<az_sql_db_classification_recommendation_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3924,7 +4090,7 @@ class az_sql_db_classification_recommendation_list_command_builder extends Comma
  * @param {string} schema The name of the schema.
  * @param {string} table The name of the table.
  */
-class az_sql_db_classification_delete_command_builder extends CommandBuilder {
+class az_sql_db_classification_delete_command_builder extends CommandBuilder<az_sql_db_classification_delete_command_result> {
     constructor(commandPath: string, column: string, schema: string, table: string) {
         super(commandPath);
         this.column(column)
@@ -3995,7 +4161,7 @@ class az_sql_db_classification_delete_command_builder extends CommandBuilder {
  *                               [--subscription]
  * ```
  */
-class az_sql_db_classification_list_command_builder extends CommandBuilder {
+class az_sql_db_classification_list_command_builder extends CommandBuilder<az_sql_db_classification_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -4063,7 +4229,7 @@ class az_sql_db_classification_list_command_builder extends CommandBuilder {
  * @param {string} schema The name of the schema.
  * @param {string} table The name of the table.
  */
-class az_sql_db_classification_show_command_builder extends CommandBuilder {
+class az_sql_db_classification_show_command_builder extends CommandBuilder<az_sql_db_classification_show_command_result> {
     constructor(commandPath: string, column: string, schema: string, table: string) {
         super(commandPath);
         this.column(column)
@@ -4147,7 +4313,7 @@ class az_sql_db_classification_show_command_builder extends CommandBuilder {
  * @param {string} schema The name of the schema.
  * @param {string} table The name of the table.
  */
-class az_sql_db_classification_update_command_builder extends CommandBuilder {
+class az_sql_db_classification_update_command_builder extends CommandBuilder<az_sql_db_classification_update_command_result> {
     constructor(commandPath: string, column: string, schema: string, table: string) {
         super(commandPath);
         this.column(column)
@@ -4234,7 +4400,7 @@ class az_sql_db_classification_update_command_builder extends CommandBuilder {
  * @param {string} name The name of the LTR backup. Use 'az sql db ltr-backup show' or 'az sql db ltr-backup list' for backup name.
  * @param {string} server Name of the Azure SQL Server. If specified, retrieves all requested backups under this server.
  */
-class az_sql_db_ltr_backup_delete_command_builder extends CommandBuilder {
+class az_sql_db_ltr_backup_delete_command_builder extends CommandBuilder<az_sql_db_ltr_backup_delete_command_result> {
     constructor(commandPath: string, database: string, location: string, name: string, server: string) {
         super(commandPath);
         this.database(database)
@@ -4297,7 +4463,7 @@ class az_sql_db_ltr_backup_delete_command_builder extends CommandBuilder {
  *
  * @param {string} location The location of the desired backups.
  */
-class az_sql_db_ltr_backup_list_command_builder extends CommandBuilder {
+class az_sql_db_ltr_backup_list_command_builder extends CommandBuilder<az_sql_db_ltr_backup_list_command_result> {
     constructor(commandPath: string, location: string) {
         super(commandPath);
         this.location(location)
@@ -4370,7 +4536,7 @@ class az_sql_db_ltr_backup_list_command_builder extends CommandBuilder {
  * @param {string} destResourceGroup Name of the resource group of the server to restore database to.
  * @param {string} destServer Name of the server to restore database to.
  */
-class az_sql_db_ltr_backup_restore_command_builder extends CommandBuilder {
+class az_sql_db_ltr_backup_restore_command_builder extends CommandBuilder<az_sql_db_ltr_backup_restore_command_result> {
     constructor(commandPath: string, backupId: string, destDatabase: string, destResourceGroup: string, destServer: string) {
         super(commandPath);
         this.backupId(backupId)
@@ -4434,7 +4600,7 @@ class az_sql_db_ltr_backup_restore_command_builder extends CommandBuilder {
  * @param {string} name The name of the LTR backup. Use 'az sql db ltr-backup show' or 'az sql db ltr-backup list' for backup name.
  * @param {string} server Name of the Azure SQL Server. If specified, retrieves all requested backups under this server.
  */
-class az_sql_db_ltr_backup_show_command_builder extends CommandBuilder {
+class az_sql_db_ltr_backup_show_command_builder extends CommandBuilder<az_sql_db_ltr_backup_show_command_result> {
     constructor(commandPath: string, database: string, location: string, name: string, server: string) {
         super(commandPath);
         this.database(database)
@@ -4499,7 +4665,7 @@ class az_sql_db_ltr_backup_show_command_builder extends CommandBuilder {
  *                           [--updated]
  * ```
  */
-class az_sql_db_ltr_backup_wait_command_builder extends CommandBuilder {
+class az_sql_db_ltr_backup_wait_command_builder extends CommandBuilder<az_sql_db_ltr_backup_wait_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -4593,7 +4759,7 @@ class az_sql_db_ltr_backup_wait_command_builder extends CommandBuilder {
  *                          [--yearly-retention]
  * ```
  */
-class az_sql_db_ltr_policy_set_command_builder extends CommandBuilder {
+class az_sql_db_ltr_policy_set_command_builder extends CommandBuilder<az_sql_db_ltr_policy_set_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -4666,7 +4832,7 @@ class az_sql_db_ltr_policy_set_command_builder extends CommandBuilder {
  *                           [--subscription]
  * ```
  */
-class az_sql_db_ltr_policy_show_command_builder extends CommandBuilder {
+class az_sql_db_ltr_policy_show_command_builder extends CommandBuilder<az_sql_db_ltr_policy_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -4723,7 +4889,7 @@ class az_sql_db_ltr_policy_show_command_builder extends CommandBuilder {
  *
  * @param {string} name The unique name of the operation to cancel.
  */
-class az_sql_db_op_cancel_command_builder extends CommandBuilder {
+class az_sql_db_op_cancel_command_builder extends CommandBuilder<az_sql_db_op_cancel_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -4779,7 +4945,7 @@ class az_sql_db_op_cancel_command_builder extends CommandBuilder {
  *                   [--subscription]
  * ```
  */
-class az_sql_db_op_list_command_builder extends CommandBuilder {
+class az_sql_db_op_list_command_builder extends CommandBuilder<az_sql_db_op_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -4852,7 +5018,7 @@ class az_sql_db_op_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} server Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`.
  */
-class az_sql_db_replica_create_command_builder extends CommandBuilder {
+class az_sql_db_replica_create_command_builder extends CommandBuilder<az_sql_db_replica_create_command_result> {
     constructor(commandPath: string, name: string, partnerServer: string, resourceGroup: string, server: string) {
         super(commandPath);
         this.name(name)
@@ -4993,7 +5159,7 @@ class az_sql_db_replica_create_command_builder extends CommandBuilder {
  *
  * @param {string} partnerServer Name of the server that the other replica is in.
  */
-class az_sql_db_replica_delete_link_command_builder extends CommandBuilder {
+class az_sql_db_replica_delete_link_command_builder extends CommandBuilder<az_sql_db_replica_delete_link_command_result> {
     constructor(commandPath: string, partnerServer: string) {
         super(commandPath);
         this.partnerServer(partnerServer)
@@ -5060,7 +5226,7 @@ class az_sql_db_replica_delete_link_command_builder extends CommandBuilder {
  *                              [--subscription]
  * ```
  */
-class az_sql_db_replica_list_links_command_builder extends CommandBuilder {
+class az_sql_db_replica_list_links_command_builder extends CommandBuilder<az_sql_db_replica_list_links_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -5109,7 +5275,7 @@ class az_sql_db_replica_list_links_command_builder extends CommandBuilder {
  *                               [--subscription]
  * ```
  */
-class az_sql_db_replica_set_primary_command_builder extends CommandBuilder {
+class az_sql_db_replica_set_primary_command_builder extends CommandBuilder<az_sql_db_replica_set_primary_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -5163,7 +5329,7 @@ class az_sql_db_replica_set_primary_command_builder extends CommandBuilder {
  *                             [--subscription]
  * ```
  */
-class az_sql_db_tde_list_activity_command_builder extends CommandBuilder {
+class az_sql_db_tde_list_activity_command_builder extends CommandBuilder<az_sql_db_tde_list_activity_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -5214,7 +5380,7 @@ class az_sql_db_tde_list_activity_command_builder extends CommandBuilder {
  *
  * @param {'Disabled' | 'Enabled'} status Status of the transparent data encryption.
  */
-class az_sql_db_tde_set_command_builder extends CommandBuilder {
+class az_sql_db_tde_set_command_builder extends CommandBuilder<az_sql_db_tde_set_command_result> {
     constructor(commandPath: string, status: 'Disabled' | 'Enabled') {
         super(commandPath);
         this.status(status)
@@ -5270,7 +5436,7 @@ class az_sql_db_tde_set_command_builder extends CommandBuilder {
  *                    [--subscription]
  * ```
  */
-class az_sql_db_tde_show_command_builder extends CommandBuilder {
+class az_sql_db_tde_show_command_builder extends CommandBuilder<az_sql_db_tde_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -5325,7 +5491,7 @@ class az_sql_db_tde_show_command_builder extends CommandBuilder {
  *                              [--subscription]
  * ```
  */
-class az_sql_db_threat_policy_show_command_builder extends CommandBuilder {
+class az_sql_db_threat_policy_show_command_builder extends CommandBuilder<az_sql_db_threat_policy_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -5391,7 +5557,7 @@ class az_sql_db_threat_policy_show_command_builder extends CommandBuilder {
  *                                [--subscription]
  * ```
  */
-class az_sql_db_threat_policy_update_command_builder extends CommandBuilder {
+class az_sql_db_threat_policy_update_command_builder extends CommandBuilder<az_sql_db_threat_policy_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -5529,7 +5695,7 @@ class az_sql_db_threat_policy_update_command_builder extends CommandBuilder {
  *
  * @param {string} destName Name of the database that will be created as the copy destination.
  */
-class az_sql_db_copy_command_builder extends CommandBuilder {
+class az_sql_db_copy_command_builder extends CommandBuilder<az_sql_db_copy_command_result> {
     constructor(commandPath: string, destName: string) {
         super(commandPath);
         this.destName(destName)
@@ -5695,7 +5861,7 @@ class az_sql_db_copy_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} server Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`.
  */
-class az_sql_db_create_command_builder extends CommandBuilder {
+class az_sql_db_create_command_builder extends CommandBuilder<az_sql_db_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, server: string) {
         super(commandPath);
         this.name(name)
@@ -5850,7 +6016,7 @@ class az_sql_db_create_command_builder extends CommandBuilder {
  *                  [--yes]
  * ```
  */
-class az_sql_db_delete_command_builder extends CommandBuilder {
+class az_sql_db_delete_command_builder extends CommandBuilder<az_sql_db_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -5922,7 +6088,7 @@ class az_sql_db_delete_command_builder extends CommandBuilder {
  * @param {'SharedAccessKey' | 'StorageAccessKey'} storageKeyType Required. Storage key type.
  * @param {string} storageUri Required. Storage Uri.
  */
-class az_sql_db_export_command_builder extends CommandBuilder {
+class az_sql_db_export_command_builder extends CommandBuilder<az_sql_db_export_command_result> {
     constructor(commandPath: string, adminPassword: string, adminUser: string, storageKey: string, storageKeyType: 'SharedAccessKey' | 'StorageAccessKey', storageUri: string) {
         super(commandPath);
         this.adminPassword(adminPassword)
@@ -6023,7 +6189,7 @@ class az_sql_db_export_command_builder extends CommandBuilder {
  * @param {'SharedAccessKey' | 'StorageAccessKey'} storageKeyType Required. Storage key type.
  * @param {string} storageUri Required. Storage Uri.
  */
-class az_sql_db_import_command_builder extends CommandBuilder {
+class az_sql_db_import_command_builder extends CommandBuilder<az_sql_db_import_command_result> {
     constructor(commandPath: string, adminPassword: string, adminUser: string, storageKey: string, storageKeyType: 'SharedAccessKey' | 'StorageAccessKey', storageUri: string) {
         super(commandPath);
         this.adminPassword(adminPassword)
@@ -6113,7 +6279,7 @@ class az_sql_db_import_command_builder extends CommandBuilder {
  *                [--subscription]
  * ```
  */
-class az_sql_db_list_command_builder extends CommandBuilder {
+class az_sql_db_list_command_builder extends CommandBuilder<az_sql_db_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6166,7 +6332,7 @@ class az_sql_db_list_command_builder extends CommandBuilder {
  *                        [--subscription]
  * ```
  */
-class az_sql_db_list_deleted_command_builder extends CommandBuilder {
+class az_sql_db_list_deleted_command_builder extends CommandBuilder<az_sql_db_list_deleted_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6213,7 +6379,7 @@ class az_sql_db_list_deleted_command_builder extends CommandBuilder {
  *
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
-class az_sql_db_list_editions_command_builder extends CommandBuilder {
+class az_sql_db_list_editions_command_builder extends CommandBuilder<az_sql_db_list_editions_command_result> {
     constructor(commandPath: string, location: string) {
         super(commandPath);
         this.location(location)
@@ -6280,7 +6446,7 @@ class az_sql_db_list_editions_command_builder extends CommandBuilder {
  *                       [--subscription]
  * ```
  */
-class az_sql_db_list_usages_command_builder extends CommandBuilder {
+class az_sql_db_list_usages_command_builder extends CommandBuilder<az_sql_db_list_usages_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6331,7 +6497,7 @@ class az_sql_db_list_usages_command_builder extends CommandBuilder {
  *
  * @param {string} newName The new name that the database will be renamed to.
  */
-class az_sql_db_rename_command_builder extends CommandBuilder {
+class az_sql_db_rename_command_builder extends CommandBuilder<az_sql_db_rename_command_result> {
     constructor(commandPath: string, newName: string) {
         super(commandPath);
         this.newName(newName)
@@ -6405,7 +6571,7 @@ class az_sql_db_rename_command_builder extends CommandBuilder {
  *
  * @param {string} destName Name of the database that will be created as the restore destination.
  */
-class az_sql_db_restore_command_builder extends CommandBuilder {
+class az_sql_db_restore_command_builder extends CommandBuilder<az_sql_db_restore_command_result> {
     constructor(commandPath: string, destName: string) {
         super(commandPath);
         this.destName(destName)
@@ -6557,7 +6723,7 @@ class az_sql_db_restore_command_builder extends CommandBuilder {
  *                [--subscription]
  * ```
  */
-class az_sql_db_show_command_builder extends CommandBuilder {
+class az_sql_db_show_command_builder extends CommandBuilder<az_sql_db_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6614,7 +6780,7 @@ class az_sql_db_show_command_builder extends CommandBuilder {
  *
  * @param {'ado.net' | 'jdbc' | 'odbc' | 'php' | 'php_pdo' | 'sqlcmd'} client Type of client connection provider.
  */
-class az_sql_db_show_connection_string_command_builder extends CommandBuilder {
+class az_sql_db_show_connection_string_command_builder extends CommandBuilder<az_sql_db_show_connection_string_command_result> {
     constructor(commandPath: string, client: 'ado.net' | 'jdbc' | 'odbc' | 'php' | 'php_pdo' | 'sqlcmd') {
         super(commandPath);
         this.client(client)
@@ -6686,7 +6852,7 @@ class az_sql_db_show_connection_string_command_builder extends CommandBuilder {
  *                  [--zone-redundant {false, true}]
  * ```
  */
-class az_sql_db_update_command_builder extends CommandBuilder {
+class az_sql_db_update_command_builder extends CommandBuilder<az_sql_db_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6846,7 +7012,7 @@ class az_sql_db_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} server Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`.
  */
-class az_sql_dw_create_command_builder extends CommandBuilder {
+class az_sql_dw_create_command_builder extends CommandBuilder<az_sql_dw_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, server: string) {
         super(commandPath);
         this.name(name)
@@ -6935,7 +7101,7 @@ class az_sql_dw_create_command_builder extends CommandBuilder {
  *                  [--yes]
  * ```
  */
-class az_sql_dw_delete_command_builder extends CommandBuilder {
+class az_sql_dw_delete_command_builder extends CommandBuilder<az_sql_dw_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -6995,7 +7161,7 @@ class az_sql_dw_delete_command_builder extends CommandBuilder {
  *                [--subscription]
  * ```
  */
-class az_sql_dw_list_command_builder extends CommandBuilder {
+class az_sql_dw_list_command_builder extends CommandBuilder<az_sql_dw_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -7043,7 +7209,7 @@ class az_sql_dw_list_command_builder extends CommandBuilder {
  *                 [--subscription]
  * ```
  */
-class az_sql_dw_pause_command_builder extends CommandBuilder {
+class az_sql_dw_pause_command_builder extends CommandBuilder<az_sql_dw_pause_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -7091,7 +7257,7 @@ class az_sql_dw_pause_command_builder extends CommandBuilder {
  *                  [--subscription]
  * ```
  */
-class az_sql_dw_resume_command_builder extends CommandBuilder {
+class az_sql_dw_resume_command_builder extends CommandBuilder<az_sql_dw_resume_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -7140,7 +7306,7 @@ class az_sql_dw_resume_command_builder extends CommandBuilder {
  *                [--subscription]
  * ```
  */
-class az_sql_dw_show_command_builder extends CommandBuilder {
+class az_sql_dw_show_command_builder extends CommandBuilder<az_sql_dw_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -7201,7 +7367,7 @@ class az_sql_dw_show_command_builder extends CommandBuilder {
  *                  [--subscription]
  * ```
  */
-class az_sql_dw_update_command_builder extends CommandBuilder {
+class az_sql_dw_update_command_builder extends CommandBuilder<az_sql_dw_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -7294,7 +7460,7 @@ class az_sql_dw_update_command_builder extends CommandBuilder {
  *
  * @param {string} name The unique name of the operation to cancel.
  */
-class az_sql_elastic_pool_op_cancel_command_builder extends CommandBuilder {
+class az_sql_elastic_pool_op_cancel_command_builder extends CommandBuilder<az_sql_elastic_pool_op_cancel_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -7350,7 +7516,7 @@ class az_sql_elastic_pool_op_cancel_command_builder extends CommandBuilder {
  *                             [--subscription]
  * ```
  */
-class az_sql_elastic_pool_op_list_command_builder extends CommandBuilder {
+class az_sql_elastic_pool_op_list_command_builder extends CommandBuilder<az_sql_elastic_pool_op_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -7417,7 +7583,7 @@ class az_sql_elastic_pool_op_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} server Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`.
  */
-class az_sql_elastic_pool_create_command_builder extends CommandBuilder {
+class az_sql_elastic_pool_create_command_builder extends CommandBuilder<az_sql_elastic_pool_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, server: string) {
         super(commandPath);
         this.name(name)
@@ -7523,7 +7689,7 @@ class az_sql_elastic_pool_create_command_builder extends CommandBuilder {
  *                            [--subscription]
  * ```
  */
-class az_sql_elastic_pool_delete_command_builder extends CommandBuilder {
+class az_sql_elastic_pool_delete_command_builder extends CommandBuilder<az_sql_elastic_pool_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -7578,7 +7744,7 @@ class az_sql_elastic_pool_delete_command_builder extends CommandBuilder {
  *                          [--subscription]
  * ```
  */
-class az_sql_elastic_pool_list_command_builder extends CommandBuilder {
+class az_sql_elastic_pool_list_command_builder extends CommandBuilder<az_sql_elastic_pool_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -7632,7 +7798,7 @@ class az_sql_elastic_pool_list_command_builder extends CommandBuilder {
  *                              [--subscription]
  * ```
  */
-class az_sql_elastic_pool_list_dbs_command_builder extends CommandBuilder {
+class az_sql_elastic_pool_list_dbs_command_builder extends CommandBuilder<az_sql_elastic_pool_list_dbs_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -7684,7 +7850,7 @@ class az_sql_elastic_pool_list_dbs_command_builder extends CommandBuilder {
  *
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
-class az_sql_elastic_pool_list_editions_command_builder extends CommandBuilder {
+class az_sql_elastic_pool_list_editions_command_builder extends CommandBuilder<az_sql_elastic_pool_list_editions_command_result> {
     constructor(commandPath: string, location: string) {
         super(commandPath);
         this.location(location)
@@ -7746,7 +7912,7 @@ class az_sql_elastic_pool_list_editions_command_builder extends CommandBuilder {
  *                          [--subscription]
  * ```
  */
-class az_sql_elastic_pool_show_command_builder extends CommandBuilder {
+class az_sql_elastic_pool_show_command_builder extends CommandBuilder<az_sql_elastic_pool_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -7812,7 +7978,7 @@ class az_sql_elastic_pool_show_command_builder extends CommandBuilder {
  *                            [--zone-redundant {false, true}]
  * ```
  */
-class az_sql_elastic_pool_update_command_builder extends CommandBuilder {
+class az_sql_elastic_pool_update_command_builder extends CommandBuilder<az_sql_elastic_pool_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -7941,7 +8107,7 @@ class az_sql_elastic_pool_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} server Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`.
  */
-class az_sql_failover_group_create_command_builder extends CommandBuilder {
+class az_sql_failover_group_create_command_builder extends CommandBuilder<az_sql_failover_group_create_command_result> {
     constructor(commandPath: string, name: string, partnerServer: string, resourceGroup: string, server: string) {
         super(commandPath);
         this.name(name)
@@ -8019,7 +8185,7 @@ class az_sql_failover_group_create_command_builder extends CommandBuilder {
  *
  * @param {string} name The name of the Failover Group.
  */
-class az_sql_failover_group_delete_command_builder extends CommandBuilder {
+class az_sql_failover_group_delete_command_builder extends CommandBuilder<az_sql_failover_group_delete_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -8068,7 +8234,7 @@ class az_sql_failover_group_delete_command_builder extends CommandBuilder {
  *                            [--subscription]
  * ```
  */
-class az_sql_failover_group_list_command_builder extends CommandBuilder {
+class az_sql_failover_group_list_command_builder extends CommandBuilder<az_sql_failover_group_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -8119,7 +8285,7 @@ class az_sql_failover_group_list_command_builder extends CommandBuilder {
  *
  * @param {string} name The name of the Failover Group.
  */
-class az_sql_failover_group_set_primary_command_builder extends CommandBuilder {
+class az_sql_failover_group_set_primary_command_builder extends CommandBuilder<az_sql_failover_group_set_primary_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -8177,7 +8343,7 @@ class az_sql_failover_group_set_primary_command_builder extends CommandBuilder {
  *
  * @param {string} name The name of the Failover Group.
  */
-class az_sql_failover_group_show_command_builder extends CommandBuilder {
+class az_sql_failover_group_show_command_builder extends CommandBuilder<az_sql_failover_group_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -8242,7 +8408,7 @@ class az_sql_failover_group_show_command_builder extends CommandBuilder {
  *
  * @param {string} name The name of the Failover Group.
  */
-class az_sql_failover_group_update_command_builder extends CommandBuilder {
+class az_sql_failover_group_update_command_builder extends CommandBuilder<az_sql_failover_group_update_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -8348,7 +8514,7 @@ class az_sql_failover_group_update_command_builder extends CommandBuilder {
  * @param {string} partnerResourceGroup The name of the resource group of the partner managed instance.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sql_instance_failover_group_create_command_builder extends CommandBuilder {
+class az_sql_instance_failover_group_create_command_builder extends CommandBuilder<az_sql_instance_failover_group_create_command_result> {
     constructor(commandPath: string, sourceMi: string, name: string, partnerMi: string, partnerResourceGroup: string, resourceGroup: string) {
         super(commandPath);
         this.sourceMi(sourceMi)
@@ -8422,7 +8588,7 @@ class az_sql_instance_failover_group_create_command_builder extends CommandBuild
  * @param {string} name The name of the Instance Failover Group.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sql_instance_failover_group_delete_command_builder extends CommandBuilder {
+class az_sql_instance_failover_group_delete_command_builder extends CommandBuilder<az_sql_instance_failover_group_delete_command_result> {
     constructor(commandPath: string, location: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.location(location)
@@ -8471,7 +8637,7 @@ class az_sql_instance_failover_group_delete_command_builder extends CommandBuild
  * @param {string} name The name of the Instance Failover Group.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sql_instance_failover_group_set_primary_command_builder extends CommandBuilder {
+class az_sql_instance_failover_group_set_primary_command_builder extends CommandBuilder<az_sql_instance_failover_group_set_primary_command_result> {
     constructor(commandPath: string, location: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.location(location)
@@ -8526,7 +8692,7 @@ class az_sql_instance_failover_group_set_primary_command_builder extends Command
  * @param {string} name The name of the Instance Failover Group.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sql_instance_failover_group_show_command_builder extends CommandBuilder {
+class az_sql_instance_failover_group_show_command_builder extends CommandBuilder<az_sql_instance_failover_group_show_command_result> {
     constructor(commandPath: string, location: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.location(location)
@@ -8586,7 +8752,7 @@ class az_sql_instance_failover_group_show_command_builder extends CommandBuilder
  * @param {string} name The name of the Instance Failover Group.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sql_instance_failover_group_update_command_builder extends CommandBuilder {
+class az_sql_instance_failover_group_update_command_builder extends CommandBuilder<az_sql_instance_failover_group_update_command_result> {
     constructor(commandPath: string, location: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.location(location)
@@ -8683,7 +8849,7 @@ class az_sql_instance_failover_group_update_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} subnet Name or ID of the subnet that allows access to an Instance Pool. If subnet name is provided, --vnet-name must be provided.
  */
-class az_sql_instance_pool_create_command_builder extends CommandBuilder {
+class az_sql_instance_pool_create_command_builder extends CommandBuilder<az_sql_instance_pool_create_command_result> {
     constructor(commandPath: string, capacity: string, edition: string, family: string, licenseType: 'BasePrice' | 'LicenseIncluded', location: string, name: string, resourceGroup: string, subnet: string) {
         super(commandPath);
         this.capacity(capacity)
@@ -8784,7 +8950,7 @@ class az_sql_instance_pool_create_command_builder extends CommandBuilder {
  * @param {string} name Instance Pool Name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sql_instance_pool_delete_command_builder extends CommandBuilder {
+class az_sql_instance_pool_delete_command_builder extends CommandBuilder<az_sql_instance_pool_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -8832,7 +8998,7 @@ class az_sql_instance_pool_delete_command_builder extends CommandBuilder {
  *                           [--subscription]
  * ```
  */
-class az_sql_instance_pool_list_command_builder extends CommandBuilder {
+class az_sql_instance_pool_list_command_builder extends CommandBuilder<az_sql_instance_pool_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -8870,7 +9036,7 @@ class az_sql_instance_pool_list_command_builder extends CommandBuilder {
  * @param {string} name Instance Pool Name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sql_instance_pool_show_command_builder extends CommandBuilder {
+class az_sql_instance_pool_show_command_builder extends CommandBuilder<az_sql_instance_pool_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -8916,7 +9082,7 @@ class az_sql_instance_pool_show_command_builder extends CommandBuilder {
  * @param {string} name Instance Pool Name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sql_instance_pool_update_command_builder extends CommandBuilder {
+class az_sql_instance_pool_update_command_builder extends CommandBuilder<az_sql_instance_pool_update_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -8968,7 +9134,7 @@ class az_sql_instance_pool_update_command_builder extends CommandBuilder {
  * @param {string} name Instance Pool Name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sql_instance_pool_wait_command_builder extends CommandBuilder {
+class az_sql_instance_pool_wait_command_builder extends CommandBuilder<az_sql_instance_pool_wait_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -9053,7 +9219,7 @@ class az_sql_instance_pool_wait_command_builder extends CommandBuilder {
  * @param {string} objectId The unique ID of the Azure AD administrator.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sql_mi_ad_admin_create_command_builder extends CommandBuilder {
+class az_sql_mi_ad_admin_create_command_builder extends CommandBuilder<az_sql_mi_ad_admin_create_command_result> {
     constructor(commandPath: string, displayName: string, managedInstance: string, objectId: string, resourceGroup: string) {
         super(commandPath);
         this.displayName(displayName)
@@ -9104,7 +9270,7 @@ class az_sql_mi_ad_admin_create_command_builder extends CommandBuilder {
  *                           [--subscription]
  * ```
  */
-class az_sql_mi_ad_admin_delete_command_builder extends CommandBuilder {
+class az_sql_mi_ad_admin_delete_command_builder extends CommandBuilder<az_sql_mi_ad_admin_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -9146,7 +9312,7 @@ class az_sql_mi_ad_admin_delete_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_sql_mi_ad_admin_list_command_builder extends CommandBuilder {
+class az_sql_mi_ad_admin_list_command_builder extends CommandBuilder<az_sql_mi_ad_admin_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -9198,7 +9364,7 @@ class az_sql_mi_ad_admin_list_command_builder extends CommandBuilder {
  * @param {string} displayName Display name of the Azure AD administrator user or group.
  * @param {string} objectId The unique ID of the Azure AD administrator.
  */
-class az_sql_mi_ad_admin_update_command_builder extends CommandBuilder {
+class az_sql_mi_ad_admin_update_command_builder extends CommandBuilder<az_sql_mi_ad_admin_update_command_result> {
     constructor(commandPath: string, displayName: string, objectId: string) {
         super(commandPath);
         this.displayName(displayName)
@@ -9257,7 +9423,7 @@ class az_sql_mi_ad_admin_update_command_builder extends CommandBuilder {
  * @param {string} managedInstance Name of the Azure SQL managed instance.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sql_mi_key_create_command_builder extends CommandBuilder {
+class az_sql_mi_key_create_command_builder extends CommandBuilder<az_sql_mi_key_create_command_result> {
     constructor(commandPath: string, kid: string, managedInstance: string, resourceGroup: string) {
         super(commandPath);
         this.kid(kid)
@@ -9304,7 +9470,7 @@ class az_sql_mi_key_create_command_builder extends CommandBuilder {
  *
  * @param {string} kid The Azure Key Vault key identifier of the server key. An example key identifier is "<a href="https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901">https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901</a>".
  */
-class az_sql_mi_key_delete_command_builder extends CommandBuilder {
+class az_sql_mi_key_delete_command_builder extends CommandBuilder<az_sql_mi_key_delete_command_result> {
     constructor(commandPath: string, kid: string) {
         super(commandPath);
         this.kid(kid)
@@ -9354,7 +9520,7 @@ class az_sql_mi_key_delete_command_builder extends CommandBuilder {
  *                    [--subscription]
  * ```
  */
-class az_sql_mi_key_list_command_builder extends CommandBuilder {
+class az_sql_mi_key_list_command_builder extends CommandBuilder<az_sql_mi_key_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -9411,7 +9577,7 @@ class az_sql_mi_key_list_command_builder extends CommandBuilder {
  *
  * @param {string} kid The Azure Key Vault key identifier of the server key. An example key identifier is "<a href="https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901">https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901</a>".
  */
-class az_sql_mi_key_show_command_builder extends CommandBuilder {
+class az_sql_mi_key_show_command_builder extends CommandBuilder<az_sql_mi_key_show_command_result> {
     constructor(commandPath: string, kid: string) {
         super(commandPath);
         this.kid(kid)
@@ -9468,7 +9634,7 @@ class az_sql_mi_key_show_command_builder extends CommandBuilder {
  *
  * @param {string} name The unique name of the operation to cancel.
  */
-class az_sql_mi_op_cancel_command_builder extends CommandBuilder {
+class az_sql_mi_op_cancel_command_builder extends CommandBuilder<az_sql_mi_op_cancel_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -9517,7 +9683,7 @@ class az_sql_mi_op_cancel_command_builder extends CommandBuilder {
  *                   [--subscription]
  * ```
  */
-class az_sql_mi_op_list_command_builder extends CommandBuilder {
+class az_sql_mi_op_list_command_builder extends CommandBuilder<az_sql_mi_op_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -9568,7 +9734,7 @@ class az_sql_mi_op_list_command_builder extends CommandBuilder {
  *
  * @param {string} name The unique name of the operation to show.
  */
-class az_sql_mi_op_show_command_builder extends CommandBuilder {
+class az_sql_mi_op_show_command_builder extends CommandBuilder<az_sql_mi_op_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -9626,7 +9792,7 @@ class az_sql_mi_op_show_command_builder extends CommandBuilder {
  *
  * @param {'AzureKeyVault' | 'ServiceManaged'} serverKeyType The type of the server key.
  */
-class az_sql_mi_tde_key_set_command_builder extends CommandBuilder {
+class az_sql_mi_tde_key_set_command_builder extends CommandBuilder<az_sql_mi_tde_key_set_command_result> {
     constructor(commandPath: string, serverKeyType: 'AzureKeyVault' | 'ServiceManaged') {
         super(commandPath);
         this.serverKeyType(serverKeyType)
@@ -9681,7 +9847,7 @@ class az_sql_mi_tde_key_set_command_builder extends CommandBuilder {
  *                        [--subscription]
  * ```
  */
-class az_sql_mi_tde_key_show_command_builder extends CommandBuilder {
+class az_sql_mi_tde_key_show_command_builder extends CommandBuilder<az_sql_mi_tde_key_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -9753,7 +9919,7 @@ class az_sql_mi_tde_key_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} subnet Name or ID of the subnet that allows access to an Azure Sql Managed Instance. If subnet name is provided, --vnet-name must be provided.
  */
-class az_sql_mi_create_command_builder extends CommandBuilder {
+class az_sql_mi_create_command_builder extends CommandBuilder<az_sql_mi_create_command_result> {
     constructor(commandPath: string, adminPassword: string, adminUser: string, name: string, resourceGroup: string, subnet: string) {
         super(commandPath);
         this.adminPassword(adminPassword)
@@ -9915,7 +10081,7 @@ class az_sql_mi_create_command_builder extends CommandBuilder {
  *                  [--yes]
  * ```
  */
-class az_sql_mi_delete_command_builder extends CommandBuilder {
+class az_sql_mi_delete_command_builder extends CommandBuilder<az_sql_mi_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -9970,7 +10136,7 @@ class az_sql_mi_delete_command_builder extends CommandBuilder {
  *                    [--subscription]
  * ```
  */
-class az_sql_mi_failover_command_builder extends CommandBuilder {
+class az_sql_mi_failover_command_builder extends CommandBuilder<az_sql_mi_failover_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -10022,7 +10188,7 @@ class az_sql_mi_failover_command_builder extends CommandBuilder {
  *                [--subscription]
  * ```
  */
-class az_sql_mi_list_command_builder extends CommandBuilder {
+class az_sql_mi_list_command_builder extends CommandBuilder<az_sql_mi_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -10058,7 +10224,7 @@ class az_sql_mi_list_command_builder extends CommandBuilder {
  *                [--subscription]
  * ```
  */
-class az_sql_mi_show_command_builder extends CommandBuilder {
+class az_sql_mi_show_command_builder extends CommandBuilder<az_sql_mi_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -10121,7 +10287,7 @@ class az_sql_mi_show_command_builder extends CommandBuilder {
  *                  [--tags]
  * ```
  */
-class az_sql_mi_update_command_builder extends CommandBuilder {
+class az_sql_mi_update_command_builder extends CommandBuilder<az_sql_mi_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -10261,7 +10427,7 @@ class az_sql_mi_update_command_builder extends CommandBuilder {
  *                               [--yes]
  * ```
  */
-class az_sql_midb_ltr_backup_delete_command_builder extends CommandBuilder {
+class az_sql_midb_ltr_backup_delete_command_builder extends CommandBuilder<az_sql_midb_ltr_backup_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -10326,7 +10492,7 @@ class az_sql_midb_ltr_backup_delete_command_builder extends CommandBuilder {
  *
  * @param {string} location The location of the desired backup(s).
  */
-class az_sql_midb_ltr_backup_list_command_builder extends CommandBuilder {
+class az_sql_midb_ltr_backup_list_command_builder extends CommandBuilder<az_sql_midb_ltr_backup_list_command_result> {
     constructor(commandPath: string, location: string) {
         super(commandPath);
         this.location(location)
@@ -10399,7 +10565,7 @@ class az_sql_midb_ltr_backup_list_command_builder extends CommandBuilder {
  * @param {string} destMi Name of the managed instance to restore managed database to.
  * @param {string} destResourceGroup Name of the resource group of the managed instance to restore managed database to.
  */
-class az_sql_midb_ltr_backup_restore_command_builder extends CommandBuilder {
+class az_sql_midb_ltr_backup_restore_command_builder extends CommandBuilder<az_sql_midb_ltr_backup_restore_command_result> {
     constructor(commandPath: string, backupId: string, destDatabase: string, destMi: string, destResourceGroup: string) {
         super(commandPath);
         this.backupId(backupId)
@@ -10459,7 +10625,7 @@ class az_sql_midb_ltr_backup_restore_command_builder extends CommandBuilder {
  *                             [--subscription]
  * ```
  */
-class az_sql_midb_ltr_backup_show_command_builder extends CommandBuilder {
+class az_sql_midb_ltr_backup_show_command_builder extends CommandBuilder<az_sql_midb_ltr_backup_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -10529,7 +10695,7 @@ class az_sql_midb_ltr_backup_show_command_builder extends CommandBuilder {
  * @param {string} managedInstance Name of the Azure SQL managed instance.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sql_midb_ltr_backup_wait_command_builder extends CommandBuilder {
+class az_sql_midb_ltr_backup_wait_command_builder extends CommandBuilder<az_sql_midb_ltr_backup_wait_command_result> {
     constructor(commandPath: string, database: string, managedInstance: string, resourceGroup: string) {
         super(commandPath);
         this.database(database)
@@ -10620,7 +10786,7 @@ class az_sql_midb_ltr_backup_wait_command_builder extends CommandBuilder {
  *                            [--yearly-retention]
  * ```
  */
-class az_sql_midb_ltr_policy_set_command_builder extends CommandBuilder {
+class az_sql_midb_ltr_policy_set_command_builder extends CommandBuilder<az_sql_midb_ltr_policy_set_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -10693,7 +10859,7 @@ class az_sql_midb_ltr_policy_set_command_builder extends CommandBuilder {
  *                             [--subscription]
  * ```
  */
-class az_sql_midb_ltr_policy_show_command_builder extends CommandBuilder {
+class az_sql_midb_ltr_policy_show_command_builder extends CommandBuilder<az_sql_midb_ltr_policy_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -10752,7 +10918,7 @@ class az_sql_midb_ltr_policy_show_command_builder extends CommandBuilder {
  *
  * @param {string} retentionDays New backup short term retention policy in days.Valid policy for live database is 7-35 days, valid policy for dropped databases is 0-35 days.
  */
-class az_sql_midb_short_term_retention_policy_set_command_builder extends CommandBuilder {
+class az_sql_midb_short_term_retention_policy_set_command_builder extends CommandBuilder<az_sql_midb_short_term_retention_policy_set_command_result> {
     constructor(commandPath: string, retentionDays: string) {
         super(commandPath);
         this.retentionDays(retentionDays)
@@ -10821,7 +10987,7 @@ class az_sql_midb_short_term_retention_policy_set_command_builder extends Comman
  *                                              [--subscription]
  * ```
  */
-class az_sql_midb_short_term_retention_policy_show_command_builder extends CommandBuilder {
+class az_sql_midb_short_term_retention_policy_show_command_builder extends CommandBuilder<az_sql_midb_short_term_retention_policy_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -10886,7 +11052,7 @@ class az_sql_midb_short_term_retention_policy_show_command_builder extends Comma
  * @param {string} name The name of the Azure SQL Managed Database.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sql_midb_create_command_builder extends CommandBuilder {
+class az_sql_midb_create_command_builder extends CommandBuilder<az_sql_midb_create_command_result> {
     constructor(commandPath: string, managedInstance: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.managedInstance(managedInstance)
@@ -10945,7 +11111,7 @@ class az_sql_midb_create_command_builder extends CommandBuilder {
  *                    [--yes]
  * ```
  */
-class az_sql_midb_delete_command_builder extends CommandBuilder {
+class az_sql_midb_delete_command_builder extends CommandBuilder<az_sql_midb_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -11005,7 +11171,7 @@ class az_sql_midb_delete_command_builder extends CommandBuilder {
  *                  [--subscription]
  * ```
  */
-class az_sql_midb_list_command_builder extends CommandBuilder {
+class az_sql_midb_list_command_builder extends CommandBuilder<az_sql_midb_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -11052,7 +11218,7 @@ class az_sql_midb_list_command_builder extends CommandBuilder {
  *                          [--subscription]
  * ```
  */
-class az_sql_midb_list_deleted_command_builder extends CommandBuilder {
+class az_sql_midb_list_deleted_command_builder extends CommandBuilder<az_sql_midb_list_deleted_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -11103,7 +11269,7 @@ class az_sql_midb_list_deleted_command_builder extends CommandBuilder {
  * @param {string} destName Name of the managed database that will be created as the restore destination.
  * @param {string} time The point in time of the source database that will be restored to create the new database. Must be greater than or equal to the source database's earliestRestoreDate value. Time should be in following format: "YYYY-MM-DDTHH:MM:SS".
  */
-class az_sql_midb_restore_command_builder extends CommandBuilder {
+class az_sql_midb_restore_command_builder extends CommandBuilder<az_sql_midb_restore_command_result> {
     constructor(commandPath: string, destName: string, time: string) {
         super(commandPath);
         this.destName(destName)
@@ -11190,7 +11356,7 @@ class az_sql_midb_restore_command_builder extends CommandBuilder {
  *                  [--subscription]
  * ```
  */
-class az_sql_midb_show_command_builder extends CommandBuilder {
+class az_sql_midb_show_command_builder extends CommandBuilder<az_sql_midb_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -11249,7 +11415,7 @@ class az_sql_midb_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serverName Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`.
  */
-class az_sql_server_ad_admin_create_command_builder extends CommandBuilder {
+class az_sql_server_ad_admin_create_command_builder extends CommandBuilder<az_sql_server_ad_admin_create_command_result> {
     constructor(commandPath: string, displayName: string, objectId: string, resourceGroup: string, serverName: string) {
         super(commandPath);
         this.displayName(displayName)
@@ -11300,7 +11466,7 @@ class az_sql_server_ad_admin_create_command_builder extends CommandBuilder {
  *                               [--subscription]
  * ```
  */
-class az_sql_server_ad_admin_delete_command_builder extends CommandBuilder {
+class az_sql_server_ad_admin_delete_command_builder extends CommandBuilder<az_sql_server_ad_admin_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -11342,7 +11508,7 @@ class az_sql_server_ad_admin_delete_command_builder extends CommandBuilder {
  *                             [--subscription]
  * ```
  */
-class az_sql_server_ad_admin_list_command_builder extends CommandBuilder {
+class az_sql_server_ad_admin_list_command_builder extends CommandBuilder<az_sql_server_ad_admin_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -11395,7 +11561,7 @@ class az_sql_server_ad_admin_list_command_builder extends CommandBuilder {
  *                               [--subscription]
  * ```
  */
-class az_sql_server_ad_admin_update_command_builder extends CommandBuilder {
+class az_sql_server_ad_admin_update_command_builder extends CommandBuilder<az_sql_server_ad_admin_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -11473,7 +11639,7 @@ class az_sql_server_ad_admin_update_command_builder extends CommandBuilder {
  *                                 [--subscription]
  * ```
  */
-class az_sql_server_audit_policy_show_command_builder extends CommandBuilder {
+class az_sql_server_audit_policy_show_command_builder extends CommandBuilder<az_sql_server_audit_policy_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -11530,7 +11696,7 @@ class az_sql_server_audit_policy_show_command_builder extends CommandBuilder {
  *                                   [--subscription]
  * ```
  */
-class az_sql_server_audit_policy_update_command_builder extends CommandBuilder {
+class az_sql_server_audit_policy_update_command_builder extends CommandBuilder<az_sql_server_audit_policy_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -11632,7 +11798,7 @@ class az_sql_server_audit_policy_update_command_builder extends CommandBuilder {
  *                                [--subscription]
  * ```
  */
-class az_sql_server_conn_policy_show_command_builder extends CommandBuilder {
+class az_sql_server_conn_policy_show_command_builder extends CommandBuilder<az_sql_server_conn_policy_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -11686,7 +11852,7 @@ class az_sql_server_conn_policy_show_command_builder extends CommandBuilder {
  *
  * @param {'Default' | 'Proxy' | 'Redirect'} connectionType The server connection type.
  */
-class az_sql_server_conn_policy_update_command_builder extends CommandBuilder {
+class az_sql_server_conn_policy_update_command_builder extends CommandBuilder<az_sql_server_conn_policy_update_command_result> {
     constructor(commandPath: string, connectionType: 'Default' | 'Proxy' | 'Redirect') {
         super(commandPath);
         this.connectionType(connectionType)
@@ -11762,7 +11928,7 @@ class az_sql_server_conn_policy_update_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} server Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`.
  */
-class az_sql_server_dns_alias_create_command_builder extends CommandBuilder {
+class az_sql_server_dns_alias_create_command_builder extends CommandBuilder<az_sql_server_dns_alias_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, server: string) {
         super(commandPath);
         this.name(name)
@@ -11809,7 +11975,7 @@ class az_sql_server_dns_alias_create_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the DNS alias.
  */
-class az_sql_server_dns_alias_delete_command_builder extends CommandBuilder {
+class az_sql_server_dns_alias_delete_command_builder extends CommandBuilder<az_sql_server_dns_alias_delete_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -11858,7 +12024,7 @@ class az_sql_server_dns_alias_delete_command_builder extends CommandBuilder {
  *                              [--subscription]
  * ```
  */
-class az_sql_server_dns_alias_list_command_builder extends CommandBuilder {
+class az_sql_server_dns_alias_list_command_builder extends CommandBuilder<az_sql_server_dns_alias_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -11912,7 +12078,7 @@ class az_sql_server_dns_alias_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the DNS alias.
  * @param {string} originalServer The name of the server to which alias is currently pointing.
  */
-class az_sql_server_dns_alias_set_command_builder extends CommandBuilder {
+class az_sql_server_dns_alias_set_command_builder extends CommandBuilder<az_sql_server_dns_alias_set_command_result> {
     constructor(commandPath: string, name: string, originalServer: string) {
         super(commandPath);
         this.name(name)
@@ -11983,7 +12149,7 @@ class az_sql_server_dns_alias_set_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the DNS alias.
  */
-class az_sql_server_dns_alias_show_command_builder extends CommandBuilder {
+class az_sql_server_dns_alias_show_command_builder extends CommandBuilder<az_sql_server_dns_alias_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -12045,7 +12211,7 @@ class az_sql_server_dns_alias_show_command_builder extends CommandBuilder {
  * @param {string} server Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`.
  * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
  */
-class az_sql_server_firewall_rule_create_command_builder extends CommandBuilder {
+class az_sql_server_firewall_rule_create_command_builder extends CommandBuilder<az_sql_server_firewall_rule_create_command_result> {
     constructor(commandPath: string, endIpAddress: string, name: string, resourceGroup: string, server: string, startIpAddress: string) {
         super(commandPath);
         this.endIpAddress(endIpAddress)
@@ -12104,7 +12270,7 @@ class az_sql_server_firewall_rule_create_command_builder extends CommandBuilder 
  *                                    [--subscription]
  * ```
  */
-class az_sql_server_firewall_rule_delete_command_builder extends CommandBuilder {
+class az_sql_server_firewall_rule_delete_command_builder extends CommandBuilder<az_sql_server_firewall_rule_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -12152,7 +12318,7 @@ class az_sql_server_firewall_rule_delete_command_builder extends CommandBuilder 
  *                                  [--subscription]
  * ```
  */
-class az_sql_server_firewall_rule_list_command_builder extends CommandBuilder {
+class az_sql_server_firewall_rule_list_command_builder extends CommandBuilder<az_sql_server_firewall_rule_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -12201,7 +12367,7 @@ class az_sql_server_firewall_rule_list_command_builder extends CommandBuilder {
  *                                  [--subscription]
  * ```
  */
-class az_sql_server_firewall_rule_show_command_builder extends CommandBuilder {
+class az_sql_server_firewall_rule_show_command_builder extends CommandBuilder<az_sql_server_firewall_rule_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -12257,7 +12423,7 @@ class az_sql_server_firewall_rule_show_command_builder extends CommandBuilder {
  *                                    [--subscription]
  * ```
  */
-class az_sql_server_firewall_rule_update_command_builder extends CommandBuilder {
+class az_sql_server_firewall_rule_update_command_builder extends CommandBuilder<az_sql_server_firewall_rule_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -12320,7 +12486,7 @@ class az_sql_server_firewall_rule_update_command_builder extends CommandBuilder 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} server Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`.
  */
-class az_sql_server_key_create_command_builder extends CommandBuilder {
+class az_sql_server_key_create_command_builder extends CommandBuilder<az_sql_server_key_create_command_result> {
     constructor(commandPath: string, kid: string, resourceGroup: string, server: string) {
         super(commandPath);
         this.kid(kid)
@@ -12367,7 +12533,7 @@ class az_sql_server_key_create_command_builder extends CommandBuilder {
  *
  * @param {string} kid The Azure Key Vault key identifier of the server key. An example key identifier is "<a href="https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901">https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901</a>".
  */
-class az_sql_server_key_delete_command_builder extends CommandBuilder {
+class az_sql_server_key_delete_command_builder extends CommandBuilder<az_sql_server_key_delete_command_result> {
     constructor(commandPath: string, kid: string) {
         super(commandPath);
         this.kid(kid)
@@ -12416,7 +12582,7 @@ class az_sql_server_key_delete_command_builder extends CommandBuilder {
  *                        [--subscription]
  * ```
  */
-class az_sql_server_key_list_command_builder extends CommandBuilder {
+class az_sql_server_key_list_command_builder extends CommandBuilder<az_sql_server_key_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -12467,7 +12633,7 @@ class az_sql_server_key_list_command_builder extends CommandBuilder {
  *
  * @param {string} kid The Azure Key Vault key identifier of the server key. An example key identifier is "<a href="https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901">https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901</a>".
  */
-class az_sql_server_key_show_command_builder extends CommandBuilder {
+class az_sql_server_key_show_command_builder extends CommandBuilder<az_sql_server_key_show_command_result> {
     constructor(commandPath: string, kid: string) {
         super(commandPath);
         this.kid(kid)
@@ -12525,7 +12691,7 @@ class az_sql_server_key_show_command_builder extends CommandBuilder {
  *
  * @param {'AzureKeyVault' | 'ServiceManaged'} serverKeyType The type of the server key.
  */
-class az_sql_server_tde_key_set_command_builder extends CommandBuilder {
+class az_sql_server_tde_key_set_command_builder extends CommandBuilder<az_sql_server_tde_key_set_command_result> {
     constructor(commandPath: string, serverKeyType: 'AzureKeyVault' | 'ServiceManaged') {
         super(commandPath);
         this.serverKeyType(serverKeyType)
@@ -12580,7 +12746,7 @@ class az_sql_server_tde_key_set_command_builder extends CommandBuilder {
  *                            [--subscription]
  * ```
  */
-class az_sql_server_tde_key_show_command_builder extends CommandBuilder {
+class az_sql_server_tde_key_show_command_builder extends CommandBuilder<az_sql_server_tde_key_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -12635,7 +12801,7 @@ class az_sql_server_tde_key_show_command_builder extends CommandBuilder {
  * @param {string} server Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`.
  * @param {string} subnet Name or ID of the subnet that allows access to an Azure Sql Server. If subnet name is provided, --vnet-name must be provided.
  */
-class az_sql_server_vnet_rule_create_command_builder extends CommandBuilder {
+class az_sql_server_vnet_rule_create_command_builder extends CommandBuilder<az_sql_server_vnet_rule_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, server: string, subnet: string) {
         super(commandPath);
         this.name(name)
@@ -12701,7 +12867,7 @@ class az_sql_server_vnet_rule_create_command_builder extends CommandBuilder {
  *
  * @param {string} name The name of the virtual network rule.
  */
-class az_sql_server_vnet_rule_delete_command_builder extends CommandBuilder {
+class az_sql_server_vnet_rule_delete_command_builder extends CommandBuilder<az_sql_server_vnet_rule_delete_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -12750,7 +12916,7 @@ class az_sql_server_vnet_rule_delete_command_builder extends CommandBuilder {
  *                              [--subscription]
  * ```
  */
-class az_sql_server_vnet_rule_list_command_builder extends CommandBuilder {
+class az_sql_server_vnet_rule_list_command_builder extends CommandBuilder<az_sql_server_vnet_rule_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -12801,7 +12967,7 @@ class az_sql_server_vnet_rule_list_command_builder extends CommandBuilder {
  *
  * @param {string} name The name of the virtual network rule.
  */
-class az_sql_server_vnet_rule_show_command_builder extends CommandBuilder {
+class az_sql_server_vnet_rule_show_command_builder extends CommandBuilder<az_sql_server_vnet_rule_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -12865,7 +13031,7 @@ class az_sql_server_vnet_rule_show_command_builder extends CommandBuilder {
  * @param {string} name The name of the virtual network rule.
  * @param {string} subnet Name or ID of the subnet that allows access to an Azure Sql Server. If subnet name is provided, --vnet-name must be provided.
  */
-class az_sql_server_vnet_rule_update_command_builder extends CommandBuilder {
+class az_sql_server_vnet_rule_update_command_builder extends CommandBuilder<az_sql_server_vnet_rule_update_command_result> {
     constructor(commandPath: string, name: string, subnet: string) {
         super(commandPath);
         this.name(name)
@@ -12961,7 +13127,7 @@ class az_sql_server_vnet_rule_update_command_builder extends CommandBuilder {
  * @param {string} name Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sql_server_create_command_builder extends CommandBuilder {
+class az_sql_server_create_command_builder extends CommandBuilder<az_sql_server_create_command_result> {
     constructor(commandPath: string, adminPassword: string, adminUser: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.adminPassword(adminPassword)
@@ -13043,7 +13209,7 @@ class az_sql_server_create_command_builder extends CommandBuilder {
  *                      [--yes]
  * ```
  */
-class az_sql_server_delete_command_builder extends CommandBuilder {
+class az_sql_server_delete_command_builder extends CommandBuilder<az_sql_server_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -13089,7 +13255,7 @@ class az_sql_server_delete_command_builder extends CommandBuilder {
  *                    [--subscription]
  * ```
  */
-class az_sql_server_list_command_builder extends CommandBuilder {
+class az_sql_server_list_command_builder extends CommandBuilder<az_sql_server_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -13124,7 +13290,7 @@ class az_sql_server_list_command_builder extends CommandBuilder {
  *                           [--subscription]
  * ```
  */
-class az_sql_server_list_usages_command_builder extends CommandBuilder {
+class az_sql_server_list_usages_command_builder extends CommandBuilder<az_sql_server_list_usages_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -13166,7 +13332,7 @@ class az_sql_server_list_usages_command_builder extends CommandBuilder {
  *                    [--subscription]
  * ```
  */
-class az_sql_server_show_command_builder extends CommandBuilder {
+class az_sql_server_show_command_builder extends CommandBuilder<az_sql_server_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -13222,7 +13388,7 @@ class az_sql_server_show_command_builder extends CommandBuilder {
  *                      [--subscription]
  * ```
  */
-class az_sql_server_update_command_builder extends CommandBuilder {
+class az_sql_server_update_command_builder extends CommandBuilder<az_sql_server_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -13324,7 +13490,7 @@ class az_sql_server_update_command_builder extends CommandBuilder {
  *                    [--updated]
  * ```
  */
-class az_sql_server_wait_command_builder extends CommandBuilder {
+class az_sql_server_wait_command_builder extends CommandBuilder<az_sql_server_wait_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -13408,7 +13574,7 @@ class az_sql_server_wait_command_builder extends CommandBuilder {
  *                               [--subscription]
  * ```
  */
-class az_sql_virtual_cluster_delete_command_builder extends CommandBuilder {
+class az_sql_virtual_cluster_delete_command_builder extends CommandBuilder<az_sql_virtual_cluster_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -13454,7 +13620,7 @@ class az_sql_virtual_cluster_delete_command_builder extends CommandBuilder {
  *                             [--subscription]
  * ```
  */
-class az_sql_virtual_cluster_list_command_builder extends CommandBuilder {
+class az_sql_virtual_cluster_list_command_builder extends CommandBuilder<az_sql_virtual_cluster_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -13490,7 +13656,7 @@ class az_sql_virtual_cluster_list_command_builder extends CommandBuilder {
  *                             [--subscription]
  * ```
  */
-class az_sql_virtual_cluster_show_command_builder extends CommandBuilder {
+class az_sql_virtual_cluster_show_command_builder extends CommandBuilder<az_sql_virtual_cluster_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -13556,7 +13722,7 @@ class az_sql_virtual_cluster_show_command_builder extends CommandBuilder {
  * @param {string} sqlvms Space-separated list of SQL virtual machine instance name or resource IDs that are enrolled into the availability group.
  * @param {string} subnet The name or resource id of the subnet to include in the private IP.
  */
-class az_sql_vm_group_ag_listener_create_command_builder extends CommandBuilder {
+class az_sql_vm_group_ag_listener_create_command_builder extends CommandBuilder<az_sql_vm_group_ag_listener_create_command_result> {
     constructor(commandPath: string, agName: string, groupName: string, ipAddress: string, loadBalancer: string, name: string, probePort: string, resourceGroup: string, sqlvms: string, subnet: string) {
         super(commandPath);
         this.agName(agName)
@@ -13664,7 +13830,7 @@ class az_sql_vm_group_ag_listener_create_command_builder extends CommandBuilder 
  *
  * @param {string} groupName Name of the SQL virtual machine group.
  */
-class az_sql_vm_group_ag_listener_delete_command_builder extends CommandBuilder {
+class az_sql_vm_group_ag_listener_delete_command_builder extends CommandBuilder<az_sql_vm_group_ag_listener_delete_command_result> {
     constructor(commandPath: string, groupName: string) {
         super(commandPath);
         this.groupName(groupName)
@@ -13721,7 +13887,7 @@ class az_sql_vm_group_ag_listener_delete_command_builder extends CommandBuilder 
  * @param {string} groupName Name of the SQL virtual machine group.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sql_vm_group_ag_listener_list_command_builder extends CommandBuilder {
+class az_sql_vm_group_ag_listener_list_command_builder extends CommandBuilder<az_sql_vm_group_ag_listener_list_command_result> {
     constructor(commandPath: string, groupName: string, resourceGroup: string) {
         super(commandPath);
         this.groupName(groupName)
@@ -13768,7 +13934,7 @@ class az_sql_vm_group_ag_listener_list_command_builder extends CommandBuilder {
  *
  * @param {string} groupName Name of the SQL virtual machine group.
  */
-class az_sql_vm_group_ag_listener_show_command_builder extends CommandBuilder {
+class az_sql_vm_group_ag_listener_show_command_builder extends CommandBuilder<az_sql_vm_group_ag_listener_show_command_result> {
     constructor(commandPath: string, groupName: string) {
         super(commandPath);
         this.groupName(groupName)
@@ -13830,7 +13996,7 @@ class az_sql_vm_group_ag_listener_show_command_builder extends CommandBuilder {
  *
  * @param {string} groupName Name of the SQL virtual machine group.
  */
-class az_sql_vm_group_ag_listener_update_command_builder extends CommandBuilder {
+class az_sql_vm_group_ag_listener_update_command_builder extends CommandBuilder<az_sql_vm_group_ag_listener_update_command_result> {
     constructor(commandPath: string, groupName: string) {
         super(commandPath);
         this.groupName(groupName)
@@ -13928,7 +14094,7 @@ class az_sql_vm_group_ag_listener_update_command_builder extends CommandBuilder 
  * @param {string} serviceAcc Account name under which SQL service will run on all participating SQL virtual machines in the cluster.
  * @param {string} storageAccount Storage account url of the witness storage account.
  */
-class az_sql_vm_group_create_command_builder extends CommandBuilder {
+class az_sql_vm_group_create_command_builder extends CommandBuilder<az_sql_vm_group_create_command_result> {
     constructor(commandPath: string, domainFqdn: string, imageOffer: string, imageSku: 'Developer' | 'Enterprise', name: string, operatorAcc: string, resourceGroup: string, serviceAcc: string, storageAccount: string) {
         super(commandPath);
         this.domainFqdn(domainFqdn)
@@ -14044,7 +14210,7 @@ class az_sql_vm_group_create_command_builder extends CommandBuilder {
  *                        [--yes]
  * ```
  */
-class az_sql_vm_group_delete_command_builder extends CommandBuilder {
+class az_sql_vm_group_delete_command_builder extends CommandBuilder<az_sql_vm_group_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -14090,7 +14256,7 @@ class az_sql_vm_group_delete_command_builder extends CommandBuilder {
  *                      [--subscription]
  * ```
  */
-class az_sql_vm_group_list_command_builder extends CommandBuilder {
+class az_sql_vm_group_list_command_builder extends CommandBuilder<az_sql_vm_group_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -14126,7 +14292,7 @@ class az_sql_vm_group_list_command_builder extends CommandBuilder {
  *                      [--subscription]
  * ```
  */
-class az_sql_vm_group_show_command_builder extends CommandBuilder {
+class az_sql_vm_group_show_command_builder extends CommandBuilder<az_sql_vm_group_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -14186,7 +14352,7 @@ class az_sql_vm_group_show_command_builder extends CommandBuilder {
  *                        [--tags]
  * ```
  */
-class az_sql_vm_group_update_command_builder extends CommandBuilder {
+class az_sql_vm_group_update_command_builder extends CommandBuilder<az_sql_vm_group_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -14311,7 +14477,7 @@ class az_sql_vm_group_update_command_builder extends CommandBuilder {
  *
  * @param {string} sqlvmGroup Name or resource ID of the SQL virtual machine group. If only name provided, SQL virtual machine group should be in the same resource group of the SQL virtual machine.
  */
-class az_sql_vm_add_to_group_command_builder extends CommandBuilder {
+class az_sql_vm_add_to_group_command_builder extends CommandBuilder<az_sql_vm_add_to_group_command_result> {
     constructor(commandPath: string, sqlvmGroup: string) {
         super(commandPath);
         this.sqlvmGroup(sqlvmGroup)
@@ -14413,7 +14579,7 @@ class az_sql_vm_add_to_group_command_builder extends CommandBuilder {
  * @param {string} name Name of the SQL virtual machine. The name of the new SQL virtual machine must be equal to the underlying virtual machine created from SQL marketplace image.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sql_vm_create_command_builder extends CommandBuilder {
+class az_sql_vm_create_command_builder extends CommandBuilder<az_sql_vm_create_command_result> {
     constructor(commandPath: string, licenseType: 'AHUB' | 'DR' | 'PAYG', name: string, resourceGroup: string) {
         super(commandPath);
         this.licenseType(licenseType)
@@ -14650,7 +14816,7 @@ class az_sql_vm_create_command_builder extends CommandBuilder {
  *                  [--yes]
  * ```
  */
-class az_sql_vm_delete_command_builder extends CommandBuilder {
+class az_sql_vm_delete_command_builder extends CommandBuilder<az_sql_vm_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -14696,7 +14862,7 @@ class az_sql_vm_delete_command_builder extends CommandBuilder {
  *                [--subscription]
  * ```
  */
-class az_sql_vm_list_command_builder extends CommandBuilder {
+class az_sql_vm_list_command_builder extends CommandBuilder<az_sql_vm_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -14731,7 +14897,7 @@ class az_sql_vm_list_command_builder extends CommandBuilder {
  *                             [--subscription]
  * ```
  */
-class az_sql_vm_remove_from_group_command_builder extends CommandBuilder {
+class az_sql_vm_remove_from_group_command_builder extends CommandBuilder<az_sql_vm_remove_from_group_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -14774,7 +14940,7 @@ class az_sql_vm_remove_from_group_command_builder extends CommandBuilder {
  *                [--subscription]
  * ```
  */
-class az_sql_vm_show_command_builder extends CommandBuilder {
+class az_sql_vm_show_command_builder extends CommandBuilder<az_sql_vm_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -14861,7 +15027,7 @@ class az_sql_vm_show_command_builder extends CommandBuilder {
  *                  [--yes]
  * ```
  */
-class az_sql_vm_update_command_builder extends CommandBuilder {
+class az_sql_vm_update_command_builder extends CommandBuilder<az_sql_vm_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -15106,7 +15272,7 @@ class az_sql_vm_update_command_builder extends CommandBuilder {
  *
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
-class az_sql_list_usages_command_builder extends CommandBuilder {
+class az_sql_list_usages_command_builder extends CommandBuilder<az_sql_list_usages_command_result> {
     constructor(commandPath: string, location: string) {
         super(commandPath);
         this.location(location)
@@ -15138,7 +15304,7 @@ class az_sql_list_usages_command_builder extends CommandBuilder {
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  * @param {string} usage Name of usage metric to return.
  */
-class az_sql_show_usage_command_builder extends CommandBuilder {
+class az_sql_show_usage_command_builder extends CommandBuilder<az_sql_show_usage_command_result> {
     constructor(commandPath: string, location: string, usage: string) {
         super(commandPath);
         this.location(location)

@@ -1,4 +1,11 @@
 import { CommandBuilder } from '../base';
+import { az_config_param_persist_delete_command_result } from './models/az_config_param_persist_delete_command_result'
+import { az_config_param_persist_off_command_result } from './models/az_config_param_persist_off_command_result'
+import { az_config_param_persist_on_command_result } from './models/az_config_param_persist_on_command_result'
+import { az_config_param_persist_show_command_result } from './models/az_config_param_persist_show_command_result'
+import { az_config_get_command_result } from './models/az_config_get_command_result'
+import { az_config_set_command_result } from './models/az_config_set_command_result'
+import { az_config_unset_command_result } from './models/az_config_unset_command_result'
 
 /** Manage parameter persistence. */
 export class az_config_param_persist {
@@ -110,7 +117,7 @@ export class az_config {
  *                                [<NAME>]
  * ```
  */
-class az_config_param_persist_delete_command_builder extends CommandBuilder {
+class az_config_param_persist_delete_command_builder extends CommandBuilder<az_config_param_persist_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -154,7 +161,7 @@ class az_config_param_persist_delete_command_builder extends CommandBuilder {
  * az config param-persist off
  * ```
  */
-class az_config_param_persist_off_command_builder extends CommandBuilder {
+class az_config_param_persist_off_command_builder extends CommandBuilder<az_config_param_persist_off_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -168,7 +175,7 @@ class az_config_param_persist_off_command_builder extends CommandBuilder {
  * az config param-persist on
  * ```
  */
-class az_config_param_persist_on_command_builder extends CommandBuilder {
+class az_config_param_persist_on_command_builder extends CommandBuilder<az_config_param_persist_on_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -183,7 +190,7 @@ class az_config_param_persist_on_command_builder extends CommandBuilder {
  *                              [<NAME>]
  * ```
  */
-class az_config_param_persist_show_command_builder extends CommandBuilder {
+class az_config_param_persist_show_command_builder extends CommandBuilder<az_config_param_persist_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -210,7 +217,7 @@ class az_config_param_persist_show_command_builder extends CommandBuilder {
  *               [<KEY>]
  * ```
  */
-class az_config_get_command_builder extends CommandBuilder {
+class az_config_get_command_builder extends CommandBuilder<az_config_get_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -237,7 +244,7 @@ class az_config_get_command_builder extends CommandBuilder {
  *               [<KEY_VALUE>]
  * ```
  */
-class az_config_set_command_builder extends CommandBuilder {
+class az_config_set_command_builder extends CommandBuilder<az_config_set_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -264,7 +271,7 @@ class az_config_set_command_builder extends CommandBuilder {
  *                 [<KEY>]
  * ```
  */
-class az_config_unset_command_builder extends CommandBuilder {
+class az_config_unset_command_builder extends CommandBuilder<az_config_unset_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }

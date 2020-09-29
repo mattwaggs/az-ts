@@ -1,4 +1,37 @@
 import { CommandBuilder } from '../base';
+import { az_appconfig_credential_list_command_result } from './models/az_appconfig_credential_list_command_result'
+import { az_appconfig_credential_regenerate_command_result } from './models/az_appconfig_credential_regenerate_command_result'
+import { az_appconfig_feature_filter_add_command_result } from './models/az_appconfig_feature_filter_add_command_result'
+import { az_appconfig_feature_filter_delete_command_result } from './models/az_appconfig_feature_filter_delete_command_result'
+import { az_appconfig_feature_filter_list_command_result } from './models/az_appconfig_feature_filter_list_command_result'
+import { az_appconfig_feature_filter_show_command_result } from './models/az_appconfig_feature_filter_show_command_result'
+import { az_appconfig_feature_delete_command_result } from './models/az_appconfig_feature_delete_command_result'
+import { az_appconfig_feature_disable_command_result } from './models/az_appconfig_feature_disable_command_result'
+import { az_appconfig_feature_enable_command_result } from './models/az_appconfig_feature_enable_command_result'
+import { az_appconfig_feature_list_command_result } from './models/az_appconfig_feature_list_command_result'
+import { az_appconfig_feature_lock_command_result } from './models/az_appconfig_feature_lock_command_result'
+import { az_appconfig_feature_set_command_result } from './models/az_appconfig_feature_set_command_result'
+import { az_appconfig_feature_show_command_result } from './models/az_appconfig_feature_show_command_result'
+import { az_appconfig_feature_unlock_command_result } from './models/az_appconfig_feature_unlock_command_result'
+import { az_appconfig_identity_assign_command_result } from './models/az_appconfig_identity_assign_command_result'
+import { az_appconfig_identity_remove_command_result } from './models/az_appconfig_identity_remove_command_result'
+import { az_appconfig_identity_show_command_result } from './models/az_appconfig_identity_show_command_result'
+import { az_appconfig_kv_delete_command_result } from './models/az_appconfig_kv_delete_command_result'
+import { az_appconfig_kv_export_command_result } from './models/az_appconfig_kv_export_command_result'
+import { az_appconfig_kv_import_command_result } from './models/az_appconfig_kv_import_command_result'
+import { az_appconfig_kv_list_command_result } from './models/az_appconfig_kv_list_command_result'
+import { az_appconfig_kv_lock_command_result } from './models/az_appconfig_kv_lock_command_result'
+import { az_appconfig_kv_restore_command_result } from './models/az_appconfig_kv_restore_command_result'
+import { az_appconfig_kv_set_command_result } from './models/az_appconfig_kv_set_command_result'
+import { az_appconfig_kv_set_keyvault_command_result } from './models/az_appconfig_kv_set_keyvault_command_result'
+import { az_appconfig_kv_show_command_result } from './models/az_appconfig_kv_show_command_result'
+import { az_appconfig_kv_unlock_command_result } from './models/az_appconfig_kv_unlock_command_result'
+import { az_appconfig_revision_list_command_result } from './models/az_appconfig_revision_list_command_result'
+import { az_appconfig_create_command_result } from './models/az_appconfig_create_command_result'
+import { az_appconfig_delete_command_result } from './models/az_appconfig_delete_command_result'
+import { az_appconfig_list_command_result } from './models/az_appconfig_list_command_result'
+import { az_appconfig_show_command_result } from './models/az_appconfig_show_command_result'
+import { az_appconfig_update_command_result } from './models/az_appconfig_update_command_result'
 
 /** Manage credentials for App Configurations. */
 export class az_appconfig_credential {
@@ -705,7 +738,7 @@ export class az_appconfig {
  *
  * @param {string} name Name of the App Configuration. You can configure the default name using `az configure --defaults app_configuration_store=<name>`.
  */
-class az_appconfig_credential_list_command_builder extends CommandBuilder {
+class az_appconfig_credential_list_command_builder extends CommandBuilder<az_appconfig_credential_list_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -750,7 +783,7 @@ class az_appconfig_credential_list_command_builder extends CommandBuilder {
  * @param {string} id Id of the key to be regenerated. Can be found using az appconfig credential list command.
  * @param {string} name Name of the App Configuration. You can configure the default name using `az configure --defaults app_configuration_store=<name>`.
  */
-class az_appconfig_credential_regenerate_command_builder extends CommandBuilder {
+class az_appconfig_credential_regenerate_command_builder extends CommandBuilder<az_appconfig_credential_regenerate_command_result> {
     constructor(commandPath: string, id: string, name: string) {
         super(commandPath);
         this.id(id)
@@ -801,7 +834,7 @@ class az_appconfig_credential_regenerate_command_builder extends CommandBuilder 
  * @param {string} feature Name of the feature to which you want to add the filter.
  * @param {string} filterName Name of the filter to be added.
  */
-class az_appconfig_feature_filter_add_command_builder extends CommandBuilder {
+class az_appconfig_feature_filter_add_command_builder extends CommandBuilder<az_appconfig_feature_filter_add_command_result> {
     constructor(commandPath: string, feature: string, filterName: string) {
         super(commandPath);
         this.feature(feature)
@@ -881,7 +914,7 @@ class az_appconfig_feature_filter_add_command_builder extends CommandBuilder {
  *
  * @param {string} feature Name of the feature from which you want to delete the filter.
  */
-class az_appconfig_feature_filter_delete_command_builder extends CommandBuilder {
+class az_appconfig_feature_filter_delete_command_builder extends CommandBuilder<az_appconfig_feature_filter_delete_command_result> {
     constructor(commandPath: string, feature: string) {
         super(commandPath);
         this.feature(feature)
@@ -959,7 +992,7 @@ class az_appconfig_feature_filter_delete_command_builder extends CommandBuilder 
  *
  * @param {string} feature Name of the feature whose filters you want to be displayed.
  */
-class az_appconfig_feature_filter_list_command_builder extends CommandBuilder {
+class az_appconfig_feature_filter_list_command_builder extends CommandBuilder<az_appconfig_feature_filter_list_command_result> {
     constructor(commandPath: string, feature: string) {
         super(commandPath);
         this.feature(feature)
@@ -1032,7 +1065,7 @@ class az_appconfig_feature_filter_list_command_builder extends CommandBuilder {
  * @param {string} feature Name of the feature which contains the filter.
  * @param {string} filterName Name of the filter to be displayed.
  */
-class az_appconfig_feature_filter_show_command_builder extends CommandBuilder {
+class az_appconfig_feature_filter_show_command_builder extends CommandBuilder<az_appconfig_feature_filter_show_command_result> {
     constructor(commandPath: string, feature: string, filterName: string) {
         super(commandPath);
         this.feature(feature)
@@ -1103,7 +1136,7 @@ class az_appconfig_feature_filter_show_command_builder extends CommandBuilder {
  *
  * @param {string} feature Key of the feature to be deleted. Support star sign as filters, for instance \* means all key and abc\* means keys with abc as prefix. Comma separated keys are not supported. Please provide escaped string if your feature name contains comma.
  */
-class az_appconfig_feature_delete_command_builder extends CommandBuilder {
+class az_appconfig_feature_delete_command_builder extends CommandBuilder<az_appconfig_feature_delete_command_result> {
     constructor(commandPath: string, feature: string) {
         super(commandPath);
         this.feature(feature)
@@ -1161,7 +1194,7 @@ class az_appconfig_feature_delete_command_builder extends CommandBuilder {
  *
  * @param {string} feature Key of the feature to be disabled.
  */
-class az_appconfig_feature_disable_command_builder extends CommandBuilder {
+class az_appconfig_feature_disable_command_builder extends CommandBuilder<az_appconfig_feature_disable_command_result> {
     constructor(commandPath: string, feature: string) {
         super(commandPath);
         this.feature(feature)
@@ -1219,7 +1252,7 @@ class az_appconfig_feature_disable_command_builder extends CommandBuilder {
  *
  * @param {string} feature Key of the feature to be enabled.
  */
-class az_appconfig_feature_enable_command_builder extends CommandBuilder {
+class az_appconfig_feature_enable_command_builder extends CommandBuilder<az_appconfig_feature_enable_command_result> {
     constructor(commandPath: string, feature: string) {
         super(commandPath);
         this.feature(feature)
@@ -1278,7 +1311,7 @@ class az_appconfig_feature_enable_command_builder extends CommandBuilder {
  *                           [--top]
  * ```
  */
-class az_appconfig_feature_list_command_builder extends CommandBuilder {
+class az_appconfig_feature_list_command_builder extends CommandBuilder<az_appconfig_feature_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1353,7 +1386,7 @@ class az_appconfig_feature_list_command_builder extends CommandBuilder {
  *
  * @param {string} feature Key of the feature to be locked.
  */
-class az_appconfig_feature_lock_command_builder extends CommandBuilder {
+class az_appconfig_feature_lock_command_builder extends CommandBuilder<az_appconfig_feature_lock_command_result> {
     constructor(commandPath: string, feature: string) {
         super(commandPath);
         this.feature(feature)
@@ -1412,7 +1445,7 @@ class az_appconfig_feature_lock_command_builder extends CommandBuilder {
  *
  * @param {string} feature Name of the feature flag to be set. Only alphanumeric characters, '.', '-' and '_' are allowed.
  */
-class az_appconfig_feature_set_command_builder extends CommandBuilder {
+class az_appconfig_feature_set_command_builder extends CommandBuilder<az_appconfig_feature_set_command_result> {
     constructor(commandPath: string, feature: string) {
         super(commandPath);
         this.feature(feature)
@@ -1477,7 +1510,7 @@ class az_appconfig_feature_set_command_builder extends CommandBuilder {
  *
  * @param {string} feature Name of the feature flag to be retrieved.
  */
-class az_appconfig_feature_show_command_builder extends CommandBuilder {
+class az_appconfig_feature_show_command_builder extends CommandBuilder<az_appconfig_feature_show_command_result> {
     constructor(commandPath: string, feature: string) {
         super(commandPath);
         this.feature(feature)
@@ -1541,7 +1574,7 @@ class az_appconfig_feature_show_command_builder extends CommandBuilder {
  *
  * @param {string} feature Key of the feature to be unlocked.
  */
-class az_appconfig_feature_unlock_command_builder extends CommandBuilder {
+class az_appconfig_feature_unlock_command_builder extends CommandBuilder<az_appconfig_feature_unlock_command_result> {
     constructor(commandPath: string, feature: string) {
         super(commandPath);
         this.feature(feature)
@@ -1597,7 +1630,7 @@ class az_appconfig_feature_unlock_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the App Configuration. You can configure the default name using `az configure --defaults app_configuration_store=<name>`.
  */
-class az_appconfig_identity_assign_command_builder extends CommandBuilder {
+class az_appconfig_identity_assign_command_builder extends CommandBuilder<az_appconfig_identity_assign_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -1641,7 +1674,7 @@ class az_appconfig_identity_assign_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the App Configuration. You can configure the default name using `az configure --defaults app_configuration_store=<name>`.
  */
-class az_appconfig_identity_remove_command_builder extends CommandBuilder {
+class az_appconfig_identity_remove_command_builder extends CommandBuilder<az_appconfig_identity_remove_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -1685,7 +1718,7 @@ class az_appconfig_identity_remove_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the App Configuration. You can configure the default name using `az configure --defaults app_configuration_store=<name>`.
  */
-class az_appconfig_identity_show_command_builder extends CommandBuilder {
+class az_appconfig_identity_show_command_builder extends CommandBuilder<az_appconfig_identity_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -1731,7 +1764,7 @@ class az_appconfig_identity_show_command_builder extends CommandBuilder {
  *
  * @param {string} key Support star sign as filters, for instance \* means all key and abc\* means keys with abc as prefix.
  */
-class az_appconfig_kv_delete_command_builder extends CommandBuilder {
+class az_appconfig_kv_delete_command_builder extends CommandBuilder<az_appconfig_kv_delete_command_result> {
     constructor(commandPath: string, key: string) {
         super(commandPath);
         this.key(key)
@@ -1803,7 +1836,7 @@ class az_appconfig_kv_delete_command_builder extends CommandBuilder {
  *
  * @param {'appconfig' | 'appservice' | 'file'} destination The destination of exporting. Note that exporting feature flags to appservice is not supported.
  */
-class az_appconfig_kv_export_command_builder extends CommandBuilder {
+class az_appconfig_kv_export_command_builder extends CommandBuilder<az_appconfig_kv_export_command_result> {
     constructor(commandPath: string, destination: 'appconfig' | 'appservice' | 'file') {
         super(commandPath);
         this.destination(destination)
@@ -1958,7 +1991,7 @@ class az_appconfig_kv_export_command_builder extends CommandBuilder {
  *
  * @param {'appconfig' | 'appservice' | 'file'} source The source of importing. Note that importing feature flags from appservice is not supported.
  */
-class az_appconfig_kv_import_command_builder extends CommandBuilder {
+class az_appconfig_kv_import_command_builder extends CommandBuilder<az_appconfig_kv_import_command_result> {
     constructor(commandPath: string, source: 'appconfig' | 'appservice' | 'file') {
         super(commandPath);
         this.source(source)
@@ -2097,7 +2130,7 @@ class az_appconfig_kv_import_command_builder extends CommandBuilder {
  *                      [--top]
  * ```
  */
-class az_appconfig_kv_list_command_builder extends CommandBuilder {
+class az_appconfig_kv_list_command_builder extends CommandBuilder<az_appconfig_kv_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2184,7 +2217,7 @@ class az_appconfig_kv_list_command_builder extends CommandBuilder {
  *
  * @param {string} key Key to be locked.
  */
-class az_appconfig_kv_lock_command_builder extends CommandBuilder {
+class az_appconfig_kv_lock_command_builder extends CommandBuilder<az_appconfig_kv_lock_command_result> {
     constructor(commandPath: string, key: string) {
         super(commandPath);
         this.key(key)
@@ -2243,7 +2276,7 @@ class az_appconfig_kv_lock_command_builder extends CommandBuilder {
  *
  * @param {string} datetime Format: "YYYY-MM-DDThh:mm:ssZ". If no time zone specified, use UTC by default.
  */
-class az_appconfig_kv_restore_command_builder extends CommandBuilder {
+class az_appconfig_kv_restore_command_builder extends CommandBuilder<az_appconfig_kv_restore_command_result> {
     constructor(commandPath: string, datetime: string) {
         super(commandPath);
         this.datetime(datetime)
@@ -2310,7 +2343,7 @@ class az_appconfig_kv_restore_command_builder extends CommandBuilder {
  *
  * @param {string} key Key to be set. Key cannot be a '.' or '..', or contain the '%' character.
  */
-class az_appconfig_kv_set_command_builder extends CommandBuilder {
+class az_appconfig_kv_set_command_builder extends CommandBuilder<az_appconfig_kv_set_command_result> {
     constructor(commandPath: string, key: string) {
         super(commandPath);
         this.key(key)
@@ -2389,7 +2422,7 @@ class az_appconfig_kv_set_command_builder extends CommandBuilder {
  * @param {string} key Key to be set. Key cannot be a '.' or '..', or contain the '%' character.
  * @param {string} secretIdentifier ID of the Key Vault object. Can be found using 'az keyvault {collection} show' command, where collection is key, secret or certificate. To set reference to the latest version of your secret, remove version information from secret identifier.
  */
-class az_appconfig_kv_set_keyvault_command_builder extends CommandBuilder {
+class az_appconfig_kv_set_keyvault_command_builder extends CommandBuilder<az_appconfig_kv_set_keyvault_command_result> {
     constructor(commandPath: string, key: string, secretIdentifier: string) {
         super(commandPath);
         this.key(key)
@@ -2461,7 +2494,7 @@ class az_appconfig_kv_set_keyvault_command_builder extends CommandBuilder {
  *
  * @param {string} key Key to be showed.
  */
-class az_appconfig_kv_show_command_builder extends CommandBuilder {
+class az_appconfig_kv_show_command_builder extends CommandBuilder<az_appconfig_kv_show_command_result> {
     constructor(commandPath: string, key: string) {
         super(commandPath);
         this.key(key)
@@ -2525,7 +2558,7 @@ class az_appconfig_kv_show_command_builder extends CommandBuilder {
  *
  * @param {string} key Key to be unlocked.
  */
-class az_appconfig_kv_unlock_command_builder extends CommandBuilder {
+class az_appconfig_kv_unlock_command_builder extends CommandBuilder<az_appconfig_kv_unlock_command_result> {
     constructor(commandPath: string, key: string) {
         super(commandPath);
         this.key(key)
@@ -2585,7 +2618,7 @@ class az_appconfig_kv_unlock_command_builder extends CommandBuilder {
  *                            [--top]
  * ```
  */
-class az_appconfig_revision_list_command_builder extends CommandBuilder {
+class az_appconfig_revision_list_command_builder extends CommandBuilder<az_appconfig_revision_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2669,7 +2702,7 @@ class az_appconfig_revision_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the App Configuration. You can configure the default name using `az configure --defaults app_configuration_store=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_appconfig_create_command_builder extends CommandBuilder {
+class az_appconfig_create_command_builder extends CommandBuilder<az_appconfig_create_command_result> {
     constructor(commandPath: string, location: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.location(location)
@@ -2733,7 +2766,7 @@ class az_appconfig_create_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the App Configuration. You can configure the default name using `az configure --defaults app_configuration_store=<name>`.
  */
-class az_appconfig_delete_command_builder extends CommandBuilder {
+class az_appconfig_delete_command_builder extends CommandBuilder<az_appconfig_delete_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -2774,7 +2807,7 @@ class az_appconfig_delete_command_builder extends CommandBuilder {
  *                   [--subscription]
  * ```
  */
-class az_appconfig_list_command_builder extends CommandBuilder {
+class az_appconfig_list_command_builder extends CommandBuilder<az_appconfig_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2811,7 +2844,7 @@ class az_appconfig_list_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the App Configuration. You can configure the default name using `az configure --defaults app_configuration_store=<name>`.
  */
-class az_appconfig_show_command_builder extends CommandBuilder {
+class az_appconfig_show_command_builder extends CommandBuilder<az_appconfig_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -2861,7 +2894,7 @@ class az_appconfig_show_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the App Configuration. You can configure the default name using `az configure --defaults app_configuration_store=<name>`.
  */
-class az_appconfig_update_command_builder extends CommandBuilder {
+class az_appconfig_update_command_builder extends CommandBuilder<az_appconfig_update_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)

@@ -1,4 +1,71 @@
 import { CommandBuilder } from '../base';
+import { az_security_adaptive_application_controls_list_command_result } from './models/az_security_adaptive_application_controls_list_command_result'
+import { az_security_adaptive_application_controls_show_command_result } from './models/az_security_adaptive_application_controls_show_command_result'
+import { az_security_adaptive_network_hardenings_list_command_result } from './models/az_security_adaptive_network_hardenings_list_command_result'
+import { az_security_adaptive_network_hardenings_show_command_result } from './models/az_security_adaptive_network_hardenings_show_command_result'
+import { az_security_alert_list_command_result } from './models/az_security_alert_list_command_result'
+import { az_security_alert_show_command_result } from './models/az_security_alert_show_command_result'
+import { az_security_alert_update_command_result } from './models/az_security_alert_update_command_result'
+import { az_security_allowed_connections_list_command_result } from './models/az_security_allowed_connections_list_command_result'
+import { az_security_allowed_connections_show_command_result } from './models/az_security_allowed_connections_show_command_result'
+import { az_security_assessment_metadata_create_command_result } from './models/az_security_assessment_metadata_create_command_result'
+import { az_security_assessment_metadata_delete_command_result } from './models/az_security_assessment_metadata_delete_command_result'
+import { az_security_assessment_metadata_list_command_result } from './models/az_security_assessment_metadata_list_command_result'
+import { az_security_assessment_metadata_show_command_result } from './models/az_security_assessment_metadata_show_command_result'
+import { az_security_assessment_create_command_result } from './models/az_security_assessment_create_command_result'
+import { az_security_assessment_delete_command_result } from './models/az_security_assessment_delete_command_result'
+import { az_security_assessment_list_command_result } from './models/az_security_assessment_list_command_result'
+import { az_security_assessment_show_command_result } from './models/az_security_assessment_show_command_result'
+import { az_security_atp_storage_show_command_result } from './models/az_security_atp_storage_show_command_result'
+import { az_security_atp_storage_update_command_result } from './models/az_security_atp_storage_update_command_result'
+import { az_security_auto_provisioning_setting_list_command_result } from './models/az_security_auto_provisioning_setting_list_command_result'
+import { az_security_auto_provisioning_setting_show_command_result } from './models/az_security_auto_provisioning_setting_show_command_result'
+import { az_security_auto_provisioning_setting_update_command_result } from './models/az_security_auto_provisioning_setting_update_command_result'
+import { az_security_contact_create_command_result } from './models/az_security_contact_create_command_result'
+import { az_security_contact_delete_command_result } from './models/az_security_contact_delete_command_result'
+import { az_security_contact_list_command_result } from './models/az_security_contact_list_command_result'
+import { az_security_contact_show_command_result } from './models/az_security_contact_show_command_result'
+import { az_security_discovered_security_solution_list_command_result } from './models/az_security_discovered_security_solution_list_command_result'
+import { az_security_discovered_security_solution_show_command_result } from './models/az_security_discovered_security_solution_show_command_result'
+import { az_security_external_security_solution_list_command_result } from './models/az_security_external_security_solution_list_command_result'
+import { az_security_external_security_solution_show_command_result } from './models/az_security_external_security_solution_show_command_result'
+import { az_security_iot_alerts_delete_command_result } from './models/az_security_iot_alerts_delete_command_result'
+import { az_security_iot_alerts_list_command_result } from './models/az_security_iot_alerts_list_command_result'
+import { az_security_iot_alerts_show_command_result } from './models/az_security_iot_alerts_show_command_result'
+import { az_security_iot_analytics_list_command_result } from './models/az_security_iot_analytics_list_command_result'
+import { az_security_iot_analytics_show_command_result } from './models/az_security_iot_analytics_show_command_result'
+import { az_security_iot_recommendations_list_command_result } from './models/az_security_iot_recommendations_list_command_result'
+import { az_security_iot_recommendations_show_command_result } from './models/az_security_iot_recommendations_show_command_result'
+import { az_security_iot_solution_create_command_result } from './models/az_security_iot_solution_create_command_result'
+import { az_security_iot_solution_delete_command_result } from './models/az_security_iot_solution_delete_command_result'
+import { az_security_iot_solution_list_command_result } from './models/az_security_iot_solution_list_command_result'
+import { az_security_iot_solution_show_command_result } from './models/az_security_iot_solution_show_command_result'
+import { az_security_iot_solution_update_command_result } from './models/az_security_iot_solution_update_command_result'
+import { az_security_jit_policy_list_command_result } from './models/az_security_jit_policy_list_command_result'
+import { az_security_jit_policy_show_command_result } from './models/az_security_jit_policy_show_command_result'
+import { az_security_location_list_command_result } from './models/az_security_location_list_command_result'
+import { az_security_location_show_command_result } from './models/az_security_location_show_command_result'
+import { az_security_pricing_create_command_result } from './models/az_security_pricing_create_command_result'
+import { az_security_pricing_list_command_result } from './models/az_security_pricing_list_command_result'
+import { az_security_pricing_show_command_result } from './models/az_security_pricing_show_command_result'
+import { az_security_regulatory_compliance_assessments_list_command_result } from './models/az_security_regulatory_compliance_assessments_list_command_result'
+import { az_security_regulatory_compliance_assessments_show_command_result } from './models/az_security_regulatory_compliance_assessments_show_command_result'
+import { az_security_regulatory_compliance_controls_list_command_result } from './models/az_security_regulatory_compliance_controls_list_command_result'
+import { az_security_regulatory_compliance_controls_show_command_result } from './models/az_security_regulatory_compliance_controls_show_command_result'
+import { az_security_regulatory_compliance_standards_list_command_result } from './models/az_security_regulatory_compliance_standards_list_command_result'
+import { az_security_regulatory_compliance_standards_show_command_result } from './models/az_security_regulatory_compliance_standards_show_command_result'
+import { az_security_setting_list_command_result } from './models/az_security_setting_list_command_result'
+import { az_security_setting_show_command_result } from './models/az_security_setting_show_command_result'
+import { az_security_sub_assessment_list_command_result } from './models/az_security_sub_assessment_list_command_result'
+import { az_security_sub_assessment_show_command_result } from './models/az_security_sub_assessment_show_command_result'
+import { az_security_task_list_command_result } from './models/az_security_task_list_command_result'
+import { az_security_task_show_command_result } from './models/az_security_task_show_command_result'
+import { az_security_topology_list_command_result } from './models/az_security_topology_list_command_result'
+import { az_security_topology_show_command_result } from './models/az_security_topology_show_command_result'
+import { az_security_workspace_setting_create_command_result } from './models/az_security_workspace_setting_create_command_result'
+import { az_security_workspace_setting_delete_command_result } from './models/az_security_workspace_setting_delete_command_result'
+import { az_security_workspace_setting_list_command_result } from './models/az_security_workspace_setting_list_command_result'
+import { az_security_workspace_setting_show_command_result } from './models/az_security_workspace_setting_show_command_result'
 
 /** Enable control which applications can run on your Azure and non-Azure machines (Windows and Linux). */
 export class az_security_adaptive_application_controls {
@@ -1218,7 +1285,7 @@ export class az_security {
  *                                                [--subscription]
  * ```
  */
-class az_security_adaptive_application_controls_list_command_builder extends CommandBuilder {
+class az_security_adaptive_application_controls_list_command_builder extends CommandBuilder<az_security_adaptive_application_controls_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1248,7 +1315,7 @@ class az_security_adaptive_application_controls_list_command_builder extends Com
  *
  * @param {string} groupName Name of an application control VM/server group.
  */
-class az_security_adaptive_application_controls_show_command_builder extends CommandBuilder {
+class az_security_adaptive_application_controls_show_command_builder extends CommandBuilder<az_security_adaptive_application_controls_show_command_result> {
     constructor(commandPath: string, groupName: string) {
         super(commandPath);
         this.groupName(groupName)
@@ -1291,7 +1358,7 @@ class az_security_adaptive_application_controls_show_command_builder extends Com
  * @param {string} resourceNamespace The Namespace of the resource.
  * @param {string} resourceType The type of the resource.
  */
-class az_security_adaptive_network_hardenings_list_command_builder extends CommandBuilder {
+class az_security_adaptive_network_hardenings_list_command_builder extends CommandBuilder<az_security_adaptive_network_hardenings_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, resourceName: string, resourceNamespace: string, resourceType: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -1357,7 +1424,7 @@ class az_security_adaptive_network_hardenings_list_command_builder extends Comma
  * @param {string} resourceNamespace The Namespace of the resource.
  * @param {string} resourceType The type of the resource.
  */
-class az_security_adaptive_network_hardenings_show_command_builder extends CommandBuilder {
+class az_security_adaptive_network_hardenings_show_command_builder extends CommandBuilder<az_security_adaptive_network_hardenings_show_command_result> {
     constructor(commandPath: string, adaptiveNetworkHardeningsResourceName: string, resourceGroup: string, resourceName: string, resourceNamespace: string, resourceType: string) {
         super(commandPath);
         this.adaptiveNetworkHardeningsResourceName(adaptiveNetworkHardeningsResourceName)
@@ -1421,7 +1488,7 @@ class az_security_adaptive_network_hardenings_show_command_builder extends Comma
  *                        [--subscription]
  * ```
  */
-class az_security_alert_list_command_builder extends CommandBuilder {
+class az_security_alert_list_command_builder extends CommandBuilder<az_security_alert_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1466,7 +1533,7 @@ class az_security_alert_list_command_builder extends CommandBuilder {
  * @param {string} location Location of the resource.
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_alert_show_command_builder extends CommandBuilder {
+class az_security_alert_show_command_builder extends CommandBuilder<az_security_alert_show_command_result> {
     constructor(commandPath: string, location: string, name: string) {
         super(commandPath);
         this.location(location)
@@ -1520,7 +1587,7 @@ class az_security_alert_show_command_builder extends CommandBuilder {
  * @param {string} name Name of the resource to be fetched.
  * @param {string} status Target status of the alert. possible values are "dismiss" and "activate".
  */
-class az_security_alert_update_command_builder extends CommandBuilder {
+class az_security_alert_update_command_builder extends CommandBuilder<az_security_alert_update_command_result> {
     constructor(commandPath: string, location: string, name: string, status: string) {
         super(commandPath);
         this.location(location)
@@ -1568,7 +1635,7 @@ class az_security_alert_update_command_builder extends CommandBuilder {
  *                                      [--subscription]
  * ```
  */
-class az_security_allowed_connections_list_command_builder extends CommandBuilder {
+class az_security_allowed_connections_list_command_builder extends CommandBuilder<az_security_allowed_connections_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1600,7 +1667,7 @@ class az_security_allowed_connections_list_command_builder extends CommandBuilde
  * @param {string} name Name of the resource to be fetched.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_security_allowed_connections_show_command_builder extends CommandBuilder {
+class az_security_allowed_connections_show_command_builder extends CommandBuilder<az_security_allowed_connections_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1650,7 +1717,7 @@ class az_security_allowed_connections_show_command_builder extends CommandBuilde
  * @param {string} name Name of the resource to be fetched.
  * @param {string} severity Indicates the importance of the security risk if the assessment is unhealthy.
  */
-class az_security_assessment_metadata_create_command_builder extends CommandBuilder {
+class az_security_assessment_metadata_create_command_builder extends CommandBuilder<az_security_assessment_metadata_create_command_result> {
     constructor(commandPath: string, description: string, displayName: string, name: string, severity: string) {
         super(commandPath);
         this.description(description)
@@ -1707,7 +1774,7 @@ class az_security_assessment_metadata_create_command_builder extends CommandBuil
  *
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_assessment_metadata_delete_command_builder extends CommandBuilder {
+class az_security_assessment_metadata_delete_command_builder extends CommandBuilder<az_security_assessment_metadata_delete_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -1735,7 +1802,7 @@ class az_security_assessment_metadata_delete_command_builder extends CommandBuil
  *                                      [--subscription]
  * ```
  */
-class az_security_assessment_metadata_list_command_builder extends CommandBuilder {
+class az_security_assessment_metadata_list_command_builder extends CommandBuilder<az_security_assessment_metadata_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1765,7 +1832,7 @@ class az_security_assessment_metadata_list_command_builder extends CommandBuilde
  *
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_assessment_metadata_show_command_builder extends CommandBuilder {
+class az_security_assessment_metadata_show_command_builder extends CommandBuilder<az_security_assessment_metadata_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -1807,7 +1874,7 @@ class az_security_assessment_metadata_show_command_builder extends CommandBuilde
  * @param {string} name Name of the resource to be fetched.
  * @param {string} statusCode Progremmatic code for the result of the assessment. can be "Healthy", "Unhealthy" or "NotApplicable".
  */
-class az_security_assessment_create_command_builder extends CommandBuilder {
+class az_security_assessment_create_command_builder extends CommandBuilder<az_security_assessment_create_command_result> {
     constructor(commandPath: string, name: string, statusCode: string) {
         super(commandPath);
         this.name(name)
@@ -1869,7 +1936,7 @@ class az_security_assessment_create_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_assessment_delete_command_builder extends CommandBuilder {
+class az_security_assessment_delete_command_builder extends CommandBuilder<az_security_assessment_delete_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -1903,7 +1970,7 @@ class az_security_assessment_delete_command_builder extends CommandBuilder {
  *                             [--subscription]
  * ```
  */
-class az_security_assessment_list_command_builder extends CommandBuilder {
+class az_security_assessment_list_command_builder extends CommandBuilder<az_security_assessment_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1934,7 +2001,7 @@ class az_security_assessment_list_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_assessment_show_command_builder extends CommandBuilder {
+class az_security_assessment_show_command_builder extends CommandBuilder<az_security_assessment_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -1979,7 +2046,7 @@ class az_security_assessment_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} storageAccount Name of an existing storage account.
  */
-class az_security_atp_storage_show_command_builder extends CommandBuilder {
+class az_security_atp_storage_show_command_builder extends CommandBuilder<az_security_atp_storage_show_command_result> {
     constructor(commandPath: string, resourceGroup: string, storageAccount: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -2026,7 +2093,7 @@ class az_security_atp_storage_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} storageAccount Name of an existing storage account.
  */
-class az_security_atp_storage_update_command_builder extends CommandBuilder {
+class az_security_atp_storage_update_command_builder extends CommandBuilder<az_security_atp_storage_update_command_result> {
     constructor(commandPath: string, isEnabled: boolean, resourceGroup: string, storageAccount: string) {
         super(commandPath);
         this.isEnabled(isEnabled)
@@ -2068,7 +2135,7 @@ class az_security_atp_storage_update_command_builder extends CommandBuilder {
  *                                            [--subscription]
  * ```
  */
-class az_security_auto_provisioning_setting_list_command_builder extends CommandBuilder {
+class az_security_auto_provisioning_setting_list_command_builder extends CommandBuilder<az_security_auto_provisioning_setting_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2098,7 +2165,7 @@ class az_security_auto_provisioning_setting_list_command_builder extends Command
  *
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_auto_provisioning_setting_show_command_builder extends CommandBuilder {
+class az_security_auto_provisioning_setting_show_command_builder extends CommandBuilder<az_security_auto_provisioning_setting_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -2136,7 +2203,7 @@ class az_security_auto_provisioning_setting_show_command_builder extends Command
  * @param {string} autoProvision Automatic provisioning toggle. possible values are "On" or "Off".
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_auto_provisioning_setting_update_command_builder extends CommandBuilder {
+class az_security_auto_provisioning_setting_update_command_builder extends CommandBuilder<az_security_auto_provisioning_setting_update_command_result> {
     constructor(commandPath: string, autoProvision: string, name: string) {
         super(commandPath);
         this.autoProvision(autoProvision)
@@ -2178,7 +2245,7 @@ class az_security_auto_provisioning_setting_update_command_builder extends Comma
  * @param {string} email E-mail of the security contact.
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_contact_create_command_builder extends CommandBuilder {
+class az_security_contact_create_command_builder extends CommandBuilder<az_security_contact_create_command_result> {
     constructor(commandPath: string, email: string, name: string) {
         super(commandPath);
         this.email(email)
@@ -2233,7 +2300,7 @@ class az_security_contact_create_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_contact_delete_command_builder extends CommandBuilder {
+class az_security_contact_delete_command_builder extends CommandBuilder<az_security_contact_delete_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -2261,7 +2328,7 @@ class az_security_contact_delete_command_builder extends CommandBuilder {
  *                          [--subscription]
  * ```
  */
-class az_security_contact_list_command_builder extends CommandBuilder {
+class az_security_contact_list_command_builder extends CommandBuilder<az_security_contact_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2291,7 +2358,7 @@ class az_security_contact_list_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_contact_show_command_builder extends CommandBuilder {
+class az_security_contact_show_command_builder extends CommandBuilder<az_security_contact_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -2325,7 +2392,7 @@ class az_security_contact_show_command_builder extends CommandBuilder {
  *                                               [--subscription]
  * ```
  */
-class az_security_discovered_security_solution_list_command_builder extends CommandBuilder {
+class az_security_discovered_security_solution_list_command_builder extends CommandBuilder<az_security_discovered_security_solution_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2357,7 +2424,7 @@ class az_security_discovered_security_solution_list_command_builder extends Comm
  * @param {string} name Name of the resource to be fetched.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_security_discovered_security_solution_show_command_builder extends CommandBuilder {
+class az_security_discovered_security_solution_show_command_builder extends CommandBuilder<az_security_discovered_security_solution_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2398,7 +2465,7 @@ class az_security_discovered_security_solution_show_command_builder extends Comm
  *                                             [--subscription]
  * ```
  */
-class az_security_external_security_solution_list_command_builder extends CommandBuilder {
+class az_security_external_security_solution_list_command_builder extends CommandBuilder<az_security_external_security_solution_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2430,7 +2497,7 @@ class az_security_external_security_solution_list_command_builder extends Comman
  * @param {string} name Name of the resource to be fetched.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_security_external_security_solution_show_command_builder extends CommandBuilder {
+class az_security_external_security_solution_show_command_builder extends CommandBuilder<az_security_external_security_solution_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2477,7 +2544,7 @@ class az_security_external_security_solution_show_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} solutionName Name of the IoT Security solution.
  */
-class az_security_iot_alerts_delete_command_builder extends CommandBuilder {
+class az_security_iot_alerts_delete_command_builder extends CommandBuilder<az_security_iot_alerts_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, solutionName: string) {
         super(commandPath);
         this.name(name)
@@ -2524,7 +2591,7 @@ class az_security_iot_alerts_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} solutionName Name of the IoT Security solution.
  */
-class az_security_iot_alerts_list_command_builder extends CommandBuilder {
+class az_security_iot_alerts_list_command_builder extends CommandBuilder<az_security_iot_alerts_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, solutionName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -2572,7 +2639,7 @@ class az_security_iot_alerts_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} solutionName Name of the IoT Security solution.
  */
-class az_security_iot_alerts_show_command_builder extends CommandBuilder {
+class az_security_iot_alerts_show_command_builder extends CommandBuilder<az_security_iot_alerts_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, solutionName: string) {
         super(commandPath);
         this.name(name)
@@ -2625,7 +2692,7 @@ class az_security_iot_alerts_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} solutionName Name of the IoT Security solution.
  */
-class az_security_iot_analytics_list_command_builder extends CommandBuilder {
+class az_security_iot_analytics_list_command_builder extends CommandBuilder<az_security_iot_analytics_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, solutionName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -2671,7 +2738,7 @@ class az_security_iot_analytics_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} solutionName Name of the IoT Security solution.
  */
-class az_security_iot_analytics_show_command_builder extends CommandBuilder {
+class az_security_iot_analytics_show_command_builder extends CommandBuilder<az_security_iot_analytics_show_command_result> {
     constructor(commandPath: string, resourceGroup: string, solutionName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -2717,7 +2784,7 @@ class az_security_iot_analytics_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} solutionName Name of the IoT Security solution.
  */
-class az_security_iot_recommendations_list_command_builder extends CommandBuilder {
+class az_security_iot_recommendations_list_command_builder extends CommandBuilder<az_security_iot_recommendations_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, solutionName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -2765,7 +2832,7 @@ class az_security_iot_recommendations_list_command_builder extends CommandBuilde
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} solutionName Name of the IoT Security solution.
  */
-class az_security_iot_recommendations_show_command_builder extends CommandBuilder {
+class az_security_iot_recommendations_show_command_builder extends CommandBuilder<az_security_iot_recommendations_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, solutionName: string) {
         super(commandPath);
         this.name(name)
@@ -2823,7 +2890,7 @@ class az_security_iot_recommendations_show_command_builder extends CommandBuilde
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} solutionName Name of the IoT Security solution.
  */
-class az_security_iot_solution_create_command_builder extends CommandBuilder {
+class az_security_iot_solution_create_command_builder extends CommandBuilder<az_security_iot_solution_create_command_result> {
     constructor(commandPath: string, displayName: string, iotHubs: string, location: string, resourceGroup: string, solutionName: string) {
         super(commandPath);
         this.displayName(displayName)
@@ -2883,7 +2950,7 @@ class az_security_iot_solution_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} solutionName Name of the IoT Security solution.
  */
-class az_security_iot_solution_delete_command_builder extends CommandBuilder {
+class az_security_iot_solution_delete_command_builder extends CommandBuilder<az_security_iot_solution_delete_command_result> {
     constructor(commandPath: string, resourceGroup: string, solutionName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -2919,7 +2986,7 @@ class az_security_iot_solution_delete_command_builder extends CommandBuilder {
  *                               [--subscription]
  * ```
  */
-class az_security_iot_solution_list_command_builder extends CommandBuilder {
+class az_security_iot_solution_list_command_builder extends CommandBuilder<az_security_iot_solution_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2957,7 +3024,7 @@ class az_security_iot_solution_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} solutionName Name of the IoT Security solution.
  */
-class az_security_iot_solution_show_command_builder extends CommandBuilder {
+class az_security_iot_solution_show_command_builder extends CommandBuilder<az_security_iot_solution_show_command_result> {
     constructor(commandPath: string, resourceGroup: string, solutionName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -3004,7 +3071,7 @@ class az_security_iot_solution_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} solutionName Name of the IoT Security solution.
  */
-class az_security_iot_solution_update_command_builder extends CommandBuilder {
+class az_security_iot_solution_update_command_builder extends CommandBuilder<az_security_iot_solution_update_command_result> {
     constructor(commandPath: string, resourceGroup: string, solutionName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -3053,7 +3120,7 @@ class az_security_iot_solution_update_command_builder extends CommandBuilder {
  *                             [--subscription]
  * ```
  */
-class az_security_jit_policy_list_command_builder extends CommandBuilder {
+class az_security_jit_policy_list_command_builder extends CommandBuilder<az_security_jit_policy_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3099,7 +3166,7 @@ class az_security_jit_policy_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the resource to be fetched.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_security_jit_policy_show_command_builder extends CommandBuilder {
+class az_security_jit_policy_show_command_builder extends CommandBuilder<az_security_jit_policy_show_command_result> {
     constructor(commandPath: string, location: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.location(location)
@@ -3147,7 +3214,7 @@ class az_security_jit_policy_show_command_builder extends CommandBuilder {
  *                           [--subscription]
  * ```
  */
-class az_security_location_list_command_builder extends CommandBuilder {
+class az_security_location_list_command_builder extends CommandBuilder<az_security_location_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3177,7 +3244,7 @@ class az_security_location_list_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_location_show_command_builder extends CommandBuilder {
+class az_security_location_show_command_builder extends CommandBuilder<az_security_location_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -3216,7 +3283,7 @@ class az_security_location_show_command_builder extends CommandBuilder {
  * @param {string} name Name of the resource to be fetched.
  * @param {string} tier Pricing tier type.
  */
-class az_security_pricing_create_command_builder extends CommandBuilder {
+class az_security_pricing_create_command_builder extends CommandBuilder<az_security_pricing_create_command_result> {
     constructor(commandPath: string, name: string, tier: string) {
         super(commandPath);
         this.name(name)
@@ -3257,7 +3324,7 @@ class az_security_pricing_create_command_builder extends CommandBuilder {
  *                          [--subscription]
  * ```
  */
-class az_security_pricing_list_command_builder extends CommandBuilder {
+class az_security_pricing_list_command_builder extends CommandBuilder<az_security_pricing_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3288,7 +3355,7 @@ class az_security_pricing_list_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_pricing_show_command_builder extends CommandBuilder {
+class az_security_pricing_show_command_builder extends CommandBuilder<az_security_pricing_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -3333,7 +3400,7 @@ class az_security_pricing_show_command_builder extends CommandBuilder {
  * @param {string} controlName The compliance control name.
  * @param {string} standardName The compliance standard name.
  */
-class az_security_regulatory_compliance_assessments_list_command_builder extends CommandBuilder {
+class az_security_regulatory_compliance_assessments_list_command_builder extends CommandBuilder<az_security_regulatory_compliance_assessments_list_command_result> {
     constructor(commandPath: string, controlName: string, standardName: string) {
         super(commandPath);
         this.controlName(controlName)
@@ -3381,7 +3448,7 @@ class az_security_regulatory_compliance_assessments_list_command_builder extends
  * @param {string} name Name of the resource to be fetched.
  * @param {string} standardName The compliance standard name.
  */
-class az_security_regulatory_compliance_assessments_show_command_builder extends CommandBuilder {
+class az_security_regulatory_compliance_assessments_show_command_builder extends CommandBuilder<az_security_regulatory_compliance_assessments_show_command_result> {
     constructor(commandPath: string, controlName: string, name: string, standardName: string) {
         super(commandPath);
         this.controlName(controlName)
@@ -3432,7 +3499,7 @@ class az_security_regulatory_compliance_assessments_show_command_builder extends
  *
  * @param {string} standardName The compliance standard name.
  */
-class az_security_regulatory_compliance_controls_list_command_builder extends CommandBuilder {
+class az_security_regulatory_compliance_controls_list_command_builder extends CommandBuilder<az_security_regulatory_compliance_controls_list_command_result> {
     constructor(commandPath: string, standardName: string) {
         super(commandPath);
         this.standardName(standardName)
@@ -3471,7 +3538,7 @@ class az_security_regulatory_compliance_controls_list_command_builder extends Co
  * @param {string} name Name of the resource to be fetched.
  * @param {string} standardName The compliance standard name.
  */
-class az_security_regulatory_compliance_controls_show_command_builder extends CommandBuilder {
+class az_security_regulatory_compliance_controls_show_command_builder extends CommandBuilder<az_security_regulatory_compliance_controls_show_command_result> {
     constructor(commandPath: string, name: string, standardName: string) {
         super(commandPath);
         this.name(name)
@@ -3512,7 +3579,7 @@ class az_security_regulatory_compliance_controls_show_command_builder extends Co
  *                                                  [--subscription]
  * ```
  */
-class az_security_regulatory_compliance_standards_list_command_builder extends CommandBuilder {
+class az_security_regulatory_compliance_standards_list_command_builder extends CommandBuilder<az_security_regulatory_compliance_standards_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3542,7 +3609,7 @@ class az_security_regulatory_compliance_standards_list_command_builder extends C
  *
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_regulatory_compliance_standards_show_command_builder extends CommandBuilder {
+class az_security_regulatory_compliance_standards_show_command_builder extends CommandBuilder<az_security_regulatory_compliance_standards_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -3576,7 +3643,7 @@ class az_security_regulatory_compliance_standards_show_command_builder extends C
  *                          [--subscription]
  * ```
  */
-class az_security_setting_list_command_builder extends CommandBuilder {
+class az_security_setting_list_command_builder extends CommandBuilder<az_security_setting_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3606,7 +3673,7 @@ class az_security_setting_list_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_setting_show_command_builder extends CommandBuilder {
+class az_security_setting_show_command_builder extends CommandBuilder<az_security_setting_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -3642,7 +3709,7 @@ class az_security_setting_show_command_builder extends CommandBuilder {
  *                                 [--subscription]
  * ```
  */
-class az_security_sub_assessment_list_command_builder extends CommandBuilder {
+class az_security_sub_assessment_list_command_builder extends CommandBuilder<az_security_sub_assessment_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3687,7 +3754,7 @@ class az_security_sub_assessment_list_command_builder extends CommandBuilder {
  * @param {string} assessmentName Name of the assessment resource.
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_sub_assessment_show_command_builder extends CommandBuilder {
+class az_security_sub_assessment_show_command_builder extends CommandBuilder<az_security_sub_assessment_show_command_result> {
     constructor(commandPath: string, assessmentName: string, name: string) {
         super(commandPath);
         this.assessmentName(assessmentName)
@@ -3735,7 +3802,7 @@ class az_security_sub_assessment_show_command_builder extends CommandBuilder {
  *                       [--subscription]
  * ```
  */
-class az_security_task_list_command_builder extends CommandBuilder {
+class az_security_task_list_command_builder extends CommandBuilder<az_security_task_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3772,7 +3839,7 @@ class az_security_task_list_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_task_show_command_builder extends CommandBuilder {
+class az_security_task_show_command_builder extends CommandBuilder<az_security_task_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -3812,7 +3879,7 @@ class az_security_task_show_command_builder extends CommandBuilder {
  *                           [--subscription]
  * ```
  */
-class az_security_topology_list_command_builder extends CommandBuilder {
+class az_security_topology_list_command_builder extends CommandBuilder<az_security_topology_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3844,7 +3911,7 @@ class az_security_topology_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the resource to be fetched.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_security_topology_show_command_builder extends CommandBuilder {
+class az_security_topology_show_command_builder extends CommandBuilder<az_security_topology_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -3889,7 +3956,7 @@ class az_security_topology_show_command_builder extends CommandBuilder {
  * @param {string} name Name of the resource to be fetched.
  * @param {string} targetWorkspace An ID of the workspace resource that will hold the security data.
  */
-class az_security_workspace_setting_create_command_builder extends CommandBuilder {
+class az_security_workspace_setting_create_command_builder extends CommandBuilder<az_security_workspace_setting_create_command_result> {
     constructor(commandPath: string, name: string, targetWorkspace: string) {
         super(commandPath);
         this.name(name)
@@ -3926,7 +3993,7 @@ class az_security_workspace_setting_create_command_builder extends CommandBuilde
  *
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_workspace_setting_delete_command_builder extends CommandBuilder {
+class az_security_workspace_setting_delete_command_builder extends CommandBuilder<az_security_workspace_setting_delete_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -3954,7 +4021,7 @@ class az_security_workspace_setting_delete_command_builder extends CommandBuilde
  *                                    [--subscription]
  * ```
  */
-class az_security_workspace_setting_list_command_builder extends CommandBuilder {
+class az_security_workspace_setting_list_command_builder extends CommandBuilder<az_security_workspace_setting_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3984,7 +4051,7 @@ class az_security_workspace_setting_list_command_builder extends CommandBuilder 
  *
  * @param {string} name Name of the resource to be fetched.
  */
-class az_security_workspace_setting_show_command_builder extends CommandBuilder {
+class az_security_workspace_setting_show_command_builder extends CommandBuilder<az_security_workspace_setting_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)

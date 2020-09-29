@@ -1,0 +1,1 @@
+export type az_image_builder_delete_command_result = Record<string, unknown>

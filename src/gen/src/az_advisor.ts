@@ -1,4 +1,10 @@
 import { CommandBuilder } from '../base';
+import { az_advisor_configuration_list_command_result } from './models/az_advisor_configuration_list_command_result'
+import { az_advisor_configuration_show_command_result } from './models/az_advisor_configuration_show_command_result'
+import { az_advisor_configuration_update_command_result } from './models/az_advisor_configuration_update_command_result'
+import { az_advisor_recommendation_disable_command_result } from './models/az_advisor_recommendation_disable_command_result'
+import { az_advisor_recommendation_enable_command_result } from './models/az_advisor_recommendation_enable_command_result'
+import { az_advisor_recommendation_list_command_result } from './models/az_advisor_recommendation_list_command_result'
 
 /** Manage Azure Advisor configuration. */
 export class az_advisor_configuration {
@@ -114,7 +120,7 @@ export class az_advisor {
  *                               [--subscription]
  * ```
  */
-class az_advisor_configuration_list_command_builder extends CommandBuilder {
+class az_advisor_configuration_list_command_builder extends CommandBuilder<az_advisor_configuration_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -142,7 +148,7 @@ class az_advisor_configuration_list_command_builder extends CommandBuilder {
  *                               [--subscription]
  * ```
  */
-class az_advisor_configuration_show_command_builder extends CommandBuilder {
+class az_advisor_configuration_show_command_builder extends CommandBuilder<az_advisor_configuration_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -182,7 +188,7 @@ class az_advisor_configuration_show_command_builder extends CommandBuilder {
  *                                 [--subscription]
  * ```
  */
-class az_advisor_configuration_update_command_builder extends CommandBuilder {
+class az_advisor_configuration_update_command_builder extends CommandBuilder<az_advisor_configuration_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -254,7 +260,7 @@ class az_advisor_configuration_update_command_builder extends CommandBuilder {
  *                                   [--subscription]
  * ```
  */
-class az_advisor_recommendation_disable_command_builder extends CommandBuilder {
+class az_advisor_recommendation_disable_command_builder extends CommandBuilder<az_advisor_recommendation_disable_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -301,7 +307,7 @@ class az_advisor_recommendation_disable_command_builder extends CommandBuilder {
  *                                  [--subscription]
  * ```
  */
-class az_advisor_recommendation_enable_command_builder extends CommandBuilder {
+class az_advisor_recommendation_enable_command_builder extends CommandBuilder<az_advisor_recommendation_enable_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -344,7 +350,7 @@ class az_advisor_recommendation_enable_command_builder extends CommandBuilder {
  *                                [--subscription]
  * ```
  */
-class az_advisor_recommendation_list_command_builder extends CommandBuilder {
+class az_advisor_recommendation_list_command_builder extends CommandBuilder<az_advisor_recommendation_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }

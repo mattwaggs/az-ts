@@ -1,4 +1,19 @@
 import { CommandBuilder } from '../base';
+import { az_appservice_ase_create_command_result } from './models/az_appservice_ase_create_command_result'
+import { az_appservice_ase_delete_command_result } from './models/az_appservice_ase_delete_command_result'
+import { az_appservice_ase_list_command_result } from './models/az_appservice_ase_list_command_result'
+import { az_appservice_ase_list_addresses_command_result } from './models/az_appservice_ase_list_addresses_command_result'
+import { az_appservice_ase_list_plans_command_result } from './models/az_appservice_ase_list_plans_command_result'
+import { az_appservice_ase_show_command_result } from './models/az_appservice_ase_show_command_result'
+import { az_appservice_ase_update_command_result } from './models/az_appservice_ase_update_command_result'
+import { az_appservice_hybrid_connection_set_key_command_result } from './models/az_appservice_hybrid_connection_set_key_command_result'
+import { az_appservice_plan_create_command_result } from './models/az_appservice_plan_create_command_result'
+import { az_appservice_plan_delete_command_result } from './models/az_appservice_plan_delete_command_result'
+import { az_appservice_plan_list_command_result } from './models/az_appservice_plan_list_command_result'
+import { az_appservice_plan_show_command_result } from './models/az_appservice_plan_show_command_result'
+import { az_appservice_plan_update_command_result } from './models/az_appservice_plan_update_command_result'
+import { az_appservice_vnet_integration_list_command_result } from './models/az_appservice_vnet_integration_list_command_result'
+import { az_appservice_list_locations_command_result } from './models/az_appservice_list_locations_command_result'
 
 /** Manage App Service Environments v2. */
 export class az_appservice_ase {
@@ -322,7 +337,7 @@ export class az_appservice {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} subnet Name or ID of existing subnet. To create vnet and/or subnet                    use `az network vnet [subnet] create`.
  */
-class az_appservice_ase_create_command_builder extends CommandBuilder {
+class az_appservice_ase_create_command_builder extends CommandBuilder<az_appservice_ase_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, subnet: string) {
         super(commandPath);
         this.name(name)
@@ -435,7 +450,7 @@ class az_appservice_ase_create_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the app service environment.
  */
-class az_appservice_ase_delete_command_builder extends CommandBuilder {
+class az_appservice_ase_delete_command_builder extends CommandBuilder<az_appservice_ase_delete_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -482,7 +497,7 @@ class az_appservice_ase_delete_command_builder extends CommandBuilder {
  *                        [--subscription]
  * ```
  */
-class az_appservice_ase_list_command_builder extends CommandBuilder {
+class az_appservice_ase_list_command_builder extends CommandBuilder<az_appservice_ase_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -518,7 +533,7 @@ class az_appservice_ase_list_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the app service environment.
  */
-class az_appservice_ase_list_addresses_command_builder extends CommandBuilder {
+class az_appservice_ase_list_addresses_command_builder extends CommandBuilder<az_appservice_ase_list_addresses_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -555,7 +570,7 @@ class az_appservice_ase_list_addresses_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the app service environment.
  */
-class az_appservice_ase_list_plans_command_builder extends CommandBuilder {
+class az_appservice_ase_list_plans_command_builder extends CommandBuilder<az_appservice_ase_list_plans_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -593,7 +608,7 @@ class az_appservice_ase_list_plans_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the app service environment.
  */
-class az_appservice_ase_show_command_builder extends CommandBuilder {
+class az_appservice_ase_show_command_builder extends CommandBuilder<az_appservice_ase_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -639,7 +654,7 @@ class az_appservice_ase_show_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the app service environment.
  */
-class az_appservice_ase_update_command_builder extends CommandBuilder {
+class az_appservice_ase_update_command_builder extends CommandBuilder<az_appservice_ase_update_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -701,7 +716,7 @@ class az_appservice_ase_update_command_builder extends CommandBuilder {
  * @param {string} plan AppService plan.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_appservice_hybrid_connection_set_key_command_builder extends CommandBuilder {
+class az_appservice_hybrid_connection_set_key_command_builder extends CommandBuilder<az_appservice_hybrid_connection_set_key_command_result> {
     constructor(commandPath: string, hybridConnection: string, keyType: string, namespace: string, plan: string, resourceGroup: string) {
         super(commandPath);
         this.hybridConnection(hybridConnection)
@@ -770,7 +785,7 @@ class az_appservice_hybrid_connection_set_key_command_builder extends CommandBui
  * @param {string} name Name of the new app service plan.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_appservice_plan_create_command_builder extends CommandBuilder {
+class az_appservice_plan_create_command_builder extends CommandBuilder<az_appservice_plan_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -862,7 +877,7 @@ class az_appservice_plan_create_command_builder extends CommandBuilder {
  *                           [--yes]
  * ```
  */
-class az_appservice_plan_delete_command_builder extends CommandBuilder {
+class az_appservice_plan_delete_command_builder extends CommandBuilder<az_appservice_plan_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -908,7 +923,7 @@ class az_appservice_plan_delete_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_appservice_plan_list_command_builder extends CommandBuilder {
+class az_appservice_plan_list_command_builder extends CommandBuilder<az_appservice_plan_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -944,7 +959,7 @@ class az_appservice_plan_list_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_appservice_plan_show_command_builder extends CommandBuilder {
+class az_appservice_plan_show_command_builder extends CommandBuilder<az_appservice_plan_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -998,7 +1013,7 @@ class az_appservice_plan_show_command_builder extends CommandBuilder {
  *                           [--subscription]
  * ```
  */
-class az_appservice_plan_update_command_builder extends CommandBuilder {
+class az_appservice_plan_update_command_builder extends CommandBuilder<az_appservice_plan_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1084,7 +1099,7 @@ class az_appservice_plan_update_command_builder extends CommandBuilder {
  * @param {string} plan AppService plan.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_appservice_vnet_integration_list_command_builder extends CommandBuilder {
+class az_appservice_vnet_integration_list_command_builder extends CommandBuilder<az_appservice_vnet_integration_list_command_result> {
     constructor(commandPath: string, plan: string, resourceGroup: string) {
         super(commandPath);
         this.plan(plan)
@@ -1128,7 +1143,7 @@ class az_appservice_vnet_integration_list_command_builder extends CommandBuilder
  *
  * @param {'B1' | 'B2' | 'B3' | 'D1' | 'F1' | 'FREE' | 'I1' | 'I2' | 'I3' | 'P1V2' | 'P1V3' | 'P2V2' | 'P2V3' | 'P3V2' | 'P3V3' | 'PC2' | 'PC3' | 'PC4' | 'S1' | 'S2' | 'S3' | 'SHARED'} sku The pricing tiers, e.g., F1(Free), D1(Shared), B1(Basic Small), B2(Basic Medium), B3(Basic Large), S1(Standard Small), P1V2(Premium V2 Small), P1V3(Premium V3 Small), P2V3(Premium V3 Medium), P3V3(Premium V3 Large), PC2 (Premium Container Small), PC3 (Premium Container Medium), PC4 (Premium Container Large), I1 (Isolated Small), I2 (Isolated Medium), I3 (Isolated Large).
  */
-class az_appservice_list_locations_command_builder extends CommandBuilder {
+class az_appservice_list_locations_command_builder extends CommandBuilder<az_appservice_list_locations_command_result> {
     constructor(commandPath: string, sku: 'B1' | 'B2' | 'B3' | 'D1' | 'F1' | 'FREE' | 'I1' | 'I2' | 'I3' | 'P1V2' | 'P1V3' | 'P2V2' | 'P2V3' | 'P3V2' | 'P3V3' | 'PC2' | 'PC3' | 'PC4' | 'S1' | 'S2' | 'S3' | 'SHARED') {
         super(commandPath);
         this.sku(sku)

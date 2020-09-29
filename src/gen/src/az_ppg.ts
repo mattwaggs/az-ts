@@ -1,4 +1,9 @@
 import { CommandBuilder } from '../base';
+import { az_ppg_create_command_result } from './models/az_ppg_create_command_result'
+import { az_ppg_delete_command_result } from './models/az_ppg_delete_command_result'
+import { az_ppg_list_command_result } from './models/az_ppg_list_command_result'
+import { az_ppg_show_command_result } from './models/az_ppg_show_command_result'
+import { az_ppg_update_command_result } from './models/az_ppg_update_command_result'
 
 /** Manage Proximity Placement Groups. */
 export class az_ppg {
@@ -111,7 +116,7 @@ export class az_ppg {
  * @param {string} name The name of the proximity placement group.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_ppg_create_command_builder extends CommandBuilder {
+class az_ppg_create_command_builder extends CommandBuilder<az_ppg_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -168,7 +173,7 @@ class az_ppg_create_command_builder extends CommandBuilder {
  * @param {string} name The name of the proximity placement group.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_ppg_delete_command_builder extends CommandBuilder {
+class az_ppg_delete_command_builder extends CommandBuilder<az_ppg_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -204,7 +209,7 @@ class az_ppg_delete_command_builder extends CommandBuilder {
  *             [--subscription]
  * ```
  */
-class az_ppg_list_command_builder extends CommandBuilder {
+class az_ppg_list_command_builder extends CommandBuilder<az_ppg_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -243,7 +248,7 @@ class az_ppg_list_command_builder extends CommandBuilder {
  * @param {string} name The name of the proximity placement group.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_ppg_show_command_builder extends CommandBuilder {
+class az_ppg_show_command_builder extends CommandBuilder<az_ppg_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -299,7 +304,7 @@ class az_ppg_show_command_builder extends CommandBuilder {
  * @param {string} name The name of the proximity placement group.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_ppg_update_command_builder extends CommandBuilder {
+class az_ppg_update_command_builder extends CommandBuilder<az_ppg_update_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)

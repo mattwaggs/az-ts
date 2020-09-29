@@ -1,4 +1,10 @@
 import { CommandBuilder } from '../base';
+import { az_billing_enrollment_account_list_command_result } from './models/az_billing_enrollment_account_list_command_result'
+import { az_billing_enrollment_account_show_command_result } from './models/az_billing_enrollment_account_show_command_result'
+import { az_billing_invoice_list_command_result } from './models/az_billing_invoice_list_command_result'
+import { az_billing_invoice_show_command_result } from './models/az_billing_invoice_show_command_result'
+import { az_billing_period_list_command_result } from './models/az_billing_period_list_command_result'
+import { az_billing_period_show_command_result } from './models/az_billing_period_show_command_result'
 
 /** Get enrollment accounts. */
 export class az_billing_enrollment_account {
@@ -111,7 +117,7 @@ export class az_billing {
  *                                    [--subscription]
  * ```
  */
-class az_billing_enrollment_account_list_command_builder extends CommandBuilder {
+class az_billing_enrollment_account_list_command_builder extends CommandBuilder<az_billing_enrollment_account_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -141,7 +147,7 @@ class az_billing_enrollment_account_list_command_builder extends CommandBuilder 
  *
  * @param {string} name Name of the enrollment account.
  */
-class az_billing_enrollment_account_show_command_builder extends CommandBuilder {
+class az_billing_enrollment_account_show_command_builder extends CommandBuilder<az_billing_enrollment_account_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -176,7 +182,7 @@ class az_billing_enrollment_account_show_command_builder extends CommandBuilder 
  *                         [--subscription]
  * ```
  */
-class az_billing_invoice_list_command_builder extends CommandBuilder {
+class az_billing_invoice_list_command_builder extends CommandBuilder<az_billing_invoice_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -210,7 +216,7 @@ class az_billing_invoice_list_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_billing_invoice_show_command_builder extends CommandBuilder {
+class az_billing_invoice_show_command_builder extends CommandBuilder<az_billing_invoice_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -246,7 +252,7 @@ class az_billing_invoice_show_command_builder extends CommandBuilder {
  *                        [--top]
  * ```
  */
-class az_billing_period_list_command_builder extends CommandBuilder {
+class az_billing_period_list_command_builder extends CommandBuilder<az_billing_period_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -294,7 +300,7 @@ class az_billing_period_list_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the billing period.
  */
-class az_billing_period_show_command_builder extends CommandBuilder {
+class az_billing_period_show_command_builder extends CommandBuilder<az_billing_period_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)

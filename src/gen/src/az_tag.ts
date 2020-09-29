@@ -1,4 +1,10 @@
 import { CommandBuilder } from '../base';
+import { az_tag_add_value_command_result } from './models/az_tag_add_value_command_result'
+import { az_tag_create_command_result } from './models/az_tag_create_command_result'
+import { az_tag_delete_command_result } from './models/az_tag_delete_command_result'
+import { az_tag_list_command_result } from './models/az_tag_list_command_result'
+import { az_tag_remove_value_command_result } from './models/az_tag_remove_value_command_result'
+import { az_tag_update_command_result } from './models/az_tag_update_command_result'
 
 /** Tag Management on a resource. */
 export class az_tag {
@@ -113,7 +119,7 @@ export class az_tag {
  * @param {string} name The tag name.
  * @param {string} value The tag value.
  */
-class az_tag_add_value_command_builder extends CommandBuilder {
+class az_tag_add_value_command_builder extends CommandBuilder<az_tag_add_value_command_result> {
     constructor(commandPath: string, name: string, value: string) {
         super(commandPath);
         this.name(name)
@@ -150,7 +156,7 @@ class az_tag_add_value_command_builder extends CommandBuilder {
  *               [--tags]
  * ```
  */
-class az_tag_create_command_builder extends CommandBuilder {
+class az_tag_create_command_builder extends CommandBuilder<az_tag_create_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -191,7 +197,7 @@ class az_tag_create_command_builder extends CommandBuilder {
  *               [--yes]
  * ```
  */
-class az_tag_delete_command_builder extends CommandBuilder {
+class az_tag_delete_command_builder extends CommandBuilder<az_tag_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -231,7 +237,7 @@ class az_tag_delete_command_builder extends CommandBuilder {
  *             [--subscription]
  * ```
  */
-class az_tag_list_command_builder extends CommandBuilder {
+class az_tag_list_command_builder extends CommandBuilder<az_tag_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -268,7 +274,7 @@ class az_tag_list_command_builder extends CommandBuilder {
  * @param {string} name The tag name.
  * @param {string} value The tag value.
  */
-class az_tag_remove_value_command_builder extends CommandBuilder {
+class az_tag_remove_value_command_builder extends CommandBuilder<az_tag_remove_value_command_result> {
     constructor(commandPath: string, name: string, value: string) {
         super(commandPath);
         this.name(name)
@@ -309,7 +315,7 @@ class az_tag_remove_value_command_builder extends CommandBuilder {
  * @param {string} resourceId The resource identifier for the entity being tagged. A resource, a resource group or a subscription may be tagged.
  * @param {string} tags The tags to be updated on the resource.
  */
-class az_tag_update_command_builder extends CommandBuilder {
+class az_tag_update_command_builder extends CommandBuilder<az_tag_update_command_result> {
     constructor(commandPath: string, operation: 'Delete' | 'Merge' | 'Replace', resourceId: string, tags: string) {
         super(commandPath);
         this.operation(operation)

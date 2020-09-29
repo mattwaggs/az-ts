@@ -1,0 +1,1 @@
+export type az_cloud_list_profiles_command_result = Record<string, unknown>

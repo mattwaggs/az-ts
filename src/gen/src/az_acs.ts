@@ -1,4 +1,17 @@
 import { CommandBuilder } from '../base';
+import { az_acs_dcos_browse_command_result } from './models/az_acs_dcos_browse_command_result'
+import { az_acs_dcos_install_cli_command_result } from './models/az_acs_dcos_install_cli_command_result'
+import { az_acs_kubernetes_browse_command_result } from './models/az_acs_kubernetes_browse_command_result'
+import { az_acs_kubernetes_get_credentials_command_result } from './models/az_acs_kubernetes_get_credentials_command_result'
+import { az_acs_kubernetes_install_cli_command_result } from './models/az_acs_kubernetes_install_cli_command_result'
+import { az_acs_browse_command_result } from './models/az_acs_browse_command_result'
+import { az_acs_create_command_result } from './models/az_acs_create_command_result'
+import { az_acs_delete_command_result } from './models/az_acs_delete_command_result'
+import { az_acs_list_command_result } from './models/az_acs_list_command_result'
+import { az_acs_list_locations_command_result } from './models/az_acs_list_locations_command_result'
+import { az_acs_scale_command_result } from './models/az_acs_scale_command_result'
+import { az_acs_show_command_result } from './models/az_acs_show_command_result'
+import { az_acs_wait_command_result } from './models/az_acs_wait_command_result'
 
 /** Commands to manage a DC/OS-orchestrated Azure Container Service. */
 export class az_acs_dcos {
@@ -282,7 +295,7 @@ export class az_acs {
  * @param {string} name Name of the container service. You can configure the default using `az configure --defaults acs=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_acs_dcos_browse_command_builder extends CommandBuilder {
+class az_acs_dcos_browse_command_builder extends CommandBuilder<az_acs_dcos_browse_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -330,7 +343,7 @@ class az_acs_dcos_browse_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_acs_dcos_install_cli_command_builder extends CommandBuilder {
+class az_acs_dcos_install_cli_command_builder extends CommandBuilder<az_acs_dcos_install_cli_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -369,7 +382,7 @@ class az_acs_dcos_install_cli_command_builder extends CommandBuilder {
  * @param {string} name Name of the container service. You can configure the default using `az configure --defaults acs=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_acs_kubernetes_browse_command_builder extends CommandBuilder {
+class az_acs_kubernetes_browse_command_builder extends CommandBuilder<az_acs_kubernetes_browse_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -423,7 +436,7 @@ class az_acs_kubernetes_browse_command_builder extends CommandBuilder {
  * @param {string} name Name of the container service. You can configure the default using `az configure --defaults acs=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_acs_kubernetes_get_credentials_command_builder extends CommandBuilder {
+class az_acs_kubernetes_get_credentials_command_builder extends CommandBuilder<az_acs_kubernetes_get_credentials_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -479,7 +492,7 @@ class az_acs_kubernetes_get_credentials_command_builder extends CommandBuilder {
  *                               [--subscription]
  * ```
  */
-class az_acs_kubernetes_install_cli_command_builder extends CommandBuilder {
+class az_acs_kubernetes_install_cli_command_builder extends CommandBuilder<az_acs_kubernetes_install_cli_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -530,7 +543,7 @@ class az_acs_kubernetes_install_cli_command_builder extends CommandBuilder {
  * @param {string} name Name of the container service. You can configure the default using `az configure --defaults acs=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_acs_browse_command_builder extends CommandBuilder {
+class az_acs_browse_command_builder extends CommandBuilder<az_acs_browse_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -610,7 +623,7 @@ class az_acs_browse_command_builder extends CommandBuilder {
  * @param {string} name Name of the container service. You can configure the default using `az configure --defaults acs=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_acs_create_command_builder extends CommandBuilder {
+class az_acs_create_command_builder extends CommandBuilder<az_acs_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -824,7 +837,7 @@ class az_acs_create_command_builder extends CommandBuilder {
  * @param {string} name Name of the container service. You can configure the default using `az configure --defaults acs=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_acs_delete_command_builder extends CommandBuilder {
+class az_acs_delete_command_builder extends CommandBuilder<az_acs_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -866,7 +879,7 @@ class az_acs_delete_command_builder extends CommandBuilder {
  *             [--subscription]
  * ```
  */
-class az_acs_list_command_builder extends CommandBuilder {
+class az_acs_list_command_builder extends CommandBuilder<az_acs_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -898,7 +911,7 @@ class az_acs_list_command_builder extends CommandBuilder {
  * az acs list-locations [--subscription]
  * ```
  */
-class az_acs_list_locations_command_builder extends CommandBuilder {
+class az_acs_list_locations_command_builder extends CommandBuilder<az_acs_list_locations_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -925,7 +938,7 @@ class az_acs_list_locations_command_builder extends CommandBuilder {
  * @param {string} newAgentCount The number of agents for the container service.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_acs_scale_command_builder extends CommandBuilder {
+class az_acs_scale_command_builder extends CommandBuilder<az_acs_scale_command_result> {
     constructor(commandPath: string, name: string, newAgentCount: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -972,7 +985,7 @@ class az_acs_scale_command_builder extends CommandBuilder {
  * @param {string} name Name of the container service. You can configure the default using `az configure --defaults acs=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_acs_show_command_builder extends CommandBuilder {
+class az_acs_show_command_builder extends CommandBuilder<az_acs_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1024,7 +1037,7 @@ class az_acs_show_command_builder extends CommandBuilder {
  * @param {string} name Name of the container service. You can configure the default using `az configure --defaults acs=<name>`.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_acs_wait_command_builder extends CommandBuilder {
+class az_acs_wait_command_builder extends CommandBuilder<az_acs_wait_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)

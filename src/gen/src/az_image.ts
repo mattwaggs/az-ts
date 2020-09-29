@@ -1,4 +1,24 @@
 import { CommandBuilder } from '../base';
+import { az_image_builder_customizer_add_command_result } from './models/az_image_builder_customizer_add_command_result'
+import { az_image_builder_customizer_clear_command_result } from './models/az_image_builder_customizer_clear_command_result'
+import { az_image_builder_customizer_remove_command_result } from './models/az_image_builder_customizer_remove_command_result'
+import { az_image_builder_output_add_command_result } from './models/az_image_builder_output_add_command_result'
+import { az_image_builder_output_clear_command_result } from './models/az_image_builder_output_clear_command_result'
+import { az_image_builder_output_remove_command_result } from './models/az_image_builder_output_remove_command_result'
+import { az_image_builder_cancel_command_result } from './models/az_image_builder_cancel_command_result'
+import { az_image_builder_create_command_result } from './models/az_image_builder_create_command_result'
+import { az_image_builder_delete_command_result } from './models/az_image_builder_delete_command_result'
+import { az_image_builder_list_command_result } from './models/az_image_builder_list_command_result'
+import { az_image_builder_run_command_result } from './models/az_image_builder_run_command_result'
+import { az_image_builder_show_command_result } from './models/az_image_builder_show_command_result'
+import { az_image_builder_show_runs_command_result } from './models/az_image_builder_show_runs_command_result'
+import { az_image_builder_update_command_result } from './models/az_image_builder_update_command_result'
+import { az_image_builder_wait_command_result } from './models/az_image_builder_wait_command_result'
+import { az_image_create_command_result } from './models/az_image_create_command_result'
+import { az_image_delete_command_result } from './models/az_image_delete_command_result'
+import { az_image_list_command_result } from './models/az_image_list_command_result'
+import { az_image_show_command_result } from './models/az_image_show_command_result'
+import { az_image_update_command_result } from './models/az_image_update_command_result'
 
 /** Manage image builder template customizers. */
 export class az_image_builder_customizer {
@@ -427,7 +447,7 @@ export class az_image {
  * @param {string} customizerName Name of the customizer.
  * @param {'file' | 'powershell' | 'shell' | 'windows-restart' | 'windows-update'} type Type of customizer to be added to the image template.
  */
-class az_image_builder_customizer_add_command_builder extends CommandBuilder {
+class az_image_builder_customizer_add_command_builder extends CommandBuilder<az_image_builder_customizer_add_command_result> {
     constructor(commandPath: string, customizerName: string, type: 'file' | 'powershell' | 'shell' | 'windows-restart' | 'windows-update') {
         super(commandPath);
         this.customizerName(customizerName)
@@ -555,7 +575,7 @@ class az_image_builder_customizer_add_command_builder extends CommandBuilder {
  *                                   [--subscription]
  * ```
  */
-class az_image_builder_customizer_clear_command_builder extends CommandBuilder {
+class az_image_builder_customizer_clear_command_builder extends CommandBuilder<az_image_builder_customizer_clear_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -606,7 +626,7 @@ class az_image_builder_customizer_clear_command_builder extends CommandBuilder {
  *
  * @param {string} customizerName Name of the customizer.
  */
-class az_image_builder_customizer_remove_command_builder extends CommandBuilder {
+class az_image_builder_customizer_remove_command_builder extends CommandBuilder<az_image_builder_customizer_remove_command_result> {
     constructor(commandPath: string, customizerName: string) {
         super(commandPath);
         this.customizerName(customizerName)
@@ -669,7 +689,7 @@ class az_image_builder_customizer_remove_command_builder extends CommandBuilder 
  *                             [--subscription]
  * ```
  */
-class az_image_builder_output_add_command_builder extends CommandBuilder {
+class az_image_builder_output_add_command_builder extends CommandBuilder<az_image_builder_output_add_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -765,7 +785,7 @@ class az_image_builder_output_add_command_builder extends CommandBuilder {
  *                               [--subscription]
  * ```
  */
-class az_image_builder_output_clear_command_builder extends CommandBuilder {
+class az_image_builder_output_clear_command_builder extends CommandBuilder<az_image_builder_output_clear_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -816,7 +836,7 @@ class az_image_builder_output_clear_command_builder extends CommandBuilder {
  *
  * @param {string} outputName Name of the image builder run output.
  */
-class az_image_builder_output_remove_command_builder extends CommandBuilder {
+class az_image_builder_output_remove_command_builder extends CommandBuilder<az_image_builder_output_remove_command_result> {
     constructor(commandPath: string, outputName: string) {
         super(commandPath);
         this.outputName(outputName)
@@ -870,7 +890,7 @@ class az_image_builder_output_remove_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_image_builder_cancel_command_builder extends CommandBuilder {
+class az_image_builder_cancel_command_builder extends CommandBuilder<az_image_builder_cancel_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -929,7 +949,7 @@ class az_image_builder_cancel_command_builder extends CommandBuilder {
  * @param {string} name The name of the image template.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_image_builder_create_command_builder extends CommandBuilder {
+class az_image_builder_create_command_builder extends CommandBuilder<az_image_builder_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1062,7 +1082,7 @@ class az_image_builder_create_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_image_builder_delete_command_builder extends CommandBuilder {
+class az_image_builder_delete_command_builder extends CommandBuilder<az_image_builder_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1102,7 +1122,7 @@ class az_image_builder_delete_command_builder extends CommandBuilder {
  *                       [--subscription]
  * ```
  */
-class az_image_builder_list_command_builder extends CommandBuilder {
+class az_image_builder_list_command_builder extends CommandBuilder<az_image_builder_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1138,7 +1158,7 @@ class az_image_builder_list_command_builder extends CommandBuilder {
  *                      [--subscription]
  * ```
  */
-class az_image_builder_run_command_builder extends CommandBuilder {
+class az_image_builder_run_command_builder extends CommandBuilder<az_image_builder_run_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1186,7 +1206,7 @@ class az_image_builder_run_command_builder extends CommandBuilder {
  *                       [--subscription]
  * ```
  */
-class az_image_builder_show_command_builder extends CommandBuilder {
+class az_image_builder_show_command_builder extends CommandBuilder<az_image_builder_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1234,7 +1254,7 @@ class az_image_builder_show_command_builder extends CommandBuilder {
  *                            [--subscription]
  * ```
  */
-class az_image_builder_show_runs_command_builder extends CommandBuilder {
+class az_image_builder_show_runs_command_builder extends CommandBuilder<az_image_builder_show_runs_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1286,7 +1306,7 @@ class az_image_builder_show_runs_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_image_builder_update_command_builder extends CommandBuilder {
+class az_image_builder_update_command_builder extends CommandBuilder<az_image_builder_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1364,7 +1384,7 @@ class az_image_builder_update_command_builder extends CommandBuilder {
  *                       [--updated]
  * ```
  */
-class az_image_builder_wait_command_builder extends CommandBuilder {
+class az_image_builder_wait_command_builder extends CommandBuilder<az_image_builder_wait_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1460,7 +1480,7 @@ class az_image_builder_wait_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} source OS disk source from the same region, including a virtual machine ID or name, OS disk blob URI, managed OS disk ID or name, or OS snapshot ID or name.
  */
-class az_image_create_command_builder extends CommandBuilder {
+class az_image_create_command_builder extends CommandBuilder<az_image_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, source: string) {
         super(commandPath);
         this.name(name)
@@ -1558,7 +1578,7 @@ class az_image_create_command_builder extends CommandBuilder {
  *                 [--subscription]
  * ```
  */
-class az_image_delete_command_builder extends CommandBuilder {
+class az_image_delete_command_builder extends CommandBuilder<az_image_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1598,7 +1618,7 @@ class az_image_delete_command_builder extends CommandBuilder {
  *               [--subscription]
  * ```
  */
-class az_image_list_command_builder extends CommandBuilder {
+class az_image_list_command_builder extends CommandBuilder<az_image_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1635,7 +1655,7 @@ class az_image_list_command_builder extends CommandBuilder {
  *               [--subscription]
  * ```
  */
-class az_image_show_command_builder extends CommandBuilder {
+class az_image_show_command_builder extends CommandBuilder<az_image_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1693,7 +1713,7 @@ class az_image_show_command_builder extends CommandBuilder {
  *                 [--tags]
  * ```
  */
-class az_image_update_command_builder extends CommandBuilder {
+class az_image_update_command_builder extends CommandBuilder<az_image_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }

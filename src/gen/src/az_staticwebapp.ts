@@ -1,4 +1,22 @@
 import { CommandBuilder } from '../base';
+import { az_staticwebapp_appsettings_delete_command_result } from './models/az_staticwebapp_appsettings_delete_command_result'
+import { az_staticwebapp_appsettings_list_command_result } from './models/az_staticwebapp_appsettings_list_command_result'
+import { az_staticwebapp_appsettings_set_command_result } from './models/az_staticwebapp_appsettings_set_command_result'
+import { az_staticwebapp_environment_functions_command_result } from './models/az_staticwebapp_environment_functions_command_result'
+import { az_staticwebapp_environment_list_command_result } from './models/az_staticwebapp_environment_list_command_result'
+import { az_staticwebapp_environment_show_command_result } from './models/az_staticwebapp_environment_show_command_result'
+import { az_staticwebapp_hostname_delete_command_result } from './models/az_staticwebapp_hostname_delete_command_result'
+import { az_staticwebapp_hostname_list_command_result } from './models/az_staticwebapp_hostname_list_command_result'
+import { az_staticwebapp_hostname_set_command_result } from './models/az_staticwebapp_hostname_set_command_result'
+import { az_staticwebapp_users_invite_command_result } from './models/az_staticwebapp_users_invite_command_result'
+import { az_staticwebapp_users_list_command_result } from './models/az_staticwebapp_users_list_command_result'
+import { az_staticwebapp_users_update_command_result } from './models/az_staticwebapp_users_update_command_result'
+import { az_staticwebapp_browse_command_result } from './models/az_staticwebapp_browse_command_result'
+import { az_staticwebapp_create_command_result } from './models/az_staticwebapp_create_command_result'
+import { az_staticwebapp_delete_command_result } from './models/az_staticwebapp_delete_command_result'
+import { az_staticwebapp_disconnect_command_result } from './models/az_staticwebapp_disconnect_command_result'
+import { az_staticwebapp_list_command_result } from './models/az_staticwebapp_list_command_result'
+import { az_staticwebapp_reconnect_command_result } from './models/az_staticwebapp_reconnect_command_result'
 
 /** Manage app settings of Functions of the static app. */
 export class az_staticwebapp_appsettings {
@@ -371,7 +389,7 @@ export class az_staticwebapp {
  * @param {string} name Name of the static site.
  * @param {string} settingNames Space-separated app setting names.
  */
-class az_staticwebapp_appsettings_delete_command_builder extends CommandBuilder {
+class az_staticwebapp_appsettings_delete_command_builder extends CommandBuilder<az_staticwebapp_appsettings_delete_command_result> {
     constructor(commandPath: string, name: string, settingNames: string) {
         super(commandPath);
         this.name(name)
@@ -416,7 +434,7 @@ class az_staticwebapp_appsettings_delete_command_builder extends CommandBuilder 
  *
  * @param {string} name Name of the static site.
  */
-class az_staticwebapp_appsettings_list_command_builder extends CommandBuilder {
+class az_staticwebapp_appsettings_list_command_builder extends CommandBuilder<az_staticwebapp_appsettings_list_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -461,7 +479,7 @@ class az_staticwebapp_appsettings_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the static site.
  * @param {string} settingNames Space-separated app settings in 'key=value' format.
  */
-class az_staticwebapp_appsettings_set_command_builder extends CommandBuilder {
+class az_staticwebapp_appsettings_set_command_builder extends CommandBuilder<az_staticwebapp_appsettings_set_command_result> {
     constructor(commandPath: string, name: string, settingNames: string) {
         super(commandPath);
         this.name(name)
@@ -506,7 +524,7 @@ class az_staticwebapp_appsettings_set_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the static site.
  */
-class az_staticwebapp_environment_functions_command_builder extends CommandBuilder {
+class az_staticwebapp_environment_functions_command_builder extends CommandBuilder<az_staticwebapp_environment_functions_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -550,7 +568,7 @@ class az_staticwebapp_environment_functions_command_builder extends CommandBuild
  *
  * @param {string} name Name of the static site.
  */
-class az_staticwebapp_environment_list_command_builder extends CommandBuilder {
+class az_staticwebapp_environment_list_command_builder extends CommandBuilder<az_staticwebapp_environment_list_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -595,7 +613,7 @@ class az_staticwebapp_environment_list_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the static site.
  */
-class az_staticwebapp_environment_show_command_builder extends CommandBuilder {
+class az_staticwebapp_environment_show_command_builder extends CommandBuilder<az_staticwebapp_environment_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -648,7 +666,7 @@ class az_staticwebapp_environment_show_command_builder extends CommandBuilder {
  * @param {string} hostname Custom hostname such as www.example.com. Only support sub domain in preview.
  * @param {string} name Name of the static site.
  */
-class az_staticwebapp_hostname_delete_command_builder extends CommandBuilder {
+class az_staticwebapp_hostname_delete_command_builder extends CommandBuilder<az_staticwebapp_hostname_delete_command_result> {
     constructor(commandPath: string, hostname: string, name: string) {
         super(commandPath);
         this.hostname(hostname)
@@ -705,7 +723,7 @@ class az_staticwebapp_hostname_delete_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the static site.
  */
-class az_staticwebapp_hostname_list_command_builder extends CommandBuilder {
+class az_staticwebapp_hostname_list_command_builder extends CommandBuilder<az_staticwebapp_hostname_list_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -751,7 +769,7 @@ class az_staticwebapp_hostname_list_command_builder extends CommandBuilder {
  * @param {string} hostname Custom hostname such as www.example.com. Only support sub domain in preview.
  * @param {string} name Name of the static site.
  */
-class az_staticwebapp_hostname_set_command_builder extends CommandBuilder {
+class az_staticwebapp_hostname_set_command_builder extends CommandBuilder<az_staticwebapp_hostname_set_command_result> {
     constructor(commandPath: string, hostname: string, name: string) {
         super(commandPath);
         this.hostname(hostname)
@@ -811,7 +829,7 @@ class az_staticwebapp_hostname_set_command_builder extends CommandBuilder {
  * @param {string} roles Comma-separated default or user-defined role names. Roles that can be assigned to a user are comma separated and case-insensitive (at most 50 roles up to 25 characters each and restricted to 0-9,A-Z,a-z, and _). Define roles in routes.json during root directory of your GitHub repo.
  * @param {string} userDetails Email for AAD, Facebook, and Google. Account name (handle) for GitHub and Twitter.
  */
-class az_staticwebapp_users_invite_command_builder extends CommandBuilder {
+class az_staticwebapp_users_invite_command_builder extends CommandBuilder<az_staticwebapp_users_invite_command_result> {
     constructor(commandPath: string, authenticationProvider: string, domain: string, invitationExpirationInHours: string, name: string, roles: string, userDetails: string) {
         super(commandPath);
         this.authenticationProvider(authenticationProvider)
@@ -885,7 +903,7 @@ class az_staticwebapp_users_invite_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the static site.
  */
-class az_staticwebapp_users_list_command_builder extends CommandBuilder {
+class az_staticwebapp_users_list_command_builder extends CommandBuilder<az_staticwebapp_users_list_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -939,7 +957,7 @@ class az_staticwebapp_users_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the static site.
  * @param {string} roles Comma-separated default or user-defined role names. Roles that can be assigned to a user are comma separated and case-insensitive (at most 50 roles up to 25 characters each and restricted to 0-9,A-Z,a-z, and _). Define roles in routes.json during root directory of your GitHub repo.
  */
-class az_staticwebapp_users_update_command_builder extends CommandBuilder {
+class az_staticwebapp_users_update_command_builder extends CommandBuilder<az_staticwebapp_users_update_command_result> {
     constructor(commandPath: string, name: string, roles: string) {
         super(commandPath);
         this.name(name)
@@ -1001,7 +1019,7 @@ class az_staticwebapp_users_update_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the static site.
  */
-class az_staticwebapp_browse_command_builder extends CommandBuilder {
+class az_staticwebapp_browse_command_builder extends CommandBuilder<az_staticwebapp_browse_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -1051,7 +1069,7 @@ class az_staticwebapp_browse_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} source URL for the repository of the static site.
  */
-class az_staticwebapp_create_command_builder extends CommandBuilder {
+class az_staticwebapp_create_command_builder extends CommandBuilder<az_staticwebapp_create_command_result> {
     constructor(commandPath: string, branch: string, location: string, name: string, resourceGroup: string, source: string) {
         super(commandPath);
         this.branch(branch)
@@ -1151,7 +1169,7 @@ class az_staticwebapp_create_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the static site.
  */
-class az_staticwebapp_delete_command_builder extends CommandBuilder {
+class az_staticwebapp_delete_command_builder extends CommandBuilder<az_staticwebapp_delete_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -1201,7 +1219,7 @@ class az_staticwebapp_delete_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of the static site.
  */
-class az_staticwebapp_disconnect_command_builder extends CommandBuilder {
+class az_staticwebapp_disconnect_command_builder extends CommandBuilder<az_staticwebapp_disconnect_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -1242,7 +1260,7 @@ class az_staticwebapp_disconnect_command_builder extends CommandBuilder {
  *                      [--subscription]
  * ```
  */
-class az_staticwebapp_list_command_builder extends CommandBuilder {
+class az_staticwebapp_list_command_builder extends CommandBuilder<az_staticwebapp_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1284,7 +1302,7 @@ class az_staticwebapp_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the static site.
  * @param {string} source URL for the repository of the static site.
  */
-class az_staticwebapp_reconnect_command_builder extends CommandBuilder {
+class az_staticwebapp_reconnect_command_builder extends CommandBuilder<az_staticwebapp_reconnect_command_result> {
     constructor(commandPath: string, branch: string, name: string, source: string) {
         super(commandPath);
         this.branch(branch)

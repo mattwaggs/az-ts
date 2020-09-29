@@ -1,4 +1,42 @@
 import { CommandBuilder } from '../base';
+import { az_mariadb_db_create_command_result } from './models/az_mariadb_db_create_command_result'
+import { az_mariadb_db_delete_command_result } from './models/az_mariadb_db_delete_command_result'
+import { az_mariadb_db_list_command_result } from './models/az_mariadb_db_list_command_result'
+import { az_mariadb_db_show_command_result } from './models/az_mariadb_db_show_command_result'
+import { az_mariadb_server_configuration_list_command_result } from './models/az_mariadb_server_configuration_list_command_result'
+import { az_mariadb_server_configuration_set_command_result } from './models/az_mariadb_server_configuration_set_command_result'
+import { az_mariadb_server_configuration_show_command_result } from './models/az_mariadb_server_configuration_show_command_result'
+import { az_mariadb_server_firewall_rule_create_command_result } from './models/az_mariadb_server_firewall_rule_create_command_result'
+import { az_mariadb_server_firewall_rule_delete_command_result } from './models/az_mariadb_server_firewall_rule_delete_command_result'
+import { az_mariadb_server_firewall_rule_list_command_result } from './models/az_mariadb_server_firewall_rule_list_command_result'
+import { az_mariadb_server_firewall_rule_show_command_result } from './models/az_mariadb_server_firewall_rule_show_command_result'
+import { az_mariadb_server_firewall_rule_update_command_result } from './models/az_mariadb_server_firewall_rule_update_command_result'
+import { az_mariadb_server_private_endpoint_connection_approve_command_result } from './models/az_mariadb_server_private_endpoint_connection_approve_command_result'
+import { az_mariadb_server_private_endpoint_connection_delete_command_result } from './models/az_mariadb_server_private_endpoint_connection_delete_command_result'
+import { az_mariadb_server_private_endpoint_connection_reject_command_result } from './models/az_mariadb_server_private_endpoint_connection_reject_command_result'
+import { az_mariadb_server_private_endpoint_connection_show_command_result } from './models/az_mariadb_server_private_endpoint_connection_show_command_result'
+import { az_mariadb_server_private_link_resource_list_command_result } from './models/az_mariadb_server_private_link_resource_list_command_result'
+import { az_mariadb_server_replica_create_command_result } from './models/az_mariadb_server_replica_create_command_result'
+import { az_mariadb_server_replica_list_command_result } from './models/az_mariadb_server_replica_list_command_result'
+import { az_mariadb_server_replica_stop_command_result } from './models/az_mariadb_server_replica_stop_command_result'
+import { az_mariadb_server_vnet_rule_create_command_result } from './models/az_mariadb_server_vnet_rule_create_command_result'
+import { az_mariadb_server_vnet_rule_delete_command_result } from './models/az_mariadb_server_vnet_rule_delete_command_result'
+import { az_mariadb_server_vnet_rule_list_command_result } from './models/az_mariadb_server_vnet_rule_list_command_result'
+import { az_mariadb_server_vnet_rule_show_command_result } from './models/az_mariadb_server_vnet_rule_show_command_result'
+import { az_mariadb_server_vnet_rule_update_command_result } from './models/az_mariadb_server_vnet_rule_update_command_result'
+import { az_mariadb_server_logs_download_command_result } from './models/az_mariadb_server_logs_download_command_result'
+import { az_mariadb_server_logs_list_command_result } from './models/az_mariadb_server_logs_list_command_result'
+import { az_mariadb_server_create_command_result } from './models/az_mariadb_server_create_command_result'
+import { az_mariadb_server_delete_command_result } from './models/az_mariadb_server_delete_command_result'
+import { az_mariadb_server_georestore_command_result } from './models/az_mariadb_server_georestore_command_result'
+import { az_mariadb_server_list_command_result } from './models/az_mariadb_server_list_command_result'
+import { az_mariadb_server_restart_command_result } from './models/az_mariadb_server_restart_command_result'
+import { az_mariadb_server_restore_command_result } from './models/az_mariadb_server_restore_command_result'
+import { az_mariadb_server_show_command_result } from './models/az_mariadb_server_show_command_result'
+import { az_mariadb_server_start_command_result } from './models/az_mariadb_server_start_command_result'
+import { az_mariadb_server_stop_command_result } from './models/az_mariadb_server_stop_command_result'
+import { az_mariadb_server_update_command_result } from './models/az_mariadb_server_update_command_result'
+import { az_mariadb_server_wait_command_result } from './models/az_mariadb_server_wait_command_result'
 
 /** Manage MariaDB databases on a server. */
 export class az_mariadb_db {
@@ -767,7 +805,7 @@ export class az_mariadb {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
-class az_mariadb_db_create_command_builder extends CommandBuilder {
+class az_mariadb_db_create_command_builder extends CommandBuilder<az_mariadb_db_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, serverName: string) {
         super(commandPath);
         this.name(name)
@@ -828,7 +866,7 @@ class az_mariadb_db_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
-class az_mariadb_db_delete_command_builder extends CommandBuilder {
+class az_mariadb_db_delete_command_builder extends CommandBuilder<az_mariadb_db_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, serverName: string) {
         super(commandPath);
         this.name(name)
@@ -881,7 +919,7 @@ class az_mariadb_db_delete_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
-class az_mariadb_db_list_command_builder extends CommandBuilder {
+class az_mariadb_db_list_command_builder extends CommandBuilder<az_mariadb_db_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, serverName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -929,7 +967,7 @@ class az_mariadb_db_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
-class az_mariadb_db_show_command_builder extends CommandBuilder {
+class az_mariadb_db_show_command_builder extends CommandBuilder<az_mariadb_db_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, serverName: string) {
         super(commandPath);
         this.name(name)
@@ -980,7 +1018,7 @@ class az_mariadb_db_show_command_builder extends CommandBuilder {
  *                                      [--subscription]
  * ```
  */
-class az_mariadb_server_configuration_list_command_builder extends CommandBuilder {
+class az_mariadb_server_configuration_list_command_builder extends CommandBuilder<az_mariadb_server_configuration_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1029,7 +1067,7 @@ class az_mariadb_server_configuration_list_command_builder extends CommandBuilde
  *                                     [--value]
  * ```
  */
-class az_mariadb_server_configuration_set_command_builder extends CommandBuilder {
+class az_mariadb_server_configuration_set_command_builder extends CommandBuilder<az_mariadb_server_configuration_set_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1084,7 +1122,7 @@ class az_mariadb_server_configuration_set_command_builder extends CommandBuilder
  *                                      [--subscription]
  * ```
  */
-class az_mariadb_server_configuration_show_command_builder extends CommandBuilder {
+class az_mariadb_server_configuration_show_command_builder extends CommandBuilder<az_mariadb_server_configuration_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1145,7 +1183,7 @@ class az_mariadb_server_configuration_show_command_builder extends CommandBuilde
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
  */
-class az_mariadb_server_firewall_rule_create_command_builder extends CommandBuilder {
+class az_mariadb_server_firewall_rule_create_command_builder extends CommandBuilder<az_mariadb_server_firewall_rule_create_command_result> {
     constructor(commandPath: string, endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string) {
         super(commandPath);
         this.endIpAddress(endIpAddress)
@@ -1205,7 +1243,7 @@ class az_mariadb_server_firewall_rule_create_command_builder extends CommandBuil
  *                                        [--yes]
  * ```
  */
-class az_mariadb_server_firewall_rule_delete_command_builder extends CommandBuilder {
+class az_mariadb_server_firewall_rule_delete_command_builder extends CommandBuilder<az_mariadb_server_firewall_rule_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1259,7 +1297,7 @@ class az_mariadb_server_firewall_rule_delete_command_builder extends CommandBuil
  *                                      [--subscription]
  * ```
  */
-class az_mariadb_server_firewall_rule_list_command_builder extends CommandBuilder {
+class az_mariadb_server_firewall_rule_list_command_builder extends CommandBuilder<az_mariadb_server_firewall_rule_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1308,7 +1346,7 @@ class az_mariadb_server_firewall_rule_list_command_builder extends CommandBuilde
  *                                      [--subscription]
  * ```
  */
-class az_mariadb_server_firewall_rule_show_command_builder extends CommandBuilder {
+class az_mariadb_server_firewall_rule_show_command_builder extends CommandBuilder<az_mariadb_server_firewall_rule_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1368,7 +1406,7 @@ class az_mariadb_server_firewall_rule_show_command_builder extends CommandBuilde
  *                                        [--subscription]
  * ```
  */
-class az_mariadb_server_firewall_rule_update_command_builder extends CommandBuilder {
+class az_mariadb_server_firewall_rule_update_command_builder extends CommandBuilder<az_mariadb_server_firewall_rule_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1454,7 +1492,7 @@ class az_mariadb_server_firewall_rule_update_command_builder extends CommandBuil
  *                                                       [--subscription]
  * ```
  */
-class az_mariadb_server_private_endpoint_connection_approve_command_builder extends CommandBuilder {
+class az_mariadb_server_private_endpoint_connection_approve_command_builder extends CommandBuilder<az_mariadb_server_private_endpoint_connection_approve_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1515,7 +1553,7 @@ class az_mariadb_server_private_endpoint_connection_approve_command_builder exte
  *                                                      [--subscription]
  * ```
  */
-class az_mariadb_server_private_endpoint_connection_delete_command_builder extends CommandBuilder {
+class az_mariadb_server_private_endpoint_connection_delete_command_builder extends CommandBuilder<az_mariadb_server_private_endpoint_connection_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1571,7 +1609,7 @@ class az_mariadb_server_private_endpoint_connection_delete_command_builder exten
  *                                                      [--subscription]
  * ```
  */
-class az_mariadb_server_private_endpoint_connection_reject_command_builder extends CommandBuilder {
+class az_mariadb_server_private_endpoint_connection_reject_command_builder extends CommandBuilder<az_mariadb_server_private_endpoint_connection_reject_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1633,7 +1671,7 @@ class az_mariadb_server_private_endpoint_connection_reject_command_builder exten
  *                                                    [--subscription]
  * ```
  */
-class az_mariadb_server_private_endpoint_connection_show_command_builder extends CommandBuilder {
+class az_mariadb_server_private_endpoint_connection_show_command_builder extends CommandBuilder<az_mariadb_server_private_endpoint_connection_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1693,7 +1731,7 @@ class az_mariadb_server_private_endpoint_connection_show_command_builder extends
  *                                              [--subscription]
  * ```
  */
-class az_mariadb_server_private_link_resource_list_command_builder extends CommandBuilder {
+class az_mariadb_server_private_link_resource_list_command_builder extends CommandBuilder<az_mariadb_server_private_link_resource_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1747,7 +1785,7 @@ class az_mariadb_server_private_link_resource_list_command_builder extends Comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} sourceServer The name or resource ID of the master server to the create replica for.
  */
-class az_mariadb_server_replica_create_command_builder extends CommandBuilder {
+class az_mariadb_server_replica_create_command_builder extends CommandBuilder<az_mariadb_server_replica_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, sourceServer: string) {
         super(commandPath);
         this.name(name)
@@ -1810,7 +1848,7 @@ class az_mariadb_server_replica_create_command_builder extends CommandBuilder {
  *                                [--subscription]
  * ```
  */
-class az_mariadb_server_replica_list_command_builder extends CommandBuilder {
+class az_mariadb_server_replica_list_command_builder extends CommandBuilder<az_mariadb_server_replica_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1858,7 +1896,7 @@ class az_mariadb_server_replica_list_command_builder extends CommandBuilder {
  *                                [--yes]
  * ```
  */
-class az_mariadb_server_replica_stop_command_builder extends CommandBuilder {
+class az_mariadb_server_replica_stop_command_builder extends CommandBuilder<az_mariadb_server_replica_stop_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1913,7 +1951,7 @@ class az_mariadb_server_replica_stop_command_builder extends CommandBuilder {
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  * @param {string} subnet Name or ID of the subnet that allows access to an Azure Postgres Server. If subnet name is provided, --vnet-name must be provided.
  */
-class az_mariadb_server_vnet_rule_create_command_builder extends CommandBuilder {
+class az_mariadb_server_vnet_rule_create_command_builder extends CommandBuilder<az_mariadb_server_vnet_rule_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, serverName: string, subnet: string) {
         super(commandPath);
         this.name(name)
@@ -1977,7 +2015,7 @@ class az_mariadb_server_vnet_rule_create_command_builder extends CommandBuilder 
  *                                    [--subscription]
  * ```
  */
-class az_mariadb_server_vnet_rule_delete_command_builder extends CommandBuilder {
+class az_mariadb_server_vnet_rule_delete_command_builder extends CommandBuilder<az_mariadb_server_vnet_rule_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2025,7 +2063,7 @@ class az_mariadb_server_vnet_rule_delete_command_builder extends CommandBuilder 
  *                                  [--subscription]
  * ```
  */
-class az_mariadb_server_vnet_rule_list_command_builder extends CommandBuilder {
+class az_mariadb_server_vnet_rule_list_command_builder extends CommandBuilder<az_mariadb_server_vnet_rule_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2074,7 +2112,7 @@ class az_mariadb_server_vnet_rule_list_command_builder extends CommandBuilder {
  *                                  [--subscription]
  * ```
  */
-class az_mariadb_server_vnet_rule_show_command_builder extends CommandBuilder {
+class az_mariadb_server_vnet_rule_show_command_builder extends CommandBuilder<az_mariadb_server_vnet_rule_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2137,7 +2175,7 @@ class az_mariadb_server_vnet_rule_show_command_builder extends CommandBuilder {
  *
  * @param {string} subnet Name or ID of the subnet that allows access to an Azure Postgres Server. If subnet name is provided, --vnet-name must be provided.
  */
-class az_mariadb_server_vnet_rule_update_command_builder extends CommandBuilder {
+class az_mariadb_server_vnet_rule_update_command_builder extends CommandBuilder<az_mariadb_server_vnet_rule_update_command_result> {
     constructor(commandPath: string, subnet: string) {
         super(commandPath);
         this.subnet(subnet)
@@ -2231,7 +2269,7 @@ class az_mariadb_server_vnet_rule_update_command_builder extends CommandBuilder 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
-class az_mariadb_server_logs_download_command_builder extends CommandBuilder {
+class az_mariadb_server_logs_download_command_builder extends CommandBuilder<az_mariadb_server_logs_download_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, serverName: string) {
         super(commandPath);
         this.name(name)
@@ -2281,7 +2319,7 @@ class az_mariadb_server_logs_download_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
-class az_mariadb_server_logs_list_command_builder extends CommandBuilder {
+class az_mariadb_server_logs_list_command_builder extends CommandBuilder<az_mariadb_server_logs_list_command_result> {
     constructor(commandPath: string, resourceGroup: string, serverName: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -2361,7 +2399,7 @@ class az_mariadb_server_logs_list_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} skuName The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16.
  */
-class az_mariadb_server_create_command_builder extends CommandBuilder {
+class az_mariadb_server_create_command_builder extends CommandBuilder<az_mariadb_server_create_command_result> {
     constructor(commandPath: string, adminPassword: string, adminUser: string, name: string, resourceGroup: string, skuName: string) {
         super(commandPath);
         this.adminPassword(adminPassword)
@@ -2486,7 +2524,7 @@ class az_mariadb_server_create_command_builder extends CommandBuilder {
  *                          [--yes]
  * ```
  */
-class az_mariadb_server_delete_command_builder extends CommandBuilder {
+class az_mariadb_server_delete_command_builder extends CommandBuilder<az_mariadb_server_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2542,7 +2580,7 @@ class az_mariadb_server_delete_command_builder extends CommandBuilder {
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  * @param {string} sourceServer The name or ID of the source server to restore from.
  */
-class az_mariadb_server_georestore_command_builder extends CommandBuilder {
+class az_mariadb_server_georestore_command_builder extends CommandBuilder<az_mariadb_server_georestore_command_result> {
     constructor(commandPath: string, location: string, sourceServer: string) {
         super(commandPath);
         this.location(location)
@@ -2620,7 +2658,7 @@ class az_mariadb_server_georestore_command_builder extends CommandBuilder {
  *                        [--subscription]
  * ```
  */
-class az_mariadb_server_list_command_builder extends CommandBuilder {
+class az_mariadb_server_list_command_builder extends CommandBuilder<az_mariadb_server_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2655,7 +2693,7 @@ class az_mariadb_server_list_command_builder extends CommandBuilder {
  *                           [--subscription]
  * ```
  */
-class az_mariadb_server_restart_command_builder extends CommandBuilder {
+class az_mariadb_server_restart_command_builder extends CommandBuilder<az_mariadb_server_restart_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2702,7 +2740,7 @@ class az_mariadb_server_restart_command_builder extends CommandBuilder {
  * @param {string} restorePointInTime The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00.
  * @param {string} sourceServer The name or resource ID of the source server to restore from.
  */
-class az_mariadb_server_restore_command_builder extends CommandBuilder {
+class az_mariadb_server_restore_command_builder extends CommandBuilder<az_mariadb_server_restore_command_result> {
     constructor(commandPath: string, restorePointInTime: string, sourceServer: string) {
         super(commandPath);
         this.restorePointInTime(restorePointInTime)
@@ -2764,7 +2802,7 @@ class az_mariadb_server_restore_command_builder extends CommandBuilder {
  *                        [--subscription]
  * ```
  */
-class az_mariadb_server_show_command_builder extends CommandBuilder {
+class az_mariadb_server_show_command_builder extends CommandBuilder<az_mariadb_server_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2811,7 +2849,7 @@ class az_mariadb_server_show_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_mariadb_server_start_command_builder extends CommandBuilder {
+class az_mariadb_server_start_command_builder extends CommandBuilder<az_mariadb_server_start_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2852,7 +2890,7 @@ class az_mariadb_server_start_command_builder extends CommandBuilder {
  *                        [--subscription]
  * ```
  */
-class az_mariadb_server_stop_command_builder extends CommandBuilder {
+class az_mariadb_server_stop_command_builder extends CommandBuilder<az_mariadb_server_stop_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2906,7 +2944,7 @@ class az_mariadb_server_stop_command_builder extends CommandBuilder {
  *                          [--tags]
  * ```
  */
-class az_mariadb_server_update_command_builder extends CommandBuilder {
+class az_mariadb_server_update_command_builder extends CommandBuilder<az_mariadb_server_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -3029,7 +3067,7 @@ class az_mariadb_server_update_command_builder extends CommandBuilder {
  *                        [--timeout]
  * ```
  */
-class az_mariadb_server_wait_command_builder extends CommandBuilder {
+class az_mariadb_server_wait_command_builder extends CommandBuilder<az_mariadb_server_wait_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }

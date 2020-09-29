@@ -1,4 +1,51 @@
 import { CommandBuilder } from '../base';
+import { az_ad_app_credential_delete_command_result } from './models/az_ad_app_credential_delete_command_result'
+import { az_ad_app_credential_list_command_result } from './models/az_ad_app_credential_list_command_result'
+import { az_ad_app_credential_reset_command_result } from './models/az_ad_app_credential_reset_command_result'
+import { az_ad_app_owner_add_command_result } from './models/az_ad_app_owner_add_command_result'
+import { az_ad_app_owner_list_command_result } from './models/az_ad_app_owner_list_command_result'
+import { az_ad_app_owner_remove_command_result } from './models/az_ad_app_owner_remove_command_result'
+import { az_ad_app_permission_add_command_result } from './models/az_ad_app_permission_add_command_result'
+import { az_ad_app_permission_admin_consent_command_result } from './models/az_ad_app_permission_admin_consent_command_result'
+import { az_ad_app_permission_delete_command_result } from './models/az_ad_app_permission_delete_command_result'
+import { az_ad_app_permission_grant_command_result } from './models/az_ad_app_permission_grant_command_result'
+import { az_ad_app_permission_list_command_result } from './models/az_ad_app_permission_list_command_result'
+import { az_ad_app_permission_list_grants_command_result } from './models/az_ad_app_permission_list_grants_command_result'
+import { az_ad_app_create_command_result } from './models/az_ad_app_create_command_result'
+import { az_ad_app_delete_command_result } from './models/az_ad_app_delete_command_result'
+import { az_ad_app_list_command_result } from './models/az_ad_app_list_command_result'
+import { az_ad_app_show_command_result } from './models/az_ad_app_show_command_result'
+import { az_ad_app_update_command_result } from './models/az_ad_app_update_command_result'
+import { az_ad_group_member_add_command_result } from './models/az_ad_group_member_add_command_result'
+import { az_ad_group_member_check_command_result } from './models/az_ad_group_member_check_command_result'
+import { az_ad_group_member_list_command_result } from './models/az_ad_group_member_list_command_result'
+import { az_ad_group_member_remove_command_result } from './models/az_ad_group_member_remove_command_result'
+import { az_ad_group_owner_add_command_result } from './models/az_ad_group_owner_add_command_result'
+import { az_ad_group_owner_list_command_result } from './models/az_ad_group_owner_list_command_result'
+import { az_ad_group_owner_remove_command_result } from './models/az_ad_group_owner_remove_command_result'
+import { az_ad_group_create_command_result } from './models/az_ad_group_create_command_result'
+import { az_ad_group_delete_command_result } from './models/az_ad_group_delete_command_result'
+import { az_ad_group_get_member_groups_command_result } from './models/az_ad_group_get_member_groups_command_result'
+import { az_ad_group_list_command_result } from './models/az_ad_group_list_command_result'
+import { az_ad_group_show_command_result } from './models/az_ad_group_show_command_result'
+import { az_ad_signed_in_user_list_owned_objects_command_result } from './models/az_ad_signed_in_user_list_owned_objects_command_result'
+import { az_ad_signed_in_user_show_command_result } from './models/az_ad_signed_in_user_show_command_result'
+import { az_ad_sp_credential_delete_command_result } from './models/az_ad_sp_credential_delete_command_result'
+import { az_ad_sp_credential_list_command_result } from './models/az_ad_sp_credential_list_command_result'
+import { az_ad_sp_credential_reset_command_result } from './models/az_ad_sp_credential_reset_command_result'
+import { az_ad_sp_owner_list_command_result } from './models/az_ad_sp_owner_list_command_result'
+import { az_ad_sp_create_command_result } from './models/az_ad_sp_create_command_result'
+import { az_ad_sp_create_for_rbac_command_result } from './models/az_ad_sp_create_for_rbac_command_result'
+import { az_ad_sp_delete_command_result } from './models/az_ad_sp_delete_command_result'
+import { az_ad_sp_list_command_result } from './models/az_ad_sp_list_command_result'
+import { az_ad_sp_show_command_result } from './models/az_ad_sp_show_command_result'
+import { az_ad_sp_update_command_result } from './models/az_ad_sp_update_command_result'
+import { az_ad_user_create_command_result } from './models/az_ad_user_create_command_result'
+import { az_ad_user_delete_command_result } from './models/az_ad_user_delete_command_result'
+import { az_ad_user_get_member_groups_command_result } from './models/az_ad_user_get_member_groups_command_result'
+import { az_ad_user_list_command_result } from './models/az_ad_user_list_command_result'
+import { az_ad_user_show_command_result } from './models/az_ad_user_show_command_result'
+import { az_ad_user_update_command_result } from './models/az_ad_user_update_command_result'
 
 /** Manage an application's password or certificate credentials. */
 export class az_ad_app_credential {
@@ -843,7 +890,7 @@ export class az_ad {
  * @param {string} id Identifier uri, application id, or object id.
  * @param {string} keyId Credential key id.
  */
-class az_ad_app_credential_delete_command_builder extends CommandBuilder {
+class az_ad_app_credential_delete_command_builder extends CommandBuilder<az_ad_app_credential_delete_command_result> {
     constructor(commandPath: string, id: string, keyId: string) {
         super(commandPath);
         this.id(id)
@@ -881,7 +928,7 @@ class az_ad_app_credential_delete_command_builder extends CommandBuilder {
  *
  * @param {string} id Identifier uri, application id, or object id.
  */
-class az_ad_app_credential_list_command_builder extends CommandBuilder {
+class az_ad_app_credential_list_command_builder extends CommandBuilder<az_ad_app_credential_list_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)
@@ -924,7 +971,7 @@ class az_ad_app_credential_list_command_builder extends CommandBuilder {
  *
  * @param {string} id Identifier uri, application id, or object id.
  */
-class az_ad_app_credential_reset_command_builder extends CommandBuilder {
+class az_ad_app_credential_reset_command_builder extends CommandBuilder<az_ad_app_credential_reset_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)
@@ -997,7 +1044,7 @@ class az_ad_app_credential_reset_command_builder extends CommandBuilder {
  * @param {string} id Identifier uri, application id, or object id.
  * @param {string} ownerObjectId Owner's object id.
  */
-class az_ad_app_owner_add_command_builder extends CommandBuilder {
+class az_ad_app_owner_add_command_builder extends CommandBuilder<az_ad_app_owner_add_command_result> {
     constructor(commandPath: string, id: string, ownerObjectId: string) {
         super(commandPath);
         this.id(id)
@@ -1028,7 +1075,7 @@ class az_ad_app_owner_add_command_builder extends CommandBuilder {
  *
  * @param {string} id Identifier uri, application id, or object id of the application.
  */
-class az_ad_app_owner_list_command_builder extends CommandBuilder {
+class az_ad_app_owner_list_command_builder extends CommandBuilder<az_ad_app_owner_list_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)
@@ -1059,7 +1106,7 @@ class az_ad_app_owner_list_command_builder extends CommandBuilder {
  * @param {string} id Identifier uri, application id, or object id.
  * @param {string} ownerObjectId Owner's object id.
  */
-class az_ad_app_owner_remove_command_builder extends CommandBuilder {
+class az_ad_app_owner_remove_command_builder extends CommandBuilder<az_ad_app_owner_remove_command_result> {
     constructor(commandPath: string, id: string, ownerObjectId: string) {
         super(commandPath);
         this.id(id)
@@ -1093,7 +1140,7 @@ class az_ad_app_owner_remove_command_builder extends CommandBuilder {
  * @param {string} apiPermissions Specify `ResourceAccess.id` - The unique identifier for one of the OAuth2Permission or AppRole instances that the resource application exposes. Space-separated list of `<resource-access-id>=<type>`.
  * @param {string} id Identifier uri, application id, or object id.
  */
-class az_ad_app_permission_add_command_builder extends CommandBuilder {
+class az_ad_app_permission_add_command_builder extends CommandBuilder<az_ad_app_permission_add_command_result> {
     constructor(commandPath: string, api: string, apiPermissions: string, id: string) {
         super(commandPath);
         this.api(api)
@@ -1130,7 +1177,7 @@ class az_ad_app_permission_add_command_builder extends CommandBuilder {
  *
  * @param {string} id Identifier uri, application id, or object id.
  */
-class az_ad_app_permission_admin_consent_command_builder extends CommandBuilder {
+class az_ad_app_permission_admin_consent_command_builder extends CommandBuilder<az_ad_app_permission_admin_consent_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)
@@ -1156,7 +1203,7 @@ class az_ad_app_permission_admin_consent_command_builder extends CommandBuilder 
  * @param {string} api Specify `RequiredResourceAccess.resourceAppId` - The unique identifier for the resource that the application requires access to. This should be equal to the appId declared on the target resource application.
  * @param {string} id Identifier uri, application id, or object id.
  */
-class az_ad_app_permission_delete_command_builder extends CommandBuilder {
+class az_ad_app_permission_delete_command_builder extends CommandBuilder<az_ad_app_permission_delete_command_result> {
     constructor(commandPath: string, api: string, id: string) {
         super(commandPath);
         this.api(api)
@@ -1198,7 +1245,7 @@ class az_ad_app_permission_delete_command_builder extends CommandBuilder {
  * @param {string} api Specify `RequiredResourceAccess.resourceAppId` - The unique identifier for the resource that the application requires access to. This should be equal to the appId declared on the target resource application.
  * @param {string} id Identifier uri, application id, or object id.
  */
-class az_ad_app_permission_grant_command_builder extends CommandBuilder {
+class az_ad_app_permission_grant_command_builder extends CommandBuilder<az_ad_app_permission_grant_command_result> {
     constructor(commandPath: string, api: string, id: string) {
         super(commandPath);
         this.api(api)
@@ -1253,7 +1300,7 @@ class az_ad_app_permission_grant_command_builder extends CommandBuilder {
  *
  * @param {string} id Identifier uri, application id, or object id of the associated application.
  */
-class az_ad_app_permission_list_command_builder extends CommandBuilder {
+class az_ad_app_permission_list_command_builder extends CommandBuilder<az_ad_app_permission_list_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)
@@ -1282,7 +1329,7 @@ class az_ad_app_permission_list_command_builder extends CommandBuilder {
  *                                  [--show-resource-name {false, true}]
  * ```
  */
-class az_ad_app_permission_list_grants_command_builder extends CommandBuilder {
+class az_ad_app_permission_list_grants_command_builder extends CommandBuilder<az_ad_app_permission_list_grants_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1332,7 +1379,7 @@ class az_ad_app_permission_list_grants_command_builder extends CommandBuilder {
  *
  * @param {string} displayName The display name of the application.
  */
-class az_ad_app_create_command_builder extends CommandBuilder {
+class az_ad_app_create_command_builder extends CommandBuilder<az_ad_app_create_command_result> {
     constructor(commandPath: string, displayName: string) {
         super(commandPath);
         this.displayName(displayName)
@@ -1451,7 +1498,7 @@ class az_ad_app_create_command_builder extends CommandBuilder {
  *
  * @param {string} id Identifier uri, application id, or object id.
  */
-class az_ad_app_delete_command_builder extends CommandBuilder {
+class az_ad_app_delete_command_builder extends CommandBuilder<az_ad_app_delete_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)
@@ -1478,7 +1525,7 @@ class az_ad_app_delete_command_builder extends CommandBuilder {
  *                [--show-mine]
  * ```
  */
-class az_ad_app_list_command_builder extends CommandBuilder {
+class az_ad_app_list_command_builder extends CommandBuilder<az_ad_app_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1537,7 +1584,7 @@ class az_ad_app_list_command_builder extends CommandBuilder {
  *
  * @param {string} id Identifier uri, application id, or object id.
  */
-class az_ad_app_show_command_builder extends CommandBuilder {
+class az_ad_app_show_command_builder extends CommandBuilder<az_ad_app_show_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)
@@ -1586,7 +1633,7 @@ class az_ad_app_show_command_builder extends CommandBuilder {
  *
  * @param {string} id Identifier uri, application id, or object id.
  */
-class az_ad_app_update_command_builder extends CommandBuilder {
+class az_ad_app_update_command_builder extends CommandBuilder<az_ad_app_update_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)
@@ -1732,7 +1779,7 @@ class az_ad_app_update_command_builder extends CommandBuilder {
  * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
  * @param {string} memberId The object ID of the contact, group, user, or service principal.
  */
-class az_ad_group_member_add_command_builder extends CommandBuilder {
+class az_ad_group_member_add_command_builder extends CommandBuilder<az_ad_group_member_add_command_result> {
     constructor(commandPath: string, group: string, memberId: string) {
         super(commandPath);
         this.group(group)
@@ -1770,7 +1817,7 @@ class az_ad_group_member_add_command_builder extends CommandBuilder {
  * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
  * @param {string} memberId The object ID of the contact, group, user, or service principal.
  */
-class az_ad_group_member_check_command_builder extends CommandBuilder {
+class az_ad_group_member_check_command_builder extends CommandBuilder<az_ad_group_member_check_command_result> {
     constructor(commandPath: string, group: string, memberId: string) {
         super(commandPath);
         this.group(group)
@@ -1801,7 +1848,7 @@ class az_ad_group_member_check_command_builder extends CommandBuilder {
  *
  * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
  */
-class az_ad_group_member_list_command_builder extends CommandBuilder {
+class az_ad_group_member_list_command_builder extends CommandBuilder<az_ad_group_member_list_command_result> {
     constructor(commandPath: string, group: string) {
         super(commandPath);
         this.group(group)
@@ -1832,7 +1879,7 @@ class az_ad_group_member_list_command_builder extends CommandBuilder {
  * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
  * @param {string} memberId The object ID of the contact, group, user, or service principal.
  */
-class az_ad_group_member_remove_command_builder extends CommandBuilder {
+class az_ad_group_member_remove_command_builder extends CommandBuilder<az_ad_group_member_remove_command_result> {
     constructor(commandPath: string, group: string, memberId: string) {
         super(commandPath);
         this.group(group)
@@ -1864,7 +1911,7 @@ class az_ad_group_member_remove_command_builder extends CommandBuilder {
  * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
  * @param {string} ownerObjectId Owner's object id.
  */
-class az_ad_group_owner_add_command_builder extends CommandBuilder {
+class az_ad_group_owner_add_command_builder extends CommandBuilder<az_ad_group_owner_add_command_result> {
     constructor(commandPath: string, group: string, ownerObjectId: string) {
         super(commandPath);
         this.group(group)
@@ -1895,7 +1942,7 @@ class az_ad_group_owner_add_command_builder extends CommandBuilder {
  *
  * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
  */
-class az_ad_group_owner_list_command_builder extends CommandBuilder {
+class az_ad_group_owner_list_command_builder extends CommandBuilder<az_ad_group_owner_list_command_result> {
     constructor(commandPath: string, group: string) {
         super(commandPath);
         this.group(group)
@@ -1926,7 +1973,7 @@ class az_ad_group_owner_list_command_builder extends CommandBuilder {
  * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
  * @param {string} ownerObjectId Owner's object id.
  */
-class az_ad_group_owner_remove_command_builder extends CommandBuilder {
+class az_ad_group_owner_remove_command_builder extends CommandBuilder<az_ad_group_owner_remove_command_result> {
     constructor(commandPath: string, group: string, ownerObjectId: string) {
         super(commandPath);
         this.group(group)
@@ -1960,7 +2007,7 @@ class az_ad_group_owner_remove_command_builder extends CommandBuilder {
  * @param {string} displayName Object's display name or its prefix.
  * @param {string} mailNickname Mail nickname.
  */
-class az_ad_group_create_command_builder extends CommandBuilder {
+class az_ad_group_create_command_builder extends CommandBuilder<az_ad_group_create_command_result> {
     constructor(commandPath: string, displayName: string, mailNickname: string) {
         super(commandPath);
         this.displayName(displayName)
@@ -2002,7 +2049,7 @@ class az_ad_group_create_command_builder extends CommandBuilder {
  *
  * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
  */
-class az_ad_group_delete_command_builder extends CommandBuilder {
+class az_ad_group_delete_command_builder extends CommandBuilder<az_ad_group_delete_command_result> {
     constructor(commandPath: string, group: string) {
         super(commandPath);
         this.group(group)
@@ -2027,7 +2074,7 @@ class az_ad_group_delete_command_builder extends CommandBuilder {
  *
  * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
  */
-class az_ad_group_get_member_groups_command_builder extends CommandBuilder {
+class az_ad_group_get_member_groups_command_builder extends CommandBuilder<az_ad_group_get_member_groups_command_result> {
     constructor(commandPath: string, group: string) {
         super(commandPath);
         this.group(group)
@@ -2062,7 +2109,7 @@ class az_ad_group_get_member_groups_command_builder extends CommandBuilder {
  *                  [--query-examples]
  * ```
  */
-class az_ad_group_list_command_builder extends CommandBuilder {
+class az_ad_group_list_command_builder extends CommandBuilder<az_ad_group_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2097,7 +2144,7 @@ class az_ad_group_list_command_builder extends CommandBuilder {
  *
  * @param {string} group Group's object id or display name(prefix also works if there is a unique match).
  */
-class az_ad_group_show_command_builder extends CommandBuilder {
+class az_ad_group_show_command_builder extends CommandBuilder<az_ad_group_show_command_result> {
     constructor(commandPath: string, group: string) {
         super(commandPath);
         this.group(group)
@@ -2124,7 +2171,7 @@ class az_ad_group_show_command_builder extends CommandBuilder {
  * az ad signed-in-user list-owned-objects [--type]
  * ```
  */
-class az_ad_signed_in_user_list_owned_objects_command_builder extends CommandBuilder {
+class az_ad_signed_in_user_list_owned_objects_command_builder extends CommandBuilder<az_ad_signed_in_user_list_owned_objects_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2144,7 +2191,7 @@ class az_ad_signed_in_user_list_owned_objects_command_builder extends CommandBui
  * az ad signed-in-user show [--query-examples]
  * ```
  */
-class az_ad_signed_in_user_show_command_builder extends CommandBuilder {
+class az_ad_signed_in_user_show_command_builder extends CommandBuilder<az_ad_signed_in_user_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2169,7 +2216,7 @@ class az_ad_signed_in_user_show_command_builder extends CommandBuilder {
  * @param {string} id Service principal name, or object id.
  * @param {string} keyId Credential key id.
  */
-class az_ad_sp_credential_delete_command_builder extends CommandBuilder {
+class az_ad_sp_credential_delete_command_builder extends CommandBuilder<az_ad_sp_credential_delete_command_result> {
     constructor(commandPath: string, id: string, keyId: string) {
         super(commandPath);
         this.id(id)
@@ -2207,7 +2254,7 @@ class az_ad_sp_credential_delete_command_builder extends CommandBuilder {
  *
  * @param {string} id Service principal name, or object id.
  */
-class az_ad_sp_credential_list_command_builder extends CommandBuilder {
+class az_ad_sp_credential_list_command_builder extends CommandBuilder<az_ad_sp_credential_list_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)
@@ -2250,7 +2297,7 @@ class az_ad_sp_credential_list_command_builder extends CommandBuilder {
  *
  * @param {string} name Name or app ID of the service principal.
  */
-class az_ad_sp_credential_reset_command_builder extends CommandBuilder {
+class az_ad_sp_credential_reset_command_builder extends CommandBuilder<az_ad_sp_credential_reset_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -2322,7 +2369,7 @@ class az_ad_sp_credential_reset_command_builder extends CommandBuilder {
  *
  * @param {string} id Service principal name, or object id or the service principal.
  */
-class az_ad_sp_owner_list_command_builder extends CommandBuilder {
+class az_ad_sp_owner_list_command_builder extends CommandBuilder<az_ad_sp_owner_list_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)
@@ -2351,7 +2398,7 @@ class az_ad_sp_owner_list_command_builder extends CommandBuilder {
  *
  * @param {string} id Identifier uri, application id, or object id of the associated application.
  */
-class az_ad_sp_create_command_builder extends CommandBuilder {
+class az_ad_sp_create_command_builder extends CommandBuilder<az_ad_sp_create_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)
@@ -2380,7 +2427,7 @@ class az_ad_sp_create_command_builder extends CommandBuilder {
  *                          [--years]
  * ```
  */
-class az_ad_sp_create_for_rbac_command_builder extends CommandBuilder {
+class az_ad_sp_create_for_rbac_command_builder extends CommandBuilder<az_ad_sp_create_for_rbac_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2450,7 +2497,7 @@ class az_ad_sp_create_for_rbac_command_builder extends CommandBuilder {
  *
  * @param {string} id Service principal name, or object id.
  */
-class az_ad_sp_delete_command_builder extends CommandBuilder {
+class az_ad_sp_delete_command_builder extends CommandBuilder<az_ad_sp_delete_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)
@@ -2476,7 +2523,7 @@ class az_ad_sp_delete_command_builder extends CommandBuilder {
  *               [--spn]
  * ```
  */
-class az_ad_sp_list_command_builder extends CommandBuilder {
+class az_ad_sp_list_command_builder extends CommandBuilder<az_ad_sp_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2529,7 +2576,7 @@ class az_ad_sp_list_command_builder extends CommandBuilder {
  *
  * @param {string} id Service principal name, or object id.
  */
-class az_ad_sp_show_command_builder extends CommandBuilder {
+class az_ad_sp_show_command_builder extends CommandBuilder<az_ad_sp_show_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)
@@ -2562,7 +2609,7 @@ class az_ad_sp_show_command_builder extends CommandBuilder {
  *
  * @param {string} id Service principal name, or object id.
  */
-class az_ad_sp_update_command_builder extends CommandBuilder {
+class az_ad_sp_update_command_builder extends CommandBuilder<az_ad_sp_update_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)
@@ -2616,7 +2663,7 @@ class az_ad_sp_update_command_builder extends CommandBuilder {
  * @param {string} password The password that should be assigned to the user for authentication.
  * @param {string} userPrincipalName Required. The user principal name (someuser@contoso.com). It must contain one of the verified domains for the tenant.
  */
-class az_ad_user_create_command_builder extends CommandBuilder {
+class az_ad_user_create_command_builder extends CommandBuilder<az_ad_user_create_command_result> {
     constructor(commandPath: string, displayName: string, password: string, userPrincipalName: string) {
         super(commandPath);
         this.displayName(displayName)
@@ -2671,7 +2718,7 @@ class az_ad_user_create_command_builder extends CommandBuilder {
  *
  * @param {string} id The object ID or principal name of the user for which to get information.
  */
-class az_ad_user_delete_command_builder extends CommandBuilder {
+class az_ad_user_delete_command_builder extends CommandBuilder<az_ad_user_delete_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)
@@ -2695,7 +2742,7 @@ class az_ad_user_delete_command_builder extends CommandBuilder {
  *
  * @param {string} id The object ID or principal name of the user for which to get information.
  */
-class az_ad_user_get_member_groups_command_builder extends CommandBuilder {
+class az_ad_user_get_member_groups_command_builder extends CommandBuilder<az_ad_user_get_member_groups_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)
@@ -2725,7 +2772,7 @@ class az_ad_user_get_member_groups_command_builder extends CommandBuilder {
  *                 [--upn]
  * ```
  */
-class az_ad_user_list_command_builder extends CommandBuilder {
+class az_ad_user_list_command_builder extends CommandBuilder<az_ad_user_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2766,7 +2813,7 @@ class az_ad_user_list_command_builder extends CommandBuilder {
  *
  * @param {string} id The object ID or principal name of the user for which to get information.
  */
-class az_ad_user_show_command_builder extends CommandBuilder {
+class az_ad_user_show_command_builder extends CommandBuilder<az_ad_user_show_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)
@@ -2800,7 +2847,7 @@ class az_ad_user_show_command_builder extends CommandBuilder {
  *
  * @param {string} id The object ID or principal name of the user for which to get information.
  */
-class az_ad_user_update_command_builder extends CommandBuilder {
+class az_ad_user_update_command_builder extends CommandBuilder<az_ad_user_update_command_result> {
     constructor(commandPath: string, id: string) {
         super(commandPath);
         this.id(id)

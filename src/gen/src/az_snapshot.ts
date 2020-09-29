@@ -1,4 +1,12 @@
 import { CommandBuilder } from '../base';
+import { az_snapshot_create_command_result } from './models/az_snapshot_create_command_result'
+import { az_snapshot_delete_command_result } from './models/az_snapshot_delete_command_result'
+import { az_snapshot_grant_access_command_result } from './models/az_snapshot_grant_access_command_result'
+import { az_snapshot_list_command_result } from './models/az_snapshot_list_command_result'
+import { az_snapshot_revoke_access_command_result } from './models/az_snapshot_revoke_access_command_result'
+import { az_snapshot_show_command_result } from './models/az_snapshot_show_command_result'
+import { az_snapshot_update_command_result } from './models/az_snapshot_update_command_result'
+import { az_snapshot_wait_command_result } from './models/az_snapshot_wait_command_result'
 
 /** Manage point-in-time copies of managed disks, native blobs, or other snapshots. */
 export class az_snapshot {
@@ -187,7 +195,7 @@ export class az_snapshot {
  * @param {string} name The name of the snapshot.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_snapshot_create_command_builder extends CommandBuilder {
+class az_snapshot_create_command_builder extends CommandBuilder<az_snapshot_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -308,7 +316,7 @@ class az_snapshot_create_command_builder extends CommandBuilder {
  *                    [--subscription]
  * ```
  */
-class az_snapshot_delete_command_builder extends CommandBuilder {
+class az_snapshot_delete_command_builder extends CommandBuilder<az_snapshot_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -353,7 +361,7 @@ class az_snapshot_delete_command_builder extends CommandBuilder {
  *
  * @param {string} durationInSeconds Time duration in seconds until the SAS access expires.
  */
-class az_snapshot_grant_access_command_builder extends CommandBuilder {
+class az_snapshot_grant_access_command_builder extends CommandBuilder<az_snapshot_grant_access_command_result> {
     constructor(commandPath: string, durationInSeconds: string) {
         super(commandPath);
         this.durationInSeconds(durationInSeconds)
@@ -406,7 +414,7 @@ class az_snapshot_grant_access_command_builder extends CommandBuilder {
  *                  [--subscription]
  * ```
  */
-class az_snapshot_list_command_builder extends CommandBuilder {
+class az_snapshot_list_command_builder extends CommandBuilder<az_snapshot_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -441,7 +449,7 @@ class az_snapshot_list_command_builder extends CommandBuilder {
  *                           [--subscription]
  * ```
  */
-class az_snapshot_revoke_access_command_builder extends CommandBuilder {
+class az_snapshot_revoke_access_command_builder extends CommandBuilder<az_snapshot_revoke_access_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -483,7 +491,7 @@ class az_snapshot_revoke_access_command_builder extends CommandBuilder {
  *                  [--subscription]
  * ```
  */
-class az_snapshot_show_command_builder extends CommandBuilder {
+class az_snapshot_show_command_builder extends CommandBuilder<az_snapshot_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -540,7 +548,7 @@ class az_snapshot_show_command_builder extends CommandBuilder {
  *                    [--subscription]
  * ```
  */
-class az_snapshot_update_command_builder extends CommandBuilder {
+class az_snapshot_update_command_builder extends CommandBuilder<az_snapshot_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -648,7 +656,7 @@ class az_snapshot_update_command_builder extends CommandBuilder {
  *                  [--updated]
  * ```
  */
-class az_snapshot_wait_command_builder extends CommandBuilder {
+class az_snapshot_wait_command_builder extends CommandBuilder<az_snapshot_wait_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }

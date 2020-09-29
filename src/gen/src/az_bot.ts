@@ -1,4 +1,46 @@
 import { CommandBuilder } from '../base';
+import { az_bot_authsetting_create_command_result } from './models/az_bot_authsetting_create_command_result'
+import { az_bot_authsetting_delete_command_result } from './models/az_bot_authsetting_delete_command_result'
+import { az_bot_authsetting_list_command_result } from './models/az_bot_authsetting_list_command_result'
+import { az_bot_authsetting_list_providers_command_result } from './models/az_bot_authsetting_list_providers_command_result'
+import { az_bot_authsetting_show_command_result } from './models/az_bot_authsetting_show_command_result'
+import { az_bot_directline_create_command_result } from './models/az_bot_directline_create_command_result'
+import { az_bot_directline_delete_command_result } from './models/az_bot_directline_delete_command_result'
+import { az_bot_directline_show_command_result } from './models/az_bot_directline_show_command_result'
+import { az_bot_directline_update_command_result } from './models/az_bot_directline_update_command_result'
+import { az_bot_email_create_command_result } from './models/az_bot_email_create_command_result'
+import { az_bot_email_delete_command_result } from './models/az_bot_email_delete_command_result'
+import { az_bot_email_show_command_result } from './models/az_bot_email_show_command_result'
+import { az_bot_facebook_create_command_result } from './models/az_bot_facebook_create_command_result'
+import { az_bot_facebook_delete_command_result } from './models/az_bot_facebook_delete_command_result'
+import { az_bot_facebook_show_command_result } from './models/az_bot_facebook_show_command_result'
+import { az_bot_kik_create_command_result } from './models/az_bot_kik_create_command_result'
+import { az_bot_kik_delete_command_result } from './models/az_bot_kik_delete_command_result'
+import { az_bot_kik_show_command_result } from './models/az_bot_kik_show_command_result'
+import { az_bot_msteams_create_command_result } from './models/az_bot_msteams_create_command_result'
+import { az_bot_msteams_delete_command_result } from './models/az_bot_msteams_delete_command_result'
+import { az_bot_msteams_show_command_result } from './models/az_bot_msteams_show_command_result'
+import { az_bot_skype_create_command_result } from './models/az_bot_skype_create_command_result'
+import { az_bot_skype_delete_command_result } from './models/az_bot_skype_delete_command_result'
+import { az_bot_skype_show_command_result } from './models/az_bot_skype_show_command_result'
+import { az_bot_slack_create_command_result } from './models/az_bot_slack_create_command_result'
+import { az_bot_slack_delete_command_result } from './models/az_bot_slack_delete_command_result'
+import { az_bot_slack_show_command_result } from './models/az_bot_slack_show_command_result'
+import { az_bot_sms_create_command_result } from './models/az_bot_sms_create_command_result'
+import { az_bot_sms_delete_command_result } from './models/az_bot_sms_delete_command_result'
+import { az_bot_sms_show_command_result } from './models/az_bot_sms_show_command_result'
+import { az_bot_telegram_create_command_result } from './models/az_bot_telegram_create_command_result'
+import { az_bot_telegram_delete_command_result } from './models/az_bot_telegram_delete_command_result'
+import { az_bot_telegram_show_command_result } from './models/az_bot_telegram_show_command_result'
+import { az_bot_webchat_show_command_result } from './models/az_bot_webchat_show_command_result'
+import { az_bot_create_command_result } from './models/az_bot_create_command_result'
+import { az_bot_delete_command_result } from './models/az_bot_delete_command_result'
+import { az_bot_download_command_result } from './models/az_bot_download_command_result'
+import { az_bot_prepare_deploy_command_result } from './models/az_bot_prepare_deploy_command_result'
+import { az_bot_prepare_publish_command_result } from './models/az_bot_prepare_publish_command_result'
+import { az_bot_publish_command_result } from './models/az_bot_publish_command_result'
+import { az_bot_show_command_result } from './models/az_bot_show_command_result'
+import { az_bot_update_command_result } from './models/az_bot_update_command_result'
 
 /** Manage OAuth connection settings on a bot. */
 export class az_bot_authsetting {
@@ -907,7 +949,7 @@ export class az_bot {
  * @param {string} service Name of the service provider. For a list of all service providers, use `az bot connection listserviceproviders`.
  * @param {string} settingName Name of the oauth connection setting.
  */
-class az_bot_authsetting_create_command_builder extends CommandBuilder {
+class az_bot_authsetting_create_command_builder extends CommandBuilder<az_bot_authsetting_create_command_result> {
     constructor(commandPath: string, clientId: string, clientSecret: string, name: string, providerScopeString: string, resourceGroup: string, service: string, settingName: string) {
         super(commandPath);
         this.clientId(clientId)
@@ -989,7 +1031,7 @@ class az_bot_authsetting_create_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} settingName Name of the oauth connection setting.
  */
-class az_bot_authsetting_delete_command_builder extends CommandBuilder {
+class az_bot_authsetting_delete_command_builder extends CommandBuilder<az_bot_authsetting_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, settingName: string) {
         super(commandPath);
         this.name(name)
@@ -1036,7 +1078,7 @@ class az_bot_authsetting_delete_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_authsetting_list_command_builder extends CommandBuilder {
+class az_bot_authsetting_list_command_builder extends CommandBuilder<az_bot_authsetting_list_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1077,7 +1119,7 @@ class az_bot_authsetting_list_command_builder extends CommandBuilder {
  *                                   [--subscription]
  * ```
  */
-class az_bot_authsetting_list_providers_command_builder extends CommandBuilder {
+class az_bot_authsetting_list_providers_command_builder extends CommandBuilder<az_bot_authsetting_list_providers_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1111,7 +1153,7 @@ class az_bot_authsetting_list_providers_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} settingName Name of the oauth connection setting.
  */
-class az_bot_authsetting_show_command_builder extends CommandBuilder {
+class az_bot_authsetting_show_command_builder extends CommandBuilder<az_bot_authsetting_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, settingName: string) {
         super(commandPath);
         this.name(name)
@@ -1169,7 +1211,7 @@ class az_bot_authsetting_show_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_directline_create_command_builder extends CommandBuilder {
+class az_bot_directline_create_command_builder extends CommandBuilder<az_bot_directline_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1244,7 +1286,7 @@ class az_bot_directline_create_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_directline_delete_command_builder extends CommandBuilder {
+class az_bot_directline_delete_command_builder extends CommandBuilder<az_bot_directline_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1285,7 +1327,7 @@ class az_bot_directline_delete_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_directline_show_command_builder extends CommandBuilder {
+class az_bot_directline_show_command_builder extends CommandBuilder<az_bot_directline_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1342,7 +1384,7 @@ class az_bot_directline_show_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_directline_update_command_builder extends CommandBuilder {
+class az_bot_directline_update_command_builder extends CommandBuilder<az_bot_directline_update_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1422,7 +1464,7 @@ class az_bot_directline_update_command_builder extends CommandBuilder {
  * @param {string} password The email password for the bot.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_email_create_command_builder extends CommandBuilder {
+class az_bot_email_create_command_builder extends CommandBuilder<az_bot_email_create_command_result> {
     constructor(commandPath: string, emailAddress: string, name: string, password: string, resourceGroup: string) {
         super(commandPath);
         this.emailAddress(emailAddress)
@@ -1481,7 +1523,7 @@ class az_bot_email_create_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_email_delete_command_builder extends CommandBuilder {
+class az_bot_email_delete_command_builder extends CommandBuilder<az_bot_email_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1522,7 +1564,7 @@ class az_bot_email_delete_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_email_show_command_builder extends CommandBuilder {
+class az_bot_email_show_command_builder extends CommandBuilder<az_bot_email_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1582,7 +1624,7 @@ class az_bot_email_show_command_builder extends CommandBuilder {
  * @param {string} secret The Facebook application secret.
  * @param {string} token The Facebook application access token.
  */
-class az_bot_facebook_create_command_builder extends CommandBuilder {
+class az_bot_facebook_create_command_builder extends CommandBuilder<az_bot_facebook_create_command_result> {
     constructor(commandPath: string, appid: string, name: string, pageId: string, resourceGroup: string, secret: string, token: string) {
         super(commandPath);
         this.appid(appid)
@@ -1655,7 +1697,7 @@ class az_bot_facebook_create_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_facebook_delete_command_builder extends CommandBuilder {
+class az_bot_facebook_delete_command_builder extends CommandBuilder<az_bot_facebook_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1696,7 +1738,7 @@ class az_bot_facebook_delete_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_facebook_show_command_builder extends CommandBuilder {
+class az_bot_facebook_show_command_builder extends CommandBuilder<az_bot_facebook_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1753,7 +1795,7 @@ class az_bot_facebook_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} userName Kik user name.
  */
-class az_bot_kik_create_command_builder extends CommandBuilder {
+class az_bot_kik_create_command_builder extends CommandBuilder<az_bot_kik_create_command_result> {
     constructor(commandPath: string, key: string, name: string, resourceGroup: string, userName: string) {
         super(commandPath);
         this.key(key)
@@ -1818,7 +1860,7 @@ class az_bot_kik_create_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_kik_delete_command_builder extends CommandBuilder {
+class az_bot_kik_delete_command_builder extends CommandBuilder<az_bot_kik_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1859,7 +1901,7 @@ class az_bot_kik_delete_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_kik_show_command_builder extends CommandBuilder {
+class az_bot_kik_show_command_builder extends CommandBuilder<az_bot_kik_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1913,7 +1955,7 @@ class az_bot_kik_show_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_msteams_create_command_builder extends CommandBuilder {
+class az_bot_msteams_create_command_builder extends CommandBuilder<az_bot_msteams_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1970,7 +2012,7 @@ class az_bot_msteams_create_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_msteams_delete_command_builder extends CommandBuilder {
+class az_bot_msteams_delete_command_builder extends CommandBuilder<az_bot_msteams_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2011,7 +2053,7 @@ class az_bot_msteams_delete_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_msteams_show_command_builder extends CommandBuilder {
+class az_bot_msteams_show_command_builder extends CommandBuilder<az_bot_msteams_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2071,7 +2113,7 @@ class az_bot_msteams_show_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_skype_create_command_builder extends CommandBuilder {
+class az_bot_skype_create_command_builder extends CommandBuilder<az_bot_skype_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2164,7 +2206,7 @@ class az_bot_skype_create_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_skype_delete_command_builder extends CommandBuilder {
+class az_bot_skype_delete_command_builder extends CommandBuilder<az_bot_skype_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2205,7 +2247,7 @@ class az_bot_skype_delete_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_skype_show_command_builder extends CommandBuilder {
+class az_bot_skype_show_command_builder extends CommandBuilder<az_bot_skype_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2264,7 +2306,7 @@ class az_bot_skype_show_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} verificationToken The verification token from Slack.
  */
-class az_bot_slack_create_command_builder extends CommandBuilder {
+class az_bot_slack_create_command_builder extends CommandBuilder<az_bot_slack_create_command_result> {
     constructor(commandPath: string, clientId: string, clientSecret: string, name: string, resourceGroup: string, verificationToken: string) {
         super(commandPath);
         this.clientId(clientId)
@@ -2336,7 +2378,7 @@ class az_bot_slack_create_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_slack_delete_command_builder extends CommandBuilder {
+class az_bot_slack_delete_command_builder extends CommandBuilder<az_bot_slack_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2377,7 +2419,7 @@ class az_bot_slack_delete_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_slack_show_command_builder extends CommandBuilder {
+class az_bot_slack_show_command_builder extends CommandBuilder<az_bot_slack_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2436,7 +2478,7 @@ class az_bot_slack_show_command_builder extends CommandBuilder {
  * @param {string} phone The phone number for the Twilio account.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_sms_create_command_builder extends CommandBuilder {
+class az_bot_sms_create_command_builder extends CommandBuilder<az_bot_sms_create_command_result> {
     constructor(commandPath: string, accountSid: string, authToken: string, name: string, phone: string, resourceGroup: string) {
         super(commandPath);
         this.accountSid(accountSid)
@@ -2508,7 +2550,7 @@ class az_bot_sms_create_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_sms_delete_command_builder extends CommandBuilder {
+class az_bot_sms_delete_command_builder extends CommandBuilder<az_bot_sms_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2549,7 +2591,7 @@ class az_bot_sms_delete_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_sms_show_command_builder extends CommandBuilder {
+class az_bot_sms_show_command_builder extends CommandBuilder<az_bot_sms_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2604,7 +2646,7 @@ class az_bot_sms_show_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_telegram_create_command_builder extends CommandBuilder {
+class az_bot_telegram_create_command_builder extends CommandBuilder<az_bot_telegram_create_command_result> {
     constructor(commandPath: string, accessToken: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.accessToken(accessToken)
@@ -2662,7 +2704,7 @@ class az_bot_telegram_create_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_telegram_delete_command_builder extends CommandBuilder {
+class az_bot_telegram_delete_command_builder extends CommandBuilder<az_bot_telegram_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2703,7 +2745,7 @@ class az_bot_telegram_delete_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_telegram_show_command_builder extends CommandBuilder {
+class az_bot_telegram_show_command_builder extends CommandBuilder<az_bot_telegram_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2756,7 +2798,7 @@ class az_bot_telegram_show_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_webchat_show_command_builder extends CommandBuilder {
+class az_bot_webchat_show_command_builder extends CommandBuilder<az_bot_webchat_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2820,7 +2862,7 @@ class az_bot_webchat_show_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_create_command_builder extends CommandBuilder {
+class az_bot_create_command_builder extends CommandBuilder<az_bot_create_command_result> {
     constructor(commandPath: string, appid: string, kind: 'registration' | 'webapp', name: string, resourceGroup: string) {
         super(commandPath);
         this.appid(appid)
@@ -2927,7 +2969,7 @@ class az_bot_create_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_delete_command_builder extends CommandBuilder {
+class az_bot_delete_command_builder extends CommandBuilder<az_bot_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2967,7 +3009,7 @@ class az_bot_delete_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_download_command_builder extends CommandBuilder {
+class az_bot_download_command_builder extends CommandBuilder<az_bot_download_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -3012,7 +3054,7 @@ class az_bot_download_command_builder extends CommandBuilder {
  *
  * @param {'Csharp' | 'Javascript' | 'Typescript'} lang The language or runtime of the bot.
  */
-class az_bot_prepare_deploy_command_builder extends CommandBuilder {
+class az_bot_prepare_deploy_command_builder extends CommandBuilder<az_bot_prepare_deploy_command_result> {
     constructor(commandPath: string, lang: 'Csharp' | 'Javascript' | 'Typescript') {
         super(commandPath);
         this.lang(lang)
@@ -3062,7 +3104,7 @@ class az_bot_prepare_deploy_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} slnName Name of the start up solution file name. Required only for C#.
  */
-class az_bot_prepare_publish_command_builder extends CommandBuilder {
+class az_bot_prepare_publish_command_builder extends CommandBuilder<az_bot_prepare_publish_command_result> {
     constructor(commandPath: string, name: string, projFilePath: string, resourceGroup: string, slnName: string) {
         super(commandPath);
         this.name(name)
@@ -3132,7 +3174,7 @@ class az_bot_prepare_publish_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_publish_command_builder extends CommandBuilder {
+class az_bot_publish_command_builder extends CommandBuilder<az_bot_publish_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -3203,7 +3245,7 @@ class az_bot_publish_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_show_command_builder extends CommandBuilder {
+class az_bot_show_command_builder extends CommandBuilder<az_bot_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -3263,7 +3305,7 @@ class az_bot_show_command_builder extends CommandBuilder {
  * @param {string} name The resource name of the bot. Bot name must be between 4 and 42 characters in length. Bot name can only have the following characters -, a - z, A - Z, 0 - 9, and _.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_bot_update_command_builder extends CommandBuilder {
+class az_bot_update_command_builder extends CommandBuilder<az_bot_update_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)

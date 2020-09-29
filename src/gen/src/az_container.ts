@@ -1,4 +1,15 @@
 import { CommandBuilder } from '../base';
+import { az_container_attach_command_result } from './models/az_container_attach_command_result'
+import { az_container_create_command_result } from './models/az_container_create_command_result'
+import { az_container_delete_command_result } from './models/az_container_delete_command_result'
+import { az_container_exec_command_result } from './models/az_container_exec_command_result'
+import { az_container_export_command_result } from './models/az_container_export_command_result'
+import { az_container_list_command_result } from './models/az_container_list_command_result'
+import { az_container_logs_command_result } from './models/az_container_logs_command_result'
+import { az_container_restart_command_result } from './models/az_container_restart_command_result'
+import { az_container_show_command_result } from './models/az_container_show_command_result'
+import { az_container_start_command_result } from './models/az_container_start_command_result'
+import { az_container_stop_command_result } from './models/az_container_stop_command_result'
 
 /** Manage Azure Container Instances. */
 export class az_container {
@@ -241,7 +252,7 @@ export class az_container {
  *                     [--subscription]
  * ```
  */
-class az_container_attach_command_builder extends CommandBuilder {
+class az_container_attach_command_builder extends CommandBuilder<az_container_attach_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -328,7 +339,7 @@ class az_container_attach_command_builder extends CommandBuilder {
  *
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_container_create_command_builder extends CommandBuilder {
+class az_container_create_command_builder extends CommandBuilder<az_container_create_command_result> {
     constructor(commandPath: string, resourceGroup: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -599,7 +610,7 @@ class az_container_create_command_builder extends CommandBuilder {
  *                     [--yes]
  * ```
  */
-class az_container_delete_command_builder extends CommandBuilder {
+class az_container_delete_command_builder extends CommandBuilder<az_container_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -652,7 +663,7 @@ class az_container_delete_command_builder extends CommandBuilder {
  *
  * @param {string} execCommand The command to run from within the container.
  */
-class az_container_exec_command_builder extends CommandBuilder {
+class az_container_exec_command_builder extends CommandBuilder<az_container_exec_command_result> {
     constructor(commandPath: string, execCommand: string) {
         super(commandPath);
         this.execCommand(execCommand)
@@ -721,7 +732,7 @@ class az_container_exec_command_builder extends CommandBuilder {
  *
  * @param {string} file The file path to export the container group.
  */
-class az_container_export_command_builder extends CommandBuilder {
+class az_container_export_command_builder extends CommandBuilder<az_container_export_command_result> {
     constructor(commandPath: string, file: string) {
         super(commandPath);
         this.file(file)
@@ -768,7 +779,7 @@ class az_container_export_command_builder extends CommandBuilder {
  *                   [--subscription]
  * ```
  */
-class az_container_list_command_builder extends CommandBuilder {
+class az_container_list_command_builder extends CommandBuilder<az_container_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -805,7 +816,7 @@ class az_container_list_command_builder extends CommandBuilder {
  *                   [--subscription]
  * ```
  */
-class az_container_logs_command_builder extends CommandBuilder {
+class az_container_logs_command_builder extends CommandBuilder<az_container_logs_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -861,7 +872,7 @@ class az_container_logs_command_builder extends CommandBuilder {
  * @param {string} name The name of the container group.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_container_restart_command_builder extends CommandBuilder {
+class az_container_restart_command_builder extends CommandBuilder<az_container_restart_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -905,7 +916,7 @@ class az_container_restart_command_builder extends CommandBuilder {
  *                   [--subscription]
  * ```
  */
-class az_container_show_command_builder extends CommandBuilder {
+class az_container_show_command_builder extends CommandBuilder<az_container_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -955,7 +966,7 @@ class az_container_show_command_builder extends CommandBuilder {
  * @param {string} name The name of the container group.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_container_start_command_builder extends CommandBuilder {
+class az_container_start_command_builder extends CommandBuilder<az_container_start_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1000,7 +1011,7 @@ class az_container_start_command_builder extends CommandBuilder {
  * @param {string} name The name of the container group.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_container_stop_command_builder extends CommandBuilder {
+class az_container_stop_command_builder extends CommandBuilder<az_container_stop_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)

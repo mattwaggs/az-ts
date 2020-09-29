@@ -1,4 +1,18 @@
 import { CommandBuilder } from '../base';
+import { az_kusto_cluster_create_command_result } from './models/az_kusto_cluster_create_command_result'
+import { az_kusto_cluster_delete_command_result } from './models/az_kusto_cluster_delete_command_result'
+import { az_kusto_cluster_list_command_result } from './models/az_kusto_cluster_list_command_result'
+import { az_kusto_cluster_show_command_result } from './models/az_kusto_cluster_show_command_result'
+import { az_kusto_cluster_start_command_result } from './models/az_kusto_cluster_start_command_result'
+import { az_kusto_cluster_stop_command_result } from './models/az_kusto_cluster_stop_command_result'
+import { az_kusto_cluster_update_command_result } from './models/az_kusto_cluster_update_command_result'
+import { az_kusto_cluster_wait_command_result } from './models/az_kusto_cluster_wait_command_result'
+import { az_kusto_database_create_command_result } from './models/az_kusto_database_create_command_result'
+import { az_kusto_database_delete_command_result } from './models/az_kusto_database_delete_command_result'
+import { az_kusto_database_list_command_result } from './models/az_kusto_database_list_command_result'
+import { az_kusto_database_show_command_result } from './models/az_kusto_database_show_command_result'
+import { az_kusto_database_update_command_result } from './models/az_kusto_database_update_command_result'
+import { az_kusto_database_wait_command_result } from './models/az_kusto_database_wait_command_result'
 
 /** Manage Azure Kusto clusters. */
 export class az_kusto_cluster {
@@ -295,7 +309,7 @@ export class az_kusto {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {'Dev(No SLA)_Standard_D11_v2' | 'Dev(No SLA)_Standard_E2a_v4' | 'Standard_D11_v2' | 'Standard_D12_v2' | 'Standard_D13_v2' | 'Standard_D14_v2' | 'Standard_DS13_v2+1TB_PS' | 'Standard_DS13_v2+2TB_PS' | 'Standard_DS14_v2+3TB_PS' | 'Standard_DS14_v2+4TB_PS' | 'Standard_E16a_v4' | 'Standard_E16as_v4+3TB_PS' | 'Standard_E16as_v4+4TB_PS' | 'Standard_E2a_v4' | 'Standard_E4a_v4' | 'Standard_E8a_v4' | 'Standard_E8as_v4+1TB_PS' | 'Standard_E8as_v4+2TB_PS' | 'Standard_L16s' | 'Standard_L4s' | 'Standard_L8s'} sku The name of the sku.
  */
-class az_kusto_cluster_create_command_builder extends CommandBuilder {
+class az_kusto_cluster_create_command_builder extends CommandBuilder<az_kusto_cluster_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, sku: 'Dev(No SLA)_Standard_D11_v2' | 'Dev(No SLA)_Standard_E2a_v4' | 'Standard_D11_v2' | 'Standard_D12_v2' | 'Standard_D13_v2' | 'Standard_D14_v2' | 'Standard_DS13_v2+1TB_PS' | 'Standard_DS13_v2+2TB_PS' | 'Standard_DS14_v2+3TB_PS' | 'Standard_DS14_v2+4TB_PS' | 'Standard_E16a_v4' | 'Standard_E16as_v4+3TB_PS' | 'Standard_E16as_v4+4TB_PS' | 'Standard_E2a_v4' | 'Standard_E4a_v4' | 'Standard_E8a_v4' | 'Standard_E8as_v4+1TB_PS' | 'Standard_E8as_v4+2TB_PS' | 'Standard_L16s' | 'Standard_L4s' | 'Standard_L8s') {
         super(commandPath);
         this.name(name)
@@ -358,7 +372,7 @@ class az_kusto_cluster_create_command_builder extends CommandBuilder {
  *                         [--yes]
  * ```
  */
-class az_kusto_cluster_delete_command_builder extends CommandBuilder {
+class az_kusto_cluster_delete_command_builder extends CommandBuilder<az_kusto_cluster_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -406,7 +420,7 @@ class az_kusto_cluster_delete_command_builder extends CommandBuilder {
  *
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_kusto_cluster_list_command_builder extends CommandBuilder {
+class az_kusto_cluster_list_command_builder extends CommandBuilder<az_kusto_cluster_list_command_result> {
     constructor(commandPath: string, resourceGroup: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -443,7 +457,7 @@ class az_kusto_cluster_list_command_builder extends CommandBuilder {
  *                       [--subscription]
  * ```
  */
-class az_kusto_cluster_show_command_builder extends CommandBuilder {
+class az_kusto_cluster_show_command_builder extends CommandBuilder<az_kusto_cluster_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -491,7 +505,7 @@ class az_kusto_cluster_show_command_builder extends CommandBuilder {
  *                        [--subscription]
  * ```
  */
-class az_kusto_cluster_start_command_builder extends CommandBuilder {
+class az_kusto_cluster_start_command_builder extends CommandBuilder<az_kusto_cluster_start_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -539,7 +553,7 @@ class az_kusto_cluster_start_command_builder extends CommandBuilder {
  *                       [--subscription]
  * ```
  */
-class az_kusto_cluster_stop_command_builder extends CommandBuilder {
+class az_kusto_cluster_stop_command_builder extends CommandBuilder<az_kusto_cluster_stop_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -592,7 +606,7 @@ class az_kusto_cluster_stop_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_kusto_cluster_update_command_builder extends CommandBuilder {
+class az_kusto_cluster_update_command_builder extends CommandBuilder<az_kusto_cluster_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -676,7 +690,7 @@ class az_kusto_cluster_update_command_builder extends CommandBuilder {
  *                       [--updated]
  * ```
  */
-class az_kusto_cluster_wait_command_builder extends CommandBuilder {
+class az_kusto_cluster_wait_command_builder extends CommandBuilder<az_kusto_cluster_wait_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -766,7 +780,7 @@ class az_kusto_cluster_wait_command_builder extends CommandBuilder {
  * @param {string} name The name of the database.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_kusto_database_create_command_builder extends CommandBuilder {
+class az_kusto_database_create_command_builder extends CommandBuilder<az_kusto_database_create_command_result> {
     constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -830,7 +844,7 @@ class az_kusto_database_create_command_builder extends CommandBuilder {
  *                          [--yes]
  * ```
  */
-class az_kusto_database_delete_command_builder extends CommandBuilder {
+class az_kusto_database_delete_command_builder extends CommandBuilder<az_kusto_database_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -886,7 +900,7 @@ class az_kusto_database_delete_command_builder extends CommandBuilder {
  * @param {string} clusterName The name of the cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_kusto_database_list_command_builder extends CommandBuilder {
+class az_kusto_database_list_command_builder extends CommandBuilder<az_kusto_database_list_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -931,7 +945,7 @@ class az_kusto_database_list_command_builder extends CommandBuilder {
  *                        [--subscription]
  * ```
  */
-class az_kusto_database_show_command_builder extends CommandBuilder {
+class az_kusto_database_show_command_builder extends CommandBuilder<az_kusto_database_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -994,7 +1008,7 @@ class az_kusto_database_show_command_builder extends CommandBuilder {
  *
  * @param {string} softDeletePeriod Amount of time that data should be kept so it is available to query. Duration in ISO8601 format (for example, 100 days would be P100D).
  */
-class az_kusto_database_update_command_builder extends CommandBuilder {
+class az_kusto_database_update_command_builder extends CommandBuilder<az_kusto_database_update_command_result> {
     constructor(commandPath: string, softDeletePeriod: string) {
         super(commandPath);
         this.softDeletePeriod(softDeletePeriod)
@@ -1092,7 +1106,7 @@ class az_kusto_database_update_command_builder extends CommandBuilder {
  *                        [--updated]
  * ```
  */
-class az_kusto_database_wait_command_builder extends CommandBuilder {
+class az_kusto_database_wait_command_builder extends CommandBuilder<az_kusto_database_wait_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }

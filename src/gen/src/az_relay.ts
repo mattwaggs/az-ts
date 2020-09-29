@@ -1,4 +1,41 @@
 import { CommandBuilder } from '../base';
+import { az_relay_hyco_authorization_rule_keys_list_command_result } from './models/az_relay_hyco_authorization_rule_keys_list_command_result'
+import { az_relay_hyco_authorization_rule_keys_renew_command_result } from './models/az_relay_hyco_authorization_rule_keys_renew_command_result'
+import { az_relay_hyco_authorization_rule_create_command_result } from './models/az_relay_hyco_authorization_rule_create_command_result'
+import { az_relay_hyco_authorization_rule_delete_command_result } from './models/az_relay_hyco_authorization_rule_delete_command_result'
+import { az_relay_hyco_authorization_rule_list_command_result } from './models/az_relay_hyco_authorization_rule_list_command_result'
+import { az_relay_hyco_authorization_rule_show_command_result } from './models/az_relay_hyco_authorization_rule_show_command_result'
+import { az_relay_hyco_authorization_rule_update_command_result } from './models/az_relay_hyco_authorization_rule_update_command_result'
+import { az_relay_hyco_create_command_result } from './models/az_relay_hyco_create_command_result'
+import { az_relay_hyco_delete_command_result } from './models/az_relay_hyco_delete_command_result'
+import { az_relay_hyco_list_command_result } from './models/az_relay_hyco_list_command_result'
+import { az_relay_hyco_show_command_result } from './models/az_relay_hyco_show_command_result'
+import { az_relay_hyco_update_command_result } from './models/az_relay_hyco_update_command_result'
+import { az_relay_namespace_authorization_rule_keys_list_command_result } from './models/az_relay_namespace_authorization_rule_keys_list_command_result'
+import { az_relay_namespace_authorization_rule_keys_renew_command_result } from './models/az_relay_namespace_authorization_rule_keys_renew_command_result'
+import { az_relay_namespace_authorization_rule_create_command_result } from './models/az_relay_namespace_authorization_rule_create_command_result'
+import { az_relay_namespace_authorization_rule_delete_command_result } from './models/az_relay_namespace_authorization_rule_delete_command_result'
+import { az_relay_namespace_authorization_rule_list_command_result } from './models/az_relay_namespace_authorization_rule_list_command_result'
+import { az_relay_namespace_authorization_rule_show_command_result } from './models/az_relay_namespace_authorization_rule_show_command_result'
+import { az_relay_namespace_authorization_rule_update_command_result } from './models/az_relay_namespace_authorization_rule_update_command_result'
+import { az_relay_namespace_create_command_result } from './models/az_relay_namespace_create_command_result'
+import { az_relay_namespace_delete_command_result } from './models/az_relay_namespace_delete_command_result'
+import { az_relay_namespace_exists_command_result } from './models/az_relay_namespace_exists_command_result'
+import { az_relay_namespace_list_command_result } from './models/az_relay_namespace_list_command_result'
+import { az_relay_namespace_show_command_result } from './models/az_relay_namespace_show_command_result'
+import { az_relay_namespace_update_command_result } from './models/az_relay_namespace_update_command_result'
+import { az_relay_wcfrelay_authorization_rule_keys_list_command_result } from './models/az_relay_wcfrelay_authorization_rule_keys_list_command_result'
+import { az_relay_wcfrelay_authorization_rule_keys_renew_command_result } from './models/az_relay_wcfrelay_authorization_rule_keys_renew_command_result'
+import { az_relay_wcfrelay_authorization_rule_create_command_result } from './models/az_relay_wcfrelay_authorization_rule_create_command_result'
+import { az_relay_wcfrelay_authorization_rule_delete_command_result } from './models/az_relay_wcfrelay_authorization_rule_delete_command_result'
+import { az_relay_wcfrelay_authorization_rule_list_command_result } from './models/az_relay_wcfrelay_authorization_rule_list_command_result'
+import { az_relay_wcfrelay_authorization_rule_show_command_result } from './models/az_relay_wcfrelay_authorization_rule_show_command_result'
+import { az_relay_wcfrelay_authorization_rule_update_command_result } from './models/az_relay_wcfrelay_authorization_rule_update_command_result'
+import { az_relay_wcfrelay_create_command_result } from './models/az_relay_wcfrelay_create_command_result'
+import { az_relay_wcfrelay_delete_command_result } from './models/az_relay_wcfrelay_delete_command_result'
+import { az_relay_wcfrelay_list_command_result } from './models/az_relay_wcfrelay_list_command_result'
+import { az_relay_wcfrelay_show_command_result } from './models/az_relay_wcfrelay_show_command_result'
+import { az_relay_wcfrelay_update_command_result } from './models/az_relay_wcfrelay_update_command_result'
 
 /** Manage Azure Authorization Rule keys for Relay Service Hybrid Connection. */
 export class az_relay_hyco_authorization_rule_keys {
@@ -763,7 +800,7 @@ export class az_relay {
  * @param {string} namespaceName Name of Namespace.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_relay_hyco_authorization_rule_keys_list_command_builder extends CommandBuilder {
+class az_relay_hyco_authorization_rule_keys_list_command_builder extends CommandBuilder<az_relay_hyco_authorization_rule_keys_list_command_result> {
     constructor(commandPath: string, hybridConnectionName: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandPath);
         this.hybridConnectionName(hybridConnectionName)
@@ -826,7 +863,7 @@ class az_relay_hyco_authorization_rule_keys_list_command_builder extends Command
  *
  * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
  */
-class az_relay_hyco_authorization_rule_keys_renew_command_builder extends CommandBuilder {
+class az_relay_hyco_authorization_rule_keys_renew_command_builder extends CommandBuilder<az_relay_hyco_authorization_rule_keys_renew_command_result> {
     constructor(commandPath: string, key: 'PrimaryKey' | 'SecondaryKey') {
         super(commandPath);
         this.key(key)
@@ -899,7 +936,7 @@ class az_relay_hyco_authorization_rule_keys_renew_command_builder extends Comman
  * @param {string} namespaceName Name of Namespace.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_relay_hyco_authorization_rule_create_command_builder extends CommandBuilder {
+class az_relay_hyco_authorization_rule_create_command_builder extends CommandBuilder<az_relay_hyco_authorization_rule_create_command_result> {
     constructor(commandPath: string, hybridConnectionName: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandPath);
         this.hybridConnectionName(hybridConnectionName)
@@ -958,7 +995,7 @@ class az_relay_hyco_authorization_rule_create_command_builder extends CommandBui
  *                                         [--subscription]
  * ```
  */
-class az_relay_hyco_authorization_rule_delete_command_builder extends CommandBuilder {
+class az_relay_hyco_authorization_rule_delete_command_builder extends CommandBuilder<az_relay_hyco_authorization_rule_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1016,7 +1053,7 @@ class az_relay_hyco_authorization_rule_delete_command_builder extends CommandBui
  * @param {string} namespaceName Name of Namespace.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_relay_hyco_authorization_rule_list_command_builder extends CommandBuilder {
+class az_relay_hyco_authorization_rule_list_command_builder extends CommandBuilder<az_relay_hyco_authorization_rule_list_command_result> {
     constructor(commandPath: string, hybridConnectionName: string, namespaceName: string, resourceGroup: string) {
         super(commandPath);
         this.hybridConnectionName(hybridConnectionName)
@@ -1069,7 +1106,7 @@ class az_relay_hyco_authorization_rule_list_command_builder extends CommandBuild
  *                                       [--subscription]
  * ```
  */
-class az_relay_hyco_authorization_rule_show_command_builder extends CommandBuilder {
+class az_relay_hyco_authorization_rule_show_command_builder extends CommandBuilder<az_relay_hyco_authorization_rule_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1137,7 +1174,7 @@ class az_relay_hyco_authorization_rule_show_command_builder extends CommandBuild
  *
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
-class az_relay_hyco_authorization_rule_update_command_builder extends CommandBuilder {
+class az_relay_hyco_authorization_rule_update_command_builder extends CommandBuilder<az_relay_hyco_authorization_rule_update_command_result> {
     constructor(commandPath: string, rights: 'Listen' | 'Manage' | 'Send') {
         super(commandPath);
         this.rights(rights)
@@ -1227,7 +1264,7 @@ class az_relay_hyco_authorization_rule_update_command_builder extends CommandBui
  * @param {string} namespaceName Name of Namespace.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_relay_hyco_create_command_builder extends CommandBuilder {
+class az_relay_hyco_create_command_builder extends CommandBuilder<az_relay_hyco_create_command_result> {
     constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1284,7 +1321,7 @@ class az_relay_hyco_create_command_builder extends CommandBuilder {
  *                      [--subscription]
  * ```
  */
-class az_relay_hyco_delete_command_builder extends CommandBuilder {
+class az_relay_hyco_delete_command_builder extends CommandBuilder<az_relay_hyco_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1334,7 +1371,7 @@ class az_relay_hyco_delete_command_builder extends CommandBuilder {
  * @param {string} namespaceName Name of Namespace.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_relay_hyco_list_command_builder extends CommandBuilder {
+class az_relay_hyco_list_command_builder extends CommandBuilder<az_relay_hyco_list_command_result> {
     constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandPath);
         this.namespaceName(namespaceName)
@@ -1379,7 +1416,7 @@ class az_relay_hyco_list_command_builder extends CommandBuilder {
  *                    [--subscription]
  * ```
  */
-class az_relay_hyco_show_command_builder extends CommandBuilder {
+class az_relay_hyco_show_command_builder extends CommandBuilder<az_relay_hyco_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1440,7 +1477,7 @@ class az_relay_hyco_show_command_builder extends CommandBuilder {
  *                      [--user-metadata]
  * ```
  */
-class az_relay_hyco_update_command_builder extends CommandBuilder {
+class az_relay_hyco_update_command_builder extends CommandBuilder<az_relay_hyco_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1534,7 +1571,7 @@ class az_relay_hyco_update_command_builder extends CommandBuilder {
  * @param {string} namespaceName Name of Namespace.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_relay_namespace_authorization_rule_keys_list_command_builder extends CommandBuilder {
+class az_relay_namespace_authorization_rule_keys_list_command_builder extends CommandBuilder<az_relay_namespace_authorization_rule_keys_list_command_result> {
     constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1589,7 +1626,7 @@ class az_relay_namespace_authorization_rule_keys_list_command_builder extends Co
  *
  * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
  */
-class az_relay_namespace_authorization_rule_keys_renew_command_builder extends CommandBuilder {
+class az_relay_namespace_authorization_rule_keys_renew_command_builder extends CommandBuilder<az_relay_namespace_authorization_rule_keys_renew_command_result> {
     constructor(commandPath: string, key: 'PrimaryKey' | 'SecondaryKey') {
         super(commandPath);
         this.key(key)
@@ -1654,7 +1691,7 @@ class az_relay_namespace_authorization_rule_keys_renew_command_builder extends C
  * @param {string} namespaceName Name of Namespace.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_relay_namespace_authorization_rule_create_command_builder extends CommandBuilder {
+class az_relay_namespace_authorization_rule_create_command_builder extends CommandBuilder<az_relay_namespace_authorization_rule_create_command_result> {
     constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1705,7 +1742,7 @@ class az_relay_namespace_authorization_rule_create_command_builder extends Comma
  *                                              [--subscription]
  * ```
  */
-class az_relay_namespace_authorization_rule_delete_command_builder extends CommandBuilder {
+class az_relay_namespace_authorization_rule_delete_command_builder extends CommandBuilder<az_relay_namespace_authorization_rule_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1755,7 +1792,7 @@ class az_relay_namespace_authorization_rule_delete_command_builder extends Comma
  * @param {string} namespaceName Name of the Namespace.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_relay_namespace_authorization_rule_list_command_builder extends CommandBuilder {
+class az_relay_namespace_authorization_rule_list_command_builder extends CommandBuilder<az_relay_namespace_authorization_rule_list_command_result> {
     constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandPath);
         this.namespaceName(namespaceName)
@@ -1800,7 +1837,7 @@ class az_relay_namespace_authorization_rule_list_command_builder extends Command
  *                                            [--subscription]
  * ```
  */
-class az_relay_namespace_authorization_rule_show_command_builder extends CommandBuilder {
+class az_relay_namespace_authorization_rule_show_command_builder extends CommandBuilder<az_relay_namespace_authorization_rule_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1861,7 +1898,7 @@ class az_relay_namespace_authorization_rule_show_command_builder extends Command
  *
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
-class az_relay_namespace_authorization_rule_update_command_builder extends CommandBuilder {
+class az_relay_namespace_authorization_rule_update_command_builder extends CommandBuilder<az_relay_namespace_authorization_rule_update_command_result> {
     constructor(commandPath: string, rights: 'Listen' | 'Manage' | 'Send') {
         super(commandPath);
         this.rights(rights)
@@ -1943,7 +1980,7 @@ class az_relay_namespace_authorization_rule_update_command_builder extends Comma
  * @param {string} name Name of Namespace.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_relay_namespace_create_command_builder extends CommandBuilder {
+class az_relay_namespace_create_command_builder extends CommandBuilder<az_relay_namespace_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1992,7 +2029,7 @@ class az_relay_namespace_create_command_builder extends CommandBuilder {
  *                           [--subscription]
  * ```
  */
-class az_relay_namespace_delete_command_builder extends CommandBuilder {
+class az_relay_namespace_delete_command_builder extends CommandBuilder<az_relay_namespace_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2033,7 +2070,7 @@ class az_relay_namespace_delete_command_builder extends CommandBuilder {
  *
  * @param {string} name Namespace name. Name can contain only letters, numbers, and hyphens. The namespace must start with a letter, and it must end with a letter or number.
  */
-class az_relay_namespace_exists_command_builder extends CommandBuilder {
+class az_relay_namespace_exists_command_builder extends CommandBuilder<az_relay_namespace_exists_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -2062,7 +2099,7 @@ class az_relay_namespace_exists_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_relay_namespace_list_command_builder extends CommandBuilder {
+class az_relay_namespace_list_command_builder extends CommandBuilder<az_relay_namespace_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2098,7 +2135,7 @@ class az_relay_namespace_list_command_builder extends CommandBuilder {
  *                         [--subscription]
  * ```
  */
-class az_relay_namespace_show_command_builder extends CommandBuilder {
+class az_relay_namespace_show_command_builder extends CommandBuilder<az_relay_namespace_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2150,7 +2187,7 @@ class az_relay_namespace_show_command_builder extends CommandBuilder {
  *                           [--tags]
  * ```
  */
-class az_relay_namespace_update_command_builder extends CommandBuilder {
+class az_relay_namespace_update_command_builder extends CommandBuilder<az_relay_namespace_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2228,7 +2265,7 @@ class az_relay_namespace_update_command_builder extends CommandBuilder {
  * @param {string} relayName Name of WCF Relay.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_relay_wcfrelay_authorization_rule_keys_list_command_builder extends CommandBuilder {
+class az_relay_wcfrelay_authorization_rule_keys_list_command_builder extends CommandBuilder<az_relay_wcfrelay_authorization_rule_keys_list_command_result> {
     constructor(commandPath: string, name: string, namespaceName: string, relayName: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2291,7 +2328,7 @@ class az_relay_wcfrelay_authorization_rule_keys_list_command_builder extends Com
  *
  * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
  */
-class az_relay_wcfrelay_authorization_rule_keys_renew_command_builder extends CommandBuilder {
+class az_relay_wcfrelay_authorization_rule_keys_renew_command_builder extends CommandBuilder<az_relay_wcfrelay_authorization_rule_keys_renew_command_result> {
     constructor(commandPath: string, key: 'PrimaryKey' | 'SecondaryKey') {
         super(commandPath);
         this.key(key)
@@ -2364,7 +2401,7 @@ class az_relay_wcfrelay_authorization_rule_keys_renew_command_builder extends Co
  * @param {string} relayName Name of WCF Relay.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_relay_wcfrelay_authorization_rule_create_command_builder extends CommandBuilder {
+class az_relay_wcfrelay_authorization_rule_create_command_builder extends CommandBuilder<az_relay_wcfrelay_authorization_rule_create_command_result> {
     constructor(commandPath: string, name: string, namespaceName: string, relayName: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2423,7 +2460,7 @@ class az_relay_wcfrelay_authorization_rule_create_command_builder extends Comman
  *                                             [--subscription]
  * ```
  */
-class az_relay_wcfrelay_authorization_rule_delete_command_builder extends CommandBuilder {
+class az_relay_wcfrelay_authorization_rule_delete_command_builder extends CommandBuilder<az_relay_wcfrelay_authorization_rule_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2481,7 +2518,7 @@ class az_relay_wcfrelay_authorization_rule_delete_command_builder extends Comman
  * @param {string} relayName Name of WCF Relay.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_relay_wcfrelay_authorization_rule_list_command_builder extends CommandBuilder {
+class az_relay_wcfrelay_authorization_rule_list_command_builder extends CommandBuilder<az_relay_wcfrelay_authorization_rule_list_command_result> {
     constructor(commandPath: string, namespaceName: string, relayName: string, resourceGroup: string) {
         super(commandPath);
         this.namespaceName(namespaceName)
@@ -2534,7 +2571,7 @@ class az_relay_wcfrelay_authorization_rule_list_command_builder extends CommandB
  *                                           [--subscription]
  * ```
  */
-class az_relay_wcfrelay_authorization_rule_show_command_builder extends CommandBuilder {
+class az_relay_wcfrelay_authorization_rule_show_command_builder extends CommandBuilder<az_relay_wcfrelay_authorization_rule_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2602,7 +2639,7 @@ class az_relay_wcfrelay_authorization_rule_show_command_builder extends CommandB
  *
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
-class az_relay_wcfrelay_authorization_rule_update_command_builder extends CommandBuilder {
+class az_relay_wcfrelay_authorization_rule_update_command_builder extends CommandBuilder<az_relay_wcfrelay_authorization_rule_update_command_result> {
     constructor(commandPath: string, rights: 'Listen' | 'Manage' | 'Send') {
         super(commandPath);
         this.rights(rights)
@@ -2695,7 +2732,7 @@ class az_relay_wcfrelay_authorization_rule_update_command_builder extends Comman
  * @param {'Http' | 'NetTcp'} relayType Relay type.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_relay_wcfrelay_create_command_builder extends CommandBuilder {
+class az_relay_wcfrelay_create_command_builder extends CommandBuilder<az_relay_wcfrelay_create_command_result> {
     constructor(commandPath: string, name: string, namespaceName: string, relayType: 'Http' | 'NetTcp', resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2765,7 +2802,7 @@ class az_relay_wcfrelay_create_command_builder extends CommandBuilder {
  *                          [--subscription]
  * ```
  */
-class az_relay_wcfrelay_delete_command_builder extends CommandBuilder {
+class az_relay_wcfrelay_delete_command_builder extends CommandBuilder<az_relay_wcfrelay_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2815,7 +2852,7 @@ class az_relay_wcfrelay_delete_command_builder extends CommandBuilder {
  * @param {string} namespaceName Name of Namespace.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_relay_wcfrelay_list_command_builder extends CommandBuilder {
+class az_relay_wcfrelay_list_command_builder extends CommandBuilder<az_relay_wcfrelay_list_command_result> {
     constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
         super(commandPath);
         this.namespaceName(namespaceName)
@@ -2860,7 +2897,7 @@ class az_relay_wcfrelay_list_command_builder extends CommandBuilder {
  *                        [--subscription]
  * ```
  */
-class az_relay_wcfrelay_show_command_builder extends CommandBuilder {
+class az_relay_wcfrelay_show_command_builder extends CommandBuilder<az_relay_wcfrelay_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2921,7 +2958,7 @@ class az_relay_wcfrelay_show_command_builder extends CommandBuilder {
  *                          [--user-metadata]
  * ```
  */
-class az_relay_wcfrelay_update_command_builder extends CommandBuilder {
+class az_relay_wcfrelay_update_command_builder extends CommandBuilder<az_relay_wcfrelay_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }

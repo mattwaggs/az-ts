@@ -1,0 +1,1 @@
+export type az_feature_show_command_result = Record<string, unknown>

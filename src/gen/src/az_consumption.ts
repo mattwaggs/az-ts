@@ -1,4 +1,13 @@
 import { CommandBuilder } from '../base';
+import { az_consumption_budget_create_command_result } from './models/az_consumption_budget_create_command_result'
+import { az_consumption_budget_delete_command_result } from './models/az_consumption_budget_delete_command_result'
+import { az_consumption_budget_list_command_result } from './models/az_consumption_budget_list_command_result'
+import { az_consumption_budget_show_command_result } from './models/az_consumption_budget_show_command_result'
+import { az_consumption_marketplace_list_command_result } from './models/az_consumption_marketplace_list_command_result'
+import { az_consumption_pricesheet_show_command_result } from './models/az_consumption_pricesheet_show_command_result'
+import { az_consumption_reservation_detail_list_command_result } from './models/az_consumption_reservation_detail_list_command_result'
+import { az_consumption_reservation_summary_list_command_result } from './models/az_consumption_reservation_summary_list_command_result'
+import { az_consumption_usage_list_command_result } from './models/az_consumption_usage_list_command_result'
 
 /** Manage budgets for an Azure subscription. */
 export class az_consumption_budget {
@@ -220,7 +229,7 @@ export class az_consumption {
  * @param {string} startDate Start date (YYYY-MM-DD in UTC) of time period of a budget.
  * @param {'annually' | 'monthly' | 'quarterly'} timeGrain Time grain of the budget can be monthly, quarterly, or annually.
  */
-class az_consumption_budget_create_command_builder extends CommandBuilder {
+class az_consumption_budget_create_command_builder extends CommandBuilder<az_consumption_budget_create_command_result> {
     constructor(commandPath: string, amount: string, budgetName: string, category: 'cost' | 'usage', endDate: string, startDate: string, timeGrain: 'annually' | 'monthly' | 'quarterly') {
         super(commandPath);
         this.amount(amount)
@@ -310,7 +319,7 @@ class az_consumption_budget_create_command_builder extends CommandBuilder {
  *
  * @param {string} budgetName Name of a budget.
  */
-class az_consumption_budget_delete_command_builder extends CommandBuilder {
+class az_consumption_budget_delete_command_builder extends CommandBuilder<az_consumption_budget_delete_command_result> {
     constructor(commandPath: string, budgetName: string) {
         super(commandPath);
         this.budgetName(budgetName)
@@ -345,7 +354,7 @@ class az_consumption_budget_delete_command_builder extends CommandBuilder {
  *                            [--subscription]
  * ```
  */
-class az_consumption_budget_list_command_builder extends CommandBuilder {
+class az_consumption_budget_list_command_builder extends CommandBuilder<az_consumption_budget_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -382,7 +391,7 @@ class az_consumption_budget_list_command_builder extends CommandBuilder {
  *
  * @param {string} budgetName Name of a budget.
  */
-class az_consumption_budget_show_command_builder extends CommandBuilder {
+class az_consumption_budget_show_command_builder extends CommandBuilder<az_consumption_budget_show_command_result> {
     constructor(commandPath: string, budgetName: string) {
         super(commandPath);
         this.budgetName(budgetName)
@@ -426,7 +435,7 @@ class az_consumption_budget_show_command_builder extends CommandBuilder {
  *                                 [--top]
  * ```
  */
-class az_consumption_marketplace_list_command_builder extends CommandBuilder {
+class az_consumption_marketplace_list_command_builder extends CommandBuilder<az_consumption_marketplace_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -479,7 +488,7 @@ class az_consumption_marketplace_list_command_builder extends CommandBuilder {
  *                                [--subscription]
  * ```
  */
-class az_consumption_pricesheet_show_command_builder extends CommandBuilder {
+class az_consumption_pricesheet_show_command_builder extends CommandBuilder<az_consumption_pricesheet_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -526,7 +535,7 @@ class az_consumption_pricesheet_show_command_builder extends CommandBuilder {
  * @param {string} reservationOrderId Reservation order id.
  * @param {string} startDate Start date (YYYY-MM-DD in UTC). Only needed for daily grain and if specified, also requires --end-date.
  */
-class az_consumption_reservation_detail_list_command_builder extends CommandBuilder {
+class az_consumption_reservation_detail_list_command_builder extends CommandBuilder<az_consumption_reservation_detail_list_command_result> {
     constructor(commandPath: string, endDate: string, reservationOrderId: string, startDate: string) {
         super(commandPath);
         this.endDate(endDate)
@@ -588,7 +597,7 @@ class az_consumption_reservation_detail_list_command_builder extends CommandBuil
  * @param {string} grain Reservation summary grain. Possible values are daily or monthly.
  * @param {string} reservationOrderId Reservation order id.
  */
-class az_consumption_reservation_summary_list_command_builder extends CommandBuilder {
+class az_consumption_reservation_summary_list_command_builder extends CommandBuilder<az_consumption_reservation_summary_list_command_result> {
     constructor(commandPath: string, grain: string, reservationOrderId: string) {
         super(commandPath);
         this.grain(grain)
@@ -653,7 +662,7 @@ class az_consumption_reservation_summary_list_command_builder extends CommandBui
  *                           [--top]
  * ```
  */
-class az_consumption_usage_list_command_builder extends CommandBuilder {
+class az_consumption_usage_list_command_builder extends CommandBuilder<az_consumption_usage_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }

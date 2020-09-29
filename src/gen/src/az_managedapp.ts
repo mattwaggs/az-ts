@@ -1,4 +1,12 @@
 import { CommandBuilder } from '../base';
+import { az_managedapp_definition_create_command_result } from './models/az_managedapp_definition_create_command_result'
+import { az_managedapp_definition_delete_command_result } from './models/az_managedapp_definition_delete_command_result'
+import { az_managedapp_definition_list_command_result } from './models/az_managedapp_definition_list_command_result'
+import { az_managedapp_definition_show_command_result } from './models/az_managedapp_definition_show_command_result'
+import { az_managedapp_create_command_result } from './models/az_managedapp_create_command_result'
+import { az_managedapp_delete_command_result } from './models/az_managedapp_delete_command_result'
+import { az_managedapp_list_command_result } from './models/az_managedapp_list_command_result'
+import { az_managedapp_show_command_result } from './models/az_managedapp_show_command_result'
 
 /** Manage Azure Managed Applications. */
 export class az_managedapp_definition {
@@ -183,7 +191,7 @@ export class az_managedapp {
  * @param {string} name The managed application definition name.
  * @param {string} resourceGroup The resource group of the managed application definition.
  */
-class az_managedapp_definition_create_command_builder extends CommandBuilder {
+class az_managedapp_definition_create_command_builder extends CommandBuilder<az_managedapp_definition_create_command_result> {
     constructor(commandPath: string, authorizations: string, description: string, displayName: string, lockLevel: 'CanNotDelete' | 'None' | 'ReadOnly', name: string, resourceGroup: string) {
         super(commandPath);
         this.authorizations(authorizations)
@@ -278,7 +286,7 @@ class az_managedapp_definition_create_command_builder extends CommandBuilder {
  *                                 [--subscription]
  * ```
  */
-class az_managedapp_definition_delete_command_builder extends CommandBuilder {
+class az_managedapp_definition_delete_command_builder extends CommandBuilder<az_managedapp_definition_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -320,7 +328,7 @@ class az_managedapp_definition_delete_command_builder extends CommandBuilder {
  *
  * @param {string} resourceGroup The resource group of the managed application definition.
  */
-class az_managedapp_definition_list_command_builder extends CommandBuilder {
+class az_managedapp_definition_list_command_builder extends CommandBuilder<az_managedapp_definition_list_command_result> {
     constructor(commandPath: string, resourceGroup: string) {
         super(commandPath);
         this.resourceGroup(resourceGroup)
@@ -357,7 +365,7 @@ class az_managedapp_definition_list_command_builder extends CommandBuilder {
  *                               [--subscription]
  * ```
  */
-class az_managedapp_definition_show_command_builder extends CommandBuilder {
+class az_managedapp_definition_show_command_builder extends CommandBuilder<az_managedapp_definition_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -418,7 +426,7 @@ class az_managedapp_definition_show_command_builder extends CommandBuilder {
  * @param {string} name The managed application name.
  * @param {string} resourceGroup The resource group of the managed application.
  */
-class az_managedapp_create_command_builder extends CommandBuilder {
+class az_managedapp_create_command_builder extends CommandBuilder<az_managedapp_create_command_result> {
     constructor(commandPath: string, kind: string, managedRgId: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.kind(kind)
@@ -517,7 +525,7 @@ class az_managedapp_create_command_builder extends CommandBuilder {
  *                      [--subscription]
  * ```
  */
-class az_managedapp_delete_command_builder extends CommandBuilder {
+class az_managedapp_delete_command_builder extends CommandBuilder<az_managedapp_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -557,7 +565,7 @@ class az_managedapp_delete_command_builder extends CommandBuilder {
  *                    [--subscription]
  * ```
  */
-class az_managedapp_list_command_builder extends CommandBuilder {
+class az_managedapp_list_command_builder extends CommandBuilder<az_managedapp_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -593,7 +601,7 @@ class az_managedapp_list_command_builder extends CommandBuilder {
  *                    [--subscription]
  * ```
  */
-class az_managedapp_show_command_builder extends CommandBuilder {
+class az_managedapp_show_command_builder extends CommandBuilder<az_managedapp_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }

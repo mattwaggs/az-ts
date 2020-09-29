@@ -1,4 +1,14 @@
 import { CommandBuilder } from '../base';
+import { az_configure_command_result } from './models/az_configure_command_result'
+import { az_feedback_command_result } from './models/az_feedback_command_result'
+import { az_find_command_result } from './models/az_find_command_result'
+import { az_interactive_command_result } from './models/az_interactive_command_result'
+import { az_login_command_result } from './models/az_login_command_result'
+import { az_logout_command_result } from './models/az_logout_command_result'
+import { az_rest_command_result } from './models/az_rest_command_result'
+import { az_self_test_command_result } from './models/az_self_test_command_result'
+import { az_upgrade_command_result } from './models/az_upgrade_command_result'
+import { az_version_command_result } from './models/az_version_command_result'
 
 /** */
 export class az {
@@ -155,7 +165,7 @@ export class az {
  *              [--scope {global, local}]
  * ```
  */
-class az_configure_command_builder extends CommandBuilder {
+class az_configure_command_builder extends CommandBuilder<az_configure_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -187,7 +197,7 @@ class az_configure_command_builder extends CommandBuilder {
  * az feedback
  * ```
  */
-class az_feedback_command_builder extends CommandBuilder {
+class az_feedback_command_builder extends CommandBuilder<az_feedback_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -201,7 +211,7 @@ class az_feedback_command_builder extends CommandBuilder {
  * az find [<CLI_TERM>]
  * ```
  */
-class az_find_command_builder extends CommandBuilder {
+class az_find_command_builder extends CommandBuilder<az_find_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -222,7 +232,7 @@ class az_find_command_builder extends CommandBuilder {
  *                [--update]
  * ```
  */
-class az_interactive_command_builder extends CommandBuilder {
+class az_interactive_command_builder extends CommandBuilder<az_interactive_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -255,7 +265,7 @@ class az_interactive_command_builder extends CommandBuilder {
  *          [--username]
  * ```
  */
-class az_login_command_builder extends CommandBuilder {
+class az_login_command_builder extends CommandBuilder<az_login_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -317,7 +327,7 @@ class az_login_command_builder extends CommandBuilder {
  * az logout [--username]
  * ```
  */
-class az_logout_command_builder extends CommandBuilder {
+class az_logout_command_builder extends CommandBuilder<az_logout_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -347,7 +357,7 @@ class az_logout_command_builder extends CommandBuilder {
  *
  * @param {string} uri Request URL. If it doesn't start with a host, CLI assumes it as an Azure resource ID and prefixes it with the ARM endpoint of the current cloud shown by `az cloud show --query endpoints.resourceManager`. Common token {subscriptionId} will be replaced with the current subscription ID specified by `az account set`.
  */
-class az_rest_command_builder extends CommandBuilder {
+class az_rest_command_builder extends CommandBuilder<az_rest_command_result> {
     constructor(commandPath: string, uri: string) {
         super(commandPath);
         this.uri(uri)
@@ -416,7 +426,7 @@ class az_rest_command_builder extends CommandBuilder {
  * az self-test [--subscription]
  * ```
  */
-class az_self_test_command_builder extends CommandBuilder {
+class az_self_test_command_builder extends CommandBuilder<az_self_test_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -438,7 +448,7 @@ class az_self_test_command_builder extends CommandBuilder {
  *            [--yes]
  * ```
  */
-class az_upgrade_command_builder extends CommandBuilder {
+class az_upgrade_command_builder extends CommandBuilder<az_upgrade_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -470,7 +480,7 @@ class az_upgrade_command_builder extends CommandBuilder {
  * az version [--subscription]
  * ```
  */
-class az_version_command_builder extends CommandBuilder {
+class az_version_command_builder extends CommandBuilder<az_version_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }

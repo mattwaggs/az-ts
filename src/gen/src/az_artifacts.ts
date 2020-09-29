@@ -1,4 +1,6 @@
 import { CommandBuilder } from '../base';
+import { az_artifacts_universal_download_command_result } from './models/az_artifacts_universal_download_command_result'
+import { az_artifacts_universal_publish_command_result } from './models/az_artifacts_universal_publish_command_result'
 
 /** Manage Universal Packages. */
 export class az_artifacts_universal {
@@ -81,7 +83,7 @@ export class az_artifacts {
  * @param {string} path Directory to place the package contents.
  * @param {string} version Version of the package, e.g. 1.0.0.
  */
-class az_artifacts_universal_download_command_builder extends CommandBuilder {
+class az_artifacts_universal_download_command_builder extends CommandBuilder<az_artifacts_universal_download_command_result> {
     constructor(commandPath: string, feed: string, name: string, path: string, version: string) {
         super(commandPath);
         this.feed(feed)
@@ -173,7 +175,7 @@ class az_artifacts_universal_download_command_builder extends CommandBuilder {
  * @param {string} path Directory containing the package contents.
  * @param {string} version Version of the package, e.g. '1.0.0'.
  */
-class az_artifacts_universal_publish_command_builder extends CommandBuilder {
+class az_artifacts_universal_publish_command_builder extends CommandBuilder<az_artifacts_universal_publish_command_result> {
     constructor(commandPath: string, feed: string, name: string, path: string, version: string) {
         super(commandPath);
         this.feed(feed)

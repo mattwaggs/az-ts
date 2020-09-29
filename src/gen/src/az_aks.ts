@@ -1,4 +1,31 @@
 import { CommandBuilder } from '../base';
+import { az_aks_nodepool_add_command_result } from './models/az_aks_nodepool_add_command_result'
+import { az_aks_nodepool_delete_command_result } from './models/az_aks_nodepool_delete_command_result'
+import { az_aks_nodepool_get_upgrades_command_result } from './models/az_aks_nodepool_get_upgrades_command_result'
+import { az_aks_nodepool_list_command_result } from './models/az_aks_nodepool_list_command_result'
+import { az_aks_nodepool_scale_command_result } from './models/az_aks_nodepool_scale_command_result'
+import { az_aks_nodepool_show_command_result } from './models/az_aks_nodepool_show_command_result'
+import { az_aks_nodepool_update_command_result } from './models/az_aks_nodepool_update_command_result'
+import { az_aks_nodepool_upgrade_command_result } from './models/az_aks_nodepool_upgrade_command_result'
+import { az_aks_browse_command_result } from './models/az_aks_browse_command_result'
+import { az_aks_create_command_result } from './models/az_aks_create_command_result'
+import { az_aks_delete_command_result } from './models/az_aks_delete_command_result'
+import { az_aks_disable_addons_command_result } from './models/az_aks_disable_addons_command_result'
+import { az_aks_enable_addons_command_result } from './models/az_aks_enable_addons_command_result'
+import { az_aks_get_credentials_command_result } from './models/az_aks_get_credentials_command_result'
+import { az_aks_get_upgrades_command_result } from './models/az_aks_get_upgrades_command_result'
+import { az_aks_get_versions_command_result } from './models/az_aks_get_versions_command_result'
+import { az_aks_install_cli_command_result } from './models/az_aks_install_cli_command_result'
+import { az_aks_list_command_result } from './models/az_aks_list_command_result'
+import { az_aks_remove_dev_spaces_command_result } from './models/az_aks_remove_dev_spaces_command_result'
+import { az_aks_rotate_certs_command_result } from './models/az_aks_rotate_certs_command_result'
+import { az_aks_scale_command_result } from './models/az_aks_scale_command_result'
+import { az_aks_show_command_result } from './models/az_aks_show_command_result'
+import { az_aks_update_command_result } from './models/az_aks_update_command_result'
+import { az_aks_update_credentials_command_result } from './models/az_aks_update_credentials_command_result'
+import { az_aks_upgrade_command_result } from './models/az_aks_upgrade_command_result'
+import { az_aks_use_dev_spaces_command_result } from './models/az_aks_use_dev_spaces_command_result'
+import { az_aks_wait_command_result } from './models/az_aks_wait_command_result'
 
 /** Commands to manage node pools in Kubernetes kubernetes cluster. */
 export class az_aks_nodepool {
@@ -665,7 +692,7 @@ export class az_aks {
  * @param {string} name The node pool name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_nodepool_add_command_builder extends CommandBuilder {
+class az_aks_nodepool_add_command_builder extends CommandBuilder<az_aks_nodepool_add_command_result> {
     constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -816,7 +843,7 @@ class az_aks_nodepool_add_command_builder extends CommandBuilder {
  * @param {string} name The node pool name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_nodepool_delete_command_builder extends CommandBuilder {
+class az_aks_nodepool_delete_command_builder extends CommandBuilder<az_aks_nodepool_delete_command_result> {
     constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -870,7 +897,7 @@ class az_aks_nodepool_delete_command_builder extends CommandBuilder {
  * @param {string} nodepoolName Name of the node pool.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_nodepool_get_upgrades_command_builder extends CommandBuilder {
+class az_aks_nodepool_get_upgrades_command_builder extends CommandBuilder<az_aks_nodepool_get_upgrades_command_result> {
     constructor(commandPath: string, clusterName: string, nodepoolName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -917,7 +944,7 @@ class az_aks_nodepool_get_upgrades_command_builder extends CommandBuilder {
  * @param {string} clusterName The cluster name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_nodepool_list_command_builder extends CommandBuilder {
+class az_aks_nodepool_list_command_builder extends CommandBuilder<az_aks_nodepool_list_command_result> {
     constructor(commandPath: string, clusterName: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -966,7 +993,7 @@ class az_aks_nodepool_list_command_builder extends CommandBuilder {
  * @param {string} name The node pool name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_nodepool_scale_command_builder extends CommandBuilder {
+class az_aks_nodepool_scale_command_builder extends CommandBuilder<az_aks_nodepool_scale_command_result> {
     constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1027,7 +1054,7 @@ class az_aks_nodepool_scale_command_builder extends CommandBuilder {
  * @param {string} name The node pool name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_nodepool_show_command_builder extends CommandBuilder {
+class az_aks_nodepool_show_command_builder extends CommandBuilder<az_aks_nodepool_show_command_result> {
     constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1089,7 +1116,7 @@ class az_aks_nodepool_show_command_builder extends CommandBuilder {
  * @param {string} name The node pool name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_nodepool_update_command_builder extends CommandBuilder {
+class az_aks_nodepool_update_command_builder extends CommandBuilder<az_aks_nodepool_update_command_result> {
     constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1188,7 +1215,7 @@ class az_aks_nodepool_update_command_builder extends CommandBuilder {
  * @param {string} name The node pool name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_nodepool_upgrade_command_builder extends CommandBuilder {
+class az_aks_nodepool_upgrade_command_builder extends CommandBuilder<az_aks_nodepool_upgrade_command_result> {
     constructor(commandPath: string, clusterName: string, kubernetesVersion: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.clusterName(clusterName)
@@ -1250,7 +1277,7 @@ class az_aks_nodepool_upgrade_command_builder extends CommandBuilder {
  * @param {string} name Name of the managed cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_browse_command_builder extends CommandBuilder {
+class az_aks_browse_command_builder extends CommandBuilder<az_aks_browse_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1365,7 +1392,7 @@ class az_aks_browse_command_builder extends CommandBuilder {
  * @param {string} name Name of the managed cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_create_command_builder extends CommandBuilder {
+class az_aks_create_command_builder extends CommandBuilder<az_aks_create_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1754,7 +1781,7 @@ class az_aks_create_command_builder extends CommandBuilder {
  * @param {string} name Name of the managed cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_delete_command_builder extends CommandBuilder {
+class az_aks_delete_command_builder extends CommandBuilder<az_aks_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1808,7 +1835,7 @@ class az_aks_delete_command_builder extends CommandBuilder {
  * @param {string} name Name of the managed cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_disable_addons_command_builder extends CommandBuilder {
+class az_aks_disable_addons_command_builder extends CommandBuilder<az_aks_disable_addons_command_result> {
     constructor(commandPath: string, addons: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.addons(addons)
@@ -1865,7 +1892,7 @@ class az_aks_disable_addons_command_builder extends CommandBuilder {
  * @param {string} name Name of the managed cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_enable_addons_command_builder extends CommandBuilder {
+class az_aks_enable_addons_command_builder extends CommandBuilder<az_aks_enable_addons_command_result> {
     constructor(commandPath: string, addons: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.addons(addons)
@@ -1933,7 +1960,7 @@ class az_aks_enable_addons_command_builder extends CommandBuilder {
  * @param {string} name Name of the managed cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_get_credentials_command_builder extends CommandBuilder {
+class az_aks_get_credentials_command_builder extends CommandBuilder<az_aks_get_credentials_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -1996,7 +2023,7 @@ class az_aks_get_credentials_command_builder extends CommandBuilder {
  * @param {string} name Name of the managed cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_get_upgrades_command_builder extends CommandBuilder {
+class az_aks_get_upgrades_command_builder extends CommandBuilder<az_aks_get_upgrades_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2033,7 +2060,7 @@ class az_aks_get_upgrades_command_builder extends CommandBuilder {
  *
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
-class az_aks_get_versions_command_builder extends CommandBuilder {
+class az_aks_get_versions_command_builder extends CommandBuilder<az_aks_get_versions_command_result> {
     constructor(commandPath: string, location: string) {
         super(commandPath);
         this.location(location)
@@ -2064,7 +2091,7 @@ class az_aks_get_versions_command_builder extends CommandBuilder {
  *                    [--subscription]
  * ```
  */
-class az_aks_install_cli_command_builder extends CommandBuilder {
+class az_aks_install_cli_command_builder extends CommandBuilder<az_aks_install_cli_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2110,7 +2137,7 @@ class az_aks_install_cli_command_builder extends CommandBuilder {
  *             [--subscription]
  * ```
  */
-class az_aks_list_command_builder extends CommandBuilder {
+class az_aks_list_command_builder extends CommandBuilder<az_aks_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -2148,7 +2175,7 @@ class az_aks_list_command_builder extends CommandBuilder {
  * @param {string} name Name of the managed cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_remove_dev_spaces_command_builder extends CommandBuilder {
+class az_aks_remove_dev_spaces_command_builder extends CommandBuilder<az_aks_remove_dev_spaces_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2195,7 +2222,7 @@ class az_aks_remove_dev_spaces_command_builder extends CommandBuilder {
  * @param {string} name Name of the managed cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_rotate_certs_command_builder extends CommandBuilder {
+class az_aks_rotate_certs_command_builder extends CommandBuilder<az_aks_rotate_certs_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2250,7 +2277,7 @@ class az_aks_rotate_certs_command_builder extends CommandBuilder {
  * @param {string} nodeCount Number of nodes in the Kubernetes node pool.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_scale_command_builder extends CommandBuilder {
+class az_aks_scale_command_builder extends CommandBuilder<az_aks_scale_command_result> {
     constructor(commandPath: string, name: string, nodeCount: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2309,7 +2336,7 @@ class az_aks_scale_command_builder extends CommandBuilder {
  * @param {string} name Name of the managed cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_show_command_builder extends CommandBuilder {
+class az_aks_show_command_builder extends CommandBuilder<az_aks_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2373,7 +2400,7 @@ class az_aks_show_command_builder extends CommandBuilder {
  * @param {string} name Name of the managed cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_update_command_builder extends CommandBuilder {
+class az_aks_update_command_builder extends CommandBuilder<az_aks_update_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2535,7 +2562,7 @@ class az_aks_update_command_builder extends CommandBuilder {
  * @param {string} name Name of the managed cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_update_credentials_command_builder extends CommandBuilder {
+class az_aks_update_credentials_command_builder extends CommandBuilder<az_aks_update_credentials_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2633,7 +2660,7 @@ class az_aks_update_credentials_command_builder extends CommandBuilder {
  * @param {string} name Name of the managed cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_upgrade_command_builder extends CommandBuilder {
+class az_aks_upgrade_command_builder extends CommandBuilder<az_aks_upgrade_command_result> {
     constructor(commandPath: string, kubernetesVersion: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.kubernetesVersion(kubernetesVersion)
@@ -2701,7 +2728,7 @@ class az_aks_upgrade_command_builder extends CommandBuilder {
  * @param {string} name Name of the managed cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_use_dev_spaces_command_builder extends CommandBuilder {
+class az_aks_use_dev_spaces_command_builder extends CommandBuilder<az_aks_use_dev_spaces_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)
@@ -2771,7 +2798,7 @@ class az_aks_use_dev_spaces_command_builder extends CommandBuilder {
  * @param {string} name Name of the managed cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_aks_wait_command_builder extends CommandBuilder {
+class az_aks_wait_command_builder extends CommandBuilder<az_aks_wait_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string) {
         super(commandPath);
         this.name(name)

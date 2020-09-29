@@ -1,4 +1,8 @@
 import { CommandBuilder } from '../base';
+import { az_cache_delete_command_result } from './models/az_cache_delete_command_result'
+import { az_cache_list_command_result } from './models/az_cache_list_command_result'
+import { az_cache_purge_command_result } from './models/az_cache_purge_command_result'
+import { az_cache_show_command_result } from './models/az_cache_show_command_result'
 
 /** Commands to manage CLI objects cached using the `--defer` argument. */
 export class az_cache {
@@ -82,7 +86,7 @@ export class az_cache {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} resourceType The resource type.
  */
-class az_cache_delete_command_builder extends CommandBuilder {
+class az_cache_delete_command_builder extends CommandBuilder<az_cache_delete_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, resourceType: string) {
         super(commandPath);
         this.name(name)
@@ -124,7 +128,7 @@ class az_cache_delete_command_builder extends CommandBuilder {
  *               [--subscription]
  * ```
  */
-class az_cache_list_command_builder extends CommandBuilder {
+class az_cache_list_command_builder extends CommandBuilder<az_cache_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -150,7 +154,7 @@ class az_cache_list_command_builder extends CommandBuilder {
  * az cache purge [--subscription]
  * ```
  */
-class az_cache_purge_command_builder extends CommandBuilder {
+class az_cache_purge_command_builder extends CommandBuilder<az_cache_purge_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -178,7 +182,7 @@ class az_cache_purge_command_builder extends CommandBuilder {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} resourceType The resource type.
  */
-class az_cache_show_command_builder extends CommandBuilder {
+class az_cache_show_command_builder extends CommandBuilder<az_cache_show_command_result> {
     constructor(commandPath: string, name: string, resourceGroup: string, resourceType: string) {
         super(commandPath);
         this.name(name)

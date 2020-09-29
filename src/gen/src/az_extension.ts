@@ -1,4 +1,11 @@
 import { CommandBuilder } from '../base';
+import { az_extension_add_command_result } from './models/az_extension_add_command_result'
+import { az_extension_list_command_result } from './models/az_extension_list_command_result'
+import { az_extension_list_available_command_result } from './models/az_extension_list_available_command_result'
+import { az_extension_list_versions_command_result } from './models/az_extension_list_versions_command_result'
+import { az_extension_remove_command_result } from './models/az_extension_remove_command_result'
+import { az_extension_show_command_result } from './models/az_extension_show_command_result'
+import { az_extension_update_command_result } from './models/az_extension_update_command_result'
 
 /** Manage and update CLI extensions. */
 export class az_extension {
@@ -120,7 +127,7 @@ export class az_extension {
  *                  [--yes]
  * ```
  */
-class az_extension_add_command_builder extends CommandBuilder {
+class az_extension_add_command_builder extends CommandBuilder<az_extension_add_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -182,7 +189,7 @@ class az_extension_add_command_builder extends CommandBuilder {
  * az extension list [--query-examples]
  * ```
  */
-class az_extension_list_command_builder extends CommandBuilder {
+class az_extension_list_command_builder extends CommandBuilder<az_extension_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -202,7 +209,7 @@ class az_extension_list_command_builder extends CommandBuilder {
  * az extension list-available [--show-details]
  * ```
  */
-class az_extension_list_available_command_builder extends CommandBuilder {
+class az_extension_list_available_command_builder extends CommandBuilder<az_extension_list_available_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -224,7 +231,7 @@ class az_extension_list_available_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of extension.
  */
-class az_extension_list_versions_command_builder extends CommandBuilder {
+class az_extension_list_versions_command_builder extends CommandBuilder<az_extension_list_versions_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -247,7 +254,7 @@ class az_extension_list_versions_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of extension.
  */
-class az_extension_remove_command_builder extends CommandBuilder {
+class az_extension_remove_command_builder extends CommandBuilder<az_extension_remove_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -271,7 +278,7 @@ class az_extension_remove_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of extension.
  */
-class az_extension_show_command_builder extends CommandBuilder {
+class az_extension_show_command_builder extends CommandBuilder<az_extension_show_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -302,7 +309,7 @@ class az_extension_show_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of extension.
  */
-class az_extension_update_command_builder extends CommandBuilder {
+class az_extension_update_command_builder extends CommandBuilder<az_extension_update_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)

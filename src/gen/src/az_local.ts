@@ -1,4 +1,8 @@
 import { CommandBuilder } from '../base';
+import { az_local_context_delete_command_result } from './models/az_local_context_delete_command_result'
+import { az_local_context_off_command_result } from './models/az_local_context_off_command_result'
+import { az_local_context_on_command_result } from './models/az_local_context_on_command_result'
+import { az_local_context_show_command_result } from './models/az_local_context_show_command_result'
 
 /** Manage Local Context. */
 export class az_local_context {
@@ -71,7 +75,7 @@ export class az_local_context {
  *                         [--yes]
  * ```
  */
-class az_local_context_delete_command_builder extends CommandBuilder {
+class az_local_context_delete_command_builder extends CommandBuilder<az_local_context_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -121,7 +125,7 @@ class az_local_context_delete_command_builder extends CommandBuilder {
  * az local-context off [--subscription]
  * ```
  */
-class az_local_context_off_command_builder extends CommandBuilder {
+class az_local_context_off_command_builder extends CommandBuilder<az_local_context_off_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -141,7 +145,7 @@ class az_local_context_off_command_builder extends CommandBuilder {
  * az local-context on [--subscription]
  * ```
  */
-class az_local_context_on_command_builder extends CommandBuilder {
+class az_local_context_on_command_builder extends CommandBuilder<az_local_context_on_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -163,7 +167,7 @@ class az_local_context_on_command_builder extends CommandBuilder {
  *                       [--subscription]
  * ```
  */
-class az_local_context_show_command_builder extends CommandBuilder {
+class az_local_context_show_command_builder extends CommandBuilder<az_local_context_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }

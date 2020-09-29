@@ -1,4 +1,20 @@
 import { CommandBuilder } from '../base';
+import { az_sig_image_definition_create_command_result } from './models/az_sig_image_definition_create_command_result'
+import { az_sig_image_definition_delete_command_result } from './models/az_sig_image_definition_delete_command_result'
+import { az_sig_image_definition_list_command_result } from './models/az_sig_image_definition_list_command_result'
+import { az_sig_image_definition_show_command_result } from './models/az_sig_image_definition_show_command_result'
+import { az_sig_image_definition_update_command_result } from './models/az_sig_image_definition_update_command_result'
+import { az_sig_image_version_create_command_result } from './models/az_sig_image_version_create_command_result'
+import { az_sig_image_version_delete_command_result } from './models/az_sig_image_version_delete_command_result'
+import { az_sig_image_version_list_command_result } from './models/az_sig_image_version_list_command_result'
+import { az_sig_image_version_show_command_result } from './models/az_sig_image_version_show_command_result'
+import { az_sig_image_version_update_command_result } from './models/az_sig_image_version_update_command_result'
+import { az_sig_image_version_wait_command_result } from './models/az_sig_image_version_wait_command_result'
+import { az_sig_create_command_result } from './models/az_sig_create_command_result'
+import { az_sig_delete_command_result } from './models/az_sig_delete_command_result'
+import { az_sig_list_command_result } from './models/az_sig_list_command_result'
+import { az_sig_show_command_result } from './models/az_sig_show_command_result'
+import { az_sig_update_command_result } from './models/az_sig_update_command_result'
 
 /** Create an image definition. */
 export class az_sig_image_definition {
@@ -410,7 +426,7 @@ export class az_sig {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} sku Image sku.
  */
-class az_sig_image_definition_create_command_builder extends CommandBuilder {
+class az_sig_image_definition_create_command_builder extends CommandBuilder<az_sig_image_definition_create_command_result> {
     constructor(commandPath: string, galleryImageDefinition: string, galleryName: string, offer: string, osType: 'Linux' | 'Windows', publisher: string, resourceGroup: string, sku: string) {
         super(commandPath);
         this.galleryImageDefinition(galleryImageDefinition)
@@ -585,7 +601,7 @@ class az_sig_image_definition_create_command_builder extends CommandBuilder {
  *                                [--subscription]
  * ```
  */
-class az_sig_image_definition_delete_command_builder extends CommandBuilder {
+class az_sig_image_definition_delete_command_builder extends CommandBuilder<az_sig_image_definition_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -635,7 +651,7 @@ class az_sig_image_definition_delete_command_builder extends CommandBuilder {
  * @param {string} galleryName Gallery name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sig_image_definition_list_command_builder extends CommandBuilder {
+class az_sig_image_definition_list_command_builder extends CommandBuilder<az_sig_image_definition_list_command_result> {
     constructor(commandPath: string, galleryName: string, resourceGroup: string) {
         super(commandPath);
         this.galleryName(galleryName)
@@ -680,7 +696,7 @@ class az_sig_image_definition_list_command_builder extends CommandBuilder {
  *                              [--subscription]
  * ```
  */
-class az_sig_image_definition_show_command_builder extends CommandBuilder {
+class az_sig_image_definition_show_command_builder extends CommandBuilder<az_sig_image_definition_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -741,7 +757,7 @@ class az_sig_image_definition_show_command_builder extends CommandBuilder {
  * @param {string} galleryName Gallery name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sig_image_definition_update_command_builder extends CommandBuilder {
+class az_sig_image_definition_update_command_builder extends CommandBuilder<az_sig_image_definition_update_command_result> {
     constructor(commandPath: string, galleryImageDefinition: string, galleryName: string, resourceGroup: string) {
         super(commandPath);
         this.galleryImageDefinition(galleryImageDefinition)
@@ -828,7 +844,7 @@ class az_sig_image_definition_update_command_builder extends CommandBuilder {
  * @param {string} galleryName Gallery name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sig_image_version_create_command_builder extends CommandBuilder {
+class az_sig_image_version_create_command_builder extends CommandBuilder<az_sig_image_version_create_command_result> {
     constructor(commandPath: string, galleryImageDefinition: string, galleryImageVersion: string, galleryName: string, resourceGroup: string) {
         super(commandPath);
         this.galleryImageDefinition(galleryImageDefinition)
@@ -963,7 +979,7 @@ class az_sig_image_version_create_command_builder extends CommandBuilder {
  * @param {string} galleryName Gallery name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sig_image_version_delete_command_builder extends CommandBuilder {
+class az_sig_image_version_delete_command_builder extends CommandBuilder<az_sig_image_version_delete_command_result> {
     constructor(commandPath: string, galleryImageDefinition: string, galleryImageVersion: string, galleryName: string, resourceGroup: string) {
         super(commandPath);
         this.galleryImageDefinition(galleryImageDefinition)
@@ -1019,7 +1035,7 @@ class az_sig_image_version_delete_command_builder extends CommandBuilder {
  * @param {string} galleryName Gallery name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sig_image_version_list_command_builder extends CommandBuilder {
+class az_sig_image_version_list_command_builder extends CommandBuilder<az_sig_image_version_list_command_result> {
     constructor(commandPath: string, galleryImageDefinition: string, galleryName: string, resourceGroup: string) {
         super(commandPath);
         this.galleryImageDefinition(galleryImageDefinition)
@@ -1077,7 +1093,7 @@ class az_sig_image_version_list_command_builder extends CommandBuilder {
  * @param {string} galleryName Gallery name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sig_image_version_show_command_builder extends CommandBuilder {
+class az_sig_image_version_show_command_builder extends CommandBuilder<az_sig_image_version_show_command_result> {
     constructor(commandPath: string, galleryImageDefinition: string, galleryImageVersion: string, galleryName: string, resourceGroup: string) {
         super(commandPath);
         this.galleryImageDefinition(galleryImageDefinition)
@@ -1153,7 +1169,7 @@ class az_sig_image_version_show_command_builder extends CommandBuilder {
  * @param {string} galleryName Gallery name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sig_image_version_update_command_builder extends CommandBuilder {
+class az_sig_image_version_update_command_builder extends CommandBuilder<az_sig_image_version_update_command_result> {
     constructor(commandPath: string, galleryImageDefinition: string, galleryImageVersion: string, galleryName: string, resourceGroup: string) {
         super(commandPath);
         this.galleryImageDefinition(galleryImageDefinition)
@@ -1260,7 +1276,7 @@ class az_sig_image_version_update_command_builder extends CommandBuilder {
  * @param {string} galleryName Gallery name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sig_image_version_wait_command_builder extends CommandBuilder {
+class az_sig_image_version_wait_command_builder extends CommandBuilder<az_sig_image_version_wait_command_result> {
     constructor(commandPath: string, galleryImageDefinition: string, galleryImageVersion: string, galleryName: string, resourceGroup: string) {
         super(commandPath);
         this.galleryImageDefinition(galleryImageDefinition)
@@ -1364,7 +1380,7 @@ class az_sig_image_version_wait_command_builder extends CommandBuilder {
  * @param {string} galleryName Gallery name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sig_create_command_builder extends CommandBuilder {
+class az_sig_create_command_builder extends CommandBuilder<az_sig_create_command_result> {
     constructor(commandPath: string, galleryName: string, resourceGroup: string) {
         super(commandPath);
         this.galleryName(galleryName)
@@ -1421,7 +1437,7 @@ class az_sig_create_command_builder extends CommandBuilder {
  * @param {string} galleryName Gallery name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sig_delete_command_builder extends CommandBuilder {
+class az_sig_delete_command_builder extends CommandBuilder<az_sig_delete_command_result> {
     constructor(commandPath: string, galleryName: string, resourceGroup: string) {
         super(commandPath);
         this.galleryName(galleryName)
@@ -1457,7 +1473,7 @@ class az_sig_delete_command_builder extends CommandBuilder {
  *             [--subscription]
  * ```
  */
-class az_sig_list_command_builder extends CommandBuilder {
+class az_sig_list_command_builder extends CommandBuilder<az_sig_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1493,7 +1509,7 @@ class az_sig_list_command_builder extends CommandBuilder {
  *             [--subscription]
  * ```
  */
-class az_sig_show_command_builder extends CommandBuilder {
+class az_sig_show_command_builder extends CommandBuilder<az_sig_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -1546,7 +1562,7 @@ class az_sig_show_command_builder extends CommandBuilder {
  * @param {string} galleryName Gallery name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
-class az_sig_update_command_builder extends CommandBuilder {
+class az_sig_update_command_builder extends CommandBuilder<az_sig_update_command_result> {
     constructor(commandPath: string, galleryName: string, resourceGroup: string) {
         super(commandPath);
         this.galleryName(galleryName)

@@ -1,4 +1,11 @@
 import { CommandBuilder } from '../base';
+import { az_cloud_list_command_result } from './models/az_cloud_list_command_result'
+import { az_cloud_list_profiles_command_result } from './models/az_cloud_list_profiles_command_result'
+import { az_cloud_register_command_result } from './models/az_cloud_register_command_result'
+import { az_cloud_set_command_result } from './models/az_cloud_set_command_result'
+import { az_cloud_show_command_result } from './models/az_cloud_show_command_result'
+import { az_cloud_unregister_command_result } from './models/az_cloud_unregister_command_result'
+import { az_cloud_update_command_result } from './models/az_cloud_update_command_result'
 
 /** Manage registered Azure clouds. */
 export class az_cloud {
@@ -138,7 +145,7 @@ export class az_cloud {
  * az cloud list [--query-examples]
  * ```
  */
-class az_cloud_list_command_builder extends CommandBuilder {
+class az_cloud_list_command_builder extends CommandBuilder<az_cloud_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -159,7 +166,7 @@ class az_cloud_list_command_builder extends CommandBuilder {
  *                        [--show-all]
  * ```
  */
-class az_cloud_list_profiles_command_builder extends CommandBuilder {
+class az_cloud_list_profiles_command_builder extends CommandBuilder<az_cloud_list_profiles_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -204,7 +211,7 @@ class az_cloud_list_profiles_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of a registered cloud.
  */
-class az_cloud_register_command_builder extends CommandBuilder {
+class az_cloud_register_command_builder extends CommandBuilder<az_cloud_register_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -330,7 +337,7 @@ class az_cloud_register_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of a registered cloud.
  */
-class az_cloud_set_command_builder extends CommandBuilder {
+class az_cloud_set_command_builder extends CommandBuilder<az_cloud_set_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -358,7 +365,7 @@ class az_cloud_set_command_builder extends CommandBuilder {
  *               [--query-examples]
  * ```
  */
-class az_cloud_show_command_builder extends CommandBuilder {
+class az_cloud_show_command_builder extends CommandBuilder<az_cloud_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -386,7 +393,7 @@ class az_cloud_show_command_builder extends CommandBuilder {
  *
  * @param {string} name Name of a registered cloud.
  */
-class az_cloud_unregister_command_builder extends CommandBuilder {
+class az_cloud_unregister_command_builder extends CommandBuilder<az_cloud_unregister_command_result> {
     constructor(commandPath: string, name: string) {
         super(commandPath);
         this.name(name)
@@ -424,7 +431,7 @@ class az_cloud_unregister_command_builder extends CommandBuilder {
  *                 [--suffix-storage-endpoint]
  * ```
  */
-class az_cloud_update_command_builder extends CommandBuilder {
+class az_cloud_update_command_builder extends CommandBuilder<az_cloud_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }

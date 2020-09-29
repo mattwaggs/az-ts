@@ -3,12 +3,12 @@ import fs from "fs";
 import yaml from "yaml";
 
 export const extractNodesFromFilesInDirectory = (directory: string) => {
-  var nodes: any[] = [];
+  const nodes: any[] = [];
 
   fs.readdirSync(directory)
     .filter((p) => !p.endsWith("TOC.yml"))
     .forEach((p) => {
-      var fullPath = path.join(directory, p);
+      const fullPath = path.join(directory, p);
       const stats = fs.statSync(fullPath);
 
       // is yaml file

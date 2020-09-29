@@ -1,4 +1,9 @@
 import { CommandBuilder } from '../base';
+import { az_lock_create_command_result } from './models/az_lock_create_command_result'
+import { az_lock_delete_command_result } from './models/az_lock_delete_command_result'
+import { az_lock_list_command_result } from './models/az_lock_list_command_result'
+import { az_lock_show_command_result } from './models/az_lock_show_command_result'
+import { az_lock_update_command_result } from './models/az_lock_update_command_result'
 
 /** Manage Azure locks. */
 export class az_lock {
@@ -124,7 +129,7 @@ export class az_lock {
  * @param {'CanNotDelete' | 'ReadOnly'} lockType The type of lock restriction.
  * @param {string} name Name of the lock.
  */
-class az_lock_create_command_builder extends CommandBuilder {
+class az_lock_create_command_builder extends CommandBuilder<az_lock_create_command_result> {
     constructor(commandPath: string, lockType: 'CanNotDelete' | 'ReadOnly', name: string) {
         super(commandPath);
         this.lockType(lockType)
@@ -201,7 +206,7 @@ class az_lock_create_command_builder extends CommandBuilder {
  *                [--subscription]
  * ```
  */
-class az_lock_delete_command_builder extends CommandBuilder {
+class az_lock_delete_command_builder extends CommandBuilder<az_lock_delete_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -270,7 +275,7 @@ class az_lock_delete_command_builder extends CommandBuilder {
  *              [--subscription]
  * ```
  */
-class az_lock_list_command_builder extends CommandBuilder {
+class az_lock_list_command_builder extends CommandBuilder<az_lock_list_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -340,7 +345,7 @@ class az_lock_list_command_builder extends CommandBuilder {
  *              [--subscription]
  * ```
  */
-class az_lock_show_command_builder extends CommandBuilder {
+class az_lock_show_command_builder extends CommandBuilder<az_lock_show_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
@@ -417,7 +422,7 @@ class az_lock_show_command_builder extends CommandBuilder {
  *                [--subscription]
  * ```
  */
-class az_lock_update_command_builder extends CommandBuilder {
+class az_lock_update_command_builder extends CommandBuilder<az_lock_update_command_result> {
     constructor(commandPath: string) {
         super(commandPath);
     }
