@@ -20,7 +20,10 @@ class BuildCommand implements Command {
 
       console.log("done.\n");
       console.log("converting parsed yaml data to classes...");
-      generateClassesFromYaml(nodes);
+
+      // skip the the nodes starting "ext" these are extension nodes, which I haven't
+      // figured out how to support yet
+      generateClassesFromYaml(nodes.filter((n) => !n.uid.startsWith("ext")));
 
       console.log("done.\n");
     });
