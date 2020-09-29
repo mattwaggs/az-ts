@@ -31,14 +31,21 @@ export const generateClassesFromYaml = (yamlNodes: Node[]): void => {
   // az_webapp_create_etc_etc
   // we can group these by the first word after az
   // az_`webapp`_create_etc_etc => webapp
-  const groupIdentifierRegex = RegExp("^(?:az_)([a-zA-Z]+)_*.*$");
+  const groupIdentifierRegex = RegExp("^([a-zA-Z]+_[a-zA-Z-]+)_*.*$");
   const getGroupIdentifierName = (id: string) => {
-    return groupIdentifierRegex.exec(id)?.[1];
+    // return groupIdentifierRegex.exec(id)?.[1];
+    const results = groupIdentifierRegex.exec(id);
+    if (!results) {
+      return id;
+    }
+    return results[1];
   };
 
   const groups = _.groupBy(yamlNodes, (node) =>
     getGroupIdentifierName(node.uid)
   );
+
+  console.log(`groups: ${Object.keys(groups).length}`);
 
   const generatedFileNames = []; // tracking these since I need to import them later
 
@@ -57,6 +64,10 @@ export const generateClassesFromYaml = (yamlNodes: Node[]): void => {
   project.save();
 };
 
+const noDashes = (input: string) => {
+  return input.replace(/-/g, "_");
+};
+
 const generateProjectFileForGroupOfNodes = (
   project: Project,
   fileName: string,
@@ -71,7 +82,7 @@ const generateProjectFileForGroupOfNodes = (
         ...nodes
           .map((n) => n?.directCommands || [])
           .filter((n) => n?.length > 0)
-          .reduce((a, b) => a.concat(b))
+          .reduce((a, b) => a.concat(b), [])
           .map((commandNode) => {
             return generateCommandBuilderClass(commandNode);
           }),
@@ -87,20 +98,23 @@ const generateClassFromNode = (node: Node): StatementStructures => {
   const generatedClass: StatementStructures = {
     isExported: true,
     kind: StructureKind.Class,
-    name: node.uid,
+    name: noDashes(node.uid),
     docs: [node.summary],
-    methods: node.directCommands?.map(generateCommand) || [],
+    methods: node.directCommands?.map((dc) => generateCommand(node, dc)) || [],
   };
 
   return generatedClass;
 };
 
-const generateCommand = (node: DirectCommand): MethodDeclarationStructure => {
-  const commandBuilderClassName = `${node.uid}_command_builder`;
-  const commandPath = `"${node.name}"`;
+const generateCommand = (
+  parentNode: Node,
+  command: DirectCommand
+): MethodDeclarationStructure => {
+  const commandBuilderClassName = `${command.uid}_command_builder`;
+  const commandPath = `"${command.name}"`;
   let returnedCommandBuilder = `return new ${commandBuilderClassName}(${commandPath});`;
-  if (node.requiredParameters?.length > 0) {
-    const params = node.requiredParameters
+  if (command.requiredParameters?.length > 0) {
+    const params = command.requiredParameters
       .map((p) => {
         return _.camelCase(parameterNameToUseableName(p.name));
       })
@@ -111,11 +125,11 @@ const generateCommand = (node: DirectCommand): MethodDeclarationStructure => {
 
   return {
     kind: StructureKind.Method,
-    name: node.uid,
-    docs: [generateDocCommentsForCommand(node)],
+    name: noDashes(command.uid.replace(`${parentNode.uid}_`, "")),
+    docs: [generateDocCommentsForCommand(command)],
     isStatic: true,
     returnType: commandBuilderClassName,
-    parameters: node.requiredParameters?.map(generateParameters) || [],
+    parameters: command.requiredParameters?.map(generateParameters) || [],
     statements: [returnedCommandBuilder],
   };
 };
@@ -182,7 +196,7 @@ const generateCommandBuilderClass = (
 
   return {
     kind: StructureKind.Class,
-    name: className,
+    name: noDashes(className),
     extends: "CommandBuilder",
     docs: [generateDocCommentsForCommand(node)],
     ctors: [
@@ -197,7 +211,7 @@ const generateCommandBuilderClass = (
           ...(node.requiredParameters?.map(generateParameters) || []),
         ],
         statements: [
-          "super(commandParent);",
+          "super(commandPath);",
           ...(node.requiredParameters?.map((param) => {
             const paramName = _.camelCase(
               parameterNameToUseableName(param.name)
@@ -270,7 +284,12 @@ const buildMasterHeirarchy = (
     {
       statements: [
         ...filesToImport.map((fileName) => {
-          return `import '${fileName.replace(".ts", "")}';`;
+          const namespaceFromFileName = /(?:\.\/src\/)([a-z]*_?[a-z-]+)(?:\.ts)/i.exec(
+            fileName
+          )?.[1];
+          return `import * as _${_.camelCase(
+            namespaceFromFileName
+          )} from '${fileName.replace(".ts", "")}';`;
         }),
         ...recursivelyGetStatementsFromClassTree(classTree),
       ],
@@ -313,6 +332,20 @@ const generateNestedCommandStructure = (nodes: Node[]): any => {
     _.set(output, path, node.uid);
   });
 
+  // make sure nodes with nested nodes, have the _extends property set
+  // this will allow the ts generator code to extend a base command class
+  orderedNodes.forEach((node) => {
+    const path = node.uid.replace(/_/g, ".");
+    const thingAtPath = _.get(output, path);
+    if (typeof thingAtPath === "object") {
+      const extendsPath = path + "._extends";
+      _.set(output, extendsPath, node.uid);
+
+      const docsPath = path + "._docs";
+      _.set(output, docsPath, node.summary);
+    }
+  });
+
   // we have to output this in reverse order now, because if we start with the
   // root az class, its properties (webapp) will complain im using it before
   // the class is declared...
@@ -333,14 +366,10 @@ const generateNestedCommandStructure = (nodes: Node[]): any => {
   return output;
 };
 
-// TODO: THIS DOESN'T WORK YET
-// the root AZ Object isn't naming the properties correctly....
-// also it cannot find any of the imported stuff... maybe thats due to other errors?
 const recursivelyGetStatementsFromClassTree = (
   classTree: any,
   pathSoFar?: string
 ): ClassDeclarationStructure[] => {
-  console.log("recursively.... pathsofar = ", pathSoFar);
   return Object.keys(classTree)
     .map((key) => {
       const dependencies: ClassDeclarationStructure[] = [];
@@ -360,29 +389,40 @@ const recursivelyGetStatementsFromClassTree = (
           ? _.camelCase(pathSoFar + "_" + key)
           : key;
 
-        const properties = Object.keys(object);
+        const properties = Object.keys(object).filter(
+          (k) => !k.startsWith("_")
+        );
 
         const thisClass: ClassDeclarationStructure = {
+          isExported: !pathSoFar, // exported if root object
           kind: StructureKind.Class,
-          name: thisClassName,
+          name: noDashes(thisClassName),
           properties: properties.map((p) => {
             const initializer =
               typeof object[p] === "string"
-                ? object[p]
-                : pathSoFar
-                ? _.camelCase(thisClassName + "_" + p)
-                : p;
+                ? getImportedClassName(object[p])
+                : _.camelCase(thisClassName + "_" + p);
 
             const prop: PropertyDeclarationStructure = {
-              name: p,
+              name: _.camelCase(p),
               kind: StructureKind.Property,
               isStatic: true,
               initializer: initializer,
+              docs: object[p]?.["_docs"] ? [object[p]?.["_docs"]] : [],
             };
 
             return prop;
           }),
         };
+
+        if (object.hasOwnProperty("_extends")) {
+          thisClass.extends = getImportedClassName(object["_extends"]);
+        }
+
+        if (object.hasOwnProperty("_docs")) {
+          thisClass.docs = [object["_docs"]];
+        }
+
         return [...dependencies, thisClass];
       }
 
@@ -391,57 +431,19 @@ const recursivelyGetStatementsFromClassTree = (
     .reduce((a, b) => a.concat(b));
 };
 
-const old_recursivelyGetStatementsFromClassTree = (
-  classTree: any
-): ClassDeclarationStructure[] => {
-  // gross code becuase lame exception, cannot `.reduce` on empty array
-  const dependenciesPlural: ClassDeclarationStructure[][] =
-    classTree.map((c) =>
-      old_recursivelyGetStatementsFromClassTree(c.nestedClasses)
-    ) || [];
+const getImportedClassName = (className: string) => {
+  // if the name is az_webapp_create, we need to access it as:
+  // _az_webapp.az_webapp_create because '_az_webapp' is the namespace under which
+  // the module was imported from
+  const regex = RegExp(/^([a-z]+_[a-z-]+)_?(?:.*)$/, "i");
+  const results = regex.exec(className);
+  const namespace = results?.[1];
 
-  const dependencies: ClassDeclarationStructure[] =
-    dependenciesPlural?.length > 0
-      ? dependenciesPlural.reduce((a, b) => a.concat(b))
-      : [];
+  if (!namespace) {
+    console.log(`couldn't find namespace of ${className}`);
+  }
 
-  const currentClasses: ClassDeclarationStructure[] = classTree.map((c) => {
-    const exportedClass: ClassDeclarationStructure = {
-      kind: StructureKind.Class,
-      name: _.camelCase(c.path),
-      docs: [], // tbd
-      properties: [
-        ...c.commands.map((command) => {
-          const prop: PropertyDeclarationStructure = {
-            kind: StructureKind.Property,
-            name: _.camelCase(command.replace(c.path, "")),
-            isStatic: true,
-            docs: [], // tbd
-            initializer: command,
-          };
-
-          return prop;
-        }),
-        ...c.nestedClasses.map((nested) => {
-          const prop: PropertyDeclarationStructure = {
-            kind: StructureKind.Property,
-            name: _.camelCase(nested.path.replace(c.path, "")),
-            isStatic: true,
-            docs: [], // tbd
-            initializer: _.camelCase(nested.path),
-          };
-
-          return prop;
-        }),
-      ],
-    };
-
-    if (c.shouldExtend) {
-      exportedClass.extends = c.shouldExtend;
-    }
-
-    return exportedClass;
-  });
-
-  return dependencies.concat(currentClasses);
+  return namespace
+    ? `_${_.camelCase(namespace)}.${noDashes(className)}`
+    : `_${_.camelCase(className)}.${noDashes(className)}`;
 };
