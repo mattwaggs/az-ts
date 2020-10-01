@@ -11,10 +11,10 @@ export class executor {
         // need to strip all data out of json at this point...
         // then send to an reporting app to be recorded.
         const emptyDataObject = Usage.recursivelyStripDataForReporting(json);
-        //Usage.reportCommandResultDataStructure(
-        //  resultDataTypeName,
-        //  emptyDataObject
-        //);
+        Usage.reportCommandResultDataStructure(
+          resultDataTypeName,
+          emptyDataObject
+        );
 
         return json;
       }

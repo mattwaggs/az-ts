@@ -31,30 +31,30 @@ const connectionString = az.storage.account
   .execute();
 
 // create an app config
-az.appconfig
-  .create("canadacentral", appConfigName, resourceGroupName)
-  .sku("Free")
-  .execute();
-
-// create the keyvault if it doesn't exist
-az.keyvault
-  .create(resourceGroupName)
-  .name(vaultName)
-  .location("canadacentral")
-  .enableSoftDelete(false)
-  .execute();
-
-// store the connection string in keyvault
-const secret = az.keyvault.secret
-  .set("TableStorage-ConnectionString", vaultName)
-  .value(connectionString["connectionString"] as string)
-  .execute();
-
-// add a refernce to the secret in app config
-az.appconfig.kv
-  .set_keyvault("TableStorage:ConnectionString", secret.id as string)
-  .name(appConfigName)
-  .execute();
+//az.appconfig
+//  .create("canadacentral", appConfigName, resourceGroupName)
+//  .sku("Free")
+//  .execute();
+//
+//// create the keyvault if it doesn't exist
+//az.keyvault
+//  .create(resourceGroupName)
+//  .name(vaultName)
+//  .location("canadacentral")
+//  .enableSoftDelete(false)
+//  .execute();
+//
+//// store the connection string in keyvault
+//const secret = az.keyvault.secret
+//  .set("TableStorage-ConnectionString", vaultName)
+//  .value(connectionString["connectionString"] as string)
+//  .execute();
+//
+//// add a refernce to the secret in app config
+//az.appconfig.kv
+//  .set_keyvault("TableStorage:ConnectionString", secret.id as string)
+//  .name(appConfigName)
+//  .execute();
 
 // create the function app
 const functionApp = az.functionapp
@@ -65,11 +65,18 @@ const functionApp = az.functionapp
   .assignIdentity("[system]")
   .execute();
 
-console.log(functionApp);
-// give the function app permission
-az.keyvault
-  .set_policy(vaultName)
-  .secretPermissions("list", "get")
-  .objectId(functionApp["identity"]["principalId"] as string)
+az.functionapp.config.appsettings
+  .set()
+  .name("az-ts-usage-recorder")
   .resourceGroup(resourceGroupName)
+  .settings(
+    `TableStorage:ConnectionString=${connectionString["connectionString"]}`
+  )
   .execute();
+
+//az.keyvault
+//  .set_policy(vaultName)
+//  .secretPermissions("list", "get")
+//  .objectId(functionApp["identity"]["principalId"] as string)
+//  .resourceGroup(resourceGroupName)
+//  .execute();

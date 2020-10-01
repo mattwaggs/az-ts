@@ -15,7 +15,7 @@ class UsageReporting {
       {
         headers: {
           "x-functions-key":
-            "CHlOmMva2DJrbSd3q2ANZpbKLdJnEB78iUFbNJYtuWBVf9PML7fQXQ==",
+            "fkiJ4D3ziIyotS5Iakmf90NholacmYP4hQg1VVz0kIYA6pHP6ODu8g==",
         },
       }
     );
