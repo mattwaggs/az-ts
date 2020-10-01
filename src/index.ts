@@ -1,5 +1,5 @@
 import { options } from "./commands/baseCommand";
-import { Help, Build, BuildMeta, RunFile } from "./commands";
+import { Help, Build, BuildMeta, BuildDataTypes, RunFile } from "./commands";
 import tsNode from "ts-node";
 
 function main() {
@@ -9,6 +9,10 @@ function main() {
 
   if (options["build-meta"]) {
     return BuildMeta.execute(options);
+  }
+
+  if (options["build-datatypes"]) {
+    return BuildDataTypes.execute(options);
   }
 
   if (options.build) {

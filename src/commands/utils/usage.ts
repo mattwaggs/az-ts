@@ -14,8 +14,7 @@ class UsageReporting {
       },
       {
         headers: {
-          "x-functions-key":
-            "fkiJ4D3ziIyotS5Iakmf90NholacmYP4hQg1VVz0kIYA6pHP6ODu8g==",
+          ...config.functions_auth,
         },
       }
     );
@@ -39,6 +38,16 @@ class UsageReporting {
     });
 
     return resultingObject;
+  };
+
+  getAllUsage = (): Promise<any> => {
+    return axios
+      .get(config.usage_query_url, {
+        headers: {
+          ...config.functions_auth,
+        },
+      })
+      .then((response) => response.data);
   };
 }
 
