@@ -45,11 +45,3 @@ az.functionapp.config.appsettings
   .resourceGroup(resourceGroupName)
   .settings(`TableStorage:ConnectionString=${connStrings.connectionString}`)
   .execute();
-
-//az.keyvault
-//  .set_policy(vaultName)
-//  .secretPermissions("list", "get")
-//  .objectId(functionApp["identity"]["principalId"] as string)
-//  .resourceGroup(resourceGroupName)
-//  .execute();
-

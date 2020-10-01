@@ -1,8 +1,6 @@
 import { az } from "./src/gen/az";
 
-<<<<<<< HEAD
 const accounts = az.storage.account.list().execute();
-=======
 import crypto from "crypto";
 
 const uniqueId = crypto.randomBytes(4).toString("hex");
@@ -47,7 +45,9 @@ az.appservice.plan
 
 // webapps
 az.webapp.list().execute();
-az.webapp.create(webappName, appServicePlanName, resourceGroupName).execute();
+const webapp = az.webapp
+  .create(webappName, appServicePlanName, resourceGroupName)
+  .execute();
 
 az.webapp.list().execute();
 az.webapp.show().name(webappName).resourceGroup(resourceGroupName).execute();
@@ -328,8 +328,9 @@ az.role.definition.list().execute();
 
 az.role.assignment.list().execute();
 az.role.assignment
-  .create("myroledef")
+  .create("Owner")
   .assignee(newUser.objectId as any)
+  .scope(webapp.id)
   .execute();
 
 az.role.assignment.list().execute();
@@ -340,4 +341,4 @@ az.account.list().execute();
 const subscription = az.account.show().execute();
 az.account.set(subscription.id as any).execute();
 
->>>>>>> parent of 21bde2e... removed test file
+az.group.delete(resourceGroupName).yes("").execute();
