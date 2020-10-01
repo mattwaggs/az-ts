@@ -1,0 +1,556 @@
+[
+  {
+    "data": "{\"0\":{\"cloudName\":\"\",\"homeTenantId\":\"\",\"id\":\"\",\"isDefault\":false,\"managedByTenants\":{},\"name\":\"\",\"state\":\"\",\"tenantId\":\"\",\"user\":{\"name\":\"\",\"type\":\"\"}}}",
+    "partitionKey": "az_account_list_command_result",
+    "rowKey": "2518007091581760591",
+    "timestamp": "2020-10-01T22:34:01.8261009+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.8261009Z'\""
+  },
+  {
+    "data": "{\"environmentName\":\"\",\"homeTenantId\":\"\",\"id\":\"\",\"isDefault\":false,\"managedByTenants\":{},\"name\":\"\",\"state\":\"\",\"tenantId\":\"\",\"user\":{\"name\":\"\",\"type\":\"\"}}",
+    "partitionKey": "az_account_show_command_result",
+    "rowKey": "2518007091586141397",
+    "timestamp": "2020-10-01T22:34:01.3876597+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.3876597Z'\""
+  },
+  {
+    "data": "{\"deletionTimestamp\":null,\"description\":null,\"dirSyncEnabled\":null,\"displayName\":\"\",\"lastDirSyncTime\":null,\"mail\":null,\"mailEnabled\":false,\"mailNickname\":\"\",\"objectId\":\"\",\"objectType\":\"\",\"odata.metadata\":\"\",\"odata.type\":\"\",\"onPremisesDomainName\":null,\"onPremisesNetBiosName\":null,\"onPremisesSamAccountName\":null,\"onPremisesSecurityIdentifier\":null,\"provisioningErrors\":{},\"proxyAddresses\":{},\"securityEnabled\":false}",
+    "partitionKey": "az_ad_group_create_command_result",
+    "rowKey": "2518007091577616317",
+    "timestamp": "2020-10-01T22:34:02.2414796+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.2414796Z'\""
+  },
+  {
+    "data": "{\"deletionTimestamp\":null,\"description\":null,\"dirSyncEnabled\":null,\"displayName\":\"\",\"lastDirSyncTime\":null,\"mail\":null,\"mailEnabled\":false,\"mailNickname\":\"\",\"objectId\":\"\",\"objectType\":\"\",\"odata.metadata\":\"\",\"odata.type\":\"\",\"onPremisesDomainName\":null,\"onPremisesNetBiosName\":null,\"onPremisesSamAccountName\":null,\"onPremisesSecurityIdentifier\":null,\"provisioningErrors\":{},\"proxyAddresses\":{},\"securityEnabled\":false}",
+    "partitionKey": "az_ad_group_create_command_result",
+    "rowKey": "2518007091623248609",
+    "timestamp": "2020-10-01T22:33:57.7166295+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A57.7166295Z'\""
+  },
+  {
+    "data": "{\"0\":\"\"}",
+    "partitionKey": "az_ad_group_get_member_groups_command_result",
+    "rowKey": "2518007091577043055",
+    "timestamp": "2020-10-01T22:34:02.2984242+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.2984242Z'\""
+  },
+  {
+    "data": "{\"0\":{\"deletionTimestamp\":null,\"description\":null,\"dirSyncEnabled\":null,\"displayName\":\"\",\"lastDirSyncTime\":null,\"mail\":null,\"mailEnabled\":false,\"mailNickname\":\"\",\"objectId\":\"\",\"objectType\":\"\",\"odata.type\":\"\",\"onPremisesDomainName\":null,\"onPremisesNetBiosName\":null,\"onPremisesSamAccountName\":null,\"onPremisesSecurityIdentifier\":null,\"provisioningErrors\":{},\"proxyAddresses\":{},\"securityEnabled\":false},\"1\":{\"deletionTimestamp\":null,\"description\":null,\"dirSyncEnabled\":null,\"displayName\":\"\",\"lastDirSyncTime\":null,\"mail\":null,\"mailEnabled\":false,\"mailNickname\":\"\",\"objectId\":\"\",\"objectType\":\"\",\"odata.type\":\"\",\"onPremisesDomainName\":null,\"onPremisesNetBiosName\":null,\"onPremisesSamAccountName\":null,\"onPremisesSecurityIdentifier\":null,\"provisioningErrors\":{},\"proxyAddresses\":{},\"securityEnabled\":false}}",
+    "partitionKey": "az_ad_group_list_command_result",
+    "rowKey": "2518007091577539730",
+    "timestamp": "2020-10-01T22:34:02.248117+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.248117Z'\""
+  },
+  {
+    "data": "{}",
+    "partitionKey": "az_ad_group_list_command_result",
+    "rowKey": "2518007091619048745",
+    "timestamp": "2020-10-01T22:33:58.1042394+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A58.1042394Z'\""
+  },
+  {
+    "data": "{\"0\":{\"accountEnabled\":false,\"ageGroup\":null,\"assignedLicenses\":{},\"assignedPlans\":{},\"city\":null,\"companyName\":null,\"consentProvidedForMinor\":null,\"country\":null,\"createdDateTime\":\"\",\"creationType\":null,\"deletionTimestamp\":null,\"department\":null,\"dirSyncEnabled\":null,\"displayName\":\"\",\"employeeId\":null,\"facsimileTelephoneNumber\":null,\"givenName\":null,\"immutableId\":null,\"isCompromised\":null,\"jobTitle\":null,\"lastDirSyncTime\":null,\"legalAgeGroupClassification\":null,\"mail\":null,\"mailNickname\":\"\",\"mobile\":null,\"objectId\":\"\",\"objectType\":\"\",\"odata.type\":\"\",\"onPremisesDistinguishedName\":null,\"onPremisesSecurityIdentifier\":null,\"otherMails\":{},\"passwordPolicies\":null,\"passwordProfile\":null,\"physicalDeliveryOfficeName\":null,\"postalCode\":null,\"preferredLanguage\":null,\"provisionedPlans\":{},\"provisioningErrors\":{},\"proxyAddresses\":{},\"refreshTokensValidFromDateTime\":\"\",\"showInAddressList\":null,\"signInNames\":{},\"sipProxyAddress\":null,\"state\":null,\"streetAddress\":null,\"surname\":null,\"telephoneNumber\":null,\"thumbnailPhoto@odata.mediaEditLink\":\"\",\"usageLocation\":null,\"userIdentities\":{},\"userPrincipalName\":\"\",\"userState\":null,\"userStateChangedOn\":null,\"userType\":\"\"}}",
+    "partitionKey": "az_ad_group_member_list_command_result",
+    "rowKey": "2518007091583246414",
+    "timestamp": "2020-10-01T22:34:01.6770907+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.6770907Z'\""
+  },
+  {
+    "data": "{\"deletionTimestamp\":null,\"description\":null,\"dirSyncEnabled\":null,\"displayName\":\"\",\"lastDirSyncTime\":null,\"mail\":null,\"mailEnabled\":false,\"mailNickname\":\"\",\"objectId\":\"\",\"objectType\":\"\",\"odata.metadata\":\"\",\"odata.type\":\"\",\"onPremisesDomainName\":null,\"onPremisesNetBiosName\":null,\"onPremisesSamAccountName\":null,\"onPremisesSecurityIdentifier\":null,\"provisioningErrors\":{},\"proxyAddresses\":{},\"securityEnabled\":false}",
+    "partitionKey": "az_ad_group_show_command_result",
+    "rowKey": "2518007091622537171",
+    "timestamp": "2020-10-01T22:33:57.7497059+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A57.7497059Z'\""
+  },
+  {
+    "data": "{\"accountEnabled\":false,\"ageGroup\":null,\"assignedLicenses\":{},\"assignedPlans\":{},\"city\":null,\"companyName\":null,\"consentProvidedForMinor\":null,\"country\":null,\"createdDateTime\":null,\"creationType\":null,\"deletionTimestamp\":null,\"department\":null,\"dirSyncEnabled\":null,\"displayName\":\"\",\"employeeId\":null,\"facsimileTelephoneNumber\":null,\"givenName\":null,\"immutableId\":null,\"isCompromised\":null,\"jobTitle\":null,\"lastDirSyncTime\":null,\"legalAgeGroupClassification\":null,\"mail\":null,\"mailNickname\":\"\",\"mobile\":null,\"objectId\":\"\",\"objectType\":\"\",\"odata.metadata\":\"\",\"odata.type\":\"\",\"onPremisesDistinguishedName\":null,\"onPremisesSecurityIdentifier\":null,\"otherMails\":{},\"passwordPolicies\":null,\"passwordProfile\":null,\"physicalDeliveryOfficeName\":null,\"postalCode\":null,\"preferredLanguage\":null,\"provisionedPlans\":{},\"provisioningErrors\":{},\"proxyAddresses\":{},\"refreshTokensValidFromDateTime\":\"\",\"showInAddressList\":null,\"signInNames\":{},\"sipProxyAddress\":null,\"state\":null,\"streetAddress\":null,\"surname\":null,\"telephoneNumber\":null,\"thumbnailPhoto@odata.mediaEditLink\":\"\",\"usageLocation\":null,\"userIdentities\":{},\"userPrincipalName\":\"\",\"userState\":null,\"userStateChangedOn\":null,\"userType\":\"\"}",
+    "partitionKey": "az_ad_user_create_command_result",
+    "rowKey": "2518007091586727981",
+    "timestamp": "2020-10-01T22:34:01.3969845+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.3969845Z'\""
+  },
+  {
+    "data": "{}",
+    "partitionKey": "az_ad_user_get_member_groups_command_result",
+    "rowKey": "2518007091577447861",
+    "timestamp": "2020-10-01T22:34:02.2560437+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.2560437Z'\""
+  },
+  {
+    "data": "{\"0\":{\"displayName\":\"\",\"objectId\":\"\"},\"1\":{\"displayName\":\"\",\"objectId\":\"\"}}",
+    "partitionKey": "az_ad_user_get_member_groups_command_result",
+    "rowKey": "2518007091577629078",
+    "timestamp": "2020-10-01T22:34:02.2955645+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.2955645Z'\""
+  },
+  {
+    "data": "{\"0\":{\"accountEnabled\":false,\"ageGroup\":null,\"assignedLicenses\":{},\"assignedPlans\":{},\"city\":null,\"companyName\":null,\"consentProvidedForMinor\":null,\"country\":null,\"createdDateTime\":\"\",\"creationType\":null,\"deletionTimestamp\":null,\"department\":null,\"dirSyncEnabled\":null,\"displayName\":\"\",\"employeeId\":null,\"facsimileTelephoneNumber\":null,\"givenName\":null,\"immutableId\":null,\"isCompromised\":null,\"jobTitle\":null,\"lastDirSyncTime\":null,\"legalAgeGroupClassification\":null,\"mail\":null,\"mailNickname\":\"\",\"mobile\":null,\"objectId\":\"\",\"objectType\":\"\",\"odata.type\":\"\",\"onPremisesDistinguishedName\":null,\"onPremisesSecurityIdentifier\":null,\"otherMails\":{},\"passwordPolicies\":null,\"passwordProfile\":null,\"physicalDeliveryOfficeName\":null,\"postalCode\":null,\"preferredLanguage\":null,\"provisionedPlans\":{},\"provisioningErrors\":{},\"proxyAddresses\":{},\"refreshTokensValidFromDateTime\":\"\",\"showInAddressList\":null,\"signInNames\":{},\"sipProxyAddress\":null,\"state\":null,\"streetAddress\":null,\"surname\":null,\"telephoneNumber\":null,\"thumbnailPhoto@odata.mediaEditLink\":\"\",\"usageLocation\":null,\"userIdentities\":{},\"userPrincipalName\":\"\",\"userState\":null,\"userStateChangedOn\":null,\"userType\":\"\"},\"1\":{\"accountEnabled\":false,\"ageGroup\":null,\"assignedLicenses\":{},\"assignedPlans\":{},\"city\":null,\"companyName\":null,\"consentProvidedForMinor\":null,\"country\":null,\"createdDateTime\":\"\",\"creationType\":null,\"deletionTimestamp\":null,\"department\":null,\"dirSyncEnabled\":null,\"displayName\":\"\",\"employeeId\":null,\"facsimileTelephoneNumber\":null,\"givenName\":\"\",\"immutableId\":null,\"isCompromised\":null,\"jobTitle\":null,\"lastDirSyncTime\":null,\"legalAgeGroupClassification\":null,\"mail\":null,\"mailNickname\":\"\",\"mobile\":null,\"objectId\":\"\",\"objectType\":\"\",\"odata.type\":\"\",\"onPremisesDistinguishedName\":null,\"onPremisesSecurityIdentifier\":null,\"otherMails\":{\"0\":\"\"},\"passwordPolicies\":null,\"passwordProfile\":null,\"physicalDeliveryOfficeName\":null,\"postalCode\":null,\"preferredLanguage\":\"\",\"provisionedPlans\":{},\"provisioningErrors\":{},\"proxyAddresses\":{},\"refreshTokensValidFromDateTime\":\"\",\"showInAddressList\":null,\"signInNames\":{},\"sipProxyAddress\":null,\"state\":null,\"streetAddress\":null,\"surname\":\"\",\"telephoneNumber\":null,\"thumbnailPhoto@odata.mediaEditLink\":\"\",\"usageLocation\":\"\",\"userIdentities\":{},\"userPrincipalName\":\"\",\"userState\":null,\"userStateChangedOn\":null,\"userType\":\"\"},\"2\":{\"accountEnabled\":false,\"ageGroup\":null,\"assignedLicenses\":{},\"assignedPlans\":{},\"city\":null,\"companyName\":null,\"consentProvidedForMinor\":null,\"country\":null,\"createdDateTime\":\"\",\"creationType\":null,\"deletionTimestamp\":null,\"department\":null,\"dirSyncEnabled\":null,\"displayName\":\"\",\"employeeId\":null,\"facsimileTelephoneNumber\":null,\"givenName\":null,\"immutableId\":null,\"isCompromised\":null,\"jobTitle\":null,\"lastDirSyncTime\":null,\"legalAgeGroupClassification\":null,\"mail\":null,\"mailNickname\":\"\",\"mobile\":null,\"objectId\":\"\",\"objectType\":\"\",\"odata.type\":\"\",\"onPremisesDistinguishedName\":null,\"onPremisesSecurityIdentifier\":null,\"otherMails\":{},\"passwordPolicies\":null,\"passwordProfile\":null,\"physicalDeliveryOfficeName\":null,\"postalCode\":null,\"preferredLanguage\":null,\"provisionedPlans\":{},\"provisioningErrors\":{},\"proxyAddresses\":{},\"refreshTokensValidFromDateTime\":\"\",\"showInAddressList\":null,\"signInNames\":{},\"sipProxyAddress\":null,\"state\":null,\"streetAddress\":null,\"surname\":null,\"telephoneNumber\":null,\"thumbnailPhoto@odata.mediaEditLink\":\"\",\"usageLocation\":null,\"userIdentities\":{},\"userPrincipalName\":\"\",\"userState\":null,\"userStateChangedOn\":null,\"userType\":\"\"}}",
+    "partitionKey": "az_ad_user_list_command_result",
+    "rowKey": "2518007091577519491",
+    "timestamp": "2020-10-01T22:34:02.248737+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.248737Z'\""
+  },
+  {
+    "data": "{\"0\":{\"accountEnabled\":false,\"ageGroup\":null,\"assignedLicenses\":{},\"assignedPlans\":{},\"city\":null,\"companyName\":null,\"consentProvidedForMinor\":null,\"country\":null,\"createdDateTime\":\"\",\"creationType\":null,\"deletionTimestamp\":null,\"department\":null,\"dirSyncEnabled\":null,\"displayName\":\"\",\"employeeId\":null,\"facsimileTelephoneNumber\":null,\"givenName\":\"\",\"immutableId\":null,\"isCompromised\":null,\"jobTitle\":null,\"lastDirSyncTime\":null,\"legalAgeGroupClassification\":null,\"mail\":null,\"mailNickname\":\"\",\"mobile\":null,\"objectId\":\"\",\"objectType\":\"\",\"odata.type\":\"\",\"onPremisesDistinguishedName\":null,\"onPremisesSecurityIdentifier\":null,\"otherMails\":{\"0\":\"\"},\"passwordPolicies\":null,\"passwordProfile\":null,\"physicalDeliveryOfficeName\":null,\"postalCode\":null,\"preferredLanguage\":\"\",\"provisionedPlans\":{},\"provisioningErrors\":{},\"proxyAddresses\":{},\"refreshTokensValidFromDateTime\":\"\",\"showInAddressList\":null,\"signInNames\":{},\"sipProxyAddress\":null,\"state\":null,\"streetAddress\":null,\"surname\":\"\",\"telephoneNumber\":null,\"thumbnailPhoto@odata.mediaEditLink\":\"\",\"usageLocation\":\"\",\"userIdentities\":{},\"userPrincipalName\":\"\",\"userState\":null,\"userStateChangedOn\":null,\"userType\":\"\"},\"1\":{\"accountEnabled\":false,\"ageGroup\":null,\"assignedLicenses\":{},\"assignedPlans\":{},\"city\":null,\"companyName\":null,\"consentProvidedForMinor\":null,\"country\":null,\"createdDateTime\":\"\",\"creationType\":null,\"deletionTimestamp\":null,\"department\":null,\"dirSyncEnabled\":null,\"displayName\":\"\",\"employeeId\":null,\"facsimileTelephoneNumber\":null,\"givenName\":null,\"immutableId\":null,\"isCompromised\":null,\"jobTitle\":null,\"lastDirSyncTime\":null,\"legalAgeGroupClassification\":null,\"mail\":null,\"mailNickname\":\"\",\"mobile\":null,\"objectId\":\"\",\"objectType\":\"\",\"odata.type\":\"\",\"onPremisesDistinguishedName\":null,\"onPremisesSecurityIdentifier\":null,\"otherMails\":{},\"passwordPolicies\":null,\"passwordProfile\":null,\"physicalDeliveryOfficeName\":null,\"postalCode\":null,\"preferredLanguage\":null,\"provisionedPlans\":{},\"provisioningErrors\":{},\"proxyAddresses\":{},\"refreshTokensValidFromDateTime\":\"\",\"showInAddressList\":null,\"signInNames\":{},\"sipProxyAddress\":null,\"state\":null,\"streetAddress\":null,\"surname\":null,\"telephoneNumber\":null,\"thumbnailPhoto@odata.mediaEditLink\":\"\",\"usageLocation\":null,\"userIdentities\":{},\"userPrincipalName\":\"\",\"userState\":null,\"userStateChangedOn\":null,\"userType\":\"\"}}",
+    "partitionKey": "az_ad_user_list_command_result",
+    "rowKey": "2518007091579497765",
+    "timestamp": "2020-10-01T22:34:02.0511098+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.0511098Z'\""
+  },
+  {
+    "data": "{\"accountEnabled\":false,\"ageGroup\":null,\"assignedLicenses\":{},\"assignedPlans\":{},\"city\":null,\"companyName\":null,\"consentProvidedForMinor\":null,\"country\":null,\"createdDateTime\":\"\",\"creationType\":null,\"deletionTimestamp\":null,\"department\":null,\"dirSyncEnabled\":null,\"displayName\":\"\",\"employeeId\":null,\"facsimileTelephoneNumber\":null,\"givenName\":null,\"immutableId\":null,\"isCompromised\":null,\"jobTitle\":null,\"lastDirSyncTime\":null,\"legalAgeGroupClassification\":null,\"mail\":null,\"mailNickname\":\"\",\"mobile\":null,\"objectId\":\"\",\"objectType\":\"\",\"odata.metadata\":\"\",\"odata.type\":\"\",\"onPremisesDistinguishedName\":null,\"onPremisesSecurityIdentifier\":null,\"otherMails\":{},\"passwordPolicies\":null,\"passwordProfile\":null,\"physicalDeliveryOfficeName\":null,\"postalCode\":null,\"preferredLanguage\":null,\"provisionedPlans\":{},\"provisioningErrors\":{},\"proxyAddresses\":{},\"refreshTokensValidFromDateTime\":\"\",\"showInAddressList\":null,\"signInNames\":{},\"sipProxyAddress\":null,\"state\":null,\"streetAddress\":null,\"surname\":null,\"telephoneNumber\":null,\"thumbnailPhoto@odata.mediaEditLink\":\"\",\"usageLocation\":null,\"userIdentities\":{},\"userPrincipalName\":\"\",\"userState\":null,\"userStateChangedOn\":null,\"userType\":\"\"}",
+    "partitionKey": "az_ad_user_show_command_result",
+    "rowKey": "2518007091583243892",
+    "timestamp": "2020-10-01T22:34:01.6792906+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.6792906Z'\""
+  },
+  {
+    "data": "{\"0\":{\"creationDate\":\"\",\"encryption\":{\"keyVaultProperties\":null},\"endpoint\":\"\",\"id\":\"\",\"identity\":null,\"location\":\"\",\"name\":\"\",\"privateEndpointConnections\":null,\"provisioningState\":\"\",\"publicNetworkAccess\":null,\"resourceGroup\":\"\",\"sku\":{\"name\":\"\"},\"tags\":{},\"type\":\"\"}}",
+    "partitionKey": "az_appconfig_list_command_result",
+    "rowKey": "2518007091578316443",
+    "timestamp": "2020-10-01T22:34:02.1694157+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.1694157Z'\""
+  },
+  {
+    "data": "{\"0\":{\"creationDate\":\"\",\"encryption\":{\"keyVaultProperties\":null},\"endpoint\":\"\",\"id\":\"\",\"identity\":null,\"location\":\"\",\"name\":\"\",\"privateEndpointConnections\":null,\"provisioningState\":\"\",\"publicNetworkAccess\":null,\"resourceGroup\":\"\",\"sku\":{\"name\":\"\"},\"tags\":{},\"type\":\"\"}}",
+    "partitionKey": "az_appconfig_list_command_result",
+    "rowKey": "2518007091618982328",
+    "timestamp": "2020-10-01T22:33:58.1056168+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A58.1056168Z'\""
+  },
+  {
+    "data": "{\"freeOfferExpirationTime\":null,\"geoRegion\":\"\",\"hostingEnvironmentProfile\":null,\"hyperV\":false,\"id\":\"\",\"isSpot\":false,\"isXenon\":false,\"kind\":\"\",\"location\":\"\",\"maximumElasticWorkerCount\":0,\"maximumNumberOfWorkers\":0,\"name\":\"\",\"numberOfSites\":0,\"perSiteScaling\":false,\"provisioningState\":\"\",\"reserved\":false,\"resourceGroup\":\"\",\"sku\":{\"capabilities\":null,\"capacity\":0,\"family\":\"\",\"locations\":null,\"name\":\"\",\"size\":\"\",\"skuCapacity\":null,\"tier\":\"\"},\"spotExpirationTime\":null,\"status\":\"\",\"subscription\":\"\",\"tags\":null,\"targetWorkerCount\":0,\"targetWorkerSizeId\":0,\"type\":\"\",\"workerTierName\":null}",
+    "partitionKey": "az_appservice_plan_create_command_result",
+    "rowKey": "2518007091582471416",
+    "timestamp": "2020-10-01T22:34:01.7548683+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.7548683Z'\""
+  },
+  {
+    "data": "{\"freeOfferExpirationTime\":null,\"geoRegion\":\"\",\"hostingEnvironmentProfile\":null,\"hyperV\":false,\"id\":\"\",\"isSpot\":false,\"isXenon\":false,\"kind\":\"\",\"location\":\"\",\"maximumElasticWorkerCount\":0,\"maximumNumberOfWorkers\":0,\"name\":\"\",\"numberOfSites\":0,\"perSiteScaling\":false,\"provisioningState\":\"\",\"reserved\":false,\"resourceGroup\":\"\",\"sku\":{\"capabilities\":null,\"capacity\":0,\"family\":\"\",\"locations\":null,\"name\":\"\",\"size\":\"\",\"skuCapacity\":null,\"tier\":\"\"},\"spotExpirationTime\":null,\"status\":\"\",\"subscription\":\"\",\"tags\":null,\"targetWorkerCount\":0,\"targetWorkerSizeId\":0,\"type\":\"\",\"workerTierName\":null}",
+    "partitionKey": "az_appservice_plan_show_command_result",
+    "rowKey": "2518007091580374631",
+    "timestamp": "2020-10-01T22:34:01.9639654+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.9639654Z'\""
+  },
+  {
+    "data": "{\"freeOfferExpirationTime\":null,\"geoRegion\":\"\",\"hostingEnvironmentProfile\":null,\"hyperV\":false,\"id\":\"\",\"isSpot\":false,\"isXenon\":false,\"kind\":\"\",\"location\":\"\",\"maximumElasticWorkerCount\":0,\"maximumNumberOfWorkers\":0,\"name\":\"\",\"numberOfSites\":0,\"perSiteScaling\":false,\"provisioningState\":null,\"reserved\":false,\"resourceGroup\":\"\",\"sku\":{\"capabilities\":null,\"capacity\":0,\"family\":null,\"locations\":null,\"name\":\"\",\"size\":\"\",\"skuCapacity\":null,\"tier\":\"\"},\"spotExpirationTime\":null,\"status\":\"\",\"subscription\":\"\",\"tags\":null,\"targetWorkerCount\":0,\"targetWorkerSizeId\":0,\"type\":\"\",\"workerTierName\":null}",
+    "partitionKey": "az_appservice_plan_update_command_result",
+    "rowKey": "2518007091587245450",
+    "timestamp": "2020-10-01T22:34:01.7217619+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.7217619Z'\""
+  },
+  {
+    "data": "{\"id\":\"\",\"location\":\"\",\"name\":\"\",\"resourceGroup\":\"\",\"rights\":{\"0\":\"\"},\"type\":\"\"}",
+    "partitionKey": "az_eventhubs_eventhub_authorization_rule_create_command_result",
+    "rowKey": "2518007091583457195",
+    "timestamp": "2020-10-01T22:34:01.6585515+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.6585515Z'\""
+  },
+  {
+    "data": "{}",
+    "partitionKey": "az_eventhubs_eventhub_authorization_rule_list_command_result",
+    "rowKey": "2518007091582453871",
+    "timestamp": "2020-10-01T22:34:01.755286+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.755286Z'\""
+  },
+  {
+    "data": "{\"0\":{\"id\":\"\",\"location\":\"\",\"name\":\"\",\"resourceGroup\":\"\",\"rights\":{\"0\":\"\"},\"type\":\"\"}}",
+    "partitionKey": "az_eventhubs_eventhub_authorization_rule_list_command_result",
+    "rowKey": "2518007091586729010",
+    "timestamp": "2020-10-01T22:34:01.3884949+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.3884949Z'\""
+  },
+  {
+    "data": "{\"id\":\"\",\"location\":\"\",\"name\":\"\",\"resourceGroup\":\"\",\"rights\":{\"0\":\"\"},\"type\":\"\"}",
+    "partitionKey": "az_eventhubs_eventhub_authorization_rule_show_command_result",
+    "rowKey": "2518007091580019973",
+    "timestamp": "2020-10-01T22:34:01.9999007+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.9999007Z'\""
+  },
+  {
+    "data": "{\"captureDescription\":null,\"createdAt\":\"\",\"id\":\"\",\"location\":\"\",\"messageRetentionInDays\":0,\"name\":\"\",\"partitionCount\":0,\"partitionIds\":{\"0\":\"\",\"1\":\"\",\"2\":\"\",\"3\":\"\"},\"resourceGroup\":\"\",\"status\":\"\",\"type\":\"\",\"updatedAt\":\"\"}",
+    "partitionKey": "az_eventhubs_eventhub_create_command_result",
+    "rowKey": "2518007091622332496",
+    "timestamp": "2020-10-01T22:33:57.7690408+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A57.7690408Z'\""
+  },
+  {
+    "data": "{}",
+    "partitionKey": "az_eventhubs_eventhub_list_command_result",
+    "rowKey": "2518007091578504276",
+    "timestamp": "2020-10-01T22:34:02.1584503+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.1584503Z'\""
+  },
+  {
+    "data": "{\"0\":{\"captureDescription\":null,\"createdAt\":\"\",\"id\":\"\",\"location\":\"\",\"messageRetentionInDays\":0,\"name\":\"\",\"partitionCount\":0,\"partitionIds\":{\"0\":\"\",\"1\":\"\",\"2\":\"\",\"3\":\"\"},\"resourceGroup\":\"\",\"status\":\"\",\"type\":\"\",\"updatedAt\":\"\"}}",
+    "partitionKey": "az_eventhubs_eventhub_list_command_result",
+    "rowKey": "2518007091579725230",
+    "timestamp": "2020-10-01T22:34:02.0312454+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.0312454Z'\""
+  },
+  {
+    "data": "{\"captureDescription\":null,\"createdAt\":\"\",\"id\":\"\",\"location\":\"\",\"messageRetentionInDays\":0,\"name\":\"\",\"partitionCount\":0,\"partitionIds\":{\"0\":\"\",\"1\":\"\",\"2\":\"\",\"3\":\"\"},\"resourceGroup\":\"\",\"status\":\"\",\"type\":\"\",\"updatedAt\":\"\"}",
+    "partitionKey": "az_eventhubs_eventhub_show_command_result",
+    "rowKey": "2518007091583250867",
+    "timestamp": "2020-10-01T22:34:01.6768679+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.6768679Z'\""
+  },
+  {
+    "data": "{\"clusterArmId\":null,\"createdAt\":\"\",\"encryption\":null,\"id\":\"\",\"identity\":null,\"isAutoInflateEnabled\":false,\"kafkaEnabled\":false,\"location\":\"\",\"maximumThroughputUnits\":0,\"metricId\":\"\",\"name\":\"\",\"provisioningState\":\"\",\"resourceGroup\":\"\",\"serviceBusEndpoint\":\"\",\"sku\":{\"capacity\":0,\"name\":\"\",\"tier\":\"\"},\"tags\":{},\"type\":\"\",\"updatedAt\":\"\",\"zoneRedundant\":false}",
+    "partitionKey": "az_eventhubs_namespace_create_command_result",
+    "rowKey": "2518007091622526835",
+    "timestamp": "2020-10-01T22:33:57.7484827+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A57.7484827Z'\""
+  },
+  {
+    "data": "{\"0\":{\"clusterArmId\":null,\"createdAt\":\"\",\"encryption\":null,\"id\":\"\",\"identity\":null,\"isAutoInflateEnabled\":false,\"kafkaEnabled\":false,\"location\":\"\",\"maximumThroughputUnits\":0,\"metricId\":\"\",\"name\":\"\",\"provisioningState\":\"\",\"resourceGroup\":\"\",\"serviceBusEndpoint\":\"\",\"sku\":{\"capacity\":0,\"name\":\"\",\"tier\":\"\"},\"tags\":{},\"type\":\"\",\"updatedAt\":\"\",\"zoneRedundant\":false},\"1\":{\"clusterArmId\":null,\"createdAt\":\"\",\"encryption\":null,\"id\":\"\",\"identity\":null,\"isAutoInflateEnabled\":false,\"kafkaEnabled\":false,\"location\":\"\",\"maximumThroughputUnits\":0,\"metricId\":\"\",\"name\":\"\",\"provisioningState\":\"\",\"resourceGroup\":\"\",\"serviceBusEndpoint\":\"\",\"sku\":{\"capacity\":0,\"name\":\"\",\"tier\":\"\"},\"tags\":{},\"type\":\"\",\"updatedAt\":\"\",\"zoneRedundant\":false}}",
+    "partitionKey": "az_eventhubs_namespace_list_command_result",
+    "rowKey": "2518007091582460258",
+    "timestamp": "2020-10-01T22:34:01.7552752+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.7552752Z'\""
+  },
+  {
+    "data": "{\"0\":{\"clusterArmId\":null,\"createdAt\":\"\",\"encryption\":null,\"id\":\"\",\"identity\":null,\"isAutoInflateEnabled\":false,\"kafkaEnabled\":false,\"location\":\"\",\"maximumThroughputUnits\":0,\"metricId\":\"\",\"name\":\"\",\"provisioningState\":\"\",\"resourceGroup\":\"\",\"serviceBusEndpoint\":\"\",\"sku\":{\"capacity\":0,\"name\":\"\",\"tier\":\"\"},\"tags\":{},\"type\":\"\",\"updatedAt\":\"\",\"zoneRedundant\":false}}",
+    "partitionKey": "az_eventhubs_namespace_list_command_result",
+    "rowKey": "2518007091622321002",
+    "timestamp": "2020-10-01T22:33:57.7758526+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A57.7758526Z'\""
+  },
+  {
+    "data": "{\"clusterArmId\":null,\"createdAt\":\"\",\"encryption\":null,\"id\":\"\",\"identity\":null,\"isAutoInflateEnabled\":false,\"kafkaEnabled\":false,\"location\":\"\",\"maximumThroughputUnits\":0,\"metricId\":\"\",\"name\":\"\",\"provisioningState\":\"\",\"resourceGroup\":\"\",\"serviceBusEndpoint\":\"\",\"sku\":{\"capacity\":0,\"name\":\"\",\"tier\":\"\"},\"tags\":{},\"type\":\"\",\"updatedAt\":\"\",\"zoneRedundant\":false}",
+    "partitionKey": "az_eventhubs_namespace_show_command_result",
+    "rowKey": "2518007091587355209",
+    "timestamp": "2020-10-01T22:34:01.6867579+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.6867579Z'\""
+  },
+  {
+    "data": "{\"0\":{\"name\":\"\",\"slotSetting\":false,\"value\":\"\"},\"1\":{\"name\":\"\",\"slotSetting\":false,\"value\":\"\"},\"2\":{\"name\":\"\",\"slotSetting\":false,\"value\":\"\"},\"3\":{\"name\":\"\",\"slotSetting\":false,\"value\":\"\"},\"4\":{\"name\":\"\",\"slotSetting\":false,\"value\":\"\"},\"5\":{\"name\":\"\",\"slotSetting\":false,\"value\":\"\"},\"6\":{\"name\":\"\",\"slotSetting\":false,\"value\":\"\"}}",
+    "partitionKey": "az_functionapp_config_appsettings_set_command_result",
+    "rowKey": "2518007331646476164",
+    "timestamp": "2020-10-01T15:53:55.3824004+00:00",
+    "eTag": "W/\"datetime'2020-10-01T15%3A53%3A55.3824004Z'\""
+  },
+  {
+    "data": "{\"availabilityState\":\"\",\"clientAffinityEnabled\":false,\"clientCertEnabled\":false,\"clientCertExclusionPaths\":null,\"cloningInfo\":null,\"containerSize\":0,\"dailyMemoryTimeQuota\":0,\"defaultHostName\":\"\",\"enabled\":false,\"enabledHostNames\":{\"0\":\"\",\"1\":\"\"},\"hostNameSslStates\":{\"0\":{\"hostType\":\"\",\"ipBasedSslResult\":null,\"ipBasedSslState\":\"\",\"name\":\"\",\"sslState\":\"\",\"thumbprint\":null,\"toUpdate\":null,\"toUpdateIpBasedSsl\":null,\"virtualIp\":null},\"1\":{\"hostType\":\"\",\"ipBasedSslResult\":null,\"ipBasedSslState\":\"\",\"name\":\"\",\"sslState\":\"\",\"thumbprint\":null,\"toUpdate\":null,\"toUpdateIpBasedSsl\":null,\"virtualIp\":null}},\"hostNames\":{\"0\":\"\"},\"hostNamesDisabled\":false,\"hostingEnvironmentProfile\":null,\"httpsOnly\":false,\"hyperV\":false,\"id\":\"\",\"identity\":{\"principalId\":\"\",\"tenantId\":\"\",\"type\":\"\",\"userAssignedIdentities\":null},\"inProgressOperationId\":null,\"isDefaultContainer\":null,\"isXenon\":false,\"kind\":\"\",\"lastModifiedTimeUtc\":\"\",\"location\":\"\",\"maxNumberOfWorkers\":null,\"name\":\"\",\"outboundIpAddresses\":\"\",\"possibleOutboundIpAddresses\":\"\",\"redundancyMode\":\"\",\"repositorySiteName\":\"\",\"reserved\":false,\"resourceGroup\":\"\",\"scmSiteAlsoStopped\":false,\"serverFarmId\":\"\",\"siteConfig\":{\"acrUseManagedIdentityCreds\":false,\"acrUserManagedIdentityID\":null,\"alwaysOn\":null,\"apiDefinition\":null,\"apiManagementConfig\":null,\"appCommandLine\":null,\"appSettings\":null,\"autoHealEnabled\":null,\"autoHealRules\":null,\"autoSwapSlotName\":null,\"azureMonitorLogCategories\":null,\"azureStorageAccounts\":null,\"connectionStrings\":null,\"cors\":null,\"customAppPoolIdentityAdminState\":null,\"customAppPoolIdentityTenantState\":null,\"defaultDocuments\":null,\"detailedErrorLoggingEnabled\":null,\"documentRoot\":null,\"experiments\":null,\"fileChangeAuditEnabled\":null,\"ftpsState\":null,\"functionAppScaleLimit\":null,\"functionsRuntimeScaleMonitoringEnabled\":null,\"handlerMappings\":null,\"healthCheckPath\":null,\"http20Enabled\":null,\"httpLoggingEnabled\":null,\"ipSecurityRestrictions\":{\"0\":{\"action\":\"\",\"description\":\"\",\"ipAddress\":\"\",\"name\":\"\",\"priority\":0,\"subnetMask\":null,\"subnetTrafficTag\":null,\"tag\":null,\"vnetSubnetResourceId\":null,\"vnetTrafficTag\":null}},\"javaContainer\":null,\"javaContainerVersion\":null,\"javaVersion\":null,\"limits\":null,\"linuxFxVersion\":null,\"loadBalancing\":null,\"localMySqlEnabled\":null,\"logsDirectorySizeLimit\":null,\"machineKey\":null,\"managedPipelineMode\":null,\"managedServiceIdentityId\":null,\"metadata\":null,\"minTlsVersion\":null,\"minimumElasticInstanceCount\":0,\"netFrameworkVersion\":null,\"nodeVersion\":null,\"numberOfWorkers\":null,\"phpVersion\":null,\"powerShellVersion\":null,\"preWarmedInstanceCount\":null,\"publishingPassword\":null,\"publishingUsername\":null,\"push\":null,\"pythonVersion\":null,\"remoteDebuggingEnabled\":null,\"remoteDebuggingVersion\":null,\"requestTracingEnabled\":null,\"requestTracingExpirationTime\":null,\"routingRules\":null,\"runtimeADUser\":null,\"runtimeADUserPassword\":null,\"scmIpSecurityRestrictions\":{\"0\":{\"action\":\"\",\"description\":\"\",\"ipAddress\":\"\",\"name\":\"\",\"priority\":0,\"subnetMask\":null,\"subnetTrafficTag\":null,\"tag\":null,\"vnetSubnetResourceId\":null,\"vnetTrafficTag\":null}},\"scmIpSecurityRestrictionsUseMain\":null,\"scmMinTlsVersion\":null,\"scmType\":null,\"tracingOptions\":null,\"use32BitWorkerProcess\":null,\"virtualApplications\":null,\"vnetName\":null,\"vnetRouteAllEnabled\":null,\"webSocketsEnabled\":null,\"websiteTimeZone\":null,\"winAuthAdminState\":null,\"winAuthTenantState\":null,\"windowsFxVersion\":null,\"xManagedServiceIdentityId\":null},\"slotSwapStatus\":null,\"state\":\"\",\"suspendedTill\":null,\"tags\":null,\"targetSwapSlot\":null,\"trafficManagerHostNames\":null,\"type\":\"\",\"usageState\":\"\"}",
+    "partitionKey": "az_functionapp_create_command_result",
+    "rowKey": "2518007331641250249",
+    "timestamp": "2020-10-01T15:53:55.9152653+00:00",
+    "eTag": "W/\"datetime'2020-10-01T15%3A53%3A55.9152653Z'\""
+  },
+  {
+    "data": "{\"id\":\"\",\"location\":\"\",\"managedBy\":null,\"name\":\"\",\"properties\":{\"provisioningState\":\"\"},\"tags\":null,\"type\":\"\"}",
+    "partitionKey": "az_group_create_command_result",
+    "rowKey": "2518007091576962154",
+    "timestamp": "2020-10-01T22:34:02.3059675+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.3059675Z'\""
+  },
+  {
+    "data": "{\"id\":\"\",\"location\":\"\",\"managedBy\":null,\"name\":\"\",\"properties\":{\"provisioningState\":\"\"},\"tags\":null,\"type\":\"\"}",
+    "partitionKey": "az_group_create_command_result",
+    "rowKey": "2518007331557739668",
+    "timestamp": "2020-10-01T15:54:04.5176941+00:00",
+    "eTag": "W/\"datetime'2020-10-01T15%3A54%3A04.5176941Z'\""
+  },
+  {
+    "data": "{\"id\":\"\",\"location\":\"\",\"managedBy\":null,\"name\":\"\",\"properties\":{\"provisioningState\":\"\"},\"tags\":null,\"type\":\"\"}",
+    "partitionKey": "az_group_show_command_result",
+    "rowKey": "2518007091622457389",
+    "timestamp": "2020-10-01T22:33:57.7576562+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A57.7576562Z'\""
+  },
+  {
+    "data": "{\"id\":\"\",\"location\":\"\",\"name\":\"\",\"properties\":{\"accessPolicies\":{\"0\":{\"applicationId\":null,\"objectId\":\"\",\"permissions\":{\"certificates\":{\"0\":\"\",\"1\":\"\",\"2\":\"\",\"3\":\"\",\"4\":\"\",\"5\":\"\",\"6\":\"\",\"7\":\"\",\"8\":\"\",\"9\":\"\",\"10\":\"\",\"11\":\"\",\"12\":\"\"},\"keys\":{\"0\":\"\",\"1\":\"\",\"2\":\"\",\"3\":\"\",\"4\":\"\",\"5\":\"\",\"6\":\"\",\"7\":\"\",\"8\":\"\"},\"secrets\":{\"0\":\"\",\"1\":\"\",\"2\":\"\",\"3\":\"\",\"4\":\"\",\"5\":\"\",\"6\":\"\"},\"storage\":{\"0\":\"\",\"1\":\"\",\"2\":\"\",\"3\":\"\",\"4\":\"\",\"5\":\"\",\"6\":\"\",\"7\":\"\",\"8\":\"\",\"9\":\"\"}},\"tenantId\":\"\"}},\"createMode\":null,\"enablePurgeProtection\":null,\"enableRbacAuthorization\":null,\"enableSoftDelete\":false,\"enabledForDeployment\":false,\"enabledForDiskEncryption\":null,\"enabledForTemplateDeployment\":null,\"networkAcls\":null,\"privateEndpointConnections\":null,\"provisioningState\":\"\",\"sku\":{\"name\":\"\"},\"softDeleteRetentionInDays\":0,\"tenantId\":\"\",\"vaultUri\":\"\"},\"resourceGroup\":\"\",\"tags\":{},\"type\":\"\"}",
+    "partitionKey": "az_keyvault_create_command_result",
+    "rowKey": "2518007091622446213",
+    "timestamp": "2020-10-01T22:33:57.7559271+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A57.7559271Z'\""
+  },
+  {
+    "data": "{\"attributes\":{\"created\":\"\",\"enabled\":false,\"expires\":null,\"notBefore\":null,\"recoveryLevel\":\"\",\"updated\":\"\"},\"key\":{\"crv\":\"\",\"d\":null,\"dp\":null,\"dq\":null,\"e\":null,\"k\":null,\"keyOps\":{\"0\":\"\",\"1\":\"\"},\"kid\":\"\",\"kty\":\"\",\"n\":null,\"p\":null,\"q\":null,\"qi\":null,\"t\":null,\"x\":\"\",\"y\":\"\"},\"managed\":null,\"tags\":null}",
+    "partitionKey": "az_keyvault_key_create_command_result",
+    "rowKey": "2518007091579908648",
+    "timestamp": "2020-10-01T22:34:02.0103859+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.0103859Z'\""
+  },
+  {
+    "data": "{\"attributes\":{\"created\":\"\",\"enabled\":false,\"expires\":null,\"notBefore\":null,\"recoveryLevel\":\"\",\"updated\":\"\"},\"deletedDate\":\"\",\"key\":{\"crv\":\"\",\"d\":null,\"dp\":null,\"dq\":null,\"e\":null,\"k\":null,\"keyOps\":{\"0\":\"\",\"1\":\"\"},\"kid\":\"\",\"kty\":\"\",\"n\":null,\"p\":null,\"q\":null,\"qi\":null,\"t\":null,\"x\":\"\",\"y\":\"\"},\"managed\":null,\"recoveryId\":\"\",\"scheduledPurgeDate\":\"\",\"tags\":null}",
+    "partitionKey": "az_keyvault_key_delete_command_result",
+    "rowKey": "2518007091582039316",
+    "timestamp": "2020-10-01T22:34:01.8000611+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.8000611Z'\""
+  },
+  {
+    "data": "{\"0\":{\"attributes\":{\"created\":\"\",\"enabled\":false,\"expires\":null,\"notBefore\":null,\"recoveryLevel\":\"\",\"updated\":\"\"},\"kid\":\"\",\"managed\":null,\"name\":\"\",\"tags\":null}}",
+    "partitionKey": "az_keyvault_key_list_command_result",
+    "rowKey": "2518007091587245675",
+    "timestamp": "2020-10-01T22:34:01.7170334+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.7170334Z'\""
+  },
+  {
+    "data": "{\"attributes\":{\"created\":\"\",\"enabled\":false,\"expires\":null,\"notBefore\":null,\"recoveryLevel\":\"\",\"updated\":\"\"},\"key\":{\"crv\":\"\",\"d\":null,\"dp\":null,\"dq\":null,\"e\":null,\"k\":null,\"keyOps\":{\"0\":\"\",\"1\":\"\"},\"kid\":\"\",\"kty\":\"\",\"n\":null,\"p\":null,\"q\":null,\"qi\":null,\"t\":null,\"x\":\"\",\"y\":\"\"},\"managed\":null,\"tags\":null}",
+    "partitionKey": "az_keyvault_key_show_command_result",
+    "rowKey": "2518007091578545044",
+    "timestamp": "2020-10-01T22:34:02.1533286+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.1533286Z'\""
+  },
+  {
+    "data": "{\"0\":{\"id\":\"\",\"location\":\"\",\"name\":\"\",\"resourceGroup\":\"\",\"tags\":{},\"type\":\"\"}}",
+    "partitionKey": "az_keyvault_list_command_result",
+    "rowKey": "2518007091583263747",
+    "timestamp": "2020-10-01T22:34:01.6765388+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.6765388Z'\""
+  },
+  {
+    "data": "{\"0\":{\"id\":\"\",\"location\":\"\",\"name\":\"\",\"resourceGroup\":\"\",\"tags\":{},\"type\":\"\"},\"1\":{\"id\":\"\",\"location\":\"\",\"name\":\"\",\"resourceGroup\":\"\",\"tags\":{},\"type\":\"\"}}",
+    "partitionKey": "az_keyvault_list_command_result",
+    "rowKey": "2518007091622347660",
+    "timestamp": "2020-10-01T22:33:57.768481+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A57.768481Z'\""
+  },
+  {
+    "data": "{\"attributes\":{\"created\":\"\",\"enabled\":false,\"expires\":null,\"notBefore\":null,\"recoveryLevel\":\"\",\"updated\":\"\"},\"contentType\":null,\"deletedDate\":\"\",\"id\":\"\",\"kid\":null,\"managed\":null,\"name\":\"\",\"recoveryId\":\"\",\"scheduledPurgeDate\":\"\",\"tags\":{\"file-encoding\":\"\"},\"value\":null}",
+    "partitionKey": "az_keyvault_secret_delete_command_result",
+    "rowKey": "2518007091577037620",
+    "timestamp": "2020-10-01T22:34:02.3022055+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.3022055Z'\""
+  },
+  {
+    "data": "{\"0\":{\"attributes\":{\"created\":\"\",\"enabled\":false,\"expires\":null,\"notBefore\":null,\"recoveryLevel\":\"\",\"updated\":\"\"},\"contentType\":null,\"id\":\"\",\"managed\":null,\"name\":\"\",\"tags\":{\"file-encoding\":\"\"}}}",
+    "partitionKey": "az_keyvault_secret_list_command_result",
+    "rowKey": "2518007091576966972",
+    "timestamp": "2020-10-01T22:34:02.3045586+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.3045586Z'\""
+  },
+  {
+    "data": "{}",
+    "partitionKey": "az_keyvault_secret_list_command_result",
+    "rowKey": "2518007091582396077",
+    "timestamp": "2020-10-01T22:34:01.7626029+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.7626029Z'\""
+  },
+  {
+    "data": "{\"attributes\":{\"created\":\"\",\"enabled\":false,\"expires\":null,\"notBefore\":null,\"recoveryLevel\":\"\",\"updated\":\"\"},\"contentType\":null,\"id\":\"\",\"kid\":null,\"managed\":null,\"name\":\"\",\"tags\":{\"file-encoding\":\"\"},\"value\":\"\"}",
+    "partitionKey": "az_keyvault_secret_set_command_result",
+    "rowKey": "2518007091586136102",
+    "timestamp": "2020-10-01T22:34:01.3885533+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.3885533Z'\""
+  },
+  {
+    "data": "{\"attributes\":{\"created\":\"\",\"enabled\":false,\"expires\":null,\"notBefore\":null,\"recoveryLevel\":\"\",\"updated\":\"\"},\"contentType\":null,\"id\":\"\",\"kid\":null,\"managed\":null,\"name\":\"\",\"tags\":{\"file-encoding\":\"\"},\"value\":\"\"}",
+    "partitionKey": "az_keyvault_secret_set_command_result",
+    "rowKey": "2518007091626238372",
+    "timestamp": "2020-10-01T22:33:57.7401395+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A57.7401395Z'\""
+  },
+  {
+    "data": "{\"attributes\":{\"created\":\"\",\"enabled\":false,\"expires\":null,\"notBefore\":null,\"recoveryLevel\":\"\",\"updated\":\"\"},\"contentType\":null,\"id\":\"\",\"kid\":null,\"managed\":null,\"name\":\"\",\"tags\":{\"file-encoding\":\"\"},\"value\":\"\"}",
+    "partitionKey": "az_keyvault_secret_show_command_result",
+    "rowKey": "2518007091587245918",
+    "timestamp": "2020-10-01T22:34:01.7251412+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.7251412Z'\""
+  },
+  {
+    "data": "{\"id\":\"\",\"location\":\"\",\"name\":\"\",\"properties\":{\"accessPolicies\":{\"0\":{\"applicationId\":null,\"objectId\":\"\",\"permissions\":{\"certificates\":{\"0\":\"\",\"1\":\"\",\"2\":\"\",\"3\":\"\",\"4\":\"\",\"5\":\"\",\"6\":\"\",\"7\":\"\",\"8\":\"\",\"9\":\"\",\"10\":\"\",\"11\":\"\",\"12\":\"\"},\"keys\":{\"0\":\"\",\"1\":\"\",\"2\":\"\",\"3\":\"\",\"4\":\"\",\"5\":\"\",\"6\":\"\",\"7\":\"\",\"8\":\"\"},\"secrets\":{\"0\":\"\",\"1\":\"\",\"2\":\"\",\"3\":\"\",\"4\":\"\",\"5\":\"\",\"6\":\"\"},\"storage\":{\"0\":\"\",\"1\":\"\",\"2\":\"\",\"3\":\"\",\"4\":\"\",\"5\":\"\",\"6\":\"\",\"7\":\"\",\"8\":\"\",\"9\":\"\"}},\"tenantId\":\"\"}},\"createMode\":null,\"enablePurgeProtection\":null,\"enableRbacAuthorization\":null,\"enableSoftDelete\":false,\"enabledForDeployment\":false,\"enabledForDiskEncryption\":null,\"enabledForTemplateDeployment\":null,\"networkAcls\":null,\"privateEndpointConnections\":null,\"provisioningState\":\"\",\"sku\":{\"name\":\"\"},\"softDeleteRetentionInDays\":0,\"tenantId\":\"\",\"vaultUri\":\"\"},\"resourceGroup\":\"\",\"tags\":{},\"type\":\"\"}",
+    "partitionKey": "az_keyvault_show_command_result",
+    "rowKey": "2518007091586728165",
+    "timestamp": "2020-10-01T22:34:01.3950041+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.3950041Z'\""
+  },
+  {
+    "data": "{}",
+    "partitionKey": "az_keyvault_storage_list_command_result",
+    "rowKey": "2518007091584949049",
+    "timestamp": "2020-10-01T22:34:01.5073675+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.5073675Z'\""
+  },
+  {
+    "data": "{}",
+    "partitionKey": "az_keyvault_storage_list_command_result",
+    "rowKey": "2518007091586728037",
+    "timestamp": "2020-10-01T22:34:01.3967896+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.3967896Z'\""
+  },
+  {
+    "data": "{}",
+    "partitionKey": "az_role_assignment_list_changelogs_command_result",
+    "rowKey": "2518007091618978046",
+    "timestamp": "2020-10-01T22:33:58.1028605+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A58.1028605Z'\""
+  },
+  {
+    "data": "{}",
+    "partitionKey": "az_role_assignment_list_command_result",
+    "rowKey": "2518007091580280533",
+    "timestamp": "2020-10-01T22:34:01.9733995+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.9733995Z'\""
+  },
+  {
+    "data": "{}",
+    "partitionKey": "az_role_assignment_list_command_result",
+    "rowKey": "2518007091585821606",
+    "timestamp": "2020-10-01T22:34:01.5176315+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.5176315Z'\""
+  },
+  {
+    "data": "{\"accessTier\":\"\",\"allowBlobPublicAccess\":null,\"azureFilesIdentityBasedAuthentication\":null,\"blobRestoreStatus\":null,\"creationTime\":\"\",\"customDomain\":null,\"enableHttpsTrafficOnly\":false,\"encryption\":{\"keySource\":\"\",\"keyVaultProperties\":null,\"requireInfrastructureEncryption\":null,\"services\":{\"blob\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"file\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"queue\":null,\"table\":null}},\"failoverInProgress\":null,\"geoReplicationStats\":null,\"id\":\"\",\"identity\":null,\"isHnsEnabled\":null,\"kind\":\"\",\"largeFileSharesState\":null,\"lastGeoFailoverTime\":null,\"location\":\"\",\"minimumTlsVersion\":null,\"name\":\"\",\"networkRuleSet\":{\"bypass\":\"\",\"defaultAction\":\"\",\"ipRules\":{},\"virtualNetworkRules\":{}},\"primaryEndpoints\":{\"blob\":\"\",\"dfs\":\"\",\"file\":\"\",\"internetEndpoints\":null,\"microsoftEndpoints\":null,\"queue\":\"\",\"table\":\"\",\"web\":\"\"},\"primaryLocation\":\"\",\"privateEndpointConnections\":{},\"provisioningState\":\"\",\"resourceGroup\":\"\",\"routingPreference\":null,\"secondaryEndpoints\":null,\"secondaryLocation\":null,\"sku\":{\"name\":\"\",\"tier\":\"\"},\"statusOfPrimary\":\"\",\"statusOfSecondary\":null,\"tags\":{},\"type\":\"\"}",
+    "partitionKey": "az_storage_account_create_command_result",
+    "rowKey": "2518007091577529347",
+    "timestamp": "2020-10-01T22:34:02.2484661+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.2484661Z'\""
+  },
+  {
+    "data": "{\"accessTier\":\"\",\"allowBlobPublicAccess\":null,\"azureFilesIdentityBasedAuthentication\":null,\"blobRestoreStatus\":null,\"creationTime\":\"\",\"customDomain\":null,\"enableHttpsTrafficOnly\":false,\"encryption\":{\"keySource\":\"\",\"keyVaultProperties\":null,\"requireInfrastructureEncryption\":null,\"services\":{\"blob\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"file\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"queue\":null,\"table\":null}},\"failoverInProgress\":null,\"geoReplicationStats\":null,\"id\":\"\",\"identity\":null,\"isHnsEnabled\":null,\"kind\":\"\",\"largeFileSharesState\":null,\"lastGeoFailoverTime\":null,\"location\":\"\",\"minimumTlsVersion\":null,\"name\":\"\",\"networkRuleSet\":{\"bypass\":\"\",\"defaultAction\":\"\",\"ipRules\":{},\"virtualNetworkRules\":{}},\"primaryEndpoints\":{\"blob\":\"\",\"dfs\":\"\",\"file\":\"\",\"internetEndpoints\":null,\"microsoftEndpoints\":null,\"queue\":\"\",\"table\":\"\",\"web\":\"\"},\"primaryLocation\":\"\",\"privateEndpointConnections\":{},\"provisioningState\":\"\",\"resourceGroup\":\"\",\"routingPreference\":null,\"secondaryEndpoints\":null,\"secondaryLocation\":null,\"sku\":{\"name\":\"\",\"tier\":\"\"},\"statusOfPrimary\":\"\",\"statusOfSecondary\":null,\"tags\":{},\"type\":\"\"}",
+    "partitionKey": "az_storage_account_create_command_result",
+    "rowKey": "2518007331557739850",
+    "timestamp": "2020-10-01T15:54:04.4706612+00:00",
+    "eTag": "W/\"datetime'2020-10-01T15%3A54%3A04.4706612Z'\""
+  },
+  {
+    "data": "{\"0\":{\"accessTier\":\"\",\"allowBlobPublicAccess\":null,\"azureFilesIdentityBasedAuthentication\":null,\"blobRestoreStatus\":null,\"creationTime\":\"\",\"customDomain\":null,\"enableHttpsTrafficOnly\":false,\"encryption\":{\"keySource\":\"\",\"keyVaultProperties\":null,\"requireInfrastructureEncryption\":null,\"services\":{\"blob\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"file\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"queue\":null,\"table\":null}},\"failoverInProgress\":null,\"geoReplicationStats\":null,\"id\":\"\",\"identity\":null,\"isHnsEnabled\":null,\"kind\":\"\",\"largeFileSharesState\":\"\",\"lastGeoFailoverTime\":null,\"location\":\"\",\"minimumTlsVersion\":null,\"name\":\"\",\"networkRuleSet\":{\"bypass\":\"\",\"defaultAction\":\"\",\"ipRules\":{},\"virtualNetworkRules\":{}},\"primaryEndpoints\":{\"blob\":\"\",\"dfs\":\"\",\"file\":\"\",\"internetEndpoints\":null,\"microsoftEndpoints\":null,\"queue\":\"\",\"table\":\"\",\"web\":\"\"},\"primaryLocation\":\"\",\"privateEndpointConnections\":{},\"provisioningState\":\"\",\"resourceGroup\":\"\",\"routingPreference\":null,\"secondaryEndpoints\":null,\"secondaryLocation\":null,\"sku\":{\"name\":\"\",\"tier\":\"\"},\"statusOfPrimary\":\"\",\"statusOfSecondary\":null,\"tags\":{},\"type\":\"\"},\"1\":{\"accessTier\":\"\",\"allowBlobPublicAccess\":null,\"azureFilesIdentityBasedAuthentication\":null,\"blobRestoreStatus\":null,\"creationTime\":\"\",\"customDomain\":null,\"enableHttpsTrafficOnly\":false,\"encryption\":{\"keySource\":\"\",\"keyVaultProperties\":null,\"requireInfrastructureEncryption\":null,\"services\":{\"blob\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"file\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"queue\":null,\"table\":null}},\"failoverInProgress\":null,\"geoReplicationStats\":null,\"id\":\"\",\"identity\":null,\"isHnsEnabled\":null,\"kind\":\"\",\"largeFileSharesState\":null,\"lastGeoFailoverTime\":null,\"location\":\"\",\"minimumTlsVersion\":null,\"name\":\"\",\"networkRuleSet\":{\"bypass\":\"\",\"defaultAction\":\"\",\"ipRules\":{},\"virtualNetworkRules\":{}},\"primaryEndpoints\":{\"blob\":\"\",\"dfs\":\"\",\"file\":\"\",\"internetEndpoints\":null,\"microsoftEndpoints\":null,\"queue\":\"\",\"table\":\"\",\"web\":\"\"},\"primaryLocation\":\"\",\"privateEndpointConnections\":{},\"provisioningState\":\"\",\"resourceGroup\":\"\",\"routingPreference\":null,\"secondaryEndpoints\":null,\"secondaryLocation\":null,\"sku\":{\"name\":\"\",\"tier\":\"\"},\"statusOfPrimary\":\"\",\"statusOfSecondary\":null,\"tags\":{},\"type\":\"\"},\"2\":{\"accessTier\":\"\",\"allowBlobPublicAccess\":null,\"azureFilesIdentityBasedAuthentication\":null,\"blobRestoreStatus\":null,\"creationTime\":\"\",\"customDomain\":null,\"enableHttpsTrafficOnly\":false,\"encryption\":{\"keySource\":\"\",\"keyVaultProperties\":null,\"requireInfrastructureEncryption\":null,\"services\":{\"blob\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"file\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"queue\":null,\"table\":null}},\"failoverInProgress\":null,\"geoReplicationStats\":null,\"id\":\"\",\"identity\":null,\"isHnsEnabled\":null,\"kind\":\"\",\"largeFileSharesState\":null,\"lastGeoFailoverTime\":null,\"location\":\"\",\"minimumTlsVersion\":null,\"name\":\"\",\"networkRuleSet\":{\"bypass\":\"\",\"defaultAction\":\"\",\"ipRules\":{},\"virtualNetworkRules\":{}},\"primaryEndpoints\":{\"blob\":\"\",\"dfs\":\"\",\"file\":\"\",\"internetEndpoints\":null,\"microsoftEndpoints\":null,\"queue\":\"\",\"table\":\"\",\"web\":\"\"},\"primaryLocation\":\"\",\"privateEndpointConnections\":{},\"provisioningState\":\"\",\"resourceGroup\":\"\",\"routingPreference\":null,\"secondaryEndpoints\":null,\"secondaryLocation\":null,\"sku\":{\"name\":\"\",\"tier\":\"\"},\"statusOfPrimary\":\"\",\"statusOfSecondary\":null,\"tags\":{},\"type\":\"\"},\"3\":{\"accessTier\":\"\",\"allowBlobPublicAccess\":null,\"azureFilesIdentityBasedAuthentication\":null,\"blobRestoreStatus\":null,\"creationTime\":\"\",\"customDomain\":null,\"enableHttpsTrafficOnly\":false,\"encryption\":{\"keySource\":\"\",\"keyVaultProperties\":null,\"requireInfrastructureEncryption\":null,\"services\":{\"blob\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"file\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"queue\":null,\"table\":null}},\"failoverInProgress\":null,\"geoReplicationStats\":null,\"id\":\"\",\"identity\":null,\"isHnsEnabled\":null,\"kind\":\"\",\"largeFileSharesState\":null,\"lastGeoFailoverTime\":null,\"location\":\"\",\"minimumTlsVersion\":null,\"name\":\"\",\"networkRuleSet\":{\"bypass\":\"\",\"defaultAction\":\"\",\"ipRules\":{},\"virtualNetworkRules\":{}},\"primaryEndpoints\":{\"blob\":\"\",\"dfs\":\"\",\"file\":\"\",\"internetEndpoints\":null,\"microsoftEndpoints\":null,\"queue\":\"\",\"table\":\"\",\"web\":\"\"},\"primaryLocation\":\"\",\"privateEndpointConnections\":{},\"provisioningState\":\"\",\"resourceGroup\":\"\",\"routingPreference\":null,\"secondaryEndpoints\":null,\"secondaryLocation\":null,\"sku\":{\"name\":\"\",\"tier\":\"\"},\"statusOfPrimary\":\"\",\"statusOfSecondary\":null,\"tags\":{},\"type\":\"\"}}",
+    "partitionKey": "az_storage_account_list_command_result",
+    "rowKey": "2518007091622621321",
+    "timestamp": "2020-10-01T22:33:57.7448575+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A57.7448575Z'\""
+  },
+  {
+    "data": "{\"0\":{\"accessTier\":\"\",\"allowBlobPublicAccess\":null,\"azureFilesIdentityBasedAuthentication\":null,\"blobRestoreStatus\":null,\"creationTime\":\"\",\"customDomain\":null,\"enableHttpsTrafficOnly\":false,\"encryption\":{\"keySource\":\"\",\"keyVaultProperties\":null,\"requireInfrastructureEncryption\":null,\"services\":{\"blob\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"file\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"queue\":null,\"table\":null}},\"failoverInProgress\":null,\"geoReplicationStats\":null,\"id\":\"\",\"identity\":null,\"isHnsEnabled\":null,\"kind\":\"\",\"largeFileSharesState\":\"\",\"lastGeoFailoverTime\":null,\"location\":\"\",\"minimumTlsVersion\":null,\"name\":\"\",\"networkRuleSet\":{\"bypass\":\"\",\"defaultAction\":\"\",\"ipRules\":{},\"virtualNetworkRules\":{}},\"primaryEndpoints\":{\"blob\":\"\",\"dfs\":\"\",\"file\":\"\",\"internetEndpoints\":null,\"microsoftEndpoints\":null,\"queue\":\"\",\"table\":\"\",\"web\":\"\"},\"primaryLocation\":\"\",\"privateEndpointConnections\":{},\"provisioningState\":\"\",\"resourceGroup\":\"\",\"routingPreference\":null,\"secondaryEndpoints\":null,\"secondaryLocation\":null,\"sku\":{\"name\":\"\",\"tier\":\"\"},\"statusOfPrimary\":\"\",\"statusOfSecondary\":null,\"tags\":{},\"type\":\"\"},\"1\":{\"accessTier\":\"\",\"allowBlobPublicAccess\":null,\"azureFilesIdentityBasedAuthentication\":null,\"blobRestoreStatus\":null,\"creationTime\":\"\",\"customDomain\":null,\"enableHttpsTrafficOnly\":false,\"encryption\":{\"keySource\":\"\",\"keyVaultProperties\":null,\"requireInfrastructureEncryption\":null,\"services\":{\"blob\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"file\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"queue\":null,\"table\":null}},\"failoverInProgress\":null,\"geoReplicationStats\":null,\"id\":\"\",\"identity\":null,\"isHnsEnabled\":null,\"kind\":\"\",\"largeFileSharesState\":null,\"lastGeoFailoverTime\":null,\"location\":\"\",\"minimumTlsVersion\":null,\"name\":\"\",\"networkRuleSet\":{\"bypass\":\"\",\"defaultAction\":\"\",\"ipRules\":{},\"virtualNetworkRules\":{}},\"primaryEndpoints\":{\"blob\":\"\",\"dfs\":\"\",\"file\":\"\",\"internetEndpoints\":null,\"microsoftEndpoints\":null,\"queue\":\"\",\"table\":\"\",\"web\":\"\"},\"primaryLocation\":\"\",\"privateEndpointConnections\":{},\"provisioningState\":\"\",\"resourceGroup\":\"\",\"routingPreference\":null,\"secondaryEndpoints\":null,\"secondaryLocation\":null,\"sku\":{\"name\":\"\",\"tier\":\"\"},\"statusOfPrimary\":\"\",\"statusOfSecondary\":null,\"tags\":{},\"type\":\"\"},\"2\":{\"accessTier\":\"\",\"allowBlobPublicAccess\":null,\"azureFilesIdentityBasedAuthentication\":null,\"blobRestoreStatus\":null,\"creationTime\":\"\",\"customDomain\":null,\"enableHttpsTrafficOnly\":false,\"encryption\":{\"keySource\":\"\",\"keyVaultProperties\":null,\"requireInfrastructureEncryption\":null,\"services\":{\"blob\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"file\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"queue\":null,\"table\":null}},\"failoverInProgress\":null,\"geoReplicationStats\":null,\"id\":\"\",\"identity\":null,\"isHnsEnabled\":null,\"kind\":\"\",\"largeFileSharesState\":null,\"lastGeoFailoverTime\":null,\"location\":\"\",\"minimumTlsVersion\":null,\"name\":\"\",\"networkRuleSet\":{\"bypass\":\"\",\"defaultAction\":\"\",\"ipRules\":{},\"virtualNetworkRules\":{}},\"primaryEndpoints\":{\"blob\":\"\",\"dfs\":\"\",\"file\":\"\",\"internetEndpoints\":null,\"microsoftEndpoints\":null,\"queue\":\"\",\"table\":\"\",\"web\":\"\"},\"primaryLocation\":\"\",\"privateEndpointConnections\":{},\"provisioningState\":\"\",\"resourceGroup\":\"\",\"routingPreference\":null,\"secondaryEndpoints\":null,\"secondaryLocation\":null,\"sku\":{\"name\":\"\",\"tier\":\"\"},\"statusOfPrimary\":\"\",\"statusOfSecondary\":null,\"tags\":{},\"type\":\"\"}}",
+    "partitionKey": "az_storage_account_list_command_result",
+    "rowKey": "2518007091626239593",
+    "timestamp": "2020-10-01T22:33:57.738281+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A57.738281Z'\""
+  },
+  {
+    "data": "{\"accessTier\":\"\",\"allowBlobPublicAccess\":null,\"azureFilesIdentityBasedAuthentication\":null,\"blobRestoreStatus\":null,\"creationTime\":\"\",\"customDomain\":null,\"enableHttpsTrafficOnly\":false,\"encryption\":{\"keySource\":\"\",\"keyVaultProperties\":null,\"requireInfrastructureEncryption\":null,\"services\":{\"blob\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"file\":{\"enabled\":false,\"keyType\":\"\",\"lastEnabledTime\":\"\"},\"queue\":null,\"table\":null}},\"failoverInProgress\":null,\"geoReplicationStats\":null,\"id\":\"\",\"identity\":null,\"isHnsEnabled\":null,\"kind\":\"\",\"largeFileSharesState\":null,\"lastGeoFailoverTime\":null,\"location\":\"\",\"minimumTlsVersion\":null,\"name\":\"\",\"networkRuleSet\":{\"bypass\":\"\",\"defaultAction\":\"\",\"ipRules\":{},\"virtualNetworkRules\":{}},\"primaryEndpoints\":{\"blob\":\"\",\"dfs\":\"\",\"file\":\"\",\"internetEndpoints\":null,\"microsoftEndpoints\":null,\"queue\":\"\",\"table\":\"\",\"web\":\"\"},\"primaryLocation\":\"\",\"privateEndpointConnections\":{},\"provisioningState\":\"\",\"resourceGroup\":\"\",\"routingPreference\":null,\"secondaryEndpoints\":null,\"secondaryLocation\":null,\"sku\":{\"name\":\"\",\"tier\":\"\"},\"statusOfPrimary\":\"\",\"statusOfSecondary\":null,\"tags\":{},\"type\":\"\"}",
+    "partitionKey": "az_storage_account_show_command_result",
+    "rowKey": "2518007091622425566",
+    "timestamp": "2020-10-01T22:33:57.760209+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A57.760209Z'\""
+  },
+  {
+    "data": "{\"connectionString\":\"\"}",
+    "partitionKey": "az_storage_account_show_connection_string_command_result",
+    "rowKey": "2518007091586829765",
+    "timestamp": "2020-10-01T22:34:01.3767426+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.3767426Z'\""
+  },
+  {
+    "data": "{\"connectionString\":\"\"}",
+    "partitionKey": "az_storage_account_show_connection_string_command_result",
+    "rowKey": "2518007331632835385",
+    "timestamp": "2020-10-01T15:53:56.7589474+00:00",
+    "eTag": "W/\"datetime'2020-10-01T15%3A53%3A56.7589474Z'\""
+  },
+  {
+    "data": "{\"created\":false}",
+    "partitionKey": "az_storage_table_create_command_result",
+    "rowKey": "2518007091579983197",
+    "timestamp": "2020-10-01T22:34:02.0110024+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.0110024Z'\""
+  },
+  {
+    "data": "{\"created\":false}",
+    "partitionKey": "az_storage_table_create_command_result",
+    "rowKey": "2518007331557752295",
+    "timestamp": "2020-10-01T15:54:04.3715913+00:00",
+    "eTag": "W/\"datetime'2020-10-01T15%3A54%3A04.3715913Z'\""
+  },
+  {
+    "data": "{\"deleted\":false}",
+    "partitionKey": "az_storage_table_delete_command_result",
+    "rowKey": "2518007091581756556",
+    "timestamp": "2020-10-01T22:34:01.8262821+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.8262821Z'\""
+  },
+  {
+    "data": "{\"0\":\"\",\"1\":\"\",\"2\":\"\",\"3\":\"\",\"4\":\"\",\"5\":\"\",\"6\":\"\",\"7\":\"\",\"8\":\"\",\"9\":\"\",\"10\":\"\",\"11\":\"\",\"12\":\"\",\"13\":\"\",\"14\":\"\",\"15\":\"\",\"16\":\"\",\"17\":\"\",\"18\":\"\",\"19\":\"\",\"20\":\"\",\"21\":\"\",\"22\":\"\",\"23\":\"\",\"24\":\"\",\"25\":\"\",\"26\":\"\",\"27\":\"\",\"28\":\"\",\"29\":\"\",\"30\":\"\",\"31\":\"\",\"32\":\"\",\"33\":\"\",\"34\":\"\",\"35\":\"\",\"36\":\"\",\"37\":\"\",\"38\":\"\",\"39\":\"\",\"40\":\"\",\"41\":\"\",\"42\":\"\",\"43\":\"\",\"44\":\"\",\"45\":\"\",\"46\":\"\",\"47\":\"\",\"48\":\"\",\"49\":\"\",\"50\":\"\",\"51\":\"\",\"52\":\"\",\"53\":\"\",\"54\":\"\",\"55\":\"\",\"56\":\"\",\"57\":\"\",\"58\":\"\",\"59\":\"\",\"60\":\"\",\"61\":\"\",\"62\":\"\",\"63\":\"\",\"64\":\"\",\"65\":\"\",\"66\":\"\",\"67\":\"\",\"68\":\"\",\"69\":\"\",\"70\":\"\",\"71\":\"\",\"72\":\"\",\"73\":\"\",\"74\":\"\",\"75\":\"\",\"76\":\"\",\"77\":\"\",\"78\":\"\",\"79\":\"\",\"80\":\"\",\"81\":\"\",\"82\":\"\"}",
+    "partitionKey": "az_storage_table_generate_sas_command_result",
+    "rowKey": "2518007091580000596",
+    "timestamp": "2020-10-01T22:34:02.0005412+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.0005412Z'\""
+  },
+  {
+    "data": "{\"0\":{\"name\":\"\"}}",
+    "partitionKey": "az_storage_table_list_command_result",
+    "rowKey": "2518007091576971362",
+    "timestamp": "2020-10-01T22:34:02.305347+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.305347Z'\""
+  },
+  {
+    "data": "{}",
+    "partitionKey": "az_storage_table_list_command_result",
+    "rowKey": "2518007091580204291",
+    "timestamp": "2020-10-01T22:34:01.9823925+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.9823925Z'\""
+  },
+  {
+    "data": "{\"availabilityState\":\"\",\"clientAffinityEnabled\":false,\"clientCertEnabled\":false,\"clientCertExclusionPaths\":null,\"cloningInfo\":null,\"containerSize\":0,\"dailyMemoryTimeQuota\":0,\"defaultHostName\":\"\",\"enabled\":false,\"enabledHostNames\":{\"0\":\"\",\"1\":\"\"},\"ftpPublishingUrl\":\"\",\"hostNameSslStates\":{\"0\":{\"hostType\":\"\",\"ipBasedSslResult\":null,\"ipBasedSslState\":\"\",\"name\":\"\",\"sslState\":\"\",\"thumbprint\":null,\"toUpdate\":null,\"toUpdateIpBasedSsl\":null,\"virtualIp\":null},\"1\":{\"hostType\":\"\",\"ipBasedSslResult\":null,\"ipBasedSslState\":\"\",\"name\":\"\",\"sslState\":\"\",\"thumbprint\":null,\"toUpdate\":null,\"toUpdateIpBasedSsl\":null,\"virtualIp\":null}},\"hostNames\":{\"0\":\"\"},\"hostNamesDisabled\":false,\"hostingEnvironmentProfile\":null,\"httpsOnly\":false,\"hyperV\":false,\"id\":\"\",\"identity\":null,\"inProgressOperationId\":null,\"isDefaultContainer\":null,\"isXenon\":false,\"kind\":\"\",\"lastModifiedTimeUtc\":\"\",\"location\":\"\",\"maxNumberOfWorkers\":null,\"name\":\"\",\"outboundIpAddresses\":\"\",\"possibleOutboundIpAddresses\":\"\",\"redundancyMode\":\"\",\"repositorySiteName\":\"\",\"reserved\":false,\"resourceGroup\":\"\",\"scmSiteAlsoStopped\":false,\"serverFarmId\":\"\",\"siteConfig\":{\"acrUseManagedIdentityCreds\":false,\"acrUserManagedIdentityID\":null,\"alwaysOn\":null,\"apiDefinition\":null,\"apiManagementConfig\":null,\"appCommandLine\":null,\"appSettings\":null,\"autoHealEnabled\":null,\"autoHealRules\":null,\"autoSwapSlotName\":null,\"azureMonitorLogCategories\":null,\"azureStorageAccounts\":null,\"connectionStrings\":null,\"cors\":null,\"customAppPoolIdentityAdminState\":null,\"customAppPoolIdentityTenantState\":null,\"defaultDocuments\":null,\"detailedErrorLoggingEnabled\":null,\"documentRoot\":null,\"experiments\":null,\"fileChangeAuditEnabled\":null,\"ftpsState\":null,\"functionAppScaleLimit\":null,\"functionsRuntimeScaleMonitoringEnabled\":null,\"handlerMappings\":null,\"healthCheckPath\":null,\"http20Enabled\":null,\"httpLoggingEnabled\":null,\"ipSecurityRestrictions\":{\"0\":{\"action\":\"\",\"description\":\"\",\"ipAddress\":\"\",\"name\":\"\",\"priority\":0,\"subnetMask\":null,\"subnetTrafficTag\":null,\"tag\":null,\"vnetSubnetResourceId\":null,\"vnetTrafficTag\":null}},\"javaContainer\":null,\"javaContainerVersion\":null,\"javaVersion\":null,\"limits\":null,\"linuxFxVersion\":null,\"loadBalancing\":null,\"localMySqlEnabled\":null,\"logsDirectorySizeLimit\":null,\"machineKey\":null,\"managedPipelineMode\":null,\"managedServiceIdentityId\":null,\"metadata\":null,\"minTlsVersion\":null,\"minimumElasticInstanceCount\":0,\"netFrameworkVersion\":null,\"nodeVersion\":null,\"numberOfWorkers\":null,\"phpVersion\":null,\"powerShellVersion\":null,\"preWarmedInstanceCount\":null,\"publishingPassword\":null,\"publishingUsername\":null,\"push\":null,\"pythonVersion\":null,\"remoteDebuggingEnabled\":null,\"remoteDebuggingVersion\":null,\"requestTracingEnabled\":null,\"requestTracingExpirationTime\":null,\"routingRules\":null,\"runtimeADUser\":null,\"runtimeADUserPassword\":null,\"scmIpSecurityRestrictions\":{\"0\":{\"action\":\"\",\"description\":\"\",\"ipAddress\":\"\",\"name\":\"\",\"priority\":0,\"subnetMask\":null,\"subnetTrafficTag\":null,\"tag\":null,\"vnetSubnetResourceId\":null,\"vnetTrafficTag\":null}},\"scmIpSecurityRestrictionsUseMain\":null,\"scmMinTlsVersion\":null,\"scmType\":null,\"tracingOptions\":null,\"use32BitWorkerProcess\":null,\"virtualApplications\":null,\"vnetName\":null,\"vnetRouteAllEnabled\":null,\"webSocketsEnabled\":null,\"websiteTimeZone\":null,\"winAuthAdminState\":null,\"winAuthTenantState\":null,\"windowsFxVersion\":null,\"xManagedServiceIdentityId\":null},\"slotSwapStatus\":null,\"state\":\"\",\"suspendedTill\":null,\"tags\":null,\"targetSwapSlot\":null,\"trafficManagerHostNames\":null,\"type\":\"\",\"usageState\":\"\"}",
+    "partitionKey": "az_webapp_create_command_result",
+    "rowKey": "2518007091583257810",
+    "timestamp": "2020-10-01T22:34:01.6763407+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.6763407Z'\""
+  },
+  {
+    "data": "{}",
+    "partitionKey": "az_webapp_deployment_slot_list_command_result",
+    "rowKey": "2518007091626239867",
+    "timestamp": "2020-10-01T22:33:57.741529+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A57.741529Z'\""
+  },
+  {
+    "data": "{}",
+    "partitionKey": "az_webapp_deployment_slot_list_command_result",
+    "rowKey": "2518007091715391523",
+    "timestamp": "2020-10-01T22:33:48.5038036+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A48.5038036Z'\""
+  },
+  {
+    "data": "{\"principalId\":\"\",\"tenantId\":\"\",\"type\":\"\",\"userAssignedIdentities\":null}",
+    "partitionKey": "az_webapp_identity_assign_command_result",
+    "rowKey": "2518007091622247953",
+    "timestamp": "2020-10-01T22:33:57.7789534+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A57.7789534Z'\""
+  },
+  {
+    "data": "{\"principalId\":\"\",\"tenantId\":\"\",\"type\":\"\",\"userAssignedIdentities\":null}",
+    "partitionKey": "az_webapp_identity_show_command_result",
+    "rowKey": "2518007091580306071",
+    "timestamp": "2020-10-01T22:34:01.9704145+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.9704145Z'\""
+  },
+  {
+    "data": "{\"0\":{\"appServicePlanId\":\"\",\"availabilityState\":\"\",\"clientAffinityEnabled\":false,\"clientCertEnabled\":false,\"clientCertExclusionPaths\":null,\"cloningInfo\":null,\"containerSize\":0,\"dailyMemoryTimeQuota\":0,\"defaultHostName\":\"\",\"enabled\":false,\"enabledHostNames\":{\"0\":\"\",\"1\":\"\"},\"hostNameSslStates\":{\"0\":{\"hostType\":\"\",\"ipBasedSslResult\":null,\"ipBasedSslState\":\"\",\"name\":\"\",\"sslState\":\"\",\"thumbprint\":null,\"toUpdate\":null,\"toUpdateIpBasedSsl\":null,\"virtualIp\":null},\"1\":{\"hostType\":\"\",\"ipBasedSslResult\":null,\"ipBasedSslState\":\"\",\"name\":\"\",\"sslState\":\"\",\"thumbprint\":null,\"toUpdate\":null,\"toUpdateIpBasedSsl\":null,\"virtualIp\":null}},\"hostNames\":{\"0\":\"\"},\"hostNamesDisabled\":false,\"hostingEnvironmentProfile\":null,\"httpsOnly\":false,\"hyperV\":false,\"id\":\"\",\"identity\":{\"principalId\":\"\",\"tenantId\":\"\",\"type\":\"\",\"userAssignedIdentities\":null},\"inProgressOperationId\":null,\"isDefaultContainer\":null,\"isXenon\":false,\"kind\":\"\",\"lastModifiedTimeUtc\":\"\",\"location\":\"\",\"maxNumberOfWorkers\":null,\"name\":\"\",\"outboundIpAddresses\":\"\",\"possibleOutboundIpAddresses\":\"\",\"redundancyMode\":\"\",\"repositorySiteName\":\"\",\"reserved\":false,\"resourceGroup\":\"\",\"scmSiteAlsoStopped\":false,\"siteConfig\":{\"acrUseManagedIdentityCreds\":false,\"acrUserManagedIdentityID\":null,\"alwaysOn\":null,\"apiDefinition\":null,\"apiManagementConfig\":null,\"appCommandLine\":null,\"appSettings\":null,\"autoHealEnabled\":null,\"autoHealRules\":null,\"autoSwapSlotName\":null,\"azureMonitorLogCategories\":null,\"azureStorageAccounts\":null,\"connectionStrings\":null,\"cors\":null,\"customAppPoolIdentityAdminState\":null,\"customAppPoolIdentityTenantState\":null,\"defaultDocuments\":null,\"detailedErrorLoggingEnabled\":null,\"documentRoot\":null,\"experiments\":null,\"fileChangeAuditEnabled\":null,\"ftpsState\":null,\"functionAppScaleLimit\":null,\"functionsRuntimeScaleMonitoringEnabled\":null,\"handlerMappings\":null,\"healthCheckPath\":null,\"http20Enabled\":null,\"httpLoggingEnabled\":null,\"ipSecurityRestrictions\":null,\"javaContainer\":null,\"javaContainerVersion\":null,\"javaVersion\":null,\"limits\":null,\"linuxFxVersion\":null,\"loadBalancing\":null,\"localMySqlEnabled\":null,\"logsDirectorySizeLimit\":null,\"machineKey\":null,\"managedPipelineMode\":null,\"managedServiceIdentityId\":null,\"metadata\":null,\"minTlsVersion\":null,\"minimumElasticInstanceCount\":0,\"netFrameworkVersion\":null,\"nodeVersion\":null,\"numberOfWorkers\":null,\"phpVersion\":null,\"powerShellVersion\":null,\"preWarmedInstanceCount\":null,\"publishingPassword\":null,\"publishingUsername\":null,\"push\":null,\"pythonVersion\":null,\"remoteDebuggingEnabled\":null,\"remoteDebuggingVersion\":null,\"requestTracingEnabled\":null,\"requestTracingExpirationTime\":null,\"routingRules\":null,\"runtimeADUser\":null,\"runtimeADUserPassword\":null,\"scmIpSecurityRestrictions\":null,\"scmIpSecurityRestrictionsUseMain\":null,\"scmMinTlsVersion\":null,\"scmType\":null,\"tracingOptions\":null,\"use32BitWorkerProcess\":null,\"virtualApplications\":null,\"vnetName\":null,\"vnetRouteAllEnabled\":null,\"webSocketsEnabled\":null,\"websiteTimeZone\":null,\"winAuthAdminState\":null,\"winAuthTenantState\":null,\"windowsFxVersion\":null,\"xManagedServiceIdentityId\":null},\"slotSwapStatus\":null,\"state\":\"\",\"suspendedTill\":null,\"tags\":null,\"targetSwapSlot\":null,\"trafficManagerHostNames\":null,\"type\":\"\",\"usageState\":\"\"}}",
+    "partitionKey": "az_webapp_list_command_result",
+    "rowKey": "2518007091586617213",
+    "timestamp": "2020-10-01T22:34:01.4988385+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.4988385Z'\""
+  },
+  {
+    "data": "{\"0\":{\"appServicePlanId\":\"\",\"availabilityState\":\"\",\"clientAffinityEnabled\":false,\"clientCertEnabled\":false,\"clientCertExclusionPaths\":null,\"cloningInfo\":null,\"containerSize\":0,\"dailyMemoryTimeQuota\":0,\"defaultHostName\":\"\",\"enabled\":false,\"enabledHostNames\":{\"0\":\"\",\"1\":\"\"},\"hostNameSslStates\":{\"0\":{\"hostType\":\"\",\"ipBasedSslResult\":null,\"ipBasedSslState\":\"\",\"name\":\"\",\"sslState\":\"\",\"thumbprint\":null,\"toUpdate\":null,\"toUpdateIpBasedSsl\":null,\"virtualIp\":null},\"1\":{\"hostType\":\"\",\"ipBasedSslResult\":null,\"ipBasedSslState\":\"\",\"name\":\"\",\"sslState\":\"\",\"thumbprint\":null,\"toUpdate\":null,\"toUpdateIpBasedSsl\":null,\"virtualIp\":null}},\"hostNames\":{\"0\":\"\"},\"hostNamesDisabled\":false,\"hostingEnvironmentProfile\":null,\"httpsOnly\":false,\"hyperV\":false,\"id\":\"\",\"identity\":null,\"inProgressOperationId\":null,\"isDefaultContainer\":null,\"isXenon\":false,\"kind\":\"\",\"lastModifiedTimeUtc\":\"\",\"location\":\"\",\"maxNumberOfWorkers\":null,\"name\":\"\",\"outboundIpAddresses\":\"\",\"possibleOutboundIpAddresses\":\"\",\"redundancyMode\":\"\",\"repositorySiteName\":\"\",\"reserved\":false,\"resourceGroup\":\"\",\"scmSiteAlsoStopped\":false,\"siteConfig\":{\"acrUseManagedIdentityCreds\":false,\"acrUserManagedIdentityID\":null,\"alwaysOn\":null,\"apiDefinition\":null,\"apiManagementConfig\":null,\"appCommandLine\":null,\"appSettings\":null,\"autoHealEnabled\":null,\"autoHealRules\":null,\"autoSwapSlotName\":null,\"azureMonitorLogCategories\":null,\"azureStorageAccounts\":null,\"connectionStrings\":null,\"cors\":null,\"customAppPoolIdentityAdminState\":null,\"customAppPoolIdentityTenantState\":null,\"defaultDocuments\":null,\"detailedErrorLoggingEnabled\":null,\"documentRoot\":null,\"experiments\":null,\"fileChangeAuditEnabled\":null,\"ftpsState\":null,\"functionAppScaleLimit\":null,\"functionsRuntimeScaleMonitoringEnabled\":null,\"handlerMappings\":null,\"healthCheckPath\":null,\"http20Enabled\":null,\"httpLoggingEnabled\":null,\"ipSecurityRestrictions\":null,\"javaContainer\":null,\"javaContainerVersion\":null,\"javaVersion\":null,\"limits\":null,\"linuxFxVersion\":null,\"loadBalancing\":null,\"localMySqlEnabled\":null,\"logsDirectorySizeLimit\":null,\"machineKey\":null,\"managedPipelineMode\":null,\"managedServiceIdentityId\":null,\"metadata\":null,\"minTlsVersion\":null,\"minimumElasticInstanceCount\":0,\"netFrameworkVersion\":null,\"nodeVersion\":null,\"numberOfWorkers\":null,\"phpVersion\":null,\"powerShellVersion\":null,\"preWarmedInstanceCount\":null,\"publishingPassword\":null,\"publishingUsername\":null,\"push\":null,\"pythonVersion\":null,\"remoteDebuggingEnabled\":null,\"remoteDebuggingVersion\":null,\"requestTracingEnabled\":null,\"requestTracingExpirationTime\":null,\"routingRules\":null,\"runtimeADUser\":null,\"runtimeADUserPassword\":null,\"scmIpSecurityRestrictions\":null,\"scmIpSecurityRestrictionsUseMain\":null,\"scmMinTlsVersion\":null,\"scmType\":null,\"tracingOptions\":null,\"use32BitWorkerProcess\":null,\"virtualApplications\":null,\"vnetName\":null,\"vnetRouteAllEnabled\":null,\"webSocketsEnabled\":null,\"websiteTimeZone\":null,\"winAuthAdminState\":null,\"winAuthTenantState\":null,\"windowsFxVersion\":null,\"xManagedServiceIdentityId\":null},\"slotSwapStatus\":null,\"state\":\"\",\"suspendedTill\":null,\"tags\":null,\"targetSwapSlot\":null,\"trafficManagerHostNames\":null,\"type\":\"\",\"usageState\":\"\"},\"1\":{\"appServicePlanId\":\"\",\"availabilityState\":\"\",\"clientAffinityEnabled\":false,\"clientCertEnabled\":false,\"clientCertExclusionPaths\":null,\"cloningInfo\":null,\"containerSize\":0,\"dailyMemoryTimeQuota\":0,\"defaultHostName\":\"\",\"enabled\":false,\"enabledHostNames\":{\"0\":\"\",\"1\":\"\"},\"hostNameSslStates\":{\"0\":{\"hostType\":\"\",\"ipBasedSslResult\":null,\"ipBasedSslState\":\"\",\"name\":\"\",\"sslState\":\"\",\"thumbprint\":null,\"toUpdate\":null,\"toUpdateIpBasedSsl\":null,\"virtualIp\":null},\"1\":{\"hostType\":\"\",\"ipBasedSslResult\":null,\"ipBasedSslState\":\"\",\"name\":\"\",\"sslState\":\"\",\"thumbprint\":null,\"toUpdate\":null,\"toUpdateIpBasedSsl\":null,\"virtualIp\":null}},\"hostNames\":{\"0\":\"\"},\"hostNamesDisabled\":false,\"hostingEnvironmentProfile\":null,\"httpsOnly\":false,\"hyperV\":false,\"id\":\"\",\"identity\":{\"principalId\":\"\",\"tenantId\":\"\",\"type\":\"\",\"userAssignedIdentities\":null},\"inProgressOperationId\":null,\"isDefaultContainer\":null,\"isXenon\":false,\"kind\":\"\",\"lastModifiedTimeUtc\":\"\",\"location\":\"\",\"maxNumberOfWorkers\":null,\"name\":\"\",\"outboundIpAddresses\":\"\",\"possibleOutboundIpAddresses\":\"\",\"redundancyMode\":\"\",\"repositorySiteName\":\"\",\"reserved\":false,\"resourceGroup\":\"\",\"scmSiteAlsoStopped\":false,\"siteConfig\":{\"acrUseManagedIdentityCreds\":false,\"acrUserManagedIdentityID\":null,\"alwaysOn\":null,\"apiDefinition\":null,\"apiManagementConfig\":null,\"appCommandLine\":null,\"appSettings\":null,\"autoHealEnabled\":null,\"autoHealRules\":null,\"autoSwapSlotName\":null,\"azureMonitorLogCategories\":null,\"azureStorageAccounts\":null,\"connectionStrings\":null,\"cors\":null,\"customAppPoolIdentityAdminState\":null,\"customAppPoolIdentityTenantState\":null,\"defaultDocuments\":null,\"detailedErrorLoggingEnabled\":null,\"documentRoot\":null,\"experiments\":null,\"fileChangeAuditEnabled\":null,\"ftpsState\":null,\"functionAppScaleLimit\":null,\"functionsRuntimeScaleMonitoringEnabled\":null,\"handlerMappings\":null,\"healthCheckPath\":null,\"http20Enabled\":null,\"httpLoggingEnabled\":null,\"ipSecurityRestrictions\":null,\"javaContainer\":null,\"javaContainerVersion\":null,\"javaVersion\":null,\"limits\":null,\"linuxFxVersion\":null,\"loadBalancing\":null,\"localMySqlEnabled\":null,\"logsDirectorySizeLimit\":null,\"machineKey\":null,\"managedPipelineMode\":null,\"managedServiceIdentityId\":null,\"metadata\":null,\"minTlsVersion\":null,\"minimumElasticInstanceCount\":0,\"netFrameworkVersion\":null,\"nodeVersion\":null,\"numberOfWorkers\":null,\"phpVersion\":null,\"powerShellVersion\":null,\"preWarmedInstanceCount\":null,\"publishingPassword\":null,\"publishingUsername\":null,\"push\":null,\"pythonVersion\":null,\"remoteDebuggingEnabled\":null,\"remoteDebuggingVersion\":null,\"requestTracingEnabled\":null,\"requestTracingExpirationTime\":null,\"routingRules\":null,\"runtimeADUser\":null,\"runtimeADUserPassword\":null,\"scmIpSecurityRestrictions\":null,\"scmIpSecurityRestrictionsUseMain\":null,\"scmMinTlsVersion\":null,\"scmType\":null,\"tracingOptions\":null,\"use32BitWorkerProcess\":null,\"virtualApplications\":null,\"vnetName\":null,\"vnetRouteAllEnabled\":null,\"webSocketsEnabled\":null,\"websiteTimeZone\":null,\"winAuthAdminState\":null,\"winAuthTenantState\":null,\"windowsFxVersion\":null,\"xManagedServiceIdentityId\":null},\"slotSwapStatus\":null,\"state\":\"\",\"suspendedTill\":null,\"tags\":null,\"targetSwapSlot\":null,\"trafficManagerHostNames\":null,\"type\":\"\",\"usageState\":\"\"}}",
+    "partitionKey": "az_webapp_list_command_result",
+    "rowKey": "2518007091587245328",
+    "timestamp": "2020-10-01T22:34:01.7182689+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A01.7182689Z'\""
+  },
+  {
+    "data": "{}",
+    "partitionKey": "az_webapp_list_command_result",
+    "rowKey": "2518007332665859478",
+    "timestamp": "2020-10-01T15:52:13.4466308+00:00",
+    "eTag": "W/\"datetime'2020-10-01T15%3A52%3A13.4466308Z'\""
+  },
+  {
+    "data": "{\"appServicePlanId\":\"\",\"availabilityState\":\"\",\"clientAffinityEnabled\":false,\"clientCertEnabled\":false,\"clientCertExclusionPaths\":null,\"cloningInfo\":null,\"containerSize\":0,\"dailyMemoryTimeQuota\":0,\"defaultHostName\":\"\",\"enabled\":false,\"enabledHostNames\":{\"0\":\"\",\"1\":\"\"},\"ftpPublishingUrl\":\"\",\"hostNameSslStates\":{\"0\":{\"hostType\":\"\",\"ipBasedSslResult\":null,\"ipBasedSslState\":\"\",\"name\":\"\",\"sslState\":\"\",\"thumbprint\":null,\"toUpdate\":null,\"toUpdateIpBasedSsl\":null,\"virtualIp\":null},\"1\":{\"hostType\":\"\",\"ipBasedSslResult\":null,\"ipBasedSslState\":\"\",\"name\":\"\",\"sslState\":\"\",\"thumbprint\":null,\"toUpdate\":null,\"toUpdateIpBasedSsl\":null,\"virtualIp\":null}},\"hostNames\":{\"0\":\"\"},\"hostNamesDisabled\":false,\"hostingEnvironmentProfile\":null,\"httpsOnly\":false,\"hyperV\":false,\"id\":\"\",\"identity\":null,\"inProgressOperationId\":null,\"isDefaultContainer\":null,\"isXenon\":false,\"kind\":\"\",\"lastModifiedTimeUtc\":\"\",\"location\":\"\",\"maxNumberOfWorkers\":null,\"name\":\"\",\"outboundIpAddresses\":\"\",\"possibleOutboundIpAddresses\":\"\",\"redundancyMode\":\"\",\"repositorySiteName\":\"\",\"reserved\":false,\"resourceGroup\":\"\",\"scmSiteAlsoStopped\":false,\"siteConfig\":{\"acrUseManagedIdentityCreds\":false,\"acrUserManagedIdentityID\":null,\"alwaysOn\":null,\"apiDefinition\":null,\"apiManagementConfig\":null,\"appCommandLine\":null,\"appSettings\":null,\"autoHealEnabled\":null,\"autoHealRules\":null,\"autoSwapSlotName\":null,\"azureMonitorLogCategories\":null,\"azureStorageAccounts\":null,\"connectionStrings\":null,\"cors\":null,\"customAppPoolIdentityAdminState\":null,\"customAppPoolIdentityTenantState\":null,\"defaultDocuments\":null,\"detailedErrorLoggingEnabled\":null,\"documentRoot\":null,\"experiments\":null,\"fileChangeAuditEnabled\":null,\"ftpsState\":null,\"functionAppScaleLimit\":null,\"functionsRuntimeScaleMonitoringEnabled\":null,\"handlerMappings\":null,\"healthCheckPath\":null,\"http20Enabled\":null,\"httpLoggingEnabled\":null,\"ipSecurityRestrictions\":null,\"javaContainer\":null,\"javaContainerVersion\":null,\"javaVersion\":null,\"limits\":null,\"linuxFxVersion\":null,\"loadBalancing\":null,\"localMySqlEnabled\":null,\"logsDirectorySizeLimit\":null,\"machineKey\":null,\"managedPipelineMode\":null,\"managedServiceIdentityId\":null,\"metadata\":null,\"minTlsVersion\":null,\"minimumElasticInstanceCount\":0,\"netFrameworkVersion\":null,\"nodeVersion\":null,\"numberOfWorkers\":null,\"phpVersion\":null,\"powerShellVersion\":null,\"preWarmedInstanceCount\":null,\"publishingPassword\":null,\"publishingUsername\":null,\"push\":null,\"pythonVersion\":null,\"remoteDebuggingEnabled\":null,\"remoteDebuggingVersion\":null,\"requestTracingEnabled\":null,\"requestTracingExpirationTime\":null,\"routingRules\":null,\"runtimeADUser\":null,\"runtimeADUserPassword\":null,\"scmIpSecurityRestrictions\":null,\"scmIpSecurityRestrictionsUseMain\":null,\"scmMinTlsVersion\":null,\"scmType\":null,\"tracingOptions\":null,\"use32BitWorkerProcess\":null,\"virtualApplications\":null,\"vnetName\":null,\"vnetRouteAllEnabled\":null,\"webSocketsEnabled\":null,\"websiteTimeZone\":null,\"winAuthAdminState\":null,\"winAuthTenantState\":null,\"windowsFxVersion\":null,\"xManagedServiceIdentityId\":null},\"slotSwapStatus\":null,\"state\":\"\",\"suspendedTill\":null,\"tags\":null,\"targetSwapSlot\":null,\"trafficManagerHostNames\":null,\"type\":\"\",\"usageState\":\"\"}",
+    "partitionKey": "az_webapp_show_command_result",
+    "rowKey": "2518007091580188965",
+    "timestamp": "2020-10-01T22:34:02.0222103+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A34%3A02.0222103Z'\""
+  },
+  {
+    "data": "{\"availabilityState\":\"\",\"clientAffinityEnabled\":false,\"clientCertEnabled\":false,\"clientCertExclusionPaths\":null,\"cloningInfo\":null,\"containerSize\":0,\"dailyMemoryTimeQuota\":0,\"defaultHostName\":\"\",\"enabled\":false,\"enabledHostNames\":{\"0\":\"\",\"1\":\"\"},\"hostNameSslStates\":{\"0\":{\"hostType\":\"\",\"ipBasedSslResult\":null,\"ipBasedSslState\":\"\",\"name\":\"\",\"sslState\":\"\",\"thumbprint\":null,\"toUpdate\":null,\"toUpdateIpBasedSsl\":null,\"virtualIp\":null},\"1\":{\"hostType\":\"\",\"ipBasedSslResult\":null,\"ipBasedSslState\":\"\",\"name\":\"\",\"sslState\":\"\",\"thumbprint\":null,\"toUpdate\":null,\"toUpdateIpBasedSsl\":null,\"virtualIp\":null}},\"hostNames\":{\"0\":\"\"},\"hostNamesDisabled\":false,\"hostingEnvironmentProfile\":null,\"httpsOnly\":false,\"hyperV\":false,\"id\":\"\",\"identity\":null,\"inProgressOperationId\":null,\"isDefaultContainer\":null,\"isXenon\":false,\"kind\":\"\",\"lastModifiedTimeUtc\":\"\",\"location\":\"\",\"maxNumberOfWorkers\":null,\"name\":\"\",\"outboundIpAddresses\":\"\",\"possibleOutboundIpAddresses\":\"\",\"redundancyMode\":\"\",\"repositorySiteName\":\"\",\"reserved\":false,\"resourceGroup\":\"\",\"scmSiteAlsoStopped\":false,\"serverFarmId\":\"\",\"siteConfig\":{\"acrUseManagedIdentityCreds\":false,\"acrUserManagedIdentityID\":null,\"alwaysOn\":null,\"apiDefinition\":null,\"apiManagementConfig\":null,\"appCommandLine\":null,\"appSettings\":null,\"autoHealEnabled\":null,\"autoHealRules\":null,\"autoSwapSlotName\":null,\"azureMonitorLogCategories\":null,\"azureStorageAccounts\":null,\"connectionStrings\":null,\"cors\":null,\"customAppPoolIdentityAdminState\":null,\"customAppPoolIdentityTenantState\":null,\"defaultDocuments\":null,\"detailedErrorLoggingEnabled\":null,\"documentRoot\":null,\"experiments\":null,\"fileChangeAuditEnabled\":null,\"ftpsState\":null,\"functionAppScaleLimit\":null,\"functionsRuntimeScaleMonitoringEnabled\":null,\"handlerMappings\":null,\"healthCheckPath\":null,\"http20Enabled\":null,\"httpLoggingEnabled\":null,\"ipSecurityRestrictions\":{\"0\":{\"action\":\"\",\"description\":\"\",\"ipAddress\":\"\",\"name\":\"\",\"priority\":0,\"subnetMask\":null,\"subnetTrafficTag\":null,\"tag\":null,\"vnetSubnetResourceId\":null,\"vnetTrafficTag\":null}},\"javaContainer\":null,\"javaContainerVersion\":null,\"javaVersion\":null,\"limits\":null,\"linuxFxVersion\":null,\"loadBalancing\":null,\"localMySqlEnabled\":null,\"logsDirectorySizeLimit\":null,\"machineKey\":null,\"managedPipelineMode\":null,\"managedServiceIdentityId\":null,\"metadata\":null,\"minTlsVersion\":null,\"minimumElasticInstanceCount\":0,\"netFrameworkVersion\":null,\"nodeVersion\":null,\"numberOfWorkers\":null,\"phpVersion\":null,\"powerShellVersion\":null,\"preWarmedInstanceCount\":null,\"publishingPassword\":null,\"publishingUsername\":null,\"push\":null,\"pythonVersion\":null,\"remoteDebuggingEnabled\":null,\"remoteDebuggingVersion\":null,\"requestTracingEnabled\":null,\"requestTracingExpirationTime\":null,\"routingRules\":null,\"runtimeADUser\":null,\"runtimeADUserPassword\":null,\"scmIpSecurityRestrictions\":{\"0\":{\"action\":\"\",\"description\":\"\",\"ipAddress\":\"\",\"name\":\"\",\"priority\":0,\"subnetMask\":null,\"subnetTrafficTag\":null,\"tag\":null,\"vnetSubnetResourceId\":null,\"vnetTrafficTag\":null}},\"scmIpSecurityRestrictionsUseMain\":null,\"scmMinTlsVersion\":null,\"scmType\":null,\"tracingOptions\":null,\"use32BitWorkerProcess\":null,\"virtualApplications\":null,\"vnetName\":null,\"vnetRouteAllEnabled\":null,\"webSocketsEnabled\":null,\"websiteTimeZone\":null,\"winAuthAdminState\":null,\"winAuthTenantState\":null,\"windowsFxVersion\":null,\"xManagedServiceIdentityId\":null},\"slotSwapStatus\":null,\"state\":\"\",\"suspendedTill\":null,\"tags\":null,\"targetSwapSlot\":null,\"trafficManagerHostNames\":null,\"type\":\"\",\"usageState\":\"\"}",
+    "partitionKey": "az_webapp_update_command_result",
+    "rowKey": "2518007091626421965",
+    "timestamp": "2020-10-01T22:33:57.7365181+00:00",
+    "eTag": "W/\"datetime'2020-10-01T22%3A33%3A57.7365181Z'\""
+  }
+]
+
