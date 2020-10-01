@@ -25,7 +25,7 @@ export class az_extension {
      * ```
      */
     static add(): az_extension_add_command_builder {
-        return new az_extension_add_command_builder("az extension add");
+        return new az_extension_add_command_builder("az extension add", 'az_extension_add_command_result');
     }
 
     /**
@@ -37,7 +37,7 @@ export class az_extension {
      * ```
      */
     static list(): az_extension_list_command_builder {
-        return new az_extension_list_command_builder("az extension list");
+        return new az_extension_list_command_builder("az extension list", 'az_extension_list_command_result');
     }
 
     /**
@@ -49,7 +49,7 @@ export class az_extension {
      * ```
      */
     static list_available(): az_extension_list_available_command_builder {
-        return new az_extension_list_available_command_builder("az extension list-available");
+        return new az_extension_list_available_command_builder("az extension list-available", 'az_extension_list_available_command_result');
     }
 
     /**
@@ -63,7 +63,7 @@ export class az_extension {
      * @param {string} name Name of extension.
      */
     static list_versions(name: string): az_extension_list_versions_command_builder {
-        return new az_extension_list_versions_command_builder("az extension list-versions", name);
+        return new az_extension_list_versions_command_builder("az extension list-versions", 'az_extension_list_versions_command_result', name);
     }
 
     /**
@@ -77,7 +77,7 @@ export class az_extension {
      * @param {string} name Name of extension.
      */
     static remove(name: string): az_extension_remove_command_builder {
-        return new az_extension_remove_command_builder("az extension remove", name);
+        return new az_extension_remove_command_builder("az extension remove", 'az_extension_remove_command_result', name);
     }
 
     /**
@@ -92,7 +92,7 @@ export class az_extension {
      * @param {string} name Name of extension.
      */
     static show(name: string): az_extension_show_command_builder {
-        return new az_extension_show_command_builder("az extension show", name);
+        return new az_extension_show_command_builder("az extension show", 'az_extension_show_command_result', name);
     }
 
     /**
@@ -108,7 +108,7 @@ export class az_extension {
      * @param {string} name Name of extension.
      */
     static update(name: string): az_extension_update_command_builder {
-        return new az_extension_update_command_builder("az extension update", name);
+        return new az_extension_update_command_builder("az extension update", 'az_extension_update_command_result', name);
     }
 }
 
@@ -128,8 +128,8 @@ export class az_extension {
  * ```
  */
 class az_extension_add_command_builder extends CommandBuilder<az_extension_add_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of extension. */
@@ -190,8 +190,8 @@ class az_extension_add_command_builder extends CommandBuilder<az_extension_add_c
  * ```
  */
 class az_extension_list_command_builder extends CommandBuilder<az_extension_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -210,8 +210,8 @@ class az_extension_list_command_builder extends CommandBuilder<az_extension_list
  * ```
  */
 class az_extension_list_available_command_builder extends CommandBuilder<az_extension_list_available_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Show the raw data from the extension index. */
@@ -232,8 +232,8 @@ class az_extension_list_available_command_builder extends CommandBuilder<az_exte
  * @param {string} name Name of extension.
  */
 class az_extension_list_versions_command_builder extends CommandBuilder<az_extension_list_versions_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -255,8 +255,8 @@ class az_extension_list_versions_command_builder extends CommandBuilder<az_exten
  * @param {string} name Name of extension.
  */
 class az_extension_remove_command_builder extends CommandBuilder<az_extension_remove_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -279,8 +279,8 @@ class az_extension_remove_command_builder extends CommandBuilder<az_extension_re
  * @param {string} name Name of extension.
  */
 class az_extension_show_command_builder extends CommandBuilder<az_extension_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -310,8 +310,8 @@ class az_extension_show_command_builder extends CommandBuilder<az_extension_show
  * @param {string} name Name of extension.
  */
 class az_extension_update_command_builder extends CommandBuilder<az_extension_update_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 

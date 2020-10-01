@@ -38,7 +38,7 @@ export class az_snapshot {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_snapshot_create_command_builder {
-        return new az_snapshot_create_command_builder("az snapshot create", name, resourceGroup);
+        return new az_snapshot_create_command_builder("az snapshot create", 'az_snapshot_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -53,7 +53,7 @@ export class az_snapshot {
      * ```
      */
     static delete(): az_snapshot_delete_command_builder {
-        return new az_snapshot_delete_command_builder("az snapshot delete");
+        return new az_snapshot_delete_command_builder("az snapshot delete", 'az_snapshot_delete_command_result');
     }
 
     /**
@@ -72,7 +72,7 @@ export class az_snapshot {
      * @param {string} durationInSeconds Time duration in seconds until the SAS access expires.
      */
     static grant_access(durationInSeconds: string): az_snapshot_grant_access_command_builder {
-        return new az_snapshot_grant_access_command_builder("az snapshot grant-access", durationInSeconds);
+        return new az_snapshot_grant_access_command_builder("az snapshot grant-access", 'az_snapshot_grant_access_command_result', durationInSeconds);
     }
 
     /**
@@ -86,7 +86,7 @@ export class az_snapshot {
      * ```
      */
     static list(): az_snapshot_list_command_builder {
-        return new az_snapshot_list_command_builder("az snapshot list");
+        return new az_snapshot_list_command_builder("az snapshot list", 'az_snapshot_list_command_result');
     }
 
     /**
@@ -101,7 +101,7 @@ export class az_snapshot {
      * ```
      */
     static revoke_access(): az_snapshot_revoke_access_command_builder {
-        return new az_snapshot_revoke_access_command_builder("az snapshot revoke-access");
+        return new az_snapshot_revoke_access_command_builder("az snapshot revoke-access", 'az_snapshot_revoke_access_command_result');
     }
 
     /**
@@ -117,7 +117,7 @@ export class az_snapshot {
      * ```
      */
     static show(): az_snapshot_show_command_builder {
-        return new az_snapshot_show_command_builder("az snapshot show");
+        return new az_snapshot_show_command_builder("az snapshot show", 'az_snapshot_show_command_result');
     }
 
     /**
@@ -142,7 +142,7 @@ export class az_snapshot {
      * ```
      */
     static update(): az_snapshot_update_command_builder {
-        return new az_snapshot_update_command_builder("az snapshot update");
+        return new az_snapshot_update_command_builder("az snapshot update", 'az_snapshot_update_command_result');
     }
 
     /**
@@ -164,7 +164,7 @@ export class az_snapshot {
      * ```
      */
     static wait(): az_snapshot_wait_command_builder {
-        return new az_snapshot_wait_command_builder("az snapshot wait");
+        return new az_snapshot_wait_command_builder("az snapshot wait", 'az_snapshot_wait_command_result');
     }
 }
 
@@ -196,8 +196,8 @@ export class az_snapshot {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_snapshot_create_command_builder extends CommandBuilder<az_snapshot_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -317,8 +317,8 @@ class az_snapshot_create_command_builder extends CommandBuilder<az_snapshot_crea
  * ```
  */
 class az_snapshot_delete_command_builder extends CommandBuilder<az_snapshot_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -362,8 +362,8 @@ class az_snapshot_delete_command_builder extends CommandBuilder<az_snapshot_dele
  * @param {string} durationInSeconds Time duration in seconds until the SAS access expires.
  */
 class az_snapshot_grant_access_command_builder extends CommandBuilder<az_snapshot_grant_access_command_result> {
-    constructor(commandPath: string, durationInSeconds: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, durationInSeconds: string) {
+        super(commandPath, resultDataTypeName);
         this.durationInSeconds(durationInSeconds)
     }
 
@@ -415,8 +415,8 @@ class az_snapshot_grant_access_command_builder extends CommandBuilder<az_snapsho
  * ```
  */
 class az_snapshot_list_command_builder extends CommandBuilder<az_snapshot_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -450,8 +450,8 @@ class az_snapshot_list_command_builder extends CommandBuilder<az_snapshot_list_c
  * ```
  */
 class az_snapshot_revoke_access_command_builder extends CommandBuilder<az_snapshot_revoke_access_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -492,8 +492,8 @@ class az_snapshot_revoke_access_command_builder extends CommandBuilder<az_snapsh
  * ```
  */
 class az_snapshot_show_command_builder extends CommandBuilder<az_snapshot_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -549,8 +549,8 @@ class az_snapshot_show_command_builder extends CommandBuilder<az_snapshot_show_c
  * ```
  */
 class az_snapshot_update_command_builder extends CommandBuilder<az_snapshot_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -657,8 +657,8 @@ class az_snapshot_update_command_builder extends CommandBuilder<az_snapshot_upda
  * ```
  */
 class az_snapshot_wait_command_builder extends CommandBuilder<az_snapshot_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */

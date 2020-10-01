@@ -81,7 +81,7 @@ export class az_devops_admin_banner {
      * @param {string} message Message (string) to show in the banner.
      */
     static add(message: string): az_devops_admin_banner_add_command_builder {
-        return new az_devops_admin_banner_add_command_builder("az devops admin banner add", message);
+        return new az_devops_admin_banner_add_command_builder("az devops admin banner add", 'az_devops_admin_banner_add_command_result', message);
     }
 
     /**
@@ -96,7 +96,7 @@ export class az_devops_admin_banner {
      * ```
      */
     static list(): az_devops_admin_banner_list_command_builder {
-        return new az_devops_admin_banner_list_command_builder("az devops admin banner list");
+        return new az_devops_admin_banner_list_command_builder("az devops admin banner list", 'az_devops_admin_banner_list_command_result');
     }
 
     /**
@@ -113,7 +113,7 @@ export class az_devops_admin_banner {
      * @param {string} id ID of the banner to remove.
      */
     static remove(id: string): az_devops_admin_banner_remove_command_builder {
-        return new az_devops_admin_banner_remove_command_builder("az devops admin banner remove", id);
+        return new az_devops_admin_banner_remove_command_builder("az devops admin banner remove", 'az_devops_admin_banner_remove_command_result', id);
     }
 
     /**
@@ -131,7 +131,7 @@ export class az_devops_admin_banner {
      * @param {string} id Identifier for the banner.
      */
     static show(id: string): az_devops_admin_banner_show_command_builder {
-        return new az_devops_admin_banner_show_command_builder("az devops admin banner show", id);
+        return new az_devops_admin_banner_show_command_builder("az devops admin banner show", 'az_devops_admin_banner_show_command_result', id);
     }
 
     /**
@@ -151,7 +151,7 @@ export class az_devops_admin_banner {
      * @param {string} id ID of the banner to update.
      */
     static update(id: string): az_devops_admin_banner_update_command_builder {
-        return new az_devops_admin_banner_update_command_builder("az devops admin banner update", id);
+        return new az_devops_admin_banner_update_command_builder("az devops admin banner update", 'az_devops_admin_banner_update_command_result', id);
     }
 }
 
@@ -177,7 +177,7 @@ export class az_devops_extension {
      * @param {string} publisherId Publisher Id. This will map to publisher-name                           in the az devops extension search output.
      */
     static disable(extensionId: string, publisherId: string): az_devops_extension_disable_command_builder {
-        return new az_devops_extension_disable_command_builder("az devops extension disable", extensionId, publisherId);
+        return new az_devops_extension_disable_command_builder("az devops extension disable", 'az_devops_extension_disable_command_result', extensionId, publisherId);
     }
 
     /**
@@ -196,7 +196,7 @@ export class az_devops_extension {
      * @param {string} publisherId Publisher Id. This will map to publisher-name                           in the az devops extension search output.
      */
     static enable(extensionId: string, publisherId: string): az_devops_extension_enable_command_builder {
-        return new az_devops_extension_enable_command_builder("az devops extension enable", extensionId, publisherId);
+        return new az_devops_extension_enable_command_builder("az devops extension enable", 'az_devops_extension_enable_command_result', extensionId, publisherId);
     }
 
     /**
@@ -215,7 +215,7 @@ export class az_devops_extension {
      * @param {string} publisherId Publisher Id. This will map to publisher-name                           in the az devops extension search output.
      */
     static install(extensionId: string, publisherId: string): az_devops_extension_install_command_builder {
-        return new az_devops_extension_install_command_builder("az devops extension install", extensionId, publisherId);
+        return new az_devops_extension_install_command_builder("az devops extension install", 'az_devops_extension_install_command_result', extensionId, publisherId);
     }
 
     /**
@@ -232,7 +232,7 @@ export class az_devops_extension {
      * ```
      */
     static list(): az_devops_extension_list_command_builder {
-        return new az_devops_extension_list_command_builder("az devops extension list");
+        return new az_devops_extension_list_command_builder("az devops extension list", 'az_devops_extension_list_command_result');
     }
 
     /**
@@ -247,7 +247,7 @@ export class az_devops_extension {
      * @param {string} searchQuery Search term.
      */
     static search(searchQuery: string): az_devops_extension_search_command_builder {
-        return new az_devops_extension_search_command_builder("az devops extension search", searchQuery);
+        return new az_devops_extension_search_command_builder("az devops extension search", 'az_devops_extension_search_command_result', searchQuery);
     }
 
     /**
@@ -267,7 +267,7 @@ export class az_devops_extension {
      * @param {string} publisherId Publisher Id. This will map to publisher-name                           in the az devops extension search output.
      */
     static show(extensionId: string, publisherId: string): az_devops_extension_show_command_builder {
-        return new az_devops_extension_show_command_builder("az devops extension show", extensionId, publisherId);
+        return new az_devops_extension_show_command_builder("az devops extension show", 'az_devops_extension_show_command_result', extensionId, publisherId);
     }
 
     /**
@@ -287,7 +287,7 @@ export class az_devops_extension {
      * @param {string} publisherId Publisher Id. This will map to publisher-name                           in the az devops extension search output.
      */
     static uninstall(extensionId: string, publisherId: string): az_devops_extension_uninstall_command_builder {
-        return new az_devops_extension_uninstall_command_builder("az devops extension uninstall", extensionId, publisherId);
+        return new az_devops_extension_uninstall_command_builder("az devops extension uninstall", 'az_devops_extension_uninstall_command_result', extensionId, publisherId);
     }
 }
 
@@ -312,7 +312,7 @@ export class az_devops_project {
      * @param {string} name Name of the new project.
      */
     static create(name: string): az_devops_project_create_command_builder {
-        return new az_devops_project_create_command_builder("az devops project create", name);
+        return new az_devops_project_create_command_builder("az devops project create", 'az_devops_project_create_command_result', name);
     }
 
     /**
@@ -330,7 +330,7 @@ export class az_devops_project {
      * @param {string} id The id of the project to delete.
      */
     static delete(id: string): az_devops_project_delete_command_builder {
-        return new az_devops_project_delete_command_builder("az devops project delete", id);
+        return new az_devops_project_delete_command_builder("az devops project delete", 'az_devops_project_delete_command_result', id);
     }
 
     /**
@@ -350,7 +350,7 @@ export class az_devops_project {
      * ```
      */
     static list(): az_devops_project_list_command_builder {
-        return new az_devops_project_list_command_builder("az devops project list");
+        return new az_devops_project_list_command_builder("az devops project list", 'az_devops_project_list_command_result');
     }
 
     /**
@@ -369,7 +369,7 @@ export class az_devops_project {
      * @param {string} project Name or ID of the project. You can configure the default project using az devops configure -d project=NAME_OR_ID. Required if not configured as default or picked up via git config.
      */
     static show(project: string): az_devops_project_show_command_builder {
-        return new az_devops_project_show_command_builder("az devops project show", project);
+        return new az_devops_project_show_command_builder("az devops project show", 'az_devops_project_show_command_result', project);
     }
 }
 
@@ -391,7 +391,7 @@ export class az_devops_security_group_membership {
      * @param {string} memberId Descriptor of the group or Email Id of the user to be added. User should already be a part of the organization. Use `az devops user add` command to add an user to organization.
      */
     static add(groupId: string, memberId: string): az_devops_security_group_membership_add_command_builder {
-        return new az_devops_security_group_membership_add_command_builder("az devops security group membership add", groupId, memberId);
+        return new az_devops_security_group_membership_add_command_builder("az devops security group membership add", 'az_devops_security_group_membership_add_command_result', groupId, memberId);
     }
 
     /**
@@ -410,7 +410,7 @@ export class az_devops_security_group_membership {
      * @param {string} id Group descriptor or User Email whose membership details are required.
      */
     static list(id: string): az_devops_security_group_membership_list_command_builder {
-        return new az_devops_security_group_membership_list_command_builder("az devops security group membership list", id);
+        return new az_devops_security_group_membership_list_command_builder("az devops security group membership list", 'az_devops_security_group_membership_list_command_result', id);
     }
 
     /**
@@ -430,7 +430,7 @@ export class az_devops_security_group_membership {
      * @param {string} memberId Descriptor of the group or Email Id of the user to be removed.
      */
     static remove(groupId: string, memberId: string): az_devops_security_group_membership_remove_command_builder {
-        return new az_devops_security_group_membership_remove_command_builder("az devops security group membership remove", groupId, memberId);
+        return new az_devops_security_group_membership_remove_command_builder("az devops security group membership remove", 'az_devops_security_group_membership_remove_command_result', groupId, memberId);
     }
 }
 
@@ -454,7 +454,7 @@ export class az_devops_security_group {
      * ```
      */
     static create(): az_devops_security_group_create_command_builder {
-        return new az_devops_security_group_create_command_builder("az devops security group create");
+        return new az_devops_security_group_create_command_builder("az devops security group create", 'az_devops_security_group_create_command_result');
     }
 
     /**
@@ -472,7 +472,7 @@ export class az_devops_security_group {
      * @param {string} id Descriptor of the group.
      */
     static delete(id: string): az_devops_security_group_delete_command_builder {
-        return new az_devops_security_group_delete_command_builder("az devops security group delete", id);
+        return new az_devops_security_group_delete_command_builder("az devops security group delete", 'az_devops_security_group_delete_command_result', id);
     }
 
     /**
@@ -491,7 +491,7 @@ export class az_devops_security_group {
      * ```
      */
     static list(): az_devops_security_group_list_command_builder {
-        return new az_devops_security_group_list_command_builder("az devops security group list");
+        return new az_devops_security_group_list_command_builder("az devops security group list", 'az_devops_security_group_list_command_result');
     }
 
     /**
@@ -509,7 +509,7 @@ export class az_devops_security_group {
      * @param {string} id Descriptor of the group.
      */
     static show(id: string): az_devops_security_group_show_command_builder {
-        return new az_devops_security_group_show_command_builder("az devops security group show", id);
+        return new az_devops_security_group_show_command_builder("az devops security group show", 'az_devops_security_group_show_command_result', id);
     }
 
     /**
@@ -528,7 +528,7 @@ export class az_devops_security_group {
      * @param {string} id Descriptor of the group.
      */
     static update(id: string): az_devops_security_group_update_command_builder {
-        return new az_devops_security_group_update_command_builder("az devops security group update", id);
+        return new az_devops_security_group_update_command_builder("az devops security group update", 'az_devops_security_group_update_command_result', id);
     }
 }
 
@@ -547,7 +547,7 @@ export class az_devops_security_permission_namespace {
      * ```
      */
     static list(): az_devops_security_permission_namespace_list_command_builder {
-        return new az_devops_security_permission_namespace_list_command_builder("az devops security permission namespace list");
+        return new az_devops_security_permission_namespace_list_command_builder("az devops security permission namespace list", 'az_devops_security_permission_namespace_list_command_result');
     }
 
     /**
@@ -565,7 +565,7 @@ export class az_devops_security_permission_namespace {
      * @param {string} namespaceId ID of security namespace.
      */
     static show(namespaceId: string): az_devops_security_permission_namespace_show_command_builder {
-        return new az_devops_security_permission_namespace_show_command_builder("az devops security permission namespace show", namespaceId);
+        return new az_devops_security_permission_namespace_show_command_builder("az devops security permission namespace show", 'az_devops_security_permission_namespace_show_command_result', namespaceId);
     }
 }
 
@@ -590,7 +590,7 @@ export class az_devops_security_permission {
      * @param {string} subject User Email ID or Group descriptor.
      */
     static list(namespaceId: string, subject: string): az_devops_security_permission_list_command_builder {
-        return new az_devops_security_permission_list_command_builder("az devops security permission list", namespaceId, subject);
+        return new az_devops_security_permission_list_command_builder("az devops security permission list", 'az_devops_security_permission_list_command_result', namespaceId, subject);
     }
 
     /**
@@ -613,7 +613,7 @@ export class az_devops_security_permission {
      * @param {string} token Security token.
      */
     static reset(namespaceId: string, permissionBit: string, subject: string, token: string): az_devops_security_permission_reset_command_builder {
-        return new az_devops_security_permission_reset_command_builder("az devops security permission reset", namespaceId, permissionBit, subject, token);
+        return new az_devops_security_permission_reset_command_builder("az devops security permission reset", 'az_devops_security_permission_reset_command_result', namespaceId, permissionBit, subject, token);
     }
 
     /**
@@ -635,7 +635,7 @@ export class az_devops_security_permission {
      * @param {string} token Security token.
      */
     static reset_all(namespaceId: string, subject: string, token: string): az_devops_security_permission_reset_all_command_builder {
-        return new az_devops_security_permission_reset_all_command_builder("az devops security permission reset-all", namespaceId, subject, token);
+        return new az_devops_security_permission_reset_all_command_builder("az devops security permission reset-all", 'az_devops_security_permission_reset_all_command_result', namespaceId, subject, token);
     }
 
     /**
@@ -657,7 +657,7 @@ export class az_devops_security_permission {
      * @param {string} token Security token.
      */
     static show(namespaceId: string, subject: string, token: string): az_devops_security_permission_show_command_builder {
-        return new az_devops_security_permission_show_command_builder("az devops security permission show", namespaceId, subject, token);
+        return new az_devops_security_permission_show_command_builder("az devops security permission show", 'az_devops_security_permission_show_command_result', namespaceId, subject, token);
     }
 
     /**
@@ -681,7 +681,7 @@ export class az_devops_security_permission {
      * @param {string} token Security token.
      */
     static update(namespaceId: string, subject: string, token: string): az_devops_security_permission_update_command_builder {
-        return new az_devops_security_permission_update_command_builder("az devops security permission update", namespaceId, subject, token);
+        return new az_devops_security_permission_update_command_builder("az devops security permission update", 'az_devops_security_permission_update_command_result', namespaceId, subject, token);
     }
 }
 
@@ -715,7 +715,7 @@ export class az_devops_service_endpoint_azurerm {
      * @param {string} name Name of service endpoint to create.
      */
     static create(azureRmServicePrincipalId: string, azureRmSubscriptionId: string, azureRmSubscriptionName: string, azureRmTenantId: string, name: string): az_devops_service_endpoint_azurerm_create_command_builder {
-        return new az_devops_service_endpoint_azurerm_create_command_builder("az devops service-endpoint azurerm create", azureRmServicePrincipalId, azureRmSubscriptionId, azureRmSubscriptionName, azureRmTenantId, name);
+        return new az_devops_service_endpoint_azurerm_create_command_builder("az devops service-endpoint azurerm create", 'az_devops_service_endpoint_azurerm_create_command_result', azureRmServicePrincipalId, azureRmSubscriptionId, azureRmSubscriptionName, azureRmTenantId, name);
     }
 }
 
@@ -738,7 +738,7 @@ export class az_devops_service_endpoint_github {
      * @param {string} name Name of service endpoint to create.
      */
     static create(githubUrl: string, name: string): az_devops_service_endpoint_github_create_command_builder {
-        return new az_devops_service_endpoint_github_create_command_builder("az devops service-endpoint github create", githubUrl, name);
+        return new az_devops_service_endpoint_github_create_command_builder("az devops service-endpoint github create", 'az_devops_service_endpoint_github_create_command_result', githubUrl, name);
     }
 }
 
@@ -760,7 +760,7 @@ export class az_devops_service_endpoint {
      * @param {string} serviceEndpointConfiguration Configuration file with service endpoint request.
      */
     static create(serviceEndpointConfiguration: string): az_devops_service_endpoint_create_command_builder {
-        return new az_devops_service_endpoint_create_command_builder("az devops service-endpoint create", serviceEndpointConfiguration);
+        return new az_devops_service_endpoint_create_command_builder("az devops service-endpoint create", 'az_devops_service_endpoint_create_command_result', serviceEndpointConfiguration);
     }
 
     /**
@@ -780,7 +780,7 @@ export class az_devops_service_endpoint {
      * @param {string} id Id of the service endpoint to delete.
      */
     static delete(id: string): az_devops_service_endpoint_delete_command_builder {
-        return new az_devops_service_endpoint_delete_command_builder("az devops service-endpoint delete", id);
+        return new az_devops_service_endpoint_delete_command_builder("az devops service-endpoint delete", 'az_devops_service_endpoint_delete_command_result', id);
     }
 
     /**
@@ -796,7 +796,7 @@ export class az_devops_service_endpoint {
      * ```
      */
     static list(): az_devops_service_endpoint_list_command_builder {
-        return new az_devops_service_endpoint_list_command_builder("az devops service-endpoint list");
+        return new az_devops_service_endpoint_list_command_builder("az devops service-endpoint list", 'az_devops_service_endpoint_list_command_result');
     }
 
     /**
@@ -815,7 +815,7 @@ export class az_devops_service_endpoint {
      * @param {string} id ID of the service endpoint.
      */
     static show(id: string): az_devops_service_endpoint_show_command_builder {
-        return new az_devops_service_endpoint_show_command_builder("az devops service-endpoint show", id);
+        return new az_devops_service_endpoint_show_command_builder("az devops service-endpoint show", 'az_devops_service_endpoint_show_command_result', id);
     }
 
     /**
@@ -834,7 +834,7 @@ export class az_devops_service_endpoint {
      * @param {string} id ID of the service endpoint.
      */
     static update(id: string): az_devops_service_endpoint_update_command_builder {
-        return new az_devops_service_endpoint_update_command_builder("az devops service-endpoint update", id);
+        return new az_devops_service_endpoint_update_command_builder("az devops service-endpoint update", 'az_devops_service_endpoint_update_command_result', id);
     }
 }
 
@@ -856,7 +856,7 @@ export class az_devops_team {
      * @param {string} name Name of the new team.
      */
     static create(name: string): az_devops_team_create_command_builder {
-        return new az_devops_team_create_command_builder("az devops team create", name);
+        return new az_devops_team_create_command_builder("az devops team create", 'az_devops_team_create_command_result', name);
     }
 
     /**
@@ -875,7 +875,7 @@ export class az_devops_team {
      * @param {string} id The id of the team to delete.
      */
     static delete(id: string): az_devops_team_delete_command_builder {
-        return new az_devops_team_delete_command_builder("az devops team delete", id);
+        return new az_devops_team_delete_command_builder("az devops team delete", 'az_devops_team_delete_command_result', id);
     }
 
     /**
@@ -893,7 +893,7 @@ export class az_devops_team {
      * ```
      */
     static list(): az_devops_team_list_command_builder {
-        return new az_devops_team_list_command_builder("az devops team list");
+        return new az_devops_team_list_command_builder("az devops team list", 'az_devops_team_list_command_result');
     }
 
     /**
@@ -913,7 +913,7 @@ export class az_devops_team {
      * @param {string} team The name or id of the team to show members of.
      */
     static list_member(team: string): az_devops_team_list_member_command_builder {
-        return new az_devops_team_list_member_command_builder("az devops team list-member", team);
+        return new az_devops_team_list_member_command_builder("az devops team list-member", 'az_devops_team_list_member_command_result', team);
     }
 
     /**
@@ -932,7 +932,7 @@ export class az_devops_team {
      * @param {string} team The name or id of the team to show.
      */
     static show(team: string): az_devops_team_show_command_builder {
-        return new az_devops_team_show_command_builder("az devops team show", team);
+        return new az_devops_team_show_command_builder("az devops team show", 'az_devops_team_show_command_result', team);
     }
 
     /**
@@ -952,7 +952,7 @@ export class az_devops_team {
      * @param {string} team The name or id of the team to be updated.
      */
     static update(team: string): az_devops_team_update_command_builder {
-        return new az_devops_team_update_command_builder("az devops team update", team);
+        return new az_devops_team_update_command_builder("az devops team update", 'az_devops_team_update_command_result', team);
     }
 }
 
@@ -975,7 +975,7 @@ export class az_devops_user {
      * @param {'advanced' | 'earlyAdopter' | 'express' | 'professional' | 'stakeholder'} licenseType License type for the user.
      */
     static add(emailId: string, licenseType: 'advanced' | 'earlyAdopter' | 'express' | 'professional' | 'stakeholder'): az_devops_user_add_command_builder {
-        return new az_devops_user_add_command_builder("az devops user add", emailId, licenseType);
+        return new az_devops_user_add_command_builder("az devops user add", 'az_devops_user_add_command_result', emailId, licenseType);
     }
 
     /**
@@ -992,7 +992,7 @@ export class az_devops_user {
      * ```
      */
     static list(): az_devops_user_list_command_builder {
-        return new az_devops_user_list_command_builder("az devops user list");
+        return new az_devops_user_list_command_builder("az devops user list", 'az_devops_user_list_command_result');
     }
 
     /**
@@ -1010,7 +1010,7 @@ export class az_devops_user {
      * @param {string} user Email ID or ID of the user.
      */
     static remove(user: string): az_devops_user_remove_command_builder {
-        return new az_devops_user_remove_command_builder("az devops user remove", user);
+        return new az_devops_user_remove_command_builder("az devops user remove", 'az_devops_user_remove_command_result', user);
     }
 
     /**
@@ -1028,7 +1028,7 @@ export class az_devops_user {
      * @param {string} user Email ID or ID of the user.
      */
     static show(user: string): az_devops_user_show_command_builder {
-        return new az_devops_user_show_command_builder("az devops user show", user);
+        return new az_devops_user_show_command_builder("az devops user show", 'az_devops_user_show_command_result', user);
     }
 
     /**
@@ -1047,7 +1047,7 @@ export class az_devops_user {
      * @param {string} user Email ID or ID of the user.
      */
     static update(licenseType: 'advanced' | 'earlyAdopter' | 'express' | 'professional' | 'stakeholder', user: string): az_devops_user_update_command_builder {
-        return new az_devops_user_update_command_builder("az devops user update", licenseType, user);
+        return new az_devops_user_update_command_builder("az devops user update", 'az_devops_user_update_command_result', licenseType, user);
     }
 }
 
@@ -1074,7 +1074,7 @@ export class az_devops_wiki_page {
      * @param {string} wiki Name or Id of the wiki.
      */
     static create(path: string, wiki: string): az_devops_wiki_page_create_command_builder {
-        return new az_devops_wiki_page_create_command_builder("az devops wiki page create", path, wiki);
+        return new az_devops_wiki_page_create_command_builder("az devops wiki page create", 'az_devops_wiki_page_create_command_result', path, wiki);
     }
 
     /**
@@ -1096,7 +1096,7 @@ export class az_devops_wiki_page {
      * @param {string} wiki Name or Id of the wiki.
      */
     static delete(path: string, wiki: string): az_devops_wiki_page_delete_command_builder {
-        return new az_devops_wiki_page_delete_command_builder("az devops wiki page delete", path, wiki);
+        return new az_devops_wiki_page_delete_command_builder("az devops wiki page delete", 'az_devops_wiki_page_delete_command_result', path, wiki);
     }
 
     /**
@@ -1120,7 +1120,7 @@ export class az_devops_wiki_page {
      * @param {string} wiki Name or Id of the wiki.
      */
     static show(path: string, wiki: string): az_devops_wiki_page_show_command_builder {
-        return new az_devops_wiki_page_show_command_builder("az devops wiki page show", path, wiki);
+        return new az_devops_wiki_page_show_command_builder("az devops wiki page show", 'az_devops_wiki_page_show_command_result', path, wiki);
     }
 
     /**
@@ -1146,7 +1146,7 @@ export class az_devops_wiki_page {
      * @param {string} wiki Name or Id of the wiki.
      */
     static update(path: string, version: string, wiki: string): az_devops_wiki_page_update_command_builder {
-        return new az_devops_wiki_page_update_command_builder("az devops wiki page update", path, version, wiki);
+        return new az_devops_wiki_page_update_command_builder("az devops wiki page update", 'az_devops_wiki_page_update_command_result', path, version, wiki);
     }
 }
 
@@ -1169,7 +1169,7 @@ export class az_devops_wiki {
      * ```
      */
     static create(): az_devops_wiki_create_command_builder {
-        return new az_devops_wiki_create_command_builder("az devops wiki create");
+        return new az_devops_wiki_create_command_builder("az devops wiki create", 'az_devops_wiki_create_command_result');
     }
 
     /**
@@ -1188,7 +1188,7 @@ export class az_devops_wiki {
      * @param {string} wiki Name or Id of the wiki to delete.
      */
     static delete(wiki: string): az_devops_wiki_delete_command_builder {
-        return new az_devops_wiki_delete_command_builder("az devops wiki delete", wiki);
+        return new az_devops_wiki_delete_command_builder("az devops wiki delete", 'az_devops_wiki_delete_command_result', wiki);
     }
 
     /**
@@ -1205,7 +1205,7 @@ export class az_devops_wiki {
      * ```
      */
     static list(): az_devops_wiki_list_command_builder {
-        return new az_devops_wiki_list_command_builder("az devops wiki list");
+        return new az_devops_wiki_list_command_builder("az devops wiki list", 'az_devops_wiki_list_command_result');
     }
 
     /**
@@ -1225,7 +1225,7 @@ export class az_devops_wiki {
      * @param {string} wiki Name or Id of the wiki.
      */
     static show(wiki: string): az_devops_wiki_show_command_builder {
-        return new az_devops_wiki_show_command_builder("az devops wiki show", wiki);
+        return new az_devops_wiki_show_command_builder("az devops wiki show", 'az_devops_wiki_show_command_result', wiki);
     }
 }
 
@@ -1243,7 +1243,7 @@ export class az_devops {
      * ```
      */
     static configure(): az_devops_configure_command_builder {
-        return new az_devops_configure_command_builder("az devops configure");
+        return new az_devops_configure_command_builder("az devops configure", 'az_devops_configure_command_result');
     }
 
     /**
@@ -1255,7 +1255,7 @@ export class az_devops {
      * ```
      */
     static feedback(): az_devops_feedback_command_builder {
-        return new az_devops_feedback_command_builder("az devops feedback");
+        return new az_devops_feedback_command_builder("az devops feedback", 'az_devops_feedback_command_result');
     }
 
     /**
@@ -1280,7 +1280,7 @@ export class az_devops {
      * ```
      */
     static invoke(): az_devops_invoke_command_builder {
-        return new az_devops_invoke_command_builder("az devops invoke");
+        return new az_devops_invoke_command_builder("az devops invoke", 'az_devops_invoke_command_result');
     }
 
     /**
@@ -1293,7 +1293,7 @@ export class az_devops {
      * ```
      */
     static login(): az_devops_login_command_builder {
-        return new az_devops_login_command_builder("az devops login");
+        return new az_devops_login_command_builder("az devops login", 'az_devops_login_command_result');
     }
 
     /**
@@ -1306,7 +1306,7 @@ export class az_devops {
      * ```
      */
     static logout(): az_devops_logout_command_builder {
-        return new az_devops_logout_command_builder("az devops logout");
+        return new az_devops_logout_command_builder("az devops logout", 'az_devops_logout_command_result');
     }
 }
 
@@ -1327,8 +1327,8 @@ export class az_devops {
  * @param {string} message Message (string) to show in the banner.
  */
 class az_devops_admin_banner_add_command_builder extends CommandBuilder<az_devops_admin_banner_add_command_result> {
-    constructor(commandPath: string, message: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, message: string) {
+        super(commandPath, resultDataTypeName);
         this.message(message)
     }
 
@@ -1387,8 +1387,8 @@ class az_devops_admin_banner_add_command_builder extends CommandBuilder<az_devop
  * ```
  */
 class az_devops_admin_banner_list_command_builder extends CommandBuilder<az_devops_admin_banner_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Automatically detect organization. */
@@ -1430,8 +1430,8 @@ class az_devops_admin_banner_list_command_builder extends CommandBuilder<az_devo
  * @param {string} id ID of the banner to remove.
  */
 class az_devops_admin_banner_remove_command_builder extends CommandBuilder<az_devops_admin_banner_remove_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -1475,8 +1475,8 @@ class az_devops_admin_banner_remove_command_builder extends CommandBuilder<az_de
  * @param {string} id Identifier for the banner.
  */
 class az_devops_admin_banner_show_command_builder extends CommandBuilder<az_devops_admin_banner_show_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -1528,8 +1528,8 @@ class az_devops_admin_banner_show_command_builder extends CommandBuilder<az_devo
  * @param {string} id ID of the banner to update.
  */
 class az_devops_admin_banner_update_command_builder extends CommandBuilder<az_devops_admin_banner_update_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -1592,8 +1592,8 @@ class az_devops_admin_banner_update_command_builder extends CommandBuilder<az_de
  * @param {string} publisherId Publisher Id. This will map to publisher-name                           in the az devops extension search output.
  */
 class az_devops_extension_disable_command_builder extends CommandBuilder<az_devops_extension_disable_command_result> {
-    constructor(commandPath: string, extensionId: string, publisherId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, extensionId: string, publisherId: string) {
+        super(commandPath, resultDataTypeName);
         this.extensionId(extensionId)
         this.publisherId(publisherId)
     }
@@ -1645,8 +1645,8 @@ class az_devops_extension_disable_command_builder extends CommandBuilder<az_devo
  * @param {string} publisherId Publisher Id. This will map to publisher-name                           in the az devops extension search output.
  */
 class az_devops_extension_enable_command_builder extends CommandBuilder<az_devops_extension_enable_command_result> {
-    constructor(commandPath: string, extensionId: string, publisherId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, extensionId: string, publisherId: string) {
+        super(commandPath, resultDataTypeName);
         this.extensionId(extensionId)
         this.publisherId(publisherId)
     }
@@ -1698,8 +1698,8 @@ class az_devops_extension_enable_command_builder extends CommandBuilder<az_devop
  * @param {string} publisherId Publisher Id. This will map to publisher-name                           in the az devops extension search output.
  */
 class az_devops_extension_install_command_builder extends CommandBuilder<az_devops_extension_install_command_result> {
-    constructor(commandPath: string, extensionId: string, publisherId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, extensionId: string, publisherId: string) {
+        super(commandPath, resultDataTypeName);
         this.extensionId(extensionId)
         this.publisherId(publisherId)
     }
@@ -1749,8 +1749,8 @@ class az_devops_extension_install_command_builder extends CommandBuilder<az_devo
  * ```
  */
 class az_devops_extension_list_command_builder extends CommandBuilder<az_devops_extension_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Automatically detect organization. */
@@ -1802,8 +1802,8 @@ class az_devops_extension_list_command_builder extends CommandBuilder<az_devops_
  * @param {string} searchQuery Search term.
  */
 class az_devops_extension_search_command_builder extends CommandBuilder<az_devops_extension_search_command_result> {
-    constructor(commandPath: string, searchQuery: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, searchQuery: string) {
+        super(commandPath, resultDataTypeName);
         this.searchQuery(searchQuery)
     }
 
@@ -1837,8 +1837,8 @@ class az_devops_extension_search_command_builder extends CommandBuilder<az_devop
  * @param {string} publisherId Publisher Id. This will map to publisher-name                           in the az devops extension search output.
  */
 class az_devops_extension_show_command_builder extends CommandBuilder<az_devops_extension_show_command_result> {
-    constructor(commandPath: string, extensionId: string, publisherId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, extensionId: string, publisherId: string) {
+        super(commandPath, resultDataTypeName);
         this.extensionId(extensionId)
         this.publisherId(publisherId)
     }
@@ -1897,8 +1897,8 @@ class az_devops_extension_show_command_builder extends CommandBuilder<az_devops_
  * @param {string} publisherId Publisher Id. This will map to publisher-name                           in the az devops extension search output.
  */
 class az_devops_extension_uninstall_command_builder extends CommandBuilder<az_devops_extension_uninstall_command_result> {
-    constructor(commandPath: string, extensionId: string, publisherId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, extensionId: string, publisherId: string) {
+        super(commandPath, resultDataTypeName);
         this.extensionId(extensionId)
         this.publisherId(publisherId)
     }
@@ -1959,8 +1959,8 @@ class az_devops_extension_uninstall_command_builder extends CommandBuilder<az_de
  * @param {string} name Name of the new project.
  */
 class az_devops_project_create_command_builder extends CommandBuilder<az_devops_project_create_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -2034,8 +2034,8 @@ class az_devops_project_create_command_builder extends CommandBuilder<az_devops_
  * @param {string} id The id of the project to delete.
  */
 class az_devops_project_delete_command_builder extends CommandBuilder<az_devops_project_delete_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -2087,8 +2087,8 @@ class az_devops_project_delete_command_builder extends CommandBuilder<az_devops_
  * ```
  */
 class az_devops_project_list_command_builder extends CommandBuilder<az_devops_project_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Continuation token. This can be retrived from previous run of this command if more results are present. */
@@ -2162,8 +2162,8 @@ class az_devops_project_list_command_builder extends CommandBuilder<az_devops_pr
  * @param {string} project Name or ID of the project. You can configure the default project using az devops configure -d project=NAME_OR_ID. Required if not configured as default or picked up via git config.
  */
 class az_devops_project_show_command_builder extends CommandBuilder<az_devops_project_show_command_result> {
-    constructor(commandPath: string, project: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, project: string) {
+        super(commandPath, resultDataTypeName);
         this.project(project)
     }
 
@@ -2220,8 +2220,8 @@ class az_devops_project_show_command_builder extends CommandBuilder<az_devops_pr
  * @param {string} memberId Descriptor of the group or Email Id of the user to be added. User should already be a part of the organization. Use `az devops user add` command to add an user to organization.
  */
 class az_devops_security_group_membership_add_command_builder extends CommandBuilder<az_devops_security_group_membership_add_command_result> {
-    constructor(commandPath: string, groupId: string, memberId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, groupId: string, memberId: string) {
+        super(commandPath, resultDataTypeName);
         this.groupId(groupId)
         this.memberId(memberId)
     }
@@ -2273,8 +2273,8 @@ class az_devops_security_group_membership_add_command_builder extends CommandBui
  * @param {string} id Group descriptor or User Email whose membership details are required.
  */
 class az_devops_security_group_membership_list_command_builder extends CommandBuilder<az_devops_security_group_membership_list_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -2332,8 +2332,8 @@ class az_devops_security_group_membership_list_command_builder extends CommandBu
  * @param {string} memberId Descriptor of the group or Email Id of the user to be removed.
  */
 class az_devops_security_group_membership_remove_command_builder extends CommandBuilder<az_devops_security_group_membership_remove_command_result> {
-    constructor(commandPath: string, groupId: string, memberId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, groupId: string, memberId: string) {
+        super(commandPath, resultDataTypeName);
         this.groupId(groupId)
         this.memberId(memberId)
     }
@@ -2393,8 +2393,8 @@ class az_devops_security_group_membership_remove_command_builder extends Command
  * ```
  */
 class az_devops_security_group_create_command_builder extends CommandBuilder<az_devops_security_group_create_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Description of Azure DevOps group. */
@@ -2473,8 +2473,8 @@ class az_devops_security_group_create_command_builder extends CommandBuilder<az_
  * @param {string} id Descriptor of the group.
  */
 class az_devops_security_group_delete_command_builder extends CommandBuilder<az_devops_security_group_delete_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -2525,8 +2525,8 @@ class az_devops_security_group_delete_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_devops_security_group_list_command_builder extends CommandBuilder<az_devops_security_group_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** If there are more results that can't be returned in a single page, the result set will contain a continuation token for retrieval of the next set of results. */
@@ -2593,8 +2593,8 @@ class az_devops_security_group_list_command_builder extends CommandBuilder<az_de
  * @param {string} id Descriptor of the group.
  */
 class az_devops_security_group_show_command_builder extends CommandBuilder<az_devops_security_group_show_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -2645,8 +2645,8 @@ class az_devops_security_group_show_command_builder extends CommandBuilder<az_de
  * @param {string} id Descriptor of the group.
  */
 class az_devops_security_group_update_command_builder extends CommandBuilder<az_devops_security_group_update_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -2700,8 +2700,8 @@ class az_devops_security_group_update_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_devops_security_permission_namespace_list_command_builder extends CommandBuilder<az_devops_security_permission_namespace_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Automatically detect organization. */
@@ -2750,8 +2750,8 @@ class az_devops_security_permission_namespace_list_command_builder extends Comma
  * @param {string} namespaceId ID of security namespace.
  */
 class az_devops_security_permission_namespace_show_command_builder extends CommandBuilder<az_devops_security_permission_namespace_show_command_result> {
-    constructor(commandPath: string, namespaceId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespaceId: string) {
+        super(commandPath, resultDataTypeName);
         this.namespaceId(namespaceId)
     }
 
@@ -2805,8 +2805,8 @@ class az_devops_security_permission_namespace_show_command_builder extends Comma
  * @param {string} subject User Email ID or Group descriptor.
  */
 class az_devops_security_permission_list_command_builder extends CommandBuilder<az_devops_security_permission_list_command_result> {
-    constructor(commandPath: string, namespaceId: string, subject: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespaceId: string, subject: string) {
+        super(commandPath, resultDataTypeName);
         this.namespaceId(namespaceId)
         this.subject(subject)
     }
@@ -2880,8 +2880,8 @@ class az_devops_security_permission_list_command_builder extends CommandBuilder<
  * @param {string} token Security token.
  */
 class az_devops_security_permission_reset_command_builder extends CommandBuilder<az_devops_security_permission_reset_command_result> {
-    constructor(commandPath: string, namespaceId: string, permissionBit: string, subject: string, token: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespaceId: string, permissionBit: string, subject: string, token: string) {
+        super(commandPath, resultDataTypeName);
         this.namespaceId(namespaceId)
         this.permissionBit(permissionBit)
         this.subject(subject)
@@ -2950,8 +2950,8 @@ class az_devops_security_permission_reset_command_builder extends CommandBuilder
  * @param {string} token Security token.
  */
 class az_devops_security_permission_reset_all_command_builder extends CommandBuilder<az_devops_security_permission_reset_all_command_result> {
-    constructor(commandPath: string, namespaceId: string, subject: string, token: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespaceId: string, subject: string, token: string) {
+        super(commandPath, resultDataTypeName);
         this.namespaceId(namespaceId)
         this.subject(subject)
         this.token(token)
@@ -3019,8 +3019,8 @@ class az_devops_security_permission_reset_all_command_builder extends CommandBui
  * @param {string} token Security token.
  */
 class az_devops_security_permission_show_command_builder extends CommandBuilder<az_devops_security_permission_show_command_result> {
-    constructor(commandPath: string, namespaceId: string, subject: string, token: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespaceId: string, subject: string, token: string) {
+        super(commandPath, resultDataTypeName);
         this.namespaceId(namespaceId)
         this.subject(subject)
         this.token(token)
@@ -3090,8 +3090,8 @@ class az_devops_security_permission_show_command_builder extends CommandBuilder<
  * @param {string} token Security token.
  */
 class az_devops_security_permission_update_command_builder extends CommandBuilder<az_devops_security_permission_update_command_result> {
-    constructor(commandPath: string, namespaceId: string, subject: string, token: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespaceId: string, subject: string, token: string) {
+        super(commandPath, resultDataTypeName);
         this.namespaceId(namespaceId)
         this.subject(subject)
         this.token(token)
@@ -3176,8 +3176,8 @@ class az_devops_security_permission_update_command_builder extends CommandBuilde
  * @param {string} name Name of service endpoint to create.
  */
 class az_devops_service_endpoint_azurerm_create_command_builder extends CommandBuilder<az_devops_service_endpoint_azurerm_create_command_result> {
-    constructor(commandPath: string, azureRmServicePrincipalId: string, azureRmSubscriptionId: string, azureRmSubscriptionName: string, azureRmTenantId: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, azureRmServicePrincipalId: string, azureRmSubscriptionId: string, azureRmSubscriptionName: string, azureRmTenantId: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.azureRmServicePrincipalId(azureRmServicePrincipalId)
         this.azureRmSubscriptionId(azureRmSubscriptionId)
         this.azureRmSubscriptionName(azureRmSubscriptionName)
@@ -3263,8 +3263,8 @@ class az_devops_service_endpoint_azurerm_create_command_builder extends CommandB
  * @param {string} name Name of service endpoint to create.
  */
 class az_devops_service_endpoint_github_create_command_builder extends CommandBuilder<az_devops_service_endpoint_github_create_command_result> {
-    constructor(commandPath: string, githubUrl: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, githubUrl: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.githubUrl(githubUrl)
         this.name(name)
     }
@@ -3322,8 +3322,8 @@ class az_devops_service_endpoint_github_create_command_builder extends CommandBu
  * @param {string} serviceEndpointConfiguration Configuration file with service endpoint request.
  */
 class az_devops_service_endpoint_create_command_builder extends CommandBuilder<az_devops_service_endpoint_create_command_result> {
-    constructor(commandPath: string, serviceEndpointConfiguration: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, serviceEndpointConfiguration: string) {
+        super(commandPath, resultDataTypeName);
         this.serviceEndpointConfiguration(serviceEndpointConfiguration)
     }
 
@@ -3381,8 +3381,8 @@ class az_devops_service_endpoint_create_command_builder extends CommandBuilder<a
  * @param {string} id Id of the service endpoint to delete.
  */
 class az_devops_service_endpoint_delete_command_builder extends CommandBuilder<az_devops_service_endpoint_delete_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -3442,8 +3442,8 @@ class az_devops_service_endpoint_delete_command_builder extends CommandBuilder<a
  * ```
  */
 class az_devops_service_endpoint_list_command_builder extends CommandBuilder<az_devops_service_endpoint_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Automatically detect organization. */
@@ -3493,8 +3493,8 @@ class az_devops_service_endpoint_list_command_builder extends CommandBuilder<az_
  * @param {string} id ID of the service endpoint.
  */
 class az_devops_service_endpoint_show_command_builder extends CommandBuilder<az_devops_service_endpoint_show_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -3551,8 +3551,8 @@ class az_devops_service_endpoint_show_command_builder extends CommandBuilder<az_
  * @param {string} id ID of the service endpoint.
  */
 class az_devops_service_endpoint_update_command_builder extends CommandBuilder<az_devops_service_endpoint_update_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -3609,8 +3609,8 @@ class az_devops_service_endpoint_update_command_builder extends CommandBuilder<a
  * @param {string} name Name of the new team.
  */
 class az_devops_team_create_command_builder extends CommandBuilder<az_devops_team_create_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -3667,8 +3667,8 @@ class az_devops_team_create_command_builder extends CommandBuilder<az_devops_tea
  * @param {string} id The id of the team to delete.
  */
 class az_devops_team_delete_command_builder extends CommandBuilder<az_devops_team_delete_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -3724,8 +3724,8 @@ class az_devops_team_delete_command_builder extends CommandBuilder<az_devops_tea
  * ```
  */
 class az_devops_team_list_command_builder extends CommandBuilder<az_devops_team_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Automatically detect organization. */
@@ -3788,8 +3788,8 @@ class az_devops_team_list_command_builder extends CommandBuilder<az_devops_team_
  * @param {string} team The name or id of the team to show members of.
  */
 class az_devops_team_list_member_command_builder extends CommandBuilder<az_devops_team_list_member_command_result> {
-    constructor(commandPath: string, team: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, team: string) {
+        super(commandPath, resultDataTypeName);
         this.team(team)
     }
 
@@ -3852,8 +3852,8 @@ class az_devops_team_list_member_command_builder extends CommandBuilder<az_devop
  * @param {string} team The name or id of the team to show.
  */
 class az_devops_team_show_command_builder extends CommandBuilder<az_devops_team_show_command_result> {
-    constructor(commandPath: string, team: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, team: string) {
+        super(commandPath, resultDataTypeName);
         this.team(team)
     }
 
@@ -3911,8 +3911,8 @@ class az_devops_team_show_command_builder extends CommandBuilder<az_devops_team_
  * @param {string} team The name or id of the team to be updated.
  */
 class az_devops_team_update_command_builder extends CommandBuilder<az_devops_team_update_command_result> {
-    constructor(commandPath: string, team: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, team: string) {
+        super(commandPath, resultDataTypeName);
         this.team(team)
     }
 
@@ -3976,8 +3976,8 @@ class az_devops_team_update_command_builder extends CommandBuilder<az_devops_tea
  * @param {'advanced' | 'earlyAdopter' | 'express' | 'professional' | 'stakeholder'} licenseType License type for the user.
  */
 class az_devops_user_add_command_builder extends CommandBuilder<az_devops_user_add_command_result> {
-    constructor(commandPath: string, emailId: string, licenseType: 'advanced' | 'earlyAdopter' | 'express' | 'professional' | 'stakeholder') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, emailId: string, licenseType: 'advanced' | 'earlyAdopter' | 'express' | 'professional' | 'stakeholder') {
+        super(commandPath, resultDataTypeName);
         this.emailId(emailId)
         this.licenseType(licenseType)
     }
@@ -4033,8 +4033,8 @@ class az_devops_user_add_command_builder extends CommandBuilder<az_devops_user_a
  * ```
  */
 class az_devops_user_list_command_builder extends CommandBuilder<az_devops_user_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Automatically detect organization. */
@@ -4089,8 +4089,8 @@ class az_devops_user_list_command_builder extends CommandBuilder<az_devops_user_
  * @param {string} user Email ID or ID of the user.
  */
 class az_devops_user_remove_command_builder extends CommandBuilder<az_devops_user_remove_command_result> {
-    constructor(commandPath: string, user: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, user: string) {
+        super(commandPath, resultDataTypeName);
         this.user(user)
     }
 
@@ -4140,8 +4140,8 @@ class az_devops_user_remove_command_builder extends CommandBuilder<az_devops_use
  * @param {string} user Email ID or ID of the user.
  */
 class az_devops_user_show_command_builder extends CommandBuilder<az_devops_user_show_command_result> {
-    constructor(commandPath: string, user: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, user: string) {
+        super(commandPath, resultDataTypeName);
         this.user(user)
     }
 
@@ -4192,8 +4192,8 @@ class az_devops_user_show_command_builder extends CommandBuilder<az_devops_user_
  * @param {string} user Email ID or ID of the user.
  */
 class az_devops_user_update_command_builder extends CommandBuilder<az_devops_user_update_command_result> {
-    constructor(commandPath: string, licenseType: 'advanced' | 'earlyAdopter' | 'express' | 'professional' | 'stakeholder', user: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, licenseType: 'advanced' | 'earlyAdopter' | 'express' | 'professional' | 'stakeholder', user: string) {
+        super(commandPath, resultDataTypeName);
         this.licenseType(licenseType)
         this.user(user)
     }
@@ -4250,8 +4250,8 @@ class az_devops_user_update_command_builder extends CommandBuilder<az_devops_use
  * @param {string} wiki Name or Id of the wiki.
  */
 class az_devops_wiki_page_create_command_builder extends CommandBuilder<az_devops_wiki_page_create_command_result> {
-    constructor(commandPath: string, path: string, wiki: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: string, wiki: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
         this.wiki(wiki)
     }
@@ -4336,8 +4336,8 @@ class az_devops_wiki_page_create_command_builder extends CommandBuilder<az_devop
  * @param {string} wiki Name or Id of the wiki.
  */
 class az_devops_wiki_page_delete_command_builder extends CommandBuilder<az_devops_wiki_page_delete_command_result> {
-    constructor(commandPath: string, path: string, wiki: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: string, wiki: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
         this.wiki(wiki)
     }
@@ -4412,8 +4412,8 @@ class az_devops_wiki_page_delete_command_builder extends CommandBuilder<az_devop
  * @param {string} wiki Name or Id of the wiki.
  */
 class az_devops_wiki_page_show_command_builder extends CommandBuilder<az_devops_wiki_page_show_command_result> {
-    constructor(commandPath: string, path: string, wiki: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: string, wiki: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
         this.wiki(wiki)
     }
@@ -4502,8 +4502,8 @@ class az_devops_wiki_page_show_command_builder extends CommandBuilder<az_devops_
  * @param {string} wiki Name or Id of the wiki.
  */
 class az_devops_wiki_page_update_command_builder extends CommandBuilder<az_devops_wiki_page_update_command_result> {
-    constructor(commandPath: string, path: string, version: string, wiki: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: string, version: string, wiki: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
         this.version(version)
         this.wiki(wiki)
@@ -4593,8 +4593,8 @@ class az_devops_wiki_page_update_command_builder extends CommandBuilder<az_devop
  * ```
  */
 class az_devops_wiki_create_command_builder extends CommandBuilder<az_devops_wiki_create_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Automatically detect organization. */
@@ -4668,8 +4668,8 @@ class az_devops_wiki_create_command_builder extends CommandBuilder<az_devops_wik
  * @param {string} wiki Name or Id of the wiki to delete.
  */
 class az_devops_wiki_delete_command_builder extends CommandBuilder<az_devops_wiki_delete_command_result> {
-    constructor(commandPath: string, wiki: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, wiki: string) {
+        super(commandPath, resultDataTypeName);
         this.wiki(wiki)
     }
 
@@ -4724,8 +4724,8 @@ class az_devops_wiki_delete_command_builder extends CommandBuilder<az_devops_wik
  * ```
  */
 class az_devops_wiki_list_command_builder extends CommandBuilder<az_devops_wiki_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Automatically detect organization. */
@@ -4782,8 +4782,8 @@ class az_devops_wiki_list_command_builder extends CommandBuilder<az_devops_wiki_
  * @param {string} wiki Name or Id of the wiki.
  */
 class az_devops_wiki_show_command_builder extends CommandBuilder<az_devops_wiki_show_command_result> {
-    constructor(commandPath: string, wiki: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, wiki: string) {
+        super(commandPath, resultDataTypeName);
         this.wiki(wiki)
     }
 
@@ -4842,8 +4842,8 @@ class az_devops_wiki_show_command_builder extends CommandBuilder<az_devops_wiki_
  * ```
  */
 class az_devops_configure_command_builder extends CommandBuilder<az_devops_configure_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Space separated 'name=value' pairs for common arguments defaults, e.g. '--defaults project=my-project-name organization=https://dev.azure.com/organizationName arg=value'. Use '' to clear the defaults, e.g. --defaults project=''. */
@@ -4880,8 +4880,8 @@ class az_devops_configure_command_builder extends CommandBuilder<az_devops_confi
  * ```
  */
 class az_devops_feedback_command_builder extends CommandBuilder<az_devops_feedback_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -4913,8 +4913,8 @@ class az_devops_feedback_command_builder extends CommandBuilder<az_devops_feedba
  * ```
  */
 class az_devops_invoke_command_builder extends CommandBuilder<az_devops_invoke_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Specifies the content type of the response. */
@@ -5012,8 +5012,8 @@ class az_devops_invoke_command_builder extends CommandBuilder<az_devops_invoke_c
  * ```
  */
 class az_devops_login_command_builder extends CommandBuilder<az_devops_login_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Azure DevOps organization URL. Example: <a href="https://dev.azure.com/MyOrganizationName">https://dev.azure.com/MyOrganizationName</a>. */
@@ -5039,8 +5039,8 @@ class az_devops_login_command_builder extends CommandBuilder<az_devops_login_com
  * ```
  */
 class az_devops_logout_command_builder extends CommandBuilder<az_devops_logout_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Azure DevOps organization URL. Example: <a href="https://dev.azure.com/MyOrganizationName/">https://dev.azure.com/MyOrganizationName/</a>. If no organization is specified, all organizations will be logged out. */

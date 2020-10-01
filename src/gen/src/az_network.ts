@@ -642,7 +642,7 @@ export class az_network_application_gateway_address_pool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(gatewayName: string, name: string, resourceGroup: string): az_network_application_gateway_address_pool_create_command_builder {
-        return new az_network_application_gateway_address_pool_create_command_builder("az network application-gateway address-pool create", gatewayName, name, resourceGroup);
+        return new az_network_application_gateway_address_pool_create_command_builder("az network application-gateway address-pool create", 'az_network_application_gateway_address_pool_create_command_result', gatewayName, name, resourceGroup);
     }
 
     /**
@@ -659,7 +659,7 @@ export class az_network_application_gateway_address_pool {
      * ```
      */
     static delete(): az_network_application_gateway_address_pool_delete_command_builder {
-        return new az_network_application_gateway_address_pool_delete_command_builder("az network application-gateway address-pool delete");
+        return new az_network_application_gateway_address_pool_delete_command_builder("az network application-gateway address-pool delete", 'az_network_application_gateway_address_pool_delete_command_result');
     }
 
     /**
@@ -677,7 +677,7 @@ export class az_network_application_gateway_address_pool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(gatewayName: string, resourceGroup: string): az_network_application_gateway_address_pool_list_command_builder {
-        return new az_network_application_gateway_address_pool_list_command_builder("az network application-gateway address-pool list", gatewayName, resourceGroup);
+        return new az_network_application_gateway_address_pool_list_command_builder("az network application-gateway address-pool list", 'az_network_application_gateway_address_pool_list_command_result', gatewayName, resourceGroup);
     }
 
     /**
@@ -694,7 +694,7 @@ export class az_network_application_gateway_address_pool {
      * ```
      */
     static show(): az_network_application_gateway_address_pool_show_command_builder {
-        return new az_network_application_gateway_address_pool_show_command_builder("az network application-gateway address-pool show");
+        return new az_network_application_gateway_address_pool_show_command_builder("az network application-gateway address-pool show", 'az_network_application_gateway_address_pool_show_command_result');
     }
 
     /**
@@ -716,7 +716,7 @@ export class az_network_application_gateway_address_pool {
      * ```
      */
     static update(): az_network_application_gateway_address_pool_update_command_builder {
-        return new az_network_application_gateway_address_pool_update_command_builder("az network application-gateway address-pool update");
+        return new az_network_application_gateway_address_pool_update_command_builder("az network application-gateway address-pool update", 'az_network_application_gateway_address_pool_update_command_result');
     }
 }
 
@@ -741,7 +741,7 @@ export class az_network_application_gateway_auth_cert {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(certFile: string, gatewayName: string, name: string, resourceGroup: string): az_network_application_gateway_auth_cert_create_command_builder {
-        return new az_network_application_gateway_auth_cert_create_command_builder("az network application-gateway auth-cert create", certFile, gatewayName, name, resourceGroup);
+        return new az_network_application_gateway_auth_cert_create_command_builder("az network application-gateway auth-cert create", 'az_network_application_gateway_auth_cert_create_command_result', certFile, gatewayName, name, resourceGroup);
     }
 
     /**
@@ -758,7 +758,7 @@ export class az_network_application_gateway_auth_cert {
      * ```
      */
     static delete(): az_network_application_gateway_auth_cert_delete_command_builder {
-        return new az_network_application_gateway_auth_cert_delete_command_builder("az network application-gateway auth-cert delete");
+        return new az_network_application_gateway_auth_cert_delete_command_builder("az network application-gateway auth-cert delete", 'az_network_application_gateway_auth_cert_delete_command_result');
     }
 
     /**
@@ -776,7 +776,7 @@ export class az_network_application_gateway_auth_cert {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(gatewayName: string, resourceGroup: string): az_network_application_gateway_auth_cert_list_command_builder {
-        return new az_network_application_gateway_auth_cert_list_command_builder("az network application-gateway auth-cert list", gatewayName, resourceGroup);
+        return new az_network_application_gateway_auth_cert_list_command_builder("az network application-gateway auth-cert list", 'az_network_application_gateway_auth_cert_list_command_result', gatewayName, resourceGroup);
     }
 
     /**
@@ -793,7 +793,7 @@ export class az_network_application_gateway_auth_cert {
      * ```
      */
     static show(): az_network_application_gateway_auth_cert_show_command_builder {
-        return new az_network_application_gateway_auth_cert_show_command_builder("az network application-gateway auth-cert show");
+        return new az_network_application_gateway_auth_cert_show_command_builder("az network application-gateway auth-cert show", 'az_network_application_gateway_auth_cert_show_command_result');
     }
 
     /**
@@ -817,7 +817,7 @@ export class az_network_application_gateway_auth_cert {
      * @param {string} certFile Certificate file path.
      */
     static update(certFile: string): az_network_application_gateway_auth_cert_update_command_builder {
-        return new az_network_application_gateway_auth_cert_update_command_builder("az network application-gateway auth-cert update", certFile);
+        return new az_network_application_gateway_auth_cert_update_command_builder("az network application-gateway auth-cert update", 'az_network_application_gateway_auth_cert_update_command_result', certFile);
     }
 }
 
@@ -844,7 +844,7 @@ export class az_network_application_gateway_frontend_ip {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(gatewayName: string, name: string, resourceGroup: string): az_network_application_gateway_frontend_ip_create_command_builder {
-        return new az_network_application_gateway_frontend_ip_create_command_builder("az network application-gateway frontend-ip create", gatewayName, name, resourceGroup);
+        return new az_network_application_gateway_frontend_ip_create_command_builder("az network application-gateway frontend-ip create", 'az_network_application_gateway_frontend_ip_create_command_result', gatewayName, name, resourceGroup);
     }
 
     /**
@@ -861,7 +861,7 @@ export class az_network_application_gateway_frontend_ip {
      * ```
      */
     static delete(): az_network_application_gateway_frontend_ip_delete_command_builder {
-        return new az_network_application_gateway_frontend_ip_delete_command_builder("az network application-gateway frontend-ip delete");
+        return new az_network_application_gateway_frontend_ip_delete_command_builder("az network application-gateway frontend-ip delete", 'az_network_application_gateway_frontend_ip_delete_command_result');
     }
 
     /**
@@ -879,7 +879,7 @@ export class az_network_application_gateway_frontend_ip {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(gatewayName: string, resourceGroup: string): az_network_application_gateway_frontend_ip_list_command_builder {
-        return new az_network_application_gateway_frontend_ip_list_command_builder("az network application-gateway frontend-ip list", gatewayName, resourceGroup);
+        return new az_network_application_gateway_frontend_ip_list_command_builder("az network application-gateway frontend-ip list", 'az_network_application_gateway_frontend_ip_list_command_result', gatewayName, resourceGroup);
     }
 
     /**
@@ -896,7 +896,7 @@ export class az_network_application_gateway_frontend_ip {
      * ```
      */
     static show(): az_network_application_gateway_frontend_ip_show_command_builder {
-        return new az_network_application_gateway_frontend_ip_show_command_builder("az network application-gateway frontend-ip show");
+        return new az_network_application_gateway_frontend_ip_show_command_builder("az network application-gateway frontend-ip show", 'az_network_application_gateway_frontend_ip_show_command_result');
     }
 
     /**
@@ -921,7 +921,7 @@ export class az_network_application_gateway_frontend_ip {
      * ```
      */
     static update(): az_network_application_gateway_frontend_ip_update_command_builder {
-        return new az_network_application_gateway_frontend_ip_update_command_builder("az network application-gateway frontend-ip update");
+        return new az_network_application_gateway_frontend_ip_update_command_builder("az network application-gateway frontend-ip update", 'az_network_application_gateway_frontend_ip_update_command_result');
     }
 }
 
@@ -946,7 +946,7 @@ export class az_network_application_gateway_frontend_port {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(gatewayName: string, name: string, port: string, resourceGroup: string): az_network_application_gateway_frontend_port_create_command_builder {
-        return new az_network_application_gateway_frontend_port_create_command_builder("az network application-gateway frontend-port create", gatewayName, name, port, resourceGroup);
+        return new az_network_application_gateway_frontend_port_create_command_builder("az network application-gateway frontend-port create", 'az_network_application_gateway_frontend_port_create_command_result', gatewayName, name, port, resourceGroup);
     }
 
     /**
@@ -963,7 +963,7 @@ export class az_network_application_gateway_frontend_port {
      * ```
      */
     static delete(): az_network_application_gateway_frontend_port_delete_command_builder {
-        return new az_network_application_gateway_frontend_port_delete_command_builder("az network application-gateway frontend-port delete");
+        return new az_network_application_gateway_frontend_port_delete_command_builder("az network application-gateway frontend-port delete", 'az_network_application_gateway_frontend_port_delete_command_result');
     }
 
     /**
@@ -981,7 +981,7 @@ export class az_network_application_gateway_frontend_port {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(gatewayName: string, resourceGroup: string): az_network_application_gateway_frontend_port_list_command_builder {
-        return new az_network_application_gateway_frontend_port_list_command_builder("az network application-gateway frontend-port list", gatewayName, resourceGroup);
+        return new az_network_application_gateway_frontend_port_list_command_builder("az network application-gateway frontend-port list", 'az_network_application_gateway_frontend_port_list_command_result', gatewayName, resourceGroup);
     }
 
     /**
@@ -998,7 +998,7 @@ export class az_network_application_gateway_frontend_port {
      * ```
      */
     static show(): az_network_application_gateway_frontend_port_show_command_builder {
-        return new az_network_application_gateway_frontend_port_show_command_builder("az network application-gateway frontend-port show");
+        return new az_network_application_gateway_frontend_port_show_command_builder("az network application-gateway frontend-port show", 'az_network_application_gateway_frontend_port_show_command_result');
     }
 
     /**
@@ -1020,7 +1020,7 @@ export class az_network_application_gateway_frontend_port {
      * ```
      */
     static update(): az_network_application_gateway_frontend_port_update_command_builder {
-        return new az_network_application_gateway_frontend_port_update_command_builder("az network application-gateway frontend-port update");
+        return new az_network_application_gateway_frontend_port_update_command_builder("az network application-gateway frontend-port update", 'az_network_application_gateway_frontend_port_update_command_result');
     }
 }
 
@@ -1050,7 +1050,7 @@ export class az_network_application_gateway_http_listener {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(frontendPort: string, gatewayName: string, name: string, resourceGroup: string): az_network_application_gateway_http_listener_create_command_builder {
-        return new az_network_application_gateway_http_listener_create_command_builder("az network application-gateway http-listener create", frontendPort, gatewayName, name, resourceGroup);
+        return new az_network_application_gateway_http_listener_create_command_builder("az network application-gateway http-listener create", 'az_network_application_gateway_http_listener_create_command_result', frontendPort, gatewayName, name, resourceGroup);
     }
 
     /**
@@ -1067,7 +1067,7 @@ export class az_network_application_gateway_http_listener {
      * ```
      */
     static delete(): az_network_application_gateway_http_listener_delete_command_builder {
-        return new az_network_application_gateway_http_listener_delete_command_builder("az network application-gateway http-listener delete");
+        return new az_network_application_gateway_http_listener_delete_command_builder("az network application-gateway http-listener delete", 'az_network_application_gateway_http_listener_delete_command_result');
     }
 
     /**
@@ -1085,7 +1085,7 @@ export class az_network_application_gateway_http_listener {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(gatewayName: string, resourceGroup: string): az_network_application_gateway_http_listener_list_command_builder {
-        return new az_network_application_gateway_http_listener_list_command_builder("az network application-gateway http-listener list", gatewayName, resourceGroup);
+        return new az_network_application_gateway_http_listener_list_command_builder("az network application-gateway http-listener list", 'az_network_application_gateway_http_listener_list_command_result', gatewayName, resourceGroup);
     }
 
     /**
@@ -1102,7 +1102,7 @@ export class az_network_application_gateway_http_listener {
      * ```
      */
     static show(): az_network_application_gateway_http_listener_show_command_builder {
-        return new az_network_application_gateway_http_listener_show_command_builder("az network application-gateway http-listener show");
+        return new az_network_application_gateway_http_listener_show_command_builder("az network application-gateway http-listener show", 'az_network_application_gateway_http_listener_show_command_result');
     }
 
     /**
@@ -1129,7 +1129,7 @@ export class az_network_application_gateway_http_listener {
      * ```
      */
     static update(): az_network_application_gateway_http_listener_update_command_builder {
-        return new az_network_application_gateway_http_listener_update_command_builder("az network application-gateway http-listener update");
+        return new az_network_application_gateway_http_listener_update_command_builder("az network application-gateway http-listener update", 'az_network_application_gateway_http_listener_update_command_result');
     }
 }
 
@@ -1166,7 +1166,7 @@ export class az_network_application_gateway_http_settings {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(gatewayName: string, name: string, port: string, resourceGroup: string): az_network_application_gateway_http_settings_create_command_builder {
-        return new az_network_application_gateway_http_settings_create_command_builder("az network application-gateway http-settings create", gatewayName, name, port, resourceGroup);
+        return new az_network_application_gateway_http_settings_create_command_builder("az network application-gateway http-settings create", 'az_network_application_gateway_http_settings_create_command_result', gatewayName, name, port, resourceGroup);
     }
 
     /**
@@ -1183,7 +1183,7 @@ export class az_network_application_gateway_http_settings {
      * ```
      */
     static delete(): az_network_application_gateway_http_settings_delete_command_builder {
-        return new az_network_application_gateway_http_settings_delete_command_builder("az network application-gateway http-settings delete");
+        return new az_network_application_gateway_http_settings_delete_command_builder("az network application-gateway http-settings delete", 'az_network_application_gateway_http_settings_delete_command_result');
     }
 
     /**
@@ -1201,7 +1201,7 @@ export class az_network_application_gateway_http_settings {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(gatewayName: string, resourceGroup: string): az_network_application_gateway_http_settings_list_command_builder {
-        return new az_network_application_gateway_http_settings_list_command_builder("az network application-gateway http-settings list", gatewayName, resourceGroup);
+        return new az_network_application_gateway_http_settings_list_command_builder("az network application-gateway http-settings list", 'az_network_application_gateway_http_settings_list_command_result', gatewayName, resourceGroup);
     }
 
     /**
@@ -1218,7 +1218,7 @@ export class az_network_application_gateway_http_settings {
      * ```
      */
     static show(): az_network_application_gateway_http_settings_show_command_builder {
-        return new az_network_application_gateway_http_settings_show_command_builder("az network application-gateway http-settings show");
+        return new az_network_application_gateway_http_settings_show_command_builder("az network application-gateway http-settings show", 'az_network_application_gateway_http_settings_show_command_result');
     }
 
     /**
@@ -1252,7 +1252,7 @@ export class az_network_application_gateway_http_settings {
      * ```
      */
     static update(): az_network_application_gateway_http_settings_update_command_builder {
-        return new az_network_application_gateway_http_settings_update_command_builder("az network application-gateway http-settings update");
+        return new az_network_application_gateway_http_settings_update_command_builder("az network application-gateway http-settings update", 'az_network_application_gateway_http_settings_update_command_result');
     }
 }
 
@@ -1274,7 +1274,7 @@ export class az_network_application_gateway_identity {
      * @param {string} identity Name or ID of the ManagedIdentity Resource.
      */
     static assign(identity: string): az_network_application_gateway_identity_assign_command_builder {
-        return new az_network_application_gateway_identity_assign_command_builder("az network application-gateway identity assign", identity);
+        return new az_network_application_gateway_identity_assign_command_builder("az network application-gateway identity assign", 'az_network_application_gateway_identity_assign_command_result', identity);
     }
 
     /**
@@ -1290,7 +1290,7 @@ export class az_network_application_gateway_identity {
      * ```
      */
     static remove(): az_network_application_gateway_identity_remove_command_builder {
-        return new az_network_application_gateway_identity_remove_command_builder("az network application-gateway identity remove");
+        return new az_network_application_gateway_identity_remove_command_builder("az network application-gateway identity remove", 'az_network_application_gateway_identity_remove_command_result');
     }
 
     /**
@@ -1306,7 +1306,7 @@ export class az_network_application_gateway_identity {
      * ```
      */
     static show(): az_network_application_gateway_identity_show_command_builder {
-        return new az_network_application_gateway_identity_show_command_builder("az network application-gateway identity show");
+        return new az_network_application_gateway_identity_show_command_builder("az network application-gateway identity show", 'az_network_application_gateway_identity_show_command_result');
     }
 }
 
@@ -1332,7 +1332,7 @@ export class az_network_application_gateway_private_link_ip_config {
      * @param {string} privateLink The name of Private Link.
      */
     static add(name: string, privateLink: string): az_network_application_gateway_private_link_ip_config_add_command_builder {
-        return new az_network_application_gateway_private_link_ip_config_add_command_builder("az network application-gateway private-link ip-config add", name, privateLink);
+        return new az_network_application_gateway_private_link_ip_config_add_command_builder("az network application-gateway private-link ip-config add", 'az_network_application_gateway_private_link_ip_config_add_command_result', name, privateLink);
     }
 
     /**
@@ -1352,7 +1352,7 @@ export class az_network_application_gateway_private_link_ip_config {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(gatewayName: string, privateLink: string, resourceGroup: string): az_network_application_gateway_private_link_ip_config_list_command_builder {
-        return new az_network_application_gateway_private_link_ip_config_list_command_builder("az network application-gateway private-link ip-config list", gatewayName, privateLink, resourceGroup);
+        return new az_network_application_gateway_private_link_ip_config_list_command_builder("az network application-gateway private-link ip-config list", 'az_network_application_gateway_private_link_ip_config_list_command_result', gatewayName, privateLink, resourceGroup);
     }
 
     /**
@@ -1374,7 +1374,7 @@ export class az_network_application_gateway_private_link_ip_config {
      * @param {string} privateLink The name of Private Link.
      */
     static remove(name: string, privateLink: string): az_network_application_gateway_private_link_ip_config_remove_command_builder {
-        return new az_network_application_gateway_private_link_ip_config_remove_command_builder("az network application-gateway private-link ip-config remove", name, privateLink);
+        return new az_network_application_gateway_private_link_ip_config_remove_command_builder("az network application-gateway private-link ip-config remove", 'az_network_application_gateway_private_link_ip_config_remove_command_result', name, privateLink);
     }
 
     /**
@@ -1395,7 +1395,7 @@ export class az_network_application_gateway_private_link_ip_config {
      * @param {string} privateLink The name of Private Link.
      */
     static show(name: string, privateLink: string): az_network_application_gateway_private_link_ip_config_show_command_builder {
-        return new az_network_application_gateway_private_link_ip_config_show_command_builder("az network application-gateway private-link ip-config show", name, privateLink);
+        return new az_network_application_gateway_private_link_ip_config_show_command_builder("az network application-gateway private-link ip-config show", 'az_network_application_gateway_private_link_ip_config_show_command_result', name, privateLink);
     }
 
     /**
@@ -1417,7 +1417,7 @@ export class az_network_application_gateway_private_link_ip_config {
      * ```
      */
     static wait(): az_network_application_gateway_private_link_ip_config_wait_command_builder {
-        return new az_network_application_gateway_private_link_ip_config_wait_command_builder("az network application-gateway private-link ip-config wait");
+        return new az_network_application_gateway_private_link_ip_config_wait_command_builder("az network application-gateway private-link ip-config wait", 'az_network_application_gateway_private_link_ip_config_wait_command_result');
     }
 }
 
@@ -1446,7 +1446,7 @@ export class az_network_application_gateway_private_link {
      * @param {string} subnet The name or an existing ID of a subnet within the same vnet of an application gateway.
      */
     static add(frontendIp: string, name: string, subnet: string): az_network_application_gateway_private_link_add_command_builder {
-        return new az_network_application_gateway_private_link_add_command_builder("az network application-gateway private-link add", frontendIp, name, subnet);
+        return new az_network_application_gateway_private_link_add_command_builder("az network application-gateway private-link add", 'az_network_application_gateway_private_link_add_command_result', frontendIp, name, subnet);
     }
 
     /**
@@ -1464,7 +1464,7 @@ export class az_network_application_gateway_private_link {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(gatewayName: string, resourceGroup: string): az_network_application_gateway_private_link_list_command_builder {
-        return new az_network_application_gateway_private_link_list_command_builder("az network application-gateway private-link list", gatewayName, resourceGroup);
+        return new az_network_application_gateway_private_link_list_command_builder("az network application-gateway private-link list", 'az_network_application_gateway_private_link_list_command_result', gatewayName, resourceGroup);
     }
 
     /**
@@ -1484,7 +1484,7 @@ export class az_network_application_gateway_private_link {
      * @param {string} name The name of Private Link.
      */
     static remove(name: string): az_network_application_gateway_private_link_remove_command_builder {
-        return new az_network_application_gateway_private_link_remove_command_builder("az network application-gateway private-link remove", name);
+        return new az_network_application_gateway_private_link_remove_command_builder("az network application-gateway private-link remove", 'az_network_application_gateway_private_link_remove_command_result', name);
     }
 
     /**
@@ -1503,7 +1503,7 @@ export class az_network_application_gateway_private_link {
      * @param {string} name The name of Private Link.
      */
     static show(name: string): az_network_application_gateway_private_link_show_command_builder {
-        return new az_network_application_gateway_private_link_show_command_builder("az network application-gateway private-link show", name);
+        return new az_network_application_gateway_private_link_show_command_builder("az network application-gateway private-link show", 'az_network_application_gateway_private_link_show_command_result', name);
     }
 
     /**
@@ -1525,7 +1525,7 @@ export class az_network_application_gateway_private_link {
      * ```
      */
     static wait(): az_network_application_gateway_private_link_wait_command_builder {
-        return new az_network_application_gateway_private_link_wait_command_builder("az network application-gateway private-link wait");
+        return new az_network_application_gateway_private_link_wait_command_builder("az network application-gateway private-link wait", 'az_network_application_gateway_private_link_wait_command_result');
     }
 }
 
@@ -1561,7 +1561,7 @@ export class az_network_application_gateway_probe {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(gatewayName: string, name: string, path: string, protocol: 'Http' | 'Https', resourceGroup: string): az_network_application_gateway_probe_create_command_builder {
-        return new az_network_application_gateway_probe_create_command_builder("az network application-gateway probe create", gatewayName, name, path, protocol, resourceGroup);
+        return new az_network_application_gateway_probe_create_command_builder("az network application-gateway probe create", 'az_network_application_gateway_probe_create_command_result', gatewayName, name, path, protocol, resourceGroup);
     }
 
     /**
@@ -1578,7 +1578,7 @@ export class az_network_application_gateway_probe {
      * ```
      */
     static delete(): az_network_application_gateway_probe_delete_command_builder {
-        return new az_network_application_gateway_probe_delete_command_builder("az network application-gateway probe delete");
+        return new az_network_application_gateway_probe_delete_command_builder("az network application-gateway probe delete", 'az_network_application_gateway_probe_delete_command_result');
     }
 
     /**
@@ -1596,7 +1596,7 @@ export class az_network_application_gateway_probe {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(gatewayName: string, resourceGroup: string): az_network_application_gateway_probe_list_command_builder {
-        return new az_network_application_gateway_probe_list_command_builder("az network application-gateway probe list", gatewayName, resourceGroup);
+        return new az_network_application_gateway_probe_list_command_builder("az network application-gateway probe list", 'az_network_application_gateway_probe_list_command_result', gatewayName, resourceGroup);
     }
 
     /**
@@ -1613,7 +1613,7 @@ export class az_network_application_gateway_probe {
      * ```
      */
     static show(): az_network_application_gateway_probe_show_command_builder {
-        return new az_network_application_gateway_probe_show_command_builder("az network application-gateway probe show");
+        return new az_network_application_gateway_probe_show_command_builder("az network application-gateway probe show", 'az_network_application_gateway_probe_show_command_result');
     }
 
     /**
@@ -1645,7 +1645,7 @@ export class az_network_application_gateway_probe {
      * ```
      */
     static update(): az_network_application_gateway_probe_update_command_builder {
-        return new az_network_application_gateway_probe_update_command_builder("az network application-gateway probe update");
+        return new az_network_application_gateway_probe_update_command_builder("az network application-gateway probe update", 'az_network_application_gateway_probe_update_command_result');
     }
 }
 
@@ -1674,7 +1674,7 @@ export class az_network_application_gateway_redirect_config {
      * @param {'Found' | 'Permanent' | 'SeeOther' | 'Temporary'} type HTTP redirection type.
      */
     static create(gatewayName: string, name: string, resourceGroup: string, type: 'Found' | 'Permanent' | 'SeeOther' | 'Temporary'): az_network_application_gateway_redirect_config_create_command_builder {
-        return new az_network_application_gateway_redirect_config_create_command_builder("az network application-gateway redirect-config create", gatewayName, name, resourceGroup, type);
+        return new az_network_application_gateway_redirect_config_create_command_builder("az network application-gateway redirect-config create", 'az_network_application_gateway_redirect_config_create_command_result', gatewayName, name, resourceGroup, type);
     }
 
     /**
@@ -1691,7 +1691,7 @@ export class az_network_application_gateway_redirect_config {
      * ```
      */
     static delete(): az_network_application_gateway_redirect_config_delete_command_builder {
-        return new az_network_application_gateway_redirect_config_delete_command_builder("az network application-gateway redirect-config delete");
+        return new az_network_application_gateway_redirect_config_delete_command_builder("az network application-gateway redirect-config delete", 'az_network_application_gateway_redirect_config_delete_command_result');
     }
 
     /**
@@ -1709,7 +1709,7 @@ export class az_network_application_gateway_redirect_config {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(gatewayName: string, resourceGroup: string): az_network_application_gateway_redirect_config_list_command_builder {
-        return new az_network_application_gateway_redirect_config_list_command_builder("az network application-gateway redirect-config list", gatewayName, resourceGroup);
+        return new az_network_application_gateway_redirect_config_list_command_builder("az network application-gateway redirect-config list", 'az_network_application_gateway_redirect_config_list_command_result', gatewayName, resourceGroup);
     }
 
     /**
@@ -1726,7 +1726,7 @@ export class az_network_application_gateway_redirect_config {
      * ```
      */
     static show(): az_network_application_gateway_redirect_config_show_command_builder {
-        return new az_network_application_gateway_redirect_config_show_command_builder("az network application-gateway redirect-config show");
+        return new az_network_application_gateway_redirect_config_show_command_builder("az network application-gateway redirect-config show", 'az_network_application_gateway_redirect_config_show_command_result');
     }
 
     /**
@@ -1752,7 +1752,7 @@ export class az_network_application_gateway_redirect_config {
      * ```
      */
     static update(): az_network_application_gateway_redirect_config_update_command_builder {
-        return new az_network_application_gateway_redirect_config_update_command_builder("az network application-gateway redirect-config update");
+        return new az_network_application_gateway_redirect_config_update_command_builder("az network application-gateway redirect-config update", 'az_network_application_gateway_redirect_config_update_command_result');
     }
 }
 
@@ -1782,7 +1782,7 @@ export class az_network_application_gateway_rewrite_rule_condition {
      * @param {string} variable The variable whose value is being evaluated.
      */
     static create(gatewayName: string, resourceGroup: string, ruleName: string, ruleSetName: string, variable: string): az_network_application_gateway_rewrite_rule_condition_create_command_builder {
-        return new az_network_application_gateway_rewrite_rule_condition_create_command_builder("az network application-gateway rewrite-rule condition create", gatewayName, resourceGroup, ruleName, ruleSetName, variable);
+        return new az_network_application_gateway_rewrite_rule_condition_create_command_builder("az network application-gateway rewrite-rule condition create", 'az_network_application_gateway_rewrite_rule_condition_create_command_result', gatewayName, resourceGroup, ruleName, ruleSetName, variable);
     }
 
     /**
@@ -1803,7 +1803,7 @@ export class az_network_application_gateway_rewrite_rule_condition {
      * @param {string} variable The variable whose value is being evaluated.
      */
     static delete(variable: string): az_network_application_gateway_rewrite_rule_condition_delete_command_builder {
-        return new az_network_application_gateway_rewrite_rule_condition_delete_command_builder("az network application-gateway rewrite-rule condition delete", variable);
+        return new az_network_application_gateway_rewrite_rule_condition_delete_command_builder("az network application-gateway rewrite-rule condition delete", 'az_network_application_gateway_rewrite_rule_condition_delete_command_result', variable);
     }
 
     /**
@@ -1825,7 +1825,7 @@ export class az_network_application_gateway_rewrite_rule_condition {
      * @param {string} ruleSetName Name of the rewrite rule set.
      */
     static list(gatewayName: string, resourceGroup: string, ruleName: string, ruleSetName: string): az_network_application_gateway_rewrite_rule_condition_list_command_builder {
-        return new az_network_application_gateway_rewrite_rule_condition_list_command_builder("az network application-gateway rewrite-rule condition list", gatewayName, resourceGroup, ruleName, ruleSetName);
+        return new az_network_application_gateway_rewrite_rule_condition_list_command_builder("az network application-gateway rewrite-rule condition list", 'az_network_application_gateway_rewrite_rule_condition_list_command_result', gatewayName, resourceGroup, ruleName, ruleSetName);
     }
 
     /**
@@ -1837,7 +1837,7 @@ export class az_network_application_gateway_rewrite_rule_condition {
      * ```
      */
     static list_server_variables(): az_network_application_gateway_rewrite_rule_condition_list_server_variables_command_builder {
-        return new az_network_application_gateway_rewrite_rule_condition_list_server_variables_command_builder("az network application-gateway rewrite-rule condition list-server-variables");
+        return new az_network_application_gateway_rewrite_rule_condition_list_server_variables_command_builder("az network application-gateway rewrite-rule condition list-server-variables", 'az_network_application_gateway_rewrite_rule_condition_list_server_variables_command_result');
     }
 
     /**
@@ -1858,7 +1858,7 @@ export class az_network_application_gateway_rewrite_rule_condition {
      * @param {string} variable The variable whose value is being evaluated.
      */
     static show(variable: string): az_network_application_gateway_rewrite_rule_condition_show_command_builder {
-        return new az_network_application_gateway_rewrite_rule_condition_show_command_builder("az network application-gateway rewrite-rule condition show", variable);
+        return new az_network_application_gateway_rewrite_rule_condition_show_command_builder("az network application-gateway rewrite-rule condition show", 'az_network_application_gateway_rewrite_rule_condition_show_command_result', variable);
     }
 
     /**
@@ -1886,7 +1886,7 @@ export class az_network_application_gateway_rewrite_rule_condition {
      * @param {string} variable The variable whose value is being evaluated.
      */
     static update(variable: string): az_network_application_gateway_rewrite_rule_condition_update_command_builder {
-        return new az_network_application_gateway_rewrite_rule_condition_update_command_builder("az network application-gateway rewrite-rule condition update", variable);
+        return new az_network_application_gateway_rewrite_rule_condition_update_command_builder("az network application-gateway rewrite-rule condition update", 'az_network_application_gateway_rewrite_rule_condition_update_command_result', variable);
     }
 }
 
@@ -1909,7 +1909,7 @@ export class az_network_application_gateway_rewrite_rule_set {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(gatewayName: string, name: string, resourceGroup: string): az_network_application_gateway_rewrite_rule_set_create_command_builder {
-        return new az_network_application_gateway_rewrite_rule_set_create_command_builder("az network application-gateway rewrite-rule set create", gatewayName, name, resourceGroup);
+        return new az_network_application_gateway_rewrite_rule_set_create_command_builder("az network application-gateway rewrite-rule set create", 'az_network_application_gateway_rewrite_rule_set_create_command_result', gatewayName, name, resourceGroup);
     }
 
     /**
@@ -1926,7 +1926,7 @@ export class az_network_application_gateway_rewrite_rule_set {
      * ```
      */
     static delete(): az_network_application_gateway_rewrite_rule_set_delete_command_builder {
-        return new az_network_application_gateway_rewrite_rule_set_delete_command_builder("az network application-gateway rewrite-rule set delete");
+        return new az_network_application_gateway_rewrite_rule_set_delete_command_builder("az network application-gateway rewrite-rule set delete", 'az_network_application_gateway_rewrite_rule_set_delete_command_result');
     }
 
     /**
@@ -1944,7 +1944,7 @@ export class az_network_application_gateway_rewrite_rule_set {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(gatewayName: string, resourceGroup: string): az_network_application_gateway_rewrite_rule_set_list_command_builder {
-        return new az_network_application_gateway_rewrite_rule_set_list_command_builder("az network application-gateway rewrite-rule set list", gatewayName, resourceGroup);
+        return new az_network_application_gateway_rewrite_rule_set_list_command_builder("az network application-gateway rewrite-rule set list", 'az_network_application_gateway_rewrite_rule_set_list_command_result', gatewayName, resourceGroup);
     }
 
     /**
@@ -1961,7 +1961,7 @@ export class az_network_application_gateway_rewrite_rule_set {
      * ```
      */
     static show(): az_network_application_gateway_rewrite_rule_set_show_command_builder {
-        return new az_network_application_gateway_rewrite_rule_set_show_command_builder("az network application-gateway rewrite-rule set show");
+        return new az_network_application_gateway_rewrite_rule_set_show_command_builder("az network application-gateway rewrite-rule set show", 'az_network_application_gateway_rewrite_rule_set_show_command_result');
     }
 
     /**
@@ -1982,7 +1982,7 @@ export class az_network_application_gateway_rewrite_rule_set {
      * ```
      */
     static update(): az_network_application_gateway_rewrite_rule_set_update_command_builder {
-        return new az_network_application_gateway_rewrite_rule_set_update_command_builder("az network application-gateway rewrite-rule set update");
+        return new az_network_application_gateway_rewrite_rule_set_update_command_builder("az network application-gateway rewrite-rule set update", 'az_network_application_gateway_rewrite_rule_set_update_command_result');
     }
 }
 
@@ -2013,7 +2013,7 @@ export class az_network_application_gateway_rewrite_rule {
      * @param {string} ruleSetName Name of the rewrite rule set.
      */
     static create(gatewayName: string, name: string, resourceGroup: string, ruleSetName: string): az_network_application_gateway_rewrite_rule_create_command_builder {
-        return new az_network_application_gateway_rewrite_rule_create_command_builder("az network application-gateway rewrite-rule create", gatewayName, name, resourceGroup, ruleSetName);
+        return new az_network_application_gateway_rewrite_rule_create_command_builder("az network application-gateway rewrite-rule create", 'az_network_application_gateway_rewrite_rule_create_command_result', gatewayName, name, resourceGroup, ruleSetName);
     }
 
     /**
@@ -2031,7 +2031,7 @@ export class az_network_application_gateway_rewrite_rule {
      * ```
      */
     static delete(): az_network_application_gateway_rewrite_rule_delete_command_builder {
-        return new az_network_application_gateway_rewrite_rule_delete_command_builder("az network application-gateway rewrite-rule delete");
+        return new az_network_application_gateway_rewrite_rule_delete_command_builder("az network application-gateway rewrite-rule delete", 'az_network_application_gateway_rewrite_rule_delete_command_result');
     }
 
     /**
@@ -2051,7 +2051,7 @@ export class az_network_application_gateway_rewrite_rule {
      * @param {string} ruleSetName Name of the rewrite rule set.
      */
     static list(gatewayName: string, resourceGroup: string, ruleSetName: string): az_network_application_gateway_rewrite_rule_list_command_builder {
-        return new az_network_application_gateway_rewrite_rule_list_command_builder("az network application-gateway rewrite-rule list", gatewayName, resourceGroup, ruleSetName);
+        return new az_network_application_gateway_rewrite_rule_list_command_builder("az network application-gateway rewrite-rule list", 'az_network_application_gateway_rewrite_rule_list_command_result', gatewayName, resourceGroup, ruleSetName);
     }
 
     /**
@@ -2063,7 +2063,7 @@ export class az_network_application_gateway_rewrite_rule {
      * ```
      */
     static list_request_headers(): az_network_application_gateway_rewrite_rule_list_request_headers_command_builder {
-        return new az_network_application_gateway_rewrite_rule_list_request_headers_command_builder("az network application-gateway rewrite-rule list-request-headers");
+        return new az_network_application_gateway_rewrite_rule_list_request_headers_command_builder("az network application-gateway rewrite-rule list-request-headers", 'az_network_application_gateway_rewrite_rule_list_request_headers_command_result');
     }
 
     /**
@@ -2075,7 +2075,7 @@ export class az_network_application_gateway_rewrite_rule {
      * ```
      */
     static list_response_headers(): az_network_application_gateway_rewrite_rule_list_response_headers_command_builder {
-        return new az_network_application_gateway_rewrite_rule_list_response_headers_command_builder("az network application-gateway rewrite-rule list-response-headers");
+        return new az_network_application_gateway_rewrite_rule_list_response_headers_command_builder("az network application-gateway rewrite-rule list-response-headers", 'az_network_application_gateway_rewrite_rule_list_response_headers_command_result');
     }
 
     /**
@@ -2093,7 +2093,7 @@ export class az_network_application_gateway_rewrite_rule {
      * ```
      */
     static show(): az_network_application_gateway_rewrite_rule_show_command_builder {
-        return new az_network_application_gateway_rewrite_rule_show_command_builder("az network application-gateway rewrite-rule show");
+        return new az_network_application_gateway_rewrite_rule_show_command_builder("az network application-gateway rewrite-rule show", 'az_network_application_gateway_rewrite_rule_show_command_result');
     }
 
     /**
@@ -2121,7 +2121,7 @@ export class az_network_application_gateway_rewrite_rule {
      * ```
      */
     static update(): az_network_application_gateway_rewrite_rule_update_command_builder {
-        return new az_network_application_gateway_rewrite_rule_update_command_builder("az network application-gateway rewrite-rule update");
+        return new az_network_application_gateway_rewrite_rule_update_command_builder("az network application-gateway rewrite-rule update", 'az_network_application_gateway_rewrite_rule_update_command_result');
     }
 }
 
@@ -2146,7 +2146,7 @@ export class az_network_application_gateway_root_cert {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(gatewayName: string, name: string, resourceGroup: string): az_network_application_gateway_root_cert_create_command_builder {
-        return new az_network_application_gateway_root_cert_create_command_builder("az network application-gateway root-cert create", gatewayName, name, resourceGroup);
+        return new az_network_application_gateway_root_cert_create_command_builder("az network application-gateway root-cert create", 'az_network_application_gateway_root_cert_create_command_result', gatewayName, name, resourceGroup);
     }
 
     /**
@@ -2163,7 +2163,7 @@ export class az_network_application_gateway_root_cert {
      * ```
      */
     static delete(): az_network_application_gateway_root_cert_delete_command_builder {
-        return new az_network_application_gateway_root_cert_delete_command_builder("az network application-gateway root-cert delete");
+        return new az_network_application_gateway_root_cert_delete_command_builder("az network application-gateway root-cert delete", 'az_network_application_gateway_root_cert_delete_command_result');
     }
 
     /**
@@ -2181,7 +2181,7 @@ export class az_network_application_gateway_root_cert {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(gatewayName: string, resourceGroup: string): az_network_application_gateway_root_cert_list_command_builder {
-        return new az_network_application_gateway_root_cert_list_command_builder("az network application-gateway root-cert list", gatewayName, resourceGroup);
+        return new az_network_application_gateway_root_cert_list_command_builder("az network application-gateway root-cert list", 'az_network_application_gateway_root_cert_list_command_result', gatewayName, resourceGroup);
     }
 
     /**
@@ -2198,7 +2198,7 @@ export class az_network_application_gateway_root_cert {
      * ```
      */
     static show(): az_network_application_gateway_root_cert_show_command_builder {
-        return new az_network_application_gateway_root_cert_show_command_builder("az network application-gateway root-cert show");
+        return new az_network_application_gateway_root_cert_show_command_builder("az network application-gateway root-cert show", 'az_network_application_gateway_root_cert_show_command_result');
     }
 
     /**
@@ -2221,7 +2221,7 @@ export class az_network_application_gateway_root_cert {
      * ```
      */
     static update(): az_network_application_gateway_root_cert_update_command_builder {
-        return new az_network_application_gateway_root_cert_update_command_builder("az network application-gateway root-cert update");
+        return new az_network_application_gateway_root_cert_update_command_builder("az network application-gateway root-cert update", 'az_network_application_gateway_root_cert_update_command_result');
     }
 }
 
@@ -2251,7 +2251,7 @@ export class az_network_application_gateway_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(gatewayName: string, name: string, resourceGroup: string): az_network_application_gateway_rule_create_command_builder {
-        return new az_network_application_gateway_rule_create_command_builder("az network application-gateway rule create", gatewayName, name, resourceGroup);
+        return new az_network_application_gateway_rule_create_command_builder("az network application-gateway rule create", 'az_network_application_gateway_rule_create_command_result', gatewayName, name, resourceGroup);
     }
 
     /**
@@ -2268,7 +2268,7 @@ export class az_network_application_gateway_rule {
      * ```
      */
     static delete(): az_network_application_gateway_rule_delete_command_builder {
-        return new az_network_application_gateway_rule_delete_command_builder("az network application-gateway rule delete");
+        return new az_network_application_gateway_rule_delete_command_builder("az network application-gateway rule delete", 'az_network_application_gateway_rule_delete_command_result');
     }
 
     /**
@@ -2286,7 +2286,7 @@ export class az_network_application_gateway_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(gatewayName: string, resourceGroup: string): az_network_application_gateway_rule_list_command_builder {
-        return new az_network_application_gateway_rule_list_command_builder("az network application-gateway rule list", gatewayName, resourceGroup);
+        return new az_network_application_gateway_rule_list_command_builder("az network application-gateway rule list", 'az_network_application_gateway_rule_list_command_result', gatewayName, resourceGroup);
     }
 
     /**
@@ -2303,7 +2303,7 @@ export class az_network_application_gateway_rule {
      * ```
      */
     static show(): az_network_application_gateway_rule_show_command_builder {
-        return new az_network_application_gateway_rule_show_command_builder("az network application-gateway rule show");
+        return new az_network_application_gateway_rule_show_command_builder("az network application-gateway rule show", 'az_network_application_gateway_rule_show_command_result');
     }
 
     /**
@@ -2331,7 +2331,7 @@ export class az_network_application_gateway_rule {
      * ```
      */
     static update(): az_network_application_gateway_rule_update_command_builder {
-        return new az_network_application_gateway_rule_update_command_builder("az network application-gateway rule update");
+        return new az_network_application_gateway_rule_update_command_builder("az network application-gateway rule update", 'az_network_application_gateway_rule_update_command_result');
     }
 }
 
@@ -2357,7 +2357,7 @@ export class az_network_application_gateway_ssl_cert {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(gatewayName: string, name: string, resourceGroup: string): az_network_application_gateway_ssl_cert_create_command_builder {
-        return new az_network_application_gateway_ssl_cert_create_command_builder("az network application-gateway ssl-cert create", gatewayName, name, resourceGroup);
+        return new az_network_application_gateway_ssl_cert_create_command_builder("az network application-gateway ssl-cert create", 'az_network_application_gateway_ssl_cert_create_command_result', gatewayName, name, resourceGroup);
     }
 
     /**
@@ -2374,7 +2374,7 @@ export class az_network_application_gateway_ssl_cert {
      * ```
      */
     static delete(): az_network_application_gateway_ssl_cert_delete_command_builder {
-        return new az_network_application_gateway_ssl_cert_delete_command_builder("az network application-gateway ssl-cert delete");
+        return new az_network_application_gateway_ssl_cert_delete_command_builder("az network application-gateway ssl-cert delete", 'az_network_application_gateway_ssl_cert_delete_command_result');
     }
 
     /**
@@ -2392,7 +2392,7 @@ export class az_network_application_gateway_ssl_cert {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(gatewayName: string, resourceGroup: string): az_network_application_gateway_ssl_cert_list_command_builder {
-        return new az_network_application_gateway_ssl_cert_list_command_builder("az network application-gateway ssl-cert list", gatewayName, resourceGroup);
+        return new az_network_application_gateway_ssl_cert_list_command_builder("az network application-gateway ssl-cert list", 'az_network_application_gateway_ssl_cert_list_command_result', gatewayName, resourceGroup);
     }
 
     /**
@@ -2409,7 +2409,7 @@ export class az_network_application_gateway_ssl_cert {
      * ```
      */
     static show(): az_network_application_gateway_ssl_cert_show_command_builder {
-        return new az_network_application_gateway_ssl_cert_show_command_builder("az network application-gateway ssl-cert show");
+        return new az_network_application_gateway_ssl_cert_show_command_builder("az network application-gateway ssl-cert show", 'az_network_application_gateway_ssl_cert_show_command_result');
     }
 
     /**
@@ -2433,7 +2433,7 @@ export class az_network_application_gateway_ssl_cert {
      * ```
      */
     static update(): az_network_application_gateway_ssl_cert_update_command_builder {
-        return new az_network_application_gateway_ssl_cert_update_command_builder("az network application-gateway ssl-cert update");
+        return new az_network_application_gateway_ssl_cert_update_command_builder("az network application-gateway ssl-cert update", 'az_network_application_gateway_ssl_cert_update_command_result');
     }
 }
 
@@ -2449,7 +2449,7 @@ export class az_network_application_gateway_ssl_policy_predefined {
      * ```
      */
     static list(): az_network_application_gateway_ssl_policy_predefined_list_command_builder {
-        return new az_network_application_gateway_ssl_policy_predefined_list_command_builder("az network application-gateway ssl-policy predefined list");
+        return new az_network_application_gateway_ssl_policy_predefined_list_command_builder("az network application-gateway ssl-policy predefined list", 'az_network_application_gateway_ssl_policy_predefined_list_command_result');
     }
 
     /**
@@ -2465,7 +2465,7 @@ export class az_network_application_gateway_ssl_policy_predefined {
      * @param {string} name Name of Ssl predefined policy.
      */
     static show(name: string): az_network_application_gateway_ssl_policy_predefined_show_command_builder {
-        return new az_network_application_gateway_ssl_policy_predefined_show_command_builder("az network application-gateway ssl-policy predefined show", name);
+        return new az_network_application_gateway_ssl_policy_predefined_show_command_builder("az network application-gateway ssl-policy predefined show", 'az_network_application_gateway_ssl_policy_predefined_show_command_result', name);
     }
 }
 
@@ -2480,7 +2480,7 @@ export class az_network_application_gateway_ssl_policy {
      * ```
      */
     static list_options(): az_network_application_gateway_ssl_policy_list_options_command_builder {
-        return new az_network_application_gateway_ssl_policy_list_options_command_builder("az network application-gateway ssl-policy list-options");
+        return new az_network_application_gateway_ssl_policy_list_options_command_builder("az network application-gateway ssl-policy list-options", 'az_network_application_gateway_ssl_policy_list_options_command_result');
     }
 
     /**
@@ -2501,7 +2501,7 @@ export class az_network_application_gateway_ssl_policy {
      * ```
      */
     static set(): az_network_application_gateway_ssl_policy_set_command_builder {
-        return new az_network_application_gateway_ssl_policy_set_command_builder("az network application-gateway ssl-policy set");
+        return new az_network_application_gateway_ssl_policy_set_command_builder("az network application-gateway ssl-policy set", 'az_network_application_gateway_ssl_policy_set_command_result');
     }
 
     /**
@@ -2517,7 +2517,7 @@ export class az_network_application_gateway_ssl_policy {
      * ```
      */
     static show(): az_network_application_gateway_ssl_policy_show_command_builder {
-        return new az_network_application_gateway_ssl_policy_show_command_builder("az network application-gateway ssl-policy show");
+        return new az_network_application_gateway_ssl_policy_show_command_builder("az network application-gateway ssl-policy show", 'az_network_application_gateway_ssl_policy_show_command_result');
     }
 }
 
@@ -2549,7 +2549,7 @@ export class az_network_application_gateway_url_path_map_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(gatewayName: string, name: string, pathMapName: string, paths: string, resourceGroup: string): az_network_application_gateway_url_path_map_rule_create_command_builder {
-        return new az_network_application_gateway_url_path_map_rule_create_command_builder("az network application-gateway url-path-map rule create", gatewayName, name, pathMapName, paths, resourceGroup);
+        return new az_network_application_gateway_url_path_map_rule_create_command_builder("az network application-gateway url-path-map rule create", 'az_network_application_gateway_url_path_map_rule_create_command_result', gatewayName, name, pathMapName, paths, resourceGroup);
     }
 
     /**
@@ -2567,7 +2567,7 @@ export class az_network_application_gateway_url_path_map_rule {
      * ```
      */
     static delete(): az_network_application_gateway_url_path_map_rule_delete_command_builder {
-        return new az_network_application_gateway_url_path_map_rule_delete_command_builder("az network application-gateway url-path-map rule delete");
+        return new az_network_application_gateway_url_path_map_rule_delete_command_builder("az network application-gateway url-path-map rule delete", 'az_network_application_gateway_url_path_map_rule_delete_command_result');
     }
 }
 
@@ -2602,7 +2602,7 @@ export class az_network_application_gateway_url_path_map {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(gatewayName: string, name: string, paths: string, resourceGroup: string): az_network_application_gateway_url_path_map_create_command_builder {
-        return new az_network_application_gateway_url_path_map_create_command_builder("az network application-gateway url-path-map create", gatewayName, name, paths, resourceGroup);
+        return new az_network_application_gateway_url_path_map_create_command_builder("az network application-gateway url-path-map create", 'az_network_application_gateway_url_path_map_create_command_result', gatewayName, name, paths, resourceGroup);
     }
 
     /**
@@ -2619,7 +2619,7 @@ export class az_network_application_gateway_url_path_map {
      * ```
      */
     static delete(): az_network_application_gateway_url_path_map_delete_command_builder {
-        return new az_network_application_gateway_url_path_map_delete_command_builder("az network application-gateway url-path-map delete");
+        return new az_network_application_gateway_url_path_map_delete_command_builder("az network application-gateway url-path-map delete", 'az_network_application_gateway_url_path_map_delete_command_result');
     }
 
     /**
@@ -2637,7 +2637,7 @@ export class az_network_application_gateway_url_path_map {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(gatewayName: string, resourceGroup: string): az_network_application_gateway_url_path_map_list_command_builder {
-        return new az_network_application_gateway_url_path_map_list_command_builder("az network application-gateway url-path-map list", gatewayName, resourceGroup);
+        return new az_network_application_gateway_url_path_map_list_command_builder("az network application-gateway url-path-map list", 'az_network_application_gateway_url_path_map_list_command_result', gatewayName, resourceGroup);
     }
 
     /**
@@ -2654,7 +2654,7 @@ export class az_network_application_gateway_url_path_map {
      * ```
      */
     static show(): az_network_application_gateway_url_path_map_show_command_builder {
-        return new az_network_application_gateway_url_path_map_show_command_builder("az network application-gateway url-path-map show");
+        return new az_network_application_gateway_url_path_map_show_command_builder("az network application-gateway url-path-map show", 'az_network_application_gateway_url_path_map_show_command_result');
     }
 
     /**
@@ -2679,7 +2679,7 @@ export class az_network_application_gateway_url_path_map {
      * ```
      */
     static update(): az_network_application_gateway_url_path_map_update_command_builder {
-        return new az_network_application_gateway_url_path_map_update_command_builder("az network application-gateway url-path-map update");
+        return new az_network_application_gateway_url_path_map_update_command_builder("az network application-gateway url-path-map update", 'az_network_application_gateway_url_path_map_update_command_result');
     }
 }
 
@@ -2697,7 +2697,7 @@ export class az_network_application_gateway_waf_config {
      * ```
      */
     static list_rule_sets(): az_network_application_gateway_waf_config_list_rule_sets_command_builder {
-        return new az_network_application_gateway_waf_config_list_rule_sets_command_builder("az network application-gateway waf-config list-rule-sets");
+        return new az_network_application_gateway_waf_config_list_rule_sets_command_builder("az network application-gateway waf-config list-rule-sets", 'az_network_application_gateway_waf_config_list_rule_sets_command_result');
     }
 
     /**
@@ -2725,7 +2725,7 @@ export class az_network_application_gateway_waf_config {
      * @param {boolean} enabled Specify whether the application firewall is enabled.
      */
     static set(enabled: boolean): az_network_application_gateway_waf_config_set_command_builder {
-        return new az_network_application_gateway_waf_config_set_command_builder("az network application-gateway waf-config set", enabled);
+        return new az_network_application_gateway_waf_config_set_command_builder("az network application-gateway waf-config set", 'az_network_application_gateway_waf_config_set_command_result', enabled);
     }
 
     /**
@@ -2741,7 +2741,7 @@ export class az_network_application_gateway_waf_config {
      * ```
      */
     static show(): az_network_application_gateway_waf_config_show_command_builder {
-        return new az_network_application_gateway_waf_config_show_command_builder("az network application-gateway waf-config show");
+        return new az_network_application_gateway_waf_config_show_command_builder("az network application-gateway waf-config show", 'az_network_application_gateway_waf_config_show_command_result');
     }
 }
 
@@ -2769,7 +2769,7 @@ export class az_network_application_gateway_waf_policy_custom_rule_match_conditi
      * @param {string} values Space-separated list of values to match.
      */
     static add(matchVariables: string, operator: 'BeginsWith' | 'Contains' | 'EndsWith' | 'Equal' | 'GeoMatch' | 'GreaterThan' | 'GreaterThanOrEqual' | 'IPMatch' | 'LessThan' | 'LessThanOrEqual' | 'Regex', values: string): az_network_application_gateway_waf_policy_custom_rule_match_condition_add_command_builder {
-        return new az_network_application_gateway_waf_policy_custom_rule_match_condition_add_command_builder("az network application-gateway waf-policy custom-rule match-condition add", matchVariables, operator, values);
+        return new az_network_application_gateway_waf_policy_custom_rule_match_condition_add_command_builder("az network application-gateway waf-policy custom-rule match-condition add", 'az_network_application_gateway_waf_policy_custom_rule_match_condition_add_command_result', matchVariables, operator, values);
     }
 
     /**
@@ -2789,7 +2789,7 @@ export class az_network_application_gateway_waf_policy_custom_rule_match_conditi
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, policyName: string, resourceGroup: string): az_network_application_gateway_waf_policy_custom_rule_match_condition_list_command_builder {
-        return new az_network_application_gateway_waf_policy_custom_rule_match_condition_list_command_builder("az network application-gateway waf-policy custom-rule match-condition list", name, policyName, resourceGroup);
+        return new az_network_application_gateway_waf_policy_custom_rule_match_condition_list_command_builder("az network application-gateway waf-policy custom-rule match-condition list", 'az_network_application_gateway_waf_policy_custom_rule_match_condition_list_command_result', name, policyName, resourceGroup);
     }
 
     /**
@@ -2808,7 +2808,7 @@ export class az_network_application_gateway_waf_policy_custom_rule_match_conditi
      * @param {string} index Index of the match condition to remove.
      */
     static remove(index: string): az_network_application_gateway_waf_policy_custom_rule_match_condition_remove_command_builder {
-        return new az_network_application_gateway_waf_policy_custom_rule_match_condition_remove_command_builder("az network application-gateway waf-policy custom-rule match-condition remove", index);
+        return new az_network_application_gateway_waf_policy_custom_rule_match_condition_remove_command_builder("az network application-gateway waf-policy custom-rule match-condition remove", 'az_network_application_gateway_waf_policy_custom_rule_match_condition_remove_command_result', index);
     }
 }
 
@@ -2836,7 +2836,7 @@ export class az_network_application_gateway_waf_policy_custom_rule {
      * @param {'Invalid' | 'MatchRule'} ruleType Type of rule.
      */
     static create(action: 'Allow' | 'Block' | 'Log', name: string, policyName: string, priority: string, resourceGroup: string, ruleType: 'Invalid' | 'MatchRule'): az_network_application_gateway_waf_policy_custom_rule_create_command_builder {
-        return new az_network_application_gateway_waf_policy_custom_rule_create_command_builder("az network application-gateway waf-policy custom-rule create", action, name, policyName, priority, resourceGroup, ruleType);
+        return new az_network_application_gateway_waf_policy_custom_rule_create_command_builder("az network application-gateway waf-policy custom-rule create", 'az_network_application_gateway_waf_policy_custom_rule_create_command_result', action, name, policyName, priority, resourceGroup, ruleType);
     }
 
     /**
@@ -2852,7 +2852,7 @@ export class az_network_application_gateway_waf_policy_custom_rule {
      * ```
      */
     static delete(): az_network_application_gateway_waf_policy_custom_rule_delete_command_builder {
-        return new az_network_application_gateway_waf_policy_custom_rule_delete_command_builder("az network application-gateway waf-policy custom-rule delete");
+        return new az_network_application_gateway_waf_policy_custom_rule_delete_command_builder("az network application-gateway waf-policy custom-rule delete", 'az_network_application_gateway_waf_policy_custom_rule_delete_command_result');
     }
 
     /**
@@ -2870,7 +2870,7 @@ export class az_network_application_gateway_waf_policy_custom_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(policyName: string, resourceGroup: string): az_network_application_gateway_waf_policy_custom_rule_list_command_builder {
-        return new az_network_application_gateway_waf_policy_custom_rule_list_command_builder("az network application-gateway waf-policy custom-rule list", policyName, resourceGroup);
+        return new az_network_application_gateway_waf_policy_custom_rule_list_command_builder("az network application-gateway waf-policy custom-rule list", 'az_network_application_gateway_waf_policy_custom_rule_list_command_result', policyName, resourceGroup);
     }
 
     /**
@@ -2887,7 +2887,7 @@ export class az_network_application_gateway_waf_policy_custom_rule {
      * ```
      */
     static show(): az_network_application_gateway_waf_policy_custom_rule_show_command_builder {
-        return new az_network_application_gateway_waf_policy_custom_rule_show_command_builder("az network application-gateway waf-policy custom-rule show");
+        return new az_network_application_gateway_waf_policy_custom_rule_show_command_builder("az network application-gateway waf-policy custom-rule show", 'az_network_application_gateway_waf_policy_custom_rule_show_command_result');
     }
 
     /**
@@ -2910,7 +2910,7 @@ export class az_network_application_gateway_waf_policy_custom_rule {
      * ```
      */
     static update(): az_network_application_gateway_waf_policy_custom_rule_update_command_builder {
-        return new az_network_application_gateway_waf_policy_custom_rule_update_command_builder("az network application-gateway waf-policy custom-rule update");
+        return new az_network_application_gateway_waf_policy_custom_rule_update_command_builder("az network application-gateway waf-policy custom-rule update", 'az_network_application_gateway_waf_policy_custom_rule_update_command_result');
     }
 }
 
@@ -2936,7 +2936,7 @@ export class az_network_application_gateway_waf_policy_managed_rule_exclusion {
      * @param {'Contains' | 'EndsWith' | 'Equals' | 'EqualsAny' | 'StartsWith'} selectorMatchOperator When matchVariable is a collection, operate on the selector to specify which elements in the collection this exclusion applies to.
      */
     static add(matchVariable: 'RequestArgNames' | 'RequestCookieNames' | 'RequestHeaderNames', policyName: string, resourceGroup: string, selector: string, selectorMatchOperator: 'Contains' | 'EndsWith' | 'Equals' | 'EqualsAny' | 'StartsWith'): az_network_application_gateway_waf_policy_managed_rule_exclusion_add_command_builder {
-        return new az_network_application_gateway_waf_policy_managed_rule_exclusion_add_command_builder("az network application-gateway waf-policy managed-rule exclusion add", matchVariable, policyName, resourceGroup, selector, selectorMatchOperator);
+        return new az_network_application_gateway_waf_policy_managed_rule_exclusion_add_command_builder("az network application-gateway waf-policy managed-rule exclusion add", 'az_network_application_gateway_waf_policy_managed_rule_exclusion_add_command_result', matchVariable, policyName, resourceGroup, selector, selectorMatchOperator);
     }
 
     /**
@@ -2954,7 +2954,7 @@ export class az_network_application_gateway_waf_policy_managed_rule_exclusion {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(policyName: string, resourceGroup: string): az_network_application_gateway_waf_policy_managed_rule_exclusion_list_command_builder {
-        return new az_network_application_gateway_waf_policy_managed_rule_exclusion_list_command_builder("az network application-gateway waf-policy managed-rule exclusion list", policyName, resourceGroup);
+        return new az_network_application_gateway_waf_policy_managed_rule_exclusion_list_command_builder("az network application-gateway waf-policy managed-rule exclusion list", 'az_network_application_gateway_waf_policy_managed_rule_exclusion_list_command_result', policyName, resourceGroup);
     }
 
     /**
@@ -2971,7 +2971,7 @@ export class az_network_application_gateway_waf_policy_managed_rule_exclusion {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static remove(policyName: string, resourceGroup: string): az_network_application_gateway_waf_policy_managed_rule_exclusion_remove_command_builder {
-        return new az_network_application_gateway_waf_policy_managed_rule_exclusion_remove_command_builder("az network application-gateway waf-policy managed-rule exclusion remove", policyName, resourceGroup);
+        return new az_network_application_gateway_waf_policy_managed_rule_exclusion_remove_command_builder("az network application-gateway waf-policy managed-rule exclusion remove", 'az_network_application_gateway_waf_policy_managed_rule_exclusion_remove_command_result', policyName, resourceGroup);
     }
 }
 
@@ -2997,7 +2997,7 @@ export class az_network_application_gateway_waf_policy_managed_rule_rule_set {
      * @param {'0.1' | '2.2.9' | '3.0' | '3.1'} version The version of the web application firewall rule set type. 0.1 is used for Microsoft_BotManagerRuleSet.
      */
     static add(policyName: string, resourceGroup: string, type: 'Microsoft_BotManagerRuleSet' | 'OWASP', version: '0.1' | '2.2.9' | '3.0' | '3.1'): az_network_application_gateway_waf_policy_managed_rule_rule_set_add_command_builder {
-        return new az_network_application_gateway_waf_policy_managed_rule_rule_set_add_command_builder("az network application-gateway waf-policy managed-rule rule-set add", policyName, resourceGroup, type, version);
+        return new az_network_application_gateway_waf_policy_managed_rule_rule_set_add_command_builder("az network application-gateway waf-policy managed-rule rule-set add", 'az_network_application_gateway_waf_policy_managed_rule_rule_set_add_command_result', policyName, resourceGroup, type, version);
     }
 
     /**
@@ -3015,7 +3015,7 @@ export class az_network_application_gateway_waf_policy_managed_rule_rule_set {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(policyName: string, resourceGroup: string): az_network_application_gateway_waf_policy_managed_rule_rule_set_list_command_builder {
-        return new az_network_application_gateway_waf_policy_managed_rule_rule_set_list_command_builder("az network application-gateway waf-policy managed-rule rule-set list", policyName, resourceGroup);
+        return new az_network_application_gateway_waf_policy_managed_rule_rule_set_list_command_builder("az network application-gateway waf-policy managed-rule rule-set list", 'az_network_application_gateway_waf_policy_managed_rule_rule_set_list_command_result', policyName, resourceGroup);
     }
 
     /**
@@ -3037,7 +3037,7 @@ export class az_network_application_gateway_waf_policy_managed_rule_rule_set {
      * @param {'0.1' | '2.2.9' | '3.0' | '3.1'} version The version of the web application firewall rule set type. 0.1 is used for Microsoft_BotManagerRuleSet.
      */
     static remove(policyName: string, resourceGroup: string, type: 'Microsoft_BotManagerRuleSet' | 'OWASP', version: '0.1' | '2.2.9' | '3.0' | '3.1'): az_network_application_gateway_waf_policy_managed_rule_rule_set_remove_command_builder {
-        return new az_network_application_gateway_waf_policy_managed_rule_rule_set_remove_command_builder("az network application-gateway waf-policy managed-rule rule-set remove", policyName, resourceGroup, type, version);
+        return new az_network_application_gateway_waf_policy_managed_rule_rule_set_remove_command_builder("az network application-gateway waf-policy managed-rule rule-set remove", 'az_network_application_gateway_waf_policy_managed_rule_rule_set_remove_command_result', policyName, resourceGroup, type, version);
     }
 
     /**
@@ -3065,7 +3065,7 @@ export class az_network_application_gateway_waf_policy_managed_rule_rule_set {
      * @param {'0.1' | '2.2.9' | '3.0' | '3.1'} version The version of the web application firewall rule set type. 0.1 is used for Microsoft_BotManagerRuleSet.
      */
     static update(groupName: string, policyName: string, resourceGroup: string, type: 'Microsoft_BotManagerRuleSet' | 'OWASP', version: '0.1' | '2.2.9' | '3.0' | '3.1'): az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder {
-        return new az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder("az network application-gateway waf-policy managed-rule rule-set update", groupName, policyName, resourceGroup, type, version);
+        return new az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder("az network application-gateway waf-policy managed-rule rule-set update", 'az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_result', groupName, policyName, resourceGroup, type, version);
     }
 }
 
@@ -3090,7 +3090,7 @@ export class az_network_application_gateway_waf_policy_policy_setting {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(policyName: string, resourceGroup: string): az_network_application_gateway_waf_policy_policy_setting_list_command_builder {
-        return new az_network_application_gateway_waf_policy_policy_setting_list_command_builder("az network application-gateway waf-policy policy-setting list", policyName, resourceGroup);
+        return new az_network_application_gateway_waf_policy_policy_setting_list_command_builder("az network application-gateway waf-policy policy-setting list", 'az_network_application_gateway_waf_policy_policy_setting_list_command_result', policyName, resourceGroup);
     }
 
     /**
@@ -3116,7 +3116,7 @@ export class az_network_application_gateway_waf_policy_policy_setting {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(policyName: string, resourceGroup: string): az_network_application_gateway_waf_policy_policy_setting_update_command_builder {
-        return new az_network_application_gateway_waf_policy_policy_setting_update_command_builder("az network application-gateway waf-policy policy-setting update", policyName, resourceGroup);
+        return new az_network_application_gateway_waf_policy_policy_setting_update_command_builder("az network application-gateway waf-policy policy-setting update", 'az_network_application_gateway_waf_policy_policy_setting_update_command_result', policyName, resourceGroup);
     }
 }
 
@@ -3140,7 +3140,7 @@ export class az_network_application_gateway_waf_policy {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_network_application_gateway_waf_policy_create_command_builder {
-        return new az_network_application_gateway_waf_policy_create_command_builder("az network application-gateway waf-policy create", name, resourceGroup);
+        return new az_network_application_gateway_waf_policy_create_command_builder("az network application-gateway waf-policy create", 'az_network_application_gateway_waf_policy_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -3155,7 +3155,7 @@ export class az_network_application_gateway_waf_policy {
      * ```
      */
     static delete(): az_network_application_gateway_waf_policy_delete_command_builder {
-        return new az_network_application_gateway_waf_policy_delete_command_builder("az network application-gateway waf-policy delete");
+        return new az_network_application_gateway_waf_policy_delete_command_builder("az network application-gateway waf-policy delete", 'az_network_application_gateway_waf_policy_delete_command_result');
     }
 
     /**
@@ -3169,7 +3169,7 @@ export class az_network_application_gateway_waf_policy {
      * ```
      */
     static list(): az_network_application_gateway_waf_policy_list_command_builder {
-        return new az_network_application_gateway_waf_policy_list_command_builder("az network application-gateway waf-policy list");
+        return new az_network_application_gateway_waf_policy_list_command_builder("az network application-gateway waf-policy list", 'az_network_application_gateway_waf_policy_list_command_result');
     }
 
     /**
@@ -3185,7 +3185,7 @@ export class az_network_application_gateway_waf_policy {
      * ```
      */
     static show(): az_network_application_gateway_waf_policy_show_command_builder {
-        return new az_network_application_gateway_waf_policy_show_command_builder("az network application-gateway waf-policy show");
+        return new az_network_application_gateway_waf_policy_show_command_builder("az network application-gateway waf-policy show", 'az_network_application_gateway_waf_policy_show_command_result');
     }
 
     /**
@@ -3205,7 +3205,7 @@ export class az_network_application_gateway_waf_policy {
      * ```
      */
     static update(): az_network_application_gateway_waf_policy_update_command_builder {
-        return new az_network_application_gateway_waf_policy_update_command_builder("az network application-gateway waf-policy update");
+        return new az_network_application_gateway_waf_policy_update_command_builder("az network application-gateway waf-policy update", 'az_network_application_gateway_waf_policy_update_command_result');
     }
 
     /**
@@ -3227,7 +3227,7 @@ export class az_network_application_gateway_waf_policy {
      * ```
      */
     static wait(): az_network_application_gateway_waf_policy_wait_command_builder {
-        return new az_network_application_gateway_waf_policy_wait_command_builder("az network application-gateway waf-policy wait");
+        return new az_network_application_gateway_waf_policy_wait_command_builder("az network application-gateway waf-policy wait", 'az_network_application_gateway_waf_policy_wait_command_result');
     }
 }
 
@@ -3282,7 +3282,7 @@ export class az_network_application_gateway {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_network_application_gateway_create_command_builder {
-        return new az_network_application_gateway_create_command_builder("az network application-gateway create", name, resourceGroup);
+        return new az_network_application_gateway_create_command_builder("az network application-gateway create", 'az_network_application_gateway_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -3298,7 +3298,7 @@ export class az_network_application_gateway {
      * ```
      */
     static delete(): az_network_application_gateway_delete_command_builder {
-        return new az_network_application_gateway_delete_command_builder("az network application-gateway delete");
+        return new az_network_application_gateway_delete_command_builder("az network application-gateway delete", 'az_network_application_gateway_delete_command_result');
     }
 
     /**
@@ -3312,7 +3312,7 @@ export class az_network_application_gateway {
      * ```
      */
     static list(): az_network_application_gateway_list_command_builder {
-        return new az_network_application_gateway_list_command_builder("az network application-gateway list");
+        return new az_network_application_gateway_list_command_builder("az network application-gateway list", 'az_network_application_gateway_list_command_result');
     }
 
     /**
@@ -3328,7 +3328,7 @@ export class az_network_application_gateway {
      * ```
      */
     static show(): az_network_application_gateway_show_command_builder {
-        return new az_network_application_gateway_show_command_builder("az network application-gateway show");
+        return new az_network_application_gateway_show_command_builder("az network application-gateway show", 'az_network_application_gateway_show_command_result');
     }
 
     /**
@@ -3344,7 +3344,7 @@ export class az_network_application_gateway {
      * ```
      */
     static show_backend_health(): az_network_application_gateway_show_backend_health_command_builder {
-        return new az_network_application_gateway_show_backend_health_command_builder("az network application-gateway show-backend-health");
+        return new az_network_application_gateway_show_backend_health_command_builder("az network application-gateway show-backend-health", 'az_network_application_gateway_show_backend_health_command_result');
     }
 
     /**
@@ -3359,7 +3359,7 @@ export class az_network_application_gateway {
      * ```
      */
     static start(): az_network_application_gateway_start_command_builder {
-        return new az_network_application_gateway_start_command_builder("az network application-gateway start");
+        return new az_network_application_gateway_start_command_builder("az network application-gateway start", 'az_network_application_gateway_start_command_result');
     }
 
     /**
@@ -3374,7 +3374,7 @@ export class az_network_application_gateway {
      * ```
      */
     static stop(): az_network_application_gateway_stop_command_builder {
-        return new az_network_application_gateway_stop_command_builder("az network application-gateway stop");
+        return new az_network_application_gateway_stop_command_builder("az network application-gateway stop", 'az_network_application_gateway_stop_command_result');
     }
 
     /**
@@ -3401,7 +3401,7 @@ export class az_network_application_gateway {
      * ```
      */
     static update(): az_network_application_gateway_update_command_builder {
-        return new az_network_application_gateway_update_command_builder("az network application-gateway update");
+        return new az_network_application_gateway_update_command_builder("az network application-gateway update", 'az_network_application_gateway_update_command_result');
     }
 
     /**
@@ -3423,7 +3423,7 @@ export class az_network_application_gateway {
      * ```
      */
     static wait(): az_network_application_gateway_wait_command_builder {
-        return new az_network_application_gateway_wait_command_builder("az network application-gateway wait");
+        return new az_network_application_gateway_wait_command_builder("az network application-gateway wait", 'az_network_application_gateway_wait_command_result');
     }
 }
 
@@ -3445,7 +3445,7 @@ export class az_network_asg {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_network_asg_create_command_builder {
-        return new az_network_asg_create_command_builder("az network asg create", name, resourceGroup);
+        return new az_network_asg_create_command_builder("az network asg create", 'az_network_asg_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -3460,7 +3460,7 @@ export class az_network_asg {
      * ```
      */
     static delete(): az_network_asg_delete_command_builder {
-        return new az_network_asg_delete_command_builder("az network asg delete");
+        return new az_network_asg_delete_command_builder("az network asg delete", 'az_network_asg_delete_command_result');
     }
 
     /**
@@ -3473,7 +3473,7 @@ export class az_network_asg {
      * ```
      */
     static list(): az_network_asg_list_command_builder {
-        return new az_network_asg_list_command_builder("az network asg list");
+        return new az_network_asg_list_command_builder("az network asg list", 'az_network_asg_list_command_result');
     }
 
     /**
@@ -3489,7 +3489,7 @@ export class az_network_asg {
      * ```
      */
     static show(): az_network_asg_show_command_builder {
-        return new az_network_asg_show_command_builder("az network asg show");
+        return new az_network_asg_show_command_builder("az network asg show", 'az_network_asg_show_command_result');
     }
 
     /**
@@ -3509,7 +3509,7 @@ export class az_network_asg {
      * ```
      */
     static update(): az_network_asg_update_command_builder {
-        return new az_network_asg_update_command_builder("az network asg update");
+        return new az_network_asg_update_command_builder("az network asg update", 'az_network_asg_update_command_result');
     }
 }
 
@@ -3534,7 +3534,7 @@ export class az_network_bastion {
      * @param {string} vnetName Name of the virtual network. It must have a subnet called AzureBastionSubnet.
      */
     static create(name: string, publicIpAddress: string, resourceGroup: string, vnetName: string): az_network_bastion_create_command_builder {
-        return new az_network_bastion_create_command_builder("az network bastion create", name, publicIpAddress, resourceGroup, vnetName);
+        return new az_network_bastion_create_command_builder("az network bastion create", 'az_network_bastion_create_command_result', name, publicIpAddress, resourceGroup, vnetName);
     }
 
     /**
@@ -3551,7 +3551,7 @@ export class az_network_bastion {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_network_bastion_delete_command_builder {
-        return new az_network_bastion_delete_command_builder("az network bastion delete", name, resourceGroup);
+        return new az_network_bastion_delete_command_builder("az network bastion delete", 'az_network_bastion_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -3565,7 +3565,7 @@ export class az_network_bastion {
      * ```
      */
     static list(): az_network_bastion_list_command_builder {
-        return new az_network_bastion_list_command_builder("az network bastion list");
+        return new az_network_bastion_list_command_builder("az network bastion list", 'az_network_bastion_list_command_result');
     }
 
     /**
@@ -3583,7 +3583,7 @@ export class az_network_bastion {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_network_bastion_show_command_builder {
-        return new az_network_bastion_show_command_builder("az network bastion show", name, resourceGroup);
+        return new az_network_bastion_show_command_builder("az network bastion show", 'az_network_bastion_show_command_result', name, resourceGroup);
     }
 }
 
@@ -3606,7 +3606,7 @@ export class az_network_ddos_protection {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_network_ddos_protection_create_command_builder {
-        return new az_network_ddos_protection_create_command_builder("az network ddos-protection create", name, resourceGroup);
+        return new az_network_ddos_protection_create_command_builder("az network ddos-protection create", 'az_network_ddos_protection_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -3621,7 +3621,7 @@ export class az_network_ddos_protection {
      * ```
      */
     static delete(): az_network_ddos_protection_delete_command_builder {
-        return new az_network_ddos_protection_delete_command_builder("az network ddos-protection delete");
+        return new az_network_ddos_protection_delete_command_builder("az network ddos-protection delete", 'az_network_ddos_protection_delete_command_result');
     }
 
     /**
@@ -3635,7 +3635,7 @@ export class az_network_ddos_protection {
      * ```
      */
     static list(): az_network_ddos_protection_list_command_builder {
-        return new az_network_ddos_protection_list_command_builder("az network ddos-protection list");
+        return new az_network_ddos_protection_list_command_builder("az network ddos-protection list", 'az_network_ddos_protection_list_command_result');
     }
 
     /**
@@ -3651,7 +3651,7 @@ export class az_network_ddos_protection {
      * ```
      */
     static show(): az_network_ddos_protection_show_command_builder {
-        return new az_network_ddos_protection_show_command_builder("az network ddos-protection show");
+        return new az_network_ddos_protection_show_command_builder("az network ddos-protection show", 'az_network_ddos_protection_show_command_result');
     }
 
     /**
@@ -3673,7 +3673,7 @@ export class az_network_ddos_protection {
      * ```
      */
     static update(): az_network_ddos_protection_update_command_builder {
-        return new az_network_ddos_protection_update_command_builder("az network ddos-protection update");
+        return new az_network_ddos_protection_update_command_builder("az network ddos-protection update", 'az_network_ddos_protection_update_command_result');
     }
 }
 
@@ -3699,7 +3699,7 @@ export class az_network_dns_record_set_a {
      * @param {string} zoneName The name of the zone.
      */
     static add_record(ipv4Address: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_a_add_record_command_builder {
-        return new az_network_dns_record_set_a_add_record_command_builder("az network dns record-set a add-record", ipv4Address, recordSetName, resourceGroup, zoneName);
+        return new az_network_dns_record_set_a_add_record_command_builder("az network dns record-set a add-record", 'az_network_dns_record_set_a_add_record_command_result', ipv4Address, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -3723,7 +3723,7 @@ export class az_network_dns_record_set_a {
      * @param {string} zoneName The name of the zone.
      */
     static create(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_a_create_command_builder {
-        return new az_network_dns_record_set_a_create_command_builder("az network dns record-set a create", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_a_create_command_builder("az network dns record-set a create", 'az_network_dns_record_set_a_create_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -3744,7 +3744,7 @@ export class az_network_dns_record_set_a {
      * @param {string} zoneName The name of the zone.
      */
     static delete(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_a_delete_command_builder {
-        return new az_network_dns_record_set_a_delete_command_builder("az network dns record-set a delete", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_a_delete_command_builder("az network dns record-set a delete", 'az_network_dns_record_set_a_delete_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -3762,7 +3762,7 @@ export class az_network_dns_record_set_a {
      * @param {string} zoneName The name of the zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_dns_record_set_a_list_command_builder {
-        return new az_network_dns_record_set_a_list_command_builder("az network dns record-set a list", resourceGroup, zoneName);
+        return new az_network_dns_record_set_a_list_command_builder("az network dns record-set a list", 'az_network_dns_record_set_a_list_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -3784,7 +3784,7 @@ export class az_network_dns_record_set_a {
      * @param {string} zoneName The name of the zone.
      */
     static remove_record(ipv4Address: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_a_remove_record_command_builder {
-        return new az_network_dns_record_set_a_remove_record_command_builder("az network dns record-set a remove-record", ipv4Address, recordSetName, resourceGroup, zoneName);
+        return new az_network_dns_record_set_a_remove_record_command_builder("az network dns record-set a remove-record", 'az_network_dns_record_set_a_remove_record_command_result', ipv4Address, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -3804,7 +3804,7 @@ export class az_network_dns_record_set_a {
      * @param {string} zoneName The name of the zone.
      */
     static show(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_a_show_command_builder {
-        return new az_network_dns_record_set_a_show_command_builder("az network dns record-set a show", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_a_show_command_builder("az network dns record-set a show", 'az_network_dns_record_set_a_show_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -3831,7 +3831,7 @@ export class az_network_dns_record_set_a {
      * @param {string} zoneName The name of the zone.
      */
     static update(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_a_update_command_builder {
-        return new az_network_dns_record_set_a_update_command_builder("az network dns record-set a update", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_a_update_command_builder("az network dns record-set a update", 'az_network_dns_record_set_a_update_command_result', name, resourceGroup, zoneName);
     }
 }
 
@@ -3857,7 +3857,7 @@ export class az_network_dns_record_set_aaaa {
      * @param {string} zoneName The name of the zone.
      */
     static add_record(ipv6Address: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_aaaa_add_record_command_builder {
-        return new az_network_dns_record_set_aaaa_add_record_command_builder("az network dns record-set aaaa add-record", ipv6Address, recordSetName, resourceGroup, zoneName);
+        return new az_network_dns_record_set_aaaa_add_record_command_builder("az network dns record-set aaaa add-record", 'az_network_dns_record_set_aaaa_add_record_command_result', ipv6Address, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -3881,7 +3881,7 @@ export class az_network_dns_record_set_aaaa {
      * @param {string} zoneName The name of the zone.
      */
     static create(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_aaaa_create_command_builder {
-        return new az_network_dns_record_set_aaaa_create_command_builder("az network dns record-set aaaa create", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_aaaa_create_command_builder("az network dns record-set aaaa create", 'az_network_dns_record_set_aaaa_create_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -3902,7 +3902,7 @@ export class az_network_dns_record_set_aaaa {
      * @param {string} zoneName The name of the zone.
      */
     static delete(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_aaaa_delete_command_builder {
-        return new az_network_dns_record_set_aaaa_delete_command_builder("az network dns record-set aaaa delete", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_aaaa_delete_command_builder("az network dns record-set aaaa delete", 'az_network_dns_record_set_aaaa_delete_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -3920,7 +3920,7 @@ export class az_network_dns_record_set_aaaa {
      * @param {string} zoneName The name of the zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_dns_record_set_aaaa_list_command_builder {
-        return new az_network_dns_record_set_aaaa_list_command_builder("az network dns record-set aaaa list", resourceGroup, zoneName);
+        return new az_network_dns_record_set_aaaa_list_command_builder("az network dns record-set aaaa list", 'az_network_dns_record_set_aaaa_list_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -3942,7 +3942,7 @@ export class az_network_dns_record_set_aaaa {
      * @param {string} zoneName The name of the zone.
      */
     static remove_record(ipv6Address: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_aaaa_remove_record_command_builder {
-        return new az_network_dns_record_set_aaaa_remove_record_command_builder("az network dns record-set aaaa remove-record", ipv6Address, recordSetName, resourceGroup, zoneName);
+        return new az_network_dns_record_set_aaaa_remove_record_command_builder("az network dns record-set aaaa remove-record", 'az_network_dns_record_set_aaaa_remove_record_command_result', ipv6Address, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -3962,7 +3962,7 @@ export class az_network_dns_record_set_aaaa {
      * @param {string} zoneName The name of the zone.
      */
     static show(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_aaaa_show_command_builder {
-        return new az_network_dns_record_set_aaaa_show_command_builder("az network dns record-set aaaa show", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_aaaa_show_command_builder("az network dns record-set aaaa show", 'az_network_dns_record_set_aaaa_show_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -3989,7 +3989,7 @@ export class az_network_dns_record_set_aaaa {
      * @param {string} zoneName The name of the zone.
      */
     static update(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_aaaa_update_command_builder {
-        return new az_network_dns_record_set_aaaa_update_command_builder("az network dns record-set aaaa update", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_aaaa_update_command_builder("az network dns record-set aaaa update", 'az_network_dns_record_set_aaaa_update_command_result', name, resourceGroup, zoneName);
     }
 }
 
@@ -4019,7 +4019,7 @@ export class az_network_dns_record_set_caa {
      * @param {string} zoneName The name of the zone.
      */
     static add_record(flags: string, recordSetName: string, resourceGroup: string, tag: string, value: string, zoneName: string): az_network_dns_record_set_caa_add_record_command_builder {
-        return new az_network_dns_record_set_caa_add_record_command_builder("az network dns record-set caa add-record", flags, recordSetName, resourceGroup, tag, value, zoneName);
+        return new az_network_dns_record_set_caa_add_record_command_builder("az network dns record-set caa add-record", 'az_network_dns_record_set_caa_add_record_command_result', flags, recordSetName, resourceGroup, tag, value, zoneName);
     }
 
     /**
@@ -4043,7 +4043,7 @@ export class az_network_dns_record_set_caa {
      * @param {string} zoneName The name of the zone.
      */
     static create(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_caa_create_command_builder {
-        return new az_network_dns_record_set_caa_create_command_builder("az network dns record-set caa create", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_caa_create_command_builder("az network dns record-set caa create", 'az_network_dns_record_set_caa_create_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -4064,7 +4064,7 @@ export class az_network_dns_record_set_caa {
      * @param {string} zoneName The name of the zone.
      */
     static delete(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_caa_delete_command_builder {
-        return new az_network_dns_record_set_caa_delete_command_builder("az network dns record-set caa delete", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_caa_delete_command_builder("az network dns record-set caa delete", 'az_network_dns_record_set_caa_delete_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -4082,7 +4082,7 @@ export class az_network_dns_record_set_caa {
      * @param {string} zoneName The name of the zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_dns_record_set_caa_list_command_builder {
-        return new az_network_dns_record_set_caa_list_command_builder("az network dns record-set caa list", resourceGroup, zoneName);
+        return new az_network_dns_record_set_caa_list_command_builder("az network dns record-set caa list", 'az_network_dns_record_set_caa_list_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -4108,7 +4108,7 @@ export class az_network_dns_record_set_caa {
      * @param {string} zoneName The name of the zone.
      */
     static remove_record(flags: string, recordSetName: string, resourceGroup: string, tag: string, value: string, zoneName: string): az_network_dns_record_set_caa_remove_record_command_builder {
-        return new az_network_dns_record_set_caa_remove_record_command_builder("az network dns record-set caa remove-record", flags, recordSetName, resourceGroup, tag, value, zoneName);
+        return new az_network_dns_record_set_caa_remove_record_command_builder("az network dns record-set caa remove-record", 'az_network_dns_record_set_caa_remove_record_command_result', flags, recordSetName, resourceGroup, tag, value, zoneName);
     }
 
     /**
@@ -4128,7 +4128,7 @@ export class az_network_dns_record_set_caa {
      * @param {string} zoneName The name of the zone.
      */
     static show(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_caa_show_command_builder {
-        return new az_network_dns_record_set_caa_show_command_builder("az network dns record-set caa show", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_caa_show_command_builder("az network dns record-set caa show", 'az_network_dns_record_set_caa_show_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -4155,7 +4155,7 @@ export class az_network_dns_record_set_caa {
      * @param {string} zoneName The name of the zone.
      */
     static update(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_caa_update_command_builder {
-        return new az_network_dns_record_set_caa_update_command_builder("az network dns record-set caa update", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_caa_update_command_builder("az network dns record-set caa update", 'az_network_dns_record_set_caa_update_command_result', name, resourceGroup, zoneName);
     }
 }
 
@@ -4182,7 +4182,7 @@ export class az_network_dns_record_set_cname {
      * @param {string} zoneName The name of the zone.
      */
     static create(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_cname_create_command_builder {
-        return new az_network_dns_record_set_cname_create_command_builder("az network dns record-set cname create", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_cname_create_command_builder("az network dns record-set cname create", 'az_network_dns_record_set_cname_create_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -4203,7 +4203,7 @@ export class az_network_dns_record_set_cname {
      * @param {string} zoneName The name of the zone.
      */
     static delete(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_cname_delete_command_builder {
-        return new az_network_dns_record_set_cname_delete_command_builder("az network dns record-set cname delete", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_cname_delete_command_builder("az network dns record-set cname delete", 'az_network_dns_record_set_cname_delete_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -4221,7 +4221,7 @@ export class az_network_dns_record_set_cname {
      * @param {string} zoneName The name of the zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_dns_record_set_cname_list_command_builder {
-        return new az_network_dns_record_set_cname_list_command_builder("az network dns record-set cname list", resourceGroup, zoneName);
+        return new az_network_dns_record_set_cname_list_command_builder("az network dns record-set cname list", 'az_network_dns_record_set_cname_list_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -4243,7 +4243,7 @@ export class az_network_dns_record_set_cname {
      * @param {string} zoneName The name of the zone.
      */
     static remove_record(cname: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_cname_remove_record_command_builder {
-        return new az_network_dns_record_set_cname_remove_record_command_builder("az network dns record-set cname remove-record", cname, recordSetName, resourceGroup, zoneName);
+        return new az_network_dns_record_set_cname_remove_record_command_builder("az network dns record-set cname remove-record", 'az_network_dns_record_set_cname_remove_record_command_result', cname, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -4266,7 +4266,7 @@ export class az_network_dns_record_set_cname {
      * @param {string} zoneName The name of the zone.
      */
     static set_record(cname: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_cname_set_record_command_builder {
-        return new az_network_dns_record_set_cname_set_record_command_builder("az network dns record-set cname set-record", cname, recordSetName, resourceGroup, zoneName);
+        return new az_network_dns_record_set_cname_set_record_command_builder("az network dns record-set cname set-record", 'az_network_dns_record_set_cname_set_record_command_result', cname, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -4286,7 +4286,7 @@ export class az_network_dns_record_set_cname {
      * @param {string} zoneName The name of the zone.
      */
     static show(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_cname_show_command_builder {
-        return new az_network_dns_record_set_cname_show_command_builder("az network dns record-set cname show", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_cname_show_command_builder("az network dns record-set cname show", 'az_network_dns_record_set_cname_show_command_result', name, resourceGroup, zoneName);
     }
 }
 
@@ -4314,7 +4314,7 @@ export class az_network_dns_record_set_mx {
      * @param {string} zoneName The name of the zone.
      */
     static add_record(exchange: string, preference: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_mx_add_record_command_builder {
-        return new az_network_dns_record_set_mx_add_record_command_builder("az network dns record-set mx add-record", exchange, preference, recordSetName, resourceGroup, zoneName);
+        return new az_network_dns_record_set_mx_add_record_command_builder("az network dns record-set mx add-record", 'az_network_dns_record_set_mx_add_record_command_result', exchange, preference, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -4338,7 +4338,7 @@ export class az_network_dns_record_set_mx {
      * @param {string} zoneName The name of the zone.
      */
     static create(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_mx_create_command_builder {
-        return new az_network_dns_record_set_mx_create_command_builder("az network dns record-set mx create", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_mx_create_command_builder("az network dns record-set mx create", 'az_network_dns_record_set_mx_create_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -4359,7 +4359,7 @@ export class az_network_dns_record_set_mx {
      * @param {string} zoneName The name of the zone.
      */
     static delete(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_mx_delete_command_builder {
-        return new az_network_dns_record_set_mx_delete_command_builder("az network dns record-set mx delete", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_mx_delete_command_builder("az network dns record-set mx delete", 'az_network_dns_record_set_mx_delete_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -4377,7 +4377,7 @@ export class az_network_dns_record_set_mx {
      * @param {string} zoneName The name of the zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_dns_record_set_mx_list_command_builder {
-        return new az_network_dns_record_set_mx_list_command_builder("az network dns record-set mx list", resourceGroup, zoneName);
+        return new az_network_dns_record_set_mx_list_command_builder("az network dns record-set mx list", 'az_network_dns_record_set_mx_list_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -4401,7 +4401,7 @@ export class az_network_dns_record_set_mx {
      * @param {string} zoneName The name of the zone.
      */
     static remove_record(exchange: string, preference: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_mx_remove_record_command_builder {
-        return new az_network_dns_record_set_mx_remove_record_command_builder("az network dns record-set mx remove-record", exchange, preference, recordSetName, resourceGroup, zoneName);
+        return new az_network_dns_record_set_mx_remove_record_command_builder("az network dns record-set mx remove-record", 'az_network_dns_record_set_mx_remove_record_command_result', exchange, preference, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -4421,7 +4421,7 @@ export class az_network_dns_record_set_mx {
      * @param {string} zoneName The name of the zone.
      */
     static show(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_mx_show_command_builder {
-        return new az_network_dns_record_set_mx_show_command_builder("az network dns record-set mx show", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_mx_show_command_builder("az network dns record-set mx show", 'az_network_dns_record_set_mx_show_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -4448,7 +4448,7 @@ export class az_network_dns_record_set_mx {
      * @param {string} zoneName The name of the zone.
      */
     static update(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_mx_update_command_builder {
-        return new az_network_dns_record_set_mx_update_command_builder("az network dns record-set mx update", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_mx_update_command_builder("az network dns record-set mx update", 'az_network_dns_record_set_mx_update_command_result', name, resourceGroup, zoneName);
     }
 }
 
@@ -4474,7 +4474,7 @@ export class az_network_dns_record_set_ns {
      * @param {string} zoneName The name of the zone.
      */
     static add_record(nsdname: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_ns_add_record_command_builder {
-        return new az_network_dns_record_set_ns_add_record_command_builder("az network dns record-set ns add-record", nsdname, recordSetName, resourceGroup, zoneName);
+        return new az_network_dns_record_set_ns_add_record_command_builder("az network dns record-set ns add-record", 'az_network_dns_record_set_ns_add_record_command_result', nsdname, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -4498,7 +4498,7 @@ export class az_network_dns_record_set_ns {
      * @param {string} zoneName The name of the zone.
      */
     static create(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_ns_create_command_builder {
-        return new az_network_dns_record_set_ns_create_command_builder("az network dns record-set ns create", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_ns_create_command_builder("az network dns record-set ns create", 'az_network_dns_record_set_ns_create_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -4519,7 +4519,7 @@ export class az_network_dns_record_set_ns {
      * @param {string} zoneName The name of the zone.
      */
     static delete(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_ns_delete_command_builder {
-        return new az_network_dns_record_set_ns_delete_command_builder("az network dns record-set ns delete", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_ns_delete_command_builder("az network dns record-set ns delete", 'az_network_dns_record_set_ns_delete_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -4537,7 +4537,7 @@ export class az_network_dns_record_set_ns {
      * @param {string} zoneName The name of the zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_dns_record_set_ns_list_command_builder {
-        return new az_network_dns_record_set_ns_list_command_builder("az network dns record-set ns list", resourceGroup, zoneName);
+        return new az_network_dns_record_set_ns_list_command_builder("az network dns record-set ns list", 'az_network_dns_record_set_ns_list_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -4559,7 +4559,7 @@ export class az_network_dns_record_set_ns {
      * @param {string} zoneName The name of the zone.
      */
     static remove_record(nsdname: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_ns_remove_record_command_builder {
-        return new az_network_dns_record_set_ns_remove_record_command_builder("az network dns record-set ns remove-record", nsdname, recordSetName, resourceGroup, zoneName);
+        return new az_network_dns_record_set_ns_remove_record_command_builder("az network dns record-set ns remove-record", 'az_network_dns_record_set_ns_remove_record_command_result', nsdname, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -4579,7 +4579,7 @@ export class az_network_dns_record_set_ns {
      * @param {string} zoneName The name of the zone.
      */
     static show(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_ns_show_command_builder {
-        return new az_network_dns_record_set_ns_show_command_builder("az network dns record-set ns show", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_ns_show_command_builder("az network dns record-set ns show", 'az_network_dns_record_set_ns_show_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -4606,7 +4606,7 @@ export class az_network_dns_record_set_ns {
      * @param {string} zoneName The name of the zone.
      */
     static update(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_ns_update_command_builder {
-        return new az_network_dns_record_set_ns_update_command_builder("az network dns record-set ns update", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_ns_update_command_builder("az network dns record-set ns update", 'az_network_dns_record_set_ns_update_command_result', name, resourceGroup, zoneName);
     }
 }
 
@@ -4632,7 +4632,7 @@ export class az_network_dns_record_set_ptr {
      * @param {string} zoneName The name of the zone.
      */
     static add_record(ptrdname: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_ptr_add_record_command_builder {
-        return new az_network_dns_record_set_ptr_add_record_command_builder("az network dns record-set ptr add-record", ptrdname, recordSetName, resourceGroup, zoneName);
+        return new az_network_dns_record_set_ptr_add_record_command_builder("az network dns record-set ptr add-record", 'az_network_dns_record_set_ptr_add_record_command_result', ptrdname, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -4656,7 +4656,7 @@ export class az_network_dns_record_set_ptr {
      * @param {string} zoneName The name of the zone.
      */
     static create(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_ptr_create_command_builder {
-        return new az_network_dns_record_set_ptr_create_command_builder("az network dns record-set ptr create", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_ptr_create_command_builder("az network dns record-set ptr create", 'az_network_dns_record_set_ptr_create_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -4677,7 +4677,7 @@ export class az_network_dns_record_set_ptr {
      * @param {string} zoneName The name of the zone.
      */
     static delete(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_ptr_delete_command_builder {
-        return new az_network_dns_record_set_ptr_delete_command_builder("az network dns record-set ptr delete", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_ptr_delete_command_builder("az network dns record-set ptr delete", 'az_network_dns_record_set_ptr_delete_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -4695,7 +4695,7 @@ export class az_network_dns_record_set_ptr {
      * @param {string} zoneName The name of the zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_dns_record_set_ptr_list_command_builder {
-        return new az_network_dns_record_set_ptr_list_command_builder("az network dns record-set ptr list", resourceGroup, zoneName);
+        return new az_network_dns_record_set_ptr_list_command_builder("az network dns record-set ptr list", 'az_network_dns_record_set_ptr_list_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -4717,7 +4717,7 @@ export class az_network_dns_record_set_ptr {
      * @param {string} zoneName The name of the zone.
      */
     static remove_record(ptrdname: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_ptr_remove_record_command_builder {
-        return new az_network_dns_record_set_ptr_remove_record_command_builder("az network dns record-set ptr remove-record", ptrdname, recordSetName, resourceGroup, zoneName);
+        return new az_network_dns_record_set_ptr_remove_record_command_builder("az network dns record-set ptr remove-record", 'az_network_dns_record_set_ptr_remove_record_command_result', ptrdname, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -4737,7 +4737,7 @@ export class az_network_dns_record_set_ptr {
      * @param {string} zoneName The name of the zone.
      */
     static show(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_ptr_show_command_builder {
-        return new az_network_dns_record_set_ptr_show_command_builder("az network dns record-set ptr show", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_ptr_show_command_builder("az network dns record-set ptr show", 'az_network_dns_record_set_ptr_show_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -4764,7 +4764,7 @@ export class az_network_dns_record_set_ptr {
      * @param {string} zoneName The name of the zone.
      */
     static update(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_ptr_update_command_builder {
-        return new az_network_dns_record_set_ptr_update_command_builder("az network dns record-set ptr update", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_ptr_update_command_builder("az network dns record-set ptr update", 'az_network_dns_record_set_ptr_update_command_result', name, resourceGroup, zoneName);
     }
 }
 
@@ -4785,7 +4785,7 @@ export class az_network_dns_record_set_soa {
      * @param {string} zoneName The name of the zone.
      */
     static show(resourceGroup: string, zoneName: string): az_network_dns_record_set_soa_show_command_builder {
-        return new az_network_dns_record_set_soa_show_command_builder("az network dns record-set soa show", resourceGroup, zoneName);
+        return new az_network_dns_record_set_soa_show_command_builder("az network dns record-set soa show", 'az_network_dns_record_set_soa_show_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -4810,7 +4810,7 @@ export class az_network_dns_record_set_soa {
      * @param {string} zoneName The name of the zone.
      */
     static update(resourceGroup: string, zoneName: string): az_network_dns_record_set_soa_update_command_builder {
-        return new az_network_dns_record_set_soa_update_command_builder("az network dns record-set soa update", resourceGroup, zoneName);
+        return new az_network_dns_record_set_soa_update_command_builder("az network dns record-set soa update", 'az_network_dns_record_set_soa_update_command_result', resourceGroup, zoneName);
     }
 }
 
@@ -4841,7 +4841,7 @@ export class az_network_dns_record_set_srv {
      * @param {string} zoneName The name of the zone.
      */
     static add_record(port: string, priority: string, recordSetName: string, resourceGroup: string, target: string, weight: string, zoneName: string): az_network_dns_record_set_srv_add_record_command_builder {
-        return new az_network_dns_record_set_srv_add_record_command_builder("az network dns record-set srv add-record", port, priority, recordSetName, resourceGroup, target, weight, zoneName);
+        return new az_network_dns_record_set_srv_add_record_command_builder("az network dns record-set srv add-record", 'az_network_dns_record_set_srv_add_record_command_result', port, priority, recordSetName, resourceGroup, target, weight, zoneName);
     }
 
     /**
@@ -4865,7 +4865,7 @@ export class az_network_dns_record_set_srv {
      * @param {string} zoneName The name of the zone.
      */
     static create(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_srv_create_command_builder {
-        return new az_network_dns_record_set_srv_create_command_builder("az network dns record-set srv create", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_srv_create_command_builder("az network dns record-set srv create", 'az_network_dns_record_set_srv_create_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -4886,7 +4886,7 @@ export class az_network_dns_record_set_srv {
      * @param {string} zoneName The name of the zone.
      */
     static delete(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_srv_delete_command_builder {
-        return new az_network_dns_record_set_srv_delete_command_builder("az network dns record-set srv delete", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_srv_delete_command_builder("az network dns record-set srv delete", 'az_network_dns_record_set_srv_delete_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -4904,7 +4904,7 @@ export class az_network_dns_record_set_srv {
      * @param {string} zoneName The name of the zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_dns_record_set_srv_list_command_builder {
-        return new az_network_dns_record_set_srv_list_command_builder("az network dns record-set srv list", resourceGroup, zoneName);
+        return new az_network_dns_record_set_srv_list_command_builder("az network dns record-set srv list", 'az_network_dns_record_set_srv_list_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -4932,7 +4932,7 @@ export class az_network_dns_record_set_srv {
      * @param {string} zoneName The name of the zone.
      */
     static remove_record(port: string, priority: string, recordSetName: string, resourceGroup: string, target: string, weight: string, zoneName: string): az_network_dns_record_set_srv_remove_record_command_builder {
-        return new az_network_dns_record_set_srv_remove_record_command_builder("az network dns record-set srv remove-record", port, priority, recordSetName, resourceGroup, target, weight, zoneName);
+        return new az_network_dns_record_set_srv_remove_record_command_builder("az network dns record-set srv remove-record", 'az_network_dns_record_set_srv_remove_record_command_result', port, priority, recordSetName, resourceGroup, target, weight, zoneName);
     }
 
     /**
@@ -4952,7 +4952,7 @@ export class az_network_dns_record_set_srv {
      * @param {string} zoneName The name of the zone.
      */
     static show(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_srv_show_command_builder {
-        return new az_network_dns_record_set_srv_show_command_builder("az network dns record-set srv show", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_srv_show_command_builder("az network dns record-set srv show", 'az_network_dns_record_set_srv_show_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -4979,7 +4979,7 @@ export class az_network_dns_record_set_srv {
      * @param {string} zoneName The name of the zone.
      */
     static update(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_srv_update_command_builder {
-        return new az_network_dns_record_set_srv_update_command_builder("az network dns record-set srv update", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_srv_update_command_builder("az network dns record-set srv update", 'az_network_dns_record_set_srv_update_command_result', name, resourceGroup, zoneName);
     }
 }
 
@@ -5004,7 +5004,7 @@ export class az_network_dns_record_set_txt {
      * @param {string} zoneName The name of the zone.
      */
     static add_record(recordSetName: string, resourceGroup: string, value: string, zoneName: string): az_network_dns_record_set_txt_add_record_command_builder {
-        return new az_network_dns_record_set_txt_add_record_command_builder("az network dns record-set txt add-record", recordSetName, resourceGroup, value, zoneName);
+        return new az_network_dns_record_set_txt_add_record_command_builder("az network dns record-set txt add-record", 'az_network_dns_record_set_txt_add_record_command_result', recordSetName, resourceGroup, value, zoneName);
     }
 
     /**
@@ -5028,7 +5028,7 @@ export class az_network_dns_record_set_txt {
      * @param {string} zoneName The name of the zone.
      */
     static create(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_txt_create_command_builder {
-        return new az_network_dns_record_set_txt_create_command_builder("az network dns record-set txt create", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_txt_create_command_builder("az network dns record-set txt create", 'az_network_dns_record_set_txt_create_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -5049,7 +5049,7 @@ export class az_network_dns_record_set_txt {
      * @param {string} zoneName The name of the zone.
      */
     static delete(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_txt_delete_command_builder {
-        return new az_network_dns_record_set_txt_delete_command_builder("az network dns record-set txt delete", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_txt_delete_command_builder("az network dns record-set txt delete", 'az_network_dns_record_set_txt_delete_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -5067,7 +5067,7 @@ export class az_network_dns_record_set_txt {
      * @param {string} zoneName The name of the zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_dns_record_set_txt_list_command_builder {
-        return new az_network_dns_record_set_txt_list_command_builder("az network dns record-set txt list", resourceGroup, zoneName);
+        return new az_network_dns_record_set_txt_list_command_builder("az network dns record-set txt list", 'az_network_dns_record_set_txt_list_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -5089,7 +5089,7 @@ export class az_network_dns_record_set_txt {
      * @param {string} zoneName The name of the zone.
      */
     static remove_record(recordSetName: string, resourceGroup: string, value: string, zoneName: string): az_network_dns_record_set_txt_remove_record_command_builder {
-        return new az_network_dns_record_set_txt_remove_record_command_builder("az network dns record-set txt remove-record", recordSetName, resourceGroup, value, zoneName);
+        return new az_network_dns_record_set_txt_remove_record_command_builder("az network dns record-set txt remove-record", 'az_network_dns_record_set_txt_remove_record_command_result', recordSetName, resourceGroup, value, zoneName);
     }
 
     /**
@@ -5109,7 +5109,7 @@ export class az_network_dns_record_set_txt {
      * @param {string} zoneName The name of the zone.
      */
     static show(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_txt_show_command_builder {
-        return new az_network_dns_record_set_txt_show_command_builder("az network dns record-set txt show", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_txt_show_command_builder("az network dns record-set txt show", 'az_network_dns_record_set_txt_show_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -5136,7 +5136,7 @@ export class az_network_dns_record_set_txt {
      * @param {string} zoneName The name of the zone.
      */
     static update(name: string, resourceGroup: string, zoneName: string): az_network_dns_record_set_txt_update_command_builder {
-        return new az_network_dns_record_set_txt_update_command_builder("az network dns record-set txt update", name, resourceGroup, zoneName);
+        return new az_network_dns_record_set_txt_update_command_builder("az network dns record-set txt update", 'az_network_dns_record_set_txt_update_command_result', name, resourceGroup, zoneName);
     }
 }
 
@@ -5157,7 +5157,7 @@ export class az_network_dns_record_set {
      * @param {string} zoneName The name of the zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_dns_record_set_list_command_builder {
-        return new az_network_dns_record_set_list_command_builder("az network dns record-set list", resourceGroup, zoneName);
+        return new az_network_dns_record_set_list_command_builder("az network dns record-set list", 'az_network_dns_record_set_list_command_result', resourceGroup, zoneName);
     }
 }
 
@@ -5183,7 +5183,7 @@ export class az_network_dns_zone {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_network_dns_zone_create_command_builder {
-        return new az_network_dns_zone_create_command_builder("az network dns zone create", name, resourceGroup);
+        return new az_network_dns_zone_create_command_builder("az network dns zone create", 'az_network_dns_zone_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -5202,7 +5202,7 @@ export class az_network_dns_zone {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_network_dns_zone_delete_command_builder {
-        return new az_network_dns_zone_delete_command_builder("az network dns zone delete", name, resourceGroup);
+        return new az_network_dns_zone_delete_command_builder("az network dns zone delete", 'az_network_dns_zone_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -5220,7 +5220,7 @@ export class az_network_dns_zone {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static export(name: string, resourceGroup: string): az_network_dns_zone_export_command_builder {
-        return new az_network_dns_zone_export_command_builder("az network dns zone export", name, resourceGroup);
+        return new az_network_dns_zone_export_command_builder("az network dns zone export", 'az_network_dns_zone_export_command_result', name, resourceGroup);
     }
 
     /**
@@ -5239,7 +5239,7 @@ export class az_network_dns_zone {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static import(fileName: string, name: string, resourceGroup: string): az_network_dns_zone_import_command_builder {
-        return new az_network_dns_zone_import_command_builder("az network dns zone import", fileName, name, resourceGroup);
+        return new az_network_dns_zone_import_command_builder("az network dns zone import", 'az_network_dns_zone_import_command_result', fileName, name, resourceGroup);
     }
 
     /**
@@ -5253,7 +5253,7 @@ export class az_network_dns_zone {
      * ```
      */
     static list(): az_network_dns_zone_list_command_builder {
-        return new az_network_dns_zone_list_command_builder("az network dns zone list");
+        return new az_network_dns_zone_list_command_builder("az network dns zone list", 'az_network_dns_zone_list_command_result');
     }
 
     /**
@@ -5271,7 +5271,7 @@ export class az_network_dns_zone {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_network_dns_zone_show_command_builder {
-        return new az_network_dns_zone_show_command_builder("az network dns zone show", name, resourceGroup);
+        return new az_network_dns_zone_show_command_builder("az network dns zone show", 'az_network_dns_zone_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -5297,7 +5297,7 @@ export class az_network_dns_zone {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, resourceGroup: string): az_network_dns_zone_update_command_builder {
-        return new az_network_dns_zone_update_command_builder("az network dns zone update", name, resourceGroup);
+        return new az_network_dns_zone_update_command_builder("az network dns zone update", 'az_network_dns_zone_update_command_result', name, resourceGroup);
     }
 }
 
@@ -5313,7 +5313,7 @@ export class az_network_dns {
      * ```
      */
     static list_references(): az_network_dns_list_references_command_builder {
-        return new az_network_dns_list_references_command_builder("az network dns list-references");
+        return new az_network_dns_list_references_command_builder("az network dns list-references", 'az_network_dns_list_references_command_result');
     }
 }
 
@@ -5335,7 +5335,7 @@ export class az_network_express_route_auth {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(circuitName: string, name: string, resourceGroup: string): az_network_express_route_auth_create_command_builder {
-        return new az_network_express_route_auth_create_command_builder("az network express-route auth create", circuitName, name, resourceGroup);
+        return new az_network_express_route_auth_create_command_builder("az network express-route auth create", 'az_network_express_route_auth_create_command_result', circuitName, name, resourceGroup);
     }
 
     /**
@@ -5351,7 +5351,7 @@ export class az_network_express_route_auth {
      * ```
      */
     static delete(): az_network_express_route_auth_delete_command_builder {
-        return new az_network_express_route_auth_delete_command_builder("az network express-route auth delete");
+        return new az_network_express_route_auth_delete_command_builder("az network express-route auth delete", 'az_network_express_route_auth_delete_command_result');
     }
 
     /**
@@ -5369,7 +5369,7 @@ export class az_network_express_route_auth {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(circuitName: string, resourceGroup: string): az_network_express_route_auth_list_command_builder {
-        return new az_network_express_route_auth_list_command_builder("az network express-route auth list", circuitName, resourceGroup);
+        return new az_network_express_route_auth_list_command_builder("az network express-route auth list", 'az_network_express_route_auth_list_command_result', circuitName, resourceGroup);
     }
 
     /**
@@ -5386,7 +5386,7 @@ export class az_network_express_route_auth {
      * ```
      */
     static show(): az_network_express_route_auth_show_command_builder {
-        return new az_network_express_route_auth_show_command_builder("az network express-route auth show");
+        return new az_network_express_route_auth_show_command_builder("az network express-route auth show", 'az_network_express_route_auth_show_command_result');
     }
 }
 
@@ -5417,7 +5417,7 @@ export class az_network_express_route_gateway_connection {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(gatewayName: string, name: string, peering: string, resourceGroup: string): az_network_express_route_gateway_connection_create_command_builder {
-        return new az_network_express_route_gateway_connection_create_command_builder("az network express-route gateway connection create", gatewayName, name, peering, resourceGroup);
+        return new az_network_express_route_gateway_connection_create_command_builder("az network express-route gateway connection create", 'az_network_express_route_gateway_connection_create_command_result', gatewayName, name, peering, resourceGroup);
     }
 
     /**
@@ -5433,7 +5433,7 @@ export class az_network_express_route_gateway_connection {
      * ```
      */
     static delete(): az_network_express_route_gateway_connection_delete_command_builder {
-        return new az_network_express_route_gateway_connection_delete_command_builder("az network express-route gateway connection delete");
+        return new az_network_express_route_gateway_connection_delete_command_builder("az network express-route gateway connection delete", 'az_network_express_route_gateway_connection_delete_command_result');
     }
 
     /**
@@ -5451,7 +5451,7 @@ export class az_network_express_route_gateway_connection {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(gatewayName: string, resourceGroup: string): az_network_express_route_gateway_connection_list_command_builder {
-        return new az_network_express_route_gateway_connection_list_command_builder("az network express-route gateway connection list", gatewayName, resourceGroup);
+        return new az_network_express_route_gateway_connection_list_command_builder("az network express-route gateway connection list", 'az_network_express_route_gateway_connection_list_command_result', gatewayName, resourceGroup);
     }
 
     /**
@@ -5468,7 +5468,7 @@ export class az_network_express_route_gateway_connection {
      * ```
      */
     static show(): az_network_express_route_gateway_connection_show_command_builder {
-        return new az_network_express_route_gateway_connection_show_command_builder("az network express-route gateway connection show");
+        return new az_network_express_route_gateway_connection_show_command_builder("az network express-route gateway connection show", 'az_network_express_route_gateway_connection_show_command_result');
     }
 
     /**
@@ -5496,7 +5496,7 @@ export class az_network_express_route_gateway_connection {
      * ```
      */
     static update(): az_network_express_route_gateway_connection_update_command_builder {
-        return new az_network_express_route_gateway_connection_update_command_builder("az network express-route gateway connection update");
+        return new az_network_express_route_gateway_connection_update_command_builder("az network express-route gateway connection update", 'az_network_express_route_gateway_connection_update_command_result');
     }
 }
 
@@ -5521,7 +5521,7 @@ export class az_network_express_route_gateway {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_network_express_route_gateway_create_command_builder {
-        return new az_network_express_route_gateway_create_command_builder("az network express-route gateway create", name, resourceGroup);
+        return new az_network_express_route_gateway_create_command_builder("az network express-route gateway create", 'az_network_express_route_gateway_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -5536,7 +5536,7 @@ export class az_network_express_route_gateway {
      * ```
      */
     static delete(): az_network_express_route_gateway_delete_command_builder {
-        return new az_network_express_route_gateway_delete_command_builder("az network express-route gateway delete");
+        return new az_network_express_route_gateway_delete_command_builder("az network express-route gateway delete", 'az_network_express_route_gateway_delete_command_result');
     }
 
     /**
@@ -5550,7 +5550,7 @@ export class az_network_express_route_gateway {
      * ```
      */
     static list(): az_network_express_route_gateway_list_command_builder {
-        return new az_network_express_route_gateway_list_command_builder("az network express-route gateway list");
+        return new az_network_express_route_gateway_list_command_builder("az network express-route gateway list", 'az_network_express_route_gateway_list_command_result');
     }
 
     /**
@@ -5566,7 +5566,7 @@ export class az_network_express_route_gateway {
      * ```
      */
     static show(): az_network_express_route_gateway_show_command_builder {
-        return new az_network_express_route_gateway_show_command_builder("az network express-route gateway show");
+        return new az_network_express_route_gateway_show_command_builder("az network express-route gateway show", 'az_network_express_route_gateway_show_command_result');
     }
 
     /**
@@ -5588,7 +5588,7 @@ export class az_network_express_route_gateway {
      * ```
      */
     static update(): az_network_express_route_gateway_update_command_builder {
-        return new az_network_express_route_gateway_update_command_builder("az network express-route gateway update");
+        return new az_network_express_route_gateway_update_command_builder("az network express-route gateway update", 'az_network_express_route_gateway_update_command_result');
     }
 }
 
@@ -5617,7 +5617,7 @@ export class az_network_express_route_peering_connection {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(addressPrefix: string, circuitName: string, name: string, peerCircuit: string, peeringName: string, resourceGroup: string): az_network_express_route_peering_connection_create_command_builder {
-        return new az_network_express_route_peering_connection_create_command_builder("az network express-route peering connection create", addressPrefix, circuitName, name, peerCircuit, peeringName, resourceGroup);
+        return new az_network_express_route_peering_connection_create_command_builder("az network express-route peering connection create", 'az_network_express_route_peering_connection_create_command_result', addressPrefix, circuitName, name, peerCircuit, peeringName, resourceGroup);
     }
 
     /**
@@ -5634,7 +5634,7 @@ export class az_network_express_route_peering_connection {
      * ```
      */
     static delete(): az_network_express_route_peering_connection_delete_command_builder {
-        return new az_network_express_route_peering_connection_delete_command_builder("az network express-route peering connection delete");
+        return new az_network_express_route_peering_connection_delete_command_builder("az network express-route peering connection delete", 'az_network_express_route_peering_connection_delete_command_result');
     }
 
     /**
@@ -5652,7 +5652,7 @@ export class az_network_express_route_peering_connection {
      * ```
      */
     static show(): az_network_express_route_peering_connection_show_command_builder {
-        return new az_network_express_route_peering_connection_show_command_builder("az network express-route peering connection show");
+        return new az_network_express_route_peering_connection_show_command_builder("az network express-route peering connection show", 'az_network_express_route_peering_connection_show_command_result');
     }
 }
 
@@ -5675,7 +5675,7 @@ export class az_network_express_route_peering_peer_connection {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(circuitName: string, peeringName: string, resourceGroup: string): az_network_express_route_peering_peer_connection_list_command_builder {
-        return new az_network_express_route_peering_peer_connection_list_command_builder("az network express-route peering peer-connection list", circuitName, peeringName, resourceGroup);
+        return new az_network_express_route_peering_peer_connection_list_command_builder("az network express-route peering peer-connection list", 'az_network_express_route_peering_peer_connection_list_command_result', circuitName, peeringName, resourceGroup);
     }
 
     /**
@@ -5697,7 +5697,7 @@ export class az_network_express_route_peering_peer_connection {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(circuitName: string, name: string, peeringName: string, resourceGroup: string): az_network_express_route_peering_peer_connection_show_command_builder {
-        return new az_network_express_route_peering_peer_connection_show_command_builder("az network express-route peering peer-connection show", circuitName, name, peeringName, resourceGroup);
+        return new az_network_express_route_peering_peer_connection_show_command_builder("az network express-route peering peer-connection show", 'az_network_express_route_peering_peer_connection_show_command_result', circuitName, name, peeringName, resourceGroup);
     }
 }
 
@@ -5733,7 +5733,7 @@ export class az_network_express_route_peering {
      * @param {string} vlanId Identifier used to identify the customer.
      */
     static create(circuitName: string, peerAsn: string, peeringType: 'AzurePrivatePeering' | 'AzurePublicPeering' | 'MicrosoftPeering', primaryPeerSubnet: string, resourceGroup: string, secondaryPeerSubnet: string, vlanId: string): az_network_express_route_peering_create_command_builder {
-        return new az_network_express_route_peering_create_command_builder("az network express-route peering create", circuitName, peerAsn, peeringType, primaryPeerSubnet, resourceGroup, secondaryPeerSubnet, vlanId);
+        return new az_network_express_route_peering_create_command_builder("az network express-route peering create", 'az_network_express_route_peering_create_command_result', circuitName, peerAsn, peeringType, primaryPeerSubnet, resourceGroup, secondaryPeerSubnet, vlanId);
     }
 
     /**
@@ -5749,7 +5749,7 @@ export class az_network_express_route_peering {
      * ```
      */
     static delete(): az_network_express_route_peering_delete_command_builder {
-        return new az_network_express_route_peering_delete_command_builder("az network express-route peering delete");
+        return new az_network_express_route_peering_delete_command_builder("az network express-route peering delete", 'az_network_express_route_peering_delete_command_result');
     }
 
     /**
@@ -5767,7 +5767,7 @@ export class az_network_express_route_peering {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(circuitName: string, resourceGroup: string): az_network_express_route_peering_list_command_builder {
-        return new az_network_express_route_peering_list_command_builder("az network express-route peering list", circuitName, resourceGroup);
+        return new az_network_express_route_peering_list_command_builder("az network express-route peering list", 'az_network_express_route_peering_list_command_result', circuitName, resourceGroup);
     }
 
     /**
@@ -5784,7 +5784,7 @@ export class az_network_express_route_peering {
      * ```
      */
     static show(): az_network_express_route_peering_show_command_builder {
-        return new az_network_express_route_peering_show_command_builder("az network express-route peering show");
+        return new az_network_express_route_peering_show_command_builder("az network express-route peering show", 'az_network_express_route_peering_show_command_result');
     }
 
     /**
@@ -5815,7 +5815,7 @@ export class az_network_express_route_peering {
      * ```
      */
     static update(): az_network_express_route_peering_update_command_builder {
-        return new az_network_express_route_peering_update_command_builder("az network express-route peering update");
+        return new az_network_express_route_peering_update_command_builder("az network express-route peering update", 'az_network_express_route_peering_update_command_result');
     }
 }
 
@@ -5837,7 +5837,7 @@ export class az_network_express_route_port_identity {
      * @param {string} identity Name or ID of the ManagedIdentity Resource.
      */
     static assign(identity: string): az_network_express_route_port_identity_assign_command_builder {
-        return new az_network_express_route_port_identity_assign_command_builder("az network express-route port identity assign", identity);
+        return new az_network_express_route_port_identity_assign_command_builder("az network express-route port identity assign", 'az_network_express_route_port_identity_assign_command_result', identity);
     }
 
     /**
@@ -5853,7 +5853,7 @@ export class az_network_express_route_port_identity {
      * ```
      */
     static remove(): az_network_express_route_port_identity_remove_command_builder {
-        return new az_network_express_route_port_identity_remove_command_builder("az network express-route port identity remove");
+        return new az_network_express_route_port_identity_remove_command_builder("az network express-route port identity remove", 'az_network_express_route_port_identity_remove_command_result');
     }
 
     /**
@@ -5869,7 +5869,7 @@ export class az_network_express_route_port_identity {
      * ```
      */
     static show(): az_network_express_route_port_identity_show_command_builder {
-        return new az_network_express_route_port_identity_show_command_builder("az network express-route port identity show");
+        return new az_network_express_route_port_identity_show_command_builder("az network express-route port identity show", 'az_network_express_route_port_identity_show_command_result');
     }
 }
 
@@ -5890,7 +5890,7 @@ export class az_network_express_route_port_link {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(portName: string, resourceGroup: string): az_network_express_route_port_link_list_command_builder {
-        return new az_network_express_route_port_link_list_command_builder("az network express-route port link list", portName, resourceGroup);
+        return new az_network_express_route_port_link_list_command_builder("az network express-route port link list", 'az_network_express_route_port_link_list_command_result', portName, resourceGroup);
     }
 
     /**
@@ -5907,7 +5907,7 @@ export class az_network_express_route_port_link {
      * ```
      */
     static show(): az_network_express_route_port_link_show_command_builder {
-        return new az_network_express_route_port_link_show_command_builder("az network express-route port link show");
+        return new az_network_express_route_port_link_show_command_builder("az network express-route port link show", 'az_network_express_route_port_link_show_command_result');
     }
 
     /**
@@ -5932,7 +5932,7 @@ export class az_network_express_route_port_link {
      * ```
      */
     static update(): az_network_express_route_port_link_update_command_builder {
-        return new az_network_express_route_port_link_update_command_builder("az network express-route port link update");
+        return new az_network_express_route_port_link_update_command_builder("az network express-route port link update", 'az_network_express_route_port_link_update_command_result');
     }
 }
 
@@ -5948,7 +5948,7 @@ export class az_network_express_route_port_location {
      * ```
      */
     static list(): az_network_express_route_port_location_list_command_builder {
-        return new az_network_express_route_port_location_list_command_builder("az network express-route port location list");
+        return new az_network_express_route_port_location_list_command_builder("az network express-route port location list", 'az_network_express_route_port_location_list_command_result');
     }
 
     /**
@@ -5964,7 +5964,7 @@ export class az_network_express_route_port_location {
      * @param {string} location Name of the requested ExpressRoutePort peering location.
      */
     static show(location: string): az_network_express_route_port_location_show_command_builder {
-        return new az_network_express_route_port_location_show_command_builder("az network express-route port location show", location);
+        return new az_network_express_route_port_location_show_command_builder("az network express-route port location show", 'az_network_express_route_port_location_show_command_result', location);
     }
 }
 
@@ -5989,7 +5989,7 @@ export class az_network_express_route_port {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_network_express_route_port_create_command_builder {
-        return new az_network_express_route_port_create_command_builder("az network express-route port create", name, resourceGroup);
+        return new az_network_express_route_port_create_command_builder("az network express-route port create", 'az_network_express_route_port_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -6004,7 +6004,7 @@ export class az_network_express_route_port {
      * ```
      */
     static delete(): az_network_express_route_port_delete_command_builder {
-        return new az_network_express_route_port_delete_command_builder("az network express-route port delete");
+        return new az_network_express_route_port_delete_command_builder("az network express-route port delete", 'az_network_express_route_port_delete_command_result');
     }
 
     /**
@@ -6018,7 +6018,7 @@ export class az_network_express_route_port {
      * ```
      */
     static list(): az_network_express_route_port_list_command_builder {
-        return new az_network_express_route_port_list_command_builder("az network express-route port list");
+        return new az_network_express_route_port_list_command_builder("az network express-route port list", 'az_network_express_route_port_list_command_result');
     }
 
     /**
@@ -6034,7 +6034,7 @@ export class az_network_express_route_port {
      * ```
      */
     static show(): az_network_express_route_port_show_command_builder {
-        return new az_network_express_route_port_show_command_builder("az network express-route port show");
+        return new az_network_express_route_port_show_command_builder("az network express-route port show", 'az_network_express_route_port_show_command_result');
     }
 
     /**
@@ -6054,7 +6054,7 @@ export class az_network_express_route_port {
      * ```
      */
     static update(): az_network_express_route_port_update_command_builder {
-        return new az_network_express_route_port_update_command_builder("az network express-route port update");
+        return new az_network_express_route_port_update_command_builder("az network express-route port update", 'az_network_express_route_port_update_command_result');
     }
 }
 
@@ -6088,7 +6088,7 @@ export class az_network_express_route {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(bandwidth: string, name: string, peeringLocation: string, provider: string, resourceGroup: string): az_network_express_route_create_command_builder {
-        return new az_network_express_route_create_command_builder("az network express-route create", bandwidth, name, peeringLocation, provider, resourceGroup);
+        return new az_network_express_route_create_command_builder("az network express-route create", 'az_network_express_route_create_command_result', bandwidth, name, peeringLocation, provider, resourceGroup);
     }
 
     /**
@@ -6104,7 +6104,7 @@ export class az_network_express_route {
      * ```
      */
     static delete(): az_network_express_route_delete_command_builder {
-        return new az_network_express_route_delete_command_builder("az network express-route delete");
+        return new az_network_express_route_delete_command_builder("az network express-route delete", 'az_network_express_route_delete_command_result');
     }
 
     /**
@@ -6119,7 +6119,7 @@ export class az_network_express_route {
      * ```
      */
     static get_stats(): az_network_express_route_get_stats_command_builder {
-        return new az_network_express_route_get_stats_command_builder("az network express-route get-stats");
+        return new az_network_express_route_get_stats_command_builder("az network express-route get-stats", 'az_network_express_route_get_stats_command_result');
     }
 
     /**
@@ -6133,7 +6133,7 @@ export class az_network_express_route {
      * ```
      */
     static list(): az_network_express_route_list_command_builder {
-        return new az_network_express_route_list_command_builder("az network express-route list");
+        return new az_network_express_route_list_command_builder("az network express-route list", 'az_network_express_route_list_command_result');
     }
 
     /**
@@ -6153,7 +6153,7 @@ export class az_network_express_route {
      * @param {string} peeringName The name of the peering.
      */
     static list_arp_tables(path: 'primary' | 'secondary', peeringName: string): az_network_express_route_list_arp_tables_command_builder {
-        return new az_network_express_route_list_arp_tables_command_builder("az network express-route list-arp-tables", path, peeringName);
+        return new az_network_express_route_list_arp_tables_command_builder("az network express-route list-arp-tables", 'az_network_express_route_list_arp_tables_command_result', path, peeringName);
     }
 
     /**
@@ -6173,7 +6173,7 @@ export class az_network_express_route {
      * @param {string} peeringName The name of the peering.
      */
     static list_route_tables(path: 'primary' | 'secondary', peeringName: string): az_network_express_route_list_route_tables_command_builder {
-        return new az_network_express_route_list_route_tables_command_builder("az network express-route list-route-tables", path, peeringName);
+        return new az_network_express_route_list_route_tables_command_builder("az network express-route list-route-tables", 'az_network_express_route_list_route_tables_command_result', path, peeringName);
     }
 
     /**
@@ -6185,7 +6185,7 @@ export class az_network_express_route {
      * ```
      */
     static list_service_providers(): az_network_express_route_list_service_providers_command_builder {
-        return new az_network_express_route_list_service_providers_command_builder("az network express-route list-service-providers");
+        return new az_network_express_route_list_service_providers_command_builder("az network express-route list-service-providers", 'az_network_express_route_list_service_providers_command_result');
     }
 
     /**
@@ -6201,7 +6201,7 @@ export class az_network_express_route {
      * ```
      */
     static show(): az_network_express_route_show_command_builder {
-        return new az_network_express_route_show_command_builder("az network express-route show");
+        return new az_network_express_route_show_command_builder("az network express-route show", 'az_network_express_route_show_command_result');
     }
 
     /**
@@ -6230,7 +6230,7 @@ export class az_network_express_route {
      * ```
      */
     static update(): az_network_express_route_update_command_builder {
-        return new az_network_express_route_update_command_builder("az network express-route update");
+        return new az_network_express_route_update_command_builder("az network express-route update", 'az_network_express_route_update_command_result');
     }
 
     /**
@@ -6252,7 +6252,7 @@ export class az_network_express_route {
      * ```
      */
     static wait(): az_network_express_route_wait_command_builder {
-        return new az_network_express_route_wait_command_builder("az network express-route wait");
+        return new az_network_express_route_wait_command_builder("az network express-route wait", 'az_network_express_route_wait_command_result');
     }
 }
 
@@ -6280,7 +6280,7 @@ export class az_network_lb_address_pool_address {
      * @param {string} vnet Name or Id of the virtual network.
      */
     static add(ipAddress: string, lbName: string, name: string, poolName: string, resourceGroup: string, vnet: string): az_network_lb_address_pool_address_add_command_builder {
-        return new az_network_lb_address_pool_address_add_command_builder("az network lb address-pool address add", ipAddress, lbName, name, poolName, resourceGroup, vnet);
+        return new az_network_lb_address_pool_address_add_command_builder("az network lb address-pool address add", 'az_network_lb_address_pool_address_add_command_result', ipAddress, lbName, name, poolName, resourceGroup, vnet);
     }
 
     /**
@@ -6300,7 +6300,7 @@ export class az_network_lb_address_pool_address {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(lbName: string, poolName: string, resourceGroup: string): az_network_lb_address_pool_address_list_command_builder {
-        return new az_network_lb_address_pool_address_list_command_builder("az network lb address-pool address list", lbName, poolName, resourceGroup);
+        return new az_network_lb_address_pool_address_list_command_builder("az network lb address-pool address list", 'az_network_lb_address_pool_address_list_command_result', lbName, poolName, resourceGroup);
     }
 
     /**
@@ -6321,7 +6321,7 @@ export class az_network_lb_address_pool_address {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static remove(lbName: string, name: string, poolName: string, resourceGroup: string): az_network_lb_address_pool_address_remove_command_builder {
-        return new az_network_lb_address_pool_address_remove_command_builder("az network lb address-pool address remove", lbName, name, poolName, resourceGroup);
+        return new az_network_lb_address_pool_address_remove_command_builder("az network lb address-pool address remove", 'az_network_lb_address_pool_address_remove_command_result', lbName, name, poolName, resourceGroup);
     }
 }
 
@@ -6346,7 +6346,7 @@ export class az_network_lb_address_pool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(lbName: string, name: string, resourceGroup: string): az_network_lb_address_pool_create_command_builder {
-        return new az_network_lb_address_pool_create_command_builder("az network lb address-pool create", lbName, name, resourceGroup);
+        return new az_network_lb_address_pool_create_command_builder("az network lb address-pool create", 'az_network_lb_address_pool_create_command_result', lbName, name, resourceGroup);
     }
 
     /**
@@ -6365,7 +6365,7 @@ export class az_network_lb_address_pool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(lbName: string, name: string, resourceGroup: string): az_network_lb_address_pool_delete_command_builder {
-        return new az_network_lb_address_pool_delete_command_builder("az network lb address-pool delete", lbName, name, resourceGroup);
+        return new az_network_lb_address_pool_delete_command_builder("az network lb address-pool delete", 'az_network_lb_address_pool_delete_command_result', lbName, name, resourceGroup);
     }
 
     /**
@@ -6383,7 +6383,7 @@ export class az_network_lb_address_pool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(lbName: string, resourceGroup: string): az_network_lb_address_pool_list_command_builder {
-        return new az_network_lb_address_pool_list_command_builder("az network lb address-pool list", lbName, resourceGroup);
+        return new az_network_lb_address_pool_list_command_builder("az network lb address-pool list", 'az_network_lb_address_pool_list_command_result', lbName, resourceGroup);
     }
 
     /**
@@ -6403,7 +6403,7 @@ export class az_network_lb_address_pool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(lbName: string, name: string, resourceGroup: string): az_network_lb_address_pool_show_command_builder {
-        return new az_network_lb_address_pool_show_command_builder("az network lb address-pool show", lbName, name, resourceGroup);
+        return new az_network_lb_address_pool_show_command_builder("az network lb address-pool show", 'az_network_lb_address_pool_show_command_result', lbName, name, resourceGroup);
     }
 }
 
@@ -6432,7 +6432,7 @@ export class az_network_lb_frontend_ip {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(lbName: string, name: string, resourceGroup: string): az_network_lb_frontend_ip_create_command_builder {
-        return new az_network_lb_frontend_ip_create_command_builder("az network lb frontend-ip create", lbName, name, resourceGroup);
+        return new az_network_lb_frontend_ip_create_command_builder("az network lb frontend-ip create", 'az_network_lb_frontend_ip_create_command_result', lbName, name, resourceGroup);
     }
 
     /**
@@ -6451,7 +6451,7 @@ export class az_network_lb_frontend_ip {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(lbName: string, name: string, resourceGroup: string): az_network_lb_frontend_ip_delete_command_builder {
-        return new az_network_lb_frontend_ip_delete_command_builder("az network lb frontend-ip delete", lbName, name, resourceGroup);
+        return new az_network_lb_frontend_ip_delete_command_builder("az network lb frontend-ip delete", 'az_network_lb_frontend_ip_delete_command_result', lbName, name, resourceGroup);
     }
 
     /**
@@ -6469,7 +6469,7 @@ export class az_network_lb_frontend_ip {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(lbName: string, resourceGroup: string): az_network_lb_frontend_ip_list_command_builder {
-        return new az_network_lb_frontend_ip_list_command_builder("az network lb frontend-ip list", lbName, resourceGroup);
+        return new az_network_lb_frontend_ip_list_command_builder("az network lb frontend-ip list", 'az_network_lb_frontend_ip_list_command_result', lbName, resourceGroup);
     }
 
     /**
@@ -6489,7 +6489,7 @@ export class az_network_lb_frontend_ip {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(lbName: string, name: string, resourceGroup: string): az_network_lb_frontend_ip_show_command_builder {
-        return new az_network_lb_frontend_ip_show_command_builder("az network lb frontend-ip show", lbName, name, resourceGroup);
+        return new az_network_lb_frontend_ip_show_command_builder("az network lb frontend-ip show", 'az_network_lb_frontend_ip_show_command_result', lbName, name, resourceGroup);
     }
 
     /**
@@ -6514,7 +6514,7 @@ export class az_network_lb_frontend_ip {
      * ```
      */
     static update(): az_network_lb_frontend_ip_update_command_builder {
-        return new az_network_lb_frontend_ip_update_command_builder("az network lb frontend-ip update");
+        return new az_network_lb_frontend_ip_update_command_builder("az network lb frontend-ip update", 'az_network_lb_frontend_ip_update_command_result');
     }
 }
 
@@ -6548,7 +6548,7 @@ export class az_network_lb_inbound_nat_pool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(backendPort: string, frontendPortRangeEnd: string, frontendPortRangeStart: string, lbName: string, name: string, protocol: 'All' | 'Tcp' | 'Udp', resourceGroup: string): az_network_lb_inbound_nat_pool_create_command_builder {
-        return new az_network_lb_inbound_nat_pool_create_command_builder("az network lb inbound-nat-pool create", backendPort, frontendPortRangeEnd, frontendPortRangeStart, lbName, name, protocol, resourceGroup);
+        return new az_network_lb_inbound_nat_pool_create_command_builder("az network lb inbound-nat-pool create", 'az_network_lb_inbound_nat_pool_create_command_result', backendPort, frontendPortRangeEnd, frontendPortRangeStart, lbName, name, protocol, resourceGroup);
     }
 
     /**
@@ -6567,7 +6567,7 @@ export class az_network_lb_inbound_nat_pool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(lbName: string, name: string, resourceGroup: string): az_network_lb_inbound_nat_pool_delete_command_builder {
-        return new az_network_lb_inbound_nat_pool_delete_command_builder("az network lb inbound-nat-pool delete", lbName, name, resourceGroup);
+        return new az_network_lb_inbound_nat_pool_delete_command_builder("az network lb inbound-nat-pool delete", 'az_network_lb_inbound_nat_pool_delete_command_result', lbName, name, resourceGroup);
     }
 
     /**
@@ -6585,7 +6585,7 @@ export class az_network_lb_inbound_nat_pool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(lbName: string, resourceGroup: string): az_network_lb_inbound_nat_pool_list_command_builder {
-        return new az_network_lb_inbound_nat_pool_list_command_builder("az network lb inbound-nat-pool list", lbName, resourceGroup);
+        return new az_network_lb_inbound_nat_pool_list_command_builder("az network lb inbound-nat-pool list", 'az_network_lb_inbound_nat_pool_list_command_result', lbName, resourceGroup);
     }
 
     /**
@@ -6605,7 +6605,7 @@ export class az_network_lb_inbound_nat_pool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(lbName: string, name: string, resourceGroup: string): az_network_lb_inbound_nat_pool_show_command_builder {
-        return new az_network_lb_inbound_nat_pool_show_command_builder("az network lb inbound-nat-pool show", lbName, name, resourceGroup);
+        return new az_network_lb_inbound_nat_pool_show_command_builder("az network lb inbound-nat-pool show", 'az_network_lb_inbound_nat_pool_show_command_result', lbName, name, resourceGroup);
     }
 
     /**
@@ -6633,7 +6633,7 @@ export class az_network_lb_inbound_nat_pool {
      * ```
      */
     static update(): az_network_lb_inbound_nat_pool_update_command_builder {
-        return new az_network_lb_inbound_nat_pool_update_command_builder("az network lb inbound-nat-pool update");
+        return new az_network_lb_inbound_nat_pool_update_command_builder("az network lb inbound-nat-pool update", 'az_network_lb_inbound_nat_pool_update_command_result');
     }
 }
 
@@ -6665,7 +6665,7 @@ export class az_network_lb_inbound_nat_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(backendPort: string, frontendPort: string, lbName: string, name: string, protocol: 'All' | 'Tcp' | 'Udp', resourceGroup: string): az_network_lb_inbound_nat_rule_create_command_builder {
-        return new az_network_lb_inbound_nat_rule_create_command_builder("az network lb inbound-nat-rule create", backendPort, frontendPort, lbName, name, protocol, resourceGroup);
+        return new az_network_lb_inbound_nat_rule_create_command_builder("az network lb inbound-nat-rule create", 'az_network_lb_inbound_nat_rule_create_command_result', backendPort, frontendPort, lbName, name, protocol, resourceGroup);
     }
 
     /**
@@ -6684,7 +6684,7 @@ export class az_network_lb_inbound_nat_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(lbName: string, name: string, resourceGroup: string): az_network_lb_inbound_nat_rule_delete_command_builder {
-        return new az_network_lb_inbound_nat_rule_delete_command_builder("az network lb inbound-nat-rule delete", lbName, name, resourceGroup);
+        return new az_network_lb_inbound_nat_rule_delete_command_builder("az network lb inbound-nat-rule delete", 'az_network_lb_inbound_nat_rule_delete_command_result', lbName, name, resourceGroup);
     }
 
     /**
@@ -6702,7 +6702,7 @@ export class az_network_lb_inbound_nat_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(lbName: string, resourceGroup: string): az_network_lb_inbound_nat_rule_list_command_builder {
-        return new az_network_lb_inbound_nat_rule_list_command_builder("az network lb inbound-nat-rule list", lbName, resourceGroup);
+        return new az_network_lb_inbound_nat_rule_list_command_builder("az network lb inbound-nat-rule list", 'az_network_lb_inbound_nat_rule_list_command_result', lbName, resourceGroup);
     }
 
     /**
@@ -6722,7 +6722,7 @@ export class az_network_lb_inbound_nat_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(lbName: string, name: string, resourceGroup: string): az_network_lb_inbound_nat_rule_show_command_builder {
-        return new az_network_lb_inbound_nat_rule_show_command_builder("az network lb inbound-nat-rule show", lbName, name, resourceGroup);
+        return new az_network_lb_inbound_nat_rule_show_command_builder("az network lb inbound-nat-rule show", 'az_network_lb_inbound_nat_rule_show_command_result', lbName, name, resourceGroup);
     }
 
     /**
@@ -6749,7 +6749,7 @@ export class az_network_lb_inbound_nat_rule {
      * ```
      */
     static update(): az_network_lb_inbound_nat_rule_update_command_builder {
-        return new az_network_lb_inbound_nat_rule_update_command_builder("az network lb inbound-nat-rule update");
+        return new az_network_lb_inbound_nat_rule_update_command_builder("az network lb inbound-nat-rule update", 'az_network_lb_inbound_nat_rule_update_command_result');
     }
 }
 
@@ -6780,7 +6780,7 @@ export class az_network_lb_outbound_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(addressPool: string, frontendIpConfigs: string, lbName: string, name: string, protocol: 'All' | 'Tcp' | 'Udp', resourceGroup: string): az_network_lb_outbound_rule_create_command_builder {
-        return new az_network_lb_outbound_rule_create_command_builder("az network lb outbound-rule create", addressPool, frontendIpConfigs, lbName, name, protocol, resourceGroup);
+        return new az_network_lb_outbound_rule_create_command_builder("az network lb outbound-rule create", 'az_network_lb_outbound_rule_create_command_result', addressPool, frontendIpConfigs, lbName, name, protocol, resourceGroup);
     }
 
     /**
@@ -6799,7 +6799,7 @@ export class az_network_lb_outbound_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(lbName: string, name: string, resourceGroup: string): az_network_lb_outbound_rule_delete_command_builder {
-        return new az_network_lb_outbound_rule_delete_command_builder("az network lb outbound-rule delete", lbName, name, resourceGroup);
+        return new az_network_lb_outbound_rule_delete_command_builder("az network lb outbound-rule delete", 'az_network_lb_outbound_rule_delete_command_result', lbName, name, resourceGroup);
     }
 
     /**
@@ -6817,7 +6817,7 @@ export class az_network_lb_outbound_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(lbName: string, resourceGroup: string): az_network_lb_outbound_rule_list_command_builder {
-        return new az_network_lb_outbound_rule_list_command_builder("az network lb outbound-rule list", lbName, resourceGroup);
+        return new az_network_lb_outbound_rule_list_command_builder("az network lb outbound-rule list", 'az_network_lb_outbound_rule_list_command_result', lbName, resourceGroup);
     }
 
     /**
@@ -6837,7 +6837,7 @@ export class az_network_lb_outbound_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(lbName: string, name: string, resourceGroup: string): az_network_lb_outbound_rule_show_command_builder {
-        return new az_network_lb_outbound_rule_show_command_builder("az network lb outbound-rule show", lbName, name, resourceGroup);
+        return new az_network_lb_outbound_rule_show_command_builder("az network lb outbound-rule show", 'az_network_lb_outbound_rule_show_command_result', lbName, name, resourceGroup);
     }
 
     /**
@@ -6863,7 +6863,7 @@ export class az_network_lb_outbound_rule {
      * ```
      */
     static update(): az_network_lb_outbound_rule_update_command_builder {
-        return new az_network_lb_outbound_rule_update_command_builder("az network lb outbound-rule update");
+        return new az_network_lb_outbound_rule_update_command_builder("az network lb outbound-rule update", 'az_network_lb_outbound_rule_update_command_result');
     }
 }
 
@@ -6892,7 +6892,7 @@ export class az_network_lb_probe {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(lbName: string, name: string, port: string, protocol: 'Http' | 'Https' | 'Tcp', resourceGroup: string): az_network_lb_probe_create_command_builder {
-        return new az_network_lb_probe_create_command_builder("az network lb probe create", lbName, name, port, protocol, resourceGroup);
+        return new az_network_lb_probe_create_command_builder("az network lb probe create", 'az_network_lb_probe_create_command_result', lbName, name, port, protocol, resourceGroup);
     }
 
     /**
@@ -6911,7 +6911,7 @@ export class az_network_lb_probe {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(lbName: string, name: string, resourceGroup: string): az_network_lb_probe_delete_command_builder {
-        return new az_network_lb_probe_delete_command_builder("az network lb probe delete", lbName, name, resourceGroup);
+        return new az_network_lb_probe_delete_command_builder("az network lb probe delete", 'az_network_lb_probe_delete_command_result', lbName, name, resourceGroup);
     }
 
     /**
@@ -6929,7 +6929,7 @@ export class az_network_lb_probe {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(lbName: string, resourceGroup: string): az_network_lb_probe_list_command_builder {
-        return new az_network_lb_probe_list_command_builder("az network lb probe list", lbName, resourceGroup);
+        return new az_network_lb_probe_list_command_builder("az network lb probe list", 'az_network_lb_probe_list_command_result', lbName, resourceGroup);
     }
 
     /**
@@ -6949,7 +6949,7 @@ export class az_network_lb_probe {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(lbName: string, name: string, resourceGroup: string): az_network_lb_probe_show_command_builder {
-        return new az_network_lb_probe_show_command_builder("az network lb probe show", lbName, name, resourceGroup);
+        return new az_network_lb_probe_show_command_builder("az network lb probe show", 'az_network_lb_probe_show_command_result', lbName, name, resourceGroup);
     }
 
     /**
@@ -6974,7 +6974,7 @@ export class az_network_lb_probe {
      * ```
      */
     static update(): az_network_lb_probe_update_command_builder {
-        return new az_network_lb_probe_update_command_builder("az network lb probe update");
+        return new az_network_lb_probe_update_command_builder("az network lb probe update", 'az_network_lb_probe_update_command_result');
     }
 }
 
@@ -7010,7 +7010,7 @@ export class az_network_lb_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(backendPort: string, frontendPort: string, lbName: string, name: string, protocol: 'All' | 'Tcp' | 'Udp', resourceGroup: string): az_network_lb_rule_create_command_builder {
-        return new az_network_lb_rule_create_command_builder("az network lb rule create", backendPort, frontendPort, lbName, name, protocol, resourceGroup);
+        return new az_network_lb_rule_create_command_builder("az network lb rule create", 'az_network_lb_rule_create_command_result', backendPort, frontendPort, lbName, name, protocol, resourceGroup);
     }
 
     /**
@@ -7029,7 +7029,7 @@ export class az_network_lb_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(lbName: string, name: string, resourceGroup: string): az_network_lb_rule_delete_command_builder {
-        return new az_network_lb_rule_delete_command_builder("az network lb rule delete", lbName, name, resourceGroup);
+        return new az_network_lb_rule_delete_command_builder("az network lb rule delete", 'az_network_lb_rule_delete_command_result', lbName, name, resourceGroup);
     }
 
     /**
@@ -7047,7 +7047,7 @@ export class az_network_lb_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(lbName: string, resourceGroup: string): az_network_lb_rule_list_command_builder {
-        return new az_network_lb_rule_list_command_builder("az network lb rule list", lbName, resourceGroup);
+        return new az_network_lb_rule_list_command_builder("az network lb rule list", 'az_network_lb_rule_list_command_result', lbName, resourceGroup);
     }
 
     /**
@@ -7067,7 +7067,7 @@ export class az_network_lb_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(lbName: string, name: string, resourceGroup: string): az_network_lb_rule_show_command_builder {
-        return new az_network_lb_rule_show_command_builder("az network lb rule show", lbName, name, resourceGroup);
+        return new az_network_lb_rule_show_command_builder("az network lb rule show", 'az_network_lb_rule_show_command_result', lbName, name, resourceGroup);
     }
 
     /**
@@ -7098,7 +7098,7 @@ export class az_network_lb_rule {
      * ```
      */
     static update(): az_network_lb_rule_update_command_builder {
-        return new az_network_lb_rule_update_command_builder("az network lb rule update");
+        return new az_network_lb_rule_update_command_builder("az network lb rule update", 'az_network_lb_rule_update_command_result');
     }
 }
 
@@ -7136,7 +7136,7 @@ export class az_network_lb {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_network_lb_create_command_builder {
-        return new az_network_lb_create_command_builder("az network lb create", name, resourceGroup);
+        return new az_network_lb_create_command_builder("az network lb create", 'az_network_lb_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -7151,7 +7151,7 @@ export class az_network_lb {
      * ```
      */
     static delete(): az_network_lb_delete_command_builder {
-        return new az_network_lb_delete_command_builder("az network lb delete");
+        return new az_network_lb_delete_command_builder("az network lb delete", 'az_network_lb_delete_command_result');
     }
 
     /**
@@ -7165,7 +7165,7 @@ export class az_network_lb {
      * ```
      */
     static list(): az_network_lb_list_command_builder {
-        return new az_network_lb_list_command_builder("az network lb list");
+        return new az_network_lb_list_command_builder("az network lb list", 'az_network_lb_list_command_result');
     }
 
     /**
@@ -7182,7 +7182,7 @@ export class az_network_lb {
      * ```
      */
     static show(): az_network_lb_show_command_builder {
-        return new az_network_lb_show_command_builder("az network lb show");
+        return new az_network_lb_show_command_builder("az network lb show", 'az_network_lb_show_command_result');
     }
 
     /**
@@ -7201,7 +7201,7 @@ export class az_network_lb {
      * ```
      */
     static update(): az_network_lb_update_command_builder {
-        return new az_network_lb_update_command_builder("az network lb update");
+        return new az_network_lb_update_command_builder("az network lb update", 'az_network_lb_update_command_result');
     }
 }
 
@@ -7230,7 +7230,7 @@ export class az_network_local_gateway {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(gatewayIpAddress: string, name: string, resourceGroup: string): az_network_local_gateway_create_command_builder {
-        return new az_network_local_gateway_create_command_builder("az network local-gateway create", gatewayIpAddress, name, resourceGroup);
+        return new az_network_local_gateway_create_command_builder("az network local-gateway create", 'az_network_local_gateway_create_command_result', gatewayIpAddress, name, resourceGroup);
     }
 
     /**
@@ -7246,7 +7246,7 @@ export class az_network_local_gateway {
      * ```
      */
     static delete(): az_network_local_gateway_delete_command_builder {
-        return new az_network_local_gateway_delete_command_builder("az network local-gateway delete");
+        return new az_network_local_gateway_delete_command_builder("az network local-gateway delete", 'az_network_local_gateway_delete_command_result');
     }
 
     /**
@@ -7262,7 +7262,7 @@ export class az_network_local_gateway {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(resourceGroup: string): az_network_local_gateway_list_command_builder {
-        return new az_network_local_gateway_list_command_builder("az network local-gateway list", resourceGroup);
+        return new az_network_local_gateway_list_command_builder("az network local-gateway list", 'az_network_local_gateway_list_command_result', resourceGroup);
     }
 
     /**
@@ -7278,7 +7278,7 @@ export class az_network_local_gateway {
      * ```
      */
     static show(): az_network_local_gateway_show_command_builder {
-        return new az_network_local_gateway_show_command_builder("az network local-gateway show");
+        return new az_network_local_gateway_show_command_builder("az network local-gateway show", 'az_network_local_gateway_show_command_result');
     }
 
     /**
@@ -7304,7 +7304,7 @@ export class az_network_local_gateway {
      * ```
      */
     static update(): az_network_local_gateway_update_command_builder {
-        return new az_network_local_gateway_update_command_builder("az network local-gateway update");
+        return new az_network_local_gateway_update_command_builder("az network local-gateway update", 'az_network_local_gateway_update_command_result');
     }
 
     /**
@@ -7326,7 +7326,7 @@ export class az_network_local_gateway {
      * ```
      */
     static wait(): az_network_local_gateway_wait_command_builder {
-        return new az_network_local_gateway_wait_command_builder("az network local-gateway wait");
+        return new az_network_local_gateway_wait_command_builder("az network local-gateway wait", 'az_network_local_gateway_wait_command_result');
     }
 }
 
@@ -7352,7 +7352,7 @@ export class az_network_nat_gateway {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_network_nat_gateway_create_command_builder {
-        return new az_network_nat_gateway_create_command_builder("az network nat gateway create", name, resourceGroup);
+        return new az_network_nat_gateway_create_command_builder("az network nat gateway create", 'az_network_nat_gateway_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -7367,7 +7367,7 @@ export class az_network_nat_gateway {
      * ```
      */
     static delete(): az_network_nat_gateway_delete_command_builder {
-        return new az_network_nat_gateway_delete_command_builder("az network nat gateway delete");
+        return new az_network_nat_gateway_delete_command_builder("az network nat gateway delete", 'az_network_nat_gateway_delete_command_result');
     }
 
     /**
@@ -7381,7 +7381,7 @@ export class az_network_nat_gateway {
      * ```
      */
     static list(): az_network_nat_gateway_list_command_builder {
-        return new az_network_nat_gateway_list_command_builder("az network nat gateway list");
+        return new az_network_nat_gateway_list_command_builder("az network nat gateway list", 'az_network_nat_gateway_list_command_result');
     }
 
     /**
@@ -7397,7 +7397,7 @@ export class az_network_nat_gateway {
      * ```
      */
     static show(): az_network_nat_gateway_show_command_builder {
-        return new az_network_nat_gateway_show_command_builder("az network nat gateway show");
+        return new az_network_nat_gateway_show_command_builder("az network nat gateway show", 'az_network_nat_gateway_show_command_result');
     }
 
     /**
@@ -7419,7 +7419,7 @@ export class az_network_nat_gateway {
      * ```
      */
     static update(): az_network_nat_gateway_update_command_builder {
-        return new az_network_nat_gateway_update_command_builder("az network nat gateway update");
+        return new az_network_nat_gateway_update_command_builder("az network nat gateway update", 'az_network_nat_gateway_update_command_result');
     }
 
     /**
@@ -7441,7 +7441,7 @@ export class az_network_nat_gateway {
      * ```
      */
     static wait(): az_network_nat_gateway_wait_command_builder {
-        return new az_network_nat_gateway_wait_command_builder("az network nat gateway wait");
+        return new az_network_nat_gateway_wait_command_builder("az network nat gateway wait", 'az_network_nat_gateway_wait_command_result');
     }
 }
 
@@ -7471,7 +7471,7 @@ export class az_network_nic_ip_config_address_pool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static add(addressPool: string, ipConfigName: string, nicName: string, resourceGroup: string): az_network_nic_ip_config_address_pool_add_command_builder {
-        return new az_network_nic_ip_config_address_pool_add_command_builder("az network nic ip-config address-pool add", addressPool, ipConfigName, nicName, resourceGroup);
+        return new az_network_nic_ip_config_address_pool_add_command_builder("az network nic ip-config address-pool add", 'az_network_nic_ip_config_address_pool_add_command_result', addressPool, ipConfigName, nicName, resourceGroup);
     }
 
     /**
@@ -7494,7 +7494,7 @@ export class az_network_nic_ip_config_address_pool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static remove(addressPool: string, ipConfigName: string, nicName: string, resourceGroup: string): az_network_nic_ip_config_address_pool_remove_command_builder {
-        return new az_network_nic_ip_config_address_pool_remove_command_builder("az network nic ip-config address-pool remove", addressPool, ipConfigName, nicName, resourceGroup);
+        return new az_network_nic_ip_config_address_pool_remove_command_builder("az network nic ip-config address-pool remove", 'az_network_nic_ip_config_address_pool_remove_command_result', addressPool, ipConfigName, nicName, resourceGroup);
     }
 }
 
@@ -7519,7 +7519,7 @@ export class az_network_nic_ip_config_inbound_nat_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static add(inboundNatRule: string, ipConfigName: string, nicName: string, resourceGroup: string): az_network_nic_ip_config_inbound_nat_rule_add_command_builder {
-        return new az_network_nic_ip_config_inbound_nat_rule_add_command_builder("az network nic ip-config inbound-nat-rule add", inboundNatRule, ipConfigName, nicName, resourceGroup);
+        return new az_network_nic_ip_config_inbound_nat_rule_add_command_builder("az network nic ip-config inbound-nat-rule add", 'az_network_nic_ip_config_inbound_nat_rule_add_command_result', inboundNatRule, ipConfigName, nicName, resourceGroup);
     }
 
     /**
@@ -7541,7 +7541,7 @@ export class az_network_nic_ip_config_inbound_nat_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static remove(inboundNatRule: string, ipConfigName: string, nicName: string, resourceGroup: string): az_network_nic_ip_config_inbound_nat_rule_remove_command_builder {
-        return new az_network_nic_ip_config_inbound_nat_rule_remove_command_builder("az network nic ip-config inbound-nat-rule remove", inboundNatRule, ipConfigName, nicName, resourceGroup);
+        return new az_network_nic_ip_config_inbound_nat_rule_remove_command_builder("az network nic ip-config inbound-nat-rule remove", 'az_network_nic_ip_config_inbound_nat_rule_remove_command_result', inboundNatRule, ipConfigName, nicName, resourceGroup);
     }
 }
 
@@ -7575,7 +7575,7 @@ export class az_network_nic_ip_config {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, nicName: string, resourceGroup: string): az_network_nic_ip_config_create_command_builder {
-        return new az_network_nic_ip_config_create_command_builder("az network nic ip-config create", name, nicName, resourceGroup);
+        return new az_network_nic_ip_config_create_command_builder("az network nic ip-config create", 'az_network_nic_ip_config_create_command_result', name, nicName, resourceGroup);
     }
 
     /**
@@ -7591,7 +7591,7 @@ export class az_network_nic_ip_config {
      * ```
      */
     static delete(): az_network_nic_ip_config_delete_command_builder {
-        return new az_network_nic_ip_config_delete_command_builder("az network nic ip-config delete");
+        return new az_network_nic_ip_config_delete_command_builder("az network nic ip-config delete", 'az_network_nic_ip_config_delete_command_result');
     }
 
     /**
@@ -7609,7 +7609,7 @@ export class az_network_nic_ip_config {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(nicName: string, resourceGroup: string): az_network_nic_ip_config_list_command_builder {
-        return new az_network_nic_ip_config_list_command_builder("az network nic ip-config list", nicName, resourceGroup);
+        return new az_network_nic_ip_config_list_command_builder("az network nic ip-config list", 'az_network_nic_ip_config_list_command_result', nicName, resourceGroup);
     }
 
     /**
@@ -7626,7 +7626,7 @@ export class az_network_nic_ip_config {
      * ```
      */
     static show(): az_network_nic_ip_config_show_command_builder {
-        return new az_network_nic_ip_config_show_command_builder("az network nic ip-config show");
+        return new az_network_nic_ip_config_show_command_builder("az network nic ip-config show", 'az_network_nic_ip_config_show_command_result');
     }
 
     /**
@@ -7658,7 +7658,7 @@ export class az_network_nic_ip_config {
      * ```
      */
     static update(): az_network_nic_ip_config_update_command_builder {
-        return new az_network_nic_ip_config_update_command_builder("az network nic ip-config update");
+        return new az_network_nic_ip_config_update_command_builder("az network nic ip-config update", 'az_network_nic_ip_config_update_command_result');
     }
 }
 
@@ -7698,7 +7698,7 @@ export class az_network_nic {
      * @param {string} subnet Name or ID of an existing subnet. If name specified, also specify --vnet-name. If you want to use an existing subnet in other resource group, please provide the ID instead of the name of the subnet.
      */
     static create(name: string, resourceGroup: string, subnet: string): az_network_nic_create_command_builder {
-        return new az_network_nic_create_command_builder("az network nic create", name, resourceGroup, subnet);
+        return new az_network_nic_create_command_builder("az network nic create", 'az_network_nic_create_command_result', name, resourceGroup, subnet);
     }
 
     /**
@@ -7714,7 +7714,7 @@ export class az_network_nic {
      * ```
      */
     static delete(): az_network_nic_delete_command_builder {
-        return new az_network_nic_delete_command_builder("az network nic delete");
+        return new az_network_nic_delete_command_builder("az network nic delete", 'az_network_nic_delete_command_result');
     }
 
     /**
@@ -7728,7 +7728,7 @@ export class az_network_nic {
      * ```
      */
     static list(): az_network_nic_list_command_builder {
-        return new az_network_nic_list_command_builder("az network nic list");
+        return new az_network_nic_list_command_builder("az network nic list", 'az_network_nic_list_command_result');
     }
 
     /**
@@ -7743,7 +7743,7 @@ export class az_network_nic {
      * ```
      */
     static list_effective_nsg(): az_network_nic_list_effective_nsg_command_builder {
-        return new az_network_nic_list_effective_nsg_command_builder("az network nic list-effective-nsg");
+        return new az_network_nic_list_effective_nsg_command_builder("az network nic list-effective-nsg", 'az_network_nic_list_effective_nsg_command_result');
     }
 
     /**
@@ -7760,7 +7760,7 @@ export class az_network_nic {
      * ```
      */
     static show(): az_network_nic_show_command_builder {
-        return new az_network_nic_show_command_builder("az network nic show");
+        return new az_network_nic_show_command_builder("az network nic show", 'az_network_nic_show_command_result');
     }
 
     /**
@@ -7775,7 +7775,7 @@ export class az_network_nic {
      * ```
      */
     static show_effective_route_table(): az_network_nic_show_effective_route_table_command_builder {
-        return new az_network_nic_show_effective_route_table_command_builder("az network nic show-effective-route-table");
+        return new az_network_nic_show_effective_route_table_command_builder("az network nic show-effective-route-table", 'az_network_nic_show_effective_route_table_command_result');
     }
 
     /**
@@ -7800,7 +7800,7 @@ export class az_network_nic {
      * ```
      */
     static update(): az_network_nic_update_command_builder {
-        return new az_network_nic_update_command_builder("az network nic update");
+        return new az_network_nic_update_command_builder("az network nic update", 'az_network_nic_update_command_result');
     }
 
     /**
@@ -7823,7 +7823,7 @@ export class az_network_nic {
      * ```
      */
     static wait(): az_network_nic_wait_command_builder {
-        return new az_network_nic_wait_command_builder("az network nic wait");
+        return new az_network_nic_wait_command_builder("az network nic wait", 'az_network_nic_wait_command_result');
     }
 }
 
@@ -7857,7 +7857,7 @@ export class az_network_nsg_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, nsgName: string, priority: string, resourceGroup: string): az_network_nsg_rule_create_command_builder {
-        return new az_network_nsg_rule_create_command_builder("az network nsg rule create", name, nsgName, priority, resourceGroup);
+        return new az_network_nsg_rule_create_command_builder("az network nsg rule create", 'az_network_nsg_rule_create_command_result', name, nsgName, priority, resourceGroup);
     }
 
     /**
@@ -7873,7 +7873,7 @@ export class az_network_nsg_rule {
      * ```
      */
     static delete(): az_network_nsg_rule_delete_command_builder {
-        return new az_network_nsg_rule_delete_command_builder("az network nsg rule delete");
+        return new az_network_nsg_rule_delete_command_builder("az network nsg rule delete", 'az_network_nsg_rule_delete_command_result');
     }
 
     /**
@@ -7892,7 +7892,7 @@ export class az_network_nsg_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(nsgName: string, resourceGroup: string): az_network_nsg_rule_list_command_builder {
-        return new az_network_nsg_rule_list_command_builder("az network nsg rule list", nsgName, resourceGroup);
+        return new az_network_nsg_rule_list_command_builder("az network nsg rule list", 'az_network_nsg_rule_list_command_result', nsgName, resourceGroup);
     }
 
     /**
@@ -7909,7 +7909,7 @@ export class az_network_nsg_rule {
      * ```
      */
     static show(): az_network_nsg_rule_show_command_builder {
-        return new az_network_nsg_rule_show_command_builder("az network nsg rule show");
+        return new az_network_nsg_rule_show_command_builder("az network nsg rule show", 'az_network_nsg_rule_show_command_result');
     }
 
     /**
@@ -7940,7 +7940,7 @@ export class az_network_nsg_rule {
      * ```
      */
     static update(): az_network_nsg_rule_update_command_builder {
-        return new az_network_nsg_rule_update_command_builder("az network nsg rule update");
+        return new az_network_nsg_rule_update_command_builder("az network nsg rule update", 'az_network_nsg_rule_update_command_result');
     }
 }
 
@@ -7962,7 +7962,7 @@ export class az_network_nsg {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_network_nsg_create_command_builder {
-        return new az_network_nsg_create_command_builder("az network nsg create", name, resourceGroup);
+        return new az_network_nsg_create_command_builder("az network nsg create", 'az_network_nsg_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -7977,7 +7977,7 @@ export class az_network_nsg {
      * ```
      */
     static delete(): az_network_nsg_delete_command_builder {
-        return new az_network_nsg_delete_command_builder("az network nsg delete");
+        return new az_network_nsg_delete_command_builder("az network nsg delete", 'az_network_nsg_delete_command_result');
     }
 
     /**
@@ -7991,7 +7991,7 @@ export class az_network_nsg {
      * ```
      */
     static list(): az_network_nsg_list_command_builder {
-        return new az_network_nsg_list_command_builder("az network nsg list");
+        return new az_network_nsg_list_command_builder("az network nsg list", 'az_network_nsg_list_command_result');
     }
 
     /**
@@ -8008,7 +8008,7 @@ export class az_network_nsg {
      * ```
      */
     static show(): az_network_nsg_show_command_builder {
-        return new az_network_nsg_show_command_builder("az network nsg show");
+        return new az_network_nsg_show_command_builder("az network nsg show", 'az_network_nsg_show_command_result');
     }
 
     /**
@@ -8027,7 +8027,7 @@ export class az_network_nsg {
      * ```
      */
     static update(): az_network_nsg_update_command_builder {
-        return new az_network_nsg_update_command_builder("az network nsg update");
+        return new az_network_nsg_update_command_builder("az network nsg update", 'az_network_nsg_update_command_result');
     }
 }
 
@@ -8055,7 +8055,7 @@ export class az_network_private_dns_link_vnet {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static create(name: string, registrationEnabled: boolean, resourceGroup: string, virtualNetwork: string, zoneName: string): az_network_private_dns_link_vnet_create_command_builder {
-        return new az_network_private_dns_link_vnet_create_command_builder("az network private-dns link vnet create", name, registrationEnabled, resourceGroup, virtualNetwork, zoneName);
+        return new az_network_private_dns_link_vnet_create_command_builder("az network private-dns link vnet create", 'az_network_private_dns_link_vnet_create_command_result', name, registrationEnabled, resourceGroup, virtualNetwork, zoneName);
     }
 
     /**
@@ -8077,7 +8077,7 @@ export class az_network_private_dns_link_vnet {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static delete(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_link_vnet_delete_command_builder {
-        return new az_network_private_dns_link_vnet_delete_command_builder("az network private-dns link vnet delete", name, resourceGroup, zoneName);
+        return new az_network_private_dns_link_vnet_delete_command_builder("az network private-dns link vnet delete", 'az_network_private_dns_link_vnet_delete_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8096,7 +8096,7 @@ export class az_network_private_dns_link_vnet {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_private_dns_link_vnet_list_command_builder {
-        return new az_network_private_dns_link_vnet_list_command_builder("az network private-dns link vnet list", resourceGroup, zoneName);
+        return new az_network_private_dns_link_vnet_list_command_builder("az network private-dns link vnet list", 'az_network_private_dns_link_vnet_list_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -8116,7 +8116,7 @@ export class az_network_private_dns_link_vnet {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static show(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_link_vnet_show_command_builder {
-        return new az_network_private_dns_link_vnet_show_command_builder("az network private-dns link vnet show", name, resourceGroup, zoneName);
+        return new az_network_private_dns_link_vnet_show_command_builder("az network private-dns link vnet show", 'az_network_private_dns_link_vnet_show_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8143,7 +8143,7 @@ export class az_network_private_dns_link_vnet {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static update(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_link_vnet_update_command_builder {
-        return new az_network_private_dns_link_vnet_update_command_builder("az network private-dns link vnet update", name, resourceGroup, zoneName);
+        return new az_network_private_dns_link_vnet_update_command_builder("az network private-dns link vnet update", 'az_network_private_dns_link_vnet_update_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8169,7 +8169,7 @@ export class az_network_private_dns_link_vnet {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static wait(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_link_vnet_wait_command_builder {
-        return new az_network_private_dns_link_vnet_wait_command_builder("az network private-dns link vnet wait", name, resourceGroup, zoneName);
+        return new az_network_private_dns_link_vnet_wait_command_builder("az network private-dns link vnet wait", 'az_network_private_dns_link_vnet_wait_command_result', name, resourceGroup, zoneName);
     }
 }
 
@@ -8197,7 +8197,7 @@ export class az_network_private_dns_record_set_a {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static add_record(ipv4Address: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_a_add_record_command_builder {
-        return new az_network_private_dns_record_set_a_add_record_command_builder("az network private-dns record-set a add-record", ipv4Address, recordSetName, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_a_add_record_command_builder("az network private-dns record-set a add-record", 'az_network_private_dns_record_set_a_add_record_command_result', ipv4Address, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -8218,7 +8218,7 @@ export class az_network_private_dns_record_set_a {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static create(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_a_create_command_builder {
-        return new az_network_private_dns_record_set_a_create_command_builder("az network private-dns record-set a create", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_a_create_command_builder("az network private-dns record-set a create", 'az_network_private_dns_record_set_a_create_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8239,7 +8239,7 @@ export class az_network_private_dns_record_set_a {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static delete(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_a_delete_command_builder {
-        return new az_network_private_dns_record_set_a_delete_command_builder("az network private-dns record-set a delete", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_a_delete_command_builder("az network private-dns record-set a delete", 'az_network_private_dns_record_set_a_delete_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8257,7 +8257,7 @@ export class az_network_private_dns_record_set_a {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_private_dns_record_set_a_list_command_builder {
-        return new az_network_private_dns_record_set_a_list_command_builder("az network private-dns record-set a list", resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_a_list_command_builder("az network private-dns record-set a list", 'az_network_private_dns_record_set_a_list_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -8279,7 +8279,7 @@ export class az_network_private_dns_record_set_a {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static remove_record(ipv4Address: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_a_remove_record_command_builder {
-        return new az_network_private_dns_record_set_a_remove_record_command_builder("az network private-dns record-set a remove-record", ipv4Address, recordSetName, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_a_remove_record_command_builder("az network private-dns record-set a remove-record", 'az_network_private_dns_record_set_a_remove_record_command_result', ipv4Address, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -8299,7 +8299,7 @@ export class az_network_private_dns_record_set_a {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static show(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_a_show_command_builder {
-        return new az_network_private_dns_record_set_a_show_command_builder("az network private-dns record-set a show", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_a_show_command_builder("az network private-dns record-set a show", 'az_network_private_dns_record_set_a_show_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8324,7 +8324,7 @@ export class az_network_private_dns_record_set_a {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static update(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_a_update_command_builder {
-        return new az_network_private_dns_record_set_a_update_command_builder("az network private-dns record-set a update", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_a_update_command_builder("az network private-dns record-set a update", 'az_network_private_dns_record_set_a_update_command_result', name, resourceGroup, zoneName);
     }
 }
 
@@ -8348,7 +8348,7 @@ export class az_network_private_dns_record_set_aaaa {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static add_record(ipv6Address: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_aaaa_add_record_command_builder {
-        return new az_network_private_dns_record_set_aaaa_add_record_command_builder("az network private-dns record-set aaaa add-record", ipv6Address, recordSetName, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_aaaa_add_record_command_builder("az network private-dns record-set aaaa add-record", 'az_network_private_dns_record_set_aaaa_add_record_command_result', ipv6Address, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -8369,7 +8369,7 @@ export class az_network_private_dns_record_set_aaaa {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static create(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_aaaa_create_command_builder {
-        return new az_network_private_dns_record_set_aaaa_create_command_builder("az network private-dns record-set aaaa create", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_aaaa_create_command_builder("az network private-dns record-set aaaa create", 'az_network_private_dns_record_set_aaaa_create_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8390,7 +8390,7 @@ export class az_network_private_dns_record_set_aaaa {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static delete(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_aaaa_delete_command_builder {
-        return new az_network_private_dns_record_set_aaaa_delete_command_builder("az network private-dns record-set aaaa delete", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_aaaa_delete_command_builder("az network private-dns record-set aaaa delete", 'az_network_private_dns_record_set_aaaa_delete_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8408,7 +8408,7 @@ export class az_network_private_dns_record_set_aaaa {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_private_dns_record_set_aaaa_list_command_builder {
-        return new az_network_private_dns_record_set_aaaa_list_command_builder("az network private-dns record-set aaaa list", resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_aaaa_list_command_builder("az network private-dns record-set aaaa list", 'az_network_private_dns_record_set_aaaa_list_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -8430,7 +8430,7 @@ export class az_network_private_dns_record_set_aaaa {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static remove_record(ipv6Address: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_aaaa_remove_record_command_builder {
-        return new az_network_private_dns_record_set_aaaa_remove_record_command_builder("az network private-dns record-set aaaa remove-record", ipv6Address, recordSetName, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_aaaa_remove_record_command_builder("az network private-dns record-set aaaa remove-record", 'az_network_private_dns_record_set_aaaa_remove_record_command_result', ipv6Address, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -8450,7 +8450,7 @@ export class az_network_private_dns_record_set_aaaa {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static show(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_aaaa_show_command_builder {
-        return new az_network_private_dns_record_set_aaaa_show_command_builder("az network private-dns record-set aaaa show", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_aaaa_show_command_builder("az network private-dns record-set aaaa show", 'az_network_private_dns_record_set_aaaa_show_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8475,7 +8475,7 @@ export class az_network_private_dns_record_set_aaaa {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static update(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_aaaa_update_command_builder {
-        return new az_network_private_dns_record_set_aaaa_update_command_builder("az network private-dns record-set aaaa update", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_aaaa_update_command_builder("az network private-dns record-set aaaa update", 'az_network_private_dns_record_set_aaaa_update_command_result', name, resourceGroup, zoneName);
     }
 }
 
@@ -8499,7 +8499,7 @@ export class az_network_private_dns_record_set_cname {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static create(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_cname_create_command_builder {
-        return new az_network_private_dns_record_set_cname_create_command_builder("az network private-dns record-set cname create", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_cname_create_command_builder("az network private-dns record-set cname create", 'az_network_private_dns_record_set_cname_create_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8520,7 +8520,7 @@ export class az_network_private_dns_record_set_cname {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static delete(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_cname_delete_command_builder {
-        return new az_network_private_dns_record_set_cname_delete_command_builder("az network private-dns record-set cname delete", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_cname_delete_command_builder("az network private-dns record-set cname delete", 'az_network_private_dns_record_set_cname_delete_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8538,7 +8538,7 @@ export class az_network_private_dns_record_set_cname {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_private_dns_record_set_cname_list_command_builder {
-        return new az_network_private_dns_record_set_cname_list_command_builder("az network private-dns record-set cname list", resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_cname_list_command_builder("az network private-dns record-set cname list", 'az_network_private_dns_record_set_cname_list_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -8560,7 +8560,7 @@ export class az_network_private_dns_record_set_cname {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static remove_record(cname: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_cname_remove_record_command_builder {
-        return new az_network_private_dns_record_set_cname_remove_record_command_builder("az network private-dns record-set cname remove-record", cname, recordSetName, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_cname_remove_record_command_builder("az network private-dns record-set cname remove-record", 'az_network_private_dns_record_set_cname_remove_record_command_result', cname, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -8581,7 +8581,7 @@ export class az_network_private_dns_record_set_cname {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static set_record(cname: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_cname_set_record_command_builder {
-        return new az_network_private_dns_record_set_cname_set_record_command_builder("az network private-dns record-set cname set-record", cname, recordSetName, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_cname_set_record_command_builder("az network private-dns record-set cname set-record", 'az_network_private_dns_record_set_cname_set_record_command_result', cname, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -8601,7 +8601,7 @@ export class az_network_private_dns_record_set_cname {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static show(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_cname_show_command_builder {
-        return new az_network_private_dns_record_set_cname_show_command_builder("az network private-dns record-set cname show", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_cname_show_command_builder("az network private-dns record-set cname show", 'az_network_private_dns_record_set_cname_show_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8626,7 +8626,7 @@ export class az_network_private_dns_record_set_cname {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static update(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_cname_update_command_builder {
-        return new az_network_private_dns_record_set_cname_update_command_builder("az network private-dns record-set cname update", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_cname_update_command_builder("az network private-dns record-set cname update", 'az_network_private_dns_record_set_cname_update_command_result', name, resourceGroup, zoneName);
     }
 }
 
@@ -8652,7 +8652,7 @@ export class az_network_private_dns_record_set_mx {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static add_record(exchange: string, preference: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_mx_add_record_command_builder {
-        return new az_network_private_dns_record_set_mx_add_record_command_builder("az network private-dns record-set mx add-record", exchange, preference, recordSetName, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_mx_add_record_command_builder("az network private-dns record-set mx add-record", 'az_network_private_dns_record_set_mx_add_record_command_result', exchange, preference, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -8673,7 +8673,7 @@ export class az_network_private_dns_record_set_mx {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static create(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_mx_create_command_builder {
-        return new az_network_private_dns_record_set_mx_create_command_builder("az network private-dns record-set mx create", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_mx_create_command_builder("az network private-dns record-set mx create", 'az_network_private_dns_record_set_mx_create_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8694,7 +8694,7 @@ export class az_network_private_dns_record_set_mx {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static delete(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_mx_delete_command_builder {
-        return new az_network_private_dns_record_set_mx_delete_command_builder("az network private-dns record-set mx delete", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_mx_delete_command_builder("az network private-dns record-set mx delete", 'az_network_private_dns_record_set_mx_delete_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8712,7 +8712,7 @@ export class az_network_private_dns_record_set_mx {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_private_dns_record_set_mx_list_command_builder {
-        return new az_network_private_dns_record_set_mx_list_command_builder("az network private-dns record-set mx list", resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_mx_list_command_builder("az network private-dns record-set mx list", 'az_network_private_dns_record_set_mx_list_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -8736,7 +8736,7 @@ export class az_network_private_dns_record_set_mx {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static remove_record(exchange: string, preference: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_mx_remove_record_command_builder {
-        return new az_network_private_dns_record_set_mx_remove_record_command_builder("az network private-dns record-set mx remove-record", exchange, preference, recordSetName, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_mx_remove_record_command_builder("az network private-dns record-set mx remove-record", 'az_network_private_dns_record_set_mx_remove_record_command_result', exchange, preference, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -8756,7 +8756,7 @@ export class az_network_private_dns_record_set_mx {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static show(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_mx_show_command_builder {
-        return new az_network_private_dns_record_set_mx_show_command_builder("az network private-dns record-set mx show", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_mx_show_command_builder("az network private-dns record-set mx show", 'az_network_private_dns_record_set_mx_show_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8781,7 +8781,7 @@ export class az_network_private_dns_record_set_mx {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static update(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_mx_update_command_builder {
-        return new az_network_private_dns_record_set_mx_update_command_builder("az network private-dns record-set mx update", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_mx_update_command_builder("az network private-dns record-set mx update", 'az_network_private_dns_record_set_mx_update_command_result', name, resourceGroup, zoneName);
     }
 }
 
@@ -8805,7 +8805,7 @@ export class az_network_private_dns_record_set_ptr {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static add_record(ptrdname: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_ptr_add_record_command_builder {
-        return new az_network_private_dns_record_set_ptr_add_record_command_builder("az network private-dns record-set ptr add-record", ptrdname, recordSetName, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_ptr_add_record_command_builder("az network private-dns record-set ptr add-record", 'az_network_private_dns_record_set_ptr_add_record_command_result', ptrdname, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -8826,7 +8826,7 @@ export class az_network_private_dns_record_set_ptr {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static create(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_ptr_create_command_builder {
-        return new az_network_private_dns_record_set_ptr_create_command_builder("az network private-dns record-set ptr create", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_ptr_create_command_builder("az network private-dns record-set ptr create", 'az_network_private_dns_record_set_ptr_create_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8847,7 +8847,7 @@ export class az_network_private_dns_record_set_ptr {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static delete(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_ptr_delete_command_builder {
-        return new az_network_private_dns_record_set_ptr_delete_command_builder("az network private-dns record-set ptr delete", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_ptr_delete_command_builder("az network private-dns record-set ptr delete", 'az_network_private_dns_record_set_ptr_delete_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8865,7 +8865,7 @@ export class az_network_private_dns_record_set_ptr {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_private_dns_record_set_ptr_list_command_builder {
-        return new az_network_private_dns_record_set_ptr_list_command_builder("az network private-dns record-set ptr list", resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_ptr_list_command_builder("az network private-dns record-set ptr list", 'az_network_private_dns_record_set_ptr_list_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -8887,7 +8887,7 @@ export class az_network_private_dns_record_set_ptr {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static remove_record(ptrdname: string, recordSetName: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_ptr_remove_record_command_builder {
-        return new az_network_private_dns_record_set_ptr_remove_record_command_builder("az network private-dns record-set ptr remove-record", ptrdname, recordSetName, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_ptr_remove_record_command_builder("az network private-dns record-set ptr remove-record", 'az_network_private_dns_record_set_ptr_remove_record_command_result', ptrdname, recordSetName, resourceGroup, zoneName);
     }
 
     /**
@@ -8907,7 +8907,7 @@ export class az_network_private_dns_record_set_ptr {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static show(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_ptr_show_command_builder {
-        return new az_network_private_dns_record_set_ptr_show_command_builder("az network private-dns record-set ptr show", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_ptr_show_command_builder("az network private-dns record-set ptr show", 'az_network_private_dns_record_set_ptr_show_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -8932,7 +8932,7 @@ export class az_network_private_dns_record_set_ptr {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static update(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_ptr_update_command_builder {
-        return new az_network_private_dns_record_set_ptr_update_command_builder("az network private-dns record-set ptr update", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_ptr_update_command_builder("az network private-dns record-set ptr update", 'az_network_private_dns_record_set_ptr_update_command_result', name, resourceGroup, zoneName);
     }
 }
 
@@ -8953,7 +8953,7 @@ export class az_network_private_dns_record_set_soa {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static show(resourceGroup: string, zoneName: string): az_network_private_dns_record_set_soa_show_command_builder {
-        return new az_network_private_dns_record_set_soa_show_command_builder("az network private-dns record-set soa show", resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_soa_show_command_builder("az network private-dns record-set soa show", 'az_network_private_dns_record_set_soa_show_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -8977,7 +8977,7 @@ export class az_network_private_dns_record_set_soa {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static update(resourceGroup: string, zoneName: string): az_network_private_dns_record_set_soa_update_command_builder {
-        return new az_network_private_dns_record_set_soa_update_command_builder("az network private-dns record-set soa update", resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_soa_update_command_builder("az network private-dns record-set soa update", 'az_network_private_dns_record_set_soa_update_command_result', resourceGroup, zoneName);
     }
 }
 
@@ -9007,7 +9007,7 @@ export class az_network_private_dns_record_set_srv {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static add_record(port: string, priority: string, recordSetName: string, resourceGroup: string, target: string, weight: string, zoneName: string): az_network_private_dns_record_set_srv_add_record_command_builder {
-        return new az_network_private_dns_record_set_srv_add_record_command_builder("az network private-dns record-set srv add-record", port, priority, recordSetName, resourceGroup, target, weight, zoneName);
+        return new az_network_private_dns_record_set_srv_add_record_command_builder("az network private-dns record-set srv add-record", 'az_network_private_dns_record_set_srv_add_record_command_result', port, priority, recordSetName, resourceGroup, target, weight, zoneName);
     }
 
     /**
@@ -9028,7 +9028,7 @@ export class az_network_private_dns_record_set_srv {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static create(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_srv_create_command_builder {
-        return new az_network_private_dns_record_set_srv_create_command_builder("az network private-dns record-set srv create", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_srv_create_command_builder("az network private-dns record-set srv create", 'az_network_private_dns_record_set_srv_create_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -9049,7 +9049,7 @@ export class az_network_private_dns_record_set_srv {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static delete(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_srv_delete_command_builder {
-        return new az_network_private_dns_record_set_srv_delete_command_builder("az network private-dns record-set srv delete", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_srv_delete_command_builder("az network private-dns record-set srv delete", 'az_network_private_dns_record_set_srv_delete_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -9067,7 +9067,7 @@ export class az_network_private_dns_record_set_srv {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_private_dns_record_set_srv_list_command_builder {
-        return new az_network_private_dns_record_set_srv_list_command_builder("az network private-dns record-set srv list", resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_srv_list_command_builder("az network private-dns record-set srv list", 'az_network_private_dns_record_set_srv_list_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -9095,7 +9095,7 @@ export class az_network_private_dns_record_set_srv {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static remove_record(port: string, priority: string, recordSetName: string, resourceGroup: string, target: string, weight: string, zoneName: string): az_network_private_dns_record_set_srv_remove_record_command_builder {
-        return new az_network_private_dns_record_set_srv_remove_record_command_builder("az network private-dns record-set srv remove-record", port, priority, recordSetName, resourceGroup, target, weight, zoneName);
+        return new az_network_private_dns_record_set_srv_remove_record_command_builder("az network private-dns record-set srv remove-record", 'az_network_private_dns_record_set_srv_remove_record_command_result', port, priority, recordSetName, resourceGroup, target, weight, zoneName);
     }
 
     /**
@@ -9115,7 +9115,7 @@ export class az_network_private_dns_record_set_srv {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static show(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_srv_show_command_builder {
-        return new az_network_private_dns_record_set_srv_show_command_builder("az network private-dns record-set srv show", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_srv_show_command_builder("az network private-dns record-set srv show", 'az_network_private_dns_record_set_srv_show_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -9140,7 +9140,7 @@ export class az_network_private_dns_record_set_srv {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static update(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_srv_update_command_builder {
-        return new az_network_private_dns_record_set_srv_update_command_builder("az network private-dns record-set srv update", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_srv_update_command_builder("az network private-dns record-set srv update", 'az_network_private_dns_record_set_srv_update_command_result', name, resourceGroup, zoneName);
     }
 }
 
@@ -9164,7 +9164,7 @@ export class az_network_private_dns_record_set_txt {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static add_record(recordSetName: string, resourceGroup: string, value: string, zoneName: string): az_network_private_dns_record_set_txt_add_record_command_builder {
-        return new az_network_private_dns_record_set_txt_add_record_command_builder("az network private-dns record-set txt add-record", recordSetName, resourceGroup, value, zoneName);
+        return new az_network_private_dns_record_set_txt_add_record_command_builder("az network private-dns record-set txt add-record", 'az_network_private_dns_record_set_txt_add_record_command_result', recordSetName, resourceGroup, value, zoneName);
     }
 
     /**
@@ -9185,7 +9185,7 @@ export class az_network_private_dns_record_set_txt {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static create(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_txt_create_command_builder {
-        return new az_network_private_dns_record_set_txt_create_command_builder("az network private-dns record-set txt create", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_txt_create_command_builder("az network private-dns record-set txt create", 'az_network_private_dns_record_set_txt_create_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -9206,7 +9206,7 @@ export class az_network_private_dns_record_set_txt {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static delete(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_txt_delete_command_builder {
-        return new az_network_private_dns_record_set_txt_delete_command_builder("az network private-dns record-set txt delete", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_txt_delete_command_builder("az network private-dns record-set txt delete", 'az_network_private_dns_record_set_txt_delete_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -9224,7 +9224,7 @@ export class az_network_private_dns_record_set_txt {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_private_dns_record_set_txt_list_command_builder {
-        return new az_network_private_dns_record_set_txt_list_command_builder("az network private-dns record-set txt list", resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_txt_list_command_builder("az network private-dns record-set txt list", 'az_network_private_dns_record_set_txt_list_command_result', resourceGroup, zoneName);
     }
 
     /**
@@ -9246,7 +9246,7 @@ export class az_network_private_dns_record_set_txt {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static remove_record(recordSetName: string, resourceGroup: string, value: string, zoneName: string): az_network_private_dns_record_set_txt_remove_record_command_builder {
-        return new az_network_private_dns_record_set_txt_remove_record_command_builder("az network private-dns record-set txt remove-record", recordSetName, resourceGroup, value, zoneName);
+        return new az_network_private_dns_record_set_txt_remove_record_command_builder("az network private-dns record-set txt remove-record", 'az_network_private_dns_record_set_txt_remove_record_command_result', recordSetName, resourceGroup, value, zoneName);
     }
 
     /**
@@ -9266,7 +9266,7 @@ export class az_network_private_dns_record_set_txt {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static show(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_txt_show_command_builder {
-        return new az_network_private_dns_record_set_txt_show_command_builder("az network private-dns record-set txt show", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_txt_show_command_builder("az network private-dns record-set txt show", 'az_network_private_dns_record_set_txt_show_command_result', name, resourceGroup, zoneName);
     }
 
     /**
@@ -9291,7 +9291,7 @@ export class az_network_private_dns_record_set_txt {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static update(name: string, resourceGroup: string, zoneName: string): az_network_private_dns_record_set_txt_update_command_builder {
-        return new az_network_private_dns_record_set_txt_update_command_builder("az network private-dns record-set txt update", name, resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_txt_update_command_builder("az network private-dns record-set txt update", 'az_network_private_dns_record_set_txt_update_command_result', name, resourceGroup, zoneName);
     }
 }
 
@@ -9312,7 +9312,7 @@ export class az_network_private_dns_record_set {
      * @param {string} zoneName The name of the Private DNS zone.
      */
     static list(resourceGroup: string, zoneName: string): az_network_private_dns_record_set_list_command_builder {
-        return new az_network_private_dns_record_set_list_command_builder("az network private-dns record-set list", resourceGroup, zoneName);
+        return new az_network_private_dns_record_set_list_command_builder("az network private-dns record-set list", 'az_network_private_dns_record_set_list_command_result', resourceGroup, zoneName);
     }
 }
 
@@ -9334,7 +9334,7 @@ export class az_network_private_dns_zone {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_network_private_dns_zone_create_command_builder {
-        return new az_network_private_dns_zone_create_command_builder("az network private-dns zone create", name, resourceGroup);
+        return new az_network_private_dns_zone_create_command_builder("az network private-dns zone create", 'az_network_private_dns_zone_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -9354,7 +9354,7 @@ export class az_network_private_dns_zone {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_network_private_dns_zone_delete_command_builder {
-        return new az_network_private_dns_zone_delete_command_builder("az network private-dns zone delete", name, resourceGroup);
+        return new az_network_private_dns_zone_delete_command_builder("az network private-dns zone delete", 'az_network_private_dns_zone_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -9372,7 +9372,7 @@ export class az_network_private_dns_zone {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static export(name: string, resourceGroup: string): az_network_private_dns_zone_export_command_builder {
-        return new az_network_private_dns_zone_export_command_builder("az network private-dns zone export", name, resourceGroup);
+        return new az_network_private_dns_zone_export_command_builder("az network private-dns zone export", 'az_network_private_dns_zone_export_command_result', name, resourceGroup);
     }
 
     /**
@@ -9391,7 +9391,7 @@ export class az_network_private_dns_zone {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static import(fileName: string, name: string, resourceGroup: string): az_network_private_dns_zone_import_command_builder {
-        return new az_network_private_dns_zone_import_command_builder("az network private-dns zone import", fileName, name, resourceGroup);
+        return new az_network_private_dns_zone_import_command_builder("az network private-dns zone import", 'az_network_private_dns_zone_import_command_result', fileName, name, resourceGroup);
     }
 
     /**
@@ -9405,7 +9405,7 @@ export class az_network_private_dns_zone {
      * ```
      */
     static list(): az_network_private_dns_zone_list_command_builder {
-        return new az_network_private_dns_zone_list_command_builder("az network private-dns zone list");
+        return new az_network_private_dns_zone_list_command_builder("az network private-dns zone list", 'az_network_private_dns_zone_list_command_result');
     }
 
     /**
@@ -9423,7 +9423,7 @@ export class az_network_private_dns_zone {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_network_private_dns_zone_show_command_builder {
-        return new az_network_private_dns_zone_show_command_builder("az network private-dns zone show", name, resourceGroup);
+        return new az_network_private_dns_zone_show_command_builder("az network private-dns zone show", 'az_network_private_dns_zone_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -9447,7 +9447,7 @@ export class az_network_private_dns_zone {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, resourceGroup: string): az_network_private_dns_zone_update_command_builder {
-        return new az_network_private_dns_zone_update_command_builder("az network private-dns zone update", name, resourceGroup);
+        return new az_network_private_dns_zone_update_command_builder("az network private-dns zone update", 'az_network_private_dns_zone_update_command_result', name, resourceGroup);
     }
 
     /**
@@ -9471,7 +9471,7 @@ export class az_network_private_dns_zone {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static wait(name: string, resourceGroup: string): az_network_private_dns_zone_wait_command_builder {
-        return new az_network_private_dns_zone_wait_command_builder("az network private-dns zone wait", name, resourceGroup);
+        return new az_network_private_dns_zone_wait_command_builder("az network private-dns zone wait", 'az_network_private_dns_zone_wait_command_result', name, resourceGroup);
     }
 }
 
@@ -9501,7 +9501,7 @@ export class az_network_private_endpoint_dns_zone_group {
      * @param {string} zoneName Name of the private dns zone.
      */
     static add(endpointName: string, name: string, privateDnsZone: string, resourceGroup: string, zoneName: string): az_network_private_endpoint_dns_zone_group_add_command_builder {
-        return new az_network_private_endpoint_dns_zone_group_add_command_builder("az network private-endpoint dns-zone-group add", endpointName, name, privateDnsZone, resourceGroup, zoneName);
+        return new az_network_private_endpoint_dns_zone_group_add_command_builder("az network private-endpoint dns-zone-group add", 'az_network_private_endpoint_dns_zone_group_add_command_result', endpointName, name, privateDnsZone, resourceGroup, zoneName);
     }
 
     /**
@@ -9524,7 +9524,7 @@ export class az_network_private_endpoint_dns_zone_group {
      * @param {string} zoneName Name of the private dns zone.
      */
     static create(endpointName: string, name: string, privateDnsZone: string, resourceGroup: string, zoneName: string): az_network_private_endpoint_dns_zone_group_create_command_builder {
-        return new az_network_private_endpoint_dns_zone_group_create_command_builder("az network private-endpoint dns-zone-group create", endpointName, name, privateDnsZone, resourceGroup, zoneName);
+        return new az_network_private_endpoint_dns_zone_group_create_command_builder("az network private-endpoint dns-zone-group create", 'az_network_private_endpoint_dns_zone_group_create_command_result', endpointName, name, privateDnsZone, resourceGroup, zoneName);
     }
 
     /**
@@ -9543,7 +9543,7 @@ export class az_network_private_endpoint_dns_zone_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(endpointName: string, name: string, resourceGroup: string): az_network_private_endpoint_dns_zone_group_delete_command_builder {
-        return new az_network_private_endpoint_dns_zone_group_delete_command_builder("az network private-endpoint dns-zone-group delete", endpointName, name, resourceGroup);
+        return new az_network_private_endpoint_dns_zone_group_delete_command_builder("az network private-endpoint dns-zone-group delete", 'az_network_private_endpoint_dns_zone_group_delete_command_result', endpointName, name, resourceGroup);
     }
 
     /**
@@ -9561,7 +9561,7 @@ export class az_network_private_endpoint_dns_zone_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(endpointName: string, resourceGroup: string): az_network_private_endpoint_dns_zone_group_list_command_builder {
-        return new az_network_private_endpoint_dns_zone_group_list_command_builder("az network private-endpoint dns-zone-group list", endpointName, resourceGroup);
+        return new az_network_private_endpoint_dns_zone_group_list_command_builder("az network private-endpoint dns-zone-group list", 'az_network_private_endpoint_dns_zone_group_list_command_result', endpointName, resourceGroup);
     }
 
     /**
@@ -9582,7 +9582,7 @@ export class az_network_private_endpoint_dns_zone_group {
      * @param {string} zoneName Name of the private dns zone.
      */
     static remove(endpointName: string, name: string, resourceGroup: string, zoneName: string): az_network_private_endpoint_dns_zone_group_remove_command_builder {
-        return new az_network_private_endpoint_dns_zone_group_remove_command_builder("az network private-endpoint dns-zone-group remove", endpointName, name, resourceGroup, zoneName);
+        return new az_network_private_endpoint_dns_zone_group_remove_command_builder("az network private-endpoint dns-zone-group remove", 'az_network_private_endpoint_dns_zone_group_remove_command_result', endpointName, name, resourceGroup, zoneName);
     }
 
     /**
@@ -9602,7 +9602,7 @@ export class az_network_private_endpoint_dns_zone_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(endpointName: string, name: string, resourceGroup: string): az_network_private_endpoint_dns_zone_group_show_command_builder {
-        return new az_network_private_endpoint_dns_zone_group_show_command_builder("az network private-endpoint dns-zone-group show", endpointName, name, resourceGroup);
+        return new az_network_private_endpoint_dns_zone_group_show_command_builder("az network private-endpoint dns-zone-group show", 'az_network_private_endpoint_dns_zone_group_show_command_result', endpointName, name, resourceGroup);
     }
 }
 
@@ -9623,7 +9623,7 @@ export class az_network_private_endpoint_connection {
      * ```
      */
     static approve(): az_network_private_endpoint_connection_approve_command_builder {
-        return new az_network_private_endpoint_connection_approve_command_builder("az network private-endpoint-connection approve");
+        return new az_network_private_endpoint_connection_approve_command_builder("az network private-endpoint-connection approve", 'az_network_private_endpoint_connection_approve_command_result');
     }
 
     /**
@@ -9641,7 +9641,7 @@ export class az_network_private_endpoint_connection {
      * ```
      */
     static delete(): az_network_private_endpoint_connection_delete_command_builder {
-        return new az_network_private_endpoint_connection_delete_command_builder("az network private-endpoint-connection delete");
+        return new az_network_private_endpoint_connection_delete_command_builder("az network private-endpoint-connection delete", 'az_network_private_endpoint_connection_delete_command_result');
     }
 
     /**
@@ -9658,7 +9658,7 @@ export class az_network_private_endpoint_connection {
      * ```
      */
     static list(): az_network_private_endpoint_connection_list_command_builder {
-        return new az_network_private_endpoint_connection_list_command_builder("az network private-endpoint-connection list");
+        return new az_network_private_endpoint_connection_list_command_builder("az network private-endpoint-connection list", 'az_network_private_endpoint_connection_list_command_result');
     }
 
     /**
@@ -9676,7 +9676,7 @@ export class az_network_private_endpoint_connection {
      * ```
      */
     static reject(): az_network_private_endpoint_connection_reject_command_builder {
-        return new az_network_private_endpoint_connection_reject_command_builder("az network private-endpoint-connection reject");
+        return new az_network_private_endpoint_connection_reject_command_builder("az network private-endpoint-connection reject", 'az_network_private_endpoint_connection_reject_command_result');
     }
 
     /**
@@ -9694,7 +9694,7 @@ export class az_network_private_endpoint_connection {
      * ```
      */
     static show(): az_network_private_endpoint_connection_show_command_builder {
-        return new az_network_private_endpoint_connection_show_command_builder("az network private-endpoint-connection show");
+        return new az_network_private_endpoint_connection_show_command_builder("az network private-endpoint-connection show", 'az_network_private_endpoint_connection_show_command_result');
     }
 }
 
@@ -9727,7 +9727,7 @@ export class az_network_private_endpoint {
      * @param {string} subnet Name or ID of an existing subnet. If name specified, also specify --vnet-name. If you want to use an existing subnet in other resource group or subscription, please provide the ID instead of the name of the subnet.
      */
     static create(connectionName: string, name: string, privateConnectionResourceId: string, resourceGroup: string, subnet: string): az_network_private_endpoint_create_command_builder {
-        return new az_network_private_endpoint_create_command_builder("az network private-endpoint create", connectionName, name, privateConnectionResourceId, resourceGroup, subnet);
+        return new az_network_private_endpoint_create_command_builder("az network private-endpoint create", 'az_network_private_endpoint_create_command_result', connectionName, name, privateConnectionResourceId, resourceGroup, subnet);
     }
 
     /**
@@ -9742,7 +9742,7 @@ export class az_network_private_endpoint {
      * ```
      */
     static delete(): az_network_private_endpoint_delete_command_builder {
-        return new az_network_private_endpoint_delete_command_builder("az network private-endpoint delete");
+        return new az_network_private_endpoint_delete_command_builder("az network private-endpoint delete", 'az_network_private_endpoint_delete_command_result');
     }
 
     /**
@@ -9756,7 +9756,7 @@ export class az_network_private_endpoint {
      * ```
      */
     static list(): az_network_private_endpoint_list_command_builder {
-        return new az_network_private_endpoint_list_command_builder("az network private-endpoint list");
+        return new az_network_private_endpoint_list_command_builder("az network private-endpoint list", 'az_network_private_endpoint_list_command_result');
     }
 
     /**
@@ -9771,7 +9771,7 @@ export class az_network_private_endpoint {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list_types(location: string): az_network_private_endpoint_list_types_command_builder {
-        return new az_network_private_endpoint_list_types_command_builder("az network private-endpoint list-types", location);
+        return new az_network_private_endpoint_list_types_command_builder("az network private-endpoint list-types", 'az_network_private_endpoint_list_types_command_result', location);
     }
 
     /**
@@ -9787,7 +9787,7 @@ export class az_network_private_endpoint {
      * ```
      */
     static show(): az_network_private_endpoint_show_command_builder {
-        return new az_network_private_endpoint_show_command_builder("az network private-endpoint show");
+        return new az_network_private_endpoint_show_command_builder("az network private-endpoint show", 'az_network_private_endpoint_show_command_result');
     }
 
     /**
@@ -9808,7 +9808,7 @@ export class az_network_private_endpoint {
      * ```
      */
     static update(): az_network_private_endpoint_update_command_builder {
-        return new az_network_private_endpoint_update_command_builder("az network private-endpoint update");
+        return new az_network_private_endpoint_update_command_builder("az network private-endpoint update", 'az_network_private_endpoint_update_command_result');
     }
 }
 
@@ -9828,7 +9828,7 @@ export class az_network_private_link_resource {
      * ```
      */
     static list(): az_network_private_link_resource_list_command_builder {
-        return new az_network_private_link_resource_list_command_builder("az network private-link-resource list");
+        return new az_network_private_link_resource_list_command_builder("az network private-link-resource list", 'az_network_private_link_resource_list_command_result');
     }
 }
 
@@ -9850,7 +9850,7 @@ export class az_network_private_link_service_connection {
      * @param {string} serviceName Name of the private link service.
      */
     static delete(name: string, resourceGroup: string, serviceName: string): az_network_private_link_service_connection_delete_command_builder {
-        return new az_network_private_link_service_connection_delete_command_builder("az network private-link-service connection delete", name, resourceGroup, serviceName);
+        return new az_network_private_link_service_connection_delete_command_builder("az network private-link-service connection delete", 'az_network_private_link_service_connection_delete_command_result', name, resourceGroup, serviceName);
     }
 
     /**
@@ -9873,7 +9873,7 @@ export class az_network_private_link_service_connection {
      * @param {string} serviceName Name of the private link service.
      */
     static update(connectionStatus: 'Approved' | 'Rejected' | 'Removed', name: string, resourceGroup: string, serviceName: string): az_network_private_link_service_connection_update_command_builder {
-        return new az_network_private_link_service_connection_update_command_builder("az network private-link-service connection update", connectionStatus, name, resourceGroup, serviceName);
+        return new az_network_private_link_service_connection_update_command_builder("az network private-link-service connection update", 'az_network_private_link_service_connection_update_command_result', connectionStatus, name, resourceGroup, serviceName);
     }
 }
 
@@ -9909,7 +9909,7 @@ export class az_network_private_link_service {
      * @param {string} subnet Name or ID of subnet to use. If name provided, also supply `--vnet-name`.
      */
     static create(lbFrontendIpConfigs: string, name: string, resourceGroup: string, subnet: string): az_network_private_link_service_create_command_builder {
-        return new az_network_private_link_service_create_command_builder("az network private-link-service create", lbFrontendIpConfigs, name, resourceGroup, subnet);
+        return new az_network_private_link_service_create_command_builder("az network private-link-service create", 'az_network_private_link_service_create_command_result', lbFrontendIpConfigs, name, resourceGroup, subnet);
     }
 
     /**
@@ -9924,7 +9924,7 @@ export class az_network_private_link_service {
      * ```
      */
     static delete(): az_network_private_link_service_delete_command_builder {
-        return new az_network_private_link_service_delete_command_builder("az network private-link-service delete");
+        return new az_network_private_link_service_delete_command_builder("az network private-link-service delete", 'az_network_private_link_service_delete_command_result');
     }
 
     /**
@@ -9938,7 +9938,7 @@ export class az_network_private_link_service {
      * ```
      */
     static list(): az_network_private_link_service_list_command_builder {
-        return new az_network_private_link_service_list_command_builder("az network private-link-service list");
+        return new az_network_private_link_service_list_command_builder("az network private-link-service list", 'az_network_private_link_service_list_command_result');
     }
 
     /**
@@ -9955,7 +9955,7 @@ export class az_network_private_link_service {
      * ```
      */
     static show(): az_network_private_link_service_show_command_builder {
-        return new az_network_private_link_service_show_command_builder("az network private-link-service show");
+        return new az_network_private_link_service_show_command_builder("az network private-link-service show", 'az_network_private_link_service_show_command_result');
     }
 
     /**
@@ -9981,7 +9981,7 @@ export class az_network_private_link_service {
      * ```
      */
     static update(): az_network_private_link_service_update_command_builder {
-        return new az_network_private_link_service_update_command_builder("az network private-link-service update");
+        return new az_network_private_link_service_update_command_builder("az network private-link-service update", 'az_network_private_link_service_update_command_result');
     }
 }
 
@@ -10000,7 +10000,7 @@ export class az_network_profile {
      * ```
      */
     static delete(): az_network_profile_delete_command_builder {
-        return new az_network_profile_delete_command_builder("az network profile delete");
+        return new az_network_profile_delete_command_builder("az network profile delete", 'az_network_profile_delete_command_result');
     }
 
     /**
@@ -10014,7 +10014,7 @@ export class az_network_profile {
      * ```
      */
     static list(): az_network_profile_list_command_builder {
-        return new az_network_profile_list_command_builder("az network profile list");
+        return new az_network_profile_list_command_builder("az network profile list", 'az_network_profile_list_command_result');
     }
 
     /**
@@ -10031,7 +10031,7 @@ export class az_network_profile {
      * ```
      */
     static show(): az_network_profile_show_command_builder {
-        return new az_network_profile_show_command_builder("az network profile show");
+        return new az_network_profile_show_command_builder("az network profile show", 'az_network_profile_show_command_result');
     }
 }
 
@@ -10057,7 +10057,7 @@ export class az_network_public_ip_prefix {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(length: string, name: string, resourceGroup: string): az_network_public_ip_prefix_create_command_builder {
-        return new az_network_public_ip_prefix_create_command_builder("az network public-ip prefix create", length, name, resourceGroup);
+        return new az_network_public_ip_prefix_create_command_builder("az network public-ip prefix create", 'az_network_public_ip_prefix_create_command_result', length, name, resourceGroup);
     }
 
     /**
@@ -10072,7 +10072,7 @@ export class az_network_public_ip_prefix {
      * ```
      */
     static delete(): az_network_public_ip_prefix_delete_command_builder {
-        return new az_network_public_ip_prefix_delete_command_builder("az network public-ip prefix delete");
+        return new az_network_public_ip_prefix_delete_command_builder("az network public-ip prefix delete", 'az_network_public_ip_prefix_delete_command_result');
     }
 
     /**
@@ -10086,7 +10086,7 @@ export class az_network_public_ip_prefix {
      * ```
      */
     static list(): az_network_public_ip_prefix_list_command_builder {
-        return new az_network_public_ip_prefix_list_command_builder("az network public-ip prefix list");
+        return new az_network_public_ip_prefix_list_command_builder("az network public-ip prefix list", 'az_network_public_ip_prefix_list_command_result');
     }
 
     /**
@@ -10103,7 +10103,7 @@ export class az_network_public_ip_prefix {
      * ```
      */
     static show(): az_network_public_ip_prefix_show_command_builder {
-        return new az_network_public_ip_prefix_show_command_builder("az network public-ip prefix show");
+        return new az_network_public_ip_prefix_show_command_builder("az network public-ip prefix show", 'az_network_public_ip_prefix_show_command_result');
     }
 
     /**
@@ -10123,7 +10123,7 @@ export class az_network_public_ip_prefix {
      * ```
      */
     static update(): az_network_public_ip_prefix_update_command_builder {
-        return new az_network_public_ip_prefix_update_command_builder("az network public-ip prefix update");
+        return new az_network_public_ip_prefix_update_command_builder("az network public-ip prefix update", 'az_network_public_ip_prefix_update_command_result');
     }
 }
 
@@ -10154,7 +10154,7 @@ export class az_network_public_ip {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_network_public_ip_create_command_builder {
-        return new az_network_public_ip_create_command_builder("az network public-ip create", name, resourceGroup);
+        return new az_network_public_ip_create_command_builder("az network public-ip create", 'az_network_public_ip_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -10169,7 +10169,7 @@ export class az_network_public_ip {
      * ```
      */
     static delete(): az_network_public_ip_delete_command_builder {
-        return new az_network_public_ip_delete_command_builder("az network public-ip delete");
+        return new az_network_public_ip_delete_command_builder("az network public-ip delete", 'az_network_public_ip_delete_command_result');
     }
 
     /**
@@ -10183,7 +10183,7 @@ export class az_network_public_ip {
      * ```
      */
     static list(): az_network_public_ip_list_command_builder {
-        return new az_network_public_ip_list_command_builder("az network public-ip list");
+        return new az_network_public_ip_list_command_builder("az network public-ip list", 'az_network_public_ip_list_command_result');
     }
 
     /**
@@ -10200,7 +10200,7 @@ export class az_network_public_ip {
      * ```
      */
     static show(): az_network_public_ip_show_command_builder {
-        return new az_network_public_ip_show_command_builder("az network public-ip show");
+        return new az_network_public_ip_show_command_builder("az network public-ip show", 'az_network_public_ip_show_command_result');
     }
 
     /**
@@ -10228,7 +10228,7 @@ export class az_network_public_ip {
      * ```
      */
     static update(): az_network_public_ip_update_command_builder {
-        return new az_network_public_ip_update_command_builder("az network public-ip update");
+        return new az_network_public_ip_update_command_builder("az network public-ip update", 'az_network_public_ip_update_command_result');
     }
 }
 
@@ -10255,7 +10255,7 @@ export class az_network_route_filter_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(access: 'Allow' | 'Deny', communities: string, filterName: string, name: string, resourceGroup: string): az_network_route_filter_rule_create_command_builder {
-        return new az_network_route_filter_rule_create_command_builder("az network route-filter rule create", access, communities, filterName, name, resourceGroup);
+        return new az_network_route_filter_rule_create_command_builder("az network route-filter rule create", 'az_network_route_filter_rule_create_command_result', access, communities, filterName, name, resourceGroup);
     }
 
     /**
@@ -10271,7 +10271,7 @@ export class az_network_route_filter_rule {
      * ```
      */
     static delete(): az_network_route_filter_rule_delete_command_builder {
-        return new az_network_route_filter_rule_delete_command_builder("az network route-filter rule delete");
+        return new az_network_route_filter_rule_delete_command_builder("az network route-filter rule delete", 'az_network_route_filter_rule_delete_command_result');
     }
 
     /**
@@ -10289,7 +10289,7 @@ export class az_network_route_filter_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(filterName: string, resourceGroup: string): az_network_route_filter_rule_list_command_builder {
-        return new az_network_route_filter_rule_list_command_builder("az network route-filter rule list", filterName, resourceGroup);
+        return new az_network_route_filter_rule_list_command_builder("az network route-filter rule list", 'az_network_route_filter_rule_list_command_result', filterName, resourceGroup);
     }
 
     /**
@@ -10301,7 +10301,7 @@ export class az_network_route_filter_rule {
      * ```
      */
     static list_service_communities(): az_network_route_filter_rule_list_service_communities_command_builder {
-        return new az_network_route_filter_rule_list_service_communities_command_builder("az network route-filter rule list-service-communities");
+        return new az_network_route_filter_rule_list_service_communities_command_builder("az network route-filter rule list-service-communities", 'az_network_route_filter_rule_list_service_communities_command_result');
     }
 
     /**
@@ -10318,7 +10318,7 @@ export class az_network_route_filter_rule {
      * ```
      */
     static show(): az_network_route_filter_rule_show_command_builder {
-        return new az_network_route_filter_rule_show_command_builder("az network route-filter rule show");
+        return new az_network_route_filter_rule_show_command_builder("az network route-filter rule show", 'az_network_route_filter_rule_show_command_result');
     }
 
     /**
@@ -10338,7 +10338,7 @@ export class az_network_route_filter_rule {
      * ```
      */
     static update(): az_network_route_filter_rule_update_command_builder {
-        return new az_network_route_filter_rule_update_command_builder("az network route-filter rule update");
+        return new az_network_route_filter_rule_update_command_builder("az network route-filter rule update", 'az_network_route_filter_rule_update_command_result');
     }
 }
 
@@ -10360,7 +10360,7 @@ export class az_network_route_filter {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_network_route_filter_create_command_builder {
-        return new az_network_route_filter_create_command_builder("az network route-filter create", name, resourceGroup);
+        return new az_network_route_filter_create_command_builder("az network route-filter create", 'az_network_route_filter_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -10377,7 +10377,7 @@ export class az_network_route_filter {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_network_route_filter_delete_command_builder {
-        return new az_network_route_filter_delete_command_builder("az network route-filter delete", name, resourceGroup);
+        return new az_network_route_filter_delete_command_builder("az network route-filter delete", 'az_network_route_filter_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -10391,7 +10391,7 @@ export class az_network_route_filter {
      * ```
      */
     static list(): az_network_route_filter_list_command_builder {
-        return new az_network_route_filter_list_command_builder("az network route-filter list");
+        return new az_network_route_filter_list_command_builder("az network route-filter list", 'az_network_route_filter_list_command_result');
     }
 
     /**
@@ -10410,7 +10410,7 @@ export class az_network_route_filter {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_network_route_filter_show_command_builder {
-        return new az_network_route_filter_show_command_builder("az network route-filter show", name, resourceGroup);
+        return new az_network_route_filter_show_command_builder("az network route-filter show", 'az_network_route_filter_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -10431,7 +10431,7 @@ export class az_network_route_filter {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, resourceGroup: string): az_network_route_filter_update_command_builder {
-        return new az_network_route_filter_update_command_builder("az network route-filter update", name, resourceGroup);
+        return new az_network_route_filter_update_command_builder("az network route-filter update", 'az_network_route_filter_update_command_result', name, resourceGroup);
     }
 }
 
@@ -10458,7 +10458,7 @@ export class az_network_route_table_route {
      * @param {string} routeTableName Route table name.
      */
     static create(addressPrefix: string, name: string, nextHopType: 'Internet' | 'None' | 'VirtualAppliance' | 'VirtualNetworkGateway' | 'VnetLocal', resourceGroup: string, routeTableName: string): az_network_route_table_route_create_command_builder {
-        return new az_network_route_table_route_create_command_builder("az network route-table route create", addressPrefix, name, nextHopType, resourceGroup, routeTableName);
+        return new az_network_route_table_route_create_command_builder("az network route-table route create", 'az_network_route_table_route_create_command_result', addressPrefix, name, nextHopType, resourceGroup, routeTableName);
     }
 
     /**
@@ -10474,7 +10474,7 @@ export class az_network_route_table_route {
      * ```
      */
     static delete(): az_network_route_table_route_delete_command_builder {
-        return new az_network_route_table_route_delete_command_builder("az network route-table route delete");
+        return new az_network_route_table_route_delete_command_builder("az network route-table route delete", 'az_network_route_table_route_delete_command_result');
     }
 
     /**
@@ -10492,7 +10492,7 @@ export class az_network_route_table_route {
      * @param {string} routeTableName Route table name.
      */
     static list(resourceGroup: string, routeTableName: string): az_network_route_table_route_list_command_builder {
-        return new az_network_route_table_route_list_command_builder("az network route-table route list", resourceGroup, routeTableName);
+        return new az_network_route_table_route_list_command_builder("az network route-table route list", 'az_network_route_table_route_list_command_result', resourceGroup, routeTableName);
     }
 
     /**
@@ -10509,7 +10509,7 @@ export class az_network_route_table_route {
      * ```
      */
     static show(): az_network_route_table_route_show_command_builder {
-        return new az_network_route_table_route_show_command_builder("az network route-table route show");
+        return new az_network_route_table_route_show_command_builder("az network route-table route show", 'az_network_route_table_route_show_command_result');
     }
 
     /**
@@ -10532,7 +10532,7 @@ export class az_network_route_table_route {
      * ```
      */
     static update(): az_network_route_table_route_update_command_builder {
-        return new az_network_route_table_route_update_command_builder("az network route-table route update");
+        return new az_network_route_table_route_update_command_builder("az network route-table route update", 'az_network_route_table_route_update_command_result');
     }
 }
 
@@ -10555,7 +10555,7 @@ export class az_network_route_table {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_network_route_table_create_command_builder {
-        return new az_network_route_table_create_command_builder("az network route-table create", name, resourceGroup);
+        return new az_network_route_table_create_command_builder("az network route-table create", 'az_network_route_table_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -10570,7 +10570,7 @@ export class az_network_route_table {
      * ```
      */
     static delete(): az_network_route_table_delete_command_builder {
-        return new az_network_route_table_delete_command_builder("az network route-table delete");
+        return new az_network_route_table_delete_command_builder("az network route-table delete", 'az_network_route_table_delete_command_result');
     }
 
     /**
@@ -10584,7 +10584,7 @@ export class az_network_route_table {
      * ```
      */
     static list(): az_network_route_table_list_command_builder {
-        return new az_network_route_table_list_command_builder("az network route-table list");
+        return new az_network_route_table_list_command_builder("az network route-table list", 'az_network_route_table_list_command_result');
     }
 
     /**
@@ -10601,7 +10601,7 @@ export class az_network_route_table {
      * ```
      */
     static show(): az_network_route_table_show_command_builder {
-        return new az_network_route_table_show_command_builder("az network route-table show");
+        return new az_network_route_table_show_command_builder("az network route-table show", 'az_network_route_table_show_command_result');
     }
 
     /**
@@ -10622,7 +10622,7 @@ export class az_network_route_table {
      * ```
      */
     static update(): az_network_route_table_update_command_builder {
-        return new az_network_route_table_update_command_builder("az network route-table update");
+        return new az_network_route_table_update_command_builder("az network route-table update", 'az_network_route_table_update_command_result');
     }
 }
 
@@ -10648,7 +10648,7 @@ export class az_network_security_partner_provider {
      * @param {string} vhub Name or ID of the virtual hub to which the Security Partner Provider belongs.
      */
     static create(name: string, provider: 'Checkpoint' | 'IBoss' | 'ZScaler', resourceGroup: string, vhub: string): az_network_security_partner_provider_create_command_builder {
-        return new az_network_security_partner_provider_create_command_builder("az network security-partner-provider create", name, provider, resourceGroup, vhub);
+        return new az_network_security_partner_provider_create_command_builder("az network security-partner-provider create", 'az_network_security_partner_provider_create_command_result', name, provider, resourceGroup, vhub);
     }
 
     /**
@@ -10665,7 +10665,7 @@ export class az_network_security_partner_provider {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_network_security_partner_provider_delete_command_builder {
-        return new az_network_security_partner_provider_delete_command_builder("az network security-partner-provider delete", name, resourceGroup);
+        return new az_network_security_partner_provider_delete_command_builder("az network security-partner-provider delete", 'az_network_security_partner_provider_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -10679,7 +10679,7 @@ export class az_network_security_partner_provider {
      * ```
      */
     static list(): az_network_security_partner_provider_list_command_builder {
-        return new az_network_security_partner_provider_list_command_builder("az network security-partner-provider list");
+        return new az_network_security_partner_provider_list_command_builder("az network security-partner-provider list", 'az_network_security_partner_provider_list_command_result');
     }
 
     /**
@@ -10697,7 +10697,7 @@ export class az_network_security_partner_provider {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_network_security_partner_provider_show_command_builder {
-        return new az_network_security_partner_provider_show_command_builder("az network security-partner-provider show", name, resourceGroup);
+        return new az_network_security_partner_provider_show_command_builder("az network security-partner-provider show", 'az_network_security_partner_provider_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -10721,7 +10721,7 @@ export class az_network_security_partner_provider {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, resourceGroup: string): az_network_security_partner_provider_update_command_builder {
-        return new az_network_security_partner_provider_update_command_builder("az network security-partner-provider update", name, resourceGroup);
+        return new az_network_security_partner_provider_update_command_builder("az network security-partner-provider update", 'az_network_security_partner_provider_update_command_result', name, resourceGroup);
     }
 }
 
@@ -10748,7 +10748,7 @@ export class az_network_service_endpoint_policy_definition {
      * @param {string} serviceResources Space-separated list of service resources the definition applies to.
      */
     static create(name: string, policyName: string, resourceGroup: string, service: string, serviceResources: string): az_network_service_endpoint_policy_definition_create_command_builder {
-        return new az_network_service_endpoint_policy_definition_create_command_builder("az network service-endpoint policy-definition create", name, policyName, resourceGroup, service, serviceResources);
+        return new az_network_service_endpoint_policy_definition_create_command_builder("az network service-endpoint policy-definition create", 'az_network_service_endpoint_policy_definition_create_command_result', name, policyName, resourceGroup, service, serviceResources);
     }
 
     /**
@@ -10764,7 +10764,7 @@ export class az_network_service_endpoint_policy_definition {
      * ```
      */
     static delete(): az_network_service_endpoint_policy_definition_delete_command_builder {
-        return new az_network_service_endpoint_policy_definition_delete_command_builder("az network service-endpoint policy-definition delete");
+        return new az_network_service_endpoint_policy_definition_delete_command_builder("az network service-endpoint policy-definition delete", 'az_network_service_endpoint_policy_definition_delete_command_result');
     }
 
     /**
@@ -10782,7 +10782,7 @@ export class az_network_service_endpoint_policy_definition {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(policyName: string, resourceGroup: string): az_network_service_endpoint_policy_definition_list_command_builder {
-        return new az_network_service_endpoint_policy_definition_list_command_builder("az network service-endpoint policy-definition list", policyName, resourceGroup);
+        return new az_network_service_endpoint_policy_definition_list_command_builder("az network service-endpoint policy-definition list", 'az_network_service_endpoint_policy_definition_list_command_result', policyName, resourceGroup);
     }
 
     /**
@@ -10799,7 +10799,7 @@ export class az_network_service_endpoint_policy_definition {
      * ```
      */
     static show(): az_network_service_endpoint_policy_definition_show_command_builder {
-        return new az_network_service_endpoint_policy_definition_show_command_builder("az network service-endpoint policy-definition show");
+        return new az_network_service_endpoint_policy_definition_show_command_builder("az network service-endpoint policy-definition show", 'az_network_service_endpoint_policy_definition_show_command_result');
     }
 
     /**
@@ -10822,7 +10822,7 @@ export class az_network_service_endpoint_policy_definition {
      * ```
      */
     static update(): az_network_service_endpoint_policy_definition_update_command_builder {
-        return new az_network_service_endpoint_policy_definition_update_command_builder("az network service-endpoint policy-definition update");
+        return new az_network_service_endpoint_policy_definition_update_command_builder("az network service-endpoint policy-definition update", 'az_network_service_endpoint_policy_definition_update_command_result');
     }
 }
 
@@ -10844,7 +10844,7 @@ export class az_network_service_endpoint_policy {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_network_service_endpoint_policy_create_command_builder {
-        return new az_network_service_endpoint_policy_create_command_builder("az network service-endpoint policy create", name, resourceGroup);
+        return new az_network_service_endpoint_policy_create_command_builder("az network service-endpoint policy create", 'az_network_service_endpoint_policy_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -10859,7 +10859,7 @@ export class az_network_service_endpoint_policy {
      * ```
      */
     static delete(): az_network_service_endpoint_policy_delete_command_builder {
-        return new az_network_service_endpoint_policy_delete_command_builder("az network service-endpoint policy delete");
+        return new az_network_service_endpoint_policy_delete_command_builder("az network service-endpoint policy delete", 'az_network_service_endpoint_policy_delete_command_result');
     }
 
     /**
@@ -10873,7 +10873,7 @@ export class az_network_service_endpoint_policy {
      * ```
      */
     static list(): az_network_service_endpoint_policy_list_command_builder {
-        return new az_network_service_endpoint_policy_list_command_builder("az network service-endpoint policy list");
+        return new az_network_service_endpoint_policy_list_command_builder("az network service-endpoint policy list", 'az_network_service_endpoint_policy_list_command_result');
     }
 
     /**
@@ -10889,7 +10889,7 @@ export class az_network_service_endpoint_policy {
      * ```
      */
     static show(): az_network_service_endpoint_policy_show_command_builder {
-        return new az_network_service_endpoint_policy_show_command_builder("az network service-endpoint policy show");
+        return new az_network_service_endpoint_policy_show_command_builder("az network service-endpoint policy show", 'az_network_service_endpoint_policy_show_command_result');
     }
 
     /**
@@ -10909,7 +10909,7 @@ export class az_network_service_endpoint_policy {
      * ```
      */
     static update(): az_network_service_endpoint_policy_update_command_builder {
-        return new az_network_service_endpoint_policy_update_command_builder("az network service-endpoint policy update");
+        return new az_network_service_endpoint_policy_update_command_builder("az network service-endpoint policy update", 'az_network_service_endpoint_policy_update_command_result');
     }
 }
 
@@ -10928,7 +10928,7 @@ export class az_network_service_endpoint {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list(location: string): az_network_service_endpoint_list_command_builder {
-        return new az_network_service_endpoint_list_command_builder("az network service-endpoint list", location);
+        return new az_network_service_endpoint_list_command_builder("az network service-endpoint list", 'az_network_service_endpoint_list_command_result', location);
     }
 }
 
@@ -10963,7 +10963,7 @@ export class az_network_traffic_manager_endpoint {
      * @param {'azureEndpoints' | 'externalEndpoints' | 'nestedEndpoints'} type Endpoint type.
      */
     static create(name: string, profileName: string, resourceGroup: string, type: 'azureEndpoints' | 'externalEndpoints' | 'nestedEndpoints'): az_network_traffic_manager_endpoint_create_command_builder {
-        return new az_network_traffic_manager_endpoint_create_command_builder("az network traffic-manager endpoint create", name, profileName, resourceGroup, type);
+        return new az_network_traffic_manager_endpoint_create_command_builder("az network traffic-manager endpoint create", 'az_network_traffic_manager_endpoint_create_command_result', name, profileName, resourceGroup, type);
     }
 
     /**
@@ -10980,7 +10980,7 @@ export class az_network_traffic_manager_endpoint {
      * ```
      */
     static delete(): az_network_traffic_manager_endpoint_delete_command_builder {
-        return new az_network_traffic_manager_endpoint_delete_command_builder("az network traffic-manager endpoint delete");
+        return new az_network_traffic_manager_endpoint_delete_command_builder("az network traffic-manager endpoint delete", 'az_network_traffic_manager_endpoint_delete_command_result');
     }
 
     /**
@@ -10999,7 +10999,7 @@ export class az_network_traffic_manager_endpoint {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(profileName: string, resourceGroup: string): az_network_traffic_manager_endpoint_list_command_builder {
-        return new az_network_traffic_manager_endpoint_list_command_builder("az network traffic-manager endpoint list", profileName, resourceGroup);
+        return new az_network_traffic_manager_endpoint_list_command_builder("az network traffic-manager endpoint list", 'az_network_traffic_manager_endpoint_list_command_result', profileName, resourceGroup);
     }
 
     /**
@@ -11017,7 +11017,7 @@ export class az_network_traffic_manager_endpoint {
      * ```
      */
     static show(): az_network_traffic_manager_endpoint_show_command_builder {
-        return new az_network_traffic_manager_endpoint_show_command_builder("az network traffic-manager endpoint show");
+        return new az_network_traffic_manager_endpoint_show_command_builder("az network traffic-manager endpoint show", 'az_network_traffic_manager_endpoint_show_command_result');
     }
 
     /**
@@ -11029,7 +11029,7 @@ export class az_network_traffic_manager_endpoint {
      * ```
      */
     static show_geographic_hierarchy(): az_network_traffic_manager_endpoint_show_geographic_hierarchy_command_builder {
-        return new az_network_traffic_manager_endpoint_show_geographic_hierarchy_command_builder("az network traffic-manager endpoint show-geographic-hierarchy");
+        return new az_network_traffic_manager_endpoint_show_geographic_hierarchy_command_builder("az network traffic-manager endpoint show-geographic-hierarchy", 'az_network_traffic_manager_endpoint_show_geographic_hierarchy_command_result');
     }
 
     /**
@@ -11061,7 +11061,7 @@ export class az_network_traffic_manager_endpoint {
      * ```
      */
     static update(): az_network_traffic_manager_endpoint_update_command_builder {
-        return new az_network_traffic_manager_endpoint_update_command_builder("az network traffic-manager endpoint update");
+        return new az_network_traffic_manager_endpoint_update_command_builder("az network traffic-manager endpoint update", 'az_network_traffic_manager_endpoint_update_command_result');
     }
 }
 
@@ -11079,7 +11079,7 @@ export class az_network_traffic_manager_profile {
      * @param {string} name DNS prefix to verify availability for.
      */
     static check_dns(name: string): az_network_traffic_manager_profile_check_dns_command_builder {
-        return new az_network_traffic_manager_profile_check_dns_command_builder("az network traffic-manager profile check-dns", name);
+        return new az_network_traffic_manager_profile_check_dns_command_builder("az network traffic-manager profile check-dns", 'az_network_traffic_manager_profile_check_dns_command_result', name);
     }
 
     /**
@@ -11111,7 +11111,7 @@ export class az_network_traffic_manager_profile {
      * @param {string} uniqueDnsName Relative DNS name for the traffic manager profile. Resulting FQDN will be `<unique-dns-name>.trafficmanager.net` and must be globally unique.
      */
     static create(name: string, resourceGroup: string, routingMethod: 'Geographic' | 'Multivalue' | 'Performance' | 'Priority' | 'Subnet' | 'Weighted', uniqueDnsName: string): az_network_traffic_manager_profile_create_command_builder {
-        return new az_network_traffic_manager_profile_create_command_builder("az network traffic-manager profile create", name, resourceGroup, routingMethod, uniqueDnsName);
+        return new az_network_traffic_manager_profile_create_command_builder("az network traffic-manager profile create", 'az_network_traffic_manager_profile_create_command_result', name, resourceGroup, routingMethod, uniqueDnsName);
     }
 
     /**
@@ -11126,7 +11126,7 @@ export class az_network_traffic_manager_profile {
      * ```
      */
     static delete(): az_network_traffic_manager_profile_delete_command_builder {
-        return new az_network_traffic_manager_profile_delete_command_builder("az network traffic-manager profile delete");
+        return new az_network_traffic_manager_profile_delete_command_builder("az network traffic-manager profile delete", 'az_network_traffic_manager_profile_delete_command_result');
     }
 
     /**
@@ -11140,7 +11140,7 @@ export class az_network_traffic_manager_profile {
      * ```
      */
     static list(): az_network_traffic_manager_profile_list_command_builder {
-        return new az_network_traffic_manager_profile_list_command_builder("az network traffic-manager profile list");
+        return new az_network_traffic_manager_profile_list_command_builder("az network traffic-manager profile list", 'az_network_traffic_manager_profile_list_command_result');
     }
 
     /**
@@ -11156,7 +11156,7 @@ export class az_network_traffic_manager_profile {
      * ```
      */
     static show(): az_network_traffic_manager_profile_show_command_builder {
-        return new az_network_traffic_manager_profile_show_command_builder("az network traffic-manager profile show");
+        return new az_network_traffic_manager_profile_show_command_builder("az network traffic-manager profile show", 'az_network_traffic_manager_profile_show_command_result');
     }
 
     /**
@@ -11187,7 +11187,7 @@ export class az_network_traffic_manager_profile {
      * ```
      */
     static update(): az_network_traffic_manager_profile_update_command_builder {
-        return new az_network_traffic_manager_profile_update_command_builder("az network traffic-manager profile update");
+        return new az_network_traffic_manager_profile_update_command_builder("az network traffic-manager profile update", 'az_network_traffic_manager_profile_update_command_result');
     }
 }
 
@@ -11218,7 +11218,7 @@ export class az_network_virtual_appliance_site {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(addressPrefix: string, applianceName: string, name: string, resourceGroup: string): az_network_virtual_appliance_site_create_command_builder {
-        return new az_network_virtual_appliance_site_create_command_builder("az network virtual-appliance site create", addressPrefix, applianceName, name, resourceGroup);
+        return new az_network_virtual_appliance_site_create_command_builder("az network virtual-appliance site create", 'az_network_virtual_appliance_site_create_command_result', addressPrefix, applianceName, name, resourceGroup);
     }
 
     /**
@@ -11238,7 +11238,7 @@ export class az_network_virtual_appliance_site {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(applianceName: string, name: string, resourceGroup: string): az_network_virtual_appliance_site_delete_command_builder {
-        return new az_network_virtual_appliance_site_delete_command_builder("az network virtual-appliance site delete", applianceName, name, resourceGroup);
+        return new az_network_virtual_appliance_site_delete_command_builder("az network virtual-appliance site delete", 'az_network_virtual_appliance_site_delete_command_result', applianceName, name, resourceGroup);
     }
 
     /**
@@ -11256,7 +11256,7 @@ export class az_network_virtual_appliance_site {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(applianceName: string, resourceGroup: string): az_network_virtual_appliance_site_list_command_builder {
-        return new az_network_virtual_appliance_site_list_command_builder("az network virtual-appliance site list", applianceName, resourceGroup);
+        return new az_network_virtual_appliance_site_list_command_builder("az network virtual-appliance site list", 'az_network_virtual_appliance_site_list_command_result', applianceName, resourceGroup);
     }
 
     /**
@@ -11276,7 +11276,7 @@ export class az_network_virtual_appliance_site {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(applianceName: string, name: string, resourceGroup: string): az_network_virtual_appliance_site_show_command_builder {
-        return new az_network_virtual_appliance_site_show_command_builder("az network virtual-appliance site show", applianceName, name, resourceGroup);
+        return new az_network_virtual_appliance_site_show_command_builder("az network virtual-appliance site show", 'az_network_virtual_appliance_site_show_command_result', applianceName, name, resourceGroup);
     }
 
     /**
@@ -11304,7 +11304,7 @@ export class az_network_virtual_appliance_site {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(addressPrefix: string, applianceName: string, name: string, resourceGroup: string): az_network_virtual_appliance_site_update_command_builder {
-        return new az_network_virtual_appliance_site_update_command_builder("az network virtual-appliance site update", addressPrefix, applianceName, name, resourceGroup);
+        return new az_network_virtual_appliance_site_update_command_builder("az network virtual-appliance site update", 'az_network_virtual_appliance_site_update_command_result', addressPrefix, applianceName, name, resourceGroup);
     }
 }
 
@@ -11320,7 +11320,7 @@ export class az_network_virtual_appliance_sku {
      * ```
      */
     static list(): az_network_virtual_appliance_sku_list_command_builder {
-        return new az_network_virtual_appliance_sku_list_command_builder("az network virtual-appliance sku list");
+        return new az_network_virtual_appliance_sku_list_command_builder("az network virtual-appliance sku list", 'az_network_virtual_appliance_sku_list_command_result');
     }
 
     /**
@@ -11336,7 +11336,7 @@ export class az_network_virtual_appliance_sku {
      * @param {string} name The name of Network Virtual Appliance SKU.
      */
     static show(name: string): az_network_virtual_appliance_sku_show_command_builder {
-        return new az_network_virtual_appliance_sku_show_command_builder("az network virtual-appliance sku show", name);
+        return new az_network_virtual_appliance_sku_show_command_builder("az network virtual-appliance sku show", 'az_network_virtual_appliance_sku_show_command_result', name);
     }
 }
 
@@ -11370,7 +11370,7 @@ export class az_network_virtual_appliance {
      * @param {string} vhub Name or ID of the virtual hub to which the Security Partner Provider belongs.
      */
     static create(name: string, resourceGroup: string, scaleUnit: string, vendor: string, version: string, vhub: string): az_network_virtual_appliance_create_command_builder {
-        return new az_network_virtual_appliance_create_command_builder("az network virtual-appliance create", name, resourceGroup, scaleUnit, vendor, version, vhub);
+        return new az_network_virtual_appliance_create_command_builder("az network virtual-appliance create", 'az_network_virtual_appliance_create_command_result', name, resourceGroup, scaleUnit, vendor, version, vhub);
     }
 
     /**
@@ -11388,7 +11388,7 @@ export class az_network_virtual_appliance {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_network_virtual_appliance_delete_command_builder {
-        return new az_network_virtual_appliance_delete_command_builder("az network virtual-appliance delete", name, resourceGroup);
+        return new az_network_virtual_appliance_delete_command_builder("az network virtual-appliance delete", 'az_network_virtual_appliance_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -11402,7 +11402,7 @@ export class az_network_virtual_appliance {
      * ```
      */
     static list(): az_network_virtual_appliance_list_command_builder {
-        return new az_network_virtual_appliance_list_command_builder("az network virtual-appliance list");
+        return new az_network_virtual_appliance_list_command_builder("az network virtual-appliance list", 'az_network_virtual_appliance_list_command_result');
     }
 
     /**
@@ -11421,7 +11421,7 @@ export class az_network_virtual_appliance {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_network_virtual_appliance_show_command_builder {
-        return new az_network_virtual_appliance_show_command_builder("az network virtual-appliance show", name, resourceGroup);
+        return new az_network_virtual_appliance_show_command_builder("az network virtual-appliance show", 'az_network_virtual_appliance_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -11444,7 +11444,7 @@ export class az_network_virtual_appliance {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, resourceGroup: string): az_network_virtual_appliance_update_command_builder {
-        return new az_network_virtual_appliance_update_command_builder("az network virtual-appliance update", name, resourceGroup);
+        return new az_network_virtual_appliance_update_command_builder("az network virtual-appliance update", 'az_network_virtual_appliance_update_command_result', name, resourceGroup);
     }
 }
 
@@ -11472,7 +11472,7 @@ export class az_network_vnet_peering {
      * @param {string} vnetName The virtual network (VNet) name.
      */
     static create(name: string, remoteVnet: string, resourceGroup: string, vnetName: string): az_network_vnet_peering_create_command_builder {
-        return new az_network_vnet_peering_create_command_builder("az network vnet peering create", name, remoteVnet, resourceGroup, vnetName);
+        return new az_network_vnet_peering_create_command_builder("az network vnet peering create", 'az_network_vnet_peering_create_command_result', name, remoteVnet, resourceGroup, vnetName);
     }
 
     /**
@@ -11488,7 +11488,7 @@ export class az_network_vnet_peering {
      * ```
      */
     static delete(): az_network_vnet_peering_delete_command_builder {
-        return new az_network_vnet_peering_delete_command_builder("az network vnet peering delete");
+        return new az_network_vnet_peering_delete_command_builder("az network vnet peering delete", 'az_network_vnet_peering_delete_command_result');
     }
 
     /**
@@ -11506,7 +11506,7 @@ export class az_network_vnet_peering {
      * @param {string} vnetName The virtual network (VNet) name.
      */
     static list(resourceGroup: string, vnetName: string): az_network_vnet_peering_list_command_builder {
-        return new az_network_vnet_peering_list_command_builder("az network vnet peering list", resourceGroup, vnetName);
+        return new az_network_vnet_peering_list_command_builder("az network vnet peering list", 'az_network_vnet_peering_list_command_result', resourceGroup, vnetName);
     }
 
     /**
@@ -11523,7 +11523,7 @@ export class az_network_vnet_peering {
      * ```
      */
     static show(): az_network_vnet_peering_show_command_builder {
-        return new az_network_vnet_peering_show_command_builder("az network vnet peering show");
+        return new az_network_vnet_peering_show_command_builder("az network vnet peering show", 'az_network_vnet_peering_show_command_result');
     }
 
     /**
@@ -11543,7 +11543,7 @@ export class az_network_vnet_peering {
      * ```
      */
     static update(): az_network_vnet_peering_update_command_builder {
-        return new az_network_vnet_peering_update_command_builder("az network vnet peering update");
+        return new az_network_vnet_peering_update_command_builder("az network vnet peering update", 'az_network_vnet_peering_update_command_result');
     }
 }
 
@@ -11576,7 +11576,7 @@ export class az_network_vnet_subnet {
      * @param {string} vnetName The virtual network (VNet) name.
      */
     static create(addressPrefixes: string, name: string, resourceGroup: string, vnetName: string): az_network_vnet_subnet_create_command_builder {
-        return new az_network_vnet_subnet_create_command_builder("az network vnet subnet create", addressPrefixes, name, resourceGroup, vnetName);
+        return new az_network_vnet_subnet_create_command_builder("az network vnet subnet create", 'az_network_vnet_subnet_create_command_result', addressPrefixes, name, resourceGroup, vnetName);
     }
 
     /**
@@ -11592,7 +11592,7 @@ export class az_network_vnet_subnet {
      * ```
      */
     static delete(): az_network_vnet_subnet_delete_command_builder {
-        return new az_network_vnet_subnet_delete_command_builder("az network vnet subnet delete");
+        return new az_network_vnet_subnet_delete_command_builder("az network vnet subnet delete", 'az_network_vnet_subnet_delete_command_result');
     }
 
     /**
@@ -11610,7 +11610,7 @@ export class az_network_vnet_subnet {
      * @param {string} vnetName The virtual network (VNet) name.
      */
     static list(resourceGroup: string, vnetName: string): az_network_vnet_subnet_list_command_builder {
-        return new az_network_vnet_subnet_list_command_builder("az network vnet subnet list", resourceGroup, vnetName);
+        return new az_network_vnet_subnet_list_command_builder("az network vnet subnet list", 'az_network_vnet_subnet_list_command_result', resourceGroup, vnetName);
     }
 
     /**
@@ -11624,7 +11624,7 @@ export class az_network_vnet_subnet {
      * ```
      */
     static list_available_delegations(): az_network_vnet_subnet_list_available_delegations_command_builder {
-        return new az_network_vnet_subnet_list_available_delegations_command_builder("az network vnet subnet list-available-delegations");
+        return new az_network_vnet_subnet_list_available_delegations_command_builder("az network vnet subnet list-available-delegations", 'az_network_vnet_subnet_list_available_delegations_command_result');
     }
 
     /**
@@ -11642,7 +11642,7 @@ export class az_network_vnet_subnet {
      * ```
      */
     static show(): az_network_vnet_subnet_show_command_builder {
-        return new az_network_vnet_subnet_show_command_builder("az network vnet subnet show");
+        return new az_network_vnet_subnet_show_command_builder("az network vnet subnet show", 'az_network_vnet_subnet_show_command_result');
     }
 
     /**
@@ -11671,7 +11671,7 @@ export class az_network_vnet_subnet {
      * ```
      */
     static update(): az_network_vnet_subnet_update_command_builder {
-        return new az_network_vnet_subnet_update_command_builder("az network vnet subnet update");
+        return new az_network_vnet_subnet_update_command_builder("az network vnet subnet update", 'az_network_vnet_subnet_update_command_result');
     }
 }
 
@@ -11698,7 +11698,7 @@ export class az_network_vnet_gateway_aad {
      * @param {string} tenant The AADTenant URI of the VirtualNetworkGateway.
      */
     static assign(audience: string, gatewayName: string, issuer: string, resourceGroup: string, tenant: string): az_network_vnet_gateway_aad_assign_command_builder {
-        return new az_network_vnet_gateway_aad_assign_command_builder("az network vnet-gateway aad assign", audience, gatewayName, issuer, resourceGroup, tenant);
+        return new az_network_vnet_gateway_aad_assign_command_builder("az network vnet-gateway aad assign", 'az_network_vnet_gateway_aad_assign_command_result', audience, gatewayName, issuer, resourceGroup, tenant);
     }
 
     /**
@@ -11716,7 +11716,7 @@ export class az_network_vnet_gateway_aad {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static remove(gatewayName: string, resourceGroup: string): az_network_vnet_gateway_aad_remove_command_builder {
-        return new az_network_vnet_gateway_aad_remove_command_builder("az network vnet-gateway aad remove", gatewayName, resourceGroup);
+        return new az_network_vnet_gateway_aad_remove_command_builder("az network vnet-gateway aad remove", 'az_network_vnet_gateway_aad_remove_command_result', gatewayName, resourceGroup);
     }
 
     /**
@@ -11734,7 +11734,7 @@ export class az_network_vnet_gateway_aad {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(gatewayName: string, resourceGroup: string): az_network_vnet_gateway_aad_show_command_builder {
-        return new az_network_vnet_gateway_aad_show_command_builder("az network vnet-gateway aad show", gatewayName, resourceGroup);
+        return new az_network_vnet_gateway_aad_show_command_builder("az network vnet-gateway aad show", 'az_network_vnet_gateway_aad_show_command_result', gatewayName, resourceGroup);
     }
 }
 
@@ -11771,7 +11771,7 @@ export class az_network_vnet_gateway_ipsec_policy {
      * @param {string} saMaxSize Required. The IPSec Security Association (also called Quick Mode or Phase 2 SA) payload size in KB for a site to site VPN tunnel.
      */
     static add(dhGroup: 'DHGroup1' | 'DHGroup14' | 'DHGroup2' | 'DHGroup2048' | 'DHGroup24' | 'ECP256' | 'ECP384' | 'None', gatewayName: string, ikeEncryption: 'AES128' | 'AES192' | 'AES256' | 'DES' | 'DES3' | 'GCMAES128' | 'GCMAES256', ikeIntegrity: 'GCMAES128' | 'GCMAES256' | 'MD5' | 'SHA1' | 'SHA256' | 'SHA384', ipsecEncryption: 'AES128' | 'AES192' | 'AES256' | 'DES' | 'DES3' | 'GCMAES128' | 'GCMAES192' | 'GCMAES256' | 'None', ipsecIntegrity: 'GCMAES128' | 'GCMAES192' | 'GCMAES256' | 'MD5' | 'SHA1' | 'SHA256', pfsGroup: 'ECP256' | 'ECP384' | 'None' | 'PFS1' | 'PFS14' | 'PFS2' | 'PFS2048' | 'PFS24' | 'PFSMM', resourceGroup: string, saLifetime: string, saMaxSize: string): az_network_vnet_gateway_ipsec_policy_add_command_builder {
-        return new az_network_vnet_gateway_ipsec_policy_add_command_builder("az network vnet-gateway ipsec-policy add", dhGroup, gatewayName, ikeEncryption, ikeIntegrity, ipsecEncryption, ipsecIntegrity, pfsGroup, resourceGroup, saLifetime, saMaxSize);
+        return new az_network_vnet_gateway_ipsec_policy_add_command_builder("az network vnet-gateway ipsec-policy add", 'az_network_vnet_gateway_ipsec_policy_add_command_result', dhGroup, gatewayName, ikeEncryption, ikeIntegrity, ipsecEncryption, ipsecIntegrity, pfsGroup, resourceGroup, saLifetime, saMaxSize);
     }
 
     /**
@@ -11789,7 +11789,7 @@ export class az_network_vnet_gateway_ipsec_policy {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static clear(gatewayName: string, resourceGroup: string): az_network_vnet_gateway_ipsec_policy_clear_command_builder {
-        return new az_network_vnet_gateway_ipsec_policy_clear_command_builder("az network vnet-gateway ipsec-policy clear", gatewayName, resourceGroup);
+        return new az_network_vnet_gateway_ipsec_policy_clear_command_builder("az network vnet-gateway ipsec-policy clear", 'az_network_vnet_gateway_ipsec_policy_clear_command_result', gatewayName, resourceGroup);
     }
 
     /**
@@ -11807,7 +11807,7 @@ export class az_network_vnet_gateway_ipsec_policy {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(gatewayName: string, resourceGroup: string): az_network_vnet_gateway_ipsec_policy_list_command_builder {
-        return new az_network_vnet_gateway_ipsec_policy_list_command_builder("az network vnet-gateway ipsec-policy list", gatewayName, resourceGroup);
+        return new az_network_vnet_gateway_ipsec_policy_list_command_builder("az network vnet-gateway ipsec-policy list", 'az_network_vnet_gateway_ipsec_policy_list_command_result', gatewayName, resourceGroup);
     }
 }
 
@@ -11831,7 +11831,7 @@ export class az_network_vnet_gateway_revoked_cert {
      * @param {string} thumbprint Certificate thumbprint.
      */
     static create(gatewayName: string, name: string, resourceGroup: string, thumbprint: string): az_network_vnet_gateway_revoked_cert_create_command_builder {
-        return new az_network_vnet_gateway_revoked_cert_create_command_builder("az network vnet-gateway revoked-cert create", gatewayName, name, resourceGroup, thumbprint);
+        return new az_network_vnet_gateway_revoked_cert_create_command_builder("az network vnet-gateway revoked-cert create", 'az_network_vnet_gateway_revoked_cert_create_command_result', gatewayName, name, resourceGroup, thumbprint);
     }
 
     /**
@@ -11850,7 +11850,7 @@ export class az_network_vnet_gateway_revoked_cert {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(gatewayName: string, name: string, resourceGroup: string): az_network_vnet_gateway_revoked_cert_delete_command_builder {
-        return new az_network_vnet_gateway_revoked_cert_delete_command_builder("az network vnet-gateway revoked-cert delete", gatewayName, name, resourceGroup);
+        return new az_network_vnet_gateway_revoked_cert_delete_command_builder("az network vnet-gateway revoked-cert delete", 'az_network_vnet_gateway_revoked_cert_delete_command_result', gatewayName, name, resourceGroup);
     }
 }
 
@@ -11874,7 +11874,7 @@ export class az_network_vnet_gateway_root_cert {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(gatewayName: string, name: string, publicCertData: string, resourceGroup: string): az_network_vnet_gateway_root_cert_create_command_builder {
-        return new az_network_vnet_gateway_root_cert_create_command_builder("az network vnet-gateway root-cert create", gatewayName, name, publicCertData, resourceGroup);
+        return new az_network_vnet_gateway_root_cert_create_command_builder("az network vnet-gateway root-cert create", 'az_network_vnet_gateway_root_cert_create_command_result', gatewayName, name, publicCertData, resourceGroup);
     }
 
     /**
@@ -11893,7 +11893,7 @@ export class az_network_vnet_gateway_root_cert {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(gatewayName: string, name: string, resourceGroup: string): az_network_vnet_gateway_root_cert_delete_command_builder {
-        return new az_network_vnet_gateway_root_cert_delete_command_builder("az network vnet-gateway root-cert delete", gatewayName, name, resourceGroup);
+        return new az_network_vnet_gateway_root_cert_delete_command_builder("az network vnet-gateway root-cert delete", 'az_network_vnet_gateway_root_cert_delete_command_result', gatewayName, name, resourceGroup);
     }
 }
 
@@ -11916,7 +11916,7 @@ export class az_network_vnet_gateway_vpn_client {
      * ```
      */
     static generate(): az_network_vnet_gateway_vpn_client_generate_command_builder {
-        return new az_network_vnet_gateway_vpn_client_generate_command_builder("az network vnet-gateway vpn-client generate");
+        return new az_network_vnet_gateway_vpn_client_generate_command_builder("az network vnet-gateway vpn-client generate", 'az_network_vnet_gateway_vpn_client_generate_command_result');
     }
 
     /**
@@ -11931,7 +11931,7 @@ export class az_network_vnet_gateway_vpn_client {
      * ```
      */
     static show_url(): az_network_vnet_gateway_vpn_client_show_url_command_builder {
-        return new az_network_vnet_gateway_vpn_client_show_url_command_builder("az network vnet-gateway vpn-client show-url");
+        return new az_network_vnet_gateway_vpn_client_show_url_command_builder("az network vnet-gateway vpn-client show-url", 'az_network_vnet_gateway_vpn_client_show_url_command_result');
     }
 }
 
@@ -11971,7 +11971,7 @@ export class az_network_vnet_gateway {
      * @param {string} vnet Name or ID of an existing virtual network which has a subnet named 'GatewaySubnet'.
      */
     static create(name: string, publicIpAddresses: string, resourceGroup: string, vnet: string): az_network_vnet_gateway_create_command_builder {
-        return new az_network_vnet_gateway_create_command_builder("az network vnet-gateway create", name, publicIpAddresses, resourceGroup, vnet);
+        return new az_network_vnet_gateway_create_command_builder("az network vnet-gateway create", 'az_network_vnet_gateway_create_command_result', name, publicIpAddresses, resourceGroup, vnet);
     }
 
     /**
@@ -11987,7 +11987,7 @@ export class az_network_vnet_gateway {
      * ```
      */
     static delete(): az_network_vnet_gateway_delete_command_builder {
-        return new az_network_vnet_gateway_delete_command_builder("az network vnet-gateway delete");
+        return new az_network_vnet_gateway_delete_command_builder("az network vnet-gateway delete", 'az_network_vnet_gateway_delete_command_result');
     }
 
     /**
@@ -12003,7 +12003,7 @@ export class az_network_vnet_gateway {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(resourceGroup: string): az_network_vnet_gateway_list_command_builder {
-        return new az_network_vnet_gateway_list_command_builder("az network vnet-gateway list", resourceGroup);
+        return new az_network_vnet_gateway_list_command_builder("az network vnet-gateway list", 'az_network_vnet_gateway_list_command_result', resourceGroup);
     }
 
     /**
@@ -12021,7 +12021,7 @@ export class az_network_vnet_gateway {
      * @param {string} peer The IP address of the peer.
      */
     static list_advertised_routes(peer: string): az_network_vnet_gateway_list_advertised_routes_command_builder {
-        return new az_network_vnet_gateway_list_advertised_routes_command_builder("az network vnet-gateway list-advertised-routes", peer);
+        return new az_network_vnet_gateway_list_advertised_routes_command_builder("az network vnet-gateway list-advertised-routes", 'az_network_vnet_gateway_list_advertised_routes_command_result', peer);
     }
 
     /**
@@ -12037,7 +12037,7 @@ export class az_network_vnet_gateway {
      * ```
      */
     static list_bgp_peer_status(): az_network_vnet_gateway_list_bgp_peer_status_command_builder {
-        return new az_network_vnet_gateway_list_bgp_peer_status_command_builder("az network vnet-gateway list-bgp-peer-status");
+        return new az_network_vnet_gateway_list_bgp_peer_status_command_builder("az network vnet-gateway list-bgp-peer-status", 'az_network_vnet_gateway_list_bgp_peer_status_command_result');
     }
 
     /**
@@ -12052,7 +12052,7 @@ export class az_network_vnet_gateway {
      * ```
      */
     static list_learned_routes(): az_network_vnet_gateway_list_learned_routes_command_builder {
-        return new az_network_vnet_gateway_list_learned_routes_command_builder("az network vnet-gateway list-learned-routes");
+        return new az_network_vnet_gateway_list_learned_routes_command_builder("az network vnet-gateway list-learned-routes", 'az_network_vnet_gateway_list_learned_routes_command_result');
     }
 
     /**
@@ -12068,7 +12068,7 @@ export class az_network_vnet_gateway {
      * ```
      */
     static reset(): az_network_vnet_gateway_reset_command_builder {
-        return new az_network_vnet_gateway_reset_command_builder("az network vnet-gateway reset");
+        return new az_network_vnet_gateway_reset_command_builder("az network vnet-gateway reset", 'az_network_vnet_gateway_reset_command_result');
     }
 
     /**
@@ -12084,7 +12084,7 @@ export class az_network_vnet_gateway {
      * ```
      */
     static show(): az_network_vnet_gateway_show_command_builder {
-        return new az_network_vnet_gateway_show_command_builder("az network vnet-gateway show");
+        return new az_network_vnet_gateway_show_command_builder("az network vnet-gateway show", 'az_network_vnet_gateway_show_command_result');
     }
 
     /**
@@ -12120,7 +12120,7 @@ export class az_network_vnet_gateway {
      * ```
      */
     static update(): az_network_vnet_gateway_update_command_builder {
-        return new az_network_vnet_gateway_update_command_builder("az network vnet-gateway update");
+        return new az_network_vnet_gateway_update_command_builder("az network vnet-gateway update", 'az_network_vnet_gateway_update_command_result');
     }
 
     /**
@@ -12142,7 +12142,7 @@ export class az_network_vnet_gateway {
      * ```
      */
     static wait(): az_network_vnet_gateway_wait_command_builder {
-        return new az_network_vnet_gateway_wait_command_builder("az network vnet-gateway wait");
+        return new az_network_vnet_gateway_wait_command_builder("az network vnet-gateway wait", 'az_network_vnet_gateway_wait_command_result');
     }
 }
 
@@ -12163,7 +12163,7 @@ export class az_network_vnet {
      * @param {string} ipAddress The private IP address to be verified.
      */
     static check_ip_address(ipAddress: string): az_network_vnet_check_ip_address_command_builder {
-        return new az_network_vnet_check_ip_address_command_builder("az network vnet check-ip-address", ipAddress);
+        return new az_network_vnet_check_ip_address_command_builder("az network vnet check-ip-address", 'az_network_vnet_check_ip_address_command_result', ipAddress);
     }
 
     /**
@@ -12191,7 +12191,7 @@ export class az_network_vnet {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_network_vnet_create_command_builder {
-        return new az_network_vnet_create_command_builder("az network vnet create", name, resourceGroup);
+        return new az_network_vnet_create_command_builder("az network vnet create", 'az_network_vnet_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -12206,7 +12206,7 @@ export class az_network_vnet {
      * ```
      */
     static delete(): az_network_vnet_delete_command_builder {
-        return new az_network_vnet_delete_command_builder("az network vnet delete");
+        return new az_network_vnet_delete_command_builder("az network vnet delete", 'az_network_vnet_delete_command_result');
     }
 
     /**
@@ -12220,7 +12220,7 @@ export class az_network_vnet {
      * ```
      */
     static list(): az_network_vnet_list_command_builder {
-        return new az_network_vnet_list_command_builder("az network vnet list");
+        return new az_network_vnet_list_command_builder("az network vnet list", 'az_network_vnet_list_command_result');
     }
 
     /**
@@ -12235,7 +12235,7 @@ export class az_network_vnet {
      * ```
      */
     static list_available_ips(): az_network_vnet_list_available_ips_command_builder {
-        return new az_network_vnet_list_available_ips_command_builder("az network vnet list-available-ips");
+        return new az_network_vnet_list_available_ips_command_builder("az network vnet list-available-ips", 'az_network_vnet_list_available_ips_command_result');
     }
 
     /**
@@ -12250,7 +12250,7 @@ export class az_network_vnet {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list_endpoint_services(location: string): az_network_vnet_list_endpoint_services_command_builder {
-        return new az_network_vnet_list_endpoint_services_command_builder("az network vnet list-endpoint-services", location);
+        return new az_network_vnet_list_endpoint_services_command_builder("az network vnet list-endpoint-services", 'az_network_vnet_list_endpoint_services_command_result', location);
     }
 
     /**
@@ -12267,7 +12267,7 @@ export class az_network_vnet {
      * ```
      */
     static show(): az_network_vnet_show_command_builder {
-        return new az_network_vnet_show_command_builder("az network vnet show");
+        return new az_network_vnet_show_command_builder("az network vnet show", 'az_network_vnet_show_command_result');
     }
 
     /**
@@ -12292,7 +12292,7 @@ export class az_network_vnet {
      * ```
      */
     static update(): az_network_vnet_update_command_builder {
-        return new az_network_vnet_update_command_builder("az network vnet update");
+        return new az_network_vnet_update_command_builder("az network vnet update", 'az_network_vnet_update_command_result');
     }
 }
 
@@ -12329,7 +12329,7 @@ export class az_network_vpn_connection_ipsec_policy {
      * @param {string} saMaxSize Required. The IPSec Security Association (also called Quick Mode or Phase 2 SA) payload size in KB for a site to site VPN tunnel.
      */
     static add(connectionName: string, dhGroup: 'DHGroup1' | 'DHGroup14' | 'DHGroup2' | 'DHGroup2048' | 'DHGroup24' | 'ECP256' | 'ECP384' | 'None', ikeEncryption: 'AES128' | 'AES192' | 'AES256' | 'DES' | 'DES3' | 'GCMAES128' | 'GCMAES256', ikeIntegrity: 'GCMAES128' | 'GCMAES256' | 'MD5' | 'SHA1' | 'SHA256' | 'SHA384', ipsecEncryption: 'AES128' | 'AES192' | 'AES256' | 'DES' | 'DES3' | 'GCMAES128' | 'GCMAES192' | 'GCMAES256' | 'None', ipsecIntegrity: 'GCMAES128' | 'GCMAES192' | 'GCMAES256' | 'MD5' | 'SHA1' | 'SHA256', pfsGroup: 'ECP256' | 'ECP384' | 'None' | 'PFS1' | 'PFS14' | 'PFS2' | 'PFS2048' | 'PFS24' | 'PFSMM', resourceGroup: string, saLifetime: string, saMaxSize: string): az_network_vpn_connection_ipsec_policy_add_command_builder {
-        return new az_network_vpn_connection_ipsec_policy_add_command_builder("az network vpn-connection ipsec-policy add", connectionName, dhGroup, ikeEncryption, ikeIntegrity, ipsecEncryption, ipsecIntegrity, pfsGroup, resourceGroup, saLifetime, saMaxSize);
+        return new az_network_vpn_connection_ipsec_policy_add_command_builder("az network vpn-connection ipsec-policy add", 'az_network_vpn_connection_ipsec_policy_add_command_result', connectionName, dhGroup, ikeEncryption, ikeIntegrity, ipsecEncryption, ipsecIntegrity, pfsGroup, resourceGroup, saLifetime, saMaxSize);
     }
 
     /**
@@ -12347,7 +12347,7 @@ export class az_network_vpn_connection_ipsec_policy {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static clear(connectionName: string, resourceGroup: string): az_network_vpn_connection_ipsec_policy_clear_command_builder {
-        return new az_network_vpn_connection_ipsec_policy_clear_command_builder("az network vpn-connection ipsec-policy clear", connectionName, resourceGroup);
+        return new az_network_vpn_connection_ipsec_policy_clear_command_builder("az network vpn-connection ipsec-policy clear", 'az_network_vpn_connection_ipsec_policy_clear_command_result', connectionName, resourceGroup);
     }
 
     /**
@@ -12365,7 +12365,7 @@ export class az_network_vpn_connection_ipsec_policy {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(connectionName: string, resourceGroup: string): az_network_vpn_connection_ipsec_policy_list_command_builder {
-        return new az_network_vpn_connection_ipsec_policy_list_command_builder("az network vpn-connection ipsec-policy list", connectionName, resourceGroup);
+        return new az_network_vpn_connection_ipsec_policy_list_command_builder("az network vpn-connection ipsec-policy list", 'az_network_vpn_connection_ipsec_policy_list_command_result', connectionName, resourceGroup);
     }
 }
 
@@ -12386,7 +12386,7 @@ export class az_network_vpn_connection_shared_key {
      * @param {string} keyLength The virtual network connection reset shared key length, should between 1 and 128.
      */
     static reset(keyLength: string): az_network_vpn_connection_shared_key_reset_command_builder {
-        return new az_network_vpn_connection_shared_key_reset_command_builder("az network vpn-connection shared-key reset", keyLength);
+        return new az_network_vpn_connection_shared_key_reset_command_builder("az network vpn-connection shared-key reset", 'az_network_vpn_connection_shared_key_reset_command_result', keyLength);
     }
 
     /**
@@ -12402,7 +12402,7 @@ export class az_network_vpn_connection_shared_key {
      * ```
      */
     static show(): az_network_vpn_connection_shared_key_show_command_builder {
-        return new az_network_vpn_connection_shared_key_show_command_builder("az network vpn-connection shared-key show");
+        return new az_network_vpn_connection_shared_key_show_command_builder("az network vpn-connection shared-key show", 'az_network_vpn_connection_shared_key_show_command_result');
     }
 
     /**
@@ -12425,7 +12425,7 @@ export class az_network_vpn_connection_shared_key {
      * @param {string} value The virtual network connection shared key value.
      */
     static update(value: string): az_network_vpn_connection_shared_key_update_command_builder {
-        return new az_network_vpn_connection_shared_key_update_command_builder("az network vpn-connection shared-key update", value);
+        return new az_network_vpn_connection_shared_key_update_command_builder("az network vpn-connection shared-key update", 'az_network_vpn_connection_shared_key_update_command_result', value);
     }
 }
 
@@ -12459,7 +12459,7 @@ export class az_network_vpn_connection {
      * @param {string} vnetGateway1 Name or ID of the source virtual network gateway.
      */
     static create(name: string, resourceGroup: string, vnetGateway1: string): az_network_vpn_connection_create_command_builder {
-        return new az_network_vpn_connection_create_command_builder("az network vpn-connection create", name, resourceGroup, vnetGateway1);
+        return new az_network_vpn_connection_create_command_builder("az network vpn-connection create", 'az_network_vpn_connection_create_command_result', name, resourceGroup, vnetGateway1);
     }
 
     /**
@@ -12474,7 +12474,7 @@ export class az_network_vpn_connection {
      * ```
      */
     static delete(): az_network_vpn_connection_delete_command_builder {
-        return new az_network_vpn_connection_delete_command_builder("az network vpn-connection delete");
+        return new az_network_vpn_connection_delete_command_builder("az network vpn-connection delete", 'az_network_vpn_connection_delete_command_result');
     }
 
     /**
@@ -12490,7 +12490,7 @@ export class az_network_vpn_connection {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(resourceGroup: string): az_network_vpn_connection_list_command_builder {
-        return new az_network_vpn_connection_list_command_builder("az network vpn-connection list", resourceGroup);
+        return new az_network_vpn_connection_list_command_builder("az network vpn-connection list", 'az_network_vpn_connection_list_command_result', resourceGroup);
     }
 
     /**
@@ -12506,7 +12506,7 @@ export class az_network_vpn_connection {
      * ```
      */
     static show(): az_network_vpn_connection_show_command_builder {
-        return new az_network_vpn_connection_show_command_builder("az network vpn-connection show");
+        return new az_network_vpn_connection_show_command_builder("az network vpn-connection show", 'az_network_vpn_connection_show_command_result');
     }
 
     /**
@@ -12531,7 +12531,7 @@ export class az_network_vpn_connection {
      * ```
      */
     static update(): az_network_vpn_connection_update_command_builder {
-        return new az_network_vpn_connection_update_command_builder("az network vpn-connection update");
+        return new az_network_vpn_connection_update_command_builder("az network vpn-connection update", 'az_network_vpn_connection_update_command_result');
     }
 }
 
@@ -12557,7 +12557,7 @@ export class az_network_vrouter_peering {
      * @param {string} vrouterName The name of the Virtual Router.
      */
     static create(name: string, peerAsn: string, peerIp: string, resourceGroup: string, vrouterName: string): az_network_vrouter_peering_create_command_builder {
-        return new az_network_vrouter_peering_create_command_builder("az network vrouter peering create", name, peerAsn, peerIp, resourceGroup, vrouterName);
+        return new az_network_vrouter_peering_create_command_builder("az network vrouter peering create", 'az_network_vrouter_peering_create_command_result', name, peerAsn, peerIp, resourceGroup, vrouterName);
     }
 
     /**
@@ -12576,7 +12576,7 @@ export class az_network_vrouter_peering {
      * @param {string} vrouterName The name of the Virtual Router.
      */
     static delete(name: string, resourceGroup: string, vrouterName: string): az_network_vrouter_peering_delete_command_builder {
-        return new az_network_vrouter_peering_delete_command_builder("az network vrouter peering delete", name, resourceGroup, vrouterName);
+        return new az_network_vrouter_peering_delete_command_builder("az network vrouter peering delete", 'az_network_vrouter_peering_delete_command_result', name, resourceGroup, vrouterName);
     }
 
     /**
@@ -12594,7 +12594,7 @@ export class az_network_vrouter_peering {
      * @param {string} vrouterName The name of the Virtual Router.
      */
     static list(resourceGroup: string, vrouterName: string): az_network_vrouter_peering_list_command_builder {
-        return new az_network_vrouter_peering_list_command_builder("az network vrouter peering list", resourceGroup, vrouterName);
+        return new az_network_vrouter_peering_list_command_builder("az network vrouter peering list", 'az_network_vrouter_peering_list_command_result', resourceGroup, vrouterName);
     }
 
     /**
@@ -12614,7 +12614,7 @@ export class az_network_vrouter_peering {
      * @param {string} vrouterName The name of the Virtual Router.
      */
     static show(name: string, resourceGroup: string, vrouterName: string): az_network_vrouter_peering_show_command_builder {
-        return new az_network_vrouter_peering_show_command_builder("az network vrouter peering show", name, resourceGroup, vrouterName);
+        return new az_network_vrouter_peering_show_command_builder("az network vrouter peering show", 'az_network_vrouter_peering_show_command_result', name, resourceGroup, vrouterName);
     }
 
     /**
@@ -12639,7 +12639,7 @@ export class az_network_vrouter_peering {
      * @param {string} vrouterName The name of the Virtual Router.
      */
     static update(name: string, resourceGroup: string, vrouterName: string): az_network_vrouter_peering_update_command_builder {
-        return new az_network_vrouter_peering_update_command_builder("az network vrouter peering update", name, resourceGroup, vrouterName);
+        return new az_network_vrouter_peering_update_command_builder("az network vrouter peering update", 'az_network_vrouter_peering_update_command_result', name, resourceGroup, vrouterName);
     }
 }
 
@@ -12663,7 +12663,7 @@ export class az_network_vrouter {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_network_vrouter_create_command_builder {
-        return new az_network_vrouter_create_command_builder("az network vrouter create", name, resourceGroup);
+        return new az_network_vrouter_create_command_builder("az network vrouter create", 'az_network_vrouter_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -12680,7 +12680,7 @@ export class az_network_vrouter {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_network_vrouter_delete_command_builder {
-        return new az_network_vrouter_delete_command_builder("az network vrouter delete", name, resourceGroup);
+        return new az_network_vrouter_delete_command_builder("az network vrouter delete", 'az_network_vrouter_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -12694,7 +12694,7 @@ export class az_network_vrouter {
      * ```
      */
     static list(): az_network_vrouter_list_command_builder {
-        return new az_network_vrouter_list_command_builder("az network vrouter list");
+        return new az_network_vrouter_list_command_builder("az network vrouter list", 'az_network_vrouter_list_command_result');
     }
 
     /**
@@ -12712,7 +12712,7 @@ export class az_network_vrouter {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_network_vrouter_show_command_builder {
-        return new az_network_vrouter_show_command_builder("az network vrouter show", name, resourceGroup);
+        return new az_network_vrouter_show_command_builder("az network vrouter show", 'az_network_vrouter_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -12734,7 +12734,7 @@ export class az_network_vrouter {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, resourceGroup: string): az_network_vrouter_update_command_builder {
-        return new az_network_vrouter_update_command_builder("az network vrouter update", name, resourceGroup);
+        return new az_network_vrouter_update_command_builder("az network vrouter update", 'az_network_vrouter_update_command_result', name, resourceGroup);
     }
 }
 
@@ -12766,7 +12766,7 @@ export class az_network_watcher_connection_monitor_endpoint {
      * @param {string} name The name of the connection monitor endpoint.
      */
     static add(connectionMonitor: string, location: string, name: string): az_network_watcher_connection_monitor_endpoint_add_command_builder {
-        return new az_network_watcher_connection_monitor_endpoint_add_command_builder("az network watcher connection-monitor endpoint add", connectionMonitor, location, name);
+        return new az_network_watcher_connection_monitor_endpoint_add_command_builder("az network watcher connection-monitor endpoint add", 'az_network_watcher_connection_monitor_endpoint_add_command_result', connectionMonitor, location, name);
     }
 
     /**
@@ -12784,7 +12784,7 @@ export class az_network_watcher_connection_monitor_endpoint {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list(connectionMonitor: string, location: string): az_network_watcher_connection_monitor_endpoint_list_command_builder {
-        return new az_network_watcher_connection_monitor_endpoint_list_command_builder("az network watcher connection-monitor endpoint list", connectionMonitor, location);
+        return new az_network_watcher_connection_monitor_endpoint_list_command_builder("az network watcher connection-monitor endpoint list", 'az_network_watcher_connection_monitor_endpoint_list_command_result', connectionMonitor, location);
     }
 
     /**
@@ -12804,7 +12804,7 @@ export class az_network_watcher_connection_monitor_endpoint {
      * @param {string} name The name of the connection monitor endpoint.
      */
     static remove(connectionMonitor: string, location: string, name: string): az_network_watcher_connection_monitor_endpoint_remove_command_builder {
-        return new az_network_watcher_connection_monitor_endpoint_remove_command_builder("az network watcher connection-monitor endpoint remove", connectionMonitor, location, name);
+        return new az_network_watcher_connection_monitor_endpoint_remove_command_builder("az network watcher connection-monitor endpoint remove", 'az_network_watcher_connection_monitor_endpoint_remove_command_result', connectionMonitor, location, name);
     }
 
     /**
@@ -12824,7 +12824,7 @@ export class az_network_watcher_connection_monitor_endpoint {
      * @param {string} name The name of the connection monitor endpoint.
      */
     static show(connectionMonitor: string, location: string, name: string): az_network_watcher_connection_monitor_endpoint_show_command_builder {
-        return new az_network_watcher_connection_monitor_endpoint_show_command_builder("az network watcher connection-monitor endpoint show", connectionMonitor, location, name);
+        return new az_network_watcher_connection_monitor_endpoint_show_command_builder("az network watcher connection-monitor endpoint show", 'az_network_watcher_connection_monitor_endpoint_show_command_result', connectionMonitor, location, name);
     }
 }
 
@@ -12847,7 +12847,7 @@ export class az_network_watcher_connection_monitor_output {
      * @param {'Workspace'} type Connection monitor output destination type. Currently, only "Workspace" is supported.
      */
     static add(connectionMonitor: string, location: string, type: 'Workspace'): az_network_watcher_connection_monitor_output_add_command_builder {
-        return new az_network_watcher_connection_monitor_output_add_command_builder("az network watcher connection-monitor output add", connectionMonitor, location, type);
+        return new az_network_watcher_connection_monitor_output_add_command_builder("az network watcher connection-monitor output add", 'az_network_watcher_connection_monitor_output_add_command_result', connectionMonitor, location, type);
     }
 
     /**
@@ -12865,7 +12865,7 @@ export class az_network_watcher_connection_monitor_output {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list(connectionMonitor: string, location: string): az_network_watcher_connection_monitor_output_list_command_builder {
-        return new az_network_watcher_connection_monitor_output_list_command_builder("az network watcher connection-monitor output list", connectionMonitor, location);
+        return new az_network_watcher_connection_monitor_output_list_command_builder("az network watcher connection-monitor output list", 'az_network_watcher_connection_monitor_output_list_command_result', connectionMonitor, location);
     }
 
     /**
@@ -12882,7 +12882,7 @@ export class az_network_watcher_connection_monitor_output {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static remove(connectionMonitor: string, location: string): az_network_watcher_connection_monitor_output_remove_command_builder {
-        return new az_network_watcher_connection_monitor_output_remove_command_builder("az network watcher connection-monitor output remove", connectionMonitor, location);
+        return new az_network_watcher_connection_monitor_output_remove_command_builder("az network watcher connection-monitor output remove", 'az_network_watcher_connection_monitor_output_remove_command_result', connectionMonitor, location);
     }
 }
 
@@ -12922,7 +12922,7 @@ export class az_network_watcher_connection_monitor_test_configuration {
      * @param {string} testGroups Space-separated list of names of test group which only need to be affected if specified.
      */
     static add(connectionMonitor: string, location: string, name: string, protocol: 'Http' | 'Icmp' | 'Tcp', testGroups: string): az_network_watcher_connection_monitor_test_configuration_add_command_builder {
-        return new az_network_watcher_connection_monitor_test_configuration_add_command_builder("az network watcher connection-monitor test-configuration add", connectionMonitor, location, name, protocol, testGroups);
+        return new az_network_watcher_connection_monitor_test_configuration_add_command_builder("az network watcher connection-monitor test-configuration add", 'az_network_watcher_connection_monitor_test_configuration_add_command_result', connectionMonitor, location, name, protocol, testGroups);
     }
 
     /**
@@ -12940,7 +12940,7 @@ export class az_network_watcher_connection_monitor_test_configuration {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list(connectionMonitor: string, location: string): az_network_watcher_connection_monitor_test_configuration_list_command_builder {
-        return new az_network_watcher_connection_monitor_test_configuration_list_command_builder("az network watcher connection-monitor test-configuration list", connectionMonitor, location);
+        return new az_network_watcher_connection_monitor_test_configuration_list_command_builder("az network watcher connection-monitor test-configuration list", 'az_network_watcher_connection_monitor_test_configuration_list_command_result', connectionMonitor, location);
     }
 
     /**
@@ -12960,7 +12960,7 @@ export class az_network_watcher_connection_monitor_test_configuration {
      * @param {string} name The name of the connection monitor test configuration.
      */
     static remove(connectionMonitor: string, location: string, name: string): az_network_watcher_connection_monitor_test_configuration_remove_command_builder {
-        return new az_network_watcher_connection_monitor_test_configuration_remove_command_builder("az network watcher connection-monitor test-configuration remove", connectionMonitor, location, name);
+        return new az_network_watcher_connection_monitor_test_configuration_remove_command_builder("az network watcher connection-monitor test-configuration remove", 'az_network_watcher_connection_monitor_test_configuration_remove_command_result', connectionMonitor, location, name);
     }
 
     /**
@@ -12980,7 +12980,7 @@ export class az_network_watcher_connection_monitor_test_configuration {
      * @param {string} name The name of the connection monitor test configuration.
      */
     static show(connectionMonitor: string, location: string, name: string): az_network_watcher_connection_monitor_test_configuration_show_command_builder {
-        return new az_network_watcher_connection_monitor_test_configuration_show_command_builder("az network watcher connection-monitor test-configuration show", connectionMonitor, location, name);
+        return new az_network_watcher_connection_monitor_test_configuration_show_command_builder("az network watcher connection-monitor test-configuration show", 'az_network_watcher_connection_monitor_test_configuration_show_command_result', connectionMonitor, location, name);
     }
 }
 
@@ -13026,7 +13026,7 @@ export class az_network_watcher_connection_monitor_test_group {
      * @param {string} testConfigName The name of the connection monitor test configuration. If you are creating a V2 Connection Monitor, it's required.
      */
     static add(connectionMonitor: string, endpointDestName: string, endpointSourceName: string, location: string, name: string, testConfigName: string): az_network_watcher_connection_monitor_test_group_add_command_builder {
-        return new az_network_watcher_connection_monitor_test_group_add_command_builder("az network watcher connection-monitor test-group add", connectionMonitor, endpointDestName, endpointSourceName, location, name, testConfigName);
+        return new az_network_watcher_connection_monitor_test_group_add_command_builder("az network watcher connection-monitor test-group add", 'az_network_watcher_connection_monitor_test_group_add_command_result', connectionMonitor, endpointDestName, endpointSourceName, location, name, testConfigName);
     }
 
     /**
@@ -13044,7 +13044,7 @@ export class az_network_watcher_connection_monitor_test_group {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list(connectionMonitor: string, location: string): az_network_watcher_connection_monitor_test_group_list_command_builder {
-        return new az_network_watcher_connection_monitor_test_group_list_command_builder("az network watcher connection-monitor test-group list", connectionMonitor, location);
+        return new az_network_watcher_connection_monitor_test_group_list_command_builder("az network watcher connection-monitor test-group list", 'az_network_watcher_connection_monitor_test_group_list_command_result', connectionMonitor, location);
     }
 
     /**
@@ -13063,7 +13063,7 @@ export class az_network_watcher_connection_monitor_test_group {
      * @param {string} name The name of the connection monitor test group.
      */
     static remove(connectionMonitor: string, location: string, name: string): az_network_watcher_connection_monitor_test_group_remove_command_builder {
-        return new az_network_watcher_connection_monitor_test_group_remove_command_builder("az network watcher connection-monitor test-group remove", connectionMonitor, location, name);
+        return new az_network_watcher_connection_monitor_test_group_remove_command_builder("az network watcher connection-monitor test-group remove", 'az_network_watcher_connection_monitor_test_group_remove_command_result', connectionMonitor, location, name);
     }
 
     /**
@@ -13083,7 +13083,7 @@ export class az_network_watcher_connection_monitor_test_group {
      * @param {string} name The name of the connection monitor test group.
      */
     static show(connectionMonitor: string, location: string, name: string): az_network_watcher_connection_monitor_test_group_show_command_builder {
-        return new az_network_watcher_connection_monitor_test_group_show_command_builder("az network watcher connection-monitor test-group show", connectionMonitor, location, name);
+        return new az_network_watcher_connection_monitor_test_group_show_command_builder("az network watcher connection-monitor test-group show", 'az_network_watcher_connection_monitor_test_group_show_command_result', connectionMonitor, location, name);
     }
 }
 
@@ -13141,7 +13141,7 @@ export class az_network_watcher_connection_monitor {
      * @param {string} name Connection monitor name.
      */
     static create(name: string): az_network_watcher_connection_monitor_create_command_builder {
-        return new az_network_watcher_connection_monitor_create_command_builder("az network watcher connection-monitor create", name);
+        return new az_network_watcher_connection_monitor_create_command_builder("az network watcher connection-monitor create", 'az_network_watcher_connection_monitor_create_command_result', name);
     }
 
     /**
@@ -13158,7 +13158,7 @@ export class az_network_watcher_connection_monitor {
      * @param {string} name Connection monitor name.
      */
     static delete(location: string, name: string): az_network_watcher_connection_monitor_delete_command_builder {
-        return new az_network_watcher_connection_monitor_delete_command_builder("az network watcher connection-monitor delete", location, name);
+        return new az_network_watcher_connection_monitor_delete_command_builder("az network watcher connection-monitor delete", 'az_network_watcher_connection_monitor_delete_command_result', location, name);
     }
 
     /**
@@ -13174,7 +13174,7 @@ export class az_network_watcher_connection_monitor {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list(location: string): az_network_watcher_connection_monitor_list_command_builder {
-        return new az_network_watcher_connection_monitor_list_command_builder("az network watcher connection-monitor list", location);
+        return new az_network_watcher_connection_monitor_list_command_builder("az network watcher connection-monitor list", 'az_network_watcher_connection_monitor_list_command_result', location);
     }
 
     /**
@@ -13191,7 +13191,7 @@ export class az_network_watcher_connection_monitor {
      * @param {string} name Connection monitor name.
      */
     static query(location: string, name: string): az_network_watcher_connection_monitor_query_command_builder {
-        return new az_network_watcher_connection_monitor_query_command_builder("az network watcher connection-monitor query", location, name);
+        return new az_network_watcher_connection_monitor_query_command_builder("az network watcher connection-monitor query", 'az_network_watcher_connection_monitor_query_command_result', location, name);
     }
 
     /**
@@ -13209,7 +13209,7 @@ export class az_network_watcher_connection_monitor {
      * @param {string} name Connection monitor name.
      */
     static show(location: string, name: string): az_network_watcher_connection_monitor_show_command_builder {
-        return new az_network_watcher_connection_monitor_show_command_builder("az network watcher connection-monitor show", location, name);
+        return new az_network_watcher_connection_monitor_show_command_builder("az network watcher connection-monitor show", 'az_network_watcher_connection_monitor_show_command_result', location, name);
     }
 
     /**
@@ -13226,7 +13226,7 @@ export class az_network_watcher_connection_monitor {
      * @param {string} name Connection monitor name.
      */
     static start(location: string, name: string): az_network_watcher_connection_monitor_start_command_builder {
-        return new az_network_watcher_connection_monitor_start_command_builder("az network watcher connection-monitor start", location, name);
+        return new az_network_watcher_connection_monitor_start_command_builder("az network watcher connection-monitor start", 'az_network_watcher_connection_monitor_start_command_result', location, name);
     }
 
     /**
@@ -13243,7 +13243,7 @@ export class az_network_watcher_connection_monitor {
      * @param {string} name Connection monitor name.
      */
     static stop(location: string, name: string): az_network_watcher_connection_monitor_stop_command_builder {
-        return new az_network_watcher_connection_monitor_stop_command_builder("az network watcher connection-monitor stop", location, name);
+        return new az_network_watcher_connection_monitor_stop_command_builder("az network watcher connection-monitor stop", 'az_network_watcher_connection_monitor_stop_command_result', location, name);
     }
 }
 
@@ -13270,7 +13270,7 @@ export class az_network_watcher_flow_log {
      * @param {string} nsg Name or ID of the Network Security Group to target.
      */
     static configure(nsg: string): az_network_watcher_flow_log_configure_command_builder {
-        return new az_network_watcher_flow_log_configure_command_builder("az network watcher flow-log configure", nsg);
+        return new az_network_watcher_flow_log_configure_command_builder("az network watcher flow-log configure", 'az_network_watcher_flow_log_configure_command_result', nsg);
     }
 
     /**
@@ -13299,7 +13299,7 @@ export class az_network_watcher_flow_log {
      * @param {string} nsg Name or ID of the network security group.
      */
     static create(location: string, name: string, nsg: string): az_network_watcher_flow_log_create_command_builder {
-        return new az_network_watcher_flow_log_create_command_builder("az network watcher flow-log create", location, name, nsg);
+        return new az_network_watcher_flow_log_create_command_builder("az network watcher flow-log create", 'az_network_watcher_flow_log_create_command_result', location, name, nsg);
     }
 
     /**
@@ -13316,7 +13316,7 @@ export class az_network_watcher_flow_log {
      * @param {string} name The name of the flow logger.
      */
     static delete(location: string, name: string): az_network_watcher_flow_log_delete_command_builder {
-        return new az_network_watcher_flow_log_delete_command_builder("az network watcher flow-log delete", location, name);
+        return new az_network_watcher_flow_log_delete_command_builder("az network watcher flow-log delete", 'az_network_watcher_flow_log_delete_command_result', location, name);
     }
 
     /**
@@ -13332,7 +13332,7 @@ export class az_network_watcher_flow_log {
      * @param {string} location Location to identify the exclusive Network Watcher under a region. Only one Network Watcher can be existed per subscription and region.
      */
     static list(location: string): az_network_watcher_flow_log_list_command_builder {
-        return new az_network_watcher_flow_log_list_command_builder("az network watcher flow-log list", location);
+        return new az_network_watcher_flow_log_list_command_builder("az network watcher flow-log list", 'az_network_watcher_flow_log_list_command_result', location);
     }
 
     /**
@@ -13349,7 +13349,7 @@ export class az_network_watcher_flow_log {
      * ```
      */
     static show(): az_network_watcher_flow_log_show_command_builder {
-        return new az_network_watcher_flow_log_show_command_builder("az network watcher flow-log show");
+        return new az_network_watcher_flow_log_show_command_builder("az network watcher flow-log show", 'az_network_watcher_flow_log_show_command_result');
     }
 
     /**
@@ -13381,7 +13381,7 @@ export class az_network_watcher_flow_log {
      * @param {string} name The name of the flow logger.
      */
     static update(location: string, name: string): az_network_watcher_flow_log_update_command_builder {
-        return new az_network_watcher_flow_log_update_command_builder("az network watcher flow-log update", location, name);
+        return new az_network_watcher_flow_log_update_command_builder("az network watcher flow-log update", 'az_network_watcher_flow_log_update_command_result', location, name);
     }
 }
 
@@ -13410,7 +13410,7 @@ export class az_network_watcher_packet_capture {
      * @param {string} vm Name or ID of the VM to target.
      */
     static create(name: string, resourceGroup: string, vm: string): az_network_watcher_packet_capture_create_command_builder {
-        return new az_network_watcher_packet_capture_create_command_builder("az network watcher packet-capture create", name, resourceGroup, vm);
+        return new az_network_watcher_packet_capture_create_command_builder("az network watcher packet-capture create", 'az_network_watcher_packet_capture_create_command_result', name, resourceGroup, vm);
     }
 
     /**
@@ -13427,7 +13427,7 @@ export class az_network_watcher_packet_capture {
      * @param {string} name The name of the packet capture session.
      */
     static delete(location: string, name: string): az_network_watcher_packet_capture_delete_command_builder {
-        return new az_network_watcher_packet_capture_delete_command_builder("az network watcher packet-capture delete", location, name);
+        return new az_network_watcher_packet_capture_delete_command_builder("az network watcher packet-capture delete", 'az_network_watcher_packet_capture_delete_command_result', location, name);
     }
 
     /**
@@ -13443,7 +13443,7 @@ export class az_network_watcher_packet_capture {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list(location: string): az_network_watcher_packet_capture_list_command_builder {
-        return new az_network_watcher_packet_capture_list_command_builder("az network watcher packet-capture list", location);
+        return new az_network_watcher_packet_capture_list_command_builder("az network watcher packet-capture list", 'az_network_watcher_packet_capture_list_command_result', location);
     }
 
     /**
@@ -13461,7 +13461,7 @@ export class az_network_watcher_packet_capture {
      * @param {string} name The name of the packet capture session.
      */
     static show(location: string, name: string): az_network_watcher_packet_capture_show_command_builder {
-        return new az_network_watcher_packet_capture_show_command_builder("az network watcher packet-capture show", location, name);
+        return new az_network_watcher_packet_capture_show_command_builder("az network watcher packet-capture show", 'az_network_watcher_packet_capture_show_command_result', location, name);
     }
 
     /**
@@ -13478,7 +13478,7 @@ export class az_network_watcher_packet_capture {
      * @param {string} name The name given to the packet capture session.
      */
     static show_status(location: string, name: string): az_network_watcher_packet_capture_show_status_command_builder {
-        return new az_network_watcher_packet_capture_show_status_command_builder("az network watcher packet-capture show-status", location, name);
+        return new az_network_watcher_packet_capture_show_status_command_builder("az network watcher packet-capture show-status", 'az_network_watcher_packet_capture_show_status_command_result', location, name);
     }
 
     /**
@@ -13495,7 +13495,7 @@ export class az_network_watcher_packet_capture {
      * @param {string} name The name of the packet capture session.
      */
     static stop(location: string, name: string): az_network_watcher_packet_capture_stop_command_builder {
-        return new az_network_watcher_packet_capture_stop_command_builder("az network watcher packet-capture stop", location, name);
+        return new az_network_watcher_packet_capture_stop_command_builder("az network watcher packet-capture stop", 'az_network_watcher_packet_capture_stop_command_result', location, name);
     }
 }
 
@@ -13516,7 +13516,7 @@ export class az_network_watcher_troubleshooting {
      * @param {string} resource Name or ID of the resource to troubleshoot.
      */
     static show(resource: string): az_network_watcher_troubleshooting_show_command_builder {
-        return new az_network_watcher_troubleshooting_show_command_builder("az network watcher troubleshooting show", resource);
+        return new az_network_watcher_troubleshooting_show_command_builder("az network watcher troubleshooting show", 'az_network_watcher_troubleshooting_show_command_result', resource);
     }
 
     /**
@@ -13538,7 +13538,7 @@ export class az_network_watcher_troubleshooting {
      * @param {string} storagePath Fully qualified URI to the storage blob container in which to store the troubleshooting results.
      */
     static start(resource: string, storageAccount: string, storagePath: string): az_network_watcher_troubleshooting_start_command_builder {
-        return new az_network_watcher_troubleshooting_start_command_builder("az network watcher troubleshooting start", resource, storageAccount, storagePath);
+        return new az_network_watcher_troubleshooting_start_command_builder("az network watcher troubleshooting start", 'az_network_watcher_troubleshooting_start_command_result', resource, storageAccount, storagePath);
     }
 }
 
@@ -13559,7 +13559,7 @@ export class az_network_watcher {
      * @param {string} locations Space-separated list of locations to configure.
      */
     static configure(locations: string): az_network_watcher_configure_command_builder {
-        return new az_network_watcher_configure_command_builder("az network watcher configure", locations);
+        return new az_network_watcher_configure_command_builder("az network watcher configure", 'az_network_watcher_configure_command_result', locations);
     }
 
     /**
@@ -13572,7 +13572,7 @@ export class az_network_watcher {
      * ```
      */
     static list(): az_network_watcher_list_command_builder {
-        return new az_network_watcher_list_command_builder("az network watcher list");
+        return new az_network_watcher_list_command_builder("az network watcher list", 'az_network_watcher_list_command_result');
     }
 
     /**
@@ -13596,7 +13596,7 @@ export class az_network_watcher {
      * @param {string} resource Name or ID of the target resource to diagnose. If an ID is given, other resource arguments should not be given.
      */
     static run_configuration_diagnostic(resource: string): az_network_watcher_run_configuration_diagnostic_command_builder {
-        return new az_network_watcher_run_configuration_diagnostic_command_builder("az network watcher run-configuration-diagnostic", resource);
+        return new az_network_watcher_run_configuration_diagnostic_command_builder("az network watcher run-configuration-diagnostic", 'az_network_watcher_run_configuration_diagnostic_command_result', resource);
     }
 
     /**
@@ -13618,7 +13618,7 @@ export class az_network_watcher {
      * @param {string} vm Name or ID of the VM to target. If the name of the VM is provided, the --resource-group is required.
      */
     static show_next_hop(destIp: string, resourceGroup: string, sourceIp: string, vm: string): az_network_watcher_show_next_hop_command_builder {
-        return new az_network_watcher_show_next_hop_command_builder("az network watcher show-next-hop", destIp, resourceGroup, sourceIp, vm);
+        return new az_network_watcher_show_next_hop_command_builder("az network watcher show-next-hop", 'az_network_watcher_show_next_hop_command_result', destIp, resourceGroup, sourceIp, vm);
     }
 
     /**
@@ -13635,7 +13635,7 @@ export class az_network_watcher {
      * @param {string} vm Name or ID of the VM to target. If the name of the VM is provided, the --resource-group is required.
      */
     static show_security_group_view(resourceGroup: string, vm: string): az_network_watcher_show_security_group_view_command_builder {
-        return new az_network_watcher_show_security_group_view_command_builder("az network watcher show-security-group-view", resourceGroup, vm);
+        return new az_network_watcher_show_security_group_view_command_builder("az network watcher show-security-group-view", 'az_network_watcher_show_security_group_view_command_result', resourceGroup, vm);
     }
 
     /**
@@ -13651,7 +13651,7 @@ export class az_network_watcher {
      * ```
      */
     static show_topology(): az_network_watcher_show_topology_command_builder {
-        return new az_network_watcher_show_topology_command_builder("az network watcher show-topology");
+        return new az_network_watcher_show_topology_command_builder("az network watcher show-topology", 'az_network_watcher_show_topology_command_result');
     }
 
     /**
@@ -13675,7 +13675,7 @@ export class az_network_watcher {
      * @param {string} sourceResource Name or ID of the resource from which to originate traffic.
      */
     static test_connectivity(sourceResource: string): az_network_watcher_test_connectivity_command_builder {
-        return new az_network_watcher_test_connectivity_command_builder("az network watcher test-connectivity", sourceResource);
+        return new az_network_watcher_test_connectivity_command_builder("az network watcher test-connectivity", 'az_network_watcher_test_connectivity_command_result', sourceResource);
     }
 
     /**
@@ -13700,7 +13700,7 @@ export class az_network_watcher {
      * @param {string} vm Name or ID of the VM to target. If the name of the VM is provided, the --resource-group is required.
      */
     static test_ip_flow(direction: 'Inbound' | 'Outbound', local: string, protocol: 'Http' | 'Https' | 'Icmp' | 'Tcp', remote: string, vm: string): az_network_watcher_test_ip_flow_command_builder {
-        return new az_network_watcher_test_ip_flow_command_builder("az network watcher test-ip-flow", direction, local, protocol, remote, vm);
+        return new az_network_watcher_test_ip_flow_command_builder("az network watcher test-ip-flow", 'az_network_watcher_test_ip_flow_command_result', direction, local, protocol, remote, vm);
     }
 }
 
@@ -13719,7 +13719,7 @@ export class az_network {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list_service_aliases(location: string): az_network_list_service_aliases_command_builder {
-        return new az_network_list_service_aliases_command_builder("az network list-service-aliases", location);
+        return new az_network_list_service_aliases_command_builder("az network list-service-aliases", 'az_network_list_service_aliases_command_result', location);
     }
 
     /**
@@ -13734,7 +13734,7 @@ export class az_network {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list_service_tags(location: string): az_network_list_service_tags_command_builder {
-        return new az_network_list_service_tags_command_builder("az network list-service-tags", location);
+        return new az_network_list_service_tags_command_builder("az network list-service-tags", 'az_network_list_service_tags_command_result', location);
     }
 
     /**
@@ -13749,7 +13749,7 @@ export class az_network {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list_usages(location: string): az_network_list_usages_command_builder {
-        return new az_network_list_usages_command_builder("az network list-usages", location);
+        return new az_network_list_usages_command_builder("az network list-usages", 'az_network_list_usages_command_result', location);
     }
 }
 
@@ -13771,8 +13771,8 @@ export class az_network {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_address_pool_create_command_builder extends CommandBuilder<az_network_application_gateway_address_pool_create_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -13829,8 +13829,8 @@ class az_network_application_gateway_address_pool_create_command_builder extends
  * ```
  */
 class az_network_application_gateway_address_pool_delete_command_builder extends CommandBuilder<az_network_application_gateway_address_pool_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -13885,8 +13885,8 @@ class az_network_application_gateway_address_pool_delete_command_builder extends
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_address_pool_list_command_builder extends CommandBuilder<az_network_application_gateway_address_pool_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -13930,8 +13930,8 @@ class az_network_application_gateway_address_pool_list_command_builder extends C
  * ```
  */
 class az_network_application_gateway_address_pool_show_command_builder extends CommandBuilder<az_network_application_gateway_address_pool_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -13990,8 +13990,8 @@ class az_network_application_gateway_address_pool_show_command_builder extends C
  * ```
  */
 class az_network_application_gateway_address_pool_update_command_builder extends CommandBuilder<az_network_application_gateway_address_pool_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -14080,8 +14080,8 @@ class az_network_application_gateway_address_pool_update_command_builder extends
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_auth_cert_create_command_builder extends CommandBuilder<az_network_application_gateway_auth_cert_create_command_result> {
-    constructor(commandPath: string, certFile: string, gatewayName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, certFile: string, gatewayName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.certFile(certFile)
         this.gatewayName(gatewayName)
         this.name(name)
@@ -14139,8 +14139,8 @@ class az_network_application_gateway_auth_cert_create_command_builder extends Co
  * ```
  */
 class az_network_application_gateway_auth_cert_delete_command_builder extends CommandBuilder<az_network_application_gateway_auth_cert_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -14195,8 +14195,8 @@ class az_network_application_gateway_auth_cert_delete_command_builder extends Co
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_auth_cert_list_command_builder extends CommandBuilder<az_network_application_gateway_auth_cert_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -14240,8 +14240,8 @@ class az_network_application_gateway_auth_cert_list_command_builder extends Comm
  * ```
  */
 class az_network_application_gateway_auth_cert_show_command_builder extends CommandBuilder<az_network_application_gateway_auth_cert_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -14302,8 +14302,8 @@ class az_network_application_gateway_auth_cert_show_command_builder extends Comm
  * @param {string} certFile Certificate file path.
  */
 class az_network_application_gateway_auth_cert_update_command_builder extends CommandBuilder<az_network_application_gateway_auth_cert_update_command_result> {
-    constructor(commandPath: string, certFile: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, certFile: string) {
+        super(commandPath, resultDataTypeName);
         this.certFile(certFile)
     }
 
@@ -14395,8 +14395,8 @@ class az_network_application_gateway_auth_cert_update_command_builder extends Co
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_frontend_ip_create_command_builder extends CommandBuilder<az_network_application_gateway_frontend_ip_create_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -14471,8 +14471,8 @@ class az_network_application_gateway_frontend_ip_create_command_builder extends 
  * ```
  */
 class az_network_application_gateway_frontend_ip_delete_command_builder extends CommandBuilder<az_network_application_gateway_frontend_ip_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -14527,8 +14527,8 @@ class az_network_application_gateway_frontend_ip_delete_command_builder extends 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_frontend_ip_list_command_builder extends CommandBuilder<az_network_application_gateway_frontend_ip_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -14572,8 +14572,8 @@ class az_network_application_gateway_frontend_ip_list_command_builder extends Co
  * ```
  */
 class az_network_application_gateway_frontend_ip_show_command_builder extends CommandBuilder<az_network_application_gateway_frontend_ip_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -14635,8 +14635,8 @@ class az_network_application_gateway_frontend_ip_show_command_builder extends Co
  * ```
  */
 class az_network_application_gateway_frontend_ip_update_command_builder extends CommandBuilder<az_network_application_gateway_frontend_ip_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -14743,8 +14743,8 @@ class az_network_application_gateway_frontend_ip_update_command_builder extends 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_frontend_port_create_command_builder extends CommandBuilder<az_network_application_gateway_frontend_port_create_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, port: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, port: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.port(port)
@@ -14802,8 +14802,8 @@ class az_network_application_gateway_frontend_port_create_command_builder extend
  * ```
  */
 class az_network_application_gateway_frontend_port_delete_command_builder extends CommandBuilder<az_network_application_gateway_frontend_port_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -14858,8 +14858,8 @@ class az_network_application_gateway_frontend_port_delete_command_builder extend
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_frontend_port_list_command_builder extends CommandBuilder<az_network_application_gateway_frontend_port_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -14903,8 +14903,8 @@ class az_network_application_gateway_frontend_port_list_command_builder extends 
  * ```
  */
 class az_network_application_gateway_frontend_port_show_command_builder extends CommandBuilder<az_network_application_gateway_frontend_port_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -14963,8 +14963,8 @@ class az_network_application_gateway_frontend_port_show_command_builder extends 
  * ```
  */
 class az_network_application_gateway_frontend_port_update_command_builder extends CommandBuilder<az_network_application_gateway_frontend_port_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -15058,8 +15058,8 @@ class az_network_application_gateway_frontend_port_update_command_builder extend
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_http_listener_create_command_builder extends CommandBuilder<az_network_application_gateway_http_listener_create_command_result> {
-    constructor(commandPath: string, frontendPort: string, gatewayName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, frontendPort: string, gatewayName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.frontendPort(frontendPort)
         this.gatewayName(gatewayName)
         this.name(name)
@@ -15147,8 +15147,8 @@ class az_network_application_gateway_http_listener_create_command_builder extend
  * ```
  */
 class az_network_application_gateway_http_listener_delete_command_builder extends CommandBuilder<az_network_application_gateway_http_listener_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -15203,8 +15203,8 @@ class az_network_application_gateway_http_listener_delete_command_builder extend
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_http_listener_list_command_builder extends CommandBuilder<az_network_application_gateway_http_listener_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -15248,8 +15248,8 @@ class az_network_application_gateway_http_listener_list_command_builder extends 
  * ```
  */
 class az_network_application_gateway_http_listener_show_command_builder extends CommandBuilder<az_network_application_gateway_http_listener_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -15313,8 +15313,8 @@ class az_network_application_gateway_http_listener_show_command_builder extends 
  * ```
  */
 class az_network_application_gateway_http_listener_update_command_builder extends CommandBuilder<az_network_application_gateway_http_listener_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -15445,8 +15445,8 @@ class az_network_application_gateway_http_listener_update_command_builder extend
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_http_settings_create_command_builder extends CommandBuilder<az_network_application_gateway_http_settings_create_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, port: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, port: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.port(port)
@@ -15576,8 +15576,8 @@ class az_network_application_gateway_http_settings_create_command_builder extend
  * ```
  */
 class az_network_application_gateway_http_settings_delete_command_builder extends CommandBuilder<az_network_application_gateway_http_settings_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -15632,8 +15632,8 @@ class az_network_application_gateway_http_settings_delete_command_builder extend
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_http_settings_list_command_builder extends CommandBuilder<az_network_application_gateway_http_settings_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -15677,8 +15677,8 @@ class az_network_application_gateway_http_settings_list_command_builder extends 
  * ```
  */
 class az_network_application_gateway_http_settings_show_command_builder extends CommandBuilder<az_network_application_gateway_http_settings_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -15749,8 +15749,8 @@ class az_network_application_gateway_http_settings_show_command_builder extends 
  * ```
  */
 class az_network_application_gateway_http_settings_update_command_builder extends CommandBuilder<az_network_application_gateway_http_settings_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -15908,8 +15908,8 @@ class az_network_application_gateway_http_settings_update_command_builder extend
  * @param {string} identity Name or ID of the ManagedIdentity Resource.
  */
 class az_network_application_gateway_identity_assign_command_builder extends CommandBuilder<az_network_application_gateway_identity_assign_command_result> {
-    constructor(commandPath: string, identity: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, identity: string) {
+        super(commandPath, resultDataTypeName);
         this.identity(identity)
     }
 
@@ -15963,8 +15963,8 @@ class az_network_application_gateway_identity_assign_command_builder extends Com
  * ```
  */
 class az_network_application_gateway_identity_remove_command_builder extends CommandBuilder<az_network_application_gateway_identity_remove_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the application gateway. */
@@ -16011,8 +16011,8 @@ class az_network_application_gateway_identity_remove_command_builder extends Com
  * ```
  */
 class az_network_application_gateway_identity_show_command_builder extends CommandBuilder<az_network_application_gateway_identity_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the application gateway. */
@@ -16066,8 +16066,8 @@ class az_network_application_gateway_identity_show_command_builder extends Comma
  * @param {string} privateLink The name of Private Link.
  */
 class az_network_application_gateway_private_link_ip_config_add_command_builder extends CommandBuilder<az_network_application_gateway_private_link_ip_config_add_command_result> {
-    constructor(commandPath: string, name: string, privateLink: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, privateLink: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.privateLink(privateLink)
     }
@@ -16144,8 +16144,8 @@ class az_network_application_gateway_private_link_ip_config_add_command_builder 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_private_link_ip_config_list_command_builder extends CommandBuilder<az_network_application_gateway_private_link_ip_config_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, privateLink: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, privateLink: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.privateLink(privateLink)
         this.resourceGroup(resourceGroup)
@@ -16201,8 +16201,8 @@ class az_network_application_gateway_private_link_ip_config_list_command_builder
  * @param {string} privateLink The name of Private Link.
  */
 class az_network_application_gateway_private_link_ip_config_remove_command_builder extends CommandBuilder<az_network_application_gateway_private_link_ip_config_remove_command_result> {
-    constructor(commandPath: string, name: string, privateLink: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, privateLink: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.privateLink(privateLink)
     }
@@ -16274,8 +16274,8 @@ class az_network_application_gateway_private_link_ip_config_remove_command_build
  * @param {string} privateLink The name of Private Link.
  */
 class az_network_application_gateway_private_link_ip_config_show_command_builder extends CommandBuilder<az_network_application_gateway_private_link_ip_config_show_command_result> {
-    constructor(commandPath: string, name: string, privateLink: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, privateLink: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.privateLink(privateLink)
     }
@@ -16342,8 +16342,8 @@ class az_network_application_gateway_private_link_ip_config_show_command_builder
  * ```
  */
 class az_network_application_gateway_private_link_ip_config_wait_command_builder extends CommandBuilder<az_network_application_gateway_private_link_ip_config_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */
@@ -16436,8 +16436,8 @@ class az_network_application_gateway_private_link_ip_config_wait_command_builder
  * @param {string} subnet The name or an existing ID of a subnet within the same vnet of an application gateway.
  */
 class az_network_application_gateway_private_link_add_command_builder extends CommandBuilder<az_network_application_gateway_private_link_add_command_result> {
-    constructor(commandPath: string, frontendIp: string, name: string, subnet: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, frontendIp: string, name: string, subnet: string) {
+        super(commandPath, resultDataTypeName);
         this.frontendIp(frontendIp)
         this.name(name)
         this.subnet(subnet)
@@ -16525,8 +16525,8 @@ class az_network_application_gateway_private_link_add_command_builder extends Co
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_private_link_list_command_builder extends CommandBuilder<az_network_application_gateway_private_link_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -16573,8 +16573,8 @@ class az_network_application_gateway_private_link_list_command_builder extends C
  * @param {string} name The name of Private Link.
  */
 class az_network_application_gateway_private_link_remove_command_builder extends CommandBuilder<az_network_application_gateway_private_link_remove_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -16637,8 +16637,8 @@ class az_network_application_gateway_private_link_remove_command_builder extends
  * @param {string} name The name of Private Link.
  */
 class az_network_application_gateway_private_link_show_command_builder extends CommandBuilder<az_network_application_gateway_private_link_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -16698,8 +16698,8 @@ class az_network_application_gateway_private_link_show_command_builder extends C
  * ```
  */
 class az_network_application_gateway_private_link_wait_command_builder extends CommandBuilder<az_network_application_gateway_private_link_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */
@@ -16799,8 +16799,8 @@ class az_network_application_gateway_private_link_wait_command_builder extends C
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_probe_create_command_builder extends CommandBuilder<az_network_application_gateway_probe_create_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, path: string, protocol: 'Http' | 'Https', resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, path: string, protocol: 'Http' | 'Https', resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.path(path)
@@ -16919,8 +16919,8 @@ class az_network_application_gateway_probe_create_command_builder extends Comman
  * ```
  */
 class az_network_application_gateway_probe_delete_command_builder extends CommandBuilder<az_network_application_gateway_probe_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -16975,8 +16975,8 @@ class az_network_application_gateway_probe_delete_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_probe_list_command_builder extends CommandBuilder<az_network_application_gateway_probe_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -17020,8 +17020,8 @@ class az_network_application_gateway_probe_list_command_builder extends CommandB
  * ```
  */
 class az_network_application_gateway_probe_show_command_builder extends CommandBuilder<az_network_application_gateway_probe_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -17090,8 +17090,8 @@ class az_network_application_gateway_probe_show_command_builder extends CommandB
  * ```
  */
 class az_network_application_gateway_probe_update_command_builder extends CommandBuilder<az_network_application_gateway_probe_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -17244,8 +17244,8 @@ class az_network_application_gateway_probe_update_command_builder extends Comman
  * @param {'Found' | 'Permanent' | 'SeeOther' | 'Temporary'} type HTTP redirection type.
  */
 class az_network_application_gateway_redirect_config_create_command_builder extends CommandBuilder<az_network_application_gateway_redirect_config_create_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, resourceGroup: string, type: 'Found' | 'Permanent' | 'SeeOther' | 'Temporary') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, resourceGroup: string, type: 'Found' | 'Permanent' | 'SeeOther' | 'Temporary') {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -17327,8 +17327,8 @@ class az_network_application_gateway_redirect_config_create_command_builder exte
  * ```
  */
 class az_network_application_gateway_redirect_config_delete_command_builder extends CommandBuilder<az_network_application_gateway_redirect_config_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -17383,8 +17383,8 @@ class az_network_application_gateway_redirect_config_delete_command_builder exte
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_redirect_config_list_command_builder extends CommandBuilder<az_network_application_gateway_redirect_config_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -17428,8 +17428,8 @@ class az_network_application_gateway_redirect_config_list_command_builder extend
  * ```
  */
 class az_network_application_gateway_redirect_config_show_command_builder extends CommandBuilder<az_network_application_gateway_redirect_config_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -17492,8 +17492,8 @@ class az_network_application_gateway_redirect_config_show_command_builder extend
  * ```
  */
 class az_network_application_gateway_redirect_config_update_command_builder extends CommandBuilder<az_network_application_gateway_redirect_config_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -17611,8 +17611,8 @@ class az_network_application_gateway_redirect_config_update_command_builder exte
  * @param {string} variable The variable whose value is being evaluated.
  */
 class az_network_application_gateway_rewrite_rule_condition_create_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_condition_create_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string, ruleName: string, ruleSetName: string, variable: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string, ruleName: string, ruleSetName: string, variable: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
         this.ruleName(ruleName)
@@ -17699,8 +17699,8 @@ class az_network_application_gateway_rewrite_rule_condition_create_command_build
  * @param {string} variable The variable whose value is being evaluated.
  */
 class az_network_application_gateway_rewrite_rule_condition_delete_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_condition_delete_command_result> {
-    constructor(commandPath: string, variable: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, variable: string) {
+        super(commandPath, resultDataTypeName);
         this.variable(variable)
     }
 
@@ -17772,8 +17772,8 @@ class az_network_application_gateway_rewrite_rule_condition_delete_command_build
  * @param {string} ruleSetName Name of the rewrite rule set.
  */
 class az_network_application_gateway_rewrite_rule_condition_list_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_condition_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string, ruleName: string, ruleSetName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string, ruleName: string, ruleSetName: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
         this.ruleName(ruleName)
@@ -17826,8 +17826,8 @@ class az_network_application_gateway_rewrite_rule_condition_list_command_builder
  * ```
  */
 class az_network_application_gateway_rewrite_rule_condition_list_server_variables_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_condition_list_server_variables_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -17855,8 +17855,8 @@ class az_network_application_gateway_rewrite_rule_condition_list_server_variable
  * @param {string} variable The variable whose value is being evaluated.
  */
 class az_network_application_gateway_rewrite_rule_condition_show_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_condition_show_command_result> {
-    constructor(commandPath: string, variable: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, variable: string) {
+        super(commandPath, resultDataTypeName);
         this.variable(variable)
     }
 
@@ -17934,8 +17934,8 @@ class az_network_application_gateway_rewrite_rule_condition_show_command_builder
  * @param {string} variable The variable whose value is being evaluated.
  */
 class az_network_application_gateway_rewrite_rule_condition_update_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_condition_update_command_result> {
-    constructor(commandPath: string, variable: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, variable: string) {
+        super(commandPath, resultDataTypeName);
         this.variable(variable)
     }
 
@@ -18047,8 +18047,8 @@ class az_network_application_gateway_rewrite_rule_condition_update_command_build
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_rewrite_rule_set_create_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_set_create_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -18099,8 +18099,8 @@ class az_network_application_gateway_rewrite_rule_set_create_command_builder ext
  * ```
  */
 class az_network_application_gateway_rewrite_rule_set_delete_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_set_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -18155,8 +18155,8 @@ class az_network_application_gateway_rewrite_rule_set_delete_command_builder ext
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_rewrite_rule_set_list_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_set_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -18200,8 +18200,8 @@ class az_network_application_gateway_rewrite_rule_set_list_command_builder exten
  * ```
  */
 class az_network_application_gateway_rewrite_rule_set_show_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_set_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -18259,8 +18259,8 @@ class az_network_application_gateway_rewrite_rule_set_show_command_builder exten
  * ```
  */
 class az_network_application_gateway_rewrite_rule_set_update_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_set_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -18349,8 +18349,8 @@ class az_network_application_gateway_rewrite_rule_set_update_command_builder ext
  * @param {string} ruleSetName Name of the rewrite rule set.
  */
 class az_network_application_gateway_rewrite_rule_create_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_create_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, resourceGroup: string, ruleSetName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, resourceGroup: string, ruleSetName: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -18445,8 +18445,8 @@ class az_network_application_gateway_rewrite_rule_create_command_builder extends
  * ```
  */
 class az_network_application_gateway_rewrite_rule_delete_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the application gateway. */
@@ -18509,8 +18509,8 @@ class az_network_application_gateway_rewrite_rule_delete_command_builder extends
  * @param {string} ruleSetName Name of the rewrite rule set.
  */
 class az_network_application_gateway_rewrite_rule_list_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string, ruleSetName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string, ruleSetName: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
         this.ruleSetName(ruleSetName)
@@ -18556,8 +18556,8 @@ class az_network_application_gateway_rewrite_rule_list_command_builder extends C
  * ```
  */
 class az_network_application_gateway_rewrite_rule_list_request_headers_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_list_request_headers_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -18576,8 +18576,8 @@ class az_network_application_gateway_rewrite_rule_list_request_headers_command_b
  * ```
  */
 class az_network_application_gateway_rewrite_rule_list_response_headers_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_list_response_headers_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -18602,8 +18602,8 @@ class az_network_application_gateway_rewrite_rule_list_response_headers_command_
  * ```
  */
 class az_network_application_gateway_rewrite_rule_show_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the application gateway. */
@@ -18674,8 +18674,8 @@ class az_network_application_gateway_rewrite_rule_show_command_builder extends C
  * ```
  */
 class az_network_application_gateway_rewrite_rule_update_command_builder extends CommandBuilder<az_network_application_gateway_rewrite_rule_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -18800,8 +18800,8 @@ class az_network_application_gateway_rewrite_rule_update_command_builder extends
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_root_cert_create_command_builder extends CommandBuilder<az_network_application_gateway_root_cert_create_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -18864,8 +18864,8 @@ class az_network_application_gateway_root_cert_create_command_builder extends Co
  * ```
  */
 class az_network_application_gateway_root_cert_delete_command_builder extends CommandBuilder<az_network_application_gateway_root_cert_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -18920,8 +18920,8 @@ class az_network_application_gateway_root_cert_delete_command_builder extends Co
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_root_cert_list_command_builder extends CommandBuilder<az_network_application_gateway_root_cert_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -18965,8 +18965,8 @@ class az_network_application_gateway_root_cert_list_command_builder extends Comm
  * ```
  */
 class az_network_application_gateway_root_cert_show_command_builder extends CommandBuilder<az_network_application_gateway_root_cert_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -19026,8 +19026,8 @@ class az_network_application_gateway_root_cert_show_command_builder extends Comm
  * ```
  */
 class az_network_application_gateway_root_cert_update_command_builder extends CommandBuilder<az_network_application_gateway_root_cert_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -19127,8 +19127,8 @@ class az_network_application_gateway_root_cert_update_command_builder extends Co
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_rule_create_command_builder extends CommandBuilder<az_network_application_gateway_rule_create_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -19221,8 +19221,8 @@ class az_network_application_gateway_rule_create_command_builder extends Command
  * ```
  */
 class az_network_application_gateway_rule_delete_command_builder extends CommandBuilder<az_network_application_gateway_rule_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -19277,8 +19277,8 @@ class az_network_application_gateway_rule_delete_command_builder extends Command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_rule_list_command_builder extends CommandBuilder<az_network_application_gateway_rule_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -19322,8 +19322,8 @@ class az_network_application_gateway_rule_list_command_builder extends CommandBu
  * ```
  */
 class az_network_application_gateway_rule_show_command_builder extends CommandBuilder<az_network_application_gateway_rule_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -19388,8 +19388,8 @@ class az_network_application_gateway_rule_show_command_builder extends CommandBu
  * ```
  */
 class az_network_application_gateway_rule_update_command_builder extends CommandBuilder<az_network_application_gateway_rule_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -19515,8 +19515,8 @@ class az_network_application_gateway_rule_update_command_builder extends Command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_ssl_cert_create_command_builder extends CommandBuilder<az_network_application_gateway_ssl_cert_create_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -19585,8 +19585,8 @@ class az_network_application_gateway_ssl_cert_create_command_builder extends Com
  * ```
  */
 class az_network_application_gateway_ssl_cert_delete_command_builder extends CommandBuilder<az_network_application_gateway_ssl_cert_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -19641,8 +19641,8 @@ class az_network_application_gateway_ssl_cert_delete_command_builder extends Com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_ssl_cert_list_command_builder extends CommandBuilder<az_network_application_gateway_ssl_cert_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -19686,8 +19686,8 @@ class az_network_application_gateway_ssl_cert_list_command_builder extends Comma
  * ```
  */
 class az_network_application_gateway_ssl_cert_show_command_builder extends CommandBuilder<az_network_application_gateway_ssl_cert_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -19748,8 +19748,8 @@ class az_network_application_gateway_ssl_cert_show_command_builder extends Comma
  * ```
  */
 class az_network_application_gateway_ssl_cert_update_command_builder extends CommandBuilder<az_network_application_gateway_ssl_cert_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -19841,8 +19841,8 @@ class az_network_application_gateway_ssl_cert_update_command_builder extends Com
  * ```
  */
 class az_network_application_gateway_ssl_policy_predefined_list_command_builder extends CommandBuilder<az_network_application_gateway_ssl_policy_predefined_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -19871,8 +19871,8 @@ class az_network_application_gateway_ssl_policy_predefined_list_command_builder 
  * @param {string} name Name of Ssl predefined policy.
  */
 class az_network_application_gateway_ssl_policy_predefined_show_command_builder extends CommandBuilder<az_network_application_gateway_ssl_policy_predefined_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -19904,8 +19904,8 @@ class az_network_application_gateway_ssl_policy_predefined_show_command_builder 
  * ```
  */
 class az_network_application_gateway_ssl_policy_list_options_command_builder extends CommandBuilder<az_network_application_gateway_ssl_policy_list_options_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -19933,8 +19933,8 @@ class az_network_application_gateway_ssl_policy_list_options_command_builder ext
  * ```
  */
 class az_network_application_gateway_ssl_policy_set_command_builder extends CommandBuilder<az_network_application_gateway_ssl_policy_set_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Ssl cipher suites to be enabled in the specified order to application gateway. */
@@ -20011,8 +20011,8 @@ class az_network_application_gateway_ssl_policy_set_command_builder extends Comm
  * ```
  */
 class az_network_application_gateway_ssl_policy_show_command_builder extends CommandBuilder<az_network_application_gateway_ssl_policy_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the application gateway. */
@@ -20072,8 +20072,8 @@ class az_network_application_gateway_ssl_policy_show_command_builder extends Com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_url_path_map_rule_create_command_builder extends CommandBuilder<az_network_application_gateway_url_path_map_rule_create_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, pathMapName: string, paths: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, pathMapName: string, paths: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.pathMapName(pathMapName)
@@ -20169,8 +20169,8 @@ class az_network_application_gateway_url_path_map_rule_create_command_builder ex
  * ```
  */
 class az_network_application_gateway_url_path_map_rule_delete_command_builder extends CommandBuilder<az_network_application_gateway_url_path_map_rule_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the application gateway. */
@@ -20245,8 +20245,8 @@ class az_network_application_gateway_url_path_map_rule_delete_command_builder ex
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_url_path_map_create_command_builder extends CommandBuilder<az_network_application_gateway_url_path_map_create_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, paths: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, paths: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.paths(paths)
@@ -20364,8 +20364,8 @@ class az_network_application_gateway_url_path_map_create_command_builder extends
  * ```
  */
 class az_network_application_gateway_url_path_map_delete_command_builder extends CommandBuilder<az_network_application_gateway_url_path_map_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -20420,8 +20420,8 @@ class az_network_application_gateway_url_path_map_delete_command_builder extends
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_url_path_map_list_command_builder extends CommandBuilder<az_network_application_gateway_url_path_map_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -20465,8 +20465,8 @@ class az_network_application_gateway_url_path_map_list_command_builder extends C
  * ```
  */
 class az_network_application_gateway_url_path_map_show_command_builder extends CommandBuilder<az_network_application_gateway_url_path_map_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the application gateway. */
@@ -20528,8 +20528,8 @@ class az_network_application_gateway_url_path_map_show_command_builder extends C
  * ```
  */
 class az_network_application_gateway_url_path_map_update_command_builder extends CommandBuilder<az_network_application_gateway_url_path_map_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -20629,8 +20629,8 @@ class az_network_application_gateway_url_path_map_update_command_builder extends
  * ```
  */
 class az_network_application_gateway_waf_config_list_rule_sets_command_builder extends CommandBuilder<az_network_application_gateway_waf_config_list_rule_sets_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** List rules for the specified rule group. Use `\*` to list rules for all groups. Omit to suppress listing individual rules. */
@@ -20683,8 +20683,8 @@ class az_network_application_gateway_waf_config_list_rule_sets_command_builder e
  * @param {boolean} enabled Specify whether the application firewall is enabled.
  */
 class az_network_application_gateway_waf_config_set_command_builder extends CommandBuilder<az_network_application_gateway_waf_config_set_command_result> {
-    constructor(commandPath: string, enabled: boolean) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, enabled: boolean) {
+        super(commandPath, resultDataTypeName);
         this.enabled(enabled)
     }
 
@@ -20792,8 +20792,8 @@ class az_network_application_gateway_waf_config_set_command_builder extends Comm
  * ```
  */
 class az_network_application_gateway_waf_config_show_command_builder extends CommandBuilder<az_network_application_gateway_waf_config_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the application gateway. */
@@ -20849,8 +20849,8 @@ class az_network_application_gateway_waf_config_show_command_builder extends Com
  * @param {string} values Space-separated list of values to match.
  */
 class az_network_application_gateway_waf_policy_custom_rule_match_condition_add_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_custom_rule_match_condition_add_command_result> {
-    constructor(commandPath: string, matchVariables: string, operator: 'BeginsWith' | 'Contains' | 'EndsWith' | 'Equal' | 'GeoMatch' | 'GreaterThan' | 'GreaterThanOrEqual' | 'IPMatch' | 'LessThan' | 'LessThanOrEqual' | 'Regex', values: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, matchVariables: string, operator: 'BeginsWith' | 'Contains' | 'EndsWith' | 'Equal' | 'GeoMatch' | 'GreaterThan' | 'GreaterThanOrEqual' | 'IPMatch' | 'LessThan' | 'LessThanOrEqual' | 'Regex', values: string) {
+        super(commandPath, resultDataTypeName);
         this.matchVariables(matchVariables)
         this.operator(operator)
         this.values(values)
@@ -20934,8 +20934,8 @@ class az_network_application_gateway_waf_policy_custom_rule_match_condition_add_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_waf_policy_custom_rule_match_condition_list_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_custom_rule_match_condition_list_command_result> {
-    constructor(commandPath: string, name: string, policyName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, policyName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
@@ -20988,8 +20988,8 @@ class az_network_application_gateway_waf_policy_custom_rule_match_condition_list
  * @param {string} index Index of the match condition to remove.
  */
 class az_network_application_gateway_waf_policy_custom_rule_match_condition_remove_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_custom_rule_match_condition_remove_command_result> {
-    constructor(commandPath: string, index: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, index: string) {
+        super(commandPath, resultDataTypeName);
         this.index(index)
     }
 
@@ -21052,8 +21052,8 @@ class az_network_application_gateway_waf_policy_custom_rule_match_condition_remo
  * @param {'Invalid' | 'MatchRule'} ruleType Type of rule.
  */
 class az_network_application_gateway_waf_policy_custom_rule_create_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_custom_rule_create_command_result> {
-    constructor(commandPath: string, action: 'Allow' | 'Block' | 'Log', name: string, policyName: string, priority: string, resourceGroup: string, ruleType: 'Invalid' | 'MatchRule') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, action: 'Allow' | 'Block' | 'Log', name: string, policyName: string, priority: string, resourceGroup: string, ruleType: 'Invalid' | 'MatchRule') {
+        super(commandPath, resultDataTypeName);
         this.action(action)
         this.name(name)
         this.policyName(policyName)
@@ -21118,8 +21118,8 @@ class az_network_application_gateway_waf_policy_custom_rule_create_command_build
  * ```
  */
 class az_network_application_gateway_waf_policy_custom_rule_delete_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_custom_rule_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -21168,8 +21168,8 @@ class az_network_application_gateway_waf_policy_custom_rule_delete_command_build
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_waf_policy_custom_rule_list_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_custom_rule_list_command_result> {
-    constructor(commandPath: string, policyName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
     }
@@ -21213,8 +21213,8 @@ class az_network_application_gateway_waf_policy_custom_rule_list_command_builder
  * ```
  */
 class az_network_application_gateway_waf_policy_custom_rule_show_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_custom_rule_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -21274,8 +21274,8 @@ class az_network_application_gateway_waf_policy_custom_rule_show_command_builder
  * ```
  */
 class az_network_application_gateway_waf_policy_custom_rule_update_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_custom_rule_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Action to take. */
@@ -21371,8 +21371,8 @@ class az_network_application_gateway_waf_policy_custom_rule_update_command_build
  * @param {'Contains' | 'EndsWith' | 'Equals' | 'EqualsAny' | 'StartsWith'} selectorMatchOperator When matchVariable is a collection, operate on the selector to specify which elements in the collection this exclusion applies to.
  */
 class az_network_application_gateway_waf_policy_managed_rule_exclusion_add_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_managed_rule_exclusion_add_command_result> {
-    constructor(commandPath: string, matchVariable: 'RequestArgNames' | 'RequestCookieNames' | 'RequestHeaderNames', policyName: string, resourceGroup: string, selector: string, selectorMatchOperator: 'Contains' | 'EndsWith' | 'Equals' | 'EqualsAny' | 'StartsWith') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, matchVariable: 'RequestArgNames' | 'RequestCookieNames' | 'RequestHeaderNames', policyName: string, resourceGroup: string, selector: string, selectorMatchOperator: 'Contains' | 'EndsWith' | 'Equals' | 'EqualsAny' | 'StartsWith') {
+        super(commandPath, resultDataTypeName);
         this.matchVariable(matchVariable)
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
@@ -21432,8 +21432,8 @@ class az_network_application_gateway_waf_policy_managed_rule_exclusion_add_comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_waf_policy_managed_rule_exclusion_list_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_managed_rule_exclusion_list_command_result> {
-    constructor(commandPath: string, policyName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
     }
@@ -21477,8 +21477,8 @@ class az_network_application_gateway_waf_policy_managed_rule_exclusion_list_comm
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_waf_policy_managed_rule_exclusion_remove_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_managed_rule_exclusion_remove_command_result> {
-    constructor(commandPath: string, policyName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
     }
@@ -21522,8 +21522,8 @@ class az_network_application_gateway_waf_policy_managed_rule_exclusion_remove_co
  * @param {'0.1' | '2.2.9' | '3.0' | '3.1'} version The version of the web application firewall rule set type. 0.1 is used for Microsoft_BotManagerRuleSet.
  */
 class az_network_application_gateway_waf_policy_managed_rule_rule_set_add_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_managed_rule_rule_set_add_command_result> {
-    constructor(commandPath: string, policyName: string, resourceGroup: string, type: 'Microsoft_BotManagerRuleSet' | 'OWASP', version: '0.1' | '2.2.9' | '3.0' | '3.1') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyName: string, resourceGroup: string, type: 'Microsoft_BotManagerRuleSet' | 'OWASP', version: '0.1' | '2.2.9' | '3.0' | '3.1') {
+        super(commandPath, resultDataTypeName);
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
         this.type(type)
@@ -21588,8 +21588,8 @@ class az_network_application_gateway_waf_policy_managed_rule_rule_set_add_comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_waf_policy_managed_rule_rule_set_list_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_managed_rule_rule_set_list_command_result> {
-    constructor(commandPath: string, policyName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
     }
@@ -21638,8 +21638,8 @@ class az_network_application_gateway_waf_policy_managed_rule_rule_set_list_comma
  * @param {'0.1' | '2.2.9' | '3.0' | '3.1'} version The version of the web application firewall rule set type. 0.1 is used for Microsoft_BotManagerRuleSet.
  */
 class az_network_application_gateway_waf_policy_managed_rule_rule_set_remove_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_managed_rule_rule_set_remove_command_result> {
-    constructor(commandPath: string, policyName: string, resourceGroup: string, type: 'Microsoft_BotManagerRuleSet' | 'OWASP', version: '0.1' | '2.2.9' | '3.0' | '3.1') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyName: string, resourceGroup: string, type: 'Microsoft_BotManagerRuleSet' | 'OWASP', version: '0.1' | '2.2.9' | '3.0' | '3.1') {
+        super(commandPath, resultDataTypeName);
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
         this.type(type)
@@ -21708,8 +21708,8 @@ class az_network_application_gateway_waf_policy_managed_rule_rule_set_remove_com
  * @param {'0.1' | '2.2.9' | '3.0' | '3.1'} version The version of the web application firewall rule set type. 0.1 is used for Microsoft_BotManagerRuleSet.
  */
 class az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_result> {
-    constructor(commandPath: string, groupName: string, policyName: string, resourceGroup: string, type: 'Microsoft_BotManagerRuleSet' | 'OWASP', version: '0.1' | '2.2.9' | '3.0' | '3.1') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, groupName: string, policyName: string, resourceGroup: string, type: 'Microsoft_BotManagerRuleSet' | 'OWASP', version: '0.1' | '2.2.9' | '3.0' | '3.1') {
+        super(commandPath, resultDataTypeName);
         this.groupName(groupName)
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
@@ -21799,8 +21799,8 @@ class az_network_application_gateway_waf_policy_managed_rule_rule_set_update_com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_waf_policy_policy_setting_list_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_policy_setting_list_command_result> {
-    constructor(commandPath: string, policyName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
     }
@@ -21853,8 +21853,8 @@ class az_network_application_gateway_waf_policy_policy_setting_list_command_buil
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_waf_policy_policy_setting_update_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_policy_setting_update_command_result> {
-    constructor(commandPath: string, policyName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
     }
@@ -21950,8 +21950,8 @@ class az_network_application_gateway_waf_policy_policy_setting_update_command_bu
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_waf_policy_create_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -22011,8 +22011,8 @@ class az_network_application_gateway_waf_policy_create_command_builder extends C
  * ```
  */
 class az_network_application_gateway_waf_policy_delete_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -22051,8 +22051,8 @@ class az_network_application_gateway_waf_policy_delete_command_builder extends C
  * ```
  */
 class az_network_application_gateway_waf_policy_list_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -22087,8 +22087,8 @@ class az_network_application_gateway_waf_policy_list_command_builder extends Com
  * ```
  */
 class az_network_application_gateway_waf_policy_show_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -22139,8 +22139,8 @@ class az_network_application_gateway_waf_policy_show_command_builder extends Com
  * ```
  */
 class az_network_application_gateway_waf_policy_update_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -22217,8 +22217,8 @@ class az_network_application_gateway_waf_policy_update_command_builder extends C
  * ```
  */
 class az_network_application_gateway_waf_policy_wait_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */
@@ -22337,8 +22337,8 @@ class az_network_application_gateway_waf_policy_wait_command_builder extends Com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_application_gateway_create_command_builder extends CommandBuilder<az_network_application_gateway_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -22585,8 +22585,8 @@ class az_network_application_gateway_create_command_builder extends CommandBuild
  * ```
  */
 class az_network_application_gateway_delete_command_builder extends CommandBuilder<az_network_application_gateway_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -22631,8 +22631,8 @@ class az_network_application_gateway_delete_command_builder extends CommandBuild
  * ```
  */
 class az_network_application_gateway_list_command_builder extends CommandBuilder<az_network_application_gateway_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -22667,8 +22667,8 @@ class az_network_application_gateway_list_command_builder extends CommandBuilder
  * ```
  */
 class az_network_application_gateway_show_command_builder extends CommandBuilder<az_network_application_gateway_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -22715,8 +22715,8 @@ class az_network_application_gateway_show_command_builder extends CommandBuilder
  * ```
  */
 class az_network_application_gateway_show_backend_health_command_builder extends CommandBuilder<az_network_application_gateway_show_backend_health_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Expands BackendAddressPool and BackendHttpSettings referenced in backend health. */
@@ -22762,8 +22762,8 @@ class az_network_application_gateway_show_backend_health_command_builder extends
  * ```
  */
 class az_network_application_gateway_start_command_builder extends CommandBuilder<az_network_application_gateway_start_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -22803,8 +22803,8 @@ class az_network_application_gateway_start_command_builder extends CommandBuilde
  * ```
  */
 class az_network_application_gateway_stop_command_builder extends CommandBuilder<az_network_application_gateway_stop_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -22856,8 +22856,8 @@ class az_network_application_gateway_stop_command_builder extends CommandBuilder
  * ```
  */
 class az_network_application_gateway_update_command_builder extends CommandBuilder<az_network_application_gateway_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -22976,8 +22976,8 @@ class az_network_application_gateway_update_command_builder extends CommandBuild
  * ```
  */
 class az_network_application_gateway_wait_command_builder extends CommandBuilder<az_network_application_gateway_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */
@@ -23063,8 +23063,8 @@ class az_network_application_gateway_wait_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_asg_create_command_builder extends CommandBuilder<az_network_asg_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -23112,8 +23112,8 @@ class az_network_asg_create_command_builder extends CommandBuilder<az_network_as
  * ```
  */
 class az_network_asg_delete_command_builder extends CommandBuilder<az_network_asg_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -23151,8 +23151,8 @@ class az_network_asg_delete_command_builder extends CommandBuilder<az_network_as
  * ```
  */
 class az_network_asg_list_command_builder extends CommandBuilder<az_network_asg_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -23181,8 +23181,8 @@ class az_network_asg_list_command_builder extends CommandBuilder<az_network_asg_
  * ```
  */
 class az_network_asg_show_command_builder extends CommandBuilder<az_network_asg_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -23233,8 +23233,8 @@ class az_network_asg_show_command_builder extends CommandBuilder<az_network_asg_
  * ```
  */
 class az_network_asg_update_command_builder extends CommandBuilder<az_network_asg_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -23311,8 +23311,8 @@ class az_network_asg_update_command_builder extends CommandBuilder<az_network_as
  * @param {string} vnetName Name of the virtual network. It must have a subnet called AzureBastionSubnet.
  */
 class az_network_bastion_create_command_builder extends CommandBuilder<az_network_bastion_create_command_result> {
-    constructor(commandPath: string, name: string, publicIpAddress: string, resourceGroup: string, vnetName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, publicIpAddress: string, resourceGroup: string, vnetName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.publicIpAddress(publicIpAddress)
         this.resourceGroup(resourceGroup)
@@ -23370,8 +23370,8 @@ class az_network_bastion_create_command_builder extends CommandBuilder<az_networ
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_bastion_delete_command_builder extends CommandBuilder<az_network_bastion_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -23406,8 +23406,8 @@ class az_network_bastion_delete_command_builder extends CommandBuilder<az_networ
  * ```
  */
 class az_network_bastion_list_command_builder extends CommandBuilder<az_network_bastion_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -23444,8 +23444,8 @@ class az_network_bastion_list_command_builder extends CommandBuilder<az_network_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_bastion_show_command_builder extends CommandBuilder<az_network_bastion_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -23492,8 +23492,8 @@ class az_network_bastion_show_command_builder extends CommandBuilder<az_network_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_ddos_protection_create_command_builder extends CommandBuilder<az_network_ddos_protection_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -23547,8 +23547,8 @@ class az_network_ddos_protection_create_command_builder extends CommandBuilder<a
  * ```
  */
 class az_network_ddos_protection_delete_command_builder extends CommandBuilder<az_network_ddos_protection_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -23587,8 +23587,8 @@ class az_network_ddos_protection_delete_command_builder extends CommandBuilder<a
  * ```
  */
 class az_network_ddos_protection_list_command_builder extends CommandBuilder<az_network_ddos_protection_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -23623,8 +23623,8 @@ class az_network_ddos_protection_list_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_network_ddos_protection_show_command_builder extends CommandBuilder<az_network_ddos_protection_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -23677,8 +23677,8 @@ class az_network_ddos_protection_show_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_network_ddos_protection_update_command_builder extends CommandBuilder<az_network_ddos_protection_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -23768,8 +23768,8 @@ class az_network_ddos_protection_update_command_builder extends CommandBuilder<a
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_a_add_record_command_builder extends CommandBuilder<az_network_dns_record_set_a_add_record_command_result> {
-    constructor(commandPath: string, ipv4Address: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ipv4Address: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.ipv4Address(ipv4Address)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -23840,8 +23840,8 @@ class az_network_dns_record_set_a_add_record_command_builder extends CommandBuil
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_a_create_command_builder extends CommandBuilder<az_network_dns_record_set_a_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -23920,8 +23920,8 @@ class az_network_dns_record_set_a_create_command_builder extends CommandBuilder<
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_a_delete_command_builder extends CommandBuilder<az_network_dns_record_set_a_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -23979,8 +23979,8 @@ class az_network_dns_record_set_a_delete_command_builder extends CommandBuilder<
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_a_list_command_builder extends CommandBuilder<az_network_dns_record_set_a_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -24029,8 +24029,8 @@ class az_network_dns_record_set_a_list_command_builder extends CommandBuilder<az
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_a_remove_record_command_builder extends CommandBuilder<az_network_dns_record_set_a_remove_record_command_result> {
-    constructor(commandPath: string, ipv4Address: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ipv4Address: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.ipv4Address(ipv4Address)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -24091,8 +24091,8 @@ class az_network_dns_record_set_a_remove_record_command_builder extends CommandB
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_a_show_command_builder extends CommandBuilder<az_network_dns_record_set_a_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -24153,8 +24153,8 @@ class az_network_dns_record_set_a_show_command_builder extends CommandBuilder<az
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_a_update_command_builder extends CommandBuilder<az_network_dns_record_set_a_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -24253,8 +24253,8 @@ class az_network_dns_record_set_a_update_command_builder extends CommandBuilder<
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_aaaa_add_record_command_builder extends CommandBuilder<az_network_dns_record_set_aaaa_add_record_command_result> {
-    constructor(commandPath: string, ipv6Address: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ipv6Address: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.ipv6Address(ipv6Address)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -24325,8 +24325,8 @@ class az_network_dns_record_set_aaaa_add_record_command_builder extends CommandB
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_aaaa_create_command_builder extends CommandBuilder<az_network_dns_record_set_aaaa_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -24405,8 +24405,8 @@ class az_network_dns_record_set_aaaa_create_command_builder extends CommandBuild
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_aaaa_delete_command_builder extends CommandBuilder<az_network_dns_record_set_aaaa_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -24464,8 +24464,8 @@ class az_network_dns_record_set_aaaa_delete_command_builder extends CommandBuild
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_aaaa_list_command_builder extends CommandBuilder<az_network_dns_record_set_aaaa_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -24514,8 +24514,8 @@ class az_network_dns_record_set_aaaa_list_command_builder extends CommandBuilder
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_aaaa_remove_record_command_builder extends CommandBuilder<az_network_dns_record_set_aaaa_remove_record_command_result> {
-    constructor(commandPath: string, ipv6Address: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ipv6Address: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.ipv6Address(ipv6Address)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -24576,8 +24576,8 @@ class az_network_dns_record_set_aaaa_remove_record_command_builder extends Comma
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_aaaa_show_command_builder extends CommandBuilder<az_network_dns_record_set_aaaa_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -24638,8 +24638,8 @@ class az_network_dns_record_set_aaaa_show_command_builder extends CommandBuilder
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_aaaa_update_command_builder extends CommandBuilder<az_network_dns_record_set_aaaa_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -24742,8 +24742,8 @@ class az_network_dns_record_set_aaaa_update_command_builder extends CommandBuild
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_caa_add_record_command_builder extends CommandBuilder<az_network_dns_record_set_caa_add_record_command_result> {
-    constructor(commandPath: string, flags: string, recordSetName: string, resourceGroup: string, tag: string, value: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, flags: string, recordSetName: string, resourceGroup: string, tag: string, value: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.flags(flags)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -24828,8 +24828,8 @@ class az_network_dns_record_set_caa_add_record_command_builder extends CommandBu
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_caa_create_command_builder extends CommandBuilder<az_network_dns_record_set_caa_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -24908,8 +24908,8 @@ class az_network_dns_record_set_caa_create_command_builder extends CommandBuilde
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_caa_delete_command_builder extends CommandBuilder<az_network_dns_record_set_caa_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -24967,8 +24967,8 @@ class az_network_dns_record_set_caa_delete_command_builder extends CommandBuilde
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_caa_list_command_builder extends CommandBuilder<az_network_dns_record_set_caa_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -25021,8 +25021,8 @@ class az_network_dns_record_set_caa_list_command_builder extends CommandBuilder<
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_caa_remove_record_command_builder extends CommandBuilder<az_network_dns_record_set_caa_remove_record_command_result> {
-    constructor(commandPath: string, flags: string, recordSetName: string, resourceGroup: string, tag: string, value: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, flags: string, recordSetName: string, resourceGroup: string, tag: string, value: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.flags(flags)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -25097,8 +25097,8 @@ class az_network_dns_record_set_caa_remove_record_command_builder extends Comman
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_caa_show_command_builder extends CommandBuilder<az_network_dns_record_set_caa_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -25159,8 +25159,8 @@ class az_network_dns_record_set_caa_show_command_builder extends CommandBuilder<
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_caa_update_command_builder extends CommandBuilder<az_network_dns_record_set_caa_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -25260,8 +25260,8 @@ class az_network_dns_record_set_caa_update_command_builder extends CommandBuilde
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_cname_create_command_builder extends CommandBuilder<az_network_dns_record_set_cname_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -25340,8 +25340,8 @@ class az_network_dns_record_set_cname_create_command_builder extends CommandBuil
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_cname_delete_command_builder extends CommandBuilder<az_network_dns_record_set_cname_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -25399,8 +25399,8 @@ class az_network_dns_record_set_cname_delete_command_builder extends CommandBuil
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_cname_list_command_builder extends CommandBuilder<az_network_dns_record_set_cname_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -25449,8 +25449,8 @@ class az_network_dns_record_set_cname_list_command_builder extends CommandBuilde
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_cname_remove_record_command_builder extends CommandBuilder<az_network_dns_record_set_cname_remove_record_command_result> {
-    constructor(commandPath: string, cname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, cname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.cname(cname)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -25514,8 +25514,8 @@ class az_network_dns_record_set_cname_remove_record_command_builder extends Comm
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_cname_set_record_command_builder extends CommandBuilder<az_network_dns_record_set_cname_set_record_command_result> {
-    constructor(commandPath: string, cname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, cname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.cname(cname)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -25582,8 +25582,8 @@ class az_network_dns_record_set_cname_set_record_command_builder extends Command
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_cname_show_command_builder extends CommandBuilder<az_network_dns_record_set_cname_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -25642,8 +25642,8 @@ class az_network_dns_record_set_cname_show_command_builder extends CommandBuilde
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_mx_add_record_command_builder extends CommandBuilder<az_network_dns_record_set_mx_add_record_command_result> {
-    constructor(commandPath: string, exchange: string, preference: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, exchange: string, preference: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.exchange(exchange)
         this.preference(preference)
         this.recordSetName(recordSetName)
@@ -25721,8 +25721,8 @@ class az_network_dns_record_set_mx_add_record_command_builder extends CommandBui
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_mx_create_command_builder extends CommandBuilder<az_network_dns_record_set_mx_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -25801,8 +25801,8 @@ class az_network_dns_record_set_mx_create_command_builder extends CommandBuilder
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_mx_delete_command_builder extends CommandBuilder<az_network_dns_record_set_mx_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -25860,8 +25860,8 @@ class az_network_dns_record_set_mx_delete_command_builder extends CommandBuilder
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_mx_list_command_builder extends CommandBuilder<az_network_dns_record_set_mx_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -25912,8 +25912,8 @@ class az_network_dns_record_set_mx_list_command_builder extends CommandBuilder<a
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_mx_remove_record_command_builder extends CommandBuilder<az_network_dns_record_set_mx_remove_record_command_result> {
-    constructor(commandPath: string, exchange: string, preference: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, exchange: string, preference: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.exchange(exchange)
         this.preference(preference)
         this.recordSetName(recordSetName)
@@ -25981,8 +25981,8 @@ class az_network_dns_record_set_mx_remove_record_command_builder extends Command
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_mx_show_command_builder extends CommandBuilder<az_network_dns_record_set_mx_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -26043,8 +26043,8 @@ class az_network_dns_record_set_mx_show_command_builder extends CommandBuilder<a
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_mx_update_command_builder extends CommandBuilder<az_network_dns_record_set_mx_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -26143,8 +26143,8 @@ class az_network_dns_record_set_mx_update_command_builder extends CommandBuilder
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_ns_add_record_command_builder extends CommandBuilder<az_network_dns_record_set_ns_add_record_command_result> {
-    constructor(commandPath: string, nsdname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nsdname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.nsdname(nsdname)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -26215,8 +26215,8 @@ class az_network_dns_record_set_ns_add_record_command_builder extends CommandBui
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_ns_create_command_builder extends CommandBuilder<az_network_dns_record_set_ns_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -26295,8 +26295,8 @@ class az_network_dns_record_set_ns_create_command_builder extends CommandBuilder
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_ns_delete_command_builder extends CommandBuilder<az_network_dns_record_set_ns_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -26354,8 +26354,8 @@ class az_network_dns_record_set_ns_delete_command_builder extends CommandBuilder
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_ns_list_command_builder extends CommandBuilder<az_network_dns_record_set_ns_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -26404,8 +26404,8 @@ class az_network_dns_record_set_ns_list_command_builder extends CommandBuilder<a
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_ns_remove_record_command_builder extends CommandBuilder<az_network_dns_record_set_ns_remove_record_command_result> {
-    constructor(commandPath: string, nsdname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nsdname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.nsdname(nsdname)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -26466,8 +26466,8 @@ class az_network_dns_record_set_ns_remove_record_command_builder extends Command
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_ns_show_command_builder extends CommandBuilder<az_network_dns_record_set_ns_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -26528,8 +26528,8 @@ class az_network_dns_record_set_ns_show_command_builder extends CommandBuilder<a
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_ns_update_command_builder extends CommandBuilder<az_network_dns_record_set_ns_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -26628,8 +26628,8 @@ class az_network_dns_record_set_ns_update_command_builder extends CommandBuilder
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_ptr_add_record_command_builder extends CommandBuilder<az_network_dns_record_set_ptr_add_record_command_result> {
-    constructor(commandPath: string, ptrdname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ptrdname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.ptrdname(ptrdname)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -26700,8 +26700,8 @@ class az_network_dns_record_set_ptr_add_record_command_builder extends CommandBu
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_ptr_create_command_builder extends CommandBuilder<az_network_dns_record_set_ptr_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -26780,8 +26780,8 @@ class az_network_dns_record_set_ptr_create_command_builder extends CommandBuilde
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_ptr_delete_command_builder extends CommandBuilder<az_network_dns_record_set_ptr_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -26839,8 +26839,8 @@ class az_network_dns_record_set_ptr_delete_command_builder extends CommandBuilde
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_ptr_list_command_builder extends CommandBuilder<az_network_dns_record_set_ptr_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -26889,8 +26889,8 @@ class az_network_dns_record_set_ptr_list_command_builder extends CommandBuilder<
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_ptr_remove_record_command_builder extends CommandBuilder<az_network_dns_record_set_ptr_remove_record_command_result> {
-    constructor(commandPath: string, ptrdname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ptrdname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.ptrdname(ptrdname)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -26951,8 +26951,8 @@ class az_network_dns_record_set_ptr_remove_record_command_builder extends Comman
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_ptr_show_command_builder extends CommandBuilder<az_network_dns_record_set_ptr_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -27013,8 +27013,8 @@ class az_network_dns_record_set_ptr_show_command_builder extends CommandBuilder<
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_ptr_update_command_builder extends CommandBuilder<az_network_dns_record_set_ptr_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -27108,8 +27108,8 @@ class az_network_dns_record_set_ptr_update_command_builder extends CommandBuilde
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_soa_show_command_builder extends CommandBuilder<az_network_dns_record_set_soa_show_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -27161,8 +27161,8 @@ class az_network_dns_record_set_soa_show_command_builder extends CommandBuilder<
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_soa_update_command_builder extends CommandBuilder<az_network_dns_record_set_soa_update_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -27259,8 +27259,8 @@ class az_network_dns_record_set_soa_update_command_builder extends CommandBuilde
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_srv_add_record_command_builder extends CommandBuilder<az_network_dns_record_set_srv_add_record_command_result> {
-    constructor(commandPath: string, port: string, priority: string, recordSetName: string, resourceGroup: string, target: string, weight: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, port: string, priority: string, recordSetName: string, resourceGroup: string, target: string, weight: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.port(port)
         this.priority(priority)
         this.recordSetName(recordSetName)
@@ -27346,8 +27346,8 @@ class az_network_dns_record_set_srv_add_record_command_builder extends CommandBu
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_srv_create_command_builder extends CommandBuilder<az_network_dns_record_set_srv_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -27426,8 +27426,8 @@ class az_network_dns_record_set_srv_create_command_builder extends CommandBuilde
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_srv_delete_command_builder extends CommandBuilder<az_network_dns_record_set_srv_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -27485,8 +27485,8 @@ class az_network_dns_record_set_srv_delete_command_builder extends CommandBuilde
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_srv_list_command_builder extends CommandBuilder<az_network_dns_record_set_srv_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -27541,8 +27541,8 @@ class az_network_dns_record_set_srv_list_command_builder extends CommandBuilder<
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_srv_remove_record_command_builder extends CommandBuilder<az_network_dns_record_set_srv_remove_record_command_result> {
-    constructor(commandPath: string, port: string, priority: string, recordSetName: string, resourceGroup: string, target: string, weight: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, port: string, priority: string, recordSetName: string, resourceGroup: string, target: string, weight: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.port(port)
         this.priority(priority)
         this.recordSetName(recordSetName)
@@ -27624,8 +27624,8 @@ class az_network_dns_record_set_srv_remove_record_command_builder extends Comman
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_srv_show_command_builder extends CommandBuilder<az_network_dns_record_set_srv_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -27686,8 +27686,8 @@ class az_network_dns_record_set_srv_show_command_builder extends CommandBuilder<
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_srv_update_command_builder extends CommandBuilder<az_network_dns_record_set_srv_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -27785,8 +27785,8 @@ class az_network_dns_record_set_srv_update_command_builder extends CommandBuilde
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_txt_add_record_command_builder extends CommandBuilder<az_network_dns_record_set_txt_add_record_command_result> {
-    constructor(commandPath: string, recordSetName: string, resourceGroup: string, value: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, recordSetName: string, resourceGroup: string, value: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
         this.value(value)
@@ -27851,8 +27851,8 @@ class az_network_dns_record_set_txt_add_record_command_builder extends CommandBu
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_txt_create_command_builder extends CommandBuilder<az_network_dns_record_set_txt_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -27931,8 +27931,8 @@ class az_network_dns_record_set_txt_create_command_builder extends CommandBuilde
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_txt_delete_command_builder extends CommandBuilder<az_network_dns_record_set_txt_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -27990,8 +27990,8 @@ class az_network_dns_record_set_txt_delete_command_builder extends CommandBuilde
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_txt_list_command_builder extends CommandBuilder<az_network_dns_record_set_txt_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -28040,8 +28040,8 @@ class az_network_dns_record_set_txt_list_command_builder extends CommandBuilder<
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_txt_remove_record_command_builder extends CommandBuilder<az_network_dns_record_set_txt_remove_record_command_result> {
-    constructor(commandPath: string, recordSetName: string, resourceGroup: string, value: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, recordSetName: string, resourceGroup: string, value: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
         this.value(value)
@@ -28102,8 +28102,8 @@ class az_network_dns_record_set_txt_remove_record_command_builder extends Comman
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_txt_show_command_builder extends CommandBuilder<az_network_dns_record_set_txt_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -28164,8 +28164,8 @@ class az_network_dns_record_set_txt_show_command_builder extends CommandBuilder<
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_txt_update_command_builder extends CommandBuilder<az_network_dns_record_set_txt_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -28259,8 +28259,8 @@ class az_network_dns_record_set_txt_update_command_builder extends CommandBuilde
  * @param {string} zoneName The name of the zone.
  */
 class az_network_dns_record_set_list_command_builder extends CommandBuilder<az_network_dns_record_set_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -28310,8 +28310,8 @@ class az_network_dns_record_set_list_command_builder extends CommandBuilder<az_n
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_dns_zone_create_command_builder extends CommandBuilder<az_network_dns_zone_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -28387,8 +28387,8 @@ class az_network_dns_zone_create_command_builder extends CommandBuilder<az_netwo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_dns_zone_delete_command_builder extends CommandBuilder<az_network_dns_zone_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -28439,8 +28439,8 @@ class az_network_dns_zone_delete_command_builder extends CommandBuilder<az_netwo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_dns_zone_export_command_builder extends CommandBuilder<az_network_dns_zone_export_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -28486,8 +28486,8 @@ class az_network_dns_zone_export_command_builder extends CommandBuilder<az_netwo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_dns_zone_import_command_builder extends CommandBuilder<az_network_dns_zone_import_command_result> {
-    constructor(commandPath: string, fileName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.fileName(fileName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -28529,8 +28529,8 @@ class az_network_dns_zone_import_command_builder extends CommandBuilder<az_netwo
  * ```
  */
 class az_network_dns_zone_list_command_builder extends CommandBuilder<az_network_dns_zone_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -28567,8 +28567,8 @@ class az_network_dns_zone_list_command_builder extends CommandBuilder<az_network
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_dns_zone_show_command_builder extends CommandBuilder<az_network_dns_zone_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -28621,8 +28621,8 @@ class az_network_dns_zone_show_command_builder extends CommandBuilder<az_network
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_dns_zone_update_command_builder extends CommandBuilder<az_network_dns_zone_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -28710,8 +28710,8 @@ class az_network_dns_zone_update_command_builder extends CommandBuilder<az_netwo
  * ```
  */
 class az_network_dns_list_references_command_builder extends CommandBuilder<az_network_dns_list_references_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -28743,8 +28743,8 @@ class az_network_dns_list_references_command_builder extends CommandBuilder<az_n
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_express_route_auth_create_command_builder extends CommandBuilder<az_network_express_route_auth_create_command_result> {
-    constructor(commandPath: string, circuitName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, circuitName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.circuitName(circuitName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -28788,8 +28788,8 @@ class az_network_express_route_auth_create_command_builder extends CommandBuilde
  * ```
  */
 class az_network_express_route_auth_delete_command_builder extends CommandBuilder<az_network_express_route_auth_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** ExpressRoute circuit name. */
@@ -28838,8 +28838,8 @@ class az_network_express_route_auth_delete_command_builder extends CommandBuilde
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_express_route_auth_list_command_builder extends CommandBuilder<az_network_express_route_auth_list_command_result> {
-    constructor(commandPath: string, circuitName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, circuitName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.circuitName(circuitName)
         this.resourceGroup(resourceGroup)
     }
@@ -28883,8 +28883,8 @@ class az_network_express_route_auth_list_command_builder extends CommandBuilder<
  * ```
  */
 class az_network_express_route_auth_show_command_builder extends CommandBuilder<az_network_express_route_auth_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** ExpressRoute circuit name. */
@@ -28949,8 +28949,8 @@ class az_network_express_route_auth_show_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_express_route_gateway_connection_create_command_builder extends CommandBuilder<az_network_express_route_gateway_connection_create_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, peering: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, peering: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.peering(peering)
@@ -29043,8 +29043,8 @@ class az_network_express_route_gateway_connection_create_command_builder extends
  * ```
  */
 class az_network_express_route_gateway_connection_delete_command_builder extends CommandBuilder<az_network_express_route_gateway_connection_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** ExpressRoute gateway name. */
@@ -29093,8 +29093,8 @@ class az_network_express_route_gateway_connection_delete_command_builder extends
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_express_route_gateway_connection_list_command_builder extends CommandBuilder<az_network_express_route_gateway_connection_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -29138,8 +29138,8 @@ class az_network_express_route_gateway_connection_list_command_builder extends C
  * ```
  */
 class az_network_express_route_gateway_connection_show_command_builder extends CommandBuilder<az_network_express_route_gateway_connection_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** ExpressRoute gateway name. */
@@ -29204,8 +29204,8 @@ class az_network_express_route_gateway_connection_show_command_builder extends C
  * ```
  */
 class az_network_express_route_gateway_connection_update_command_builder extends CommandBuilder<az_network_express_route_gateway_connection_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -29330,8 +29330,8 @@ class az_network_express_route_gateway_connection_update_command_builder extends
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_express_route_gateway_create_command_builder extends CommandBuilder<az_network_express_route_gateway_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -29397,8 +29397,8 @@ class az_network_express_route_gateway_create_command_builder extends CommandBui
  * ```
  */
 class az_network_express_route_gateway_delete_command_builder extends CommandBuilder<az_network_express_route_gateway_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -29437,8 +29437,8 @@ class az_network_express_route_gateway_delete_command_builder extends CommandBui
  * ```
  */
 class az_network_express_route_gateway_list_command_builder extends CommandBuilder<az_network_express_route_gateway_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -29473,8 +29473,8 @@ class az_network_express_route_gateway_list_command_builder extends CommandBuild
  * ```
  */
 class az_network_express_route_gateway_show_command_builder extends CommandBuilder<az_network_express_route_gateway_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -29527,8 +29527,8 @@ class az_network_express_route_gateway_show_command_builder extends CommandBuild
  * ```
  */
 class az_network_express_route_gateway_update_command_builder extends CommandBuilder<az_network_express_route_gateway_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -29621,8 +29621,8 @@ class az_network_express_route_gateway_update_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_express_route_peering_connection_create_command_builder extends CommandBuilder<az_network_express_route_peering_connection_create_command_result> {
-    constructor(commandPath: string, addressPrefix: string, circuitName: string, name: string, peerCircuit: string, peeringName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, addressPrefix: string, circuitName: string, name: string, peerCircuit: string, peeringName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.addressPrefix(addressPrefix)
         this.circuitName(circuitName)
         this.name(name)
@@ -29694,8 +29694,8 @@ class az_network_express_route_peering_connection_create_command_builder extends
  * ```
  */
 class az_network_express_route_peering_connection_delete_command_builder extends CommandBuilder<az_network_express_route_peering_connection_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** ExpressRoute circuit name. */
@@ -29750,8 +29750,8 @@ class az_network_express_route_peering_connection_delete_command_builder extends
  * ```
  */
 class az_network_express_route_peering_connection_show_command_builder extends CommandBuilder<az_network_express_route_peering_connection_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** ExpressRoute circuit name. */
@@ -29814,8 +29814,8 @@ class az_network_express_route_peering_connection_show_command_builder extends C
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_express_route_peering_peer_connection_list_command_builder extends CommandBuilder<az_network_express_route_peering_peer_connection_list_command_result> {
-    constructor(commandPath: string, circuitName: string, peeringName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, circuitName: string, peeringName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.circuitName(circuitName)
         this.peeringName(peeringName)
         this.resourceGroup(resourceGroup)
@@ -29871,8 +29871,8 @@ class az_network_express_route_peering_peer_connection_list_command_builder exte
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_express_route_peering_peer_connection_show_command_builder extends CommandBuilder<az_network_express_route_peering_peer_connection_show_command_result> {
-    constructor(commandPath: string, circuitName: string, name: string, peeringName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, circuitName: string, name: string, peeringName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.circuitName(circuitName)
         this.name(name)
         this.peeringName(peeringName)
@@ -29946,8 +29946,8 @@ class az_network_express_route_peering_peer_connection_show_command_builder exte
  * @param {string} vlanId Identifier used to identify the customer.
  */
 class az_network_express_route_peering_create_command_builder extends CommandBuilder<az_network_express_route_peering_create_command_result> {
-    constructor(commandPath: string, circuitName: string, peerAsn: string, peeringType: 'AzurePrivatePeering' | 'AzurePublicPeering' | 'MicrosoftPeering', primaryPeerSubnet: string, resourceGroup: string, secondaryPeerSubnet: string, vlanId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, circuitName: string, peerAsn: string, peeringType: 'AzurePrivatePeering' | 'AzurePublicPeering' | 'MicrosoftPeering', primaryPeerSubnet: string, resourceGroup: string, secondaryPeerSubnet: string, vlanId: string) {
+        super(commandPath, resultDataTypeName);
         this.circuitName(circuitName)
         this.peerAsn(peerAsn)
         this.peeringType(peeringType)
@@ -30055,8 +30055,8 @@ class az_network_express_route_peering_create_command_builder extends CommandBui
  * ```
  */
 class az_network_express_route_peering_delete_command_builder extends CommandBuilder<az_network_express_route_peering_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** ExpressRoute circuit name. */
@@ -30105,8 +30105,8 @@ class az_network_express_route_peering_delete_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_express_route_peering_list_command_builder extends CommandBuilder<az_network_express_route_peering_list_command_result> {
-    constructor(commandPath: string, circuitName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, circuitName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.circuitName(circuitName)
         this.resourceGroup(resourceGroup)
     }
@@ -30150,8 +30150,8 @@ class az_network_express_route_peering_list_command_builder extends CommandBuild
  * ```
  */
 class az_network_express_route_peering_show_command_builder extends CommandBuilder<az_network_express_route_peering_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** ExpressRoute circuit name. */
@@ -30219,8 +30219,8 @@ class az_network_express_route_peering_show_command_builder extends CommandBuild
  * ```
  */
 class az_network_express_route_peering_update_command_builder extends CommandBuilder<az_network_express_route_peering_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -30360,8 +30360,8 @@ class az_network_express_route_peering_update_command_builder extends CommandBui
  * @param {string} identity Name or ID of the ManagedIdentity Resource.
  */
 class az_network_express_route_port_identity_assign_command_builder extends CommandBuilder<az_network_express_route_port_identity_assign_command_result> {
-    constructor(commandPath: string, identity: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, identity: string) {
+        super(commandPath, resultDataTypeName);
         this.identity(identity)
     }
 
@@ -30415,8 +30415,8 @@ class az_network_express_route_port_identity_assign_command_builder extends Comm
  * ```
  */
 class az_network_express_route_port_identity_remove_command_builder extends CommandBuilder<az_network_express_route_port_identity_remove_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -30463,8 +30463,8 @@ class az_network_express_route_port_identity_remove_command_builder extends Comm
  * ```
  */
 class az_network_express_route_port_identity_show_command_builder extends CommandBuilder<az_network_express_route_port_identity_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -30513,8 +30513,8 @@ class az_network_express_route_port_identity_show_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_express_route_port_link_list_command_builder extends CommandBuilder<az_network_express_route_port_link_list_command_result> {
-    constructor(commandPath: string, portName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, portName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.portName(portName)
         this.resourceGroup(resourceGroup)
     }
@@ -30558,8 +30558,8 @@ class az_network_express_route_port_link_list_command_builder extends CommandBui
  * ```
  */
 class az_network_express_route_port_link_show_command_builder extends CommandBuilder<az_network_express_route_port_link_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -30621,8 +30621,8 @@ class az_network_express_route_port_link_show_command_builder extends CommandBui
  * ```
  */
 class az_network_express_route_port_link_update_command_builder extends CommandBuilder<az_network_express_route_port_link_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -30720,8 +30720,8 @@ class az_network_express_route_port_link_update_command_builder extends CommandB
  * ```
  */
 class az_network_express_route_port_location_list_command_builder extends CommandBuilder<az_network_express_route_port_location_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -30750,8 +30750,8 @@ class az_network_express_route_port_location_list_command_builder extends Comman
  * @param {string} location Name of the requested ExpressRoutePort peering location.
  */
 class az_network_express_route_port_location_show_command_builder extends CommandBuilder<az_network_express_route_port_location_show_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -30793,8 +30793,8 @@ class az_network_express_route_port_location_show_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_express_route_port_create_command_builder extends CommandBuilder<az_network_express_route_port_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -30860,8 +30860,8 @@ class az_network_express_route_port_create_command_builder extends CommandBuilde
  * ```
  */
 class az_network_express_route_port_delete_command_builder extends CommandBuilder<az_network_express_route_port_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -30900,8 +30900,8 @@ class az_network_express_route_port_delete_command_builder extends CommandBuilde
  * ```
  */
 class az_network_express_route_port_list_command_builder extends CommandBuilder<az_network_express_route_port_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -30936,8 +30936,8 @@ class az_network_express_route_port_list_command_builder extends CommandBuilder<
  * ```
  */
 class az_network_express_route_port_show_command_builder extends CommandBuilder<az_network_express_route_port_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -30988,8 +30988,8 @@ class az_network_express_route_port_show_command_builder extends CommandBuilder<
  * ```
  */
 class az_network_express_route_port_update_command_builder extends CommandBuilder<az_network_express_route_port_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -31075,8 +31075,8 @@ class az_network_express_route_port_update_command_builder extends CommandBuilde
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_express_route_create_command_builder extends CommandBuilder<az_network_express_route_create_command_result> {
-    constructor(commandPath: string, bandwidth: string, name: string, peeringLocation: string, provider: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, bandwidth: string, name: string, peeringLocation: string, provider: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.bandwidth(bandwidth)
         this.name(name)
         this.peeringLocation(peeringLocation)
@@ -31182,8 +31182,8 @@ class az_network_express_route_create_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_network_express_route_delete_command_builder extends CommandBuilder<az_network_express_route_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -31229,8 +31229,8 @@ class az_network_express_route_delete_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_network_express_route_get_stats_command_builder extends CommandBuilder<az_network_express_route_get_stats_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -31269,8 +31269,8 @@ class az_network_express_route_get_stats_command_builder extends CommandBuilder<
  * ```
  */
 class az_network_express_route_list_command_builder extends CommandBuilder<az_network_express_route_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -31309,8 +31309,8 @@ class az_network_express_route_list_command_builder extends CommandBuilder<az_ne
  * @param {string} peeringName The name of the peering.
  */
 class az_network_express_route_list_arp_tables_command_builder extends CommandBuilder<az_network_express_route_list_arp_tables_command_result> {
-    constructor(commandPath: string, path: 'primary' | 'secondary', peeringName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: 'primary' | 'secondary', peeringName: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
         this.peeringName(peeringName)
     }
@@ -31369,8 +31369,8 @@ class az_network_express_route_list_arp_tables_command_builder extends CommandBu
  * @param {string} peeringName The name of the peering.
  */
 class az_network_express_route_list_route_tables_command_builder extends CommandBuilder<az_network_express_route_list_route_tables_command_result> {
-    constructor(commandPath: string, path: 'primary' | 'secondary', peeringName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: 'primary' | 'secondary', peeringName: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
         this.peeringName(peeringName)
     }
@@ -31421,8 +31421,8 @@ class az_network_express_route_list_route_tables_command_builder extends Command
  * ```
  */
 class az_network_express_route_list_service_providers_command_builder extends CommandBuilder<az_network_express_route_list_service_providers_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -31445,8 +31445,8 @@ class az_network_express_route_list_service_providers_command_builder extends Co
  * ```
  */
 class az_network_express_route_show_command_builder extends CommandBuilder<az_network_express_route_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -31506,8 +31506,8 @@ class az_network_express_route_show_command_builder extends CommandBuilder<az_ne
  * ```
  */
 class az_network_express_route_update_command_builder extends CommandBuilder<az_network_express_route_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -31638,8 +31638,8 @@ class az_network_express_route_update_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_network_express_route_wait_command_builder extends CommandBuilder<az_network_express_route_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */
@@ -31731,8 +31731,8 @@ class az_network_express_route_wait_command_builder extends CommandBuilder<az_ne
  * @param {string} vnet Name or Id of the virtual network.
  */
 class az_network_lb_address_pool_address_add_command_builder extends CommandBuilder<az_network_lb_address_pool_address_add_command_result> {
-    constructor(commandPath: string, ipAddress: string, lbName: string, name: string, poolName: string, resourceGroup: string, vnet: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ipAddress: string, lbName: string, name: string, poolName: string, resourceGroup: string, vnet: string) {
+        super(commandPath, resultDataTypeName);
         this.ipAddress(ipAddress)
         this.lbName(lbName)
         this.name(name)
@@ -31801,8 +31801,8 @@ class az_network_lb_address_pool_address_add_command_builder extends CommandBuil
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_address_pool_address_list_command_builder extends CommandBuilder<az_network_lb_address_pool_address_list_command_result> {
-    constructor(commandPath: string, lbName: string, poolName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, poolName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.poolName(poolName)
         this.resourceGroup(resourceGroup)
@@ -31857,8 +31857,8 @@ class az_network_lb_address_pool_address_list_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_address_pool_address_remove_command_builder extends CommandBuilder<az_network_lb_address_pool_address_remove_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, poolName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, poolName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.poolName(poolName)
@@ -31915,8 +31915,8 @@ class az_network_lb_address_pool_address_remove_command_builder extends CommandB
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_address_pool_create_command_builder extends CommandBuilder<az_network_lb_address_pool_create_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -31981,8 +31981,8 @@ class az_network_lb_address_pool_create_command_builder extends CommandBuilder<a
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_address_pool_delete_command_builder extends CommandBuilder<az_network_lb_address_pool_delete_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -32028,8 +32028,8 @@ class az_network_lb_address_pool_delete_command_builder extends CommandBuilder<a
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_address_pool_list_command_builder extends CommandBuilder<az_network_lb_address_pool_list_command_result> {
-    constructor(commandPath: string, lbName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.resourceGroup(resourceGroup)
     }
@@ -32076,8 +32076,8 @@ class az_network_lb_address_pool_list_command_builder extends CommandBuilder<az_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_address_pool_show_command_builder extends CommandBuilder<az_network_lb_address_pool_show_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -32137,8 +32137,8 @@ class az_network_lb_address_pool_show_command_builder extends CommandBuilder<az_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_frontend_ip_create_command_builder extends CommandBuilder<az_network_lb_frontend_ip_create_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -32227,8 +32227,8 @@ class az_network_lb_frontend_ip_create_command_builder extends CommandBuilder<az
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_frontend_ip_delete_command_builder extends CommandBuilder<az_network_lb_frontend_ip_delete_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -32274,8 +32274,8 @@ class az_network_lb_frontend_ip_delete_command_builder extends CommandBuilder<az
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_frontend_ip_list_command_builder extends CommandBuilder<az_network_lb_frontend_ip_list_command_result> {
-    constructor(commandPath: string, lbName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.resourceGroup(resourceGroup)
     }
@@ -32322,8 +32322,8 @@ class az_network_lb_frontend_ip_list_command_builder extends CommandBuilder<az_n
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_frontend_ip_show_command_builder extends CommandBuilder<az_network_lb_frontend_ip_show_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -32382,8 +32382,8 @@ class az_network_lb_frontend_ip_show_command_builder extends CommandBuilder<az_n
  * ```
  */
 class az_network_lb_frontend_ip_update_command_builder extends CommandBuilder<az_network_lb_frontend_ip_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -32499,8 +32499,8 @@ class az_network_lb_frontend_ip_update_command_builder extends CommandBuilder<az
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_inbound_nat_pool_create_command_builder extends CommandBuilder<az_network_lb_inbound_nat_pool_create_command_result> {
-    constructor(commandPath: string, backendPort: string, frontendPortRangeEnd: string, frontendPortRangeStart: string, lbName: string, name: string, protocol: 'All' | 'Tcp' | 'Udp', resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, backendPort: string, frontendPortRangeEnd: string, frontendPortRangeStart: string, lbName: string, name: string, protocol: 'All' | 'Tcp' | 'Udp', resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.backendPort(backendPort)
         this.frontendPortRangeEnd(frontendPortRangeEnd)
         this.frontendPortRangeStart(frontendPortRangeStart)
@@ -32599,8 +32599,8 @@ class az_network_lb_inbound_nat_pool_create_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_inbound_nat_pool_delete_command_builder extends CommandBuilder<az_network_lb_inbound_nat_pool_delete_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -32646,8 +32646,8 @@ class az_network_lb_inbound_nat_pool_delete_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_inbound_nat_pool_list_command_builder extends CommandBuilder<az_network_lb_inbound_nat_pool_list_command_result> {
-    constructor(commandPath: string, lbName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.resourceGroup(resourceGroup)
     }
@@ -32694,8 +32694,8 @@ class az_network_lb_inbound_nat_pool_list_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_inbound_nat_pool_show_command_builder extends CommandBuilder<az_network_lb_inbound_nat_pool_show_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -32757,8 +32757,8 @@ class az_network_lb_inbound_nat_pool_show_command_builder extends CommandBuilder
  * ```
  */
 class az_network_lb_inbound_nat_pool_update_command_builder extends CommandBuilder<az_network_lb_inbound_nat_pool_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -32890,8 +32890,8 @@ class az_network_lb_inbound_nat_pool_update_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_inbound_nat_rule_create_command_builder extends CommandBuilder<az_network_lb_inbound_nat_rule_create_command_result> {
-    constructor(commandPath: string, backendPort: string, frontendPort: string, lbName: string, name: string, protocol: 'All' | 'Tcp' | 'Udp', resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, backendPort: string, frontendPort: string, lbName: string, name: string, protocol: 'All' | 'Tcp' | 'Udp', resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.backendPort(backendPort)
         this.frontendPort(frontendPort)
         this.lbName(lbName)
@@ -32983,8 +32983,8 @@ class az_network_lb_inbound_nat_rule_create_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_inbound_nat_rule_delete_command_builder extends CommandBuilder<az_network_lb_inbound_nat_rule_delete_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -33030,8 +33030,8 @@ class az_network_lb_inbound_nat_rule_delete_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_inbound_nat_rule_list_command_builder extends CommandBuilder<az_network_lb_inbound_nat_rule_list_command_result> {
-    constructor(commandPath: string, lbName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.resourceGroup(resourceGroup)
     }
@@ -33078,8 +33078,8 @@ class az_network_lb_inbound_nat_rule_list_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_inbound_nat_rule_show_command_builder extends CommandBuilder<az_network_lb_inbound_nat_rule_show_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -33140,8 +33140,8 @@ class az_network_lb_inbound_nat_rule_show_command_builder extends CommandBuilder
  * ```
  */
 class az_network_lb_inbound_nat_rule_update_command_builder extends CommandBuilder<az_network_lb_inbound_nat_rule_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -33266,8 +33266,8 @@ class az_network_lb_inbound_nat_rule_update_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_outbound_rule_create_command_builder extends CommandBuilder<az_network_lb_outbound_rule_create_command_result> {
-    constructor(commandPath: string, addressPool: string, frontendIpConfigs: string, lbName: string, name: string, protocol: 'All' | 'Tcp' | 'Udp', resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, addressPool: string, frontendIpConfigs: string, lbName: string, name: string, protocol: 'All' | 'Tcp' | 'Udp', resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.addressPool(addressPool)
         this.frontendIpConfigs(frontendIpConfigs)
         this.lbName(lbName)
@@ -33353,8 +33353,8 @@ class az_network_lb_outbound_rule_create_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_outbound_rule_delete_command_builder extends CommandBuilder<az_network_lb_outbound_rule_delete_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -33400,8 +33400,8 @@ class az_network_lb_outbound_rule_delete_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_outbound_rule_list_command_builder extends CommandBuilder<az_network_lb_outbound_rule_list_command_result> {
-    constructor(commandPath: string, lbName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.resourceGroup(resourceGroup)
     }
@@ -33448,8 +33448,8 @@ class az_network_lb_outbound_rule_list_command_builder extends CommandBuilder<az
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_outbound_rule_show_command_builder extends CommandBuilder<az_network_lb_outbound_rule_show_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -33509,8 +33509,8 @@ class az_network_lb_outbound_rule_show_command_builder extends CommandBuilder<az
  * ```
  */
 class az_network_lb_outbound_rule_update_command_builder extends CommandBuilder<az_network_lb_outbound_rule_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -33627,8 +33627,8 @@ class az_network_lb_outbound_rule_update_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_probe_create_command_builder extends CommandBuilder<az_network_lb_probe_create_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, port: string, protocol: 'Http' | 'Https' | 'Tcp', resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, port: string, protocol: 'Http' | 'Https' | 'Tcp', resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.port(port)
@@ -33707,8 +33707,8 @@ class az_network_lb_probe_create_command_builder extends CommandBuilder<az_netwo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_probe_delete_command_builder extends CommandBuilder<az_network_lb_probe_delete_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -33754,8 +33754,8 @@ class az_network_lb_probe_delete_command_builder extends CommandBuilder<az_netwo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_probe_list_command_builder extends CommandBuilder<az_network_lb_probe_list_command_result> {
-    constructor(commandPath: string, lbName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.resourceGroup(resourceGroup)
     }
@@ -33802,8 +33802,8 @@ class az_network_lb_probe_list_command_builder extends CommandBuilder<az_network
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_probe_show_command_builder extends CommandBuilder<az_network_lb_probe_show_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -33862,8 +33862,8 @@ class az_network_lb_probe_show_command_builder extends CommandBuilder<az_network
  * ```
  */
 class az_network_lb_probe_update_command_builder extends CommandBuilder<az_network_lb_probe_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -33981,8 +33981,8 @@ class az_network_lb_probe_update_command_builder extends CommandBuilder<az_netwo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_rule_create_command_builder extends CommandBuilder<az_network_lb_rule_create_command_result> {
-    constructor(commandPath: string, backendPort: string, frontendPort: string, lbName: string, name: string, protocol: 'All' | 'Tcp' | 'Udp', resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, backendPort: string, frontendPort: string, lbName: string, name: string, protocol: 'All' | 'Tcp' | 'Udp', resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.backendPort(backendPort)
         this.frontendPort(frontendPort)
         this.lbName(lbName)
@@ -34098,8 +34098,8 @@ class az_network_lb_rule_create_command_builder extends CommandBuilder<az_networ
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_rule_delete_command_builder extends CommandBuilder<az_network_lb_rule_delete_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -34145,8 +34145,8 @@ class az_network_lb_rule_delete_command_builder extends CommandBuilder<az_networ
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_rule_list_command_builder extends CommandBuilder<az_network_lb_rule_list_command_result> {
-    constructor(commandPath: string, lbName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.resourceGroup(resourceGroup)
     }
@@ -34193,8 +34193,8 @@ class az_network_lb_rule_list_command_builder extends CommandBuilder<az_network_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_rule_show_command_builder extends CommandBuilder<az_network_lb_rule_show_command_result> {
-    constructor(commandPath: string, lbName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lbName(lbName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -34259,8 +34259,8 @@ class az_network_lb_rule_show_command_builder extends CommandBuilder<az_network_
  * ```
  */
 class az_network_lb_rule_update_command_builder extends CommandBuilder<az_network_lb_rule_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -34416,8 +34416,8 @@ class az_network_lb_rule_update_command_builder extends CommandBuilder<az_networ
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_lb_create_command_builder extends CommandBuilder<az_network_lb_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -34561,8 +34561,8 @@ class az_network_lb_create_command_builder extends CommandBuilder<az_network_lb_
  * ```
  */
 class az_network_lb_delete_command_builder extends CommandBuilder<az_network_lb_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -34601,8 +34601,8 @@ class az_network_lb_delete_command_builder extends CommandBuilder<az_network_lb_
  * ```
  */
 class az_network_lb_list_command_builder extends CommandBuilder<az_network_lb_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -34638,8 +34638,8 @@ class az_network_lb_list_command_builder extends CommandBuilder<az_network_lb_li
  * ```
  */
 class az_network_lb_show_command_builder extends CommandBuilder<az_network_lb_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Expands referenced resources. */
@@ -34695,8 +34695,8 @@ class az_network_lb_show_command_builder extends CommandBuilder<az_network_lb_sh
  * ```
  */
 class az_network_lb_update_command_builder extends CommandBuilder<az_network_lb_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -34771,8 +34771,8 @@ class az_network_lb_update_command_builder extends CommandBuilder<az_network_lb_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_local_gateway_create_command_builder extends CommandBuilder<az_network_local_gateway_create_command_result> {
-    constructor(commandPath: string, gatewayIpAddress: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayIpAddress: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayIpAddress(gatewayIpAddress)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -34858,8 +34858,8 @@ class az_network_local_gateway_create_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_network_local_gateway_delete_command_builder extends CommandBuilder<az_network_local_gateway_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -34906,8 +34906,8 @@ class az_network_local_gateway_delete_command_builder extends CommandBuilder<az_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_local_gateway_list_command_builder extends CommandBuilder<az_network_local_gateway_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -34943,8 +34943,8 @@ class az_network_local_gateway_list_command_builder extends CommandBuilder<az_ne
  * ```
  */
 class az_network_local_gateway_show_command_builder extends CommandBuilder<az_network_local_gateway_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -35001,8 +35001,8 @@ class az_network_local_gateway_show_command_builder extends CommandBuilder<az_ne
  * ```
  */
 class az_network_local_gateway_update_command_builder extends CommandBuilder<az_network_local_gateway_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -35115,8 +35115,8 @@ class az_network_local_gateway_update_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_network_local_gateway_wait_command_builder extends CommandBuilder<az_network_local_gateway_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */
@@ -35206,8 +35206,8 @@ class az_network_local_gateway_wait_command_builder extends CommandBuilder<az_ne
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_nat_gateway_create_command_builder extends CommandBuilder<az_network_nat_gateway_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -35279,8 +35279,8 @@ class az_network_nat_gateway_create_command_builder extends CommandBuilder<az_ne
  * ```
  */
 class az_network_nat_gateway_delete_command_builder extends CommandBuilder<az_network_nat_gateway_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -35319,8 +35319,8 @@ class az_network_nat_gateway_delete_command_builder extends CommandBuilder<az_ne
  * ```
  */
 class az_network_nat_gateway_list_command_builder extends CommandBuilder<az_network_nat_gateway_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -35355,8 +35355,8 @@ class az_network_nat_gateway_list_command_builder extends CommandBuilder<az_netw
  * ```
  */
 class az_network_nat_gateway_show_command_builder extends CommandBuilder<az_network_nat_gateway_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -35409,8 +35409,8 @@ class az_network_nat_gateway_show_command_builder extends CommandBuilder<az_netw
  * ```
  */
 class az_network_nat_gateway_update_command_builder extends CommandBuilder<az_network_nat_gateway_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -35499,8 +35499,8 @@ class az_network_nat_gateway_update_command_builder extends CommandBuilder<az_ne
  * ```
  */
 class az_network_nat_gateway_wait_command_builder extends CommandBuilder<az_network_nat_gateway_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */
@@ -35590,8 +35590,8 @@ class az_network_nat_gateway_wait_command_builder extends CommandBuilder<az_netw
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_nic_ip_config_address_pool_add_command_builder extends CommandBuilder<az_network_nic_ip_config_address_pool_add_command_result> {
-    constructor(commandPath: string, addressPool: string, ipConfigName: string, nicName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, addressPool: string, ipConfigName: string, nicName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.addressPool(addressPool)
         this.ipConfigName(ipConfigName)
         this.nicName(nicName)
@@ -35661,8 +35661,8 @@ class az_network_nic_ip_config_address_pool_add_command_builder extends CommandB
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_nic_ip_config_address_pool_remove_command_builder extends CommandBuilder<az_network_nic_ip_config_address_pool_remove_command_result> {
-    constructor(commandPath: string, addressPool: string, ipConfigName: string, nicName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, addressPool: string, ipConfigName: string, nicName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.addressPool(addressPool)
         this.ipConfigName(ipConfigName)
         this.nicName(nicName)
@@ -35731,8 +35731,8 @@ class az_network_nic_ip_config_address_pool_remove_command_builder extends Comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_nic_ip_config_inbound_nat_rule_add_command_builder extends CommandBuilder<az_network_nic_ip_config_inbound_nat_rule_add_command_result> {
-    constructor(commandPath: string, inboundNatRule: string, ipConfigName: string, nicName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, inboundNatRule: string, ipConfigName: string, nicName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.inboundNatRule(inboundNatRule)
         this.ipConfigName(ipConfigName)
         this.nicName(nicName)
@@ -35795,8 +35795,8 @@ class az_network_nic_ip_config_inbound_nat_rule_add_command_builder extends Comm
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_nic_ip_config_inbound_nat_rule_remove_command_builder extends CommandBuilder<az_network_nic_ip_config_inbound_nat_rule_remove_command_result> {
-    constructor(commandPath: string, inboundNatRule: string, ipConfigName: string, nicName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, inboundNatRule: string, ipConfigName: string, nicName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.inboundNatRule(inboundNatRule)
         this.ipConfigName(ipConfigName)
         this.nicName(nicName)
@@ -35868,8 +35868,8 @@ class az_network_nic_ip_config_inbound_nat_rule_remove_command_builder extends C
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_nic_ip_config_create_command_builder extends CommandBuilder<az_network_nic_ip_config_create_command_result> {
-    constructor(commandPath: string, name: string, nicName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, nicName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.nicName(nicName)
         this.resourceGroup(resourceGroup)
@@ -35985,8 +35985,8 @@ class az_network_nic_ip_config_create_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_network_nic_ip_config_delete_command_builder extends CommandBuilder<az_network_nic_ip_config_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -36035,8 +36035,8 @@ class az_network_nic_ip_config_delete_command_builder extends CommandBuilder<az_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_nic_ip_config_list_command_builder extends CommandBuilder<az_network_nic_ip_config_list_command_result> {
-    constructor(commandPath: string, nicName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nicName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.nicName(nicName)
         this.resourceGroup(resourceGroup)
     }
@@ -36080,8 +36080,8 @@ class az_network_nic_ip_config_list_command_builder extends CommandBuilder<az_ne
  * ```
  */
 class az_network_nic_ip_config_show_command_builder extends CommandBuilder<az_network_nic_ip_config_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -36150,8 +36150,8 @@ class az_network_nic_ip_config_show_command_builder extends CommandBuilder<az_ne
  * ```
  */
 class az_network_nic_ip_config_update_command_builder extends CommandBuilder<az_network_nic_ip_config_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -36315,8 +36315,8 @@ class az_network_nic_ip_config_update_command_builder extends CommandBuilder<az_
  * @param {string} subnet Name or ID of an existing subnet. If name specified, also specify --vnet-name. If you want to use an existing subnet in other resource group, please provide the ID instead of the name of the subnet.
  */
 class az_network_nic_create_command_builder extends CommandBuilder<az_network_nic_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, subnet: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, subnet: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.subnet(subnet)
@@ -36468,8 +36468,8 @@ class az_network_nic_create_command_builder extends CommandBuilder<az_network_ni
  * ```
  */
 class az_network_nic_delete_command_builder extends CommandBuilder<az_network_nic_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -36514,8 +36514,8 @@ class az_network_nic_delete_command_builder extends CommandBuilder<az_network_ni
  * ```
  */
 class az_network_nic_list_command_builder extends CommandBuilder<az_network_nic_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -36549,8 +36549,8 @@ class az_network_nic_list_command_builder extends CommandBuilder<az_network_nic_
  * ```
  */
 class az_network_nic_list_effective_nsg_command_builder extends CommandBuilder<az_network_nic_list_effective_nsg_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -36592,8 +36592,8 @@ class az_network_nic_list_effective_nsg_command_builder extends CommandBuilder<a
  * ```
  */
 class az_network_nic_show_command_builder extends CommandBuilder<az_network_nic_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Expands referenced resources. */
@@ -36645,8 +36645,8 @@ class az_network_nic_show_command_builder extends CommandBuilder<az_network_nic_
  * ```
  */
 class az_network_nic_show_effective_route_table_command_builder extends CommandBuilder<az_network_nic_show_effective_route_table_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -36696,8 +36696,8 @@ class az_network_nic_show_effective_route_table_command_builder extends CommandB
  * ```
  */
 class az_network_nic_update_command_builder extends CommandBuilder<az_network_nic_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Enable accelerated networking. */
@@ -36805,8 +36805,8 @@ class az_network_nic_update_command_builder extends CommandBuilder<az_network_ni
  * ```
  */
 class az_network_nic_wait_command_builder extends CommandBuilder<az_network_nic_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */
@@ -36910,8 +36910,8 @@ class az_network_nic_wait_command_builder extends CommandBuilder<az_network_nic_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_nsg_rule_create_command_builder extends CommandBuilder<az_network_nsg_rule_create_command_result> {
-    constructor(commandPath: string, name: string, nsgName: string, priority: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, nsgName: string, priority: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.nsgName(nsgName)
         this.priority(priority)
@@ -37022,8 +37022,8 @@ class az_network_nsg_rule_create_command_builder extends CommandBuilder<az_netwo
  * ```
  */
 class az_network_nsg_rule_delete_command_builder extends CommandBuilder<az_network_nsg_rule_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -37073,8 +37073,8 @@ class az_network_nsg_rule_delete_command_builder extends CommandBuilder<az_netwo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_nsg_rule_list_command_builder extends CommandBuilder<az_network_nsg_rule_list_command_result> {
-    constructor(commandPath: string, nsgName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nsgName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.nsgName(nsgName)
         this.resourceGroup(resourceGroup)
     }
@@ -37124,8 +37124,8 @@ class az_network_nsg_rule_list_command_builder extends CommandBuilder<az_network
  * ```
  */
 class az_network_nsg_rule_show_command_builder extends CommandBuilder<az_network_nsg_rule_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -37193,8 +37193,8 @@ class az_network_nsg_rule_show_command_builder extends CommandBuilder<az_network
  * ```
  */
 class az_network_nsg_rule_update_command_builder extends CommandBuilder<az_network_nsg_rule_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** */
@@ -37334,8 +37334,8 @@ class az_network_nsg_rule_update_command_builder extends CommandBuilder<az_netwo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_nsg_create_command_builder extends CommandBuilder<az_network_nsg_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -37383,8 +37383,8 @@ class az_network_nsg_create_command_builder extends CommandBuilder<az_network_ns
  * ```
  */
 class az_network_nsg_delete_command_builder extends CommandBuilder<az_network_nsg_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -37423,8 +37423,8 @@ class az_network_nsg_delete_command_builder extends CommandBuilder<az_network_ns
  * ```
  */
 class az_network_nsg_list_command_builder extends CommandBuilder<az_network_nsg_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -37460,8 +37460,8 @@ class az_network_nsg_list_command_builder extends CommandBuilder<az_network_nsg_
  * ```
  */
 class az_network_nsg_show_command_builder extends CommandBuilder<az_network_nsg_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Expands referenced resources. */
@@ -37517,8 +37517,8 @@ class az_network_nsg_show_command_builder extends CommandBuilder<az_network_nsg_
  * ```
  */
 class az_network_nsg_update_command_builder extends CommandBuilder<az_network_nsg_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -37592,8 +37592,8 @@ class az_network_nsg_update_command_builder extends CommandBuilder<az_network_ns
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_link_vnet_create_command_builder extends CommandBuilder<az_network_private_dns_link_vnet_create_command_result> {
-    constructor(commandPath: string, name: string, registrationEnabled: boolean, resourceGroup: string, virtualNetwork: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, registrationEnabled: boolean, resourceGroup: string, virtualNetwork: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.registrationEnabled(registrationEnabled)
         this.resourceGroup(resourceGroup)
@@ -37669,8 +37669,8 @@ class az_network_private_dns_link_vnet_create_command_builder extends CommandBui
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_link_vnet_delete_command_builder extends CommandBuilder<az_network_private_dns_link_vnet_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -37735,8 +37735,8 @@ class az_network_private_dns_link_vnet_delete_command_builder extends CommandBui
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_link_vnet_list_command_builder extends CommandBuilder<az_network_private_dns_link_vnet_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -37789,8 +37789,8 @@ class az_network_private_dns_link_vnet_list_command_builder extends CommandBuild
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_link_vnet_show_command_builder extends CommandBuilder<az_network_private_dns_link_vnet_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -37851,8 +37851,8 @@ class az_network_private_dns_link_vnet_show_command_builder extends CommandBuild
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_link_vnet_update_command_builder extends CommandBuilder<az_network_private_dns_link_vnet_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -37954,8 +37954,8 @@ class az_network_private_dns_link_vnet_update_command_builder extends CommandBui
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_link_vnet_wait_command_builder extends CommandBuilder<az_network_private_dns_link_vnet_wait_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -38046,8 +38046,8 @@ class az_network_private_dns_link_vnet_wait_command_builder extends CommandBuild
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_a_add_record_command_builder extends CommandBuilder<az_network_private_dns_record_set_a_add_record_command_result> {
-    constructor(commandPath: string, ipv4Address: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ipv4Address: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.ipv4Address(ipv4Address)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -38103,8 +38103,8 @@ class az_network_private_dns_record_set_a_add_record_command_builder extends Com
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_a_create_command_builder extends CommandBuilder<az_network_private_dns_record_set_a_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -38165,8 +38165,8 @@ class az_network_private_dns_record_set_a_create_command_builder extends Command
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_a_delete_command_builder extends CommandBuilder<az_network_private_dns_record_set_a_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -38224,8 +38224,8 @@ class az_network_private_dns_record_set_a_delete_command_builder extends Command
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_a_list_command_builder extends CommandBuilder<az_network_private_dns_record_set_a_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -38274,8 +38274,8 @@ class az_network_private_dns_record_set_a_list_command_builder extends CommandBu
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_a_remove_record_command_builder extends CommandBuilder<az_network_private_dns_record_set_a_remove_record_command_result> {
-    constructor(commandPath: string, ipv4Address: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ipv4Address: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.ipv4Address(ipv4Address)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -38336,8 +38336,8 @@ class az_network_private_dns_record_set_a_remove_record_command_builder extends 
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_a_show_command_builder extends CommandBuilder<az_network_private_dns_record_set_a_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -38396,8 +38396,8 @@ class az_network_private_dns_record_set_a_show_command_builder extends CommandBu
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_a_update_command_builder extends CommandBuilder<az_network_private_dns_record_set_a_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -38482,8 +38482,8 @@ class az_network_private_dns_record_set_a_update_command_builder extends Command
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_aaaa_add_record_command_builder extends CommandBuilder<az_network_private_dns_record_set_aaaa_add_record_command_result> {
-    constructor(commandPath: string, ipv6Address: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ipv6Address: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.ipv6Address(ipv6Address)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -38539,8 +38539,8 @@ class az_network_private_dns_record_set_aaaa_add_record_command_builder extends 
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_aaaa_create_command_builder extends CommandBuilder<az_network_private_dns_record_set_aaaa_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -38601,8 +38601,8 @@ class az_network_private_dns_record_set_aaaa_create_command_builder extends Comm
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_aaaa_delete_command_builder extends CommandBuilder<az_network_private_dns_record_set_aaaa_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -38660,8 +38660,8 @@ class az_network_private_dns_record_set_aaaa_delete_command_builder extends Comm
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_aaaa_list_command_builder extends CommandBuilder<az_network_private_dns_record_set_aaaa_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -38710,8 +38710,8 @@ class az_network_private_dns_record_set_aaaa_list_command_builder extends Comman
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_aaaa_remove_record_command_builder extends CommandBuilder<az_network_private_dns_record_set_aaaa_remove_record_command_result> {
-    constructor(commandPath: string, ipv6Address: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ipv6Address: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.ipv6Address(ipv6Address)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -38772,8 +38772,8 @@ class az_network_private_dns_record_set_aaaa_remove_record_command_builder exten
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_aaaa_show_command_builder extends CommandBuilder<az_network_private_dns_record_set_aaaa_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -38832,8 +38832,8 @@ class az_network_private_dns_record_set_aaaa_show_command_builder extends Comman
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_aaaa_update_command_builder extends CommandBuilder<az_network_private_dns_record_set_aaaa_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -38918,8 +38918,8 @@ class az_network_private_dns_record_set_aaaa_update_command_builder extends Comm
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_cname_create_command_builder extends CommandBuilder<az_network_private_dns_record_set_cname_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -38980,8 +38980,8 @@ class az_network_private_dns_record_set_cname_create_command_builder extends Com
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_cname_delete_command_builder extends CommandBuilder<az_network_private_dns_record_set_cname_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -39039,8 +39039,8 @@ class az_network_private_dns_record_set_cname_delete_command_builder extends Com
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_cname_list_command_builder extends CommandBuilder<az_network_private_dns_record_set_cname_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -39089,8 +39089,8 @@ class az_network_private_dns_record_set_cname_list_command_builder extends Comma
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_cname_remove_record_command_builder extends CommandBuilder<az_network_private_dns_record_set_cname_remove_record_command_result> {
-    constructor(commandPath: string, cname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, cname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.cname(cname)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -39152,8 +39152,8 @@ class az_network_private_dns_record_set_cname_remove_record_command_builder exte
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_cname_set_record_command_builder extends CommandBuilder<az_network_private_dns_record_set_cname_set_record_command_result> {
-    constructor(commandPath: string, cname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, cname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.cname(cname)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -39208,8 +39208,8 @@ class az_network_private_dns_record_set_cname_set_record_command_builder extends
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_cname_show_command_builder extends CommandBuilder<az_network_private_dns_record_set_cname_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -39268,8 +39268,8 @@ class az_network_private_dns_record_set_cname_show_command_builder extends Comma
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_cname_update_command_builder extends CommandBuilder<az_network_private_dns_record_set_cname_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -39356,8 +39356,8 @@ class az_network_private_dns_record_set_cname_update_command_builder extends Com
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_mx_add_record_command_builder extends CommandBuilder<az_network_private_dns_record_set_mx_add_record_command_result> {
-    constructor(commandPath: string, exchange: string, preference: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, exchange: string, preference: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.exchange(exchange)
         this.preference(preference)
         this.recordSetName(recordSetName)
@@ -39420,8 +39420,8 @@ class az_network_private_dns_record_set_mx_add_record_command_builder extends Co
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_mx_create_command_builder extends CommandBuilder<az_network_private_dns_record_set_mx_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -39482,8 +39482,8 @@ class az_network_private_dns_record_set_mx_create_command_builder extends Comman
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_mx_delete_command_builder extends CommandBuilder<az_network_private_dns_record_set_mx_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -39541,8 +39541,8 @@ class az_network_private_dns_record_set_mx_delete_command_builder extends Comman
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_mx_list_command_builder extends CommandBuilder<az_network_private_dns_record_set_mx_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -39593,8 +39593,8 @@ class az_network_private_dns_record_set_mx_list_command_builder extends CommandB
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_mx_remove_record_command_builder extends CommandBuilder<az_network_private_dns_record_set_mx_remove_record_command_result> {
-    constructor(commandPath: string, exchange: string, preference: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, exchange: string, preference: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.exchange(exchange)
         this.preference(preference)
         this.recordSetName(recordSetName)
@@ -39662,8 +39662,8 @@ class az_network_private_dns_record_set_mx_remove_record_command_builder extends
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_mx_show_command_builder extends CommandBuilder<az_network_private_dns_record_set_mx_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -39722,8 +39722,8 @@ class az_network_private_dns_record_set_mx_show_command_builder extends CommandB
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_mx_update_command_builder extends CommandBuilder<az_network_private_dns_record_set_mx_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -39808,8 +39808,8 @@ class az_network_private_dns_record_set_mx_update_command_builder extends Comman
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_ptr_add_record_command_builder extends CommandBuilder<az_network_private_dns_record_set_ptr_add_record_command_result> {
-    constructor(commandPath: string, ptrdname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ptrdname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.ptrdname(ptrdname)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -39865,8 +39865,8 @@ class az_network_private_dns_record_set_ptr_add_record_command_builder extends C
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_ptr_create_command_builder extends CommandBuilder<az_network_private_dns_record_set_ptr_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -39927,8 +39927,8 @@ class az_network_private_dns_record_set_ptr_create_command_builder extends Comma
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_ptr_delete_command_builder extends CommandBuilder<az_network_private_dns_record_set_ptr_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -39986,8 +39986,8 @@ class az_network_private_dns_record_set_ptr_delete_command_builder extends Comma
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_ptr_list_command_builder extends CommandBuilder<az_network_private_dns_record_set_ptr_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -40036,8 +40036,8 @@ class az_network_private_dns_record_set_ptr_list_command_builder extends Command
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_ptr_remove_record_command_builder extends CommandBuilder<az_network_private_dns_record_set_ptr_remove_record_command_result> {
-    constructor(commandPath: string, ptrdname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ptrdname: string, recordSetName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.ptrdname(ptrdname)
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
@@ -40098,8 +40098,8 @@ class az_network_private_dns_record_set_ptr_remove_record_command_builder extend
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_ptr_show_command_builder extends CommandBuilder<az_network_private_dns_record_set_ptr_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -40158,8 +40158,8 @@ class az_network_private_dns_record_set_ptr_show_command_builder extends Command
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_ptr_update_command_builder extends CommandBuilder<az_network_private_dns_record_set_ptr_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -40241,8 +40241,8 @@ class az_network_private_dns_record_set_ptr_update_command_builder extends Comma
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_soa_show_command_builder extends CommandBuilder<az_network_private_dns_record_set_soa_show_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -40293,8 +40293,8 @@ class az_network_private_dns_record_set_soa_show_command_builder extends Command
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_soa_update_command_builder extends CommandBuilder<az_network_private_dns_record_set_soa_update_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -40384,8 +40384,8 @@ class az_network_private_dns_record_set_soa_update_command_builder extends Comma
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_srv_add_record_command_builder extends CommandBuilder<az_network_private_dns_record_set_srv_add_record_command_result> {
-    constructor(commandPath: string, port: string, priority: string, recordSetName: string, resourceGroup: string, target: string, weight: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, port: string, priority: string, recordSetName: string, resourceGroup: string, target: string, weight: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.port(port)
         this.priority(priority)
         this.recordSetName(recordSetName)
@@ -40462,8 +40462,8 @@ class az_network_private_dns_record_set_srv_add_record_command_builder extends C
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_srv_create_command_builder extends CommandBuilder<az_network_private_dns_record_set_srv_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -40524,8 +40524,8 @@ class az_network_private_dns_record_set_srv_create_command_builder extends Comma
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_srv_delete_command_builder extends CommandBuilder<az_network_private_dns_record_set_srv_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -40583,8 +40583,8 @@ class az_network_private_dns_record_set_srv_delete_command_builder extends Comma
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_srv_list_command_builder extends CommandBuilder<az_network_private_dns_record_set_srv_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -40639,8 +40639,8 @@ class az_network_private_dns_record_set_srv_list_command_builder extends Command
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_srv_remove_record_command_builder extends CommandBuilder<az_network_private_dns_record_set_srv_remove_record_command_result> {
-    constructor(commandPath: string, port: string, priority: string, recordSetName: string, resourceGroup: string, target: string, weight: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, port: string, priority: string, recordSetName: string, resourceGroup: string, target: string, weight: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.port(port)
         this.priority(priority)
         this.recordSetName(recordSetName)
@@ -40722,8 +40722,8 @@ class az_network_private_dns_record_set_srv_remove_record_command_builder extend
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_srv_show_command_builder extends CommandBuilder<az_network_private_dns_record_set_srv_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -40782,8 +40782,8 @@ class az_network_private_dns_record_set_srv_show_command_builder extends Command
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_srv_update_command_builder extends CommandBuilder<az_network_private_dns_record_set_srv_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -40868,8 +40868,8 @@ class az_network_private_dns_record_set_srv_update_command_builder extends Comma
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_txt_add_record_command_builder extends CommandBuilder<az_network_private_dns_record_set_txt_add_record_command_result> {
-    constructor(commandPath: string, recordSetName: string, resourceGroup: string, value: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, recordSetName: string, resourceGroup: string, value: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
         this.value(value)
@@ -40925,8 +40925,8 @@ class az_network_private_dns_record_set_txt_add_record_command_builder extends C
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_txt_create_command_builder extends CommandBuilder<az_network_private_dns_record_set_txt_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -40987,8 +40987,8 @@ class az_network_private_dns_record_set_txt_create_command_builder extends Comma
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_txt_delete_command_builder extends CommandBuilder<az_network_private_dns_record_set_txt_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -41046,8 +41046,8 @@ class az_network_private_dns_record_set_txt_delete_command_builder extends Comma
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_txt_list_command_builder extends CommandBuilder<az_network_private_dns_record_set_txt_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -41096,8 +41096,8 @@ class az_network_private_dns_record_set_txt_list_command_builder extends Command
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_txt_remove_record_command_builder extends CommandBuilder<az_network_private_dns_record_set_txt_remove_record_command_result> {
-    constructor(commandPath: string, recordSetName: string, resourceGroup: string, value: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, recordSetName: string, resourceGroup: string, value: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.recordSetName(recordSetName)
         this.resourceGroup(resourceGroup)
         this.value(value)
@@ -41158,8 +41158,8 @@ class az_network_private_dns_record_set_txt_remove_record_command_builder extend
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_txt_show_command_builder extends CommandBuilder<az_network_private_dns_record_set_txt_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -41218,8 +41218,8 @@ class az_network_private_dns_record_set_txt_show_command_builder extends Command
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_txt_update_command_builder extends CommandBuilder<az_network_private_dns_record_set_txt_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
@@ -41301,8 +41301,8 @@ class az_network_private_dns_record_set_txt_update_command_builder extends Comma
  * @param {string} zoneName The name of the Private DNS zone.
  */
 class az_network_private_dns_record_set_list_command_builder extends CommandBuilder<az_network_private_dns_record_set_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.zoneName(zoneName)
     }
@@ -41348,8 +41348,8 @@ class az_network_private_dns_record_set_list_command_builder extends CommandBuil
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_private_dns_zone_create_command_builder extends CommandBuilder<az_network_private_dns_zone_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -41402,8 +41402,8 @@ class az_network_private_dns_zone_create_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_private_dns_zone_delete_command_builder extends CommandBuilder<az_network_private_dns_zone_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -41460,8 +41460,8 @@ class az_network_private_dns_zone_delete_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_private_dns_zone_export_command_builder extends CommandBuilder<az_network_private_dns_zone_export_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -41507,8 +41507,8 @@ class az_network_private_dns_zone_export_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_private_dns_zone_import_command_builder extends CommandBuilder<az_network_private_dns_zone_import_command_result> {
-    constructor(commandPath: string, fileName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.fileName(fileName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -41550,8 +41550,8 @@ class az_network_private_dns_zone_import_command_builder extends CommandBuilder<
  * ```
  */
 class az_network_private_dns_zone_list_command_builder extends CommandBuilder<az_network_private_dns_zone_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -41588,8 +41588,8 @@ class az_network_private_dns_zone_list_command_builder extends CommandBuilder<az
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_private_dns_zone_show_command_builder extends CommandBuilder<az_network_private_dns_zone_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -41640,8 +41640,8 @@ class az_network_private_dns_zone_show_command_builder extends CommandBuilder<az
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_private_dns_zone_update_command_builder extends CommandBuilder<az_network_private_dns_zone_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -41728,8 +41728,8 @@ class az_network_private_dns_zone_update_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_private_dns_zone_wait_command_builder extends CommandBuilder<az_network_private_dns_zone_wait_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -41815,8 +41815,8 @@ class az_network_private_dns_zone_wait_command_builder extends CommandBuilder<az
  * @param {string} zoneName Name of the private dns zone.
  */
 class az_network_private_endpoint_dns_zone_group_add_command_builder extends CommandBuilder<az_network_private_endpoint_dns_zone_group_add_command_result> {
-    constructor(commandPath: string, endpointName: string, name: string, privateDnsZone: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endpointName: string, name: string, privateDnsZone: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.endpointName(endpointName)
         this.name(name)
         this.privateDnsZone(privateDnsZone)
@@ -41881,8 +41881,8 @@ class az_network_private_endpoint_dns_zone_group_add_command_builder extends Com
  * @param {string} zoneName Name of the private dns zone.
  */
 class az_network_private_endpoint_dns_zone_group_create_command_builder extends CommandBuilder<az_network_private_endpoint_dns_zone_group_create_command_result> {
-    constructor(commandPath: string, endpointName: string, name: string, privateDnsZone: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endpointName: string, name: string, privateDnsZone: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.endpointName(endpointName)
         this.name(name)
         this.privateDnsZone(privateDnsZone)
@@ -41943,8 +41943,8 @@ class az_network_private_endpoint_dns_zone_group_create_command_builder extends 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_private_endpoint_dns_zone_group_delete_command_builder extends CommandBuilder<az_network_private_endpoint_dns_zone_group_delete_command_result> {
-    constructor(commandPath: string, endpointName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endpointName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.endpointName(endpointName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -41990,8 +41990,8 @@ class az_network_private_endpoint_dns_zone_group_delete_command_builder extends 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_private_endpoint_dns_zone_group_list_command_builder extends CommandBuilder<az_network_private_endpoint_dns_zone_group_list_command_result> {
-    constructor(commandPath: string, endpointName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endpointName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.endpointName(endpointName)
         this.resourceGroup(resourceGroup)
     }
@@ -42039,8 +42039,8 @@ class az_network_private_endpoint_dns_zone_group_list_command_builder extends Co
  * @param {string} zoneName Name of the private dns zone.
  */
 class az_network_private_endpoint_dns_zone_group_remove_command_builder extends CommandBuilder<az_network_private_endpoint_dns_zone_group_remove_command_result> {
-    constructor(commandPath: string, endpointName: string, name: string, resourceGroup: string, zoneName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endpointName: string, name: string, resourceGroup: string, zoneName: string) {
+        super(commandPath, resultDataTypeName);
         this.endpointName(endpointName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -42095,8 +42095,8 @@ class az_network_private_endpoint_dns_zone_group_remove_command_builder extends 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_private_endpoint_dns_zone_group_show_command_builder extends CommandBuilder<az_network_private_endpoint_dns_zone_group_show_command_result> {
-    constructor(commandPath: string, endpointName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endpointName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.endpointName(endpointName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -42148,8 +42148,8 @@ class az_network_private_endpoint_dns_zone_group_show_command_builder extends Co
  * ```
  */
 class az_network_private_endpoint_connection_approve_command_builder extends CommandBuilder<az_network_private_endpoint_connection_approve_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Comments for the approval. */
@@ -42210,8 +42210,8 @@ class az_network_private_endpoint_connection_approve_command_builder extends Com
  * ```
  */
 class az_network_private_endpoint_connection_delete_command_builder extends CommandBuilder<az_network_private_endpoint_connection_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** ID of the private endpoint connection. */
@@ -42271,8 +42271,8 @@ class az_network_private_endpoint_connection_delete_command_builder extends Comm
  * ```
  */
 class az_network_private_endpoint_connection_list_command_builder extends CommandBuilder<az_network_private_endpoint_connection_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** ID of the resource. */
@@ -42327,8 +42327,8 @@ class az_network_private_endpoint_connection_list_command_builder extends Comman
  * ```
  */
 class az_network_private_endpoint_connection_reject_command_builder extends CommandBuilder<az_network_private_endpoint_connection_reject_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Comments for the rejection. */
@@ -42389,8 +42389,8 @@ class az_network_private_endpoint_connection_reject_command_builder extends Comm
  * ```
  */
 class az_network_private_endpoint_connection_show_command_builder extends CommandBuilder<az_network_private_endpoint_connection_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** ID of the private endpoint connection. */
@@ -42463,8 +42463,8 @@ class az_network_private_endpoint_connection_show_command_builder extends Comman
  * @param {string} subnet Name or ID of an existing subnet. If name specified, also specify --vnet-name. If you want to use an existing subnet in other resource group or subscription, please provide the ID instead of the name of the subnet.
  */
 class az_network_private_endpoint_create_command_builder extends CommandBuilder<az_network_private_endpoint_create_command_result> {
-    constructor(commandPath: string, connectionName: string, name: string, privateConnectionResourceId: string, resourceGroup: string, subnet: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionName: string, name: string, privateConnectionResourceId: string, resourceGroup: string, subnet: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionName(connectionName)
         this.name(name)
         this.privateConnectionResourceId(privateConnectionResourceId)
@@ -42563,8 +42563,8 @@ class az_network_private_endpoint_create_command_builder extends CommandBuilder<
  * ```
  */
 class az_network_private_endpoint_delete_command_builder extends CommandBuilder<az_network_private_endpoint_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -42603,8 +42603,8 @@ class az_network_private_endpoint_delete_command_builder extends CommandBuilder<
  * ```
  */
 class az_network_private_endpoint_list_command_builder extends CommandBuilder<az_network_private_endpoint_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -42638,8 +42638,8 @@ class az_network_private_endpoint_list_command_builder extends CommandBuilder<az
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_network_private_endpoint_list_types_command_builder extends CommandBuilder<az_network_private_endpoint_list_types_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -42669,8 +42669,8 @@ class az_network_private_endpoint_list_types_command_builder extends CommandBuil
  * ```
  */
 class az_network_private_endpoint_show_command_builder extends CommandBuilder<az_network_private_endpoint_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -42722,8 +42722,8 @@ class az_network_private_endpoint_show_command_builder extends CommandBuilder<az
  * ```
  */
 class az_network_private_endpoint_update_command_builder extends CommandBuilder<az_network_private_endpoint_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -42801,8 +42801,8 @@ class az_network_private_endpoint_update_command_builder extends CommandBuilder<
  * ```
  */
 class az_network_private_link_resource_list_command_builder extends CommandBuilder<az_network_private_link_resource_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** ID of the resource. */
@@ -42858,8 +42858,8 @@ class az_network_private_link_resource_list_command_builder extends CommandBuild
  * @param {string} serviceName Name of the private link service.
  */
 class az_network_private_link_service_connection_delete_command_builder extends CommandBuilder<az_network_private_link_service_connection_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, serviceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serviceName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.serviceName(serviceName)
@@ -42910,8 +42910,8 @@ class az_network_private_link_service_connection_delete_command_builder extends 
  * @param {string} serviceName Name of the private link service.
  */
 class az_network_private_link_service_connection_update_command_builder extends CommandBuilder<az_network_private_link_service_connection_update_command_result> {
-    constructor(commandPath: string, connectionStatus: 'Approved' | 'Rejected' | 'Removed', name: string, resourceGroup: string, serviceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionStatus: 'Approved' | 'Rejected' | 'Removed', name: string, resourceGroup: string, serviceName: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionStatus(connectionStatus)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -42991,8 +42991,8 @@ class az_network_private_link_service_connection_update_command_builder extends 
  * @param {string} subnet Name or ID of subnet to use. If name provided, also supply `--vnet-name`.
  */
 class az_network_private_link_service_create_command_builder extends CommandBuilder<az_network_private_link_service_create_command_result> {
-    constructor(commandPath: string, lbFrontendIpConfigs: string, name: string, resourceGroup: string, subnet: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lbFrontendIpConfigs: string, name: string, resourceGroup: string, subnet: string) {
+        super(commandPath, resultDataTypeName);
         this.lbFrontendIpConfigs(lbFrontendIpConfigs)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -43114,8 +43114,8 @@ class az_network_private_link_service_create_command_builder extends CommandBuil
  * ```
  */
 class az_network_private_link_service_delete_command_builder extends CommandBuilder<az_network_private_link_service_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -43154,8 +43154,8 @@ class az_network_private_link_service_delete_command_builder extends CommandBuil
  * ```
  */
 class az_network_private_link_service_list_command_builder extends CommandBuilder<az_network_private_link_service_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -43191,8 +43191,8 @@ class az_network_private_link_service_list_command_builder extends CommandBuilde
  * ```
  */
 class az_network_private_link_service_show_command_builder extends CommandBuilder<az_network_private_link_service_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Expands referenced resources. */
@@ -43255,8 +43255,8 @@ class az_network_private_link_service_show_command_builder extends CommandBuilde
  * ```
  */
 class az_network_private_link_service_update_command_builder extends CommandBuilder<az_network_private_link_service_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -43363,8 +43363,8 @@ class az_network_private_link_service_update_command_builder extends CommandBuil
  * ```
  */
 class az_network_profile_delete_command_builder extends CommandBuilder<az_network_profile_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -43409,8 +43409,8 @@ class az_network_profile_delete_command_builder extends CommandBuilder<az_networ
  * ```
  */
 class az_network_profile_list_command_builder extends CommandBuilder<az_network_profile_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -43446,8 +43446,8 @@ class az_network_profile_list_command_builder extends CommandBuilder<az_network_
  * ```
  */
 class az_network_profile_show_command_builder extends CommandBuilder<az_network_profile_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Expands referenced resources. */
@@ -43507,8 +43507,8 @@ class az_network_profile_show_command_builder extends CommandBuilder<az_network_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_public_ip_prefix_create_command_builder extends CommandBuilder<az_network_public_ip_prefix_create_command_result> {
-    constructor(commandPath: string, length: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, length: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.length(length)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -43575,8 +43575,8 @@ class az_network_public_ip_prefix_create_command_builder extends CommandBuilder<
  * ```
  */
 class az_network_public_ip_prefix_delete_command_builder extends CommandBuilder<az_network_public_ip_prefix_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -43615,8 +43615,8 @@ class az_network_public_ip_prefix_delete_command_builder extends CommandBuilder<
  * ```
  */
 class az_network_public_ip_prefix_list_command_builder extends CommandBuilder<az_network_public_ip_prefix_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -43652,8 +43652,8 @@ class az_network_public_ip_prefix_list_command_builder extends CommandBuilder<az
  * ```
  */
 class az_network_public_ip_prefix_show_command_builder extends CommandBuilder<az_network_public_ip_prefix_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Expands referenced resources. */
@@ -43710,8 +43710,8 @@ class az_network_public_ip_prefix_show_command_builder extends CommandBuilder<az
  * ```
  */
 class az_network_public_ip_prefix_update_command_builder extends CommandBuilder<az_network_public_ip_prefix_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -43794,8 +43794,8 @@ class az_network_public_ip_prefix_update_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_public_ip_create_command_builder extends CommandBuilder<az_network_public_ip_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -43897,8 +43897,8 @@ class az_network_public_ip_create_command_builder extends CommandBuilder<az_netw
  * ```
  */
 class az_network_public_ip_delete_command_builder extends CommandBuilder<az_network_public_ip_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -43937,8 +43937,8 @@ class az_network_public_ip_delete_command_builder extends CommandBuilder<az_netw
  * ```
  */
 class az_network_public_ip_list_command_builder extends CommandBuilder<az_network_public_ip_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -43974,8 +43974,8 @@ class az_network_public_ip_list_command_builder extends CommandBuilder<az_networ
  * ```
  */
 class az_network_public_ip_show_command_builder extends CommandBuilder<az_network_public_ip_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Expands referenced resources. */
@@ -44040,8 +44040,8 @@ class az_network_public_ip_show_command_builder extends CommandBuilder<az_networ
  * ```
  */
 class az_network_public_ip_update_command_builder extends CommandBuilder<az_network_public_ip_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -44168,8 +44168,8 @@ class az_network_public_ip_update_command_builder extends CommandBuilder<az_netw
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_route_filter_rule_create_command_builder extends CommandBuilder<az_network_route_filter_rule_create_command_result> {
-    constructor(commandPath: string, access: 'Allow' | 'Deny', communities: string, filterName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, access: 'Allow' | 'Deny', communities: string, filterName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.access(access)
         this.communities(communities)
         this.filterName(filterName)
@@ -44233,8 +44233,8 @@ class az_network_route_filter_rule_create_command_builder extends CommandBuilder
  * ```
  */
 class az_network_route_filter_rule_delete_command_builder extends CommandBuilder<az_network_route_filter_rule_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the route filter. */
@@ -44283,8 +44283,8 @@ class az_network_route_filter_rule_delete_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_route_filter_rule_list_command_builder extends CommandBuilder<az_network_route_filter_rule_list_command_result> {
-    constructor(commandPath: string, filterName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, filterName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.filterName(filterName)
         this.resourceGroup(resourceGroup)
     }
@@ -44323,8 +44323,8 @@ class az_network_route_filter_rule_list_command_builder extends CommandBuilder<a
  * ```
  */
 class az_network_route_filter_rule_list_service_communities_command_builder extends CommandBuilder<az_network_route_filter_rule_list_service_communities_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -44348,8 +44348,8 @@ class az_network_route_filter_rule_list_service_communities_command_builder exte
  * ```
  */
 class az_network_route_filter_rule_show_command_builder extends CommandBuilder<az_network_route_filter_rule_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the route filter. */
@@ -44406,8 +44406,8 @@ class az_network_route_filter_rule_show_command_builder extends CommandBuilder<a
  * ```
  */
 class az_network_route_filter_rule_update_command_builder extends CommandBuilder<az_network_route_filter_rule_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -44481,8 +44481,8 @@ class az_network_route_filter_rule_update_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_route_filter_create_command_builder extends CommandBuilder<az_network_route_filter_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -44532,8 +44532,8 @@ class az_network_route_filter_create_command_builder extends CommandBuilder<az_n
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_route_filter_delete_command_builder extends CommandBuilder<az_network_route_filter_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -44568,8 +44568,8 @@ class az_network_route_filter_delete_command_builder extends CommandBuilder<az_n
  * ```
  */
 class az_network_route_filter_list_command_builder extends CommandBuilder<az_network_route_filter_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -44607,8 +44607,8 @@ class az_network_route_filter_list_command_builder extends CommandBuilder<az_net
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_route_filter_show_command_builder extends CommandBuilder<az_network_route_filter_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -44662,8 +44662,8 @@ class az_network_route_filter_show_command_builder extends CommandBuilder<az_net
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_route_filter_update_command_builder extends CommandBuilder<az_network_route_filter_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -44732,8 +44732,8 @@ class az_network_route_filter_update_command_builder extends CommandBuilder<az_n
  * @param {string} routeTableName Route table name.
  */
 class az_network_route_table_route_create_command_builder extends CommandBuilder<az_network_route_table_route_create_command_result> {
-    constructor(commandPath: string, addressPrefix: string, name: string, nextHopType: 'Internet' | 'None' | 'VirtualAppliance' | 'VirtualNetworkGateway' | 'VnetLocal', resourceGroup: string, routeTableName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, addressPrefix: string, name: string, nextHopType: 'Internet' | 'None' | 'VirtualAppliance' | 'VirtualNetworkGateway' | 'VnetLocal', resourceGroup: string, routeTableName: string) {
+        super(commandPath, resultDataTypeName);
         this.addressPrefix(addressPrefix)
         this.name(name)
         this.nextHopType(nextHopType)
@@ -44797,8 +44797,8 @@ class az_network_route_table_route_create_command_builder extends CommandBuilder
  * ```
  */
 class az_network_route_table_route_delete_command_builder extends CommandBuilder<az_network_route_table_route_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -44847,8 +44847,8 @@ class az_network_route_table_route_delete_command_builder extends CommandBuilder
  * @param {string} routeTableName Route table name.
  */
 class az_network_route_table_route_list_command_builder extends CommandBuilder<az_network_route_table_route_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, routeTableName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, routeTableName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.routeTableName(routeTableName)
     }
@@ -44892,8 +44892,8 @@ class az_network_route_table_route_list_command_builder extends CommandBuilder<a
  * ```
  */
 class az_network_route_table_route_show_command_builder extends CommandBuilder<az_network_route_table_route_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -44953,8 +44953,8 @@ class az_network_route_table_route_show_command_builder extends CommandBuilder<a
  * ```
  */
 class az_network_route_table_route_update_command_builder extends CommandBuilder<az_network_route_table_route_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -45047,8 +45047,8 @@ class az_network_route_table_route_update_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_route_table_create_command_builder extends CommandBuilder<az_network_route_table_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -45102,8 +45102,8 @@ class az_network_route_table_create_command_builder extends CommandBuilder<az_ne
  * ```
  */
 class az_network_route_table_delete_command_builder extends CommandBuilder<az_network_route_table_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -45142,8 +45142,8 @@ class az_network_route_table_delete_command_builder extends CommandBuilder<az_ne
  * ```
  */
 class az_network_route_table_list_command_builder extends CommandBuilder<az_network_route_table_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -45179,8 +45179,8 @@ class az_network_route_table_list_command_builder extends CommandBuilder<az_netw
  * ```
  */
 class az_network_route_table_show_command_builder extends CommandBuilder<az_network_route_table_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Expands referenced resources. */
@@ -45238,8 +45238,8 @@ class az_network_route_table_show_command_builder extends CommandBuilder<az_netw
  * ```
  */
 class az_network_route_table_update_command_builder extends CommandBuilder<az_network_route_table_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -45323,8 +45323,8 @@ class az_network_route_table_update_command_builder extends CommandBuilder<az_ne
  * @param {string} vhub Name or ID of the virtual hub to which the Security Partner Provider belongs.
  */
 class az_network_security_partner_provider_create_command_builder extends CommandBuilder<az_network_security_partner_provider_create_command_result> {
-    constructor(commandPath: string, name: string, provider: 'Checkpoint' | 'IBoss' | 'ZScaler', resourceGroup: string, vhub: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, provider: 'Checkpoint' | 'IBoss' | 'ZScaler', resourceGroup: string, vhub: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.provider(provider)
         this.resourceGroup(resourceGroup)
@@ -45388,8 +45388,8 @@ class az_network_security_partner_provider_create_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_security_partner_provider_delete_command_builder extends CommandBuilder<az_network_security_partner_provider_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -45424,8 +45424,8 @@ class az_network_security_partner_provider_delete_command_builder extends Comman
  * ```
  */
 class az_network_security_partner_provider_list_command_builder extends CommandBuilder<az_network_security_partner_provider_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -45462,8 +45462,8 @@ class az_network_security_partner_provider_list_command_builder extends CommandB
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_security_partner_provider_show_command_builder extends CommandBuilder<az_network_security_partner_provider_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -45514,8 +45514,8 @@ class az_network_security_partner_provider_show_command_builder extends CommandB
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_security_partner_provider_update_command_builder extends CommandBuilder<az_network_security_partner_provider_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -45602,8 +45602,8 @@ class az_network_security_partner_provider_update_command_builder extends Comman
  * @param {string} serviceResources Space-separated list of service resources the definition applies to.
  */
 class az_network_service_endpoint_policy_definition_create_command_builder extends CommandBuilder<az_network_service_endpoint_policy_definition_create_command_result> {
-    constructor(commandPath: string, name: string, policyName: string, resourceGroup: string, service: string, serviceResources: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, policyName: string, resourceGroup: string, service: string, serviceResources: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
@@ -45667,8 +45667,8 @@ class az_network_service_endpoint_policy_definition_create_command_builder exten
  * ```
  */
 class az_network_service_endpoint_policy_definition_delete_command_builder extends CommandBuilder<az_network_service_endpoint_policy_definition_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -45717,8 +45717,8 @@ class az_network_service_endpoint_policy_definition_delete_command_builder exten
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_service_endpoint_policy_definition_list_command_builder extends CommandBuilder<az_network_service_endpoint_policy_definition_list_command_result> {
-    constructor(commandPath: string, policyName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
     }
@@ -45762,8 +45762,8 @@ class az_network_service_endpoint_policy_definition_list_command_builder extends
  * ```
  */
 class az_network_service_endpoint_policy_definition_show_command_builder extends CommandBuilder<az_network_service_endpoint_policy_definition_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -45823,8 +45823,8 @@ class az_network_service_endpoint_policy_definition_show_command_builder extends
  * ```
  */
 class az_network_service_endpoint_policy_definition_update_command_builder extends CommandBuilder<az_network_service_endpoint_policy_definition_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -45916,8 +45916,8 @@ class az_network_service_endpoint_policy_definition_update_command_builder exten
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_service_endpoint_policy_create_command_builder extends CommandBuilder<az_network_service_endpoint_policy_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -45965,8 +45965,8 @@ class az_network_service_endpoint_policy_create_command_builder extends CommandB
  * ```
  */
 class az_network_service_endpoint_policy_delete_command_builder extends CommandBuilder<az_network_service_endpoint_policy_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -46005,8 +46005,8 @@ class az_network_service_endpoint_policy_delete_command_builder extends CommandB
  * ```
  */
 class az_network_service_endpoint_policy_list_command_builder extends CommandBuilder<az_network_service_endpoint_policy_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -46041,8 +46041,8 @@ class az_network_service_endpoint_policy_list_command_builder extends CommandBui
  * ```
  */
 class az_network_service_endpoint_policy_show_command_builder extends CommandBuilder<az_network_service_endpoint_policy_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -46093,8 +46093,8 @@ class az_network_service_endpoint_policy_show_command_builder extends CommandBui
  * ```
  */
 class az_network_service_endpoint_policy_update_command_builder extends CommandBuilder<az_network_service_endpoint_policy_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -46165,8 +46165,8 @@ class az_network_service_endpoint_policy_update_command_builder extends CommandB
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_network_service_endpoint_list_command_builder extends CommandBuilder<az_network_service_endpoint_list_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -46218,8 +46218,8 @@ class az_network_service_endpoint_list_command_builder extends CommandBuilder<az
  * @param {'azureEndpoints' | 'externalEndpoints' | 'nestedEndpoints'} type Endpoint type.
  */
 class az_network_traffic_manager_endpoint_create_command_builder extends CommandBuilder<az_network_traffic_manager_endpoint_create_command_result> {
-    constructor(commandPath: string, name: string, profileName: string, resourceGroup: string, type: 'azureEndpoints' | 'externalEndpoints' | 'nestedEndpoints') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, profileName: string, resourceGroup: string, type: 'azureEndpoints' | 'externalEndpoints' | 'nestedEndpoints') {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.profileName(profileName)
         this.resourceGroup(resourceGroup)
@@ -46337,8 +46337,8 @@ class az_network_traffic_manager_endpoint_create_command_builder extends Command
  * ```
  */
 class az_network_traffic_manager_endpoint_delete_command_builder extends CommandBuilder<az_network_traffic_manager_endpoint_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -46394,8 +46394,8 @@ class az_network_traffic_manager_endpoint_delete_command_builder extends Command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_traffic_manager_endpoint_list_command_builder extends CommandBuilder<az_network_traffic_manager_endpoint_list_command_result> {
-    constructor(commandPath: string, profileName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, profileName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.profileName(profileName)
         this.resourceGroup(resourceGroup)
     }
@@ -46446,8 +46446,8 @@ class az_network_traffic_manager_endpoint_list_command_builder extends CommandBu
  * ```
  */
 class az_network_traffic_manager_endpoint_show_command_builder extends CommandBuilder<az_network_traffic_manager_endpoint_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -46502,8 +46502,8 @@ class az_network_traffic_manager_endpoint_show_command_builder extends CommandBu
  * ```
  */
 class az_network_traffic_manager_endpoint_show_geographic_hierarchy_command_builder extends CommandBuilder<az_network_traffic_manager_endpoint_show_geographic_hierarchy_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -46542,8 +46542,8 @@ class az_network_traffic_manager_endpoint_show_geographic_hierarchy_command_buil
  * ```
  */
 class az_network_traffic_manager_endpoint_update_command_builder extends CommandBuilder<az_network_traffic_manager_endpoint_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -46685,8 +46685,8 @@ class az_network_traffic_manager_endpoint_update_command_builder extends Command
  * @param {string} name DNS prefix to verify availability for.
  */
 class az_network_traffic_manager_profile_check_dns_command_builder extends CommandBuilder<az_network_traffic_manager_profile_check_dns_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -46732,8 +46732,8 @@ class az_network_traffic_manager_profile_check_dns_command_builder extends Comma
  * @param {string} uniqueDnsName Relative DNS name for the traffic manager profile. Resulting FQDN will be `<unique-dns-name>.trafficmanager.net` and must be globally unique.
  */
 class az_network_traffic_manager_profile_create_command_builder extends CommandBuilder<az_network_traffic_manager_profile_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, routingMethod: 'Geographic' | 'Multivalue' | 'Performance' | 'Priority' | 'Subnet' | 'Weighted', uniqueDnsName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, routingMethod: 'Geographic' | 'Multivalue' | 'Performance' | 'Priority' | 'Subnet' | 'Weighted', uniqueDnsName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.routingMethod(routingMethod)
@@ -46849,8 +46849,8 @@ class az_network_traffic_manager_profile_create_command_builder extends CommandB
  * ```
  */
 class az_network_traffic_manager_profile_delete_command_builder extends CommandBuilder<az_network_traffic_manager_profile_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -46889,8 +46889,8 @@ class az_network_traffic_manager_profile_delete_command_builder extends CommandB
  * ```
  */
 class az_network_traffic_manager_profile_list_command_builder extends CommandBuilder<az_network_traffic_manager_profile_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -46925,8 +46925,8 @@ class az_network_traffic_manager_profile_list_command_builder extends CommandBui
  * ```
  */
 class az_network_traffic_manager_profile_show_command_builder extends CommandBuilder<az_network_traffic_manager_profile_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -46988,8 +46988,8 @@ class az_network_traffic_manager_profile_show_command_builder extends CommandBui
  * ```
  */
 class az_network_traffic_manager_profile_update_command_builder extends CommandBuilder<az_network_traffic_manager_profile_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -47134,8 +47134,8 @@ class az_network_traffic_manager_profile_update_command_builder extends CommandB
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_virtual_appliance_site_create_command_builder extends CommandBuilder<az_network_virtual_appliance_site_create_command_result> {
-    constructor(commandPath: string, addressPrefix: string, applianceName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, addressPrefix: string, applianceName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.addressPrefix(addressPrefix)
         this.applianceName(applianceName)
         this.name(name)
@@ -47208,8 +47208,8 @@ class az_network_virtual_appliance_site_create_command_builder extends CommandBu
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_virtual_appliance_site_delete_command_builder extends CommandBuilder<az_network_virtual_appliance_site_delete_command_result> {
-    constructor(commandPath: string, applianceName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, applianceName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.applianceName(applianceName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -47261,8 +47261,8 @@ class az_network_virtual_appliance_site_delete_command_builder extends CommandBu
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_virtual_appliance_site_list_command_builder extends CommandBuilder<az_network_virtual_appliance_site_list_command_result> {
-    constructor(commandPath: string, applianceName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, applianceName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.applianceName(applianceName)
         this.resourceGroup(resourceGroup)
     }
@@ -47309,8 +47309,8 @@ class az_network_virtual_appliance_site_list_command_builder extends CommandBuil
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_virtual_appliance_site_show_command_builder extends CommandBuilder<az_network_virtual_appliance_site_show_command_result> {
-    constructor(commandPath: string, applianceName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, applianceName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.applianceName(applianceName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -47372,8 +47372,8 @@ class az_network_virtual_appliance_site_show_command_builder extends CommandBuil
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_virtual_appliance_site_update_command_builder extends CommandBuilder<az_network_virtual_appliance_site_update_command_result> {
-    constructor(commandPath: string, addressPrefix: string, applianceName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, addressPrefix: string, applianceName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.addressPrefix(addressPrefix)
         this.applianceName(applianceName)
         this.name(name)
@@ -47463,8 +47463,8 @@ class az_network_virtual_appliance_site_update_command_builder extends CommandBu
  * ```
  */
 class az_network_virtual_appliance_sku_list_command_builder extends CommandBuilder<az_network_virtual_appliance_sku_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -47493,8 +47493,8 @@ class az_network_virtual_appliance_sku_list_command_builder extends CommandBuild
  * @param {string} name The name of Network Virtual Appliance SKU.
  */
 class az_network_virtual_appliance_sku_show_command_builder extends CommandBuilder<az_network_virtual_appliance_sku_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -47545,8 +47545,8 @@ class az_network_virtual_appliance_sku_show_command_builder extends CommandBuild
  * @param {string} vhub Name or ID of the virtual hub to which the Security Partner Provider belongs.
  */
 class az_network_virtual_appliance_create_command_builder extends CommandBuilder<az_network_virtual_appliance_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, scaleUnit: string, vendor: string, version: string, vhub: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, scaleUnit: string, vendor: string, version: string, vhub: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.scaleUnit(scaleUnit)
@@ -47649,8 +47649,8 @@ class az_network_virtual_appliance_create_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_virtual_appliance_delete_command_builder extends CommandBuilder<az_network_virtual_appliance_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -47691,8 +47691,8 @@ class az_network_virtual_appliance_delete_command_builder extends CommandBuilder
  * ```
  */
 class az_network_virtual_appliance_list_command_builder extends CommandBuilder<az_network_virtual_appliance_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -47730,8 +47730,8 @@ class az_network_virtual_appliance_list_command_builder extends CommandBuilder<a
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_virtual_appliance_show_command_builder extends CommandBuilder<az_network_virtual_appliance_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -47787,8 +47787,8 @@ class az_network_virtual_appliance_show_command_builder extends CommandBuilder<a
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_virtual_appliance_update_command_builder extends CommandBuilder<az_network_virtual_appliance_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -47870,8 +47870,8 @@ class az_network_virtual_appliance_update_command_builder extends CommandBuilder
  * @param {string} vnetName The virtual network (VNet) name.
  */
 class az_network_vnet_peering_create_command_builder extends CommandBuilder<az_network_vnet_peering_create_command_result> {
-    constructor(commandPath: string, name: string, remoteVnet: string, resourceGroup: string, vnetName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, remoteVnet: string, resourceGroup: string, vnetName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.remoteVnet(remoteVnet)
         this.resourceGroup(resourceGroup)
@@ -47946,8 +47946,8 @@ class az_network_vnet_peering_create_command_builder extends CommandBuilder<az_n
  * ```
  */
 class az_network_vnet_peering_delete_command_builder extends CommandBuilder<az_network_vnet_peering_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -47996,8 +47996,8 @@ class az_network_vnet_peering_delete_command_builder extends CommandBuilder<az_n
  * @param {string} vnetName The virtual network (VNet) name.
  */
 class az_network_vnet_peering_list_command_builder extends CommandBuilder<az_network_vnet_peering_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, vnetName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, vnetName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.vnetName(vnetName)
     }
@@ -48041,8 +48041,8 @@ class az_network_vnet_peering_list_command_builder extends CommandBuilder<az_net
  * ```
  */
 class az_network_vnet_peering_show_command_builder extends CommandBuilder<az_network_vnet_peering_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -48099,8 +48099,8 @@ class az_network_vnet_peering_show_command_builder extends CommandBuilder<az_net
  * ```
  */
 class az_network_vnet_peering_update_command_builder extends CommandBuilder<az_network_vnet_peering_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -48185,8 +48185,8 @@ class az_network_vnet_peering_update_command_builder extends CommandBuilder<az_n
  * @param {string} vnetName The virtual network (VNet) name.
  */
 class az_network_vnet_subnet_create_command_builder extends CommandBuilder<az_network_vnet_subnet_create_command_result> {
-    constructor(commandPath: string, addressPrefixes: string, name: string, resourceGroup: string, vnetName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, addressPrefixes: string, name: string, resourceGroup: string, vnetName: string) {
+        super(commandPath, resultDataTypeName);
         this.addressPrefixes(addressPrefixes)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -48291,8 +48291,8 @@ class az_network_vnet_subnet_create_command_builder extends CommandBuilder<az_ne
  * ```
  */
 class az_network_vnet_subnet_delete_command_builder extends CommandBuilder<az_network_vnet_subnet_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -48341,8 +48341,8 @@ class az_network_vnet_subnet_delete_command_builder extends CommandBuilder<az_ne
  * @param {string} vnetName The virtual network (VNet) name.
  */
 class az_network_vnet_subnet_list_command_builder extends CommandBuilder<az_network_vnet_subnet_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, vnetName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, vnetName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.vnetName(vnetName)
     }
@@ -48383,8 +48383,8 @@ class az_network_vnet_subnet_list_command_builder extends CommandBuilder<az_netw
  * ```
  */
 class az_network_vnet_subnet_list_available_delegations_command_builder extends CommandBuilder<az_network_vnet_subnet_list_available_delegations_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`. */
@@ -48421,8 +48421,8 @@ class az_network_vnet_subnet_list_available_delegations_command_builder extends 
  * ```
  */
 class az_network_vnet_subnet_show_command_builder extends CommandBuilder<az_network_vnet_subnet_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Expands referenced resources. */
@@ -48494,8 +48494,8 @@ class az_network_vnet_subnet_show_command_builder extends CommandBuilder<az_netw
  * ```
  */
 class az_network_vnet_subnet_update_command_builder extends CommandBuilder<az_network_vnet_subnet_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -48628,8 +48628,8 @@ class az_network_vnet_subnet_update_command_builder extends CommandBuilder<az_ne
  * @param {string} tenant The AADTenant URI of the VirtualNetworkGateway.
  */
 class az_network_vnet_gateway_aad_assign_command_builder extends CommandBuilder<az_network_vnet_gateway_aad_assign_command_result> {
-    constructor(commandPath: string, audience: string, gatewayName: string, issuer: string, resourceGroup: string, tenant: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, audience: string, gatewayName: string, issuer: string, resourceGroup: string, tenant: string) {
+        super(commandPath, resultDataTypeName);
         this.audience(audience)
         this.gatewayName(gatewayName)
         this.issuer(issuer)
@@ -48695,8 +48695,8 @@ class az_network_vnet_gateway_aad_assign_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_vnet_gateway_aad_remove_command_builder extends CommandBuilder<az_network_vnet_gateway_aad_remove_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -48741,8 +48741,8 @@ class az_network_vnet_gateway_aad_remove_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_vnet_gateway_aad_show_command_builder extends CommandBuilder<az_network_vnet_gateway_aad_show_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -48803,8 +48803,8 @@ class az_network_vnet_gateway_aad_show_command_builder extends CommandBuilder<az
  * @param {string} saMaxSize Required. The IPSec Security Association (also called Quick Mode or Phase 2 SA) payload size in KB for a site to site VPN tunnel.
  */
 class az_network_vnet_gateway_ipsec_policy_add_command_builder extends CommandBuilder<az_network_vnet_gateway_ipsec_policy_add_command_result> {
-    constructor(commandPath: string, dhGroup: 'DHGroup1' | 'DHGroup14' | 'DHGroup2' | 'DHGroup2048' | 'DHGroup24' | 'ECP256' | 'ECP384' | 'None', gatewayName: string, ikeEncryption: 'AES128' | 'AES192' | 'AES256' | 'DES' | 'DES3' | 'GCMAES128' | 'GCMAES256', ikeIntegrity: 'GCMAES128' | 'GCMAES256' | 'MD5' | 'SHA1' | 'SHA256' | 'SHA384', ipsecEncryption: 'AES128' | 'AES192' | 'AES256' | 'DES' | 'DES3' | 'GCMAES128' | 'GCMAES192' | 'GCMAES256' | 'None', ipsecIntegrity: 'GCMAES128' | 'GCMAES192' | 'GCMAES256' | 'MD5' | 'SHA1' | 'SHA256', pfsGroup: 'ECP256' | 'ECP384' | 'None' | 'PFS1' | 'PFS14' | 'PFS2' | 'PFS2048' | 'PFS24' | 'PFSMM', resourceGroup: string, saLifetime: string, saMaxSize: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, dhGroup: 'DHGroup1' | 'DHGroup14' | 'DHGroup2' | 'DHGroup2048' | 'DHGroup24' | 'ECP256' | 'ECP384' | 'None', gatewayName: string, ikeEncryption: 'AES128' | 'AES192' | 'AES256' | 'DES' | 'DES3' | 'GCMAES128' | 'GCMAES256', ikeIntegrity: 'GCMAES128' | 'GCMAES256' | 'MD5' | 'SHA1' | 'SHA256' | 'SHA384', ipsecEncryption: 'AES128' | 'AES192' | 'AES256' | 'DES' | 'DES3' | 'GCMAES128' | 'GCMAES192' | 'GCMAES256' | 'None', ipsecIntegrity: 'GCMAES128' | 'GCMAES192' | 'GCMAES256' | 'MD5' | 'SHA1' | 'SHA256', pfsGroup: 'ECP256' | 'ECP384' | 'None' | 'PFS1' | 'PFS14' | 'PFS2' | 'PFS2048' | 'PFS24' | 'PFSMM', resourceGroup: string, saLifetime: string, saMaxSize: string) {
+        super(commandPath, resultDataTypeName);
         this.dhGroup(dhGroup)
         this.gatewayName(gatewayName)
         this.ikeEncryption(ikeEncryption)
@@ -48905,8 +48905,8 @@ class az_network_vnet_gateway_ipsec_policy_add_command_builder extends CommandBu
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_vnet_gateway_ipsec_policy_clear_command_builder extends CommandBuilder<az_network_vnet_gateway_ipsec_policy_clear_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -48951,8 +48951,8 @@ class az_network_vnet_gateway_ipsec_policy_clear_command_builder extends Command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_vnet_gateway_ipsec_policy_list_command_builder extends CommandBuilder<az_network_vnet_gateway_ipsec_policy_list_command_result> {
-    constructor(commandPath: string, gatewayName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.resourceGroup(resourceGroup)
     }
@@ -49000,8 +49000,8 @@ class az_network_vnet_gateway_ipsec_policy_list_command_builder extends CommandB
  * @param {string} thumbprint Certificate thumbprint.
  */
 class az_network_vnet_gateway_revoked_cert_create_command_builder extends CommandBuilder<az_network_vnet_gateway_revoked_cert_create_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, resourceGroup: string, thumbprint: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, resourceGroup: string, thumbprint: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -49055,8 +49055,8 @@ class az_network_vnet_gateway_revoked_cert_create_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_vnet_gateway_revoked_cert_delete_command_builder extends CommandBuilder<az_network_vnet_gateway_revoked_cert_delete_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -49105,8 +49105,8 @@ class az_network_vnet_gateway_revoked_cert_delete_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_vnet_gateway_root_cert_create_command_builder extends CommandBuilder<az_network_vnet_gateway_root_cert_create_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, publicCertData: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, publicCertData: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.publicCertData(publicCertData)
@@ -49160,8 +49160,8 @@ class az_network_vnet_gateway_root_cert_create_command_builder extends CommandBu
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_vnet_gateway_root_cert_delete_command_builder extends CommandBuilder<az_network_vnet_gateway_root_cert_delete_command_result> {
-    constructor(commandPath: string, gatewayName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gatewayName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.gatewayName(gatewayName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -49209,8 +49209,8 @@ class az_network_vnet_gateway_root_cert_delete_command_builder extends CommandBu
  * ```
  */
 class az_network_vnet_gateway_vpn_client_generate_command_builder extends CommandBuilder<az_network_vnet_gateway_vpn_client_generate_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Method used to authenticate with the generated client. */
@@ -49280,8 +49280,8 @@ class az_network_vnet_gateway_vpn_client_generate_command_builder extends Comman
  * ```
  */
 class az_network_vnet_gateway_vpn_client_show_url_command_builder extends CommandBuilder<az_network_vnet_gateway_vpn_client_show_url_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -49343,8 +49343,8 @@ class az_network_vnet_gateway_vpn_client_show_url_command_builder extends Comman
  * @param {string} vnet Name or ID of an existing virtual network which has a subnet named 'GatewaySubnet'.
  */
 class az_network_vnet_gateway_create_command_builder extends CommandBuilder<az_network_vnet_gateway_create_command_result> {
-    constructor(commandPath: string, name: string, publicIpAddresses: string, resourceGroup: string, vnet: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, publicIpAddresses: string, resourceGroup: string, vnet: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.publicIpAddresses(publicIpAddresses)
         this.resourceGroup(resourceGroup)
@@ -49491,8 +49491,8 @@ class az_network_vnet_gateway_create_command_builder extends CommandBuilder<az_n
  * ```
  */
 class az_network_vnet_gateway_delete_command_builder extends CommandBuilder<az_network_vnet_gateway_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -49539,8 +49539,8 @@ class az_network_vnet_gateway_delete_command_builder extends CommandBuilder<az_n
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_vnet_gateway_list_command_builder extends CommandBuilder<az_network_vnet_gateway_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -49578,8 +49578,8 @@ class az_network_vnet_gateway_list_command_builder extends CommandBuilder<az_net
  * @param {string} peer The IP address of the peer.
  */
 class az_network_vnet_gateway_list_advertised_routes_command_builder extends CommandBuilder<az_network_vnet_gateway_list_advertised_routes_command_result> {
-    constructor(commandPath: string, peer: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, peer: string) {
+        super(commandPath, resultDataTypeName);
         this.peer(peer)
     }
 
@@ -49627,8 +49627,8 @@ class az_network_vnet_gateway_list_advertised_routes_command_builder extends Com
  * ```
  */
 class az_network_vnet_gateway_list_bgp_peer_status_command_builder extends CommandBuilder<az_network_vnet_gateway_list_bgp_peer_status_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -49674,8 +49674,8 @@ class az_network_vnet_gateway_list_bgp_peer_status_command_builder extends Comma
  * ```
  */
 class az_network_vnet_gateway_list_learned_routes_command_builder extends CommandBuilder<az_network_vnet_gateway_list_learned_routes_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -49716,8 +49716,8 @@ class az_network_vnet_gateway_list_learned_routes_command_builder extends Comman
  * ```
  */
 class az_network_vnet_gateway_reset_command_builder extends CommandBuilder<az_network_vnet_gateway_reset_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Virtual network gateway vip address supplied to the begin reset of the active-active feature enabled gateway. */
@@ -49764,8 +49764,8 @@ class az_network_vnet_gateway_reset_command_builder extends CommandBuilder<az_ne
  * ```
  */
 class az_network_vnet_gateway_show_command_builder extends CommandBuilder<az_network_vnet_gateway_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -49832,8 +49832,8 @@ class az_network_vnet_gateway_show_command_builder extends CommandBuilder<az_net
  * ```
  */
 class az_network_vnet_gateway_update_command_builder extends CommandBuilder<az_network_vnet_gateway_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -50006,8 +50006,8 @@ class az_network_vnet_gateway_update_command_builder extends CommandBuilder<az_n
  * ```
  */
 class az_network_vnet_gateway_wait_command_builder extends CommandBuilder<az_network_vnet_gateway_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */
@@ -50092,8 +50092,8 @@ class az_network_vnet_gateway_wait_command_builder extends CommandBuilder<az_net
  * @param {string} ipAddress The private IP address to be verified.
  */
 class az_network_vnet_check_ip_address_command_builder extends CommandBuilder<az_network_vnet_check_ip_address_command_result> {
-    constructor(commandPath: string, ipAddress: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ipAddress: string) {
+        super(commandPath, resultDataTypeName);
         this.ipAddress(ipAddress)
     }
 
@@ -50153,8 +50153,8 @@ class az_network_vnet_check_ip_address_command_builder extends CommandBuilder<az
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_vnet_create_command_builder extends CommandBuilder<az_network_vnet_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -50256,8 +50256,8 @@ class az_network_vnet_create_command_builder extends CommandBuilder<az_network_v
  * ```
  */
 class az_network_vnet_delete_command_builder extends CommandBuilder<az_network_vnet_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -50296,8 +50296,8 @@ class az_network_vnet_delete_command_builder extends CommandBuilder<az_network_v
  * ```
  */
 class az_network_vnet_list_command_builder extends CommandBuilder<az_network_vnet_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -50331,8 +50331,8 @@ class az_network_vnet_list_command_builder extends CommandBuilder<az_network_vne
  * ```
  */
 class az_network_vnet_list_available_ips_command_builder extends CommandBuilder<az_network_vnet_list_available_ips_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -50372,8 +50372,8 @@ class az_network_vnet_list_available_ips_command_builder extends CommandBuilder<
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_network_vnet_list_endpoint_services_command_builder extends CommandBuilder<az_network_vnet_list_endpoint_services_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -50404,8 +50404,8 @@ class az_network_vnet_list_endpoint_services_command_builder extends CommandBuil
  * ```
  */
 class az_network_vnet_show_command_builder extends CommandBuilder<az_network_vnet_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Expands referenced resources. */
@@ -50467,8 +50467,8 @@ class az_network_vnet_show_command_builder extends CommandBuilder<az_network_vne
  * ```
  */
 class az_network_vnet_update_command_builder extends CommandBuilder<az_network_vnet_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -50587,8 +50587,8 @@ class az_network_vnet_update_command_builder extends CommandBuilder<az_network_v
  * @param {string} saMaxSize Required. The IPSec Security Association (also called Quick Mode or Phase 2 SA) payload size in KB for a site to site VPN tunnel.
  */
 class az_network_vpn_connection_ipsec_policy_add_command_builder extends CommandBuilder<az_network_vpn_connection_ipsec_policy_add_command_result> {
-    constructor(commandPath: string, connectionName: string, dhGroup: 'DHGroup1' | 'DHGroup14' | 'DHGroup2' | 'DHGroup2048' | 'DHGroup24' | 'ECP256' | 'ECP384' | 'None', ikeEncryption: 'AES128' | 'AES192' | 'AES256' | 'DES' | 'DES3' | 'GCMAES128' | 'GCMAES256', ikeIntegrity: 'GCMAES128' | 'GCMAES256' | 'MD5' | 'SHA1' | 'SHA256' | 'SHA384', ipsecEncryption: 'AES128' | 'AES192' | 'AES256' | 'DES' | 'DES3' | 'GCMAES128' | 'GCMAES192' | 'GCMAES256' | 'None', ipsecIntegrity: 'GCMAES128' | 'GCMAES192' | 'GCMAES256' | 'MD5' | 'SHA1' | 'SHA256', pfsGroup: 'ECP256' | 'ECP384' | 'None' | 'PFS1' | 'PFS14' | 'PFS2' | 'PFS2048' | 'PFS24' | 'PFSMM', resourceGroup: string, saLifetime: string, saMaxSize: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionName: string, dhGroup: 'DHGroup1' | 'DHGroup14' | 'DHGroup2' | 'DHGroup2048' | 'DHGroup24' | 'ECP256' | 'ECP384' | 'None', ikeEncryption: 'AES128' | 'AES192' | 'AES256' | 'DES' | 'DES3' | 'GCMAES128' | 'GCMAES256', ikeIntegrity: 'GCMAES128' | 'GCMAES256' | 'MD5' | 'SHA1' | 'SHA256' | 'SHA384', ipsecEncryption: 'AES128' | 'AES192' | 'AES256' | 'DES' | 'DES3' | 'GCMAES128' | 'GCMAES192' | 'GCMAES256' | 'None', ipsecIntegrity: 'GCMAES128' | 'GCMAES192' | 'GCMAES256' | 'MD5' | 'SHA1' | 'SHA256', pfsGroup: 'ECP256' | 'ECP384' | 'None' | 'PFS1' | 'PFS14' | 'PFS2' | 'PFS2048' | 'PFS24' | 'PFSMM', resourceGroup: string, saLifetime: string, saMaxSize: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionName(connectionName)
         this.dhGroup(dhGroup)
         this.ikeEncryption(ikeEncryption)
@@ -50689,8 +50689,8 @@ class az_network_vpn_connection_ipsec_policy_add_command_builder extends Command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_vpn_connection_ipsec_policy_clear_command_builder extends CommandBuilder<az_network_vpn_connection_ipsec_policy_clear_command_result> {
-    constructor(commandPath: string, connectionName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionName(connectionName)
         this.resourceGroup(resourceGroup)
     }
@@ -50735,8 +50735,8 @@ class az_network_vpn_connection_ipsec_policy_clear_command_builder extends Comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_vpn_connection_ipsec_policy_list_command_builder extends CommandBuilder<az_network_vpn_connection_ipsec_policy_list_command_result> {
-    constructor(commandPath: string, connectionName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionName(connectionName)
         this.resourceGroup(resourceGroup)
     }
@@ -50781,8 +50781,8 @@ class az_network_vpn_connection_ipsec_policy_list_command_builder extends Comman
  * @param {string} keyLength The virtual network connection reset shared key length, should between 1 and 128.
  */
 class az_network_vpn_connection_shared_key_reset_command_builder extends CommandBuilder<az_network_vpn_connection_shared_key_reset_command_result> {
-    constructor(commandPath: string, keyLength: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, keyLength: string) {
+        super(commandPath, resultDataTypeName);
         this.keyLength(keyLength)
     }
 
@@ -50830,8 +50830,8 @@ class az_network_vpn_connection_shared_key_reset_command_builder extends Command
  * ```
  */
 class az_network_vpn_connection_shared_key_show_command_builder extends CommandBuilder<az_network_vpn_connection_shared_key_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Connection name. */
@@ -50885,8 +50885,8 @@ class az_network_vpn_connection_shared_key_show_command_builder extends CommandB
  * @param {string} value The virtual network connection shared key value.
  */
 class az_network_vpn_connection_shared_key_update_command_builder extends CommandBuilder<az_network_vpn_connection_shared_key_update_command_result> {
-    constructor(commandPath: string, value: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, value: string) {
+        super(commandPath, resultDataTypeName);
         this.value(value)
     }
 
@@ -50979,8 +50979,8 @@ class az_network_vpn_connection_shared_key_update_command_builder extends Comman
  * @param {string} vnetGateway1 Name or ID of the source virtual network gateway.
  */
 class az_network_vpn_connection_create_command_builder extends CommandBuilder<az_network_vpn_connection_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, vnetGateway1: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, vnetGateway1: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.vnetGateway1(vnetGateway1)
@@ -51095,8 +51095,8 @@ class az_network_vpn_connection_create_command_builder extends CommandBuilder<az
  * ```
  */
 class az_network_vpn_connection_delete_command_builder extends CommandBuilder<az_network_vpn_connection_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -51137,8 +51137,8 @@ class az_network_vpn_connection_delete_command_builder extends CommandBuilder<az
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_vpn_connection_list_command_builder extends CommandBuilder<az_network_vpn_connection_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -51174,8 +51174,8 @@ class az_network_vpn_connection_list_command_builder extends CommandBuilder<az_n
  * ```
  */
 class az_network_vpn_connection_show_command_builder extends CommandBuilder<az_network_vpn_connection_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -51231,8 +51231,8 @@ class az_network_vpn_connection_show_command_builder extends CommandBuilder<az_n
  * ```
  */
 class az_network_vpn_connection_update_command_builder extends CommandBuilder<az_network_vpn_connection_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -51340,8 +51340,8 @@ class az_network_vpn_connection_update_command_builder extends CommandBuilder<az
  * @param {string} vrouterName The name of the Virtual Router.
  */
 class az_network_vrouter_peering_create_command_builder extends CommandBuilder<az_network_vrouter_peering_create_command_result> {
-    constructor(commandPath: string, name: string, peerAsn: string, peerIp: string, resourceGroup: string, vrouterName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, peerAsn: string, peerIp: string, resourceGroup: string, vrouterName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.peerAsn(peerAsn)
         this.peerIp(peerIp)
@@ -51402,8 +51402,8 @@ class az_network_vrouter_peering_create_command_builder extends CommandBuilder<a
  * @param {string} vrouterName The name of the Virtual Router.
  */
 class az_network_vrouter_peering_delete_command_builder extends CommandBuilder<az_network_vrouter_peering_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, vrouterName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, vrouterName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.vrouterName(vrouterName)
@@ -51449,8 +51449,8 @@ class az_network_vrouter_peering_delete_command_builder extends CommandBuilder<a
  * @param {string} vrouterName The name of the Virtual Router.
  */
 class az_network_vrouter_peering_list_command_builder extends CommandBuilder<az_network_vrouter_peering_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, vrouterName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, vrouterName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.vrouterName(vrouterName)
     }
@@ -51497,8 +51497,8 @@ class az_network_vrouter_peering_list_command_builder extends CommandBuilder<az_
  * @param {string} vrouterName The name of the Virtual Router.
  */
 class az_network_vrouter_peering_show_command_builder extends CommandBuilder<az_network_vrouter_peering_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, vrouterName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, vrouterName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.vrouterName(vrouterName)
@@ -51557,8 +51557,8 @@ class az_network_vrouter_peering_show_command_builder extends CommandBuilder<az_
  * @param {string} vrouterName The name of the Virtual Router.
  */
 class az_network_vrouter_peering_update_command_builder extends CommandBuilder<az_network_vrouter_peering_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, vrouterName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, vrouterName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.vrouterName(vrouterName)
@@ -51643,8 +51643,8 @@ class az_network_vrouter_peering_update_command_builder extends CommandBuilder<a
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_vrouter_create_command_builder extends CommandBuilder<az_network_vrouter_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -51706,8 +51706,8 @@ class az_network_vrouter_create_command_builder extends CommandBuilder<az_networ
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_vrouter_delete_command_builder extends CommandBuilder<az_network_vrouter_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -51742,8 +51742,8 @@ class az_network_vrouter_delete_command_builder extends CommandBuilder<az_networ
  * ```
  */
 class az_network_vrouter_list_command_builder extends CommandBuilder<az_network_vrouter_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -51780,8 +51780,8 @@ class az_network_vrouter_list_command_builder extends CommandBuilder<az_network_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_vrouter_show_command_builder extends CommandBuilder<az_network_vrouter_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -51830,8 +51830,8 @@ class az_network_vrouter_show_command_builder extends CommandBuilder<az_network_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_network_vrouter_update_command_builder extends CommandBuilder<az_network_vrouter_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -51911,8 +51911,8 @@ class az_network_vrouter_update_command_builder extends CommandBuilder<az_networ
  * @param {string} name The name of the connection monitor endpoint.
  */
 class az_network_watcher_connection_monitor_endpoint_add_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_endpoint_add_command_result> {
-    constructor(commandPath: string, connectionMonitor: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionMonitor: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionMonitor(connectionMonitor)
         this.location(location)
         this.name(name)
@@ -52018,8 +52018,8 @@ class az_network_watcher_connection_monitor_endpoint_add_command_builder extends
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_network_watcher_connection_monitor_endpoint_list_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_endpoint_list_command_result> {
-    constructor(commandPath: string, connectionMonitor: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionMonitor: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionMonitor(connectionMonitor)
         this.location(location)
     }
@@ -52066,8 +52066,8 @@ class az_network_watcher_connection_monitor_endpoint_list_command_builder extend
  * @param {string} name The name of the connection monitor endpoint.
  */
 class az_network_watcher_connection_monitor_endpoint_remove_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_endpoint_remove_command_result> {
-    constructor(commandPath: string, connectionMonitor: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionMonitor: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionMonitor(connectionMonitor)
         this.location(location)
         this.name(name)
@@ -52121,8 +52121,8 @@ class az_network_watcher_connection_monitor_endpoint_remove_command_builder exte
  * @param {string} name The name of the connection monitor endpoint.
  */
 class az_network_watcher_connection_monitor_endpoint_show_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_endpoint_show_command_result> {
-    constructor(commandPath: string, connectionMonitor: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionMonitor: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionMonitor(connectionMonitor)
         this.location(location)
         this.name(name)
@@ -52176,8 +52176,8 @@ class az_network_watcher_connection_monitor_endpoint_show_command_builder extend
  * @param {'Workspace'} type Connection monitor output destination type. Currently, only "Workspace" is supported.
  */
 class az_network_watcher_connection_monitor_output_add_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_output_add_command_result> {
-    constructor(commandPath: string, connectionMonitor: string, location: string, type: 'Workspace') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionMonitor: string, location: string, type: 'Workspace') {
+        super(commandPath, resultDataTypeName);
         this.connectionMonitor(connectionMonitor)
         this.location(location)
         this.type(type)
@@ -52229,8 +52229,8 @@ class az_network_watcher_connection_monitor_output_add_command_builder extends C
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_network_watcher_connection_monitor_output_list_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_output_list_command_result> {
-    constructor(commandPath: string, connectionMonitor: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionMonitor: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionMonitor(connectionMonitor)
         this.location(location)
     }
@@ -52274,8 +52274,8 @@ class az_network_watcher_connection_monitor_output_list_command_builder extends 
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_network_watcher_connection_monitor_output_remove_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_output_remove_command_result> {
-    constructor(commandPath: string, connectionMonitor: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionMonitor: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionMonitor(connectionMonitor)
         this.location(location)
     }
@@ -52333,8 +52333,8 @@ class az_network_watcher_connection_monitor_output_remove_command_builder extend
  * @param {string} testGroups Space-separated list of names of test group which only need to be affected if specified.
  */
 class az_network_watcher_connection_monitor_test_configuration_add_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_test_configuration_add_command_result> {
-    constructor(commandPath: string, connectionMonitor: string, location: string, name: string, protocol: 'Http' | 'Icmp' | 'Tcp', testGroups: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionMonitor: string, location: string, name: string, protocol: 'Http' | 'Icmp' | 'Tcp', testGroups: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionMonitor(connectionMonitor)
         this.location(location)
         this.name(name)
@@ -52478,8 +52478,8 @@ class az_network_watcher_connection_monitor_test_configuration_add_command_build
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_network_watcher_connection_monitor_test_configuration_list_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_test_configuration_list_command_result> {
-    constructor(commandPath: string, connectionMonitor: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionMonitor: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionMonitor(connectionMonitor)
         this.location(location)
     }
@@ -52526,8 +52526,8 @@ class az_network_watcher_connection_monitor_test_configuration_list_command_buil
  * @param {string} name The name of the connection monitor test configuration.
  */
 class az_network_watcher_connection_monitor_test_configuration_remove_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_test_configuration_remove_command_result> {
-    constructor(commandPath: string, connectionMonitor: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionMonitor: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionMonitor(connectionMonitor)
         this.location(location)
         this.name(name)
@@ -52581,8 +52581,8 @@ class az_network_watcher_connection_monitor_test_configuration_remove_command_bu
  * @param {string} name The name of the connection monitor test configuration.
  */
 class az_network_watcher_connection_monitor_test_configuration_show_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_test_configuration_show_command_result> {
-    constructor(commandPath: string, connectionMonitor: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionMonitor: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionMonitor(connectionMonitor)
         this.location(location)
         this.name(name)
@@ -52659,8 +52659,8 @@ class az_network_watcher_connection_monitor_test_configuration_show_command_buil
  * @param {string} testConfigName The name of the connection monitor test configuration. If you are creating a V2 Connection Monitor, it's required.
  */
 class az_network_watcher_connection_monitor_test_group_add_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_test_group_add_command_result> {
-    constructor(commandPath: string, connectionMonitor: string, endpointDestName: string, endpointSourceName: string, location: string, name: string, testConfigName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionMonitor: string, endpointDestName: string, endpointSourceName: string, location: string, name: string, testConfigName: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionMonitor(connectionMonitor)
         this.endpointDestName(endpointDestName)
         this.endpointSourceName(endpointSourceName)
@@ -52835,8 +52835,8 @@ class az_network_watcher_connection_monitor_test_group_add_command_builder exten
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_network_watcher_connection_monitor_test_group_list_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_test_group_list_command_result> {
-    constructor(commandPath: string, connectionMonitor: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionMonitor: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionMonitor(connectionMonitor)
         this.location(location)
     }
@@ -52882,8 +52882,8 @@ class az_network_watcher_connection_monitor_test_group_list_command_builder exte
  * @param {string} name The name of the connection monitor test group.
  */
 class az_network_watcher_connection_monitor_test_group_remove_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_test_group_remove_command_result> {
-    constructor(commandPath: string, connectionMonitor: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionMonitor: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionMonitor(connectionMonitor)
         this.location(location)
         this.name(name)
@@ -52931,8 +52931,8 @@ class az_network_watcher_connection_monitor_test_group_remove_command_builder ex
  * @param {string} name The name of the connection monitor test group.
  */
 class az_network_watcher_connection_monitor_test_group_show_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_test_group_show_command_result> {
-    constructor(commandPath: string, connectionMonitor: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, connectionMonitor: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.connectionMonitor(connectionMonitor)
         this.location(location)
         this.name(name)
@@ -53021,8 +53021,8 @@ class az_network_watcher_connection_monitor_test_group_show_command_builder exte
  * @param {string} name Connection monitor name.
  */
 class az_network_watcher_connection_monitor_create_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_create_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -53293,8 +53293,8 @@ class az_network_watcher_connection_monitor_create_command_builder extends Comma
  * @param {string} name Connection monitor name.
  */
 class az_network_watcher_connection_monitor_delete_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_delete_command_result> {
-    constructor(commandPath: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
     }
@@ -53331,8 +53331,8 @@ class az_network_watcher_connection_monitor_delete_command_builder extends Comma
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_network_watcher_connection_monitor_list_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_list_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -53369,8 +53369,8 @@ class az_network_watcher_connection_monitor_list_command_builder extends Command
  * @param {string} name Connection monitor name.
  */
 class az_network_watcher_connection_monitor_query_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_query_command_result> {
-    constructor(commandPath: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
     }
@@ -53409,8 +53409,8 @@ class az_network_watcher_connection_monitor_query_command_builder extends Comman
  * @param {string} name Connection monitor name.
  */
 class az_network_watcher_connection_monitor_show_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_show_command_result> {
-    constructor(commandPath: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
     }
@@ -53454,8 +53454,8 @@ class az_network_watcher_connection_monitor_show_command_builder extends Command
  * @param {string} name Connection monitor name.
  */
 class az_network_watcher_connection_monitor_start_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_start_command_result> {
-    constructor(commandPath: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
     }
@@ -53493,8 +53493,8 @@ class az_network_watcher_connection_monitor_start_command_builder extends Comman
  * @param {string} name Connection monitor name.
  */
 class az_network_watcher_connection_monitor_stop_command_builder extends CommandBuilder<az_network_watcher_connection_monitor_stop_command_result> {
-    constructor(commandPath: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
     }
@@ -53539,8 +53539,8 @@ class az_network_watcher_connection_monitor_stop_command_builder extends Command
  * @param {string} nsg Name or ID of the Network Security Group to target.
  */
 class az_network_watcher_flow_log_configure_command_builder extends CommandBuilder<az_network_watcher_flow_log_configure_command_result> {
-    constructor(commandPath: string, nsg: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nsg: string) {
+        super(commandPath, resultDataTypeName);
         this.nsg(nsg)
     }
 
@@ -53637,8 +53637,8 @@ class az_network_watcher_flow_log_configure_command_builder extends CommandBuild
  * @param {string} nsg Name or ID of the network security group.
  */
 class az_network_watcher_flow_log_create_command_builder extends CommandBuilder<az_network_watcher_flow_log_create_command_result> {
-    constructor(commandPath: string, location: string, name: string, nsg: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string, nsg: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
         this.nsg(nsg)
@@ -53743,8 +53743,8 @@ class az_network_watcher_flow_log_create_command_builder extends CommandBuilder<
  * @param {string} name The name of the flow logger.
  */
 class az_network_watcher_flow_log_delete_command_builder extends CommandBuilder<az_network_watcher_flow_log_delete_command_result> {
-    constructor(commandPath: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
     }
@@ -53781,8 +53781,8 @@ class az_network_watcher_flow_log_delete_command_builder extends CommandBuilder<
  * @param {string} location Location to identify the exclusive Network Watcher under a region. Only one Network Watcher can be existed per subscription and region.
  */
 class az_network_watcher_flow_log_list_command_builder extends CommandBuilder<az_network_watcher_flow_log_list_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -53819,8 +53819,8 @@ class az_network_watcher_flow_log_list_command_builder extends CommandBuilder<az
  * ```
  */
 class az_network_watcher_flow_log_show_command_builder extends CommandBuilder<az_network_watcher_flow_log_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Location to identify the exclusive Network Watcher under a region. Only one Network Watcher can be existed per subscription and region. */
@@ -53889,8 +53889,8 @@ class az_network_watcher_flow_log_show_command_builder extends CommandBuilder<az
  * @param {string} name The name of the flow logger.
  */
 class az_network_watcher_flow_log_update_command_builder extends CommandBuilder<az_network_watcher_flow_log_update_command_result> {
-    constructor(commandPath: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
     }
@@ -54027,8 +54027,8 @@ class az_network_watcher_flow_log_update_command_builder extends CommandBuilder<
  * @param {string} vm Name or ID of the VM to target.
  */
 class az_network_watcher_packet_capture_create_command_builder extends CommandBuilder<az_network_watcher_packet_capture_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, vm: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, vm: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.vm(vm)
@@ -54115,8 +54115,8 @@ class az_network_watcher_packet_capture_create_command_builder extends CommandBu
  * @param {string} name The name of the packet capture session.
  */
 class az_network_watcher_packet_capture_delete_command_builder extends CommandBuilder<az_network_watcher_packet_capture_delete_command_result> {
-    constructor(commandPath: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
     }
@@ -54153,8 +54153,8 @@ class az_network_watcher_packet_capture_delete_command_builder extends CommandBu
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_network_watcher_packet_capture_list_command_builder extends CommandBuilder<az_network_watcher_packet_capture_list_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -54192,8 +54192,8 @@ class az_network_watcher_packet_capture_list_command_builder extends CommandBuil
  * @param {string} name The name of the packet capture session.
  */
 class az_network_watcher_packet_capture_show_command_builder extends CommandBuilder<az_network_watcher_packet_capture_show_command_result> {
-    constructor(commandPath: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
     }
@@ -54237,8 +54237,8 @@ class az_network_watcher_packet_capture_show_command_builder extends CommandBuil
  * @param {string} name The name given to the packet capture session.
  */
 class az_network_watcher_packet_capture_show_status_command_builder extends CommandBuilder<az_network_watcher_packet_capture_show_status_command_result> {
-    constructor(commandPath: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
     }
@@ -54276,8 +54276,8 @@ class az_network_watcher_packet_capture_show_status_command_builder extends Comm
  * @param {string} name The name of the packet capture session.
  */
 class az_network_watcher_packet_capture_stop_command_builder extends CommandBuilder<az_network_watcher_packet_capture_stop_command_result> {
-    constructor(commandPath: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
     }
@@ -54316,8 +54316,8 @@ class az_network_watcher_packet_capture_stop_command_builder extends CommandBuil
  * @param {string} resource Name or ID of the resource to troubleshoot.
  */
 class az_network_watcher_troubleshooting_show_command_builder extends CommandBuilder<az_network_watcher_troubleshooting_show_command_result> {
-    constructor(commandPath: string, resource: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resource: string) {
+        super(commandPath, resultDataTypeName);
         this.resource(resource)
     }
 
@@ -54371,8 +54371,8 @@ class az_network_watcher_troubleshooting_show_command_builder extends CommandBui
  * @param {string} storagePath Fully qualified URI to the storage blob container in which to store the troubleshooting results.
  */
 class az_network_watcher_troubleshooting_start_command_builder extends CommandBuilder<az_network_watcher_troubleshooting_start_command_result> {
-    constructor(commandPath: string, resource: string, storageAccount: string, storagePath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resource: string, storageAccount: string, storagePath: string) {
+        super(commandPath, resultDataTypeName);
         this.resource(resource)
         this.storageAccount(storageAccount)
         this.storagePath(storagePath)
@@ -54436,8 +54436,8 @@ class az_network_watcher_troubleshooting_start_command_builder extends CommandBu
  * @param {string} locations Space-separated list of locations to configure.
  */
 class az_network_watcher_configure_command_builder extends CommandBuilder<az_network_watcher_configure_command_result> {
-    constructor(commandPath: string, locations: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, locations: string) {
+        super(commandPath, resultDataTypeName);
         this.locations(locations)
     }
 
@@ -54482,8 +54482,8 @@ class az_network_watcher_configure_command_builder extends CommandBuilder<az_net
  * ```
  */
 class az_network_watcher_list_command_builder extends CommandBuilder<az_network_watcher_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -54520,8 +54520,8 @@ class az_network_watcher_list_command_builder extends CommandBuilder<az_network_
  * @param {string} resource Name or ID of the target resource to diagnose. If an ID is given, other resource arguments should not be given.
  */
 class az_network_watcher_run_configuration_diagnostic_command_builder extends CommandBuilder<az_network_watcher_run_configuration_diagnostic_command_result> {
-    constructor(commandPath: string, resource: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resource: string) {
+        super(commandPath, resultDataTypeName);
         this.resource(resource)
     }
 
@@ -54611,8 +54611,8 @@ class az_network_watcher_run_configuration_diagnostic_command_builder extends Co
  * @param {string} vm Name or ID of the VM to target. If the name of the VM is provided, the --resource-group is required.
  */
 class az_network_watcher_show_next_hop_command_builder extends CommandBuilder<az_network_watcher_show_next_hop_command_result> {
-    constructor(commandPath: string, destIp: string, resourceGroup: string, sourceIp: string, vm: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, destIp: string, resourceGroup: string, sourceIp: string, vm: string) {
+        super(commandPath, resultDataTypeName);
         this.destIp(destIp)
         this.resourceGroup(resourceGroup)
         this.sourceIp(sourceIp)
@@ -54670,8 +54670,8 @@ class az_network_watcher_show_next_hop_command_builder extends CommandBuilder<az
  * @param {string} vm Name or ID of the VM to target. If the name of the VM is provided, the --resource-group is required.
  */
 class az_network_watcher_show_security_group_view_command_builder extends CommandBuilder<az_network_watcher_show_security_group_view_command_result> {
-    constructor(commandPath: string, resourceGroup: string, vm: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, vm: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.vm(vm)
     }
@@ -54708,8 +54708,8 @@ class az_network_watcher_show_security_group_view_command_builder extends Comman
  * ```
  */
 class az_network_watcher_show_topology_command_builder extends CommandBuilder<az_network_watcher_show_topology_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Location. Defaults to the location of the target resource group. */
@@ -54764,8 +54764,8 @@ class az_network_watcher_show_topology_command_builder extends CommandBuilder<az
  * @param {string} sourceResource Name or ID of the resource from which to originate traffic.
  */
 class az_network_watcher_test_connectivity_command_builder extends CommandBuilder<az_network_watcher_test_connectivity_command_result> {
-    constructor(commandPath: string, sourceResource: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, sourceResource: string) {
+        super(commandPath, resultDataTypeName);
         this.sourceResource(sourceResource)
     }
 
@@ -54858,8 +54858,8 @@ class az_network_watcher_test_connectivity_command_builder extends CommandBuilde
  * @param {string} vm Name or ID of the VM to target. If the name of the VM is provided, the --resource-group is required.
  */
 class az_network_watcher_test_ip_flow_command_builder extends CommandBuilder<az_network_watcher_test_ip_flow_command_result> {
-    constructor(commandPath: string, direction: 'Inbound' | 'Outbound', local: string, protocol: 'Http' | 'Https' | 'Icmp' | 'Tcp', remote: string, vm: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, direction: 'Inbound' | 'Outbound', local: string, protocol: 'Http' | 'Https' | 'Icmp' | 'Tcp', remote: string, vm: string) {
+        super(commandPath, resultDataTypeName);
         this.direction(direction)
         this.local(local)
         this.protocol(protocol)
@@ -54929,8 +54929,8 @@ class az_network_watcher_test_ip_flow_command_builder extends CommandBuilder<az_
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_network_list_service_aliases_command_builder extends CommandBuilder<az_network_list_service_aliases_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -54965,8 +54965,8 @@ class az_network_list_service_aliases_command_builder extends CommandBuilder<az_
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_network_list_service_tags_command_builder extends CommandBuilder<az_network_list_service_tags_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -54995,8 +54995,8 @@ class az_network_list_service_tags_command_builder extends CommandBuilder<az_net
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_network_list_usages_command_builder extends CommandBuilder<az_network_list_usages_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 

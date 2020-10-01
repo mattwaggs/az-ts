@@ -86,7 +86,7 @@ export class az_cdn_custom_domain {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(endpointName: string, hostname: string, name: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_create_command_builder {
-        return new az_cdn_custom_domain_create_command_builder("az cdn custom-domain create", endpointName, hostname, name, profileName, resourceGroup);
+        return new az_cdn_custom_domain_create_command_builder("az cdn custom-domain create", 'az_cdn_custom_domain_create_command_result', endpointName, hostname, name, profileName, resourceGroup);
     }
 
     /**
@@ -107,7 +107,7 @@ export class az_cdn_custom_domain {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(endpointName: string, name: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_delete_command_builder {
-        return new az_cdn_custom_domain_delete_command_builder("az cdn custom-domain delete", endpointName, name, profileName, resourceGroup);
+        return new az_cdn_custom_domain_delete_command_builder("az cdn custom-domain delete", 'az_cdn_custom_domain_delete_command_result', endpointName, name, profileName, resourceGroup);
     }
 
     /**
@@ -128,7 +128,7 @@ export class az_cdn_custom_domain {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static disable_https(endpointName: string, name: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_disable_https_command_builder {
-        return new az_cdn_custom_domain_disable_https_command_builder("az cdn custom-domain disable-https", endpointName, name, profileName, resourceGroup);
+        return new az_cdn_custom_domain_disable_https_command_builder("az cdn custom-domain disable-https", 'az_cdn_custom_domain_disable_https_command_result', endpointName, name, profileName, resourceGroup);
     }
 
     /**
@@ -156,7 +156,7 @@ export class az_cdn_custom_domain {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static enable_https(endpointName: string, name: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_enable_https_command_builder {
-        return new az_cdn_custom_domain_enable_https_command_builder("az cdn custom-domain enable-https", endpointName, name, profileName, resourceGroup);
+        return new az_cdn_custom_domain_enable_https_command_builder("az cdn custom-domain enable-https", 'az_cdn_custom_domain_enable_https_command_result', endpointName, name, profileName, resourceGroup);
     }
 
     /**
@@ -176,7 +176,7 @@ export class az_cdn_custom_domain {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(endpointName: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_list_command_builder {
-        return new az_cdn_custom_domain_list_command_builder("az cdn custom-domain list", endpointName, profileName, resourceGroup);
+        return new az_cdn_custom_domain_list_command_builder("az cdn custom-domain list", 'az_cdn_custom_domain_list_command_result', endpointName, profileName, resourceGroup);
     }
 
     /**
@@ -198,7 +198,7 @@ export class az_cdn_custom_domain {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(endpointName: string, name: string, profileName: string, resourceGroup: string): az_cdn_custom_domain_show_command_builder {
-        return new az_cdn_custom_domain_show_command_builder("az cdn custom-domain show", endpointName, name, profileName, resourceGroup);
+        return new az_cdn_custom_domain_show_command_builder("az cdn custom-domain show", 'az_cdn_custom_domain_show_command_result', endpointName, name, profileName, resourceGroup);
     }
 }
 
@@ -214,7 +214,7 @@ export class az_cdn_edge_node {
      * ```
      */
     static list(): az_cdn_edge_node_list_command_builder {
-        return new az_cdn_edge_node_list_command_builder("az cdn edge-node list");
+        return new az_cdn_edge_node_list_command_builder("az cdn edge-node list", 'az_cdn_edge_node_list_command_result');
     }
 }
 
@@ -254,7 +254,7 @@ export class az_cdn_endpoint_rule_action {
      * @param {string} ruleName Name of the rule.
      */
     static add(actionName: string, ruleName: string): az_cdn_endpoint_rule_action_add_command_builder {
-        return new az_cdn_endpoint_rule_action_add_command_builder("az cdn endpoint rule action add", actionName, ruleName);
+        return new az_cdn_endpoint_rule_action_add_command_builder("az cdn endpoint rule action add", 'az_cdn_endpoint_rule_action_add_command_result', actionName, ruleName);
     }
 
     /**
@@ -275,7 +275,7 @@ export class az_cdn_endpoint_rule_action {
      * @param {string} ruleName Name of the rule.
      */
     static remove(index: string, ruleName: string): az_cdn_endpoint_rule_action_remove_command_builder {
-        return new az_cdn_endpoint_rule_action_remove_command_builder("az cdn endpoint rule action remove", index, ruleName);
+        return new az_cdn_endpoint_rule_action_remove_command_builder("az cdn endpoint rule action remove", 'az_cdn_endpoint_rule_action_remove_command_result', index, ruleName);
     }
 
     /**
@@ -292,7 +292,7 @@ export class az_cdn_endpoint_rule_action {
      * ```
      */
     static show(): az_cdn_endpoint_rule_action_show_command_builder {
-        return new az_cdn_endpoint_rule_action_show_command_builder("az cdn endpoint rule action show");
+        return new az_cdn_endpoint_rule_action_show_command_builder("az cdn endpoint rule action show", 'az_cdn_endpoint_rule_action_show_command_result');
     }
 }
 
@@ -322,7 +322,7 @@ export class az_cdn_endpoint_rule_condition {
      * @param {string} ruleName Name of the rule.
      */
     static add(matchVariable: string, operator: string, ruleName: string): az_cdn_endpoint_rule_condition_add_command_builder {
-        return new az_cdn_endpoint_rule_condition_add_command_builder("az cdn endpoint rule condition add", matchVariable, operator, ruleName);
+        return new az_cdn_endpoint_rule_condition_add_command_builder("az cdn endpoint rule condition add", 'az_cdn_endpoint_rule_condition_add_command_result', matchVariable, operator, ruleName);
     }
 
     /**
@@ -343,7 +343,7 @@ export class az_cdn_endpoint_rule_condition {
      * @param {string} ruleName Name of the rule.
      */
     static remove(index: string, ruleName: string): az_cdn_endpoint_rule_condition_remove_command_builder {
-        return new az_cdn_endpoint_rule_condition_remove_command_builder("az cdn endpoint rule condition remove", index, ruleName);
+        return new az_cdn_endpoint_rule_condition_remove_command_builder("az cdn endpoint rule condition remove", 'az_cdn_endpoint_rule_condition_remove_command_result', index, ruleName);
     }
 
     /**
@@ -360,7 +360,7 @@ export class az_cdn_endpoint_rule_condition {
      * ```
      */
     static show(): az_cdn_endpoint_rule_condition_show_command_builder {
-        return new az_cdn_endpoint_rule_condition_show_command_builder("az cdn endpoint rule condition show");
+        return new az_cdn_endpoint_rule_condition_show_command_builder("az cdn endpoint rule condition show", 'az_cdn_endpoint_rule_condition_show_command_result');
     }
 }
 
@@ -408,7 +408,7 @@ export class az_cdn_endpoint_rule {
      * @param {string} ruleName Name of the rule.
      */
     static add(actionName: string, order: string, ruleName: string): az_cdn_endpoint_rule_add_command_builder {
-        return new az_cdn_endpoint_rule_add_command_builder("az cdn endpoint rule add", actionName, order, ruleName);
+        return new az_cdn_endpoint_rule_add_command_builder("az cdn endpoint rule add", 'az_cdn_endpoint_rule_add_command_result', actionName, order, ruleName);
     }
 
     /**
@@ -427,7 +427,7 @@ export class az_cdn_endpoint_rule {
      * @param {string} ruleName Name of the rule.
      */
     static remove(ruleName: string): az_cdn_endpoint_rule_remove_command_builder {
-        return new az_cdn_endpoint_rule_remove_command_builder("az cdn endpoint rule remove", ruleName);
+        return new az_cdn_endpoint_rule_remove_command_builder("az cdn endpoint rule remove", 'az_cdn_endpoint_rule_remove_command_result', ruleName);
     }
 
     /**
@@ -444,7 +444,7 @@ export class az_cdn_endpoint_rule {
      * ```
      */
     static show(): az_cdn_endpoint_rule_show_command_builder {
-        return new az_cdn_endpoint_rule_show_command_builder("az cdn endpoint rule show");
+        return new az_cdn_endpoint_rule_show_command_builder("az cdn endpoint rule show", 'az_cdn_endpoint_rule_show_command_result');
     }
 }
 
@@ -464,7 +464,7 @@ export class az_cdn_endpoint_waf_policy {
      * ```
      */
     static remove(): az_cdn_endpoint_waf_policy_remove_command_builder {
-        return new az_cdn_endpoint_waf_policy_remove_command_builder("az cdn endpoint waf policy remove");
+        return new az_cdn_endpoint_waf_policy_remove_command_builder("az cdn endpoint waf policy remove", 'az_cdn_endpoint_waf_policy_remove_command_result');
     }
 
     /**
@@ -484,7 +484,7 @@ export class az_cdn_endpoint_waf_policy {
      * ```
      */
     static set(): az_cdn_endpoint_waf_policy_set_command_builder {
-        return new az_cdn_endpoint_waf_policy_set_command_builder("az cdn endpoint waf policy set");
+        return new az_cdn_endpoint_waf_policy_set_command_builder("az cdn endpoint waf policy set", 'az_cdn_endpoint_waf_policy_set_command_result');
     }
 
     /**
@@ -501,7 +501,7 @@ export class az_cdn_endpoint_waf_policy {
      * ```
      */
     static show(): az_cdn_endpoint_waf_policy_show_command_builder {
-        return new az_cdn_endpoint_waf_policy_show_command_builder("az cdn endpoint waf policy show");
+        return new az_cdn_endpoint_waf_policy_show_command_builder("az cdn endpoint waf policy show", 'az_cdn_endpoint_waf_policy_show_command_result');
     }
 }
 
@@ -539,7 +539,7 @@ export class az_cdn_endpoint {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, origin: string, profileName: string, resourceGroup: string): az_cdn_endpoint_create_command_builder {
-        return new az_cdn_endpoint_create_command_builder("az cdn endpoint create", name, origin, profileName, resourceGroup);
+        return new az_cdn_endpoint_create_command_builder("az cdn endpoint create", 'az_cdn_endpoint_create_command_result', name, origin, profileName, resourceGroup);
     }
 
     /**
@@ -556,7 +556,7 @@ export class az_cdn_endpoint {
      * ```
      */
     static delete(): az_cdn_endpoint_delete_command_builder {
-        return new az_cdn_endpoint_delete_command_builder("az cdn endpoint delete");
+        return new az_cdn_endpoint_delete_command_builder("az cdn endpoint delete", 'az_cdn_endpoint_delete_command_result');
     }
 
     /**
@@ -574,7 +574,7 @@ export class az_cdn_endpoint {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(profileName: string, resourceGroup: string): az_cdn_endpoint_list_command_builder {
-        return new az_cdn_endpoint_list_command_builder("az cdn endpoint list", profileName, resourceGroup);
+        return new az_cdn_endpoint_list_command_builder("az cdn endpoint list", 'az_cdn_endpoint_list_command_result', profileName, resourceGroup);
     }
 
     /**
@@ -594,7 +594,7 @@ export class az_cdn_endpoint {
      * @param {string} contentPaths The path to the content to be loaded. Path should be a relative file URL of the origin.
      */
     static load(contentPaths: string): az_cdn_endpoint_load_command_builder {
-        return new az_cdn_endpoint_load_command_builder("az cdn endpoint load", contentPaths);
+        return new az_cdn_endpoint_load_command_builder("az cdn endpoint load", 'az_cdn_endpoint_load_command_result', contentPaths);
     }
 
     /**
@@ -614,7 +614,7 @@ export class az_cdn_endpoint {
      * @param {string} contentPaths The path to the content to be purged. Can describe a file path or a wild card directory.
      */
     static purge(contentPaths: string): az_cdn_endpoint_purge_command_builder {
-        return new az_cdn_endpoint_purge_command_builder("az cdn endpoint purge", contentPaths);
+        return new az_cdn_endpoint_purge_command_builder("az cdn endpoint purge", 'az_cdn_endpoint_purge_command_result', contentPaths);
     }
 
     /**
@@ -631,7 +631,7 @@ export class az_cdn_endpoint {
      * ```
      */
     static show(): az_cdn_endpoint_show_command_builder {
-        return new az_cdn_endpoint_show_command_builder("az cdn endpoint show");
+        return new az_cdn_endpoint_show_command_builder("az cdn endpoint show", 'az_cdn_endpoint_show_command_result');
     }
 
     /**
@@ -648,7 +648,7 @@ export class az_cdn_endpoint {
      * ```
      */
     static start(): az_cdn_endpoint_start_command_builder {
-        return new az_cdn_endpoint_start_command_builder("az cdn endpoint start");
+        return new az_cdn_endpoint_start_command_builder("az cdn endpoint start", 'az_cdn_endpoint_start_command_result');
     }
 
     /**
@@ -665,7 +665,7 @@ export class az_cdn_endpoint {
      * ```
      */
     static stop(): az_cdn_endpoint_stop_command_builder {
-        return new az_cdn_endpoint_stop_command_builder("az cdn endpoint stop");
+        return new az_cdn_endpoint_stop_command_builder("az cdn endpoint stop", 'az_cdn_endpoint_stop_command_result');
     }
 
     /**
@@ -694,7 +694,7 @@ export class az_cdn_endpoint {
      * ```
      */
     static update(): az_cdn_endpoint_update_command_builder {
-        return new az_cdn_endpoint_update_command_builder("az cdn endpoint update");
+        return new az_cdn_endpoint_update_command_builder("az cdn endpoint update", 'az_cdn_endpoint_update_command_result');
     }
 
     /**
@@ -713,7 +713,7 @@ export class az_cdn_endpoint {
      * @param {string} hostName The host name of the custom domain. Must be a domain name.
      */
     static validate_custom_domain(hostName: string): az_cdn_endpoint_validate_custom_domain_command_builder {
-        return new az_cdn_endpoint_validate_custom_domain_command_builder("az cdn endpoint validate-custom-domain", hostName);
+        return new az_cdn_endpoint_validate_custom_domain_command_builder("az cdn endpoint validate-custom-domain", 'az_cdn_endpoint_validate_custom_domain_command_result', hostName);
     }
 }
 
@@ -736,7 +736,7 @@ export class az_cdn_origin {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(endpointName: string, profileName: string, resourceGroup: string): az_cdn_origin_list_command_builder {
-        return new az_cdn_origin_list_command_builder("az cdn origin list", endpointName, profileName, resourceGroup);
+        return new az_cdn_origin_list_command_builder("az cdn origin list", 'az_cdn_origin_list_command_result', endpointName, profileName, resourceGroup);
     }
 
     /**
@@ -754,7 +754,7 @@ export class az_cdn_origin {
      * ```
      */
     static show(): az_cdn_origin_show_command_builder {
-        return new az_cdn_origin_show_command_builder("az cdn origin show");
+        return new az_cdn_origin_show_command_builder("az cdn origin show", 'az_cdn_origin_show_command_result');
     }
 
     /**
@@ -776,7 +776,7 @@ export class az_cdn_origin {
      * ```
      */
     static update(): az_cdn_origin_update_command_builder {
-        return new az_cdn_origin_update_command_builder("az cdn origin update");
+        return new az_cdn_origin_update_command_builder("az cdn origin update", 'az_cdn_origin_update_command_result');
     }
 }
 
@@ -799,7 +799,7 @@ export class az_cdn_profile {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_cdn_profile_create_command_builder {
-        return new az_cdn_profile_create_command_builder("az cdn profile create", name, resourceGroup);
+        return new az_cdn_profile_create_command_builder("az cdn profile create", 'az_cdn_profile_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -814,7 +814,7 @@ export class az_cdn_profile {
      * ```
      */
     static delete(): az_cdn_profile_delete_command_builder {
-        return new az_cdn_profile_delete_command_builder("az cdn profile delete");
+        return new az_cdn_profile_delete_command_builder("az cdn profile delete", 'az_cdn_profile_delete_command_result');
     }
 
     /**
@@ -828,7 +828,7 @@ export class az_cdn_profile {
      * ```
      */
     static list(): az_cdn_profile_list_command_builder {
-        return new az_cdn_profile_list_command_builder("az cdn profile list");
+        return new az_cdn_profile_list_command_builder("az cdn profile list", 'az_cdn_profile_list_command_result');
     }
 
     /**
@@ -844,7 +844,7 @@ export class az_cdn_profile {
      * ```
      */
     static show(): az_cdn_profile_show_command_builder {
-        return new az_cdn_profile_show_command_builder("az cdn profile show");
+        return new az_cdn_profile_show_command_builder("az cdn profile show", 'az_cdn_profile_show_command_result');
     }
 
     /**
@@ -864,7 +864,7 @@ export class az_cdn_profile {
      * ```
      */
     static update(): az_cdn_profile_update_command_builder {
-        return new az_cdn_profile_update_command_builder("az cdn profile update");
+        return new az_cdn_profile_update_command_builder("az cdn profile update", 'az_cdn_profile_update_command_result');
     }
 
     /**
@@ -879,7 +879,7 @@ export class az_cdn_profile {
      * ```
      */
     static usage(): az_cdn_profile_usage_command_builder {
-        return new az_cdn_profile_usage_command_builder("az cdn profile usage");
+        return new az_cdn_profile_usage_command_builder("az cdn profile usage", 'az_cdn_profile_usage_command_result');
     }
 }
 
@@ -901,7 +901,7 @@ export class az_cdn_waf_policy_custom_rule {
      * @param {string} name The name of the custom rule.
      */
     static delete(name: string): az_cdn_waf_policy_custom_rule_delete_command_builder {
-        return new az_cdn_waf_policy_custom_rule_delete_command_builder("az cdn waf policy custom-rule delete", name);
+        return new az_cdn_waf_policy_custom_rule_delete_command_builder("az cdn waf policy custom-rule delete", 'az_cdn_waf_policy_custom_rule_delete_command_result', name);
     }
 
     /**
@@ -919,7 +919,7 @@ export class az_cdn_waf_policy_custom_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(policyName: string, resourceGroup: string): az_cdn_waf_policy_custom_rule_list_command_builder {
-        return new az_cdn_waf_policy_custom_rule_list_command_builder("az cdn waf policy custom-rule list", policyName, resourceGroup);
+        return new az_cdn_waf_policy_custom_rule_list_command_builder("az cdn waf policy custom-rule list", 'az_cdn_waf_policy_custom_rule_list_command_result', policyName, resourceGroup);
     }
 
     /**
@@ -944,7 +944,7 @@ export class az_cdn_waf_policy_custom_rule {
      * @param {string} priority The priority of the custom rule as a non-negative integer.
      */
     static set(action: 'Allow' | 'Block' | 'Log' | 'Redirect', matchCondition: string, name: string, priority: string): az_cdn_waf_policy_custom_rule_set_command_builder {
-        return new az_cdn_waf_policy_custom_rule_set_command_builder("az cdn waf policy custom-rule set", action, matchCondition, name, priority);
+        return new az_cdn_waf_policy_custom_rule_set_command_builder("az cdn waf policy custom-rule set", 'az_cdn_waf_policy_custom_rule_set_command_result', action, matchCondition, name, priority);
     }
 
     /**
@@ -963,7 +963,7 @@ export class az_cdn_waf_policy_custom_rule {
      * @param {string} name The name of the custom rule.
      */
     static show(name: string): az_cdn_waf_policy_custom_rule_show_command_builder {
-        return new az_cdn_waf_policy_custom_rule_show_command_builder("az cdn waf policy custom-rule show", name);
+        return new az_cdn_waf_policy_custom_rule_show_command_builder("az cdn waf policy custom-rule show", 'az_cdn_waf_policy_custom_rule_show_command_result', name);
     }
 }
 
@@ -989,7 +989,7 @@ export class az_cdn_waf_policy_managed_rule_set_rule_group_override {
      * @param {string} ruleSetVersion The version of the managed rule set.
      */
     static delete(name: string, ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_rule_group_override_delete_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_delete_command_builder("az cdn waf policy managed-rule-set rule-group-override delete", name, ruleSetType, ruleSetVersion);
+        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_delete_command_builder("az cdn waf policy managed-rule-set rule-group-override delete", 'az_cdn_waf_policy_managed_rule_set_rule_group_override_delete_command_result', name, ruleSetType, ruleSetVersion);
     }
 
     /**
@@ -1011,7 +1011,7 @@ export class az_cdn_waf_policy_managed_rule_set_rule_group_override {
      * @param {string} ruleSetVersion The version of the managed rule set.
      */
     static list(policyName: string, resourceGroup: string, ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_rule_group_override_list_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_list_command_builder("az cdn waf policy managed-rule-set rule-group-override list", policyName, resourceGroup, ruleSetType, ruleSetVersion);
+        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_list_command_builder("az cdn waf policy managed-rule-set rule-group-override list", 'az_cdn_waf_policy_managed_rule_set_rule_group_override_list_command_result', policyName, resourceGroup, ruleSetType, ruleSetVersion);
     }
 
     /**
@@ -1028,7 +1028,7 @@ export class az_cdn_waf_policy_managed_rule_set_rule_group_override {
      * @param {string} ruleSetVersion The version of the managed rule set.
      */
     static list_available(ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_rule_group_override_list_available_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_list_available_command_builder("az cdn waf policy managed-rule-set rule-group-override list-available", ruleSetType, ruleSetVersion);
+        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_list_available_command_builder("az cdn waf policy managed-rule-set rule-group-override list-available", 'az_cdn_waf_policy_managed_rule_set_rule_group_override_list_available_command_result', ruleSetType, ruleSetVersion);
     }
 
     /**
@@ -1052,7 +1052,7 @@ export class az_cdn_waf_policy_managed_rule_set_rule_group_override {
      * @param {string} ruleSetVersion The version of the managed rule set.
      */
     static set(name: string, ruleOverride: string, ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_rule_group_override_set_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_set_command_builder("az cdn waf policy managed-rule-set rule-group-override set", name, ruleOverride, ruleSetType, ruleSetVersion);
+        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_set_command_builder("az cdn waf policy managed-rule-set rule-group-override set", 'az_cdn_waf_policy_managed_rule_set_rule_group_override_set_command_result', name, ruleOverride, ruleSetType, ruleSetVersion);
     }
 
     /**
@@ -1075,7 +1075,7 @@ export class az_cdn_waf_policy_managed_rule_set_rule_group_override {
      * @param {string} ruleSetVersion The version of the managed rule set.
      */
     static show(name: string, ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_rule_group_override_show_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_show_command_builder("az cdn waf policy managed-rule-set rule-group-override show", name, ruleSetType, ruleSetVersion);
+        return new az_cdn_waf_policy_managed_rule_set_rule_group_override_show_command_builder("az cdn waf policy managed-rule-set rule-group-override show", 'az_cdn_waf_policy_managed_rule_set_rule_group_override_show_command_result', name, ruleSetType, ruleSetVersion);
     }
 }
 
@@ -1098,7 +1098,7 @@ export class az_cdn_waf_policy_managed_rule_set {
      * @param {string} ruleSetVersion The version of the managed rule set.
      */
     static add(ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_add_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_add_command_builder("az cdn waf policy managed-rule-set add", ruleSetType, ruleSetVersion);
+        return new az_cdn_waf_policy_managed_rule_set_add_command_builder("az cdn waf policy managed-rule-set add", 'az_cdn_waf_policy_managed_rule_set_add_command_result', ruleSetType, ruleSetVersion);
     }
 
     /**
@@ -1116,7 +1116,7 @@ export class az_cdn_waf_policy_managed_rule_set {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(policyName: string, resourceGroup: string): az_cdn_waf_policy_managed_rule_set_list_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_list_command_builder("az cdn waf policy managed-rule-set list", policyName, resourceGroup);
+        return new az_cdn_waf_policy_managed_rule_set_list_command_builder("az cdn waf policy managed-rule-set list", 'az_cdn_waf_policy_managed_rule_set_list_command_result', policyName, resourceGroup);
     }
 
     /**
@@ -1128,7 +1128,7 @@ export class az_cdn_waf_policy_managed_rule_set {
      * ```
      */
     static list_available(): az_cdn_waf_policy_managed_rule_set_list_available_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_list_available_command_builder("az cdn waf policy managed-rule-set list-available");
+        return new az_cdn_waf_policy_managed_rule_set_list_available_command_builder("az cdn waf policy managed-rule-set list-available", 'az_cdn_waf_policy_managed_rule_set_list_available_command_result');
     }
 
     /**
@@ -1149,7 +1149,7 @@ export class az_cdn_waf_policy_managed_rule_set {
      * @param {string} ruleSetVersion The version of the managed rule set.
      */
     static remove(ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_remove_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_remove_command_builder("az cdn waf policy managed-rule-set remove", ruleSetType, ruleSetVersion);
+        return new az_cdn_waf_policy_managed_rule_set_remove_command_builder("az cdn waf policy managed-rule-set remove", 'az_cdn_waf_policy_managed_rule_set_remove_command_result', ruleSetType, ruleSetVersion);
     }
 
     /**
@@ -1170,7 +1170,7 @@ export class az_cdn_waf_policy_managed_rule_set {
      * @param {string} ruleSetVersion The version of the managed rule set.
      */
     static show(ruleSetType: string, ruleSetVersion: string): az_cdn_waf_policy_managed_rule_set_show_command_builder {
-        return new az_cdn_waf_policy_managed_rule_set_show_command_builder("az cdn waf policy managed-rule-set show", ruleSetType, ruleSetVersion);
+        return new az_cdn_waf_policy_managed_rule_set_show_command_builder("az cdn waf policy managed-rule-set show", 'az_cdn_waf_policy_managed_rule_set_show_command_result', ruleSetType, ruleSetVersion);
     }
 }
 
@@ -1192,7 +1192,7 @@ export class az_cdn_waf_policy_rate_limit_rule {
      * @param {string} name The name of the rate limit rule.
      */
     static delete(name: string): az_cdn_waf_policy_rate_limit_rule_delete_command_builder {
-        return new az_cdn_waf_policy_rate_limit_rule_delete_command_builder("az cdn waf policy rate-limit-rule delete", name);
+        return new az_cdn_waf_policy_rate_limit_rule_delete_command_builder("az cdn waf policy rate-limit-rule delete", 'az_cdn_waf_policy_rate_limit_rule_delete_command_result', name);
     }
 
     /**
@@ -1210,7 +1210,7 @@ export class az_cdn_waf_policy_rate_limit_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(policyName: string, resourceGroup: string): az_cdn_waf_policy_rate_limit_rule_list_command_builder {
-        return new az_cdn_waf_policy_rate_limit_rule_list_command_builder("az cdn waf policy rate-limit-rule list", policyName, resourceGroup);
+        return new az_cdn_waf_policy_rate_limit_rule_list_command_builder("az cdn waf policy rate-limit-rule list", 'az_cdn_waf_policy_rate_limit_rule_list_command_result', policyName, resourceGroup);
     }
 
     /**
@@ -1239,7 +1239,7 @@ export class az_cdn_waf_policy_rate_limit_rule {
      * @param {string} requestThreshold The request threshold to trigger rate limiting.
      */
     static set(action: 'Allow' | 'Block' | 'Log' | 'Redirect', duration: string, matchCondition: string, name: string, priority: string, requestThreshold: string): az_cdn_waf_policy_rate_limit_rule_set_command_builder {
-        return new az_cdn_waf_policy_rate_limit_rule_set_command_builder("az cdn waf policy rate-limit-rule set", action, duration, matchCondition, name, priority, requestThreshold);
+        return new az_cdn_waf_policy_rate_limit_rule_set_command_builder("az cdn waf policy rate-limit-rule set", 'az_cdn_waf_policy_rate_limit_rule_set_command_result', action, duration, matchCondition, name, priority, requestThreshold);
     }
 
     /**
@@ -1258,7 +1258,7 @@ export class az_cdn_waf_policy_rate_limit_rule {
      * @param {string} name The name of the rate limit rule.
      */
     static show(name: string): az_cdn_waf_policy_rate_limit_rule_show_command_builder {
-        return new az_cdn_waf_policy_rate_limit_rule_show_command_builder("az cdn waf policy rate-limit-rule show", name);
+        return new az_cdn_waf_policy_rate_limit_rule_show_command_builder("az cdn waf policy rate-limit-rule show", 'az_cdn_waf_policy_rate_limit_rule_show_command_result', name);
     }
 }
 
@@ -1277,7 +1277,7 @@ export class az_cdn_waf_policy {
      * ```
      */
     static delete(): az_cdn_waf_policy_delete_command_builder {
-        return new az_cdn_waf_policy_delete_command_builder("az cdn waf policy delete");
+        return new az_cdn_waf_policy_delete_command_builder("az cdn waf policy delete", 'az_cdn_waf_policy_delete_command_result');
     }
 
     /**
@@ -1293,7 +1293,7 @@ export class az_cdn_waf_policy {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(resourceGroup: string): az_cdn_waf_policy_list_command_builder {
-        return new az_cdn_waf_policy_list_command_builder("az cdn waf policy list", resourceGroup);
+        return new az_cdn_waf_policy_list_command_builder("az cdn waf policy list", 'az_cdn_waf_policy_list_command_result', resourceGroup);
     }
 
     /**
@@ -1315,7 +1315,7 @@ export class az_cdn_waf_policy {
      * ```
      */
     static set(): az_cdn_waf_policy_set_command_builder {
-        return new az_cdn_waf_policy_set_command_builder("az cdn waf policy set");
+        return new az_cdn_waf_policy_set_command_builder("az cdn waf policy set", 'az_cdn_waf_policy_set_command_result');
     }
 
     /**
@@ -1331,7 +1331,7 @@ export class az_cdn_waf_policy {
      * ```
      */
     static show(): az_cdn_waf_policy_show_command_builder {
-        return new az_cdn_waf_policy_show_command_builder("az cdn waf policy show");
+        return new az_cdn_waf_policy_show_command_builder("az cdn waf policy show", 'az_cdn_waf_policy_show_command_result');
     }
 }
 
@@ -1352,7 +1352,7 @@ export class az_cdn {
      * ```
      */
     static name_exists(): az_cdn_name_exists_command_builder {
-        return new az_cdn_name_exists_command_builder("az cdn name-exists");
+        return new az_cdn_name_exists_command_builder("az cdn name-exists", 'az_cdn_name_exists_command_result');
     }
 
     /**
@@ -1364,7 +1364,7 @@ export class az_cdn {
      * ```
      */
     static usage(): az_cdn_usage_command_builder {
-        return new az_cdn_usage_command_builder("az cdn usage");
+        return new az_cdn_usage_command_builder("az cdn usage", 'az_cdn_usage_command_result');
     }
 }
 
@@ -1390,8 +1390,8 @@ export class az_cdn {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_custom_domain_create_command_builder extends CommandBuilder<az_cdn_custom_domain_create_command_result> {
-    constructor(commandPath: string, endpointName: string, hostname: string, name: string, profileName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endpointName: string, hostname: string, name: string, profileName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.endpointName(endpointName)
         this.hostname(hostname)
         this.name(name)
@@ -1466,8 +1466,8 @@ class az_cdn_custom_domain_create_command_builder extends CommandBuilder<az_cdn_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_custom_domain_delete_command_builder extends CommandBuilder<az_cdn_custom_domain_delete_command_result> {
-    constructor(commandPath: string, endpointName: string, name: string, profileName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endpointName: string, name: string, profileName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.endpointName(endpointName)
         this.name(name)
         this.profileName(profileName)
@@ -1523,8 +1523,8 @@ class az_cdn_custom_domain_delete_command_builder extends CommandBuilder<az_cdn_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_custom_domain_disable_https_command_builder extends CommandBuilder<az_cdn_custom_domain_disable_https_command_result> {
-    constructor(commandPath: string, endpointName: string, name: string, profileName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endpointName: string, name: string, profileName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.endpointName(endpointName)
         this.name(name)
         this.profileName(profileName)
@@ -1587,8 +1587,8 @@ class az_cdn_custom_domain_disable_https_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_custom_domain_enable_https_command_builder extends CommandBuilder<az_cdn_custom_domain_enable_https_command_result> {
-    constructor(commandPath: string, endpointName: string, name: string, profileName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endpointName: string, name: string, profileName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.endpointName(endpointName)
         this.name(name)
         this.profileName(profileName)
@@ -1685,8 +1685,8 @@ class az_cdn_custom_domain_enable_https_command_builder extends CommandBuilder<a
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_custom_domain_list_command_builder extends CommandBuilder<az_cdn_custom_domain_list_command_result> {
-    constructor(commandPath: string, endpointName: string, profileName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endpointName: string, profileName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.endpointName(endpointName)
         this.profileName(profileName)
         this.resourceGroup(resourceGroup)
@@ -1742,8 +1742,8 @@ class az_cdn_custom_domain_list_command_builder extends CommandBuilder<az_cdn_cu
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_custom_domain_show_command_builder extends CommandBuilder<az_cdn_custom_domain_show_command_result> {
-    constructor(commandPath: string, endpointName: string, name: string, profileName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endpointName: string, name: string, profileName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.endpointName(endpointName)
         this.name(name)
         this.profileName(profileName)
@@ -1797,8 +1797,8 @@ class az_cdn_custom_domain_show_command_builder extends CommandBuilder<az_cdn_cu
  * ```
  */
 class az_cdn_edge_node_list_command_builder extends CommandBuilder<az_cdn_edge_node_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -1848,8 +1848,8 @@ class az_cdn_edge_node_list_command_builder extends CommandBuilder<az_cdn_edge_n
  * @param {string} ruleName Name of the rule.
  */
 class az_cdn_endpoint_rule_action_add_command_builder extends CommandBuilder<az_cdn_endpoint_rule_action_add_command_result> {
-    constructor(commandPath: string, actionName: string, ruleName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, actionName: string, ruleName: string) {
+        super(commandPath, resultDataTypeName);
         this.actionName(actionName)
         this.ruleName(ruleName)
     }
@@ -2011,8 +2011,8 @@ class az_cdn_endpoint_rule_action_add_command_builder extends CommandBuilder<az_
  * @param {string} ruleName Name of the rule.
  */
 class az_cdn_endpoint_rule_action_remove_command_builder extends CommandBuilder<az_cdn_endpoint_rule_action_remove_command_result> {
-    constructor(commandPath: string, index: string, ruleName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, index: string, ruleName: string) {
+        super(commandPath, resultDataTypeName);
         this.index(index)
         this.ruleName(ruleName)
     }
@@ -2074,8 +2074,8 @@ class az_cdn_endpoint_rule_action_remove_command_builder extends CommandBuilder<
  * ```
  */
 class az_cdn_endpoint_rule_action_show_command_builder extends CommandBuilder<az_cdn_endpoint_rule_action_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2139,8 +2139,8 @@ class az_cdn_endpoint_rule_action_show_command_builder extends CommandBuilder<az
  * @param {string} ruleName Name of the rule.
  */
 class az_cdn_endpoint_rule_condition_add_command_builder extends CommandBuilder<az_cdn_endpoint_rule_condition_add_command_result> {
-    constructor(commandPath: string, matchVariable: string, operator: string, ruleName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, matchVariable: string, operator: string, ruleName: string) {
+        super(commandPath, resultDataTypeName);
         this.matchVariable(matchVariable)
         this.operator(operator)
         this.ruleName(ruleName)
@@ -2237,8 +2237,8 @@ class az_cdn_endpoint_rule_condition_add_command_builder extends CommandBuilder<
  * @param {string} ruleName Name of the rule.
  */
 class az_cdn_endpoint_rule_condition_remove_command_builder extends CommandBuilder<az_cdn_endpoint_rule_condition_remove_command_result> {
-    constructor(commandPath: string, index: string, ruleName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, index: string, ruleName: string) {
+        super(commandPath, resultDataTypeName);
         this.index(index)
         this.ruleName(ruleName)
     }
@@ -2300,8 +2300,8 @@ class az_cdn_endpoint_rule_condition_remove_command_builder extends CommandBuild
  * ```
  */
 class az_cdn_endpoint_rule_condition_show_command_builder extends CommandBuilder<az_cdn_endpoint_rule_condition_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2383,8 +2383,8 @@ class az_cdn_endpoint_rule_condition_show_command_builder extends CommandBuilder
  * @param {string} ruleName Name of the rule.
  */
 class az_cdn_endpoint_rule_add_command_builder extends CommandBuilder<az_cdn_endpoint_rule_add_command_result> {
-    constructor(commandPath: string, actionName: string, order: string, ruleName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, actionName: string, order: string, ruleName: string) {
+        super(commandPath, resultDataTypeName);
         this.actionName(actionName)
         this.order(order)
         this.ruleName(ruleName)
@@ -2587,8 +2587,8 @@ class az_cdn_endpoint_rule_add_command_builder extends CommandBuilder<az_cdn_end
  * @param {string} ruleName Name of the rule.
  */
 class az_cdn_endpoint_rule_remove_command_builder extends CommandBuilder<az_cdn_endpoint_rule_remove_command_result> {
-    constructor(commandPath: string, ruleName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ruleName: string) {
+        super(commandPath, resultDataTypeName);
         this.ruleName(ruleName)
     }
 
@@ -2643,8 +2643,8 @@ class az_cdn_endpoint_rule_remove_command_builder extends CommandBuilder<az_cdn_
  * ```
  */
 class az_cdn_endpoint_rule_show_command_builder extends CommandBuilder<az_cdn_endpoint_rule_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2698,8 +2698,8 @@ class az_cdn_endpoint_rule_show_command_builder extends CommandBuilder<az_cdn_en
  * ```
  */
 class az_cdn_endpoint_waf_policy_remove_command_builder extends CommandBuilder<az_cdn_endpoint_waf_policy_remove_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the CDN endpoint. */
@@ -2756,8 +2756,8 @@ class az_cdn_endpoint_waf_policy_remove_command_builder extends CommandBuilder<a
  * ```
  */
 class az_cdn_endpoint_waf_policy_set_command_builder extends CommandBuilder<az_cdn_endpoint_waf_policy_set_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the CDN endpoint. */
@@ -2829,8 +2829,8 @@ class az_cdn_endpoint_waf_policy_set_command_builder extends CommandBuilder<az_c
  * ```
  */
 class az_cdn_endpoint_waf_policy_show_command_builder extends CommandBuilder<az_cdn_endpoint_waf_policy_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the CDN endpoint. */
@@ -2898,8 +2898,8 @@ class az_cdn_endpoint_waf_policy_show_command_builder extends CommandBuilder<az_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_endpoint_create_command_builder extends CommandBuilder<az_cdn_endpoint_create_command_result> {
-    constructor(commandPath: string, name: string, origin: string, profileName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, origin: string, profileName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.origin(origin)
         this.profileName(profileName)
@@ -3011,8 +3011,8 @@ class az_cdn_endpoint_create_command_builder extends CommandBuilder<az_cdn_endpo
  * ```
  */
 class az_cdn_endpoint_delete_command_builder extends CommandBuilder<az_cdn_endpoint_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3067,8 +3067,8 @@ class az_cdn_endpoint_delete_command_builder extends CommandBuilder<az_cdn_endpo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_endpoint_list_command_builder extends CommandBuilder<az_cdn_endpoint_list_command_result> {
-    constructor(commandPath: string, profileName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, profileName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.profileName(profileName)
         this.resourceGroup(resourceGroup)
     }
@@ -3115,8 +3115,8 @@ class az_cdn_endpoint_list_command_builder extends CommandBuilder<az_cdn_endpoin
  * @param {string} contentPaths The path to the content to be loaded. Path should be a relative file URL of the origin.
  */
 class az_cdn_endpoint_load_command_builder extends CommandBuilder<az_cdn_endpoint_load_command_result> {
-    constructor(commandPath: string, contentPaths: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, contentPaths: string) {
+        super(commandPath, resultDataTypeName);
         this.contentPaths(contentPaths)
     }
 
@@ -3180,8 +3180,8 @@ class az_cdn_endpoint_load_command_builder extends CommandBuilder<az_cdn_endpoin
  * @param {string} contentPaths The path to the content to be purged. Can describe a file path or a wild card directory.
  */
 class az_cdn_endpoint_purge_command_builder extends CommandBuilder<az_cdn_endpoint_purge_command_result> {
-    constructor(commandPath: string, contentPaths: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, contentPaths: string) {
+        super(commandPath, resultDataTypeName);
         this.contentPaths(contentPaths)
     }
 
@@ -3242,8 +3242,8 @@ class az_cdn_endpoint_purge_command_builder extends CommandBuilder<az_cdn_endpoi
  * ```
  */
 class az_cdn_endpoint_show_command_builder extends CommandBuilder<az_cdn_endpoint_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3297,8 +3297,8 @@ class az_cdn_endpoint_show_command_builder extends CommandBuilder<az_cdn_endpoin
  * ```
  */
 class az_cdn_endpoint_start_command_builder extends CommandBuilder<az_cdn_endpoint_start_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3352,8 +3352,8 @@ class az_cdn_endpoint_start_command_builder extends CommandBuilder<az_cdn_endpoi
  * ```
  */
 class az_cdn_endpoint_stop_command_builder extends CommandBuilder<az_cdn_endpoint_stop_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3419,8 +3419,8 @@ class az_cdn_endpoint_stop_command_builder extends CommandBuilder<az_cdn_endpoin
  * ```
  */
 class az_cdn_endpoint_update_command_builder extends CommandBuilder<az_cdn_endpoint_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -3548,8 +3548,8 @@ class az_cdn_endpoint_update_command_builder extends CommandBuilder<az_cdn_endpo
  * @param {string} hostName The host name of the custom domain. Must be a domain name.
  */
 class az_cdn_endpoint_validate_custom_domain_command_builder extends CommandBuilder<az_cdn_endpoint_validate_custom_domain_command_result> {
-    constructor(commandPath: string, hostName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, hostName: string) {
+        super(commandPath, resultDataTypeName);
         this.hostName(hostName)
     }
 
@@ -3607,8 +3607,8 @@ class az_cdn_endpoint_validate_custom_domain_command_builder extends CommandBuil
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_origin_list_command_builder extends CommandBuilder<az_cdn_origin_list_command_result> {
-    constructor(commandPath: string, endpointName: string, profileName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endpointName: string, profileName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.endpointName(endpointName)
         this.profileName(profileName)
         this.resourceGroup(resourceGroup)
@@ -3660,8 +3660,8 @@ class az_cdn_origin_list_command_builder extends CommandBuilder<az_cdn_origin_li
  * ```
  */
 class az_cdn_origin_show_command_builder extends CommandBuilder<az_cdn_origin_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the CDN endpoint. */
@@ -3726,8 +3726,8 @@ class az_cdn_origin_show_command_builder extends CommandBuilder<az_cdn_origin_sh
  * ```
  */
 class az_cdn_origin_update_command_builder extends CommandBuilder<az_cdn_origin_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the CDN endpoint. */
@@ -3814,8 +3814,8 @@ class az_cdn_origin_update_command_builder extends CommandBuilder<az_cdn_origin_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_profile_create_command_builder extends CommandBuilder<az_cdn_profile_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -3869,8 +3869,8 @@ class az_cdn_profile_create_command_builder extends CommandBuilder<az_cdn_profil
  * ```
  */
 class az_cdn_profile_delete_command_builder extends CommandBuilder<az_cdn_profile_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3909,8 +3909,8 @@ class az_cdn_profile_delete_command_builder extends CommandBuilder<az_cdn_profil
  * ```
  */
 class az_cdn_profile_list_command_builder extends CommandBuilder<az_cdn_profile_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -3945,8 +3945,8 @@ class az_cdn_profile_list_command_builder extends CommandBuilder<az_cdn_profile_
  * ```
  */
 class az_cdn_profile_show_command_builder extends CommandBuilder<az_cdn_profile_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3997,8 +3997,8 @@ class az_cdn_profile_show_command_builder extends CommandBuilder<az_cdn_profile_
  * ```
  */
 class az_cdn_profile_update_command_builder extends CommandBuilder<az_cdn_profile_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -4068,8 +4068,8 @@ class az_cdn_profile_update_command_builder extends CommandBuilder<az_cdn_profil
  * ```
  */
 class az_cdn_profile_usage_command_builder extends CommandBuilder<az_cdn_profile_usage_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4113,8 +4113,8 @@ class az_cdn_profile_usage_command_builder extends CommandBuilder<az_cdn_profile
  * @param {string} name The name of the custom rule.
  */
 class az_cdn_waf_policy_custom_rule_delete_command_builder extends CommandBuilder<az_cdn_waf_policy_custom_rule_delete_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -4170,8 +4170,8 @@ class az_cdn_waf_policy_custom_rule_delete_command_builder extends CommandBuilde
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_waf_policy_custom_rule_list_command_builder extends CommandBuilder<az_cdn_waf_policy_custom_rule_list_command_result> {
-    constructor(commandPath: string, policyName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
     }
@@ -4223,8 +4223,8 @@ class az_cdn_waf_policy_custom_rule_list_command_builder extends CommandBuilder<
  * @param {string} priority The priority of the custom rule as a non-negative integer.
  */
 class az_cdn_waf_policy_custom_rule_set_command_builder extends CommandBuilder<az_cdn_waf_policy_custom_rule_set_command_result> {
-    constructor(commandPath: string, action: 'Allow' | 'Block' | 'Log' | 'Redirect', matchCondition: string, name: string, priority: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, action: 'Allow' | 'Block' | 'Log' | 'Redirect', matchCondition: string, name: string, priority: string) {
+        super(commandPath, resultDataTypeName);
         this.action(action)
         this.matchCondition(matchCondition)
         this.name(name)
@@ -4302,8 +4302,8 @@ class az_cdn_waf_policy_custom_rule_set_command_builder extends CommandBuilder<a
  * @param {string} name The name of the custom rule.
  */
 class az_cdn_waf_policy_custom_rule_show_command_builder extends CommandBuilder<az_cdn_waf_policy_custom_rule_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -4364,8 +4364,8 @@ class az_cdn_waf_policy_custom_rule_show_command_builder extends CommandBuilder<
  * @param {string} ruleSetVersion The version of the managed rule set.
  */
 class az_cdn_waf_policy_managed_rule_set_rule_group_override_delete_command_builder extends CommandBuilder<az_cdn_waf_policy_managed_rule_set_rule_group_override_delete_command_result> {
-    constructor(commandPath: string, name: string, ruleSetType: string, ruleSetVersion: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, ruleSetType: string, ruleSetVersion: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.ruleSetType(ruleSetType)
         this.ruleSetVersion(ruleSetVersion)
@@ -4439,8 +4439,8 @@ class az_cdn_waf_policy_managed_rule_set_rule_group_override_delete_command_buil
  * @param {string} ruleSetVersion The version of the managed rule set.
  */
 class az_cdn_waf_policy_managed_rule_set_rule_group_override_list_command_builder extends CommandBuilder<az_cdn_waf_policy_managed_rule_set_rule_group_override_list_command_result> {
-    constructor(commandPath: string, policyName: string, resourceGroup: string, ruleSetType: string, ruleSetVersion: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyName: string, resourceGroup: string, ruleSetType: string, ruleSetVersion: string) {
+        super(commandPath, resultDataTypeName);
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
         this.ruleSetType(ruleSetType)
@@ -4498,8 +4498,8 @@ class az_cdn_waf_policy_managed_rule_set_rule_group_override_list_command_builde
  * @param {string} ruleSetVersion The version of the managed rule set.
  */
 class az_cdn_waf_policy_managed_rule_set_rule_group_override_list_available_command_builder extends CommandBuilder<az_cdn_waf_policy_managed_rule_set_rule_group_override_list_available_command_result> {
-    constructor(commandPath: string, ruleSetType: string, ruleSetVersion: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ruleSetType: string, ruleSetVersion: string) {
+        super(commandPath, resultDataTypeName);
         this.ruleSetType(ruleSetType)
         this.ruleSetVersion(ruleSetVersion)
     }
@@ -4544,8 +4544,8 @@ class az_cdn_waf_policy_managed_rule_set_rule_group_override_list_available_comm
  * @param {string} ruleSetVersion The version of the managed rule set.
  */
 class az_cdn_waf_policy_managed_rule_set_rule_group_override_set_command_builder extends CommandBuilder<az_cdn_waf_policy_managed_rule_set_rule_group_override_set_command_result> {
-    constructor(commandPath: string, name: string, ruleOverride: string, ruleSetType: string, ruleSetVersion: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, ruleOverride: string, ruleSetType: string, ruleSetVersion: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.ruleOverride(ruleOverride)
         this.ruleSetType(ruleSetType)
@@ -4621,8 +4621,8 @@ class az_cdn_waf_policy_managed_rule_set_rule_group_override_set_command_builder
  * @param {string} ruleSetVersion The version of the managed rule set.
  */
 class az_cdn_waf_policy_managed_rule_set_rule_group_override_show_command_builder extends CommandBuilder<az_cdn_waf_policy_managed_rule_set_rule_group_override_show_command_result> {
-    constructor(commandPath: string, name: string, ruleSetType: string, ruleSetVersion: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, ruleSetType: string, ruleSetVersion: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.ruleSetType(ruleSetType)
         this.ruleSetVersion(ruleSetVersion)
@@ -4694,8 +4694,8 @@ class az_cdn_waf_policy_managed_rule_set_rule_group_override_show_command_builde
  * @param {string} ruleSetVersion The version of the managed rule set.
  */
 class az_cdn_waf_policy_managed_rule_set_add_command_builder extends CommandBuilder<az_cdn_waf_policy_managed_rule_set_add_command_result> {
-    constructor(commandPath: string, ruleSetType: string, ruleSetVersion: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ruleSetType: string, ruleSetVersion: string) {
+        super(commandPath, resultDataTypeName);
         this.ruleSetType(ruleSetType)
         this.ruleSetVersion(ruleSetVersion)
     }
@@ -4752,8 +4752,8 @@ class az_cdn_waf_policy_managed_rule_set_add_command_builder extends CommandBuil
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_waf_policy_managed_rule_set_list_command_builder extends CommandBuilder<az_cdn_waf_policy_managed_rule_set_list_command_result> {
-    constructor(commandPath: string, policyName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
     }
@@ -4792,8 +4792,8 @@ class az_cdn_waf_policy_managed_rule_set_list_command_builder extends CommandBui
  * ```
  */
 class az_cdn_waf_policy_managed_rule_set_list_available_command_builder extends CommandBuilder<az_cdn_waf_policy_managed_rule_set_list_available_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -4821,8 +4821,8 @@ class az_cdn_waf_policy_managed_rule_set_list_available_command_builder extends 
  * @param {string} ruleSetVersion The version of the managed rule set.
  */
 class az_cdn_waf_policy_managed_rule_set_remove_command_builder extends CommandBuilder<az_cdn_waf_policy_managed_rule_set_remove_command_result> {
-    constructor(commandPath: string, ruleSetType: string, ruleSetVersion: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ruleSetType: string, ruleSetVersion: string) {
+        super(commandPath, resultDataTypeName);
         this.ruleSetType(ruleSetType)
         this.ruleSetVersion(ruleSetVersion)
     }
@@ -4888,8 +4888,8 @@ class az_cdn_waf_policy_managed_rule_set_remove_command_builder extends CommandB
  * @param {string} ruleSetVersion The version of the managed rule set.
  */
 class az_cdn_waf_policy_managed_rule_set_show_command_builder extends CommandBuilder<az_cdn_waf_policy_managed_rule_set_show_command_result> {
-    constructor(commandPath: string, ruleSetType: string, ruleSetVersion: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ruleSetType: string, ruleSetVersion: string) {
+        super(commandPath, resultDataTypeName);
         this.ruleSetType(ruleSetType)
         this.ruleSetVersion(ruleSetVersion)
     }
@@ -4953,8 +4953,8 @@ class az_cdn_waf_policy_managed_rule_set_show_command_builder extends CommandBui
  * @param {string} name The name of the rate limit rule.
  */
 class az_cdn_waf_policy_rate_limit_rule_delete_command_builder extends CommandBuilder<az_cdn_waf_policy_rate_limit_rule_delete_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -5010,8 +5010,8 @@ class az_cdn_waf_policy_rate_limit_rule_delete_command_builder extends CommandBu
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_waf_policy_rate_limit_rule_list_command_builder extends CommandBuilder<az_cdn_waf_policy_rate_limit_rule_list_command_result> {
-    constructor(commandPath: string, policyName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.policyName(policyName)
         this.resourceGroup(resourceGroup)
     }
@@ -5067,8 +5067,8 @@ class az_cdn_waf_policy_rate_limit_rule_list_command_builder extends CommandBuil
  * @param {string} requestThreshold The request threshold to trigger rate limiting.
  */
 class az_cdn_waf_policy_rate_limit_rule_set_command_builder extends CommandBuilder<az_cdn_waf_policy_rate_limit_rule_set_command_result> {
-    constructor(commandPath: string, action: 'Allow' | 'Block' | 'Log' | 'Redirect', duration: string, matchCondition: string, name: string, priority: string, requestThreshold: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, action: 'Allow' | 'Block' | 'Log' | 'Redirect', duration: string, matchCondition: string, name: string, priority: string, requestThreshold: string) {
+        super(commandPath, resultDataTypeName);
         this.action(action)
         this.duration(duration)
         this.matchCondition(matchCondition)
@@ -5160,8 +5160,8 @@ class az_cdn_waf_policy_rate_limit_rule_set_command_builder extends CommandBuild
  * @param {string} name The name of the rate limit rule.
  */
 class az_cdn_waf_policy_rate_limit_rule_show_command_builder extends CommandBuilder<az_cdn_waf_policy_rate_limit_rule_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -5215,8 +5215,8 @@ class az_cdn_waf_policy_rate_limit_rule_show_command_builder extends CommandBuil
  * ```
  */
 class az_cdn_waf_policy_delete_command_builder extends CommandBuilder<az_cdn_waf_policy_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5263,8 +5263,8 @@ class az_cdn_waf_policy_delete_command_builder extends CommandBuilder<az_cdn_waf
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cdn_waf_policy_list_command_builder extends CommandBuilder<az_cdn_waf_policy_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -5306,8 +5306,8 @@ class az_cdn_waf_policy_list_command_builder extends CommandBuilder<az_cdn_waf_p
  * ```
  */
 class az_cdn_waf_policy_set_command_builder extends CommandBuilder<az_cdn_waf_policy_set_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The response body to send when a request is blocked, provided as a Base64 encoded string. */
@@ -5390,8 +5390,8 @@ class az_cdn_waf_policy_set_command_builder extends CommandBuilder<az_cdn_waf_po
  * ```
  */
 class az_cdn_waf_policy_show_command_builder extends CommandBuilder<az_cdn_waf_policy_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5436,8 +5436,8 @@ class az_cdn_waf_policy_show_command_builder extends CommandBuilder<az_cdn_waf_p
  * ```
  */
 class az_cdn_name_exists_command_builder extends CommandBuilder<az_cdn_name_exists_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5468,8 +5468,8 @@ class az_cdn_name_exists_command_builder extends CommandBuilder<az_cdn_name_exis
  * ```
  */
 class az_cdn_usage_command_builder extends CommandBuilder<az_cdn_usage_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */

@@ -94,7 +94,7 @@ export class az_mysql_db {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static create(name: string, resourceGroup: string, serverName: string): az_mysql_db_create_command_builder {
-        return new az_mysql_db_create_command_builder("az mysql db create", name, resourceGroup, serverName);
+        return new az_mysql_db_create_command_builder("az mysql db create", 'az_mysql_db_create_command_result', name, resourceGroup, serverName);
     }
 
     /**
@@ -114,7 +114,7 @@ export class az_mysql_db {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static delete(name: string, resourceGroup: string, serverName: string): az_mysql_db_delete_command_builder {
-        return new az_mysql_db_delete_command_builder("az mysql db delete", name, resourceGroup, serverName);
+        return new az_mysql_db_delete_command_builder("az mysql db delete", 'az_mysql_db_delete_command_result', name, resourceGroup, serverName);
     }
 
     /**
@@ -132,7 +132,7 @@ export class az_mysql_db {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static list(resourceGroup: string, serverName: string): az_mysql_db_list_command_builder {
-        return new az_mysql_db_list_command_builder("az mysql db list", resourceGroup, serverName);
+        return new az_mysql_db_list_command_builder("az mysql db list", 'az_mysql_db_list_command_result', resourceGroup, serverName);
     }
 
     /**
@@ -152,7 +152,7 @@ export class az_mysql_db {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static show(name: string, resourceGroup: string, serverName: string): az_mysql_db_show_command_builder {
-        return new az_mysql_db_show_command_builder("az mysql db show", name, resourceGroup, serverName);
+        return new az_mysql_db_show_command_builder("az mysql db show", 'az_mysql_db_show_command_result', name, resourceGroup, serverName);
     }
 }
 
@@ -176,7 +176,7 @@ export class az_mysql_flexible_server_db {
      * @param {string} serverName Name of the server.
      */
     static create(databaseName: string, resourceGroup: string, serverName: string): az_mysql_flexible_server_db_create_command_builder {
-        return new az_mysql_flexible_server_db_create_command_builder("az mysql flexible-server db create", databaseName, resourceGroup, serverName);
+        return new az_mysql_flexible_server_db_create_command_builder("az mysql flexible-server db create", 'az_mysql_flexible_server_db_create_command_result', databaseName, resourceGroup, serverName);
     }
 
     /**
@@ -193,7 +193,7 @@ export class az_mysql_flexible_server_db {
      * ```
      */
     static delete(): az_mysql_flexible_server_db_delete_command_builder {
-        return new az_mysql_flexible_server_db_delete_command_builder("az mysql flexible-server db delete");
+        return new az_mysql_flexible_server_db_delete_command_builder("az mysql flexible-server db delete", 'az_mysql_flexible_server_db_delete_command_result');
     }
 
     /**
@@ -211,7 +211,7 @@ export class az_mysql_flexible_server_db {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static list(resourceGroup: string, serverName: string): az_mysql_flexible_server_db_list_command_builder {
-        return new az_mysql_flexible_server_db_list_command_builder("az mysql flexible-server db list", resourceGroup, serverName);
+        return new az_mysql_flexible_server_db_list_command_builder("az mysql flexible-server db list", 'az_mysql_flexible_server_db_list_command_result', resourceGroup, serverName);
     }
 
     /**
@@ -230,7 +230,7 @@ export class az_mysql_flexible_server_db {
      * @param {string} databaseName The name of a database.
      */
     static show(databaseName: string): az_mysql_flexible_server_db_show_command_builder {
-        return new az_mysql_flexible_server_db_show_command_builder("az mysql flexible-server db show", databaseName);
+        return new az_mysql_flexible_server_db_show_command_builder("az mysql flexible-server db show", 'az_mysql_flexible_server_db_show_command_result', databaseName);
     }
 }
 
@@ -256,7 +256,7 @@ export class az_mysql_flexible_server_firewall_rule {
      * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
      */
     static create(endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string): az_mysql_flexible_server_firewall_rule_create_command_builder {
-        return new az_mysql_flexible_server_firewall_rule_create_command_builder("az mysql flexible-server firewall-rule create", endIpAddress, name, resourceGroup, serverName, startIpAddress);
+        return new az_mysql_flexible_server_firewall_rule_create_command_builder("az mysql flexible-server firewall-rule create", 'az_mysql_flexible_server_firewall_rule_create_command_result', endIpAddress, name, resourceGroup, serverName, startIpAddress);
     }
 
     /**
@@ -273,7 +273,7 @@ export class az_mysql_flexible_server_firewall_rule {
      * ```
      */
     static delete(): az_mysql_flexible_server_firewall_rule_delete_command_builder {
-        return new az_mysql_flexible_server_firewall_rule_delete_command_builder("az mysql flexible-server firewall-rule delete");
+        return new az_mysql_flexible_server_firewall_rule_delete_command_builder("az mysql flexible-server firewall-rule delete", 'az_mysql_flexible_server_firewall_rule_delete_command_result');
     }
 
     /**
@@ -291,7 +291,7 @@ export class az_mysql_flexible_server_firewall_rule {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static list(resourceGroup: string, serverName: string): az_mysql_flexible_server_firewall_rule_list_command_builder {
-        return new az_mysql_flexible_server_firewall_rule_list_command_builder("az mysql flexible-server firewall-rule list", resourceGroup, serverName);
+        return new az_mysql_flexible_server_firewall_rule_list_command_builder("az mysql flexible-server firewall-rule list", 'az_mysql_flexible_server_firewall_rule_list_command_result', resourceGroup, serverName);
     }
 
     /**
@@ -308,7 +308,7 @@ export class az_mysql_flexible_server_firewall_rule {
      * ```
      */
     static show(): az_mysql_flexible_server_firewall_rule_show_command_builder {
-        return new az_mysql_flexible_server_firewall_rule_show_command_builder("az mysql flexible-server firewall-rule show");
+        return new az_mysql_flexible_server_firewall_rule_show_command_builder("az mysql flexible-server firewall-rule show", 'az_mysql_flexible_server_firewall_rule_show_command_result');
     }
 
     /**
@@ -330,7 +330,7 @@ export class az_mysql_flexible_server_firewall_rule {
      * ```
      */
     static update(): az_mysql_flexible_server_firewall_rule_update_command_builder {
-        return new az_mysql_flexible_server_firewall_rule_update_command_builder("az mysql flexible-server firewall-rule update");
+        return new az_mysql_flexible_server_firewall_rule_update_command_builder("az mysql flexible-server firewall-rule update", 'az_mysql_flexible_server_firewall_rule_update_command_result');
     }
 }
 
@@ -351,7 +351,7 @@ export class az_mysql_flexible_server_parameter {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static list(resourceGroup: string, serverName: string): az_mysql_flexible_server_parameter_list_command_builder {
-        return new az_mysql_flexible_server_parameter_list_command_builder("az mysql flexible-server parameter list", resourceGroup, serverName);
+        return new az_mysql_flexible_server_parameter_list_command_builder("az mysql flexible-server parameter list", 'az_mysql_flexible_server_parameter_list_command_result', resourceGroup, serverName);
     }
 
     /**
@@ -369,7 +369,7 @@ export class az_mysql_flexible_server_parameter {
      * ```
      */
     static set(): az_mysql_flexible_server_parameter_set_command_builder {
-        return new az_mysql_flexible_server_parameter_set_command_builder("az mysql flexible-server parameter set");
+        return new az_mysql_flexible_server_parameter_set_command_builder("az mysql flexible-server parameter set", 'az_mysql_flexible_server_parameter_set_command_result');
     }
 
     /**
@@ -386,7 +386,7 @@ export class az_mysql_flexible_server_parameter {
      * ```
      */
     static show(): az_mysql_flexible_server_parameter_show_command_builder {
-        return new az_mysql_flexible_server_parameter_show_command_builder("az mysql flexible-server parameter show");
+        return new az_mysql_flexible_server_parameter_show_command_builder("az mysql flexible-server parameter show", 'az_mysql_flexible_server_parameter_show_command_result');
     }
 }
 
@@ -412,7 +412,7 @@ export class az_mysql_flexible_server_replica {
      * @param {string} sourceServer The name or resource ID of the source server to restore from.
      */
     static create(name: string, resourceGroup: string, sourceServer: string): az_mysql_flexible_server_replica_create_command_builder {
-        return new az_mysql_flexible_server_replica_create_command_builder("az mysql flexible-server replica create", name, resourceGroup, sourceServer);
+        return new az_mysql_flexible_server_replica_create_command_builder("az mysql flexible-server replica create", 'az_mysql_flexible_server_replica_create_command_result', name, resourceGroup, sourceServer);
     }
 
     /**
@@ -430,7 +430,7 @@ export class az_mysql_flexible_server_replica {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, resourceGroup: string): az_mysql_flexible_server_replica_list_command_builder {
-        return new az_mysql_flexible_server_replica_list_command_builder("az mysql flexible-server replica list", name, resourceGroup);
+        return new az_mysql_flexible_server_replica_list_command_builder("az mysql flexible-server replica list", 'az_mysql_flexible_server_replica_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -446,7 +446,7 @@ export class az_mysql_flexible_server_replica {
      * ```
      */
     static stop_replication(): az_mysql_flexible_server_replica_stop_replication_command_builder {
-        return new az_mysql_flexible_server_replica_stop_replication_command_builder("az mysql flexible-server replica stop-replication");
+        return new az_mysql_flexible_server_replica_stop_replication_command_builder("az mysql flexible-server replica stop-replication", 'az_mysql_flexible_server_replica_stop_replication_command_result');
     }
 }
 
@@ -480,7 +480,7 @@ export class az_mysql_flexible_server {
      * ```
      */
     static create(): az_mysql_flexible_server_create_command_builder {
-        return new az_mysql_flexible_server_create_command_builder("az mysql flexible-server create");
+        return new az_mysql_flexible_server_create_command_builder("az mysql flexible-server create", 'az_mysql_flexible_server_create_command_result');
     }
 
     /**
@@ -496,7 +496,7 @@ export class az_mysql_flexible_server {
      * ```
      */
     static delete(): az_mysql_flexible_server_delete_command_builder {
-        return new az_mysql_flexible_server_delete_command_builder("az mysql flexible-server delete");
+        return new az_mysql_flexible_server_delete_command_builder("az mysql flexible-server delete", 'az_mysql_flexible_server_delete_command_result');
     }
 
     /**
@@ -510,7 +510,7 @@ export class az_mysql_flexible_server {
      * ```
      */
     static list(): az_mysql_flexible_server_list_command_builder {
-        return new az_mysql_flexible_server_list_command_builder("az mysql flexible-server list");
+        return new az_mysql_flexible_server_list_command_builder("az mysql flexible-server list", 'az_mysql_flexible_server_list_command_result');
     }
 
     /**
@@ -525,7 +525,7 @@ export class az_mysql_flexible_server {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list_skus(location: string): az_mysql_flexible_server_list_skus_command_builder {
-        return new az_mysql_flexible_server_list_skus_command_builder("az mysql flexible-server list-skus", location);
+        return new az_mysql_flexible_server_list_skus_command_builder("az mysql flexible-server list-skus", 'az_mysql_flexible_server_list_skus_command_result', location);
     }
 
     /**
@@ -540,7 +540,7 @@ export class az_mysql_flexible_server {
      * ```
      */
     static restart(): az_mysql_flexible_server_restart_command_builder {
-        return new az_mysql_flexible_server_restart_command_builder("az mysql flexible-server restart");
+        return new az_mysql_flexible_server_restart_command_builder("az mysql flexible-server restart", 'az_mysql_flexible_server_restart_command_result');
     }
 
     /**
@@ -562,7 +562,7 @@ export class az_mysql_flexible_server {
      * @param {string} time The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00.
      */
     static restore(sourceServer: string, time: string): az_mysql_flexible_server_restore_command_builder {
-        return new az_mysql_flexible_server_restore_command_builder("az mysql flexible-server restore", sourceServer, time);
+        return new az_mysql_flexible_server_restore_command_builder("az mysql flexible-server restore", 'az_mysql_flexible_server_restore_command_result', sourceServer, time);
     }
 
     /**
@@ -578,7 +578,7 @@ export class az_mysql_flexible_server {
      * ```
      */
     static show(): az_mysql_flexible_server_show_command_builder {
-        return new az_mysql_flexible_server_show_command_builder("az mysql flexible-server show");
+        return new az_mysql_flexible_server_show_command_builder("az mysql flexible-server show", 'az_mysql_flexible_server_show_command_result');
     }
 
     /**
@@ -595,7 +595,7 @@ export class az_mysql_flexible_server {
      * ```
      */
     static show_connection_string(): az_mysql_flexible_server_show_connection_string_command_builder {
-        return new az_mysql_flexible_server_show_connection_string_command_builder("az mysql flexible-server show-connection-string");
+        return new az_mysql_flexible_server_show_connection_string_command_builder("az mysql flexible-server show-connection-string", 'az_mysql_flexible_server_show_connection_string_command_result');
     }
 
     /**
@@ -610,7 +610,7 @@ export class az_mysql_flexible_server {
      * ```
      */
     static start(): az_mysql_flexible_server_start_command_builder {
-        return new az_mysql_flexible_server_start_command_builder("az mysql flexible-server start");
+        return new az_mysql_flexible_server_start_command_builder("az mysql flexible-server start", 'az_mysql_flexible_server_start_command_result');
     }
 
     /**
@@ -625,7 +625,7 @@ export class az_mysql_flexible_server {
      * ```
      */
     static stop(): az_mysql_flexible_server_stop_command_builder {
-        return new az_mysql_flexible_server_stop_command_builder("az mysql flexible-server stop");
+        return new az_mysql_flexible_server_stop_command_builder("az mysql flexible-server stop", 'az_mysql_flexible_server_stop_command_result');
     }
 
     /**
@@ -656,7 +656,7 @@ export class az_mysql_flexible_server {
      * ```
      */
     static update(): az_mysql_flexible_server_update_command_builder {
-        return new az_mysql_flexible_server_update_command_builder("az mysql flexible-server update");
+        return new az_mysql_flexible_server_update_command_builder("az mysql flexible-server update", 'az_mysql_flexible_server_update_command_result');
     }
 
     /**
@@ -678,7 +678,7 @@ export class az_mysql_flexible_server {
      * ```
      */
     static wait(): az_mysql_flexible_server_wait_command_builder {
-        return new az_mysql_flexible_server_wait_command_builder("az mysql flexible-server wait");
+        return new az_mysql_flexible_server_wait_command_builder("az mysql flexible-server wait", 'az_mysql_flexible_server_wait_command_result');
     }
 }
 
@@ -701,7 +701,7 @@ export class az_mysql_server_ad_admin {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static create(resourceGroup: string, serverName: string): az_mysql_server_ad_admin_create_command_builder {
-        return new az_mysql_server_ad_admin_create_command_builder("az mysql server ad-admin create", resourceGroup, serverName);
+        return new az_mysql_server_ad_admin_create_command_builder("az mysql server ad-admin create", 'az_mysql_server_ad_admin_create_command_result', resourceGroup, serverName);
     }
 
     /**
@@ -717,7 +717,7 @@ export class az_mysql_server_ad_admin {
      * ```
      */
     static delete(): az_mysql_server_ad_admin_delete_command_builder {
-        return new az_mysql_server_ad_admin_delete_command_builder("az mysql server ad-admin delete");
+        return new az_mysql_server_ad_admin_delete_command_builder("az mysql server ad-admin delete", 'az_mysql_server_ad_admin_delete_command_result');
     }
 
     /**
@@ -733,7 +733,7 @@ export class az_mysql_server_ad_admin {
      * ```
      */
     static list(): az_mysql_server_ad_admin_list_command_builder {
-        return new az_mysql_server_ad_admin_list_command_builder("az mysql server ad-admin list");
+        return new az_mysql_server_ad_admin_list_command_builder("az mysql server ad-admin list", 'az_mysql_server_ad_admin_list_command_result');
     }
 
     /**
@@ -749,7 +749,7 @@ export class az_mysql_server_ad_admin {
      * ```
      */
     static show(): az_mysql_server_ad_admin_show_command_builder {
-        return new az_mysql_server_ad_admin_show_command_builder("az mysql server ad-admin show");
+        return new az_mysql_server_ad_admin_show_command_builder("az mysql server ad-admin show", 'az_mysql_server_ad_admin_show_command_result');
     }
 
     /**
@@ -771,7 +771,7 @@ export class az_mysql_server_ad_admin {
      * ```
      */
     static wait(): az_mysql_server_ad_admin_wait_command_builder {
-        return new az_mysql_server_ad_admin_wait_command_builder("az mysql server ad-admin wait");
+        return new az_mysql_server_ad_admin_wait_command_builder("az mysql server ad-admin wait", 'az_mysql_server_ad_admin_wait_command_result');
     }
 }
 
@@ -790,7 +790,7 @@ export class az_mysql_server_configuration {
      * ```
      */
     static list(): az_mysql_server_configuration_list_command_builder {
-        return new az_mysql_server_configuration_list_command_builder("az mysql server configuration list");
+        return new az_mysql_server_configuration_list_command_builder("az mysql server configuration list", 'az_mysql_server_configuration_list_command_result');
     }
 
     /**
@@ -807,7 +807,7 @@ export class az_mysql_server_configuration {
      * ```
      */
     static set(): az_mysql_server_configuration_set_command_builder {
-        return new az_mysql_server_configuration_set_command_builder("az mysql server configuration set");
+        return new az_mysql_server_configuration_set_command_builder("az mysql server configuration set", 'az_mysql_server_configuration_set_command_result');
     }
 
     /**
@@ -824,7 +824,7 @@ export class az_mysql_server_configuration {
      * ```
      */
     static show(): az_mysql_server_configuration_show_command_builder {
-        return new az_mysql_server_configuration_show_command_builder("az mysql server configuration show");
+        return new az_mysql_server_configuration_show_command_builder("az mysql server configuration show", 'az_mysql_server_configuration_show_command_result');
     }
 }
 
@@ -850,7 +850,7 @@ export class az_mysql_server_firewall_rule {
      * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
      */
     static create(endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string): az_mysql_server_firewall_rule_create_command_builder {
-        return new az_mysql_server_firewall_rule_create_command_builder("az mysql server firewall-rule create", endIpAddress, name, resourceGroup, serverName, startIpAddress);
+        return new az_mysql_server_firewall_rule_create_command_builder("az mysql server firewall-rule create", 'az_mysql_server_firewall_rule_create_command_result', endIpAddress, name, resourceGroup, serverName, startIpAddress);
     }
 
     /**
@@ -867,7 +867,7 @@ export class az_mysql_server_firewall_rule {
      * ```
      */
     static delete(): az_mysql_server_firewall_rule_delete_command_builder {
-        return new az_mysql_server_firewall_rule_delete_command_builder("az mysql server firewall-rule delete");
+        return new az_mysql_server_firewall_rule_delete_command_builder("az mysql server firewall-rule delete", 'az_mysql_server_firewall_rule_delete_command_result');
     }
 
     /**
@@ -883,7 +883,7 @@ export class az_mysql_server_firewall_rule {
      * ```
      */
     static list(): az_mysql_server_firewall_rule_list_command_builder {
-        return new az_mysql_server_firewall_rule_list_command_builder("az mysql server firewall-rule list");
+        return new az_mysql_server_firewall_rule_list_command_builder("az mysql server firewall-rule list", 'az_mysql_server_firewall_rule_list_command_result');
     }
 
     /**
@@ -900,7 +900,7 @@ export class az_mysql_server_firewall_rule {
      * ```
      */
     static show(): az_mysql_server_firewall_rule_show_command_builder {
-        return new az_mysql_server_firewall_rule_show_command_builder("az mysql server firewall-rule show");
+        return new az_mysql_server_firewall_rule_show_command_builder("az mysql server firewall-rule show", 'az_mysql_server_firewall_rule_show_command_result');
     }
 
     /**
@@ -922,7 +922,7 @@ export class az_mysql_server_firewall_rule {
      * ```
      */
     static update(): az_mysql_server_firewall_rule_update_command_builder {
-        return new az_mysql_server_firewall_rule_update_command_builder("az mysql server firewall-rule update");
+        return new az_mysql_server_firewall_rule_update_command_builder("az mysql server firewall-rule update", 'az_mysql_server_firewall_rule_update_command_result');
     }
 }
 
@@ -944,7 +944,7 @@ export class az_mysql_server_key {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(kid: string, name: string, resourceGroup: string): az_mysql_server_key_create_command_builder {
-        return new az_mysql_server_key_create_command_builder("az mysql server key create", kid, name, resourceGroup);
+        return new az_mysql_server_key_create_command_builder("az mysql server key create", 'az_mysql_server_key_create_command_result', kid, name, resourceGroup);
     }
 
     /**
@@ -963,7 +963,7 @@ export class az_mysql_server_key {
      * @param {string} kid The Azure Key Vault key identifier of the server key. An example key identifier is "<a href="https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901">https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901</a>".
      */
     static delete(kid: string): az_mysql_server_key_delete_command_builder {
-        return new az_mysql_server_key_delete_command_builder("az mysql server key delete", kid);
+        return new az_mysql_server_key_delete_command_builder("az mysql server key delete", 'az_mysql_server_key_delete_command_result', kid);
     }
 
     /**
@@ -979,7 +979,7 @@ export class az_mysql_server_key {
      * ```
      */
     static list(): az_mysql_server_key_list_command_builder {
-        return new az_mysql_server_key_list_command_builder("az mysql server key list");
+        return new az_mysql_server_key_list_command_builder("az mysql server key list", 'az_mysql_server_key_list_command_result');
     }
 
     /**
@@ -998,7 +998,7 @@ export class az_mysql_server_key {
      * @param {string} kid The Azure Key Vault key identifier of the server key. An example key identifier is "<a href="https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901">https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901</a>".
      */
     static show(kid: string): az_mysql_server_key_show_command_builder {
-        return new az_mysql_server_key_show_command_builder("az mysql server key show", kid);
+        return new az_mysql_server_key_show_command_builder("az mysql server key show", 'az_mysql_server_key_show_command_result', kid);
     }
 }
 
@@ -1019,7 +1019,7 @@ export class az_mysql_server_private_endpoint_connection {
      * ```
      */
     static approve(): az_mysql_server_private_endpoint_connection_approve_command_builder {
-        return new az_mysql_server_private_endpoint_connection_approve_command_builder("az mysql server private-endpoint-connection approve");
+        return new az_mysql_server_private_endpoint_connection_approve_command_builder("az mysql server private-endpoint-connection approve", 'az_mysql_server_private_endpoint_connection_approve_command_result');
     }
 
     /**
@@ -1036,7 +1036,7 @@ export class az_mysql_server_private_endpoint_connection {
      * ```
      */
     static delete(): az_mysql_server_private_endpoint_connection_delete_command_builder {
-        return new az_mysql_server_private_endpoint_connection_delete_command_builder("az mysql server private-endpoint-connection delete");
+        return new az_mysql_server_private_endpoint_connection_delete_command_builder("az mysql server private-endpoint-connection delete", 'az_mysql_server_private_endpoint_connection_delete_command_result');
     }
 
     /**
@@ -1054,7 +1054,7 @@ export class az_mysql_server_private_endpoint_connection {
      * ```
      */
     static reject(): az_mysql_server_private_endpoint_connection_reject_command_builder {
-        return new az_mysql_server_private_endpoint_connection_reject_command_builder("az mysql server private-endpoint-connection reject");
+        return new az_mysql_server_private_endpoint_connection_reject_command_builder("az mysql server private-endpoint-connection reject", 'az_mysql_server_private_endpoint_connection_reject_command_result');
     }
 
     /**
@@ -1072,7 +1072,7 @@ export class az_mysql_server_private_endpoint_connection {
      * ```
      */
     static show(): az_mysql_server_private_endpoint_connection_show_command_builder {
-        return new az_mysql_server_private_endpoint_connection_show_command_builder("az mysql server private-endpoint-connection show");
+        return new az_mysql_server_private_endpoint_connection_show_command_builder("az mysql server private-endpoint-connection show", 'az_mysql_server_private_endpoint_connection_show_command_result');
     }
 }
 
@@ -1091,7 +1091,7 @@ export class az_mysql_server_private_link_resource {
      * ```
      */
     static list(): az_mysql_server_private_link_resource_list_command_builder {
-        return new az_mysql_server_private_link_resource_list_command_builder("az mysql server private-link-resource list");
+        return new az_mysql_server_private_link_resource_list_command_builder("az mysql server private-link-resource list", 'az_mysql_server_private_link_resource_list_command_result');
     }
 }
 
@@ -1116,7 +1116,7 @@ export class az_mysql_server_replica {
      * @param {string} sourceServer The name or resource ID of the master server to the create replica for.
      */
     static create(name: string, resourceGroup: string, sourceServer: string): az_mysql_server_replica_create_command_builder {
-        return new az_mysql_server_replica_create_command_builder("az mysql server replica create", name, resourceGroup, sourceServer);
+        return new az_mysql_server_replica_create_command_builder("az mysql server replica create", 'az_mysql_server_replica_create_command_result', name, resourceGroup, sourceServer);
     }
 
     /**
@@ -1132,7 +1132,7 @@ export class az_mysql_server_replica {
      * ```
      */
     static list(): az_mysql_server_replica_list_command_builder {
-        return new az_mysql_server_replica_list_command_builder("az mysql server replica list");
+        return new az_mysql_server_replica_list_command_builder("az mysql server replica list", 'az_mysql_server_replica_list_command_result');
     }
 
     /**
@@ -1148,7 +1148,7 @@ export class az_mysql_server_replica {
      * ```
      */
     static stop(): az_mysql_server_replica_stop_command_builder {
-        return new az_mysql_server_replica_stop_command_builder("az mysql server replica stop");
+        return new az_mysql_server_replica_stop_command_builder("az mysql server replica stop", 'az_mysql_server_replica_stop_command_result');
     }
 }
 
@@ -1174,7 +1174,7 @@ export class az_mysql_server_vnet_rule {
      * @param {string} subnet Name or ID of the subnet that allows access to an Azure Postgres Server. If subnet name is provided, --vnet-name must be provided.
      */
     static create(name: string, resourceGroup: string, serverName: string, subnet: string): az_mysql_server_vnet_rule_create_command_builder {
-        return new az_mysql_server_vnet_rule_create_command_builder("az mysql server vnet-rule create", name, resourceGroup, serverName, subnet);
+        return new az_mysql_server_vnet_rule_create_command_builder("az mysql server vnet-rule create", 'az_mysql_server_vnet_rule_create_command_result', name, resourceGroup, serverName, subnet);
     }
 
     /**
@@ -1190,7 +1190,7 @@ export class az_mysql_server_vnet_rule {
      * ```
      */
     static delete(): az_mysql_server_vnet_rule_delete_command_builder {
-        return new az_mysql_server_vnet_rule_delete_command_builder("az mysql server vnet-rule delete");
+        return new az_mysql_server_vnet_rule_delete_command_builder("az mysql server vnet-rule delete", 'az_mysql_server_vnet_rule_delete_command_result');
     }
 
     /**
@@ -1206,7 +1206,7 @@ export class az_mysql_server_vnet_rule {
      * ```
      */
     static list(): az_mysql_server_vnet_rule_list_command_builder {
-        return new az_mysql_server_vnet_rule_list_command_builder("az mysql server vnet-rule list");
+        return new az_mysql_server_vnet_rule_list_command_builder("az mysql server vnet-rule list", 'az_mysql_server_vnet_rule_list_command_result');
     }
 
     /**
@@ -1223,7 +1223,7 @@ export class az_mysql_server_vnet_rule {
      * ```
      */
     static show(): az_mysql_server_vnet_rule_show_command_builder {
-        return new az_mysql_server_vnet_rule_show_command_builder("az mysql server vnet-rule show");
+        return new az_mysql_server_vnet_rule_show_command_builder("az mysql server vnet-rule show", 'az_mysql_server_vnet_rule_show_command_result');
     }
 
     /**
@@ -1248,7 +1248,7 @@ export class az_mysql_server_vnet_rule {
      * @param {string} subnet Name or ID of the subnet that allows access to an Azure Postgres Server. If subnet name is provided, --vnet-name must be provided.
      */
     static update(subnet: string): az_mysql_server_vnet_rule_update_command_builder {
-        return new az_mysql_server_vnet_rule_update_command_builder("az mysql server vnet-rule update", subnet);
+        return new az_mysql_server_vnet_rule_update_command_builder("az mysql server vnet-rule update", 'az_mysql_server_vnet_rule_update_command_result', subnet);
     }
 }
 
@@ -1270,7 +1270,7 @@ export class az_mysql_server_logs {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static download(name: string, resourceGroup: string, serverName: string): az_mysql_server_logs_download_command_builder {
-        return new az_mysql_server_logs_download_command_builder("az mysql server-logs download", name, resourceGroup, serverName);
+        return new az_mysql_server_logs_download_command_builder("az mysql server-logs download", 'az_mysql_server_logs_download_command_result', name, resourceGroup, serverName);
     }
 
     /**
@@ -1291,7 +1291,7 @@ export class az_mysql_server_logs {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static list(resourceGroup: string, serverName: string): az_mysql_server_logs_list_command_builder {
-        return new az_mysql_server_logs_list_command_builder("az mysql server-logs list", resourceGroup, serverName);
+        return new az_mysql_server_logs_list_command_builder("az mysql server-logs list", 'az_mysql_server_logs_list_command_result', resourceGroup, serverName);
     }
 }
 
@@ -1329,7 +1329,7 @@ export class az_mysql_server {
      * @param {string} skuName The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16.
      */
     static create(adminPassword: string, adminUser: string, name: string, resourceGroup: string, skuName: string): az_mysql_server_create_command_builder {
-        return new az_mysql_server_create_command_builder("az mysql server create", adminPassword, adminUser, name, resourceGroup, skuName);
+        return new az_mysql_server_create_command_builder("az mysql server create", 'az_mysql_server_create_command_result', adminPassword, adminUser, name, resourceGroup, skuName);
     }
 
     /**
@@ -1345,7 +1345,7 @@ export class az_mysql_server {
      * ```
      */
     static delete(): az_mysql_server_delete_command_builder {
-        return new az_mysql_server_delete_command_builder("az mysql server delete");
+        return new az_mysql_server_delete_command_builder("az mysql server delete", 'az_mysql_server_delete_command_result');
     }
 
     /**
@@ -1369,7 +1369,7 @@ export class az_mysql_server {
      * @param {string} sourceServer The name or ID of the source server to restore from.
      */
     static georestore(location: string, sourceServer: string): az_mysql_server_georestore_command_builder {
-        return new az_mysql_server_georestore_command_builder("az mysql server georestore", location, sourceServer);
+        return new az_mysql_server_georestore_command_builder("az mysql server georestore", 'az_mysql_server_georestore_command_result', location, sourceServer);
     }
 
     /**
@@ -1383,7 +1383,7 @@ export class az_mysql_server {
      * ```
      */
     static list(): az_mysql_server_list_command_builder {
-        return new az_mysql_server_list_command_builder("az mysql server list");
+        return new az_mysql_server_list_command_builder("az mysql server list", 'az_mysql_server_list_command_result');
     }
 
     /**
@@ -1398,7 +1398,7 @@ export class az_mysql_server {
      * ```
      */
     static restart(): az_mysql_server_restart_command_builder {
-        return new az_mysql_server_restart_command_builder("az mysql server restart");
+        return new az_mysql_server_restart_command_builder("az mysql server restart", 'az_mysql_server_restart_command_result');
     }
 
     /**
@@ -1419,7 +1419,7 @@ export class az_mysql_server {
      * @param {string} sourceServer The name or resource ID of the source server to restore from.
      */
     static restore(restorePointInTime: string, sourceServer: string): az_mysql_server_restore_command_builder {
-        return new az_mysql_server_restore_command_builder("az mysql server restore", restorePointInTime, sourceServer);
+        return new az_mysql_server_restore_command_builder("az mysql server restore", 'az_mysql_server_restore_command_result', restorePointInTime, sourceServer);
     }
 
     /**
@@ -1435,7 +1435,7 @@ export class az_mysql_server {
      * ```
      */
     static show(): az_mysql_server_show_command_builder {
-        return new az_mysql_server_show_command_builder("az mysql server show");
+        return new az_mysql_server_show_command_builder("az mysql server show", 'az_mysql_server_show_command_result');
     }
 
     /**
@@ -1450,7 +1450,7 @@ export class az_mysql_server {
      * ```
      */
     static start(): az_mysql_server_start_command_builder {
-        return new az_mysql_server_start_command_builder("az mysql server start");
+        return new az_mysql_server_start_command_builder("az mysql server start", 'az_mysql_server_start_command_result');
     }
 
     /**
@@ -1465,7 +1465,7 @@ export class az_mysql_server {
      * ```
      */
     static stop(): az_mysql_server_stop_command_builder {
-        return new az_mysql_server_stop_command_builder("az mysql server stop");
+        return new az_mysql_server_stop_command_builder("az mysql server stop", 'az_mysql_server_stop_command_result');
     }
 
     /**
@@ -1494,7 +1494,7 @@ export class az_mysql_server {
      * ```
      */
     static update(): az_mysql_server_update_command_builder {
-        return new az_mysql_server_update_command_builder("az mysql server update");
+        return new az_mysql_server_update_command_builder("az mysql server update", 'az_mysql_server_update_command_result');
     }
 
     /**
@@ -1513,7 +1513,7 @@ export class az_mysql_server {
      * ```
      */
     static wait(): az_mysql_server_wait_command_builder {
-        return new az_mysql_server_wait_command_builder("az mysql server wait");
+        return new az_mysql_server_wait_command_builder("az mysql server wait", 'az_mysql_server_wait_command_result');
     }
 }
 
@@ -1539,8 +1539,8 @@ export class az_mysql {
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_mysql_db_create_command_builder extends CommandBuilder<az_mysql_db_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
@@ -1600,8 +1600,8 @@ class az_mysql_db_create_command_builder extends CommandBuilder<az_mysql_db_crea
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_mysql_db_delete_command_builder extends CommandBuilder<az_mysql_db_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
@@ -1653,8 +1653,8 @@ class az_mysql_db_delete_command_builder extends CommandBuilder<az_mysql_db_dele
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_mysql_db_list_command_builder extends CommandBuilder<az_mysql_db_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
     }
@@ -1701,8 +1701,8 @@ class az_mysql_db_list_command_builder extends CommandBuilder<az_mysql_db_list_c
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_mysql_db_show_command_builder extends CommandBuilder<az_mysql_db_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
@@ -1757,8 +1757,8 @@ class az_mysql_db_show_command_builder extends CommandBuilder<az_mysql_db_show_c
  * @param {string} serverName Name of the server.
  */
 class az_mysql_flexible_server_db_create_command_builder extends CommandBuilder<az_mysql_flexible_server_db_create_command_result> {
-    constructor(commandPath: string, databaseName: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
@@ -1815,8 +1815,8 @@ class az_mysql_flexible_server_db_create_command_builder extends CommandBuilder<
  * ```
  */
 class az_mysql_flexible_server_db_delete_command_builder extends CommandBuilder<az_mysql_flexible_server_db_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of a database. */
@@ -1871,8 +1871,8 @@ class az_mysql_flexible_server_db_delete_command_builder extends CommandBuilder<
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_mysql_flexible_server_db_list_command_builder extends CommandBuilder<az_mysql_flexible_server_db_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
     }
@@ -1918,8 +1918,8 @@ class az_mysql_flexible_server_db_list_command_builder extends CommandBuilder<az
  * @param {string} databaseName The name of a database.
  */
 class az_mysql_flexible_server_db_show_command_builder extends CommandBuilder<az_mysql_flexible_server_db_show_command_result> {
-    constructor(commandPath: string, databaseName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
     }
 
@@ -1980,8 +1980,8 @@ class az_mysql_flexible_server_db_show_command_builder extends CommandBuilder<az
  * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
  */
 class az_mysql_flexible_server_firewall_rule_create_command_builder extends CommandBuilder<az_mysql_flexible_server_firewall_rule_create_command_result> {
-    constructor(commandPath: string, endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string) {
+        super(commandPath, resultDataTypeName);
         this.endIpAddress(endIpAddress)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2040,8 +2040,8 @@ class az_mysql_flexible_server_firewall_rule_create_command_builder extends Comm
  * ```
  */
 class az_mysql_flexible_server_firewall_rule_delete_command_builder extends CommandBuilder<az_mysql_flexible_server_firewall_rule_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2096,8 +2096,8 @@ class az_mysql_flexible_server_firewall_rule_delete_command_builder extends Comm
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_mysql_flexible_server_firewall_rule_list_command_builder extends CommandBuilder<az_mysql_flexible_server_firewall_rule_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
     }
@@ -2141,8 +2141,8 @@ class az_mysql_flexible_server_firewall_rule_list_command_builder extends Comman
  * ```
  */
 class az_mysql_flexible_server_firewall_rule_show_command_builder extends CommandBuilder<az_mysql_flexible_server_firewall_rule_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2201,8 +2201,8 @@ class az_mysql_flexible_server_firewall_rule_show_command_builder extends Comman
  * ```
  */
 class az_mysql_flexible_server_firewall_rule_update_command_builder extends CommandBuilder<az_mysql_flexible_server_firewall_rule_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -2287,8 +2287,8 @@ class az_mysql_flexible_server_firewall_rule_update_command_builder extends Comm
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_mysql_flexible_server_parameter_list_command_builder extends CommandBuilder<az_mysql_flexible_server_parameter_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
     }
@@ -2333,8 +2333,8 @@ class az_mysql_flexible_server_parameter_list_command_builder extends CommandBui
  * ```
  */
 class az_mysql_flexible_server_parameter_set_command_builder extends CommandBuilder<az_mysql_flexible_server_parameter_set_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2394,8 +2394,8 @@ class az_mysql_flexible_server_parameter_set_command_builder extends CommandBuil
  * ```
  */
 class az_mysql_flexible_server_parameter_show_command_builder extends CommandBuilder<az_mysql_flexible_server_parameter_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2455,8 +2455,8 @@ class az_mysql_flexible_server_parameter_show_command_builder extends CommandBui
  * @param {string} sourceServer The name or resource ID of the source server to restore from.
  */
 class az_mysql_flexible_server_replica_create_command_builder extends CommandBuilder<az_mysql_flexible_server_replica_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, sourceServer: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, sourceServer: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.sourceServer(sourceServer)
@@ -2526,8 +2526,8 @@ class az_mysql_flexible_server_replica_create_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_mysql_flexible_server_replica_list_command_builder extends CommandBuilder<az_mysql_flexible_server_replica_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2570,8 +2570,8 @@ class az_mysql_flexible_server_replica_list_command_builder extends CommandBuild
  * ```
  */
 class az_mysql_flexible_server_replica_stop_replication_command_builder extends CommandBuilder<az_mysql_flexible_server_replica_stop_replication_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2633,8 +2633,8 @@ class az_mysql_flexible_server_replica_stop_replication_command_builder extends 
  * ```
  */
 class az_mysql_flexible_server_create_command_builder extends CommandBuilder<az_mysql_flexible_server_create_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The virtual network address prefix. */
@@ -2771,8 +2771,8 @@ class az_mysql_flexible_server_create_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_mysql_flexible_server_delete_command_builder extends CommandBuilder<az_mysql_flexible_server_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Delete the server without prompt. */
@@ -2817,8 +2817,8 @@ class az_mysql_flexible_server_delete_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_mysql_flexible_server_list_command_builder extends CommandBuilder<az_mysql_flexible_server_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -2852,8 +2852,8 @@ class az_mysql_flexible_server_list_command_builder extends CommandBuilder<az_my
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_mysql_flexible_server_list_skus_command_builder extends CommandBuilder<az_mysql_flexible_server_list_skus_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -2882,8 +2882,8 @@ class az_mysql_flexible_server_list_skus_command_builder extends CommandBuilder<
  * ```
  */
 class az_mysql_flexible_server_restart_command_builder extends CommandBuilder<az_mysql_flexible_server_restart_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2930,8 +2930,8 @@ class az_mysql_flexible_server_restart_command_builder extends CommandBuilder<az
  * @param {string} time The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00.
  */
 class az_mysql_flexible_server_restore_command_builder extends CommandBuilder<az_mysql_flexible_server_restore_command_result> {
-    constructor(commandPath: string, sourceServer: string, time: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, sourceServer: string, time: string) {
+        super(commandPath, resultDataTypeName);
         this.sourceServer(sourceServer)
         this.time(time)
     }
@@ -2998,8 +2998,8 @@ class az_mysql_flexible_server_restore_command_builder extends CommandBuilder<az
  * ```
  */
 class az_mysql_flexible_server_show_command_builder extends CommandBuilder<az_mysql_flexible_server_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3047,8 +3047,8 @@ class az_mysql_flexible_server_show_command_builder extends CommandBuilder<az_my
  * ```
  */
 class az_mysql_flexible_server_show_connection_string_command_builder extends CommandBuilder<az_mysql_flexible_server_show_connection_string_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The login password of the administrator. */
@@ -3100,8 +3100,8 @@ class az_mysql_flexible_server_show_connection_string_command_builder extends Co
  * ```
  */
 class az_mysql_flexible_server_start_command_builder extends CommandBuilder<az_mysql_flexible_server_start_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3141,8 +3141,8 @@ class az_mysql_flexible_server_start_command_builder extends CommandBuilder<az_m
  * ```
  */
 class az_mysql_flexible_server_stop_command_builder extends CommandBuilder<az_mysql_flexible_server_stop_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3198,8 +3198,8 @@ class az_mysql_flexible_server_stop_command_builder extends CommandBuilder<az_my
  * ```
  */
 class az_mysql_flexible_server_update_command_builder extends CommandBuilder<az_mysql_flexible_server_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -3342,8 +3342,8 @@ class az_mysql_flexible_server_update_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_mysql_flexible_server_wait_command_builder extends CommandBuilder<az_mysql_flexible_server_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */
@@ -3430,8 +3430,8 @@ class az_mysql_flexible_server_wait_command_builder extends CommandBuilder<az_my
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_mysql_server_ad_admin_create_command_builder extends CommandBuilder<az_mysql_server_ad_admin_create_command_result> {
-    constructor(commandPath: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
     }
@@ -3486,8 +3486,8 @@ class az_mysql_server_ad_admin_create_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_mysql_server_ad_admin_delete_command_builder extends CommandBuilder<az_mysql_server_ad_admin_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3534,8 +3534,8 @@ class az_mysql_server_ad_admin_delete_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_mysql_server_ad_admin_list_command_builder extends CommandBuilder<az_mysql_server_ad_admin_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3582,8 +3582,8 @@ class az_mysql_server_ad_admin_list_command_builder extends CommandBuilder<az_my
  * ```
  */
 class az_mysql_server_ad_admin_show_command_builder extends CommandBuilder<az_mysql_server_ad_admin_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3636,8 +3636,8 @@ class az_mysql_server_ad_admin_show_command_builder extends CommandBuilder<az_my
  * ```
  */
 class az_mysql_server_ad_admin_wait_command_builder extends CommandBuilder<az_mysql_server_ad_admin_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */
@@ -3720,8 +3720,8 @@ class az_mysql_server_ad_admin_wait_command_builder extends CommandBuilder<az_my
  * ```
  */
 class az_mysql_server_configuration_list_command_builder extends CommandBuilder<az_mysql_server_configuration_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3769,8 +3769,8 @@ class az_mysql_server_configuration_list_command_builder extends CommandBuilder<
  * ```
  */
 class az_mysql_server_configuration_set_command_builder extends CommandBuilder<az_mysql_server_configuration_set_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3824,8 +3824,8 @@ class az_mysql_server_configuration_set_command_builder extends CommandBuilder<a
  * ```
  */
 class az_mysql_server_configuration_show_command_builder extends CommandBuilder<az_mysql_server_configuration_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3885,8 +3885,8 @@ class az_mysql_server_configuration_show_command_builder extends CommandBuilder<
  * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
  */
 class az_mysql_server_firewall_rule_create_command_builder extends CommandBuilder<az_mysql_server_firewall_rule_create_command_result> {
-    constructor(commandPath: string, endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string) {
+        super(commandPath, resultDataTypeName);
         this.endIpAddress(endIpAddress)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3945,8 +3945,8 @@ class az_mysql_server_firewall_rule_create_command_builder extends CommandBuilde
  * ```
  */
 class az_mysql_server_firewall_rule_delete_command_builder extends CommandBuilder<az_mysql_server_firewall_rule_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3999,8 +3999,8 @@ class az_mysql_server_firewall_rule_delete_command_builder extends CommandBuilde
  * ```
  */
 class az_mysql_server_firewall_rule_list_command_builder extends CommandBuilder<az_mysql_server_firewall_rule_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4048,8 +4048,8 @@ class az_mysql_server_firewall_rule_list_command_builder extends CommandBuilder<
  * ```
  */
 class az_mysql_server_firewall_rule_show_command_builder extends CommandBuilder<az_mysql_server_firewall_rule_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4108,8 +4108,8 @@ class az_mysql_server_firewall_rule_show_command_builder extends CommandBuilder<
  * ```
  */
 class az_mysql_server_firewall_rule_update_command_builder extends CommandBuilder<az_mysql_server_firewall_rule_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -4195,8 +4195,8 @@ class az_mysql_server_firewall_rule_update_command_builder extends CommandBuilde
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_mysql_server_key_create_command_builder extends CommandBuilder<az_mysql_server_key_create_command_result> {
-    constructor(commandPath: string, kid: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, kid: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.kid(kid)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4243,8 +4243,8 @@ class az_mysql_server_key_create_command_builder extends CommandBuilder<az_mysql
  * @param {string} kid The Azure Key Vault key identifier of the server key. An example key identifier is "<a href="https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901">https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901</a>".
  */
 class az_mysql_server_key_delete_command_builder extends CommandBuilder<az_mysql_server_key_delete_command_result> {
-    constructor(commandPath: string, kid: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, kid: string) {
+        super(commandPath, resultDataTypeName);
         this.kid(kid)
     }
 
@@ -4298,8 +4298,8 @@ class az_mysql_server_key_delete_command_builder extends CommandBuilder<az_mysql
  * ```
  */
 class az_mysql_server_key_list_command_builder extends CommandBuilder<az_mysql_server_key_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4349,8 +4349,8 @@ class az_mysql_server_key_list_command_builder extends CommandBuilder<az_mysql_s
  * @param {string} kid The Azure Key Vault key identifier of the server key. An example key identifier is "<a href="https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901">https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901</a>".
  */
 class az_mysql_server_key_show_command_builder extends CommandBuilder<az_mysql_server_key_show_command_result> {
-    constructor(commandPath: string, kid: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, kid: string) {
+        super(commandPath, resultDataTypeName);
         this.kid(kid)
     }
 
@@ -4406,8 +4406,8 @@ class az_mysql_server_key_show_command_builder extends CommandBuilder<az_mysql_s
  * ```
  */
 class az_mysql_server_private_endpoint_connection_approve_command_builder extends CommandBuilder<az_mysql_server_private_endpoint_connection_approve_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Comments for approve operation. */
@@ -4467,8 +4467,8 @@ class az_mysql_server_private_endpoint_connection_approve_command_builder extend
  * ```
  */
 class az_mysql_server_private_endpoint_connection_delete_command_builder extends CommandBuilder<az_mysql_server_private_endpoint_connection_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The ID of the private endpoint connection associated with the Server. If specified --server-name/-s and --name/-n, this should be omitted. */
@@ -4523,8 +4523,8 @@ class az_mysql_server_private_endpoint_connection_delete_command_builder extends
  * ```
  */
 class az_mysql_server_private_endpoint_connection_reject_command_builder extends CommandBuilder<az_mysql_server_private_endpoint_connection_reject_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Comments for reject operation. */
@@ -4585,8 +4585,8 @@ class az_mysql_server_private_endpoint_connection_reject_command_builder extends
  * ```
  */
 class az_mysql_server_private_endpoint_connection_show_command_builder extends CommandBuilder<az_mysql_server_private_endpoint_connection_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The ID of the private endpoint connection associated with the Server. If specified --server-name/-s and --name/-n, this should be omitted. */
@@ -4645,8 +4645,8 @@ class az_mysql_server_private_endpoint_connection_show_command_builder extends C
  * ```
  */
 class az_mysql_server_private_link_resource_list_command_builder extends CommandBuilder<az_mysql_server_private_link_resource_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4699,8 +4699,8 @@ class az_mysql_server_private_link_resource_list_command_builder extends Command
  * @param {string} sourceServer The name or resource ID of the master server to the create replica for.
  */
 class az_mysql_server_replica_create_command_builder extends CommandBuilder<az_mysql_server_replica_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, sourceServer: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, sourceServer: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.sourceServer(sourceServer)
@@ -4762,8 +4762,8 @@ class az_mysql_server_replica_create_command_builder extends CommandBuilder<az_m
  * ```
  */
 class az_mysql_server_replica_list_command_builder extends CommandBuilder<az_mysql_server_replica_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4810,8 +4810,8 @@ class az_mysql_server_replica_list_command_builder extends CommandBuilder<az_mys
  * ```
  */
 class az_mysql_server_replica_stop_command_builder extends CommandBuilder<az_mysql_server_replica_stop_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4865,8 +4865,8 @@ class az_mysql_server_replica_stop_command_builder extends CommandBuilder<az_mys
  * @param {string} subnet Name or ID of the subnet that allows access to an Azure Postgres Server. If subnet name is provided, --vnet-name must be provided.
  */
 class az_mysql_server_vnet_rule_create_command_builder extends CommandBuilder<az_mysql_server_vnet_rule_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, serverName: string, subnet: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serverName: string, subnet: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
@@ -4929,8 +4929,8 @@ class az_mysql_server_vnet_rule_create_command_builder extends CommandBuilder<az
  * ```
  */
 class az_mysql_server_vnet_rule_delete_command_builder extends CommandBuilder<az_mysql_server_vnet_rule_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4977,8 +4977,8 @@ class az_mysql_server_vnet_rule_delete_command_builder extends CommandBuilder<az
  * ```
  */
 class az_mysql_server_vnet_rule_list_command_builder extends CommandBuilder<az_mysql_server_vnet_rule_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5026,8 +5026,8 @@ class az_mysql_server_vnet_rule_list_command_builder extends CommandBuilder<az_m
  * ```
  */
 class az_mysql_server_vnet_rule_show_command_builder extends CommandBuilder<az_mysql_server_vnet_rule_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5089,8 +5089,8 @@ class az_mysql_server_vnet_rule_show_command_builder extends CommandBuilder<az_m
  * @param {string} subnet Name or ID of the subnet that allows access to an Azure Postgres Server. If subnet name is provided, --vnet-name must be provided.
  */
 class az_mysql_server_vnet_rule_update_command_builder extends CommandBuilder<az_mysql_server_vnet_rule_update_command_result> {
-    constructor(commandPath: string, subnet: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, subnet: string) {
+        super(commandPath, resultDataTypeName);
         this.subnet(subnet)
     }
 
@@ -5183,8 +5183,8 @@ class az_mysql_server_vnet_rule_update_command_builder extends CommandBuilder<az
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_mysql_server_logs_download_command_builder extends CommandBuilder<az_mysql_server_logs_download_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
@@ -5233,8 +5233,8 @@ class az_mysql_server_logs_download_command_builder extends CommandBuilder<az_my
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_mysql_server_logs_list_command_builder extends CommandBuilder<az_mysql_server_logs_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
     }
@@ -5314,8 +5314,8 @@ class az_mysql_server_logs_list_command_builder extends CommandBuilder<az_mysql_
  * @param {string} skuName The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16.
  */
 class az_mysql_server_create_command_builder extends CommandBuilder<az_mysql_server_create_command_result> {
-    constructor(commandPath: string, adminPassword: string, adminUser: string, name: string, resourceGroup: string, skuName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, adminPassword: string, adminUser: string, name: string, resourceGroup: string, skuName: string) {
+        super(commandPath, resultDataTypeName);
         this.adminPassword(adminPassword)
         this.adminUser(adminUser)
         this.name(name)
@@ -5445,8 +5445,8 @@ class az_mysql_server_create_command_builder extends CommandBuilder<az_mysql_ser
  * ```
  */
 class az_mysql_server_delete_command_builder extends CommandBuilder<az_mysql_server_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5501,8 +5501,8 @@ class az_mysql_server_delete_command_builder extends CommandBuilder<az_mysql_ser
  * @param {string} sourceServer The name or ID of the source server to restore from.
  */
 class az_mysql_server_georestore_command_builder extends CommandBuilder<az_mysql_server_georestore_command_result> {
-    constructor(commandPath: string, location: string, sourceServer: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, sourceServer: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.sourceServer(sourceServer)
     }
@@ -5579,8 +5579,8 @@ class az_mysql_server_georestore_command_builder extends CommandBuilder<az_mysql
  * ```
  */
 class az_mysql_server_list_command_builder extends CommandBuilder<az_mysql_server_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -5614,8 +5614,8 @@ class az_mysql_server_list_command_builder extends CommandBuilder<az_mysql_serve
  * ```
  */
 class az_mysql_server_restart_command_builder extends CommandBuilder<az_mysql_server_restart_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5661,8 +5661,8 @@ class az_mysql_server_restart_command_builder extends CommandBuilder<az_mysql_se
  * @param {string} sourceServer The name or resource ID of the source server to restore from.
  */
 class az_mysql_server_restore_command_builder extends CommandBuilder<az_mysql_server_restore_command_result> {
-    constructor(commandPath: string, restorePointInTime: string, sourceServer: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, restorePointInTime: string, sourceServer: string) {
+        super(commandPath, resultDataTypeName);
         this.restorePointInTime(restorePointInTime)
         this.sourceServer(sourceServer)
     }
@@ -5723,8 +5723,8 @@ class az_mysql_server_restore_command_builder extends CommandBuilder<az_mysql_se
  * ```
  */
 class az_mysql_server_show_command_builder extends CommandBuilder<az_mysql_server_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5770,8 +5770,8 @@ class az_mysql_server_show_command_builder extends CommandBuilder<az_mysql_serve
  * ```
  */
 class az_mysql_server_start_command_builder extends CommandBuilder<az_mysql_server_start_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5811,8 +5811,8 @@ class az_mysql_server_start_command_builder extends CommandBuilder<az_mysql_serv
  * ```
  */
 class az_mysql_server_stop_command_builder extends CommandBuilder<az_mysql_server_stop_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5866,8 +5866,8 @@ class az_mysql_server_stop_command_builder extends CommandBuilder<az_mysql_serve
  * ```
  */
 class az_mysql_server_update_command_builder extends CommandBuilder<az_mysql_server_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -5995,8 +5995,8 @@ class az_mysql_server_update_command_builder extends CommandBuilder<az_mysql_ser
  * ```
  */
 class az_mysql_server_wait_command_builder extends CommandBuilder<az_mysql_server_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until the condition satisfies a custom JMESPath query. E.g. provisioningState!='InProgress', instanceView.statuses[?code=='PowerState/running']. */

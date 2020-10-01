@@ -53,7 +53,7 @@ export class az_batchai_cluster_file {
      * @param {string} workspace Name of workspace.
      */
     static list(cluster: string, resourceGroup: string, workspace: string): az_batchai_cluster_file_list_command_builder {
-        return new az_batchai_cluster_file_list_command_builder("az batchai cluster file list", cluster, resourceGroup, workspace);
+        return new az_batchai_cluster_file_list_command_builder("az batchai cluster file list", 'az_batchai_cluster_file_list_command_result', cluster, resourceGroup, workspace);
     }
 }
 
@@ -80,7 +80,7 @@ export class az_batchai_cluster_node {
      * @param {string} workspace Name of workspace.
      */
     static exec(cluster: string, resourceGroup: string, workspace: string): az_batchai_cluster_node_exec_command_builder {
-        return new az_batchai_cluster_node_exec_command_builder("az batchai cluster node exec", cluster, resourceGroup, workspace);
+        return new az_batchai_cluster_node_exec_command_builder("az batchai cluster node exec", 'az_batchai_cluster_node_exec_command_result', cluster, resourceGroup, workspace);
     }
 
     /**
@@ -100,7 +100,7 @@ export class az_batchai_cluster_node {
      * @param {string} workspace Name of workspace.
      */
     static list(cluster: string, resourceGroup: string, workspace: string): az_batchai_cluster_node_list_command_builder {
-        return new az_batchai_cluster_node_list_command_builder("az batchai cluster node list", cluster, resourceGroup, workspace);
+        return new az_batchai_cluster_node_list_command_builder("az batchai cluster node list", 'az_batchai_cluster_node_list_command_result', cluster, resourceGroup, workspace);
     }
 }
 
@@ -124,7 +124,7 @@ export class az_batchai_cluster {
      * @param {string} min Minimum number of nodes.
      */
     static auto_scale(max: string, min: string): az_batchai_cluster_auto_scale_command_builder {
-        return new az_batchai_cluster_auto_scale_command_builder("az batchai cluster auto-scale", max, min);
+        return new az_batchai_cluster_auto_scale_command_builder("az batchai cluster auto-scale", 'az_batchai_cluster_auto_scale_command_result', max, min);
     }
 
     /**
@@ -167,7 +167,7 @@ export class az_batchai_cluster {
      * @param {string} workspace Name of workspace.
      */
     static create(name: string, resourceGroup: string, workspace: string): az_batchai_cluster_create_command_builder {
-        return new az_batchai_cluster_create_command_builder("az batchai cluster create", name, resourceGroup, workspace);
+        return new az_batchai_cluster_create_command_builder("az batchai cluster create", 'az_batchai_cluster_create_command_result', name, resourceGroup, workspace);
     }
 
     /**
@@ -185,7 +185,7 @@ export class az_batchai_cluster {
      * ```
      */
     static delete(): az_batchai_cluster_delete_command_builder {
-        return new az_batchai_cluster_delete_command_builder("az batchai cluster delete");
+        return new az_batchai_cluster_delete_command_builder("az batchai cluster delete", 'az_batchai_cluster_delete_command_result');
     }
 
     /**
@@ -203,7 +203,7 @@ export class az_batchai_cluster {
      * @param {string} workspace Name of workspace.
      */
     static list(resourceGroup: string, workspace: string): az_batchai_cluster_list_command_builder {
-        return new az_batchai_cluster_list_command_builder("az batchai cluster list", resourceGroup, workspace);
+        return new az_batchai_cluster_list_command_builder("az batchai cluster list", 'az_batchai_cluster_list_command_result', resourceGroup, workspace);
     }
 
     /**
@@ -222,7 +222,7 @@ export class az_batchai_cluster {
      * @param {string} target Target number of compute nodes.
      */
     static resize(target: string): az_batchai_cluster_resize_command_builder {
-        return new az_batchai_cluster_resize_command_builder("az batchai cluster resize", target);
+        return new az_batchai_cluster_resize_command_builder("az batchai cluster resize", 'az_batchai_cluster_resize_command_result', target);
     }
 
     /**
@@ -239,7 +239,7 @@ export class az_batchai_cluster {
      * ```
      */
     static show(): az_batchai_cluster_show_command_builder {
-        return new az_batchai_cluster_show_command_builder("az batchai cluster show");
+        return new az_batchai_cluster_show_command_builder("az batchai cluster show", 'az_batchai_cluster_show_command_result');
     }
 }
 
@@ -261,7 +261,7 @@ export class az_batchai_experiment {
      * @param {string} workspace Name of workspace.
      */
     static create(name: string, resourceGroup: string, workspace: string): az_batchai_experiment_create_command_builder {
-        return new az_batchai_experiment_create_command_builder("az batchai experiment create", name, resourceGroup, workspace);
+        return new az_batchai_experiment_create_command_builder("az batchai experiment create", 'az_batchai_experiment_create_command_result', name, resourceGroup, workspace);
     }
 
     /**
@@ -279,7 +279,7 @@ export class az_batchai_experiment {
      * ```
      */
     static delete(): az_batchai_experiment_delete_command_builder {
-        return new az_batchai_experiment_delete_command_builder("az batchai experiment delete");
+        return new az_batchai_experiment_delete_command_builder("az batchai experiment delete", 'az_batchai_experiment_delete_command_result');
     }
 
     /**
@@ -297,7 +297,7 @@ export class az_batchai_experiment {
      * @param {string} workspace Name of workspace.
      */
     static list(resourceGroup: string, workspace: string): az_batchai_experiment_list_command_builder {
-        return new az_batchai_experiment_list_command_builder("az batchai experiment list", resourceGroup, workspace);
+        return new az_batchai_experiment_list_command_builder("az batchai experiment list", 'az_batchai_experiment_list_command_result', resourceGroup, workspace);
     }
 
     /**
@@ -314,7 +314,7 @@ export class az_batchai_experiment {
      * ```
      */
     static show(): az_batchai_experiment_show_command_builder {
-        return new az_batchai_experiment_show_command_builder("az batchai experiment show");
+        return new az_batchai_experiment_show_command_builder("az batchai experiment show", 'az_batchai_experiment_show_command_result');
     }
 }
 
@@ -348,7 +348,7 @@ export class az_batchai_file_server {
      * @param {string} workspace Name or ARM ID of the workspace. You can configure default workspace using `az batchai workspace set-default`.
      */
     static create(name: string, resourceGroup: string, workspace: string): az_batchai_file_server_create_command_builder {
-        return new az_batchai_file_server_create_command_builder("az batchai file-server create", name, resourceGroup, workspace);
+        return new az_batchai_file_server_create_command_builder("az batchai file-server create", 'az_batchai_file_server_create_command_result', name, resourceGroup, workspace);
     }
 
     /**
@@ -366,7 +366,7 @@ export class az_batchai_file_server {
      * ```
      */
     static delete(): az_batchai_file_server_delete_command_builder {
-        return new az_batchai_file_server_delete_command_builder("az batchai file-server delete");
+        return new az_batchai_file_server_delete_command_builder("az batchai file-server delete", 'az_batchai_file_server_delete_command_result');
     }
 
     /**
@@ -384,7 +384,7 @@ export class az_batchai_file_server {
      * @param {string} workspace Name of workspace.
      */
     static list(resourceGroup: string, workspace: string): az_batchai_file_server_list_command_builder {
-        return new az_batchai_file_server_list_command_builder("az batchai file-server list", resourceGroup, workspace);
+        return new az_batchai_file_server_list_command_builder("az batchai file-server list", 'az_batchai_file_server_list_command_result', resourceGroup, workspace);
     }
 
     /**
@@ -401,7 +401,7 @@ export class az_batchai_file_server {
      * ```
      */
     static show(): az_batchai_file_server_show_command_builder {
-        return new az_batchai_file_server_show_command_builder("az batchai file-server show");
+        return new az_batchai_file_server_show_command_builder("az batchai file-server show", 'az_batchai_file_server_show_command_result');
     }
 }
 
@@ -429,7 +429,7 @@ export class az_batchai_job_file {
      * @param {string} workspace Name of workspace.
      */
     static list(experiment: string, job: string, resourceGroup: string, workspace: string): az_batchai_job_file_list_command_builder {
-        return new az_batchai_job_file_list_command_builder("az batchai job file list", experiment, job, resourceGroup, workspace);
+        return new az_batchai_job_file_list_command_builder("az batchai job file list", 'az_batchai_job_file_list_command_result', experiment, job, resourceGroup, workspace);
     }
 
     /**
@@ -454,7 +454,7 @@ export class az_batchai_job_file {
      * @param {string} workspace Name of workspace.
      */
     static stream(experiment: string, fileName: string, job: string, resourceGroup: string, workspace: string): az_batchai_job_file_stream_command_builder {
-        return new az_batchai_job_file_stream_command_builder("az batchai job file stream", experiment, fileName, job, resourceGroup, workspace);
+        return new az_batchai_job_file_stream_command_builder("az batchai job file stream", 'az_batchai_job_file_stream_command_result', experiment, fileName, job, resourceGroup, workspace);
     }
 }
 
@@ -483,7 +483,7 @@ export class az_batchai_job_node {
      * @param {string} workspace Name of workspace.
      */
     static exec(experiment: string, job: string, resourceGroup: string, workspace: string): az_batchai_job_node_exec_command_builder {
-        return new az_batchai_job_node_exec_command_builder("az batchai job node exec", experiment, job, resourceGroup, workspace);
+        return new az_batchai_job_node_exec_command_builder("az batchai job node exec", 'az_batchai_job_node_exec_command_result', experiment, job, resourceGroup, workspace);
     }
 
     /**
@@ -505,7 +505,7 @@ export class az_batchai_job_node {
      * @param {string} workspace Name of workspace.
      */
     static list(experiment: string, job: string, resourceGroup: string, workspace: string): az_batchai_job_node_list_command_builder {
-        return new az_batchai_job_node_list_command_builder("az batchai job node list", experiment, job, resourceGroup, workspace);
+        return new az_batchai_job_node_list_command_builder("az batchai job node list", 'az_batchai_job_node_list_command_result', experiment, job, resourceGroup, workspace);
     }
 }
 
@@ -541,7 +541,7 @@ export class az_batchai_job {
      * @param {string} workspace Name of workspace.
      */
     static create(cluster: string, configFile: string, experiment: string, name: string, resourceGroup: string, workspace: string): az_batchai_job_create_command_builder {
-        return new az_batchai_job_create_command_builder("az batchai job create", cluster, configFile, experiment, name, resourceGroup, workspace);
+        return new az_batchai_job_create_command_builder("az batchai job create", 'az_batchai_job_create_command_result', cluster, configFile, experiment, name, resourceGroup, workspace);
     }
 
     /**
@@ -560,7 +560,7 @@ export class az_batchai_job {
      * ```
      */
     static delete(): az_batchai_job_delete_command_builder {
-        return new az_batchai_job_delete_command_builder("az batchai job delete");
+        return new az_batchai_job_delete_command_builder("az batchai job delete", 'az_batchai_job_delete_command_result');
     }
 
     /**
@@ -580,7 +580,7 @@ export class az_batchai_job {
      * @param {string} workspace Name of workspace.
      */
     static list(experiment: string, resourceGroup: string, workspace: string): az_batchai_job_list_command_builder {
-        return new az_batchai_job_list_command_builder("az batchai job list", experiment, resourceGroup, workspace);
+        return new az_batchai_job_list_command_builder("az batchai job list", 'az_batchai_job_list_command_result', experiment, resourceGroup, workspace);
     }
 
     /**
@@ -598,7 +598,7 @@ export class az_batchai_job {
      * ```
      */
     static show(): az_batchai_job_show_command_builder {
-        return new az_batchai_job_show_command_builder("az batchai job show");
+        return new az_batchai_job_show_command_builder("az batchai job show", 'az_batchai_job_show_command_result');
     }
 
     /**
@@ -617,7 +617,7 @@ export class az_batchai_job {
      * ```
      */
     static terminate(): az_batchai_job_terminate_command_builder {
-        return new az_batchai_job_terminate_command_builder("az batchai job terminate");
+        return new az_batchai_job_terminate_command_builder("az batchai job terminate", 'az_batchai_job_terminate_command_result');
     }
 
     /**
@@ -635,7 +635,7 @@ export class az_batchai_job {
      * ```
      */
     static wait(): az_batchai_job_wait_command_builder {
-        return new az_batchai_job_wait_command_builder("az batchai job wait");
+        return new az_batchai_job_wait_command_builder("az batchai job wait", 'az_batchai_job_wait_command_result');
     }
 }
 
@@ -656,7 +656,7 @@ export class az_batchai_workspace {
      * @param {string} workspace Name of workspace.
      */
     static create(resourceGroup: string, workspace: string): az_batchai_workspace_create_command_builder {
-        return new az_batchai_workspace_create_command_builder("az batchai workspace create", resourceGroup, workspace);
+        return new az_batchai_workspace_create_command_builder("az batchai workspace create", 'az_batchai_workspace_create_command_result', resourceGroup, workspace);
     }
 
     /**
@@ -673,7 +673,7 @@ export class az_batchai_workspace {
      * ```
      */
     static delete(): az_batchai_workspace_delete_command_builder {
-        return new az_batchai_workspace_delete_command_builder("az batchai workspace delete");
+        return new az_batchai_workspace_delete_command_builder("az batchai workspace delete", 'az_batchai_workspace_delete_command_result');
     }
 
     /**
@@ -687,7 +687,7 @@ export class az_batchai_workspace {
      * ```
      */
     static list(): az_batchai_workspace_list_command_builder {
-        return new az_batchai_workspace_list_command_builder("az batchai workspace list");
+        return new az_batchai_workspace_list_command_builder("az batchai workspace list", 'az_batchai_workspace_list_command_result');
     }
 
     /**
@@ -703,7 +703,7 @@ export class az_batchai_workspace {
      * ```
      */
     static show(): az_batchai_workspace_show_command_builder {
-        return new az_batchai_workspace_show_command_builder("az batchai workspace show");
+        return new az_batchai_workspace_show_command_builder("az batchai workspace show", 'az_batchai_workspace_show_command_result');
     }
 }
 
@@ -721,7 +721,7 @@ export class az_batchai {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list_usages(location: string): az_batchai_list_usages_command_builder {
-        return new az_batchai_list_usages_command_builder("az batchai list-usages", location);
+        return new az_batchai_list_usages_command_builder("az batchai list-usages", 'az_batchai_list_usages_command_result', location);
     }
 }
 
@@ -744,8 +744,8 @@ export class az_batchai {
  * @param {string} workspace Name of workspace.
  */
 class az_batchai_cluster_file_list_command_builder extends CommandBuilder<az_batchai_cluster_file_list_command_result> {
-    constructor(commandPath: string, cluster: string, resourceGroup: string, workspace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, cluster: string, resourceGroup: string, workspace: string) {
+        super(commandPath, resultDataTypeName);
         this.cluster(cluster)
         this.resourceGroup(resourceGroup)
         this.workspace(workspace)
@@ -815,8 +815,8 @@ class az_batchai_cluster_file_list_command_builder extends CommandBuilder<az_bat
  * @param {string} workspace Name of workspace.
  */
 class az_batchai_cluster_node_exec_command_builder extends CommandBuilder<az_batchai_cluster_node_exec_command_result> {
-    constructor(commandPath: string, cluster: string, resourceGroup: string, workspace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, cluster: string, resourceGroup: string, workspace: string) {
+        super(commandPath, resultDataTypeName);
         this.cluster(cluster)
         this.resourceGroup(resourceGroup)
         this.workspace(workspace)
@@ -894,8 +894,8 @@ class az_batchai_cluster_node_exec_command_builder extends CommandBuilder<az_bat
  * @param {string} workspace Name of workspace.
  */
 class az_batchai_cluster_node_list_command_builder extends CommandBuilder<az_batchai_cluster_node_list_command_result> {
-    constructor(commandPath: string, cluster: string, resourceGroup: string, workspace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, cluster: string, resourceGroup: string, workspace: string) {
+        super(commandPath, resultDataTypeName);
         this.cluster(cluster)
         this.resourceGroup(resourceGroup)
         this.workspace(workspace)
@@ -950,8 +950,8 @@ class az_batchai_cluster_node_list_command_builder extends CommandBuilder<az_bat
  * @param {string} min Minimum number of nodes.
  */
 class az_batchai_cluster_auto_scale_command_builder extends CommandBuilder<az_batchai_cluster_auto_scale_command_result> {
-    constructor(commandPath: string, max: string, min: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, max: string, min: string) {
+        super(commandPath, resultDataTypeName);
         this.max(max)
         this.min(min)
     }
@@ -1039,8 +1039,8 @@ class az_batchai_cluster_auto_scale_command_builder extends CommandBuilder<az_ba
  * @param {string} workspace Name of workspace.
  */
 class az_batchai_cluster_create_command_builder extends CommandBuilder<az_batchai_cluster_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspace: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspace(workspace)
@@ -1230,8 +1230,8 @@ class az_batchai_cluster_create_command_builder extends CommandBuilder<az_batcha
  * ```
  */
 class az_batchai_cluster_delete_command_builder extends CommandBuilder<az_batchai_cluster_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1292,8 +1292,8 @@ class az_batchai_cluster_delete_command_builder extends CommandBuilder<az_batcha
  * @param {string} workspace Name of workspace.
  */
 class az_batchai_cluster_list_command_builder extends CommandBuilder<az_batchai_cluster_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspace: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspace(workspace)
     }
@@ -1339,8 +1339,8 @@ class az_batchai_cluster_list_command_builder extends CommandBuilder<az_batchai_
  * @param {string} target Target number of compute nodes.
  */
 class az_batchai_cluster_resize_command_builder extends CommandBuilder<az_batchai_cluster_resize_command_result> {
-    constructor(commandPath: string, target: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, target: string) {
+        super(commandPath, resultDataTypeName);
         this.target(target)
     }
 
@@ -1395,8 +1395,8 @@ class az_batchai_cluster_resize_command_builder extends CommandBuilder<az_batcha
  * ```
  */
 class az_batchai_cluster_show_command_builder extends CommandBuilder<az_batchai_cluster_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1452,8 +1452,8 @@ class az_batchai_cluster_show_command_builder extends CommandBuilder<az_batchai_
  * @param {string} workspace Name of workspace.
  */
 class az_batchai_experiment_create_command_builder extends CommandBuilder<az_batchai_experiment_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspace: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspace(workspace)
@@ -1499,8 +1499,8 @@ class az_batchai_experiment_create_command_builder extends CommandBuilder<az_bat
  * ```
  */
 class az_batchai_experiment_delete_command_builder extends CommandBuilder<az_batchai_experiment_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1561,8 +1561,8 @@ class az_batchai_experiment_delete_command_builder extends CommandBuilder<az_bat
  * @param {string} workspace Name of workspace.
  */
 class az_batchai_experiment_list_command_builder extends CommandBuilder<az_batchai_experiment_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspace: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspace(workspace)
     }
@@ -1606,8 +1606,8 @@ class az_batchai_experiment_list_command_builder extends CommandBuilder<az_batch
  * ```
  */
 class az_batchai_experiment_show_command_builder extends CommandBuilder<az_batchai_experiment_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1675,8 +1675,8 @@ class az_batchai_experiment_show_command_builder extends CommandBuilder<az_batch
  * @param {string} workspace Name or ARM ID of the workspace. You can configure default workspace using `az batchai workspace set-default`.
  */
 class az_batchai_file_server_create_command_builder extends CommandBuilder<az_batchai_file_server_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspace: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspace(workspace)
@@ -1794,8 +1794,8 @@ class az_batchai_file_server_create_command_builder extends CommandBuilder<az_ba
  * ```
  */
 class az_batchai_file_server_delete_command_builder extends CommandBuilder<az_batchai_file_server_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1856,8 +1856,8 @@ class az_batchai_file_server_delete_command_builder extends CommandBuilder<az_ba
  * @param {string} workspace Name of workspace.
  */
 class az_batchai_file_server_list_command_builder extends CommandBuilder<az_batchai_file_server_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspace: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspace(workspace)
     }
@@ -1901,8 +1901,8 @@ class az_batchai_file_server_list_command_builder extends CommandBuilder<az_batc
  * ```
  */
 class az_batchai_file_server_show_command_builder extends CommandBuilder<az_batchai_file_server_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1964,8 +1964,8 @@ class az_batchai_file_server_show_command_builder extends CommandBuilder<az_batc
  * @param {string} workspace Name of workspace.
  */
 class az_batchai_job_file_list_command_builder extends CommandBuilder<az_batchai_job_file_list_command_result> {
-    constructor(commandPath: string, experiment: string, job: string, resourceGroup: string, workspace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, experiment: string, job: string, resourceGroup: string, workspace: string) {
+        super(commandPath, resultDataTypeName);
         this.experiment(experiment)
         this.job(job)
         this.resourceGroup(resourceGroup)
@@ -2049,8 +2049,8 @@ class az_batchai_job_file_list_command_builder extends CommandBuilder<az_batchai
  * @param {string} workspace Name of workspace.
  */
 class az_batchai_job_file_stream_command_builder extends CommandBuilder<az_batchai_job_file_stream_command_result> {
-    constructor(commandPath: string, experiment: string, fileName: string, job: string, resourceGroup: string, workspace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, experiment: string, fileName: string, job: string, resourceGroup: string, workspace: string) {
+        super(commandPath, resultDataTypeName);
         this.experiment(experiment)
         this.fileName(fileName)
         this.job(job)
@@ -2130,8 +2130,8 @@ class az_batchai_job_file_stream_command_builder extends CommandBuilder<az_batch
  * @param {string} workspace Name of workspace.
  */
 class az_batchai_job_node_exec_command_builder extends CommandBuilder<az_batchai_job_node_exec_command_result> {
-    constructor(commandPath: string, experiment: string, job: string, resourceGroup: string, workspace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, experiment: string, job: string, resourceGroup: string, workspace: string) {
+        super(commandPath, resultDataTypeName);
         this.experiment(experiment)
         this.job(job)
         this.resourceGroup(resourceGroup)
@@ -2218,8 +2218,8 @@ class az_batchai_job_node_exec_command_builder extends CommandBuilder<az_batchai
  * @param {string} workspace Name of workspace.
  */
 class az_batchai_job_node_list_command_builder extends CommandBuilder<az_batchai_job_node_list_command_result> {
-    constructor(commandPath: string, experiment: string, job: string, resourceGroup: string, workspace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, experiment: string, job: string, resourceGroup: string, workspace: string) {
+        super(commandPath, resultDataTypeName);
         this.experiment(experiment)
         this.job(job)
         this.resourceGroup(resourceGroup)
@@ -2293,8 +2293,8 @@ class az_batchai_job_node_list_command_builder extends CommandBuilder<az_batchai
  * @param {string} workspace Name of workspace.
  */
 class az_batchai_job_create_command_builder extends CommandBuilder<az_batchai_job_create_command_result> {
-    constructor(commandPath: string, cluster: string, configFile: string, experiment: string, name: string, resourceGroup: string, workspace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, cluster: string, configFile: string, experiment: string, name: string, resourceGroup: string, workspace: string) {
+        super(commandPath, resultDataTypeName);
         this.cluster(cluster)
         this.configFile(configFile)
         this.experiment(experiment)
@@ -2410,8 +2410,8 @@ class az_batchai_job_create_command_builder extends CommandBuilder<az_batchai_jo
  * ```
  */
 class az_batchai_job_delete_command_builder extends CommandBuilder<az_batchai_job_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of experiment. */
@@ -2480,8 +2480,8 @@ class az_batchai_job_delete_command_builder extends CommandBuilder<az_batchai_jo
  * @param {string} workspace Name of workspace.
  */
 class az_batchai_job_list_command_builder extends CommandBuilder<az_batchai_job_list_command_result> {
-    constructor(commandPath: string, experiment: string, resourceGroup: string, workspace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, experiment: string, resourceGroup: string, workspace: string) {
+        super(commandPath, resultDataTypeName);
         this.experiment(experiment)
         this.resourceGroup(resourceGroup)
         this.workspace(workspace)
@@ -2533,8 +2533,8 @@ class az_batchai_job_list_command_builder extends CommandBuilder<az_batchai_job_
  * ```
  */
 class az_batchai_job_show_command_builder extends CommandBuilder<az_batchai_job_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of experiment. */
@@ -2596,8 +2596,8 @@ class az_batchai_job_show_command_builder extends CommandBuilder<az_batchai_job_
  * ```
  */
 class az_batchai_job_terminate_command_builder extends CommandBuilder<az_batchai_job_terminate_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of experiment. */
@@ -2664,8 +2664,8 @@ class az_batchai_job_terminate_command_builder extends CommandBuilder<az_batchai
  * ```
  */
 class az_batchai_job_wait_command_builder extends CommandBuilder<az_batchai_job_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of experiment. */
@@ -2726,8 +2726,8 @@ class az_batchai_job_wait_command_builder extends CommandBuilder<az_batchai_job_
  * @param {string} workspace Name of workspace.
  */
 class az_batchai_workspace_create_command_builder extends CommandBuilder<az_batchai_workspace_create_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspace: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspace(workspace)
     }
@@ -2771,8 +2771,8 @@ class az_batchai_workspace_create_command_builder extends CommandBuilder<az_batc
  * ```
  */
 class az_batchai_workspace_delete_command_builder extends CommandBuilder<az_batchai_workspace_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2823,8 +2823,8 @@ class az_batchai_workspace_delete_command_builder extends CommandBuilder<az_batc
  * ```
  */
 class az_batchai_workspace_list_command_builder extends CommandBuilder<az_batchai_workspace_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -2859,8 +2859,8 @@ class az_batchai_workspace_list_command_builder extends CommandBuilder<az_batcha
  * ```
  */
 class az_batchai_workspace_show_command_builder extends CommandBuilder<az_batchai_workspace_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2906,8 +2906,8 @@ class az_batchai_workspace_show_command_builder extends CommandBuilder<az_batcha
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_batchai_list_usages_command_builder extends CommandBuilder<az_batchai_list_usages_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 

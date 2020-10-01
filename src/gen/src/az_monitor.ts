@@ -149,7 +149,7 @@ export class az_monitor_action_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_monitor_action_group_create_command_builder {
-        return new az_monitor_action_group_create_command_builder("az monitor action-group create", name, resourceGroup);
+        return new az_monitor_action_group_create_command_builder("az monitor action-group create", 'az_monitor_action_group_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -164,7 +164,7 @@ export class az_monitor_action_group {
      * ```
      */
     static delete(): az_monitor_action_group_delete_command_builder {
-        return new az_monitor_action_group_delete_command_builder("az monitor action-group delete");
+        return new az_monitor_action_group_delete_command_builder("az monitor action-group delete", 'az_monitor_action_group_delete_command_result');
     }
 
     /**
@@ -182,7 +182,7 @@ export class az_monitor_action_group {
      * @param {string} name The name of the receiver to resubscribe.
      */
     static enable_receiver(name: string): az_monitor_action_group_enable_receiver_command_builder {
-        return new az_monitor_action_group_enable_receiver_command_builder("az monitor action-group enable-receiver", name);
+        return new az_monitor_action_group_enable_receiver_command_builder("az monitor action-group enable-receiver", 'az_monitor_action_group_enable_receiver_command_result', name);
     }
 
     /**
@@ -196,7 +196,7 @@ export class az_monitor_action_group {
      * ```
      */
     static list(): az_monitor_action_group_list_command_builder {
-        return new az_monitor_action_group_list_command_builder("az monitor action-group list");
+        return new az_monitor_action_group_list_command_builder("az monitor action-group list", 'az_monitor_action_group_list_command_result');
     }
 
     /**
@@ -212,7 +212,7 @@ export class az_monitor_action_group {
      * ```
      */
     static show(): az_monitor_action_group_show_command_builder {
-        return new az_monitor_action_group_show_command_builder("az monitor action-group show");
+        return new az_monitor_action_group_show_command_builder("az monitor action-group show", 'az_monitor_action_group_show_command_result');
     }
 
     /**
@@ -235,7 +235,7 @@ export class az_monitor_action_group {
      * ```
      */
     static update(): az_monitor_action_group_update_command_builder {
-        return new az_monitor_action_group_update_command_builder("az monitor action-group update");
+        return new az_monitor_action_group_update_command_builder("az monitor action-group update", 'az_monitor_action_group_update_command_result');
     }
 }
 
@@ -259,7 +259,7 @@ export class az_monitor_activity_log_alert_action_group {
      * @param {string} actionGroup The names or the resource ids of the action groups to be added.
      */
     static add(actionGroup: string): az_monitor_activity_log_alert_action_group_add_command_builder {
-        return new az_monitor_activity_log_alert_action_group_add_command_builder("az monitor activity-log alert action-group add", actionGroup);
+        return new az_monitor_activity_log_alert_action_group_add_command_builder("az monitor activity-log alert action-group add", 'az_monitor_activity_log_alert_action_group_add_command_result', actionGroup);
     }
 
     /**
@@ -277,7 +277,7 @@ export class az_monitor_activity_log_alert_action_group {
      * @param {string} actionGroup The names or the resource ids of the action groups to be added.
      */
     static remove(actionGroup: string): az_monitor_activity_log_alert_action_group_remove_command_builder {
-        return new az_monitor_activity_log_alert_action_group_remove_command_builder("az monitor activity-log alert action-group remove", actionGroup);
+        return new az_monitor_activity_log_alert_action_group_remove_command_builder("az monitor activity-log alert action-group remove", 'az_monitor_activity_log_alert_action_group_remove_command_result', actionGroup);
     }
 }
 
@@ -299,7 +299,7 @@ export class az_monitor_activity_log_alert_scope {
      * @param {string} scope List of scopes to add. Each scope could be a resource ID, a resource group ID or a subscription ID.
      */
     static add(scope: string): az_monitor_activity_log_alert_scope_add_command_builder {
-        return new az_monitor_activity_log_alert_scope_add_command_builder("az monitor activity-log alert scope add", scope);
+        return new az_monitor_activity_log_alert_scope_add_command_builder("az monitor activity-log alert scope add", 'az_monitor_activity_log_alert_scope_add_command_result', scope);
     }
 
     /**
@@ -317,7 +317,7 @@ export class az_monitor_activity_log_alert_scope {
      * @param {string} scope The scopes to remove.
      */
     static remove(scope: string): az_monitor_activity_log_alert_scope_remove_command_builder {
-        return new az_monitor_activity_log_alert_scope_remove_command_builder("az monitor activity-log alert scope remove", scope);
+        return new az_monitor_activity_log_alert_scope_remove_command_builder("az monitor activity-log alert scope remove", 'az_monitor_activity_log_alert_scope_remove_command_result', scope);
     }
 }
 
@@ -344,7 +344,7 @@ export class az_monitor_activity_log_alert {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_monitor_activity_log_alert_create_command_builder {
-        return new az_monitor_activity_log_alert_create_command_builder("az monitor activity-log alert create", name, resourceGroup);
+        return new az_monitor_activity_log_alert_create_command_builder("az monitor activity-log alert create", 'az_monitor_activity_log_alert_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -359,7 +359,7 @@ export class az_monitor_activity_log_alert {
      * ```
      */
     static delete(): az_monitor_activity_log_alert_delete_command_builder {
-        return new az_monitor_activity_log_alert_delete_command_builder("az monitor activity-log alert delete");
+        return new az_monitor_activity_log_alert_delete_command_builder("az monitor activity-log alert delete", 'az_monitor_activity_log_alert_delete_command_result');
     }
 
     /**
@@ -373,7 +373,7 @@ export class az_monitor_activity_log_alert {
      * ```
      */
     static list(): az_monitor_activity_log_alert_list_command_builder {
-        return new az_monitor_activity_log_alert_list_command_builder("az monitor activity-log alert list");
+        return new az_monitor_activity_log_alert_list_command_builder("az monitor activity-log alert list", 'az_monitor_activity_log_alert_list_command_result');
     }
 
     /**
@@ -389,7 +389,7 @@ export class az_monitor_activity_log_alert {
      * ```
      */
     static show(): az_monitor_activity_log_alert_show_command_builder {
-        return new az_monitor_activity_log_alert_show_command_builder("az monitor activity-log alert show");
+        return new az_monitor_activity_log_alert_show_command_builder("az monitor activity-log alert show", 'az_monitor_activity_log_alert_show_command_result');
     }
 
     /**
@@ -412,7 +412,7 @@ export class az_monitor_activity_log_alert {
      * ```
      */
     static update(): az_monitor_activity_log_alert_update_command_builder {
-        return new az_monitor_activity_log_alert_update_command_builder("az monitor activity-log alert update");
+        return new az_monitor_activity_log_alert_update_command_builder("az monitor activity-log alert update", 'az_monitor_activity_log_alert_update_command_result');
     }
 }
 
@@ -440,7 +440,7 @@ export class az_monitor_activity_log {
      * ```
      */
     static list(): az_monitor_activity_log_list_command_builder {
-        return new az_monitor_activity_log_list_command_builder("az monitor activity-log list");
+        return new az_monitor_activity_log_list_command_builder("az monitor activity-log list", 'az_monitor_activity_log_list_command_result');
     }
 
     /**
@@ -452,7 +452,7 @@ export class az_monitor_activity_log {
      * ```
      */
     static list_categories(): az_monitor_activity_log_list_categories_command_builder {
-        return new az_monitor_activity_log_list_categories_command_builder("az monitor activity-log list-categories");
+        return new az_monitor_activity_log_list_categories_command_builder("az monitor activity-log list-categories", 'az_monitor_activity_log_list_categories_command_result');
     }
 }
 
@@ -484,7 +484,7 @@ export class az_monitor_alert {
      * @param {string} target Name or ID of the target resource.
      */
     static create(condition: string, name: string, target: string): az_monitor_alert_create_command_builder {
-        return new az_monitor_alert_create_command_builder("az monitor alert create", condition, name, target);
+        return new az_monitor_alert_create_command_builder("az monitor alert create", 'az_monitor_alert_create_command_result', condition, name, target);
     }
 
     /**
@@ -499,7 +499,7 @@ export class az_monitor_alert {
      * ```
      */
     static delete(): az_monitor_alert_delete_command_builder {
-        return new az_monitor_alert_delete_command_builder("az monitor alert delete");
+        return new az_monitor_alert_delete_command_builder("az monitor alert delete", 'az_monitor_alert_delete_command_result');
     }
 
     /**
@@ -515,7 +515,7 @@ export class az_monitor_alert {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(resourceGroup: string): az_monitor_alert_list_command_builder {
-        return new az_monitor_alert_list_command_builder("az monitor alert list", resourceGroup);
+        return new az_monitor_alert_list_command_builder("az monitor alert list", 'az_monitor_alert_list_command_result', resourceGroup);
     }
 
     /**
@@ -532,7 +532,7 @@ export class az_monitor_alert {
      * @param {string} ruleName Name of the alert rule.
      */
     static list_incidents(resourceGroup: string, ruleName: string): az_monitor_alert_list_incidents_command_builder {
-        return new az_monitor_alert_list_incidents_command_builder("az monitor alert list-incidents", resourceGroup, ruleName);
+        return new az_monitor_alert_list_incidents_command_builder("az monitor alert list-incidents", 'az_monitor_alert_list_incidents_command_result', resourceGroup, ruleName);
     }
 
     /**
@@ -548,7 +548,7 @@ export class az_monitor_alert {
      * ```
      */
     static show(): az_monitor_alert_show_command_builder {
-        return new az_monitor_alert_show_command_builder("az monitor alert show");
+        return new az_monitor_alert_show_command_builder("az monitor alert show", 'az_monitor_alert_show_command_result');
     }
 
     /**
@@ -564,7 +564,7 @@ export class az_monitor_alert {
      * ```
      */
     static show_incident(): az_monitor_alert_show_incident_command_builder {
-        return new az_monitor_alert_show_incident_command_builder("az monitor alert show-incident");
+        return new az_monitor_alert_show_incident_command_builder("az monitor alert show-incident", 'az_monitor_alert_show_incident_command_result');
     }
 
     /**
@@ -599,7 +599,7 @@ export class az_monitor_alert {
      * ```
      */
     static update(): az_monitor_alert_update_command_builder {
-        return new az_monitor_alert_update_command_builder("az monitor alert update");
+        return new az_monitor_alert_update_command_builder("az monitor alert update", 'az_monitor_alert_update_command_result');
     }
 }
 
@@ -631,7 +631,7 @@ export class az_monitor_autoscale_profile {
      * @param {string} timezone Timezone name.
      */
     static create(autoscaleName: string, count: string, name: string, resourceGroup: string, timezone: string): az_monitor_autoscale_profile_create_command_builder {
-        return new az_monitor_autoscale_profile_create_command_builder("az monitor autoscale profile create", autoscaleName, count, name, resourceGroup, timezone);
+        return new az_monitor_autoscale_profile_create_command_builder("az monitor autoscale profile create", 'az_monitor_autoscale_profile_create_command_result', autoscaleName, count, name, resourceGroup, timezone);
     }
 
     /**
@@ -650,7 +650,7 @@ export class az_monitor_autoscale_profile {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(autoscaleName: string, name: string, resourceGroup: string): az_monitor_autoscale_profile_delete_command_builder {
-        return new az_monitor_autoscale_profile_delete_command_builder("az monitor autoscale profile delete", autoscaleName, name, resourceGroup);
+        return new az_monitor_autoscale_profile_delete_command_builder("az monitor autoscale profile delete", 'az_monitor_autoscale_profile_delete_command_result', autoscaleName, name, resourceGroup);
     }
 
     /**
@@ -668,7 +668,7 @@ export class az_monitor_autoscale_profile {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(autoscaleName: string, resourceGroup: string): az_monitor_autoscale_profile_list_command_builder {
-        return new az_monitor_autoscale_profile_list_command_builder("az monitor autoscale profile list", autoscaleName, resourceGroup);
+        return new az_monitor_autoscale_profile_list_command_builder("az monitor autoscale profile list", 'az_monitor_autoscale_profile_list_command_result', autoscaleName, resourceGroup);
     }
 
     /**
@@ -682,7 +682,7 @@ export class az_monitor_autoscale_profile {
      * ```
      */
     static list_timezones(): az_monitor_autoscale_profile_list_timezones_command_builder {
-        return new az_monitor_autoscale_profile_list_timezones_command_builder("az monitor autoscale profile list-timezones");
+        return new az_monitor_autoscale_profile_list_timezones_command_builder("az monitor autoscale profile list-timezones", 'az_monitor_autoscale_profile_list_timezones_command_result');
     }
 
     /**
@@ -702,7 +702,7 @@ export class az_monitor_autoscale_profile {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(autoscaleName: string, name: string, resourceGroup: string): az_monitor_autoscale_profile_show_command_builder {
-        return new az_monitor_autoscale_profile_show_command_builder("az monitor autoscale profile show", autoscaleName, name, resourceGroup);
+        return new az_monitor_autoscale_profile_show_command_builder("az monitor autoscale profile show", 'az_monitor_autoscale_profile_show_command_result', autoscaleName, name, resourceGroup);
     }
 }
 
@@ -727,7 +727,7 @@ export class az_monitor_autoscale_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static copy(autoscaleName: string, destSchedule: string, index: string, resourceGroup: string): az_monitor_autoscale_rule_copy_command_builder {
-        return new az_monitor_autoscale_rule_copy_command_builder("az monitor autoscale rule copy", autoscaleName, destSchedule, index, resourceGroup);
+        return new az_monitor_autoscale_rule_copy_command_builder("az monitor autoscale rule copy", 'az_monitor_autoscale_rule_copy_command_result', autoscaleName, destSchedule, index, resourceGroup);
     }
 
     /**
@@ -754,7 +754,7 @@ export class az_monitor_autoscale_rule {
      * @param {string} scale The direction and amount to scale.
      */
     static create(autoscaleName: string, condition: string, scale: string): az_monitor_autoscale_rule_create_command_builder {
-        return new az_monitor_autoscale_rule_create_command_builder("az monitor autoscale rule create", autoscaleName, condition, scale);
+        return new az_monitor_autoscale_rule_create_command_builder("az monitor autoscale rule create", 'az_monitor_autoscale_rule_create_command_result', autoscaleName, condition, scale);
     }
 
     /**
@@ -774,7 +774,7 @@ export class az_monitor_autoscale_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(autoscaleName: string, index: string, resourceGroup: string): az_monitor_autoscale_rule_delete_command_builder {
-        return new az_monitor_autoscale_rule_delete_command_builder("az monitor autoscale rule delete", autoscaleName, index, resourceGroup);
+        return new az_monitor_autoscale_rule_delete_command_builder("az monitor autoscale rule delete", 'az_monitor_autoscale_rule_delete_command_result', autoscaleName, index, resourceGroup);
     }
 
     /**
@@ -793,7 +793,7 @@ export class az_monitor_autoscale_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(autoscaleName: string, resourceGroup: string): az_monitor_autoscale_rule_list_command_builder {
-        return new az_monitor_autoscale_rule_list_command_builder("az monitor autoscale rule list", autoscaleName, resourceGroup);
+        return new az_monitor_autoscale_rule_list_command_builder("az monitor autoscale rule list", 'az_monitor_autoscale_rule_list_command_result', autoscaleName, resourceGroup);
     }
 }
 
@@ -815,7 +815,7 @@ export class az_monitor_autoscale_settings {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, parameters: string, resourceGroup: string): az_monitor_autoscale_settings_create_command_builder {
-        return new az_monitor_autoscale_settings_create_command_builder("az monitor autoscale-settings create", name, parameters, resourceGroup);
+        return new az_monitor_autoscale_settings_create_command_builder("az monitor autoscale-settings create", 'az_monitor_autoscale_settings_create_command_result', name, parameters, resourceGroup);
     }
 
     /**
@@ -830,7 +830,7 @@ export class az_monitor_autoscale_settings {
      * ```
      */
     static delete(): az_monitor_autoscale_settings_delete_command_builder {
-        return new az_monitor_autoscale_settings_delete_command_builder("az monitor autoscale-settings delete");
+        return new az_monitor_autoscale_settings_delete_command_builder("az monitor autoscale-settings delete", 'az_monitor_autoscale_settings_delete_command_result');
     }
 
     /**
@@ -842,7 +842,7 @@ export class az_monitor_autoscale_settings {
      * ```
      */
     static get_parameters_template(): az_monitor_autoscale_settings_get_parameters_template_command_builder {
-        return new az_monitor_autoscale_settings_get_parameters_template_command_builder("az monitor autoscale-settings get-parameters-template");
+        return new az_monitor_autoscale_settings_get_parameters_template_command_builder("az monitor autoscale-settings get-parameters-template", 'az_monitor_autoscale_settings_get_parameters_template_command_result');
     }
 
     /**
@@ -858,7 +858,7 @@ export class az_monitor_autoscale_settings {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(resourceGroup: string): az_monitor_autoscale_settings_list_command_builder {
-        return new az_monitor_autoscale_settings_list_command_builder("az monitor autoscale-settings list", resourceGroup);
+        return new az_monitor_autoscale_settings_list_command_builder("az monitor autoscale-settings list", 'az_monitor_autoscale_settings_list_command_result', resourceGroup);
     }
 
     /**
@@ -874,7 +874,7 @@ export class az_monitor_autoscale_settings {
      * ```
      */
     static show(): az_monitor_autoscale_settings_show_command_builder {
-        return new az_monitor_autoscale_settings_show_command_builder("az monitor autoscale-settings show");
+        return new az_monitor_autoscale_settings_show_command_builder("az monitor autoscale-settings show", 'az_monitor_autoscale_settings_show_command_result');
     }
 
     /**
@@ -895,7 +895,7 @@ export class az_monitor_autoscale_settings {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, resourceGroup: string): az_monitor_autoscale_settings_update_command_builder {
-        return new az_monitor_autoscale_settings_update_command_builder("az monitor autoscale-settings update", name, resourceGroup);
+        return new az_monitor_autoscale_settings_update_command_builder("az monitor autoscale-settings update", 'az_monitor_autoscale_settings_update_command_result', name, resourceGroup);
     }
 }
 
@@ -928,7 +928,7 @@ export class az_monitor_autoscale {
      * @param {string} resource Name or ID of the target resource.
      */
     static create(count: string, resource: string): az_monitor_autoscale_create_command_builder {
-        return new az_monitor_autoscale_create_command_builder("az monitor autoscale create", count, resource);
+        return new az_monitor_autoscale_create_command_builder("az monitor autoscale create", 'az_monitor_autoscale_create_command_result', count, resource);
     }
 
     /**
@@ -943,7 +943,7 @@ export class az_monitor_autoscale {
      * ```
      */
     static delete(): az_monitor_autoscale_delete_command_builder {
-        return new az_monitor_autoscale_delete_command_builder("az monitor autoscale delete");
+        return new az_monitor_autoscale_delete_command_builder("az monitor autoscale delete", 'az_monitor_autoscale_delete_command_result');
     }
 
     /**
@@ -959,7 +959,7 @@ export class az_monitor_autoscale {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(resourceGroup: string): az_monitor_autoscale_list_command_builder {
-        return new az_monitor_autoscale_list_command_builder("az monitor autoscale list", resourceGroup);
+        return new az_monitor_autoscale_list_command_builder("az monitor autoscale list", 'az_monitor_autoscale_list_command_result', resourceGroup);
     }
 
     /**
@@ -975,7 +975,7 @@ export class az_monitor_autoscale {
      * ```
      */
     static show(): az_monitor_autoscale_show_command_builder {
-        return new az_monitor_autoscale_show_command_builder("az monitor autoscale show");
+        return new az_monitor_autoscale_show_command_builder("az monitor autoscale show", 'az_monitor_autoscale_show_command_result');
     }
 
     /**
@@ -1003,7 +1003,7 @@ export class az_monitor_autoscale {
      * ```
      */
     static update(): az_monitor_autoscale_update_command_builder {
-        return new az_monitor_autoscale_update_command_builder("az monitor autoscale update");
+        return new az_monitor_autoscale_update_command_builder("az monitor autoscale update", 'az_monitor_autoscale_update_command_result');
     }
 }
 
@@ -1026,7 +1026,7 @@ export class az_monitor_diagnostic_settings_categories {
      * @param {string} resource Name or ID of the target resource.
      */
     static list(resource: string): az_monitor_diagnostic_settings_categories_list_command_builder {
-        return new az_monitor_diagnostic_settings_categories_list_command_builder("az monitor diagnostic-settings categories list", resource);
+        return new az_monitor_diagnostic_settings_categories_list_command_builder("az monitor diagnostic-settings categories list", 'az_monitor_diagnostic_settings_categories_list_command_result', resource);
     }
 
     /**
@@ -1048,7 +1048,7 @@ export class az_monitor_diagnostic_settings_categories {
      * @param {string} resource Name or ID of the target resource.
      */
     static show(name: string, resource: string): az_monitor_diagnostic_settings_categories_show_command_builder {
-        return new az_monitor_diagnostic_settings_categories_show_command_builder("az monitor diagnostic-settings categories show", name, resource);
+        return new az_monitor_diagnostic_settings_categories_show_command_builder("az monitor diagnostic-settings categories show", 'az_monitor_diagnostic_settings_categories_show_command_result', name, resource);
     }
 }
 
@@ -1075,7 +1075,7 @@ export class az_monitor_diagnostic_settings_subscription {
      * @param {string} name The name of the diagnostic setting.
      */
     static create(location: string, logs: string, name: string): az_monitor_diagnostic_settings_subscription_create_command_builder {
-        return new az_monitor_diagnostic_settings_subscription_create_command_builder("az monitor diagnostic-settings subscription create", location, logs, name);
+        return new az_monitor_diagnostic_settings_subscription_create_command_builder("az monitor diagnostic-settings subscription create", 'az_monitor_diagnostic_settings_subscription_create_command_result', location, logs, name);
     }
 
     /**
@@ -1091,7 +1091,7 @@ export class az_monitor_diagnostic_settings_subscription {
      * @param {string} name The name of the diagnostic setting.
      */
     static delete(name: string): az_monitor_diagnostic_settings_subscription_delete_command_builder {
-        return new az_monitor_diagnostic_settings_subscription_delete_command_builder("az monitor diagnostic-settings subscription delete", name);
+        return new az_monitor_diagnostic_settings_subscription_delete_command_builder("az monitor diagnostic-settings subscription delete", 'az_monitor_diagnostic_settings_subscription_delete_command_result', name);
     }
 
     /**
@@ -1104,7 +1104,7 @@ export class az_monitor_diagnostic_settings_subscription {
      * ```
      */
     static list(): az_monitor_diagnostic_settings_subscription_list_command_builder {
-        return new az_monitor_diagnostic_settings_subscription_list_command_builder("az monitor diagnostic-settings subscription list");
+        return new az_monitor_diagnostic_settings_subscription_list_command_builder("az monitor diagnostic-settings subscription list", 'az_monitor_diagnostic_settings_subscription_list_command_result');
     }
 
     /**
@@ -1120,7 +1120,7 @@ export class az_monitor_diagnostic_settings_subscription {
      * @param {string} name The name of the diagnostic setting.
      */
     static show(name: string): az_monitor_diagnostic_settings_subscription_show_command_builder {
-        return new az_monitor_diagnostic_settings_subscription_show_command_builder("az monitor diagnostic-settings subscription show", name);
+        return new az_monitor_diagnostic_settings_subscription_show_command_builder("az monitor diagnostic-settings subscription show", 'az_monitor_diagnostic_settings_subscription_show_command_result', name);
     }
 
     /**
@@ -1145,7 +1145,7 @@ export class az_monitor_diagnostic_settings_subscription {
      * @param {string} name The name of the diagnostic setting.
      */
     static update(name: string): az_monitor_diagnostic_settings_subscription_update_command_builder {
-        return new az_monitor_diagnostic_settings_subscription_update_command_builder("az monitor diagnostic-settings subscription update", name);
+        return new az_monitor_diagnostic_settings_subscription_update_command_builder("az monitor diagnostic-settings subscription update", 'az_monitor_diagnostic_settings_subscription_update_command_result', name);
     }
 }
 
@@ -1176,7 +1176,7 @@ export class az_monitor_diagnostic_settings {
      * @param {string} resource Name or ID of the target resource.
      */
     static create(name: string, resource: string): az_monitor_diagnostic_settings_create_command_builder {
-        return new az_monitor_diagnostic_settings_create_command_builder("az monitor diagnostic-settings create", name, resource);
+        return new az_monitor_diagnostic_settings_create_command_builder("az monitor diagnostic-settings create", 'az_monitor_diagnostic_settings_create_command_result', name, resource);
     }
 
     /**
@@ -1197,7 +1197,7 @@ export class az_monitor_diagnostic_settings {
      * @param {string} resource Name or ID of the target resource.
      */
     static delete(name: string, resource: string): az_monitor_diagnostic_settings_delete_command_builder {
-        return new az_monitor_diagnostic_settings_delete_command_builder("az monitor diagnostic-settings delete", name, resource);
+        return new az_monitor_diagnostic_settings_delete_command_builder("az monitor diagnostic-settings delete", 'az_monitor_diagnostic_settings_delete_command_result', name, resource);
     }
 
     /**
@@ -1217,7 +1217,7 @@ export class az_monitor_diagnostic_settings {
      * @param {string} resource Name or ID of the target resource.
      */
     static list(resource: string): az_monitor_diagnostic_settings_list_command_builder {
-        return new az_monitor_diagnostic_settings_list_command_builder("az monitor diagnostic-settings list", resource);
+        return new az_monitor_diagnostic_settings_list_command_builder("az monitor diagnostic-settings list", 'az_monitor_diagnostic_settings_list_command_result', resource);
     }
 
     /**
@@ -1239,7 +1239,7 @@ export class az_monitor_diagnostic_settings {
      * @param {string} resource Name or ID of the target resource.
      */
     static show(name: string, resource: string): az_monitor_diagnostic_settings_show_command_builder {
-        return new az_monitor_diagnostic_settings_show_command_builder("az monitor diagnostic-settings show", name, resource);
+        return new az_monitor_diagnostic_settings_show_command_builder("az monitor diagnostic-settings show", 'az_monitor_diagnostic_settings_show_command_result', name, resource);
     }
 
     /**
@@ -1264,7 +1264,7 @@ export class az_monitor_diagnostic_settings {
      * @param {string} resource Name or ID of the target resource.
      */
     static update(name: string, resource: string): az_monitor_diagnostic_settings_update_command_builder {
-        return new az_monitor_diagnostic_settings_update_command_builder("az monitor diagnostic-settings update", name, resource);
+        return new az_monitor_diagnostic_settings_update_command_builder("az monitor diagnostic-settings update", 'az_monitor_diagnostic_settings_update_command_result', name, resource);
     }
 }
 
@@ -1291,7 +1291,7 @@ export class az_monitor_log_analytics_cluster {
      * @param {string} skuCapacity The capacity of the SKU. It must be in the range of 1000-2000 per day and must be in multiples of 100. If you want to increase the limit, please contact LAIngestionRate@microsoft.com. It can be decreased only after 31 days.
      */
     static create(name: string, resourceGroup: string, skuCapacity: string): az_monitor_log_analytics_cluster_create_command_builder {
-        return new az_monitor_log_analytics_cluster_create_command_builder("az monitor log-analytics cluster create", name, resourceGroup, skuCapacity);
+        return new az_monitor_log_analytics_cluster_create_command_builder("az monitor log-analytics cluster create", 'az_monitor_log_analytics_cluster_create_command_result', name, resourceGroup, skuCapacity);
     }
 
     /**
@@ -1310,7 +1310,7 @@ export class az_monitor_log_analytics_cluster {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_monitor_log_analytics_cluster_delete_command_builder {
-        return new az_monitor_log_analytics_cluster_delete_command_builder("az monitor log-analytics cluster delete", name, resourceGroup);
+        return new az_monitor_log_analytics_cluster_delete_command_builder("az monitor log-analytics cluster delete", 'az_monitor_log_analytics_cluster_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -1324,7 +1324,7 @@ export class az_monitor_log_analytics_cluster {
      * ```
      */
     static list(): az_monitor_log_analytics_cluster_list_command_builder {
-        return new az_monitor_log_analytics_cluster_list_command_builder("az monitor log-analytics cluster list");
+        return new az_monitor_log_analytics_cluster_list_command_builder("az monitor log-analytics cluster list", 'az_monitor_log_analytics_cluster_list_command_result');
     }
 
     /**
@@ -1342,7 +1342,7 @@ export class az_monitor_log_analytics_cluster {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_monitor_log_analytics_cluster_show_command_builder {
-        return new az_monitor_log_analytics_cluster_show_command_builder("az monitor log-analytics cluster show", name, resourceGroup);
+        return new az_monitor_log_analytics_cluster_show_command_builder("az monitor log-analytics cluster show", 'az_monitor_log_analytics_cluster_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -1364,7 +1364,7 @@ export class az_monitor_log_analytics_cluster {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, resourceGroup: string): az_monitor_log_analytics_cluster_update_command_builder {
-        return new az_monitor_log_analytics_cluster_update_command_builder("az monitor log-analytics cluster update", name, resourceGroup);
+        return new az_monitor_log_analytics_cluster_update_command_builder("az monitor log-analytics cluster update", 'az_monitor_log_analytics_cluster_update_command_result', name, resourceGroup);
     }
 
     /**
@@ -1388,7 +1388,7 @@ export class az_monitor_log_analytics_cluster {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static wait(name: string, resourceGroup: string): az_monitor_log_analytics_cluster_wait_command_builder {
-        return new az_monitor_log_analytics_cluster_wait_command_builder("az monitor log-analytics cluster wait", name, resourceGroup);
+        return new az_monitor_log_analytics_cluster_wait_command_builder("az monitor log-analytics cluster wait", 'az_monitor_log_analytics_cluster_wait_command_result', name, resourceGroup);
     }
 }
 
@@ -1415,7 +1415,7 @@ export class az_monitor_log_analytics_workspace_data_export {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static create(destination: string, name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_data_export_create_command_builder {
-        return new az_monitor_log_analytics_workspace_data_export_create_command_builder("az monitor log-analytics workspace data-export create", destination, name, resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_data_export_create_command_builder("az monitor log-analytics workspace data-export create", 'az_monitor_log_analytics_workspace_data_export_create_command_result', destination, name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1435,7 +1435,7 @@ export class az_monitor_log_analytics_workspace_data_export {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static delete(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_data_export_delete_command_builder {
-        return new az_monitor_log_analytics_workspace_data_export_delete_command_builder("az monitor log-analytics workspace data-export delete", name, resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_data_export_delete_command_builder("az monitor log-analytics workspace data-export delete", 'az_monitor_log_analytics_workspace_data_export_delete_command_result', name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1453,7 +1453,7 @@ export class az_monitor_log_analytics_workspace_data_export {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_data_export_list_command_builder {
-        return new az_monitor_log_analytics_workspace_data_export_list_command_builder("az monitor log-analytics workspace data-export list", resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_data_export_list_command_builder("az monitor log-analytics workspace data-export list", 'az_monitor_log_analytics_workspace_data_export_list_command_result', resourceGroup, workspaceName);
     }
 
     /**
@@ -1473,7 +1473,7 @@ export class az_monitor_log_analytics_workspace_data_export {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static show(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_data_export_show_command_builder {
-        return new az_monitor_log_analytics_workspace_data_export_show_command_builder("az monitor log-analytics workspace data-export show", name, resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_data_export_show_command_builder("az monitor log-analytics workspace data-export show", 'az_monitor_log_analytics_workspace_data_export_show_command_result', name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1500,7 +1500,7 @@ export class az_monitor_log_analytics_workspace_data_export {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static update(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_data_export_update_command_builder {
-        return new az_monitor_log_analytics_workspace_data_export_update_command_builder("az monitor log-analytics workspace data-export update", name, resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_data_export_update_command_builder("az monitor log-analytics workspace data-export update", 'az_monitor_log_analytics_workspace_data_export_update_command_result', name, resourceGroup, workspaceName);
     }
 }
 
@@ -1525,7 +1525,7 @@ export class az_monitor_log_analytics_workspace_linked_service {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static create(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_create_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_service_create_command_builder("az monitor log-analytics workspace linked-service create", name, resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_linked_service_create_command_builder("az monitor log-analytics workspace linked-service create", 'az_monitor_log_analytics_workspace_linked_service_create_command_result', name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1546,7 +1546,7 @@ export class az_monitor_log_analytics_workspace_linked_service {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static delete(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_delete_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_service_delete_command_builder("az monitor log-analytics workspace linked-service delete", name, resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_linked_service_delete_command_builder("az monitor log-analytics workspace linked-service delete", 'az_monitor_log_analytics_workspace_linked_service_delete_command_result', name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1564,7 +1564,7 @@ export class az_monitor_log_analytics_workspace_linked_service {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_list_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_service_list_command_builder("az monitor log-analytics workspace linked-service list", resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_linked_service_list_command_builder("az monitor log-analytics workspace linked-service list", 'az_monitor_log_analytics_workspace_linked_service_list_command_result', resourceGroup, workspaceName);
     }
 
     /**
@@ -1584,7 +1584,7 @@ export class az_monitor_log_analytics_workspace_linked_service {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static show(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_show_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_service_show_command_builder("az monitor log-analytics workspace linked-service show", name, resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_linked_service_show_command_builder("az monitor log-analytics workspace linked-service show", 'az_monitor_log_analytics_workspace_linked_service_show_command_result', name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1610,7 +1610,7 @@ export class az_monitor_log_analytics_workspace_linked_service {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static update(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_update_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_service_update_command_builder("az monitor log-analytics workspace linked-service update", name, resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_linked_service_update_command_builder("az monitor log-analytics workspace linked-service update", 'az_monitor_log_analytics_workspace_linked_service_update_command_result', name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1636,7 +1636,7 @@ export class az_monitor_log_analytics_workspace_linked_service {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static wait(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_service_wait_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_service_wait_command_builder("az monitor log-analytics workspace linked-service wait", name, resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_linked_service_wait_command_builder("az monitor log-analytics workspace linked-service wait", 'az_monitor_log_analytics_workspace_linked_service_wait_command_result', name, resourceGroup, workspaceName);
     }
 }
 
@@ -1660,7 +1660,7 @@ export class az_monitor_log_analytics_workspace_linked_storage {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static add(resourceGroup: string, storageAccounts: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_add_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_storage_add_command_builder("az monitor log-analytics workspace linked-storage add", resourceGroup, storageAccounts, type, workspaceName);
+        return new az_monitor_log_analytics_workspace_linked_storage_add_command_builder("az monitor log-analytics workspace linked-storage add", 'az_monitor_log_analytics_workspace_linked_storage_add_command_result', resourceGroup, storageAccounts, type, workspaceName);
     }
 
     /**
@@ -1680,7 +1680,7 @@ export class az_monitor_log_analytics_workspace_linked_storage {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static create(resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_create_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_storage_create_command_builder("az monitor log-analytics workspace linked-storage create", resourceGroup, type, workspaceName);
+        return new az_monitor_log_analytics_workspace_linked_storage_create_command_builder("az monitor log-analytics workspace linked-storage create", 'az_monitor_log_analytics_workspace_linked_storage_create_command_result', resourceGroup, type, workspaceName);
     }
 
     /**
@@ -1700,7 +1700,7 @@ export class az_monitor_log_analytics_workspace_linked_storage {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static delete(resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_delete_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_storage_delete_command_builder("az monitor log-analytics workspace linked-storage delete", resourceGroup, type, workspaceName);
+        return new az_monitor_log_analytics_workspace_linked_storage_delete_command_builder("az monitor log-analytics workspace linked-storage delete", 'az_monitor_log_analytics_workspace_linked_storage_delete_command_result', resourceGroup, type, workspaceName);
     }
 
     /**
@@ -1718,7 +1718,7 @@ export class az_monitor_log_analytics_workspace_linked_storage {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_list_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_storage_list_command_builder("az monitor log-analytics workspace linked-storage list", resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_linked_storage_list_command_builder("az monitor log-analytics workspace linked-storage list", 'az_monitor_log_analytics_workspace_linked_storage_list_command_result', resourceGroup, workspaceName);
     }
 
     /**
@@ -1739,7 +1739,7 @@ export class az_monitor_log_analytics_workspace_linked_storage {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static remove(resourceGroup: string, storageAccounts: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_remove_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_storage_remove_command_builder("az monitor log-analytics workspace linked-storage remove", resourceGroup, storageAccounts, type, workspaceName);
+        return new az_monitor_log_analytics_workspace_linked_storage_remove_command_builder("az monitor log-analytics workspace linked-storage remove", 'az_monitor_log_analytics_workspace_linked_storage_remove_command_result', resourceGroup, storageAccounts, type, workspaceName);
     }
 
     /**
@@ -1759,7 +1759,7 @@ export class az_monitor_log_analytics_workspace_linked_storage {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static show(resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string): az_monitor_log_analytics_workspace_linked_storage_show_command_builder {
-        return new az_monitor_log_analytics_workspace_linked_storage_show_command_builder("az monitor log-analytics workspace linked-storage show", resourceGroup, type, workspaceName);
+        return new az_monitor_log_analytics_workspace_linked_storage_show_command_builder("az monitor log-analytics workspace linked-storage show", 'az_monitor_log_analytics_workspace_linked_storage_show_command_result', resourceGroup, type, workspaceName);
     }
 }
 
@@ -1781,7 +1781,7 @@ export class az_monitor_log_analytics_workspace_pack {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static disable(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_pack_disable_command_builder {
-        return new az_monitor_log_analytics_workspace_pack_disable_command_builder("az monitor log-analytics workspace pack disable", name, resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_pack_disable_command_builder("az monitor log-analytics workspace pack disable", 'az_monitor_log_analytics_workspace_pack_disable_command_result', name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1800,7 +1800,7 @@ export class az_monitor_log_analytics_workspace_pack {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static enable(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_pack_enable_command_builder {
-        return new az_monitor_log_analytics_workspace_pack_enable_command_builder("az monitor log-analytics workspace pack enable", name, resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_pack_enable_command_builder("az monitor log-analytics workspace pack enable", 'az_monitor_log_analytics_workspace_pack_enable_command_result', name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1818,7 +1818,7 @@ export class az_monitor_log_analytics_workspace_pack {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_pack_list_command_builder {
-        return new az_monitor_log_analytics_workspace_pack_list_command_builder("az monitor log-analytics workspace pack list", resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_pack_list_command_builder("az monitor log-analytics workspace pack list", 'az_monitor_log_analytics_workspace_pack_list_command_result', resourceGroup, workspaceName);
     }
 }
 
@@ -1849,7 +1849,7 @@ export class az_monitor_log_analytics_workspace_saved_search {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static create(category: string, displayName: string, name: string, resourceGroup: string, savedQuery: string, workspaceName: string): az_monitor_log_analytics_workspace_saved_search_create_command_builder {
-        return new az_monitor_log_analytics_workspace_saved_search_create_command_builder("az monitor log-analytics workspace saved-search create", category, displayName, name, resourceGroup, savedQuery, workspaceName);
+        return new az_monitor_log_analytics_workspace_saved_search_create_command_builder("az monitor log-analytics workspace saved-search create", 'az_monitor_log_analytics_workspace_saved_search_create_command_result', category, displayName, name, resourceGroup, savedQuery, workspaceName);
     }
 
     /**
@@ -1869,7 +1869,7 @@ export class az_monitor_log_analytics_workspace_saved_search {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static delete(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_saved_search_delete_command_builder {
-        return new az_monitor_log_analytics_workspace_saved_search_delete_command_builder("az monitor log-analytics workspace saved-search delete", name, resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_saved_search_delete_command_builder("az monitor log-analytics workspace saved-search delete", 'az_monitor_log_analytics_workspace_saved_search_delete_command_result', name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1887,7 +1887,7 @@ export class az_monitor_log_analytics_workspace_saved_search {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_saved_search_list_command_builder {
-        return new az_monitor_log_analytics_workspace_saved_search_list_command_builder("az monitor log-analytics workspace saved-search list", resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_saved_search_list_command_builder("az monitor log-analytics workspace saved-search list", 'az_monitor_log_analytics_workspace_saved_search_list_command_result', resourceGroup, workspaceName);
     }
 
     /**
@@ -1907,7 +1907,7 @@ export class az_monitor_log_analytics_workspace_saved_search {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static show(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_saved_search_show_command_builder {
-        return new az_monitor_log_analytics_workspace_saved_search_show_command_builder("az monitor log-analytics workspace saved-search show", name, resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_saved_search_show_command_builder("az monitor log-analytics workspace saved-search show", 'az_monitor_log_analytics_workspace_saved_search_show_command_result', name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1936,7 +1936,7 @@ export class az_monitor_log_analytics_workspace_saved_search {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static update(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_saved_search_update_command_builder {
-        return new az_monitor_log_analytics_workspace_saved_search_update_command_builder("az monitor log-analytics workspace saved-search update", name, resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_saved_search_update_command_builder("az monitor log-analytics workspace saved-search update", 'az_monitor_log_analytics_workspace_saved_search_update_command_result', name, resourceGroup, workspaceName);
     }
 }
 
@@ -1957,7 +1957,7 @@ export class az_monitor_log_analytics_workspace_table {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static list(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_table_list_command_builder {
-        return new az_monitor_log_analytics_workspace_table_list_command_builder("az monitor log-analytics workspace table list", resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_table_list_command_builder("az monitor log-analytics workspace table list", 'az_monitor_log_analytics_workspace_table_list_command_result', resourceGroup, workspaceName);
     }
 
     /**
@@ -1977,7 +1977,7 @@ export class az_monitor_log_analytics_workspace_table {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static show(name: string, resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_table_show_command_builder {
-        return new az_monitor_log_analytics_workspace_table_show_command_builder("az monitor log-analytics workspace table show", name, resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_table_show_command_builder("az monitor log-analytics workspace table show", 'az_monitor_log_analytics_workspace_table_show_command_result', name, resourceGroup, workspaceName);
     }
 
     /**
@@ -1998,7 +1998,7 @@ export class az_monitor_log_analytics_workspace_table {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static update(name: string, resourceGroup: string, retentionTime: string, workspaceName: string): az_monitor_log_analytics_workspace_table_update_command_builder {
-        return new az_monitor_log_analytics_workspace_table_update_command_builder("az monitor log-analytics workspace table update", name, resourceGroup, retentionTime, workspaceName);
+        return new az_monitor_log_analytics_workspace_table_update_command_builder("az monitor log-analytics workspace table update", 'az_monitor_log_analytics_workspace_table_update_command_result', name, resourceGroup, retentionTime, workspaceName);
     }
 }
 
@@ -2027,7 +2027,7 @@ export class az_monitor_log_analytics_workspace {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static create(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_create_command_builder {
-        return new az_monitor_log_analytics_workspace_create_command_builder("az monitor log-analytics workspace create", resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_create_command_builder("az monitor log-analytics workspace create", 'az_monitor_log_analytics_workspace_create_command_result', resourceGroup, workspaceName);
     }
 
     /**
@@ -2046,7 +2046,7 @@ export class az_monitor_log_analytics_workspace {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static delete(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_delete_command_builder {
-        return new az_monitor_log_analytics_workspace_delete_command_builder("az monitor log-analytics workspace delete", resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_delete_command_builder("az monitor log-analytics workspace delete", 'az_monitor_log_analytics_workspace_delete_command_result', resourceGroup, workspaceName);
     }
 
     /**
@@ -2063,7 +2063,7 @@ export class az_monitor_log_analytics_workspace {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static get_schema(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_get_schema_command_builder {
-        return new az_monitor_log_analytics_workspace_get_schema_command_builder("az monitor log-analytics workspace get-schema", resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_get_schema_command_builder("az monitor log-analytics workspace get-schema", 'az_monitor_log_analytics_workspace_get_schema_command_result', resourceGroup, workspaceName);
     }
 
     /**
@@ -2080,7 +2080,7 @@ export class az_monitor_log_analytics_workspace {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static get_shared_keys(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_get_shared_keys_command_builder {
-        return new az_monitor_log_analytics_workspace_get_shared_keys_command_builder("az monitor log-analytics workspace get-shared-keys", resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_get_shared_keys_command_builder("az monitor log-analytics workspace get-shared-keys", 'az_monitor_log_analytics_workspace_get_shared_keys_command_result', resourceGroup, workspaceName);
     }
 
     /**
@@ -2094,7 +2094,7 @@ export class az_monitor_log_analytics_workspace {
      * ```
      */
     static list(): az_monitor_log_analytics_workspace_list_command_builder {
-        return new az_monitor_log_analytics_workspace_list_command_builder("az monitor log-analytics workspace list");
+        return new az_monitor_log_analytics_workspace_list_command_builder("az monitor log-analytics workspace list", 'az_monitor_log_analytics_workspace_list_command_result');
     }
 
     /**
@@ -2107,7 +2107,7 @@ export class az_monitor_log_analytics_workspace {
      * ```
      */
     static list_deleted_workspaces(): az_monitor_log_analytics_workspace_list_deleted_workspaces_command_builder {
-        return new az_monitor_log_analytics_workspace_list_deleted_workspaces_command_builder("az monitor log-analytics workspace list-deleted-workspaces");
+        return new az_monitor_log_analytics_workspace_list_deleted_workspaces_command_builder("az monitor log-analytics workspace list-deleted-workspaces", 'az_monitor_log_analytics_workspace_list_deleted_workspaces_command_result');
     }
 
     /**
@@ -2124,7 +2124,7 @@ export class az_monitor_log_analytics_workspace {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static list_management_groups(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_list_management_groups_command_builder {
-        return new az_monitor_log_analytics_workspace_list_management_groups_command_builder("az monitor log-analytics workspace list-management-groups", resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_list_management_groups_command_builder("az monitor log-analytics workspace list-management-groups", 'az_monitor_log_analytics_workspace_list_management_groups_command_result', resourceGroup, workspaceName);
     }
 
     /**
@@ -2141,7 +2141,7 @@ export class az_monitor_log_analytics_workspace {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static list_usages(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_list_usages_command_builder {
-        return new az_monitor_log_analytics_workspace_list_usages_command_builder("az monitor log-analytics workspace list-usages", resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_list_usages_command_builder("az monitor log-analytics workspace list-usages", 'az_monitor_log_analytics_workspace_list_usages_command_result', resourceGroup, workspaceName);
     }
 
     /**
@@ -2158,7 +2158,7 @@ export class az_monitor_log_analytics_workspace {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static recover(workspaceName: string): az_monitor_log_analytics_workspace_recover_command_builder {
-        return new az_monitor_log_analytics_workspace_recover_command_builder("az monitor log-analytics workspace recover", workspaceName);
+        return new az_monitor_log_analytics_workspace_recover_command_builder("az monitor log-analytics workspace recover", 'az_monitor_log_analytics_workspace_recover_command_result', workspaceName);
     }
 
     /**
@@ -2176,7 +2176,7 @@ export class az_monitor_log_analytics_workspace {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static show(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_show_command_builder {
-        return new az_monitor_log_analytics_workspace_show_command_builder("az monitor log-analytics workspace show", resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_show_command_builder("az monitor log-analytics workspace show", 'az_monitor_log_analytics_workspace_show_command_result', resourceGroup, workspaceName);
     }
 
     /**
@@ -2203,7 +2203,7 @@ export class az_monitor_log_analytics_workspace {
      * @param {string} workspaceName Name of the Log Analytics Workspace.
      */
     static update(resourceGroup: string, workspaceName: string): az_monitor_log_analytics_workspace_update_command_builder {
-        return new az_monitor_log_analytics_workspace_update_command_builder("az monitor log-analytics workspace update", resourceGroup, workspaceName);
+        return new az_monitor_log_analytics_workspace_update_command_builder("az monitor log-analytics workspace update", 'az_monitor_log_analytics_workspace_update_command_result', resourceGroup, workspaceName);
     }
 }
 
@@ -2238,7 +2238,7 @@ export class az_monitor_log_profiles {
      * @param {string} name The name of the log profile.
      */
     static create(categories: string, days: string, enabled: boolean, location: string, locations: string, name: string): az_monitor_log_profiles_create_command_builder {
-        return new az_monitor_log_profiles_create_command_builder("az monitor log-profiles create", categories, days, enabled, location, locations, name);
+        return new az_monitor_log_profiles_create_command_builder("az monitor log-profiles create", 'az_monitor_log_profiles_create_command_result', categories, days, enabled, location, locations, name);
     }
 
     /**
@@ -2253,7 +2253,7 @@ export class az_monitor_log_profiles {
      * @param {string} name The name of the log profile.
      */
     static delete(name: string): az_monitor_log_profiles_delete_command_builder {
-        return new az_monitor_log_profiles_delete_command_builder("az monitor log-profiles delete", name);
+        return new az_monitor_log_profiles_delete_command_builder("az monitor log-profiles delete", 'az_monitor_log_profiles_delete_command_result', name);
     }
 
     /**
@@ -2266,7 +2266,7 @@ export class az_monitor_log_profiles {
      * ```
      */
     static list(): az_monitor_log_profiles_list_command_builder {
-        return new az_monitor_log_profiles_list_command_builder("az monitor log-profiles list");
+        return new az_monitor_log_profiles_list_command_builder("az monitor log-profiles list", 'az_monitor_log_profiles_list_command_result');
     }
 
     /**
@@ -2282,7 +2282,7 @@ export class az_monitor_log_profiles {
      * @param {string} name The name of the log profile.
      */
     static show(name: string): az_monitor_log_profiles_show_command_builder {
-        return new az_monitor_log_profiles_show_command_builder("az monitor log-profiles show", name);
+        return new az_monitor_log_profiles_show_command_builder("az monitor log-profiles show", 'az_monitor_log_profiles_show_command_result', name);
     }
 
     /**
@@ -2301,7 +2301,7 @@ export class az_monitor_log_profiles {
      * @param {string} name The name of the log profile.
      */
     static update(name: string): az_monitor_log_profiles_update_command_builder {
-        return new az_monitor_log_profiles_update_command_builder("az monitor log-profiles update", name);
+        return new az_monitor_log_profiles_update_command_builder("az monitor log-profiles update", 'az_monitor_log_profiles_update_command_result', name);
     }
 }
 
@@ -2335,7 +2335,7 @@ export class az_monitor_metrics_alert {
      * @param {string} scopes Space-separated list of scopes the rule applies to. The resources specified in this parameter must be of the same type and exist in the same location.
      */
     static create(condition: string, name: string, resourceGroup: string, scopes: string): az_monitor_metrics_alert_create_command_builder {
-        return new az_monitor_metrics_alert_create_command_builder("az monitor metrics alert create", condition, name, resourceGroup, scopes);
+        return new az_monitor_metrics_alert_create_command_builder("az monitor metrics alert create", 'az_monitor_metrics_alert_create_command_result', condition, name, resourceGroup, scopes);
     }
 
     /**
@@ -2350,7 +2350,7 @@ export class az_monitor_metrics_alert {
      * ```
      */
     static delete(): az_monitor_metrics_alert_delete_command_builder {
-        return new az_monitor_metrics_alert_delete_command_builder("az monitor metrics alert delete");
+        return new az_monitor_metrics_alert_delete_command_builder("az monitor metrics alert delete", 'az_monitor_metrics_alert_delete_command_result');
     }
 
     /**
@@ -2364,7 +2364,7 @@ export class az_monitor_metrics_alert {
      * ```
      */
     static list(): az_monitor_metrics_alert_list_command_builder {
-        return new az_monitor_metrics_alert_list_command_builder("az monitor metrics alert list");
+        return new az_monitor_metrics_alert_list_command_builder("az monitor metrics alert list", 'az_monitor_metrics_alert_list_command_result');
     }
 
     /**
@@ -2380,7 +2380,7 @@ export class az_monitor_metrics_alert {
      * ```
      */
     static show(): az_monitor_metrics_alert_show_command_builder {
-        return new az_monitor_metrics_alert_show_command_builder("az monitor metrics alert show");
+        return new az_monitor_metrics_alert_show_command_builder("az monitor metrics alert show", 'az_monitor_metrics_alert_show_command_result');
     }
 
     /**
@@ -2411,7 +2411,7 @@ export class az_monitor_metrics_alert {
      * ```
      */
     static update(): az_monitor_metrics_alert_update_command_builder {
-        return new az_monitor_metrics_alert_update_command_builder("az monitor metrics alert update");
+        return new az_monitor_metrics_alert_update_command_builder("az monitor metrics alert update", 'az_monitor_metrics_alert_update_command_result');
     }
 }
 
@@ -2446,7 +2446,7 @@ export class az_monitor_metrics {
      * @param {string} resource Name or ID of the target resource.
      */
     static list(resource: string): az_monitor_metrics_list_command_builder {
-        return new az_monitor_metrics_list_command_builder("az monitor metrics list", resource);
+        return new az_monitor_metrics_list_command_builder("az monitor metrics list", 'az_monitor_metrics_list_command_result', resource);
     }
 
     /**
@@ -2466,7 +2466,7 @@ export class az_monitor_metrics {
      * @param {string} resource Name or ID of the target resource.
      */
     static list_definitions(resource: string): az_monitor_metrics_list_definitions_command_builder {
-        return new az_monitor_metrics_list_definitions_command_builder("az monitor metrics list-definitions", resource);
+        return new az_monitor_metrics_list_definitions_command_builder("az monitor metrics list-definitions", 'az_monitor_metrics_list_definitions_command_result', resource);
     }
 }
 
@@ -2486,7 +2486,7 @@ export class az_monitor_private_link_scope_private_endpoint_connection {
      * ```
      */
     static approve(): az_monitor_private_link_scope_private_endpoint_connection_approve_command_builder {
-        return new az_monitor_private_link_scope_private_endpoint_connection_approve_command_builder("az monitor private-link-scope private-endpoint-connection approve");
+        return new az_monitor_private_link_scope_private_endpoint_connection_approve_command_builder("az monitor private-link-scope private-endpoint-connection approve", 'az_monitor_private_link_scope_private_endpoint_connection_approve_command_result');
     }
 
     /**
@@ -2503,7 +2503,7 @@ export class az_monitor_private_link_scope_private_endpoint_connection {
      * ```
      */
     static delete(): az_monitor_private_link_scope_private_endpoint_connection_delete_command_builder {
-        return new az_monitor_private_link_scope_private_endpoint_connection_delete_command_builder("az monitor private-link-scope private-endpoint-connection delete");
+        return new az_monitor_private_link_scope_private_endpoint_connection_delete_command_builder("az monitor private-link-scope private-endpoint-connection delete", 'az_monitor_private_link_scope_private_endpoint_connection_delete_command_result');
     }
 
     /**
@@ -2521,7 +2521,7 @@ export class az_monitor_private_link_scope_private_endpoint_connection {
      * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
      */
     static list(resourceGroup: string, scopeName: string): az_monitor_private_link_scope_private_endpoint_connection_list_command_builder {
-        return new az_monitor_private_link_scope_private_endpoint_connection_list_command_builder("az monitor private-link-scope private-endpoint-connection list", resourceGroup, scopeName);
+        return new az_monitor_private_link_scope_private_endpoint_connection_list_command_builder("az monitor private-link-scope private-endpoint-connection list", 'az_monitor_private_link_scope_private_endpoint_connection_list_command_result', resourceGroup, scopeName);
     }
 
     /**
@@ -2538,7 +2538,7 @@ export class az_monitor_private_link_scope_private_endpoint_connection {
      * ```
      */
     static reject(): az_monitor_private_link_scope_private_endpoint_connection_reject_command_builder {
-        return new az_monitor_private_link_scope_private_endpoint_connection_reject_command_builder("az monitor private-link-scope private-endpoint-connection reject");
+        return new az_monitor_private_link_scope_private_endpoint_connection_reject_command_builder("az monitor private-link-scope private-endpoint-connection reject", 'az_monitor_private_link_scope_private_endpoint_connection_reject_command_result');
     }
 
     /**
@@ -2555,7 +2555,7 @@ export class az_monitor_private_link_scope_private_endpoint_connection {
      * ```
      */
     static show(): az_monitor_private_link_scope_private_endpoint_connection_show_command_builder {
-        return new az_monitor_private_link_scope_private_endpoint_connection_show_command_builder("az monitor private-link-scope private-endpoint-connection show");
+        return new az_monitor_private_link_scope_private_endpoint_connection_show_command_builder("az monitor private-link-scope private-endpoint-connection show", 'az_monitor_private_link_scope_private_endpoint_connection_show_command_result');
     }
 }
 
@@ -2576,7 +2576,7 @@ export class az_monitor_private_link_scope_private_link_resource {
      * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
      */
     static list(resourceGroup: string, scopeName: string): az_monitor_private_link_scope_private_link_resource_list_command_builder {
-        return new az_monitor_private_link_scope_private_link_resource_list_command_builder("az monitor private-link-scope private-link-resource list", resourceGroup, scopeName);
+        return new az_monitor_private_link_scope_private_link_resource_list_command_builder("az monitor private-link-scope private-link-resource list", 'az_monitor_private_link_scope_private_link_resource_list_command_result', resourceGroup, scopeName);
     }
 
     /**
@@ -2596,7 +2596,7 @@ export class az_monitor_private_link_scope_private_link_resource {
      * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
      */
     static show(name: string, resourceGroup: string, scopeName: string): az_monitor_private_link_scope_private_link_resource_show_command_builder {
-        return new az_monitor_private_link_scope_private_link_resource_show_command_builder("az monitor private-link-scope private-link-resource show", name, resourceGroup, scopeName);
+        return new az_monitor_private_link_scope_private_link_resource_show_command_builder("az monitor private-link-scope private-link-resource show", 'az_monitor_private_link_scope_private_link_resource_show_command_result', name, resourceGroup, scopeName);
     }
 }
 
@@ -2620,7 +2620,7 @@ export class az_monitor_private_link_scope_scoped_resource {
      * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
      */
     static create(linkedResource: string, name: string, resourceGroup: string, scopeName: string): az_monitor_private_link_scope_scoped_resource_create_command_builder {
-        return new az_monitor_private_link_scope_scoped_resource_create_command_builder("az monitor private-link-scope scoped-resource create", linkedResource, name, resourceGroup, scopeName);
+        return new az_monitor_private_link_scope_scoped_resource_create_command_builder("az monitor private-link-scope scoped-resource create", 'az_monitor_private_link_scope_scoped_resource_create_command_result', linkedResource, name, resourceGroup, scopeName);
     }
 
     /**
@@ -2640,7 +2640,7 @@ export class az_monitor_private_link_scope_scoped_resource {
      * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
      */
     static delete(name: string, resourceGroup: string, scopeName: string): az_monitor_private_link_scope_scoped_resource_delete_command_builder {
-        return new az_monitor_private_link_scope_scoped_resource_delete_command_builder("az monitor private-link-scope scoped-resource delete", name, resourceGroup, scopeName);
+        return new az_monitor_private_link_scope_scoped_resource_delete_command_builder("az monitor private-link-scope scoped-resource delete", 'az_monitor_private_link_scope_scoped_resource_delete_command_result', name, resourceGroup, scopeName);
     }
 
     /**
@@ -2658,7 +2658,7 @@ export class az_monitor_private_link_scope_scoped_resource {
      * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
      */
     static list(resourceGroup: string, scopeName: string): az_monitor_private_link_scope_scoped_resource_list_command_builder {
-        return new az_monitor_private_link_scope_scoped_resource_list_command_builder("az monitor private-link-scope scoped-resource list", resourceGroup, scopeName);
+        return new az_monitor_private_link_scope_scoped_resource_list_command_builder("az monitor private-link-scope scoped-resource list", 'az_monitor_private_link_scope_scoped_resource_list_command_result', resourceGroup, scopeName);
     }
 
     /**
@@ -2678,7 +2678,7 @@ export class az_monitor_private_link_scope_scoped_resource {
      * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
      */
     static show(name: string, resourceGroup: string, scopeName: string): az_monitor_private_link_scope_scoped_resource_show_command_builder {
-        return new az_monitor_private_link_scope_scoped_resource_show_command_builder("az monitor private-link-scope scoped-resource show", name, resourceGroup, scopeName);
+        return new az_monitor_private_link_scope_scoped_resource_show_command_builder("az monitor private-link-scope scoped-resource show", 'az_monitor_private_link_scope_scoped_resource_show_command_result', name, resourceGroup, scopeName);
     }
 }
 
@@ -2699,7 +2699,7 @@ export class az_monitor_private_link_scope {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_monitor_private_link_scope_create_command_builder {
-        return new az_monitor_private_link_scope_create_command_builder("az monitor private-link-scope create", name, resourceGroup);
+        return new az_monitor_private_link_scope_create_command_builder("az monitor private-link-scope create", 'az_monitor_private_link_scope_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -2717,7 +2717,7 @@ export class az_monitor_private_link_scope {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_monitor_private_link_scope_delete_command_builder {
-        return new az_monitor_private_link_scope_delete_command_builder("az monitor private-link-scope delete", name, resourceGroup);
+        return new az_monitor_private_link_scope_delete_command_builder("az monitor private-link-scope delete", 'az_monitor_private_link_scope_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -2731,7 +2731,7 @@ export class az_monitor_private_link_scope {
      * ```
      */
     static list(): az_monitor_private_link_scope_list_command_builder {
-        return new az_monitor_private_link_scope_list_command_builder("az monitor private-link-scope list");
+        return new az_monitor_private_link_scope_list_command_builder("az monitor private-link-scope list", 'az_monitor_private_link_scope_list_command_result');
     }
 
     /**
@@ -2749,7 +2749,7 @@ export class az_monitor_private_link_scope {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_monitor_private_link_scope_show_command_builder {
-        return new az_monitor_private_link_scope_show_command_builder("az monitor private-link-scope show", name, resourceGroup);
+        return new az_monitor_private_link_scope_show_command_builder("az monitor private-link-scope show", 'az_monitor_private_link_scope_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -2768,7 +2768,7 @@ export class az_monitor_private_link_scope {
      * @param {string} tags Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags.
      */
     static update(name: string, resourceGroup: string, tags: string): az_monitor_private_link_scope_update_command_builder {
-        return new az_monitor_private_link_scope_update_command_builder("az monitor private-link-scope update", name, resourceGroup, tags);
+        return new az_monitor_private_link_scope_update_command_builder("az monitor private-link-scope update", 'az_monitor_private_link_scope_update_command_result', name, resourceGroup, tags);
     }
 }
 
@@ -2790,7 +2790,7 @@ export class az_monitor {
      * @param {string} targetResource Resource ID of the target resource.
      */
     static clone(sourceResource: string, targetResource: string): az_monitor_clone_command_builder {
-        return new az_monitor_clone_command_builder("az monitor clone", sourceResource, targetResource);
+        return new az_monitor_clone_command_builder("az monitor clone", 'az_monitor_clone_command_result', sourceResource, targetResource);
     }
 }
 
@@ -2811,8 +2811,8 @@ export class az_monitor {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_action_group_create_command_builder extends CommandBuilder<az_monitor_action_group_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2866,8 +2866,8 @@ class az_monitor_action_group_create_command_builder extends CommandBuilder<az_m
  * ```
  */
 class az_monitor_action_group_delete_command_builder extends CommandBuilder<az_monitor_action_group_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2910,8 +2910,8 @@ class az_monitor_action_group_delete_command_builder extends CommandBuilder<az_m
  * @param {string} name The name of the receiver to resubscribe.
  */
 class az_monitor_action_group_enable_receiver_command_builder extends CommandBuilder<az_monitor_action_group_enable_receiver_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -2957,8 +2957,8 @@ class az_monitor_action_group_enable_receiver_command_builder extends CommandBui
  * ```
  */
 class az_monitor_action_group_list_command_builder extends CommandBuilder<az_monitor_action_group_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -2993,8 +2993,8 @@ class az_monitor_action_group_list_command_builder extends CommandBuilder<az_mon
  * ```
  */
 class az_monitor_action_group_show_command_builder extends CommandBuilder<az_monitor_action_group_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3048,8 +3048,8 @@ class az_monitor_action_group_show_command_builder extends CommandBuilder<az_mon
  * ```
  */
 class az_monitor_action_group_update_command_builder extends CommandBuilder<az_monitor_action_group_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -3143,8 +3143,8 @@ class az_monitor_action_group_update_command_builder extends CommandBuilder<az_m
  * @param {string} actionGroup The names or the resource ids of the action groups to be added.
  */
 class az_monitor_activity_log_alert_action_group_add_command_builder extends CommandBuilder<az_monitor_activity_log_alert_action_group_add_command_result> {
-    constructor(commandPath: string, actionGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, actionGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.actionGroup(actionGroup)
     }
 
@@ -3212,8 +3212,8 @@ class az_monitor_activity_log_alert_action_group_add_command_builder extends Com
  * @param {string} actionGroup The names or the resource ids of the action groups to be added.
  */
 class az_monitor_activity_log_alert_action_group_remove_command_builder extends CommandBuilder<az_monitor_activity_log_alert_action_group_remove_command_result> {
-    constructor(commandPath: string, actionGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, actionGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.actionGroup(actionGroup)
     }
 
@@ -3264,8 +3264,8 @@ class az_monitor_activity_log_alert_action_group_remove_command_builder extends 
  * @param {string} scope List of scopes to add. Each scope could be a resource ID, a resource group ID or a subscription ID.
  */
 class az_monitor_activity_log_alert_scope_add_command_builder extends CommandBuilder<az_monitor_activity_log_alert_scope_add_command_result> {
-    constructor(commandPath: string, scope: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, scope: string) {
+        super(commandPath, resultDataTypeName);
         this.scope(scope)
     }
 
@@ -3321,8 +3321,8 @@ class az_monitor_activity_log_alert_scope_add_command_builder extends CommandBui
  * @param {string} scope The scopes to remove.
  */
 class az_monitor_activity_log_alert_scope_remove_command_builder extends CommandBuilder<az_monitor_activity_log_alert_scope_remove_command_result> {
-    constructor(commandPath: string, scope: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, scope: string) {
+        super(commandPath, resultDataTypeName);
         this.scope(scope)
     }
 
@@ -3378,8 +3378,8 @@ class az_monitor_activity_log_alert_scope_remove_command_builder extends Command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_activity_log_alert_create_command_builder extends CommandBuilder<az_monitor_activity_log_alert_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -3457,8 +3457,8 @@ class az_monitor_activity_log_alert_create_command_builder extends CommandBuilde
  * ```
  */
 class az_monitor_activity_log_alert_delete_command_builder extends CommandBuilder<az_monitor_activity_log_alert_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3497,8 +3497,8 @@ class az_monitor_activity_log_alert_delete_command_builder extends CommandBuilde
  * ```
  */
 class az_monitor_activity_log_alert_list_command_builder extends CommandBuilder<az_monitor_activity_log_alert_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -3533,8 +3533,8 @@ class az_monitor_activity_log_alert_list_command_builder extends CommandBuilder<
  * ```
  */
 class az_monitor_activity_log_alert_show_command_builder extends CommandBuilder<az_monitor_activity_log_alert_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3588,8 +3588,8 @@ class az_monitor_activity_log_alert_show_command_builder extends CommandBuilder<
  * ```
  */
 class az_monitor_activity_log_alert_update_command_builder extends CommandBuilder<az_monitor_activity_log_alert_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -3687,8 +3687,8 @@ class az_monitor_activity_log_alert_update_command_builder extends CommandBuilde
  * ```
  */
 class az_monitor_activity_log_list_command_builder extends CommandBuilder<az_monitor_activity_log_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Caller to query for, such as an e-mail address or service principal ID. */
@@ -3785,8 +3785,8 @@ class az_monitor_activity_log_list_command_builder extends CommandBuilder<az_mon
  * ```
  */
 class az_monitor_activity_log_list_categories_command_builder extends CommandBuilder<az_monitor_activity_log_list_categories_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -3822,8 +3822,8 @@ class az_monitor_activity_log_list_categories_command_builder extends CommandBui
  * @param {string} target Name or ID of the target resource.
  */
 class az_monitor_alert_create_command_builder extends CommandBuilder<az_monitor_alert_create_command_result> {
-    constructor(commandPath: string, condition: string, name: string, target: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, condition: string, name: string, target: string) {
+        super(commandPath, resultDataTypeName);
         this.condition(condition)
         this.name(name)
         this.target(target)
@@ -3926,8 +3926,8 @@ class az_monitor_alert_create_command_builder extends CommandBuilder<az_monitor_
  * ```
  */
 class az_monitor_alert_delete_command_builder extends CommandBuilder<az_monitor_alert_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3968,8 +3968,8 @@ class az_monitor_alert_delete_command_builder extends CommandBuilder<az_monitor_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_alert_list_command_builder extends CommandBuilder<az_monitor_alert_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -4006,8 +4006,8 @@ class az_monitor_alert_list_command_builder extends CommandBuilder<az_monitor_al
  * @param {string} ruleName Name of the alert rule.
  */
 class az_monitor_alert_list_incidents_command_builder extends CommandBuilder<az_monitor_alert_list_incidents_command_result> {
-    constructor(commandPath: string, resourceGroup: string, ruleName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, ruleName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.ruleName(ruleName)
     }
@@ -4044,8 +4044,8 @@ class az_monitor_alert_list_incidents_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_monitor_alert_show_command_builder extends CommandBuilder<az_monitor_alert_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4092,8 +4092,8 @@ class az_monitor_alert_show_command_builder extends CommandBuilder<az_monitor_al
  * ```
  */
 class az_monitor_alert_show_incident_command_builder extends CommandBuilder<az_monitor_alert_show_incident_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4159,8 +4159,8 @@ class az_monitor_alert_show_incident_command_builder extends CommandBuilder<az_m
  * ```
  */
 class az_monitor_alert_update_command_builder extends CommandBuilder<az_monitor_alert_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -4334,8 +4334,8 @@ class az_monitor_alert_update_command_builder extends CommandBuilder<az_monitor_
  * @param {string} timezone Timezone name.
  */
 class az_monitor_autoscale_profile_create_command_builder extends CommandBuilder<az_monitor_autoscale_profile_create_command_result> {
-    constructor(commandPath: string, autoscaleName: string, count: string, name: string, resourceGroup: string, timezone: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, autoscaleName: string, count: string, name: string, resourceGroup: string, timezone: string) {
+        super(commandPath, resultDataTypeName);
         this.autoscaleName(autoscaleName)
         this.count(count)
         this.name(name)
@@ -4432,8 +4432,8 @@ class az_monitor_autoscale_profile_create_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_profile_delete_command_builder extends CommandBuilder<az_monitor_autoscale_profile_delete_command_result> {
-    constructor(commandPath: string, autoscaleName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, autoscaleName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.autoscaleName(autoscaleName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4479,8 +4479,8 @@ class az_monitor_autoscale_profile_delete_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_profile_list_command_builder extends CommandBuilder<az_monitor_autoscale_profile_list_command_result> {
-    constructor(commandPath: string, autoscaleName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, autoscaleName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.autoscaleName(autoscaleName)
         this.resourceGroup(resourceGroup)
     }
@@ -4521,8 +4521,8 @@ class az_monitor_autoscale_profile_list_command_builder extends CommandBuilder<a
  * ```
  */
 class az_monitor_autoscale_profile_list_timezones_command_builder extends CommandBuilder<az_monitor_autoscale_profile_list_timezones_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Filter results based on UTC hour offset. */
@@ -4561,8 +4561,8 @@ class az_monitor_autoscale_profile_list_timezones_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_profile_show_command_builder extends CommandBuilder<az_monitor_autoscale_profile_show_command_result> {
-    constructor(commandPath: string, autoscaleName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, autoscaleName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.autoscaleName(autoscaleName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4618,8 +4618,8 @@ class az_monitor_autoscale_profile_show_command_builder extends CommandBuilder<a
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_rule_copy_command_builder extends CommandBuilder<az_monitor_autoscale_rule_copy_command_result> {
-    constructor(commandPath: string, autoscaleName: string, destSchedule: string, index: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, autoscaleName: string, destSchedule: string, index: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.autoscaleName(autoscaleName)
         this.destSchedule(destSchedule)
         this.index(index)
@@ -4687,8 +4687,8 @@ class az_monitor_autoscale_rule_copy_command_builder extends CommandBuilder<az_m
  * @param {string} scale The direction and amount to scale.
  */
 class az_monitor_autoscale_rule_create_command_builder extends CommandBuilder<az_monitor_autoscale_rule_create_command_result> {
-    constructor(commandPath: string, autoscaleName: string, condition: string, scale: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, autoscaleName: string, condition: string, scale: string) {
+        super(commandPath, resultDataTypeName);
         this.autoscaleName(autoscaleName)
         this.condition(condition)
         this.scale(scale)
@@ -4784,8 +4784,8 @@ class az_monitor_autoscale_rule_create_command_builder extends CommandBuilder<az
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_rule_delete_command_builder extends CommandBuilder<az_monitor_autoscale_rule_delete_command_result> {
-    constructor(commandPath: string, autoscaleName: string, index: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, autoscaleName: string, index: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.autoscaleName(autoscaleName)
         this.index(index)
         this.resourceGroup(resourceGroup)
@@ -4838,8 +4838,8 @@ class az_monitor_autoscale_rule_delete_command_builder extends CommandBuilder<az
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_rule_list_command_builder extends CommandBuilder<az_monitor_autoscale_rule_list_command_result> {
-    constructor(commandPath: string, autoscaleName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, autoscaleName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.autoscaleName(autoscaleName)
         this.resourceGroup(resourceGroup)
     }
@@ -4891,8 +4891,8 @@ class az_monitor_autoscale_rule_list_command_builder extends CommandBuilder<az_m
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_settings_create_command_builder extends CommandBuilder<az_monitor_autoscale_settings_create_command_result> {
-    constructor(commandPath: string, name: string, parameters: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, parameters: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.parameters(parameters)
         this.resourceGroup(resourceGroup)
@@ -4935,8 +4935,8 @@ class az_monitor_autoscale_settings_create_command_builder extends CommandBuilde
  * ```
  */
 class az_monitor_autoscale_settings_delete_command_builder extends CommandBuilder<az_monitor_autoscale_settings_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4973,8 +4973,8 @@ class az_monitor_autoscale_settings_delete_command_builder extends CommandBuilde
  * ```
  */
 class az_monitor_autoscale_settings_get_parameters_template_command_builder extends CommandBuilder<az_monitor_autoscale_settings_get_parameters_template_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -4997,8 +4997,8 @@ class az_monitor_autoscale_settings_get_parameters_template_command_builder exte
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_settings_list_command_builder extends CommandBuilder<az_monitor_autoscale_settings_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -5034,8 +5034,8 @@ class az_monitor_autoscale_settings_list_command_builder extends CommandBuilder<
  * ```
  */
 class az_monitor_autoscale_settings_show_command_builder extends CommandBuilder<az_monitor_autoscale_settings_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5087,8 +5087,8 @@ class az_monitor_autoscale_settings_show_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_settings_update_command_builder extends CommandBuilder<az_monitor_autoscale_settings_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -5163,8 +5163,8 @@ class az_monitor_autoscale_settings_update_command_builder extends CommandBuilde
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_autoscale_create_command_builder extends CommandBuilder<az_monitor_autoscale_create_command_result> {
-    constructor(commandPath: string, count: string, resource: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, count: string, resource: string) {
+        super(commandPath, resultDataTypeName);
         this.count(count)
         this.resource(resource)
     }
@@ -5278,8 +5278,8 @@ class az_monitor_autoscale_create_command_builder extends CommandBuilder<az_moni
  * ```
  */
 class az_monitor_autoscale_delete_command_builder extends CommandBuilder<az_monitor_autoscale_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5320,8 +5320,8 @@ class az_monitor_autoscale_delete_command_builder extends CommandBuilder<az_moni
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_autoscale_list_command_builder extends CommandBuilder<az_monitor_autoscale_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -5357,8 +5357,8 @@ class az_monitor_autoscale_list_command_builder extends CommandBuilder<az_monito
  * ```
  */
 class az_monitor_autoscale_show_command_builder extends CommandBuilder<az_monitor_autoscale_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5417,8 +5417,8 @@ class az_monitor_autoscale_show_command_builder extends CommandBuilder<az_monito
  * ```
  */
 class az_monitor_autoscale_update_command_builder extends CommandBuilder<az_monitor_autoscale_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -5541,8 +5541,8 @@ class az_monitor_autoscale_update_command_builder extends CommandBuilder<az_moni
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_diagnostic_settings_categories_list_command_builder extends CommandBuilder<az_monitor_diagnostic_settings_categories_list_command_result> {
-    constructor(commandPath: string, resource: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resource: string) {
+        super(commandPath, resultDataTypeName);
         this.resource(resource)
     }
 
@@ -5608,8 +5608,8 @@ class az_monitor_diagnostic_settings_categories_list_command_builder extends Com
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_diagnostic_settings_categories_show_command_builder extends CommandBuilder<az_monitor_diagnostic_settings_categories_show_command_result> {
-    constructor(commandPath: string, name: string, resource: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resource: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resource(resource)
     }
@@ -5684,8 +5684,8 @@ class az_monitor_diagnostic_settings_categories_show_command_builder extends Com
  * @param {string} name The name of the diagnostic setting.
  */
 class az_monitor_diagnostic_settings_subscription_create_command_builder extends CommandBuilder<az_monitor_diagnostic_settings_subscription_create_command_result> {
-    constructor(commandPath: string, location: string, logs: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, logs: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.logs(logs)
         this.name(name)
@@ -5759,8 +5759,8 @@ class az_monitor_diagnostic_settings_subscription_create_command_builder extends
  * @param {string} name The name of the diagnostic setting.
  */
 class az_monitor_diagnostic_settings_subscription_delete_command_builder extends CommandBuilder<az_monitor_diagnostic_settings_subscription_delete_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -5793,8 +5793,8 @@ class az_monitor_diagnostic_settings_subscription_delete_command_builder extends
  * ```
  */
 class az_monitor_diagnostic_settings_subscription_list_command_builder extends CommandBuilder<az_monitor_diagnostic_settings_subscription_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -5823,8 +5823,8 @@ class az_monitor_diagnostic_settings_subscription_list_command_builder extends C
  * @param {string} name The name of the diagnostic setting.
  */
 class az_monitor_diagnostic_settings_subscription_show_command_builder extends CommandBuilder<az_monitor_diagnostic_settings_subscription_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -5869,8 +5869,8 @@ class az_monitor_diagnostic_settings_subscription_show_command_builder extends C
  * @param {string} name The name of the diagnostic setting.
  */
 class az_monitor_diagnostic_settings_subscription_update_command_builder extends CommandBuilder<az_monitor_diagnostic_settings_subscription_update_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -5972,8 +5972,8 @@ class az_monitor_diagnostic_settings_subscription_update_command_builder extends
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_diagnostic_settings_create_command_builder extends CommandBuilder<az_monitor_diagnostic_settings_create_command_result> {
-    constructor(commandPath: string, name: string, resource: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resource: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resource(resource)
     }
@@ -6081,8 +6081,8 @@ class az_monitor_diagnostic_settings_create_command_builder extends CommandBuild
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_diagnostic_settings_delete_command_builder extends CommandBuilder<az_monitor_diagnostic_settings_delete_command_result> {
-    constructor(commandPath: string, name: string, resource: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resource: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resource(resource)
     }
@@ -6147,8 +6147,8 @@ class az_monitor_diagnostic_settings_delete_command_builder extends CommandBuild
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_diagnostic_settings_list_command_builder extends CommandBuilder<az_monitor_diagnostic_settings_list_command_result> {
-    constructor(commandPath: string, resource: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resource: string) {
+        super(commandPath, resultDataTypeName);
         this.resource(resource)
     }
 
@@ -6214,8 +6214,8 @@ class az_monitor_diagnostic_settings_list_command_builder extends CommandBuilder
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_diagnostic_settings_show_command_builder extends CommandBuilder<az_monitor_diagnostic_settings_show_command_result> {
-    constructor(commandPath: string, name: string, resource: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resource: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resource(resource)
     }
@@ -6291,8 +6291,8 @@ class az_monitor_diagnostic_settings_show_command_builder extends CommandBuilder
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_diagnostic_settings_update_command_builder extends CommandBuilder<az_monitor_diagnostic_settings_update_command_result> {
-    constructor(commandPath: string, name: string, resource: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resource: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resource(resource)
     }
@@ -6385,8 +6385,8 @@ class az_monitor_diagnostic_settings_update_command_builder extends CommandBuild
  * @param {string} skuCapacity The capacity of the SKU. It must be in the range of 1000-2000 per day and must be in multiples of 100. If you want to increase the limit, please contact LAIngestionRate@microsoft.com. It can be decreased only after 31 days.
  */
 class az_monitor_log_analytics_cluster_create_command_builder extends CommandBuilder<az_monitor_log_analytics_cluster_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, skuCapacity: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, skuCapacity: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.skuCapacity(skuCapacity)
@@ -6463,8 +6463,8 @@ class az_monitor_log_analytics_cluster_create_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_log_analytics_cluster_delete_command_builder extends CommandBuilder<az_monitor_log_analytics_cluster_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -6511,8 +6511,8 @@ class az_monitor_log_analytics_cluster_delete_command_builder extends CommandBui
  * ```
  */
 class az_monitor_log_analytics_cluster_list_command_builder extends CommandBuilder<az_monitor_log_analytics_cluster_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -6549,8 +6549,8 @@ class az_monitor_log_analytics_cluster_list_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_log_analytics_cluster_show_command_builder extends CommandBuilder<az_monitor_log_analytics_cluster_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -6599,8 +6599,8 @@ class az_monitor_log_analytics_cluster_show_command_builder extends CommandBuild
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_log_analytics_cluster_update_command_builder extends CommandBuilder<az_monitor_log_analytics_cluster_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -6675,8 +6675,8 @@ class az_monitor_log_analytics_cluster_update_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_log_analytics_cluster_wait_command_builder extends CommandBuilder<az_monitor_log_analytics_cluster_wait_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -6763,8 +6763,8 @@ class az_monitor_log_analytics_cluster_wait_command_builder extends CommandBuild
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_data_export_create_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_data_export_create_command_result> {
-    constructor(commandPath: string, destination: string, name: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, destination: string, name: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.destination(destination)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -6837,8 +6837,8 @@ class az_monitor_log_analytics_workspace_data_export_create_command_builder exte
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_data_export_delete_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_data_export_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -6890,8 +6890,8 @@ class az_monitor_log_analytics_workspace_data_export_delete_command_builder exte
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_data_export_list_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_data_export_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
     }
@@ -6938,8 +6938,8 @@ class az_monitor_log_analytics_workspace_data_export_list_command_builder extend
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_data_export_show_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_data_export_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -7000,8 +7000,8 @@ class az_monitor_log_analytics_workspace_data_export_show_command_builder extend
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_data_export_update_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_data_export_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -7099,8 +7099,8 @@ class az_monitor_log_analytics_workspace_data_export_update_command_builder exte
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_service_create_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_linked_service_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -7167,8 +7167,8 @@ class az_monitor_log_analytics_workspace_linked_service_create_command_builder e
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_service_delete_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_linked_service_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -7226,8 +7226,8 @@ class az_monitor_log_analytics_workspace_linked_service_delete_command_builder e
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_service_list_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_linked_service_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
     }
@@ -7274,8 +7274,8 @@ class az_monitor_log_analytics_workspace_linked_service_list_command_builder ext
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_service_show_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_linked_service_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -7335,8 +7335,8 @@ class az_monitor_log_analytics_workspace_linked_service_show_command_builder ext
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_service_update_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_linked_service_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -7432,8 +7432,8 @@ class az_monitor_log_analytics_workspace_linked_service_update_command_builder e
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_service_wait_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_linked_service_wait_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -7524,8 +7524,8 @@ class az_monitor_log_analytics_workspace_linked_service_wait_command_builder ext
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_storage_add_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_linked_storage_add_command_result> {
-    constructor(commandPath: string, resourceGroup: string, storageAccounts: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, storageAccounts: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.storageAccounts(storageAccounts)
         this.type(type)
@@ -7580,8 +7580,8 @@ class az_monitor_log_analytics_workspace_linked_storage_add_command_builder exte
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_storage_create_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_linked_storage_create_command_result> {
-    constructor(commandPath: string, resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.type(type)
         this.workspaceName(workspaceName)
@@ -7635,8 +7635,8 @@ class az_monitor_log_analytics_workspace_linked_storage_create_command_builder e
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_storage_delete_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_linked_storage_delete_command_result> {
-    constructor(commandPath: string, resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.type(type)
         this.workspaceName(workspaceName)
@@ -7688,8 +7688,8 @@ class az_monitor_log_analytics_workspace_linked_storage_delete_command_builder e
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_storage_list_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_linked_storage_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
     }
@@ -7737,8 +7737,8 @@ class az_monitor_log_analytics_workspace_linked_storage_list_command_builder ext
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_storage_remove_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_linked_storage_remove_command_result> {
-    constructor(commandPath: string, resourceGroup: string, storageAccounts: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, storageAccounts: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.storageAccounts(storageAccounts)
         this.type(type)
@@ -7793,8 +7793,8 @@ class az_monitor_log_analytics_workspace_linked_storage_remove_command_builder e
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_linked_storage_show_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_linked_storage_show_command_result> {
-    constructor(commandPath: string, resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, type: 'AzureWatson' | 'CustomLogs', workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.type(type)
         this.workspaceName(workspaceName)
@@ -7847,8 +7847,8 @@ class az_monitor_log_analytics_workspace_linked_storage_show_command_builder ext
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_pack_disable_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_pack_disable_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -7895,8 +7895,8 @@ class az_monitor_log_analytics_workspace_pack_disable_command_builder extends Co
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_pack_enable_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_pack_enable_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -7942,8 +7942,8 @@ class az_monitor_log_analytics_workspace_pack_enable_command_builder extends Com
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_pack_list_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_pack_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
     }
@@ -7998,8 +7998,8 @@ class az_monitor_log_analytics_workspace_pack_list_command_builder extends Comma
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_saved_search_create_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_saved_search_create_command_result> {
-    constructor(commandPath: string, category: string, displayName: string, name: string, resourceGroup: string, savedQuery: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, category: string, displayName: string, name: string, resourceGroup: string, savedQuery: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.category(category)
         this.displayName(displayName)
         this.name(name)
@@ -8086,8 +8086,8 @@ class az_monitor_log_analytics_workspace_saved_search_create_command_builder ext
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_saved_search_delete_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_saved_search_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -8139,8 +8139,8 @@ class az_monitor_log_analytics_workspace_saved_search_delete_command_builder ext
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_saved_search_list_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_saved_search_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
     }
@@ -8187,8 +8187,8 @@ class az_monitor_log_analytics_workspace_saved_search_list_command_builder exten
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_saved_search_show_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_saved_search_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -8251,8 +8251,8 @@ class az_monitor_log_analytics_workspace_saved_search_show_command_builder exten
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_saved_search_update_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_saved_search_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -8358,8 +8358,8 @@ class az_monitor_log_analytics_workspace_saved_search_update_command_builder ext
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_table_list_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_table_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
     }
@@ -8406,8 +8406,8 @@ class az_monitor_log_analytics_workspace_table_list_command_builder extends Comm
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_table_show_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_table_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
@@ -8462,8 +8462,8 @@ class az_monitor_log_analytics_workspace_table_show_command_builder extends Comm
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_table_update_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_table_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, retentionTime: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, retentionTime: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.retentionTime(retentionTime)
@@ -8524,8 +8524,8 @@ class az_monitor_log_analytics_workspace_table_update_command_builder extends Co
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_create_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_create_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
     }
@@ -8619,8 +8619,8 @@ class az_monitor_log_analytics_workspace_create_command_builder extends CommandB
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_delete_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_delete_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
     }
@@ -8670,8 +8670,8 @@ class az_monitor_log_analytics_workspace_delete_command_builder extends CommandB
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_get_schema_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_get_schema_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
     }
@@ -8709,8 +8709,8 @@ class az_monitor_log_analytics_workspace_get_schema_command_builder extends Comm
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_get_shared_keys_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_get_shared_keys_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
     }
@@ -8745,8 +8745,8 @@ class az_monitor_log_analytics_workspace_get_shared_keys_command_builder extends
  * ```
  */
 class az_monitor_log_analytics_workspace_list_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -8778,8 +8778,8 @@ class az_monitor_log_analytics_workspace_list_command_builder extends CommandBui
  * ```
  */
 class az_monitor_log_analytics_workspace_list_deleted_workspaces_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_list_deleted_workspaces_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
@@ -8809,8 +8809,8 @@ class az_monitor_log_analytics_workspace_list_deleted_workspaces_command_builder
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_list_management_groups_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_list_management_groups_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
     }
@@ -8848,8 +8848,8 @@ class az_monitor_log_analytics_workspace_list_management_groups_command_builder 
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_list_usages_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_list_usages_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
     }
@@ -8887,8 +8887,8 @@ class az_monitor_log_analytics_workspace_list_usages_command_builder extends Com
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_recover_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_recover_command_result> {
-    constructor(commandPath: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.workspaceName(workspaceName)
     }
 
@@ -8932,8 +8932,8 @@ class az_monitor_log_analytics_workspace_recover_command_builder extends Command
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_show_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_show_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
     }
@@ -8987,8 +8987,8 @@ class az_monitor_log_analytics_workspace_show_command_builder extends CommandBui
  * @param {string} workspaceName Name of the Log Analytics Workspace.
  */
 class az_monitor_log_analytics_workspace_update_command_builder extends CommandBuilder<az_monitor_log_analytics_workspace_update_command_result> {
-    constructor(commandPath: string, resourceGroup: string, workspaceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, workspaceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.workspaceName(workspaceName)
     }
@@ -9097,8 +9097,8 @@ class az_monitor_log_analytics_workspace_update_command_builder extends CommandB
  * @param {string} name The name of the log profile.
  */
 class az_monitor_log_profiles_create_command_builder extends CommandBuilder<az_monitor_log_profiles_create_command_result> {
-    constructor(commandPath: string, categories: string, days: string, enabled: boolean, location: string, locations: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, categories: string, days: string, enabled: boolean, location: string, locations: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.categories(categories)
         this.days(days)
         this.enabled(enabled)
@@ -9180,8 +9180,8 @@ class az_monitor_log_profiles_create_command_builder extends CommandBuilder<az_m
  * @param {string} name The name of the log profile.
  */
 class az_monitor_log_profiles_delete_command_builder extends CommandBuilder<az_monitor_log_profiles_delete_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -9208,8 +9208,8 @@ class az_monitor_log_profiles_delete_command_builder extends CommandBuilder<az_m
  * ```
  */
 class az_monitor_log_profiles_list_command_builder extends CommandBuilder<az_monitor_log_profiles_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -9238,8 +9238,8 @@ class az_monitor_log_profiles_list_command_builder extends CommandBuilder<az_mon
  * @param {string} name The name of the log profile.
  */
 class az_monitor_log_profiles_show_command_builder extends CommandBuilder<az_monitor_log_profiles_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -9278,8 +9278,8 @@ class az_monitor_log_profiles_show_command_builder extends CommandBuilder<az_mon
  * @param {string} name The name of the log profile.
  */
 class az_monitor_log_profiles_update_command_builder extends CommandBuilder<az_monitor_log_profiles_update_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -9348,8 +9348,8 @@ class az_monitor_log_profiles_update_command_builder extends CommandBuilder<az_m
  * @param {string} scopes Space-separated list of scopes the rule applies to. The resources specified in this parameter must be of the same type and exist in the same location.
  */
 class az_monitor_metrics_alert_create_command_builder extends CommandBuilder<az_monitor_metrics_alert_create_command_result> {
-    constructor(commandPath: string, condition: string, name: string, resourceGroup: string, scopes: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, condition: string, name: string, resourceGroup: string, scopes: string) {
+        super(commandPath, resultDataTypeName);
         this.condition(condition)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -9459,8 +9459,8 @@ class az_monitor_metrics_alert_create_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_monitor_metrics_alert_delete_command_builder extends CommandBuilder<az_monitor_metrics_alert_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -9499,8 +9499,8 @@ class az_monitor_metrics_alert_delete_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_monitor_metrics_alert_list_command_builder extends CommandBuilder<az_monitor_metrics_alert_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -9535,8 +9535,8 @@ class az_monitor_metrics_alert_list_command_builder extends CommandBuilder<az_mo
  * ```
  */
 class az_monitor_metrics_alert_show_command_builder extends CommandBuilder<az_monitor_metrics_alert_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -9598,8 +9598,8 @@ class az_monitor_metrics_alert_show_command_builder extends CommandBuilder<az_mo
  * ```
  */
 class az_monitor_metrics_alert_update_command_builder extends CommandBuilder<az_monitor_metrics_alert_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -9752,8 +9752,8 @@ class az_monitor_metrics_alert_update_command_builder extends CommandBuilder<az_
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_metrics_list_command_builder extends CommandBuilder<az_monitor_metrics_list_command_result> {
-    constructor(commandPath: string, resource: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resource: string) {
+        super(commandPath, resultDataTypeName);
         this.resource(resource)
     }
 
@@ -9889,8 +9889,8 @@ class az_monitor_metrics_list_command_builder extends CommandBuilder<az_monitor_
  * @param {string} resource Name or ID of the target resource.
  */
 class az_monitor_metrics_list_definitions_command_builder extends CommandBuilder<az_monitor_metrics_list_definitions_command_result> {
-    constructor(commandPath: string, resource: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resource: string) {
+        super(commandPath, resultDataTypeName);
         this.resource(resource)
     }
 
@@ -9951,8 +9951,8 @@ class az_monitor_metrics_list_definitions_command_builder extends CommandBuilder
  * ```
  */
 class az_monitor_private_link_scope_private_endpoint_connection_approve_command_builder extends CommandBuilder<az_monitor_private_link_scope_private_endpoint_connection_approve_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Comments for approve operation. */
@@ -10006,8 +10006,8 @@ class az_monitor_private_link_scope_private_endpoint_connection_approve_command_
  * ```
  */
 class az_monitor_private_link_scope_private_endpoint_connection_delete_command_builder extends CommandBuilder<az_monitor_private_link_scope_private_endpoint_connection_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The ID of the private endpoint connection associated with the private link scope. You can get it using `az monitor private-link-scope show`. */
@@ -10062,8 +10062,8 @@ class az_monitor_private_link_scope_private_endpoint_connection_delete_command_b
  * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
  */
 class az_monitor_private_link_scope_private_endpoint_connection_list_command_builder extends CommandBuilder<az_monitor_private_link_scope_private_endpoint_connection_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, scopeName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, scopeName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.scopeName(scopeName)
     }
@@ -10107,8 +10107,8 @@ class az_monitor_private_link_scope_private_endpoint_connection_list_command_bui
  * ```
  */
 class az_monitor_private_link_scope_private_endpoint_connection_reject_command_builder extends CommandBuilder<az_monitor_private_link_scope_private_endpoint_connection_reject_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Comments for reject operation. */
@@ -10162,8 +10162,8 @@ class az_monitor_private_link_scope_private_endpoint_connection_reject_command_b
  * ```
  */
 class az_monitor_private_link_scope_private_endpoint_connection_show_command_builder extends CommandBuilder<az_monitor_private_link_scope_private_endpoint_connection_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The ID of the private endpoint connection associated with the private link scope. You can get it using `az monitor private-link-scope show`. */
@@ -10218,8 +10218,8 @@ class az_monitor_private_link_scope_private_endpoint_connection_show_command_bui
  * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
  */
 class az_monitor_private_link_scope_private_link_resource_list_command_builder extends CommandBuilder<az_monitor_private_link_scope_private_link_resource_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, scopeName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, scopeName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.scopeName(scopeName)
     }
@@ -10266,8 +10266,8 @@ class az_monitor_private_link_scope_private_link_resource_list_command_builder e
  * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
  */
 class az_monitor_private_link_scope_private_link_resource_show_command_builder extends CommandBuilder<az_monitor_private_link_scope_private_link_resource_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, scopeName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, scopeName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.scopeName(scopeName)
@@ -10322,8 +10322,8 @@ class az_monitor_private_link_scope_private_link_resource_show_command_builder e
  * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
  */
 class az_monitor_private_link_scope_scoped_resource_create_command_builder extends CommandBuilder<az_monitor_private_link_scope_scoped_resource_create_command_result> {
-    constructor(commandPath: string, linkedResource: string, name: string, resourceGroup: string, scopeName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, linkedResource: string, name: string, resourceGroup: string, scopeName: string) {
+        super(commandPath, resultDataTypeName);
         this.linkedResource(linkedResource)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -10378,8 +10378,8 @@ class az_monitor_private_link_scope_scoped_resource_create_command_builder exten
  * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
  */
 class az_monitor_private_link_scope_scoped_resource_delete_command_builder extends CommandBuilder<az_monitor_private_link_scope_scoped_resource_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, scopeName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, scopeName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.scopeName(scopeName)
@@ -10431,8 +10431,8 @@ class az_monitor_private_link_scope_scoped_resource_delete_command_builder exten
  * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
  */
 class az_monitor_private_link_scope_scoped_resource_list_command_builder extends CommandBuilder<az_monitor_private_link_scope_scoped_resource_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, scopeName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, scopeName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.scopeName(scopeName)
     }
@@ -10479,8 +10479,8 @@ class az_monitor_private_link_scope_scoped_resource_list_command_builder extends
  * @param {string} scopeName Name of the Azure Monitor Private Link Scope.
  */
 class az_monitor_private_link_scope_scoped_resource_show_command_builder extends CommandBuilder<az_monitor_private_link_scope_scoped_resource_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, scopeName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, scopeName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.scopeName(scopeName)
@@ -10532,8 +10532,8 @@ class az_monitor_private_link_scope_scoped_resource_show_command_builder extends
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_private_link_scope_create_command_builder extends CommandBuilder<az_monitor_private_link_scope_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -10578,8 +10578,8 @@ class az_monitor_private_link_scope_create_command_builder extends CommandBuilde
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_private_link_scope_delete_command_builder extends CommandBuilder<az_monitor_private_link_scope_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -10620,8 +10620,8 @@ class az_monitor_private_link_scope_delete_command_builder extends CommandBuilde
  * ```
  */
 class az_monitor_private_link_scope_list_command_builder extends CommandBuilder<az_monitor_private_link_scope_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -10658,8 +10658,8 @@ class az_monitor_private_link_scope_list_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_monitor_private_link_scope_show_command_builder extends CommandBuilder<az_monitor_private_link_scope_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -10705,8 +10705,8 @@ class az_monitor_private_link_scope_show_command_builder extends CommandBuilder<
  * @param {string} tags Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags.
  */
 class az_monitor_private_link_scope_update_command_builder extends CommandBuilder<az_monitor_private_link_scope_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, tags: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, tags: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.tags(tags)
@@ -10753,8 +10753,8 @@ class az_monitor_private_link_scope_update_command_builder extends CommandBuilde
  * @param {string} targetResource Resource ID of the target resource.
  */
 class az_monitor_clone_command_builder extends CommandBuilder<az_monitor_clone_command_result> {
-    constructor(commandPath: string, sourceResource: string, targetResource: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, sourceResource: string, targetResource: string) {
+        super(commandPath, resultDataTypeName);
         this.sourceResource(sourceResource)
         this.targetResource(targetResource)
     }

@@ -160,7 +160,8 @@ const generateCommand = (
 ): MethodDeclarationStructure => {
   const commandBuilderClassName = `${command.uid}_command_builder`;
   const commandPath = `"${command.name}"`;
-  let returnedCommandBuilder = `return new ${commandBuilderClassName}(${commandPath});`;
+  const commandResultName = `${command.uid}_command_result`;
+  let returnedCommandBuilder = `return new ${commandBuilderClassName}(${commandPath}, '${commandResultName}');`;
   if (command.requiredParameters?.length > 0) {
     const params = command.requiredParameters
       .map((p) => {
@@ -168,7 +169,7 @@ const generateCommand = (
       })
       .join(", ");
 
-    returnedCommandBuilder = `return new ${commandBuilderClassName}(${commandPath}, ${params});`;
+    returnedCommandBuilder = `return new ${commandBuilderClassName}(${commandPath}, '${commandResultName}', ${params});`;
   }
 
   return {
@@ -254,12 +255,17 @@ const generateCommandBuilderClass = (
           {
             kind: StructureKind.Parameter,
             name: "commandPath",
-            type: "string", // any because we dont have response data types yet
+            type: "string",
+          },
+          {
+            kind: StructureKind.Parameter,
+            name: "resultDataTypeName",
+            type: "string",
           },
           ...(node.requiredParameters?.map(generateParameters) || []),
         ],
         statements: [
-          "super(commandPath);",
+          "super(commandPath, resultDataTypeName);",
           ...(node.requiredParameters?.map((param) => {
             const paramName = _.camelCase(
               parameterNameToUseableName(param.name)

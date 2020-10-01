@@ -18,7 +18,7 @@ export class az_advisor_configuration {
      * ```
      */
     static list(): az_advisor_configuration_list_command_builder {
-        return new az_advisor_configuration_list_command_builder("az advisor configuration list");
+        return new az_advisor_configuration_list_command_builder("az advisor configuration list", 'az_advisor_configuration_list_command_result');
     }
 
     /**
@@ -32,7 +32,7 @@ export class az_advisor_configuration {
      * ```
      */
     static show(): az_advisor_configuration_show_command_builder {
-        return new az_advisor_configuration_show_command_builder("az advisor configuration show");
+        return new az_advisor_configuration_show_command_builder("az advisor configuration show", 'az_advisor_configuration_show_command_result');
     }
 
     /**
@@ -52,7 +52,7 @@ export class az_advisor_configuration {
      * ```
      */
     static update(): az_advisor_configuration_update_command_builder {
-        return new az_advisor_configuration_update_command_builder("az advisor configuration update");
+        return new az_advisor_configuration_update_command_builder("az advisor configuration update", 'az_advisor_configuration_update_command_result');
     }
 }
 
@@ -71,7 +71,7 @@ export class az_advisor_recommendation {
      * ```
      */
     static disable(): az_advisor_recommendation_disable_command_builder {
-        return new az_advisor_recommendation_disable_command_builder("az advisor recommendation disable");
+        return new az_advisor_recommendation_disable_command_builder("az advisor recommendation disable", 'az_advisor_recommendation_disable_command_result');
     }
 
     /**
@@ -86,7 +86,7 @@ export class az_advisor_recommendation {
      * ```
      */
     static enable(): az_advisor_recommendation_enable_command_builder {
-        return new az_advisor_recommendation_enable_command_builder("az advisor recommendation enable");
+        return new az_advisor_recommendation_enable_command_builder("az advisor recommendation enable", 'az_advisor_recommendation_enable_command_result');
     }
 
     /**
@@ -103,7 +103,7 @@ export class az_advisor_recommendation {
      * ```
      */
     static list(): az_advisor_recommendation_list_command_builder {
-        return new az_advisor_recommendation_list_command_builder("az advisor recommendation list");
+        return new az_advisor_recommendation_list_command_builder("az advisor recommendation list", 'az_advisor_recommendation_list_command_result');
     }
 }
 
@@ -121,8 +121,8 @@ export class az_advisor {
  * ```
  */
 class az_advisor_configuration_list_command_builder extends CommandBuilder<az_advisor_configuration_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -149,8 +149,8 @@ class az_advisor_configuration_list_command_builder extends CommandBuilder<az_ad
  * ```
  */
 class az_advisor_configuration_show_command_builder extends CommandBuilder<az_advisor_configuration_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -189,8 +189,8 @@ class az_advisor_configuration_show_command_builder extends CommandBuilder<az_ad
  * ```
  */
 class az_advisor_configuration_update_command_builder extends CommandBuilder<az_advisor_configuration_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -261,8 +261,8 @@ class az_advisor_configuration_update_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_advisor_recommendation_disable_command_builder extends CommandBuilder<az_advisor_recommendation_disable_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Number of days to disable. If not specified, the recommendation is disabled forever. */
@@ -308,8 +308,8 @@ class az_advisor_recommendation_disable_command_builder extends CommandBuilder<a
  * ```
  */
 class az_advisor_recommendation_enable_command_builder extends CommandBuilder<az_advisor_recommendation_enable_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). If provided, no other "Resource Id" arguments should be specified. */
@@ -351,8 +351,8 @@ class az_advisor_recommendation_enable_command_builder extends CommandBuilder<az
  * ```
  */
 class az_advisor_recommendation_list_command_builder extends CommandBuilder<az_advisor_recommendation_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of recommendation category. */

@@ -24,7 +24,7 @@ export class az_ppg {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_ppg_create_command_builder {
-        return new az_ppg_create_command_builder("az ppg create", name, resourceGroup);
+        return new az_ppg_create_command_builder("az ppg create", 'az_ppg_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -41,7 +41,7 @@ export class az_ppg {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_ppg_delete_command_builder {
-        return new az_ppg_delete_command_builder("az ppg delete", name, resourceGroup);
+        return new az_ppg_delete_command_builder("az ppg delete", 'az_ppg_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -55,7 +55,7 @@ export class az_ppg {
      * ```
      */
     static list(): az_ppg_list_command_builder {
-        return new az_ppg_list_command_builder("az ppg list");
+        return new az_ppg_list_command_builder("az ppg list", 'az_ppg_list_command_result');
     }
 
     /**
@@ -74,7 +74,7 @@ export class az_ppg {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_ppg_show_command_builder {
-        return new az_ppg_show_command_builder("az ppg show", name, resourceGroup);
+        return new az_ppg_show_command_builder("az ppg show", 'az_ppg_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -96,7 +96,7 @@ export class az_ppg {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, resourceGroup: string): az_ppg_update_command_builder {
-        return new az_ppg_update_command_builder("az ppg update", name, resourceGroup);
+        return new az_ppg_update_command_builder("az ppg update", 'az_ppg_update_command_result', name, resourceGroup);
     }
 }
 
@@ -117,8 +117,8 @@ export class az_ppg {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ppg_create_command_builder extends CommandBuilder<az_ppg_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -174,8 +174,8 @@ class az_ppg_create_command_builder extends CommandBuilder<az_ppg_create_command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ppg_delete_command_builder extends CommandBuilder<az_ppg_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -210,8 +210,8 @@ class az_ppg_delete_command_builder extends CommandBuilder<az_ppg_delete_command
  * ```
  */
 class az_ppg_list_command_builder extends CommandBuilder<az_ppg_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -249,8 +249,8 @@ class az_ppg_list_command_builder extends CommandBuilder<az_ppg_list_command_res
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ppg_show_command_builder extends CommandBuilder<az_ppg_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -305,8 +305,8 @@ class az_ppg_show_command_builder extends CommandBuilder<az_ppg_show_command_res
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ppg_update_command_builder extends CommandBuilder<az_ppg_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }

@@ -18,7 +18,7 @@ export class az_cloud {
      * ```
      */
     static list(): az_cloud_list_command_builder {
-        return new az_cloud_list_command_builder("az cloud list");
+        return new az_cloud_list_command_builder("az cloud list", 'az_cloud_list_command_result');
     }
 
     /**
@@ -31,7 +31,7 @@ export class az_cloud {
      * ```
      */
     static list_profiles(): az_cloud_list_profiles_command_builder {
-        return new az_cloud_list_profiles_command_builder("az cloud list-profiles");
+        return new az_cloud_list_profiles_command_builder("az cloud list-profiles", 'az_cloud_list_profiles_command_result');
     }
 
     /**
@@ -62,7 +62,7 @@ export class az_cloud {
      * @param {string} name Name of a registered cloud.
      */
     static register(name: string): az_cloud_register_command_builder {
-        return new az_cloud_register_command_builder("az cloud register", name);
+        return new az_cloud_register_command_builder("az cloud register", 'az_cloud_register_command_result', name);
     }
 
     /**
@@ -77,7 +77,7 @@ export class az_cloud {
      * @param {string} name Name of a registered cloud.
      */
     static set(name: string): az_cloud_set_command_builder {
-        return new az_cloud_set_command_builder("az cloud set", name);
+        return new az_cloud_set_command_builder("az cloud set", 'az_cloud_set_command_result', name);
     }
 
     /**
@@ -90,7 +90,7 @@ export class az_cloud {
      * ```
      */
     static show(): az_cloud_show_command_builder {
-        return new az_cloud_show_command_builder("az cloud show");
+        return new az_cloud_show_command_builder("az cloud show", 'az_cloud_show_command_result');
     }
 
     /**
@@ -104,7 +104,7 @@ export class az_cloud {
      * @param {string} name Name of a registered cloud.
      */
     static unregister(name: string): az_cloud_unregister_command_builder {
-        return new az_cloud_unregister_command_builder("az cloud unregister", name);
+        return new az_cloud_unregister_command_builder("az cloud unregister", 'az_cloud_unregister_command_result', name);
     }
 
     /**
@@ -133,7 +133,7 @@ export class az_cloud {
      * ```
      */
     static update(): az_cloud_update_command_builder {
-        return new az_cloud_update_command_builder("az cloud update");
+        return new az_cloud_update_command_builder("az cloud update", 'az_cloud_update_command_result');
     }
 }
 
@@ -146,8 +146,8 @@ export class az_cloud {
  * ```
  */
 class az_cloud_list_command_builder extends CommandBuilder<az_cloud_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -167,8 +167,8 @@ class az_cloud_list_command_builder extends CommandBuilder<az_cloud_list_command
  * ```
  */
 class az_cloud_list_profiles_command_builder extends CommandBuilder<az_cloud_list_profiles_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of a registered cloud. */
@@ -212,8 +212,8 @@ class az_cloud_list_profiles_command_builder extends CommandBuilder<az_cloud_lis
  * @param {string} name Name of a registered cloud.
  */
 class az_cloud_register_command_builder extends CommandBuilder<az_cloud_register_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -338,8 +338,8 @@ class az_cloud_register_command_builder extends CommandBuilder<az_cloud_register
  * @param {string} name Name of a registered cloud.
  */
 class az_cloud_set_command_builder extends CommandBuilder<az_cloud_set_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -366,8 +366,8 @@ class az_cloud_set_command_builder extends CommandBuilder<az_cloud_set_command_r
  * ```
  */
 class az_cloud_show_command_builder extends CommandBuilder<az_cloud_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of a registered cloud. */
@@ -394,8 +394,8 @@ class az_cloud_show_command_builder extends CommandBuilder<az_cloud_show_command
  * @param {string} name Name of a registered cloud.
  */
 class az_cloud_unregister_command_builder extends CommandBuilder<az_cloud_unregister_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -432,8 +432,8 @@ class az_cloud_unregister_command_builder extends CommandBuilder<az_cloud_unregi
  * ```
  */
 class az_cloud_update_command_builder extends CommandBuilder<az_cloud_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** JSON encoded cloud configuration. Use @{file} to load from a file. */

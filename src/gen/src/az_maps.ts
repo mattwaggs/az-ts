@@ -24,7 +24,7 @@ export class az_maps_account_keys {
      * @param {string} resourceGroup Resource group name.
      */
     static list(name: string, resourceGroup: string): az_maps_account_keys_list_command_builder {
-        return new az_maps_account_keys_list_command_builder("az maps account keys list", name, resourceGroup);
+        return new az_maps_account_keys_list_command_builder("az maps account keys list", 'az_maps_account_keys_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -43,7 +43,7 @@ export class az_maps_account_keys {
      * @param {string} resourceGroup Resource group name.
      */
     static renew(key: 'primary' | 'secondary', name: string, resourceGroup: string): az_maps_account_keys_renew_command_builder {
-        return new az_maps_account_keys_renew_command_builder("az maps account keys renew", key, name, resourceGroup);
+        return new az_maps_account_keys_renew_command_builder("az maps account keys renew", 'az_maps_account_keys_renew_command_result', key, name, resourceGroup);
     }
 }
 
@@ -66,7 +66,7 @@ export class az_maps_account {
      * @param {string} resourceGroup Resource group name.
      */
     static create(name: string, resourceGroup: string): az_maps_account_create_command_builder {
-        return new az_maps_account_create_command_builder("az maps account create", name, resourceGroup);
+        return new az_maps_account_create_command_builder("az maps account create", 'az_maps_account_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -81,7 +81,7 @@ export class az_maps_account {
      * ```
      */
     static delete(): az_maps_account_delete_command_builder {
-        return new az_maps_account_delete_command_builder("az maps account delete");
+        return new az_maps_account_delete_command_builder("az maps account delete", 'az_maps_account_delete_command_result');
     }
 
     /**
@@ -95,7 +95,7 @@ export class az_maps_account {
      * ```
      */
     static list(): az_maps_account_list_command_builder {
-        return new az_maps_account_list_command_builder("az maps account list");
+        return new az_maps_account_list_command_builder("az maps account list", 'az_maps_account_list_command_result');
     }
 
     /**
@@ -111,7 +111,7 @@ export class az_maps_account {
      * ```
      */
     static show(): az_maps_account_show_command_builder {
-        return new az_maps_account_show_command_builder("az maps account show");
+        return new az_maps_account_show_command_builder("az maps account show", 'az_maps_account_show_command_result');
     }
 
     /**
@@ -132,7 +132,7 @@ export class az_maps_account {
      * ```
      */
     static update(): az_maps_account_update_command_builder {
-        return new az_maps_account_update_command_builder("az maps account update");
+        return new az_maps_account_update_command_builder("az maps account update", 'az_maps_account_update_command_result');
     }
 }
 
@@ -155,8 +155,8 @@ export class az_maps {
  * @param {string} resourceGroup Resource group name.
  */
 class az_maps_account_keys_list_command_builder extends CommandBuilder<az_maps_account_keys_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -202,8 +202,8 @@ class az_maps_account_keys_list_command_builder extends CommandBuilder<az_maps_a
  * @param {string} resourceGroup Resource group name.
  */
 class az_maps_account_keys_renew_command_builder extends CommandBuilder<az_maps_account_keys_renew_command_result> {
-    constructor(commandPath: string, key: 'primary' | 'secondary', name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, key: 'primary' | 'secondary', name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.key(key)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -251,8 +251,8 @@ class az_maps_account_keys_renew_command_builder extends CommandBuilder<az_maps_
  * @param {string} resourceGroup Resource group name.
  */
 class az_maps_account_create_command_builder extends CommandBuilder<az_maps_account_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -306,8 +306,8 @@ class az_maps_account_create_command_builder extends CommandBuilder<az_maps_acco
  * ```
  */
 class az_maps_account_delete_command_builder extends CommandBuilder<az_maps_account_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -346,8 +346,8 @@ class az_maps_account_delete_command_builder extends CommandBuilder<az_maps_acco
  * ```
  */
 class az_maps_account_list_command_builder extends CommandBuilder<az_maps_account_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -382,8 +382,8 @@ class az_maps_account_list_command_builder extends CommandBuilder<az_maps_accoun
  * ```
  */
 class az_maps_account_show_command_builder extends CommandBuilder<az_maps_account_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -435,8 +435,8 @@ class az_maps_account_show_command_builder extends CommandBuilder<az_maps_accoun
  * ```
  */
 class az_maps_account_update_command_builder extends CommandBuilder<az_maps_account_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */

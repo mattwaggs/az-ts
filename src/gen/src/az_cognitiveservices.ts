@@ -33,7 +33,7 @@ export class az_cognitiveservices_account_identity {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static assign(name: string, resourceGroup: string): az_cognitiveservices_account_identity_assign_command_builder {
-        return new az_cognitiveservices_account_identity_assign_command_builder("az cognitiveservices account identity assign", name, resourceGroup);
+        return new az_cognitiveservices_account_identity_assign_command_builder("az cognitiveservices account identity assign", 'az_cognitiveservices_account_identity_assign_command_result', name, resourceGroup);
     }
 
     /**
@@ -50,7 +50,7 @@ export class az_cognitiveservices_account_identity {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static remove(name: string, resourceGroup: string): az_cognitiveservices_account_identity_remove_command_builder {
-        return new az_cognitiveservices_account_identity_remove_command_builder("az cognitiveservices account identity remove", name, resourceGroup);
+        return new az_cognitiveservices_account_identity_remove_command_builder("az cognitiveservices account identity remove", 'az_cognitiveservices_account_identity_remove_command_result', name, resourceGroup);
     }
 
     /**
@@ -68,7 +68,7 @@ export class az_cognitiveservices_account_identity {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_cognitiveservices_account_identity_show_command_builder {
-        return new az_cognitiveservices_account_identity_show_command_builder("az cognitiveservices account identity show", name, resourceGroup);
+        return new az_cognitiveservices_account_identity_show_command_builder("az cognitiveservices account identity show", 'az_cognitiveservices_account_identity_show_command_result', name, resourceGroup);
     }
 }
 
@@ -89,7 +89,7 @@ export class az_cognitiveservices_account_keys {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, resourceGroup: string): az_cognitiveservices_account_keys_list_command_builder {
-        return new az_cognitiveservices_account_keys_list_command_builder("az cognitiveservices account keys list", name, resourceGroup);
+        return new az_cognitiveservices_account_keys_list_command_builder("az cognitiveservices account keys list", 'az_cognitiveservices_account_keys_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -108,7 +108,7 @@ export class az_cognitiveservices_account_keys {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static regenerate(keyName: 'key1' | 'key2', name: string, resourceGroup: string): az_cognitiveservices_account_keys_regenerate_command_builder {
-        return new az_cognitiveservices_account_keys_regenerate_command_builder("az cognitiveservices account keys regenerate", keyName, name, resourceGroup);
+        return new az_cognitiveservices_account_keys_regenerate_command_builder("az cognitiveservices account keys regenerate", 'az_cognitiveservices_account_keys_regenerate_command_result', keyName, name, resourceGroup);
     }
 }
 
@@ -131,7 +131,7 @@ export class az_cognitiveservices_account_network_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static add(name: string, resourceGroup: string): az_cognitiveservices_account_network_rule_add_command_builder {
-        return new az_cognitiveservices_account_network_rule_add_command_builder("az cognitiveservices account network-rule add", name, resourceGroup);
+        return new az_cognitiveservices_account_network_rule_add_command_builder("az cognitiveservices account network-rule add", 'az_cognitiveservices_account_network_rule_add_command_result', name, resourceGroup);
     }
 
     /**
@@ -149,7 +149,7 @@ export class az_cognitiveservices_account_network_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, resourceGroup: string): az_cognitiveservices_account_network_rule_list_command_builder {
-        return new az_cognitiveservices_account_network_rule_list_command_builder("az cognitiveservices account network-rule list", name, resourceGroup);
+        return new az_cognitiveservices_account_network_rule_list_command_builder("az cognitiveservices account network-rule list", 'az_cognitiveservices_account_network_rule_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -169,7 +169,7 @@ export class az_cognitiveservices_account_network_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static remove(name: string, resourceGroup: string): az_cognitiveservices_account_network_rule_remove_command_builder {
-        return new az_cognitiveservices_account_network_rule_remove_command_builder("az cognitiveservices account network-rule remove", name, resourceGroup);
+        return new az_cognitiveservices_account_network_rule_remove_command_builder("az cognitiveservices account network-rule remove", 'az_cognitiveservices_account_network_rule_remove_command_result', name, resourceGroup);
     }
 }
 
@@ -202,7 +202,7 @@ export class az_cognitiveservices_account {
      * @param {string} sku Name of the Sku of cognitive services account.
      */
     static create(kind: string, location: string, name: string, resourceGroup: string, sku: string): az_cognitiveservices_account_create_command_builder {
-        return new az_cognitiveservices_account_create_command_builder("az cognitiveservices account create", kind, location, name, resourceGroup, sku);
+        return new az_cognitiveservices_account_create_command_builder("az cognitiveservices account create", 'az_cognitiveservices_account_create_command_result', kind, location, name, resourceGroup, sku);
     }
 
     /**
@@ -219,7 +219,7 @@ export class az_cognitiveservices_account {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_cognitiveservices_account_delete_command_builder {
-        return new az_cognitiveservices_account_delete_command_builder("az cognitiveservices account delete", name, resourceGroup);
+        return new az_cognitiveservices_account_delete_command_builder("az cognitiveservices account delete", 'az_cognitiveservices_account_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -233,7 +233,7 @@ export class az_cognitiveservices_account {
      * ```
      */
     static list(): az_cognitiveservices_account_list_command_builder {
-        return new az_cognitiveservices_account_list_command_builder("az cognitiveservices account list");
+        return new az_cognitiveservices_account_list_command_builder("az cognitiveservices account list", 'az_cognitiveservices_account_list_command_result');
     }
 
     /**
@@ -245,7 +245,7 @@ export class az_cognitiveservices_account {
      * ```
      */
     static list_kinds(): az_cognitiveservices_account_list_kinds_command_builder {
-        return new az_cognitiveservices_account_list_kinds_command_builder("az cognitiveservices account list-kinds");
+        return new az_cognitiveservices_account_list_kinds_command_builder("az cognitiveservices account list-kinds", 'az_cognitiveservices_account_list_kinds_command_result');
     }
 
     /**
@@ -261,7 +261,7 @@ export class az_cognitiveservices_account {
      * ```
      */
     static list_skus(): az_cognitiveservices_account_list_skus_command_builder {
-        return new az_cognitiveservices_account_list_skus_command_builder("az cognitiveservices account list-skus");
+        return new az_cognitiveservices_account_list_skus_command_builder("az cognitiveservices account list-skus", 'az_cognitiveservices_account_list_skus_command_result');
     }
 
     /**
@@ -278,7 +278,7 @@ export class az_cognitiveservices_account {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list_usage(name: string, resourceGroup: string): az_cognitiveservices_account_list_usage_command_builder {
-        return new az_cognitiveservices_account_list_usage_command_builder("az cognitiveservices account list-usage", name, resourceGroup);
+        return new az_cognitiveservices_account_list_usage_command_builder("az cognitiveservices account list-usage", 'az_cognitiveservices_account_list_usage_command_result', name, resourceGroup);
     }
 
     /**
@@ -296,7 +296,7 @@ export class az_cognitiveservices_account {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_cognitiveservices_account_show_command_builder {
-        return new az_cognitiveservices_account_show_command_builder("az cognitiveservices account show", name, resourceGroup);
+        return new az_cognitiveservices_account_show_command_builder("az cognitiveservices account show", 'az_cognitiveservices_account_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -319,7 +319,7 @@ export class az_cognitiveservices_account {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, resourceGroup: string): az_cognitiveservices_account_update_command_builder {
-        return new az_cognitiveservices_account_update_command_builder("az cognitiveservices account update", name, resourceGroup);
+        return new az_cognitiveservices_account_update_command_builder("az cognitiveservices account update", 'az_cognitiveservices_account_update_command_result', name, resourceGroup);
     }
 }
 
@@ -336,7 +336,7 @@ export class az_cognitiveservices {
      * ```
      */
     static list(): az_cognitiveservices_list_command_builder {
-        return new az_cognitiveservices_list_command_builder("az cognitiveservices list");
+        return new az_cognitiveservices_list_command_builder("az cognitiveservices list", 'az_cognitiveservices_list_command_result');
     }
 }
 
@@ -354,8 +354,8 @@ export class az_cognitiveservices {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cognitiveservices_account_identity_assign_command_builder extends CommandBuilder<az_cognitiveservices_account_identity_assign_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -393,8 +393,8 @@ class az_cognitiveservices_account_identity_assign_command_builder extends Comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cognitiveservices_account_identity_remove_command_builder extends CommandBuilder<az_cognitiveservices_account_identity_remove_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -433,8 +433,8 @@ class az_cognitiveservices_account_identity_remove_command_builder extends Comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cognitiveservices_account_identity_show_command_builder extends CommandBuilder<az_cognitiveservices_account_identity_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -479,8 +479,8 @@ class az_cognitiveservices_account_identity_show_command_builder extends Command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cognitiveservices_account_keys_list_command_builder extends CommandBuilder<az_cognitiveservices_account_keys_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -526,8 +526,8 @@ class az_cognitiveservices_account_keys_list_command_builder extends CommandBuil
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cognitiveservices_account_keys_regenerate_command_builder extends CommandBuilder<az_cognitiveservices_account_keys_regenerate_command_result> {
-    constructor(commandPath: string, keyName: 'key1' | 'key2', name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, keyName: 'key1' | 'key2', name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.keyName(keyName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -575,8 +575,8 @@ class az_cognitiveservices_account_keys_regenerate_command_builder extends Comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cognitiveservices_account_network_rule_add_command_builder extends CommandBuilder<az_cognitiveservices_account_network_rule_add_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -633,8 +633,8 @@ class az_cognitiveservices_account_network_rule_add_command_builder extends Comm
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cognitiveservices_account_network_rule_list_command_builder extends CommandBuilder<az_cognitiveservices_account_network_rule_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -681,8 +681,8 @@ class az_cognitiveservices_account_network_rule_list_command_builder extends Com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cognitiveservices_account_network_rule_remove_command_builder extends CommandBuilder<az_cognitiveservices_account_network_rule_remove_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -751,8 +751,8 @@ class az_cognitiveservices_account_network_rule_remove_command_builder extends C
  * @param {string} sku Name of the Sku of cognitive services account.
  */
 class az_cognitiveservices_account_create_command_builder extends CommandBuilder<az_cognitiveservices_account_create_command_result> {
-    constructor(commandPath: string, kind: string, location: string, name: string, resourceGroup: string, sku: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, kind: string, location: string, name: string, resourceGroup: string, sku: string) {
+        super(commandPath, resultDataTypeName);
         this.kind(kind)
         this.location(location)
         this.name(name)
@@ -853,8 +853,8 @@ class az_cognitiveservices_account_create_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cognitiveservices_account_delete_command_builder extends CommandBuilder<az_cognitiveservices_account_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -889,8 +889,8 @@ class az_cognitiveservices_account_delete_command_builder extends CommandBuilder
  * ```
  */
 class az_cognitiveservices_account_list_command_builder extends CommandBuilder<az_cognitiveservices_account_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -921,8 +921,8 @@ class az_cognitiveservices_account_list_command_builder extends CommandBuilder<a
  * ```
  */
 class az_cognitiveservices_account_list_kinds_command_builder extends CommandBuilder<az_cognitiveservices_account_list_kinds_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -945,8 +945,8 @@ class az_cognitiveservices_account_list_kinds_command_builder extends CommandBui
  * ```
  */
 class az_cognitiveservices_account_list_skus_command_builder extends CommandBuilder<az_cognitiveservices_account_list_skus_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The API name of cognitive services account. */
@@ -994,8 +994,8 @@ class az_cognitiveservices_account_list_skus_command_builder extends CommandBuil
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cognitiveservices_account_list_usage_command_builder extends CommandBuilder<az_cognitiveservices_account_list_usage_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1034,8 +1034,8 @@ class az_cognitiveservices_account_list_usage_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cognitiveservices_account_show_command_builder extends CommandBuilder<az_cognitiveservices_account_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1085,8 +1085,8 @@ class az_cognitiveservices_account_show_command_builder extends CommandBuilder<a
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_cognitiveservices_account_update_command_builder extends CommandBuilder<az_cognitiveservices_account_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1157,8 +1157,8 @@ class az_cognitiveservices_account_update_command_builder extends CommandBuilder
  * ```
  */
 class az_cognitiveservices_list_command_builder extends CommandBuilder<az_cognitiveservices_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */

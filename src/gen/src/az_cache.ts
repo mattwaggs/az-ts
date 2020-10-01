@@ -22,7 +22,7 @@ export class az_cache {
      * @param {string} resourceType The resource type.
      */
     static delete(name: string, resourceGroup: string, resourceType: string): az_cache_delete_command_builder {
-        return new az_cache_delete_command_builder("az cache delete", name, resourceGroup, resourceType);
+        return new az_cache_delete_command_builder("az cache delete", 'az_cache_delete_command_result', name, resourceGroup, resourceType);
     }
 
     /**
@@ -35,7 +35,7 @@ export class az_cache {
      * ```
      */
     static list(): az_cache_list_command_builder {
-        return new az_cache_list_command_builder("az cache list");
+        return new az_cache_list_command_builder("az cache list", 'az_cache_list_command_result');
     }
 
     /**
@@ -47,7 +47,7 @@ export class az_cache {
      * ```
      */
     static purge(): az_cache_purge_command_builder {
-        return new az_cache_purge_command_builder("az cache purge");
+        return new az_cache_purge_command_builder("az cache purge", 'az_cache_purge_command_result');
     }
 
     /**
@@ -67,7 +67,7 @@ export class az_cache {
      * @param {string} resourceType The resource type.
      */
     static show(name: string, resourceGroup: string, resourceType: string): az_cache_show_command_builder {
-        return new az_cache_show_command_builder("az cache show", name, resourceGroup, resourceType);
+        return new az_cache_show_command_builder("az cache show", 'az_cache_show_command_result', name, resourceGroup, resourceType);
     }
 }
 
@@ -87,8 +87,8 @@ export class az_cache {
  * @param {string} resourceType The resource type.
  */
 class az_cache_delete_command_builder extends CommandBuilder<az_cache_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, resourceType: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, resourceType: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.resourceType(resourceType)
@@ -129,8 +129,8 @@ class az_cache_delete_command_builder extends CommandBuilder<az_cache_delete_com
  * ```
  */
 class az_cache_list_command_builder extends CommandBuilder<az_cache_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -155,8 +155,8 @@ class az_cache_list_command_builder extends CommandBuilder<az_cache_list_command
  * ```
  */
 class az_cache_purge_command_builder extends CommandBuilder<az_cache_purge_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -183,8 +183,8 @@ class az_cache_purge_command_builder extends CommandBuilder<az_cache_purge_comma
  * @param {string} resourceType The resource type.
  */
 class az_cache_show_command_builder extends CommandBuilder<az_cache_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, resourceType: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, resourceType: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.resourceType(resourceType)

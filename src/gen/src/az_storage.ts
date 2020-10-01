@@ -244,7 +244,7 @@ export class az_storage_account_blob_service_properties {
      * @param {string} accountName The storage account name.
      */
     static show(accountName: string): az_storage_account_blob_service_properties_show_command_builder {
-        return new az_storage_account_blob_service_properties_show_command_builder("az storage account blob-service-properties show", accountName);
+        return new az_storage_account_blob_service_properties_show_command_builder("az storage account blob-service-properties show", 'az_storage_account_blob_service_properties_show_command_result', accountName);
     }
 
     /**
@@ -272,7 +272,7 @@ export class az_storage_account_blob_service_properties {
      * @param {string} accountName The storage account name.
      */
     static update(accountName: string): az_storage_account_blob_service_properties_update_command_builder {
-        return new az_storage_account_blob_service_properties_update_command_builder("az storage account blob-service-properties update", accountName);
+        return new az_storage_account_blob_service_properties_update_command_builder("az storage account blob-service-properties update", 'az_storage_account_blob_service_properties_update_command_result', accountName);
     }
 }
 
@@ -295,7 +295,7 @@ export class az_storage_account_encryption_scope {
      * @param {string} name The name of the encryption scope within the specified storage account.
      */
     static create(accountName: string, name: string): az_storage_account_encryption_scope_create_command_builder {
-        return new az_storage_account_encryption_scope_create_command_builder("az storage account encryption-scope create", accountName, name);
+        return new az_storage_account_encryption_scope_create_command_builder("az storage account encryption-scope create", 'az_storage_account_encryption_scope_create_command_result', accountName, name);
     }
 
     /**
@@ -312,7 +312,7 @@ export class az_storage_account_encryption_scope {
      * @param {string} accountName The storage account name.
      */
     static list(accountName: string): az_storage_account_encryption_scope_list_command_builder {
-        return new az_storage_account_encryption_scope_list_command_builder("az storage account encryption-scope list", accountName);
+        return new az_storage_account_encryption_scope_list_command_builder("az storage account encryption-scope list", 'az_storage_account_encryption_scope_list_command_result', accountName);
     }
 
     /**
@@ -331,7 +331,7 @@ export class az_storage_account_encryption_scope {
      * @param {string} name The name of the encryption scope within the specified storage account.
      */
     static show(accountName: string, name: string): az_storage_account_encryption_scope_show_command_builder {
-        return new az_storage_account_encryption_scope_show_command_builder("az storage account encryption-scope show", accountName, name);
+        return new az_storage_account_encryption_scope_show_command_builder("az storage account encryption-scope show", 'az_storage_account_encryption_scope_show_command_result', accountName, name);
     }
 
     /**
@@ -352,7 +352,7 @@ export class az_storage_account_encryption_scope {
      * @param {string} name The name of the encryption scope within the specified storage account.
      */
     static update(accountName: string, name: string): az_storage_account_encryption_scope_update_command_builder {
-        return new az_storage_account_encryption_scope_update_command_builder("az storage account encryption-scope update", accountName, name);
+        return new az_storage_account_encryption_scope_update_command_builder("az storage account encryption-scope update", 'az_storage_account_encryption_scope_update_command_result', accountName, name);
     }
 }
 
@@ -372,7 +372,7 @@ export class az_storage_account_file_service_properties {
      * @param {string} accountName The storage account name.
      */
     static show(accountName: string): az_storage_account_file_service_properties_show_command_builder {
-        return new az_storage_account_file_service_properties_show_command_builder("az storage account file-service-properties show", accountName);
+        return new az_storage_account_file_service_properties_show_command_builder("az storage account file-service-properties show", 'az_storage_account_file_service_properties_show_command_result', accountName);
     }
 
     /**
@@ -390,7 +390,7 @@ export class az_storage_account_file_service_properties {
      * @param {string} accountName The storage account name.
      */
     static update(accountName: string): az_storage_account_file_service_properties_update_command_builder {
-        return new az_storage_account_file_service_properties_update_command_builder("az storage account file-service-properties update", accountName);
+        return new az_storage_account_file_service_properties_update_command_builder("az storage account file-service-properties update", 'az_storage_account_file_service_properties_update_command_result', accountName);
     }
 }
 
@@ -411,7 +411,7 @@ export class az_storage_account_keys {
      * @param {string} accountName The storage account name.
      */
     static list(accountName: string): az_storage_account_keys_list_command_builder {
-        return new az_storage_account_keys_list_command_builder("az storage account keys list", accountName);
+        return new az_storage_account_keys_list_command_builder("az storage account keys list", 'az_storage_account_keys_list_command_result', accountName);
     }
 
     /**
@@ -430,7 +430,7 @@ export class az_storage_account_keys {
      * @param {'primary' | 'secondary'} key The key options to regenerate.
      */
     static renew(accountName: string, key: 'primary' | 'secondary'): az_storage_account_keys_renew_command_builder {
-        return new az_storage_account_keys_renew_command_builder("az storage account keys renew", accountName, key);
+        return new az_storage_account_keys_renew_command_builder("az storage account keys renew", 'az_storage_account_keys_renew_command_result', accountName, key);
     }
 }
 
@@ -452,7 +452,7 @@ export class az_storage_account_management_policy {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(accountName: string, policy: string, resourceGroup: string): az_storage_account_management_policy_create_command_builder {
-        return new az_storage_account_management_policy_create_command_builder("az storage account management-policy create", accountName, policy, resourceGroup);
+        return new az_storage_account_management_policy_create_command_builder("az storage account management-policy create", 'az_storage_account_management_policy_create_command_result', accountName, policy, resourceGroup);
     }
 
     /**
@@ -469,7 +469,7 @@ export class az_storage_account_management_policy {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(accountName: string, resourceGroup: string): az_storage_account_management_policy_delete_command_builder {
-        return new az_storage_account_management_policy_delete_command_builder("az storage account management-policy delete", accountName, resourceGroup);
+        return new az_storage_account_management_policy_delete_command_builder("az storage account management-policy delete", 'az_storage_account_management_policy_delete_command_result', accountName, resourceGroup);
     }
 
     /**
@@ -487,7 +487,7 @@ export class az_storage_account_management_policy {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(accountName: string, resourceGroup: string): az_storage_account_management_policy_show_command_builder {
-        return new az_storage_account_management_policy_show_command_builder("az storage account management-policy show", accountName, resourceGroup);
+        return new az_storage_account_management_policy_show_command_builder("az storage account management-policy show", 'az_storage_account_management_policy_show_command_result', accountName, resourceGroup);
     }
 
     /**
@@ -508,7 +508,7 @@ export class az_storage_account_management_policy {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(accountName: string, resourceGroup: string): az_storage_account_management_policy_update_command_builder {
-        return new az_storage_account_management_policy_update_command_builder("az storage account management-policy update", accountName, resourceGroup);
+        return new az_storage_account_management_policy_update_command_builder("az storage account management-policy update", 'az_storage_account_management_policy_update_command_result', accountName, resourceGroup);
     }
 }
 
@@ -531,7 +531,7 @@ export class az_storage_account_network_rule {
      * @param {string} accountName The storage account name.
      */
     static add(accountName: string): az_storage_account_network_rule_add_command_builder {
-        return new az_storage_account_network_rule_add_command_builder("az storage account network-rule add", accountName);
+        return new az_storage_account_network_rule_add_command_builder("az storage account network-rule add", 'az_storage_account_network_rule_add_command_result', accountName);
     }
 
     /**
@@ -548,7 +548,7 @@ export class az_storage_account_network_rule {
      * @param {string} accountName The storage account name.
      */
     static list(accountName: string): az_storage_account_network_rule_list_command_builder {
-        return new az_storage_account_network_rule_list_command_builder("az storage account network-rule list", accountName);
+        return new az_storage_account_network_rule_list_command_builder("az storage account network-rule list", 'az_storage_account_network_rule_list_command_result', accountName);
     }
 
     /**
@@ -567,7 +567,7 @@ export class az_storage_account_network_rule {
      * @param {string} accountName The storage account name.
      */
     static remove(accountName: string): az_storage_account_network_rule_remove_command_builder {
-        return new az_storage_account_network_rule_remove_command_builder("az storage account network-rule remove", accountName);
+        return new az_storage_account_network_rule_remove_command_builder("az storage account network-rule remove", 'az_storage_account_network_rule_remove_command_result', accountName);
     }
 }
 
@@ -594,7 +594,7 @@ export class az_storage_account_or_policy_rule {
      * @param {string} sourceContainer The source storage container name.
      */
     static add(accountName: string, destinationContainer: string, policyId: string, sourceContainer: string): az_storage_account_or_policy_rule_add_command_builder {
-        return new az_storage_account_or_policy_rule_add_command_builder("az storage account or-policy rule add", accountName, destinationContainer, policyId, sourceContainer);
+        return new az_storage_account_or_policy_rule_add_command_builder("az storage account or-policy rule add", 'az_storage_account_or_policy_rule_add_command_result', accountName, destinationContainer, policyId, sourceContainer);
     }
 
     /**
@@ -613,7 +613,7 @@ export class az_storage_account_or_policy_rule {
      * @param {string} policyId The ID of object replication policy or "default" if the policy ID is unknown. Policy Id will be auto-generated when setting on destination account. Required when setting on source account.
      */
     static list(accountName: string, policyId: string): az_storage_account_or_policy_rule_list_command_builder {
-        return new az_storage_account_or_policy_rule_list_command_builder("az storage account or-policy rule list", accountName, policyId);
+        return new az_storage_account_or_policy_rule_list_command_builder("az storage account or-policy rule list", 'az_storage_account_or_policy_rule_list_command_result', accountName, policyId);
     }
 
     /**
@@ -633,7 +633,7 @@ export class az_storage_account_or_policy_rule {
      * @param {string} ruleId Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source account.
      */
     static remove(accountName: string, policyId: string, ruleId: string): az_storage_account_or_policy_rule_remove_command_builder {
-        return new az_storage_account_or_policy_rule_remove_command_builder("az storage account or-policy rule remove", accountName, policyId, ruleId);
+        return new az_storage_account_or_policy_rule_remove_command_builder("az storage account or-policy rule remove", 'az_storage_account_or_policy_rule_remove_command_result', accountName, policyId, ruleId);
     }
 
     /**
@@ -654,7 +654,7 @@ export class az_storage_account_or_policy_rule {
      * @param {string} ruleId Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source account.
      */
     static show(accountName: string, policyId: string, ruleId: string): az_storage_account_or_policy_rule_show_command_builder {
-        return new az_storage_account_or_policy_rule_show_command_builder("az storage account or-policy rule show", accountName, policyId, ruleId);
+        return new az_storage_account_or_policy_rule_show_command_builder("az storage account or-policy rule show", 'az_storage_account_or_policy_rule_show_command_result', accountName, policyId, ruleId);
     }
 
     /**
@@ -678,7 +678,7 @@ export class az_storage_account_or_policy_rule {
      * @param {string} ruleId Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source account.
      */
     static update(accountName: string, policyId: string, ruleId: string): az_storage_account_or_policy_rule_update_command_builder {
-        return new az_storage_account_or_policy_rule_update_command_builder("az storage account or-policy rule update", accountName, policyId, ruleId);
+        return new az_storage_account_or_policy_rule_update_command_builder("az storage account or-policy rule update", 'az_storage_account_or_policy_rule_update_command_result', accountName, policyId, ruleId);
     }
 }
 
@@ -706,7 +706,7 @@ export class az_storage_account_or_policy {
      * @param {string} accountName The storage account name.
      */
     static create(accountName: string): az_storage_account_or_policy_create_command_builder {
-        return new az_storage_account_or_policy_create_command_builder("az storage account or-policy create", accountName);
+        return new az_storage_account_or_policy_create_command_builder("az storage account or-policy create", 'az_storage_account_or_policy_create_command_result', accountName);
     }
 
     /**
@@ -724,7 +724,7 @@ export class az_storage_account_or_policy {
      * @param {string} policyId The ID of object replication policy or "default" if the policy ID is unknown. Policy Id will be auto-generated when setting on destination account. Required when setting on source account.
      */
     static delete(accountName: string, policyId: string): az_storage_account_or_policy_delete_command_builder {
-        return new az_storage_account_or_policy_delete_command_builder("az storage account or-policy delete", accountName, policyId);
+        return new az_storage_account_or_policy_delete_command_builder("az storage account or-policy delete", 'az_storage_account_or_policy_delete_command_result', accountName, policyId);
     }
 
     /**
@@ -741,7 +741,7 @@ export class az_storage_account_or_policy {
      * @param {string} accountName The storage account name.
      */
     static list(accountName: string): az_storage_account_or_policy_list_command_builder {
-        return new az_storage_account_or_policy_list_command_builder("az storage account or-policy list", accountName);
+        return new az_storage_account_or_policy_list_command_builder("az storage account or-policy list", 'az_storage_account_or_policy_list_command_result', accountName);
     }
 
     /**
@@ -760,7 +760,7 @@ export class az_storage_account_or_policy {
      * @param {string} policyId The ID of object replication policy or "default" if the policy ID is unknown. Policy Id will be auto-generated when setting on destination account. Required when setting on source account.
      */
     static show(accountName: string, policyId: string): az_storage_account_or_policy_show_command_builder {
-        return new az_storage_account_or_policy_show_command_builder("az storage account or-policy show", accountName, policyId);
+        return new az_storage_account_or_policy_show_command_builder("az storage account or-policy show", 'az_storage_account_or_policy_show_command_result', accountName, policyId);
     }
 
     /**
@@ -784,7 +784,7 @@ export class az_storage_account_or_policy {
      * @param {string} accountName The storage account name.
      */
     static update(accountName: string): az_storage_account_or_policy_update_command_builder {
-        return new az_storage_account_or_policy_update_command_builder("az storage account or-policy update", accountName);
+        return new az_storage_account_or_policy_update_command_builder("az storage account or-policy update", 'az_storage_account_or_policy_update_command_result', accountName);
     }
 }
 
@@ -804,7 +804,7 @@ export class az_storage_account_private_endpoint_connection {
      * ```
      */
     static approve(): az_storage_account_private_endpoint_connection_approve_command_builder {
-        return new az_storage_account_private_endpoint_connection_approve_command_builder("az storage account private-endpoint-connection approve");
+        return new az_storage_account_private_endpoint_connection_approve_command_builder("az storage account private-endpoint-connection approve", 'az_storage_account_private_endpoint_connection_approve_command_result');
     }
 
     /**
@@ -821,7 +821,7 @@ export class az_storage_account_private_endpoint_connection {
      * ```
      */
     static delete(): az_storage_account_private_endpoint_connection_delete_command_builder {
-        return new az_storage_account_private_endpoint_connection_delete_command_builder("az storage account private-endpoint-connection delete");
+        return new az_storage_account_private_endpoint_connection_delete_command_builder("az storage account private-endpoint-connection delete", 'az_storage_account_private_endpoint_connection_delete_command_result');
     }
 
     /**
@@ -838,7 +838,7 @@ export class az_storage_account_private_endpoint_connection {
      * ```
      */
     static reject(): az_storage_account_private_endpoint_connection_reject_command_builder {
-        return new az_storage_account_private_endpoint_connection_reject_command_builder("az storage account private-endpoint-connection reject");
+        return new az_storage_account_private_endpoint_connection_reject_command_builder("az storage account private-endpoint-connection reject", 'az_storage_account_private_endpoint_connection_reject_command_result');
     }
 
     /**
@@ -855,7 +855,7 @@ export class az_storage_account_private_endpoint_connection {
      * ```
      */
     static show(): az_storage_account_private_endpoint_connection_show_command_builder {
-        return new az_storage_account_private_endpoint_connection_show_command_builder("az storage account private-endpoint-connection show");
+        return new az_storage_account_private_endpoint_connection_show_command_builder("az storage account private-endpoint-connection show", 'az_storage_account_private_endpoint_connection_show_command_result');
     }
 }
 
@@ -876,7 +876,7 @@ export class az_storage_account_private_link_resource {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(accountName: string, resourceGroup: string): az_storage_account_private_link_resource_list_command_builder {
-        return new az_storage_account_private_link_resource_list_command_builder("az storage account private-link-resource list", accountName, resourceGroup);
+        return new az_storage_account_private_link_resource_list_command_builder("az storage account private-link-resource list", 'az_storage_account_private_link_resource_list_command_result', accountName, resourceGroup);
     }
 }
 
@@ -894,7 +894,7 @@ export class az_storage_account {
      * @param {string} name The storage account name.
      */
     static check_name(name: string): az_storage_account_check_name_command_builder {
-        return new az_storage_account_check_name_command_builder("az storage account check-name", name);
+        return new az_storage_account_check_name_command_builder("az storage account check-name", 'az_storage_account_check_name_command_result', name);
     }
 
     /**
@@ -940,7 +940,7 @@ export class az_storage_account {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_storage_account_create_command_builder {
-        return new az_storage_account_create_command_builder("az storage account create", name, resourceGroup);
+        return new az_storage_account_create_command_builder("az storage account create", 'az_storage_account_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -956,7 +956,7 @@ export class az_storage_account {
      * ```
      */
     static delete(): az_storage_account_delete_command_builder {
-        return new az_storage_account_delete_command_builder("az storage account delete");
+        return new az_storage_account_delete_command_builder("az storage account delete", 'az_storage_account_delete_command_result');
     }
 
     /**
@@ -973,7 +973,7 @@ export class az_storage_account {
      * ```
      */
     static failover(): az_storage_account_failover_command_builder {
-        return new az_storage_account_failover_command_builder("az storage account failover");
+        return new az_storage_account_failover_command_builder("az storage account failover", 'az_storage_account_failover_command_result');
     }
 
     /**
@@ -1001,7 +1001,7 @@ export class az_storage_account {
      * @param {string} services The storage services the SAS is applicable for. Allowed values: (b)lob (f)ile (q)ueue (t)able. Can be combined.
      */
     static generate_sas(expiry: string, permissions: string, resourceTypes: string, services: string): az_storage_account_generate_sas_command_builder {
-        return new az_storage_account_generate_sas_command_builder("az storage account generate-sas", expiry, permissions, resourceTypes, services);
+        return new az_storage_account_generate_sas_command_builder("az storage account generate-sas", 'az_storage_account_generate_sas_command_result', expiry, permissions, resourceTypes, services);
     }
 
     /**
@@ -1015,7 +1015,7 @@ export class az_storage_account {
      * ```
      */
     static list(): az_storage_account_list_command_builder {
-        return new az_storage_account_list_command_builder("az storage account list");
+        return new az_storage_account_list_command_builder("az storage account list", 'az_storage_account_list_command_result');
     }
 
     /**
@@ -1030,7 +1030,7 @@ export class az_storage_account {
      * ```
      */
     static revoke_delegation_keys(): az_storage_account_revoke_delegation_keys_command_builder {
-        return new az_storage_account_revoke_delegation_keys_command_builder("az storage account revoke-delegation-keys");
+        return new az_storage_account_revoke_delegation_keys_command_builder("az storage account revoke-delegation-keys", 'az_storage_account_revoke_delegation_keys_command_result');
     }
 
     /**
@@ -1047,7 +1047,7 @@ export class az_storage_account {
      * ```
      */
     static show(): az_storage_account_show_command_builder {
-        return new az_storage_account_show_command_builder("az storage account show");
+        return new az_storage_account_show_command_builder("az storage account show", 'az_storage_account_show_command_result');
     }
 
     /**
@@ -1069,7 +1069,7 @@ export class az_storage_account {
      * ```
      */
     static show_connection_string(): az_storage_account_show_connection_string_command_builder {
-        return new az_storage_account_show_connection_string_command_builder("az storage account show-connection-string");
+        return new az_storage_account_show_connection_string_command_builder("az storage account show-connection-string", 'az_storage_account_show_connection_string_command_result');
     }
 
     /**
@@ -1084,7 +1084,7 @@ export class az_storage_account {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static show_usage(location: string): az_storage_account_show_usage_command_builder {
-        return new az_storage_account_show_usage_command_builder("az storage account show-usage", location);
+        return new az_storage_account_show_usage_command_builder("az storage account show-usage", 'az_storage_account_show_usage_command_result', location);
     }
 
     /**
@@ -1131,7 +1131,7 @@ export class az_storage_account {
      * ```
      */
     static update(): az_storage_account_update_command_builder {
-        return new az_storage_account_update_command_builder("az storage account update");
+        return new az_storage_account_update_command_builder("az storage account update", 'az_storage_account_update_command_result');
     }
 }
 
@@ -1160,7 +1160,7 @@ export class az_storage_blob_copy {
      * @param {string} destinationContainer The container name.
      */
     static cancel(copyId: string, destinationBlob: string, destinationContainer: string): az_storage_blob_copy_cancel_command_builder {
-        return new az_storage_blob_copy_cancel_command_builder("az storage blob copy cancel", copyId, destinationBlob, destinationContainer);
+        return new az_storage_blob_copy_cancel_command_builder("az storage blob copy cancel", 'az_storage_blob_copy_cancel_command_result', copyId, destinationBlob, destinationContainer);
     }
 
     /**
@@ -1204,7 +1204,7 @@ export class az_storage_blob_copy {
      * @param {string} destinationContainer The container name.
      */
     static start(destinationBlob: string, destinationContainer: string): az_storage_blob_copy_start_command_builder {
-        return new az_storage_blob_copy_start_command_builder("az storage blob copy start", destinationBlob, destinationContainer);
+        return new az_storage_blob_copy_start_command_builder("az storage blob copy start", 'az_storage_blob_copy_start_command_result', destinationBlob, destinationContainer);
     }
 
     /**
@@ -1231,7 +1231,7 @@ export class az_storage_blob_copy {
      * ```
      */
     static start_batch(): az_storage_blob_copy_start_batch_command_builder {
-        return new az_storage_blob_copy_start_batch_command_builder("az storage blob copy start-batch");
+        return new az_storage_blob_copy_start_batch_command_builder("az storage blob copy start-batch", 'az_storage_blob_copy_start_batch_command_result');
     }
 }
 
@@ -1260,7 +1260,7 @@ export class az_storage_blob_incremental_copy {
      * @param {string} name The blob name.
      */
     static cancel(containerName: string, copyId: string, name: string): az_storage_blob_incremental_copy_cancel_command_builder {
-        return new az_storage_blob_incremental_copy_cancel_command_builder("az storage blob incremental-copy cancel", containerName, copyId, name);
+        return new az_storage_blob_incremental_copy_cancel_command_builder("az storage blob incremental-copy cancel", 'az_storage_blob_incremental_copy_cancel_command_result', containerName, copyId, name);
     }
 
     /**
@@ -1297,7 +1297,7 @@ export class az_storage_blob_incremental_copy {
      * @param {string} destinationContainer The container name.
      */
     static start(destinationBlob: string, destinationContainer: string): az_storage_blob_incremental_copy_start_command_builder {
-        return new az_storage_blob_incremental_copy_start_command_builder("az storage blob incremental-copy start", destinationBlob, destinationContainer);
+        return new az_storage_blob_incremental_copy_start_command_builder("az storage blob incremental-copy start", 'az_storage_blob_incremental_copy_start_command_result', destinationBlob, destinationContainer);
     }
 }
 
@@ -1329,7 +1329,7 @@ export class az_storage_blob_lease {
      * @param {string} containerName The container name.
      */
     static acquire(blobName: string, containerName: string): az_storage_blob_lease_acquire_command_builder {
-        return new az_storage_blob_lease_acquire_command_builder("az storage blob lease acquire", blobName, containerName);
+        return new az_storage_blob_lease_acquire_command_builder("az storage blob lease acquire", 'az_storage_blob_lease_acquire_command_result', blobName, containerName);
     }
 
     /**
@@ -1357,7 +1357,7 @@ export class az_storage_blob_lease {
      * @param {string} containerName The container name.
      */
     static break(blobName: string, containerName: string): az_storage_blob_lease_break_command_builder {
-        return new az_storage_blob_lease_break_command_builder("az storage blob lease break", blobName, containerName);
+        return new az_storage_blob_lease_break_command_builder("az storage blob lease break", 'az_storage_blob_lease_break_command_result', blobName, containerName);
     }
 
     /**
@@ -1388,7 +1388,7 @@ export class az_storage_blob_lease {
      * @param {string} proposedLeaseId Proposed lease ID, in a GUID string format. The Blob service returns 400 (Invalid request) if the proposed lease ID is not in the correct format.
      */
     static change(blobName: string, containerName: string, leaseId: string, proposedLeaseId: string): az_storage_blob_lease_change_command_builder {
-        return new az_storage_blob_lease_change_command_builder("az storage blob lease change", blobName, containerName, leaseId, proposedLeaseId);
+        return new az_storage_blob_lease_change_command_builder("az storage blob lease change", 'az_storage_blob_lease_change_command_result', blobName, containerName, leaseId, proposedLeaseId);
     }
 
     /**
@@ -1417,7 +1417,7 @@ export class az_storage_blob_lease {
      * @param {string} leaseId Required if the blob has an active lease.
      */
     static release(blobName: string, containerName: string, leaseId: string): az_storage_blob_lease_release_command_builder {
-        return new az_storage_blob_lease_release_command_builder("az storage blob lease release", blobName, containerName, leaseId);
+        return new az_storage_blob_lease_release_command_builder("az storage blob lease release", 'az_storage_blob_lease_release_command_result', blobName, containerName, leaseId);
     }
 
     /**
@@ -1446,7 +1446,7 @@ export class az_storage_blob_lease {
      * @param {string} leaseId Required if the blob has an active lease.
      */
     static renew(blobName: string, containerName: string, leaseId: string): az_storage_blob_lease_renew_command_builder {
-        return new az_storage_blob_lease_renew_command_builder("az storage blob lease renew", blobName, containerName, leaseId);
+        return new az_storage_blob_lease_renew_command_builder("az storage blob lease renew", 'az_storage_blob_lease_renew_command_result', blobName, containerName, leaseId);
     }
 }
 
@@ -1479,7 +1479,7 @@ export class az_storage_blob_metadata {
      * @param {string} name The blob name.
      */
     static show(containerName: string, name: string): az_storage_blob_metadata_show_command_builder {
-        return new az_storage_blob_metadata_show_command_builder("az storage blob metadata show", containerName, name);
+        return new az_storage_blob_metadata_show_command_builder("az storage blob metadata show", 'az_storage_blob_metadata_show_command_result', containerName, name);
     }
 
     /**
@@ -1508,7 +1508,7 @@ export class az_storage_blob_metadata {
      * @param {string} name The blob name.
      */
     static update(containerName: string, name: string): az_storage_blob_metadata_update_command_builder {
-        return new az_storage_blob_metadata_update_command_builder("az storage blob metadata update", containerName, name);
+        return new az_storage_blob_metadata_update_command_builder("az storage blob metadata update", 'az_storage_blob_metadata_update_command_result', containerName, name);
     }
 }
 
@@ -1530,7 +1530,7 @@ export class az_storage_blob_service_properties_delete_policy {
      * ```
      */
     static show(): az_storage_blob_service_properties_delete_policy_show_command_builder {
-        return new az_storage_blob_service_properties_delete_policy_show_command_builder("az storage blob service-properties delete-policy show");
+        return new az_storage_blob_service_properties_delete_policy_show_command_builder("az storage blob service-properties delete-policy show", 'az_storage_blob_service_properties_delete_policy_show_command_result');
     }
 
     /**
@@ -1549,7 +1549,7 @@ export class az_storage_blob_service_properties_delete_policy {
      * ```
      */
     static update(): az_storage_blob_service_properties_delete_policy_update_command_builder {
-        return new az_storage_blob_service_properties_delete_policy_update_command_builder("az storage blob service-properties delete-policy update");
+        return new az_storage_blob_service_properties_delete_policy_update_command_builder("az storage blob service-properties delete-policy update", 'az_storage_blob_service_properties_delete_policy_update_command_result');
     }
 }
 
@@ -1571,7 +1571,7 @@ export class az_storage_blob_service_properties {
      * ```
      */
     static show(): az_storage_blob_service_properties_show_command_builder {
-        return new az_storage_blob_service_properties_show_command_builder("az storage blob service-properties show");
+        return new az_storage_blob_service_properties_show_command_builder("az storage blob service-properties show", 'az_storage_blob_service_properties_show_command_result');
     }
 
     /**
@@ -1598,7 +1598,7 @@ export class az_storage_blob_service_properties {
      * ```
      */
     static update(): az_storage_blob_service_properties_update_command_builder {
-        return new az_storage_blob_service_properties_update_command_builder("az storage blob service-properties update");
+        return new az_storage_blob_service_properties_update_command_builder("az storage blob service-properties update", 'az_storage_blob_service_properties_update_command_result');
     }
 }
 
@@ -1631,7 +1631,7 @@ export class az_storage_blob {
      * @param {string} name The blob name.
      */
     static delete(containerName: string, name: string): az_storage_blob_delete_command_builder {
-        return new az_storage_blob_delete_command_builder("az storage blob delete", containerName, name);
+        return new az_storage_blob_delete_command_builder("az storage blob delete", 'az_storage_blob_delete_command_result', containerName, name);
     }
 
     /**
@@ -1660,7 +1660,7 @@ export class az_storage_blob {
      * @param {string} source The blob container from where the files will be deleted.
      */
     static delete_batch(source: string): az_storage_blob_delete_batch_command_builder {
-        return new az_storage_blob_delete_batch_command_builder("az storage blob delete-batch", source);
+        return new az_storage_blob_delete_batch_command_builder("az storage blob delete-batch", 'az_storage_blob_delete_batch_command_result', source);
     }
 
     /**
@@ -1698,7 +1698,7 @@ export class az_storage_blob {
      * @param {string} name The blob name.
      */
     static download(containerName: string, file: string, name: string): az_storage_blob_download_command_builder {
-        return new az_storage_blob_download_command_builder("az storage blob download", containerName, file, name);
+        return new az_storage_blob_download_command_builder("az storage blob download", 'az_storage_blob_download_command_result', containerName, file, name);
     }
 
     /**
@@ -1725,7 +1725,7 @@ export class az_storage_blob {
      * @param {string} source The blob container from where the files will be downloaded.
      */
     static download_batch(destination: string, source: string): az_storage_blob_download_batch_command_builder {
-        return new az_storage_blob_download_batch_command_builder("az storage blob download-batch", destination, source);
+        return new az_storage_blob_download_batch_command_builder("az storage blob download-batch", 'az_storage_blob_download_batch_command_result', destination, source);
     }
 
     /**
@@ -1749,7 +1749,7 @@ export class az_storage_blob {
      * @param {string} name The blob name.
      */
     static exists(containerName: string, name: string): az_storage_blob_exists_command_builder {
-        return new az_storage_blob_exists_command_builder("az storage blob exists", containerName, name);
+        return new az_storage_blob_exists_command_builder("az storage blob exists", 'az_storage_blob_exists_command_result', containerName, name);
     }
 
     /**
@@ -1783,7 +1783,7 @@ export class az_storage_blob {
      * @param {string} name The blob name.
      */
     static generate_sas(containerName: string, name: string): az_storage_blob_generate_sas_command_builder {
-        return new az_storage_blob_generate_sas_command_builder("az storage blob generate-sas", containerName, name);
+        return new az_storage_blob_generate_sas_command_builder("az storage blob generate-sas", 'az_storage_blob_generate_sas_command_result', containerName, name);
     }
 
     /**
@@ -1811,7 +1811,7 @@ export class az_storage_blob {
      * @param {string} containerName The container name.
      */
     static list(containerName: string): az_storage_blob_list_command_builder {
-        return new az_storage_blob_list_command_builder("az storage blob list", containerName);
+        return new az_storage_blob_list_command_builder("az storage blob list", 'az_storage_blob_list_command_result', containerName);
     }
 
     /**
@@ -1831,7 +1831,7 @@ export class az_storage_blob {
      * @param {string} timeToRestore Restore blob to the specified time, which should be UTC datetime in (Y-m-d'T'H:M:S'Z').
      */
     static restore(accountName: string, timeToRestore: string): az_storage_blob_restore_command_builder {
-        return new az_storage_blob_restore_command_builder("az storage blob restore", accountName, timeToRestore);
+        return new az_storage_blob_restore_command_builder("az storage blob restore", 'az_storage_blob_restore_command_result', accountName, timeToRestore);
     }
 
     /**
@@ -1858,7 +1858,7 @@ export class az_storage_blob {
      * @param {string} tier The tier value to set the blob to.
      */
     static set_tier(containerName: string, name: string, tier: string): az_storage_blob_set_tier_command_builder {
-        return new az_storage_blob_set_tier_command_builder("az storage blob set-tier", containerName, name, tier);
+        return new az_storage_blob_set_tier_command_builder("az storage blob set-tier", 'az_storage_blob_set_tier_command_result', containerName, name, tier);
     }
 
     /**
@@ -1888,7 +1888,7 @@ export class az_storage_blob {
      * @param {string} name The blob name.
      */
     static show(containerName: string, name: string): az_storage_blob_show_command_builder {
-        return new az_storage_blob_show_command_builder("az storage blob show", containerName, name);
+        return new az_storage_blob_show_command_builder("az storage blob show", 'az_storage_blob_show_command_result', containerName, name);
     }
 
     /**
@@ -1917,7 +1917,7 @@ export class az_storage_blob {
      * @param {string} name The blob name.
      */
     static snapshot(containerName: string, name: string): az_storage_blob_snapshot_command_builder {
-        return new az_storage_blob_snapshot_command_builder("az storage blob snapshot", containerName, name);
+        return new az_storage_blob_snapshot_command_builder("az storage blob snapshot", 'az_storage_blob_snapshot_command_result', containerName, name);
     }
 
     /**
@@ -1943,7 +1943,7 @@ export class az_storage_blob {
      * @param {string} source The source file path to sync from.
      */
     static sync(container: string, source: string): az_storage_blob_sync_command_builder {
-        return new az_storage_blob_sync_command_builder("az storage blob sync", container, source);
+        return new az_storage_blob_sync_command_builder("az storage blob sync", 'az_storage_blob_sync_command_result', container, source);
     }
 
     /**
@@ -1966,7 +1966,7 @@ export class az_storage_blob {
      * @param {string} name The blob name.
      */
     static undelete(containerName: string, name: string): az_storage_blob_undelete_command_builder {
-        return new az_storage_blob_undelete_command_builder("az storage blob undelete", containerName, name);
+        return new az_storage_blob_undelete_command_builder("az storage blob undelete", 'az_storage_blob_undelete_command_result', containerName, name);
     }
 
     /**
@@ -2001,7 +2001,7 @@ export class az_storage_blob {
      * @param {string} name The blob name.
      */
     static update(containerName: string, name: string): az_storage_blob_update_command_builder {
-        return new az_storage_blob_update_command_builder("az storage blob update", containerName, name);
+        return new az_storage_blob_update_command_builder("az storage blob update", 'az_storage_blob_update_command_result', containerName, name);
     }
 
     /**
@@ -2046,7 +2046,7 @@ export class az_storage_blob {
      * @param {string} name The blob name.
      */
     static upload(containerName: string, file: string, name: string): az_storage_blob_upload_command_builder {
-        return new az_storage_blob_upload_command_builder("az storage blob upload", containerName, file, name);
+        return new az_storage_blob_upload_command_builder("az storage blob upload", 'az_storage_blob_upload_command_result', containerName, file, name);
     }
 
     /**
@@ -2090,7 +2090,7 @@ export class az_storage_blob {
      * @param {string} source The directory where the files to be uploaded are located.
      */
     static upload_batch(destination: string, source: string): az_storage_blob_upload_batch_command_builder {
-        return new az_storage_blob_upload_batch_command_builder("az storage blob upload-batch", destination, source);
+        return new az_storage_blob_upload_batch_command_builder("az storage blob upload-batch", 'az_storage_blob_upload_batch_command_result', destination, source);
     }
 
     /**
@@ -2114,7 +2114,7 @@ export class az_storage_blob {
      * @param {string} name The blob name.
      */
     static url(containerName: string, name: string): az_storage_blob_url_command_builder {
-        return new az_storage_blob_url_command_builder("az storage blob url", containerName, name);
+        return new az_storage_blob_url_command_builder("az storage blob url", 'az_storage_blob_url_command_result', containerName, name);
     }
 }
 
@@ -2138,7 +2138,7 @@ export class az_storage_container_immutability_policy {
      * @param {string} containerName The container name.
      */
     static create(accountName: string, containerName: string): az_storage_container_immutability_policy_create_command_builder {
-        return new az_storage_container_immutability_policy_create_command_builder("az storage container immutability-policy create", accountName, containerName);
+        return new az_storage_container_immutability_policy_create_command_builder("az storage container immutability-policy create", 'az_storage_container_immutability_policy_create_command_result', accountName, containerName);
     }
 
     /**
@@ -2158,7 +2158,7 @@ export class az_storage_container_immutability_policy {
      * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
      */
     static delete(accountName: string, containerName: string, ifMatch: string): az_storage_container_immutability_policy_delete_command_builder {
-        return new az_storage_container_immutability_policy_delete_command_builder("az storage container immutability-policy delete", accountName, containerName, ifMatch);
+        return new az_storage_container_immutability_policy_delete_command_builder("az storage container immutability-policy delete", 'az_storage_container_immutability_policy_delete_command_result', accountName, containerName, ifMatch);
     }
 
     /**
@@ -2180,7 +2180,7 @@ export class az_storage_container_immutability_policy {
      * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
      */
     static extend(accountName: string, containerName: string, ifMatch: string): az_storage_container_immutability_policy_extend_command_builder {
-        return new az_storage_container_immutability_policy_extend_command_builder("az storage container immutability-policy extend", accountName, containerName, ifMatch);
+        return new az_storage_container_immutability_policy_extend_command_builder("az storage container immutability-policy extend", 'az_storage_container_immutability_policy_extend_command_result', accountName, containerName, ifMatch);
     }
 
     /**
@@ -2200,7 +2200,7 @@ export class az_storage_container_immutability_policy {
      * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
      */
     static lock(accountName: string, containerName: string, ifMatch: string): az_storage_container_immutability_policy_lock_command_builder {
-        return new az_storage_container_immutability_policy_lock_command_builder("az storage container immutability-policy lock", accountName, containerName, ifMatch);
+        return new az_storage_container_immutability_policy_lock_command_builder("az storage container immutability-policy lock", 'az_storage_container_immutability_policy_lock_command_result', accountName, containerName, ifMatch);
     }
 
     /**
@@ -2220,7 +2220,7 @@ export class az_storage_container_immutability_policy {
      * @param {string} containerName The container name.
      */
     static show(accountName: string, containerName: string): az_storage_container_immutability_policy_show_command_builder {
-        return new az_storage_container_immutability_policy_show_command_builder("az storage container immutability-policy show", accountName, containerName);
+        return new az_storage_container_immutability_policy_show_command_builder("az storage container immutability-policy show", 'az_storage_container_immutability_policy_show_command_result', accountName, containerName);
     }
 }
 
@@ -2248,7 +2248,7 @@ export class az_storage_container_lease {
      * @param {string} containerName The container name.
      */
     static acquire(containerName: string): az_storage_container_lease_acquire_command_builder {
-        return new az_storage_container_lease_acquire_command_builder("az storage container lease acquire", containerName);
+        return new az_storage_container_lease_acquire_command_builder("az storage container lease acquire", 'az_storage_container_lease_acquire_command_result', containerName);
     }
 
     /**
@@ -2272,7 +2272,7 @@ export class az_storage_container_lease {
      * @param {string} containerName The container name.
      */
     static break(containerName: string): az_storage_container_lease_break_command_builder {
-        return new az_storage_container_lease_break_command_builder("az storage container lease break", containerName);
+        return new az_storage_container_lease_break_command_builder("az storage container lease break", 'az_storage_container_lease_break_command_result', containerName);
     }
 
     /**
@@ -2299,7 +2299,7 @@ export class az_storage_container_lease {
      * @param {string} proposedLeaseId Proposed lease ID, in a GUID string format. The Blob service returns 400 (Invalid request) if the proposed lease ID is not in the correct format.
      */
     static change(containerName: string, leaseId: string, proposedLeaseId: string): az_storage_container_lease_change_command_builder {
-        return new az_storage_container_lease_change_command_builder("az storage container lease change", containerName, leaseId, proposedLeaseId);
+        return new az_storage_container_lease_change_command_builder("az storage container lease change", 'az_storage_container_lease_change_command_result', containerName, leaseId, proposedLeaseId);
     }
 
     /**
@@ -2324,7 +2324,7 @@ export class az_storage_container_lease {
      * @param {string} leaseId Lease ID for active lease.
      */
     static release(containerName: string, leaseId: string): az_storage_container_lease_release_command_builder {
-        return new az_storage_container_lease_release_command_builder("az storage container lease release", containerName, leaseId);
+        return new az_storage_container_lease_release_command_builder("az storage container lease release", 'az_storage_container_lease_release_command_result', containerName, leaseId);
     }
 
     /**
@@ -2349,7 +2349,7 @@ export class az_storage_container_lease {
      * @param {string} leaseId Lease ID for active lease.
      */
     static renew(containerName: string, leaseId: string): az_storage_container_lease_renew_command_builder {
-        return new az_storage_container_lease_renew_command_builder("az storage container lease renew", containerName, leaseId);
+        return new az_storage_container_lease_renew_command_builder("az storage container lease renew", 'az_storage_container_lease_renew_command_result', containerName, leaseId);
     }
 }
 
@@ -2372,7 +2372,7 @@ export class az_storage_container_legal_hold {
      * @param {string} tags Each tag should be 3 to 23 alphanumeric characters and is normalized to lower case.
      */
     static clear(accountName: string, containerName: string, tags: string): az_storage_container_legal_hold_clear_command_builder {
-        return new az_storage_container_legal_hold_clear_command_builder("az storage container legal-hold clear", accountName, containerName, tags);
+        return new az_storage_container_legal_hold_clear_command_builder("az storage container legal-hold clear", 'az_storage_container_legal_hold_clear_command_result', accountName, containerName, tags);
     }
 
     /**
@@ -2392,7 +2392,7 @@ export class az_storage_container_legal_hold {
      * @param {string} tags Each tag should be 3 to 23 alphanumeric characters and is normalized to lower case.
      */
     static set(accountName: string, containerName: string, tags: string): az_storage_container_legal_hold_set_command_builder {
-        return new az_storage_container_legal_hold_set_command_builder("az storage container legal-hold set", accountName, containerName, tags);
+        return new az_storage_container_legal_hold_set_command_builder("az storage container legal-hold set", 'az_storage_container_legal_hold_set_command_result', accountName, containerName, tags);
     }
 
     /**
@@ -2411,7 +2411,7 @@ export class az_storage_container_legal_hold {
      * @param {string} containerName The container name.
      */
     static show(accountName: string, containerName: string): az_storage_container_legal_hold_show_command_builder {
-        return new az_storage_container_legal_hold_show_command_builder("az storage container legal-hold show", accountName, containerName);
+        return new az_storage_container_legal_hold_show_command_builder("az storage container legal-hold show", 'az_storage_container_legal_hold_show_command_result', accountName, containerName);
     }
 }
 
@@ -2437,7 +2437,7 @@ export class az_storage_container_metadata {
      * @param {string} name The container name.
      */
     static show(name: string): az_storage_container_metadata_show_command_builder {
-        return new az_storage_container_metadata_show_command_builder("az storage container metadata show", name);
+        return new az_storage_container_metadata_show_command_builder("az storage container metadata show", 'az_storage_container_metadata_show_command_result', name);
     }
 
     /**
@@ -2461,7 +2461,7 @@ export class az_storage_container_metadata {
      * @param {string} name The container name.
      */
     static update(name: string): az_storage_container_metadata_update_command_builder {
-        return new az_storage_container_metadata_update_command_builder("az storage container metadata update", name);
+        return new az_storage_container_metadata_update_command_builder("az storage container metadata update", 'az_storage_container_metadata_update_command_result', name);
     }
 }
 
@@ -2490,7 +2490,7 @@ export class az_storage_container_policy {
      * @param {string} name The stored access policy name.
      */
     static create(containerName: string, name: string): az_storage_container_policy_create_command_builder {
-        return new az_storage_container_policy_create_command_builder("az storage container policy create", containerName, name);
+        return new az_storage_container_policy_create_command_builder("az storage container policy create", 'az_storage_container_policy_create_command_result', containerName, name);
     }
 
     /**
@@ -2513,7 +2513,7 @@ export class az_storage_container_policy {
      * @param {string} name The stored access policy name.
      */
     static delete(containerName: string, name: string): az_storage_container_policy_delete_command_builder {
-        return new az_storage_container_policy_delete_command_builder("az storage container policy delete", containerName, name);
+        return new az_storage_container_policy_delete_command_builder("az storage container policy delete", 'az_storage_container_policy_delete_command_result', containerName, name);
     }
 
     /**
@@ -2535,7 +2535,7 @@ export class az_storage_container_policy {
      * @param {string} containerName The container name.
      */
     static list(containerName: string): az_storage_container_policy_list_command_builder {
-        return new az_storage_container_policy_list_command_builder("az storage container policy list", containerName);
+        return new az_storage_container_policy_list_command_builder("az storage container policy list", 'az_storage_container_policy_list_command_result', containerName);
     }
 
     /**
@@ -2559,7 +2559,7 @@ export class az_storage_container_policy {
      * @param {string} name The stored access policy name.
      */
     static show(containerName: string, name: string): az_storage_container_policy_show_command_builder {
-        return new az_storage_container_policy_show_command_builder("az storage container policy show", containerName, name);
+        return new az_storage_container_policy_show_command_builder("az storage container policy show", 'az_storage_container_policy_show_command_result', containerName, name);
     }
 
     /**
@@ -2585,7 +2585,7 @@ export class az_storage_container_policy {
      * @param {string} name The stored access policy name.
      */
     static update(containerName: string, name: string): az_storage_container_policy_update_command_builder {
-        return new az_storage_container_policy_update_command_builder("az storage container policy update", containerName, name);
+        return new az_storage_container_policy_update_command_builder("az storage container policy update", 'az_storage_container_policy_update_command_result', containerName, name);
     }
 }
 
@@ -2615,7 +2615,7 @@ export class az_storage_container {
      * @param {string} name The container name.
      */
     static create(name: string): az_storage_container_create_command_builder {
-        return new az_storage_container_create_command_builder("az storage container create", name);
+        return new az_storage_container_create_command_builder("az storage container create", 'az_storage_container_create_command_result', name);
     }
 
     /**
@@ -2641,7 +2641,7 @@ export class az_storage_container {
      * @param {string} name The container name.
      */
     static delete(name: string): az_storage_container_delete_command_builder {
-        return new az_storage_container_delete_command_builder("az storage container delete", name);
+        return new az_storage_container_delete_command_builder("az storage container delete", 'az_storage_container_delete_command_result', name);
     }
 
     /**
@@ -2662,7 +2662,7 @@ export class az_storage_container {
      * @param {string} name The container name.
      */
     static exists(name: string): az_storage_container_exists_command_builder {
-        return new az_storage_container_exists_command_builder("az storage container exists", name);
+        return new az_storage_container_exists_command_builder("az storage container exists", 'az_storage_container_exists_command_result', name);
     }
 
     /**
@@ -2693,7 +2693,7 @@ export class az_storage_container {
      * @param {string} name The container name.
      */
     static generate_sas(name: string): az_storage_container_generate_sas_command_builder {
-        return new az_storage_container_generate_sas_command_builder("az storage container generate-sas", name);
+        return new az_storage_container_generate_sas_command_builder("az storage container generate-sas", 'az_storage_container_generate_sas_command_result', name);
     }
 
     /**
@@ -2716,7 +2716,7 @@ export class az_storage_container {
      * ```
      */
     static list(): az_storage_container_list_command_builder {
-        return new az_storage_container_list_command_builder("az storage container list");
+        return new az_storage_container_list_command_builder("az storage container list", 'az_storage_container_list_command_result');
     }
 
     /**
@@ -2741,7 +2741,7 @@ export class az_storage_container {
      * @param {string} name The container name.
      */
     static set_permission(name: string): az_storage_container_set_permission_command_builder {
-        return new az_storage_container_set_permission_command_builder("az storage container set-permission", name);
+        return new az_storage_container_set_permission_command_builder("az storage container set-permission", 'az_storage_container_set_permission_command_result', name);
     }
 
     /**
@@ -2764,7 +2764,7 @@ export class az_storage_container {
      * @param {string} name The container name.
      */
     static show(name: string): az_storage_container_show_command_builder {
-        return new az_storage_container_show_command_builder("az storage container show", name);
+        return new az_storage_container_show_command_builder("az storage container show", 'az_storage_container_show_command_result', name);
     }
 
     /**
@@ -2786,7 +2786,7 @@ export class az_storage_container {
      * @param {string} name The container name.
      */
     static show_permission(name: string): az_storage_container_show_permission_command_builder {
-        return new az_storage_container_show_permission_command_builder("az storage container show-permission", name);
+        return new az_storage_container_show_permission_command_builder("az storage container show-permission", 'az_storage_container_show_permission_command_result', name);
     }
 }
 
@@ -2816,7 +2816,7 @@ export class az_storage_cors {
      * @param {string} services The storage service(s) to add rules to. Allowed options are: (b)lob, (f)ile, (q)ueue, (t)able. Can be combined.
      */
     static add(methods: 'DELETE' | 'GET' | 'HEAD' | 'MERGE' | 'OPTIONS' | 'POST' | 'PUT', origins: string, services: string): az_storage_cors_add_command_builder {
-        return new az_storage_cors_add_command_builder("az storage cors add", methods, origins, services);
+        return new az_storage_cors_add_command_builder("az storage cors add", 'az_storage_cors_add_command_result', methods, origins, services);
     }
 
     /**
@@ -2836,7 +2836,7 @@ export class az_storage_cors {
      * @param {string} services The storage service(s) to remove rules from. Allowed options are: (b)lob, (f)ile, (q)ueue, (t)able. Can be combined.
      */
     static clear(services: string): az_storage_cors_clear_command_builder {
-        return new az_storage_cors_clear_command_builder("az storage cors clear", services);
+        return new az_storage_cors_clear_command_builder("az storage cors clear", 'az_storage_cors_clear_command_result', services);
     }
 
     /**
@@ -2855,7 +2855,7 @@ export class az_storage_cors {
      * ```
      */
     static list(): az_storage_cors_list_command_builder {
-        return new az_storage_cors_list_command_builder("az storage cors list");
+        return new az_storage_cors_list_command_builder("az storage cors list", 'az_storage_cors_list_command_result');
     }
 }
 
@@ -2882,7 +2882,7 @@ export class az_storage_directory_metadata {
      * @param {string} shareName The file share name.
      */
     static show(name: string, shareName: string): az_storage_directory_metadata_show_command_builder {
-        return new az_storage_directory_metadata_show_command_builder("az storage directory metadata show", name, shareName);
+        return new az_storage_directory_metadata_show_command_builder("az storage directory metadata show", 'az_storage_directory_metadata_show_command_result', name, shareName);
     }
 
     /**
@@ -2905,7 +2905,7 @@ export class az_storage_directory_metadata {
      * @param {string} shareName The file share name.
      */
     static update(name: string, shareName: string): az_storage_directory_metadata_update_command_builder {
-        return new az_storage_directory_metadata_update_command_builder("az storage directory metadata update", name, shareName);
+        return new az_storage_directory_metadata_update_command_builder("az storage directory metadata update", 'az_storage_directory_metadata_update_command_result', name, shareName);
     }
 }
 
@@ -2932,7 +2932,7 @@ export class az_storage_directory {
      * @param {string} shareName The file share name.
      */
     static create(name: string, shareName: string): az_storage_directory_create_command_builder {
-        return new az_storage_directory_create_command_builder("az storage directory create", name, shareName);
+        return new az_storage_directory_create_command_builder("az storage directory create", 'az_storage_directory_create_command_result', name, shareName);
     }
 
     /**
@@ -2955,7 +2955,7 @@ export class az_storage_directory {
      * @param {string} shareName The file share name.
      */
     static delete(name: string, shareName: string): az_storage_directory_delete_command_builder {
-        return new az_storage_directory_delete_command_builder("az storage directory delete", name, shareName);
+        return new az_storage_directory_delete_command_builder("az storage directory delete", 'az_storage_directory_delete_command_result', name, shareName);
     }
 
     /**
@@ -2978,7 +2978,7 @@ export class az_storage_directory {
      * @param {string} shareName The file share name.
      */
     static exists(name: string, shareName: string): az_storage_directory_exists_command_builder {
-        return new az_storage_directory_exists_command_builder("az storage directory exists", name, shareName);
+        return new az_storage_directory_exists_command_builder("az storage directory exists", 'az_storage_directory_exists_command_result', name, shareName);
     }
 
     /**
@@ -3000,7 +3000,7 @@ export class az_storage_directory {
      * @param {string} shareName The file share name.
      */
     static list(shareName: string): az_storage_directory_list_command_builder {
-        return new az_storage_directory_list_command_builder("az storage directory list", shareName);
+        return new az_storage_directory_list_command_builder("az storage directory list", 'az_storage_directory_list_command_result', shareName);
     }
 
     /**
@@ -3024,7 +3024,7 @@ export class az_storage_directory {
      * @param {string} shareName The file share name.
      */
     static show(name: string, shareName: string): az_storage_directory_show_command_builder {
-        return new az_storage_directory_show_command_builder("az storage directory show", name, shareName);
+        return new az_storage_directory_show_command_builder("az storage directory show", 'az_storage_directory_show_command_result', name, shareName);
     }
 }
 
@@ -3052,7 +3052,7 @@ export class az_storage_entity {
      * @param {string} tableName The name of the table containing the entity to delete.
      */
     static delete(partitionKey: string, rowKey: string, tableName: string): az_storage_entity_delete_command_builder {
-        return new az_storage_entity_delete_command_builder("az storage entity delete", partitionKey, rowKey, tableName);
+        return new az_storage_entity_delete_command_builder("az storage entity delete", 'az_storage_entity_delete_command_result', partitionKey, rowKey, tableName);
     }
 
     /**
@@ -3075,7 +3075,7 @@ export class az_storage_entity {
      * @param {string} tableName The name of the table to insert the entity into.
      */
     static insert(entity: string, tableName: string): az_storage_entity_insert_command_builder {
-        return new az_storage_entity_insert_command_builder("az storage entity insert", entity, tableName);
+        return new az_storage_entity_insert_command_builder("az storage entity insert", 'az_storage_entity_insert_command_result', entity, tableName);
     }
 
     /**
@@ -3098,7 +3098,7 @@ export class az_storage_entity {
      * @param {string} tableName The name of the table containing the entity to merge.
      */
     static merge(entity: string, tableName: string): az_storage_entity_merge_command_builder {
-        return new az_storage_entity_merge_command_builder("az storage entity merge", entity, tableName);
+        return new az_storage_entity_merge_command_builder("az storage entity merge", 'az_storage_entity_merge_command_result', entity, tableName);
     }
 
     /**
@@ -3123,7 +3123,7 @@ export class az_storage_entity {
      * @param {string} tableName The name of the table to query.
      */
     static query(tableName: string): az_storage_entity_query_command_builder {
-        return new az_storage_entity_query_command_builder("az storage entity query", tableName);
+        return new az_storage_entity_query_command_builder("az storage entity query", 'az_storage_entity_query_command_result', tableName);
     }
 
     /**
@@ -3146,7 +3146,7 @@ export class az_storage_entity {
      * @param {string} tableName The name of the table containing the entity to update.
      */
     static replace(entity: string, tableName: string): az_storage_entity_replace_command_builder {
-        return new az_storage_entity_replace_command_builder("az storage entity replace", entity, tableName);
+        return new az_storage_entity_replace_command_builder("az storage entity replace", 'az_storage_entity_replace_command_result', entity, tableName);
     }
 
     /**
@@ -3173,7 +3173,7 @@ export class az_storage_entity {
      * @param {string} tableName The name of the table to get the entity from.
      */
     static show(partitionKey: string, rowKey: string, tableName: string): az_storage_entity_show_command_builder {
-        return new az_storage_entity_show_command_builder("az storage entity show", partitionKey, rowKey, tableName);
+        return new az_storage_entity_show_command_builder("az storage entity show", 'az_storage_entity_show_command_result', partitionKey, rowKey, tableName);
     }
 }
 
@@ -3200,7 +3200,7 @@ export class az_storage_file_copy {
      * @param {string} destinationShare Name of the destination share. The share must exist.
      */
     static cancel(copyId: string, destinationPath: string, destinationShare: string): az_storage_file_copy_cancel_command_builder {
-        return new az_storage_file_copy_cancel_command_builder("az storage file copy cancel", copyId, destinationPath, destinationShare);
+        return new az_storage_file_copy_cancel_command_builder("az storage file copy cancel", 'az_storage_file_copy_cancel_command_result', copyId, destinationPath, destinationShare);
     }
 
     /**
@@ -3233,7 +3233,7 @@ export class az_storage_file_copy {
      * @param {string} destinationShare Name of the destination share. The share must exist.
      */
     static start(destinationPath: string, destinationShare: string): az_storage_file_copy_start_command_builder {
-        return new az_storage_file_copy_start_command_builder("az storage file copy start", destinationPath, destinationShare);
+        return new az_storage_file_copy_start_command_builder("az storage file copy start", 'az_storage_file_copy_start_command_result', destinationPath, destinationShare);
     }
 
     /**
@@ -3261,7 +3261,7 @@ export class az_storage_file_copy {
      * ```
      */
     static start_batch(): az_storage_file_copy_start_batch_command_builder {
-        return new az_storage_file_copy_start_batch_command_builder("az storage file copy start-batch");
+        return new az_storage_file_copy_start_batch_command_builder("az storage file copy start-batch", 'az_storage_file_copy_start_batch_command_result');
     }
 }
 
@@ -3288,7 +3288,7 @@ export class az_storage_file_metadata {
      * @param {string} shareName The file share name.
      */
     static show(path: string, shareName: string): az_storage_file_metadata_show_command_builder {
-        return new az_storage_file_metadata_show_command_builder("az storage file metadata show", path, shareName);
+        return new az_storage_file_metadata_show_command_builder("az storage file metadata show", 'az_storage_file_metadata_show_command_result', path, shareName);
     }
 
     /**
@@ -3311,7 +3311,7 @@ export class az_storage_file_metadata {
      * @param {string} shareName The file share name.
      */
     static update(path: string, shareName: string): az_storage_file_metadata_update_command_builder {
-        return new az_storage_file_metadata_update_command_builder("az storage file metadata update", path, shareName);
+        return new az_storage_file_metadata_update_command_builder("az storage file metadata update", 'az_storage_file_metadata_update_command_result', path, shareName);
     }
 }
 
@@ -3336,7 +3336,7 @@ export class az_storage_file {
      * @param {string} shareName The file share name.
      */
     static delete(path: string, shareName: string): az_storage_file_delete_command_builder {
-        return new az_storage_file_delete_command_builder("az storage file delete", path, shareName);
+        return new az_storage_file_delete_command_builder("az storage file delete", 'az_storage_file_delete_command_result', path, shareName);
     }
 
     /**
@@ -3358,7 +3358,7 @@ export class az_storage_file {
      * @param {string} source The source of the file delete operation. The source can be the file share URL or the share name.
      */
     static delete_batch(source: string): az_storage_file_delete_batch_command_builder {
-        return new az_storage_file_delete_batch_command_builder("az storage file delete-batch", source);
+        return new az_storage_file_delete_batch_command_builder("az storage file delete-batch", 'az_storage_file_delete_batch_command_result', source);
     }
 
     /**
@@ -3388,7 +3388,7 @@ export class az_storage_file {
      * @param {string} shareName The file share name.
      */
     static download(path: string, shareName: string): az_storage_file_download_command_builder {
-        return new az_storage_file_download_command_builder("az storage file download", path, shareName);
+        return new az_storage_file_download_command_builder("az storage file download", 'az_storage_file_download_command_result', path, shareName);
     }
 
     /**
@@ -3415,7 +3415,7 @@ export class az_storage_file {
      * @param {string} source The source of the file download operation. The source can be the file share URL or the share name.
      */
     static download_batch(destination: string, source: string): az_storage_file_download_batch_command_builder {
-        return new az_storage_file_download_batch_command_builder("az storage file download-batch", destination, source);
+        return new az_storage_file_download_batch_command_builder("az storage file download-batch", 'az_storage_file_download_batch_command_result', destination, source);
     }
 
     /**
@@ -3438,7 +3438,7 @@ export class az_storage_file {
      * @param {string} shareName The file share name.
      */
     static exists(path: string, shareName: string): az_storage_file_exists_command_builder {
-        return new az_storage_file_exists_command_builder("az storage file exists", path, shareName);
+        return new az_storage_file_exists_command_builder("az storage file exists", 'az_storage_file_exists_command_result', path, shareName);
     }
 
     /**
@@ -3469,7 +3469,7 @@ export class az_storage_file {
      * @param {string} shareName The file share name.
      */
     static generate_sas(path: string, shareName: string): az_storage_file_generate_sas_command_builder {
-        return new az_storage_file_generate_sas_command_builder("az storage file generate-sas", path, shareName);
+        return new az_storage_file_generate_sas_command_builder("az storage file generate-sas", 'az_storage_file_generate_sas_command_result', path, shareName);
     }
 
     /**
@@ -3495,7 +3495,7 @@ export class az_storage_file {
      * @param {string} shareName The file share name.
      */
     static list(shareName: string): az_storage_file_list_command_builder {
-        return new az_storage_file_list_command_builder("az storage file list", shareName);
+        return new az_storage_file_list_command_builder("az storage file list", 'az_storage_file_list_command_result', shareName);
     }
 
     /**
@@ -3519,7 +3519,7 @@ export class az_storage_file {
      * @param {string} size The length to resize the file to.
      */
     static resize(path: string, shareName: string, size: string): az_storage_file_resize_command_builder {
-        return new az_storage_file_resize_command_builder("az storage file resize", path, shareName, size);
+        return new az_storage_file_resize_command_builder("az storage file resize", 'az_storage_file_resize_command_result', path, shareName, size);
     }
 
     /**
@@ -3543,7 +3543,7 @@ export class az_storage_file {
      * @param {string} shareName The file share name.
      */
     static show(path: string, shareName: string): az_storage_file_show_command_builder {
-        return new az_storage_file_show_command_builder("az storage file show", path, shareName);
+        return new az_storage_file_show_command_builder("az storage file show", 'az_storage_file_show_command_result', path, shareName);
     }
 
     /**
@@ -3572,7 +3572,7 @@ export class az_storage_file {
      * @param {string} shareName The file share name.
      */
     static update(path: string, shareName: string): az_storage_file_update_command_builder {
-        return new az_storage_file_update_command_builder("az storage file update", path, shareName);
+        return new az_storage_file_update_command_builder("az storage file update", 'az_storage_file_update_command_result', path, shareName);
     }
 
     /**
@@ -3605,7 +3605,7 @@ export class az_storage_file {
      * @param {string} source Path of the local file to upload as the file content.
      */
     static upload(shareName: string, source: string): az_storage_file_upload_command_builder {
-        return new az_storage_file_upload_command_builder("az storage file upload", shareName, source);
+        return new az_storage_file_upload_command_builder("az storage file upload", 'az_storage_file_upload_command_result', shareName, source);
     }
 
     /**
@@ -3639,7 +3639,7 @@ export class az_storage_file {
      * @param {string} source The directory to upload files from.
      */
     static upload_batch(destination: string, source: string): az_storage_file_upload_batch_command_builder {
-        return new az_storage_file_upload_batch_command_builder("az storage file upload-batch", destination, source);
+        return new az_storage_file_upload_batch_command_builder("az storage file upload-batch", 'az_storage_file_upload_batch_command_result', destination, source);
     }
 
     /**
@@ -3661,7 +3661,7 @@ export class az_storage_file {
      * @param {string} shareName The file share name.
      */
     static url(path: string, shareName: string): az_storage_file_url_command_builder {
-        return new az_storage_file_url_command_builder("az storage file url", path, shareName);
+        return new az_storage_file_url_command_builder("az storage file url", 'az_storage_file_url_command_result', path, shareName);
     }
 }
 
@@ -3690,7 +3690,7 @@ export class az_storage_fs_access {
      * @param {string} path The path to a file or directory in the specified file system.
      */
     static set(fileSystem: string, path: string): az_storage_fs_access_set_command_builder {
-        return new az_storage_fs_access_set_command_builder("az storage fs access set", fileSystem, path);
+        return new az_storage_fs_access_set_command_builder("az storage fs access set", 'az_storage_fs_access_set_command_result', fileSystem, path);
     }
 
     /**
@@ -3713,7 +3713,7 @@ export class az_storage_fs_access {
      * @param {string} path The path to a file or directory in the specified file system.
      */
     static show(fileSystem: string, path: string): az_storage_fs_access_show_command_builder {
-        return new az_storage_fs_access_show_command_builder("az storage fs access show", fileSystem, path);
+        return new az_storage_fs_access_show_command_builder("az storage fs access show", 'az_storage_fs_access_show_command_result', fileSystem, path);
     }
 }
 
@@ -3740,7 +3740,7 @@ export class az_storage_fs_directory_metadata {
      * @param {string} name The name of directory.
      */
     static show(fileSystem: string, name: string): az_storage_fs_directory_metadata_show_command_builder {
-        return new az_storage_fs_directory_metadata_show_command_builder("az storage fs directory metadata show", fileSystem, name);
+        return new az_storage_fs_directory_metadata_show_command_builder("az storage fs directory metadata show", 'az_storage_fs_directory_metadata_show_command_result', fileSystem, name);
     }
 
     /**
@@ -3765,7 +3765,7 @@ export class az_storage_fs_directory_metadata {
      * @param {string} name The name of directory.
      */
     static update(fileSystem: string, metadata: string, name: string): az_storage_fs_directory_metadata_update_command_builder {
-        return new az_storage_fs_directory_metadata_update_command_builder("az storage fs directory metadata update", fileSystem, metadata, name);
+        return new az_storage_fs_directory_metadata_update_command_builder("az storage fs directory metadata update", 'az_storage_fs_directory_metadata_update_command_result', fileSystem, metadata, name);
     }
 }
 
@@ -3794,7 +3794,7 @@ export class az_storage_fs_directory {
      * @param {string} name The name of directory.
      */
     static create(fileSystem: string, name: string): az_storage_fs_directory_create_command_builder {
-        return new az_storage_fs_directory_create_command_builder("az storage fs directory create", fileSystem, name);
+        return new az_storage_fs_directory_create_command_builder("az storage fs directory create", 'az_storage_fs_directory_create_command_result', fileSystem, name);
     }
 
     /**
@@ -3818,7 +3818,7 @@ export class az_storage_fs_directory {
      * @param {string} name The name of directory.
      */
     static delete(fileSystem: string, name: string): az_storage_fs_directory_delete_command_builder {
-        return new az_storage_fs_directory_delete_command_builder("az storage fs directory delete", fileSystem, name);
+        return new az_storage_fs_directory_delete_command_builder("az storage fs directory delete", 'az_storage_fs_directory_delete_command_result', fileSystem, name);
     }
 
     /**
@@ -3841,7 +3841,7 @@ export class az_storage_fs_directory {
      * @param {string} name The name of directory.
      */
     static exists(fileSystem: string, name: string): az_storage_fs_directory_exists_command_builder {
-        return new az_storage_fs_directory_exists_command_builder("az storage fs directory exists", fileSystem, name);
+        return new az_storage_fs_directory_exists_command_builder("az storage fs directory exists", 'az_storage_fs_directory_exists_command_result', fileSystem, name);
     }
 
     /**
@@ -3866,7 +3866,7 @@ export class az_storage_fs_directory {
      * @param {string} fileSystem File system name.
      */
     static list(fileSystem: string): az_storage_fs_directory_list_command_builder {
-        return new az_storage_fs_directory_list_command_builder("az storage fs directory list", fileSystem);
+        return new az_storage_fs_directory_list_command_builder("az storage fs directory list", 'az_storage_fs_directory_list_command_result', fileSystem);
     }
 
     /**
@@ -3891,7 +3891,7 @@ export class az_storage_fs_directory {
      * @param {string} newDirectory The new directory name the users want to move to. The value must have the following format: "{filesystem}/{directory}/{subdirectory}".
      */
     static move(fileSystem: string, name: string, newDirectory: string): az_storage_fs_directory_move_command_builder {
-        return new az_storage_fs_directory_move_command_builder("az storage fs directory move", fileSystem, name, newDirectory);
+        return new az_storage_fs_directory_move_command_builder("az storage fs directory move", 'az_storage_fs_directory_move_command_result', fileSystem, name, newDirectory);
     }
 
     /**
@@ -3915,7 +3915,7 @@ export class az_storage_fs_directory {
      * @param {string} name The name of directory.
      */
     static show(fileSystem: string, name: string): az_storage_fs_directory_show_command_builder {
-        return new az_storage_fs_directory_show_command_builder("az storage fs directory show", fileSystem, name);
+        return new az_storage_fs_directory_show_command_builder("az storage fs directory show", 'az_storage_fs_directory_show_command_result', fileSystem, name);
     }
 }
 
@@ -3942,7 +3942,7 @@ export class az_storage_fs_file_metadata {
      * @param {string} path The file path in a file system.
      */
     static show(fileSystem: string, path: string): az_storage_fs_file_metadata_show_command_builder {
-        return new az_storage_fs_file_metadata_show_command_builder("az storage fs file metadata show", fileSystem, path);
+        return new az_storage_fs_file_metadata_show_command_builder("az storage fs file metadata show", 'az_storage_fs_file_metadata_show_command_result', fileSystem, path);
     }
 
     /**
@@ -3967,7 +3967,7 @@ export class az_storage_fs_file_metadata {
      * @param {string} path The file path in a file system.
      */
     static update(fileSystem: string, metadata: string, path: string): az_storage_fs_file_metadata_update_command_builder {
-        return new az_storage_fs_file_metadata_update_command_builder("az storage fs file metadata update", fileSystem, metadata, path);
+        return new az_storage_fs_file_metadata_update_command_builder("az storage fs file metadata update", 'az_storage_fs_file_metadata_update_command_result', fileSystem, metadata, path);
     }
 }
 
@@ -3995,7 +3995,7 @@ export class az_storage_fs_file {
      * @param {string} path The file path in a file system.
      */
     static append(content: string, fileSystem: string, path: string): az_storage_fs_file_append_command_builder {
-        return new az_storage_fs_file_append_command_builder("az storage fs file append", content, fileSystem, path);
+        return new az_storage_fs_file_append_command_builder("az storage fs file append", 'az_storage_fs_file_append_command_result', content, fileSystem, path);
     }
 
     /**
@@ -4027,7 +4027,7 @@ export class az_storage_fs_file {
      * @param {string} path The file path in a file system.
      */
     static create(fileSystem: string, path: string): az_storage_fs_file_create_command_builder {
-        return new az_storage_fs_file_create_command_builder("az storage fs file create", fileSystem, path);
+        return new az_storage_fs_file_create_command_builder("az storage fs file create", 'az_storage_fs_file_create_command_result', fileSystem, path);
     }
 
     /**
@@ -4051,7 +4051,7 @@ export class az_storage_fs_file {
      * @param {string} path The file path in a file system.
      */
     static delete(fileSystem: string, path: string): az_storage_fs_file_delete_command_builder {
-        return new az_storage_fs_file_delete_command_builder("az storage fs file delete", fileSystem, path);
+        return new az_storage_fs_file_delete_command_builder("az storage fs file delete", 'az_storage_fs_file_delete_command_result', fileSystem, path);
     }
 
     /**
@@ -4076,7 +4076,7 @@ export class az_storage_fs_file {
      * @param {string} path The file path in a file system.
      */
     static download(fileSystem: string, path: string): az_storage_fs_file_download_command_builder {
-        return new az_storage_fs_file_download_command_builder("az storage fs file download", fileSystem, path);
+        return new az_storage_fs_file_download_command_builder("az storage fs file download", 'az_storage_fs_file_download_command_result', fileSystem, path);
     }
 
     /**
@@ -4099,7 +4099,7 @@ export class az_storage_fs_file {
      * @param {string} path The file path in a file system.
      */
     static exists(fileSystem: string, path: string): az_storage_fs_file_exists_command_builder {
-        return new az_storage_fs_file_exists_command_builder("az storage fs file exists", fileSystem, path);
+        return new az_storage_fs_file_exists_command_builder("az storage fs file exists", 'az_storage_fs_file_exists_command_result', fileSystem, path);
     }
 
     /**
@@ -4126,7 +4126,7 @@ export class az_storage_fs_file {
      * @param {string} fileSystem File system name.
      */
     static list(fileSystem: string): az_storage_fs_file_list_command_builder {
-        return new az_storage_fs_file_list_command_builder("az storage fs file list", fileSystem);
+        return new az_storage_fs_file_list_command_builder("az storage fs file list", 'az_storage_fs_file_list_command_result', fileSystem);
     }
 
     /**
@@ -4156,7 +4156,7 @@ export class az_storage_fs_file {
      * @param {string} path The original file path users want to move in a file system.
      */
     static move(fileSystem: string, newPath: string, path: string): az_storage_fs_file_move_command_builder {
-        return new az_storage_fs_file_move_command_builder("az storage fs file move", fileSystem, newPath, path);
+        return new az_storage_fs_file_move_command_builder("az storage fs file move", 'az_storage_fs_file_move_command_result', fileSystem, newPath, path);
     }
 
     /**
@@ -4180,7 +4180,7 @@ export class az_storage_fs_file {
      * @param {string} path The file path in a file system.
      */
     static show(fileSystem: string, path: string): az_storage_fs_file_show_command_builder {
-        return new az_storage_fs_file_show_command_builder("az storage fs file show", fileSystem, path);
+        return new az_storage_fs_file_show_command_builder("az storage fs file show", 'az_storage_fs_file_show_command_result', fileSystem, path);
     }
 
     /**
@@ -4219,7 +4219,7 @@ export class az_storage_fs_file {
      * @param {string} source Path of the local file to upload as the file content.
      */
     static upload(fileSystem: string, path: string, source: string): az_storage_fs_file_upload_command_builder {
-        return new az_storage_fs_file_upload_command_builder("az storage fs file upload", fileSystem, path, source);
+        return new az_storage_fs_file_upload_command_builder("az storage fs file upload", 'az_storage_fs_file_upload_command_result', fileSystem, path, source);
     }
 }
 
@@ -4244,7 +4244,7 @@ export class az_storage_fs_metadata {
      * @param {string} name File system name.
      */
     static show(name: string): az_storage_fs_metadata_show_command_builder {
-        return new az_storage_fs_metadata_show_command_builder("az storage fs metadata show", name);
+        return new az_storage_fs_metadata_show_command_builder("az storage fs metadata show", 'az_storage_fs_metadata_show_command_result', name);
     }
 
     /**
@@ -4267,7 +4267,7 @@ export class az_storage_fs_metadata {
      * @param {string} name File system name.
      */
     static update(metadata: string, name: string): az_storage_fs_metadata_update_command_builder {
-        return new az_storage_fs_metadata_update_command_builder("az storage fs metadata update", metadata, name);
+        return new az_storage_fs_metadata_update_command_builder("az storage fs metadata update", 'az_storage_fs_metadata_update_command_result', metadata, name);
     }
 }
 
@@ -4293,7 +4293,7 @@ export class az_storage_fs {
      * @param {string} name File system name.
      */
     static create(name: string): az_storage_fs_create_command_builder {
-        return new az_storage_fs_create_command_builder("az storage fs create", name);
+        return new az_storage_fs_create_command_builder("az storage fs create", 'az_storage_fs_create_command_result', name);
     }
 
     /**
@@ -4315,7 +4315,7 @@ export class az_storage_fs {
      * @param {string} name File system name.
      */
     static delete(name: string): az_storage_fs_delete_command_builder {
-        return new az_storage_fs_delete_command_builder("az storage fs delete", name);
+        return new az_storage_fs_delete_command_builder("az storage fs delete", 'az_storage_fs_delete_command_result', name);
     }
 
     /**
@@ -4336,7 +4336,7 @@ export class az_storage_fs {
      * @param {string} name File system name.
      */
     static exists(name: string): az_storage_fs_exists_command_builder {
-        return new az_storage_fs_exists_command_builder("az storage fs exists", name);
+        return new az_storage_fs_exists_command_builder("az storage fs exists", 'az_storage_fs_exists_command_result', name);
     }
 
     /**
@@ -4356,7 +4356,7 @@ export class az_storage_fs {
      * ```
      */
     static list(): az_storage_fs_list_command_builder {
-        return new az_storage_fs_list_command_builder("az storage fs list");
+        return new az_storage_fs_list_command_builder("az storage fs list", 'az_storage_fs_list_command_result');
     }
 
     /**
@@ -4378,7 +4378,7 @@ export class az_storage_fs {
      * @param {string} name File system name.
      */
     static show(name: string): az_storage_fs_show_command_builder {
-        return new az_storage_fs_show_command_builder("az storage fs show", name);
+        return new az_storage_fs_show_command_builder("az storage fs show", 'az_storage_fs_show_command_result', name);
     }
 }
 
@@ -4399,7 +4399,7 @@ export class az_storage_logging {
      * ```
      */
     static off(): az_storage_logging_off_command_builder {
-        return new az_storage_logging_off_command_builder("az storage logging off");
+        return new az_storage_logging_off_command_builder("az storage logging off", 'az_storage_logging_off_command_result');
     }
 
     /**
@@ -4418,7 +4418,7 @@ export class az_storage_logging {
      * ```
      */
     static show(): az_storage_logging_show_command_builder {
-        return new az_storage_logging_show_command_builder("az storage logging show");
+        return new az_storage_logging_show_command_builder("az storage logging show", 'az_storage_logging_show_command_result');
     }
 
     /**
@@ -4443,7 +4443,7 @@ export class az_storage_logging {
      * @param {string} services The storage service(s) for which to update logging info: (b)lob (q)ueue (t)able. Can be combined.
      */
     static update(log: string, retention: string, services: string): az_storage_logging_update_command_builder {
-        return new az_storage_logging_update_command_builder("az storage logging update", log, retention, services);
+        return new az_storage_logging_update_command_builder("az storage logging update", 'az_storage_logging_update_command_result', log, retention, services);
     }
 }
 
@@ -4467,7 +4467,7 @@ export class az_storage_message {
      * @param {string} queueName The queue name.
      */
     static clear(queueName: string): az_storage_message_clear_command_builder {
-        return new az_storage_message_clear_command_builder("az storage message clear", queueName);
+        return new az_storage_message_clear_command_builder("az storage message clear", 'az_storage_message_clear_command_result', queueName);
     }
 
     /**
@@ -4492,7 +4492,7 @@ export class az_storage_message {
      * @param {string} queueName The queue name.
      */
     static delete(id: string, popReceipt: string, queueName: string): az_storage_message_delete_command_builder {
-        return new az_storage_message_delete_command_builder("az storage message delete", id, popReceipt, queueName);
+        return new az_storage_message_delete_command_builder("az storage message delete", 'az_storage_message_delete_command_result', id, popReceipt, queueName);
     }
 
     /**
@@ -4515,7 +4515,7 @@ export class az_storage_message {
      * @param {string} queueName The queue name.
      */
     static get(queueName: string): az_storage_message_get_command_builder {
-        return new az_storage_message_get_command_builder("az storage message get", queueName);
+        return new az_storage_message_get_command_builder("az storage message get", 'az_storage_message_get_command_result', queueName);
     }
 
     /**
@@ -4537,7 +4537,7 @@ export class az_storage_message {
      * @param {string} queueName The queue name.
      */
     static peek(queueName: string): az_storage_message_peek_command_builder {
-        return new az_storage_message_peek_command_builder("az storage message peek", queueName);
+        return new az_storage_message_peek_command_builder("az storage message peek", 'az_storage_message_peek_command_result', queueName);
     }
 
     /**
@@ -4562,7 +4562,7 @@ export class az_storage_message {
      * @param {string} queueName The queue name.
      */
     static put(content: string, queueName: string): az_storage_message_put_command_builder {
-        return new az_storage_message_put_command_builder("az storage message put", content, queueName);
+        return new az_storage_message_put_command_builder("az storage message put", 'az_storage_message_put_command_result', content, queueName);
     }
 
     /**
@@ -4590,7 +4590,7 @@ export class az_storage_message {
      * @param {string} visibilityTimeout Specifies the new visibility timeout value, in seconds, relative to server time. The new value must be larger than or equal to 0, and cannot be larger than 7 days. The visibility timeout of a message cannot be set to a value later than the expiry time. A message can be updated until it has been deleted or has expired.
      */
     static update(id: string, popReceipt: string, queueName: string, visibilityTimeout: string): az_storage_message_update_command_builder {
-        return new az_storage_message_update_command_builder("az storage message update", id, popReceipt, queueName, visibilityTimeout);
+        return new az_storage_message_update_command_builder("az storage message update", 'az_storage_message_update_command_result', id, popReceipt, queueName, visibilityTimeout);
     }
 }
 
@@ -4613,7 +4613,7 @@ export class az_storage_metrics {
      * ```
      */
     static show(): az_storage_metrics_show_command_builder {
-        return new az_storage_metrics_show_command_builder("az storage metrics show");
+        return new az_storage_metrics_show_command_builder("az storage metrics show", 'az_storage_metrics_show_command_result');
     }
 
     /**
@@ -4638,7 +4638,7 @@ export class az_storage_metrics {
      * @param {string} services The storage services from which to retrieve metrics info: (b)lob (q)ueue (t)able. Can be combined.
      */
     static update(retention: string, services: string): az_storage_metrics_update_command_builder {
-        return new az_storage_metrics_update_command_builder("az storage metrics update", retention, services);
+        return new az_storage_metrics_update_command_builder("az storage metrics update", 'az_storage_metrics_update_command_result', retention, services);
     }
 }
 
@@ -4663,7 +4663,7 @@ export class az_storage_queue_metadata {
      * @param {string} name The queue name.
      */
     static show(name: string): az_storage_queue_metadata_show_command_builder {
-        return new az_storage_queue_metadata_show_command_builder("az storage queue metadata show", name);
+        return new az_storage_queue_metadata_show_command_builder("az storage queue metadata show", 'az_storage_queue_metadata_show_command_result', name);
     }
 
     /**
@@ -4685,7 +4685,7 @@ export class az_storage_queue_metadata {
      * @param {string} name The queue name.
      */
     static update(name: string): az_storage_queue_metadata_update_command_builder {
-        return new az_storage_queue_metadata_update_command_builder("az storage queue metadata update", name);
+        return new az_storage_queue_metadata_update_command_builder("az storage queue metadata update", 'az_storage_queue_metadata_update_command_result', name);
     }
 }
 
@@ -4713,7 +4713,7 @@ export class az_storage_queue_policy {
      * @param {string} queueName The queue name.
      */
     static create(name: string, queueName: string): az_storage_queue_policy_create_command_builder {
-        return new az_storage_queue_policy_create_command_builder("az storage queue policy create", name, queueName);
+        return new az_storage_queue_policy_create_command_builder("az storage queue policy create", 'az_storage_queue_policy_create_command_result', name, queueName);
     }
 
     /**
@@ -4735,7 +4735,7 @@ export class az_storage_queue_policy {
      * @param {string} queueName The queue name.
      */
     static delete(name: string, queueName: string): az_storage_queue_policy_delete_command_builder {
-        return new az_storage_queue_policy_delete_command_builder("az storage queue policy delete", name, queueName);
+        return new az_storage_queue_policy_delete_command_builder("az storage queue policy delete", 'az_storage_queue_policy_delete_command_result', name, queueName);
     }
 
     /**
@@ -4756,7 +4756,7 @@ export class az_storage_queue_policy {
      * @param {string} queueName The queue name.
      */
     static list(queueName: string): az_storage_queue_policy_list_command_builder {
-        return new az_storage_queue_policy_list_command_builder("az storage queue policy list", queueName);
+        return new az_storage_queue_policy_list_command_builder("az storage queue policy list", 'az_storage_queue_policy_list_command_result', queueName);
     }
 
     /**
@@ -4779,7 +4779,7 @@ export class az_storage_queue_policy {
      * @param {string} queueName The queue name.
      */
     static show(name: string, queueName: string): az_storage_queue_policy_show_command_builder {
-        return new az_storage_queue_policy_show_command_builder("az storage queue policy show", name, queueName);
+        return new az_storage_queue_policy_show_command_builder("az storage queue policy show", 'az_storage_queue_policy_show_command_result', name, queueName);
     }
 
     /**
@@ -4804,7 +4804,7 @@ export class az_storage_queue_policy {
      * @param {string} queueName The queue name.
      */
     static update(name: string, queueName: string): az_storage_queue_policy_update_command_builder {
-        return new az_storage_queue_policy_update_command_builder("az storage queue policy update", name, queueName);
+        return new az_storage_queue_policy_update_command_builder("az storage queue policy update", 'az_storage_queue_policy_update_command_result', name, queueName);
     }
 }
 
@@ -4830,7 +4830,7 @@ export class az_storage_queue {
      * @param {string} name The queue name.
      */
     static create(name: string): az_storage_queue_create_command_builder {
-        return new az_storage_queue_create_command_builder("az storage queue create", name);
+        return new az_storage_queue_create_command_builder("az storage queue create", 'az_storage_queue_create_command_result', name);
     }
 
     /**
@@ -4852,7 +4852,7 @@ export class az_storage_queue {
      * @param {string} name The queue name.
      */
     static delete(name: string): az_storage_queue_delete_command_builder {
-        return new az_storage_queue_delete_command_builder("az storage queue delete", name);
+        return new az_storage_queue_delete_command_builder("az storage queue delete", 'az_storage_queue_delete_command_result', name);
     }
 
     /**
@@ -4873,7 +4873,7 @@ export class az_storage_queue {
      * @param {string} name The queue name.
      */
     static exists(name: string): az_storage_queue_exists_command_builder {
-        return new az_storage_queue_exists_command_builder("az storage queue exists", name);
+        return new az_storage_queue_exists_command_builder("az storage queue exists", 'az_storage_queue_exists_command_result', name);
     }
 
     /**
@@ -4897,7 +4897,7 @@ export class az_storage_queue {
      * @param {string} name The queue name.
      */
     static generate_sas(name: string): az_storage_queue_generate_sas_command_builder {
-        return new az_storage_queue_generate_sas_command_builder("az storage queue generate-sas", name);
+        return new az_storage_queue_generate_sas_command_builder("az storage queue generate-sas", 'az_storage_queue_generate_sas_command_result', name);
     }
 
     /**
@@ -4920,7 +4920,7 @@ export class az_storage_queue {
      * ```
      */
     static list(): az_storage_queue_list_command_builder {
-        return new az_storage_queue_list_command_builder("az storage queue list");
+        return new az_storage_queue_list_command_builder("az storage queue list", 'az_storage_queue_list_command_result');
     }
 
     /**
@@ -4938,7 +4938,7 @@ export class az_storage_queue {
      * ```
      */
     static stats(): az_storage_queue_stats_command_builder {
-        return new az_storage_queue_stats_command_builder("az storage queue stats");
+        return new az_storage_queue_stats_command_builder("az storage queue stats", 'az_storage_queue_stats_command_result');
     }
 }
 
@@ -4963,7 +4963,7 @@ export class az_storage_share_metadata {
      * @param {string} name The file share name.
      */
     static show(name: string): az_storage_share_metadata_show_command_builder {
-        return new az_storage_share_metadata_show_command_builder("az storage share metadata show", name);
+        return new az_storage_share_metadata_show_command_builder("az storage share metadata show", 'az_storage_share_metadata_show_command_result', name);
     }
 
     /**
@@ -4984,7 +4984,7 @@ export class az_storage_share_metadata {
      * @param {string} name The file share name.
      */
     static update(name: string): az_storage_share_metadata_update_command_builder {
-        return new az_storage_share_metadata_update_command_builder("az storage share metadata update", name);
+        return new az_storage_share_metadata_update_command_builder("az storage share metadata update", 'az_storage_share_metadata_update_command_result', name);
     }
 }
 
@@ -5011,7 +5011,7 @@ export class az_storage_share_policy {
      * @param {string} shareName The file share name.
      */
     static create(name: string, shareName: string): az_storage_share_policy_create_command_builder {
-        return new az_storage_share_policy_create_command_builder("az storage share policy create", name, shareName);
+        return new az_storage_share_policy_create_command_builder("az storage share policy create", 'az_storage_share_policy_create_command_result', name, shareName);
     }
 
     /**
@@ -5032,7 +5032,7 @@ export class az_storage_share_policy {
      * @param {string} shareName The file share name.
      */
     static delete(name: string, shareName: string): az_storage_share_policy_delete_command_builder {
-        return new az_storage_share_policy_delete_command_builder("az storage share policy delete", name, shareName);
+        return new az_storage_share_policy_delete_command_builder("az storage share policy delete", 'az_storage_share_policy_delete_command_result', name, shareName);
     }
 
     /**
@@ -5052,7 +5052,7 @@ export class az_storage_share_policy {
      * @param {string} shareName The file share name.
      */
     static list(shareName: string): az_storage_share_policy_list_command_builder {
-        return new az_storage_share_policy_list_command_builder("az storage share policy list", shareName);
+        return new az_storage_share_policy_list_command_builder("az storage share policy list", 'az_storage_share_policy_list_command_result', shareName);
     }
 
     /**
@@ -5074,7 +5074,7 @@ export class az_storage_share_policy {
      * @param {string} shareName The file share name.
      */
     static show(name: string, shareName: string): az_storage_share_policy_show_command_builder {
-        return new az_storage_share_policy_show_command_builder("az storage share policy show", name, shareName);
+        return new az_storage_share_policy_show_command_builder("az storage share policy show", 'az_storage_share_policy_show_command_result', name, shareName);
     }
 
     /**
@@ -5098,7 +5098,7 @@ export class az_storage_share_policy {
      * @param {string} shareName The file share name.
      */
     static update(name: string, shareName: string): az_storage_share_policy_update_command_builder {
-        return new az_storage_share_policy_update_command_builder("az storage share policy update", name, shareName);
+        return new az_storage_share_policy_update_command_builder("az storage share policy update", 'az_storage_share_policy_update_command_result', name, shareName);
     }
 }
 
@@ -5124,7 +5124,7 @@ export class az_storage_share_rm {
      * @param {string} storageAccount The name or ID of the storage account.
      */
     static create(name: string, storageAccount: string): az_storage_share_rm_create_command_builder {
-        return new az_storage_share_rm_create_command_builder("az storage share-rm create", name, storageAccount);
+        return new az_storage_share_rm_create_command_builder("az storage share-rm create", 'az_storage_share_rm_create_command_result', name, storageAccount);
     }
 
     /**
@@ -5141,7 +5141,7 @@ export class az_storage_share_rm {
      * ```
      */
     static delete(): az_storage_share_rm_delete_command_builder {
-        return new az_storage_share_rm_delete_command_builder("az storage share-rm delete");
+        return new az_storage_share_rm_delete_command_builder("az storage share-rm delete", 'az_storage_share_rm_delete_command_result');
     }
 
     /**
@@ -5157,7 +5157,7 @@ export class az_storage_share_rm {
      * ```
      */
     static exists(): az_storage_share_rm_exists_command_builder {
-        return new az_storage_share_rm_exists_command_builder("az storage share-rm exists");
+        return new az_storage_share_rm_exists_command_builder("az storage share-rm exists", 'az_storage_share_rm_exists_command_result');
     }
 
     /**
@@ -5175,7 +5175,7 @@ export class az_storage_share_rm {
      * @param {string} storageAccount The name or ID of the storage account.
      */
     static list(storageAccount: string): az_storage_share_rm_list_command_builder {
-        return new az_storage_share_rm_list_command_builder("az storage share-rm list", storageAccount);
+        return new az_storage_share_rm_list_command_builder("az storage share-rm list", 'az_storage_share_rm_list_command_result', storageAccount);
     }
 
     /**
@@ -5195,7 +5195,7 @@ export class az_storage_share_rm {
      * @param {string} deletedVersion Identify the version of the deleted share that will be restored.
      */
     static restore(deletedVersion: string): az_storage_share_rm_restore_command_builder {
-        return new az_storage_share_rm_restore_command_builder("az storage share-rm restore", deletedVersion);
+        return new az_storage_share_rm_restore_command_builder("az storage share-rm restore", 'az_storage_share_rm_restore_command_result', deletedVersion);
     }
 
     /**
@@ -5213,7 +5213,7 @@ export class az_storage_share_rm {
      * ```
      */
     static show(): az_storage_share_rm_show_command_builder {
-        return new az_storage_share_rm_show_command_builder("az storage share-rm show");
+        return new az_storage_share_rm_show_command_builder("az storage share-rm show", 'az_storage_share_rm_show_command_result');
     }
 
     /**
@@ -5229,7 +5229,7 @@ export class az_storage_share_rm {
      * ```
      */
     static stats(): az_storage_share_rm_stats_command_builder {
-        return new az_storage_share_rm_stats_command_builder("az storage share-rm stats");
+        return new az_storage_share_rm_stats_command_builder("az storage share-rm stats", 'az_storage_share_rm_stats_command_result');
     }
 
     /**
@@ -5253,7 +5253,7 @@ export class az_storage_share_rm {
      * ```
      */
     static update(): az_storage_share_rm_update_command_builder {
-        return new az_storage_share_rm_update_command_builder("az storage share-rm update");
+        return new az_storage_share_rm_update_command_builder("az storage share-rm update", 'az_storage_share_rm_update_command_result');
     }
 }
 
@@ -5279,7 +5279,7 @@ export class az_storage_share {
      * @param {string} name The file share name.
      */
     static create(name: string): az_storage_share_create_command_builder {
-        return new az_storage_share_create_command_builder("az storage share create", name);
+        return new az_storage_share_create_command_builder("az storage share create", 'az_storage_share_create_command_result', name);
     }
 
     /**
@@ -5302,7 +5302,7 @@ export class az_storage_share {
      * @param {string} name The file share name.
      */
     static delete(name: string): az_storage_share_delete_command_builder {
-        return new az_storage_share_delete_command_builder("az storage share delete", name);
+        return new az_storage_share_delete_command_builder("az storage share delete", 'az_storage_share_delete_command_result', name);
     }
 
     /**
@@ -5323,7 +5323,7 @@ export class az_storage_share {
      * @param {string} name The file share name.
      */
     static exists(name: string): az_storage_share_exists_command_builder {
-        return new az_storage_share_exists_command_builder("az storage share exists", name);
+        return new az_storage_share_exists_command_builder("az storage share exists", 'az_storage_share_exists_command_result', name);
     }
 
     /**
@@ -5352,7 +5352,7 @@ export class az_storage_share {
      * @param {string} name The file share name.
      */
     static generate_sas(name: string): az_storage_share_generate_sas_command_builder {
-        return new az_storage_share_generate_sas_command_builder("az storage share generate-sas", name);
+        return new az_storage_share_generate_sas_command_builder("az storage share generate-sas", 'az_storage_share_generate_sas_command_result', name);
     }
 
     /**
@@ -5375,7 +5375,7 @@ export class az_storage_share {
      * ```
      */
     static list(): az_storage_share_list_command_builder {
-        return new az_storage_share_list_command_builder("az storage share list");
+        return new az_storage_share_list_command_builder("az storage share list", 'az_storage_share_list_command_result');
     }
 
     /**
@@ -5397,7 +5397,7 @@ export class az_storage_share {
      * @param {string} name The file share name.
      */
     static show(name: string): az_storage_share_show_command_builder {
-        return new az_storage_share_show_command_builder("az storage share show", name);
+        return new az_storage_share_show_command_builder("az storage share show", 'az_storage_share_show_command_result', name);
     }
 
     /**
@@ -5419,7 +5419,7 @@ export class az_storage_share {
      * @param {string} name The file share name.
      */
     static snapshot(name: string): az_storage_share_snapshot_command_builder {
-        return new az_storage_share_snapshot_command_builder("az storage share snapshot", name);
+        return new az_storage_share_snapshot_command_builder("az storage share snapshot", 'az_storage_share_snapshot_command_result', name);
     }
 
     /**
@@ -5439,7 +5439,7 @@ export class az_storage_share {
      * @param {string} name The file share name.
      */
     static stats(name: string): az_storage_share_stats_command_builder {
-        return new az_storage_share_stats_command_builder("az storage share stats", name);
+        return new az_storage_share_stats_command_builder("az storage share stats", 'az_storage_share_stats_command_result', name);
     }
 
     /**
@@ -5461,7 +5461,7 @@ export class az_storage_share {
      * @param {string} quota Specifies the maximum size of the share, in gigabytes. Must be greater than 0, and less than or equal to 5 TB (5120 GB).
      */
     static update(name: string, quota: string): az_storage_share_update_command_builder {
-        return new az_storage_share_update_command_builder("az storage share update", name, quota);
+        return new az_storage_share_update_command_builder("az storage share update", 'az_storage_share_update_command_result', name, quota);
     }
 
     /**
@@ -5482,7 +5482,7 @@ export class az_storage_share {
      * @param {string} name The file share name.
      */
     static url(name: string): az_storage_share_url_command_builder {
-        return new az_storage_share_url_command_builder("az storage share url", name);
+        return new az_storage_share_url_command_builder("az storage share url", 'az_storage_share_url_command_result', name);
     }
 }
 
@@ -5509,7 +5509,7 @@ export class az_storage_table_policy {
      * @param {string} tableName The container name.
      */
     static create(name: string, tableName: string): az_storage_table_policy_create_command_builder {
-        return new az_storage_table_policy_create_command_builder("az storage table policy create", name, tableName);
+        return new az_storage_table_policy_create_command_builder("az storage table policy create", 'az_storage_table_policy_create_command_result', name, tableName);
     }
 
     /**
@@ -5530,7 +5530,7 @@ export class az_storage_table_policy {
      * @param {string} tableName The container name.
      */
     static delete(name: string, tableName: string): az_storage_table_policy_delete_command_builder {
-        return new az_storage_table_policy_delete_command_builder("az storage table policy delete", name, tableName);
+        return new az_storage_table_policy_delete_command_builder("az storage table policy delete", 'az_storage_table_policy_delete_command_result', name, tableName);
     }
 
     /**
@@ -5550,7 +5550,7 @@ export class az_storage_table_policy {
      * @param {string} tableName The container name.
      */
     static list(tableName: string): az_storage_table_policy_list_command_builder {
-        return new az_storage_table_policy_list_command_builder("az storage table policy list", tableName);
+        return new az_storage_table_policy_list_command_builder("az storage table policy list", 'az_storage_table_policy_list_command_result', tableName);
     }
 
     /**
@@ -5572,7 +5572,7 @@ export class az_storage_table_policy {
      * @param {string} tableName The container name.
      */
     static show(name: string, tableName: string): az_storage_table_policy_show_command_builder {
-        return new az_storage_table_policy_show_command_builder("az storage table policy show", name, tableName);
+        return new az_storage_table_policy_show_command_builder("az storage table policy show", 'az_storage_table_policy_show_command_result', name, tableName);
     }
 
     /**
@@ -5596,7 +5596,7 @@ export class az_storage_table_policy {
      * @param {string} tableName The container name.
      */
     static update(name: string, tableName: string): az_storage_table_policy_update_command_builder {
-        return new az_storage_table_policy_update_command_builder("az storage table policy update", name, tableName);
+        return new az_storage_table_policy_update_command_builder("az storage table policy update", 'az_storage_table_policy_update_command_result', name, tableName);
     }
 }
 
@@ -5620,7 +5620,7 @@ export class az_storage_table {
      * @param {string} name The name of the table to create. The table name may contain only alphanumeric characters and cannot begin with a numeric character. It is case-insensitive and must be from 3 to 63 characters long.
      */
     static create(name: string): az_storage_table_create_command_builder {
-        return new az_storage_table_create_command_builder("az storage table create", name);
+        return new az_storage_table_create_command_builder("az storage table create", 'az_storage_table_create_command_result', name);
     }
 
     /**
@@ -5641,7 +5641,7 @@ export class az_storage_table {
      * @param {string} name The name of the table to delete.
      */
     static delete(name: string): az_storage_table_delete_command_builder {
-        return new az_storage_table_delete_command_builder("az storage table delete", name);
+        return new az_storage_table_delete_command_builder("az storage table delete", 'az_storage_table_delete_command_result', name);
     }
 
     /**
@@ -5661,7 +5661,7 @@ export class az_storage_table {
      * @param {string} name The name of table to check for existence.
      */
     static exists(name: string): az_storage_table_exists_command_builder {
-        return new az_storage_table_exists_command_builder("az storage table exists", name);
+        return new az_storage_table_exists_command_builder("az storage table exists", 'az_storage_table_exists_command_result', name);
     }
 
     /**
@@ -5689,7 +5689,7 @@ export class az_storage_table {
      * @param {string} name The name of the table to create a SAS token for.
      */
     static generate_sas(name: string): az_storage_table_generate_sas_command_builder {
-        return new az_storage_table_generate_sas_command_builder("az storage table generate-sas", name);
+        return new az_storage_table_generate_sas_command_builder("az storage table generate-sas", 'az_storage_table_generate_sas_command_result', name);
     }
 
     /**
@@ -5709,7 +5709,7 @@ export class az_storage_table {
      * ```
      */
     static list(): az_storage_table_list_command_builder {
-        return new az_storage_table_list_command_builder("az storage table list");
+        return new az_storage_table_list_command_builder("az storage table list", 'az_storage_table_list_command_result');
     }
 
     /**
@@ -5726,7 +5726,7 @@ export class az_storage_table {
      * ```
      */
     static stats(): az_storage_table_stats_command_builder {
-        return new az_storage_table_stats_command_builder("az storage table stats");
+        return new az_storage_table_stats_command_builder("az storage table stats", 'az_storage_table_stats_command_result');
     }
 }
 
@@ -5772,7 +5772,7 @@ export class az_storage {
      * ```
      */
     static copy(): az_storage_copy_command_builder {
-        return new az_storage_copy_command_builder("az storage copy");
+        return new az_storage_copy_command_builder("az storage copy", 'az_storage_copy_command_result');
     }
 
     /**
@@ -5797,7 +5797,7 @@ export class az_storage {
      * ```
      */
     static remove(): az_storage_remove_command_builder {
-        return new az_storage_remove_command_builder("az storage remove");
+        return new az_storage_remove_command_builder("az storage remove", 'az_storage_remove_command_result');
     }
 }
 
@@ -5815,8 +5815,8 @@ export class az_storage {
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_blob_service_properties_show_command_builder extends CommandBuilder<az_storage_account_blob_service_properties_show_command_result> {
-    constructor(commandPath: string, accountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
     }
 
@@ -5870,8 +5870,8 @@ class az_storage_account_blob_service_properties_show_command_builder extends Co
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_blob_service_properties_update_command_builder extends CommandBuilder<az_storage_account_blob_service_properties_update_command_result> {
-    constructor(commandPath: string, accountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
     }
 
@@ -5983,8 +5983,8 @@ class az_storage_account_blob_service_properties_update_command_builder extends 
  * @param {string} name The name of the encryption scope within the specified storage account.
  */
 class az_storage_account_encryption_scope_create_command_builder extends CommandBuilder<az_storage_account_encryption_scope_create_command_result> {
-    constructor(commandPath: string, accountName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.name(name)
     }
@@ -6040,8 +6040,8 @@ class az_storage_account_encryption_scope_create_command_builder extends Command
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_encryption_scope_list_command_builder extends CommandBuilder<az_storage_account_encryption_scope_list_command_result> {
-    constructor(commandPath: string, accountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
     }
 
@@ -6086,8 +6086,8 @@ class az_storage_account_encryption_scope_list_command_builder extends CommandBu
  * @param {string} name The name of the encryption scope within the specified storage account.
  */
 class az_storage_account_encryption_scope_show_command_builder extends CommandBuilder<az_storage_account_encryption_scope_show_command_result> {
-    constructor(commandPath: string, accountName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.name(name)
     }
@@ -6141,8 +6141,8 @@ class az_storage_account_encryption_scope_show_command_builder extends CommandBu
  * @param {string} name The name of the encryption scope within the specified storage account.
  */
 class az_storage_account_encryption_scope_update_command_builder extends CommandBuilder<az_storage_account_encryption_scope_update_command_result> {
-    constructor(commandPath: string, accountName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.name(name)
     }
@@ -6204,8 +6204,8 @@ class az_storage_account_encryption_scope_update_command_builder extends Command
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_file_service_properties_show_command_builder extends CommandBuilder<az_storage_account_file_service_properties_show_command_result> {
-    constructor(commandPath: string, accountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
     }
 
@@ -6249,8 +6249,8 @@ class az_storage_account_file_service_properties_show_command_builder extends Co
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_file_service_properties_update_command_builder extends CommandBuilder<az_storage_account_file_service_properties_update_command_result> {
-    constructor(commandPath: string, accountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
     }
 
@@ -6300,8 +6300,8 @@ class az_storage_account_file_service_properties_update_command_builder extends 
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_keys_list_command_builder extends CommandBuilder<az_storage_account_keys_list_command_result> {
-    constructor(commandPath: string, accountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
     }
 
@@ -6352,8 +6352,8 @@ class az_storage_account_keys_list_command_builder extends CommandBuilder<az_sto
  * @param {'primary' | 'secondary'} key The key options to regenerate.
  */
 class az_storage_account_keys_renew_command_builder extends CommandBuilder<az_storage_account_keys_renew_command_result> {
-    constructor(commandPath: string, accountName: string, key: 'primary' | 'secondary') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, key: 'primary' | 'secondary') {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.key(key)
     }
@@ -6405,8 +6405,8 @@ class az_storage_account_keys_renew_command_builder extends CommandBuilder<az_st
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_storage_account_management_policy_create_command_builder extends CommandBuilder<az_storage_account_management_policy_create_command_result> {
-    constructor(commandPath: string, accountName: string, policy: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, policy: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.policy(policy)
         this.resourceGroup(resourceGroup)
@@ -6451,8 +6451,8 @@ class az_storage_account_management_policy_create_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_storage_account_management_policy_delete_command_builder extends CommandBuilder<az_storage_account_management_policy_delete_command_result> {
-    constructor(commandPath: string, accountName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
     }
@@ -6491,8 +6491,8 @@ class az_storage_account_management_policy_delete_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_storage_account_management_policy_show_command_builder extends CommandBuilder<az_storage_account_management_policy_show_command_result> {
-    constructor(commandPath: string, accountName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
     }
@@ -6540,8 +6540,8 @@ class az_storage_account_management_policy_show_command_builder extends CommandB
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_storage_account_management_policy_update_command_builder extends CommandBuilder<az_storage_account_management_policy_update_command_result> {
-    constructor(commandPath: string, accountName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
     }
@@ -6606,8 +6606,8 @@ class az_storage_account_management_policy_update_command_builder extends Comman
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_network_rule_add_command_builder extends CommandBuilder<az_storage_account_network_rule_add_command_result> {
-    constructor(commandPath: string, accountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
     }
 
@@ -6668,8 +6668,8 @@ class az_storage_account_network_rule_add_command_builder extends CommandBuilder
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_network_rule_list_command_builder extends CommandBuilder<az_storage_account_network_rule_list_command_result> {
-    constructor(commandPath: string, accountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
     }
 
@@ -6714,8 +6714,8 @@ class az_storage_account_network_rule_list_command_builder extends CommandBuilde
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_network_rule_remove_command_builder extends CommandBuilder<az_storage_account_network_rule_remove_command_result> {
-    constructor(commandPath: string, accountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
     }
 
@@ -6777,8 +6777,8 @@ class az_storage_account_network_rule_remove_command_builder extends CommandBuil
  * @param {string} sourceContainer The source storage container name.
  */
 class az_storage_account_or_policy_rule_add_command_builder extends CommandBuilder<az_storage_account_or_policy_rule_add_command_result> {
-    constructor(commandPath: string, accountName: string, destinationContainer: string, policyId: string, sourceContainer: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, destinationContainer: string, policyId: string, sourceContainer: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.destinationContainer(destinationContainer)
         this.policyId(policyId)
@@ -6850,8 +6850,8 @@ class az_storage_account_or_policy_rule_add_command_builder extends CommandBuild
  * @param {string} policyId The ID of object replication policy or "default" if the policy ID is unknown. Policy Id will be auto-generated when setting on destination account. Required when setting on source account.
  */
 class az_storage_account_or_policy_rule_list_command_builder extends CommandBuilder<az_storage_account_or_policy_rule_list_command_result> {
-    constructor(commandPath: string, accountName: string, policyId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, policyId: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.policyId(policyId)
     }
@@ -6904,8 +6904,8 @@ class az_storage_account_or_policy_rule_list_command_builder extends CommandBuil
  * @param {string} ruleId Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source account.
  */
 class az_storage_account_or_policy_rule_remove_command_builder extends CommandBuilder<az_storage_account_or_policy_rule_remove_command_result> {
-    constructor(commandPath: string, accountName: string, policyId: string, ruleId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, policyId: string, ruleId: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.policyId(policyId)
         this.ruleId(ruleId)
@@ -6960,8 +6960,8 @@ class az_storage_account_or_policy_rule_remove_command_builder extends CommandBu
  * @param {string} ruleId Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source account.
  */
 class az_storage_account_or_policy_rule_show_command_builder extends CommandBuilder<az_storage_account_or_policy_rule_show_command_result> {
-    constructor(commandPath: string, accountName: string, policyId: string, ruleId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, policyId: string, ruleId: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.policyId(policyId)
         this.ruleId(ruleId)
@@ -7025,8 +7025,8 @@ class az_storage_account_or_policy_rule_show_command_builder extends CommandBuil
  * @param {string} ruleId Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source account.
  */
 class az_storage_account_or_policy_rule_update_command_builder extends CommandBuilder<az_storage_account_or_policy_rule_update_command_result> {
-    constructor(commandPath: string, accountName: string, policyId: string, ruleId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, policyId: string, ruleId: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.policyId(policyId)
         this.ruleId(ruleId)
@@ -7109,8 +7109,8 @@ class az_storage_account_or_policy_rule_update_command_builder extends CommandBu
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_or_policy_create_command_builder extends CommandBuilder<az_storage_account_or_policy_create_command_result> {
-    constructor(commandPath: string, accountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
     }
 
@@ -7202,8 +7202,8 @@ class az_storage_account_or_policy_create_command_builder extends CommandBuilder
  * @param {string} policyId The ID of object replication policy or "default" if the policy ID is unknown. Policy Id will be auto-generated when setting on destination account. Required when setting on source account.
  */
 class az_storage_account_or_policy_delete_command_builder extends CommandBuilder<az_storage_account_or_policy_delete_command_result> {
-    constructor(commandPath: string, accountName: string, policyId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, policyId: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.policyId(policyId)
     }
@@ -7247,8 +7247,8 @@ class az_storage_account_or_policy_delete_command_builder extends CommandBuilder
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_or_policy_list_command_builder extends CommandBuilder<az_storage_account_or_policy_list_command_result> {
-    constructor(commandPath: string, accountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
     }
 
@@ -7293,8 +7293,8 @@ class az_storage_account_or_policy_list_command_builder extends CommandBuilder<a
  * @param {string} policyId The ID of object replication policy or "default" if the policy ID is unknown. Policy Id will be auto-generated when setting on destination account. Required when setting on source account.
  */
 class az_storage_account_or_policy_show_command_builder extends CommandBuilder<az_storage_account_or_policy_show_command_result> {
-    constructor(commandPath: string, accountName: string, policyId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, policyId: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.policyId(policyId)
     }
@@ -7351,8 +7351,8 @@ class az_storage_account_or_policy_show_command_builder extends CommandBuilder<a
  * @param {string} accountName The storage account name.
  */
 class az_storage_account_or_policy_update_command_builder extends CommandBuilder<az_storage_account_or_policy_update_command_result> {
-    constructor(commandPath: string, accountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
     }
 
@@ -7437,8 +7437,8 @@ class az_storage_account_or_policy_update_command_builder extends CommandBuilder
  * ```
  */
 class az_storage_account_private_endpoint_connection_approve_command_builder extends CommandBuilder<az_storage_account_private_endpoint_connection_approve_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The storage account name. */
@@ -7492,8 +7492,8 @@ class az_storage_account_private_endpoint_connection_approve_command_builder ext
  * ```
  */
 class az_storage_account_private_endpoint_connection_delete_command_builder extends CommandBuilder<az_storage_account_private_endpoint_connection_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The storage account name. */
@@ -7547,8 +7547,8 @@ class az_storage_account_private_endpoint_connection_delete_command_builder exte
  * ```
  */
 class az_storage_account_private_endpoint_connection_reject_command_builder extends CommandBuilder<az_storage_account_private_endpoint_connection_reject_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The storage account name. */
@@ -7602,8 +7602,8 @@ class az_storage_account_private_endpoint_connection_reject_command_builder exte
  * ```
  */
 class az_storage_account_private_endpoint_connection_show_command_builder extends CommandBuilder<az_storage_account_private_endpoint_connection_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The storage account name. */
@@ -7658,8 +7658,8 @@ class az_storage_account_private_endpoint_connection_show_command_builder extend
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_storage_account_private_link_resource_list_command_builder extends CommandBuilder<az_storage_account_private_link_resource_list_command_result> {
-    constructor(commandPath: string, accountName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
     }
@@ -7701,8 +7701,8 @@ class az_storage_account_private_link_resource_list_command_builder extends Comm
  * @param {string} name The storage account name.
  */
 class az_storage_account_check_name_command_builder extends CommandBuilder<az_storage_account_check_name_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -7762,8 +7762,8 @@ class az_storage_account_check_name_command_builder extends CommandBuilder<az_st
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_storage_account_create_command_builder extends CommandBuilder<az_storage_account_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -7974,8 +7974,8 @@ class az_storage_account_create_command_builder extends CommandBuilder<az_storag
  * ```
  */
 class az_storage_account_delete_command_builder extends CommandBuilder<az_storage_account_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -8023,8 +8023,8 @@ class az_storage_account_delete_command_builder extends CommandBuilder<az_storag
  * ```
  */
 class az_storage_account_failover_command_builder extends CommandBuilder<az_storage_account_failover_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -8089,8 +8089,8 @@ class az_storage_account_failover_command_builder extends CommandBuilder<az_stor
  * @param {string} services The storage services the SAS is applicable for. Allowed values: (b)lob (f)ile (q)ueue (t)able. Can be combined.
  */
 class az_storage_account_generate_sas_command_builder extends CommandBuilder<az_storage_account_generate_sas_command_result> {
-    constructor(commandPath: string, expiry: string, permissions: string, resourceTypes: string, services: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, expiry: string, permissions: string, resourceTypes: string, services: string) {
+        super(commandPath, resultDataTypeName);
         this.expiry(expiry)
         this.permissions(permissions)
         this.resourceTypes(resourceTypes)
@@ -8181,8 +8181,8 @@ class az_storage_account_generate_sas_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_storage_account_list_command_builder extends CommandBuilder<az_storage_account_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -8216,8 +8216,8 @@ class az_storage_account_list_command_builder extends CommandBuilder<az_storage_
  * ```
  */
 class az_storage_account_revoke_delegation_keys_command_builder extends CommandBuilder<az_storage_account_revoke_delegation_keys_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -8259,8 +8259,8 @@ class az_storage_account_revoke_delegation_keys_command_builder extends CommandB
  * ```
  */
 class az_storage_account_show_command_builder extends CommandBuilder<az_storage_account_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** May be used to expand the properties within account's properties. By default, data is not included when fetching properties. Currently we only support geoReplicationStats and blobRestoreStatus. */
@@ -8319,8 +8319,8 @@ class az_storage_account_show_command_builder extends CommandBuilder<az_storage_
  * ```
  */
 class az_storage_account_show_connection_string_command_builder extends CommandBuilder<az_storage_account_show_connection_string_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Custom endpoint for blobs. */
@@ -8402,8 +8402,8 @@ class az_storage_account_show_connection_string_command_builder extends CommandB
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_storage_account_show_usage_command_builder extends CommandBuilder<az_storage_account_show_usage_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -8464,8 +8464,8 @@ class az_storage_account_show_usage_command_builder extends CommandBuilder<az_st
  * ```
  */
 class az_storage_account_update_command_builder extends CommandBuilder<az_storage_account_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The access tier used for billing StandardBlob accounts. Cannot be set for StandardLRS, StandardGRS, StandardRAGRS, or PremiumLRS account types. It is required for StandardBlob accounts during creation. */
@@ -8708,8 +8708,8 @@ class az_storage_account_update_command_builder extends CommandBuilder<az_storag
  * @param {string} destinationContainer The container name.
  */
 class az_storage_blob_copy_cancel_command_builder extends CommandBuilder<az_storage_blob_copy_cancel_command_result> {
-    constructor(commandPath: string, copyId: string, destinationBlob: string, destinationContainer: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, copyId: string, destinationBlob: string, destinationContainer: string) {
+        super(commandPath, resultDataTypeName);
         this.copyId(copyId)
         this.destinationBlob(destinationBlob)
         this.destinationContainer(destinationContainer)
@@ -8823,8 +8823,8 @@ class az_storage_blob_copy_cancel_command_builder extends CommandBuilder<az_stor
  * @param {string} destinationContainer The container name.
  */
 class az_storage_blob_copy_start_command_builder extends CommandBuilder<az_storage_blob_copy_start_command_result> {
-    constructor(commandPath: string, destinationBlob: string, destinationContainer: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, destinationBlob: string, destinationContainer: string) {
+        super(commandPath, resultDataTypeName);
         this.destinationBlob(destinationBlob)
         this.destinationContainer(destinationContainer)
     }
@@ -9034,8 +9034,8 @@ class az_storage_blob_copy_start_command_builder extends CommandBuilder<az_stora
  * ```
  */
 class az_storage_blob_copy_start_batch_command_builder extends CommandBuilder<az_storage_blob_copy_start_batch_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
@@ -9158,8 +9158,8 @@ class az_storage_blob_copy_start_batch_command_builder extends CommandBuilder<az
  * @param {string} name The blob name.
  */
 class az_storage_blob_incremental_copy_cancel_command_builder extends CommandBuilder<az_storage_blob_incremental_copy_cancel_command_result> {
-    constructor(commandPath: string, containerName: string, copyId: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, copyId: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.copyId(copyId)
         this.name(name)
@@ -9266,8 +9266,8 @@ class az_storage_blob_incremental_copy_cancel_command_builder extends CommandBui
  * @param {string} destinationContainer The container name.
  */
 class az_storage_blob_incremental_copy_start_command_builder extends CommandBuilder<az_storage_blob_incremental_copy_start_command_result> {
-    constructor(commandPath: string, destinationBlob: string, destinationContainer: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, destinationBlob: string, destinationContainer: string) {
+        super(commandPath, resultDataTypeName);
         this.destinationBlob(destinationBlob)
         this.destinationContainer(destinationContainer)
     }
@@ -9437,8 +9437,8 @@ class az_storage_blob_incremental_copy_start_command_builder extends CommandBuil
  * @param {string} containerName The container name.
  */
 class az_storage_blob_lease_acquire_command_builder extends CommandBuilder<az_storage_blob_lease_acquire_command_result> {
-    constructor(commandPath: string, blobName: string, containerName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, blobName: string, containerName: string) {
+        super(commandPath, resultDataTypeName);
         this.blobName(blobName)
         this.containerName(containerName)
     }
@@ -9559,8 +9559,8 @@ class az_storage_blob_lease_acquire_command_builder extends CommandBuilder<az_st
  * @param {string} containerName The container name.
  */
 class az_storage_blob_lease_break_command_builder extends CommandBuilder<az_storage_blob_lease_break_command_result> {
-    constructor(commandPath: string, blobName: string, containerName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, blobName: string, containerName: string) {
+        super(commandPath, resultDataTypeName);
         this.blobName(blobName)
         this.containerName(containerName)
     }
@@ -9678,8 +9678,8 @@ class az_storage_blob_lease_break_command_builder extends CommandBuilder<az_stor
  * @param {string} proposedLeaseId Proposed lease ID, in a GUID string format. The Blob service returns 400 (Invalid request) if the proposed lease ID is not in the correct format.
  */
 class az_storage_blob_lease_change_command_builder extends CommandBuilder<az_storage_blob_lease_change_command_result> {
-    constructor(commandPath: string, blobName: string, containerName: string, leaseId: string, proposedLeaseId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, blobName: string, containerName: string, leaseId: string, proposedLeaseId: string) {
+        super(commandPath, resultDataTypeName);
         this.blobName(blobName)
         this.containerName(containerName)
         this.leaseId(leaseId)
@@ -9803,8 +9803,8 @@ class az_storage_blob_lease_change_command_builder extends CommandBuilder<az_sto
  * @param {string} leaseId Required if the blob has an active lease.
  */
 class az_storage_blob_lease_release_command_builder extends CommandBuilder<az_storage_blob_lease_release_command_result> {
-    constructor(commandPath: string, blobName: string, containerName: string, leaseId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, blobName: string, containerName: string, leaseId: string) {
+        super(commandPath, resultDataTypeName);
         this.blobName(blobName)
         this.containerName(containerName)
         this.leaseId(leaseId)
@@ -9921,8 +9921,8 @@ class az_storage_blob_lease_release_command_builder extends CommandBuilder<az_st
  * @param {string} leaseId Required if the blob has an active lease.
  */
 class az_storage_blob_lease_renew_command_builder extends CommandBuilder<az_storage_blob_lease_renew_command_result> {
-    constructor(commandPath: string, blobName: string, containerName: string, leaseId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, blobName: string, containerName: string, leaseId: string) {
+        super(commandPath, resultDataTypeName);
         this.blobName(blobName)
         this.containerName(containerName)
         this.leaseId(leaseId)
@@ -10040,8 +10040,8 @@ class az_storage_blob_lease_renew_command_builder extends CommandBuilder<az_stor
  * @param {string} name The blob name.
  */
 class az_storage_blob_metadata_show_command_builder extends CommandBuilder<az_storage_blob_metadata_show_command_result> {
-    constructor(commandPath: string, containerName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.name(name)
     }
@@ -10169,8 +10169,8 @@ class az_storage_blob_metadata_show_command_builder extends CommandBuilder<az_st
  * @param {string} name The blob name.
  */
 class az_storage_blob_metadata_update_command_builder extends CommandBuilder<az_storage_blob_metadata_update_command_result> {
-    constructor(commandPath: string, containerName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.name(name)
     }
@@ -10282,8 +10282,8 @@ class az_storage_blob_metadata_update_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_storage_blob_service_properties_delete_policy_show_command_builder extends CommandBuilder<az_storage_blob_service_properties_delete_policy_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
@@ -10351,8 +10351,8 @@ class az_storage_blob_service_properties_delete_policy_show_command_builder exte
  * ```
  */
 class az_storage_blob_service_properties_delete_policy_update_command_builder extends CommandBuilder<az_storage_blob_service_properties_delete_policy_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
@@ -10420,8 +10420,8 @@ class az_storage_blob_service_properties_delete_policy_update_command_builder ex
  * ```
  */
 class az_storage_blob_service_properties_show_command_builder extends CommandBuilder<az_storage_blob_service_properties_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
@@ -10497,8 +10497,8 @@ class az_storage_blob_service_properties_show_command_builder extends CommandBui
  * ```
  */
 class az_storage_blob_service_properties_update_command_builder extends CommandBuilder<az_storage_blob_service_properties_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Represents the path to the error document that should be shown when an error 404 is issued, in other words, when a browser requests a page that does not exist. */
@@ -10625,8 +10625,8 @@ class az_storage_blob_service_properties_update_command_builder extends CommandB
  * @param {string} name The blob name.
  */
 class az_storage_blob_delete_command_builder extends CommandBuilder<az_storage_blob_delete_command_result> {
-    constructor(commandPath: string, containerName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.name(name)
     }
@@ -10754,8 +10754,8 @@ class az_storage_blob_delete_command_builder extends CommandBuilder<az_storage_b
  * @param {string} source The blob container from where the files will be deleted.
  */
 class az_storage_blob_delete_batch_command_builder extends CommandBuilder<az_storage_blob_delete_batch_command_result> {
-    constructor(commandPath: string, source: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, source: string) {
+        super(commandPath, resultDataTypeName);
         this.source(source)
     }
 
@@ -10891,8 +10891,8 @@ class az_storage_blob_delete_batch_command_builder extends CommandBuilder<az_sto
  * @param {string} name The blob name.
  */
 class az_storage_blob_download_command_builder extends CommandBuilder<az_storage_blob_download_command_result> {
-    constructor(commandPath: string, containerName: string, file: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, file: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.file(file)
         this.name(name)
@@ -11061,8 +11061,8 @@ class az_storage_blob_download_command_builder extends CommandBuilder<az_storage
  * @param {string} source The blob container from where the files will be downloaded.
  */
 class az_storage_blob_download_batch_command_builder extends CommandBuilder<az_storage_blob_download_batch_command_result> {
-    constructor(commandPath: string, destination: string, source: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, destination: string, source: string) {
+        super(commandPath, resultDataTypeName);
         this.destination(destination)
         this.source(source)
     }
@@ -11167,8 +11167,8 @@ class az_storage_blob_download_batch_command_builder extends CommandBuilder<az_s
  * @param {string} name The blob name.
  */
 class az_storage_blob_exists_command_builder extends CommandBuilder<az_storage_blob_exists_command_result> {
-    constructor(commandPath: string, containerName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.name(name)
     }
@@ -11265,8 +11265,8 @@ class az_storage_blob_exists_command_builder extends CommandBuilder<az_storage_b
  * @param {string} name The blob name.
  */
 class az_storage_blob_generate_sas_command_builder extends CommandBuilder<az_storage_blob_generate_sas_command_result> {
-    constructor(commandPath: string, containerName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.name(name)
     }
@@ -11417,8 +11417,8 @@ class az_storage_blob_generate_sas_command_builder extends CommandBuilder<az_sto
  * @param {string} containerName The container name.
  */
 class az_storage_blob_list_command_builder extends CommandBuilder<az_storage_blob_list_command_result> {
-    constructor(commandPath: string, containerName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
     }
 
@@ -11530,8 +11530,8 @@ class az_storage_blob_list_command_builder extends CommandBuilder<az_storage_blo
  * @param {string} timeToRestore Restore blob to the specified time, which should be UTC datetime in (Y-m-d'T'H:M:S'Z').
  */
 class az_storage_blob_restore_command_builder extends CommandBuilder<az_storage_blob_restore_command_result> {
-    constructor(commandPath: string, accountName: string, timeToRestore: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, timeToRestore: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.timeToRestore(timeToRestore)
     }
@@ -11597,8 +11597,8 @@ class az_storage_blob_restore_command_builder extends CommandBuilder<az_storage_
  * @param {string} tier The tier value to set the blob to.
  */
 class az_storage_blob_set_tier_command_builder extends CommandBuilder<az_storage_blob_set_tier_command_result> {
-    constructor(commandPath: string, containerName: string, name: string, tier: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, name: string, tier: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.name(name)
         this.tier(tier)
@@ -11704,8 +11704,8 @@ class az_storage_blob_set_tier_command_builder extends CommandBuilder<az_storage
  * @param {string} name The blob name.
  */
 class az_storage_blob_show_command_builder extends CommandBuilder<az_storage_blob_show_command_result> {
-    constructor(commandPath: string, containerName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.name(name)
     }
@@ -11833,8 +11833,8 @@ class az_storage_blob_show_command_builder extends CommandBuilder<az_storage_blo
  * @param {string} name The blob name.
  */
 class az_storage_blob_snapshot_command_builder extends CommandBuilder<az_storage_blob_snapshot_command_result> {
-    constructor(commandPath: string, containerName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.name(name)
     }
@@ -11953,8 +11953,8 @@ class az_storage_blob_snapshot_command_builder extends CommandBuilder<az_storage
  * @param {string} source The source file path to sync from.
  */
 class az_storage_blob_sync_command_builder extends CommandBuilder<az_storage_blob_sync_command_result> {
-    constructor(commandPath: string, container: string, source: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, container: string, source: string) {
+        super(commandPath, resultDataTypeName);
         this.container(container)
         this.source(source)
     }
@@ -12052,8 +12052,8 @@ class az_storage_blob_sync_command_builder extends CommandBuilder<az_storage_blo
  * @param {string} name The blob name.
  */
 class az_storage_blob_undelete_command_builder extends CommandBuilder<az_storage_blob_undelete_command_result> {
-    constructor(commandPath: string, containerName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.name(name)
     }
@@ -12145,8 +12145,8 @@ class az_storage_blob_undelete_command_builder extends CommandBuilder<az_storage
  * @param {string} name The blob name.
  */
 class az_storage_blob_update_command_builder extends CommandBuilder<az_storage_blob_update_command_result> {
-    constructor(commandPath: string, containerName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.name(name)
     }
@@ -12320,8 +12320,8 @@ class az_storage_blob_update_command_builder extends CommandBuilder<az_storage_b
  * @param {string} name The blob name.
  */
 class az_storage_blob_upload_command_builder extends CommandBuilder<az_storage_blob_upload_command_result> {
-    constructor(commandPath: string, containerName: string, file: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, file: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.file(file)
         this.name(name)
@@ -12549,8 +12549,8 @@ class az_storage_blob_upload_command_builder extends CommandBuilder<az_storage_b
  * @param {string} source The directory where the files to be uploaded are located.
  */
 class az_storage_blob_upload_batch_command_builder extends CommandBuilder<az_storage_blob_upload_batch_command_result> {
-    constructor(commandPath: string, destination: string, source: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, destination: string, source: string) {
+        super(commandPath, resultDataTypeName);
         this.destination(destination)
         this.source(source)
     }
@@ -12757,8 +12757,8 @@ class az_storage_blob_upload_batch_command_builder extends CommandBuilder<az_sto
  * @param {string} name The blob name.
  */
 class az_storage_blob_url_command_builder extends CommandBuilder<az_storage_blob_url_command_result> {
-    constructor(commandPath: string, containerName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.name(name)
     }
@@ -12842,8 +12842,8 @@ class az_storage_blob_url_command_builder extends CommandBuilder<az_storage_blob
  * @param {string} containerName The container name.
  */
 class az_storage_container_immutability_policy_create_command_builder extends CommandBuilder<az_storage_container_immutability_policy_create_command_result> {
-    constructor(commandPath: string, accountName: string, containerName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, containerName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.containerName(containerName)
     }
@@ -12908,8 +12908,8 @@ class az_storage_container_immutability_policy_create_command_builder extends Co
  * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
  */
 class az_storage_container_immutability_policy_delete_command_builder extends CommandBuilder<az_storage_container_immutability_policy_delete_command_result> {
-    constructor(commandPath: string, accountName: string, containerName: string, ifMatch: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, containerName: string, ifMatch: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.containerName(containerName)
         this.ifMatch(ifMatch)
@@ -12965,8 +12965,8 @@ class az_storage_container_immutability_policy_delete_command_builder extends Co
  * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
  */
 class az_storage_container_immutability_policy_extend_command_builder extends CommandBuilder<az_storage_container_immutability_policy_extend_command_result> {
-    constructor(commandPath: string, accountName: string, containerName: string, ifMatch: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, containerName: string, ifMatch: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.containerName(containerName)
         this.ifMatch(ifMatch)
@@ -13032,8 +13032,8 @@ class az_storage_container_immutability_policy_extend_command_builder extends Co
  * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
  */
 class az_storage_container_immutability_policy_lock_command_builder extends CommandBuilder<az_storage_container_immutability_policy_lock_command_result> {
-    constructor(commandPath: string, accountName: string, containerName: string, ifMatch: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, containerName: string, ifMatch: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.containerName(containerName)
         this.ifMatch(ifMatch)
@@ -13087,8 +13087,8 @@ class az_storage_container_immutability_policy_lock_command_builder extends Comm
  * @param {string} containerName The container name.
  */
 class az_storage_container_immutability_policy_show_command_builder extends CommandBuilder<az_storage_container_immutability_policy_show_command_result> {
-    constructor(commandPath: string, accountName: string, containerName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, containerName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.containerName(containerName)
     }
@@ -13152,8 +13152,8 @@ class az_storage_container_immutability_policy_show_command_builder extends Comm
  * @param {string} containerName The container name.
  */
 class az_storage_container_lease_acquire_command_builder extends CommandBuilder<az_storage_container_lease_acquire_command_result> {
-    constructor(commandPath: string, containerName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
     }
 
@@ -13251,8 +13251,8 @@ class az_storage_container_lease_acquire_command_builder extends CommandBuilder<
  * @param {string} containerName The container name.
  */
 class az_storage_container_lease_break_command_builder extends CommandBuilder<az_storage_container_lease_break_command_result> {
-    constructor(commandPath: string, containerName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
     }
 
@@ -13347,8 +13347,8 @@ class az_storage_container_lease_break_command_builder extends CommandBuilder<az
  * @param {string} proposedLeaseId Proposed lease ID, in a GUID string format. The Blob service returns 400 (Invalid request) if the proposed lease ID is not in the correct format.
  */
 class az_storage_container_lease_change_command_builder extends CommandBuilder<az_storage_container_lease_change_command_result> {
-    constructor(commandPath: string, containerName: string, leaseId: string, proposedLeaseId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, leaseId: string, proposedLeaseId: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.leaseId(leaseId)
         this.proposedLeaseId(proposedLeaseId)
@@ -13449,8 +13449,8 @@ class az_storage_container_lease_change_command_builder extends CommandBuilder<a
  * @param {string} leaseId Lease ID for active lease.
  */
 class az_storage_container_lease_release_command_builder extends CommandBuilder<az_storage_container_lease_release_command_result> {
-    constructor(commandPath: string, containerName: string, leaseId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, leaseId: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.leaseId(leaseId)
     }
@@ -13544,8 +13544,8 @@ class az_storage_container_lease_release_command_builder extends CommandBuilder<
  * @param {string} leaseId Lease ID for active lease.
  */
 class az_storage_container_lease_renew_command_builder extends CommandBuilder<az_storage_container_lease_renew_command_result> {
-    constructor(commandPath: string, containerName: string, leaseId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, leaseId: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.leaseId(leaseId)
     }
@@ -13634,8 +13634,8 @@ class az_storage_container_lease_renew_command_builder extends CommandBuilder<az
  * @param {string} tags Each tag should be 3 to 23 alphanumeric characters and is normalized to lower case.
  */
 class az_storage_container_legal_hold_clear_command_builder extends CommandBuilder<az_storage_container_legal_hold_clear_command_result> {
-    constructor(commandPath: string, accountName: string, containerName: string, tags: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, containerName: string, tags: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.containerName(containerName)
         this.tags(tags)
@@ -13689,8 +13689,8 @@ class az_storage_container_legal_hold_clear_command_builder extends CommandBuild
  * @param {string} tags Each tag should be 3 to 23 alphanumeric characters and is normalized to lower case.
  */
 class az_storage_container_legal_hold_set_command_builder extends CommandBuilder<az_storage_container_legal_hold_set_command_result> {
-    constructor(commandPath: string, accountName: string, containerName: string, tags: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, containerName: string, tags: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.containerName(containerName)
         this.tags(tags)
@@ -13743,8 +13743,8 @@ class az_storage_container_legal_hold_set_command_builder extends CommandBuilder
  * @param {string} containerName The container name.
  */
 class az_storage_container_legal_hold_show_command_builder extends CommandBuilder<az_storage_container_legal_hold_show_command_result> {
-    constructor(commandPath: string, accountName: string, containerName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, containerName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.containerName(containerName)
     }
@@ -13800,8 +13800,8 @@ class az_storage_container_legal_hold_show_command_builder extends CommandBuilde
  * @param {string} name The container name.
  */
 class az_storage_container_metadata_show_command_builder extends CommandBuilder<az_storage_container_metadata_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -13887,8 +13887,8 @@ class az_storage_container_metadata_show_command_builder extends CommandBuilder<
  * @param {string} name The container name.
  */
 class az_storage_container_metadata_update_command_builder extends CommandBuilder<az_storage_container_metadata_update_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -13982,8 +13982,8 @@ class az_storage_container_metadata_update_command_builder extends CommandBuilde
  * @param {string} name The stored access policy name.
  */
 class az_storage_container_policy_create_command_builder extends CommandBuilder<az_storage_container_policy_create_command_result> {
-    constructor(commandPath: string, containerName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.name(name)
     }
@@ -14081,8 +14081,8 @@ class az_storage_container_policy_create_command_builder extends CommandBuilder<
  * @param {string} name The stored access policy name.
  */
 class az_storage_container_policy_delete_command_builder extends CommandBuilder<az_storage_container_policy_delete_command_result> {
-    constructor(commandPath: string, containerName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.name(name)
     }
@@ -14161,8 +14161,8 @@ class az_storage_container_policy_delete_command_builder extends CommandBuilder<
  * @param {string} containerName The container name.
  */
 class az_storage_container_policy_list_command_builder extends CommandBuilder<az_storage_container_policy_list_command_result> {
-    constructor(commandPath: string, containerName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
     }
 
@@ -14242,8 +14242,8 @@ class az_storage_container_policy_list_command_builder extends CommandBuilder<az
  * @param {string} name The stored access policy name.
  */
 class az_storage_container_policy_show_command_builder extends CommandBuilder<az_storage_container_policy_show_command_result> {
-    constructor(commandPath: string, containerName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.name(name)
     }
@@ -14332,8 +14332,8 @@ class az_storage_container_policy_show_command_builder extends CommandBuilder<az
  * @param {string} name The stored access policy name.
  */
 class az_storage_container_policy_update_command_builder extends CommandBuilder<az_storage_container_policy_update_command_result> {
-    constructor(commandPath: string, containerName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.name(name)
     }
@@ -14435,8 +14435,8 @@ class az_storage_container_policy_update_command_builder extends CommandBuilder<
  * @param {string} name The container name.
  */
 class az_storage_container_create_command_builder extends CommandBuilder<az_storage_container_create_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -14548,8 +14548,8 @@ class az_storage_container_create_command_builder extends CommandBuilder<az_stor
  * @param {string} name The container name.
  */
 class az_storage_container_delete_command_builder extends CommandBuilder<az_storage_container_delete_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -14650,8 +14650,8 @@ class az_storage_container_delete_command_builder extends CommandBuilder<az_stor
  * @param {string} name The container name.
  */
 class az_storage_container_exists_command_builder extends CommandBuilder<az_storage_container_exists_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -14732,8 +14732,8 @@ class az_storage_container_exists_command_builder extends CommandBuilder<az_stor
  * @param {string} name The container name.
  */
 class az_storage_container_generate_sas_command_builder extends CommandBuilder<az_storage_container_generate_sas_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -14866,8 +14866,8 @@ class az_storage_container_generate_sas_command_builder extends CommandBuilder<a
  * ```
  */
 class az_storage_container_list_command_builder extends CommandBuilder<az_storage_container_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
@@ -14965,8 +14965,8 @@ class az_storage_container_list_command_builder extends CommandBuilder<az_storag
  * @param {string} name The container name.
  */
 class az_storage_container_set_permission_command_builder extends CommandBuilder<az_storage_container_set_permission_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -15063,8 +15063,8 @@ class az_storage_container_set_permission_command_builder extends CommandBuilder
  * @param {string} name The container name.
  */
 class az_storage_container_show_command_builder extends CommandBuilder<az_storage_container_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -15148,8 +15148,8 @@ class az_storage_container_show_command_builder extends CommandBuilder<az_storag
  * @param {string} name The container name.
  */
 class az_storage_container_show_permission_command_builder extends CommandBuilder<az_storage_container_show_permission_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -15232,8 +15232,8 @@ class az_storage_container_show_permission_command_builder extends CommandBuilde
  * @param {string} services The storage service(s) to add rules to. Allowed options are: (b)lob, (f)ile, (q)ueue, (t)able. Can be combined.
  */
 class az_storage_cors_add_command_builder extends CommandBuilder<az_storage_cors_add_command_result> {
-    constructor(commandPath: string, methods: 'DELETE' | 'GET' | 'HEAD' | 'MERGE' | 'OPTIONS' | 'POST' | 'PUT', origins: string, services: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, methods: 'DELETE' | 'GET' | 'HEAD' | 'MERGE' | 'OPTIONS' | 'POST' | 'PUT', origins: string, services: string) {
+        super(commandPath, resultDataTypeName);
         this.methods(methods)
         this.origins(origins)
         this.services(services)
@@ -15329,8 +15329,8 @@ class az_storage_cors_add_command_builder extends CommandBuilder<az_storage_cors
  * @param {string} services The storage service(s) to remove rules from. Allowed options are: (b)lob, (f)ile, (q)ueue, (t)able. Can be combined.
  */
 class az_storage_cors_clear_command_builder extends CommandBuilder<az_storage_cors_clear_command_result> {
-    constructor(commandPath: string, services: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, services: string) {
+        super(commandPath, resultDataTypeName);
         this.services(services)
     }
 
@@ -15393,8 +15393,8 @@ class az_storage_cors_clear_command_builder extends CommandBuilder<az_storage_co
  * ```
  */
 class az_storage_cors_list_command_builder extends CommandBuilder<az_storage_cors_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
@@ -15467,8 +15467,8 @@ class az_storage_cors_list_command_builder extends CommandBuilder<az_storage_cor
  * @param {string} shareName The file share name.
  */
 class az_storage_directory_metadata_show_command_builder extends CommandBuilder<az_storage_directory_metadata_show_command_result> {
-    constructor(commandPath: string, name: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.shareName(shareName)
     }
@@ -15554,8 +15554,8 @@ class az_storage_directory_metadata_show_command_builder extends CommandBuilder<
  * @param {string} shareName The file share name.
  */
 class az_storage_directory_metadata_update_command_builder extends CommandBuilder<az_storage_directory_metadata_update_command_result> {
-    constructor(commandPath: string, name: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.shareName(shareName)
     }
@@ -15636,8 +15636,8 @@ class az_storage_directory_metadata_update_command_builder extends CommandBuilde
  * @param {string} shareName The file share name.
  */
 class az_storage_directory_create_command_builder extends CommandBuilder<az_storage_directory_create_command_result> {
-    constructor(commandPath: string, name: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.shareName(shareName)
     }
@@ -15723,8 +15723,8 @@ class az_storage_directory_create_command_builder extends CommandBuilder<az_stor
  * @param {string} shareName The file share name.
  */
 class az_storage_directory_delete_command_builder extends CommandBuilder<az_storage_directory_delete_command_result> {
-    constructor(commandPath: string, name: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.shareName(shareName)
     }
@@ -15804,8 +15804,8 @@ class az_storage_directory_delete_command_builder extends CommandBuilder<az_stor
  * @param {string} shareName The file share name.
  */
 class az_storage_directory_exists_command_builder extends CommandBuilder<az_storage_directory_exists_command_result> {
-    constructor(commandPath: string, name: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.shareName(shareName)
     }
@@ -15884,8 +15884,8 @@ class az_storage_directory_exists_command_builder extends CommandBuilder<az_stor
  * @param {string} shareName The file share name.
  */
 class az_storage_directory_list_command_builder extends CommandBuilder<az_storage_directory_list_command_result> {
-    constructor(commandPath: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.shareName(shareName)
     }
 
@@ -15965,8 +15965,8 @@ class az_storage_directory_list_command_builder extends CommandBuilder<az_storag
  * @param {string} shareName The file share name.
  */
 class az_storage_directory_show_command_builder extends CommandBuilder<az_storage_directory_show_command_result> {
-    constructor(commandPath: string, name: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.shareName(shareName)
     }
@@ -16054,8 +16054,8 @@ class az_storage_directory_show_command_builder extends CommandBuilder<az_storag
  * @param {string} tableName The name of the table containing the entity to delete.
  */
 class az_storage_entity_delete_command_builder extends CommandBuilder<az_storage_entity_delete_command_result> {
-    constructor(commandPath: string, partitionKey: string, rowKey: string, tableName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, partitionKey: string, rowKey: string, tableName: string) {
+        super(commandPath, resultDataTypeName);
         this.partitionKey(partitionKey)
         this.rowKey(rowKey)
         this.tableName(tableName)
@@ -16142,8 +16142,8 @@ class az_storage_entity_delete_command_builder extends CommandBuilder<az_storage
  * @param {string} tableName The name of the table to insert the entity into.
  */
 class az_storage_entity_insert_command_builder extends CommandBuilder<az_storage_entity_insert_command_result> {
-    constructor(commandPath: string, entity: string, tableName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, entity: string, tableName: string) {
+        super(commandPath, resultDataTypeName);
         this.entity(entity)
         this.tableName(tableName)
     }
@@ -16223,8 +16223,8 @@ class az_storage_entity_insert_command_builder extends CommandBuilder<az_storage
  * @param {string} tableName The name of the table containing the entity to merge.
  */
 class az_storage_entity_merge_command_builder extends CommandBuilder<az_storage_entity_merge_command_result> {
-    constructor(commandPath: string, entity: string, tableName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, entity: string, tableName: string) {
+        super(commandPath, resultDataTypeName);
         this.entity(entity)
         this.tableName(tableName)
     }
@@ -16306,8 +16306,8 @@ class az_storage_entity_merge_command_builder extends CommandBuilder<az_storage_
  * @param {string} tableName The name of the table to query.
  */
 class az_storage_entity_query_command_builder extends CommandBuilder<az_storage_entity_query_command_result> {
-    constructor(commandPath: string, tableName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, tableName: string) {
+        super(commandPath, resultDataTypeName);
         this.tableName(tableName)
     }
 
@@ -16404,8 +16404,8 @@ class az_storage_entity_query_command_builder extends CommandBuilder<az_storage_
  * @param {string} tableName The name of the table containing the entity to update.
  */
 class az_storage_entity_replace_command_builder extends CommandBuilder<az_storage_entity_replace_command_result> {
-    constructor(commandPath: string, entity: string, tableName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, entity: string, tableName: string) {
+        super(commandPath, resultDataTypeName);
         this.entity(entity)
         this.tableName(tableName)
     }
@@ -16489,8 +16489,8 @@ class az_storage_entity_replace_command_builder extends CommandBuilder<az_storag
  * @param {string} tableName The name of the table to get the entity from.
  */
 class az_storage_entity_show_command_builder extends CommandBuilder<az_storage_entity_show_command_result> {
-    constructor(commandPath: string, partitionKey: string, rowKey: string, tableName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, partitionKey: string, rowKey: string, tableName: string) {
+        super(commandPath, resultDataTypeName);
         this.partitionKey(partitionKey)
         this.rowKey(rowKey)
         this.tableName(tableName)
@@ -16590,8 +16590,8 @@ class az_storage_entity_show_command_builder extends CommandBuilder<az_storage_e
  * @param {string} destinationShare Name of the destination share. The share must exist.
  */
 class az_storage_file_copy_cancel_command_builder extends CommandBuilder<az_storage_file_copy_cancel_command_result> {
-    constructor(commandPath: string, copyId: string, destinationPath: string, destinationShare: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, copyId: string, destinationPath: string, destinationShare: string) {
+        super(commandPath, resultDataTypeName);
         this.copyId(copyId)
         this.destinationPath(destinationPath)
         this.destinationShare(destinationShare)
@@ -16682,8 +16682,8 @@ class az_storage_file_copy_cancel_command_builder extends CommandBuilder<az_stor
  * @param {string} destinationShare Name of the destination share. The share must exist.
  */
 class az_storage_file_copy_start_command_builder extends CommandBuilder<az_storage_file_copy_start_command_result> {
-    constructor(commandPath: string, destinationPath: string, destinationShare: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, destinationPath: string, destinationShare: string) {
+        super(commandPath, resultDataTypeName);
         this.destinationPath(destinationPath)
         this.destinationShare(destinationShare)
     }
@@ -16828,8 +16828,8 @@ class az_storage_file_copy_start_command_builder extends CommandBuilder<az_stora
  * ```
  */
 class az_storage_file_copy_start_batch_command_builder extends CommandBuilder<az_storage_file_copy_start_batch_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
@@ -16956,8 +16956,8 @@ class az_storage_file_copy_start_batch_command_builder extends CommandBuilder<az
  * @param {string} shareName The file share name.
  */
 class az_storage_file_metadata_show_command_builder extends CommandBuilder<az_storage_file_metadata_show_command_result> {
-    constructor(commandPath: string, path: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
         this.shareName(shareName)
     }
@@ -17043,8 +17043,8 @@ class az_storage_file_metadata_show_command_builder extends CommandBuilder<az_st
  * @param {string} shareName The file share name.
  */
 class az_storage_file_metadata_update_command_builder extends CommandBuilder<az_storage_file_metadata_update_command_result> {
-    constructor(commandPath: string, path: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
         this.shareName(shareName)
     }
@@ -17123,8 +17123,8 @@ class az_storage_file_metadata_update_command_builder extends CommandBuilder<az_
  * @param {string} shareName The file share name.
  */
 class az_storage_file_delete_command_builder extends CommandBuilder<az_storage_file_delete_command_result> {
-    constructor(commandPath: string, path: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
         this.shareName(shareName)
     }
@@ -17197,8 +17197,8 @@ class az_storage_file_delete_command_builder extends CommandBuilder<az_storage_f
  * @param {string} source The source of the file delete operation. The source can be the file share URL or the share name.
  */
 class az_storage_file_delete_batch_command_builder extends CommandBuilder<az_storage_file_delete_batch_command_result> {
-    constructor(commandPath: string, source: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, source: string) {
+        super(commandPath, resultDataTypeName);
         this.source(source)
     }
 
@@ -17284,8 +17284,8 @@ class az_storage_file_delete_batch_command_builder extends CommandBuilder<az_sto
  * @param {string} shareName The file share name.
  */
 class az_storage_file_download_command_builder extends CommandBuilder<az_storage_file_download_command_result> {
-    constructor(commandPath: string, path: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
         this.shareName(shareName)
     }
@@ -17411,8 +17411,8 @@ class az_storage_file_download_command_builder extends CommandBuilder<az_storage
  * @param {string} source The source of the file download operation. The source can be the file share URL or the share name.
  */
 class az_storage_file_download_batch_command_builder extends CommandBuilder<az_storage_file_download_batch_command_result> {
-    constructor(commandPath: string, destination: string, source: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, destination: string, source: string) {
+        super(commandPath, resultDataTypeName);
         this.destination(destination)
         this.source(source)
     }
@@ -17516,8 +17516,8 @@ class az_storage_file_download_batch_command_builder extends CommandBuilder<az_s
  * @param {string} shareName The file share name.
  */
 class az_storage_file_exists_command_builder extends CommandBuilder<az_storage_file_exists_command_result> {
-    constructor(commandPath: string, path: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
         this.shareName(shareName)
     }
@@ -17605,8 +17605,8 @@ class az_storage_file_exists_command_builder extends CommandBuilder<az_storage_f
  * @param {string} shareName The file share name.
  */
 class az_storage_file_generate_sas_command_builder extends CommandBuilder<az_storage_file_generate_sas_command_result> {
-    constructor(commandPath: string, path: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
         this.shareName(shareName)
     }
@@ -17737,8 +17737,8 @@ class az_storage_file_generate_sas_command_builder extends CommandBuilder<az_sto
  * @param {string} shareName The file share name.
  */
 class az_storage_file_list_command_builder extends CommandBuilder<az_storage_file_list_command_result> {
-    constructor(commandPath: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.shareName(shareName)
     }
 
@@ -17842,8 +17842,8 @@ class az_storage_file_list_command_builder extends CommandBuilder<az_storage_fil
  * @param {string} size The length to resize the file to.
  */
 class az_storage_file_resize_command_builder extends CommandBuilder<az_storage_file_resize_command_result> {
-    constructor(commandPath: string, path: string, shareName: string, size: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: string, shareName: string, size: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
         this.shareName(shareName)
         this.size(size)
@@ -17925,8 +17925,8 @@ class az_storage_file_resize_command_builder extends CommandBuilder<az_storage_f
  * @param {string} shareName The file share name.
  */
 class az_storage_file_show_command_builder extends CommandBuilder<az_storage_file_show_command_result> {
-    constructor(commandPath: string, path: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
         this.shareName(shareName)
     }
@@ -18018,8 +18018,8 @@ class az_storage_file_show_command_builder extends CommandBuilder<az_storage_fil
  * @param {string} shareName The file share name.
  */
 class az_storage_file_update_command_builder extends CommandBuilder<az_storage_file_update_command_result> {
-    constructor(commandPath: string, path: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
         this.shareName(shareName)
     }
@@ -18145,8 +18145,8 @@ class az_storage_file_update_command_builder extends CommandBuilder<az_storage_f
  * @param {string} source Path of the local file to upload as the file content.
  */
 class az_storage_file_upload_command_builder extends CommandBuilder<az_storage_file_upload_command_result> {
-    constructor(commandPath: string, shareName: string, source: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, shareName: string, source: string) {
+        super(commandPath, resultDataTypeName);
         this.shareName(shareName)
         this.source(source)
     }
@@ -18297,8 +18297,8 @@ class az_storage_file_upload_command_builder extends CommandBuilder<az_storage_f
  * @param {string} source The directory to upload files from.
  */
 class az_storage_file_upload_batch_command_builder extends CommandBuilder<az_storage_file_upload_batch_command_result> {
-    constructor(commandPath: string, destination: string, source: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, destination: string, source: string) {
+        super(commandPath, resultDataTypeName);
         this.destination(destination)
         this.source(source)
     }
@@ -18443,8 +18443,8 @@ class az_storage_file_upload_batch_command_builder extends CommandBuilder<az_sto
  * @param {string} shareName The file share name.
  */
 class az_storage_file_url_command_builder extends CommandBuilder<az_storage_file_url_command_result> {
-    constructor(commandPath: string, path: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
         this.shareName(shareName)
     }
@@ -18521,8 +18521,8 @@ class az_storage_file_url_command_builder extends CommandBuilder<az_storage_file
  * @param {string} path The path to a file or directory in the specified file system.
  */
 class az_storage_fs_access_set_command_builder extends CommandBuilder<az_storage_fs_access_set_command_result> {
-    constructor(commandPath: string, fileSystem: string, path: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, path: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.path(path)
     }
@@ -18620,8 +18620,8 @@ class az_storage_fs_access_set_command_builder extends CommandBuilder<az_storage
  * @param {string} path The path to a file or directory in the specified file system.
  */
 class az_storage_fs_access_show_command_builder extends CommandBuilder<az_storage_fs_access_show_command_result> {
-    constructor(commandPath: string, fileSystem: string, path: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, path: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.path(path)
     }
@@ -18702,8 +18702,8 @@ class az_storage_fs_access_show_command_builder extends CommandBuilder<az_storag
  * @param {string} name The name of directory.
  */
 class az_storage_fs_directory_metadata_show_command_builder extends CommandBuilder<az_storage_fs_directory_metadata_show_command_result> {
-    constructor(commandPath: string, fileSystem: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.name(name)
     }
@@ -18791,8 +18791,8 @@ class az_storage_fs_directory_metadata_show_command_builder extends CommandBuild
  * @param {string} name The name of directory.
  */
 class az_storage_fs_directory_metadata_update_command_builder extends CommandBuilder<az_storage_fs_directory_metadata_update_command_result> {
-    constructor(commandPath: string, fileSystem: string, metadata: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, metadata: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.metadata(metadata)
         this.name(name)
@@ -18882,8 +18882,8 @@ class az_storage_fs_directory_metadata_update_command_builder extends CommandBui
  * @param {string} name The name of directory.
  */
 class az_storage_fs_directory_create_command_builder extends CommandBuilder<az_storage_fs_directory_create_command_result> {
-    constructor(commandPath: string, fileSystem: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.name(name)
     }
@@ -18982,8 +18982,8 @@ class az_storage_fs_directory_create_command_builder extends CommandBuilder<az_s
  * @param {string} name The name of directory.
  */
 class az_storage_fs_directory_delete_command_builder extends CommandBuilder<az_storage_fs_directory_delete_command_result> {
-    constructor(commandPath: string, fileSystem: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.name(name)
     }
@@ -19069,8 +19069,8 @@ class az_storage_fs_directory_delete_command_builder extends CommandBuilder<az_s
  * @param {string} name The name of directory.
  */
 class az_storage_fs_directory_exists_command_builder extends CommandBuilder<az_storage_fs_directory_exists_command_result> {
-    constructor(commandPath: string, fileSystem: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.name(name)
     }
@@ -19152,8 +19152,8 @@ class az_storage_fs_directory_exists_command_builder extends CommandBuilder<az_s
  * @param {string} fileSystem File system name.
  */
 class az_storage_fs_directory_list_command_builder extends CommandBuilder<az_storage_fs_directory_list_command_result> {
-    constructor(commandPath: string, fileSystem: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
     }
 
@@ -19252,8 +19252,8 @@ class az_storage_fs_directory_list_command_builder extends CommandBuilder<az_sto
  * @param {string} newDirectory The new directory name the users want to move to. The value must have the following format: "{filesystem}/{directory}/{subdirectory}".
  */
 class az_storage_fs_directory_move_command_builder extends CommandBuilder<az_storage_fs_directory_move_command_result> {
-    constructor(commandPath: string, fileSystem: string, name: string, newDirectory: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, name: string, newDirectory: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.name(name)
         this.newDirectory(newDirectory)
@@ -19341,8 +19341,8 @@ class az_storage_fs_directory_move_command_builder extends CommandBuilder<az_sto
  * @param {string} name The name of directory.
  */
 class az_storage_fs_directory_show_command_builder extends CommandBuilder<az_storage_fs_directory_show_command_result> {
-    constructor(commandPath: string, fileSystem: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.name(name)
     }
@@ -19429,8 +19429,8 @@ class az_storage_fs_directory_show_command_builder extends CommandBuilder<az_sto
  * @param {string} path The file path in a file system.
  */
 class az_storage_fs_file_metadata_show_command_builder extends CommandBuilder<az_storage_fs_file_metadata_show_command_result> {
-    constructor(commandPath: string, fileSystem: string, path: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, path: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.path(path)
     }
@@ -19518,8 +19518,8 @@ class az_storage_fs_file_metadata_show_command_builder extends CommandBuilder<az
  * @param {string} path The file path in a file system.
  */
 class az_storage_fs_file_metadata_update_command_builder extends CommandBuilder<az_storage_fs_file_metadata_update_command_result> {
-    constructor(commandPath: string, fileSystem: string, metadata: string, path: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, metadata: string, path: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.metadata(metadata)
         this.path(path)
@@ -19608,8 +19608,8 @@ class az_storage_fs_file_metadata_update_command_builder extends CommandBuilder<
  * @param {string} path The file path in a file system.
  */
 class az_storage_fs_file_append_command_builder extends CommandBuilder<az_storage_fs_file_append_command_result> {
-    constructor(commandPath: string, content: string, fileSystem: string, path: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, content: string, fileSystem: string, path: string) {
+        super(commandPath, resultDataTypeName);
         this.content(content)
         this.fileSystem(fileSystem)
         this.path(path)
@@ -19705,8 +19705,8 @@ class az_storage_fs_file_append_command_builder extends CommandBuilder<az_storag
  * @param {string} path The file path in a file system.
  */
 class az_storage_fs_file_create_command_builder extends CommandBuilder<az_storage_fs_file_create_command_result> {
-    constructor(commandPath: string, fileSystem: string, path: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, path: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.path(path)
     }
@@ -19841,8 +19841,8 @@ class az_storage_fs_file_create_command_builder extends CommandBuilder<az_storag
  * @param {string} path The file path in a file system.
  */
 class az_storage_fs_file_delete_command_builder extends CommandBuilder<az_storage_fs_file_delete_command_result> {
-    constructor(commandPath: string, fileSystem: string, path: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, path: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.path(path)
     }
@@ -19930,8 +19930,8 @@ class az_storage_fs_file_delete_command_builder extends CommandBuilder<az_storag
  * @param {string} path The file path in a file system.
  */
 class az_storage_fs_file_download_command_builder extends CommandBuilder<az_storage_fs_file_download_command_result> {
-    constructor(commandPath: string, fileSystem: string, path: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, path: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.path(path)
     }
@@ -20023,8 +20023,8 @@ class az_storage_fs_file_download_command_builder extends CommandBuilder<az_stor
  * @param {string} path The file path in a file system.
  */
 class az_storage_fs_file_exists_command_builder extends CommandBuilder<az_storage_fs_file_exists_command_result> {
-    constructor(commandPath: string, fileSystem: string, path: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, path: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.path(path)
     }
@@ -20108,8 +20108,8 @@ class az_storage_fs_file_exists_command_builder extends CommandBuilder<az_storag
  * @param {string} fileSystem File system name.
  */
 class az_storage_fs_file_list_command_builder extends CommandBuilder<az_storage_fs_file_list_command_result> {
-    constructor(commandPath: string, fileSystem: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
     }
 
@@ -20225,8 +20225,8 @@ class az_storage_fs_file_list_command_builder extends CommandBuilder<az_storage_
  * @param {string} path The original file path users want to move in a file system.
  */
 class az_storage_fs_file_move_command_builder extends CommandBuilder<az_storage_fs_file_move_command_result> {
-    constructor(commandPath: string, fileSystem: string, newPath: string, path: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, newPath: string, path: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.newPath(newPath)
         this.path(path)
@@ -20344,8 +20344,8 @@ class az_storage_fs_file_move_command_builder extends CommandBuilder<az_storage_
  * @param {string} path The file path in a file system.
  */
 class az_storage_fs_file_show_command_builder extends CommandBuilder<az_storage_fs_file_show_command_result> {
-    constructor(commandPath: string, fileSystem: string, path: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, path: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.path(path)
     }
@@ -20447,8 +20447,8 @@ class az_storage_fs_file_show_command_builder extends CommandBuilder<az_storage_
  * @param {string} source Path of the local file to upload as the file content.
  */
 class az_storage_fs_file_upload_command_builder extends CommandBuilder<az_storage_fs_file_upload_command_result> {
-    constructor(commandPath: string, fileSystem: string, path: string, source: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, fileSystem: string, path: string, source: string) {
+        super(commandPath, resultDataTypeName);
         this.fileSystem(fileSystem)
         this.path(path)
         this.source(source)
@@ -20618,8 +20618,8 @@ class az_storage_fs_file_upload_command_builder extends CommandBuilder<az_storag
  * @param {string} name File system name.
  */
 class az_storage_fs_metadata_show_command_builder extends CommandBuilder<az_storage_fs_metadata_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -20698,8 +20698,8 @@ class az_storage_fs_metadata_show_command_builder extends CommandBuilder<az_stor
  * @param {string} name File system name.
  */
 class az_storage_fs_metadata_update_command_builder extends CommandBuilder<az_storage_fs_metadata_update_command_result> {
-    constructor(commandPath: string, metadata: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, metadata: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.metadata(metadata)
         this.name(name)
     }
@@ -20779,8 +20779,8 @@ class az_storage_fs_metadata_update_command_builder extends CommandBuilder<az_st
  * @param {string} name File system name.
  */
 class az_storage_fs_create_command_builder extends CommandBuilder<az_storage_fs_create_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -20864,8 +20864,8 @@ class az_storage_fs_create_command_builder extends CommandBuilder<az_storage_fs_
  * @param {string} name File system name.
  */
 class az_storage_fs_delete_command_builder extends CommandBuilder<az_storage_fs_delete_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -20942,8 +20942,8 @@ class az_storage_fs_delete_command_builder extends CommandBuilder<az_storage_fs_
  * @param {string} name File system name.
  */
 class az_storage_fs_exists_command_builder extends CommandBuilder<az_storage_fs_exists_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -21013,8 +21013,8 @@ class az_storage_fs_exists_command_builder extends CommandBuilder<az_storage_fs_
  * ```
  */
 class az_storage_fs_list_command_builder extends CommandBuilder<az_storage_fs_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
@@ -21091,8 +21091,8 @@ class az_storage_fs_list_command_builder extends CommandBuilder<az_storage_fs_li
  * @param {string} name File system name.
  */
 class az_storage_fs_show_command_builder extends CommandBuilder<az_storage_fs_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -21166,8 +21166,8 @@ class az_storage_fs_show_command_builder extends CommandBuilder<az_storage_fs_sh
  * ```
  */
 class az_storage_logging_off_command_builder extends CommandBuilder<az_storage_logging_off_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
@@ -21229,8 +21229,8 @@ class az_storage_logging_off_command_builder extends CommandBuilder<az_storage_l
  * ```
  */
 class az_storage_logging_show_command_builder extends CommandBuilder<az_storage_logging_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
@@ -21304,8 +21304,8 @@ class az_storage_logging_show_command_builder extends CommandBuilder<az_storage_
  * @param {string} services The storage service(s) for which to update logging info: (b)lob (q)ueue (t)able. Can be combined.
  */
 class az_storage_logging_update_command_builder extends CommandBuilder<az_storage_logging_update_command_result> {
-    constructor(commandPath: string, log: string, retention: string, services: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, log: string, retention: string, services: string) {
+        super(commandPath, resultDataTypeName);
         this.log(log)
         this.retention(retention)
         this.services(services)
@@ -21390,8 +21390,8 @@ class az_storage_logging_update_command_builder extends CommandBuilder<az_storag
  * @param {string} queueName The queue name.
  */
 class az_storage_message_clear_command_builder extends CommandBuilder<az_storage_message_clear_command_result> {
-    constructor(commandPath: string, queueName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, queueName: string) {
+        super(commandPath, resultDataTypeName);
         this.queueName(queueName)
     }
 
@@ -21466,8 +21466,8 @@ class az_storage_message_clear_command_builder extends CommandBuilder<az_storage
  * @param {string} queueName The queue name.
  */
 class az_storage_message_delete_command_builder extends CommandBuilder<az_storage_message_delete_command_result> {
-    constructor(commandPath: string, id: string, popReceipt: string, queueName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string, popReceipt: string, queueName: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
         this.popReceipt(popReceipt)
         this.queueName(queueName)
@@ -21554,8 +21554,8 @@ class az_storage_message_delete_command_builder extends CommandBuilder<az_storag
  * @param {string} queueName The queue name.
  */
 class az_storage_message_get_command_builder extends CommandBuilder<az_storage_message_get_command_result> {
-    constructor(commandPath: string, queueName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, queueName: string) {
+        super(commandPath, resultDataTypeName);
         this.queueName(queueName)
     }
 
@@ -21639,8 +21639,8 @@ class az_storage_message_get_command_builder extends CommandBuilder<az_storage_m
  * @param {string} queueName The queue name.
  */
 class az_storage_message_peek_command_builder extends CommandBuilder<az_storage_message_peek_command_result> {
-    constructor(commandPath: string, queueName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, queueName: string) {
+        super(commandPath, resultDataTypeName);
         this.queueName(queueName)
     }
 
@@ -21721,8 +21721,8 @@ class az_storage_message_peek_command_builder extends CommandBuilder<az_storage_
  * @param {string} queueName The queue name.
  */
 class az_storage_message_put_command_builder extends CommandBuilder<az_storage_message_put_command_result> {
-    constructor(commandPath: string, content: string, queueName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, content: string, queueName: string) {
+        super(commandPath, resultDataTypeName);
         this.content(content)
         this.queueName(queueName)
     }
@@ -21819,8 +21819,8 @@ class az_storage_message_put_command_builder extends CommandBuilder<az_storage_m
  * @param {string} visibilityTimeout Specifies the new visibility timeout value, in seconds, relative to server time. The new value must be larger than or equal to 0, and cannot be larger than 7 days. The visibility timeout of a message cannot be set to a value later than the expiry time. A message can be updated until it has been deleted or has expired.
  */
 class az_storage_message_update_command_builder extends CommandBuilder<az_storage_message_update_command_result> {
-    constructor(commandPath: string, id: string, popReceipt: string, queueName: string, visibilityTimeout: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string, popReceipt: string, queueName: string, visibilityTimeout: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
         this.popReceipt(popReceipt)
         this.queueName(queueName)
@@ -21917,8 +21917,8 @@ class az_storage_message_update_command_builder extends CommandBuilder<az_storag
  * ```
  */
 class az_storage_metrics_show_command_builder extends CommandBuilder<az_storage_metrics_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
@@ -21998,8 +21998,8 @@ class az_storage_metrics_show_command_builder extends CommandBuilder<az_storage_
  * @param {string} services The storage services from which to retrieve metrics info: (b)lob (q)ueue (t)able. Can be combined.
  */
 class az_storage_metrics_update_command_builder extends CommandBuilder<az_storage_metrics_update_command_result> {
-    constructor(commandPath: string, retention: string, services: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, retention: string, services: string) {
+        super(commandPath, resultDataTypeName);
         this.retention(retention)
         this.services(services)
     }
@@ -22090,8 +22090,8 @@ class az_storage_metrics_update_command_builder extends CommandBuilder<az_storag
  * @param {string} name The queue name.
  */
 class az_storage_queue_metadata_show_command_builder extends CommandBuilder<az_storage_queue_metadata_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -22169,8 +22169,8 @@ class az_storage_queue_metadata_show_command_builder extends CommandBuilder<az_s
  * @param {string} name The queue name.
  */
 class az_storage_queue_metadata_update_command_builder extends CommandBuilder<az_storage_queue_metadata_update_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -22251,8 +22251,8 @@ class az_storage_queue_metadata_update_command_builder extends CommandBuilder<az
  * @param {string} queueName The queue name.
  */
 class az_storage_queue_policy_create_command_builder extends CommandBuilder<az_storage_queue_policy_create_command_result> {
-    constructor(commandPath: string, name: string, queueName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, queueName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.queueName(queueName)
     }
@@ -22343,8 +22343,8 @@ class az_storage_queue_policy_create_command_builder extends CommandBuilder<az_s
  * @param {string} queueName The queue name.
  */
 class az_storage_queue_policy_delete_command_builder extends CommandBuilder<az_storage_queue_policy_delete_command_result> {
-    constructor(commandPath: string, name: string, queueName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, queueName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.queueName(queueName)
     }
@@ -22416,8 +22416,8 @@ class az_storage_queue_policy_delete_command_builder extends CommandBuilder<az_s
  * @param {string} queueName The queue name.
  */
 class az_storage_queue_policy_list_command_builder extends CommandBuilder<az_storage_queue_policy_list_command_result> {
-    constructor(commandPath: string, queueName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, queueName: string) {
+        super(commandPath, resultDataTypeName);
         this.queueName(queueName)
     }
 
@@ -22490,8 +22490,8 @@ class az_storage_queue_policy_list_command_builder extends CommandBuilder<az_sto
  * @param {string} queueName The queue name.
  */
 class az_storage_queue_policy_show_command_builder extends CommandBuilder<az_storage_queue_policy_show_command_result> {
-    constructor(commandPath: string, name: string, queueName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, queueName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.queueName(queueName)
     }
@@ -22573,8 +22573,8 @@ class az_storage_queue_policy_show_command_builder extends CommandBuilder<az_sto
  * @param {string} queueName The queue name.
  */
 class az_storage_queue_policy_update_command_builder extends CommandBuilder<az_storage_queue_policy_update_command_result> {
-    constructor(commandPath: string, name: string, queueName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, queueName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.queueName(queueName)
     }
@@ -22666,8 +22666,8 @@ class az_storage_queue_policy_update_command_builder extends CommandBuilder<az_s
  * @param {string} name The queue name.
  */
 class az_storage_queue_create_command_builder extends CommandBuilder<az_storage_queue_create_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -22751,8 +22751,8 @@ class az_storage_queue_create_command_builder extends CommandBuilder<az_storage_
  * @param {string} name The queue name.
  */
 class az_storage_queue_delete_command_builder extends CommandBuilder<az_storage_queue_delete_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -22829,8 +22829,8 @@ class az_storage_queue_delete_command_builder extends CommandBuilder<az_storage_
  * @param {string} name The queue name.
  */
 class az_storage_queue_exists_command_builder extends CommandBuilder<az_storage_queue_exists_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -22904,8 +22904,8 @@ class az_storage_queue_exists_command_builder extends CommandBuilder<az_storage_
  * @param {string} name The queue name.
  */
 class az_storage_queue_generate_sas_command_builder extends CommandBuilder<az_storage_queue_generate_sas_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -22996,8 +22996,8 @@ class az_storage_queue_generate_sas_command_builder extends CommandBuilder<az_st
  * ```
  */
 class az_storage_queue_list_command_builder extends CommandBuilder<az_storage_queue_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
@@ -23088,8 +23088,8 @@ class az_storage_queue_list_command_builder extends CommandBuilder<az_storage_qu
  * ```
  */
 class az_storage_queue_stats_command_builder extends CommandBuilder<az_storage_queue_stats_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
@@ -23154,8 +23154,8 @@ class az_storage_queue_stats_command_builder extends CommandBuilder<az_storage_q
  * @param {string} name The file share name.
  */
 class az_storage_share_metadata_show_command_builder extends CommandBuilder<az_storage_share_metadata_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -23232,8 +23232,8 @@ class az_storage_share_metadata_show_command_builder extends CommandBuilder<az_s
  * @param {string} name The file share name.
  */
 class az_storage_share_metadata_update_command_builder extends CommandBuilder<az_storage_share_metadata_update_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -23307,8 +23307,8 @@ class az_storage_share_metadata_update_command_builder extends CommandBuilder<az
  * @param {string} shareName The file share name.
  */
 class az_storage_share_policy_create_command_builder extends CommandBuilder<az_storage_share_policy_create_command_result> {
-    constructor(commandPath: string, name: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.shareName(shareName)
     }
@@ -23392,8 +23392,8 @@ class az_storage_share_policy_create_command_builder extends CommandBuilder<az_s
  * @param {string} shareName The file share name.
  */
 class az_storage_share_policy_delete_command_builder extends CommandBuilder<az_storage_share_policy_delete_command_result> {
-    constructor(commandPath: string, name: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.shareName(shareName)
     }
@@ -23458,8 +23458,8 @@ class az_storage_share_policy_delete_command_builder extends CommandBuilder<az_s
  * @param {string} shareName The file share name.
  */
 class az_storage_share_policy_list_command_builder extends CommandBuilder<az_storage_share_policy_list_command_result> {
-    constructor(commandPath: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.shareName(shareName)
     }
 
@@ -23525,8 +23525,8 @@ class az_storage_share_policy_list_command_builder extends CommandBuilder<az_sto
  * @param {string} shareName The file share name.
  */
 class az_storage_share_policy_show_command_builder extends CommandBuilder<az_storage_share_policy_show_command_result> {
-    constructor(commandPath: string, name: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.shareName(shareName)
     }
@@ -23601,8 +23601,8 @@ class az_storage_share_policy_show_command_builder extends CommandBuilder<az_sto
  * @param {string} shareName The file share name.
  */
 class az_storage_share_policy_update_command_builder extends CommandBuilder<az_storage_share_policy_update_command_result> {
-    constructor(commandPath: string, name: string, shareName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, shareName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.shareName(shareName)
     }
@@ -23688,8 +23688,8 @@ class az_storage_share_policy_update_command_builder extends CommandBuilder<az_s
  * @param {string} storageAccount The name or ID of the storage account.
  */
 class az_storage_share_rm_create_command_builder extends CommandBuilder<az_storage_share_rm_create_command_result> {
-    constructor(commandPath: string, name: string, storageAccount: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, storageAccount: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.storageAccount(storageAccount)
     }
@@ -23763,8 +23763,8 @@ class az_storage_share_rm_create_command_builder extends CommandBuilder<az_stora
  * ```
  */
 class az_storage_share_rm_delete_command_builder extends CommandBuilder<az_storage_share_rm_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -23817,8 +23817,8 @@ class az_storage_share_rm_delete_command_builder extends CommandBuilder<az_stora
  * ```
  */
 class az_storage_share_rm_exists_command_builder extends CommandBuilder<az_storage_share_rm_exists_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -23867,8 +23867,8 @@ class az_storage_share_rm_exists_command_builder extends CommandBuilder<az_stora
  * @param {string} storageAccount The name or ID of the storage account.
  */
 class az_storage_share_rm_list_command_builder extends CommandBuilder<az_storage_share_rm_list_command_result> {
-    constructor(commandPath: string, storageAccount: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, storageAccount: string) {
+        super(commandPath, resultDataTypeName);
         this.storageAccount(storageAccount)
     }
 
@@ -23920,8 +23920,8 @@ class az_storage_share_rm_list_command_builder extends CommandBuilder<az_storage
  * @param {string} deletedVersion Identify the version of the deleted share that will be restored.
  */
 class az_storage_share_rm_restore_command_builder extends CommandBuilder<az_storage_share_rm_restore_command_result> {
-    constructor(commandPath: string, deletedVersion: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, deletedVersion: string) {
+        super(commandPath, resultDataTypeName);
         this.deletedVersion(deletedVersion)
     }
 
@@ -23983,8 +23983,8 @@ class az_storage_share_rm_restore_command_builder extends CommandBuilder<az_stor
  * ```
  */
 class az_storage_share_rm_show_command_builder extends CommandBuilder<az_storage_share_rm_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Optional, used to expand the properties within share's properties. */
@@ -24043,8 +24043,8 @@ class az_storage_share_rm_show_command_builder extends CommandBuilder<az_storage
  * ```
  */
 class az_storage_share_rm_stats_command_builder extends CommandBuilder<az_storage_share_rm_stats_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -24099,8 +24099,8 @@ class az_storage_share_rm_stats_command_builder extends CommandBuilder<az_storag
  * ```
  */
 class az_storage_share_rm_update_command_builder extends CommandBuilder<az_storage_share_rm_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Access tier for specific share. GpV2 account can choose between TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium. */
@@ -24202,8 +24202,8 @@ class az_storage_share_rm_update_command_builder extends CommandBuilder<az_stora
  * @param {string} name The file share name.
  */
 class az_storage_share_create_command_builder extends CommandBuilder<az_storage_share_create_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -24288,8 +24288,8 @@ class az_storage_share_create_command_builder extends CommandBuilder<az_storage_
  * @param {string} name The file share name.
  */
 class az_storage_share_delete_command_builder extends CommandBuilder<az_storage_share_delete_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -24372,8 +24372,8 @@ class az_storage_share_delete_command_builder extends CommandBuilder<az_storage_
  * @param {string} name The file share name.
  */
 class az_storage_share_exists_command_builder extends CommandBuilder<az_storage_share_exists_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -24452,8 +24452,8 @@ class az_storage_share_exists_command_builder extends CommandBuilder<az_storage_
  * @param {string} name The file share name.
  */
 class az_storage_share_generate_sas_command_builder extends CommandBuilder<az_storage_share_generate_sas_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -24574,8 +24574,8 @@ class az_storage_share_generate_sas_command_builder extends CommandBuilder<az_st
  * ```
  */
 class az_storage_share_list_command_builder extends CommandBuilder<az_storage_share_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
@@ -24670,8 +24670,8 @@ class az_storage_share_list_command_builder extends CommandBuilder<az_storage_sh
  * @param {string} name The file share name.
  */
 class az_storage_share_show_command_builder extends CommandBuilder<az_storage_share_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -24749,8 +24749,8 @@ class az_storage_share_show_command_builder extends CommandBuilder<az_storage_sh
  * @param {string} name The file share name.
  */
 class az_storage_share_snapshot_command_builder extends CommandBuilder<az_storage_share_snapshot_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -24826,8 +24826,8 @@ class az_storage_share_snapshot_command_builder extends CommandBuilder<az_storag
  * @param {string} name The file share name.
  */
 class az_storage_share_stats_command_builder extends CommandBuilder<az_storage_share_stats_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -24893,8 +24893,8 @@ class az_storage_share_stats_command_builder extends CommandBuilder<az_storage_s
  * @param {string} quota Specifies the maximum size of the share, in gigabytes. Must be greater than 0, and less than or equal to 5 TB (5120 GB).
  */
 class az_storage_share_update_command_builder extends CommandBuilder<az_storage_share_update_command_result> {
-    constructor(commandPath: string, name: string, quota: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, quota: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.quota(quota)
     }
@@ -24966,8 +24966,8 @@ class az_storage_share_update_command_builder extends CommandBuilder<az_storage_
  * @param {string} name The file share name.
  */
 class az_storage_share_url_command_builder extends CommandBuilder<az_storage_share_url_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -25041,8 +25041,8 @@ class az_storage_share_url_command_builder extends CommandBuilder<az_storage_sha
  * @param {string} tableName The container name.
  */
 class az_storage_table_policy_create_command_builder extends CommandBuilder<az_storage_table_policy_create_command_result> {
-    constructor(commandPath: string, name: string, tableName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, tableName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.tableName(tableName)
     }
@@ -25126,8 +25126,8 @@ class az_storage_table_policy_create_command_builder extends CommandBuilder<az_s
  * @param {string} tableName The container name.
  */
 class az_storage_table_policy_delete_command_builder extends CommandBuilder<az_storage_table_policy_delete_command_result> {
-    constructor(commandPath: string, name: string, tableName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, tableName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.tableName(tableName)
     }
@@ -25192,8 +25192,8 @@ class az_storage_table_policy_delete_command_builder extends CommandBuilder<az_s
  * @param {string} tableName The container name.
  */
 class az_storage_table_policy_list_command_builder extends CommandBuilder<az_storage_table_policy_list_command_result> {
-    constructor(commandPath: string, tableName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, tableName: string) {
+        super(commandPath, resultDataTypeName);
         this.tableName(tableName)
     }
 
@@ -25259,8 +25259,8 @@ class az_storage_table_policy_list_command_builder extends CommandBuilder<az_sto
  * @param {string} tableName The container name.
  */
 class az_storage_table_policy_show_command_builder extends CommandBuilder<az_storage_table_policy_show_command_result> {
-    constructor(commandPath: string, name: string, tableName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, tableName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.tableName(tableName)
     }
@@ -25335,8 +25335,8 @@ class az_storage_table_policy_show_command_builder extends CommandBuilder<az_sto
  * @param {string} tableName The container name.
  */
 class az_storage_table_policy_update_command_builder extends CommandBuilder<az_storage_table_policy_update_command_result> {
-    constructor(commandPath: string, name: string, tableName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, tableName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.tableName(tableName)
     }
@@ -25420,8 +25420,8 @@ class az_storage_table_policy_update_command_builder extends CommandBuilder<az_s
  * @param {string} name The name of the table to create. The table name may contain only alphanumeric characters and cannot begin with a numeric character. It is case-insensitive and must be from 3 to 63 characters long.
  */
 class az_storage_table_create_command_builder extends CommandBuilder<az_storage_table_create_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -25492,8 +25492,8 @@ class az_storage_table_create_command_builder extends CommandBuilder<az_storage_
  * @param {string} name The name of the table to delete.
  */
 class az_storage_table_delete_command_builder extends CommandBuilder<az_storage_table_delete_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -25563,8 +25563,8 @@ class az_storage_table_delete_command_builder extends CommandBuilder<az_storage_
  * @param {string} name The name of table to check for existence.
  */
 class az_storage_table_exists_command_builder extends CommandBuilder<az_storage_table_exists_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -25636,8 +25636,8 @@ class az_storage_table_exists_command_builder extends CommandBuilder<az_storage_
  * @param {string} name The name of the table to create a SAS token for.
  */
 class az_storage_table_generate_sas_command_builder extends CommandBuilder<az_storage_table_generate_sas_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -25749,8 +25749,8 @@ class az_storage_table_generate_sas_command_builder extends CommandBuilder<az_st
  * ```
  */
 class az_storage_table_list_command_builder extends CommandBuilder<az_storage_table_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
@@ -25822,8 +25822,8 @@ class az_storage_table_list_command_builder extends CommandBuilder<az_storage_ta
  * ```
  */
 class az_storage_table_stats_command_builder extends CommandBuilder<az_storage_table_stats_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
@@ -25903,8 +25903,8 @@ class az_storage_table_stats_command_builder extends CommandBuilder<az_storage_t
  * ```
  */
 class az_storage_copy_command_builder extends CommandBuilder<az_storage_copy_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
@@ -26122,8 +26122,8 @@ class az_storage_copy_command_builder extends CommandBuilder<az_storage_copy_com
  * ```
  */
 class az_storage_remove_command_builder extends CommandBuilder<az_storage_remove_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */

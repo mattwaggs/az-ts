@@ -30,7 +30,7 @@ export class az_reservations_catalog {
      * @param {string} subscriptionId Id of the subscription to get the catalog for.
      */
     static show(reservedResourceType: 'CosmosDb' | 'RedHat' | 'RedHatOsa' | 'SqlDataWarehouse' | 'SqlDatabases' | 'SuseLinux' | 'VMwareCloudSimple' | 'VirtualMachines', subscriptionId: string): az_reservations_catalog_show_command_builder {
-        return new az_reservations_catalog_show_command_builder("az reservations catalog show", reservedResourceType, subscriptionId);
+        return new az_reservations_catalog_show_command_builder("az reservations catalog show", 'az_reservations_catalog_show_command_result', reservedResourceType, subscriptionId);
     }
 }
 
@@ -49,7 +49,7 @@ export class az_reservations_reservation_order_id {
      * @param {string} subscriptionId Id of the subscription to look up applied reservations.
      */
     static list(subscriptionId: string): az_reservations_reservation_order_id_list_command_builder {
-        return new az_reservations_reservation_order_id_list_command_builder("az reservations reservation-order-id list", subscriptionId);
+        return new az_reservations_reservation_order_id_list_command_builder("az reservations reservation-order-id list", 'az_reservations_reservation_order_id_list_command_result', subscriptionId);
     }
 }
 
@@ -84,7 +84,7 @@ export class az_reservations_reservation_order {
      * @param {'P1Y' | 'P3Y'} term Available reservation terms for this resource.
      */
     static calculate(appliedScopeType: 'Shared' | 'Single', billingScope: string, displayName: string, quantity: string, reservedResourceType: 'CosmosDb' | 'RedHat' | 'RedHatOsa' | 'SqlDataWarehouse' | 'SqlDatabases' | 'SuseLinux' | 'VMwareCloudSimple' | 'VirtualMachines', sku: string, term: 'P1Y' | 'P3Y'): az_reservations_reservation_order_calculate_command_builder {
-        return new az_reservations_reservation_order_calculate_command_builder("az reservations reservation-order calculate", appliedScopeType, billingScope, displayName, quantity, reservedResourceType, sku, term);
+        return new az_reservations_reservation_order_calculate_command_builder("az reservations reservation-order calculate", 'az_reservations_reservation_order_calculate_command_result', appliedScopeType, billingScope, displayName, quantity, reservedResourceType, sku, term);
     }
 
     /**
@@ -97,7 +97,7 @@ export class az_reservations_reservation_order {
      * ```
      */
     static list(): az_reservations_reservation_order_list_command_builder {
-        return new az_reservations_reservation_order_list_command_builder("az reservations reservation-order list");
+        return new az_reservations_reservation_order_list_command_builder("az reservations reservation-order list", 'az_reservations_reservation_order_list_command_result');
     }
 
     /**
@@ -131,7 +131,7 @@ export class az_reservations_reservation_order {
      * @param {'P1Y' | 'P3Y'} term Available reservation terms for this resource.
      */
     static purchase(appliedScopeType: 'Shared' | 'Single', billingScope: string, displayName: string, quantity: string, reservationOrderId: string, reservedResourceType: 'CosmosDb' | 'RedHat' | 'RedHatOsa' | 'SqlDataWarehouse' | 'SqlDatabases' | 'SuseLinux' | 'VMwareCloudSimple' | 'VirtualMachines', sku: string, term: 'P1Y' | 'P3Y'): az_reservations_reservation_order_purchase_command_builder {
-        return new az_reservations_reservation_order_purchase_command_builder("az reservations reservation-order purchase", appliedScopeType, billingScope, displayName, quantity, reservationOrderId, reservedResourceType, sku, term);
+        return new az_reservations_reservation_order_purchase_command_builder("az reservations reservation-order purchase", 'az_reservations_reservation_order_purchase_command_result', appliedScopeType, billingScope, displayName, quantity, reservationOrderId, reservedResourceType, sku, term);
     }
 
     /**
@@ -148,7 +148,7 @@ export class az_reservations_reservation_order {
      * @param {string} reservationOrderId Id of reservation order to look up.
      */
     static show(reservationOrderId: string): az_reservations_reservation_order_show_command_builder {
-        return new az_reservations_reservation_order_show_command_builder("az reservations reservation-order show", reservationOrderId);
+        return new az_reservations_reservation_order_show_command_builder("az reservations reservation-order show", 'az_reservations_reservation_order_show_command_result', reservationOrderId);
     }
 }
 
@@ -167,7 +167,7 @@ export class az_reservations_reservation {
      * @param {string} reservationOrderId Id of container reservation order.
      */
     static list(reservationOrderId: string): az_reservations_reservation_list_command_builder {
-        return new az_reservations_reservation_list_command_builder("az reservations reservation list", reservationOrderId);
+        return new az_reservations_reservation_list_command_builder("az reservations reservation list", 'az_reservations_reservation_list_command_result', reservationOrderId);
     }
 
     /**
@@ -184,7 +184,7 @@ export class az_reservations_reservation {
      * @param {string} reservationOrderId Order id of the reservation.
      */
     static list_history(reservationId: string, reservationOrderId: string): az_reservations_reservation_list_history_command_builder {
-        return new az_reservations_reservation_list_history_command_builder("az reservations reservation list-history", reservationId, reservationOrderId);
+        return new az_reservations_reservation_list_history_command_builder("az reservations reservation list-history", 'az_reservations_reservation_list_history_command_result', reservationId, reservationOrderId);
     }
 
     /**
@@ -203,7 +203,7 @@ export class az_reservations_reservation {
      * @param {string} reservationOrderId Reservation order id of the reservations to merge.
      */
     static merge(reservationId1: string, reservationId2: string, reservationOrderId: string): az_reservations_reservation_merge_command_builder {
-        return new az_reservations_reservation_merge_command_builder("az reservations reservation merge", reservationId1, reservationId2, reservationOrderId);
+        return new az_reservations_reservation_merge_command_builder("az reservations reservation merge", 'az_reservations_reservation_merge_command_result', reservationId1, reservationId2, reservationOrderId);
     }
 
     /**
@@ -222,7 +222,7 @@ export class az_reservations_reservation {
      * @param {string} reservationOrderId Order id of reservation to look up.
      */
     static show(reservationId: string, reservationOrderId: string): az_reservations_reservation_show_command_builder {
-        return new az_reservations_reservation_show_command_builder("az reservations reservation show", reservationId, reservationOrderId);
+        return new az_reservations_reservation_show_command_builder("az reservations reservation show", 'az_reservations_reservation_show_command_result', reservationId, reservationOrderId);
     }
 
     /**
@@ -243,7 +243,7 @@ export class az_reservations_reservation {
      * @param {string} reservationOrderId Reservation order id of the reservation to split.
      */
     static split(quantity1: string, quantity2: string, reservationId: string, reservationOrderId: string): az_reservations_reservation_split_command_builder {
-        return new az_reservations_reservation_split_command_builder("az reservations reservation split", quantity1, quantity2, reservationId, reservationOrderId);
+        return new az_reservations_reservation_split_command_builder("az reservations reservation split", 'az_reservations_reservation_split_command_result', quantity1, quantity2, reservationId, reservationOrderId);
     }
 
     /**
@@ -264,7 +264,7 @@ export class az_reservations_reservation {
      * @param {string} reservationOrderId Reservation order id of the reservation to update.
      */
     static update(appliedScopeType: 'Shared' | 'Single', reservationId: string, reservationOrderId: string): az_reservations_reservation_update_command_builder {
-        return new az_reservations_reservation_update_command_builder("az reservations reservation update", appliedScopeType, reservationId, reservationOrderId);
+        return new az_reservations_reservation_update_command_builder("az reservations reservation update", 'az_reservations_reservation_update_command_result', appliedScopeType, reservationId, reservationOrderId);
     }
 }
 
@@ -288,8 +288,8 @@ export class az_reservations {
  * @param {string} subscriptionId Id of the subscription to get the catalog for.
  */
 class az_reservations_catalog_show_command_builder extends CommandBuilder<az_reservations_catalog_show_command_result> {
-    constructor(commandPath: string, reservedResourceType: 'CosmosDb' | 'RedHat' | 'RedHatOsa' | 'SqlDataWarehouse' | 'SqlDatabases' | 'SuseLinux' | 'VMwareCloudSimple' | 'VirtualMachines', subscriptionId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, reservedResourceType: 'CosmosDb' | 'RedHat' | 'RedHatOsa' | 'SqlDataWarehouse' | 'SqlDatabases' | 'SuseLinux' | 'VMwareCloudSimple' | 'VirtualMachines', subscriptionId: string) {
+        super(commandPath, resultDataTypeName);
         this.reservedResourceType(reservedResourceType)
         this.subscriptionId(subscriptionId)
     }
@@ -338,8 +338,8 @@ class az_reservations_catalog_show_command_builder extends CommandBuilder<az_res
  * @param {string} subscriptionId Id of the subscription to look up applied reservations.
  */
 class az_reservations_reservation_order_id_list_command_builder extends CommandBuilder<az_reservations_reservation_order_id_list_command_result> {
-    constructor(commandPath: string, subscriptionId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, subscriptionId: string) {
+        super(commandPath, resultDataTypeName);
         this.subscriptionId(subscriptionId)
     }
 
@@ -391,8 +391,8 @@ class az_reservations_reservation_order_id_list_command_builder extends CommandB
  * @param {'P1Y' | 'P3Y'} term Available reservation terms for this resource.
  */
 class az_reservations_reservation_order_calculate_command_builder extends CommandBuilder<az_reservations_reservation_order_calculate_command_result> {
-    constructor(commandPath: string, appliedScopeType: 'Shared' | 'Single', billingScope: string, displayName: string, quantity: string, reservedResourceType: 'CosmosDb' | 'RedHat' | 'RedHatOsa' | 'SqlDataWarehouse' | 'SqlDatabases' | 'SuseLinux' | 'VMwareCloudSimple' | 'VirtualMachines', sku: string, term: 'P1Y' | 'P3Y') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, appliedScopeType: 'Shared' | 'Single', billingScope: string, displayName: string, quantity: string, reservedResourceType: 'CosmosDb' | 'RedHat' | 'RedHatOsa' | 'SqlDataWarehouse' | 'SqlDatabases' | 'SuseLinux' | 'VMwareCloudSimple' | 'VirtualMachines', sku: string, term: 'P1Y' | 'P3Y') {
+        super(commandPath, resultDataTypeName);
         this.appliedScopeType(appliedScopeType)
         this.billingScope(billingScope)
         this.displayName(displayName)
@@ -491,8 +491,8 @@ class az_reservations_reservation_order_calculate_command_builder extends Comman
  * ```
  */
 class az_reservations_reservation_order_list_command_builder extends CommandBuilder<az_reservations_reservation_order_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -539,8 +539,8 @@ class az_reservations_reservation_order_list_command_builder extends CommandBuil
  * @param {'P1Y' | 'P3Y'} term Available reservation terms for this resource.
  */
 class az_reservations_reservation_order_purchase_command_builder extends CommandBuilder<az_reservations_reservation_order_purchase_command_result> {
-    constructor(commandPath: string, appliedScopeType: 'Shared' | 'Single', billingScope: string, displayName: string, quantity: string, reservationOrderId: string, reservedResourceType: 'CosmosDb' | 'RedHat' | 'RedHatOsa' | 'SqlDataWarehouse' | 'SqlDatabases' | 'SuseLinux' | 'VMwareCloudSimple' | 'VirtualMachines', sku: string, term: 'P1Y' | 'P3Y') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, appliedScopeType: 'Shared' | 'Single', billingScope: string, displayName: string, quantity: string, reservationOrderId: string, reservedResourceType: 'CosmosDb' | 'RedHat' | 'RedHatOsa' | 'SqlDataWarehouse' | 'SqlDatabases' | 'SuseLinux' | 'VMwareCloudSimple' | 'VirtualMachines', sku: string, term: 'P1Y' | 'P3Y') {
+        super(commandPath, resultDataTypeName);
         this.appliedScopeType(appliedScopeType)
         this.billingScope(billingScope)
         this.displayName(displayName)
@@ -650,8 +650,8 @@ class az_reservations_reservation_order_purchase_command_builder extends Command
  * @param {string} reservationOrderId Id of reservation order to look up.
  */
 class az_reservations_reservation_order_show_command_builder extends CommandBuilder<az_reservations_reservation_order_show_command_result> {
-    constructor(commandPath: string, reservationOrderId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, reservationOrderId: string) {
+        super(commandPath, resultDataTypeName);
         this.reservationOrderId(reservationOrderId)
     }
 
@@ -693,8 +693,8 @@ class az_reservations_reservation_order_show_command_builder extends CommandBuil
  * @param {string} reservationOrderId Id of container reservation order.
  */
 class az_reservations_reservation_list_command_builder extends CommandBuilder<az_reservations_reservation_list_command_result> {
-    constructor(commandPath: string, reservationOrderId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, reservationOrderId: string) {
+        super(commandPath, resultDataTypeName);
         this.reservationOrderId(reservationOrderId)
     }
 
@@ -731,8 +731,8 @@ class az_reservations_reservation_list_command_builder extends CommandBuilder<az
  * @param {string} reservationOrderId Order id of the reservation.
  */
 class az_reservations_reservation_list_history_command_builder extends CommandBuilder<az_reservations_reservation_list_history_command_result> {
-    constructor(commandPath: string, reservationId: string, reservationOrderId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, reservationId: string, reservationOrderId: string) {
+        super(commandPath, resultDataTypeName);
         this.reservationId(reservationId)
         this.reservationOrderId(reservationOrderId)
     }
@@ -772,8 +772,8 @@ class az_reservations_reservation_list_history_command_builder extends CommandBu
  * @param {string} reservationOrderId Reservation order id of the reservations to merge.
  */
 class az_reservations_reservation_merge_command_builder extends CommandBuilder<az_reservations_reservation_merge_command_result> {
-    constructor(commandPath: string, reservationId1: string, reservationId2: string, reservationOrderId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, reservationId1: string, reservationId2: string, reservationOrderId: string) {
+        super(commandPath, resultDataTypeName);
         this.reservationId1(reservationId1)
         this.reservationId2(reservationId2)
         this.reservationOrderId(reservationOrderId)
@@ -820,8 +820,8 @@ class az_reservations_reservation_merge_command_builder extends CommandBuilder<a
  * @param {string} reservationOrderId Order id of reservation to look up.
  */
 class az_reservations_reservation_show_command_builder extends CommandBuilder<az_reservations_reservation_show_command_result> {
-    constructor(commandPath: string, reservationId: string, reservationOrderId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, reservationId: string, reservationOrderId: string) {
+        super(commandPath, resultDataTypeName);
         this.reservationId(reservationId)
         this.reservationOrderId(reservationOrderId)
     }
@@ -875,8 +875,8 @@ class az_reservations_reservation_show_command_builder extends CommandBuilder<az
  * @param {string} reservationOrderId Reservation order id of the reservation to split.
  */
 class az_reservations_reservation_split_command_builder extends CommandBuilder<az_reservations_reservation_split_command_result> {
-    constructor(commandPath: string, quantity1: string, quantity2: string, reservationId: string, reservationOrderId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, quantity1: string, quantity2: string, reservationId: string, reservationOrderId: string) {
+        super(commandPath, resultDataTypeName);
         this.quantity1(quantity1)
         this.quantity2(quantity2)
         this.reservationId(reservationId)
@@ -932,8 +932,8 @@ class az_reservations_reservation_split_command_builder extends CommandBuilder<a
  * @param {string} reservationOrderId Reservation order id of the reservation to update.
  */
 class az_reservations_reservation_update_command_builder extends CommandBuilder<az_reservations_reservation_update_command_result> {
-    constructor(commandPath: string, appliedScopeType: 'Shared' | 'Single', reservationId: string, reservationOrderId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, appliedScopeType: 'Shared' | 'Single', reservationId: string, reservationOrderId: string) {
+        super(commandPath, resultDataTypeName);
         this.appliedScopeType(appliedScopeType)
         this.reservationId(reservationId)
         this.reservationOrderId(reservationOrderId)

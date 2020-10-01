@@ -34,7 +34,7 @@ export class az_account_lock {
      * @param {string} name Name of the lock.
      */
     static create(lockType: 'CanNotDelete' | 'ReadOnly', name: string): az_account_lock_create_command_builder {
-        return new az_account_lock_create_command_builder("az account lock create", lockType, name);
+        return new az_account_lock_create_command_builder("az account lock create", 'az_account_lock_create_command_result', lockType, name);
     }
 
     /**
@@ -47,7 +47,7 @@ export class az_account_lock {
      * ```
      */
     static delete(): az_account_lock_delete_command_builder {
-        return new az_account_lock_delete_command_builder("az account lock delete");
+        return new az_account_lock_delete_command_builder("az account lock delete", 'az_account_lock_delete_command_result');
     }
 
     /**
@@ -60,7 +60,7 @@ export class az_account_lock {
      * ```
      */
     static list(): az_account_lock_list_command_builder {
-        return new az_account_lock_list_command_builder("az account lock list");
+        return new az_account_lock_list_command_builder("az account lock list", 'az_account_lock_list_command_result');
     }
 
     /**
@@ -74,7 +74,7 @@ export class az_account_lock {
      * ```
      */
     static show(): az_account_lock_show_command_builder {
-        return new az_account_lock_show_command_builder("az account lock show");
+        return new az_account_lock_show_command_builder("az account lock show", 'az_account_lock_show_command_result');
     }
 
     /**
@@ -89,7 +89,7 @@ export class az_account_lock {
      * ```
      */
     static update(): az_account_lock_update_command_builder {
-        return new az_account_lock_update_command_builder("az account lock update");
+        return new az_account_lock_update_command_builder("az account lock update", 'az_account_lock_update_command_result');
     }
 }
 
@@ -108,7 +108,7 @@ export class az_account_management_group_subscription {
      * @param {string} subscription Subscription Id or Name.
      */
     static add(name: string, subscription: string): az_account_management_group_subscription_add_command_builder {
-        return new az_account_management_group_subscription_add_command_builder("az account management-group subscription add", name, subscription);
+        return new az_account_management_group_subscription_add_command_builder("az account management-group subscription add", 'az_account_management_group_subscription_add_command_result', name, subscription);
     }
 
     /**
@@ -124,7 +124,7 @@ export class az_account_management_group_subscription {
      * @param {string} subscription Subscription Id or Name.
      */
     static remove(name: string, subscription: string): az_account_management_group_subscription_remove_command_builder {
-        return new az_account_management_group_subscription_remove_command_builder("az account management-group subscription remove", name, subscription);
+        return new az_account_management_group_subscription_remove_command_builder("az account management-group subscription remove", 'az_account_management_group_subscription_remove_command_result', name, subscription);
     }
 }
 
@@ -143,7 +143,7 @@ export class az_account_management_group {
      * @param {string} name Name of the management group.
      */
     static create(name: string): az_account_management_group_create_command_builder {
-        return new az_account_management_group_create_command_builder("az account management-group create", name);
+        return new az_account_management_group_create_command_builder("az account management-group create", 'az_account_management_group_create_command_result', name);
     }
 
     /**
@@ -157,7 +157,7 @@ export class az_account_management_group {
      * @param {string} name Name of the management group.
      */
     static delete(name: string): az_account_management_group_delete_command_builder {
-        return new az_account_management_group_delete_command_builder("az account management-group delete", name);
+        return new az_account_management_group_delete_command_builder("az account management-group delete", 'az_account_management_group_delete_command_result', name);
     }
 
     /**
@@ -169,7 +169,7 @@ export class az_account_management_group {
      * ```
      */
     static list(): az_account_management_group_list_command_builder {
-        return new az_account_management_group_list_command_builder("az account management-group list");
+        return new az_account_management_group_list_command_builder("az account management-group list", 'az_account_management_group_list_command_result');
     }
 
     /**
@@ -186,7 +186,7 @@ export class az_account_management_group {
      * @param {string} name Name of the management group.
      */
     static show(name: string): az_account_management_group_show_command_builder {
-        return new az_account_management_group_show_command_builder("az account management-group show", name);
+        return new az_account_management_group_show_command_builder("az account management-group show", 'az_account_management_group_show_command_result', name);
     }
 
     /**
@@ -206,7 +206,7 @@ export class az_account_management_group {
      * @param {string} name Name of the management group.
      */
     static update(name: string): az_account_management_group_update_command_builder {
-        return new az_account_management_group_update_command_builder("az account management-group update", name);
+        return new az_account_management_group_update_command_builder("az account management-group update", 'az_account_management_group_update_command_result', name);
     }
 }
 
@@ -221,7 +221,7 @@ export class az_account {
      * ```
      */
     static clear(): az_account_clear_command_builder {
-        return new az_account_clear_command_builder("az account clear");
+        return new az_account_clear_command_builder("az account clear", 'az_account_clear_command_result');
     }
 
     /**
@@ -236,7 +236,7 @@ export class az_account {
      * ```
      */
     static get_access_token(): az_account_get_access_token_command_builder {
-        return new az_account_get_access_token_command_builder("az account get-access-token");
+        return new az_account_get_access_token_command_builder("az account get-access-token", 'az_account_get_access_token_command_result');
     }
 
     /**
@@ -250,7 +250,7 @@ export class az_account {
      * ```
      */
     static list(): az_account_list_command_builder {
-        return new az_account_list_command_builder("az account list");
+        return new az_account_list_command_builder("az account list", 'az_account_list_command_result');
     }
 
     /**
@@ -262,7 +262,7 @@ export class az_account {
      * ```
      */
     static list_locations(): az_account_list_locations_command_builder {
-        return new az_account_list_locations_command_builder("az account list-locations");
+        return new az_account_list_locations_command_builder("az account list-locations", 'az_account_list_locations_command_result');
     }
 
     /**
@@ -276,7 +276,7 @@ export class az_account {
      * @param {string} subscription Name or ID of subscription.
      */
     static set(subscription: string): az_account_set_command_builder {
-        return new az_account_set_command_builder("az account set", subscription);
+        return new az_account_set_command_builder("az account set", 'az_account_set_command_result', subscription);
     }
 
     /**
@@ -290,7 +290,7 @@ export class az_account {
      * ```
      */
     static show(): az_account_show_command_builder {
-        return new az_account_show_command_builder("az account show");
+        return new az_account_show_command_builder("az account show", 'az_account_show_command_result');
     }
 }
 
@@ -308,8 +308,8 @@ export class az_account {
  * @param {string} name Name of the lock.
  */
 class az_account_lock_create_command_builder extends CommandBuilder<az_account_lock_create_command_result> {
-    constructor(commandPath: string, lockType: 'CanNotDelete' | 'ReadOnly', name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lockType: 'CanNotDelete' | 'ReadOnly', name: string) {
+        super(commandPath, resultDataTypeName);
         this.lockType(lockType)
         this.name(name)
     }
@@ -343,8 +343,8 @@ class az_account_lock_create_command_builder extends CommandBuilder<az_account_l
  * ```
  */
 class az_account_lock_delete_command_builder extends CommandBuilder<az_account_lock_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). If provided, no other "Resource Id" arguments should be specified. */
@@ -370,8 +370,8 @@ class az_account_lock_delete_command_builder extends CommandBuilder<az_account_l
  * ```
  */
 class az_account_lock_list_command_builder extends CommandBuilder<az_account_lock_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** A query filter to use to restrict the results. */
@@ -398,8 +398,8 @@ class az_account_lock_list_command_builder extends CommandBuilder<az_account_loc
  * ```
  */
 class az_account_lock_show_command_builder extends CommandBuilder<az_account_lock_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). If provided, no other "Resource Id" arguments should be specified. */
@@ -433,8 +433,8 @@ class az_account_lock_show_command_builder extends CommandBuilder<az_account_loc
  * ```
  */
 class az_account_lock_update_command_builder extends CommandBuilder<az_account_lock_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). If provided, no other "Resource Id" arguments should be specified. */
@@ -475,8 +475,8 @@ class az_account_lock_update_command_builder extends CommandBuilder<az_account_l
  * @param {string} subscription Subscription Id or Name.
  */
 class az_account_management_group_subscription_add_command_builder extends CommandBuilder<az_account_management_group_subscription_add_command_result> {
-    constructor(commandPath: string, name: string, subscription: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, subscription: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.subscription(subscription)
     }
@@ -507,8 +507,8 @@ class az_account_management_group_subscription_add_command_builder extends Comma
  * @param {string} subscription Subscription Id or Name.
  */
 class az_account_management_group_subscription_remove_command_builder extends CommandBuilder<az_account_management_group_subscription_remove_command_result> {
-    constructor(commandPath: string, name: string, subscription: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, subscription: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.subscription(subscription)
     }
@@ -539,8 +539,8 @@ class az_account_management_group_subscription_remove_command_builder extends Co
  * @param {string} name Name of the management group.
  */
 class az_account_management_group_create_command_builder extends CommandBuilder<az_account_management_group_create_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -574,8 +574,8 @@ class az_account_management_group_create_command_builder extends CommandBuilder<
  * @param {string} name Name of the management group.
  */
 class az_account_management_group_delete_command_builder extends CommandBuilder<az_account_management_group_delete_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -595,8 +595,8 @@ class az_account_management_group_delete_command_builder extends CommandBuilder<
  * ```
  */
 class az_account_management_group_list_command_builder extends CommandBuilder<az_account_management_group_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -620,8 +620,8 @@ class az_account_management_group_list_command_builder extends CommandBuilder<az
  * @param {string} name Name of the management group.
  */
 class az_account_management_group_show_command_builder extends CommandBuilder<az_account_management_group_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -667,8 +667,8 @@ class az_account_management_group_show_command_builder extends CommandBuilder<az
  * @param {string} name Name of the management group.
  */
 class az_account_management_group_update_command_builder extends CommandBuilder<az_account_management_group_update_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -724,8 +724,8 @@ class az_account_management_group_update_command_builder extends CommandBuilder<
  * ```
  */
 class az_account_clear_command_builder extends CommandBuilder<az_account_clear_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 }
 
@@ -741,8 +741,8 @@ class az_account_clear_command_builder extends CommandBuilder<az_account_clear_c
  * ```
  */
 class az_account_get_access_token_command_builder extends CommandBuilder<az_account_get_access_token_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Azure resource endpoints. Default to Azure Resource Manager. */
@@ -781,8 +781,8 @@ class az_account_get_access_token_command_builder extends CommandBuilder<az_acco
  * ```
  */
 class az_account_list_command_builder extends CommandBuilder<az_account_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** List all subscriptions, rather than just 'Enabled' ones. */
@@ -813,8 +813,8 @@ class az_account_list_command_builder extends CommandBuilder<az_account_list_com
  * ```
  */
 class az_account_list_locations_command_builder extends CommandBuilder<az_account_list_locations_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 }
 
@@ -829,8 +829,8 @@ class az_account_list_locations_command_builder extends CommandBuilder<az_accoun
  * @param {string} subscription Name or ID of subscription.
  */
 class az_account_set_command_builder extends CommandBuilder<az_account_set_command_result> {
-    constructor(commandPath: string, subscription: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, subscription: string) {
+        super(commandPath, resultDataTypeName);
         this.subscription(subscription)
     }
 
@@ -852,8 +852,8 @@ class az_account_set_command_builder extends CommandBuilder<az_account_set_comma
  * ```
  */
 class az_account_show_command_builder extends CommandBuilder<az_account_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */

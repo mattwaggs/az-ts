@@ -31,7 +31,7 @@ export class az_role_assignment {
      * @param {string} role Role name or id.
      */
     static create(role: string): az_role_assignment_create_command_builder {
-        return new az_role_assignment_create_command_builder("az role assignment create", role);
+        return new az_role_assignment_create_command_builder("az role assignment create", 'az_role_assignment_create_command_result', role);
     }
 
     /**
@@ -50,7 +50,7 @@ export class az_role_assignment {
      * ```
      */
     static delete(): az_role_assignment_delete_command_builder {
-        return new az_role_assignment_delete_command_builder("az role assignment delete");
+        return new az_role_assignment_delete_command_builder("az role assignment delete", 'az_role_assignment_delete_command_result');
     }
 
     /**
@@ -71,7 +71,7 @@ export class az_role_assignment {
      * ```
      */
     static list(): az_role_assignment_list_command_builder {
-        return new az_role_assignment_list_command_builder("az role assignment list");
+        return new az_role_assignment_list_command_builder("az role assignment list", 'az_role_assignment_list_command_result');
     }
 
     /**
@@ -85,7 +85,7 @@ export class az_role_assignment {
      * ```
      */
     static list_changelogs(): az_role_assignment_list_changelogs_command_builder {
-        return new az_role_assignment_list_changelogs_command_builder("az role assignment list-changelogs");
+        return new az_role_assignment_list_changelogs_command_builder("az role assignment list-changelogs", 'az_role_assignment_list_changelogs_command_result');
     }
 
     /**
@@ -100,7 +100,7 @@ export class az_role_assignment {
      * @param {string} roleAssignment Description of an existing role assignment as JSON, or a path to a file containing a JSON description.
      */
     static update(roleAssignment: string): az_role_assignment_update_command_builder {
-        return new az_role_assignment_update_command_builder("az role assignment update", roleAssignment);
+        return new az_role_assignment_update_command_builder("az role assignment update", 'az_role_assignment_update_command_result', roleAssignment);
     }
 }
 
@@ -118,7 +118,7 @@ export class az_role_definition {
      * @param {string} roleDefinition Description of a role as JSON, or a path to a file containing a JSON description.
      */
     static create(roleDefinition: string): az_role_definition_create_command_builder {
-        return new az_role_definition_create_command_builder("az role definition create", roleDefinition);
+        return new az_role_definition_create_command_builder("az role definition create", 'az_role_definition_create_command_result', roleDefinition);
     }
 
     /**
@@ -136,7 +136,7 @@ export class az_role_definition {
      * @param {string} name The role's name.
      */
     static delete(name: string): az_role_definition_delete_command_builder {
-        return new az_role_definition_delete_command_builder("az role definition delete", name);
+        return new az_role_definition_delete_command_builder("az role definition delete", 'az_role_definition_delete_command_result', name);
     }
 
     /**
@@ -153,7 +153,7 @@ export class az_role_definition {
      * ```
      */
     static list(): az_role_definition_list_command_builder {
-        return new az_role_definition_list_command_builder("az role definition list");
+        return new az_role_definition_list_command_builder("az role definition list", 'az_role_definition_list_command_result');
     }
 
     /**
@@ -168,7 +168,7 @@ export class az_role_definition {
      * @param {string} roleDefinition Description of an existing role as JSON, or a path to a file containing a JSON description.
      */
     static update(roleDefinition: string): az_role_definition_update_command_builder {
-        return new az_role_definition_update_command_builder("az role definition update", roleDefinition);
+        return new az_role_definition_update_command_builder("az role definition update", 'az_role_definition_update_command_result', roleDefinition);
     }
 }
 
@@ -196,8 +196,8 @@ export class az_role {
  * @param {string} role Role name or id.
  */
 class az_role_assignment_create_command_builder extends CommandBuilder<az_role_assignment_create_command_result> {
-    constructor(commandPath: string, role: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, role: string) {
+        super(commandPath, resultDataTypeName);
         this.role(role)
     }
 
@@ -278,8 +278,8 @@ class az_role_assignment_create_command_builder extends CommandBuilder<az_role_a
  * ```
  */
 class az_role_assignment_delete_command_builder extends CommandBuilder<az_role_assignment_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Represent a user, group, or service principal. supported format: object id, user sign-in name, or service principal name. */
@@ -349,8 +349,8 @@ class az_role_assignment_delete_command_builder extends CommandBuilder<az_role_a
  * ```
  */
 class az_role_assignment_list_command_builder extends CommandBuilder<az_role_assignment_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Show all assignments under the current subscription. */
@@ -425,8 +425,8 @@ class az_role_assignment_list_command_builder extends CommandBuilder<az_role_ass
  * ```
  */
 class az_role_assignment_list_changelogs_command_builder extends CommandBuilder<az_role_assignment_list_changelogs_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The end time of the query in the format of %Y-%m-%dT%H:%M:%SZ, e.g. 2000-12-31T12:59:59Z. Defaults to the current time. */
@@ -460,8 +460,8 @@ class az_role_assignment_list_changelogs_command_builder extends CommandBuilder<
  * @param {string} roleAssignment Description of an existing role assignment as JSON, or a path to a file containing a JSON description.
  */
 class az_role_assignment_update_command_builder extends CommandBuilder<az_role_assignment_update_command_result> {
-    constructor(commandPath: string, roleAssignment: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, roleAssignment: string) {
+        super(commandPath, resultDataTypeName);
         this.roleAssignment(roleAssignment)
     }
 
@@ -490,8 +490,8 @@ class az_role_assignment_update_command_builder extends CommandBuilder<az_role_a
  * @param {string} roleDefinition Description of a role as JSON, or a path to a file containing a JSON description.
  */
 class az_role_definition_create_command_builder extends CommandBuilder<az_role_definition_create_command_result> {
-    constructor(commandPath: string, roleDefinition: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, roleDefinition: string) {
+        super(commandPath, resultDataTypeName);
         this.roleDefinition(roleDefinition)
     }
 
@@ -523,8 +523,8 @@ class az_role_definition_create_command_builder extends CommandBuilder<az_role_d
  * @param {string} name The role's name.
  */
 class az_role_definition_delete_command_builder extends CommandBuilder<az_role_definition_delete_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -573,8 +573,8 @@ class az_role_definition_delete_command_builder extends CommandBuilder<az_role_d
  * ```
  */
 class az_role_definition_list_command_builder extends CommandBuilder<az_role_definition_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Custom roles only(vs. build-in ones). */
@@ -626,8 +626,8 @@ class az_role_definition_list_command_builder extends CommandBuilder<az_role_def
  * @param {string} roleDefinition Description of an existing role as JSON, or a path to a file containing a JSON description.
  */
 class az_role_definition_update_command_builder extends CommandBuilder<az_role_definition_update_command_result> {
-    constructor(commandPath: string, roleDefinition: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, roleDefinition: string) {
+        super(commandPath, resultDataTypeName);
         this.roleDefinition(roleDefinition)
     }
 

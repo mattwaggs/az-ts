@@ -39,7 +39,7 @@ export class az_disk_access {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_disk_access_create_command_builder {
-        return new az_disk_access_create_command_builder("az disk-access create", name, resourceGroup);
+        return new az_disk_access_create_command_builder("az disk-access create", 'az_disk_access_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -54,7 +54,7 @@ export class az_disk_access {
      * ```
      */
     static delete(): az_disk_access_delete_command_builder {
-        return new az_disk_access_delete_command_builder("az disk-access delete");
+        return new az_disk_access_delete_command_builder("az disk-access delete", 'az_disk_access_delete_command_result');
     }
 
     /**
@@ -68,7 +68,7 @@ export class az_disk_access {
      * ```
      */
     static list(): az_disk_access_list_command_builder {
-        return new az_disk_access_list_command_builder("az disk-access list");
+        return new az_disk_access_list_command_builder("az disk-access list", 'az_disk_access_list_command_result');
     }
 
     /**
@@ -84,7 +84,7 @@ export class az_disk_access {
      * ```
      */
     static show(): az_disk_access_show_command_builder {
-        return new az_disk_access_show_command_builder("az disk-access show");
+        return new az_disk_access_show_command_builder("az disk-access show", 'az_disk_access_show_command_result');
     }
 
     /**
@@ -105,7 +105,7 @@ export class az_disk_access {
      * ```
      */
     static update(): az_disk_access_update_command_builder {
-        return new az_disk_access_update_command_builder("az disk-access update");
+        return new az_disk_access_update_command_builder("az disk-access update", 'az_disk_access_update_command_result');
     }
 
     /**
@@ -127,7 +127,7 @@ export class az_disk_access {
      * ```
      */
     static wait(): az_disk_access_wait_command_builder {
-        return new az_disk_access_wait_command_builder("az disk-access wait");
+        return new az_disk_access_wait_command_builder("az disk-access wait", 'az_disk_access_wait_command_result');
     }
 }
 
@@ -155,7 +155,7 @@ export class az_disk_encryption_set {
      * @param {string} sourceVault Name or ID of the KeyVault containing the key or secret.
      */
     static create(keyUrl: string, name: string, resourceGroup: string, sourceVault: string): az_disk_encryption_set_create_command_builder {
-        return new az_disk_encryption_set_create_command_builder("az disk-encryption-set create", keyUrl, name, resourceGroup, sourceVault);
+        return new az_disk_encryption_set_create_command_builder("az disk-encryption-set create", 'az_disk_encryption_set_create_command_result', keyUrl, name, resourceGroup, sourceVault);
     }
 
     /**
@@ -170,7 +170,7 @@ export class az_disk_encryption_set {
      * ```
      */
     static delete(): az_disk_encryption_set_delete_command_builder {
-        return new az_disk_encryption_set_delete_command_builder("az disk-encryption-set delete");
+        return new az_disk_encryption_set_delete_command_builder("az disk-encryption-set delete", 'az_disk_encryption_set_delete_command_result');
     }
 
     /**
@@ -184,7 +184,7 @@ export class az_disk_encryption_set {
      * ```
      */
     static list(): az_disk_encryption_set_list_command_builder {
-        return new az_disk_encryption_set_list_command_builder("az disk-encryption-set list");
+        return new az_disk_encryption_set_list_command_builder("az disk-encryption-set list", 'az_disk_encryption_set_list_command_result');
     }
 
     /**
@@ -199,7 +199,7 @@ export class az_disk_encryption_set {
      * ```
      */
     static list_associated_resources(): az_disk_encryption_set_list_associated_resources_command_builder {
-        return new az_disk_encryption_set_list_associated_resources_command_builder("az disk-encryption-set list-associated-resources");
+        return new az_disk_encryption_set_list_associated_resources_command_builder("az disk-encryption-set list-associated-resources", 'az_disk_encryption_set_list_associated_resources_command_result');
     }
 
     /**
@@ -215,7 +215,7 @@ export class az_disk_encryption_set {
      * ```
      */
     static show(): az_disk_encryption_set_show_command_builder {
-        return new az_disk_encryption_set_show_command_builder("az disk-encryption-set show");
+        return new az_disk_encryption_set_show_command_builder("az disk-encryption-set show", 'az_disk_encryption_set_show_command_result');
     }
 
     /**
@@ -236,7 +236,7 @@ export class az_disk_encryption_set {
      * ```
      */
     static update(): az_disk_encryption_set_update_command_builder {
-        return new az_disk_encryption_set_update_command_builder("az disk-encryption-set update");
+        return new az_disk_encryption_set_update_command_builder("az disk-encryption-set update", 'az_disk_encryption_set_update_command_result');
     }
 }
 
@@ -283,7 +283,7 @@ export class az_disk {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_disk_create_command_builder {
-        return new az_disk_create_command_builder("az disk create", name, resourceGroup);
+        return new az_disk_create_command_builder("az disk create", 'az_disk_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -300,7 +300,7 @@ export class az_disk {
      * ```
      */
     static delete(): az_disk_delete_command_builder {
-        return new az_disk_delete_command_builder("az disk delete");
+        return new az_disk_delete_command_builder("az disk delete", 'az_disk_delete_command_result');
     }
 
     /**
@@ -319,7 +319,7 @@ export class az_disk {
      * @param {string} durationInSeconds Time duration in seconds until the SAS access expires.
      */
     static grant_access(durationInSeconds: string): az_disk_grant_access_command_builder {
-        return new az_disk_grant_access_command_builder("az disk grant-access", durationInSeconds);
+        return new az_disk_grant_access_command_builder("az disk grant-access", 'az_disk_grant_access_command_result', durationInSeconds);
     }
 
     /**
@@ -333,7 +333,7 @@ export class az_disk {
      * ```
      */
     static list(): az_disk_list_command_builder {
-        return new az_disk_list_command_builder("az disk list");
+        return new az_disk_list_command_builder("az disk list", 'az_disk_list_command_result');
     }
 
     /**
@@ -348,7 +348,7 @@ export class az_disk {
      * ```
      */
     static revoke_access(): az_disk_revoke_access_command_builder {
-        return new az_disk_revoke_access_command_builder("az disk revoke-access");
+        return new az_disk_revoke_access_command_builder("az disk revoke-access", 'az_disk_revoke_access_command_result');
     }
 
     /**
@@ -364,7 +364,7 @@ export class az_disk {
      * ```
      */
     static show(): az_disk_show_command_builder {
-        return new az_disk_show_command_builder("az disk show");
+        return new az_disk_show_command_builder("az disk show", 'az_disk_show_command_result');
     }
 
     /**
@@ -395,7 +395,7 @@ export class az_disk {
      * ```
      */
     static update(): az_disk_update_command_builder {
-        return new az_disk_update_command_builder("az disk update");
+        return new az_disk_update_command_builder("az disk update", 'az_disk_update_command_result');
     }
 
     /**
@@ -417,7 +417,7 @@ export class az_disk {
      * ```
      */
     static wait(): az_disk_wait_command_builder {
-        return new az_disk_wait_command_builder("az disk wait");
+        return new az_disk_wait_command_builder("az disk wait", 'az_disk_wait_command_result');
     }
 }
 
@@ -438,8 +438,8 @@ export class az_disk {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_disk_access_create_command_builder extends CommandBuilder<az_disk_access_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -493,8 +493,8 @@ class az_disk_access_create_command_builder extends CommandBuilder<az_disk_acces
  * ```
  */
 class az_disk_access_delete_command_builder extends CommandBuilder<az_disk_access_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -533,8 +533,8 @@ class az_disk_access_delete_command_builder extends CommandBuilder<az_disk_acces
  * ```
  */
 class az_disk_access_list_command_builder extends CommandBuilder<az_disk_access_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -569,8 +569,8 @@ class az_disk_access_list_command_builder extends CommandBuilder<az_disk_access_
  * ```
  */
 class az_disk_access_show_command_builder extends CommandBuilder<az_disk_access_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -622,8 +622,8 @@ class az_disk_access_show_command_builder extends CommandBuilder<az_disk_access_
  * ```
  */
 class az_disk_access_update_command_builder extends CommandBuilder<az_disk_access_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -706,8 +706,8 @@ class az_disk_access_update_command_builder extends CommandBuilder<az_disk_acces
  * ```
  */
 class az_disk_access_wait_command_builder extends CommandBuilder<az_disk_access_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */
@@ -799,8 +799,8 @@ class az_disk_access_wait_command_builder extends CommandBuilder<az_disk_access_
  * @param {string} sourceVault Name or ID of the KeyVault containing the key or secret.
  */
 class az_disk_encryption_set_create_command_builder extends CommandBuilder<az_disk_encryption_set_create_command_result> {
-    constructor(commandPath: string, keyUrl: string, name: string, resourceGroup: string, sourceVault: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, keyUrl: string, name: string, resourceGroup: string, sourceVault: string) {
+        super(commandPath, resultDataTypeName);
         this.keyUrl(keyUrl)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -874,8 +874,8 @@ class az_disk_encryption_set_create_command_builder extends CommandBuilder<az_di
  * ```
  */
 class az_disk_encryption_set_delete_command_builder extends CommandBuilder<az_disk_encryption_set_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -914,8 +914,8 @@ class az_disk_encryption_set_delete_command_builder extends CommandBuilder<az_di
  * ```
  */
 class az_disk_encryption_set_list_command_builder extends CommandBuilder<az_disk_encryption_set_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -949,8 +949,8 @@ class az_disk_encryption_set_list_command_builder extends CommandBuilder<az_disk
  * ```
  */
 class az_disk_encryption_set_list_associated_resources_command_builder extends CommandBuilder<az_disk_encryption_set_list_associated_resources_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -991,8 +991,8 @@ class az_disk_encryption_set_list_associated_resources_command_builder extends C
  * ```
  */
 class az_disk_encryption_set_show_command_builder extends CommandBuilder<az_disk_encryption_set_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1044,8 +1044,8 @@ class az_disk_encryption_set_show_command_builder extends CommandBuilder<az_disk
  * ```
  */
 class az_disk_encryption_set_update_command_builder extends CommandBuilder<az_disk_encryption_set_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -1150,8 +1150,8 @@ class az_disk_encryption_set_update_command_builder extends CommandBuilder<az_di
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_disk_create_command_builder extends CommandBuilder<az_disk_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1351,8 +1351,8 @@ class az_disk_create_command_builder extends CommandBuilder<az_disk_create_comma
  * ```
  */
 class az_disk_delete_command_builder extends CommandBuilder<az_disk_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1408,8 +1408,8 @@ class az_disk_delete_command_builder extends CommandBuilder<az_disk_delete_comma
  * @param {string} durationInSeconds Time duration in seconds until the SAS access expires.
  */
 class az_disk_grant_access_command_builder extends CommandBuilder<az_disk_grant_access_command_result> {
-    constructor(commandPath: string, durationInSeconds: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, durationInSeconds: string) {
+        super(commandPath, resultDataTypeName);
         this.durationInSeconds(durationInSeconds)
     }
 
@@ -1461,8 +1461,8 @@ class az_disk_grant_access_command_builder extends CommandBuilder<az_disk_grant_
  * ```
  */
 class az_disk_list_command_builder extends CommandBuilder<az_disk_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -1496,8 +1496,8 @@ class az_disk_list_command_builder extends CommandBuilder<az_disk_list_command_r
  * ```
  */
 class az_disk_revoke_access_command_builder extends CommandBuilder<az_disk_revoke_access_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1538,8 +1538,8 @@ class az_disk_revoke_access_command_builder extends CommandBuilder<az_disk_revok
  * ```
  */
 class az_disk_show_command_builder extends CommandBuilder<az_disk_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1601,8 +1601,8 @@ class az_disk_show_command_builder extends CommandBuilder<az_disk_show_command_r
  * ```
  */
 class az_disk_update_command_builder extends CommandBuilder<az_disk_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -1745,8 +1745,8 @@ class az_disk_update_command_builder extends CommandBuilder<az_disk_update_comma
  * ```
  */
 class az_disk_wait_command_builder extends CommandBuilder<az_disk_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */

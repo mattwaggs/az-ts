@@ -36,7 +36,7 @@ export class az_resource_link {
      * @param {string} target Fully-qualified resource ID of the resource link target.
      */
     static create(link: string, target: string): az_resource_link_create_command_builder {
-        return new az_resource_link_create_command_builder("az resource link create", link, target);
+        return new az_resource_link_create_command_builder("az resource link create", 'az_resource_link_create_command_result', link, target);
     }
 
     /**
@@ -51,7 +51,7 @@ export class az_resource_link {
      * @param {string} link Fully-qualified resource ID of the resource link.
      */
     static delete(link: string): az_resource_link_delete_command_builder {
-        return new az_resource_link_delete_command_builder("az resource link delete", link);
+        return new az_resource_link_delete_command_builder("az resource link delete", 'az_resource_link_delete_command_result', link);
     }
 
     /**
@@ -66,7 +66,7 @@ export class az_resource_link {
      * ```
      */
     static list(): az_resource_link_list_command_builder {
-        return new az_resource_link_list_command_builder("az resource link list");
+        return new az_resource_link_list_command_builder("az resource link list", 'az_resource_link_list_command_result');
     }
 
     /**
@@ -82,7 +82,7 @@ export class az_resource_link {
      * @param {string} link Fully-qualified resource ID of the resource link.
      */
     static show(link: string): az_resource_link_show_command_builder {
-        return new az_resource_link_show_command_builder("az resource link show", link);
+        return new az_resource_link_show_command_builder("az resource link show", 'az_resource_link_show_command_result', link);
     }
 
     /**
@@ -99,7 +99,7 @@ export class az_resource_link {
      * @param {string} link Fully-qualified resource ID of the resource link.
      */
     static update(link: string): az_resource_link_update_command_builder {
-        return new az_resource_link_update_command_builder("az resource link update", link);
+        return new az_resource_link_update_command_builder("az resource link update", 'az_resource_link_update_command_result', link);
     }
 }
 
@@ -125,7 +125,7 @@ export class az_resource_lock {
      * @param {string} name Name of the lock.
      */
     static create(lockType: 'CanNotDelete' | 'ReadOnly', name: string): az_resource_lock_create_command_builder {
-        return new az_resource_lock_create_command_builder("az resource lock create", lockType, name);
+        return new az_resource_lock_create_command_builder("az resource lock create", 'az_resource_lock_create_command_result', lockType, name);
     }
 
     /**
@@ -144,7 +144,7 @@ export class az_resource_lock {
      * ```
      */
     static delete(): az_resource_lock_delete_command_builder {
-        return new az_resource_lock_delete_command_builder("az resource lock delete");
+        return new az_resource_lock_delete_command_builder("az resource lock delete", 'az_resource_lock_delete_command_result');
     }
 
     /**
@@ -163,7 +163,7 @@ export class az_resource_lock {
      * ```
      */
     static list(): az_resource_lock_list_command_builder {
-        return new az_resource_lock_list_command_builder("az resource lock list");
+        return new az_resource_lock_list_command_builder("az resource lock list", 'az_resource_lock_list_command_result');
     }
 
     /**
@@ -183,7 +183,7 @@ export class az_resource_lock {
      * ```
      */
     static show(): az_resource_lock_show_command_builder {
-        return new az_resource_lock_show_command_builder("az resource lock show");
+        return new az_resource_lock_show_command_builder("az resource lock show", 'az_resource_lock_show_command_result');
     }
 
     /**
@@ -204,7 +204,7 @@ export class az_resource_lock {
      * ```
      */
     static update(): az_resource_lock_update_command_builder {
-        return new az_resource_lock_update_command_builder("az resource lock update");
+        return new az_resource_lock_update_command_builder("az resource lock update", 'az_resource_lock_update_command_result');
     }
 }
 
@@ -232,7 +232,7 @@ export class az_resource {
      * @param {string} properties A JSON-formatted string containing resource properties.
      */
     static create(properties: string): az_resource_create_command_builder {
-        return new az_resource_create_command_builder("az resource create", properties);
+        return new az_resource_create_command_builder("az resource create", 'az_resource_create_command_result', properties);
     }
 
     /**
@@ -252,7 +252,7 @@ export class az_resource {
      * ```
      */
     static delete(): az_resource_delete_command_builder {
-        return new az_resource_delete_command_builder("az resource delete");
+        return new az_resource_delete_command_builder("az resource delete", 'az_resource_delete_command_result');
     }
 
     /**
@@ -276,7 +276,7 @@ export class az_resource {
      * @param {string} action The action that will be invoked on the specified resource.
      */
     static invoke_action(action: string): az_resource_invoke_action_command_builder {
-        return new az_resource_invoke_action_command_builder("az resource invoke-action", action);
+        return new az_resource_invoke_action_command_builder("az resource invoke-action", 'az_resource_invoke_action_command_result', action);
     }
 
     /**
@@ -295,7 +295,7 @@ export class az_resource {
      * ```
      */
     static list(): az_resource_list_command_builder {
-        return new az_resource_list_command_builder("az resource list");
+        return new az_resource_list_command_builder("az resource list", 'az_resource_list_command_result');
     }
 
     /**
@@ -313,7 +313,7 @@ export class az_resource {
      * @param {string} ids The space-separated resource ids to be moved.
      */
     static move(destinationGroup: string, ids: string): az_resource_move_command_builder {
-        return new az_resource_move_command_builder("az resource move", destinationGroup, ids);
+        return new az_resource_move_command_builder("az resource move", 'az_resource_move_command_result', destinationGroup, ids);
     }
 
     /**
@@ -335,7 +335,7 @@ export class az_resource {
      * ```
      */
     static show(): az_resource_show_command_builder {
-        return new az_resource_show_command_builder("az resource show");
+        return new az_resource_show_command_builder("az resource show", 'az_resource_show_command_result');
     }
 
     /**
@@ -359,7 +359,7 @@ export class az_resource {
      * @param {string} tags Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags.
      */
     static tag(tags: string): az_resource_tag_command_builder {
-        return new az_resource_tag_command_builder("az resource tag", tags);
+        return new az_resource_tag_command_builder("az resource tag", 'az_resource_tag_command_result', tags);
     }
 
     /**
@@ -384,7 +384,7 @@ export class az_resource {
      * ```
      */
     static update(): az_resource_update_command_builder {
-        return new az_resource_update_command_builder("az resource update");
+        return new az_resource_update_command_builder("az resource update", 'az_resource_update_command_result');
     }
 
     /**
@@ -411,7 +411,7 @@ export class az_resource {
      * ```
      */
     static wait(): az_resource_wait_command_builder {
-        return new az_resource_wait_command_builder("az resource wait");
+        return new az_resource_wait_command_builder("az resource wait", 'az_resource_wait_command_result');
     }
 }
 
@@ -430,8 +430,8 @@ export class az_resource {
  * @param {string} target Fully-qualified resource ID of the resource link target.
  */
 class az_resource_link_create_command_builder extends CommandBuilder<az_resource_link_create_command_result> {
-    constructor(commandPath: string, link: string, target: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, link: string, target: string) {
+        super(commandPath, resultDataTypeName);
         this.link(link)
         this.target(target)
     }
@@ -473,8 +473,8 @@ class az_resource_link_create_command_builder extends CommandBuilder<az_resource
  * @param {string} link Fully-qualified resource ID of the resource link.
  */
 class az_resource_link_delete_command_builder extends CommandBuilder<az_resource_link_delete_command_result> {
-    constructor(commandPath: string, link: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, link: string) {
+        super(commandPath, resultDataTypeName);
         this.link(link)
     }
 
@@ -503,8 +503,8 @@ class az_resource_link_delete_command_builder extends CommandBuilder<az_resource
  * ```
  */
 class az_resource_link_list_command_builder extends CommandBuilder<az_resource_link_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Filter string for limiting results. */
@@ -545,8 +545,8 @@ class az_resource_link_list_command_builder extends CommandBuilder<az_resource_l
  * @param {string} link Fully-qualified resource ID of the resource link.
  */
 class az_resource_link_show_command_builder extends CommandBuilder<az_resource_link_show_command_result> {
-    constructor(commandPath: string, link: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, link: string) {
+        super(commandPath, resultDataTypeName);
         this.link(link)
     }
 
@@ -583,8 +583,8 @@ class az_resource_link_show_command_builder extends CommandBuilder<az_resource_l
  * @param {string} link Fully-qualified resource ID of the resource link.
  */
 class az_resource_link_update_command_builder extends CommandBuilder<az_resource_link_update_command_result> {
-    constructor(commandPath: string, link: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, link: string) {
+        super(commandPath, resultDataTypeName);
         this.link(link)
     }
 
@@ -633,8 +633,8 @@ class az_resource_link_update_command_builder extends CommandBuilder<az_resource
  * @param {string} name Name of the lock.
  */
 class az_resource_lock_create_command_builder extends CommandBuilder<az_resource_lock_create_command_result> {
-    constructor(commandPath: string, lockType: 'CanNotDelete' | 'ReadOnly', name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lockType: 'CanNotDelete' | 'ReadOnly', name: string) {
+        super(commandPath, resultDataTypeName);
         this.lockType(lockType)
         this.name(name)
     }
@@ -710,8 +710,8 @@ class az_resource_lock_create_command_builder extends CommandBuilder<az_resource
  * ```
  */
 class az_resource_lock_delete_command_builder extends CommandBuilder<az_resource_lock_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). If provided, no other "Resource Id" arguments should be specified. */
@@ -779,8 +779,8 @@ class az_resource_lock_delete_command_builder extends CommandBuilder<az_resource
  * ```
  */
 class az_resource_lock_list_command_builder extends CommandBuilder<az_resource_lock_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** A query filter to use to restrict the results. */
@@ -849,8 +849,8 @@ class az_resource_lock_list_command_builder extends CommandBuilder<az_resource_l
  * ```
  */
 class az_resource_lock_show_command_builder extends CommandBuilder<az_resource_lock_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). If provided, no other "Resource Id" arguments should be specified. */
@@ -926,8 +926,8 @@ class az_resource_lock_show_command_builder extends CommandBuilder<az_resource_l
  * ```
  */
 class az_resource_lock_update_command_builder extends CommandBuilder<az_resource_lock_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). If provided, no other "Resource Id" arguments should be specified. */
@@ -1013,8 +1013,8 @@ class az_resource_lock_update_command_builder extends CommandBuilder<az_resource
  * @param {string} properties A JSON-formatted string containing resource properties.
  */
 class az_resource_create_command_builder extends CommandBuilder<az_resource_create_command_result> {
-    constructor(commandPath: string, properties: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, properties: string) {
+        super(commandPath, resultDataTypeName);
         this.properties(properties)
     }
 
@@ -1108,8 +1108,8 @@ class az_resource_create_command_builder extends CommandBuilder<az_resource_crea
  * ```
  */
 class az_resource_delete_command_builder extends CommandBuilder<az_resource_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The api version of the resource (omit for the latest stable version). */
@@ -1188,8 +1188,8 @@ class az_resource_delete_command_builder extends CommandBuilder<az_resource_dele
  * @param {string} action The action that will be invoked on the specified resource.
  */
 class az_resource_invoke_action_command_builder extends CommandBuilder<az_resource_invoke_action_command_result> {
-    constructor(commandPath: string, action: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, action: string) {
+        super(commandPath, resultDataTypeName);
         this.action(action)
     }
 
@@ -1276,8 +1276,8 @@ class az_resource_invoke_action_command_builder extends CommandBuilder<az_resour
  * ```
  */
 class az_resource_list_command_builder extends CommandBuilder<az_resource_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`. */
@@ -1344,8 +1344,8 @@ class az_resource_list_command_builder extends CommandBuilder<az_resource_list_c
  * @param {string} ids The space-separated resource ids to be moved.
  */
 class az_resource_move_command_builder extends CommandBuilder<az_resource_move_command_result> {
-    constructor(commandPath: string, destinationGroup: string, ids: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, destinationGroup: string, ids: string) {
+        super(commandPath, resultDataTypeName);
         this.destinationGroup(destinationGroup)
         this.ids(ids)
     }
@@ -1394,8 +1394,8 @@ class az_resource_move_command_builder extends CommandBuilder<az_resource_move_c
  * ```
  */
 class az_resource_show_command_builder extends CommandBuilder<az_resource_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The api version of the resource (omit for the latest stable version). */
@@ -1486,8 +1486,8 @@ class az_resource_show_command_builder extends CommandBuilder<az_resource_show_c
  * @param {string} tags Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags.
  */
 class az_resource_tag_command_builder extends CommandBuilder<az_resource_tag_command_result> {
-    constructor(commandPath: string, tags: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, tags: string) {
+        super(commandPath, resultDataTypeName);
         this.tags(tags)
     }
 
@@ -1580,8 +1580,8 @@ class az_resource_tag_command_builder extends CommandBuilder<az_resource_tag_com
  * ```
  */
 class az_resource_update_command_builder extends CommandBuilder<az_resource_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -1693,8 +1693,8 @@ class az_resource_update_command_builder extends CommandBuilder<az_resource_upda
  * ```
  */
 class az_resource_wait_command_builder extends CommandBuilder<az_resource_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The api version of the resource (omit for the latest stable version). */

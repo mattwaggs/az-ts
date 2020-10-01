@@ -23,7 +23,7 @@ export class az_identity {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_identity_create_command_builder {
-        return new az_identity_create_command_builder("az identity create", name, resourceGroup);
+        return new az_identity_create_command_builder("az identity create", 'az_identity_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -38,7 +38,7 @@ export class az_identity {
      * ```
      */
     static delete(): az_identity_delete_command_builder {
-        return new az_identity_delete_command_builder("az identity delete");
+        return new az_identity_delete_command_builder("az identity delete", 'az_identity_delete_command_result');
     }
 
     /**
@@ -52,7 +52,7 @@ export class az_identity {
      * ```
      */
     static list(): az_identity_list_command_builder {
-        return new az_identity_list_command_builder("az identity list");
+        return new az_identity_list_command_builder("az identity list", 'az_identity_list_command_result');
     }
 
     /**
@@ -64,7 +64,7 @@ export class az_identity {
      * ```
      */
     static list_operations(): az_identity_list_operations_command_builder {
-        return new az_identity_list_operations_command_builder("az identity list-operations");
+        return new az_identity_list_operations_command_builder("az identity list-operations", 'az_identity_list_operations_command_result');
     }
 
     /**
@@ -80,7 +80,7 @@ export class az_identity {
      * ```
      */
     static show(): az_identity_show_command_builder {
-        return new az_identity_show_command_builder("az identity show");
+        return new az_identity_show_command_builder("az identity show", 'az_identity_show_command_result');
     }
 }
 
@@ -100,8 +100,8 @@ export class az_identity {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_identity_create_command_builder extends CommandBuilder<az_identity_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -149,8 +149,8 @@ class az_identity_create_command_builder extends CommandBuilder<az_identity_crea
  * ```
  */
 class az_identity_delete_command_builder extends CommandBuilder<az_identity_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -189,8 +189,8 @@ class az_identity_delete_command_builder extends CommandBuilder<az_identity_dele
  * ```
  */
 class az_identity_list_command_builder extends CommandBuilder<az_identity_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -221,8 +221,8 @@ class az_identity_list_command_builder extends CommandBuilder<az_identity_list_c
  * ```
  */
 class az_identity_list_operations_command_builder extends CommandBuilder<az_identity_list_operations_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -245,8 +245,8 @@ class az_identity_list_operations_command_builder extends CommandBuilder<az_iden
  * ```
  */
 class az_identity_show_command_builder extends CommandBuilder<az_identity_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */

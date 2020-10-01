@@ -28,7 +28,7 @@ export class az_search_admin_key {
      * @param {string} serviceName The name of the search service.
      */
     static renew(keyKind: string, resourceGroup: string, serviceName: string): az_search_admin_key_renew_command_builder {
-        return new az_search_admin_key_renew_command_builder("az search admin-key renew", keyKind, resourceGroup, serviceName);
+        return new az_search_admin_key_renew_command_builder("az search admin-key renew", 'az_search_admin_key_renew_command_result', keyKind, resourceGroup, serviceName);
     }
 
     /**
@@ -46,7 +46,7 @@ export class az_search_admin_key {
      * @param {string} serviceName The name of the search service.
      */
     static show(resourceGroup: string, serviceName: string): az_search_admin_key_show_command_builder {
-        return new az_search_admin_key_show_command_builder("az search admin-key show", resourceGroup, serviceName);
+        return new az_search_admin_key_show_command_builder("az search admin-key show", 'az_search_admin_key_show_command_result', resourceGroup, serviceName);
     }
 }
 
@@ -68,7 +68,7 @@ export class az_search_query_key {
      * @param {string} serviceName The name of the search service.
      */
     static create(name: string, resourceGroup: string, serviceName: string): az_search_query_key_create_command_builder {
-        return new az_search_query_key_create_command_builder("az search query-key create", name, resourceGroup, serviceName);
+        return new az_search_query_key_create_command_builder("az search query-key create", 'az_search_query_key_create_command_result', name, resourceGroup, serviceName);
     }
 
     /**
@@ -87,7 +87,7 @@ export class az_search_query_key {
      * @param {string} serviceName The name of the search service.
      */
     static delete(keyValue: string, resourceGroup: string, serviceName: string): az_search_query_key_delete_command_builder {
-        return new az_search_query_key_delete_command_builder("az search query-key delete", keyValue, resourceGroup, serviceName);
+        return new az_search_query_key_delete_command_builder("az search query-key delete", 'az_search_query_key_delete_command_result', keyValue, resourceGroup, serviceName);
     }
 
     /**
@@ -105,7 +105,7 @@ export class az_search_query_key {
      * @param {string} serviceName The name of the search service.
      */
     static list(resourceGroup: string, serviceName: string): az_search_query_key_list_command_builder {
-        return new az_search_query_key_list_command_builder("az search query-key list", resourceGroup, serviceName);
+        return new az_search_query_key_list_command_builder("az search query-key list", 'az_search_query_key_list_command_result', resourceGroup, serviceName);
     }
 }
 
@@ -130,7 +130,7 @@ export class az_search_service {
      * @param {string} sku The SKU of the search service, which determines price tier and capacity limits.
      */
     static create(name: string, resourceGroup: string, sku: string): az_search_service_create_command_builder {
-        return new az_search_service_create_command_builder("az search service create", name, resourceGroup, sku);
+        return new az_search_service_create_command_builder("az search service create", 'az_search_service_create_command_result', name, resourceGroup, sku);
     }
 
     /**
@@ -148,7 +148,7 @@ export class az_search_service {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_search_service_delete_command_builder {
-        return new az_search_service_delete_command_builder("az search service delete", name, resourceGroup);
+        return new az_search_service_delete_command_builder("az search service delete", 'az_search_service_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -164,7 +164,7 @@ export class az_search_service {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(resourceGroup: string): az_search_service_list_command_builder {
-        return new az_search_service_list_command_builder("az search service list", resourceGroup);
+        return new az_search_service_list_command_builder("az search service list", 'az_search_service_list_command_result', resourceGroup);
     }
 
     /**
@@ -182,7 +182,7 @@ export class az_search_service {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_search_service_show_command_builder {
-        return new az_search_service_show_command_builder("az search service show", name, resourceGroup);
+        return new az_search_service_show_command_builder("az search service show", 'az_search_service_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -205,7 +205,7 @@ export class az_search_service {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, resourceGroup: string): az_search_service_update_command_builder {
-        return new az_search_service_update_command_builder("az search service update", name, resourceGroup);
+        return new az_search_service_update_command_builder("az search service update", 'az_search_service_update_command_result', name, resourceGroup);
     }
 }
 
@@ -229,8 +229,8 @@ export class az_search {
  * @param {string} serviceName The name of the search service.
  */
 class az_search_admin_key_renew_command_builder extends CommandBuilder<az_search_admin_key_renew_command_result> {
-    constructor(commandPath: string, keyKind: string, resourceGroup: string, serviceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, keyKind: string, resourceGroup: string, serviceName: string) {
+        super(commandPath, resultDataTypeName);
         this.keyKind(keyKind)
         this.resourceGroup(resourceGroup)
         this.serviceName(serviceName)
@@ -276,8 +276,8 @@ class az_search_admin_key_renew_command_builder extends CommandBuilder<az_search
  * @param {string} serviceName The name of the search service.
  */
 class az_search_admin_key_show_command_builder extends CommandBuilder<az_search_admin_key_show_command_result> {
-    constructor(commandPath: string, resourceGroup: string, serviceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serviceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.serviceName(serviceName)
     }
@@ -323,8 +323,8 @@ class az_search_admin_key_show_command_builder extends CommandBuilder<az_search_
  * @param {string} serviceName The name of the search service.
  */
 class az_search_query_key_create_command_builder extends CommandBuilder<az_search_query_key_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, serviceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serviceName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.serviceName(serviceName)
@@ -371,8 +371,8 @@ class az_search_query_key_create_command_builder extends CommandBuilder<az_searc
  * @param {string} serviceName The name of the search service.
  */
 class az_search_query_key_delete_command_builder extends CommandBuilder<az_search_query_key_delete_command_result> {
-    constructor(commandPath: string, keyValue: string, resourceGroup: string, serviceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, keyValue: string, resourceGroup: string, serviceName: string) {
+        super(commandPath, resultDataTypeName);
         this.keyValue(keyValue)
         this.resourceGroup(resourceGroup)
         this.serviceName(serviceName)
@@ -418,8 +418,8 @@ class az_search_query_key_delete_command_builder extends CommandBuilder<az_searc
  * @param {string} serviceName The name of the search service.
  */
 class az_search_query_key_list_command_builder extends CommandBuilder<az_search_query_key_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, serviceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serviceName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.serviceName(serviceName)
     }
@@ -468,8 +468,8 @@ class az_search_query_key_list_command_builder extends CommandBuilder<az_search_
  * @param {string} sku The SKU of the search service, which determines price tier and capacity limits.
  */
 class az_search_service_create_command_builder extends CommandBuilder<az_search_service_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, sku: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, sku: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.sku(sku)
@@ -533,8 +533,8 @@ class az_search_service_create_command_builder extends CommandBuilder<az_search_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_search_service_delete_command_builder extends CommandBuilder<az_search_service_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -577,8 +577,8 @@ class az_search_service_delete_command_builder extends CommandBuilder<az_search_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_search_service_list_command_builder extends CommandBuilder<az_search_service_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -616,8 +616,8 @@ class az_search_service_list_command_builder extends CommandBuilder<az_search_se
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_search_service_show_command_builder extends CommandBuilder<az_search_service_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -667,8 +667,8 @@ class az_search_service_show_command_builder extends CommandBuilder<az_search_se
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_search_service_update_command_builder extends CommandBuilder<az_search_service_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }

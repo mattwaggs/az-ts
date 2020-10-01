@@ -37,7 +37,7 @@ export class az_consumption_budget {
      * @param {'annually' | 'monthly' | 'quarterly'} timeGrain Time grain of the budget can be monthly, quarterly, or annually.
      */
     static create(amount: string, budgetName: string, category: 'cost' | 'usage', endDate: string, startDate: string, timeGrain: 'annually' | 'monthly' | 'quarterly'): az_consumption_budget_create_command_builder {
-        return new az_consumption_budget_create_command_builder("az consumption budget create", amount, budgetName, category, endDate, startDate, timeGrain);
+        return new az_consumption_budget_create_command_builder("az consumption budget create", 'az_consumption_budget_create_command_result', amount, budgetName, category, endDate, startDate, timeGrain);
     }
 
     /**
@@ -53,7 +53,7 @@ export class az_consumption_budget {
      * @param {string} budgetName Name of a budget.
      */
     static delete(budgetName: string): az_consumption_budget_delete_command_builder {
-        return new az_consumption_budget_delete_command_builder("az consumption budget delete", budgetName);
+        return new az_consumption_budget_delete_command_builder("az consumption budget delete", 'az_consumption_budget_delete_command_result', budgetName);
     }
 
     /**
@@ -67,7 +67,7 @@ export class az_consumption_budget {
      * ```
      */
     static list(): az_consumption_budget_list_command_builder {
-        return new az_consumption_budget_list_command_builder("az consumption budget list");
+        return new az_consumption_budget_list_command_builder("az consumption budget list", 'az_consumption_budget_list_command_result');
     }
 
     /**
@@ -84,7 +84,7 @@ export class az_consumption_budget {
      * @param {string} budgetName Name of a budget.
      */
     static show(budgetName: string): az_consumption_budget_show_command_builder {
-        return new az_consumption_budget_show_command_builder("az consumption budget show", budgetName);
+        return new az_consumption_budget_show_command_builder("az consumption budget show", 'az_consumption_budget_show_command_result', budgetName);
     }
 }
 
@@ -104,7 +104,7 @@ export class az_consumption_marketplace {
      * ```
      */
     static list(): az_consumption_marketplace_list_command_builder {
-        return new az_consumption_marketplace_list_command_builder("az consumption marketplace list");
+        return new az_consumption_marketplace_list_command_builder("az consumption marketplace list", 'az_consumption_marketplace_list_command_result');
     }
 }
 
@@ -122,7 +122,7 @@ export class az_consumption_pricesheet {
      * ```
      */
     static show(): az_consumption_pricesheet_show_command_builder {
-        return new az_consumption_pricesheet_show_command_builder("az consumption pricesheet show");
+        return new az_consumption_pricesheet_show_command_builder("az consumption pricesheet show", 'az_consumption_pricesheet_show_command_result');
     }
 }
 
@@ -146,7 +146,7 @@ export class az_consumption_reservation_detail {
      * @param {string} startDate Start date (YYYY-MM-DD in UTC). Only needed for daily grain and if specified, also requires --end-date.
      */
     static list(endDate: string, reservationOrderId: string, startDate: string): az_consumption_reservation_detail_list_command_builder {
-        return new az_consumption_reservation_detail_list_command_builder("az consumption reservation detail list", endDate, reservationOrderId, startDate);
+        return new az_consumption_reservation_detail_list_command_builder("az consumption reservation detail list", 'az_consumption_reservation_detail_list_command_result', endDate, reservationOrderId, startDate);
     }
 }
 
@@ -170,7 +170,7 @@ export class az_consumption_reservation_summary {
      * @param {string} reservationOrderId Reservation order id.
      */
     static list(grain: string, reservationOrderId: string): az_consumption_reservation_summary_list_command_builder {
-        return new az_consumption_reservation_summary_list_command_builder("az consumption reservation summary list", grain, reservationOrderId);
+        return new az_consumption_reservation_summary_list_command_builder("az consumption reservation summary list", 'az_consumption_reservation_summary_list_command_result', grain, reservationOrderId);
     }
 }
 
@@ -196,7 +196,7 @@ export class az_consumption_usage {
      * ```
      */
     static list(): az_consumption_usage_list_command_builder {
-        return new az_consumption_usage_list_command_builder("az consumption usage list");
+        return new az_consumption_usage_list_command_builder("az consumption usage list", 'az_consumption_usage_list_command_result');
     }
 }
 
@@ -230,8 +230,8 @@ export class az_consumption {
  * @param {'annually' | 'monthly' | 'quarterly'} timeGrain Time grain of the budget can be monthly, quarterly, or annually.
  */
 class az_consumption_budget_create_command_builder extends CommandBuilder<az_consumption_budget_create_command_result> {
-    constructor(commandPath: string, amount: string, budgetName: string, category: 'cost' | 'usage', endDate: string, startDate: string, timeGrain: 'annually' | 'monthly' | 'quarterly') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, amount: string, budgetName: string, category: 'cost' | 'usage', endDate: string, startDate: string, timeGrain: 'annually' | 'monthly' | 'quarterly') {
+        super(commandPath, resultDataTypeName);
         this.amount(amount)
         this.budgetName(budgetName)
         this.category(category)
@@ -320,8 +320,8 @@ class az_consumption_budget_create_command_builder extends CommandBuilder<az_con
  * @param {string} budgetName Name of a budget.
  */
 class az_consumption_budget_delete_command_builder extends CommandBuilder<az_consumption_budget_delete_command_result> {
-    constructor(commandPath: string, budgetName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, budgetName: string) {
+        super(commandPath, resultDataTypeName);
         this.budgetName(budgetName)
     }
 
@@ -355,8 +355,8 @@ class az_consumption_budget_delete_command_builder extends CommandBuilder<az_con
  * ```
  */
 class az_consumption_budget_list_command_builder extends CommandBuilder<az_consumption_budget_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -392,8 +392,8 @@ class az_consumption_budget_list_command_builder extends CommandBuilder<az_consu
  * @param {string} budgetName Name of a budget.
  */
 class az_consumption_budget_show_command_builder extends CommandBuilder<az_consumption_budget_show_command_result> {
-    constructor(commandPath: string, budgetName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, budgetName: string) {
+        super(commandPath, resultDataTypeName);
         this.budgetName(budgetName)
     }
 
@@ -436,8 +436,8 @@ class az_consumption_budget_show_command_builder extends CommandBuilder<az_consu
  * ```
  */
 class az_consumption_marketplace_list_command_builder extends CommandBuilder<az_consumption_marketplace_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the billing period to get the marketplace. */
@@ -489,8 +489,8 @@ class az_consumption_marketplace_list_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_consumption_pricesheet_show_command_builder extends CommandBuilder<az_consumption_pricesheet_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the billing period to get the price sheet. */
@@ -536,8 +536,8 @@ class az_consumption_pricesheet_show_command_builder extends CommandBuilder<az_c
  * @param {string} startDate Start date (YYYY-MM-DD in UTC). Only needed for daily grain and if specified, also requires --end-date.
  */
 class az_consumption_reservation_detail_list_command_builder extends CommandBuilder<az_consumption_reservation_detail_list_command_result> {
-    constructor(commandPath: string, endDate: string, reservationOrderId: string, startDate: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endDate: string, reservationOrderId: string, startDate: string) {
+        super(commandPath, resultDataTypeName);
         this.endDate(endDate)
         this.reservationOrderId(reservationOrderId)
         this.startDate(startDate)
@@ -598,8 +598,8 @@ class az_consumption_reservation_detail_list_command_builder extends CommandBuil
  * @param {string} reservationOrderId Reservation order id.
  */
 class az_consumption_reservation_summary_list_command_builder extends CommandBuilder<az_consumption_reservation_summary_list_command_result> {
-    constructor(commandPath: string, grain: string, reservationOrderId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, grain: string, reservationOrderId: string) {
+        super(commandPath, resultDataTypeName);
         this.grain(grain)
         this.reservationOrderId(reservationOrderId)
     }
@@ -663,8 +663,8 @@ class az_consumption_reservation_summary_list_command_builder extends CommandBui
  * ```
  */
 class az_consumption_usage_list_command_builder extends CommandBuilder<az_consumption_usage_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the billing period to get the usage details that associate with. */

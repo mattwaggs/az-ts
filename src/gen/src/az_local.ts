@@ -20,7 +20,7 @@ export class az_local_context {
      * ```
      */
     static delete(): az_local_context_delete_command_builder {
-        return new az_local_context_delete_command_builder("az local-context delete");
+        return new az_local_context_delete_command_builder("az local-context delete", 'az_local_context_delete_command_result');
     }
 
     /**
@@ -32,7 +32,7 @@ export class az_local_context {
      * ```
      */
     static off(): az_local_context_off_command_builder {
-        return new az_local_context_off_command_builder("az local-context off");
+        return new az_local_context_off_command_builder("az local-context off", 'az_local_context_off_command_result');
     }
 
     /**
@@ -44,7 +44,7 @@ export class az_local_context {
      * ```
      */
     static on(): az_local_context_on_command_builder {
-        return new az_local_context_on_command_builder("az local-context on");
+        return new az_local_context_on_command_builder("az local-context on", 'az_local_context_on_command_result');
     }
 
     /**
@@ -58,7 +58,7 @@ export class az_local_context {
      * ```
      */
     static show(): az_local_context_show_command_builder {
-        return new az_local_context_show_command_builder("az local-context show");
+        return new az_local_context_show_command_builder("az local-context show", 'az_local_context_show_command_result');
     }
 }
 
@@ -76,8 +76,8 @@ export class az_local_context {
  * ```
  */
 class az_local_context_delete_command_builder extends CommandBuilder<az_local_context_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Clear all local context data. Either --name or --all can be specified. */
@@ -126,8 +126,8 @@ class az_local_context_delete_command_builder extends CommandBuilder<az_local_co
  * ```
  */
 class az_local_context_off_command_builder extends CommandBuilder<az_local_context_off_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -146,8 +146,8 @@ class az_local_context_off_command_builder extends CommandBuilder<az_local_conte
  * ```
  */
 class az_local_context_on_command_builder extends CommandBuilder<az_local_context_on_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -168,8 +168,8 @@ class az_local_context_on_command_builder extends CommandBuilder<az_local_contex
  * ```
  */
 class az_local_context_show_command_builder extends CommandBuilder<az_local_context_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Space-separated list of local context parameter names. */

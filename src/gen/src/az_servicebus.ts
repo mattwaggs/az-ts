@@ -85,7 +85,7 @@ export class az_servicebus_georecovery_alias_authorization_rule_keys {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(alias: string, name: string, namespaceName: string, resourceGroup: string): az_servicebus_georecovery_alias_authorization_rule_keys_list_command_builder {
-        return new az_servicebus_georecovery_alias_authorization_rule_keys_list_command_builder("az servicebus georecovery-alias authorization-rule keys list", alias, name, namespaceName, resourceGroup);
+        return new az_servicebus_georecovery_alias_authorization_rule_keys_list_command_builder("az servicebus georecovery-alias authorization-rule keys list", 'az_servicebus_georecovery_alias_authorization_rule_keys_list_command_result', alias, name, namespaceName, resourceGroup);
     }
 }
 
@@ -108,7 +108,7 @@ export class az_servicebus_georecovery_alias_authorization_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(alias: string, namespaceName: string, resourceGroup: string): az_servicebus_georecovery_alias_authorization_rule_list_command_builder {
-        return new az_servicebus_georecovery_alias_authorization_rule_list_command_builder("az servicebus georecovery-alias authorization-rule list", alias, namespaceName, resourceGroup);
+        return new az_servicebus_georecovery_alias_authorization_rule_list_command_builder("az servicebus georecovery-alias authorization-rule list", 'az_servicebus_georecovery_alias_authorization_rule_list_command_result', alias, namespaceName, resourceGroup);
     }
 
     /**
@@ -126,7 +126,7 @@ export class az_servicebus_georecovery_alias_authorization_rule {
      * ```
      */
     static show(): az_servicebus_georecovery_alias_authorization_rule_show_command_builder {
-        return new az_servicebus_georecovery_alias_authorization_rule_show_command_builder("az servicebus georecovery-alias authorization-rule show");
+        return new az_servicebus_georecovery_alias_authorization_rule_show_command_builder("az servicebus georecovery-alias authorization-rule show", 'az_servicebus_georecovery_alias_authorization_rule_show_command_result');
     }
 }
 
@@ -145,7 +145,7 @@ export class az_servicebus_georecovery_alias {
      * ```
      */
     static break_pair(): az_servicebus_georecovery_alias_break_pair_command_builder {
-        return new az_servicebus_georecovery_alias_break_pair_command_builder("az servicebus georecovery-alias break-pair");
+        return new az_servicebus_georecovery_alias_break_pair_command_builder("az servicebus georecovery-alias break-pair", 'az_servicebus_georecovery_alias_break_pair_command_result');
     }
 
     /**
@@ -161,7 +161,7 @@ export class az_servicebus_georecovery_alias {
      * ```
      */
     static delete(): az_servicebus_georecovery_alias_delete_command_builder {
-        return new az_servicebus_georecovery_alias_delete_command_builder("az servicebus georecovery-alias delete");
+        return new az_servicebus_georecovery_alias_delete_command_builder("az servicebus georecovery-alias delete", 'az_servicebus_georecovery_alias_delete_command_result');
     }
 
     /**
@@ -180,7 +180,7 @@ export class az_servicebus_georecovery_alias {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static exists(alias: string, namespaceName: string, resourceGroup: string): az_servicebus_georecovery_alias_exists_command_builder {
-        return new az_servicebus_georecovery_alias_exists_command_builder("az servicebus georecovery-alias exists", alias, namespaceName, resourceGroup);
+        return new az_servicebus_georecovery_alias_exists_command_builder("az servicebus georecovery-alias exists", 'az_servicebus_georecovery_alias_exists_command_result', alias, namespaceName, resourceGroup);
     }
 
     /**
@@ -196,7 +196,7 @@ export class az_servicebus_georecovery_alias {
      * ```
      */
     static fail_over(): az_servicebus_georecovery_alias_fail_over_command_builder {
-        return new az_servicebus_georecovery_alias_fail_over_command_builder("az servicebus georecovery-alias fail-over");
+        return new az_servicebus_georecovery_alias_fail_over_command_builder("az servicebus georecovery-alias fail-over", 'az_servicebus_georecovery_alias_fail_over_command_result');
     }
 
     /**
@@ -214,7 +214,7 @@ export class az_servicebus_georecovery_alias {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(namespaceName: string, resourceGroup: string): az_servicebus_georecovery_alias_list_command_builder {
-        return new az_servicebus_georecovery_alias_list_command_builder("az servicebus georecovery-alias list", namespaceName, resourceGroup);
+        return new az_servicebus_georecovery_alias_list_command_builder("az servicebus georecovery-alias list", 'az_servicebus_georecovery_alias_list_command_result', namespaceName, resourceGroup);
     }
 
     /**
@@ -234,7 +234,7 @@ export class az_servicebus_georecovery_alias {
      * @param {string} partnerNamespace Name (if within the same resource group) or ARM Id of Primary/Secondary Service Bus  namespace name, which is part of GEO DR pairing.
      */
     static set(partnerNamespace: string): az_servicebus_georecovery_alias_set_command_builder {
-        return new az_servicebus_georecovery_alias_set_command_builder("az servicebus georecovery-alias set", partnerNamespace);
+        return new az_servicebus_georecovery_alias_set_command_builder("az servicebus georecovery-alias set", 'az_servicebus_georecovery_alias_set_command_result', partnerNamespace);
     }
 
     /**
@@ -251,7 +251,7 @@ export class az_servicebus_georecovery_alias {
      * ```
      */
     static show(): az_servicebus_georecovery_alias_show_command_builder {
-        return new az_servicebus_georecovery_alias_show_command_builder("az servicebus georecovery-alias show");
+        return new az_servicebus_georecovery_alias_show_command_builder("az servicebus georecovery-alias show", 'az_servicebus_georecovery_alias_show_command_result');
     }
 }
 
@@ -269,7 +269,7 @@ export class az_servicebus_migration {
      * ```
      */
     static abort(): az_servicebus_migration_abort_command_builder {
-        return new az_servicebus_migration_abort_command_builder("az servicebus migration abort");
+        return new az_servicebus_migration_abort_command_builder("az servicebus migration abort", 'az_servicebus_migration_abort_command_result');
     }
 
     /**
@@ -284,7 +284,7 @@ export class az_servicebus_migration {
      * ```
      */
     static complete(): az_servicebus_migration_complete_command_builder {
-        return new az_servicebus_migration_complete_command_builder("az servicebus migration complete");
+        return new az_servicebus_migration_complete_command_builder("az servicebus migration complete", 'az_servicebus_migration_complete_command_result');
     }
 
     /**
@@ -300,7 +300,7 @@ export class az_servicebus_migration {
      * ```
      */
     static show(): az_servicebus_migration_show_command_builder {
-        return new az_servicebus_migration_show_command_builder("az servicebus migration show");
+        return new az_servicebus_migration_show_command_builder("az servicebus migration show", 'az_servicebus_migration_show_command_result');
     }
 
     /**
@@ -320,7 +320,7 @@ export class az_servicebus_migration {
      * @param {string} targetNamespace Name (if within the same resource group) or ARM Id of empty Premium Service Bus namespace name that will be target of the migration.
      */
     static start(postMigrationName: string, targetNamespace: string): az_servicebus_migration_start_command_builder {
-        return new az_servicebus_migration_start_command_builder("az servicebus migration start", postMigrationName, targetNamespace);
+        return new az_servicebus_migration_start_command_builder("az servicebus migration start", 'az_servicebus_migration_start_command_result', postMigrationName, targetNamespace);
     }
 }
 
@@ -343,7 +343,7 @@ export class az_servicebus_namespace_authorization_rule_keys {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, namespaceName: string, resourceGroup: string): az_servicebus_namespace_authorization_rule_keys_list_command_builder {
-        return new az_servicebus_namespace_authorization_rule_keys_list_command_builder("az servicebus namespace authorization-rule keys list", name, namespaceName, resourceGroup);
+        return new az_servicebus_namespace_authorization_rule_keys_list_command_builder("az servicebus namespace authorization-rule keys list", 'az_servicebus_namespace_authorization_rule_keys_list_command_result', name, namespaceName, resourceGroup);
     }
 
     /**
@@ -363,7 +363,7 @@ export class az_servicebus_namespace_authorization_rule_keys {
      * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
      */
     static renew(key: 'PrimaryKey' | 'SecondaryKey'): az_servicebus_namespace_authorization_rule_keys_renew_command_builder {
-        return new az_servicebus_namespace_authorization_rule_keys_renew_command_builder("az servicebus namespace authorization-rule keys renew", key);
+        return new az_servicebus_namespace_authorization_rule_keys_renew_command_builder("az servicebus namespace authorization-rule keys renew", 'az_servicebus_namespace_authorization_rule_keys_renew_command_result', key);
     }
 }
 
@@ -387,7 +387,7 @@ export class az_servicebus_namespace_authorization_rule {
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      */
     static create(name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send'): az_servicebus_namespace_authorization_rule_create_command_builder {
-        return new az_servicebus_namespace_authorization_rule_create_command_builder("az servicebus namespace authorization-rule create", name, namespaceName, resourceGroup, rights);
+        return new az_servicebus_namespace_authorization_rule_create_command_builder("az servicebus namespace authorization-rule create", 'az_servicebus_namespace_authorization_rule_create_command_result', name, namespaceName, resourceGroup, rights);
     }
 
     /**
@@ -403,7 +403,7 @@ export class az_servicebus_namespace_authorization_rule {
      * ```
      */
     static delete(): az_servicebus_namespace_authorization_rule_delete_command_builder {
-        return new az_servicebus_namespace_authorization_rule_delete_command_builder("az servicebus namespace authorization-rule delete");
+        return new az_servicebus_namespace_authorization_rule_delete_command_builder("az servicebus namespace authorization-rule delete", 'az_servicebus_namespace_authorization_rule_delete_command_result');
     }
 
     /**
@@ -421,7 +421,7 @@ export class az_servicebus_namespace_authorization_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(namespaceName: string, resourceGroup: string): az_servicebus_namespace_authorization_rule_list_command_builder {
-        return new az_servicebus_namespace_authorization_rule_list_command_builder("az servicebus namespace authorization-rule list", namespaceName, resourceGroup);
+        return new az_servicebus_namespace_authorization_rule_list_command_builder("az servicebus namespace authorization-rule list", 'az_servicebus_namespace_authorization_rule_list_command_result', namespaceName, resourceGroup);
     }
 
     /**
@@ -438,7 +438,7 @@ export class az_servicebus_namespace_authorization_rule {
      * ```
      */
     static show(): az_servicebus_namespace_authorization_rule_show_command_builder {
-        return new az_servicebus_namespace_authorization_rule_show_command_builder("az servicebus namespace authorization-rule show");
+        return new az_servicebus_namespace_authorization_rule_show_command_builder("az servicebus namespace authorization-rule show", 'az_servicebus_namespace_authorization_rule_show_command_result');
     }
 
     /**
@@ -461,7 +461,7 @@ export class az_servicebus_namespace_authorization_rule {
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      */
     static update(rights: 'Listen' | 'Manage' | 'Send'): az_servicebus_namespace_authorization_rule_update_command_builder {
-        return new az_servicebus_namespace_authorization_rule_update_command_builder("az servicebus namespace authorization-rule update", rights);
+        return new az_servicebus_namespace_authorization_rule_update_command_builder("az servicebus namespace authorization-rule update", 'az_servicebus_namespace_authorization_rule_update_command_result', rights);
     }
 }
 
@@ -486,7 +486,7 @@ export class az_servicebus_namespace_network_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static add(namespaceName: string, resourceGroup: string): az_servicebus_namespace_network_rule_add_command_builder {
-        return new az_servicebus_namespace_network_rule_add_command_builder("az servicebus namespace network-rule add", namespaceName, resourceGroup);
+        return new az_servicebus_namespace_network_rule_add_command_builder("az servicebus namespace network-rule add", 'az_servicebus_namespace_network_rule_add_command_result', namespaceName, resourceGroup);
     }
 
     /**
@@ -504,7 +504,7 @@ export class az_servicebus_namespace_network_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(namespaceName: string, resourceGroup: string): az_servicebus_namespace_network_rule_list_command_builder {
-        return new az_servicebus_namespace_network_rule_list_command_builder("az servicebus namespace network-rule list", namespaceName, resourceGroup);
+        return new az_servicebus_namespace_network_rule_list_command_builder("az servicebus namespace network-rule list", 'az_servicebus_namespace_network_rule_list_command_result', namespaceName, resourceGroup);
     }
 
     /**
@@ -524,7 +524,7 @@ export class az_servicebus_namespace_network_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static remove(namespaceName: string, resourceGroup: string): az_servicebus_namespace_network_rule_remove_command_builder {
-        return new az_servicebus_namespace_network_rule_remove_command_builder("az servicebus namespace network-rule remove", namespaceName, resourceGroup);
+        return new az_servicebus_namespace_network_rule_remove_command_builder("az servicebus namespace network-rule remove", 'az_servicebus_namespace_network_rule_remove_command_result', namespaceName, resourceGroup);
     }
 }
 
@@ -549,7 +549,7 @@ export class az_servicebus_namespace {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_servicebus_namespace_create_command_builder {
-        return new az_servicebus_namespace_create_command_builder("az servicebus namespace create", name, resourceGroup);
+        return new az_servicebus_namespace_create_command_builder("az servicebus namespace create", 'az_servicebus_namespace_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -564,7 +564,7 @@ export class az_servicebus_namespace {
      * ```
      */
     static delete(): az_servicebus_namespace_delete_command_builder {
-        return new az_servicebus_namespace_delete_command_builder("az servicebus namespace delete");
+        return new az_servicebus_namespace_delete_command_builder("az servicebus namespace delete", 'az_servicebus_namespace_delete_command_result');
     }
 
     /**
@@ -579,7 +579,7 @@ export class az_servicebus_namespace {
      * @param {string} name Namespace name. Name can contain only letters, numbers, and hyphens. The namespace must start with a letter, and it must end with a letter or number.
      */
     static exists(name: string): az_servicebus_namespace_exists_command_builder {
-        return new az_servicebus_namespace_exists_command_builder("az servicebus namespace exists", name);
+        return new az_servicebus_namespace_exists_command_builder("az servicebus namespace exists", 'az_servicebus_namespace_exists_command_result', name);
     }
 
     /**
@@ -593,7 +593,7 @@ export class az_servicebus_namespace {
      * ```
      */
     static list(): az_servicebus_namespace_list_command_builder {
-        return new az_servicebus_namespace_list_command_builder("az servicebus namespace list");
+        return new az_servicebus_namespace_list_command_builder("az servicebus namespace list", 'az_servicebus_namespace_list_command_result');
     }
 
     /**
@@ -609,7 +609,7 @@ export class az_servicebus_namespace {
      * ```
      */
     static show(): az_servicebus_namespace_show_command_builder {
-        return new az_servicebus_namespace_show_command_builder("az servicebus namespace show");
+        return new az_servicebus_namespace_show_command_builder("az servicebus namespace show", 'az_servicebus_namespace_show_command_result');
     }
 
     /**
@@ -632,7 +632,7 @@ export class az_servicebus_namespace {
      * ```
      */
     static update(): az_servicebus_namespace_update_command_builder {
-        return new az_servicebus_namespace_update_command_builder("az servicebus namespace update");
+        return new az_servicebus_namespace_update_command_builder("az servicebus namespace update", 'az_servicebus_namespace_update_command_result');
     }
 }
 
@@ -657,7 +657,7 @@ export class az_servicebus_queue_authorization_rule_keys {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, namespaceName: string, queueName: string, resourceGroup: string): az_servicebus_queue_authorization_rule_keys_list_command_builder {
-        return new az_servicebus_queue_authorization_rule_keys_list_command_builder("az servicebus queue authorization-rule keys list", name, namespaceName, queueName, resourceGroup);
+        return new az_servicebus_queue_authorization_rule_keys_list_command_builder("az servicebus queue authorization-rule keys list", 'az_servicebus_queue_authorization_rule_keys_list_command_result', name, namespaceName, queueName, resourceGroup);
     }
 
     /**
@@ -678,7 +678,7 @@ export class az_servicebus_queue_authorization_rule_keys {
      * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
      */
     static renew(key: 'PrimaryKey' | 'SecondaryKey'): az_servicebus_queue_authorization_rule_keys_renew_command_builder {
-        return new az_servicebus_queue_authorization_rule_keys_renew_command_builder("az servicebus queue authorization-rule keys renew", key);
+        return new az_servicebus_queue_authorization_rule_keys_renew_command_builder("az servicebus queue authorization-rule keys renew", 'az_servicebus_queue_authorization_rule_keys_renew_command_result', key);
     }
 }
 
@@ -704,7 +704,7 @@ export class az_servicebus_queue_authorization_rule {
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      */
     static create(name: string, namespaceName: string, queueName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send'): az_servicebus_queue_authorization_rule_create_command_builder {
-        return new az_servicebus_queue_authorization_rule_create_command_builder("az servicebus queue authorization-rule create", name, namespaceName, queueName, resourceGroup, rights);
+        return new az_servicebus_queue_authorization_rule_create_command_builder("az servicebus queue authorization-rule create", 'az_servicebus_queue_authorization_rule_create_command_result', name, namespaceName, queueName, resourceGroup, rights);
     }
 
     /**
@@ -721,7 +721,7 @@ export class az_servicebus_queue_authorization_rule {
      * ```
      */
     static delete(): az_servicebus_queue_authorization_rule_delete_command_builder {
-        return new az_servicebus_queue_authorization_rule_delete_command_builder("az servicebus queue authorization-rule delete");
+        return new az_servicebus_queue_authorization_rule_delete_command_builder("az servicebus queue authorization-rule delete", 'az_servicebus_queue_authorization_rule_delete_command_result');
     }
 
     /**
@@ -741,7 +741,7 @@ export class az_servicebus_queue_authorization_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(namespaceName: string, queueName: string, resourceGroup: string): az_servicebus_queue_authorization_rule_list_command_builder {
-        return new az_servicebus_queue_authorization_rule_list_command_builder("az servicebus queue authorization-rule list", namespaceName, queueName, resourceGroup);
+        return new az_servicebus_queue_authorization_rule_list_command_builder("az servicebus queue authorization-rule list", 'az_servicebus_queue_authorization_rule_list_command_result', namespaceName, queueName, resourceGroup);
     }
 
     /**
@@ -759,7 +759,7 @@ export class az_servicebus_queue_authorization_rule {
      * ```
      */
     static show(): az_servicebus_queue_authorization_rule_show_command_builder {
-        return new az_servicebus_queue_authorization_rule_show_command_builder("az servicebus queue authorization-rule show");
+        return new az_servicebus_queue_authorization_rule_show_command_builder("az servicebus queue authorization-rule show", 'az_servicebus_queue_authorization_rule_show_command_result');
     }
 
     /**
@@ -783,7 +783,7 @@ export class az_servicebus_queue_authorization_rule {
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      */
     static update(rights: 'Listen' | 'Manage' | 'Send'): az_servicebus_queue_authorization_rule_update_command_builder {
-        return new az_servicebus_queue_authorization_rule_update_command_builder("az servicebus queue authorization-rule update", rights);
+        return new az_servicebus_queue_authorization_rule_update_command_builder("az servicebus queue authorization-rule update", 'az_servicebus_queue_authorization_rule_update_command_result', rights);
     }
 }
 
@@ -820,7 +820,7 @@ export class az_servicebus_queue {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, namespaceName: string, resourceGroup: string): az_servicebus_queue_create_command_builder {
-        return new az_servicebus_queue_create_command_builder("az servicebus queue create", name, namespaceName, resourceGroup);
+        return new az_servicebus_queue_create_command_builder("az servicebus queue create", 'az_servicebus_queue_create_command_result', name, namespaceName, resourceGroup);
     }
 
     /**
@@ -836,7 +836,7 @@ export class az_servicebus_queue {
      * ```
      */
     static delete(): az_servicebus_queue_delete_command_builder {
-        return new az_servicebus_queue_delete_command_builder("az servicebus queue delete");
+        return new az_servicebus_queue_delete_command_builder("az servicebus queue delete", 'az_servicebus_queue_delete_command_result');
     }
 
     /**
@@ -856,7 +856,7 @@ export class az_servicebus_queue {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(namespaceName: string, resourceGroup: string): az_servicebus_queue_list_command_builder {
-        return new az_servicebus_queue_list_command_builder("az servicebus queue list", namespaceName, resourceGroup);
+        return new az_servicebus_queue_list_command_builder("az servicebus queue list", 'az_servicebus_queue_list_command_result', namespaceName, resourceGroup);
     }
 
     /**
@@ -873,7 +873,7 @@ export class az_servicebus_queue {
      * ```
      */
     static show(): az_servicebus_queue_show_command_builder {
-        return new az_servicebus_queue_show_command_builder("az servicebus queue show");
+        return new az_servicebus_queue_show_command_builder("az servicebus queue show", 'az_servicebus_queue_show_command_result');
     }
 
     /**
@@ -908,7 +908,7 @@ export class az_servicebus_queue {
      * ```
      */
     static update(): az_servicebus_queue_update_command_builder {
-        return new az_servicebus_queue_update_command_builder("az servicebus queue update");
+        return new az_servicebus_queue_update_command_builder("az servicebus queue update", 'az_servicebus_queue_update_command_result');
     }
 }
 
@@ -933,7 +933,7 @@ export class az_servicebus_topic_authorization_rule_keys {
      * @param {string} topicName Name of Topic.
      */
     static list(name: string, namespaceName: string, resourceGroup: string, topicName: string): az_servicebus_topic_authorization_rule_keys_list_command_builder {
-        return new az_servicebus_topic_authorization_rule_keys_list_command_builder("az servicebus topic authorization-rule keys list", name, namespaceName, resourceGroup, topicName);
+        return new az_servicebus_topic_authorization_rule_keys_list_command_builder("az servicebus topic authorization-rule keys list", 'az_servicebus_topic_authorization_rule_keys_list_command_result', name, namespaceName, resourceGroup, topicName);
     }
 
     /**
@@ -954,7 +954,7 @@ export class az_servicebus_topic_authorization_rule_keys {
      * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
      */
     static renew(key: 'PrimaryKey' | 'SecondaryKey'): az_servicebus_topic_authorization_rule_keys_renew_command_builder {
-        return new az_servicebus_topic_authorization_rule_keys_renew_command_builder("az servicebus topic authorization-rule keys renew", key);
+        return new az_servicebus_topic_authorization_rule_keys_renew_command_builder("az servicebus topic authorization-rule keys renew", 'az_servicebus_topic_authorization_rule_keys_renew_command_result', key);
     }
 }
 
@@ -980,7 +980,7 @@ export class az_servicebus_topic_authorization_rule {
      * @param {string} topicName Name of Topic.
      */
     static create(name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send', topicName: string): az_servicebus_topic_authorization_rule_create_command_builder {
-        return new az_servicebus_topic_authorization_rule_create_command_builder("az servicebus topic authorization-rule create", name, namespaceName, resourceGroup, rights, topicName);
+        return new az_servicebus_topic_authorization_rule_create_command_builder("az servicebus topic authorization-rule create", 'az_servicebus_topic_authorization_rule_create_command_result', name, namespaceName, resourceGroup, rights, topicName);
     }
 
     /**
@@ -997,7 +997,7 @@ export class az_servicebus_topic_authorization_rule {
      * ```
      */
     static delete(): az_servicebus_topic_authorization_rule_delete_command_builder {
-        return new az_servicebus_topic_authorization_rule_delete_command_builder("az servicebus topic authorization-rule delete");
+        return new az_servicebus_topic_authorization_rule_delete_command_builder("az servicebus topic authorization-rule delete", 'az_servicebus_topic_authorization_rule_delete_command_result');
     }
 
     /**
@@ -1017,7 +1017,7 @@ export class az_servicebus_topic_authorization_rule {
      * @param {string} topicName Name of Topic.
      */
     static list(namespaceName: string, resourceGroup: string, topicName: string): az_servicebus_topic_authorization_rule_list_command_builder {
-        return new az_servicebus_topic_authorization_rule_list_command_builder("az servicebus topic authorization-rule list", namespaceName, resourceGroup, topicName);
+        return new az_servicebus_topic_authorization_rule_list_command_builder("az servicebus topic authorization-rule list", 'az_servicebus_topic_authorization_rule_list_command_result', namespaceName, resourceGroup, topicName);
     }
 
     /**
@@ -1035,7 +1035,7 @@ export class az_servicebus_topic_authorization_rule {
      * ```
      */
     static show(): az_servicebus_topic_authorization_rule_show_command_builder {
-        return new az_servicebus_topic_authorization_rule_show_command_builder("az servicebus topic authorization-rule show");
+        return new az_servicebus_topic_authorization_rule_show_command_builder("az servicebus topic authorization-rule show", 'az_servicebus_topic_authorization_rule_show_command_result');
     }
 
     /**
@@ -1059,7 +1059,7 @@ export class az_servicebus_topic_authorization_rule {
      * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
      */
     static update(rights: 'Listen' | 'Manage' | 'Send'): az_servicebus_topic_authorization_rule_update_command_builder {
-        return new az_servicebus_topic_authorization_rule_update_command_builder("az servicebus topic authorization-rule update", rights);
+        return new az_servicebus_topic_authorization_rule_update_command_builder("az servicebus topic authorization-rule update", 'az_servicebus_topic_authorization_rule_update_command_result', rights);
     }
 }
 
@@ -1099,7 +1099,7 @@ export class az_servicebus_topic_subscription_rule {
      * @param {string} topicName Name of Topic.
      */
     static create(name: string, namespaceName: string, resourceGroup: string, subscriptionName: string, topicName: string): az_servicebus_topic_subscription_rule_create_command_builder {
-        return new az_servicebus_topic_subscription_rule_create_command_builder("az servicebus topic subscription rule create", name, namespaceName, resourceGroup, subscriptionName, topicName);
+        return new az_servicebus_topic_subscription_rule_create_command_builder("az servicebus topic subscription rule create", 'az_servicebus_topic_subscription_rule_create_command_result', name, namespaceName, resourceGroup, subscriptionName, topicName);
     }
 
     /**
@@ -1117,7 +1117,7 @@ export class az_servicebus_topic_subscription_rule {
      * ```
      */
     static delete(): az_servicebus_topic_subscription_rule_delete_command_builder {
-        return new az_servicebus_topic_subscription_rule_delete_command_builder("az servicebus topic subscription rule delete");
+        return new az_servicebus_topic_subscription_rule_delete_command_builder("az servicebus topic subscription rule delete", 'az_servicebus_topic_subscription_rule_delete_command_result');
     }
 
     /**
@@ -1141,7 +1141,7 @@ export class az_servicebus_topic_subscription_rule {
      * @param {string} topicName Name of Topic.
      */
     static list(namespaceName: string, resourceGroup: string, subscriptionName: string, topicName: string): az_servicebus_topic_subscription_rule_list_command_builder {
-        return new az_servicebus_topic_subscription_rule_list_command_builder("az servicebus topic subscription rule list", namespaceName, resourceGroup, subscriptionName, topicName);
+        return new az_servicebus_topic_subscription_rule_list_command_builder("az servicebus topic subscription rule list", 'az_servicebus_topic_subscription_rule_list_command_result', namespaceName, resourceGroup, subscriptionName, topicName);
     }
 
     /**
@@ -1160,7 +1160,7 @@ export class az_servicebus_topic_subscription_rule {
      * ```
      */
     static show(): az_servicebus_topic_subscription_rule_show_command_builder {
-        return new az_servicebus_topic_subscription_rule_show_command_builder("az servicebus topic subscription rule show");
+        return new az_servicebus_topic_subscription_rule_show_command_builder("az servicebus topic subscription rule show", 'az_servicebus_topic_subscription_rule_show_command_result');
     }
 
     /**
@@ -1196,7 +1196,7 @@ export class az_servicebus_topic_subscription_rule {
      * ```
      */
     static update(): az_servicebus_topic_subscription_rule_update_command_builder {
-        return new az_servicebus_topic_subscription_rule_update_command_builder("az servicebus topic subscription rule update");
+        return new az_servicebus_topic_subscription_rule_update_command_builder("az servicebus topic subscription rule update", 'az_servicebus_topic_subscription_rule_update_command_result');
     }
 }
 
@@ -1231,7 +1231,7 @@ export class az_servicebus_topic_subscription {
      * @param {string} topicName Name of Topic.
      */
     static create(name: string, namespaceName: string, resourceGroup: string, topicName: string): az_servicebus_topic_subscription_create_command_builder {
-        return new az_servicebus_topic_subscription_create_command_builder("az servicebus topic subscription create", name, namespaceName, resourceGroup, topicName);
+        return new az_servicebus_topic_subscription_create_command_builder("az servicebus topic subscription create", 'az_servicebus_topic_subscription_create_command_result', name, namespaceName, resourceGroup, topicName);
     }
 
     /**
@@ -1248,7 +1248,7 @@ export class az_servicebus_topic_subscription {
      * ```
      */
     static delete(): az_servicebus_topic_subscription_delete_command_builder {
-        return new az_servicebus_topic_subscription_delete_command_builder("az servicebus topic subscription delete");
+        return new az_servicebus_topic_subscription_delete_command_builder("az servicebus topic subscription delete", 'az_servicebus_topic_subscription_delete_command_result');
     }
 
     /**
@@ -1270,7 +1270,7 @@ export class az_servicebus_topic_subscription {
      * @param {string} topicName Name of Topic.
      */
     static list(namespaceName: string, resourceGroup: string, topicName: string): az_servicebus_topic_subscription_list_command_builder {
-        return new az_servicebus_topic_subscription_list_command_builder("az servicebus topic subscription list", namespaceName, resourceGroup, topicName);
+        return new az_servicebus_topic_subscription_list_command_builder("az servicebus topic subscription list", 'az_servicebus_topic_subscription_list_command_result', namespaceName, resourceGroup, topicName);
     }
 
     /**
@@ -1288,7 +1288,7 @@ export class az_servicebus_topic_subscription {
      * ```
      */
     static show(): az_servicebus_topic_subscription_show_command_builder {
-        return new az_servicebus_topic_subscription_show_command_builder("az servicebus topic subscription show");
+        return new az_servicebus_topic_subscription_show_command_builder("az servicebus topic subscription show", 'az_servicebus_topic_subscription_show_command_result');
     }
 
     /**
@@ -1320,7 +1320,7 @@ export class az_servicebus_topic_subscription {
      * ```
      */
     static update(): az_servicebus_topic_subscription_update_command_builder {
-        return new az_servicebus_topic_subscription_update_command_builder("az servicebus topic subscription update");
+        return new az_servicebus_topic_subscription_update_command_builder("az servicebus topic subscription update", 'az_servicebus_topic_subscription_update_command_result');
     }
 }
 
@@ -1352,7 +1352,7 @@ export class az_servicebus_topic {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, namespaceName: string, resourceGroup: string): az_servicebus_topic_create_command_builder {
-        return new az_servicebus_topic_create_command_builder("az servicebus topic create", name, namespaceName, resourceGroup);
+        return new az_servicebus_topic_create_command_builder("az servicebus topic create", 'az_servicebus_topic_create_command_result', name, namespaceName, resourceGroup);
     }
 
     /**
@@ -1368,7 +1368,7 @@ export class az_servicebus_topic {
      * ```
      */
     static delete(): az_servicebus_topic_delete_command_builder {
-        return new az_servicebus_topic_delete_command_builder("az servicebus topic delete");
+        return new az_servicebus_topic_delete_command_builder("az servicebus topic delete", 'az_servicebus_topic_delete_command_result');
     }
 
     /**
@@ -1388,7 +1388,7 @@ export class az_servicebus_topic {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(namespaceName: string, resourceGroup: string): az_servicebus_topic_list_command_builder {
-        return new az_servicebus_topic_list_command_builder("az servicebus topic list", namespaceName, resourceGroup);
+        return new az_servicebus_topic_list_command_builder("az servicebus topic list", 'az_servicebus_topic_list_command_result', namespaceName, resourceGroup);
     }
 
     /**
@@ -1405,7 +1405,7 @@ export class az_servicebus_topic {
      * ```
      */
     static show(): az_servicebus_topic_show_command_builder {
-        return new az_servicebus_topic_show_command_builder("az servicebus topic show");
+        return new az_servicebus_topic_show_command_builder("az servicebus topic show", 'az_servicebus_topic_show_command_result');
     }
 
     /**
@@ -1435,7 +1435,7 @@ export class az_servicebus_topic {
      * ```
      */
     static update(): az_servicebus_topic_update_command_builder {
-        return new az_servicebus_topic_update_command_builder("az servicebus topic update");
+        return new az_servicebus_topic_update_command_builder("az servicebus topic update", 'az_servicebus_topic_update_command_result');
     }
 }
 
@@ -1462,8 +1462,8 @@ export class az_servicebus {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_georecovery_alias_authorization_rule_keys_list_command_builder extends CommandBuilder<az_servicebus_georecovery_alias_authorization_rule_keys_list_command_result> {
-    constructor(commandPath: string, alias: string, name: string, namespaceName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, alias: string, name: string, namespaceName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.alias(alias)
         this.name(name)
         this.namespaceName(namespaceName)
@@ -1524,8 +1524,8 @@ class az_servicebus_georecovery_alias_authorization_rule_keys_list_command_build
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_georecovery_alias_authorization_rule_list_command_builder extends CommandBuilder<az_servicebus_georecovery_alias_authorization_rule_list_command_result> {
-    constructor(commandPath: string, alias: string, namespaceName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, alias: string, namespaceName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.alias(alias)
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -1577,8 +1577,8 @@ class az_servicebus_georecovery_alias_authorization_rule_list_command_builder ex
  * ```
  */
 class az_servicebus_georecovery_alias_authorization_rule_show_command_builder extends CommandBuilder<az_servicebus_georecovery_alias_authorization_rule_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Geo-Disaster Recovery Configuration Alias. */
@@ -1637,8 +1637,8 @@ class az_servicebus_georecovery_alias_authorization_rule_show_command_builder ex
  * ```
  */
 class az_servicebus_georecovery_alias_break_pair_command_builder extends CommandBuilder<az_servicebus_georecovery_alias_break_pair_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Geo-Disaster Recovery Configuration Alias. */
@@ -1685,8 +1685,8 @@ class az_servicebus_georecovery_alias_break_pair_command_builder extends Command
  * ```
  */
 class az_servicebus_georecovery_alias_delete_command_builder extends CommandBuilder<az_servicebus_georecovery_alias_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Geo-Disaster Recovery Configuration Alias. */
@@ -1736,8 +1736,8 @@ class az_servicebus_georecovery_alias_delete_command_builder extends CommandBuil
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_georecovery_alias_exists_command_builder extends CommandBuilder<az_servicebus_georecovery_alias_exists_command_result> {
-    constructor(commandPath: string, alias: string, namespaceName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, alias: string, namespaceName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.alias(alias)
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -1781,8 +1781,8 @@ class az_servicebus_georecovery_alias_exists_command_builder extends CommandBuil
  * ```
  */
 class az_servicebus_georecovery_alias_fail_over_command_builder extends CommandBuilder<az_servicebus_georecovery_alias_fail_over_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Geo-Disaster Recovery Configuration Alias. */
@@ -1831,8 +1831,8 @@ class az_servicebus_georecovery_alias_fail_over_command_builder extends CommandB
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_georecovery_alias_list_command_builder extends CommandBuilder<az_servicebus_georecovery_alias_list_command_result> {
-    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespaceName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
     }
@@ -1879,8 +1879,8 @@ class az_servicebus_georecovery_alias_list_command_builder extends CommandBuilde
  * @param {string} partnerNamespace Name (if within the same resource group) or ARM Id of Primary/Secondary Service Bus  namespace name, which is part of GEO DR pairing.
  */
 class az_servicebus_georecovery_alias_set_command_builder extends CommandBuilder<az_servicebus_georecovery_alias_set_command_result> {
-    constructor(commandPath: string, partnerNamespace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, partnerNamespace: string) {
+        super(commandPath, resultDataTypeName);
         this.partnerNamespace(partnerNamespace)
     }
 
@@ -1941,8 +1941,8 @@ class az_servicebus_georecovery_alias_set_command_builder extends CommandBuilder
  * ```
  */
 class az_servicebus_georecovery_alias_show_command_builder extends CommandBuilder<az_servicebus_georecovery_alias_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Geo-Disaster Recovery Configuration Alias. */
@@ -1994,8 +1994,8 @@ class az_servicebus_georecovery_alias_show_command_builder extends CommandBuilde
  * ```
  */
 class az_servicebus_migration_abort_command_builder extends CommandBuilder<az_servicebus_migration_abort_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2035,8 +2035,8 @@ class az_servicebus_migration_abort_command_builder extends CommandBuilder<az_se
  * ```
  */
 class az_servicebus_migration_complete_command_builder extends CommandBuilder<az_servicebus_migration_complete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2077,8 +2077,8 @@ class az_servicebus_migration_complete_command_builder extends CommandBuilder<az
  * ```
  */
 class az_servicebus_migration_show_command_builder extends CommandBuilder<az_servicebus_migration_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2129,8 +2129,8 @@ class az_servicebus_migration_show_command_builder extends CommandBuilder<az_ser
  * @param {string} targetNamespace Name (if within the same resource group) or ARM Id of empty Premium Service Bus namespace name that will be target of the migration.
  */
 class az_servicebus_migration_start_command_builder extends CommandBuilder<az_servicebus_migration_start_command_result> {
-    constructor(commandPath: string, postMigrationName: string, targetNamespace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, postMigrationName: string, targetNamespace: string) {
+        super(commandPath, resultDataTypeName);
         this.postMigrationName(postMigrationName)
         this.targetNamespace(targetNamespace)
     }
@@ -2189,8 +2189,8 @@ class az_servicebus_migration_start_command_builder extends CommandBuilder<az_se
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_namespace_authorization_rule_keys_list_command_builder extends CommandBuilder<az_servicebus_namespace_authorization_rule_keys_list_command_result> {
-    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, namespaceName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -2244,8 +2244,8 @@ class az_servicebus_namespace_authorization_rule_keys_list_command_builder exten
  * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
  */
 class az_servicebus_namespace_authorization_rule_keys_renew_command_builder extends CommandBuilder<az_servicebus_namespace_authorization_rule_keys_renew_command_result> {
-    constructor(commandPath: string, key: 'PrimaryKey' | 'SecondaryKey') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, key: 'PrimaryKey' | 'SecondaryKey') {
+        super(commandPath, resultDataTypeName);
         this.key(key)
     }
 
@@ -2310,8 +2310,8 @@ class az_servicebus_namespace_authorization_rule_keys_renew_command_builder exte
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
 class az_servicebus_namespace_authorization_rule_create_command_builder extends CommandBuilder<az_servicebus_namespace_authorization_rule_create_command_result> {
-    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send') {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -2362,8 +2362,8 @@ class az_servicebus_namespace_authorization_rule_create_command_builder extends 
  * ```
  */
 class az_servicebus_namespace_authorization_rule_delete_command_builder extends CommandBuilder<az_servicebus_namespace_authorization_rule_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2412,8 +2412,8 @@ class az_servicebus_namespace_authorization_rule_delete_command_builder extends 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_namespace_authorization_rule_list_command_builder extends CommandBuilder<az_servicebus_namespace_authorization_rule_list_command_result> {
-    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespaceName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
     }
@@ -2457,8 +2457,8 @@ class az_servicebus_namespace_authorization_rule_list_command_builder extends Co
  * ```
  */
 class az_servicebus_namespace_authorization_rule_show_command_builder extends CommandBuilder<az_servicebus_namespace_authorization_rule_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2518,8 +2518,8 @@ class az_servicebus_namespace_authorization_rule_show_command_builder extends Co
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
 class az_servicebus_namespace_authorization_rule_update_command_builder extends CommandBuilder<az_servicebus_namespace_authorization_rule_update_command_result> {
-    constructor(commandPath: string, rights: 'Listen' | 'Manage' | 'Send') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, rights: 'Listen' | 'Manage' | 'Send') {
+        super(commandPath, resultDataTypeName);
         this.rights(rights)
     }
 
@@ -2603,8 +2603,8 @@ class az_servicebus_namespace_authorization_rule_update_command_builder extends 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_namespace_network_rule_add_command_builder extends CommandBuilder<az_servicebus_namespace_network_rule_add_command_result> {
-    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespaceName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
     }
@@ -2673,8 +2673,8 @@ class az_servicebus_namespace_network_rule_add_command_builder extends CommandBu
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_namespace_network_rule_list_command_builder extends CommandBuilder<az_servicebus_namespace_network_rule_list_command_result> {
-    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespaceName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
     }
@@ -2721,8 +2721,8 @@ class az_servicebus_namespace_network_rule_list_command_builder extends CommandB
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_namespace_network_rule_remove_command_builder extends CommandBuilder<az_servicebus_namespace_network_rule_remove_command_result> {
-    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespaceName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
     }
@@ -2783,8 +2783,8 @@ class az_servicebus_namespace_network_rule_remove_command_builder extends Comman
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_namespace_create_command_builder extends CommandBuilder<az_servicebus_namespace_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2850,8 +2850,8 @@ class az_servicebus_namespace_create_command_builder extends CommandBuilder<az_s
  * ```
  */
 class az_servicebus_namespace_delete_command_builder extends CommandBuilder<az_servicebus_namespace_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2891,8 +2891,8 @@ class az_servicebus_namespace_delete_command_builder extends CommandBuilder<az_s
  * @param {string} name Namespace name. Name can contain only letters, numbers, and hyphens. The namespace must start with a letter, and it must end with a letter or number.
  */
 class az_servicebus_namespace_exists_command_builder extends CommandBuilder<az_servicebus_namespace_exists_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -2920,8 +2920,8 @@ class az_servicebus_namespace_exists_command_builder extends CommandBuilder<az_s
  * ```
  */
 class az_servicebus_namespace_list_command_builder extends CommandBuilder<az_servicebus_namespace_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -2956,8 +2956,8 @@ class az_servicebus_namespace_list_command_builder extends CommandBuilder<az_ser
  * ```
  */
 class az_servicebus_namespace_show_command_builder extends CommandBuilder<az_servicebus_namespace_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3011,8 +3011,8 @@ class az_servicebus_namespace_show_command_builder extends CommandBuilder<az_ser
  * ```
  */
 class az_servicebus_namespace_update_command_builder extends CommandBuilder<az_servicebus_namespace_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -3107,8 +3107,8 @@ class az_servicebus_namespace_update_command_builder extends CommandBuilder<az_s
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_queue_authorization_rule_keys_list_command_builder extends CommandBuilder<az_servicebus_queue_authorization_rule_keys_list_command_result> {
-    constructor(commandPath: string, name: string, namespaceName: string, queueName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, namespaceName: string, queueName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.namespaceName(namespaceName)
         this.queueName(queueName)
@@ -3170,8 +3170,8 @@ class az_servicebus_queue_authorization_rule_keys_list_command_builder extends C
  * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
  */
 class az_servicebus_queue_authorization_rule_keys_renew_command_builder extends CommandBuilder<az_servicebus_queue_authorization_rule_keys_renew_command_result> {
-    constructor(commandPath: string, key: 'PrimaryKey' | 'SecondaryKey') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, key: 'PrimaryKey' | 'SecondaryKey') {
+        super(commandPath, resultDataTypeName);
         this.key(key)
     }
 
@@ -3244,8 +3244,8 @@ class az_servicebus_queue_authorization_rule_keys_renew_command_builder extends 
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
 class az_servicebus_queue_authorization_rule_create_command_builder extends CommandBuilder<az_servicebus_queue_authorization_rule_create_command_result> {
-    constructor(commandPath: string, name: string, namespaceName: string, queueName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, namespaceName: string, queueName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send') {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.namespaceName(namespaceName)
         this.queueName(queueName)
@@ -3304,8 +3304,8 @@ class az_servicebus_queue_authorization_rule_create_command_builder extends Comm
  * ```
  */
 class az_servicebus_queue_authorization_rule_delete_command_builder extends CommandBuilder<az_servicebus_queue_authorization_rule_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3362,8 +3362,8 @@ class az_servicebus_queue_authorization_rule_delete_command_builder extends Comm
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_queue_authorization_rule_list_command_builder extends CommandBuilder<az_servicebus_queue_authorization_rule_list_command_result> {
-    constructor(commandPath: string, namespaceName: string, queueName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespaceName: string, queueName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.namespaceName(namespaceName)
         this.queueName(queueName)
         this.resourceGroup(resourceGroup)
@@ -3415,8 +3415,8 @@ class az_servicebus_queue_authorization_rule_list_command_builder extends Comman
  * ```
  */
 class az_servicebus_queue_authorization_rule_show_command_builder extends CommandBuilder<az_servicebus_queue_authorization_rule_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3483,8 +3483,8 @@ class az_servicebus_queue_authorization_rule_show_command_builder extends Comman
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
 class az_servicebus_queue_authorization_rule_update_command_builder extends CommandBuilder<az_servicebus_queue_authorization_rule_update_command_result> {
-    constructor(commandPath: string, rights: 'Listen' | 'Manage' | 'Send') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, rights: 'Listen' | 'Manage' | 'Send') {
+        super(commandPath, resultDataTypeName);
         this.rights(rights)
     }
 
@@ -3586,8 +3586,8 @@ class az_servicebus_queue_authorization_rule_update_command_builder extends Comm
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_queue_create_command_builder extends CommandBuilder<az_servicebus_queue_create_command_result> {
-    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, namespaceName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -3721,8 +3721,8 @@ class az_servicebus_queue_create_command_builder extends CommandBuilder<az_servi
  * ```
  */
 class az_servicebus_queue_delete_command_builder extends CommandBuilder<az_servicebus_queue_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3773,8 +3773,8 @@ class az_servicebus_queue_delete_command_builder extends CommandBuilder<az_servi
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_queue_list_command_builder extends CommandBuilder<az_servicebus_queue_list_command_result> {
-    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespaceName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
     }
@@ -3830,8 +3830,8 @@ class az_servicebus_queue_list_command_builder extends CommandBuilder<az_service
  * ```
  */
 class az_servicebus_queue_show_command_builder extends CommandBuilder<az_servicebus_queue_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3903,8 +3903,8 @@ class az_servicebus_queue_show_command_builder extends CommandBuilder<az_service
  * ```
  */
 class az_servicebus_queue_update_command_builder extends CommandBuilder<az_servicebus_queue_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -4071,8 +4071,8 @@ class az_servicebus_queue_update_command_builder extends CommandBuilder<az_servi
  * @param {string} topicName Name of Topic.
  */
 class az_servicebus_topic_authorization_rule_keys_list_command_builder extends CommandBuilder<az_servicebus_topic_authorization_rule_keys_list_command_result> {
-    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string, topicName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, namespaceName: string, resourceGroup: string, topicName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -4134,8 +4134,8 @@ class az_servicebus_topic_authorization_rule_keys_list_command_builder extends C
  * @param {'PrimaryKey' | 'SecondaryKey'} key Specifies Primary or Secondary key needs to be reset.
  */
 class az_servicebus_topic_authorization_rule_keys_renew_command_builder extends CommandBuilder<az_servicebus_topic_authorization_rule_keys_renew_command_result> {
-    constructor(commandPath: string, key: 'PrimaryKey' | 'SecondaryKey') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, key: 'PrimaryKey' | 'SecondaryKey') {
+        super(commandPath, resultDataTypeName);
         this.key(key)
     }
 
@@ -4208,8 +4208,8 @@ class az_servicebus_topic_authorization_rule_keys_renew_command_builder extends 
  * @param {string} topicName Name of Topic.
  */
 class az_servicebus_topic_authorization_rule_create_command_builder extends CommandBuilder<az_servicebus_topic_authorization_rule_create_command_result> {
-    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send', topicName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, namespaceName: string, resourceGroup: string, rights: 'Listen' | 'Manage' | 'Send', topicName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -4268,8 +4268,8 @@ class az_servicebus_topic_authorization_rule_create_command_builder extends Comm
  * ```
  */
 class az_servicebus_topic_authorization_rule_delete_command_builder extends CommandBuilder<az_servicebus_topic_authorization_rule_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4326,8 +4326,8 @@ class az_servicebus_topic_authorization_rule_delete_command_builder extends Comm
  * @param {string} topicName Name of Topic.
  */
 class az_servicebus_topic_authorization_rule_list_command_builder extends CommandBuilder<az_servicebus_topic_authorization_rule_list_command_result> {
-    constructor(commandPath: string, namespaceName: string, resourceGroup: string, topicName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespaceName: string, resourceGroup: string, topicName: string) {
+        super(commandPath, resultDataTypeName);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
         this.topicName(topicName)
@@ -4379,8 +4379,8 @@ class az_servicebus_topic_authorization_rule_list_command_builder extends Comman
  * ```
  */
 class az_servicebus_topic_authorization_rule_show_command_builder extends CommandBuilder<az_servicebus_topic_authorization_rule_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4447,8 +4447,8 @@ class az_servicebus_topic_authorization_rule_show_command_builder extends Comman
  * @param {'Listen' | 'Manage' | 'Send'} rights Space-separated list of Authorization rule rights.
  */
 class az_servicebus_topic_authorization_rule_update_command_builder extends CommandBuilder<az_servicebus_topic_authorization_rule_update_command_result> {
-    constructor(commandPath: string, rights: 'Listen' | 'Manage' | 'Send') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, rights: 'Listen' | 'Manage' | 'Send') {
+        super(commandPath, resultDataTypeName);
         this.rights(rights)
     }
 
@@ -4553,8 +4553,8 @@ class az_servicebus_topic_authorization_rule_update_command_builder extends Comm
  * @param {string} topicName Name of Topic.
  */
 class az_servicebus_topic_subscription_rule_create_command_builder extends CommandBuilder<az_servicebus_topic_subscription_rule_create_command_result> {
-    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string, subscriptionName: string, topicName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, namespaceName: string, resourceGroup: string, subscriptionName: string, topicName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -4698,8 +4698,8 @@ class az_servicebus_topic_subscription_rule_create_command_builder extends Comma
  * ```
  */
 class az_servicebus_topic_subscription_rule_delete_command_builder extends CommandBuilder<az_servicebus_topic_subscription_rule_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4766,8 +4766,8 @@ class az_servicebus_topic_subscription_rule_delete_command_builder extends Comma
  * @param {string} topicName Name of Topic.
  */
 class az_servicebus_topic_subscription_rule_list_command_builder extends CommandBuilder<az_servicebus_topic_subscription_rule_list_command_result> {
-    constructor(commandPath: string, namespaceName: string, resourceGroup: string, subscriptionName: string, topicName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespaceName: string, resourceGroup: string, subscriptionName: string, topicName: string) {
+        super(commandPath, resultDataTypeName);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
         this.subscriptionName(subscriptionName)
@@ -4839,8 +4839,8 @@ class az_servicebus_topic_subscription_rule_list_command_builder extends Command
  * ```
  */
 class az_servicebus_topic_subscription_rule_show_command_builder extends CommandBuilder<az_servicebus_topic_subscription_rule_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4925,8 +4925,8 @@ class az_servicebus_topic_subscription_rule_show_command_builder extends Command
  * ```
  */
 class az_servicebus_topic_subscription_rule_update_command_builder extends CommandBuilder<az_servicebus_topic_subscription_rule_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** This property is reserved for future use. An integer value showing the compatibility level, currently hard-coded to 20. */
@@ -5109,8 +5109,8 @@ class az_servicebus_topic_subscription_rule_update_command_builder extends Comma
  * @param {string} topicName Name of Topic.
  */
 class az_servicebus_topic_subscription_create_command_builder extends CommandBuilder<az_servicebus_topic_subscription_create_command_result> {
-    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string, topicName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, namespaceName: string, resourceGroup: string, topicName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -5228,8 +5228,8 @@ class az_servicebus_topic_subscription_create_command_builder extends CommandBui
  * ```
  */
 class az_servicebus_topic_subscription_delete_command_builder extends CommandBuilder<az_servicebus_topic_subscription_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5288,8 +5288,8 @@ class az_servicebus_topic_subscription_delete_command_builder extends CommandBui
  * @param {string} topicName Name of Topic.
  */
 class az_servicebus_topic_subscription_list_command_builder extends CommandBuilder<az_servicebus_topic_subscription_list_command_result> {
-    constructor(commandPath: string, namespaceName: string, resourceGroup: string, topicName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespaceName: string, resourceGroup: string, topicName: string) {
+        super(commandPath, resultDataTypeName);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
         this.topicName(topicName)
@@ -5353,8 +5353,8 @@ class az_servicebus_topic_subscription_list_command_builder extends CommandBuild
  * ```
  */
 class az_servicebus_topic_subscription_show_command_builder extends CommandBuilder<az_servicebus_topic_subscription_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5429,8 +5429,8 @@ class az_servicebus_topic_subscription_show_command_builder extends CommandBuild
  * ```
  */
 class az_servicebus_topic_subscription_update_command_builder extends CommandBuilder<az_servicebus_topic_subscription_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -5586,8 +5586,8 @@ class az_servicebus_topic_subscription_update_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_topic_create_command_builder extends CommandBuilder<az_servicebus_topic_create_command_result> {
-    constructor(commandPath: string, name: string, namespaceName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, namespaceName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
@@ -5691,8 +5691,8 @@ class az_servicebus_topic_create_command_builder extends CommandBuilder<az_servi
  * ```
  */
 class az_servicebus_topic_delete_command_builder extends CommandBuilder<az_servicebus_topic_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5743,8 +5743,8 @@ class az_servicebus_topic_delete_command_builder extends CommandBuilder<az_servi
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_servicebus_topic_list_command_builder extends CommandBuilder<az_servicebus_topic_list_command_result> {
-    constructor(commandPath: string, namespaceName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespaceName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.namespaceName(namespaceName)
         this.resourceGroup(resourceGroup)
     }
@@ -5800,8 +5800,8 @@ class az_servicebus_topic_list_command_builder extends CommandBuilder<az_service
  * ```
  */
 class az_servicebus_topic_show_command_builder extends CommandBuilder<az_servicebus_topic_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5868,8 +5868,8 @@ class az_servicebus_topic_show_command_builder extends CommandBuilder<az_service
  * ```
  */
 class az_servicebus_topic_update_command_builder extends CommandBuilder<az_servicebus_topic_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */

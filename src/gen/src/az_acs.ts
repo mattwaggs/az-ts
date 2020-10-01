@@ -31,7 +31,7 @@ export class az_acs_dcos {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static browse(name: string, resourceGroup: string): az_acs_dcos_browse_command_builder {
-        return new az_acs_dcos_browse_command_builder("az acs dcos browse", name, resourceGroup);
+        return new az_acs_dcos_browse_command_builder("az acs dcos browse", 'az_acs_dcos_browse_command_result', name, resourceGroup);
     }
 
     /**
@@ -45,7 +45,7 @@ export class az_acs_dcos {
      * ```
      */
     static install_cli(): az_acs_dcos_install_cli_command_builder {
-        return new az_acs_dcos_install_cli_command_builder("az acs dcos install-cli");
+        return new az_acs_dcos_install_cli_command_builder("az acs dcos install-cli", 'az_acs_dcos_install_cli_command_result');
     }
 }
 
@@ -67,7 +67,7 @@ export class az_acs_kubernetes {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static browse(name: string, resourceGroup: string): az_acs_kubernetes_browse_command_builder {
-        return new az_acs_kubernetes_browse_command_builder("az acs kubernetes browse", name, resourceGroup);
+        return new az_acs_kubernetes_browse_command_builder("az acs kubernetes browse", 'az_acs_kubernetes_browse_command_result', name, resourceGroup);
     }
 
     /**
@@ -87,7 +87,7 @@ export class az_acs_kubernetes {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static get_credentials(name: string, resourceGroup: string): az_acs_kubernetes_get_credentials_command_builder {
-        return new az_acs_kubernetes_get_credentials_command_builder("az acs kubernetes get-credentials", name, resourceGroup);
+        return new az_acs_kubernetes_get_credentials_command_builder("az acs kubernetes get-credentials", 'az_acs_kubernetes_get_credentials_command_result', name, resourceGroup);
     }
 
     /**
@@ -103,7 +103,7 @@ export class az_acs_kubernetes {
      * ```
      */
     static install_cli(): az_acs_kubernetes_install_cli_command_builder {
-        return new az_acs_kubernetes_install_cli_command_builder("az acs kubernetes install-cli");
+        return new az_acs_kubernetes_install_cli_command_builder("az acs kubernetes install-cli", 'az_acs_kubernetes_install_cli_command_result');
     }
 }
 
@@ -125,7 +125,7 @@ export class az_acs {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static browse(name: string, resourceGroup: string): az_acs_browse_command_builder {
-        return new az_acs_browse_command_builder("az acs browse", name, resourceGroup);
+        return new az_acs_browse_command_builder("az acs browse", 'az_acs_browse_command_result', name, resourceGroup);
     }
 
     /**
@@ -171,7 +171,7 @@ export class az_acs {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_acs_create_command_builder {
-        return new az_acs_create_command_builder("az acs create", name, resourceGroup);
+        return new az_acs_create_command_builder("az acs create", 'az_acs_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -189,7 +189,7 @@ export class az_acs {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_acs_delete_command_builder {
-        return new az_acs_delete_command_builder("az acs delete", name, resourceGroup);
+        return new az_acs_delete_command_builder("az acs delete", 'az_acs_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -203,7 +203,7 @@ export class az_acs {
      * ```
      */
     static list(): az_acs_list_command_builder {
-        return new az_acs_list_command_builder("az acs list");
+        return new az_acs_list_command_builder("az acs list", 'az_acs_list_command_result');
     }
 
     /**
@@ -215,7 +215,7 @@ export class az_acs {
      * ```
      */
     static list_locations(): az_acs_list_locations_command_builder {
-        return new az_acs_list_locations_command_builder("az acs list-locations");
+        return new az_acs_list_locations_command_builder("az acs list-locations", 'az_acs_list_locations_command_result');
     }
 
     /**
@@ -234,7 +234,7 @@ export class az_acs {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static scale(name: string, newAgentCount: string, resourceGroup: string): az_acs_scale_command_builder {
-        return new az_acs_scale_command_builder("az acs scale", name, newAgentCount, resourceGroup);
+        return new az_acs_scale_command_builder("az acs scale", 'az_acs_scale_command_result', name, newAgentCount, resourceGroup);
     }
 
     /**
@@ -252,7 +252,7 @@ export class az_acs {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_acs_show_command_builder {
-        return new az_acs_show_command_builder("az acs show", name, resourceGroup);
+        return new az_acs_show_command_builder("az acs show", 'az_acs_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -276,7 +276,7 @@ export class az_acs {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static wait(name: string, resourceGroup: string): az_acs_wait_command_builder {
-        return new az_acs_wait_command_builder("az acs wait", name, resourceGroup);
+        return new az_acs_wait_command_builder("az acs wait", 'az_acs_wait_command_result', name, resourceGroup);
     }
 }
 
@@ -296,8 +296,8 @@ export class az_acs {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_acs_dcos_browse_command_builder extends CommandBuilder<az_acs_dcos_browse_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -344,8 +344,8 @@ class az_acs_dcos_browse_command_builder extends CommandBuilder<az_acs_dcos_brow
  * ```
  */
 class az_acs_dcos_install_cli_command_builder extends CommandBuilder<az_acs_dcos_install_cli_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Version of kubectl to install. */
@@ -383,8 +383,8 @@ class az_acs_dcos_install_cli_command_builder extends CommandBuilder<az_acs_dcos
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_acs_kubernetes_browse_command_builder extends CommandBuilder<az_acs_kubernetes_browse_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -437,8 +437,8 @@ class az_acs_kubernetes_browse_command_builder extends CommandBuilder<az_acs_kub
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_acs_kubernetes_get_credentials_command_builder extends CommandBuilder<az_acs_kubernetes_get_credentials_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -493,8 +493,8 @@ class az_acs_kubernetes_get_credentials_command_builder extends CommandBuilder<a
  * ```
  */
 class az_acs_kubernetes_install_cli_command_builder extends CommandBuilder<az_acs_kubernetes_install_cli_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Version of kubectl to install. */
@@ -544,8 +544,8 @@ class az_acs_kubernetes_install_cli_command_builder extends CommandBuilder<az_ac
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_acs_browse_command_builder extends CommandBuilder<az_acs_browse_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -624,8 +624,8 @@ class az_acs_browse_command_builder extends CommandBuilder<az_acs_browse_command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_acs_create_command_builder extends CommandBuilder<az_acs_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -838,8 +838,8 @@ class az_acs_create_command_builder extends CommandBuilder<az_acs_create_command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_acs_delete_command_builder extends CommandBuilder<az_acs_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -880,8 +880,8 @@ class az_acs_delete_command_builder extends CommandBuilder<az_acs_delete_command
  * ```
  */
 class az_acs_list_command_builder extends CommandBuilder<az_acs_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -912,8 +912,8 @@ class az_acs_list_command_builder extends CommandBuilder<az_acs_list_command_res
  * ```
  */
 class az_acs_list_locations_command_builder extends CommandBuilder<az_acs_list_locations_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -939,8 +939,8 @@ class az_acs_list_locations_command_builder extends CommandBuilder<az_acs_list_l
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_acs_scale_command_builder extends CommandBuilder<az_acs_scale_command_result> {
-    constructor(commandPath: string, name: string, newAgentCount: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, newAgentCount: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.newAgentCount(newAgentCount)
         this.resourceGroup(resourceGroup)
@@ -986,8 +986,8 @@ class az_acs_scale_command_builder extends CommandBuilder<az_acs_scale_command_r
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_acs_show_command_builder extends CommandBuilder<az_acs_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1038,8 +1038,8 @@ class az_acs_show_command_builder extends CommandBuilder<az_acs_show_command_res
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_acs_wait_command_builder extends CommandBuilder<az_acs_wait_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }

@@ -62,7 +62,7 @@ export class az_aks_nodepool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static add(clusterName: string, name: string, resourceGroup: string): az_aks_nodepool_add_command_builder {
-        return new az_aks_nodepool_add_command_builder("az aks nodepool add", clusterName, name, resourceGroup);
+        return new az_aks_nodepool_add_command_builder("az aks nodepool add", 'az_aks_nodepool_add_command_result', clusterName, name, resourceGroup);
     }
 
     /**
@@ -82,7 +82,7 @@ export class az_aks_nodepool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(clusterName: string, name: string, resourceGroup: string): az_aks_nodepool_delete_command_builder {
-        return new az_aks_nodepool_delete_command_builder("az aks nodepool delete", clusterName, name, resourceGroup);
+        return new az_aks_nodepool_delete_command_builder("az aks nodepool delete", 'az_aks_nodepool_delete_command_result', clusterName, name, resourceGroup);
     }
 
     /**
@@ -101,7 +101,7 @@ export class az_aks_nodepool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static get_upgrades(clusterName: string, nodepoolName: string, resourceGroup: string): az_aks_nodepool_get_upgrades_command_builder {
-        return new az_aks_nodepool_get_upgrades_command_builder("az aks nodepool get-upgrades", clusterName, nodepoolName, resourceGroup);
+        return new az_aks_nodepool_get_upgrades_command_builder("az aks nodepool get-upgrades", 'az_aks_nodepool_get_upgrades_command_result', clusterName, nodepoolName, resourceGroup);
     }
 
     /**
@@ -119,7 +119,7 @@ export class az_aks_nodepool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(clusterName: string, resourceGroup: string): az_aks_nodepool_list_command_builder {
-        return new az_aks_nodepool_list_command_builder("az aks nodepool list", clusterName, resourceGroup);
+        return new az_aks_nodepool_list_command_builder("az aks nodepool list", 'az_aks_nodepool_list_command_result', clusterName, resourceGroup);
     }
 
     /**
@@ -140,7 +140,7 @@ export class az_aks_nodepool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static scale(clusterName: string, name: string, resourceGroup: string): az_aks_nodepool_scale_command_builder {
-        return new az_aks_nodepool_scale_command_builder("az aks nodepool scale", clusterName, name, resourceGroup);
+        return new az_aks_nodepool_scale_command_builder("az aks nodepool scale", 'az_aks_nodepool_scale_command_result', clusterName, name, resourceGroup);
     }
 
     /**
@@ -160,7 +160,7 @@ export class az_aks_nodepool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(clusterName: string, name: string, resourceGroup: string): az_aks_nodepool_show_command_builder {
-        return new az_aks_nodepool_show_command_builder("az aks nodepool show", clusterName, name, resourceGroup);
+        return new az_aks_nodepool_show_command_builder("az aks nodepool show", 'az_aks_nodepool_show_command_result', clusterName, name, resourceGroup);
     }
 
     /**
@@ -187,7 +187,7 @@ export class az_aks_nodepool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(clusterName: string, name: string, resourceGroup: string): az_aks_nodepool_update_command_builder {
-        return new az_aks_nodepool_update_command_builder("az aks nodepool update", clusterName, name, resourceGroup);
+        return new az_aks_nodepool_update_command_builder("az aks nodepool update", 'az_aks_nodepool_update_command_result', clusterName, name, resourceGroup);
     }
 
     /**
@@ -209,7 +209,7 @@ export class az_aks_nodepool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static upgrade(clusterName: string, kubernetesVersion: string, name: string, resourceGroup: string): az_aks_nodepool_upgrade_command_builder {
-        return new az_aks_nodepool_upgrade_command_builder("az aks nodepool upgrade", clusterName, kubernetesVersion, name, resourceGroup);
+        return new az_aks_nodepool_upgrade_command_builder("az aks nodepool upgrade", 'az_aks_nodepool_upgrade_command_result', clusterName, kubernetesVersion, name, resourceGroup);
     }
 }
 
@@ -232,7 +232,7 @@ export class az_aks {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static browse(name: string, resourceGroup: string): az_aks_browse_command_builder {
-        return new az_aks_browse_command_builder("az aks browse", name, resourceGroup);
+        return new az_aks_browse_command_builder("az aks browse", 'az_aks_browse_command_result', name, resourceGroup);
     }
 
     /**
@@ -307,7 +307,7 @@ export class az_aks {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_aks_create_command_builder {
-        return new az_aks_create_command_builder("az aks create", name, resourceGroup);
+        return new az_aks_create_command_builder("az aks create", 'az_aks_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -326,7 +326,7 @@ export class az_aks {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_aks_delete_command_builder {
-        return new az_aks_delete_command_builder("az aks delete", name, resourceGroup);
+        return new az_aks_delete_command_builder("az aks delete", 'az_aks_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -346,7 +346,7 @@ export class az_aks {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static disable_addons(addons: string, name: string, resourceGroup: string): az_aks_disable_addons_command_builder {
-        return new az_aks_disable_addons_command_builder("az aks disable-addons", addons, name, resourceGroup);
+        return new az_aks_disable_addons_command_builder("az aks disable-addons", 'az_aks_disable_addons_command_result', addons, name, resourceGroup);
     }
 
     /**
@@ -368,7 +368,7 @@ export class az_aks {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static enable_addons(addons: string, name: string, resourceGroup: string): az_aks_enable_addons_command_builder {
-        return new az_aks_enable_addons_command_builder("az aks enable-addons", addons, name, resourceGroup);
+        return new az_aks_enable_addons_command_builder("az aks enable-addons", 'az_aks_enable_addons_command_result', addons, name, resourceGroup);
     }
 
     /**
@@ -389,7 +389,7 @@ export class az_aks {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static get_credentials(name: string, resourceGroup: string): az_aks_get_credentials_command_builder {
-        return new az_aks_get_credentials_command_builder("az aks get-credentials", name, resourceGroup);
+        return new az_aks_get_credentials_command_builder("az aks get-credentials", 'az_aks_get_credentials_command_result', name, resourceGroup);
     }
 
     /**
@@ -406,7 +406,7 @@ export class az_aks {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static get_upgrades(name: string, resourceGroup: string): az_aks_get_upgrades_command_builder {
-        return new az_aks_get_upgrades_command_builder("az aks get-upgrades", name, resourceGroup);
+        return new az_aks_get_upgrades_command_builder("az aks get-upgrades", 'az_aks_get_upgrades_command_result', name, resourceGroup);
     }
 
     /**
@@ -421,7 +421,7 @@ export class az_aks {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static get_versions(location: string): az_aks_get_versions_command_builder {
-        return new az_aks_get_versions_command_builder("az aks get-versions", location);
+        return new az_aks_get_versions_command_builder("az aks get-versions", 'az_aks_get_versions_command_result', location);
     }
 
     /**
@@ -437,7 +437,7 @@ export class az_aks {
      * ```
      */
     static install_cli(): az_aks_install_cli_command_builder {
-        return new az_aks_install_cli_command_builder("az aks install-cli");
+        return new az_aks_install_cli_command_builder("az aks install-cli", 'az_aks_install_cli_command_result');
     }
 
     /**
@@ -451,7 +451,7 @@ export class az_aks {
      * ```
      */
     static list(): az_aks_list_command_builder {
-        return new az_aks_list_command_builder("az aks list");
+        return new az_aks_list_command_builder("az aks list", 'az_aks_list_command_result');
     }
 
     /**
@@ -469,7 +469,7 @@ export class az_aks {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static remove_dev_spaces(name: string, resourceGroup: string): az_aks_remove_dev_spaces_command_builder {
-        return new az_aks_remove_dev_spaces_command_builder("az aks remove-dev-spaces", name, resourceGroup);
+        return new az_aks_remove_dev_spaces_command_builder("az aks remove-dev-spaces", 'az_aks_remove_dev_spaces_command_result', name, resourceGroup);
     }
 
     /**
@@ -488,7 +488,7 @@ export class az_aks {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static rotate_certs(name: string, resourceGroup: string): az_aks_rotate_certs_command_builder {
-        return new az_aks_rotate_certs_command_builder("az aks rotate-certs", name, resourceGroup);
+        return new az_aks_rotate_certs_command_builder("az aks rotate-certs", 'az_aks_rotate_certs_command_result', name, resourceGroup);
     }
 
     /**
@@ -509,7 +509,7 @@ export class az_aks {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static scale(name: string, nodeCount: string, resourceGroup: string): az_aks_scale_command_builder {
-        return new az_aks_scale_command_builder("az aks scale", name, nodeCount, resourceGroup);
+        return new az_aks_scale_command_builder("az aks scale", 'az_aks_scale_command_result', name, nodeCount, resourceGroup);
     }
 
     /**
@@ -527,7 +527,7 @@ export class az_aks {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_aks_show_command_builder {
-        return new az_aks_show_command_builder("az aks show", name, resourceGroup);
+        return new az_aks_show_command_builder("az aks show", 'az_aks_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -563,7 +563,7 @@ export class az_aks {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, resourceGroup: string): az_aks_update_command_builder {
-        return new az_aks_update_command_builder("az aks update", name, resourceGroup);
+        return new az_aks_update_command_builder("az aks update", 'az_aks_update_command_result', name, resourceGroup);
     }
 
     /**
@@ -589,7 +589,7 @@ export class az_aks {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update_credentials(name: string, resourceGroup: string): az_aks_update_credentials_command_builder {
-        return new az_aks_update_credentials_command_builder("az aks update-credentials", name, resourceGroup);
+        return new az_aks_update_credentials_command_builder("az aks update-credentials", 'az_aks_update_credentials_command_result', name, resourceGroup);
     }
 
     /**
@@ -611,7 +611,7 @@ export class az_aks {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static upgrade(kubernetesVersion: string, name: string, resourceGroup: string): az_aks_upgrade_command_builder {
-        return new az_aks_upgrade_command_builder("az aks upgrade", kubernetesVersion, name, resourceGroup);
+        return new az_aks_upgrade_command_builder("az aks upgrade", 'az_aks_upgrade_command_result', kubernetesVersion, name, resourceGroup);
     }
 
     /**
@@ -632,7 +632,7 @@ export class az_aks {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static use_dev_spaces(name: string, resourceGroup: string): az_aks_use_dev_spaces_command_builder {
-        return new az_aks_use_dev_spaces_command_builder("az aks use-dev-spaces", name, resourceGroup);
+        return new az_aks_use_dev_spaces_command_builder("az aks use-dev-spaces", 'az_aks_use_dev_spaces_command_result', name, resourceGroup);
     }
 
     /**
@@ -656,7 +656,7 @@ export class az_aks {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static wait(name: string, resourceGroup: string): az_aks_wait_command_builder {
-        return new az_aks_wait_command_builder("az aks wait", name, resourceGroup);
+        return new az_aks_wait_command_builder("az aks wait", 'az_aks_wait_command_result', name, resourceGroup);
     }
 }
 
@@ -693,8 +693,8 @@ export class az_aks {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_nodepool_add_command_builder extends CommandBuilder<az_aks_nodepool_add_command_result> {
-    constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.clusterName(clusterName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -844,8 +844,8 @@ class az_aks_nodepool_add_command_builder extends CommandBuilder<az_aks_nodepool
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_nodepool_delete_command_builder extends CommandBuilder<az_aks_nodepool_delete_command_result> {
-    constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.clusterName(clusterName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -898,8 +898,8 @@ class az_aks_nodepool_delete_command_builder extends CommandBuilder<az_aks_nodep
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_nodepool_get_upgrades_command_builder extends CommandBuilder<az_aks_nodepool_get_upgrades_command_result> {
-    constructor(commandPath: string, clusterName: string, nodepoolName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, nodepoolName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.clusterName(clusterName)
         this.nodepoolName(nodepoolName)
         this.resourceGroup(resourceGroup)
@@ -945,8 +945,8 @@ class az_aks_nodepool_get_upgrades_command_builder extends CommandBuilder<az_aks
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_nodepool_list_command_builder extends CommandBuilder<az_aks_nodepool_list_command_result> {
-    constructor(commandPath: string, clusterName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.clusterName(clusterName)
         this.resourceGroup(resourceGroup)
     }
@@ -994,8 +994,8 @@ class az_aks_nodepool_list_command_builder extends CommandBuilder<az_aks_nodepoo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_nodepool_scale_command_builder extends CommandBuilder<az_aks_nodepool_scale_command_result> {
-    constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.clusterName(clusterName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1055,8 +1055,8 @@ class az_aks_nodepool_scale_command_builder extends CommandBuilder<az_aks_nodepo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_nodepool_show_command_builder extends CommandBuilder<az_aks_nodepool_show_command_result> {
-    constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.clusterName(clusterName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1117,8 +1117,8 @@ class az_aks_nodepool_show_command_builder extends CommandBuilder<az_aks_nodepoo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_nodepool_update_command_builder extends CommandBuilder<az_aks_nodepool_update_command_result> {
-    constructor(commandPath: string, clusterName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.clusterName(clusterName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1216,8 +1216,8 @@ class az_aks_nodepool_update_command_builder extends CommandBuilder<az_aks_nodep
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_nodepool_upgrade_command_builder extends CommandBuilder<az_aks_nodepool_upgrade_command_result> {
-    constructor(commandPath: string, clusterName: string, kubernetesVersion: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, kubernetesVersion: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.clusterName(clusterName)
         this.kubernetesVersion(kubernetesVersion)
         this.name(name)
@@ -1278,8 +1278,8 @@ class az_aks_nodepool_upgrade_command_builder extends CommandBuilder<az_aks_node
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_browse_command_builder extends CommandBuilder<az_aks_browse_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1393,8 +1393,8 @@ class az_aks_browse_command_builder extends CommandBuilder<az_aks_browse_command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_create_command_builder extends CommandBuilder<az_aks_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1782,8 +1782,8 @@ class az_aks_create_command_builder extends CommandBuilder<az_aks_create_command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_delete_command_builder extends CommandBuilder<az_aks_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1836,8 +1836,8 @@ class az_aks_delete_command_builder extends CommandBuilder<az_aks_delete_command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_disable_addons_command_builder extends CommandBuilder<az_aks_disable_addons_command_result> {
-    constructor(commandPath: string, addons: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, addons: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.addons(addons)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1893,8 +1893,8 @@ class az_aks_disable_addons_command_builder extends CommandBuilder<az_aks_disabl
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_enable_addons_command_builder extends CommandBuilder<az_aks_enable_addons_command_result> {
-    constructor(commandPath: string, addons: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, addons: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.addons(addons)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1961,8 +1961,8 @@ class az_aks_enable_addons_command_builder extends CommandBuilder<az_aks_enable_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_get_credentials_command_builder extends CommandBuilder<az_aks_get_credentials_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2024,8 +2024,8 @@ class az_aks_get_credentials_command_builder extends CommandBuilder<az_aks_get_c
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_get_upgrades_command_builder extends CommandBuilder<az_aks_get_upgrades_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2061,8 +2061,8 @@ class az_aks_get_upgrades_command_builder extends CommandBuilder<az_aks_get_upgr
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_aks_get_versions_command_builder extends CommandBuilder<az_aks_get_versions_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -2092,8 +2092,8 @@ class az_aks_get_versions_command_builder extends CommandBuilder<az_aks_get_vers
  * ```
  */
 class az_aks_install_cli_command_builder extends CommandBuilder<az_aks_install_cli_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Version of kubectl to install. */
@@ -2138,8 +2138,8 @@ class az_aks_install_cli_command_builder extends CommandBuilder<az_aks_install_c
  * ```
  */
 class az_aks_list_command_builder extends CommandBuilder<az_aks_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -2176,8 +2176,8 @@ class az_aks_list_command_builder extends CommandBuilder<az_aks_list_command_res
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_remove_dev_spaces_command_builder extends CommandBuilder<az_aks_remove_dev_spaces_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2223,8 +2223,8 @@ class az_aks_remove_dev_spaces_command_builder extends CommandBuilder<az_aks_rem
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_rotate_certs_command_builder extends CommandBuilder<az_aks_rotate_certs_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2278,8 +2278,8 @@ class az_aks_rotate_certs_command_builder extends CommandBuilder<az_aks_rotate_c
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_scale_command_builder extends CommandBuilder<az_aks_scale_command_result> {
-    constructor(commandPath: string, name: string, nodeCount: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, nodeCount: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.nodeCount(nodeCount)
         this.resourceGroup(resourceGroup)
@@ -2337,8 +2337,8 @@ class az_aks_scale_command_builder extends CommandBuilder<az_aks_scale_command_r
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_show_command_builder extends CommandBuilder<az_aks_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2401,8 +2401,8 @@ class az_aks_show_command_builder extends CommandBuilder<az_aks_show_command_res
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_update_command_builder extends CommandBuilder<az_aks_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2563,8 +2563,8 @@ class az_aks_update_command_builder extends CommandBuilder<az_aks_update_command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_update_credentials_command_builder extends CommandBuilder<az_aks_update_credentials_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2661,8 +2661,8 @@ class az_aks_update_credentials_command_builder extends CommandBuilder<az_aks_up
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_upgrade_command_builder extends CommandBuilder<az_aks_upgrade_command_result> {
-    constructor(commandPath: string, kubernetesVersion: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, kubernetesVersion: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.kubernetesVersion(kubernetesVersion)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2729,8 +2729,8 @@ class az_aks_upgrade_command_builder extends CommandBuilder<az_aks_upgrade_comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_use_dev_spaces_command_builder extends CommandBuilder<az_aks_use_dev_spaces_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2799,8 +2799,8 @@ class az_aks_use_dev_spaces_command_builder extends CommandBuilder<az_aks_use_de
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_wait_command_builder extends CommandBuilder<az_aks_wait_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }

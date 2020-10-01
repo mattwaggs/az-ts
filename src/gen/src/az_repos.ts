@@ -67,7 +67,7 @@ export class az_repos_import {
      * @param {string} gitSourceUrl Url of the source git repository.
      */
     static create(gitSourceUrl: string): az_repos_import_create_command_builder {
-        return new az_repos_import_create_command_builder("az repos import create", gitSourceUrl);
+        return new az_repos_import_create_command_builder("az repos import create", 'az_repos_import_create_command_result', gitSourceUrl);
     }
 }
 
@@ -103,7 +103,7 @@ export class az_repos_policy_approver_count {
      * @param {boolean} resetOnSourcePush Whether to reset source on push.
      */
     static create(allowDownvotes: boolean, blocking: boolean, branch: string, creatorVoteCounts: boolean, enabled: boolean, minimumApproverCount: string, repositoryId: string, resetOnSourcePush: boolean): az_repos_policy_approver_count_create_command_builder {
-        return new az_repos_policy_approver_count_create_command_builder("az repos policy approver-count create", allowDownvotes, blocking, branch, creatorVoteCounts, enabled, minimumApproverCount, repositoryId, resetOnSourcePush);
+        return new az_repos_policy_approver_count_create_command_builder("az repos policy approver-count create", 'az_repos_policy_approver_count_create_command_result', allowDownvotes, blocking, branch, creatorVoteCounts, enabled, minimumApproverCount, repositoryId, resetOnSourcePush);
     }
 
     /**
@@ -130,7 +130,7 @@ export class az_repos_policy_approver_count {
      * @param {string} policyId ID of the policy.
      */
     static update(policyId: string): az_repos_policy_approver_count_update_command_builder {
-        return new az_repos_policy_approver_count_update_command_builder("az repos policy approver-count update", policyId);
+        return new az_repos_policy_approver_count_update_command_builder("az repos policy approver-count update", 'az_repos_policy_approver_count_update_command_result', policyId);
     }
 }
 
@@ -169,7 +169,7 @@ export class az_repos_policy_build {
      * @param {string} validDuration Policy validity duration (in minutes).
      */
     static create(blocking: boolean, branch: string, buildDefinitionId: string, displayName: string, enabled: boolean, manualQueueOnly: boolean, queueOnSourceUpdateOnly: boolean, repositoryId: string, validDuration: string): az_repos_policy_build_create_command_builder {
-        return new az_repos_policy_build_create_command_builder("az repos policy build create", blocking, branch, buildDefinitionId, displayName, enabled, manualQueueOnly, queueOnSourceUpdateOnly, repositoryId, validDuration);
+        return new az_repos_policy_build_create_command_builder("az repos policy build create", 'az_repos_policy_build_create_command_result', blocking, branch, buildDefinitionId, displayName, enabled, manualQueueOnly, queueOnSourceUpdateOnly, repositoryId, validDuration);
     }
 
     /**
@@ -198,7 +198,7 @@ export class az_repos_policy_build {
      * @param {string} policyId ID of the policy.
      */
     static update(policyId: string): az_repos_policy_build_update_command_builder {
-        return new az_repos_policy_build_update_command_builder("az repos policy build update", policyId);
+        return new az_repos_policy_build_update_command_builder("az repos policy build update", 'az_repos_policy_build_update_command_result', policyId);
     }
 }
 
@@ -223,7 +223,7 @@ export class az_repos_policy_case_enforcement {
      * @param {string} repositoryId Id of the repository on which to apply the policy.
      */
     static create(blocking: boolean, enabled: boolean, repositoryId: string): az_repos_policy_case_enforcement_create_command_builder {
-        return new az_repos_policy_case_enforcement_create_command_builder("az repos policy case-enforcement create", blocking, enabled, repositoryId);
+        return new az_repos_policy_case_enforcement_create_command_builder("az repos policy case-enforcement create", 'az_repos_policy_case_enforcement_create_command_result', blocking, enabled, repositoryId);
     }
 
     /**
@@ -244,7 +244,7 @@ export class az_repos_policy_case_enforcement {
      * @param {string} policyId ID of the policy.
      */
     static update(policyId: string): az_repos_policy_case_enforcement_update_command_builder {
-        return new az_repos_policy_case_enforcement_update_command_builder("az repos policy case-enforcement update", policyId);
+        return new az_repos_policy_case_enforcement_update_command_builder("az repos policy case-enforcement update", 'az_repos_policy_case_enforcement_update_command_result', policyId);
     }
 }
 
@@ -272,7 +272,7 @@ export class az_repos_policy_comment_required {
      * @param {string} repositoryId Id of the repository on which to apply the policy.
      */
     static create(blocking: boolean, branch: string, enabled: boolean, repositoryId: string): az_repos_policy_comment_required_create_command_builder {
-        return new az_repos_policy_comment_required_create_command_builder("az repos policy comment-required create", blocking, branch, enabled, repositoryId);
+        return new az_repos_policy_comment_required_create_command_builder("az repos policy comment-required create", 'az_repos_policy_comment_required_create_command_result', blocking, branch, enabled, repositoryId);
     }
 
     /**
@@ -295,7 +295,7 @@ export class az_repos_policy_comment_required {
      * @param {string} policyId ID of the policy.
      */
     static update(policyId: string): az_repos_policy_comment_required_update_command_builder {
-        return new az_repos_policy_comment_required_update_command_builder("az repos policy comment-required update", policyId);
+        return new az_repos_policy_comment_required_update_command_builder("az repos policy comment-required update", 'az_repos_policy_comment_required_update_command_result', policyId);
     }
 }
 
@@ -324,7 +324,7 @@ export class az_repos_policy_file_size {
      * @param {boolean} useUncompressedSize Whether to use uncompressed size.
      */
     static create(blocking: boolean, enabled: boolean, maximumGitBlobSize: string, repositoryId: string, useUncompressedSize: boolean): az_repos_policy_file_size_create_command_builder {
-        return new az_repos_policy_file_size_create_command_builder("az repos policy file-size create", blocking, enabled, maximumGitBlobSize, repositoryId, useUncompressedSize);
+        return new az_repos_policy_file_size_create_command_builder("az repos policy file-size create", 'az_repos_policy_file_size_create_command_result', blocking, enabled, maximumGitBlobSize, repositoryId, useUncompressedSize);
     }
 
     /**
@@ -347,7 +347,7 @@ export class az_repos_policy_file_size {
      * @param {string} policyId ID of the policy.
      */
     static update(policyId: string): az_repos_policy_file_size_update_command_builder {
-        return new az_repos_policy_file_size_update_command_builder("az repos policy file-size update", policyId);
+        return new az_repos_policy_file_size_update_command_builder("az repos policy file-size update", 'az_repos_policy_file_size_update_command_result', policyId);
     }
 }
 
@@ -380,7 +380,7 @@ export class az_repos_policy_merge_strategy {
      * @param {string} repositoryId Id of the repository on which to apply the policy.
      */
     static create(blocking: boolean, branch: string, enabled: boolean, repositoryId: string): az_repos_policy_merge_strategy_create_command_builder {
-        return new az_repos_policy_merge_strategy_create_command_builder("az repos policy merge-strategy create", blocking, branch, enabled, repositoryId);
+        return new az_repos_policy_merge_strategy_create_command_builder("az repos policy merge-strategy create", 'az_repos_policy_merge_strategy_create_command_result', blocking, branch, enabled, repositoryId);
     }
 
     /**
@@ -408,7 +408,7 @@ export class az_repos_policy_merge_strategy {
      * @param {string} policyId ID of the policy.
      */
     static update(policyId: string): az_repos_policy_merge_strategy_update_command_builder {
-        return new az_repos_policy_merge_strategy_update_command_builder("az repos policy merge-strategy update", policyId);
+        return new az_repos_policy_merge_strategy_update_command_builder("az repos policy merge-strategy update", 'az_repos_policy_merge_strategy_update_command_result', policyId);
     }
 }
 
@@ -441,7 +441,7 @@ export class az_repos_policy_required_reviewer {
      * @param {string} requiredReviewerIds Required reviewers email addresses separated by ';'. For example: john@contoso.com;alice@contoso.com.
      */
     static create(blocking: boolean, branch: string, enabled: boolean, message: string, repositoryId: string, requiredReviewerIds: string): az_repos_policy_required_reviewer_create_command_builder {
-        return new az_repos_policy_required_reviewer_create_command_builder("az repos policy required-reviewer create", blocking, branch, enabled, message, repositoryId, requiredReviewerIds);
+        return new az_repos_policy_required_reviewer_create_command_builder("az repos policy required-reviewer create", 'az_repos_policy_required_reviewer_create_command_result', blocking, branch, enabled, message, repositoryId, requiredReviewerIds);
     }
 
     /**
@@ -467,7 +467,7 @@ export class az_repos_policy_required_reviewer {
      * @param {string} policyId ID of the policy.
      */
     static update(policyId: string): az_repos_policy_required_reviewer_update_command_builder {
-        return new az_repos_policy_required_reviewer_update_command_builder("az repos policy required-reviewer update", policyId);
+        return new az_repos_policy_required_reviewer_update_command_builder("az repos policy required-reviewer update", 'az_repos_policy_required_reviewer_update_command_result', policyId);
     }
 }
 
@@ -495,7 +495,7 @@ export class az_repos_policy_work_item_linking {
      * @param {string} repositoryId Id of the repository on which to apply the policy.
      */
     static create(blocking: boolean, branch: string, enabled: boolean, repositoryId: string): az_repos_policy_work_item_linking_create_command_builder {
-        return new az_repos_policy_work_item_linking_create_command_builder("az repos policy work-item-linking create", blocking, branch, enabled, repositoryId);
+        return new az_repos_policy_work_item_linking_create_command_builder("az repos policy work-item-linking create", 'az_repos_policy_work_item_linking_create_command_result', blocking, branch, enabled, repositoryId);
     }
 
     /**
@@ -518,7 +518,7 @@ export class az_repos_policy_work_item_linking {
      * @param {string} policyId ID of the policy.
      */
     static update(policyId: string): az_repos_policy_work_item_linking_update_command_builder {
-        return new az_repos_policy_work_item_linking_update_command_builder("az repos policy work-item-linking update", policyId);
+        return new az_repos_policy_work_item_linking_update_command_builder("az repos policy work-item-linking update", 'az_repos_policy_work_item_linking_update_command_result', policyId);
     }
 }
 
@@ -539,7 +539,7 @@ export class az_repos_policy {
      * @param {string} policyConfiguration Local file path for configuration file. Please use / backslash when typing in directory path.
      */
     static create(policyConfiguration: string): az_repos_policy_create_command_builder {
-        return new az_repos_policy_create_command_builder("az repos policy create", policyConfiguration);
+        return new az_repos_policy_create_command_builder("az repos policy create", 'az_repos_policy_create_command_result', policyConfiguration);
     }
 
     /**
@@ -558,7 +558,7 @@ export class az_repos_policy {
      * @param {string} policyId ID of the policy.
      */
     static delete(policyId: string): az_repos_policy_delete_command_builder {
-        return new az_repos_policy_delete_command_builder("az repos policy delete", policyId);
+        return new az_repos_policy_delete_command_builder("az repos policy delete", 'az_repos_policy_delete_command_result', policyId);
     }
 
     /**
@@ -576,7 +576,7 @@ export class az_repos_policy {
      * ```
      */
     static list(): az_repos_policy_list_command_builder {
-        return new az_repos_policy_list_command_builder("az repos policy list");
+        return new az_repos_policy_list_command_builder("az repos policy list", 'az_repos_policy_list_command_result');
     }
 
     /**
@@ -595,7 +595,7 @@ export class az_repos_policy {
      * @param {string} policyId ID of the policy.
      */
     static show(policyId: string): az_repos_policy_show_command_builder {
-        return new az_repos_policy_show_command_builder("az repos policy show", policyId);
+        return new az_repos_policy_show_command_builder("az repos policy show", 'az_repos_policy_show_command_result', policyId);
     }
 
     /**
@@ -615,7 +615,7 @@ export class az_repos_policy {
      * @param {string} policyId ID of the policy.
      */
     static update(policyConfiguration: string, policyId: string): az_repos_policy_update_command_builder {
-        return new az_repos_policy_update_command_builder("az repos policy update", policyConfiguration, policyId);
+        return new az_repos_policy_update_command_builder("az repos policy update", 'az_repos_policy_update_command_result', policyConfiguration, policyId);
     }
 }
 
@@ -638,7 +638,7 @@ export class az_repos_pr_policy {
      * @param {string} id ID of the pull request.
      */
     static list(id: string): az_repos_pr_policy_list_command_builder {
-        return new az_repos_pr_policy_list_command_builder("az repos pr policy list", id);
+        return new az_repos_pr_policy_list_command_builder("az repos pr policy list", 'az_repos_pr_policy_list_command_result', id);
     }
 
     /**
@@ -657,7 +657,7 @@ export class az_repos_pr_policy {
      * @param {string} id ID of the pull request.
      */
     static queue(evaluationId: string, id: string): az_repos_pr_policy_queue_command_builder {
-        return new az_repos_pr_policy_queue_command_builder("az repos pr policy queue", evaluationId, id);
+        return new az_repos_pr_policy_queue_command_builder("az repos pr policy queue", 'az_repos_pr_policy_queue_command_result', evaluationId, id);
     }
 }
 
@@ -679,7 +679,7 @@ export class az_repos_pr_reviewer {
      * @param {string} reviewers Users or groups to include as reviewers on a pull request. Space separated.
      */
     static add(id: string, reviewers: string): az_repos_pr_reviewer_add_command_builder {
-        return new az_repos_pr_reviewer_add_command_builder("az repos pr reviewer add", id, reviewers);
+        return new az_repos_pr_reviewer_add_command_builder("az repos pr reviewer add", 'az_repos_pr_reviewer_add_command_result', id, reviewers);
     }
 
     /**
@@ -697,7 +697,7 @@ export class az_repos_pr_reviewer {
      * @param {string} id ID of the pull request.
      */
     static list(id: string): az_repos_pr_reviewer_list_command_builder {
-        return new az_repos_pr_reviewer_list_command_builder("az repos pr reviewer list", id);
+        return new az_repos_pr_reviewer_list_command_builder("az repos pr reviewer list", 'az_repos_pr_reviewer_list_command_result', id);
     }
 
     /**
@@ -716,7 +716,7 @@ export class az_repos_pr_reviewer {
      * @param {string} reviewers Users or groups to remove as reviewers on a pull request. Space separated.
      */
     static remove(id: string, reviewers: string): az_repos_pr_reviewer_remove_command_builder {
-        return new az_repos_pr_reviewer_remove_command_builder("az repos pr reviewer remove", id, reviewers);
+        return new az_repos_pr_reviewer_remove_command_builder("az repos pr reviewer remove", 'az_repos_pr_reviewer_remove_command_result', id, reviewers);
     }
 }
 
@@ -738,7 +738,7 @@ export class az_repos_pr_work_item {
      * @param {string} workItems IDs of the work items to link. Space separated.
      */
     static add(id: string, workItems: string): az_repos_pr_work_item_add_command_builder {
-        return new az_repos_pr_work_item_add_command_builder("az repos pr work-item add", id, workItems);
+        return new az_repos_pr_work_item_add_command_builder("az repos pr work-item add", 'az_repos_pr_work_item_add_command_result', id, workItems);
     }
 
     /**
@@ -756,7 +756,7 @@ export class az_repos_pr_work_item {
      * @param {string} id ID of the pull request.
      */
     static list(id: string): az_repos_pr_work_item_list_command_builder {
-        return new az_repos_pr_work_item_list_command_builder("az repos pr work-item list", id);
+        return new az_repos_pr_work_item_list_command_builder("az repos pr work-item list", 'az_repos_pr_work_item_list_command_result', id);
     }
 
     /**
@@ -775,7 +775,7 @@ export class az_repos_pr_work_item {
      * @param {string} workItems IDs of the work items to unlink. Space separated.
      */
     static remove(id: string, workItems: string): az_repos_pr_work_item_remove_command_builder {
-        return new az_repos_pr_work_item_remove_command_builder("az repos pr work-item remove", id, workItems);
+        return new az_repos_pr_work_item_remove_command_builder("az repos pr work-item remove", 'az_repos_pr_work_item_remove_command_result', id, workItems);
     }
 }
 
@@ -794,7 +794,7 @@ export class az_repos_pr {
      * @param {string} id ID of the pull request.
      */
     static checkout(id: string): az_repos_pr_checkout_command_builder {
-        return new az_repos_pr_checkout_command_builder("az repos pr checkout", id);
+        return new az_repos_pr_checkout_command_builder("az repos pr checkout", 'az_repos_pr_checkout_command_result', id);
     }
 
     /**
@@ -825,7 +825,7 @@ export class az_repos_pr {
      * ```
      */
     static create(): az_repos_pr_create_command_builder {
-        return new az_repos_pr_create_command_builder("az repos pr create");
+        return new az_repos_pr_create_command_builder("az repos pr create", 'az_repos_pr_create_command_result');
     }
 
     /**
@@ -850,7 +850,7 @@ export class az_repos_pr {
      * ```
      */
     static list(): az_repos_pr_list_command_builder {
-        return new az_repos_pr_list_command_builder("az repos pr list");
+        return new az_repos_pr_list_command_builder("az repos pr list", 'az_repos_pr_list_command_result');
     }
 
     /**
@@ -869,7 +869,7 @@ export class az_repos_pr {
      * @param {'approve' | 'approve-with-suggestions' | 'reject' | 'reset' | 'wait-for-author'} vote New vote value for the pull request.
      */
     static set_vote(id: string, vote: 'approve' | 'approve-with-suggestions' | 'reject' | 'reset' | 'wait-for-author'): az_repos_pr_set_vote_command_builder {
-        return new az_repos_pr_set_vote_command_builder("az repos pr set-vote", id, vote);
+        return new az_repos_pr_set_vote_command_builder("az repos pr set-vote", 'az_repos_pr_set_vote_command_result', id, vote);
     }
 
     /**
@@ -888,7 +888,7 @@ export class az_repos_pr {
      * @param {string} id ID of the pull request.
      */
     static show(id: string): az_repos_pr_show_command_builder {
-        return new az_repos_pr_show_command_builder("az repos pr show", id);
+        return new az_repos_pr_show_command_builder("az repos pr show", 'az_repos_pr_show_command_result', id);
     }
 
     /**
@@ -916,7 +916,7 @@ export class az_repos_pr {
      * @param {string} id ID of the pull request.
      */
     static update(id: string): az_repos_pr_update_command_builder {
-        return new az_repos_pr_update_command_builder("az repos pr update", id);
+        return new az_repos_pr_update_command_builder("az repos pr update", 'az_repos_pr_update_command_result', id);
     }
 }
 
@@ -940,7 +940,7 @@ export class az_repos_ref {
      * @param {string} objectId Id of the object to create the reference from.
      */
     static create(name: string, objectId: string): az_repos_ref_create_command_builder {
-        return new az_repos_ref_create_command_builder("az repos ref create", name, objectId);
+        return new az_repos_ref_create_command_builder("az repos ref create", 'az_repos_ref_create_command_result', name, objectId);
     }
 
     /**
@@ -961,7 +961,7 @@ export class az_repos_ref {
      * @param {string} objectId Id of the reference to delete.
      */
     static delete(name: string, objectId: string): az_repos_ref_delete_command_builder {
-        return new az_repos_ref_delete_command_builder("az repos ref delete", name, objectId);
+        return new az_repos_ref_delete_command_builder("az repos ref delete", 'az_repos_ref_delete_command_result', name, objectId);
     }
 
     /**
@@ -979,7 +979,7 @@ export class az_repos_ref {
      * ```
      */
     static list(): az_repos_ref_list_command_builder {
-        return new az_repos_ref_list_command_builder("az repos ref list");
+        return new az_repos_ref_list_command_builder("az repos ref list", 'az_repos_ref_list_command_result');
     }
 
     /**
@@ -998,7 +998,7 @@ export class az_repos_ref {
      * @param {string} name Name of the reference to update (example: heads/my_branch).
      */
     static lock(name: string): az_repos_ref_lock_command_builder {
-        return new az_repos_ref_lock_command_builder("az repos ref lock", name);
+        return new az_repos_ref_lock_command_builder("az repos ref lock", 'az_repos_ref_lock_command_result', name);
     }
 
     /**
@@ -1017,7 +1017,7 @@ export class az_repos_ref {
      * @param {string} name Name of the reference to update (example: heads/my_branch).
      */
     static unlock(name: string): az_repos_ref_unlock_command_builder {
-        return new az_repos_ref_unlock_command_builder("az repos ref unlock", name);
+        return new az_repos_ref_unlock_command_builder("az repos ref unlock", 'az_repos_ref_unlock_command_result', name);
     }
 }
 
@@ -1039,7 +1039,7 @@ export class az_repos {
      * @param {string} name Name for the new repository.
      */
     static create(name: string): az_repos_create_command_builder {
-        return new az_repos_create_command_builder("az repos create", name);
+        return new az_repos_create_command_builder("az repos create", 'az_repos_create_command_result', name);
     }
 
     /**
@@ -1058,7 +1058,7 @@ export class az_repos {
      * @param {string} id ID of the repository.
      */
     static delete(id: string): az_repos_delete_command_builder {
-        return new az_repos_delete_command_builder("az repos delete", id);
+        return new az_repos_delete_command_builder("az repos delete", 'az_repos_delete_command_result', id);
     }
 
     /**
@@ -1074,7 +1074,7 @@ export class az_repos {
      * ```
      */
     static list(): az_repos_list_command_builder {
-        return new az_repos_list_command_builder("az repos list");
+        return new az_repos_list_command_builder("az repos list", 'az_repos_list_command_result');
     }
 
     /**
@@ -1094,7 +1094,7 @@ export class az_repos {
      * @param {string} repository Name or ID of the repository.
      */
     static show(repository: string): az_repos_show_command_builder {
-        return new az_repos_show_command_builder("az repos show", repository);
+        return new az_repos_show_command_builder("az repos show", 'az_repos_show_command_result', repository);
     }
 
     /**
@@ -1114,7 +1114,7 @@ export class az_repos {
      * @param {string} repository Name or ID of the repository.
      */
     static update(repository: string): az_repos_update_command_builder {
-        return new az_repos_update_command_builder("az repos update", repository);
+        return new az_repos_update_command_builder("az repos update", 'az_repos_update_command_result', repository);
     }
 }
 
@@ -1137,8 +1137,8 @@ export class az_repos {
  * @param {string} gitSourceUrl Url of the source git repository.
  */
 class az_repos_import_create_command_builder extends CommandBuilder<az_repos_import_create_command_result> {
-    constructor(commandPath: string, gitSourceUrl: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, gitSourceUrl: string) {
+        super(commandPath, resultDataTypeName);
         this.gitSourceUrl(gitSourceUrl)
     }
 
@@ -1227,8 +1227,8 @@ class az_repos_import_create_command_builder extends CommandBuilder<az_repos_imp
  * @param {boolean} resetOnSourcePush Whether to reset source on push.
  */
 class az_repos_policy_approver_count_create_command_builder extends CommandBuilder<az_repos_policy_approver_count_create_command_result> {
-    constructor(commandPath: string, allowDownvotes: boolean, blocking: boolean, branch: string, creatorVoteCounts: boolean, enabled: boolean, minimumApproverCount: string, repositoryId: string, resetOnSourcePush: boolean) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, allowDownvotes: boolean, blocking: boolean, branch: string, creatorVoteCounts: boolean, enabled: boolean, minimumApproverCount: string, repositoryId: string, resetOnSourcePush: boolean) {
+        super(commandPath, resultDataTypeName);
         this.allowDownvotes(allowDownvotes)
         this.blocking(blocking)
         this.branch(branch)
@@ -1342,8 +1342,8 @@ class az_repos_policy_approver_count_create_command_builder extends CommandBuild
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_approver_count_update_command_builder extends CommandBuilder<az_repos_policy_approver_count_update_command_result> {
-    constructor(commandPath: string, policyId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyId: string) {
+        super(commandPath, resultDataTypeName);
         this.policyId(policyId)
     }
 
@@ -1465,8 +1465,8 @@ class az_repos_policy_approver_count_update_command_builder extends CommandBuild
  * @param {string} validDuration Policy validity duration (in minutes).
  */
 class az_repos_policy_build_create_command_builder extends CommandBuilder<az_repos_policy_build_create_command_result> {
-    constructor(commandPath: string, blocking: boolean, branch: string, buildDefinitionId: string, displayName: string, enabled: boolean, manualQueueOnly: boolean, queueOnSourceUpdateOnly: boolean, repositoryId: string, validDuration: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, blocking: boolean, branch: string, buildDefinitionId: string, displayName: string, enabled: boolean, manualQueueOnly: boolean, queueOnSourceUpdateOnly: boolean, repositoryId: string, validDuration: string) {
+        super(commandPath, resultDataTypeName);
         this.blocking(blocking)
         this.branch(branch)
         this.buildDefinitionId(buildDefinitionId)
@@ -1595,8 +1595,8 @@ class az_repos_policy_build_create_command_builder extends CommandBuilder<az_rep
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_build_update_command_builder extends CommandBuilder<az_repos_policy_build_update_command_result> {
-    constructor(commandPath: string, policyId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyId: string) {
+        super(commandPath, resultDataTypeName);
         this.policyId(policyId)
     }
 
@@ -1716,8 +1716,8 @@ class az_repos_policy_build_update_command_builder extends CommandBuilder<az_rep
  * @param {string} repositoryId Id of the repository on which to apply the policy.
  */
 class az_repos_policy_case_enforcement_create_command_builder extends CommandBuilder<az_repos_policy_case_enforcement_create_command_result> {
-    constructor(commandPath: string, blocking: boolean, enabled: boolean, repositoryId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, blocking: boolean, enabled: boolean, repositoryId: string) {
+        super(commandPath, resultDataTypeName);
         this.blocking(blocking)
         this.enabled(enabled)
         this.repositoryId(repositoryId)
@@ -1784,8 +1784,8 @@ class az_repos_policy_case_enforcement_create_command_builder extends CommandBui
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_case_enforcement_update_command_builder extends CommandBuilder<az_repos_policy_case_enforcement_update_command_result> {
-    constructor(commandPath: string, policyId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyId: string) {
+        super(commandPath, resultDataTypeName);
         this.policyId(policyId)
     }
 
@@ -1860,8 +1860,8 @@ class az_repos_policy_case_enforcement_update_command_builder extends CommandBui
  * @param {string} repositoryId Id of the repository on which to apply the policy.
  */
 class az_repos_policy_comment_required_create_command_builder extends CommandBuilder<az_repos_policy_comment_required_create_command_result> {
-    constructor(commandPath: string, blocking: boolean, branch: string, enabled: boolean, repositoryId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, blocking: boolean, branch: string, enabled: boolean, repositoryId: string) {
+        super(commandPath, resultDataTypeName);
         this.blocking(blocking)
         this.branch(branch)
         this.enabled(enabled)
@@ -1943,8 +1943,8 @@ class az_repos_policy_comment_required_create_command_builder extends CommandBui
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_comment_required_update_command_builder extends CommandBuilder<az_repos_policy_comment_required_update_command_result> {
-    constructor(commandPath: string, policyId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyId: string) {
+        super(commandPath, resultDataTypeName);
         this.policyId(policyId)
     }
 
@@ -2032,8 +2032,8 @@ class az_repos_policy_comment_required_update_command_builder extends CommandBui
  * @param {boolean} useUncompressedSize Whether to use uncompressed size.
  */
 class az_repos_policy_file_size_create_command_builder extends CommandBuilder<az_repos_policy_file_size_create_command_result> {
-    constructor(commandPath: string, blocking: boolean, enabled: boolean, maximumGitBlobSize: string, repositoryId: string, useUncompressedSize: boolean) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, blocking: boolean, enabled: boolean, maximumGitBlobSize: string, repositoryId: string, useUncompressedSize: boolean) {
+        super(commandPath, resultDataTypeName);
         this.blocking(blocking)
         this.enabled(enabled)
         this.maximumGitBlobSize(maximumGitBlobSize)
@@ -2116,8 +2116,8 @@ class az_repos_policy_file_size_create_command_builder extends CommandBuilder<az
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_file_size_update_command_builder extends CommandBuilder<az_repos_policy_file_size_update_command_result> {
-    constructor(commandPath: string, policyId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyId: string) {
+        super(commandPath, resultDataTypeName);
         this.policyId(policyId)
     }
 
@@ -2209,8 +2209,8 @@ class az_repos_policy_file_size_update_command_builder extends CommandBuilder<az
  * @param {string} repositoryId Id of the repository on which to apply the policy.
  */
 class az_repos_policy_merge_strategy_create_command_builder extends CommandBuilder<az_repos_policy_merge_strategy_create_command_result> {
-    constructor(commandPath: string, blocking: boolean, branch: string, enabled: boolean, repositoryId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, blocking: boolean, branch: string, enabled: boolean, repositoryId: string) {
+        super(commandPath, resultDataTypeName);
         this.blocking(blocking)
         this.branch(branch)
         this.enabled(enabled)
@@ -2327,8 +2327,8 @@ class az_repos_policy_merge_strategy_create_command_builder extends CommandBuild
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_merge_strategy_update_command_builder extends CommandBuilder<az_repos_policy_merge_strategy_update_command_result> {
-    constructor(commandPath: string, policyId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyId: string) {
+        super(commandPath, resultDataTypeName);
         this.policyId(policyId)
     }
 
@@ -2450,8 +2450,8 @@ class az_repos_policy_merge_strategy_update_command_builder extends CommandBuild
  * @param {string} requiredReviewerIds Required reviewers email addresses separated by ';'. For example: john@contoso.com;alice@contoso.com.
  */
 class az_repos_policy_required_reviewer_create_command_builder extends CommandBuilder<az_repos_policy_required_reviewer_create_command_result> {
-    constructor(commandPath: string, blocking: boolean, branch: string, enabled: boolean, message: string, repositoryId: string, requiredReviewerIds: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, blocking: boolean, branch: string, enabled: boolean, message: string, repositoryId: string, requiredReviewerIds: string) {
+        super(commandPath, resultDataTypeName);
         this.blocking(blocking)
         this.branch(branch)
         this.enabled(enabled)
@@ -2556,8 +2556,8 @@ class az_repos_policy_required_reviewer_create_command_builder extends CommandBu
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_required_reviewer_update_command_builder extends CommandBuilder<az_repos_policy_required_reviewer_update_command_result> {
-    constructor(commandPath: string, policyId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyId: string) {
+        super(commandPath, resultDataTypeName);
         this.policyId(policyId)
     }
 
@@ -2662,8 +2662,8 @@ class az_repos_policy_required_reviewer_update_command_builder extends CommandBu
  * @param {string} repositoryId Id of the repository on which to apply the policy.
  */
 class az_repos_policy_work_item_linking_create_command_builder extends CommandBuilder<az_repos_policy_work_item_linking_create_command_result> {
-    constructor(commandPath: string, blocking: boolean, branch: string, enabled: boolean, repositoryId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, blocking: boolean, branch: string, enabled: boolean, repositoryId: string) {
+        super(commandPath, resultDataTypeName);
         this.blocking(blocking)
         this.branch(branch)
         this.enabled(enabled)
@@ -2745,8 +2745,8 @@ class az_repos_policy_work_item_linking_create_command_builder extends CommandBu
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_work_item_linking_update_command_builder extends CommandBuilder<az_repos_policy_work_item_linking_update_command_result> {
-    constructor(commandPath: string, policyId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyId: string) {
+        super(commandPath, resultDataTypeName);
         this.policyId(policyId)
     }
 
@@ -2826,8 +2826,8 @@ class az_repos_policy_work_item_linking_update_command_builder extends CommandBu
  * @param {string} policyConfiguration Local file path for configuration file. Please use / backslash when typing in directory path.
  */
 class az_repos_policy_create_command_builder extends CommandBuilder<az_repos_policy_create_command_result> {
-    constructor(commandPath: string, policyConfiguration: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyConfiguration: string) {
+        super(commandPath, resultDataTypeName);
         this.policyConfiguration(policyConfiguration)
     }
 
@@ -2878,8 +2878,8 @@ class az_repos_policy_create_command_builder extends CommandBuilder<az_repos_pol
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_delete_command_builder extends CommandBuilder<az_repos_policy_delete_command_result> {
-    constructor(commandPath: string, policyId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyId: string) {
+        super(commandPath, resultDataTypeName);
         this.policyId(policyId)
     }
 
@@ -2935,8 +2935,8 @@ class az_repos_policy_delete_command_builder extends CommandBuilder<az_repos_pol
  * ```
  */
 class az_repos_policy_list_command_builder extends CommandBuilder<az_repos_policy_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Branch name to filter results by exact match of branch name. The --repository-id parameter is required to use the branch filter. For example: --branch master. */
@@ -2998,8 +2998,8 @@ class az_repos_policy_list_command_builder extends CommandBuilder<az_repos_polic
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_show_command_builder extends CommandBuilder<az_repos_policy_show_command_result> {
-    constructor(commandPath: string, policyId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyId: string) {
+        super(commandPath, resultDataTypeName);
         this.policyId(policyId)
     }
 
@@ -3057,8 +3057,8 @@ class az_repos_policy_show_command_builder extends CommandBuilder<az_repos_polic
  * @param {string} policyId ID of the policy.
  */
 class az_repos_policy_update_command_builder extends CommandBuilder<az_repos_policy_update_command_result> {
-    constructor(commandPath: string, policyConfiguration: string, policyId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyConfiguration: string, policyId: string) {
+        super(commandPath, resultDataTypeName);
         this.policyConfiguration(policyConfiguration)
         this.policyId(policyId)
     }
@@ -3117,8 +3117,8 @@ class az_repos_policy_update_command_builder extends CommandBuilder<az_repos_pol
  * @param {string} id ID of the pull request.
  */
 class az_repos_pr_policy_list_command_builder extends CommandBuilder<az_repos_pr_policy_list_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -3181,8 +3181,8 @@ class az_repos_pr_policy_list_command_builder extends CommandBuilder<az_repos_pr
  * @param {string} id ID of the pull request.
  */
 class az_repos_pr_policy_queue_command_builder extends CommandBuilder<az_repos_pr_policy_queue_command_result> {
-    constructor(commandPath: string, evaluationId: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, evaluationId: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.evaluationId(evaluationId)
         this.id(id)
     }
@@ -3234,8 +3234,8 @@ class az_repos_pr_policy_queue_command_builder extends CommandBuilder<az_repos_p
  * @param {string} reviewers Users or groups to include as reviewers on a pull request. Space separated.
  */
 class az_repos_pr_reviewer_add_command_builder extends CommandBuilder<az_repos_pr_reviewer_add_command_result> {
-    constructor(commandPath: string, id: string, reviewers: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string, reviewers: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
         this.reviewers(reviewers)
     }
@@ -3286,8 +3286,8 @@ class az_repos_pr_reviewer_add_command_builder extends CommandBuilder<az_repos_p
  * @param {string} id ID of the pull request.
  */
 class az_repos_pr_reviewer_list_command_builder extends CommandBuilder<az_repos_pr_reviewer_list_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -3338,8 +3338,8 @@ class az_repos_pr_reviewer_list_command_builder extends CommandBuilder<az_repos_
  * @param {string} reviewers Users or groups to remove as reviewers on a pull request. Space separated.
  */
 class az_repos_pr_reviewer_remove_command_builder extends CommandBuilder<az_repos_pr_reviewer_remove_command_result> {
-    constructor(commandPath: string, id: string, reviewers: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string, reviewers: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
         this.reviewers(reviewers)
     }
@@ -3391,8 +3391,8 @@ class az_repos_pr_reviewer_remove_command_builder extends CommandBuilder<az_repo
  * @param {string} workItems IDs of the work items to link. Space separated.
  */
 class az_repos_pr_work_item_add_command_builder extends CommandBuilder<az_repos_pr_work_item_add_command_result> {
-    constructor(commandPath: string, id: string, workItems: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string, workItems: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
         this.workItems(workItems)
     }
@@ -3443,8 +3443,8 @@ class az_repos_pr_work_item_add_command_builder extends CommandBuilder<az_repos_
  * @param {string} id ID of the pull request.
  */
 class az_repos_pr_work_item_list_command_builder extends CommandBuilder<az_repos_pr_work_item_list_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -3495,8 +3495,8 @@ class az_repos_pr_work_item_list_command_builder extends CommandBuilder<az_repos
  * @param {string} workItems IDs of the work items to unlink. Space separated.
  */
 class az_repos_pr_work_item_remove_command_builder extends CommandBuilder<az_repos_pr_work_item_remove_command_result> {
-    constructor(commandPath: string, id: string, workItems: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string, workItems: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
         this.workItems(workItems)
     }
@@ -3545,8 +3545,8 @@ class az_repos_pr_work_item_remove_command_builder extends CommandBuilder<az_rep
  * @param {string} id ID of the pull request.
  */
 class az_repos_pr_checkout_command_builder extends CommandBuilder<az_repos_pr_checkout_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -3597,8 +3597,8 @@ class az_repos_pr_checkout_command_builder extends CommandBuilder<az_repos_pr_ch
  * ```
  */
 class az_repos_pr_create_command_builder extends CommandBuilder<az_repos_pr_create_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Set the pull request to complete automatically when all policies have passed and the source branch can be merged into the target branch. */
@@ -3744,8 +3744,8 @@ class az_repos_pr_create_command_builder extends CommandBuilder<az_repos_pr_crea
  * ```
  */
 class az_repos_pr_list_command_builder extends CommandBuilder<az_repos_pr_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Limit results to pull requests created by this user. */
@@ -3849,8 +3849,8 @@ class az_repos_pr_list_command_builder extends CommandBuilder<az_repos_pr_list_c
  * @param {'approve' | 'approve-with-suggestions' | 'reject' | 'reset' | 'wait-for-author'} vote New vote value for the pull request.
  */
 class az_repos_pr_set_vote_command_builder extends CommandBuilder<az_repos_pr_set_vote_command_result> {
-    constructor(commandPath: string, id: string, vote: 'approve' | 'approve-with-suggestions' | 'reject' | 'reset' | 'wait-for-author') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string, vote: 'approve' | 'approve-with-suggestions' | 'reject' | 'reset' | 'wait-for-author') {
+        super(commandPath, resultDataTypeName);
         this.id(id)
         this.vote(vote)
     }
@@ -3902,8 +3902,8 @@ class az_repos_pr_set_vote_command_builder extends CommandBuilder<az_repos_pr_se
  * @param {string} id ID of the pull request.
  */
 class az_repos_pr_show_command_builder extends CommandBuilder<az_repos_pr_show_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -3969,8 +3969,8 @@ class az_repos_pr_show_command_builder extends CommandBuilder<az_repos_pr_show_c
  * @param {string} id ID of the pull request.
  */
 class az_repos_pr_update_command_builder extends CommandBuilder<az_repos_pr_update_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -4083,8 +4083,8 @@ class az_repos_pr_update_command_builder extends CommandBuilder<az_repos_pr_upda
  * @param {string} objectId Id of the object to create the reference from.
  */
 class az_repos_ref_create_command_builder extends CommandBuilder<az_repos_ref_create_command_result> {
-    constructor(commandPath: string, name: string, objectId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, objectId: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.objectId(objectId)
     }
@@ -4150,8 +4150,8 @@ class az_repos_ref_create_command_builder extends CommandBuilder<az_repos_ref_cr
  * @param {string} objectId Id of the reference to delete.
  */
 class az_repos_ref_delete_command_builder extends CommandBuilder<az_repos_ref_delete_command_result> {
-    constructor(commandPath: string, name: string, objectId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, objectId: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.objectId(objectId)
     }
@@ -4214,8 +4214,8 @@ class az_repos_ref_delete_command_builder extends CommandBuilder<az_repos_ref_de
  * ```
  */
 class az_repos_ref_list_command_builder extends CommandBuilder<az_repos_ref_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Automatically detect organization. */
@@ -4277,8 +4277,8 @@ class az_repos_ref_list_command_builder extends CommandBuilder<az_repos_ref_list
  * @param {string} name Name of the reference to update (example: heads/my_branch).
  */
 class az_repos_ref_lock_command_builder extends CommandBuilder<az_repos_ref_lock_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -4335,8 +4335,8 @@ class az_repos_ref_lock_command_builder extends CommandBuilder<az_repos_ref_lock
  * @param {string} name Name of the reference to update (example: heads/my_branch).
  */
 class az_repos_ref_unlock_command_builder extends CommandBuilder<az_repos_ref_unlock_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -4393,8 +4393,8 @@ class az_repos_ref_unlock_command_builder extends CommandBuilder<az_repos_ref_un
  * @param {string} name Name for the new repository.
  */
 class az_repos_create_command_builder extends CommandBuilder<az_repos_create_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -4451,8 +4451,8 @@ class az_repos_create_command_builder extends CommandBuilder<az_repos_create_com
  * @param {string} id ID of the repository.
  */
 class az_repos_delete_command_builder extends CommandBuilder<az_repos_delete_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -4506,8 +4506,8 @@ class az_repos_delete_command_builder extends CommandBuilder<az_repos_delete_com
  * ```
  */
 class az_repos_list_command_builder extends CommandBuilder<az_repos_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Automatically detect organization. */
@@ -4558,8 +4558,8 @@ class az_repos_list_command_builder extends CommandBuilder<az_repos_list_command
  * @param {string} repository Name or ID of the repository.
  */
 class az_repos_show_command_builder extends CommandBuilder<az_repos_show_command_result> {
-    constructor(commandPath: string, repository: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, repository: string) {
+        super(commandPath, resultDataTypeName);
         this.repository(repository)
     }
 
@@ -4623,8 +4623,8 @@ class az_repos_show_command_builder extends CommandBuilder<az_repos_show_command
  * @param {string} repository Name or ID of the repository.
  */
 class az_repos_update_command_builder extends CommandBuilder<az_repos_update_command_result> {
-    constructor(commandPath: string, repository: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, repository: string) {
+        super(commandPath, resultDataTypeName);
         this.repository(repository)
     }
 

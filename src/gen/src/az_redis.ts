@@ -46,7 +46,7 @@ export class az_redis_firewall_rules {
      * @param {string} startIp Lowest IP address included in the range.
      */
     static create(endIp: string, name: string, resourceGroup: string, ruleName: string, startIp: string): az_redis_firewall_rules_create_command_builder {
-        return new az_redis_firewall_rules_create_command_builder("az redis firewall-rules create", endIp, name, resourceGroup, ruleName, startIp);
+        return new az_redis_firewall_rules_create_command_builder("az redis firewall-rules create", 'az_redis_firewall_rules_create_command_result', endIp, name, resourceGroup, ruleName, startIp);
     }
 
     /**
@@ -64,7 +64,7 @@ export class az_redis_firewall_rules {
      * @param {string} ruleName The name of the firewall rule.
      */
     static delete(ruleName: string): az_redis_firewall_rules_delete_command_builder {
-        return new az_redis_firewall_rules_delete_command_builder("az redis firewall-rules delete", ruleName);
+        return new az_redis_firewall_rules_delete_command_builder("az redis firewall-rules delete", 'az_redis_firewall_rules_delete_command_result', ruleName);
     }
 
     /**
@@ -82,7 +82,7 @@ export class az_redis_firewall_rules {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, resourceGroup: string): az_redis_firewall_rules_list_command_builder {
-        return new az_redis_firewall_rules_list_command_builder("az redis firewall-rules list", name, resourceGroup);
+        return new az_redis_firewall_rules_list_command_builder("az redis firewall-rules list", 'az_redis_firewall_rules_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -101,7 +101,7 @@ export class az_redis_firewall_rules {
      * @param {string} ruleName The name of the firewall rule.
      */
     static show(ruleName: string): az_redis_firewall_rules_show_command_builder {
-        return new az_redis_firewall_rules_show_command_builder("az redis firewall-rules show", ruleName);
+        return new az_redis_firewall_rules_show_command_builder("az redis firewall-rules show", 'az_redis_firewall_rules_show_command_result', ruleName);
     }
 
     /**
@@ -123,7 +123,7 @@ export class az_redis_firewall_rules {
      * @param {string} startIp Lowest IP address included in the range.
      */
     static update(endIp: string, ruleName: string, startIp: string): az_redis_firewall_rules_update_command_builder {
-        return new az_redis_firewall_rules_update_command_builder("az redis firewall-rules update", endIp, ruleName, startIp);
+        return new az_redis_firewall_rules_update_command_builder("az redis firewall-rules update", 'az_redis_firewall_rules_update_command_result', endIp, ruleName, startIp);
     }
 }
 
@@ -145,7 +145,7 @@ export class az_redis_patch_schedule {
      * @param {string} scheduleEntries List of Patch schedule entries. Example Value:[{"dayOfWeek":"Monday","startHourUtc":"00","maintenanceWindow":"PT5H"}].
      */
     static create(name: string, resourceGroup: string, scheduleEntries: string): az_redis_patch_schedule_create_command_builder {
-        return new az_redis_patch_schedule_create_command_builder("az redis patch-schedule create", name, resourceGroup, scheduleEntries);
+        return new az_redis_patch_schedule_create_command_builder("az redis patch-schedule create", 'az_redis_patch_schedule_create_command_result', name, resourceGroup, scheduleEntries);
     }
 
     /**
@@ -162,7 +162,7 @@ export class az_redis_patch_schedule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_redis_patch_schedule_delete_command_builder {
-        return new az_redis_patch_schedule_delete_command_builder("az redis patch-schedule delete", name, resourceGroup);
+        return new az_redis_patch_schedule_delete_command_builder("az redis patch-schedule delete", 'az_redis_patch_schedule_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -180,7 +180,7 @@ export class az_redis_patch_schedule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_redis_patch_schedule_show_command_builder {
-        return new az_redis_patch_schedule_show_command_builder("az redis patch-schedule show", name, resourceGroup);
+        return new az_redis_patch_schedule_show_command_builder("az redis patch-schedule show", 'az_redis_patch_schedule_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -199,7 +199,7 @@ export class az_redis_patch_schedule {
      * @param {string} scheduleEntries List of Patch schedule entries. Example Value:[{"dayOfWeek":"Monday","startHourUtc":"00","maintenanceWindow":"PT5H"}].
      */
     static update(name: string, resourceGroup: string, scheduleEntries: string): az_redis_patch_schedule_update_command_builder {
-        return new az_redis_patch_schedule_update_command_builder("az redis patch-schedule update", name, resourceGroup, scheduleEntries);
+        return new az_redis_patch_schedule_update_command_builder("az redis patch-schedule update", 'az_redis_patch_schedule_update_command_result', name, resourceGroup, scheduleEntries);
     }
 }
 
@@ -223,7 +223,7 @@ export class az_redis_server_link {
      * @param {string} serverToLink Resource ID or name of the redis cache to be linked.
      */
     static create(name: string, replicationRole: 'Primary' | 'Secondary', resourceGroup: string, serverToLink: string): az_redis_server_link_create_command_builder {
-        return new az_redis_server_link_create_command_builder("az redis server-link create", name, replicationRole, resourceGroup, serverToLink);
+        return new az_redis_server_link_create_command_builder("az redis server-link create", 'az_redis_server_link_create_command_result', name, replicationRole, resourceGroup, serverToLink);
     }
 
     /**
@@ -242,7 +242,7 @@ export class az_redis_server_link {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(linkedServerName: string, name: string, resourceGroup: string): az_redis_server_link_delete_command_builder {
-        return new az_redis_server_link_delete_command_builder("az redis server-link delete", linkedServerName, name, resourceGroup);
+        return new az_redis_server_link_delete_command_builder("az redis server-link delete", 'az_redis_server_link_delete_command_result', linkedServerName, name, resourceGroup);
     }
 
     /**
@@ -260,7 +260,7 @@ export class az_redis_server_link {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, resourceGroup: string): az_redis_server_link_list_command_builder {
-        return new az_redis_server_link_list_command_builder("az redis server-link list", name, resourceGroup);
+        return new az_redis_server_link_list_command_builder("az redis server-link list", 'az_redis_server_link_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -280,7 +280,7 @@ export class az_redis_server_link {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(linkedServerName: string, name: string, resourceGroup: string): az_redis_server_link_show_command_builder {
-        return new az_redis_server_link_show_command_builder("az redis server-link show", linkedServerName, name, resourceGroup);
+        return new az_redis_server_link_show_command_builder("az redis server-link show", 'az_redis_server_link_show_command_result', linkedServerName, name, resourceGroup);
     }
 }
 
@@ -316,7 +316,7 @@ export class az_redis {
      * @param {'c0' | 'c1' | 'c2' | 'c3' | 'c4' | 'c5' | 'c6' | 'p1' | 'p2' | 'p3' | 'p4' | 'p5'} vmSize Size of Redis cache to deploy. Basic and Standard Cache sizes start with C. Premium Cache sizes start with P.
      */
     static create(location: string, name: string, resourceGroup: string, sku: 'Basic' | 'Premium' | 'Standard', vmSize: 'c0' | 'c1' | 'c2' | 'c3' | 'c4' | 'c5' | 'c6' | 'p1' | 'p2' | 'p3' | 'p4' | 'p5'): az_redis_create_command_builder {
-        return new az_redis_create_command_builder("az redis create", location, name, resourceGroup, sku, vmSize);
+        return new az_redis_create_command_builder("az redis create", 'az_redis_create_command_result', location, name, resourceGroup, sku, vmSize);
     }
 
     /**
@@ -332,7 +332,7 @@ export class az_redis {
      * ```
      */
     static delete(): az_redis_delete_command_builder {
-        return new az_redis_delete_command_builder("az redis delete");
+        return new az_redis_delete_command_builder("az redis delete", 'az_redis_delete_command_result');
     }
 
     /**
@@ -353,7 +353,7 @@ export class az_redis {
      * @param {string} prefix Prefix to use for exported files.
      */
     static export(container: string, prefix: string): az_redis_export_command_builder {
-        return new az_redis_export_command_builder("az redis export", container, prefix);
+        return new az_redis_export_command_builder("az redis export", 'az_redis_export_command_result', container, prefix);
     }
 
     /**
@@ -372,7 +372,7 @@ export class az_redis {
      * @param {'AllNodes' | 'PrimaryNode' | 'SecondaryNode'} rebootType Which Redis node(s) to reboot. Depending on this value data loss is possible.
      */
     static force_reboot(rebootType: 'AllNodes' | 'PrimaryNode' | 'SecondaryNode'): az_redis_force_reboot_command_builder {
-        return new az_redis_force_reboot_command_builder("az redis force-reboot", rebootType);
+        return new az_redis_force_reboot_command_builder("az redis force-reboot", 'az_redis_force_reboot_command_result', rebootType);
     }
 
     /**
@@ -391,7 +391,7 @@ export class az_redis {
      * @param {string} files SAS url for blobs that needs to be imported.
      */
     static import(files: string): az_redis_import_command_builder {
-        return new az_redis_import_command_builder("az redis import", files);
+        return new az_redis_import_command_builder("az redis import", 'az_redis_import_command_result', files);
     }
 
     /**
@@ -410,7 +410,7 @@ export class az_redis {
      * @param {string} files SAS url for blobs that needs to be imported.
      */
     static import_method(files: string): az_redis_import_method_command_builder {
-        return new az_redis_import_method_command_builder("az redis import-method", files);
+        return new az_redis_import_method_command_builder("az redis import-method", 'az_redis_import_method_command_result', files);
     }
 
     /**
@@ -424,7 +424,7 @@ export class az_redis {
      * ```
      */
     static list(): az_redis_list_command_builder {
-        return new az_redis_list_command_builder("az redis list");
+        return new az_redis_list_command_builder("az redis list", 'az_redis_list_command_result');
     }
 
     /**
@@ -439,7 +439,7 @@ export class az_redis {
      * ```
      */
     static list_keys(): az_redis_list_keys_command_builder {
-        return new az_redis_list_keys_command_builder("az redis list-keys");
+        return new az_redis_list_keys_command_builder("az redis list-keys", 'az_redis_list_keys_command_result');
     }
 
     /**
@@ -457,7 +457,7 @@ export class az_redis {
      * @param {'Primary' | 'Secondary'} keyType The Redis access key to regenerate.
      */
     static regenerate_keys(keyType: 'Primary' | 'Secondary'): az_redis_regenerate_keys_command_builder {
-        return new az_redis_regenerate_keys_command_builder("az redis regenerate-keys", keyType);
+        return new az_redis_regenerate_keys_command_builder("az redis regenerate-keys", 'az_redis_regenerate_keys_command_result', keyType);
     }
 
     /**
@@ -473,7 +473,7 @@ export class az_redis {
      * ```
      */
     static show(): az_redis_show_command_builder {
-        return new az_redis_show_command_builder("az redis show");
+        return new az_redis_show_command_builder("az redis show", 'az_redis_show_command_result');
     }
 
     /**
@@ -494,7 +494,7 @@ export class az_redis {
      * ```
      */
     static update(): az_redis_update_command_builder {
-        return new az_redis_update_command_builder("az redis update");
+        return new az_redis_update_command_builder("az redis update", 'az_redis_update_command_result');
     }
 }
 
@@ -518,8 +518,8 @@ export class az_redis {
  * @param {string} startIp Lowest IP address included in the range.
  */
 class az_redis_firewall_rules_create_command_builder extends CommandBuilder<az_redis_firewall_rules_create_command_result> {
-    constructor(commandPath: string, endIp: string, name: string, resourceGroup: string, ruleName: string, startIp: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endIp: string, name: string, resourceGroup: string, ruleName: string, startIp: string) {
+        super(commandPath, resultDataTypeName);
         this.endIp(endIp)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -579,8 +579,8 @@ class az_redis_firewall_rules_create_command_builder extends CommandBuilder<az_r
  * @param {string} ruleName The name of the firewall rule.
  */
 class az_redis_firewall_rules_delete_command_builder extends CommandBuilder<az_redis_firewall_rules_delete_command_result> {
-    constructor(commandPath: string, ruleName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ruleName: string) {
+        super(commandPath, resultDataTypeName);
         this.ruleName(ruleName)
     }
 
@@ -630,8 +630,8 @@ class az_redis_firewall_rules_delete_command_builder extends CommandBuilder<az_r
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_redis_firewall_rules_list_command_builder extends CommandBuilder<az_redis_firewall_rules_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -677,8 +677,8 @@ class az_redis_firewall_rules_list_command_builder extends CommandBuilder<az_red
  * @param {string} ruleName The name of the firewall rule.
  */
 class az_redis_firewall_rules_show_command_builder extends CommandBuilder<az_redis_firewall_rules_show_command_result> {
-    constructor(commandPath: string, ruleName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ruleName: string) {
+        super(commandPath, resultDataTypeName);
         this.ruleName(ruleName)
     }
 
@@ -738,8 +738,8 @@ class az_redis_firewall_rules_show_command_builder extends CommandBuilder<az_red
  * @param {string} startIp Lowest IP address included in the range.
  */
 class az_redis_firewall_rules_update_command_builder extends CommandBuilder<az_redis_firewall_rules_update_command_result> {
-    constructor(commandPath: string, endIp: string, ruleName: string, startIp: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endIp: string, ruleName: string, startIp: string) {
+        super(commandPath, resultDataTypeName);
         this.endIp(endIp)
         this.ruleName(ruleName)
         this.startIp(startIp)
@@ -804,8 +804,8 @@ class az_redis_firewall_rules_update_command_builder extends CommandBuilder<az_r
  * @param {string} scheduleEntries List of Patch schedule entries. Example Value:[{"dayOfWeek":"Monday","startHourUtc":"00","maintenanceWindow":"PT5H"}].
  */
 class az_redis_patch_schedule_create_command_builder extends CommandBuilder<az_redis_patch_schedule_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, scheduleEntries: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, scheduleEntries: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.scheduleEntries(scheduleEntries)
@@ -850,8 +850,8 @@ class az_redis_patch_schedule_create_command_builder extends CommandBuilder<az_r
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_redis_patch_schedule_delete_command_builder extends CommandBuilder<az_redis_patch_schedule_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -890,8 +890,8 @@ class az_redis_patch_schedule_delete_command_builder extends CommandBuilder<az_r
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_redis_patch_schedule_show_command_builder extends CommandBuilder<az_redis_patch_schedule_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -937,8 +937,8 @@ class az_redis_patch_schedule_show_command_builder extends CommandBuilder<az_red
  * @param {string} scheduleEntries List of Patch schedule entries. Example Value:[{"dayOfWeek":"Monday","startHourUtc":"00","maintenanceWindow":"PT5H"}].
  */
 class az_redis_patch_schedule_update_command_builder extends CommandBuilder<az_redis_patch_schedule_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, scheduleEntries: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, scheduleEntries: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.scheduleEntries(scheduleEntries)
@@ -987,8 +987,8 @@ class az_redis_patch_schedule_update_command_builder extends CommandBuilder<az_r
  * @param {string} serverToLink Resource ID or name of the redis cache to be linked.
  */
 class az_redis_server_link_create_command_builder extends CommandBuilder<az_redis_server_link_create_command_result> {
-    constructor(commandPath: string, name: string, replicationRole: 'Primary' | 'Secondary', resourceGroup: string, serverToLink: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, replicationRole: 'Primary' | 'Secondary', resourceGroup: string, serverToLink: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.replicationRole(replicationRole)
         this.resourceGroup(resourceGroup)
@@ -1042,8 +1042,8 @@ class az_redis_server_link_create_command_builder extends CommandBuilder<az_redi
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_redis_server_link_delete_command_builder extends CommandBuilder<az_redis_server_link_delete_command_result> {
-    constructor(commandPath: string, linkedServerName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, linkedServerName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.linkedServerName(linkedServerName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1089,8 +1089,8 @@ class az_redis_server_link_delete_command_builder extends CommandBuilder<az_redi
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_redis_server_link_list_command_builder extends CommandBuilder<az_redis_server_link_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1137,8 +1137,8 @@ class az_redis_server_link_list_command_builder extends CommandBuilder<az_redis_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_redis_server_link_show_command_builder extends CommandBuilder<az_redis_server_link_show_command_result> {
-    constructor(commandPath: string, linkedServerName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, linkedServerName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.linkedServerName(linkedServerName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1205,8 +1205,8 @@ class az_redis_server_link_show_command_builder extends CommandBuilder<az_redis_
  * @param {'c0' | 'c1' | 'c2' | 'c3' | 'c4' | 'c5' | 'c6' | 'p1' | 'p2' | 'p3' | 'p4' | 'p5'} vmSize Size of Redis cache to deploy. Basic and Standard Cache sizes start with C. Premium Cache sizes start with P.
  */
 class az_redis_create_command_builder extends CommandBuilder<az_redis_create_command_result> {
-    constructor(commandPath: string, location: string, name: string, resourceGroup: string, sku: 'Basic' | 'Premium' | 'Standard', vmSize: 'c0' | 'c1' | 'c2' | 'c3' | 'c4' | 'c5' | 'c6' | 'p1' | 'p2' | 'p3' | 'p4' | 'p5') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string, resourceGroup: string, sku: 'Basic' | 'Premium' | 'Standard', vmSize: 'c0' | 'c1' | 'c2' | 'c3' | 'c4' | 'c5' | 'c6' | 'p1' | 'p2' | 'p3' | 'p4' | 'p5') {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1324,8 +1324,8 @@ class az_redis_create_command_builder extends CommandBuilder<az_redis_create_com
  * ```
  */
 class az_redis_delete_command_builder extends CommandBuilder<az_redis_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1377,8 +1377,8 @@ class az_redis_delete_command_builder extends CommandBuilder<az_redis_delete_com
  * @param {string} prefix Prefix to use for exported files.
  */
 class az_redis_export_command_builder extends CommandBuilder<az_redis_export_command_result> {
-    constructor(commandPath: string, container: string, prefix: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, container: string, prefix: string) {
+        super(commandPath, resultDataTypeName);
         this.container(container)
         this.prefix(prefix)
     }
@@ -1442,8 +1442,8 @@ class az_redis_export_command_builder extends CommandBuilder<az_redis_export_com
  * @param {'AllNodes' | 'PrimaryNode' | 'SecondaryNode'} rebootType Which Redis node(s) to reboot. Depending on this value data loss is possible.
  */
 class az_redis_force_reboot_command_builder extends CommandBuilder<az_redis_force_reboot_command_result> {
-    constructor(commandPath: string, rebootType: 'AllNodes' | 'PrimaryNode' | 'SecondaryNode') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, rebootType: 'AllNodes' | 'PrimaryNode' | 'SecondaryNode') {
+        super(commandPath, resultDataTypeName);
         this.rebootType(rebootType)
     }
 
@@ -1500,8 +1500,8 @@ class az_redis_force_reboot_command_builder extends CommandBuilder<az_redis_forc
  * @param {string} files SAS url for blobs that needs to be imported.
  */
 class az_redis_import_command_builder extends CommandBuilder<az_redis_import_command_result> {
-    constructor(commandPath: string, files: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, files: string) {
+        super(commandPath, resultDataTypeName);
         this.files(files)
     }
 
@@ -1558,8 +1558,8 @@ class az_redis_import_command_builder extends CommandBuilder<az_redis_import_com
  * @param {string} files SAS url for blobs that needs to be imported.
  */
 class az_redis_import_method_command_builder extends CommandBuilder<az_redis_import_method_command_result> {
-    constructor(commandPath: string, files: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, files: string) {
+        super(commandPath, resultDataTypeName);
         this.files(files)
     }
 
@@ -1611,8 +1611,8 @@ class az_redis_import_method_command_builder extends CommandBuilder<az_redis_imp
  * ```
  */
 class az_redis_list_command_builder extends CommandBuilder<az_redis_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -1646,8 +1646,8 @@ class az_redis_list_command_builder extends CommandBuilder<az_redis_list_command
  * ```
  */
 class az_redis_list_keys_command_builder extends CommandBuilder<az_redis_list_keys_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1690,8 +1690,8 @@ class az_redis_list_keys_command_builder extends CommandBuilder<az_redis_list_ke
  * @param {'Primary' | 'Secondary'} keyType The Redis access key to regenerate.
  */
 class az_redis_regenerate_keys_command_builder extends CommandBuilder<az_redis_regenerate_keys_command_result> {
-    constructor(commandPath: string, keyType: 'Primary' | 'Secondary') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, keyType: 'Primary' | 'Secondary') {
+        super(commandPath, resultDataTypeName);
         this.keyType(keyType)
     }
 
@@ -1739,8 +1739,8 @@ class az_redis_regenerate_keys_command_builder extends CommandBuilder<az_redis_r
  * ```
  */
 class az_redis_show_command_builder extends CommandBuilder<az_redis_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1792,8 +1792,8 @@ class az_redis_show_command_builder extends CommandBuilder<az_redis_show_command
  * ```
  */
 class az_redis_update_command_builder extends CommandBuilder<az_redis_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */

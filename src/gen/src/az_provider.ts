@@ -18,7 +18,7 @@ export class az_provider_operation {
      * ```
      */
     static list(): az_provider_operation_list_command_builder {
-        return new az_provider_operation_list_command_builder("az provider operation list");
+        return new az_provider_operation_list_command_builder("az provider operation list", 'az_provider_operation_list_command_result');
     }
 
     /**
@@ -34,7 +34,7 @@ export class az_provider_operation {
      * @param {string} namespace The resource namespace, aka 'provider'.
      */
     static show(namespace: string): az_provider_operation_show_command_builder {
-        return new az_provider_operation_show_command_builder("az provider operation show", namespace);
+        return new az_provider_operation_show_command_builder("az provider operation show", 'az_provider_operation_show_command_result', namespace);
     }
 }
 
@@ -51,7 +51,7 @@ export class az_provider {
      * ```
      */
     static list(): az_provider_list_command_builder {
-        return new az_provider_list_command_builder("az provider list");
+        return new az_provider_list_command_builder("az provider list", 'az_provider_list_command_result');
     }
 
     /**
@@ -67,7 +67,7 @@ export class az_provider {
      * @param {string} namespace The resource namespace, aka 'provider'.
      */
     static register(namespace: string): az_provider_register_command_builder {
-        return new az_provider_register_command_builder("az provider register", namespace);
+        return new az_provider_register_command_builder("az provider register", 'az_provider_register_command_result', namespace);
     }
 
     /**
@@ -84,7 +84,7 @@ export class az_provider {
      * @param {string} namespace The resource namespace, aka 'provider'.
      */
     static show(namespace: string): az_provider_show_command_builder {
-        return new az_provider_show_command_builder("az provider show", namespace);
+        return new az_provider_show_command_builder("az provider show", 'az_provider_show_command_result', namespace);
     }
 
     /**
@@ -100,7 +100,7 @@ export class az_provider {
      * @param {string} namespace The resource namespace, aka 'provider'.
      */
     static unregister(namespace: string): az_provider_unregister_command_builder {
-        return new az_provider_unregister_command_builder("az provider unregister", namespace);
+        return new az_provider_unregister_command_builder("az provider unregister", 'az_provider_unregister_command_result', namespace);
     }
 }
 
@@ -114,8 +114,8 @@ export class az_provider {
  * ```
  */
 class az_provider_operation_list_command_builder extends CommandBuilder<az_provider_operation_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -144,8 +144,8 @@ class az_provider_operation_list_command_builder extends CommandBuilder<az_provi
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
 class az_provider_operation_show_command_builder extends CommandBuilder<az_provider_operation_show_command_result> {
-    constructor(commandPath: string, namespace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespace: string) {
+        super(commandPath, resultDataTypeName);
         this.namespace(namespace)
     }
 
@@ -179,8 +179,8 @@ class az_provider_operation_show_command_builder extends CommandBuilder<az_provi
  * ```
  */
 class az_provider_list_command_builder extends CommandBuilder<az_provider_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The properties to include in the results. For example, use &$expand=metadata in the query string to retrieve resource provider metadata. To include property aliases in response, use $expand=resourceTypes/aliases. */
@@ -215,8 +215,8 @@ class az_provider_list_command_builder extends CommandBuilder<az_provider_list_c
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
 class az_provider_register_command_builder extends CommandBuilder<az_provider_register_command_result> {
-    constructor(commandPath: string, namespace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespace: string) {
+        super(commandPath, resultDataTypeName);
         this.namespace(namespace)
     }
 
@@ -253,8 +253,8 @@ class az_provider_register_command_builder extends CommandBuilder<az_provider_re
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
 class az_provider_show_command_builder extends CommandBuilder<az_provider_show_command_result> {
-    constructor(commandPath: string, namespace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespace: string) {
+        super(commandPath, resultDataTypeName);
         this.namespace(namespace)
     }
 
@@ -296,8 +296,8 @@ class az_provider_show_command_builder extends CommandBuilder<az_provider_show_c
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
 class az_provider_unregister_command_builder extends CommandBuilder<az_provider_unregister_command_result> {
-    constructor(commandPath: string, namespace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, namespace: string) {
+        super(commandPath, resultDataTypeName);
         this.namespace(namespace)
     }
 

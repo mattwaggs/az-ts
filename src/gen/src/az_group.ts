@@ -41,7 +41,7 @@ export class az_group_deployment_operation {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, resourceGroup: string): az_group_deployment_operation_list_command_builder {
-        return new az_group_deployment_operation_list_command_builder("az group deployment operation list", name, resourceGroup);
+        return new az_group_deployment_operation_list_command_builder("az group deployment operation list", 'az_group_deployment_operation_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -61,7 +61,7 @@ export class az_group_deployment_operation {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, operationIds: string, resourceGroup: string): az_group_deployment_operation_show_command_builder {
-        return new az_group_deployment_operation_show_command_builder("az group deployment operation show", name, operationIds, resourceGroup);
+        return new az_group_deployment_operation_show_command_builder("az group deployment operation show", 'az_group_deployment_operation_show_command_result', name, operationIds, resourceGroup);
     }
 }
 
@@ -81,7 +81,7 @@ export class az_group_deployment {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static cancel(name: string, resourceGroup: string): az_group_deployment_cancel_command_builder {
-        return new az_group_deployment_cancel_command_builder("az group deployment cancel", name, resourceGroup);
+        return new az_group_deployment_cancel_command_builder("az group deployment cancel", 'az_group_deployment_cancel_command_result', name, resourceGroup);
     }
 
     /**
@@ -107,7 +107,7 @@ export class az_group_deployment {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(resourceGroup: string): az_group_deployment_create_command_builder {
-        return new az_group_deployment_create_command_builder("az group deployment create", resourceGroup);
+        return new az_group_deployment_create_command_builder("az group deployment create", 'az_group_deployment_create_command_result', resourceGroup);
     }
 
     /**
@@ -125,7 +125,7 @@ export class az_group_deployment {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_group_deployment_delete_command_builder {
-        return new az_group_deployment_delete_command_builder("az group deployment delete", name, resourceGroup);
+        return new az_group_deployment_delete_command_builder("az group deployment delete", 'az_group_deployment_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -142,7 +142,7 @@ export class az_group_deployment {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static export(name: string, resourceGroup: string): az_group_deployment_export_command_builder {
-        return new az_group_deployment_export_command_builder("az group deployment export", name, resourceGroup);
+        return new az_group_deployment_export_command_builder("az group deployment export", 'az_group_deployment_export_command_result', name, resourceGroup);
     }
 
     /**
@@ -160,7 +160,7 @@ export class az_group_deployment {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(resourceGroup: string): az_group_deployment_list_command_builder {
-        return new az_group_deployment_list_command_builder("az group deployment list", resourceGroup);
+        return new az_group_deployment_list_command_builder("az group deployment list", 'az_group_deployment_list_command_result', resourceGroup);
     }
 
     /**
@@ -178,7 +178,7 @@ export class az_group_deployment {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_group_deployment_show_command_builder {
-        return new az_group_deployment_show_command_builder("az group deployment show", name, resourceGroup);
+        return new az_group_deployment_show_command_builder("az group deployment show", 'az_group_deployment_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -200,7 +200,7 @@ export class az_group_deployment {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static validate(resourceGroup: string): az_group_deployment_validate_command_builder {
-        return new az_group_deployment_validate_command_builder("az group deployment validate", resourceGroup);
+        return new az_group_deployment_validate_command_builder("az group deployment validate", 'az_group_deployment_validate_command_result', resourceGroup);
     }
 
     /**
@@ -224,7 +224,7 @@ export class az_group_deployment {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static wait(name: string, resourceGroup: string): az_group_deployment_wait_command_builder {
-        return new az_group_deployment_wait_command_builder("az group deployment wait", name, resourceGroup);
+        return new az_group_deployment_wait_command_builder("az group deployment wait", 'az_group_deployment_wait_command_result', name, resourceGroup);
     }
 }
 
@@ -247,7 +247,7 @@ export class az_group_lock {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(lockType: 'CanNotDelete' | 'ReadOnly', name: string, resourceGroup: string): az_group_lock_create_command_builder {
-        return new az_group_lock_create_command_builder("az group lock create", lockType, name, resourceGroup);
+        return new az_group_lock_create_command_builder("az group lock create", 'az_group_lock_create_command_result', lockType, name, resourceGroup);
     }
 
     /**
@@ -262,7 +262,7 @@ export class az_group_lock {
      * ```
      */
     static delete(): az_group_lock_delete_command_builder {
-        return new az_group_lock_delete_command_builder("az group lock delete");
+        return new az_group_lock_delete_command_builder("az group lock delete", 'az_group_lock_delete_command_result');
     }
 
     /**
@@ -277,7 +277,7 @@ export class az_group_lock {
      * ```
      */
     static list(): az_group_lock_list_command_builder {
-        return new az_group_lock_list_command_builder("az group lock list");
+        return new az_group_lock_list_command_builder("az group lock list", 'az_group_lock_list_command_result');
     }
 
     /**
@@ -293,7 +293,7 @@ export class az_group_lock {
      * ```
      */
     static show(): az_group_lock_show_command_builder {
-        return new az_group_lock_show_command_builder("az group lock show");
+        return new az_group_lock_show_command_builder("az group lock show", 'az_group_lock_show_command_result');
     }
 
     /**
@@ -310,7 +310,7 @@ export class az_group_lock {
      * ```
      */
     static update(): az_group_lock_update_command_builder {
-        return new az_group_lock_update_command_builder("az group lock update");
+        return new az_group_lock_update_command_builder("az group lock update", 'az_group_lock_update_command_result');
     }
 }
 
@@ -332,7 +332,7 @@ export class az_group {
      * @param {string} resourceGroup Name of the new resource group.
      */
     static create(location: string, resourceGroup: string): az_group_create_command_builder {
-        return new az_group_create_command_builder("az group create", location, resourceGroup);
+        return new az_group_create_command_builder("az group create", 'az_group_create_command_result', location, resourceGroup);
     }
 
     /**
@@ -349,7 +349,7 @@ export class az_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(resourceGroup: string): az_group_delete_command_builder {
-        return new az_group_delete_command_builder("az group delete", resourceGroup);
+        return new az_group_delete_command_builder("az group delete", 'az_group_delete_command_result', resourceGroup);
     }
 
     /**
@@ -364,7 +364,7 @@ export class az_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static exists(resourceGroup: string): az_group_exists_command_builder {
-        return new az_group_exists_command_builder("az group exists", resourceGroup);
+        return new az_group_exists_command_builder("az group exists", 'az_group_exists_command_result', resourceGroup);
     }
 
     /**
@@ -384,7 +384,7 @@ export class az_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static export(resourceGroup: string): az_group_export_command_builder {
-        return new az_group_export_command_builder("az group export", resourceGroup);
+        return new az_group_export_command_builder("az group export", 'az_group_export_command_result', resourceGroup);
     }
 
     /**
@@ -398,7 +398,7 @@ export class az_group {
      * ```
      */
     static list(): az_group_list_command_builder {
-        return new az_group_list_command_builder("az group list");
+        return new az_group_list_command_builder("az group list", 'az_group_list_command_result');
     }
 
     /**
@@ -414,7 +414,7 @@ export class az_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(resourceGroup: string): az_group_show_command_builder {
-        return new az_group_show_command_builder("az group show", resourceGroup);
+        return new az_group_show_command_builder("az group show", 'az_group_show_command_result', resourceGroup);
     }
 
     /**
@@ -434,7 +434,7 @@ export class az_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(resourceGroup: string): az_group_update_command_builder {
-        return new az_group_update_command_builder("az group update", resourceGroup);
+        return new az_group_update_command_builder("az group update", 'az_group_update_command_result', resourceGroup);
     }
 
     /**
@@ -456,7 +456,7 @@ export class az_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static wait(resourceGroup: string): az_group_wait_command_builder {
-        return new az_group_wait_command_builder("az group wait", resourceGroup);
+        return new az_group_wait_command_builder("az group wait", 'az_group_wait_command_result', resourceGroup);
     }
 }
 
@@ -476,8 +476,8 @@ export class az_group {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_group_deployment_operation_list_command_builder extends CommandBuilder<az_group_deployment_operation_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -530,8 +530,8 @@ class az_group_deployment_operation_list_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_group_deployment_operation_show_command_builder extends CommandBuilder<az_group_deployment_operation_show_command_result> {
-    constructor(commandPath: string, name: string, operationIds: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, operationIds: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.operationIds(operationIds)
         this.resourceGroup(resourceGroup)
@@ -582,8 +582,8 @@ class az_group_deployment_operation_show_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_group_deployment_cancel_command_builder extends CommandBuilder<az_group_deployment_cancel_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -630,8 +630,8 @@ class az_group_deployment_cancel_command_builder extends CommandBuilder<az_group
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_group_deployment_create_command_builder extends CommandBuilder<az_group_deployment_create_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -729,8 +729,8 @@ class az_group_deployment_create_command_builder extends CommandBuilder<az_group
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_group_deployment_delete_command_builder extends CommandBuilder<az_group_deployment_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -774,8 +774,8 @@ class az_group_deployment_delete_command_builder extends CommandBuilder<az_group
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_group_deployment_export_command_builder extends CommandBuilder<az_group_deployment_export_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -814,8 +814,8 @@ class az_group_deployment_export_command_builder extends CommandBuilder<az_group
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_group_deployment_list_command_builder extends CommandBuilder<az_group_deployment_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -865,8 +865,8 @@ class az_group_deployment_list_command_builder extends CommandBuilder<az_group_d
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_group_deployment_show_command_builder extends CommandBuilder<az_group_deployment_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -915,8 +915,8 @@ class az_group_deployment_show_command_builder extends CommandBuilder<az_group_d
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_group_deployment_validate_command_builder extends CommandBuilder<az_group_deployment_validate_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -996,8 +996,8 @@ class az_group_deployment_validate_command_builder extends CommandBuilder<az_gro
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_group_deployment_wait_command_builder extends CommandBuilder<az_group_deployment_wait_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1080,8 +1080,8 @@ class az_group_deployment_wait_command_builder extends CommandBuilder<az_group_d
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_group_lock_create_command_builder extends CommandBuilder<az_group_lock_create_command_result> {
-    constructor(commandPath: string, lockType: 'CanNotDelete' | 'ReadOnly', name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lockType: 'CanNotDelete' | 'ReadOnly', name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.lockType(lockType)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1130,8 +1130,8 @@ class az_group_lock_create_command_builder extends CommandBuilder<az_group_lock_
  * ```
  */
 class az_group_lock_delete_command_builder extends CommandBuilder<az_group_lock_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). If provided, no other "Resource Id" arguments should be specified. */
@@ -1171,8 +1171,8 @@ class az_group_lock_delete_command_builder extends CommandBuilder<az_group_lock_
  * ```
  */
 class az_group_lock_list_command_builder extends CommandBuilder<az_group_lock_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** A query filter to use to restrict the results. */
@@ -1213,8 +1213,8 @@ class az_group_lock_list_command_builder extends CommandBuilder<az_group_lock_li
  * ```
  */
 class az_group_lock_show_command_builder extends CommandBuilder<az_group_lock_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). If provided, no other "Resource Id" arguments should be specified. */
@@ -1262,8 +1262,8 @@ class az_group_lock_show_command_builder extends CommandBuilder<az_group_lock_sh
  * ```
  */
 class az_group_lock_update_command_builder extends CommandBuilder<az_group_lock_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). If provided, no other "Resource Id" arguments should be specified. */
@@ -1319,8 +1319,8 @@ class az_group_lock_update_command_builder extends CommandBuilder<az_group_lock_
  * @param {string} resourceGroup Name of the new resource group.
  */
 class az_group_create_command_builder extends CommandBuilder<az_group_create_command_result> {
-    constructor(commandPath: string, location: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.resourceGroup(resourceGroup)
     }
@@ -1370,8 +1370,8 @@ class az_group_create_command_builder extends CommandBuilder<az_group_create_com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_group_delete_command_builder extends CommandBuilder<az_group_delete_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -1412,8 +1412,8 @@ class az_group_delete_command_builder extends CommandBuilder<az_group_delete_com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_group_exists_command_builder extends CommandBuilder<az_group_exists_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -1447,8 +1447,8 @@ class az_group_exists_command_builder extends CommandBuilder<az_group_exists_com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_group_export_command_builder extends CommandBuilder<az_group_export_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -1506,8 +1506,8 @@ class az_group_export_command_builder extends CommandBuilder<az_group_export_com
  * ```
  */
 class az_group_list_command_builder extends CommandBuilder<az_group_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -1542,8 +1542,8 @@ class az_group_list_command_builder extends CommandBuilder<az_group_list_command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_group_show_command_builder extends CommandBuilder<az_group_show_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -1583,8 +1583,8 @@ class az_group_show_command_builder extends CommandBuilder<az_group_show_command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_group_update_command_builder extends CommandBuilder<az_group_update_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -1650,8 +1650,8 @@ class az_group_update_command_builder extends CommandBuilder<az_group_update_com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_group_wait_command_builder extends CommandBuilder<az_group_wait_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
