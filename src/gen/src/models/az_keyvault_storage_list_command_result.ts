@@ -1,1 +1,2 @@
-export type az_keyvault_storage_list_command_result = Record<string, unknown>
+export interface az_keyvault_storage_list_command_result {
+}

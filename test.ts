@@ -68,12 +68,22 @@ az.webapp.identity
   .resourceGroup(resourceGroupName)
   .execute();
 
-az.webapp.deployment.slot.list().execute();
+az.webapp.deployment.slot
+  .list()
+  .name(webappName)
+  .resourceGroup(resourceGroupName)
+  .execute();
+
 az.webapp.deployment.slot
   .create(webappName, resourceGroupName, "staging")
   .execute();
 
-az.webapp.deployment.slot.list().execute();
+az.webapp.deployment.slot
+  .list()
+  .name(webappName)
+  .resourceGroup(resourceGroupName)
+  .execute();
+
 az.webapp.deployment.slot
   .delete("staging")
   .resourceGroup(resourceGroupName)
@@ -97,22 +107,41 @@ az.storage.account
   .resourceGroup(resourceGroupName)
   .execute();
 
-az.storage.account
+const connString = az.storage.account
   .show_connection_string()
   .name(storageAccountName)
   .resourceGroup(resourceGroupName)
   .execute();
 
-az.storage.table.list().accountName(storageAccountName).execute();
+az.storage.table
+  .list()
+  .accountName(storageAccountName)
+  .connectionString(connString.connectionString)
+  .execute();
 
-az.storage.table.create(tableName).accountName(storageAccountName).execute();
-az.storage.table.list().accountName(storageAccountName).execute();
+az.storage.table
+  .create(tableName)
+  .accountName(storageAccountName)
+  .connectionString(connString.connectionString)
+  .execute();
+
+az.storage.table
+  .list()
+  .accountName(storageAccountName)
+  .connectionString(connString.connectionString)
+  .execute();
+
 az.storage.table
   .generate_sas(tableName)
   .accountName(storageAccountName)
+  .connectionString(connString.connectionString)
   .execute();
 
-az.storage.table.delete(tableName).accountName(storageAccountName).execute();
+az.storage.table
+  .delete(tableName)
+  .accountName(storageAccountName)
+  .connectionString(connString.connectionString)
+  .execute();
 
 // event hubs
 az.eventhubs.namespace.list().execute();
@@ -133,12 +162,14 @@ az.eventhubs.namespace
 az.eventhubs.eventhub.list(ehNamespaceName, resourceGroupName).execute();
 az.eventhubs.eventhub
   .create(ehName, ehNamespaceName, resourceGroupName)
+  .messageRetention("1")
   .execute();
 
 az.eventhubs.eventhub.list(ehNamespaceName, resourceGroupName).execute();
 az.eventhubs.eventhub
   .show()
   .name(ehName)
+  .resourceGroup(resourceGroupName)
   .namespaceName(ehNamespaceName)
   .execute();
 
@@ -147,7 +178,7 @@ az.eventhubs.eventhub.authorization.rule
   .execute();
 
 az.eventhubs.eventhub.authorization.rule
-  .create(ehName, "my-new-rule", ehNamespaceName, resourceGroupName, "Manage")
+  .create(ehName, "my-new-rule", ehNamespaceName, resourceGroupName, "Listen")
   .execute();
 
 az.eventhubs.eventhub.authorization.rule
@@ -186,6 +217,7 @@ const newStorageAccountName = `newstorage${uniqueId}`;
 az.keyvault.storage.list(vaultName).execute();
 az.keyvault.storage
   .add(activeKeyName, newStorageAccountName, resourceGroupName, vaultName)
+  .autoRegenerateKey(false)
   .execute();
 
 az.keyvault.storage.list(vaultName).execute();
@@ -200,6 +232,8 @@ az.keyvault.secret.set("secretname", vaultName).value("asdf").execute();
 az.keyvault.secret.list().vaultName(vaultName).execute();
 az.keyvault.secret.show().name("secretname").vaultName(vaultName).execute();
 az.keyvault.secret.delete().vaultName(vaultName).name("secretname").execute();
+az.keyvault.secret.show_deleted().vaultName(vaultName).execute();
+
 const referencedKey = az.keyvault.secret
   .set("referenced", vaultName)
   .value("asdf")
@@ -216,16 +250,6 @@ az.keyvault.key
 az.keyvault.key.list().vaultName(vaultName).execute();
 az.keyvault.key.show().name("keyname").vaultName(vaultName).execute();
 az.keyvault.key.delete().vaultName(vaultName).name("keyname").execute();
-
-az.keyvault.certificate.list().vaultName(vaultName).execute();
-az.keyvault.certificate.create("certname", "policyname", vaultName).execute();
-az.keyvault.certificate.list().vaultName(vaultName).execute();
-az.keyvault.certificate.show().name("certname").vaultName(vaultName).execute();
-az.keyvault.certificate
-  .delete()
-  .vaultName(vaultName)
-  .name("certname")
-  .execute();
 
 // app config
 az.appconfig.list().execute();
@@ -244,30 +268,26 @@ az.appconfig.kv
   .execute();
 
 az.appconfig.kv
-  .set_keyvault("key2", "notarealidentifier")
-  .name(appConfigName)
-  .yes("")
-  .execute();
-
-az.appconfig.kv
-  .set_keyvault("key3", referencedKey.id as string)
+  .set_keyvault("key2", referencedKey.id as string)
   .name(appConfigName)
   .yes("")
   .execute();
 
 az.appconfig.kv.show("key1").name(appConfigName).execute();
 az.appconfig.kv.show("key2").name(appConfigName).execute();
-az.appconfig.kv.show("key3").name(appConfigName).execute();
 az.appconfig.kv.list().name(appConfigName).execute();
 az.appconfig.kv.list().name(appConfigName).resolveKeyvault(true).execute();
 
 // ad stuff
 az.ad.user.list().execute();
-const newUserName = crypto.randomBytes(4).toString("hex");
 const newPassword = crypto.randomBytes(24).toString("base64");
 
 const newUser = az.ad.user
-  .create(newUserName, newPassword, newUserName)
+  .create(
+    uniqueId,
+    newPassword,
+    `${uniqueId}@mattwaggonerdevfacto.onmicrosoft.com`
+  )
   .execute();
 az.ad.user.list().execute();
 az.ad.user.show(newUser.objectId as any).execute();
