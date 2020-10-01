@@ -8,9 +8,11 @@ const resourceGroupName = `matt-test-rg-${uniqueId}`;
 const appServicePlanName = `matt-test-plan-${uniqueId}`;
 const webappName = `matt-test-${uniqueId}`;
 const storageAccountName = `test${uniqueId}`;
-const tableName = `table{uniqueId}`;
-const ehNamespaceName = `name{uniqueId}`;
-const ehName = `eh{uniqueId}`;
+const tableName = `table${uniqueId}`;
+const ehNamespaceName = `name${uniqueId}`;
+const ehName = `eh${uniqueId}`;
+const appConfigName = `appconfig${uniqueId}`;
+const vaultName = `vault${uniqueId}`;
 
 // resource group
 az.group.list();
@@ -168,70 +170,150 @@ az.eventhubs.eventhub.authorization.rule
   .resourceGroup(resourceGroupName)
   .execute();
 
-// app config
-
 // keyvaults
+az.keyvault.list().execute();
+az.keyvault
+  .create(resourceGroupName)
+  .name(vaultName)
+  .sku("standard")
+  .location("canadacentral")
+  .execute();
+az.keyvault.list().execute();
+az.keyvault.show().name(vaultName).resourceGroup(resourceGroupName).execute();
 
-// role assignments
+const activeKeyName = `activekeyname${uniqueId}`;
+const newStorageAccountName = `newstorage${uniqueId}`;
+az.keyvault.storage.list(vaultName).execute();
+az.keyvault.storage
+  .add(activeKeyName, newStorageAccountName, resourceGroupName, vaultName)
+  .execute();
+
+az.keyvault.storage.list(vaultName).execute();
+az.keyvault.storage
+  .show()
+  .name(newStorageAccountName)
+  .vaultName(vaultName)
+  .execute();
+
+az.keyvault.secret.list().vaultName(vaultName).execute();
+az.keyvault.secret.set("secretname", vaultName).value("asdf").execute();
+az.keyvault.secret.list().vaultName(vaultName).execute();
+az.keyvault.secret.show().name("secretname").vaultName(vaultName).execute();
+az.keyvault.secret.delete().vaultName(vaultName).name("secretname").execute();
+const referencedKey = az.keyvault.secret
+  .set("referenced", vaultName)
+  .value("asdf")
+  .execute();
+
+az.keyvault.key.list().vaultName(vaultName).execute();
+az.keyvault.key
+  .create()
+  .vaultName(vaultName)
+  .name("keyname")
+  .size("2048")
+  .curve("P-256")
+  .execute();
+az.keyvault.key.list().vaultName(vaultName).execute();
+az.keyvault.key.show().name("keyname").vaultName(vaultName).execute();
+az.keyvault.key.delete().vaultName(vaultName).name("keyname").execute();
+
+az.keyvault.certificate.list().vaultName(vaultName).execute();
+az.keyvault.certificate.create("certname", "policyname", vaultName).execute();
+az.keyvault.certificate.list().vaultName(vaultName).execute();
+az.keyvault.certificate.show().name("certname").vaultName(vaultName).execute();
+az.keyvault.certificate
+  .delete()
+  .vaultName(vaultName)
+  .name("certname")
+  .execute();
+
+// app config
+az.appconfig.list().execute();
+az.appconfig
+  .create("canadacentral", appConfigName, resourceGroupName)
+  .sku("Free")
+  .execute();
+
+az.appconfig.list().execute();
+az.appconfig.show(appConfigName).resourceGroup(resourceGroupName).execute();
+az.appconfig.kv
+  .set("key1")
+  .name(appConfigName)
+  .value("value")
+  .yes("")
+  .execute();
+
+az.appconfig.kv
+  .set_keyvault("key2", "notarealidentifier")
+  .name(appConfigName)
+  .yes("")
+  .execute();
+
+az.appconfig.kv
+  .set_keyvault("key3", referencedKey.id as string)
+  .name(appConfigName)
+  .yes("")
+  .execute();
+
+az.appconfig.kv.show("key1").name(appConfigName).execute();
+az.appconfig.kv.show("key2").name(appConfigName).execute();
+az.appconfig.kv.show("key3").name(appConfigName).execute();
+az.appconfig.kv.list().name(appConfigName).execute();
+az.appconfig.kv.list().name(appConfigName).resolveKeyvault(true).execute();
 
 // ad stuff
+az.ad.user.list().execute();
+const newUserName = crypto.randomBytes(4).toString("hex");
+const newPassword = crypto.randomBytes(24).toString("base64");
+
+const newUser = az.ad.user
+  .create(newUserName, newPassword, newUserName)
+  .execute();
+az.ad.user.list().execute();
+az.ad.user.show(newUser.objectId as any).execute();
+az.ad.user.get_member_groups(newUser.objectId as any).execute();
+
+az.ad.group.list().execute();
+const newGroup = az.ad.group
+  .create("customgroupname", "custommailname")
+  .execute();
+const newParentGroup = az.ad.group
+  .create("parentGroup", "parentGroup")
+  .execute();
+
+az.ad.group.member
+  .add(newGroup.objectId as any, newUser.objectId as any)
+  .execute();
+az.ad.group.member.list(newGroup.objectId as any).execute();
+
+az.ad.group.member
+  .add(newParentGroup.objectId as any, newGroup.objectId as any)
+  .execute();
+
+az.ad.group.list().execute();
+
+az.ad.group.show(newGroup.objectId as any).execute();
+
+az.ad.group.get_member_groups(newGroup.objectId as any).execute();
+
+az.ad.user.get_member_groups(newUser.objectId as any).execute();
+
+// role assignments
+az.role.definition.list().execute();
+az.role.definition.create("myroledef").execute();
+az.role.definition.list().execute();
+
+az.role.assignment.list().execute();
+az.role.assignment
+  .create("myroledef")
+  .assignee(newUser.objectId as any)
+  .execute();
+
+az.role.assignment.list().execute();
+az.role.assignment.list_changelogs().execute();
 
 // accounts
+az.account.list().execute();
+const subscription = az.account.show().execute();
+az.account.set(subscription.id as any).execute();
 
-// subscriptions
-
-const appConfigName = "az-ts-app-config";
-const vaultName = "usage-recorder-keyvault";
-
-// create the resource group
-az.group.create("canadacentral", resourceGroupName).execute();
-
-// create the storage account and table storage for recording the
-// reported data structures
-
-az.storage.table
-  .create("datatypelogs")
-  .accountName(storageAccountName)
-  .execute();
-
-// get the connection string
-const connectionString = az.storage.account
-  .show_connection_string()
-  .resourceGroup(resourceGroupName)
-  .name(storageAccountName)
-  .execute();
-
-// create an app config
-//az.appconfig
-//  .create("canadacentral", appConfigName, resourceGroupName)
-//  .sku("Free")
-//  .execute();
-//
-//// create the keyvault if it doesn't exist
-//az.keyvault
-//  .create(resourceGroupName)
-//  .name(vaultName)
-//  .location("canadacentral")
-//  .enableSoftDelete(false)
-//  .execute();
-//
-//// store the connection string in keyvault
-//const secret = az.keyvault.secret
-//  .set("TableStorage-ConnectionString", vaultName)
-//  .value(connectionString["connectionString"] as string)
-//  .execute();
-//
-//// add a refernce to the secret in app config
-//az.appconfig.kv
-//  .set_keyvault("TableStorage:ConnectionString", secret.id as string)
-//  .name(appConfigName)
-//  .execute();
-
-// create the function app
-
-//az.keyvault
-//  .set_policy(vaultName)
-//  .secretPermissions("list", "get")
-//  .objectId(functionApp["identity"]["principalId"] as string)
-//  .resourceGroup(resourceGroupName)
-//  .execute();
