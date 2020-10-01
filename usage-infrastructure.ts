@@ -24,37 +24,11 @@ az.storage.table
   .execute();
 
 // get the connection string
-const connectionString = az.storage.account
+const connStrings = az.storage.account
   .show_connection_string()
   .resourceGroup(resourceGroupName)
   .name(storageAccountName)
   .execute();
-
-// create an app config
-//az.appconfig
-//  .create("canadacentral", appConfigName, resourceGroupName)
-//  .sku("Free")
-//  .execute();
-//
-//// create the keyvault if it doesn't exist
-//az.keyvault
-//  .create(resourceGroupName)
-//  .name(vaultName)
-//  .location("canadacentral")
-//  .enableSoftDelete(false)
-//  .execute();
-//
-//// store the connection string in keyvault
-//const secret = az.keyvault.secret
-//  .set("TableStorage-ConnectionString", vaultName)
-//  .value(connectionString["connectionString"] as string)
-//  .execute();
-//
-//// add a refernce to the secret in app config
-//az.appconfig.kv
-//  .set_keyvault("TableStorage:ConnectionString", secret.id as string)
-//  .name(appConfigName)
-//  .execute();
 
 // create the function app
 const functionApp = az.functionapp
@@ -69,9 +43,7 @@ az.functionapp.config.appsettings
   .set()
   .name("az-ts-usage-recorder")
   .resourceGroup(resourceGroupName)
-  .settings(
-    `TableStorage:ConnectionString=${connectionString["connectionString"]}`
-  )
+  .settings(`TableStorage:ConnectionString=${connStrings.connectionString}`)
   .execute();
 
 //az.keyvault
@@ -80,3 +52,4 @@ az.functionapp.config.appsettings
 //  .objectId(functionApp["identity"]["principalId"] as string)
 //  .resourceGroup(resourceGroupName)
 //  .execute();
+
