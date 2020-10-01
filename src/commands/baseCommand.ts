@@ -13,7 +13,7 @@ export interface OptionsResult {
 }
 
 export interface Command {
-  execute: (options: OptionsResult) => void;
+  execute: (options: OptionsResult) => void | Promise<any>;
 }
 
 const optionDefinitions: OptionDefinition[] = [

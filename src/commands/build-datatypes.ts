@@ -10,24 +10,31 @@ import _ from "lodash";
 
 class BuildDataTypesCommand implements Command {
   execute = (opts: OptionsResult) => {
-    CleanUp(({ addCleanupTask }) => {
-      usage.getAllUsage().then((data) => {
-        const rows = data.map((row) => {
-          const typeName = data.partitionKey;
-          const dataStructure = JSON.parse(data.data);
-          return { typeName, dataStructure };
-        });
+    return CleanUp(async ({ addCleanupTask }) => {
+      const data = await usage.getAllUsage();
+      const rows = data.map((row) => {
+        const typeName = row.partitionKey;
+        const dataStructure = JSON.parse(row.data);
+        return { typeName, dataStructure };
+      });
 
-        const groups = _.groupBy(rows, (r) => r.typeName);
+      const groups = _.groupBy(rows, (r) => r.typeName);
+      const results: { [key: string]: any[] } = {};
 
-        Object.keys(groups).map((key) => {
-          const json = JSON.stringify(groups[key]);
-          const interfaces = this.convertJsonToTS(json, key);
-          const fileName = path.join(__dirname, `../gen/src/models/${key}.ts`);
-          this.saveGeneratedInterfaces(interfaces, fileName);
-        });
+      Object.keys(groups).map((key) => {
+        results[key] = groups[key]
+          .map((o) => o.dataStructure)
+          .reduce((a, b) => a.concat(b), []);
+      });
 
-        // group data structures by type name
+      console.log(results);
+      Object.keys(results).map((key) => {
+        //const json = JSON.stringify(groups[key]);
+        const json = results[key];
+        console.log(json);
+        const interfaces = this.convertJsonToTS(json, key);
+        const fileName = path.join(__dirname, `../gen/src/models/${key}.ts`);
+        this.saveGeneratedInterfaces(interfaces, fileName);
       });
 
       console.log("done.\n");
