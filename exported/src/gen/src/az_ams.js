@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_ams = exports.az_ams_transform = exports.az_ams_transform_output = exports.az_ams_streaming_policy = exports.az_ams_streaming_locator = exports.az_ams_streaming_endpoint = exports.az_ams_streaming_endpoint_akamai = exports.az_ams_live_output = exports.az_ams_live_event = exports.az_ams_job = exports.az_ams_content_key_policy = exports.az_ams_content_key_policy_option = exports.az_ams_asset = exports.az_ams_asset_filter = exports.az_ams_account = exports.az_ams_account_filter = exports.az_ams_account_storage = exports.az_ams_account_sp = exports.az_ams_account_mru = void 0;
 var base_1 = require("../base");
 /** Manage media reserved units for an Azure Media Services account. */
 var az_ams_account_mru = /** @class */ (function () {

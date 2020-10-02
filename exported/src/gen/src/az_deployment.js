@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_deployment = exports.az_deployment_scripts = exports.az_deployment_tenant = exports.az_deployment_sub = exports.az_deployment_operation = exports.az_deployment_operation_tenant = exports.az_deployment_operation_sub = exports.az_deployment_operation_mg = exports.az_deployment_operation_group = exports.az_deployment_mg = exports.az_deployment_group = void 0;
 var base_1 = require("../base");
 /** Manage Azure Resource Manager template deployment at resource group. */
 var az_deployment_group = /** @class */ (function () {

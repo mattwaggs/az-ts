@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_deploymentmanager = exports.az_deploymentmanager_step = exports.az_deploymentmanager_service = exports.az_deploymentmanager_service_unit = exports.az_deploymentmanager_service_topology = exports.az_deploymentmanager_rollout = exports.az_deploymentmanager_artifact_source = void 0;
 var base_1 = require("../base");
 /** Manage artifact sources. */
 var az_deploymentmanager_artifact_source = /** @class */ (function () {

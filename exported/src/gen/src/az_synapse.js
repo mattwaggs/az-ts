@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_synapse = exports.az_synapse_workspace = exports.az_synapse_workspace_firewall_rule = exports.az_synapse_sql = exports.az_synapse_sql_pool = exports.az_synapse_spark = exports.az_synapse_spark_statement = exports.az_synapse_spark_session = exports.az_synapse_spark_pool = exports.az_synapse_spark_job = exports.az_synapse_role = exports.az_synapse_role_definition = exports.az_synapse_role_assignment = void 0;
 var base_1 = require("../base");
 /** Manage Synapse's role assignments. */
 var az_synapse_role_assignment = /** @class */ (function () {

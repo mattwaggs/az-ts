@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_iot = exports.az_iot_hub = exports.az_iot_hub_routing_endpoint = exports.az_iot_hub_route = exports.az_iot_hub_policy = exports.az_iot_hub_message_enrichment = exports.az_iot_hub_devicestream = exports.az_iot_hub_consumer_group = exports.az_iot_hub_certificate = exports.az_iot_dps = exports.az_iot_dps_linked_hub = exports.az_iot_dps_certificate = exports.az_iot_dps_access_policy = exports.az_iot_central = exports.az_iot_central_app = void 0;
 var base_1 = require("../base");
 /** Manage IoT Central applications. */
 var az_iot_central_app = /** @class */ (function () {

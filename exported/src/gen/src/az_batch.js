@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_batch = exports.az_batch_task = exports.az_batch_task_subtask = exports.az_batch_task_file = exports.az_batch_pool = exports.az_batch_pool_usage_metrics = exports.az_batch_pool_supported_images = exports.az_batch_pool_node_counts = exports.az_batch_pool_autoscale = exports.az_batch_pool_all_statistics = exports.az_batch_node = exports.az_batch_node_user = exports.az_batch_node_service_logs = exports.az_batch_node_scheduling = exports.az_batch_node_remote_login_settings = exports.az_batch_node_remote_desktop = exports.az_batch_node_file = exports.az_batch_location = exports.az_batch_location_quotas = exports.az_batch_job = exports.az_batch_job_schedule = exports.az_batch_job_task_counts = exports.az_batch_job_prep_release_status = exports.az_batch_job_all_statistics = exports.az_batch_certificate = exports.az_batch_application = exports.az_batch_application_summary = exports.az_batch_application_package = exports.az_batch_account = exports.az_batch_account_keys = exports.az_batch_account_autostorage_keys = void 0;
 var base_1 = require("../base");
 /** Manage the access keys for the auto storage account configured for a Batch account. */
 var az_batch_account_autostorage_keys = /** @class */ (function () {

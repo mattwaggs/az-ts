@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_keyvault = exports.az_keyvault_storage = exports.az_keyvault_storage_sas_definition = exports.az_keyvault_security_domain = exports.az_keyvault_secret = exports.az_keyvault_role = exports.az_keyvault_role_definition = exports.az_keyvault_role_assignment = exports.az_keyvault_restore = exports.az_keyvault_private_link_resource = exports.az_keyvault_private_endpoint_connection = exports.az_keyvault_network_rule = exports.az_keyvault_key = exports.az_keyvault_certificate = exports.az_keyvault_certificate_pending = exports.az_keyvault_certificate_issuer = exports.az_keyvault_certificate_issuer_admin = exports.az_keyvault_certificate_contact = exports.az_keyvault_backup = void 0;
 var base_1 = require("../base");
 /** Manage full HSM backup. */
 var az_keyvault_backup = /** @class */ (function () {

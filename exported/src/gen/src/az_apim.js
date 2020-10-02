@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_apim = exports.az_apim_product = exports.az_apim_product_api = exports.az_apim_nv = exports.az_apim_api = exports.az_apim_api_versionset = exports.az_apim_api_revision = exports.az_apim_api_release = exports.az_apim_api_operation = void 0;
 var base_1 = require("../base");
 /** Manage Azure API Management API Operations. */
 var az_apim_api_operation = /** @class */ (function () {

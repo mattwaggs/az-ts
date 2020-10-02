@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_cdn = exports.az_cdn_waf = exports.az_cdn_waf_policy = exports.az_cdn_waf_policy_rate_limit_rule = exports.az_cdn_waf_policy_managed_rule_set = exports.az_cdn_waf_policy_managed_rule_set_rule_group_override = exports.az_cdn_waf_policy_custom_rule = exports.az_cdn_profile = exports.az_cdn_origin = exports.az_cdn_endpoint = exports.az_cdn_endpoint_waf = exports.az_cdn_endpoint_waf_policy = exports.az_cdn_endpoint_rule = exports.az_cdn_endpoint_rule_condition = exports.az_cdn_endpoint_rule_action = exports.az_cdn_edge_node = exports.az_cdn_custom_domain = void 0;
 var base_1 = require("../base");
 /** Manage Azure CDN Custom Domains to provide custom host names for endpoints. */
 var az_cdn_custom_domain = /** @class */ (function () {

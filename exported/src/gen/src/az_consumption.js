@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_consumption = exports.az_consumption_usage = exports.az_consumption_reservation = exports.az_consumption_reservation_summary = exports.az_consumption_reservation_detail = exports.az_consumption_pricesheet = exports.az_consumption_marketplace = exports.az_consumption_budget = void 0;
 var base_1 = require("../base");
 /** Manage budgets for an Azure subscription. */
 var az_consumption_budget = /** @class */ (function () {

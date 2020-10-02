@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_sf = exports.az_sf_service = exports.az_sf_managed_node_type = exports.az_sf_managed_node_type_vm_secret = exports.az_sf_managed_node_type_vm_extension = exports.az_sf_managed_node_type_node = exports.az_sf_managed_cluster = exports.az_sf_managed_cluster_client_certificate = exports.az_sf_cluster = exports.az_sf_cluster_upgrade_type = exports.az_sf_cluster_setting = exports.az_sf_cluster_reliability = exports.az_sf_cluster_node = exports.az_sf_cluster_node_type = exports.az_sf_cluster_durability = exports.az_sf_cluster_client_certificate = exports.az_sf_cluster_certificate = exports.az_sf_application = exports.az_sf_application_type = exports.az_sf_application_type_version = exports.az_sf_application_certificate = void 0;
 var base_1 = require("../base");
 /** Manage the certificate of an application. */
 var az_sf_application_certificate = /** @class */ (function () {

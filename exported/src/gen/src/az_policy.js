@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_policy = exports.az_policy_state = exports.az_policy_set_definition = exports.az_policy_remediation = exports.az_policy_remediation_deployment = exports.az_policy_metadata = exports.az_policy_event = exports.az_policy_definition = exports.az_policy_assignment = exports.az_policy_assignment_identity = void 0;
 var base_1 = require("../base");
 /** Manage a policy assignment's managed identity. */
 var az_policy_assignment_identity = /** @class */ (function () {

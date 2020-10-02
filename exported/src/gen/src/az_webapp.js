@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_webapp = exports.az_webapp_webjob = exports.az_webapp_webjob_triggered = exports.az_webapp_webjob_continuous = exports.az_webapp_vnet_integration = exports.az_webapp_traffic_routing = exports.az_webapp_log = exports.az_webapp_log_deployment = exports.az_webapp_identity = exports.az_webapp_hybrid_connection = exports.az_webapp_deployment = exports.az_webapp_deployment_user = exports.az_webapp_deployment_source = exports.az_webapp_deployment_slot = exports.az_webapp_deployment_container = exports.az_webapp_deleted = exports.az_webapp_cors = exports.az_webapp_config = exports.az_webapp_config_storage_account = exports.az_webapp_config_ssl = exports.az_webapp_config_snapshot = exports.az_webapp_config_hostname = exports.az_webapp_config_container = exports.az_webapp_config_connection_string = exports.az_webapp_config_backup = exports.az_webapp_config_appsettings = exports.az_webapp_config_access_restriction = exports.az_webapp_auth = void 0;
 var base_1 = require("../base");
 /** Manage webapp authentication and authorization. */
 var az_webapp_auth = /** @class */ (function () {

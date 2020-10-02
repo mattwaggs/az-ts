@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_devops = exports.az_devops_wiki = exports.az_devops_wiki_page = exports.az_devops_user = exports.az_devops_team = exports.az_devops_service_endpoint = exports.az_devops_service_endpoint_github = exports.az_devops_service_endpoint_azurerm = exports.az_devops_security = exports.az_devops_security_permission = exports.az_devops_security_permission_namespace = exports.az_devops_security_group = exports.az_devops_security_group_membership = exports.az_devops_project = exports.az_devops_extension = exports.az_devops_admin = exports.az_devops_admin_banner = void 0;
 var base_1 = require("../base");
 /** Manage organization banner. */
 var az_devops_admin_banner = /** @class */ (function () {

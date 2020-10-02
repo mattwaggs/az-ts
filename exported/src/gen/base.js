@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.CommandBuilder = void 0;
 var executor_1 = require("../commands/utils/executor");
 var CommandBuilder = /** @class */ (function () {
     function CommandBuilder(commandPath, resultDataTypeName) {

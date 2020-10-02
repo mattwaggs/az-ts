@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_lab = exports.az_lab_vnet = exports.az_lab_vm = exports.az_lab_secret = exports.az_lab_gallery_image = exports.az_lab_formula = exports.az_lab_environment = exports.az_lab_custom_image = exports.az_lab_artifact = exports.az_lab_artifact_source = exports.az_lab_arm_template = void 0;
 var base_1 = require("../base");
 /** Manage Azure Resource Manager (ARM) templates in an Azure DevTest Lab. */
 var az_lab_arm_template = /** @class */ (function () {

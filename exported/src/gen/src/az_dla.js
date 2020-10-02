@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_dla = exports.az_dla_job = exports.az_dla_job_recurrence = exports.az_dla_job_pipeline = exports.az_dla_catalog = exports.az_dla_catalog_view = exports.az_dla_catalog_tvf = exports.az_dla_catalog_table = exports.az_dla_catalog_table_type = exports.az_dla_catalog_table_stats = exports.az_dla_catalog_table_partition = exports.az_dla_catalog_schema = exports.az_dla_catalog_procedure = exports.az_dla_catalog_package = exports.az_dla_catalog_external_data_source = exports.az_dla_catalog_database = exports.az_dla_catalog_credential = exports.az_dla_catalog_assembly = exports.az_dla_account = exports.az_dla_account_firewall = exports.az_dla_account_data_lake_store = exports.az_dla_account_compute_policy = exports.az_dla_account_blob_storage = void 0;
 var base_1 = require("../base");
 /** Manage links between Data Lake Analytics accounts and Azure Storage. */
 var az_dla_account_blob_storage = /** @class */ (function () {

@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_sql = exports.az_sql_vm = exports.az_sql_vm_group = exports.az_sql_vm_group_ag_listener = exports.az_sql_virtual_cluster = exports.az_sql_server = exports.az_sql_server_vnet_rule = exports.az_sql_server_tde_key = exports.az_sql_server_key = exports.az_sql_server_firewall_rule = exports.az_sql_server_dns_alias = exports.az_sql_server_conn_policy = exports.az_sql_server_audit_policy = exports.az_sql_server_ad_admin = exports.az_sql_midb = exports.az_sql_midb_short_term_retention_policy = exports.az_sql_midb_ltr_policy = exports.az_sql_midb_ltr_backup = exports.az_sql_mi = exports.az_sql_mi_tde_key = exports.az_sql_mi_op = exports.az_sql_mi_key = exports.az_sql_mi_ad_admin = exports.az_sql_instance_pool = exports.az_sql_instance_failover_group = exports.az_sql_failover_group = exports.az_sql_elastic_pool = exports.az_sql_elastic_pool_op = exports.az_sql_dw = exports.az_sql_db = exports.az_sql_db_threat_policy = exports.az_sql_db_tde = exports.az_sql_db_replica = exports.az_sql_db_op = exports.az_sql_db_ltr_policy = exports.az_sql_db_ltr_backup = exports.az_sql_db_classification = exports.az_sql_db_classification_recommendation = exports.az_sql_db_audit_policy = void 0;
 var base_1 = require("../base");
 /** Manage a database's auditing policy. */
 var az_sql_db_audit_policy = /** @class */ (function () {

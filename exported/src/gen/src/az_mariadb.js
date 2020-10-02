@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_mariadb = exports.az_mariadb_server = exports.az_mariadb_server_logs = exports.az_mariadb_server_vnet_rule = exports.az_mariadb_server_replica = exports.az_mariadb_server_private_link_resource = exports.az_mariadb_server_private_endpoint_connection = exports.az_mariadb_server_firewall_rule = exports.az_mariadb_server_configuration = exports.az_mariadb_db = void 0;
 var base_1 = require("../base");
 /** Manage MariaDB databases on a server. */
 var az_mariadb_db = /** @class */ (function () {

@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_functionapp = exports.az_functionapp_vnet_integration = exports.az_functionapp_plan = exports.az_functionapp_log = exports.az_functionapp_log_deployment = exports.az_functionapp_keys = exports.az_functionapp_identity = exports.az_functionapp_hybrid_connection = exports.az_functionapp_function = exports.az_functionapp_function_keys = exports.az_functionapp_devops_pipeline = exports.az_functionapp_deployment = exports.az_functionapp_deployment_user = exports.az_functionapp_deployment_source = exports.az_functionapp_deployment_slot = exports.az_functionapp_deployment_container = exports.az_functionapp_cors = exports.az_functionapp_config = exports.az_functionapp_config_ssl = exports.az_functionapp_config_hostname = exports.az_functionapp_config_container = exports.az_functionapp_config_appsettings = exports.az_functionapp_config_access_restriction = void 0;
 var base_1 = require("../base");
 /** Methods that show, set, add, and remove access restrictions on a functionapp. */
 var az_functionapp_config_access_restriction = /** @class */ (function () {

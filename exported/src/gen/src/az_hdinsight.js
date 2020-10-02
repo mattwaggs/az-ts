@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_hdinsight = exports.az_hdinsight_script_action = exports.az_hdinsight_monitor = exports.az_hdinsight_host = exports.az_hdinsight_autoscale = exports.az_hdinsight_autoscale_condition = exports.az_hdinsight_application = void 0;
 var base_1 = require("../base");
 /** Manage HDInsight applications. */
 var az_hdinsight_application = /** @class */ (function () {

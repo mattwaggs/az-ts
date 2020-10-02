@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_vm = exports.az_vm_user = exports.az_vm_unmanaged_disk = exports.az_vm_secret = exports.az_vm_run_command = exports.az_vm_nic = exports.az_vm_monitor = exports.az_vm_monitor_metrics = exports.az_vm_monitor_log = exports.az_vm_image = exports.az_vm_image_terms = exports.az_vm_identity = exports.az_vm_host = exports.az_vm_host_group = exports.az_vm_extension = exports.az_vm_extension_image = exports.az_vm_encryption = exports.az_vm_disk = exports.az_vm_diagnostics = exports.az_vm_boot_diagnostics = exports.az_vm_availability_set = void 0;
 var base_1 = require("../base");
 /** Group resources into availability sets. */
 var az_vm_availability_set = /** @class */ (function () {

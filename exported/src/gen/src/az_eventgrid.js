@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_eventgrid = exports.az_eventgrid_topic = exports.az_eventgrid_topic_type = exports.az_eventgrid_topic_key = exports.az_eventgrid_system_topic = exports.az_eventgrid_system_topic_event_subscription = exports.az_eventgrid_partner = exports.az_eventgrid_partner_topic = exports.az_eventgrid_partner_topic_event_subscription = exports.az_eventgrid_partner_registration = exports.az_eventgrid_partner_namespace = exports.az_eventgrid_partner_namespace_key = exports.az_eventgrid_partner_namespace_event_channel = exports.az_eventgrid_extension_topic = exports.az_eventgrid_event_subscription = exports.az_eventgrid_domain = exports.az_eventgrid_domain_topic = exports.az_eventgrid_domain_key = void 0;
 var base_1 = require("../base");
 /** Manage shared access keys of a domain. */
 var az_eventgrid_domain_key = /** @class */ (function () {

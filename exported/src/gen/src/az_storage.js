@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_storage = exports.az_storage_table = exports.az_storage_table_policy = exports.az_storage_share = exports.az_storage_share_rm = exports.az_storage_share_policy = exports.az_storage_share_metadata = exports.az_storage_queue = exports.az_storage_queue_policy = exports.az_storage_queue_metadata = exports.az_storage_metrics = exports.az_storage_message = exports.az_storage_logging = exports.az_storage_fs = exports.az_storage_fs_metadata = exports.az_storage_fs_file = exports.az_storage_fs_file_metadata = exports.az_storage_fs_directory = exports.az_storage_fs_directory_metadata = exports.az_storage_fs_access = exports.az_storage_file = exports.az_storage_file_metadata = exports.az_storage_file_copy = exports.az_storage_entity = exports.az_storage_directory = exports.az_storage_directory_metadata = exports.az_storage_cors = exports.az_storage_container = exports.az_storage_container_policy = exports.az_storage_container_metadata = exports.az_storage_container_legal_hold = exports.az_storage_container_lease = exports.az_storage_container_immutability_policy = exports.az_storage_blob = exports.az_storage_blob_service_properties = exports.az_storage_blob_service_properties_delete_policy = exports.az_storage_blob_metadata = exports.az_storage_blob_lease = exports.az_storage_blob_incremental_copy = exports.az_storage_blob_copy = exports.az_storage_account = exports.az_storage_account_private_link_resource = exports.az_storage_account_private_endpoint_connection = exports.az_storage_account_or_policy = exports.az_storage_account_or_policy_rule = exports.az_storage_account_network_rule = exports.az_storage_account_management_policy = exports.az_storage_account_keys = exports.az_storage_account_file_service_properties = exports.az_storage_account_encryption_scope = exports.az_storage_account_blob_service_properties = void 0;
 var base_1 = require("../base");
 /** Manage the properties of a storage account's blob service. */
 var az_storage_account_blob_service_properties = /** @class */ (function () {

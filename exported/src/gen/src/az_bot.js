@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_bot = exports.az_bot_webchat = exports.az_bot_telegram = exports.az_bot_sms = exports.az_bot_slack = exports.az_bot_skype = exports.az_bot_msteams = exports.az_bot_kik = exports.az_bot_facebook = exports.az_bot_email = exports.az_bot_directline = exports.az_bot_authsetting = void 0;
 var base_1 = require("../base");
 /** Manage OAuth connection settings on a bot. */
 var az_bot_authsetting = /** @class */ (function () {

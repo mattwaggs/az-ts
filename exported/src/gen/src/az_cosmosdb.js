@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_cosmosdb = exports.az_cosmosdb_table = exports.az_cosmosdb_table_throughput = exports.az_cosmosdb_sql = exports.az_cosmosdb_sql_user_defined_function = exports.az_cosmosdb_sql_trigger = exports.az_cosmosdb_sql_stored_procedure = exports.az_cosmosdb_sql_database = exports.az_cosmosdb_sql_database_throughput = exports.az_cosmosdb_sql_container = exports.az_cosmosdb_sql_container_throughput = exports.az_cosmosdb_private_link_resource = exports.az_cosmosdb_private_endpoint_connection = exports.az_cosmosdb_network_rule = exports.az_cosmosdb_mongodb = exports.az_cosmosdb_mongodb_database = exports.az_cosmosdb_mongodb_database_throughput = exports.az_cosmosdb_mongodb_collection = exports.az_cosmosdb_mongodb_collection_throughput = exports.az_cosmosdb_keys = exports.az_cosmosdb_gremlin = exports.az_cosmosdb_gremlin_graph = exports.az_cosmosdb_gremlin_graph_throughput = exports.az_cosmosdb_gremlin_database = exports.az_cosmosdb_gremlin_database_throughput = exports.az_cosmosdb_database = exports.az_cosmosdb_collection = exports.az_cosmosdb_cassandra = exports.az_cosmosdb_cassandra_table = exports.az_cosmosdb_cassandra_table_throughput = exports.az_cosmosdb_cassandra_keyspace = exports.az_cosmosdb_cassandra_keyspace_throughput = void 0;
 var base_1 = require("../base");
 /** Manage throughput of Cassandra keyspace under an Azure Cosmos DB account. */
 var az_cosmosdb_cassandra_keyspace_throughput = /** @class */ (function () {

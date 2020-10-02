@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_security = exports.az_security_workspace_setting = exports.az_security_topology = exports.az_security_task = exports.az_security_sub_assessment = exports.az_security_setting = exports.az_security_regulatory_compliance_standards = exports.az_security_regulatory_compliance_controls = exports.az_security_regulatory_compliance_assessments = exports.az_security_pricing = exports.az_security_location = exports.az_security_jit_policy = exports.az_security_iot_solution = exports.az_security_iot_recommendations = exports.az_security_iot_analytics = exports.az_security_iot_alerts = exports.az_security_external_security_solution = exports.az_security_discovered_security_solution = exports.az_security_contact = exports.az_security_auto_provisioning_setting = exports.az_security_atp = exports.az_security_atp_storage = exports.az_security_assessment = exports.az_security_assessment_metadata = exports.az_security_allowed_connections = exports.az_security_alert = exports.az_security_adaptive_network_hardenings = exports.az_security_adaptive_application_controls = void 0;
 var base_1 = require("../base");
 /** Enable control which applications can run on your Azure and non-Azure machines (Windows and Linux). */
 var az_security_adaptive_application_controls = /** @class */ (function () {

@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_vmss = exports.az_vmss_run_command = exports.az_vmss_rolling_upgrade = exports.az_vmss_nic = exports.az_vmss_identity = exports.az_vmss_extension = exports.az_vmss_extension_image = exports.az_vmss_encryption = exports.az_vmss_disk = exports.az_vmss_diagnostics = void 0;
 var base_1 = require("../base");
 /** Configure the Azure Virtual Machine Scale Set diagnostics extension. */
 var az_vmss_diagnostics = /** @class */ (function () {

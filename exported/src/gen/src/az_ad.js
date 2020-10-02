@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_ad = exports.az_ad_user = exports.az_ad_sp = exports.az_ad_sp_owner = exports.az_ad_sp_credential = exports.az_ad_signed_in_user = exports.az_ad_group = exports.az_ad_group_owner = exports.az_ad_group_member = exports.az_ad_app = exports.az_ad_app_permission = exports.az_ad_app_owner = exports.az_ad_app_credential = void 0;
 var base_1 = require("../base");
 /** Manage an application's password or certificate credentials. */
 var az_ad_app_credential = /** @class */ (function () {

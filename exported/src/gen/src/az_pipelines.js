@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_pipelines = exports.az_pipelines_variable = exports.az_pipelines_variable_group = exports.az_pipelines_variable_group_variable = exports.az_pipelines_runs = exports.az_pipelines_runs_tag = exports.az_pipelines_runs_artifact = exports.az_pipelines_release = exports.az_pipelines_release_definition = exports.az_pipelines_queue = exports.az_pipelines_pool = exports.az_pipelines_folder = exports.az_pipelines_build = exports.az_pipelines_build_tag = exports.az_pipelines_build_definition = exports.az_pipelines_agent = void 0;
 var base_1 = require("../base");
 /** Manage agents. */
 var az_pipelines_agent = /** @class */ (function () {

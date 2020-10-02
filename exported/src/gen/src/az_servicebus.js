@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_servicebus = exports.az_servicebus_topic = exports.az_servicebus_topic_subscription = exports.az_servicebus_topic_subscription_rule = exports.az_servicebus_topic_authorization_rule = exports.az_servicebus_topic_authorization_rule_keys = exports.az_servicebus_queue = exports.az_servicebus_queue_authorization_rule = exports.az_servicebus_queue_authorization_rule_keys = exports.az_servicebus_namespace = exports.az_servicebus_namespace_network_rule = exports.az_servicebus_namespace_authorization_rule = exports.az_servicebus_namespace_authorization_rule_keys = exports.az_servicebus_migration = exports.az_servicebus_georecovery_alias = exports.az_servicebus_georecovery_alias_authorization_rule = exports.az_servicebus_georecovery_alias_authorization_rule_keys = void 0;
 var base_1 = require("../base");
 /** Manage Azure Authorization Rule keys for Service Bus Namespace. */
 var az_servicebus_georecovery_alias_authorization_rule_keys = /** @class */ (function () {

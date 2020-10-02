@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_monitor = exports.az_monitor_private_link_scope = exports.az_monitor_private_link_scope_scoped_resource = exports.az_monitor_private_link_scope_private_link_resource = exports.az_monitor_private_link_scope_private_endpoint_connection = exports.az_monitor_metrics = exports.az_monitor_metrics_alert = exports.az_monitor_log_profiles = exports.az_monitor_log_analytics = exports.az_monitor_log_analytics_workspace = exports.az_monitor_log_analytics_workspace_table = exports.az_monitor_log_analytics_workspace_saved_search = exports.az_monitor_log_analytics_workspace_pack = exports.az_monitor_log_analytics_workspace_linked_storage = exports.az_monitor_log_analytics_workspace_linked_service = exports.az_monitor_log_analytics_workspace_data_export = exports.az_monitor_log_analytics_cluster = exports.az_monitor_diagnostic_settings = exports.az_monitor_diagnostic_settings_subscription = exports.az_monitor_diagnostic_settings_categories = exports.az_monitor_autoscale = exports.az_monitor_autoscale_settings = exports.az_monitor_autoscale_rule = exports.az_monitor_autoscale_profile = exports.az_monitor_alert = exports.az_monitor_activity_log = exports.az_monitor_activity_log_alert = exports.az_monitor_activity_log_alert_scope = exports.az_monitor_activity_log_alert_action_group = exports.az_monitor_action_group = void 0;
 var base_1 = require("../base");
 /** Manage action groups. */
 var az_monitor_action_group = /** @class */ (function () {

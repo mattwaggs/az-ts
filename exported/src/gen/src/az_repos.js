@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_repos = exports.az_repos_ref = exports.az_repos_pr = exports.az_repos_pr_work_item = exports.az_repos_pr_reviewer = exports.az_repos_pr_policy = exports.az_repos_policy = exports.az_repos_policy_work_item_linking = exports.az_repos_policy_required_reviewer = exports.az_repos_policy_merge_strategy = exports.az_repos_policy_file_size = exports.az_repos_policy_comment_required = exports.az_repos_policy_case_enforcement = exports.az_repos_policy_build = exports.az_repos_policy_approver_count = exports.az_repos_import = void 0;
 var base_1 = require("../base");
 /** Manage Git repositories import. */
 var az_repos_import = /** @class */ (function () {

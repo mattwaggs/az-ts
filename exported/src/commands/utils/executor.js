@@ -1,12 +1,12 @@
 "use strict";
 exports.__esModule = true;
+exports.executor = void 0;
 var child_process_1 = require("child_process");
 var usage_1 = require("./usage");
 var executor = /** @class */ (function () {
     function executor() {
     }
     executor.execute = function (command, resultDataTypeName) {
-        console.log(command);
         try {
             var result = child_process_1.execSync(command).toString();
             if (result) {

@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_acr = exports.az_acr_webhook = exports.az_acr_token = exports.az_acr_token_credential = exports.az_acr_taskrun = exports.az_acr_task = exports.az_acr_task_timer = exports.az_acr_task_identity = exports.az_acr_task_credential = exports.az_acr_scope_map = exports.az_acr_repository = exports.az_acr_replication = exports.az_acr_private_link_resource = exports.az_acr_private_endpoint_connection = exports.az_acr_pack = exports.az_acr_network_rule = exports.az_acr_identity = exports.az_acr_helm = exports.az_acr_helm_repo = exports.az_acr_encryption = exports.az_acr_credential = exports.az_acr_config = exports.az_acr_config_retention = exports.az_acr_config_content_trust = exports.az_acr_agentpool = void 0;
 var base_1 = require("../base");
 /** Manage private Tasks agent pools with Azure Container Registries. */
 var az_acr_agentpool = /** @class */ (function () {

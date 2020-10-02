@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_backup = exports.az_backup_vault = exports.az_backup_vault_backup_properties = exports.az_backup_restore = exports.az_backup_restore_files = exports.az_backup_recoverypoint = exports.az_backup_recoveryconfig = exports.az_backup_protection = exports.az_backup_protectable_item = exports.az_backup_policy = exports.az_backup_job = exports.az_backup_item = exports.az_backup_container = void 0;
 var base_1 = require("../base");
 /** Resource which houses items or applications to be protected. */
 var az_backup_container = /** @class */ (function () {

@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+exports.az_dls = exports.az_dls_fs = exports.az_dls_fs_access = exports.az_dls_account = exports.az_dls_account_trusted_provider = exports.az_dls_account_network_rule = exports.az_dls_account_firewall = void 0;
 var base_1 = require("../base");
 /** Manage Data Lake Store account firewall rules. */
 var az_dls_account_firewall = /** @class */ (function () {
