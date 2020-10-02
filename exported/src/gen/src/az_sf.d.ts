@@ -1,0 +1,2872 @@
+import { CommandBuilder } from '../base';
+import { az_sf_application_certificate_add_command_result } from './models/az_sf_application_certificate_add_command_result';
+import { az_sf_application_type_version_create_command_result } from './models/az_sf_application_type_version_create_command_result';
+import { az_sf_application_type_version_delete_command_result } from './models/az_sf_application_type_version_delete_command_result';
+import { az_sf_application_type_version_list_command_result } from './models/az_sf_application_type_version_list_command_result';
+import { az_sf_application_type_version_show_command_result } from './models/az_sf_application_type_version_show_command_result';
+import { az_sf_application_type_create_command_result } from './models/az_sf_application_type_create_command_result';
+import { az_sf_application_type_delete_command_result } from './models/az_sf_application_type_delete_command_result';
+import { az_sf_application_type_list_command_result } from './models/az_sf_application_type_list_command_result';
+import { az_sf_application_type_show_command_result } from './models/az_sf_application_type_show_command_result';
+import { az_sf_application_create_command_result } from './models/az_sf_application_create_command_result';
+import { az_sf_application_delete_command_result } from './models/az_sf_application_delete_command_result';
+import { az_sf_application_list_command_result } from './models/az_sf_application_list_command_result';
+import { az_sf_application_show_command_result } from './models/az_sf_application_show_command_result';
+import { az_sf_application_update_command_result } from './models/az_sf_application_update_command_result';
+import { az_sf_cluster_certificate_add_command_result } from './models/az_sf_cluster_certificate_add_command_result';
+import { az_sf_cluster_certificate_remove_command_result } from './models/az_sf_cluster_certificate_remove_command_result';
+import { az_sf_cluster_client_certificate_add_command_result } from './models/az_sf_cluster_client_certificate_add_command_result';
+import { az_sf_cluster_client_certificate_remove_command_result } from './models/az_sf_cluster_client_certificate_remove_command_result';
+import { az_sf_cluster_durability_update_command_result } from './models/az_sf_cluster_durability_update_command_result';
+import { az_sf_cluster_node_type_add_command_result } from './models/az_sf_cluster_node_type_add_command_result';
+import { az_sf_cluster_node_add_command_result } from './models/az_sf_cluster_node_add_command_result';
+import { az_sf_cluster_node_remove_command_result } from './models/az_sf_cluster_node_remove_command_result';
+import { az_sf_cluster_reliability_update_command_result } from './models/az_sf_cluster_reliability_update_command_result';
+import { az_sf_cluster_setting_remove_command_result } from './models/az_sf_cluster_setting_remove_command_result';
+import { az_sf_cluster_setting_set_command_result } from './models/az_sf_cluster_setting_set_command_result';
+import { az_sf_cluster_upgrade_type_set_command_result } from './models/az_sf_cluster_upgrade_type_set_command_result';
+import { az_sf_cluster_create_command_result } from './models/az_sf_cluster_create_command_result';
+import { az_sf_cluster_list_command_result } from './models/az_sf_cluster_list_command_result';
+import { az_sf_cluster_show_command_result } from './models/az_sf_cluster_show_command_result';
+import { az_sf_managed_cluster_client_certificate_add_command_result } from './models/az_sf_managed_cluster_client_certificate_add_command_result';
+import { az_sf_managed_cluster_client_certificate_delete_command_result } from './models/az_sf_managed_cluster_client_certificate_delete_command_result';
+import { az_sf_managed_cluster_create_command_result } from './models/az_sf_managed_cluster_create_command_result';
+import { az_sf_managed_cluster_delete_command_result } from './models/az_sf_managed_cluster_delete_command_result';
+import { az_sf_managed_cluster_list_command_result } from './models/az_sf_managed_cluster_list_command_result';
+import { az_sf_managed_cluster_show_command_result } from './models/az_sf_managed_cluster_show_command_result';
+import { az_sf_managed_cluster_update_command_result } from './models/az_sf_managed_cluster_update_command_result';
+import { az_sf_managed_node_type_node_delete_command_result } from './models/az_sf_managed_node_type_node_delete_command_result';
+import { az_sf_managed_node_type_node_reimage_command_result } from './models/az_sf_managed_node_type_node_reimage_command_result';
+import { az_sf_managed_node_type_node_restart_command_result } from './models/az_sf_managed_node_type_node_restart_command_result';
+import { az_sf_managed_node_type_vm_extension_add_command_result } from './models/az_sf_managed_node_type_vm_extension_add_command_result';
+import { az_sf_managed_node_type_vm_extension_delete_command_result } from './models/az_sf_managed_node_type_vm_extension_delete_command_result';
+import { az_sf_managed_node_type_vm_secret_add_command_result } from './models/az_sf_managed_node_type_vm_secret_add_command_result';
+import { az_sf_managed_node_type_create_command_result } from './models/az_sf_managed_node_type_create_command_result';
+import { az_sf_managed_node_type_delete_command_result } from './models/az_sf_managed_node_type_delete_command_result';
+import { az_sf_managed_node_type_list_command_result } from './models/az_sf_managed_node_type_list_command_result';
+import { az_sf_managed_node_type_show_command_result } from './models/az_sf_managed_node_type_show_command_result';
+import { az_sf_managed_node_type_update_command_result } from './models/az_sf_managed_node_type_update_command_result';
+import { az_sf_service_create_command_result } from './models/az_sf_service_create_command_result';
+import { az_sf_service_delete_command_result } from './models/az_sf_service_delete_command_result';
+import { az_sf_service_list_command_result } from './models/az_sf_service_list_command_result';
+import { az_sf_service_show_command_result } from './models/az_sf_service_show_command_result';
+/** Manage the certificate of an application. */
+export declare class az_sf_application_certificate {
+    /**
+     * Add a new certificate to the Virtual Machine Scale Sets that make up the cluster to be used by hosted applications.
+     *
+     * Syntax:
+     * ```
+     * az sf application certificate add --cluster-name
+     *                                   --resource-group
+     *                                   [--cert-out-folder]
+     *                                   [--cert-subject-name]
+     *                                   [--certificate-file]
+     *                                   [--certificate-password]
+     *                                   [--secret-identifier]
+     *                                   [--subscription]
+     *                                   [--vault-name]
+     *                                   [--vault-resource-group]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static add(clusterName: string, resourceGroup: string): az_sf_application_certificate_add_command_builder;
+}
+/** Manage application type versions on an Azure Service Fabric cluster. */
+export declare class az_sf_application_type_version {
+    /**
+     * Create a new application type on an Azure Service Fabric cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf application-type version create --application-type-name
+     *                                       --application-type-version
+     *                                       --cluster-name
+     *                                       --package-url
+     *                                       --resource-group
+     *                                       [--subscription]
+     * ```
+     *
+     * @param {string} applicationTypeName Specify the application type name.
+     * @param {string} applicationTypeVersion Specify the application type version.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} packageUrl Specify the url of the application package sfpkg file.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static create(applicationTypeName: string, applicationTypeVersion: string, clusterName: string, packageUrl: string, resourceGroup: string): az_sf_application_type_version_create_command_builder;
+    /**
+     * Delete an application type version.
+     *
+     * Syntax:
+     * ```
+     * az sf application-type version delete --application-type-name
+     *                                       --application-type-version
+     *                                       --cluster-name
+     *                                       --resource-group
+     *                                       [--subscription]
+     * ```
+     *
+     * @param {string} applicationTypeName Specify the application type name.
+     * @param {string} applicationTypeVersion Specify the application type version.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static delete(applicationTypeName: string, applicationTypeVersion: string, clusterName: string, resourceGroup: string): az_sf_application_type_version_delete_command_builder;
+    /**
+     * List version of a given application type.
+     *
+     * Syntax:
+     * ```
+     * az sf application-type version list --application-type-name
+     *                                     --cluster-name
+     *                                     --resource-group
+     *                                     [--query-examples]
+     *                                     [--subscription]
+     * ```
+     *
+     * @param {string} applicationTypeName Specify the application type name.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static list(applicationTypeName: string, clusterName: string, resourceGroup: string): az_sf_application_type_version_list_command_builder;
+    /**
+     * Show the properties of an application type version on an Azure Service Fabric cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf application-type version show --application-type-name
+     *                                     --application-type-version
+     *                                     --cluster-name
+     *                                     --resource-group
+     *                                     [--query-examples]
+     *                                     [--subscription]
+     * ```
+     *
+     * @param {string} applicationTypeName Specify the application type name.
+     * @param {string} applicationTypeVersion Specify the application type version.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static show(applicationTypeName: string, applicationTypeVersion: string, clusterName: string, resourceGroup: string): az_sf_application_type_version_show_command_builder;
+}
+/** Manage application types on an Azure Service Fabric cluster. */
+export declare class az_sf_application_type {
+    /**
+     * Create a new application type on an Azure Service Fabric cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf application-type create --application-type-name
+     *                               --cluster-name
+     *                               --resource-group
+     *                               [--subscription]
+     * ```
+     *
+     * @param {string} applicationTypeName Specify the application type name.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static create(applicationTypeName: string, clusterName: string, resourceGroup: string): az_sf_application_type_create_command_builder;
+    /**
+     * Delete an application type.
+     *
+     * Syntax:
+     * ```
+     * az sf application-type delete --application-type-name
+     *                               --cluster-name
+     *                               --resource-group
+     *                               [--subscription]
+     * ```
+     *
+     * @param {string} applicationTypeName Specify the application type name.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static delete(applicationTypeName: string, clusterName: string, resourceGroup: string): az_sf_application_type_delete_command_builder;
+    /**
+     * List application types of a given cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf application-type list --cluster-name
+     *                             --resource-group
+     *                             [--query-examples]
+     *                             [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static list(clusterName: string, resourceGroup: string): az_sf_application_type_list_command_builder;
+    /**
+     * Show the properties of an application type on an Azure Service Fabric cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf application-type show --application-type-name
+     *                             --cluster-name
+     *                             --resource-group
+     *                             [--query-examples]
+     *                             [--subscription]
+     * ```
+     *
+     * @param {string} applicationTypeName Specify the application type name.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static show(applicationTypeName: string, clusterName: string, resourceGroup: string): az_sf_application_type_show_command_builder;
+}
+/** Manage applications running on an Azure Service Fabric cluster. */
+export declare class az_sf_application {
+    /**
+     * Create a new application on an Azure Service Fabric cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf application create --application-name
+     *                          --application-type-name
+     *                          --application-type-version
+     *                          --cluster-name
+     *                          --resource-group
+     *                          [--application-parameters]
+     *                          [--max-nodes]
+     *                          [--min-nodes]
+     *                          [--package-url]
+     *                          [--subscription]
+     * ```
+     *
+     * @param {string} applicationName Specify the application name.
+     * @param {string} applicationTypeName Specify the application type name.
+     * @param {string} applicationTypeVersion Specify the application type version.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static create(applicationName: string, applicationTypeName: string, applicationTypeVersion: string, clusterName: string, resourceGroup: string): az_sf_application_create_command_builder;
+    /**
+     * Delete an application.
+     *
+     * Syntax:
+     * ```
+     * az sf application delete --application-name
+     *                          --cluster-name
+     *                          --resource-group
+     *                          [--subscription]
+     * ```
+     *
+     * @param {string} applicationName Specify the application name.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static delete(applicationName: string, clusterName: string, resourceGroup: string): az_sf_application_delete_command_builder;
+    /**
+     * List applications of a given cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf application list --cluster-name
+     *                        --resource-group
+     *                        [--query-examples]
+     *                        [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static list(clusterName: string, resourceGroup: string): az_sf_application_list_command_builder;
+    /**
+     * Show the properties of an application on an Azure Service Fabric cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf application show --application-name
+     *                        --cluster-name
+     *                        --resource-group
+     *                        [--query-examples]
+     *                        [--subscription]
+     * ```
+     *
+     * @param {string} applicationName Specify the application name.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static show(applicationName: string, clusterName: string, resourceGroup: string): az_sf_application_show_command_builder;
+    /**
+     * Update a Azure Service Fabric application. This allows updating the application parameters and/or upgrade the application type version which will trigger an application upgrade.
+     *
+     * Syntax:
+     * ```
+     * az sf application update --application-name
+     *                          --cluster-name
+     *                          --resource-group
+     *                          [--application-parameters]
+     *                          [--application-type-version]
+     *                          [--consider-warning-as-error {false, true}]
+     *                          [--failure-action {Manual, Rollback}]
+     *                          [--force-restart {false, true}]
+     *                          [--hc-retry-timeout]
+     *                          [--hc-stable-duration]
+     *                          [--hc-wait-duration]
+     *                          [--max-nodes]
+     *                          [--max-porcent-unhealthy-apps]
+     *                          [--max-porcent-unhealthy-partitions]
+     *                          [--max-porcent-unhealthy-replicas]
+     *                          [--max-porcent-unhealthy-services]
+     *                          [--min-nodes]
+     *                          [--rep-check-timeout]
+     *                          [--service-type-health-policy-map]
+     *                          [--subscription]
+     *                          [--ud-timeout]
+     *                          [--upgrade-timeout]
+     * ```
+     *
+     * @param {string} applicationName Specify the application name.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static update(applicationName: string, clusterName: string, resourceGroup: string): az_sf_application_update_command_builder;
+}
+/** Manage a cluster certificate. */
+export declare class az_sf_cluster_certificate {
+    /**
+     * Add a secondary cluster certificate to the cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf cluster certificate add --cluster-name
+     *                               --resource-group
+     *                               [--cert-out-folder]
+     *                               [--cert-subject-name]
+     *                               [--certificate-file]
+     *                               [--certificate-password]
+     *                               [--secret-identifier]
+     *                               [--subscription]
+     *                               [--vault-name]
+     *                               [--vault-resource-group]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static add(clusterName: string, resourceGroup: string): az_sf_cluster_certificate_add_command_builder;
+    /**
+     * Remove a certificate from a cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf cluster certificate remove --cluster-name
+     *                                  --resource-group
+     *                                  --thumbprint
+     *                                  [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     * @param {string} thumbprint The cluster certificate thumbprint to be removed.
+     */
+    static remove(clusterName: string, resourceGroup: string, thumbprint: string): az_sf_cluster_certificate_remove_command_builder;
+}
+/** Manage the client certificate of a cluster. */
+export declare class az_sf_cluster_client_certificate {
+    /**
+     * Add a common name or certificate thumbprint to the cluster for client authentication.
+     *
+     * Syntax:
+     * ```
+     * az sf cluster client-certificate add --cluster-name
+     *                                      --resource-group
+     *                                      [--admin-client-thumbprints]
+     *                                      [--cert-common-name]
+     *                                      [--cert-issuer-tp]
+     *                                      [--client-cert-cn]
+     *                                      [--is-admin]
+     *                                      [--readonly-client-thumbprints]
+     *                                      [--subscription]
+     *                                      [--thumbprint]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static add(clusterName: string, resourceGroup: string): az_sf_cluster_client_certificate_add_command_builder;
+    /**
+     * Remove client certificates or subject names used for authentication.
+     *
+     * Syntax:
+     * ```
+     * az sf cluster client-certificate remove --cluster-name
+     *                                         --resource-group
+     *                                         [--cert-common-name]
+     *                                         [--cert-issuer-tp]
+     *                                         [--client-cert-cn]
+     *                                         [--subscription]
+     *                                         [--thumbprints]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static remove(clusterName: string, resourceGroup: string): az_sf_cluster_client_certificate_remove_command_builder;
+}
+/** Manage the durability of a cluster. */
+export declare class az_sf_cluster_durability {
+    /**
+     * Update the durability tier or VM SKU of a node type in the cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf cluster durability update --cluster-name
+     *                                 --durability-level {Bronze, Gold, Silver}
+     *                                 --node-type
+     *                                 --resource-group
+     *                                 [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {'Bronze' | 'Gold' | 'Silver'} durabilityLevel Durability level.
+     * @param {string} nodeType The Node type name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static update(clusterName: string, durabilityLevel: 'Bronze' | 'Gold' | 'Silver', nodeType: string, resourceGroup: string): az_sf_cluster_durability_update_command_builder;
+}
+/** Manage the node-type of a cluster. */
+export declare class az_sf_cluster_node_type {
+    /**
+     * Add a new node type to a cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf cluster node-type add --capacity
+     *                             --cluster-name
+     *                             --node-type
+     *                             --resource-group
+     *                             --vm-password
+     *                             --vm-user-name
+     *                             [--durability-level {Bronze, Gold, Silver}]
+     *                             [--subscription]
+     *                             [--vm-sku]
+     *                             [--vm-tier]
+     * ```
+     *
+     * @param {string} capacity The capacity tag applied to nodes in the node type. The cluster resource manager uses these tags to understand how much capacity a node has.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} nodeType The Node type name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     * @param {string} vmPassword The password of the Vm.
+     * @param {string} vmUserName The user name for logging to Vm. Default will be adminuser.
+     */
+    static add(capacity: string, clusterName: string, nodeType: string, resourceGroup: string, vmPassword: string, vmUserName: string): az_sf_cluster_node_type_add_command_builder;
+}
+/** Manage the node instance of a cluster. */
+export declare class az_sf_cluster_node {
+    /**
+     * Add nodes to a node type in a cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf cluster node add --cluster-name
+     *                        --node-type
+     *                        --nodes-to-add
+     *                        --resource-group
+     *                        [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} nodeType The Node type name.
+     * @param {string} numberOfNodesToAdd Number of nodes to add.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static add(clusterName: string, nodeType: string, numberOfNodesToAdd: string, resourceGroup: string): az_sf_cluster_node_add_command_builder;
+    /**
+     * Remove nodes from a node type in a cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf cluster node remove --cluster-name
+     *                           --node-type
+     *                           --nodes-to-remove
+     *                           --resource-group
+     *                           [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} nodeType The Node type name.
+     * @param {string} numberOfNodesToRemove Number of nodes to remove.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static remove(clusterName: string, nodeType: string, numberOfNodesToRemove: string, resourceGroup: string): az_sf_cluster_node_remove_command_builder;
+}
+/** Manage the reliability of a cluster. */
+export declare class az_sf_cluster_reliability {
+    /**
+     * Update the reliability tier for the primary node in a cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf cluster reliability update --cluster-name
+     *                                  --reliability-level {Bronze, Gold, Platinum, Silver}
+     *                                  --resource-group
+     *                                  [--auto-add-node]
+     *                                  [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {'Bronze' | 'Gold' | 'Platinum' | 'Silver'} reliabilityLevel Durability level.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static update(clusterName: string, reliabilityLevel: 'Bronze' | 'Gold' | 'Platinum' | 'Silver', resourceGroup: string): az_sf_cluster_reliability_update_command_builder;
+}
+/** Manage a cluster's settings. */
+export declare class az_sf_cluster_setting {
+    /**
+     * Remove settings from a cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf cluster setting remove --cluster-name
+     *                              --resource-group
+     *                              [--parameter]
+     *                              [--section]
+     *                              [--settings-section]
+     *                              [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static remove(clusterName: string, resourceGroup: string): az_sf_cluster_setting_remove_command_builder;
+    /**
+     * Update the settings of a cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf cluster setting set --cluster-name
+     *                           --resource-group
+     *                           [--parameter]
+     *                           [--section]
+     *                           [--settings-section]
+     *                           [--subscription]
+     *                           [--value]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static set(clusterName: string, resourceGroup: string): az_sf_cluster_setting_set_command_builder;
+}
+/** Manage the upgrade type of a cluster. */
+export declare class az_sf_cluster_upgrade_type {
+    /**
+     * Change the  upgrade type for a cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf cluster upgrade-type set --cluster-name
+     *                                --resource-group
+     *                                --upgrade-mode {automatic, manual}
+     *                                [--subscription]
+     *                                [--version]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     * @param {'automatic' | 'manual'} upgradeMode Cluster upgrade mode.
+     */
+    static set(clusterName: string, resourceGroup: string, upgradeMode: 'automatic' | 'manual'): az_sf_cluster_upgrade_type_set_command_builder;
+}
+/** Manage an Azure Service Fabric cluster. */
+export declare class az_sf_cluster {
+    /**
+     * Create a new Azure Service Fabric cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf cluster create --location
+     *                      --resource-group
+     *                      [--cert-out-folder]
+     *                      [--cert-subject-name]
+     *                      [--certificate-file]
+     *                      [--certificate-password]
+     *                      [--cluster-name]
+     *                      [--cluster-size]
+     *                      [--os {UbuntuServer1604, WindowsServer1709, WindowsServer1709withContainers, WindowsServer1803withContainers, WindowsServer1809withContainers, WindowsServer2012R2Datacenter, WindowsServer2016Datacenter, WindowsServer2016DatacenterwithContainers, WindowsServer2019Datacenter, WindowsServer2019DatacenterwithContainers}]
+     *                      [--parameter-file]
+     *                      [--secret-identifier]
+     *                      [--subscription]
+     *                      [--template-file]
+     *                      [--vault-name]
+     *                      [--vault-resource-group]
+     *                      [--vm-password]
+     *                      [--vm-sku]
+     *                      [--vm-user-name]
+     * ```
+     *
+     * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static create(location: string, resourceGroup: string): az_sf_cluster_create_command_builder;
+    /**
+     * List cluster resources.
+     *
+     * Syntax:
+     * ```
+     * az sf cluster list [--query-examples]
+     *                    [--resource-group]
+     *                    [--subscription]
+     * ```
+     */
+    static list(): az_sf_cluster_list_command_builder;
+    /**
+     * Gets a Service Fabric cluster resource.
+     *
+     * Syntax:
+     * ```
+     * az sf cluster show --cluster-name
+     *                    --resource-group
+     *                    [--query-examples]
+     *                    [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static show(clusterName: string, resourceGroup: string): az_sf_cluster_show_command_builder;
+}
+/** Manage client certificates of a manged cluster. */
+export declare class az_sf_managed_cluster_client_certificate {
+    /**
+     * Add a new client certificate to the managed cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-cluster client-certificate add --cluster-name
+     *                                              --resource-group
+     *                                              [--common-name]
+     *                                              [--is-admin {false, true}]
+     *                                              [--issuer-thumbprint]
+     *                                              [--subscription]
+     *                                              [--thumbprint]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static add(clusterName: string, resourceGroup: string): az_sf_managed_cluster_client_certificate_add_command_builder;
+    /**
+     * Delete a client certificate from the managed cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-cluster client-certificate delete --cluster-name
+     *                                                 --resource-group
+     *                                                 [--common-name]
+     *                                                 [--subscription]
+     *                                                 [--thumbprint]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static delete(clusterName: string, resourceGroup: string): az_sf_managed_cluster_client_certificate_delete_command_builder;
+}
+/** Manage an Azure Service Fabric managed cluster. */
+export declare class az_sf_managed_cluster {
+    /**
+     * Delete a managed cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-cluster create --admin-password
+     *                              --cluster-name
+     *                              --resource-group
+     *                              [--admin-user-name]
+     *                              [--cert-common-name]
+     *                              [--cert-is-admin {false, true}]
+     *                              [--cert-issuer-thumbprint]
+     *                              [--cert-thumbprint]
+     *                              [--client-connection-port]
+     *                              [--dns-name]
+     *                              [--gateway-connection-port]
+     *                              [--location]
+     *                              [--sku]
+     *                              [--subscription]
+     *                              [--tags]
+     * ```
+     *
+     * @param {string} adminPassword Admin password used for the virtual machines.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static create(adminPassword: string, clusterName: string, resourceGroup: string): az_sf_managed_cluster_create_command_builder;
+    /**
+     * Delete a managed cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-cluster delete --cluster-name
+     *                              --resource-group
+     *                              [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static delete(clusterName: string, resourceGroup: string): az_sf_managed_cluster_delete_command_builder;
+    /**
+     * List managed clusters.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-cluster list [--query-examples]
+     *                            [--resource-group]
+     *                            [--subscription]
+     * ```
+     */
+    static list(): az_sf_managed_cluster_list_command_builder;
+    /**
+     * Show the properties of an Azure Service Fabric managed cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-cluster show --cluster-name
+     *                            --resource-group
+     *                            [--query-examples]
+     *                            [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static show(clusterName: string, resourceGroup: string): az_sf_managed_cluster_show_command_builder;
+    /**
+     * Update a managed cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-cluster update --cluster-name
+     *                              --resource-group
+     *                              [--client-connection-port]
+     *                              [--dns-name]
+     *                              [--gateway-connection-port]
+     *                              [--subscription]
+     *                              [--tags]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static update(clusterName: string, resourceGroup: string): az_sf_managed_cluster_update_command_builder;
+}
+/** Perform operations on nodes of a node type on managed clusters. */
+export declare class az_sf_managed_node_type_node {
+    /**
+     * Delete nodes of a node type.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-node-type node delete --cluster-name
+     *                                     --name
+     *                                     --node-name
+     *                                     --resource-group
+     *                                     [--force {false, true}]
+     *                                     [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} nodeTypeName Node type name.
+     * @param {string} nodeName List of target nodes to perform the operation.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static delete(clusterName: string, nodeTypeName: string, nodeName: string, resourceGroup: string): az_sf_managed_node_type_node_delete_command_builder;
+    /**
+     * Reimage nodes of a node type.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-node-type node reimage --cluster-name
+     *                                      --name
+     *                                      --node-name
+     *                                      --resource-group
+     *                                      [--force {false, true}]
+     *                                      [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} nodeTypeName Node type name.
+     * @param {string} nodeName List of target nodes to perform the operation.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static reimage(clusterName: string, nodeTypeName: string, nodeName: string, resourceGroup: string): az_sf_managed_node_type_node_reimage_command_builder;
+    /**
+     * Restart nodes of a node type.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-node-type node restart --cluster-name
+     *                                      --name
+     *                                      --node-name
+     *                                      --resource-group
+     *                                      [--force {false, true}]
+     *                                      [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} nodeTypeName Node type name.
+     * @param {string} nodeName List of target nodes to perform the operation.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static restart(clusterName: string, nodeTypeName: string, nodeName: string, resourceGroup: string): az_sf_managed_node_type_node_restart_command_builder;
+}
+/** Managed vm extension on a node type on managed clusters. */
+export declare class az_sf_managed_node_type_vm_extension {
+    /**
+     * Add an extension to the node type.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-node-type vm-extension add --cluster-name
+     *                                          --extension-name
+     *                                          --extension-type
+     *                                          --name
+     *                                          --publisher
+     *                                          --resource-group
+     *                                          --type-handler-version
+     *                                          [--auto-upgrade {false, true}]
+     *                                          [--force-update-tag]
+     *                                          [--protected-setting]
+     *                                          [--provision-after]
+     *                                          [--setting]
+     *                                          [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} extensionName Extension name.
+     * @param {string} extensionType Specifies the type of the extension; an example is "CustomScriptExtension".
+     * @param {string} nodeTypeName Node type name.
+     * @param {string} publisher The name of the extension handler publisher.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     * @param {string} typeHandlerVersion Specifies the version of the script handler.
+     */
+    static add(clusterName: string, extensionName: string, extensionType: string, nodeTypeName: string, publisher: string, resourceGroup: string, typeHandlerVersion: string): az_sf_managed_node_type_vm_extension_add_command_builder;
+    /**
+     * Delete an extension to the node type.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-node-type vm-extension delete --cluster-name
+     *                                             --extension-name
+     *                                             --name
+     *                                             --resource-group
+     *                                             [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} extensionName Extension name.
+     * @param {string} nodeTypeName Node type name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static delete(clusterName: string, extensionName: string, nodeTypeName: string, resourceGroup: string): az_sf_managed_node_type_vm_extension_delete_command_builder;
+}
+/** Managed vm secrets on a node type on managed clusters. */
+export declare class az_sf_managed_node_type_vm_secret {
+    /**
+     * Add a secret to the node type.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-node-type vm-secret add --certificate-store
+     *                                       --certificate-url
+     *                                       --cluster-name
+     *                                       --name
+     *                                       --resource-group
+     *                                       --source-vault-id
+     *                                       [--subscription]
+     * ```
+     *
+     * @param {string} certificateStore Specifies the certificate store on the Virtual Machine to which the certificate should be added. The specified certificate store is implicitly in the LocalMachine account.
+     * @param {string} certificateUrl This is the URL of a certificate that has been uploaded to Key Vault as a secret. For adding a secret to the Key Vault, see [Add a key or secret to the key vault](<a href="https://docs.microsoft.com/azure/key-vault/key-vault-get-started/#add">https://docs.microsoft.com/azure/key-vault/key-vault-get-started/#add</a>). In this case, your certificate needs to be It is the Base64 encoding of the following JSON Object which is encoded in UTF-8: <br><br> {<br>  "data":"<Base64-encoded-certificate>",<br>  "dataType":"pfx",<br>  "password":"<pfx-file-password>"<br>}/.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} nodeTypeName Node type name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     * @param {string} sourceVaultId Key Vault resource id containing the certificates.
+     */
+    static add(certificateStore: string, certificateUrl: string, clusterName: string, nodeTypeName: string, resourceGroup: string, sourceVaultId: string): az_sf_managed_node_type_vm_secret_add_command_builder;
+}
+/** Manage a node type of an Azure Service Fabric managed cluster. */
+export declare class az_sf_managed_node_type {
+    /**
+     * Delete a managed cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-node-type create --cluster-name
+     *                                --instance-count
+     *                                --name
+     *                                --resource-group
+     *                                [--app-end-port]
+     *                                [--app-start-port]
+     *                                [--capacity]
+     *                                [--disk-size]
+     *                                [--ephemeral-end-port]
+     *                                [--ephemeral-start-port]
+     *                                [--placement-property]
+     *                                [--primary {false, true}]
+     *                                [--subscription]
+     *                                [--vm-image-offer]
+     *                                [--vm-image-publisher]
+     *                                [--vm-image-sku]
+     *                                [--vm-image-version]
+     *                                [--vm-size]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} instanceCount Essage = "The number of nodes in the node type.
+     * @param {string} nodeTypeName Node type name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static create(clusterName: string, instanceCount: string, nodeTypeName: string, resourceGroup: string): az_sf_managed_node_type_create_command_builder;
+    /**
+     * Delete node type from a cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-node-type delete --cluster-name
+     *                                --name
+     *                                --resource-group
+     *                                [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} nodeTypeName Node type name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static delete(clusterName: string, nodeTypeName: string, resourceGroup: string): az_sf_managed_node_type_delete_command_builder;
+    /**
+     * List node types of a managed cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-node-type list --cluster-name
+     *                              --resource-group
+     *                              [--query-examples]
+     *                              [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static list(clusterName: string, resourceGroup: string): az_sf_managed_node_type_list_command_builder;
+    /**
+     * Show the properties of a node type.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-node-type show --cluster-name
+     *                              --name
+     *                              --resource-group
+     *                              [--query-examples]
+     *                              [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} nodeTypeName Node type name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static show(clusterName: string, nodeTypeName: string, resourceGroup: string): az_sf_managed_node_type_show_command_builder;
+    /**
+     * Update a managed cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf managed-node-type update --cluster-name
+     *                                --name
+     *                                --resource-group
+     *                                [--app-end-port]
+     *                                [--app-start-port]
+     *                                [--capacity]
+     *                                [--ephemeral-end-port]
+     *                                [--ephemeral-start-port]
+     *                                [--instance-count]
+     *                                [--placement-property]
+     *                                [--subscription]
+     * ```
+     *
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} nodeTypeName Node type name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static update(clusterName: string, nodeTypeName: string, resourceGroup: string): az_sf_managed_node_type_update_command_builder;
+}
+/** Manage services running on an Azure Service Fabric cluster. */
+export declare class az_sf_service {
+    /**
+     * Create a new service on an Azure Service Fabric cluster.
+     *
+     * Syntax:
+     * ```
+     * az sf service create --application
+     *                      --cluster-name
+     *                      --name
+     *                      --resource-group
+     *                      --service-type
+     *                      --state {stateful, stateless}
+     *                      [--default-move-cost {High, Low, Medium, Zero}]
+     *                      [--instance-count]
+     *                      [--min-replica]
+     *                      [--partition-scheme {named, singleton, uniformInt64}]
+     *                      [--subscription]
+     *                      [--target-replica]
+     * ```
+     *
+     * @param {string} applicationName Specify the name of the service. The application name must be a prefix of the service name, for example: appName~serviceName.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} serviceName Specify the name of the service. The application name must be a prefix of the service name, for example: appName~serviceName.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     * @param {string} serviceType Specify the service type name of the application, it should exist in the application manifest.
+     * @param {'stateful' | 'stateless'} state Specify if the service is stateless or stateful.
+     */
+    static create(applicationName: string, clusterName: string, serviceName: string, resourceGroup: string, serviceType: string, state: 'stateful' | 'stateless'): az_sf_service_create_command_builder;
+    /**
+     * Delete a service.
+     *
+     * Syntax:
+     * ```
+     * az sf service delete --application-name
+     *                      --cluster-name
+     *                      --name
+     *                      --resource-group
+     *                      [--subscription]
+     * ```
+     *
+     * @param {string} applicationName The name of the application resource.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} serviceName Specify the name of the service. The application name must be a prefix of the service name, for example: appName~serviceName.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static delete(applicationName: string, clusterName: string, serviceName: string, resourceGroup: string): az_sf_service_delete_command_builder;
+    /**
+     * List services of a given application.
+     *
+     * Syntax:
+     * ```
+     * az sf service list --application-name
+     *                    --cluster-name
+     *                    --resource-group
+     *                    [--query-examples]
+     *                    [--subscription]
+     * ```
+     *
+     * @param {string} applicationName The name of the application resource.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static list(applicationName: string, clusterName: string, resourceGroup: string): az_sf_service_list_command_builder;
+    /**
+     * Get a service.
+     *
+     * Syntax:
+     * ```
+     * az sf service show --application-name
+     *                    --cluster-name
+     *                    --name
+     *                    --resource-group
+     *                    [--query-examples]
+     *                    [--subscription]
+     * ```
+     *
+     * @param {string} applicationName The name of the application resource.
+     * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+     * @param {string} serviceName Specify the name of the service. The application name must be a prefix of the service name, for example: appName~serviceName.
+     * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static show(applicationName: string, clusterName: string, serviceName: string, resourceGroup: string): az_sf_service_show_command_builder;
+}
+/** Manage and administer Azure Service Fabric clusters. */
+export declare class az_sf {
+}
+/**
+ * Add a new certificate to the Virtual Machine Scale Sets that make up the cluster to be used by hosted applications.
+ *
+ * Syntax:
+ * ```
+ * az sf application certificate add --cluster-name
+ *                                   --resource-group
+ *                                   [--cert-out-folder]
+ *                                   [--cert-subject-name]
+ *                                   [--certificate-file]
+ *                                   [--certificate-password]
+ *                                   [--secret-identifier]
+ *                                   [--subscription]
+ *                                   [--vault-name]
+ *                                   [--vault-resource-group]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_application_certificate_add_command_builder extends CommandBuilder<az_sf_application_certificate_add_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_application_certificate_add_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_application_certificate_add_command_builder;
+    /** The folder of the new certificate file to be created. */
+    certificateOutputFolder(value: string): az_sf_application_certificate_add_command_builder;
+    /** The subject name of the certificate to be created. */
+    certificateSubjectName(value: string): az_sf_application_certificate_add_command_builder;
+    /** The existing certificate file path for the primary cluster certificate. */
+    certificateFile(value: string): az_sf_application_certificate_add_command_builder;
+    /** The password of the certificate file. */
+    certificatePassword(value: string): az_sf_application_certificate_add_command_builder;
+    /** The existing Azure key vault secret URL. */
+    secretIdentifier(value: string): az_sf_application_certificate_add_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_application_certificate_add_command_builder;
+    /** Azure key vault name, it not given it will be the cluster resource group name. */
+    vaultName(value: string): az_sf_application_certificate_add_command_builder;
+    /** Key vault resource group name, if not given it will be cluster resource group name. */
+    vaultResourceGroup(value: string): az_sf_application_certificate_add_command_builder;
+}
+/**
+ * Create a new application type on an Azure Service Fabric cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf application-type version create --application-type-name
+ *                                       --application-type-version
+ *                                       --cluster-name
+ *                                       --package-url
+ *                                       --resource-group
+ *                                       [--subscription]
+ * ```
+ *
+ * @param {string} applicationTypeName Specify the application type name.
+ * @param {string} applicationTypeVersion Specify the application type version.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} packageUrl Specify the url of the application package sfpkg file.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_application_type_version_create_command_builder extends CommandBuilder<az_sf_application_type_version_create_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, applicationTypeName: string, applicationTypeVersion: string, clusterName: string, packageUrl: string, resourceGroup: string);
+    /** Specify the application type name. */
+    applicationTypeName(value: string): az_sf_application_type_version_create_command_builder;
+    /** Specify the application type version. */
+    applicationTypeVersion(value: string): az_sf_application_type_version_create_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_application_type_version_create_command_builder;
+    /** Specify the url of the application package sfpkg file. */
+    packageUrl(value: string): az_sf_application_type_version_create_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_application_type_version_create_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_application_type_version_create_command_builder;
+}
+/**
+ * Delete an application type version.
+ *
+ * Syntax:
+ * ```
+ * az sf application-type version delete --application-type-name
+ *                                       --application-type-version
+ *                                       --cluster-name
+ *                                       --resource-group
+ *                                       [--subscription]
+ * ```
+ *
+ * @param {string} applicationTypeName Specify the application type name.
+ * @param {string} applicationTypeVersion Specify the application type version.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_application_type_version_delete_command_builder extends CommandBuilder<az_sf_application_type_version_delete_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, applicationTypeName: string, applicationTypeVersion: string, clusterName: string, resourceGroup: string);
+    /** Specify the application type name. */
+    applicationTypeName(value: string): az_sf_application_type_version_delete_command_builder;
+    /** Specify the application type version. */
+    applicationTypeVersion(value: string): az_sf_application_type_version_delete_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_application_type_version_delete_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_application_type_version_delete_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_application_type_version_delete_command_builder;
+}
+/**
+ * List version of a given application type.
+ *
+ * Syntax:
+ * ```
+ * az sf application-type version list --application-type-name
+ *                                     --cluster-name
+ *                                     --resource-group
+ *                                     [--query-examples]
+ *                                     [--subscription]
+ * ```
+ *
+ * @param {string} applicationTypeName Specify the application type name.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_application_type_version_list_command_builder extends CommandBuilder<az_sf_application_type_version_list_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, applicationTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the application type name. */
+    applicationTypeName(value: string): az_sf_application_type_version_list_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_application_type_version_list_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_application_type_version_list_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_sf_application_type_version_list_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_application_type_version_list_command_builder;
+}
+/**
+ * Show the properties of an application type version on an Azure Service Fabric cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf application-type version show --application-type-name
+ *                                     --application-type-version
+ *                                     --cluster-name
+ *                                     --resource-group
+ *                                     [--query-examples]
+ *                                     [--subscription]
+ * ```
+ *
+ * @param {string} applicationTypeName Specify the application type name.
+ * @param {string} applicationTypeVersion Specify the application type version.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_application_type_version_show_command_builder extends CommandBuilder<az_sf_application_type_version_show_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, applicationTypeName: string, applicationTypeVersion: string, clusterName: string, resourceGroup: string);
+    /** Specify the application type name. */
+    applicationTypeName(value: string): az_sf_application_type_version_show_command_builder;
+    /** Specify the application type version. */
+    applicationTypeVersion(value: string): az_sf_application_type_version_show_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_application_type_version_show_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_application_type_version_show_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_sf_application_type_version_show_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_application_type_version_show_command_builder;
+}
+/**
+ * Create a new application type on an Azure Service Fabric cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf application-type create --application-type-name
+ *                               --cluster-name
+ *                               --resource-group
+ *                               [--subscription]
+ * ```
+ *
+ * @param {string} applicationTypeName Specify the application type name.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_application_type_create_command_builder extends CommandBuilder<az_sf_application_type_create_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, applicationTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the application type name. */
+    applicationTypeName(value: string): az_sf_application_type_create_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_application_type_create_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_application_type_create_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_application_type_create_command_builder;
+}
+/**
+ * Delete an application type.
+ *
+ * Syntax:
+ * ```
+ * az sf application-type delete --application-type-name
+ *                               --cluster-name
+ *                               --resource-group
+ *                               [--subscription]
+ * ```
+ *
+ * @param {string} applicationTypeName Specify the application type name.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_application_type_delete_command_builder extends CommandBuilder<az_sf_application_type_delete_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, applicationTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the application type name. */
+    applicationTypeName(value: string): az_sf_application_type_delete_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_application_type_delete_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_application_type_delete_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_application_type_delete_command_builder;
+}
+/**
+ * List application types of a given cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf application-type list --cluster-name
+ *                             --resource-group
+ *                             [--query-examples]
+ *                             [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_application_type_list_command_builder extends CommandBuilder<az_sf_application_type_list_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_application_type_list_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_application_type_list_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_sf_application_type_list_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_application_type_list_command_builder;
+}
+/**
+ * Show the properties of an application type on an Azure Service Fabric cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf application-type show --application-type-name
+ *                             --cluster-name
+ *                             --resource-group
+ *                             [--query-examples]
+ *                             [--subscription]
+ * ```
+ *
+ * @param {string} applicationTypeName Specify the application type name.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_application_type_show_command_builder extends CommandBuilder<az_sf_application_type_show_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, applicationTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the application type name. */
+    applicationTypeName(value: string): az_sf_application_type_show_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_application_type_show_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_application_type_show_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_sf_application_type_show_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_application_type_show_command_builder;
+}
+/**
+ * Create a new application on an Azure Service Fabric cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf application create --application-name
+ *                          --application-type-name
+ *                          --application-type-version
+ *                          --cluster-name
+ *                          --resource-group
+ *                          [--application-parameters]
+ *                          [--max-nodes]
+ *                          [--min-nodes]
+ *                          [--package-url]
+ *                          [--subscription]
+ * ```
+ *
+ * @param {string} applicationName Specify the application name.
+ * @param {string} applicationTypeName Specify the application type name.
+ * @param {string} applicationTypeVersion Specify the application type version.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_application_create_command_builder extends CommandBuilder<az_sf_application_create_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, applicationName: string, applicationTypeName: string, applicationTypeVersion: string, clusterName: string, resourceGroup: string);
+    /** Specify the application name. */
+    applicationName(value: string): az_sf_application_create_command_builder;
+    /** Specify the application type name. */
+    applicationTypeName(value: string): az_sf_application_create_command_builder;
+    /** Specify the application type version. */
+    applicationTypeVersion(value: string): az_sf_application_create_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_application_create_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_application_create_command_builder;
+    /** Specify the application parameters as key/value pairs. These parameters must exist in the application manifest. for example: --application-parameters param1=value1 param2=value2. */
+    applicationParameters(value: string): az_sf_application_create_command_builder;
+    /** Specify the maximum number of nodes on which to place an application. The value of this parameter must be a non-negative integer. The default value is 0, which indicates the application can be placed on any number of nodes in the cluster. */
+    maximumNodes(value: string): az_sf_application_create_command_builder;
+    /** Specify the minimum number of nodes where Service Fabric will reserve capacity for this application, this does not mean that the application is guaranteed to have replicas on all those nodes. The value of this parameter must be a non-negative integer. Default value for this is zero, which means no capacity is reserved for the application. */
+    minimumNodes(value: string): az_sf_application_create_command_builder;
+    /** Specify the url of the application package sfpkg file. */
+    packageUrl(value: string): az_sf_application_create_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_application_create_command_builder;
+}
+/**
+ * Delete an application.
+ *
+ * Syntax:
+ * ```
+ * az sf application delete --application-name
+ *                          --cluster-name
+ *                          --resource-group
+ *                          [--subscription]
+ * ```
+ *
+ * @param {string} applicationName Specify the application name.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_application_delete_command_builder extends CommandBuilder<az_sf_application_delete_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, applicationName: string, clusterName: string, resourceGroup: string);
+    /** Specify the application name. */
+    applicationName(value: string): az_sf_application_delete_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_application_delete_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_application_delete_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_application_delete_command_builder;
+}
+/**
+ * List applications of a given cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf application list --cluster-name
+ *                        --resource-group
+ *                        [--query-examples]
+ *                        [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_application_list_command_builder extends CommandBuilder<az_sf_application_list_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_application_list_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_application_list_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_sf_application_list_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_application_list_command_builder;
+}
+/**
+ * Show the properties of an application on an Azure Service Fabric cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf application show --application-name
+ *                        --cluster-name
+ *                        --resource-group
+ *                        [--query-examples]
+ *                        [--subscription]
+ * ```
+ *
+ * @param {string} applicationName Specify the application name.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_application_show_command_builder extends CommandBuilder<az_sf_application_show_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, applicationName: string, clusterName: string, resourceGroup: string);
+    /** Specify the application name. */
+    applicationName(value: string): az_sf_application_show_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_application_show_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_application_show_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_sf_application_show_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_application_show_command_builder;
+}
+/**
+ * Update a Azure Service Fabric application. This allows updating the application parameters and/or upgrade the application type version which will trigger an application upgrade.
+ *
+ * Syntax:
+ * ```
+ * az sf application update --application-name
+ *                          --cluster-name
+ *                          --resource-group
+ *                          [--application-parameters]
+ *                          [--application-type-version]
+ *                          [--consider-warning-as-error {false, true}]
+ *                          [--failure-action {Manual, Rollback}]
+ *                          [--force-restart {false, true}]
+ *                          [--hc-retry-timeout]
+ *                          [--hc-stable-duration]
+ *                          [--hc-wait-duration]
+ *                          [--max-nodes]
+ *                          [--max-porcent-unhealthy-apps]
+ *                          [--max-porcent-unhealthy-partitions]
+ *                          [--max-porcent-unhealthy-replicas]
+ *                          [--max-porcent-unhealthy-services]
+ *                          [--min-nodes]
+ *                          [--rep-check-timeout]
+ *                          [--service-type-health-policy-map]
+ *                          [--subscription]
+ *                          [--ud-timeout]
+ *                          [--upgrade-timeout]
+ * ```
+ *
+ * @param {string} applicationName Specify the application name.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_application_update_command_builder extends CommandBuilder<az_sf_application_update_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, applicationName: string, clusterName: string, resourceGroup: string);
+    /** Specify the application name. */
+    applicationName(value: string): az_sf_application_update_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_application_update_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_application_update_command_builder;
+    /** Specify the application parameters as key/value pairs. These parameters must exist in the application manifest. for example: --application-parameters param1=value1 param2=value2. */
+    applicationParameters(value: string): az_sf_application_update_command_builder;
+    /** Specify the application type version. */
+    applicationTypeVersion(value: string): az_sf_application_update_command_builder;
+    /** Indicates whether to treat a warning health event as an error event during health evaluation. */
+    considerWarningAsError(value: boolean): az_sf_application_update_command_builder;
+    /** Specify the action to take if the monitored upgrade fails. The acceptable values for this parameter are Rollback or Manual. */
+    failureAction(value: 'Manual' | 'Rollback'): az_sf_application_update_command_builder;
+    /** Indicates that the service host restarts even if the upgrade is a configuration-only change. */
+    forceRestart(value: boolean): az_sf_application_update_command_builder;
+    /** Specify the duration, in seconds, after which Service Fabric retries the health check if the previous health check fails. */
+    healthCheckRetryTimeout(value: string): az_sf_application_update_command_builder;
+    /** Specify the duration, in seconds, that Service Fabric waits in order to verify that the application is stable before moving to the next upgrade domain or completing the upgrade. This wait duration prevents undetected changes of health right after the health check is performed. */
+    healthCheckStableDuration(value: string): az_sf_application_update_command_builder;
+    /** Specify the duration, in seconds, that Service Fabric waits before it performs the initial health check after it finishes the upgrade on the upgrade domain. */
+    healthCheckWaitDuration(value: string): az_sf_application_update_command_builder;
+    /** Specify the maximum number of nodes on which to place an application. The value of this parameter must be a non-negative integer. The default value is 0, which indicates the application can be placed on any number of nodes in the cluster. */
+    maximumNodes(value: string): az_sf_application_update_command_builder;
+    /** Specify the maximum percentage of the application instances deployed on the nodes in the cluster that have a health state of error before the application health state for the cluster is error. Allowed values are form 0 to 100. */
+    maxPorcentUnhealthyApps(value: string): az_sf_application_update_command_builder;
+    /** Specify the maximum percent of unhelthy partitions per service allowed by the health policy for the default service type to use for the monitored upgrade. Allowed values are form 0 to 100. */
+    maxPorcentUnhealthyPartitions(value: string): az_sf_application_update_command_builder;
+    /** Specify the maximum percent of unhelthy replicas per service allowed by the health policy for the default service type to use for the monitored upgrade. Allowed values are form 0 to 100. */
+    maxPorcentUnhealthyReplicas(value: string): az_sf_application_update_command_builder;
+    /** Specify the maximum percent of unhelthy services allowed by the health policy for the default service type to use for the monitored upgrade. Allowed values are form 0 to 100. */
+    maxPorcentUnhealthyServices(value: string): az_sf_application_update_command_builder;
+    /** Specify the minimum number of nodes where Service Fabric will reserve capacity for this application, this does not mean that the application is guaranteed to have replicas on all those nodes. The value of this parameter must be a non-negative integer. Default value for this is zero, which means no capacity is reserved for the application. */
+    minimumNodes(value: string): az_sf_application_update_command_builder;
+    /** Specify the maximum time, in seconds, that Service Fabric waits for a service to reconfigure into a safe state, if not already in a safe state, before Service Fabric proceeds with the upgrade. */
+    upgradeReplicaSetCheckTimeout(value: string): az_sf_application_update_command_builder;
+    /** Specify the map of the health policy to use for different service types as a hash table in the following format: {"ServiceTypeName" : "MaxPercentUnhealthyPartitionsPerService,MaxPercentUnhealthyReplicasPerPartition,MaxPercentUnhealthyServices"}. For example: @{ "ServiceTypeName01" = "5,10,5"; "ServiceTypeName02" = "5,5,5" }. */
+    serviceTypeHealthPolicyMap(value: string): az_sf_application_update_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_application_update_command_builder;
+    /** Specify the maximum time, in seconds, that Service Fabric takes to upgrade a single upgrade domain. After this period, the upgrade fails. */
+    upgradeDomainTimeout(value: string): az_sf_application_update_command_builder;
+    /** Specify the maximum time, in seconds, that Service Fabric takes for the entire upgrade. After this period, the upgrade fails. */
+    upgradeTimeout(value: string): az_sf_application_update_command_builder;
+}
+/**
+ * Add a secondary cluster certificate to the cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf cluster certificate add --cluster-name
+ *                               --resource-group
+ *                               [--cert-out-folder]
+ *                               [--cert-subject-name]
+ *                               [--certificate-file]
+ *                               [--certificate-password]
+ *                               [--secret-identifier]
+ *                               [--subscription]
+ *                               [--vault-name]
+ *                               [--vault-resource-group]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_cluster_certificate_add_command_builder extends CommandBuilder<az_sf_cluster_certificate_add_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_cluster_certificate_add_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_cluster_certificate_add_command_builder;
+    /** The folder of the new certificate file to be created. */
+    certificateOutputFolder(value: string): az_sf_cluster_certificate_add_command_builder;
+    /** The subject name of the certificate to be created. */
+    certificateSubjectName(value: string): az_sf_cluster_certificate_add_command_builder;
+    /** The existing certificate file path for the primary cluster certificate. */
+    certificateFile(value: string): az_sf_cluster_certificate_add_command_builder;
+    /** The password of the certificate file. */
+    certificatePassword(value: string): az_sf_cluster_certificate_add_command_builder;
+    /** The existing Azure key vault secret URL. */
+    secretIdentifier(value: string): az_sf_cluster_certificate_add_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_cluster_certificate_add_command_builder;
+    /** Azure key vault name, it not given it will be the cluster resource group name. */
+    vaultName(value: string): az_sf_cluster_certificate_add_command_builder;
+    /** Key vault resource group name, if not given it will be cluster resource group name. */
+    vaultResourceGroup(value: string): az_sf_cluster_certificate_add_command_builder;
+}
+/**
+ * Remove a certificate from a cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf cluster certificate remove --cluster-name
+ *                                  --resource-group
+ *                                  --thumbprint
+ *                                  [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ * @param {string} thumbprint The cluster certificate thumbprint to be removed.
+ */
+declare class az_sf_cluster_certificate_remove_command_builder extends CommandBuilder<az_sf_cluster_certificate_remove_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string, thumbprint: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_cluster_certificate_remove_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_cluster_certificate_remove_command_builder;
+    /** The cluster certificate thumbprint to be removed. */
+    thumbprint(value: string): az_sf_cluster_certificate_remove_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_cluster_certificate_remove_command_builder;
+}
+/**
+ * Add a common name or certificate thumbprint to the cluster for client authentication.
+ *
+ * Syntax:
+ * ```
+ * az sf cluster client-certificate add --cluster-name
+ *                                      --resource-group
+ *                                      [--admin-client-thumbprints]
+ *                                      [--cert-common-name]
+ *                                      [--cert-issuer-tp]
+ *                                      [--client-cert-cn]
+ *                                      [--is-admin]
+ *                                      [--readonly-client-thumbprints]
+ *                                      [--subscription]
+ *                                      [--thumbprint]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_cluster_client_certificate_add_command_builder extends CommandBuilder<az_sf_cluster_client_certificate_add_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_cluster_client_certificate_add_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_cluster_client_certificate_add_command_builder;
+    /** Client certificate thumbprint that only has admin permission. */
+    adminClientThumbprints(value: string): az_sf_cluster_client_certificate_add_command_builder;
+    /** Client certificate common name. */
+    certificateCommonName(value: string): az_sf_cluster_client_certificate_add_command_builder;
+    /** Client certificate issuer thumbprint. */
+    certificateIssuerThumbprint(value: string): az_sf_cluster_client_certificate_add_command_builder;
+    /** JSON encoded parameters configuration. Use @{file} to load from a file. For example: [{"isAdmin":true, "certificateCommonName": "test.com", "certificateIssuerThumbprint": "22B4AE296B504E512DF880A77A2CAE20200FF922"}]. */
+    clientCertificateCommonNames(value: string): az_sf_cluster_client_certificate_add_command_builder;
+    /** Client authentication type. */
+    isAdmin(value: string): az_sf_cluster_client_certificate_add_command_builder;
+    /** Space-separated list of client certificate thumbprint that has read only permission. */
+    readonlyClientThumbprints(value: string): az_sf_cluster_client_certificate_add_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_cluster_client_certificate_add_command_builder;
+    /** Client certificate thumbprint. */
+    thumbprint(value: string): az_sf_cluster_client_certificate_add_command_builder;
+}
+/**
+ * Remove client certificates or subject names used for authentication.
+ *
+ * Syntax:
+ * ```
+ * az sf cluster client-certificate remove --cluster-name
+ *                                         --resource-group
+ *                                         [--cert-common-name]
+ *                                         [--cert-issuer-tp]
+ *                                         [--client-cert-cn]
+ *                                         [--subscription]
+ *                                         [--thumbprints]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_cluster_client_certificate_remove_command_builder extends CommandBuilder<az_sf_cluster_client_certificate_remove_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_cluster_client_certificate_remove_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_cluster_client_certificate_remove_command_builder;
+    /** Client certificate common name. */
+    certificateCommonName(value: string): az_sf_cluster_client_certificate_remove_command_builder;
+    /** Client certificate issuer thumbprint. */
+    certificateIssuerThumbprint(value: string): az_sf_cluster_client_certificate_remove_command_builder;
+    /** JSON encoded parameters configuration. Use @{file} to load from a file. For example: [{"certificateCommonName": "test.com","certificateIssuerThumbprint": "22B4AE296B504E512DF880A77A2CAE20200FF922"}]. */
+    clientCertificateCommonNames(value: string): az_sf_cluster_client_certificate_remove_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_cluster_client_certificate_remove_command_builder;
+    /** A single or Space-separated list of client certificate thumbprint(s) to be remove. */
+    thumbprints(value: string): az_sf_cluster_client_certificate_remove_command_builder;
+}
+/**
+ * Update the durability tier or VM SKU of a node type in the cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf cluster durability update --cluster-name
+ *                                 --durability-level {Bronze, Gold, Silver}
+ *                                 --node-type
+ *                                 --resource-group
+ *                                 [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {'Bronze' | 'Gold' | 'Silver'} durabilityLevel Durability level.
+ * @param {string} nodeType The Node type name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_cluster_durability_update_command_builder extends CommandBuilder<az_sf_cluster_durability_update_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, durabilityLevel: 'Bronze' | 'Gold' | 'Silver', nodeType: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_cluster_durability_update_command_builder;
+    /** Durability level. */
+    durabilityLevel(value: 'Bronze' | 'Gold' | 'Silver'): az_sf_cluster_durability_update_command_builder;
+    /** The Node type name. */
+    nodeType(value: string): az_sf_cluster_durability_update_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_cluster_durability_update_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_cluster_durability_update_command_builder;
+}
+/**
+ * Add a new node type to a cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf cluster node-type add --capacity
+ *                             --cluster-name
+ *                             --node-type
+ *                             --resource-group
+ *                             --vm-password
+ *                             --vm-user-name
+ *                             [--durability-level {Bronze, Gold, Silver}]
+ *                             [--subscription]
+ *                             [--vm-sku]
+ *                             [--vm-tier]
+ * ```
+ *
+ * @param {string} capacity The capacity tag applied to nodes in the node type. The cluster resource manager uses these tags to understand how much capacity a node has.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} nodeType The Node type name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ * @param {string} vmPassword The password of the Vm.
+ * @param {string} vmUserName The user name for logging to Vm. Default will be adminuser.
+ */
+declare class az_sf_cluster_node_type_add_command_builder extends CommandBuilder<az_sf_cluster_node_type_add_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, capacity: string, clusterName: string, nodeType: string, resourceGroup: string, vmPassword: string, vmUserName: string);
+    /** The capacity tag applied to nodes in the node type. The cluster resource manager uses these tags to understand how much capacity a node has. */
+    capacity(value: string): az_sf_cluster_node_type_add_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_cluster_node_type_add_command_builder;
+    /** The Node type name. */
+    nodeType(value: string): az_sf_cluster_node_type_add_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_cluster_node_type_add_command_builder;
+    /** The password of the Vm. */
+    vmPassword(value: string): az_sf_cluster_node_type_add_command_builder;
+    /** The user name for logging to Vm. Default will be adminuser. */
+    vmUserName(value: string): az_sf_cluster_node_type_add_command_builder;
+    /** Durability level. */
+    durabilityLevel(value: 'Bronze' | 'Gold' | 'Silver'): az_sf_cluster_node_type_add_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_cluster_node_type_add_command_builder;
+    /** VM Sku. */
+    vmSku(value: string): az_sf_cluster_node_type_add_command_builder;
+    /** VM tier. */
+    vmTier(value: string): az_sf_cluster_node_type_add_command_builder;
+}
+/**
+ * Add nodes to a node type in a cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf cluster node add --cluster-name
+ *                        --node-type
+ *                        --nodes-to-add
+ *                        --resource-group
+ *                        [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} nodeType The Node type name.
+ * @param {string} numberOfNodesToAdd Number of nodes to add.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_cluster_node_add_command_builder extends CommandBuilder<az_sf_cluster_node_add_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, nodeType: string, numberOfNodesToAdd: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_cluster_node_add_command_builder;
+    /** The Node type name. */
+    nodeType(value: string): az_sf_cluster_node_add_command_builder;
+    /** Number of nodes to add. */
+    numberOfNodesToAdd(value: string): az_sf_cluster_node_add_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_cluster_node_add_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_cluster_node_add_command_builder;
+}
+/**
+ * Remove nodes from a node type in a cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf cluster node remove --cluster-name
+ *                           --node-type
+ *                           --nodes-to-remove
+ *                           --resource-group
+ *                           [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} nodeType The Node type name.
+ * @param {string} numberOfNodesToRemove Number of nodes to remove.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_cluster_node_remove_command_builder extends CommandBuilder<az_sf_cluster_node_remove_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, nodeType: string, numberOfNodesToRemove: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_cluster_node_remove_command_builder;
+    /** The Node type name. */
+    nodeType(value: string): az_sf_cluster_node_remove_command_builder;
+    /** Number of nodes to remove. */
+    numberOfNodesToRemove(value: string): az_sf_cluster_node_remove_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_cluster_node_remove_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_cluster_node_remove_command_builder;
+}
+/**
+ * Update the reliability tier for the primary node in a cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf cluster reliability update --cluster-name
+ *                                  --reliability-level {Bronze, Gold, Platinum, Silver}
+ *                                  --resource-group
+ *                                  [--auto-add-node]
+ *                                  [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {'Bronze' | 'Gold' | 'Platinum' | 'Silver'} reliabilityLevel Durability level.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_cluster_reliability_update_command_builder extends CommandBuilder<az_sf_cluster_reliability_update_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, reliabilityLevel: 'Bronze' | 'Gold' | 'Platinum' | 'Silver', resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_cluster_reliability_update_command_builder;
+    /** Durability level. */
+    reliabilityLevel(value: 'Bronze' | 'Gold' | 'Platinum' | 'Silver'): az_sf_cluster_reliability_update_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_cluster_reliability_update_command_builder;
+    /** Add node count automatically when changing reliability. */
+    autoAddNode(value: string): az_sf_cluster_reliability_update_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_cluster_reliability_update_command_builder;
+}
+/**
+ * Remove settings from a cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf cluster setting remove --cluster-name
+ *                              --resource-group
+ *                              [--parameter]
+ *                              [--section]
+ *                              [--settings-section]
+ *                              [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_cluster_setting_remove_command_builder extends CommandBuilder<az_sf_cluster_setting_remove_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_cluster_setting_remove_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_cluster_setting_remove_command_builder;
+    /** Parameter name. */
+    parameter(value: string): az_sf_cluster_setting_remove_command_builder;
+    /** Section name. */
+    section(value: string): az_sf_cluster_setting_remove_command_builder;
+    /** JSON encoded parameters configuration. Use @{file} to load from a file. For example: [{"section": "NamingService","parameter": "MaxOperationTimeout"}]. */
+    settingsSectionDescription(value: string): az_sf_cluster_setting_remove_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_cluster_setting_remove_command_builder;
+}
+/**
+ * Update the settings of a cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf cluster setting set --cluster-name
+ *                           --resource-group
+ *                           [--parameter]
+ *                           [--section]
+ *                           [--settings-section]
+ *                           [--subscription]
+ *                           [--value]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_cluster_setting_set_command_builder extends CommandBuilder<az_sf_cluster_setting_set_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_cluster_setting_set_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_cluster_setting_set_command_builder;
+    /** Parameter name. */
+    parameter(value: string): az_sf_cluster_setting_set_command_builder;
+    /** Section name. */
+    section(value: string): az_sf_cluster_setting_set_command_builder;
+    /** JSON encoded parameters configuration. Use @{file} to load from a file. For example: [{"section": "NamingService","parameter": "MaxOperationTimeout","value": 1000},{"section": "MaxFileOperationTimeout","parameter": "Max2","value": 1000]. */
+    settingsSectionDescription(value: string): az_sf_cluster_setting_set_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_cluster_setting_set_command_builder;
+    /** Specify the value. */
+    value(value: string): az_sf_cluster_setting_set_command_builder;
+}
+/**
+ * Change the  upgrade type for a cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf cluster upgrade-type set --cluster-name
+ *                                --resource-group
+ *                                --upgrade-mode {automatic, manual}
+ *                                [--subscription]
+ *                                [--version]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ * @param {'automatic' | 'manual'} upgradeMode Cluster upgrade mode.
+ */
+declare class az_sf_cluster_upgrade_type_set_command_builder extends CommandBuilder<az_sf_cluster_upgrade_type_set_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string, upgradeMode: 'automatic' | 'manual');
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_cluster_upgrade_type_set_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_cluster_upgrade_type_set_command_builder;
+    /** Cluster upgrade mode. */
+    upgradeMode(value: 'automatic' | 'manual'): az_sf_cluster_upgrade_type_set_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_cluster_upgrade_type_set_command_builder;
+    /** Cluster code version. */
+    version(value: string): az_sf_cluster_upgrade_type_set_command_builder;
+}
+/**
+ * Create a new Azure Service Fabric cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf cluster create --location
+ *                      --resource-group
+ *                      [--cert-out-folder]
+ *                      [--cert-subject-name]
+ *                      [--certificate-file]
+ *                      [--certificate-password]
+ *                      [--cluster-name]
+ *                      [--cluster-size]
+ *                      [--os {UbuntuServer1604, WindowsServer1709, WindowsServer1709withContainers, WindowsServer1803withContainers, WindowsServer1809withContainers, WindowsServer2012R2Datacenter, WindowsServer2016Datacenter, WindowsServer2016DatacenterwithContainers, WindowsServer2019Datacenter, WindowsServer2019DatacenterwithContainers}]
+ *                      [--parameter-file]
+ *                      [--secret-identifier]
+ *                      [--subscription]
+ *                      [--template-file]
+ *                      [--vault-name]
+ *                      [--vault-resource-group]
+ *                      [--vm-password]
+ *                      [--vm-sku]
+ *                      [--vm-user-name]
+ * ```
+ *
+ * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_cluster_create_command_builder extends CommandBuilder<az_sf_cluster_create_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, location: string, resourceGroup: string);
+    /** Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`. */
+    location(value: string): az_sf_cluster_create_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_cluster_create_command_builder;
+    /** The folder of the new certificate file to be created. */
+    certificateOutputFolder(value: string): az_sf_cluster_create_command_builder;
+    /** The subject name of the certificate to be created. */
+    certificateSubjectName(value: string): az_sf_cluster_create_command_builder;
+    /** The existing certificate file path for the primary cluster certificate. */
+    certificateFile(value: string): az_sf_cluster_create_command_builder;
+    /** The password of the certificate file. */
+    certificatePassword(value: string): az_sf_cluster_create_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_cluster_create_command_builder;
+    /** The number of nodes in the cluster. Default are 5 nodes. */
+    clusterSize(value: string): az_sf_cluster_create_command_builder;
+    /** The Operating System of the VMs that make up the cluster. */
+    vmOs(value: 'UbuntuServer1604' | 'WindowsServer1709' | 'WindowsServer1709withContainers' | 'WindowsServer1803withContainers' | 'WindowsServer1809withContainers' | 'WindowsServer2012R2Datacenter' | 'WindowsServer2016Datacenter' | 'WindowsServer2016DatacenterwithContainers' | 'WindowsServer2019Datacenter' | 'WindowsServer2019DatacenterwithContainers'): az_sf_cluster_create_command_builder;
+    /** The path to the template parameter file. */
+    parameterFile(value: string): az_sf_cluster_create_command_builder;
+    /** The existing Azure key vault secret URL. */
+    secretIdentifier(value: string): az_sf_cluster_create_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_cluster_create_command_builder;
+    /** The path to the template file. */
+    templateFile(value: string): az_sf_cluster_create_command_builder;
+    /** Azure key vault name, it not given it will be the cluster resource group name. */
+    vaultName(value: string): az_sf_cluster_create_command_builder;
+    /** Key vault resource group name, if not given it will be cluster resource group name. */
+    vaultResourceGroup(value: string): az_sf_cluster_create_command_builder;
+    /** The password of the Vm. */
+    vmPassword(value: string): az_sf_cluster_create_command_builder;
+    /** VM Sku. */
+    vmSku(value: string): az_sf_cluster_create_command_builder;
+    /** The user name for logging to Vm. Default will be adminuser. */
+    vmUserName(value: string): az_sf_cluster_create_command_builder;
+}
+/**
+ * List cluster resources.
+ *
+ * Syntax:
+ * ```
+ * az sf cluster list [--query-examples]
+ *                    [--resource-group]
+ *                    [--subscription]
+ * ```
+ */
+declare class az_sf_cluster_list_command_builder extends CommandBuilder<az_sf_cluster_list_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string);
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_sf_cluster_list_command_builder;
+    /** The resource group name. */
+    resourceGroup(value: string): az_sf_cluster_list_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_cluster_list_command_builder;
+}
+/**
+ * Gets a Service Fabric cluster resource.
+ *
+ * Syntax:
+ * ```
+ * az sf cluster show --cluster-name
+ *                    --resource-group
+ *                    [--query-examples]
+ *                    [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_cluster_show_command_builder extends CommandBuilder<az_sf_cluster_show_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_cluster_show_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_cluster_show_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_sf_cluster_show_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_cluster_show_command_builder;
+}
+/**
+ * Add a new client certificate to the managed cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-cluster client-certificate add --cluster-name
+ *                                              --resource-group
+ *                                              [--common-name]
+ *                                              [--is-admin {false, true}]
+ *                                              [--issuer-thumbprint]
+ *                                              [--subscription]
+ *                                              [--thumbprint]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_managed_cluster_client_certificate_add_command_builder extends CommandBuilder<az_sf_managed_cluster_client_certificate_add_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_managed_cluster_client_certificate_add_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_cluster_client_certificate_add_command_builder;
+    /** Client certificate common name. */
+    commonName(value: string): az_sf_managed_cluster_client_certificate_add_command_builder;
+    /** Client authentication type. */
+    isAdmin(value: boolean): az_sf_managed_cluster_client_certificate_add_command_builder;
+    /** Space-separated list of issuer thumbprints. */
+    issuerThumbprint(value: string): az_sf_managed_cluster_client_certificate_add_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_cluster_client_certificate_add_command_builder;
+    /** Client certificate thumbprint. */
+    thumbprint(value: string): az_sf_managed_cluster_client_certificate_add_command_builder;
+}
+/**
+ * Delete a client certificate from the managed cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-cluster client-certificate delete --cluster-name
+ *                                                 --resource-group
+ *                                                 [--common-name]
+ *                                                 [--subscription]
+ *                                                 [--thumbprint]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_managed_cluster_client_certificate_delete_command_builder extends CommandBuilder<az_sf_managed_cluster_client_certificate_delete_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_managed_cluster_client_certificate_delete_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_cluster_client_certificate_delete_command_builder;
+    /** A single or Space-separated list of client certificate common name(s) to be remove. */
+    commonName(value: string): az_sf_managed_cluster_client_certificate_delete_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_cluster_client_certificate_delete_command_builder;
+    /** A single or Space-separated list of client certificate thumbprint(s) to be remove. */
+    thumbprint(value: string): az_sf_managed_cluster_client_certificate_delete_command_builder;
+}
+/**
+ * Delete a managed cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-cluster create --admin-password
+ *                              --cluster-name
+ *                              --resource-group
+ *                              [--admin-user-name]
+ *                              [--cert-common-name]
+ *                              [--cert-is-admin {false, true}]
+ *                              [--cert-issuer-thumbprint]
+ *                              [--cert-thumbprint]
+ *                              [--client-connection-port]
+ *                              [--dns-name]
+ *                              [--gateway-connection-port]
+ *                              [--location]
+ *                              [--sku]
+ *                              [--subscription]
+ *                              [--tags]
+ * ```
+ *
+ * @param {string} adminPassword Admin password used for the virtual machines.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_managed_cluster_create_command_builder extends CommandBuilder<az_sf_managed_cluster_create_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, adminPassword: string, clusterName: string, resourceGroup: string);
+    /** Admin password used for the virtual machines. */
+    adminPassword(value: string): az_sf_managed_cluster_create_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_managed_cluster_create_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_cluster_create_command_builder;
+    /** Admin user used for the virtual machines. */
+    adminUserName(value: string): az_sf_managed_cluster_create_command_builder;
+    /** Client certificate common name. */
+    clientCertCommonName(value: string): az_sf_managed_cluster_create_command_builder;
+    /** Client authentication type. */
+    clientCertIsAdmin(value: boolean): az_sf_managed_cluster_create_command_builder;
+    /** Space-separated list of issuer thumbprints. */
+    clientCertIssuerThumbprint(value: string): az_sf_managed_cluster_create_command_builder;
+    /** Client certificate thumbprint. */
+    clientCertThumbprint(value: string): az_sf_managed_cluster_create_command_builder;
+    /** Port used for client connections to the cluster. */
+    clientConnectionPort(value: string): az_sf_managed_cluster_create_command_builder;
+    /** Cluster's dns name. */
+    dnsName(value: string): az_sf_managed_cluster_create_command_builder;
+    /** Port used for http connections to the cluster. */
+    gatewayConnectionPort(value: string): az_sf_managed_cluster_create_command_builder;
+    /** Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`. */
+    location(value: string): az_sf_managed_cluster_create_command_builder;
+    /** Cluster's Sku, the options are Basic: it will have a minimum of 3 seed nodes and only allows 1 node type and Standard: it will have a minimum of 5 seed nodes and allows multiple node types. */
+    sku(value: string): az_sf_managed_cluster_create_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_cluster_create_command_builder;
+    /** Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags. */
+    tags(value: string): az_sf_managed_cluster_create_command_builder;
+}
+/**
+ * Delete a managed cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-cluster delete --cluster-name
+ *                              --resource-group
+ *                              [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_managed_cluster_delete_command_builder extends CommandBuilder<az_sf_managed_cluster_delete_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_managed_cluster_delete_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_cluster_delete_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_cluster_delete_command_builder;
+}
+/**
+ * List managed clusters.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-cluster list [--query-examples]
+ *                            [--resource-group]
+ *                            [--subscription]
+ * ```
+ */
+declare class az_sf_managed_cluster_list_command_builder extends CommandBuilder<az_sf_managed_cluster_list_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string);
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_sf_managed_cluster_list_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_cluster_list_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_cluster_list_command_builder;
+}
+/**
+ * Show the properties of an Azure Service Fabric managed cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-cluster show --cluster-name
+ *                            --resource-group
+ *                            [--query-examples]
+ *                            [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_managed_cluster_show_command_builder extends CommandBuilder<az_sf_managed_cluster_show_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_managed_cluster_show_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_cluster_show_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_sf_managed_cluster_show_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_cluster_show_command_builder;
+}
+/**
+ * Update a managed cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-cluster update --cluster-name
+ *                              --resource-group
+ *                              [--client-connection-port]
+ *                              [--dns-name]
+ *                              [--gateway-connection-port]
+ *                              [--subscription]
+ *                              [--tags]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_managed_cluster_update_command_builder extends CommandBuilder<az_sf_managed_cluster_update_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_managed_cluster_update_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_cluster_update_command_builder;
+    /** Port used for client connections to the cluster. */
+    clientConnectionPort(value: string): az_sf_managed_cluster_update_command_builder;
+    /** Cluster's dns name. */
+    dnsName(value: string): az_sf_managed_cluster_update_command_builder;
+    /** Port used for http connections to the cluster. */
+    gatewayConnectionPort(value: string): az_sf_managed_cluster_update_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_cluster_update_command_builder;
+    /** Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags. */
+    tags(value: string): az_sf_managed_cluster_update_command_builder;
+}
+/**
+ * Delete nodes of a node type.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-node-type node delete --cluster-name
+ *                                     --name
+ *                                     --node-name
+ *                                     --resource-group
+ *                                     [--force {false, true}]
+ *                                     [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} nodeTypeName Node type name.
+ * @param {string} nodeName List of target nodes to perform the operation.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_managed_node_type_node_delete_command_builder extends CommandBuilder<az_sf_managed_node_type_node_delete_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, nodeTypeName: string, nodeName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_managed_node_type_node_delete_command_builder;
+    /** Node type name. */
+    nodeTypeName(value: string): az_sf_managed_node_type_node_delete_command_builder;
+    /** List of target nodes to perform the operation. */
+    nodeName(value: string): az_sf_managed_node_type_node_delete_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_node_type_node_delete_command_builder;
+    /** Using this flag will force the operation even if service fabric is unable to disable the nodes. Use with caution as this might cause data loss if stateful workloads are running on the node. */
+    force(value: boolean): az_sf_managed_node_type_node_delete_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_node_type_node_delete_command_builder;
+}
+/**
+ * Reimage nodes of a node type.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-node-type node reimage --cluster-name
+ *                                      --name
+ *                                      --node-name
+ *                                      --resource-group
+ *                                      [--force {false, true}]
+ *                                      [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} nodeTypeName Node type name.
+ * @param {string} nodeName List of target nodes to perform the operation.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_managed_node_type_node_reimage_command_builder extends CommandBuilder<az_sf_managed_node_type_node_reimage_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, nodeTypeName: string, nodeName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_managed_node_type_node_reimage_command_builder;
+    /** Node type name. */
+    nodeTypeName(value: string): az_sf_managed_node_type_node_reimage_command_builder;
+    /** List of target nodes to perform the operation. */
+    nodeName(value: string): az_sf_managed_node_type_node_reimage_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_node_type_node_reimage_command_builder;
+    /** Using this flag will force the operation even if service fabric is unable to disable the nodes. Use with caution as this might cause data loss if stateful workloads are running on the node. */
+    force(value: boolean): az_sf_managed_node_type_node_reimage_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_node_type_node_reimage_command_builder;
+}
+/**
+ * Restart nodes of a node type.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-node-type node restart --cluster-name
+ *                                      --name
+ *                                      --node-name
+ *                                      --resource-group
+ *                                      [--force {false, true}]
+ *                                      [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} nodeTypeName Node type name.
+ * @param {string} nodeName List of target nodes to perform the operation.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_managed_node_type_node_restart_command_builder extends CommandBuilder<az_sf_managed_node_type_node_restart_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, nodeTypeName: string, nodeName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_managed_node_type_node_restart_command_builder;
+    /** Node type name. */
+    nodeTypeName(value: string): az_sf_managed_node_type_node_restart_command_builder;
+    /** List of target nodes to perform the operation. */
+    nodeName(value: string): az_sf_managed_node_type_node_restart_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_node_type_node_restart_command_builder;
+    /** Using this flag will force the operation even if service fabric is unable to disable the nodes. Use with caution as this might cause data loss if stateful workloads are running on the node. */
+    force(value: boolean): az_sf_managed_node_type_node_restart_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_node_type_node_restart_command_builder;
+}
+/**
+ * Add an extension to the node type.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-node-type vm-extension add --cluster-name
+ *                                          --extension-name
+ *                                          --extension-type
+ *                                          --name
+ *                                          --publisher
+ *                                          --resource-group
+ *                                          --type-handler-version
+ *                                          [--auto-upgrade {false, true}]
+ *                                          [--force-update-tag]
+ *                                          [--protected-setting]
+ *                                          [--provision-after]
+ *                                          [--setting]
+ *                                          [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} extensionName Extension name.
+ * @param {string} extensionType Specifies the type of the extension; an example is "CustomScriptExtension".
+ * @param {string} nodeTypeName Node type name.
+ * @param {string} publisher The name of the extension handler publisher.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ * @param {string} typeHandlerVersion Specifies the version of the script handler.
+ */
+declare class az_sf_managed_node_type_vm_extension_add_command_builder extends CommandBuilder<az_sf_managed_node_type_vm_extension_add_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, extensionName: string, extensionType: string, nodeTypeName: string, publisher: string, resourceGroup: string, typeHandlerVersion: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_managed_node_type_vm_extension_add_command_builder;
+    /** Extension name. */
+    extensionName(value: string): az_sf_managed_node_type_vm_extension_add_command_builder;
+    /** Specifies the type of the extension; an example is "CustomScriptExtension". */
+    extensionType(value: string): az_sf_managed_node_type_vm_extension_add_command_builder;
+    /** Node type name. */
+    nodeTypeName(value: string): az_sf_managed_node_type_vm_extension_add_command_builder;
+    /** The name of the extension handler publisher. */
+    publisher(value: string): az_sf_managed_node_type_vm_extension_add_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_node_type_vm_extension_add_command_builder;
+    /** Specifies the version of the script handler. */
+    typeHandlerVersion(value: string): az_sf_managed_node_type_vm_extension_add_command_builder;
+    /** Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true. */
+    autoUpgradeMinorVersion(value: boolean): az_sf_managed_node_type_vm_extension_add_command_builder;
+    /** If a value is provided and is different from the previous value, the extension handler will be forced to update even if the extension configuration has not changed. */
+    forceUpdateTag(value: string): az_sf_managed_node_type_vm_extension_add_command_builder;
+    /** The extension can contain either protectedSettings or protectedSettingsFromKeyVault or no protected settings at all. */
+    protectedSetting(value: string): az_sf_managed_node_type_vm_extension_add_command_builder;
+    /** Collection of extension names after which this extension needs to be provisioned. */
+    provisionAfterExtension(value: string): az_sf_managed_node_type_vm_extension_add_command_builder;
+    /** Json formatted public settings for the extension. */
+    setting(value: string): az_sf_managed_node_type_vm_extension_add_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_node_type_vm_extension_add_command_builder;
+}
+/**
+ * Delete an extension to the node type.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-node-type vm-extension delete --cluster-name
+ *                                             --extension-name
+ *                                             --name
+ *                                             --resource-group
+ *                                             [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} extensionName Extension name.
+ * @param {string} nodeTypeName Node type name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_managed_node_type_vm_extension_delete_command_builder extends CommandBuilder<az_sf_managed_node_type_vm_extension_delete_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, extensionName: string, nodeTypeName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_managed_node_type_vm_extension_delete_command_builder;
+    /** Extension name. */
+    extensionName(value: string): az_sf_managed_node_type_vm_extension_delete_command_builder;
+    /** Node type name. */
+    nodeTypeName(value: string): az_sf_managed_node_type_vm_extension_delete_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_node_type_vm_extension_delete_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_node_type_vm_extension_delete_command_builder;
+}
+/**
+ * Add a secret to the node type.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-node-type vm-secret add --certificate-store
+ *                                       --certificate-url
+ *                                       --cluster-name
+ *                                       --name
+ *                                       --resource-group
+ *                                       --source-vault-id
+ *                                       [--subscription]
+ * ```
+ *
+ * @param {string} certificateStore Specifies the certificate store on the Virtual Machine to which the certificate should be added. The specified certificate store is implicitly in the LocalMachine account.
+ * @param {string} certificateUrl This is the URL of a certificate that has been uploaded to Key Vault as a secret. For adding a secret to the Key Vault, see [Add a key or secret to the key vault](<a href="https://docs.microsoft.com/azure/key-vault/key-vault-get-started/#add">https://docs.microsoft.com/azure/key-vault/key-vault-get-started/#add</a>). In this case, your certificate needs to be It is the Base64 encoding of the following JSON Object which is encoded in UTF-8: <br><br> {<br>  "data":"<Base64-encoded-certificate>",<br>  "dataType":"pfx",<br>  "password":"<pfx-file-password>"<br>}/.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} nodeTypeName Node type name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ * @param {string} sourceVaultId Key Vault resource id containing the certificates.
+ */
+declare class az_sf_managed_node_type_vm_secret_add_command_builder extends CommandBuilder<az_sf_managed_node_type_vm_secret_add_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, certificateStore: string, certificateUrl: string, clusterName: string, nodeTypeName: string, resourceGroup: string, sourceVaultId: string);
+    /** Specifies the certificate store on the Virtual Machine to which the certificate should be added. The specified certificate store is implicitly in the LocalMachine account. */
+    certificateStore(value: string): az_sf_managed_node_type_vm_secret_add_command_builder;
+    /** This is the URL of a certificate that has been uploaded to Key Vault as a secret. For adding a secret to the Key Vault, see [Add a key or secret to the key vault](<a href="https://docs.microsoft.com/azure/key-vault/key-vault-get-started/#add">https://docs.microsoft.com/azure/key-vault/key-vault-get-started/#add</a>). In this case, your certificate needs to be It is the Base64 encoding of the following JSON Object which is encoded in UTF-8: <br><br> {<br>  "data":"<Base64-encoded-certificate>",<br>  "dataType":"pfx",<br>  "password":"<pfx-file-password>"<br>}/. */
+    certificateUrl(value: string): az_sf_managed_node_type_vm_secret_add_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_managed_node_type_vm_secret_add_command_builder;
+    /** Node type name. */
+    nodeTypeName(value: string): az_sf_managed_node_type_vm_secret_add_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_node_type_vm_secret_add_command_builder;
+    /** Key Vault resource id containing the certificates. */
+    sourceVaultId(value: string): az_sf_managed_node_type_vm_secret_add_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_node_type_vm_secret_add_command_builder;
+}
+/**
+ * Delete a managed cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-node-type create --cluster-name
+ *                                --instance-count
+ *                                --name
+ *                                --resource-group
+ *                                [--app-end-port]
+ *                                [--app-start-port]
+ *                                [--capacity]
+ *                                [--disk-size]
+ *                                [--ephemeral-end-port]
+ *                                [--ephemeral-start-port]
+ *                                [--placement-property]
+ *                                [--primary {false, true}]
+ *                                [--subscription]
+ *                                [--vm-image-offer]
+ *                                [--vm-image-publisher]
+ *                                [--vm-image-sku]
+ *                                [--vm-image-version]
+ *                                [--vm-size]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} instanceCount Essage = "The number of nodes in the node type.
+ * @param {string} nodeTypeName Node type name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_managed_node_type_create_command_builder extends CommandBuilder<az_sf_managed_node_type_create_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, instanceCount: string, nodeTypeName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_managed_node_type_create_command_builder;
+    /** Essage = "The number of nodes in the node type. */
+    instanceCount(value: string): az_sf_managed_node_type_create_command_builder;
+    /** Node type name. */
+    nodeTypeName(value: string): az_sf_managed_node_type_create_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_node_type_create_command_builder;
+    /** Application End port of a range of ports. */
+    applicationEndPort(value: string): az_sf_managed_node_type_create_command_builder;
+    /** Application start port of a range of ports. */
+    applicationStartPort(value: string): az_sf_managed_node_type_create_command_builder;
+    /** Capacity tags applied to the nodes in the node type as key/value pairs, the cluster resource manager uses these tags to understand how much resource a node has. Updating this will override the current values.for example: --capacity ClientConnections=65536 param2=value2. */
+    capacity(value: string): az_sf_managed_node_type_create_command_builder;
+    /** Disk size for each vm in the node type in GBs. */
+    diskSize(value: string): az_sf_managed_node_type_create_command_builder;
+    /** Ephemeral end port of a range of ports. */
+    ephemeralEndPort(value: string): az_sf_managed_node_type_create_command_builder;
+    /** Ephemeral start port of a range of ports. */
+    ephemeralStartPort(value: string): az_sf_managed_node_type_create_command_builder;
+    /** Placement tags applied to nodes in the node type as key/value pairs, which can be used to indicate where certain services (workload) should run. Updating this will override the current values.for example: --placement-property NodeColor=Green SomeProperty=5. */
+    placementProperty(value: string): az_sf_managed_node_type_create_command_builder;
+    /** Specify if the node type is primary. On this node type will run system services. Only one node type should be marked as primary. Primary node type cannot be deleted or changed for existing clusters. */
+    primary(value: boolean): az_sf_managed_node_type_create_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_node_type_create_command_builder;
+    /** The offer type of the Azure Virtual Machines Marketplace image. */
+    vmImageOffer(value: string): az_sf_managed_node_type_create_command_builder;
+    /** The publisher of the Azure Virtual Machines Marketplace image. */
+    vmImagePublisher(value: string): az_sf_managed_node_type_create_command_builder;
+    /** The SKU of the Azure Virtual Machines Marketplace image. */
+    vmImageSku(value: string): az_sf_managed_node_type_create_command_builder;
+    /** The version of the Azure Virtual Machines Marketplace image. */
+    vmImageVersion(value: string): az_sf_managed_node_type_create_command_builder;
+    /** The size of virtual machines in the pool. All virtual machines in a pool are the same size. */
+    vmSize(value: string): az_sf_managed_node_type_create_command_builder;
+}
+/**
+ * Delete node type from a cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-node-type delete --cluster-name
+ *                                --name
+ *                                --resource-group
+ *                                [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} nodeTypeName Node type name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_managed_node_type_delete_command_builder extends CommandBuilder<az_sf_managed_node_type_delete_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, nodeTypeName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_managed_node_type_delete_command_builder;
+    /** Node type name. */
+    nodeTypeName(value: string): az_sf_managed_node_type_delete_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_node_type_delete_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_node_type_delete_command_builder;
+}
+/**
+ * List node types of a managed cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-node-type list --cluster-name
+ *                              --resource-group
+ *                              [--query-examples]
+ *                              [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_managed_node_type_list_command_builder extends CommandBuilder<az_sf_managed_node_type_list_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_managed_node_type_list_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_node_type_list_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_sf_managed_node_type_list_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_node_type_list_command_builder;
+}
+/**
+ * Show the properties of a node type.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-node-type show --cluster-name
+ *                              --name
+ *                              --resource-group
+ *                              [--query-examples]
+ *                              [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} nodeTypeName Node type name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_managed_node_type_show_command_builder extends CommandBuilder<az_sf_managed_node_type_show_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, nodeTypeName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_managed_node_type_show_command_builder;
+    /** Node type name. */
+    nodeTypeName(value: string): az_sf_managed_node_type_show_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_node_type_show_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_sf_managed_node_type_show_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_node_type_show_command_builder;
+}
+/**
+ * Update a managed cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf managed-node-type update --cluster-name
+ *                                --name
+ *                                --resource-group
+ *                                [--app-end-port]
+ *                                [--app-start-port]
+ *                                [--capacity]
+ *                                [--ephemeral-end-port]
+ *                                [--ephemeral-start-port]
+ *                                [--instance-count]
+ *                                [--placement-property]
+ *                                [--subscription]
+ * ```
+ *
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} nodeTypeName Node type name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_managed_node_type_update_command_builder extends CommandBuilder<az_sf_managed_node_type_update_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, nodeTypeName: string, resourceGroup: string);
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_managed_node_type_update_command_builder;
+    /** Node type name. */
+    nodeTypeName(value: string): az_sf_managed_node_type_update_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_managed_node_type_update_command_builder;
+    /** Application End port of a range of ports. */
+    applicationEndPort(value: string): az_sf_managed_node_type_update_command_builder;
+    /** Application start port of a range of ports. */
+    applicationStartPort(value: string): az_sf_managed_node_type_update_command_builder;
+    /** Capacity tags applied to the nodes in the node type as key/value pairs, the cluster resource manager uses these tags to understand how much resource a node has. Updating this will override the current values.for example: --capacity ClientConnections=65536 param2=value2. */
+    capacity(value: string): az_sf_managed_node_type_update_command_builder;
+    /** Ephemeral end port of a range of ports. */
+    ephemeralEndPort(value: string): az_sf_managed_node_type_update_command_builder;
+    /** Ephemeral start port of a range of ports. */
+    ephemeralStartPort(value: string): az_sf_managed_node_type_update_command_builder;
+    /** Essage = "The number of nodes in the node type. */
+    instanceCount(value: string): az_sf_managed_node_type_update_command_builder;
+    /** Placement tags applied to nodes in the node type as key/value pairs, which can be used to indicate where certain services (workload) should run. Updating this will override the current values.for example: --placement-property NodeColor=Green SomeProperty=5. */
+    placementProperty(value: string): az_sf_managed_node_type_update_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_managed_node_type_update_command_builder;
+}
+/**
+ * Create a new service on an Azure Service Fabric cluster.
+ *
+ * Syntax:
+ * ```
+ * az sf service create --application
+ *                      --cluster-name
+ *                      --name
+ *                      --resource-group
+ *                      --service-type
+ *                      --state {stateful, stateless}
+ *                      [--default-move-cost {High, Low, Medium, Zero}]
+ *                      [--instance-count]
+ *                      [--min-replica]
+ *                      [--partition-scheme {named, singleton, uniformInt64}]
+ *                      [--subscription]
+ *                      [--target-replica]
+ * ```
+ *
+ * @param {string} applicationName Specify the name of the service. The application name must be a prefix of the service name, for example: appName~serviceName.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} serviceName Specify the name of the service. The application name must be a prefix of the service name, for example: appName~serviceName.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ * @param {string} serviceType Specify the service type name of the application, it should exist in the application manifest.
+ * @param {'stateful' | 'stateless'} state Specify if the service is stateless or stateful.
+ */
+declare class az_sf_service_create_command_builder extends CommandBuilder<az_sf_service_create_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, applicationName: string, clusterName: string, serviceName: string, resourceGroup: string, serviceType: string, state: 'stateful' | 'stateless');
+    /** Specify the name of the service. The application name must be a prefix of the service name, for example: appName~serviceName. */
+    applicationName(value: string): az_sf_service_create_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_service_create_command_builder;
+    /** Specify the name of the service. The application name must be a prefix of the service name, for example: appName~serviceName. */
+    serviceName(value: string): az_sf_service_create_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_service_create_command_builder;
+    /** Specify the service type name of the application, it should exist in the application manifest. */
+    serviceType(value: string): az_sf_service_create_command_builder;
+    /** Specify if the service is stateless or stateful. */
+    state(value: 'stateful' | 'stateless'): az_sf_service_create_command_builder;
+    /** Specify the default cost for a move. Higher costs make it less likely that the Cluster Resource Manager will move the replica when trying to balance the cluster. */
+    defaultMoveCost(value: 'High' | 'Low' | 'Medium' | 'Zero'): az_sf_service_create_command_builder;
+    /** Specify the instance count for the stateless service. If -1 is used, it means it will run on all the nodes. */
+    instanceCount(value: string): az_sf_service_create_command_builder;
+    /** Specify the min replica set size for the stateful service. */
+    minReplicaSetSize(value: string): az_sf_service_create_command_builder;
+    /** Specify what partition scheme to use. Singleton partitions are typically used when the service does not require any additional routing. UniformInt64 means that each partition owns a range of int64 keys. Named is usually for services with data that can be bucketed, within a bounded set. Some common examples of data fields used as named partition keys would be regions, postal codes, customer groups, or other business boundaries. */
+    partitionScheme(value: 'named' | 'singleton' | 'uniformInt64'): az_sf_service_create_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_service_create_command_builder;
+    /** Specify the target replica set size for the stateful service. */
+    targetReplicaSetSize(value: string): az_sf_service_create_command_builder;
+}
+/**
+ * Delete a service.
+ *
+ * Syntax:
+ * ```
+ * az sf service delete --application-name
+ *                      --cluster-name
+ *                      --name
+ *                      --resource-group
+ *                      [--subscription]
+ * ```
+ *
+ * @param {string} applicationName The name of the application resource.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} serviceName Specify the name of the service. The application name must be a prefix of the service name, for example: appName~serviceName.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_service_delete_command_builder extends CommandBuilder<az_sf_service_delete_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, applicationName: string, clusterName: string, serviceName: string, resourceGroup: string);
+    /** The name of the application resource. */
+    applicationName(value: string): az_sf_service_delete_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_service_delete_command_builder;
+    /** Specify the name of the service. The application name must be a prefix of the service name, for example: appName~serviceName. */
+    serviceName(value: string): az_sf_service_delete_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_service_delete_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_service_delete_command_builder;
+}
+/**
+ * List services of a given application.
+ *
+ * Syntax:
+ * ```
+ * az sf service list --application-name
+ *                    --cluster-name
+ *                    --resource-group
+ *                    [--query-examples]
+ *                    [--subscription]
+ * ```
+ *
+ * @param {string} applicationName The name of the application resource.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_service_list_command_builder extends CommandBuilder<az_sf_service_list_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, applicationName: string, clusterName: string, resourceGroup: string);
+    /** The name of the application resource. */
+    applicationName(value: string): az_sf_service_list_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_service_list_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_service_list_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_sf_service_list_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_service_list_command_builder;
+}
+/**
+ * Get a service.
+ *
+ * Syntax:
+ * ```
+ * az sf service show --application-name
+ *                    --cluster-name
+ *                    --name
+ *                    --resource-group
+ *                    [--query-examples]
+ *                    [--subscription]
+ * ```
+ *
+ * @param {string} applicationName The name of the application resource.
+ * @param {string} clusterName Specify the name of the cluster, if not given it will be same as resource group name.
+ * @param {string} serviceName Specify the name of the service. The application name must be a prefix of the service name, for example: appName~serviceName.
+ * @param {string} resourceGroup Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_sf_service_show_command_builder extends CommandBuilder<az_sf_service_show_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, applicationName: string, clusterName: string, serviceName: string, resourceGroup: string);
+    /** The name of the application resource. */
+    applicationName(value: string): az_sf_service_show_command_builder;
+    /** Specify the name of the cluster, if not given it will be same as resource group name. */
+    clusterName(value: string): az_sf_service_show_command_builder;
+    /** Specify the name of the service. The application name must be a prefix of the service name, for example: appName~serviceName. */
+    serviceName(value: string): az_sf_service_show_command_builder;
+    /** Specify the resource group name. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sf_service_show_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_sf_service_show_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sf_service_show_command_builder;
+}
+export {};

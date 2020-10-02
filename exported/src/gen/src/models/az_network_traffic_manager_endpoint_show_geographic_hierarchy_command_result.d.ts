@@ -1,0 +1,1 @@
+export declare type az_network_traffic_manager_endpoint_show_geographic_hierarchy_command_result = Record<string, any>;
