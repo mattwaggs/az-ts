@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "compileandrun": "ts-node src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "export": "tsc --outDir ./exported -d ./src/gen/index.ts"
   },
   "author": "",
   "license": "ISC",
