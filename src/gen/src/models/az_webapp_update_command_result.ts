@@ -1,6 +1,4 @@
-export type az_webapp_update_command_result = az_webapp_update_command_result_item[];
-
-interface az_webapp_update_command_result_item {
+export interface az_webapp_update_command_result {
   availabilityState: string;
   clientAffinityEnabled: boolean;
   clientCertEnabled: boolean;

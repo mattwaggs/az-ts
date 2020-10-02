@@ -1,6 +1,4 @@
-export type az_storage_table_generate_sas_command_result = az_storage_table_generate_sas_command_result_item[];
-
-interface az_storage_table_generate_sas_command_result_item {
+export interface az_storage_table_generate_sas_command_result {
   '0': string;
   '1': string;
   '2': string;

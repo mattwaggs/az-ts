@@ -1,6 +1,4 @@
-export type az_keyvault_list_command_result = az_keyvault_list_command_result_item[];
-
-interface az_keyvault_list_command_result_item {
+export interface az_keyvault_list_command_result {
   id: string;
   location: string;
   name: string;

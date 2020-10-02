@@ -31,7 +31,10 @@ class BuildDataTypesCommand implements Command {
         const json = results[key];
         if (Array.isArray(json) && json.length === 0) {
           return;
-        } else if (Array.isArray(json)) {
+        } else if (
+          Array.isArray(json) &&
+          json.every((item) => Array.isArray(item))
+        ) {
           const interfaces = this.convertJsonArrayToTS(json, key);
           const fileName = path.join(__dirname, `../gen/src/models/${key}.ts`);
           this.saveGeneratedInterfaces(interfaces, fileName);

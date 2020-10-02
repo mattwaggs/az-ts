@@ -1,6 +1,4 @@
-export type az_group_show_command_result = az_group_show_command_result_item[];
-
-interface az_group_show_command_result_item {
+export interface az_group_show_command_result {
   id: string;
   location: string;
   managedBy?: any;
