@@ -3,7 +3,6 @@ import Usage from "./usage";
 
 export class executor {
   static execute = (command: string, resultDataTypeName: string): any => {
-    console.log(command);
     try {
       const result = execSync(command).toString();
       if (result) {
