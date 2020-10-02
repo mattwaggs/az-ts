@@ -1,8 +1,9 @@
 {
   "name": "az-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Azure Typescript Cli",
   "main": "./src/gen/index.js",
+  "bin": "./runner.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
