@@ -1,1 +1,1 @@
-export type az_network_express_route_gateway_connection_update_command_result = Record<string, unknown>
+export type az_network_express_route_gateway_connection_update_command_result = Record<string, any>

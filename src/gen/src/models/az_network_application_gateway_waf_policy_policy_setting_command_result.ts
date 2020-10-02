@@ -1,1 +1,0 @@
-export type az_network_application_gateway_waf_policy_policy_setting_command_result = Record<string, unknown>

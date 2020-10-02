@@ -9,16 +9,12 @@ export interface az_ad_group_create_command_result {
   mailNickname: string;
   objectId: string;
   objectType: string;
-  'odata.metadata': string;
   'odata.type': string;
   onPremisesDomainName?: any;
   onPremisesNetBiosName?: any;
   onPremisesSamAccountName?: any;
   onPremisesSecurityIdentifier?: any;
-  provisioningErrors: ProvisioningErrors;
-  proxyAddresses: ProvisioningErrors;
+  provisioningErrors: any[];
+  proxyAddresses: any[];
   securityEnabled: boolean;
-}
-
-export interface ProvisioningErrors {
 }

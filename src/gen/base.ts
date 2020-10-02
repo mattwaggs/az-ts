@@ -6,9 +6,9 @@ export abstract class CommandBuilder<T = void> {
     private resultDataTypeName: string
   ) {}
 
-  _flags: { [key: string]: string } = {};
+  protected _flags: { [key: string]: string } = {};
 
-  setFlag = (key: string, value: string): void => {
+  protected setFlag = (key: string, value: string): void => {
     this._flags[key] = value;
   };
 

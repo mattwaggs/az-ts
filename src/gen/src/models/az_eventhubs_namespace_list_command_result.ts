@@ -1,9 +1,4 @@
 export interface az_eventhubs_namespace_list_command_result {
-  '0': _0;
-  '1'?: _0;
-}
-
-export interface _0 {
   clusterArmId?: any;
   createdAt: string;
   encryption?: any;

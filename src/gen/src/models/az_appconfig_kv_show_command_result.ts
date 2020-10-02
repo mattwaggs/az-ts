@@ -1,1 +1,13 @@
-export type az_appconfig_kv_show_command_result = Record<string, unknown>
+export interface az_appconfig_kv_show_command_result {
+  contentType?: string;
+  etag: string;
+  key: string;
+  label?: any;
+  lastModified: string;
+  locked: boolean;
+  tags: Tags;
+  value: string;
+}
+
+export interface Tags {
+}

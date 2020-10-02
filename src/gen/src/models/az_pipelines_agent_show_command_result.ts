@@ -1,1 +1,1 @@
-export type az_pipelines_agent_show_command_result = Record<string, unknown>
+export type az_pipelines_agent_show_command_result = Record<string, any>

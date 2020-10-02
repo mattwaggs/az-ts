@@ -21,7 +21,7 @@ export interface az_storage_account_show_command_result {
   networkRuleSet: NetworkRuleSet;
   primaryEndpoints: PrimaryEndpoints;
   primaryLocation: string;
-  privateEndpointConnections: IpRules;
+  privateEndpointConnections: any[];
   provisioningState: string;
   resourceGroup: string;
   routingPreference?: any;
@@ -30,8 +30,11 @@ export interface az_storage_account_show_command_result {
   sku: Sku;
   statusOfPrimary: string;
   statusOfSecondary?: any;
-  tags: IpRules;
+  tags: Tags;
   type: string;
+}
+
+export interface Tags {
 }
 
 export interface Sku {
@@ -53,11 +56,8 @@ export interface PrimaryEndpoints {
 export interface NetworkRuleSet {
   bypass: string;
   defaultAction: string;
-  ipRules: IpRules;
-  virtualNetworkRules: IpRules;
-}
-
-export interface IpRules {
+  ipRules: any[];
+  virtualNetworkRules: any[];
 }
 
 export interface Encryption {

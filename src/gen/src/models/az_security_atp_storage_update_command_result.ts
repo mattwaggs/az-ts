@@ -1,1 +1,1 @@
-export type az_security_atp_storage_update_command_result = Record<string, unknown>
+export type az_security_atp_storage_update_command_result = Record<string, any>

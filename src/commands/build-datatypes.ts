@@ -18,10 +18,7 @@ class BuildDataTypesCommand implements Command {
         return { typeName, dataStructure };
       });
 
-      fs.writeFileSync("realtestoutput.json", JSON.stringify(data));
       const groups = _.groupBy(rows, (r) => r.typeName);
-
-      fs.writeFileSync("testoutput.json", JSON.stringify(groups));
       const results: { [key: string]: any[] } = {};
 
       Object.keys(groups).map((key) => {
@@ -31,12 +28,14 @@ class BuildDataTypesCommand implements Command {
       });
 
       Object.keys(results).map((key) => {
-        //const json = JSON.stringify(groups[key]);
         const json = results[key];
-        fs.writeFileSync("testoutput.json", JSON.stringify(json));
-        //const interfaces = this.convertJsonToTS(json, key);
-        //const fileName = path.join(__dirname, `../gen/src/models/${key}.ts`);
-        //this.saveGeneratedInterfaces(interfaces, fileName);
+        if (Array.isArray(json) && json.length === 0) {
+          return;
+        }
+
+        const interfaces = this.convertJsonToTS(json, key);
+        const fileName = path.join(__dirname, `../gen/src/models/${key}.ts`);
+        this.saveGeneratedInterfaces(interfaces, fileName);
       });
 
       console.log("done.\n");

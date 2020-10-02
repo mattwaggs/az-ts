@@ -1,1 +1,1 @@
-export type az_network_application_gateway_wait_command_result = Record<string, unknown>
+export type az_network_application_gateway_wait_command_result = Record<string, any>

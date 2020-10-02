@@ -1,1 +1,1 @@
-export type az_batch_task_file_list_command_result = Record<string, unknown>
+export type az_batch_task_file_list_command_result = Record<string, any>

@@ -15,10 +15,7 @@ export interface az_ad_group_show_command_result {
   onPremisesNetBiosName?: any;
   onPremisesSamAccountName?: any;
   onPremisesSecurityIdentifier?: any;
-  provisioningErrors: ProvisioningErrors;
-  proxyAddresses: ProvisioningErrors;
+  provisioningErrors: any[];
+  proxyAddresses: any[];
   securityEnabled: boolean;
-}
-
-export interface ProvisioningErrors {
 }

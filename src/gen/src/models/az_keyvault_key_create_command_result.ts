@@ -12,7 +12,7 @@ export interface Key {
   dq?: any;
   e?: any;
   k?: any;
-  keyOps: KeyOps;
+  keyOps: KeyOp[];
   kid: string;
   kty: string;
   n?: any;
@@ -24,9 +24,13 @@ export interface Key {
   y: string;
 }
 
-export interface KeyOps {
+export interface KeyOp {
   '0': string;
   '1': string;
+  '2': string;
+  '3': string;
+  '4'?: string;
+  '5'?: string;
 }
 
 export interface Attributes {

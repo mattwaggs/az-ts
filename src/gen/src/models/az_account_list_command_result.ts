@@ -1,13 +1,9 @@
 export interface az_account_list_command_result {
-  '0': _0;
-}
-
-export interface _0 {
   cloudName: string;
   homeTenantId: string;
   id: string;
   isDefault: boolean;
-  managedByTenants: ManagedByTenants;
+  managedByTenants: any[];
   name: string;
   state: string;
   tenantId: string;
@@ -17,7 +13,4 @@ export interface _0 {
 export interface User {
   name: string;
   type: string;
-}
-
-export interface ManagedByTenants {
 }

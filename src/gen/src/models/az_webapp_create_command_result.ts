@@ -8,10 +8,10 @@ export interface az_webapp_create_command_result {
   dailyMemoryTimeQuota: number;
   defaultHostName: string;
   enabled: boolean;
-  enabledHostNames: EnabledHostNames;
+  enabledHostNames: EnabledHostName[];
   ftpPublishingUrl: string;
-  hostNameSslStates: HostNameSslStates;
-  hostNames: HostNames;
+  hostNameSslStates: HostNameSslState[];
+  hostNames: HostName[];
   hostNamesDisabled: boolean;
   hostingEnvironmentProfile?: any;
   httpsOnly: boolean;
@@ -74,7 +74,7 @@ export interface SiteConfig {
   healthCheckPath?: any;
   http20Enabled?: any;
   httpLoggingEnabled?: any;
-  ipSecurityRestrictions: IpSecurityRestrictions;
+  ipSecurityRestrictions: IpSecurityRestriction[];
   javaContainer?: any;
   javaContainerVersion?: any;
   javaVersion?: any;
@@ -106,7 +106,7 @@ export interface SiteConfig {
   routingRules?: any;
   runtimeADUser?: any;
   runtimeADUserPassword?: any;
-  scmIpSecurityRestrictions: IpSecurityRestrictions;
+  scmIpSecurityRestrictions: IpSecurityRestriction[];
   scmIpSecurityRestrictionsUseMain?: any;
   scmMinTlsVersion?: any;
   scmType?: any;
@@ -123,11 +123,7 @@ export interface SiteConfig {
   xManagedServiceIdentityId?: any;
 }
 
-export interface IpSecurityRestrictions {
-  '0': _02;
-}
-
-export interface _02 {
+export interface IpSecurityRestriction {
   action: string;
   description: string;
   ipAddress: string;
@@ -140,16 +136,46 @@ export interface _02 {
   vnetTrafficTag?: any;
 }
 
-export interface HostNames {
+export interface HostName {
   '0': string;
+  '1': string;
+  '2': string;
+  '3': string;
+  '4': string;
+  '5': string;
+  '6': string;
+  '7': string;
+  '8': string;
+  '9': string;
+  '10': string;
+  '11': string;
+  '12': string;
+  '13': string;
+  '14': string;
+  '15': string;
+  '16': string;
+  '17': string;
+  '18': string;
+  '19': string;
+  '20': string;
+  '21': string;
+  '22': string;
+  '23': string;
+  '24': string;
+  '25': string;
+  '26': string;
+  '27': string;
+  '28': string;
+  '29': string;
+  '30': string;
+  '31': string;
+  '32': string;
+  '33': string;
+  '34': string;
+  '35': string;
 }
 
-export interface HostNameSslStates {
-  '0': _0;
-  '1': _0;
-}
-
-export interface _0 {
+export interface HostNameSslState {
   hostType: string;
   ipBasedSslResult?: any;
   ipBasedSslState: string;
@@ -161,7 +187,45 @@ export interface _0 {
   virtualIp?: any;
 }
 
-export interface EnabledHostNames {
+export interface EnabledHostName {
   '0': string;
   '1': string;
+  '2': string;
+  '3': string;
+  '4': string;
+  '5': string;
+  '6': string;
+  '7': string;
+  '8': string;
+  '9': string;
+  '10': string;
+  '11': string;
+  '12': string;
+  '13': string;
+  '14': string;
+  '15': string;
+  '16': string;
+  '17': string;
+  '18': string;
+  '19': string;
+  '20': string;
+  '21': string;
+  '22': string;
+  '23': string;
+  '24': string;
+  '25': string;
+  '26': string;
+  '27': string;
+  '28': string;
+  '29': string;
+  '30': string;
+  '31': string;
+  '32': string;
+  '33': string;
+  '34': string;
+  '35': string;
+  '36'?: string;
+  '37'?: string;
+  '38'?: string;
+  '39'?: string;
 }

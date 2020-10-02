@@ -1,11 +1,4 @@
 export interface az_storage_account_list_command_result {
-  '0': _0;
-  '1': _1;
-  '2': _1;
-  '3'?: _1;
-}
-
-export interface _1 {
   accessTier: string;
   allowBlobPublicAccess?: any;
   azureFilesIdentityBasedAuthentication?: any;
@@ -20,7 +13,7 @@ export interface _1 {
   identity?: any;
   isHnsEnabled?: any;
   kind: string;
-  largeFileSharesState?: any;
+  largeFileSharesState?: string;
   lastGeoFailoverTime?: any;
   location: string;
   minimumTlsVersion?: any;
@@ -28,7 +21,7 @@ export interface _1 {
   networkRuleSet: NetworkRuleSet;
   primaryEndpoints: PrimaryEndpoints;
   primaryLocation: string;
-  privateEndpointConnections: IpRules;
+  privateEndpointConnections: any[];
   provisioningState: string;
   resourceGroup: string;
   routingPreference?: any;
@@ -37,44 +30,11 @@ export interface _1 {
   sku: Sku;
   statusOfPrimary: string;
   statusOfSecondary?: any;
-  tags: IpRules;
+  tags: Tags;
   type: string;
 }
 
-export interface _0 {
-  accessTier: string;
-  allowBlobPublicAccess?: any;
-  azureFilesIdentityBasedAuthentication?: any;
-  blobRestoreStatus?: any;
-  creationTime: string;
-  customDomain?: any;
-  enableHttpsTrafficOnly: boolean;
-  encryption: Encryption;
-  failoverInProgress?: any;
-  geoReplicationStats?: any;
-  id: string;
-  identity?: any;
-  isHnsEnabled?: any;
-  kind: string;
-  largeFileSharesState: string;
-  lastGeoFailoverTime?: any;
-  location: string;
-  minimumTlsVersion?: any;
-  name: string;
-  networkRuleSet: NetworkRuleSet;
-  primaryEndpoints: PrimaryEndpoints;
-  primaryLocation: string;
-  privateEndpointConnections: IpRules;
-  provisioningState: string;
-  resourceGroup: string;
-  routingPreference?: any;
-  secondaryEndpoints?: any;
-  secondaryLocation?: any;
-  sku: Sku;
-  statusOfPrimary: string;
-  statusOfSecondary?: any;
-  tags: IpRules;
-  type: string;
+export interface Tags {
 }
 
 export interface Sku {
@@ -96,11 +56,8 @@ export interface PrimaryEndpoints {
 export interface NetworkRuleSet {
   bypass: string;
   defaultAction: string;
-  ipRules: IpRules;
-  virtualNetworkRules: IpRules;
-}
-
-export interface IpRules {
+  ipRules: any[];
+  virtualNetworkRules: any[];
 }
 
 export interface Encryption {

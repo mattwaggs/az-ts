@@ -1,1 +1,1 @@
-export type az_webapp_config_set_command_result = Record<string, unknown>
+export type az_webapp_config_set_command_result = Record<string, any>

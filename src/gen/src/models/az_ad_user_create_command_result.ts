@@ -1,8 +1,8 @@
 export interface az_ad_user_create_command_result {
   accountEnabled: boolean;
   ageGroup?: any;
-  assignedLicenses: AssignedLicenses;
-  assignedPlans: AssignedLicenses;
+  assignedLicenses: any[];
+  assignedPlans: any[];
   city?: any;
   companyName?: any;
   consentProvidedForMinor?: any;
@@ -30,18 +30,18 @@ export interface az_ad_user_create_command_result {
   'odata.type': string;
   onPremisesDistinguishedName?: any;
   onPremisesSecurityIdentifier?: any;
-  otherMails: AssignedLicenses;
+  otherMails: any[];
   passwordPolicies?: any;
   passwordProfile?: any;
   physicalDeliveryOfficeName?: any;
   postalCode?: any;
   preferredLanguage?: any;
-  provisionedPlans: AssignedLicenses;
-  provisioningErrors: AssignedLicenses;
-  proxyAddresses: AssignedLicenses;
+  provisionedPlans: any[];
+  provisioningErrors: any[];
+  proxyAddresses: any[];
   refreshTokensValidFromDateTime: string;
   showInAddressList?: any;
-  signInNames: AssignedLicenses;
+  signInNames: any[];
   sipProxyAddress?: any;
   state?: any;
   streetAddress?: any;
@@ -49,12 +49,9 @@ export interface az_ad_user_create_command_result {
   telephoneNumber?: any;
   'thumbnailPhoto@odata.mediaEditLink': string;
   usageLocation?: any;
-  userIdentities: AssignedLicenses;
+  userIdentities: any[];
   userPrincipalName: string;
   userState?: any;
   userStateChangedOn?: any;
   userType: string;
-}
-
-export interface AssignedLicenses {
 }

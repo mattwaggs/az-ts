@@ -84,7 +84,7 @@ const generateModelFileForNode = (
     project.createSourceFile(
       filePath,
       {
-        statements: [`export type ${nameOfType} = Record<string, unknown>`],
+        statements: [`export type ${nameOfType} = Record<string, any>`],
       },
       {
         overwrite: true,

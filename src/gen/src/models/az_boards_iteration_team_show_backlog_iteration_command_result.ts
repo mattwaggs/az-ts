@@ -1,1 +1,1 @@
-export type az_boards_iteration_team_show_backlog_iteration_command_result = Record<string, unknown>
+export type az_boards_iteration_team_show_backlog_iteration_command_result = Record<string, any>

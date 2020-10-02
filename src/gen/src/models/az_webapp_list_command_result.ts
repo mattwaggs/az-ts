@@ -1,9 +1,4 @@
 export interface az_webapp_list_command_result {
-  '0'?: _02;
-  '1'?: _1;
-}
-
-export interface _1 {
   appServicePlanId: string;
   availabilityState: string;
   clientAffinityEnabled: boolean;
@@ -14,61 +9,15 @@ export interface _1 {
   dailyMemoryTimeQuota: number;
   defaultHostName: string;
   enabled: boolean;
-  enabledHostNames: EnabledHostNames;
-  hostNameSslStates: HostNameSslStates;
-  hostNames: HostNames;
+  enabledHostNames: EnabledHostName[];
+  hostNameSslStates: HostNameSslState[];
+  hostNames: HostName[];
   hostNamesDisabled: boolean;
   hostingEnvironmentProfile?: any;
   httpsOnly: boolean;
   hyperV: boolean;
   id: string;
-  identity: Identity;
-  inProgressOperationId?: any;
-  isDefaultContainer?: any;
-  isXenon: boolean;
-  kind: string;
-  lastModifiedTimeUtc: string;
-  location: string;
-  maxNumberOfWorkers?: any;
-  name: string;
-  outboundIpAddresses: string;
-  possibleOutboundIpAddresses: string;
-  redundancyMode: string;
-  repositorySiteName: string;
-  reserved: boolean;
-  resourceGroup: string;
-  scmSiteAlsoStopped: boolean;
-  siteConfig: SiteConfig;
-  slotSwapStatus?: any;
-  state: string;
-  suspendedTill?: any;
-  tags?: any;
-  targetSwapSlot?: any;
-  trafficManagerHostNames?: any;
-  type: string;
-  usageState: string;
-}
-
-export interface _02 {
-  appServicePlanId: string;
-  availabilityState: string;
-  clientAffinityEnabled: boolean;
-  clientCertEnabled: boolean;
-  clientCertExclusionPaths?: any;
-  cloningInfo?: any;
-  containerSize: number;
-  dailyMemoryTimeQuota: number;
-  defaultHostName: string;
-  enabled: boolean;
-  enabledHostNames: EnabledHostNames;
-  hostNameSslStates: HostNameSslStates;
-  hostNames: HostNames;
-  hostNamesDisabled: boolean;
-  hostingEnvironmentProfile?: any;
-  httpsOnly: boolean;
-  hyperV: boolean;
-  id: string;
-  identity?: Identity;
+  identity?: any;
   inProgressOperationId?: any;
   isDefaultContainer?: any;
   isXenon: boolean;
@@ -173,23 +122,46 @@ export interface SiteConfig {
   xManagedServiceIdentityId?: any;
 }
 
-export interface Identity {
-  principalId: string;
-  tenantId: string;
-  type: string;
-  userAssignedIdentities?: any;
-}
-
-export interface HostNames {
+export interface HostName {
   '0': string;
+  '1': string;
+  '2': string;
+  '3': string;
+  '4': string;
+  '5': string;
+  '6': string;
+  '7': string;
+  '8': string;
+  '9': string;
+  '10': string;
+  '11': string;
+  '12': string;
+  '13': string;
+  '14': string;
+  '15': string;
+  '16': string;
+  '17': string;
+  '18': string;
+  '19': string;
+  '20': string;
+  '21': string;
+  '22': string;
+  '23': string;
+  '24': string;
+  '25': string;
+  '26': string;
+  '27': string;
+  '28': string;
+  '29': string;
+  '30': string;
+  '31': string;
+  '32': string;
+  '33': string;
+  '34': string;
+  '35': string;
 }
 
-export interface HostNameSslStates {
-  '0': _0;
-  '1': _0;
-}
-
-export interface _0 {
+export interface HostNameSslState {
   hostType: string;
   ipBasedSslResult?: any;
   ipBasedSslState: string;
@@ -201,7 +173,45 @@ export interface _0 {
   virtualIp?: any;
 }
 
-export interface EnabledHostNames {
+export interface EnabledHostName {
   '0': string;
   '1': string;
+  '2': string;
+  '3': string;
+  '4': string;
+  '5': string;
+  '6': string;
+  '7': string;
+  '8': string;
+  '9': string;
+  '10': string;
+  '11': string;
+  '12': string;
+  '13': string;
+  '14': string;
+  '15': string;
+  '16': string;
+  '17': string;
+  '18': string;
+  '19': string;
+  '20': string;
+  '21': string;
+  '22': string;
+  '23': string;
+  '24': string;
+  '25': string;
+  '26': string;
+  '27': string;
+  '28': string;
+  '29': string;
+  '30': string;
+  '31': string;
+  '32': string;
+  '33': string;
+  '34': string;
+  '35': string;
+  '36'?: string;
+  '37'?: string;
+  '38'?: string;
+  '39'?: string;
 }

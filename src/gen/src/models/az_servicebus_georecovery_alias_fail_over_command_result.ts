@@ -1,1 +1,1 @@
-export type az_servicebus_georecovery_alias_fail_over_command_result = Record<string, unknown>
+export type az_servicebus_georecovery_alias_fail_over_command_result = Record<string, any>

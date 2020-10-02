@@ -1,1 +1,1 @@
-export type az_acr_private_endpoint_connection_list_command_result = Record<string, unknown>
+export type az_acr_private_endpoint_connection_list_command_result = Record<string, any>

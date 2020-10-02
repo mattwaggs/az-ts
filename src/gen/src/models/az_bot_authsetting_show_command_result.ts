@@ -1,1 +1,1 @@
-export type az_bot_authsetting_show_command_result = Record<string, unknown>
+export type az_bot_authsetting_show_command_result = Record<string, any>

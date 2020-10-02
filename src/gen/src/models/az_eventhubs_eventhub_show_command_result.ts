@@ -6,16 +6,13 @@ export interface az_eventhubs_eventhub_show_command_result {
   messageRetentionInDays: number;
   name: string;
   partitionCount: number;
-  partitionIds: PartitionIds;
+  partitionIds: PartitionId[];
   resourceGroup: string;
   status: string;
   type: string;
   updatedAt: string;
 }
 
-export interface PartitionIds {
+export interface PartitionId {
   '0': string;
-  '1': string;
-  '2': string;
-  '3': string;
 }

@@ -1,1 +1,1 @@
-export type az_appservice_list_locations_command_result = Record<string, unknown>
+export type az_appservice_list_locations_command_result = Record<string, any>

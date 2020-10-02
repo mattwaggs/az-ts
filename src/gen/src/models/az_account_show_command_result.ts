@@ -3,7 +3,7 @@ export interface az_account_show_command_result {
   homeTenantId: string;
   id: string;
   isDefault: boolean;
-  managedByTenants: ManagedByTenants;
+  managedByTenants: any[];
   name: string;
   state: string;
   tenantId: string;
@@ -13,7 +13,4 @@ export interface az_account_show_command_result {
 export interface User {
   name: string;
   type: string;
-}
-
-export interface ManagedByTenants {
 }

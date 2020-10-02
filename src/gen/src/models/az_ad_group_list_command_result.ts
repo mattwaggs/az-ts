@@ -1,9 +1,4 @@
 export interface az_ad_group_list_command_result {
-  '0'?: _0;
-  '1'?: _0;
-}
-
-export interface _0 {
   deletionTimestamp?: any;
   description?: any;
   dirSyncEnabled?: any;
@@ -19,10 +14,7 @@ export interface _0 {
   onPremisesNetBiosName?: any;
   onPremisesSamAccountName?: any;
   onPremisesSecurityIdentifier?: any;
-  provisioningErrors: ProvisioningErrors;
-  proxyAddresses: ProvisioningErrors;
+  provisioningErrors: any[];
+  proxyAddresses: any[];
   securityEnabled: boolean;
-}
-
-export interface ProvisioningErrors {
 }

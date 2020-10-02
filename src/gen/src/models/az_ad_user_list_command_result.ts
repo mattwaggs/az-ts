@@ -1,71 +1,8 @@
 export interface az_ad_user_list_command_result {
-  '0': _0;
-  '1': _0;
-  '2'?: _2;
-}
-
-export interface _2 {
   accountEnabled: boolean;
   ageGroup?: any;
-  assignedLicenses: AssignedLicenses;
-  assignedPlans: AssignedLicenses;
-  city?: any;
-  companyName?: any;
-  consentProvidedForMinor?: any;
-  country?: any;
-  createdDateTime: string;
-  creationType?: any;
-  deletionTimestamp?: any;
-  department?: any;
-  dirSyncEnabled?: any;
-  displayName: string;
-  employeeId?: any;
-  facsimileTelephoneNumber?: any;
-  givenName?: any;
-  immutableId?: any;
-  isCompromised?: any;
-  jobTitle?: any;
-  lastDirSyncTime?: any;
-  legalAgeGroupClassification?: any;
-  mail?: any;
-  mailNickname: string;
-  mobile?: any;
-  objectId: string;
-  objectType: string;
-  'odata.type': string;
-  onPremisesDistinguishedName?: any;
-  onPremisesSecurityIdentifier?: any;
-  otherMails: AssignedLicenses;
-  passwordPolicies?: any;
-  passwordProfile?: any;
-  physicalDeliveryOfficeName?: any;
-  postalCode?: any;
-  preferredLanguage?: any;
-  provisionedPlans: AssignedLicenses;
-  provisioningErrors: AssignedLicenses;
-  proxyAddresses: AssignedLicenses;
-  refreshTokensValidFromDateTime: string;
-  showInAddressList?: any;
-  signInNames: AssignedLicenses;
-  sipProxyAddress?: any;
-  state?: any;
-  streetAddress?: any;
-  surname?: any;
-  telephoneNumber?: any;
-  'thumbnailPhoto@odata.mediaEditLink': string;
-  usageLocation?: any;
-  userIdentities: AssignedLicenses;
-  userPrincipalName: string;
-  userState?: any;
-  userStateChangedOn?: any;
-  userType: string;
-}
-
-export interface _0 {
-  accountEnabled: boolean;
-  ageGroup?: any;
-  assignedLicenses: AssignedLicenses;
-  assignedPlans: AssignedLicenses;
+  assignedLicenses: any[];
+  assignedPlans: any[];
   city?: any;
   companyName?: any;
   consentProvidedForMinor?: any;
@@ -92,18 +29,18 @@ export interface _0 {
   'odata.type': string;
   onPremisesDistinguishedName?: any;
   onPremisesSecurityIdentifier?: any;
-  otherMails: OtherMails;
+  otherMails: OtherMail[];
   passwordPolicies?: any;
   passwordProfile?: any;
   physicalDeliveryOfficeName?: any;
   postalCode?: any;
   preferredLanguage?: string;
-  provisionedPlans: AssignedLicenses;
-  provisioningErrors: AssignedLicenses;
-  proxyAddresses: AssignedLicenses;
+  provisionedPlans: any[];
+  provisioningErrors: any[];
+  proxyAddresses: any[];
   refreshTokensValidFromDateTime: string;
   showInAddressList?: any;
-  signInNames: AssignedLicenses;
+  signInNames: any[];
   sipProxyAddress?: any;
   state?: any;
   streetAddress?: any;
@@ -111,16 +48,38 @@ export interface _0 {
   telephoneNumber?: any;
   'thumbnailPhoto@odata.mediaEditLink': string;
   usageLocation?: string;
-  userIdentities: AssignedLicenses;
+  userIdentities: any[];
   userPrincipalName: string;
   userState?: any;
   userStateChangedOn?: any;
   userType: string;
 }
 
-export interface OtherMails {
-  '0'?: string;
-}
-
-export interface AssignedLicenses {
+export interface OtherMail {
+  '0': string;
+  '1': string;
+  '2': string;
+  '3': string;
+  '4': string;
+  '5': string;
+  '6': string;
+  '7': string;
+  '8': string;
+  '9': string;
+  '10': string;
+  '11': string;
+  '12': string;
+  '13': string;
+  '14': string;
+  '15': string;
+  '16': string;
+  '17': string;
+  '18': string;
+  '19': string;
+  '20': string;
+  '21': string;
+  '22': string;
+  '23': string;
+  '24': string;
+  '25': string;
 }

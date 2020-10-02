@@ -1,8 +1,4 @@
 export interface az_keyvault_secret_list_command_result {
-  '0'?: _0;
-}
-
-export interface _0 {
   attributes: Attributes;
   contentType?: any;
   id: string;
