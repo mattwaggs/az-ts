@@ -87,7 +87,7 @@ const generateModelFileForNode = (
         statements: [`export type ${nameOfType} = Record<string, any>`],
       },
       {
-        overwrite: true,
+        overwrite: false,
       }
     );
   } catch (e) {
