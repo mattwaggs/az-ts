@@ -1,4 +1,6 @@
-export interface az_storage_account_show_command_result {
+export type az_storage_account_show_command_result = az_storage_account_show_command_result_item[];
+
+interface az_storage_account_show_command_result_item {
   accessTier: string;
   allowBlobPublicAccess?: any;
   azureFilesIdentityBasedAuthentication?: any;
@@ -34,15 +36,15 @@ export interface az_storage_account_show_command_result {
   type: string;
 }
 
-export interface Tags {
+interface Tags {
 }
 
-export interface Sku {
+interface Sku {
   name: string;
   tier: string;
 }
 
-export interface PrimaryEndpoints {
+interface PrimaryEndpoints {
   blob: string;
   dfs: string;
   file: string;
@@ -53,28 +55,28 @@ export interface PrimaryEndpoints {
   web: string;
 }
 
-export interface NetworkRuleSet {
+interface NetworkRuleSet {
   bypass: string;
   defaultAction: string;
   ipRules: any[];
   virtualNetworkRules: any[];
 }
 
-export interface Encryption {
+interface Encryption {
   keySource: string;
   keyVaultProperties?: any;
   requireInfrastructureEncryption?: any;
   services: Services;
 }
 
-export interface Services {
+interface Services {
   blob: Blob;
   file: Blob;
   queue?: any;
   table?: any;
 }
 
-export interface Blob {
+interface Blob {
   enabled: boolean;
   keyType: string;
   lastEnabledTime: string;

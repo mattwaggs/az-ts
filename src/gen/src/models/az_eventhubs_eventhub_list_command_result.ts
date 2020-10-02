@@ -1,4 +1,6 @@
-export interface az_eventhubs_eventhub_list_command_result {
+export type az_eventhubs_eventhub_list_command_result = az_eventhubs_eventhub_list_command_result_item[];
+
+interface az_eventhubs_eventhub_list_command_result_item {
   captureDescription?: any;
   createdAt: string;
   id: string;
@@ -13,6 +15,6 @@ export interface az_eventhubs_eventhub_list_command_result {
   updatedAt: string;
 }
 
-export interface PartitionId {
+interface PartitionId {
   '0': string;
 }

@@ -1,0 +1,17 @@
+{
+  "name": "az-ts",
+  "version": "1.0.0",
+  "description": "Azure Typescript Cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Waggoner",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "lodash": "^4.17.20",
+    "shelljs": "^0.8.4",
+    "typescript": "^4.0.3"
+  }
+}

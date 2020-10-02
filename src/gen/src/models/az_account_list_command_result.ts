@@ -1,4 +1,6 @@
-export interface az_account_list_command_result {
+export type az_account_list_command_result = az_account_list_command_result_item[];
+
+interface az_account_list_command_result_item {
   cloudName: string;
   homeTenantId: string;
   id: string;
@@ -10,7 +12,7 @@ export interface az_account_list_command_result {
   user: User;
 }
 
-export interface User {
+interface User {
   name: string;
   type: string;
 }

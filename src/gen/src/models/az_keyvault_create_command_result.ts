@@ -1,4 +1,6 @@
-export interface az_keyvault_create_command_result {
+export type az_keyvault_create_command_result = az_keyvault_create_command_result_item[];
+
+interface az_keyvault_create_command_result_item {
   id: string;
   location: string;
   name: string;
@@ -8,10 +10,10 @@ export interface az_keyvault_create_command_result {
   type: string;
 }
 
-export interface Tags {
+interface Tags {
 }
 
-export interface Properties {
+interface Properties {
   accessPolicies: AccessPolicy[];
   createMode?: any;
   enablePurgeProtection?: any;
@@ -29,25 +31,25 @@ export interface Properties {
   vaultUri: string;
 }
 
-export interface Sku {
+interface Sku {
   name: string;
 }
 
-export interface AccessPolicy {
+interface AccessPolicy {
   applicationId?: any;
   objectId: string;
   permissions: Permissions;
   tenantId: string;
 }
 
-export interface Permissions {
+interface Permissions {
   certificates: Certificate[];
   keys: Key[];
   secrets: Key[];
   storage: Storage[];
 }
 
-export interface Storage {
+interface Storage {
   '0': string;
   '1': string;
   '2': string;
@@ -63,7 +65,7 @@ export interface Storage {
   '12'?: string;
 }
 
-export interface Key {
+interface Key {
   '0': string;
   '1': string;
   '2': string;
@@ -73,7 +75,7 @@ export interface Key {
   '6'?: string;
 }
 
-export interface Certificate {
+interface Certificate {
   '0': string;
   '1': string;
   '2': string;

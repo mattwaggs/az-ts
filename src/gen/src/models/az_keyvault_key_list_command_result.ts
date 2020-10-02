@@ -1,4 +1,6 @@
-export interface az_keyvault_key_list_command_result {
+export type az_keyvault_key_list_command_result = az_keyvault_key_list_command_result_item[];
+
+interface az_keyvault_key_list_command_result_item {
   attributes: Attributes;
   kid: string;
   managed?: any;
@@ -6,7 +8,7 @@ export interface az_keyvault_key_list_command_result {
   tags?: any;
 }
 
-export interface Attributes {
+interface Attributes {
   created: string;
   enabled: boolean;
   expires?: any;

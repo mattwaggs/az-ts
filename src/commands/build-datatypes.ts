@@ -31,15 +31,30 @@ class BuildDataTypesCommand implements Command {
         const json = results[key];
         if (Array.isArray(json) && json.length === 0) {
           return;
+        } else if (Array.isArray(json)) {
+          const interfaces = this.convertJsonArrayToTS(json, key);
+          const fileName = path.join(__dirname, `../gen/src/models/${key}.ts`);
+          this.saveGeneratedInterfaces(interfaces, fileName);
+        } else {
+          const interfaces = this.convertJsonToTS(json, key);
+          const fileName = path.join(__dirname, `../gen/src/models/${key}.ts`);
+          this.saveGeneratedInterfaces(interfaces, fileName);
         }
-
-        const interfaces = this.convertJsonToTS(json, key);
-        const fileName = path.join(__dirname, `../gen/src/models/${key}.ts`);
-        this.saveGeneratedInterfaces(interfaces, fileName);
       });
 
       console.log("done.\n");
     });
+  };
+
+  convertJsonArrayToTS = (json: any, rootObjectName: string) => {
+    const interfaces = JsonToTS(json).map((typeInterface) => {
+      return typeInterface.replace(/RootObject/g, `${rootObjectName}_item`);
+    });
+
+    return [
+      `type ${rootObjectName} = ${rootObjectName}_item[];`,
+      ...interfaces,
+    ];
   };
 
   convertJsonToTS = (json: any, rootObjectName: string) => {
@@ -50,7 +65,12 @@ class BuildDataTypesCommand implements Command {
 
   saveGeneratedInterfaces = (interfaces: string[], filePath: string) => {
     const content = interfaces
-      .map((typeInterface) => `export ${typeInterface}`)
+      .map((typeInterface, index) => {
+        if (index === 0) {
+          return `export ${typeInterface}`;
+        }
+        return typeInterface;
+      })
       .join("\n\n");
 
     fs.mkdirSync(path.dirname(filePath), { recursive: true });

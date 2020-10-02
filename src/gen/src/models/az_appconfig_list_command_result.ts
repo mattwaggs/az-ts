@@ -1,4 +1,6 @@
-export interface az_appconfig_list_command_result {
+export type az_appconfig_list_command_result = az_appconfig_list_command_result_item[];
+
+interface az_appconfig_list_command_result_item {
   creationDate: string;
   encryption: Encryption;
   endpoint: string;
@@ -15,13 +17,13 @@ export interface az_appconfig_list_command_result {
   type: string;
 }
 
-export interface Tags {
+interface Tags {
 }
 
-export interface Sku {
+interface Sku {
   name: string;
 }
 
-export interface Encryption {
+interface Encryption {
   keyVaultProperties?: any;
 }

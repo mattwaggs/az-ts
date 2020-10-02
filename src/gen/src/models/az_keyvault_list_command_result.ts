@@ -1,4 +1,6 @@
-export interface az_keyvault_list_command_result {
+export type az_keyvault_list_command_result = az_keyvault_list_command_result_item[];
+
+interface az_keyvault_list_command_result_item {
   id: string;
   location: string;
   name: string;
@@ -7,5 +9,5 @@ export interface az_keyvault_list_command_result {
   type: string;
 }
 
-export interface Tags {
+interface Tags {
 }

@@ -1,4 +1,6 @@
-export interface az_webapp_list_command_result {
+export type az_webapp_list_command_result = az_webapp_list_command_result_item[];
+
+interface az_webapp_list_command_result_item {
   appServicePlanId: string;
   availabilityState: string;
   clientAffinityEnabled: boolean;
@@ -44,7 +46,7 @@ export interface az_webapp_list_command_result {
   usageState: string;
 }
 
-export interface SiteConfig {
+interface SiteConfig {
   acrUseManagedIdentityCreds: boolean;
   acrUserManagedIdentityID?: any;
   alwaysOn?: any;
@@ -122,7 +124,7 @@ export interface SiteConfig {
   xManagedServiceIdentityId?: any;
 }
 
-export interface HostName {
+interface HostName {
   '0': string;
   '1': string;
   '2': string;
@@ -161,7 +163,7 @@ export interface HostName {
   '35': string;
 }
 
-export interface HostNameSslState {
+interface HostNameSslState {
   hostType: string;
   ipBasedSslResult?: any;
   ipBasedSslState: string;
@@ -173,7 +175,7 @@ export interface HostNameSslState {
   virtualIp?: any;
 }
 
-export interface EnabledHostName {
+interface EnabledHostName {
   '0': string;
   '1': string;
   '2': string;

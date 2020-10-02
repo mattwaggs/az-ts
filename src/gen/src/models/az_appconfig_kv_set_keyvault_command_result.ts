@@ -1,4 +1,6 @@
-export interface az_appconfig_kv_set_keyvault_command_result {
+export type az_appconfig_kv_set_keyvault_command_result = az_appconfig_kv_set_keyvault_command_result_item[];
+
+interface az_appconfig_kv_set_keyvault_command_result_item {
   contentType: string;
   etag: string;
   key: string;
@@ -9,5 +11,5 @@ export interface az_appconfig_kv_set_keyvault_command_result {
   value: string;
 }
 
-export interface Tags {
+interface Tags {
 }

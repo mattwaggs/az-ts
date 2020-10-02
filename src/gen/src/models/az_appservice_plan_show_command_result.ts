@@ -1,4 +1,6 @@
-export interface az_appservice_plan_show_command_result {
+export type az_appservice_plan_show_command_result = az_appservice_plan_show_command_result_item[];
+
+interface az_appservice_plan_show_command_result_item {
   freeOfferExpirationTime?: any;
   geoRegion: string;
   hostingEnvironmentProfile?: any;
@@ -27,7 +29,7 @@ export interface az_appservice_plan_show_command_result {
   workerTierName?: any;
 }
 
-export interface Sku {
+interface Sku {
   capabilities?: any;
   capacity: number;
   family: string;

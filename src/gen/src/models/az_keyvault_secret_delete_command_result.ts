@@ -1,4 +1,6 @@
-export interface az_keyvault_secret_delete_command_result {
+export type az_keyvault_secret_delete_command_result = az_keyvault_secret_delete_command_result_item[];
+
+interface az_keyvault_secret_delete_command_result_item {
   attributes: Attributes;
   contentType?: any;
   deletedDate: string;
@@ -12,11 +14,11 @@ export interface az_keyvault_secret_delete_command_result {
   value?: any;
 }
 
-export interface Tags {
+interface Tags {
   'file-encoding': string;
 }
 
-export interface Attributes {
+interface Attributes {
   created: string;
   enabled: boolean;
   expires?: any;

@@ -1,4 +1,6 @@
-export interface az_ad_user_list_command_result {
+export type az_ad_user_list_command_result = az_ad_user_list_command_result_item[];
+
+interface az_ad_user_list_command_result_item {
   accountEnabled: boolean;
   ageGroup?: any;
   assignedLicenses: any[];
@@ -55,7 +57,7 @@ export interface az_ad_user_list_command_result {
   userType: string;
 }
 
-export interface OtherMail {
+interface OtherMail {
   '0': string;
   '1': string;
   '2': string;

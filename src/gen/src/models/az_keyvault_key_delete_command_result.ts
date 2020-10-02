@@ -1,4 +1,6 @@
-export interface az_keyvault_key_delete_command_result {
+export type az_keyvault_key_delete_command_result = az_keyvault_key_delete_command_result_item[];
+
+interface az_keyvault_key_delete_command_result_item {
   attributes: Attributes;
   deletedDate: string;
   key: Key;
@@ -8,7 +10,7 @@ export interface az_keyvault_key_delete_command_result {
   tags?: any;
 }
 
-export interface Key {
+interface Key {
   crv: string;
   d?: any;
   dp?: any;
@@ -27,7 +29,7 @@ export interface Key {
   y: string;
 }
 
-export interface KeyOp {
+interface KeyOp {
   '0': string;
   '1': string;
   '2': string;
@@ -36,7 +38,7 @@ export interface KeyOp {
   '5'?: string;
 }
 
-export interface Attributes {
+interface Attributes {
   created: string;
   enabled: boolean;
   expires?: any;

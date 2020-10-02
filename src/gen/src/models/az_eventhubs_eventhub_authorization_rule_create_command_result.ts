@@ -1,4 +1,6 @@
-export interface az_eventhubs_eventhub_authorization_rule_create_command_result {
+export type az_eventhubs_eventhub_authorization_rule_create_command_result = az_eventhubs_eventhub_authorization_rule_create_command_result_item[];
+
+interface az_eventhubs_eventhub_authorization_rule_create_command_result_item {
   id: string;
   location: string;
   name: string;
@@ -7,7 +9,7 @@ export interface az_eventhubs_eventhub_authorization_rule_create_command_result 
   type: string;
 }
 
-export interface Right {
+interface Right {
   '0': string;
   '1': string;
   '2': string;

@@ -1,4 +1,6 @@
-export interface az_eventhubs_namespace_show_command_result {
+export type az_eventhubs_namespace_show_command_result = az_eventhubs_namespace_show_command_result_item[];
+
+interface az_eventhubs_namespace_show_command_result_item {
   clusterArmId?: any;
   createdAt: string;
   encryption?: any;
@@ -20,10 +22,10 @@ export interface az_eventhubs_namespace_show_command_result {
   zoneRedundant: boolean;
 }
 
-export interface Tags {
+interface Tags {
 }
 
-export interface Sku {
+interface Sku {
   capacity: number;
   name: string;
   tier: string;

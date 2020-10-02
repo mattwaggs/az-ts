@@ -1,4 +1,6 @@
-export interface az_ad_group_get_member_groups_command_result {
+export type az_ad_group_get_member_groups_command_result = az_ad_group_get_member_groups_command_result_item[];
+
+interface az_ad_group_get_member_groups_command_result_item {
   '0': string;
   '1': string;
   '2': string;

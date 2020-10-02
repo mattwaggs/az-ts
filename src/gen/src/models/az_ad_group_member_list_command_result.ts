@@ -1,4 +1,6 @@
-export interface az_ad_group_member_list_command_result {
+export type az_ad_group_member_list_command_result = az_ad_group_member_list_command_result_item[];
+
+interface az_ad_group_member_list_command_result_item {
   accountEnabled: boolean;
   ageGroup?: any;
   assignedLicenses: any[];
