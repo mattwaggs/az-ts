@@ -1,5 +1,4 @@
-export declare type az_webapp_create_command_result = az_webapp_create_command_result_item[];
-interface az_webapp_create_command_result_item {
+export interface az_webapp_create_command_result {
     availabilityState: string;
     clientAffinityEnabled: boolean;
     clientCertEnabled: boolean;

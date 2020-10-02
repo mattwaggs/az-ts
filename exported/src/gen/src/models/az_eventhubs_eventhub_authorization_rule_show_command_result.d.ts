@@ -1,5 +1,4 @@
-export declare type az_eventhubs_eventhub_authorization_rule_show_command_result = az_eventhubs_eventhub_authorization_rule_show_command_result_item[];
-interface az_eventhubs_eventhub_authorization_rule_show_command_result_item {
+export interface az_eventhubs_eventhub_authorization_rule_show_command_result {
     id: string;
     location: string;
     name: string;

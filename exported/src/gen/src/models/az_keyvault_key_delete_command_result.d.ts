@@ -1,5 +1,4 @@
-export declare type az_keyvault_key_delete_command_result = az_keyvault_key_delete_command_result_item[];
-interface az_keyvault_key_delete_command_result_item {
+export interface az_keyvault_key_delete_command_result {
     attributes: Attributes;
     deletedDate: string;
     key: Key;

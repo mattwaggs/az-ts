@@ -1,5 +1,4 @@
-export declare type az_role_assignment_create_command_result = az_role_assignment_create_command_result_item[];
-interface az_role_assignment_create_command_result_item {
+export interface az_role_assignment_create_command_result {
     canDelegate?: any;
     condition?: any;
     conditionVersion?: any;
@@ -13,4 +12,3 @@ interface az_role_assignment_create_command_result_item {
     scope: string;
     type: string;
 }
-export {};

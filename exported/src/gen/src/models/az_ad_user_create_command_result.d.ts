@@ -1,5 +1,4 @@
-export declare type az_ad_user_create_command_result = az_ad_user_create_command_result_item[];
-interface az_ad_user_create_command_result_item {
+export interface az_ad_user_create_command_result {
     accountEnabled: boolean;
     ageGroup?: any;
     assignedLicenses: any[];
@@ -56,4 +55,3 @@ interface az_ad_user_create_command_result_item {
     userStateChangedOn?: any;
     userType: string;
 }
-export {};

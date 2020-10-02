@@ -1,5 +1,4 @@
-export declare type az_account_show_command_result = az_account_show_command_result_item[];
-interface az_account_show_command_result_item {
+export interface az_account_show_command_result {
     environmentName: string;
     homeTenantId: string;
     id: string;

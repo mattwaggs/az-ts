@@ -1,5 +1,4 @@
-export declare type az_appconfig_create_command_result = az_appconfig_create_command_result_item[];
-interface az_appconfig_create_command_result_item {
+export interface az_appconfig_create_command_result {
     creationDate: string;
     encryption: Encryption;
     endpoint: string;

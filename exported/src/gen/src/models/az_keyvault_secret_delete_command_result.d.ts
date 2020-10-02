@@ -1,5 +1,4 @@
-export declare type az_keyvault_secret_delete_command_result = az_keyvault_secret_delete_command_result_item[];
-interface az_keyvault_secret_delete_command_result_item {
+export interface az_keyvault_secret_delete_command_result {
     attributes: Attributes;
     contentType?: any;
     deletedDate: string;

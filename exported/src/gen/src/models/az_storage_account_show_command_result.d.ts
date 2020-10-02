@@ -1,5 +1,4 @@
-export declare type az_storage_account_show_command_result = az_storage_account_show_command_result_item[];
-interface az_storage_account_show_command_result_item {
+export interface az_storage_account_show_command_result {
     accessTier: string;
     allowBlobPublicAccess?: any;
     azureFilesIdentityBasedAuthentication?: any;

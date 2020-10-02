@@ -1,5 +1,4 @@
-export declare type az_eventhubs_namespace_show_command_result = az_eventhubs_namespace_show_command_result_item[];
-interface az_eventhubs_namespace_show_command_result_item {
+export interface az_eventhubs_namespace_show_command_result {
     clusterArmId?: any;
     createdAt: string;
     encryption?: any;

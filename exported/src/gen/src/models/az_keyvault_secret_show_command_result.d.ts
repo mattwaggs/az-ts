@@ -1,5 +1,4 @@
-export declare type az_keyvault_secret_show_command_result = az_keyvault_secret_show_command_result_item[];
-interface az_keyvault_secret_show_command_result_item {
+export interface az_keyvault_secret_show_command_result {
     attributes: Attributes;
     contentType?: any;
     id: string;

@@ -1,5 +1,4 @@
-export declare type az_appservice_plan_show_command_result = az_appservice_plan_show_command_result_item[];
-interface az_appservice_plan_show_command_result_item {
+export interface az_appservice_plan_show_command_result {
     freeOfferExpirationTime?: any;
     geoRegion: string;
     hostingEnvironmentProfile?: any;
