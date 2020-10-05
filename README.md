@@ -7,7 +7,7 @@
 This ambitious project aims to be a full 1 to 1 typescript replacement for the
 existing azure cli.
 
-![create a webapp with az-ts](https://raw.githubusercontent.com/mattwaggs/az-ts/master/images/webapp.gif)
+![create a webapp with az-ts](images/webapp.gif)
 
 ## Why
 
@@ -22,11 +22,11 @@ within your code.
 
 **Fully typed easy to explore command heirarchy**
 
-![get storage account connection strings with az-ts](https://raw.githubusercontent.com/mattwaggs/az-ts/master/images/storage-account.gif)
+![get storage account connection strings with az-ts](images/storage-account.gif)
 
 **Fully typed responses from the azure cli**
 
-![fully typed responses from the cli ](https://raw.githubusercontent.com/mattwaggs/az-ts/master/images/user.gif)
+![fully typed responses from the cli ](images/user.gif)
 
 ## Installation & Usage
 
