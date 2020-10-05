@@ -27,7 +27,7 @@ export class az_artifacts_universal {
      * @param {string} version Version of the package, e.g. 1.0.0.
      */
     static download(feed: string, name: string, path: string, version: string): az_artifacts_universal_download_command_builder {
-        return new az_artifacts_universal_download_command_builder("az artifacts universal download", feed, name, path, version);
+        return new az_artifacts_universal_download_command_builder("az artifacts universal download", 'az_artifacts_universal_download_command_result', feed, name, path, version);
     }
 
     /**
@@ -53,7 +53,7 @@ export class az_artifacts_universal {
      * @param {string} version Version of the package, e.g. '1.0.0'.
      */
     static publish(feed: string, name: string, path: string, version: string): az_artifacts_universal_publish_command_builder {
-        return new az_artifacts_universal_publish_command_builder("az artifacts universal publish", feed, name, path, version);
+        return new az_artifacts_universal_publish_command_builder("az artifacts universal publish", 'az_artifacts_universal_publish_command_result', feed, name, path, version);
     }
 }
 
@@ -84,8 +84,8 @@ export class az_artifacts {
  * @param {string} version Version of the package, e.g. 1.0.0.
  */
 class az_artifacts_universal_download_command_builder extends CommandBuilder<az_artifacts_universal_download_command_result> {
-    constructor(commandPath: string, feed: string, name: string, path: string, version: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, feed: string, name: string, path: string, version: string) {
+        super(commandPath, resultDataTypeName);
         this.feed(feed)
         this.name(name)
         this.path(path)
@@ -176,8 +176,8 @@ class az_artifacts_universal_download_command_builder extends CommandBuilder<az_
  * @param {string} version Version of the package, e.g. '1.0.0'.
  */
 class az_artifacts_universal_publish_command_builder extends CommandBuilder<az_artifacts_universal_publish_command_result> {
-    constructor(commandPath: string, feed: string, name: string, path: string, version: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, feed: string, name: string, path: string, version: string) {
+        super(commandPath, resultDataTypeName);
         this.feed(feed)
         this.name(name)
         this.path(path)

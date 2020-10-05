@@ -1,1 +1,1 @@
-export type az_sf_application_certificate_add_command_result = Record<string, unknown>
+export type az_sf_application_certificate_add_command_result = Record<string, any>

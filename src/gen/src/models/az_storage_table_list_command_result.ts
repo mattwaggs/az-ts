@@ -1,1 +1,3 @@
-export type az_storage_table_list_command_result = Record<string, unknown>
+export interface az_storage_table_list_command_result {
+  name: string;
+}

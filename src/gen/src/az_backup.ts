@@ -68,7 +68,7 @@ export class az_backup_container {
      * @param {string} vaultName Name of the Recovery services vault.
      */
     static list(backupManagementType: 'AzureIaasVM' | 'AzureStorage' | 'AzureWorkload', resourceGroup: string, vaultName: string): az_backup_container_list_command_builder {
-        return new az_backup_container_list_command_builder("az backup container list", backupManagementType, resourceGroup, vaultName);
+        return new az_backup_container_list_command_builder("az backup container list", 'az_backup_container_list_command_result', backupManagementType, resourceGroup, vaultName);
     }
 
     /**
@@ -90,7 +90,7 @@ export class az_backup_container {
      * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
      */
     static re_register(containerName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'): az_backup_container_re_register_command_builder {
-        return new az_backup_container_re_register_command_builder("az backup container re-register", containerName, workloadType);
+        return new az_backup_container_re_register_command_builder("az backup container re-register", 'az_backup_container_re_register_command_result', containerName, workloadType);
     }
 
     /**
@@ -111,7 +111,7 @@ export class az_backup_container {
      * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
      */
     static register(resourceId: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'): az_backup_container_register_command_builder {
-        return new az_backup_container_register_command_builder("az backup container register", resourceId, workloadType);
+        return new az_backup_container_register_command_builder("az backup container register", 'az_backup_container_register_command_result', resourceId, workloadType);
     }
 
     /**
@@ -131,7 +131,7 @@ export class az_backup_container {
      * @param {string} name Name of the container. You can use the backup container list command to get the name of a container.
      */
     static show(name: string): az_backup_container_show_command_builder {
-        return new az_backup_container_show_command_builder("az backup container show", name);
+        return new az_backup_container_show_command_builder("az backup container show", 'az_backup_container_show_command_result', name);
     }
 
     /**
@@ -151,7 +151,7 @@ export class az_backup_container {
      * @param {string} containerName Name of the backup container. Accepts 'Name' or 'FriendlyName' from the output of az backup container list command. If 'FriendlyName' is passed then BackupManagementType is required.
      */
     static unregister(containerName: string): az_backup_container_unregister_command_builder {
-        return new az_backup_container_unregister_command_builder("az backup container unregister", containerName);
+        return new az_backup_container_unregister_command_builder("az backup container unregister", 'az_backup_container_unregister_command_result', containerName);
     }
 }
 
@@ -175,7 +175,7 @@ export class az_backup_item {
      * @param {string} vaultName Name of the Recovery services vault.
      */
     static list(resourceGroup: string, vaultName: string): az_backup_item_list_command_builder {
-        return new az_backup_item_list_command_builder("az backup item list", resourceGroup, vaultName);
+        return new az_backup_item_list_command_builder("az backup item list", 'az_backup_item_list_command_result', resourceGroup, vaultName);
     }
 
     /**
@@ -198,7 +198,7 @@ export class az_backup_item {
      * @param {string} policyName Name of the Backup policy. You can use the backup policy list command to get the name of a backup policy.
      */
     static set_policy(containerName: string, policyName: string): az_backup_item_set_policy_command_builder {
-        return new az_backup_item_set_policy_command_builder("az backup item set-policy", containerName, policyName);
+        return new az_backup_item_set_policy_command_builder("az backup item set-policy", 'az_backup_item_set_policy_command_result', containerName, policyName);
     }
 
     /**
@@ -221,7 +221,7 @@ export class az_backup_item {
      * @param {string} name Name of the backed up item. You can use the backup item list command to get the name of a backed up item.
      */
     static show(containerName: string, name: string): az_backup_item_show_command_builder {
-        return new az_backup_item_show_command_builder("az backup item show", containerName, name);
+        return new az_backup_item_show_command_builder("az backup item show", 'az_backup_item_show_command_result', containerName, name);
     }
 }
 
@@ -246,7 +246,7 @@ export class az_backup_job {
      * @param {string} vaultName Name of the Recovery services vault.
      */
     static list(resourceGroup: string, vaultName: string): az_backup_job_list_command_builder {
-        return new az_backup_job_list_command_builder("az backup job list", resourceGroup, vaultName);
+        return new az_backup_job_list_command_builder("az backup job list", 'az_backup_job_list_command_result', resourceGroup, vaultName);
     }
 
     /**
@@ -265,7 +265,7 @@ export class az_backup_job {
      * @param {string} name Name of the job. You can use the backup job list command to get the name of a job.
      */
     static show(name: string): az_backup_job_show_command_builder {
-        return new az_backup_job_show_command_builder("az backup job show", name);
+        return new az_backup_job_show_command_builder("az backup job show", 'az_backup_job_show_command_result', name);
     }
 
     /**
@@ -283,7 +283,7 @@ export class az_backup_job {
      * @param {string} name Name of the job. You can use the backup job list command to get the name of a job.
      */
     static stop(name: string): az_backup_job_stop_command_builder {
-        return new az_backup_job_stop_command_builder("az backup job stop", name);
+        return new az_backup_job_stop_command_builder("az backup job stop", 'az_backup_job_stop_command_result', name);
     }
 
     /**
@@ -302,7 +302,7 @@ export class az_backup_job {
      * @param {string} name Name of the job. You can use the backup job list command to get the name of a job.
      */
     static wait(name: string): az_backup_job_wait_command_builder {
-        return new az_backup_job_wait_command_builder("az backup job wait", name);
+        return new az_backup_job_wait_command_builder("az backup job wait", 'az_backup_job_wait_command_result', name);
     }
 }
 
@@ -329,7 +329,7 @@ export class az_backup_policy {
      * @param {string} vaultName Name of the Recovery services vault.
      */
     static create(backupManagementType: 'AzureIaasVM' | 'AzureStorage' | 'AzureWorkload', name: string, policy: string, resourceGroup: string, vaultName: string): az_backup_policy_create_command_builder {
-        return new az_backup_policy_create_command_builder("az backup policy create", backupManagementType, name, policy, resourceGroup, vaultName);
+        return new az_backup_policy_create_command_builder("az backup policy create", 'az_backup_policy_create_command_result', backupManagementType, name, policy, resourceGroup, vaultName);
     }
 
     /**
@@ -347,7 +347,7 @@ export class az_backup_policy {
      * @param {string} name Name of the backup policy. You can use the backup policy list command to get the name of a policy.
      */
     static delete(name: string): az_backup_policy_delete_command_builder {
-        return new az_backup_policy_delete_command_builder("az backup policy delete", name);
+        return new az_backup_policy_delete_command_builder("az backup policy delete", 'az_backup_policy_delete_command_result', name);
     }
 
     /**
@@ -362,7 +362,7 @@ export class az_backup_policy {
      * ```
      */
     static get_default_for_vm(): az_backup_policy_get_default_for_vm_command_builder {
-        return new az_backup_policy_get_default_for_vm_command_builder("az backup policy get-default-for-vm");
+        return new az_backup_policy_get_default_for_vm_command_builder("az backup policy get-default-for-vm", 'az_backup_policy_get_default_for_vm_command_result');
     }
 
     /**
@@ -382,7 +382,7 @@ export class az_backup_policy {
      * @param {string} vaultName Name of the Recovery services vault.
      */
     static list(resourceGroup: string, vaultName: string): az_backup_policy_list_command_builder {
-        return new az_backup_policy_list_command_builder("az backup policy list", resourceGroup, vaultName);
+        return new az_backup_policy_list_command_builder("az backup policy list", 'az_backup_policy_list_command_result', resourceGroup, vaultName);
     }
 
     /**
@@ -401,7 +401,7 @@ export class az_backup_policy {
      * @param {string} name Name of the backup policy. You can use the backup policy list command to get the name of a policy.
      */
     static list_associated_items(name: string): az_backup_policy_list_associated_items_command_builder {
-        return new az_backup_policy_list_associated_items_command_builder("az backup policy list-associated-items", name);
+        return new az_backup_policy_list_associated_items_command_builder("az backup policy list-associated-items", 'az_backup_policy_list_associated_items_command_result', name);
     }
 
     /**
@@ -420,7 +420,7 @@ export class az_backup_policy {
      * ```
      */
     static set(): az_backup_policy_set_command_builder {
-        return new az_backup_policy_set_command_builder("az backup policy set");
+        return new az_backup_policy_set_command_builder("az backup policy set", 'az_backup_policy_set_command_result');
     }
 
     /**
@@ -439,7 +439,7 @@ export class az_backup_policy {
      * @param {string} name Name of the backup policy. You can use the backup policy list command to get the name of a policy.
      */
     static show(name: string): az_backup_policy_show_command_builder {
-        return new az_backup_policy_show_command_builder("az backup policy show", name);
+        return new az_backup_policy_show_command_builder("az backup policy show", 'az_backup_policy_show_command_result', name);
     }
 }
 
@@ -463,7 +463,7 @@ export class az_backup_protectable_item {
      * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
      */
     static initialize(containerName: string, resourceGroup: string, vaultName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'): az_backup_protectable_item_initialize_command_builder {
-        return new az_backup_protectable_item_initialize_command_builder("az backup protectable-item initialize", containerName, resourceGroup, vaultName, workloadType);
+        return new az_backup_protectable_item_initialize_command_builder("az backup protectable-item initialize", 'az_backup_protectable_item_initialize_command_result', containerName, resourceGroup, vaultName, workloadType);
     }
 
     /**
@@ -484,7 +484,7 @@ export class az_backup_protectable_item {
      * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
      */
     static list(resourceGroup: string, vaultName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'): az_backup_protectable_item_list_command_builder {
-        return new az_backup_protectable_item_list_command_builder("az backup protectable-item list", resourceGroup, vaultName, workloadType);
+        return new az_backup_protectable_item_list_command_builder("az backup protectable-item list", 'az_backup_protectable_item_list_command_result', resourceGroup, vaultName, workloadType);
     }
 
     /**
@@ -510,7 +510,7 @@ export class az_backup_protectable_item {
      * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
      */
     static show(name: string, protectableItemType: 'HANAInstance' | 'SAPHanaDatabase' | 'SAPHanaSystem' | 'SQLAG' | 'SQLDatabase' | 'SQLInstance', resourceGroup: string, serverName: string, vaultName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'): az_backup_protectable_item_show_command_builder {
-        return new az_backup_protectable_item_show_command_builder("az backup protectable-item show", name, protectableItemType, resourceGroup, serverName, vaultName, workloadType);
+        return new az_backup_protectable_item_show_command_builder("az backup protectable-item show", 'az_backup_protectable_item_show_command_result', name, protectableItemType, resourceGroup, serverName, vaultName, workloadType);
     }
 }
 
@@ -531,7 +531,7 @@ export class az_backup_protection {
      * @param {string} itemName Name of the backed up item.
      */
     static auto_disable_for_azurewl(itemName: string): az_backup_protection_auto_disable_for_azurewl_command_builder {
-        return new az_backup_protection_auto_disable_for_azurewl_command_builder("az backup protection auto-disable-for-azurewl", itemName);
+        return new az_backup_protection_auto_disable_for_azurewl_command_builder("az backup protection auto-disable-for-azurewl", 'az_backup_protection_auto_disable_for_azurewl_command_result', itemName);
     }
 
     /**
@@ -557,7 +557,7 @@ export class az_backup_protection {
      * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
      */
     static auto_enable_for_azurewl(policyName: string, protectableItemName: string, protectableItemType: 'HANAInstance' | 'SAPHanaDatabase' | 'SAPHanaSystem' | 'SQLAG' | 'SQLDatabase' | 'SQLInstance', serverName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'): az_backup_protection_auto_enable_for_azurewl_command_builder {
-        return new az_backup_protection_auto_enable_for_azurewl_command_builder("az backup protection auto-enable-for-azurewl", policyName, protectableItemName, protectableItemType, serverName, workloadType);
+        return new az_backup_protection_auto_enable_for_azurewl_command_builder("az backup protection auto-enable-for-azurewl", 'az_backup_protection_auto_enable_for_azurewl_command_result', policyName, protectableItemName, protectableItemType, serverName, workloadType);
     }
 
     /**
@@ -581,7 +581,7 @@ export class az_backup_protection {
      * @param {string} itemName Name of the backed up item.
      */
     static backup_now(itemName: string): az_backup_protection_backup_now_command_builder {
-        return new az_backup_protection_backup_now_command_builder("az backup protection backup-now", itemName);
+        return new az_backup_protection_backup_now_command_builder("az backup protection backup-now", 'az_backup_protection_backup_now_command_result', itemName);
     }
 
     /**
@@ -596,7 +596,7 @@ export class az_backup_protection {
      * @param {string} vmId ID of the virtual machine to be checked for protection.
      */
     static check_vm(vmId: string): az_backup_protection_check_vm_command_builder {
-        return new az_backup_protection_check_vm_command_builder("az backup protection check-vm", vmId);
+        return new az_backup_protection_check_vm_command_builder("az backup protection check-vm", 'az_backup_protection_check_vm_command_result', vmId);
     }
 
     /**
@@ -620,7 +620,7 @@ export class az_backup_protection {
      * @param {string} itemName Name of the backed up item.
      */
     static disable(containerName: string, itemName: string): az_backup_protection_disable_command_builder {
-        return new az_backup_protection_disable_command_builder("az backup protection disable", containerName, itemName);
+        return new az_backup_protection_disable_command_builder("az backup protection disable", 'az_backup_protection_disable_command_result', containerName, itemName);
     }
 
     /**
@@ -642,7 +642,7 @@ export class az_backup_protection {
      * @param {string} storageAccount Name of the Storage Account of the FileShare.
      */
     static enable_for_azurefileshare(azureFileShare: string, policyName: string, storageAccount: string): az_backup_protection_enable_for_azurefileshare_command_builder {
-        return new az_backup_protection_enable_for_azurefileshare_command_builder("az backup protection enable-for-azurefileshare", azureFileShare, policyName, storageAccount);
+        return new az_backup_protection_enable_for_azurefileshare_command_builder("az backup protection enable-for-azurefileshare", 'az_backup_protection_enable_for_azurefileshare_command_result', azureFileShare, policyName, storageAccount);
     }
 
     /**
@@ -668,7 +668,7 @@ export class az_backup_protection {
      * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
      */
     static enable_for_azurewl(policyName: string, protectableItemName: string, protectableItemType: 'HANAInstance' | 'SAPHanaDatabase' | 'SAPHanaSystem' | 'SQLAG' | 'SQLDatabase' | 'SQLInstance', serverName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'): az_backup_protection_enable_for_azurewl_command_builder {
-        return new az_backup_protection_enable_for_azurewl_command_builder("az backup protection enable-for-azurewl", policyName, protectableItemName, protectableItemType, serverName, workloadType);
+        return new az_backup_protection_enable_for_azurewl_command_builder("az backup protection enable-for-azurewl", 'az_backup_protection_enable_for_azurewl_command_result', policyName, protectableItemName, protectableItemType, serverName, workloadType);
     }
 
     /**
@@ -691,7 +691,7 @@ export class az_backup_protection {
      * @param {string} vm Name or ID of the Virtual Machine to be protected.
      */
     static enable_for_vm(policyName: string, vm: string): az_backup_protection_enable_for_vm_command_builder {
-        return new az_backup_protection_enable_for_vm_command_builder("az backup protection enable-for-vm", policyName, vm);
+        return new az_backup_protection_enable_for_vm_command_builder("az backup protection enable-for-vm", 'az_backup_protection_enable_for_vm_command_result', policyName, vm);
     }
 
     /**
@@ -715,7 +715,7 @@ export class az_backup_protection {
      * @param {string} policyName Name of the backup policy.
      */
     static resume(containerName: string, itemName: string, policyName: string): az_backup_protection_resume_command_builder {
-        return new az_backup_protection_resume_command_builder("az backup protection resume", containerName, itemName, policyName);
+        return new az_backup_protection_resume_command_builder("az backup protection resume", 'az_backup_protection_resume_command_result', containerName, itemName, policyName);
     }
 
     /**
@@ -738,7 +738,7 @@ export class az_backup_protection {
      * @param {string} itemName Name of the backed up item.
      */
     static undelete(backupManagementType: 'AzureIaasVM' | 'AzureStorage' | 'AzureWorkload', containerName: string, itemName: string): az_backup_protection_undelete_command_builder {
-        return new az_backup_protection_undelete_command_builder("az backup protection undelete", backupManagementType, containerName, itemName);
+        return new az_backup_protection_undelete_command_builder("az backup protection undelete", 'az_backup_protection_undelete_command_result', backupManagementType, containerName, itemName);
     }
 
     /**
@@ -761,7 +761,7 @@ export class az_backup_protection {
      * @param {string} itemName Name of the backed up item.
      */
     static update_for_vm(containerName: string, itemName: string): az_backup_protection_update_for_vm_command_builder {
-        return new az_backup_protection_update_for_vm_command_builder("az backup protection update-for-vm", containerName, itemName);
+        return new az_backup_protection_update_for_vm_command_builder("az backup protection update-for-vm", 'az_backup_protection_update_for_vm_command_result', containerName, itemName);
     }
 }
 
@@ -798,7 +798,7 @@ export class az_backup_recoveryconfig {
      * @param {string} vaultName Name of the Recovery services vault.
      */
     static show(containerName: string, itemName: string, resourceGroup: string, restoreMode: 'AlternateWorkloadRestore' | 'OriginalWorkloadRestore' | 'RestoreAsFiles', vaultName: string): az_backup_recoveryconfig_show_command_builder {
-        return new az_backup_recoveryconfig_show_command_builder("az backup recoveryconfig show", containerName, itemName, resourceGroup, restoreMode, vaultName);
+        return new az_backup_recoveryconfig_show_command_builder("az backup recoveryconfig show", 'az_backup_recoveryconfig_show_command_result', containerName, itemName, resourceGroup, restoreMode, vaultName);
     }
 }
 
@@ -827,7 +827,7 @@ export class az_backup_recoverypoint {
      * @param {string} vaultName Name of the Recovery services vault.
      */
     static list(containerName: string, itemName: string, resourceGroup: string, vaultName: string): az_backup_recoverypoint_list_command_builder {
-        return new az_backup_recoverypoint_list_command_builder("az backup recoverypoint list", containerName, itemName, resourceGroup, vaultName);
+        return new az_backup_recoverypoint_list_command_builder("az backup recoverypoint list", 'az_backup_recoverypoint_list_command_result', containerName, itemName, resourceGroup, vaultName);
     }
 
     /**
@@ -852,7 +852,7 @@ export class az_backup_recoverypoint {
      * @param {string} name Name of the recovery point. You can use the backup recovery point list command to get the name of a backed up item.
      */
     static show(containerName: string, itemName: string, name: string): az_backup_recoverypoint_show_command_builder {
-        return new az_backup_recoverypoint_show_command_builder("az backup recoverypoint show", containerName, itemName, name);
+        return new az_backup_recoverypoint_show_command_builder("az backup recoverypoint show", 'az_backup_recoverypoint_show_command_result', containerName, itemName, name);
     }
 
     /**
@@ -877,7 +877,7 @@ export class az_backup_recoverypoint {
      * @param {string} vaultName Name of the Recovery services vault.
      */
     static show_log_chain(containerName: string, itemName: string, resourceGroup: string, vaultName: string): az_backup_recoverypoint_show_log_chain_command_builder {
-        return new az_backup_recoverypoint_show_log_chain_command_builder("az backup recoverypoint show-log-chain", containerName, itemName, resourceGroup, vaultName);
+        return new az_backup_recoverypoint_show_log_chain_command_builder("az backup recoverypoint show-log-chain", 'az_backup_recoverypoint_show_log_chain_command_result', containerName, itemName, resourceGroup, vaultName);
     }
 }
 
@@ -902,7 +902,7 @@ export class az_backup_restore_files {
      * @param {string} rpName Name of the recovery point.
      */
     static mount_rp(containerName: string, itemName: string, rpName: string): az_backup_restore_files_mount_rp_command_builder {
-        return new az_backup_restore_files_mount_rp_command_builder("az backup restore files mount-rp", containerName, itemName, rpName);
+        return new az_backup_restore_files_mount_rp_command_builder("az backup restore files mount-rp", 'az_backup_restore_files_mount_rp_command_result', containerName, itemName, rpName);
     }
 
     /**
@@ -924,7 +924,7 @@ export class az_backup_restore_files {
      * @param {string} rpName Name of the recovery point.
      */
     static unmount_rp(containerName: string, itemName: string, rpName: string): az_backup_restore_files_unmount_rp_command_builder {
-        return new az_backup_restore_files_unmount_rp_command_builder("az backup restore files unmount-rp", containerName, itemName, rpName);
+        return new az_backup_restore_files_unmount_rp_command_builder("az backup restore files unmount-rp", 'az_backup_restore_files_unmount_rp_command_result', containerName, itemName, rpName);
     }
 }
 
@@ -958,7 +958,7 @@ export class az_backup_restore {
      * @param {string} rpName Name of the recovery point.
      */
     static restore_azurefiles(containerName: string, itemName: string, resolveConflict: 'Overwrite' | 'Skip', restoreMode: 'AlternateLocation' | 'OriginalLocation', rpName: string): az_backup_restore_restore_azurefiles_command_builder {
-        return new az_backup_restore_restore_azurefiles_command_builder("az backup restore restore-azurefiles", containerName, itemName, resolveConflict, restoreMode, rpName);
+        return new az_backup_restore_restore_azurefiles_command_builder("az backup restore restore-azurefiles", 'az_backup_restore_restore_azurefiles_command_result', containerName, itemName, resolveConflict, restoreMode, rpName);
     }
 
     /**
@@ -987,7 +987,7 @@ export class az_backup_restore {
      * @param {string} rpName Name of the recovery point.
      */
     static restore_azurefileshare(containerName: string, itemName: string, resolveConflict: 'Overwrite' | 'Skip', restoreMode: 'AlternateLocation' | 'OriginalLocation', rpName: string): az_backup_restore_restore_azurefileshare_command_builder {
-        return new az_backup_restore_restore_azurefileshare_command_builder("az backup restore restore-azurefileshare", containerName, itemName, resolveConflict, restoreMode, rpName);
+        return new az_backup_restore_restore_azurefileshare_command_builder("az backup restore restore-azurefileshare", 'az_backup_restore_restore_azurefileshare_command_result', containerName, itemName, resolveConflict, restoreMode, rpName);
     }
 
     /**
@@ -1005,7 +1005,7 @@ export class az_backup_restore {
      * @param {string} recoveryConfig Specify the recovery configuration of a backed up item. The configuration object can be obtained from 'backup recoveryconfig show' command.
      */
     static restore_azurewl(recoveryConfig: string): az_backup_restore_restore_azurewl_command_builder {
-        return new az_backup_restore_restore_azurewl_command_builder("az backup restore restore-azurewl", recoveryConfig);
+        return new az_backup_restore_restore_azurewl_command_builder("az backup restore restore-azurewl", 'az_backup_restore_restore_azurewl_command_result', recoveryConfig);
     }
 
     /**
@@ -1034,7 +1034,7 @@ export class az_backup_restore {
      * @param {string} storageAccount Name or ID of the staging storage account. The VM configuration will be restored to this storage account. See the help for --restore-to-staging-storage-account parameter for more info.
      */
     static restore_disks(containerName: string, itemName: string, rpName: string, storageAccount: string): az_backup_restore_restore_disks_command_builder {
-        return new az_backup_restore_restore_disks_command_builder("az backup restore restore-disks", containerName, itemName, rpName, storageAccount);
+        return new az_backup_restore_restore_disks_command_builder("az backup restore restore-disks", 'az_backup_restore_restore_disks_command_result', containerName, itemName, rpName, storageAccount);
     }
 }
 
@@ -1054,7 +1054,7 @@ export class az_backup_vault_backup_properties {
      * ```
      */
     static set(): az_backup_vault_backup_properties_set_command_builder {
-        return new az_backup_vault_backup_properties_set_command_builder("az backup vault backup-properties set");
+        return new az_backup_vault_backup_properties_set_command_builder("az backup vault backup-properties set", 'az_backup_vault_backup_properties_set_command_result');
     }
 
     /**
@@ -1070,7 +1070,7 @@ export class az_backup_vault_backup_properties {
      * ```
      */
     static show(): az_backup_vault_backup_properties_show_command_builder {
-        return new az_backup_vault_backup_properties_show_command_builder("az backup vault backup-properties show");
+        return new az_backup_vault_backup_properties_show_command_builder("az backup vault backup-properties show", 'az_backup_vault_backup_properties_show_command_result');
     }
 }
 
@@ -1092,7 +1092,7 @@ export class az_backup_vault {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(location: string, name: string, resourceGroup: string): az_backup_vault_create_command_builder {
-        return new az_backup_vault_create_command_builder("az backup vault create", location, name, resourceGroup);
+        return new az_backup_vault_create_command_builder("az backup vault create", 'az_backup_vault_create_command_result', location, name, resourceGroup);
     }
 
     /**
@@ -1109,7 +1109,7 @@ export class az_backup_vault {
      * ```
      */
     static delete(): az_backup_vault_delete_command_builder {
-        return new az_backup_vault_delete_command_builder("az backup vault delete");
+        return new az_backup_vault_delete_command_builder("az backup vault delete", 'az_backup_vault_delete_command_result');
     }
 
     /**
@@ -1123,7 +1123,7 @@ export class az_backup_vault {
      * ```
      */
     static list(): az_backup_vault_list_command_builder {
-        return new az_backup_vault_list_command_builder("az backup vault list");
+        return new az_backup_vault_list_command_builder("az backup vault list", 'az_backup_vault_list_command_result');
     }
 
     /**
@@ -1139,7 +1139,7 @@ export class az_backup_vault {
      * ```
      */
     static show(): az_backup_vault_show_command_builder {
-        return new az_backup_vault_show_command_builder("az backup vault show");
+        return new az_backup_vault_show_command_builder("az backup vault show", 'az_backup_vault_show_command_result');
     }
 }
 
@@ -1164,8 +1164,8 @@ export class az_backup {
  * @param {string} vaultName Name of the Recovery services vault.
  */
 class az_backup_container_list_command_builder extends CommandBuilder<az_backup_container_list_command_result> {
-    constructor(commandPath: string, backupManagementType: 'AzureIaasVM' | 'AzureStorage' | 'AzureWorkload', resourceGroup: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, backupManagementType: 'AzureIaasVM' | 'AzureStorage' | 'AzureWorkload', resourceGroup: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.backupManagementType(backupManagementType)
         this.resourceGroup(resourceGroup)
         this.vaultName(vaultName)
@@ -1221,8 +1221,8 @@ class az_backup_container_list_command_builder extends CommandBuilder<az_backup_
  * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
  */
 class az_backup_container_re_register_command_builder extends CommandBuilder<az_backup_container_re_register_command_result> {
-    constructor(commandPath: string, containerName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM') {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.workloadType(workloadType)
     }
@@ -1294,8 +1294,8 @@ class az_backup_container_re_register_command_builder extends CommandBuilder<az_
  * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
  */
 class az_backup_container_register_command_builder extends CommandBuilder<az_backup_container_register_command_result> {
-    constructor(commandPath: string, resourceId: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceId: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM') {
+        super(commandPath, resultDataTypeName);
         this.resourceId(resourceId)
         this.workloadType(workloadType)
     }
@@ -1360,8 +1360,8 @@ class az_backup_container_register_command_builder extends CommandBuilder<az_bac
  * @param {string} name Name of the container. You can use the backup container list command to get the name of a container.
  */
 class az_backup_container_show_command_builder extends CommandBuilder<az_backup_container_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -1425,8 +1425,8 @@ class az_backup_container_show_command_builder extends CommandBuilder<az_backup_
  * @param {string} containerName Name of the backup container. Accepts 'Name' or 'FriendlyName' from the output of az backup container list command. If 'FriendlyName' is passed then BackupManagementType is required.
  */
 class az_backup_container_unregister_command_builder extends CommandBuilder<az_backup_container_unregister_command_result> {
-    constructor(commandPath: string, containerName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
     }
 
@@ -1491,8 +1491,8 @@ class az_backup_container_unregister_command_builder extends CommandBuilder<az_b
  * @param {string} vaultName Name of the Recovery services vault.
  */
 class az_backup_item_list_command_builder extends CommandBuilder<az_backup_item_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.vaultName(vaultName)
     }
@@ -1560,8 +1560,8 @@ class az_backup_item_list_command_builder extends CommandBuilder<az_backup_item_
  * @param {string} policyName Name of the Backup policy. You can use the backup policy list command to get the name of a backup policy.
  */
 class az_backup_item_set_policy_command_builder extends CommandBuilder<az_backup_item_set_policy_command_result> {
-    constructor(commandPath: string, containerName: string, policyName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, policyName: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.policyName(policyName)
     }
@@ -1641,8 +1641,8 @@ class az_backup_item_set_policy_command_builder extends CommandBuilder<az_backup
  * @param {string} name Name of the backed up item. You can use the backup item list command to get the name of a backed up item.
  */
 class az_backup_item_show_command_builder extends CommandBuilder<az_backup_item_show_command_result> {
-    constructor(commandPath: string, containerName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.name(name)
     }
@@ -1721,8 +1721,8 @@ class az_backup_item_show_command_builder extends CommandBuilder<az_backup_item_
  * @param {string} vaultName Name of the Recovery services vault.
  */
 class az_backup_job_list_command_builder extends CommandBuilder<az_backup_job_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.vaultName(vaultName)
     }
@@ -1792,8 +1792,8 @@ class az_backup_job_list_command_builder extends CommandBuilder<az_backup_job_li
  * @param {string} name Name of the job. You can use the backup job list command to get the name of a job.
  */
 class az_backup_job_show_command_builder extends CommandBuilder<az_backup_job_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -1849,8 +1849,8 @@ class az_backup_job_show_command_builder extends CommandBuilder<az_backup_job_sh
  * @param {string} name Name of the job. You can use the backup job list command to get the name of a job.
  */
 class az_backup_job_stop_command_builder extends CommandBuilder<az_backup_job_stop_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -1901,8 +1901,8 @@ class az_backup_job_stop_command_builder extends CommandBuilder<az_backup_job_st
  * @param {string} name Name of the job. You can use the backup job list command to get the name of a job.
  */
 class az_backup_job_wait_command_builder extends CommandBuilder<az_backup_job_wait_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -1964,8 +1964,8 @@ class az_backup_job_wait_command_builder extends CommandBuilder<az_backup_job_wa
  * @param {string} vaultName Name of the Recovery services vault.
  */
 class az_backup_policy_create_command_builder extends CommandBuilder<az_backup_policy_create_command_result> {
-    constructor(commandPath: string, backupManagementType: 'AzureIaasVM' | 'AzureStorage' | 'AzureWorkload', name: string, policy: string, resourceGroup: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, backupManagementType: 'AzureIaasVM' | 'AzureStorage' | 'AzureWorkload', name: string, policy: string, resourceGroup: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.backupManagementType(backupManagementType)
         this.name(name)
         this.policy(policy)
@@ -2031,8 +2031,8 @@ class az_backup_policy_create_command_builder extends CommandBuilder<az_backup_p
  * @param {string} name Name of the backup policy. You can use the backup policy list command to get the name of a policy.
  */
 class az_backup_policy_delete_command_builder extends CommandBuilder<az_backup_policy_delete_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -2079,8 +2079,8 @@ class az_backup_policy_delete_command_builder extends CommandBuilder<az_backup_p
  * ```
  */
 class az_backup_policy_get_default_for_vm_command_builder extends CommandBuilder<az_backup_policy_get_default_for_vm_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2125,8 +2125,8 @@ class az_backup_policy_get_default_for_vm_command_builder extends CommandBuilder
  * @param {string} vaultName Name of the Recovery services vault.
  */
 class az_backup_policy_list_command_builder extends CommandBuilder<az_backup_policy_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.vaultName(vaultName)
     }
@@ -2184,8 +2184,8 @@ class az_backup_policy_list_command_builder extends CommandBuilder<az_backup_pol
  * @param {string} name Name of the backup policy. You can use the backup policy list command to get the name of a policy.
  */
 class az_backup_policy_list_associated_items_command_builder extends CommandBuilder<az_backup_policy_list_associated_items_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -2242,8 +2242,8 @@ class az_backup_policy_list_associated_items_command_builder extends CommandBuil
  * ```
  */
 class az_backup_policy_set_command_builder extends CommandBuilder<az_backup_policy_set_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Specifiy the backup management type. Define how Azure Backup manages the backup of entities within the ARM resource. For eg: AzureWorkloads refers to workloads installed within Azure VMs, AzureStorage refers to entities within Storage account. Required only if friendly name is used as Container name. */
@@ -2311,8 +2311,8 @@ class az_backup_policy_set_command_builder extends CommandBuilder<az_backup_poli
  * @param {string} name Name of the backup policy. You can use the backup policy list command to get the name of a policy.
  */
 class az_backup_policy_show_command_builder extends CommandBuilder<az_backup_policy_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -2371,8 +2371,8 @@ class az_backup_policy_show_command_builder extends CommandBuilder<az_backup_pol
  * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
  */
 class az_backup_protectable_item_initialize_command_builder extends CommandBuilder<az_backup_protectable_item_initialize_command_result> {
-    constructor(commandPath: string, containerName: string, resourceGroup: string, vaultName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, resourceGroup: string, vaultName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM') {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.resourceGroup(resourceGroup)
         this.vaultName(vaultName)
@@ -2428,8 +2428,8 @@ class az_backup_protectable_item_initialize_command_builder extends CommandBuild
  * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
  */
 class az_backup_protectable_item_list_command_builder extends CommandBuilder<az_backup_protectable_item_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, vaultName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, vaultName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM') {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.vaultName(vaultName)
         this.workloadType(workloadType)
@@ -2495,8 +2495,8 @@ class az_backup_protectable_item_list_command_builder extends CommandBuilder<az_
  * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
  */
 class az_backup_protectable_item_show_command_builder extends CommandBuilder<az_backup_protectable_item_show_command_result> {
-    constructor(commandPath: string, name: string, protectableItemType: 'HANAInstance' | 'SAPHanaDatabase' | 'SAPHanaSystem' | 'SQLAG' | 'SQLDatabase' | 'SQLInstance', resourceGroup: string, serverName: string, vaultName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, protectableItemType: 'HANAInstance' | 'SAPHanaDatabase' | 'SAPHanaSystem' | 'SQLAG' | 'SQLDatabase' | 'SQLInstance', resourceGroup: string, serverName: string, vaultName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM') {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.protectableItemType(protectableItemType)
         this.resourceGroup(resourceGroup)
@@ -2569,8 +2569,8 @@ class az_backup_protectable_item_show_command_builder extends CommandBuilder<az_
  * @param {string} itemName Name of the backed up item.
  */
 class az_backup_protection_auto_disable_for_azurewl_command_builder extends CommandBuilder<az_backup_protection_auto_disable_for_azurewl_command_result> {
-    constructor(commandPath: string, itemName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, itemName: string) {
+        super(commandPath, resultDataTypeName);
         this.itemName(itemName)
     }
 
@@ -2628,8 +2628,8 @@ class az_backup_protection_auto_disable_for_azurewl_command_builder extends Comm
  * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
  */
 class az_backup_protection_auto_enable_for_azurewl_command_builder extends CommandBuilder<az_backup_protection_auto_enable_for_azurewl_command_result> {
-    constructor(commandPath: string, policyName: string, protectableItemName: string, protectableItemType: 'HANAInstance' | 'SAPHanaDatabase' | 'SAPHanaSystem' | 'SQLAG' | 'SQLDatabase' | 'SQLInstance', serverName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyName: string, protectableItemName: string, protectableItemType: 'HANAInstance' | 'SAPHanaDatabase' | 'SAPHanaSystem' | 'SQLAG' | 'SQLDatabase' | 'SQLInstance', serverName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM') {
+        super(commandPath, resultDataTypeName);
         this.policyName(policyName)
         this.protectableItemName(protectableItemName)
         this.protectableItemType(protectableItemType)
@@ -2713,8 +2713,8 @@ class az_backup_protection_auto_enable_for_azurewl_command_builder extends Comma
  * @param {string} itemName Name of the backed up item.
  */
 class az_backup_protection_backup_now_command_builder extends CommandBuilder<az_backup_protection_backup_now_command_result> {
-    constructor(commandPath: string, itemName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, itemName: string) {
+        super(commandPath, resultDataTypeName);
         this.itemName(itemName)
     }
 
@@ -2797,8 +2797,8 @@ class az_backup_protection_backup_now_command_builder extends CommandBuilder<az_
  * @param {string} vmId ID of the virtual machine to be checked for protection.
  */
 class az_backup_protection_check_vm_command_builder extends CommandBuilder<az_backup_protection_check_vm_command_result> {
-    constructor(commandPath: string, vmId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, vmId: string) {
+        super(commandPath, resultDataTypeName);
         this.vmId(vmId)
     }
 
@@ -2836,8 +2836,8 @@ class az_backup_protection_check_vm_command_builder extends CommandBuilder<az_ba
  * @param {string} itemName Name of the backed up item.
  */
 class az_backup_protection_disable_command_builder extends CommandBuilder<az_backup_protection_disable_command_result> {
-    constructor(commandPath: string, containerName: string, itemName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, itemName: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.itemName(itemName)
     }
@@ -2922,8 +2922,8 @@ class az_backup_protection_disable_command_builder extends CommandBuilder<az_bac
  * @param {string} storageAccount Name of the Storage Account of the FileShare.
  */
 class az_backup_protection_enable_for_azurefileshare_command_builder extends CommandBuilder<az_backup_protection_enable_for_azurefileshare_command_result> {
-    constructor(commandPath: string, azureFileShare: string, policyName: string, storageAccount: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, azureFileShare: string, policyName: string, storageAccount: string) {
+        super(commandPath, resultDataTypeName);
         this.azureFileShare(azureFileShare)
         this.policyName(policyName)
         this.storageAccount(storageAccount)
@@ -2995,8 +2995,8 @@ class az_backup_protection_enable_for_azurefileshare_command_builder extends Com
  * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
  */
 class az_backup_protection_enable_for_azurewl_command_builder extends CommandBuilder<az_backup_protection_enable_for_azurewl_command_result> {
-    constructor(commandPath: string, policyName: string, protectableItemName: string, protectableItemType: 'HANAInstance' | 'SAPHanaDatabase' | 'SAPHanaSystem' | 'SQLAG' | 'SQLDatabase' | 'SQLInstance', serverName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyName: string, protectableItemName: string, protectableItemType: 'HANAInstance' | 'SAPHanaDatabase' | 'SAPHanaSystem' | 'SQLAG' | 'SQLDatabase' | 'SQLInstance', serverName: string, workloadType: 'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM') {
+        super(commandPath, resultDataTypeName);
         this.policyName(policyName)
         this.protectableItemName(protectableItemName)
         this.protectableItemType(protectableItemType)
@@ -3079,8 +3079,8 @@ class az_backup_protection_enable_for_azurewl_command_builder extends CommandBui
  * @param {string} vm Name or ID of the Virtual Machine to be protected.
  */
 class az_backup_protection_enable_for_vm_command_builder extends CommandBuilder<az_backup_protection_enable_for_vm_command_result> {
-    constructor(commandPath: string, policyName: string, vm: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyName: string, vm: string) {
+        super(commandPath, resultDataTypeName);
         this.policyName(policyName)
         this.vm(vm)
     }
@@ -3161,8 +3161,8 @@ class az_backup_protection_enable_for_vm_command_builder extends CommandBuilder<
  * @param {string} policyName Name of the backup policy.
  */
 class az_backup_protection_resume_command_builder extends CommandBuilder<az_backup_protection_resume_command_result> {
-    constructor(commandPath: string, containerName: string, itemName: string, policyName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, itemName: string, policyName: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.itemName(itemName)
         this.policyName(policyName)
@@ -3243,8 +3243,8 @@ class az_backup_protection_resume_command_builder extends CommandBuilder<az_back
  * @param {string} itemName Name of the backed up item.
  */
 class az_backup_protection_undelete_command_builder extends CommandBuilder<az_backup_protection_undelete_command_result> {
-    constructor(commandPath: string, backupManagementType: 'AzureIaasVM' | 'AzureStorage' | 'AzureWorkload', containerName: string, itemName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, backupManagementType: 'AzureIaasVM' | 'AzureStorage' | 'AzureWorkload', containerName: string, itemName: string) {
+        super(commandPath, resultDataTypeName);
         this.backupManagementType(backupManagementType)
         this.containerName(containerName)
         this.itemName(itemName)
@@ -3319,8 +3319,8 @@ class az_backup_protection_undelete_command_builder extends CommandBuilder<az_ba
  * @param {string} itemName Name of the backed up item.
  */
 class az_backup_protection_update_for_vm_command_builder extends CommandBuilder<az_backup_protection_update_for_vm_command_result> {
-    constructor(commandPath: string, containerName: string, itemName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, itemName: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.itemName(itemName)
     }
@@ -3411,8 +3411,8 @@ class az_backup_protection_update_for_vm_command_builder extends CommandBuilder<
  * @param {string} vaultName Name of the Recovery services vault.
  */
 class az_backup_recoveryconfig_show_command_builder extends CommandBuilder<az_backup_recoveryconfig_show_command_result> {
-    constructor(commandPath: string, containerName: string, itemName: string, resourceGroup: string, restoreMode: 'AlternateWorkloadRestore' | 'OriginalWorkloadRestore' | 'RestoreAsFiles', vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, itemName: string, resourceGroup: string, restoreMode: 'AlternateWorkloadRestore' | 'OriginalWorkloadRestore' | 'RestoreAsFiles', vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.itemName(itemName)
         this.resourceGroup(resourceGroup)
@@ -3546,8 +3546,8 @@ class az_backup_recoveryconfig_show_command_builder extends CommandBuilder<az_ba
  * @param {string} vaultName Name of the Recovery services vault.
  */
 class az_backup_recoverypoint_list_command_builder extends CommandBuilder<az_backup_recoverypoint_list_command_result> {
-    constructor(commandPath: string, containerName: string, itemName: string, resourceGroup: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, itemName: string, resourceGroup: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.itemName(itemName)
         this.resourceGroup(resourceGroup)
@@ -3637,8 +3637,8 @@ class az_backup_recoverypoint_list_command_builder extends CommandBuilder<az_bac
  * @param {string} name Name of the recovery point. You can use the backup recovery point list command to get the name of a backed up item.
  */
 class az_backup_recoverypoint_show_command_builder extends CommandBuilder<az_backup_recoverypoint_show_command_result> {
-    constructor(commandPath: string, containerName: string, itemName: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, itemName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.itemName(itemName)
         this.name(name)
@@ -3727,8 +3727,8 @@ class az_backup_recoverypoint_show_command_builder extends CommandBuilder<az_bac
  * @param {string} vaultName Name of the Recovery services vault.
  */
 class az_backup_recoverypoint_show_log_chain_command_builder extends CommandBuilder<az_backup_recoverypoint_show_log_chain_command_result> {
-    constructor(commandPath: string, containerName: string, itemName: string, resourceGroup: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, itemName: string, resourceGroup: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.itemName(itemName)
         this.resourceGroup(resourceGroup)
@@ -3809,8 +3809,8 @@ class az_backup_recoverypoint_show_log_chain_command_builder extends CommandBuil
  * @param {string} rpName Name of the recovery point.
  */
 class az_backup_restore_files_mount_rp_command_builder extends CommandBuilder<az_backup_restore_files_mount_rp_command_result> {
-    constructor(commandPath: string, containerName: string, itemName: string, rpName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, itemName: string, rpName: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.itemName(itemName)
         this.rpName(rpName)
@@ -3878,8 +3878,8 @@ class az_backup_restore_files_mount_rp_command_builder extends CommandBuilder<az
  * @param {string} rpName Name of the recovery point.
  */
 class az_backup_restore_files_unmount_rp_command_builder extends CommandBuilder<az_backup_restore_files_unmount_rp_command_result> {
-    constructor(commandPath: string, containerName: string, itemName: string, rpName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, itemName: string, rpName: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.itemName(itemName)
         this.rpName(rpName)
@@ -3956,8 +3956,8 @@ class az_backup_restore_files_unmount_rp_command_builder extends CommandBuilder<
  * @param {string} rpName Name of the recovery point.
  */
 class az_backup_restore_restore_azurefiles_command_builder extends CommandBuilder<az_backup_restore_restore_azurefiles_command_result> {
-    constructor(commandPath: string, containerName: string, itemName: string, resolveConflict: 'Overwrite' | 'Skip', restoreMode: 'AlternateLocation' | 'OriginalLocation', rpName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, itemName: string, resolveConflict: 'Overwrite' | 'Skip', restoreMode: 'AlternateLocation' | 'OriginalLocation', rpName: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.itemName(itemName)
         this.resolveConflict(resolveConflict)
@@ -4076,8 +4076,8 @@ class az_backup_restore_restore_azurefiles_command_builder extends CommandBuilde
  * @param {string} rpName Name of the recovery point.
  */
 class az_backup_restore_restore_azurefileshare_command_builder extends CommandBuilder<az_backup_restore_restore_azurefileshare_command_result> {
-    constructor(commandPath: string, containerName: string, itemName: string, resolveConflict: 'Overwrite' | 'Skip', restoreMode: 'AlternateLocation' | 'OriginalLocation', rpName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, itemName: string, resolveConflict: 'Overwrite' | 'Skip', restoreMode: 'AlternateLocation' | 'OriginalLocation', rpName: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.itemName(itemName)
         this.resolveConflict(resolveConflict)
@@ -4173,8 +4173,8 @@ class az_backup_restore_restore_azurefileshare_command_builder extends CommandBu
  * @param {string} recoveryConfig Specify the recovery configuration of a backed up item. The configuration object can be obtained from 'backup recoveryconfig show' command.
  */
 class az_backup_restore_restore_azurewl_command_builder extends CommandBuilder<az_backup_restore_restore_azurewl_command_result> {
-    constructor(commandPath: string, recoveryConfig: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, recoveryConfig: string) {
+        super(commandPath, resultDataTypeName);
         this.recoveryConfig(recoveryConfig)
     }
 
@@ -4235,8 +4235,8 @@ class az_backup_restore_restore_azurewl_command_builder extends CommandBuilder<a
  * @param {string} storageAccount Name or ID of the staging storage account. The VM configuration will be restored to this storage account. See the help for --restore-to-staging-storage-account parameter for more info.
  */
 class az_backup_restore_restore_disks_command_builder extends CommandBuilder<az_backup_restore_restore_disks_command_result> {
-    constructor(commandPath: string, containerName: string, itemName: string, rpName: string, storageAccount: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, containerName: string, itemName: string, rpName: string, storageAccount: string) {
+        super(commandPath, resultDataTypeName);
         this.containerName(containerName)
         this.itemName(itemName)
         this.rpName(rpName)
@@ -4336,8 +4336,8 @@ class az_backup_restore_restore_disks_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_backup_vault_backup_properties_set_command_builder extends CommandBuilder<az_backup_vault_backup_properties_set_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Sets backup storage properties for a Recovery Services vault. */
@@ -4390,8 +4390,8 @@ class az_backup_vault_backup_properties_set_command_builder extends CommandBuild
  * ```
  */
 class az_backup_vault_backup_properties_show_command_builder extends CommandBuilder<az_backup_vault_backup_properties_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4441,8 +4441,8 @@ class az_backup_vault_backup_properties_show_command_builder extends CommandBuil
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_backup_vault_create_command_builder extends CommandBuilder<az_backup_vault_create_command_result> {
-    constructor(commandPath: string, location: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4487,8 +4487,8 @@ class az_backup_vault_create_command_builder extends CommandBuilder<az_backup_va
  * ```
  */
 class az_backup_vault_delete_command_builder extends CommandBuilder<az_backup_vault_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Force completion of the requested action. */
@@ -4539,8 +4539,8 @@ class az_backup_vault_delete_command_builder extends CommandBuilder<az_backup_va
  * ```
  */
 class az_backup_vault_list_command_builder extends CommandBuilder<az_backup_vault_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -4575,8 +4575,8 @@ class az_backup_vault_list_command_builder extends CommandBuilder<az_backup_vaul
  * ```
  */
 class az_backup_vault_show_command_builder extends CommandBuilder<az_backup_vault_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */

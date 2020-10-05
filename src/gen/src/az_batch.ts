@@ -106,7 +106,7 @@ export class az_batch_account_autostorage_keys {
      * @param {string} resourceGroup Name of the resource group.
      */
     static sync(name: string, resourceGroup: string): az_batch_account_autostorage_keys_sync_command_builder {
-        return new az_batch_account_autostorage_keys_sync_command_builder("az batch account autostorage-keys sync", name, resourceGroup);
+        return new az_batch_account_autostorage_keys_sync_command_builder("az batch account autostorage-keys sync", 'az_batch_account_autostorage_keys_sync_command_result', name, resourceGroup);
     }
 }
 
@@ -127,7 +127,7 @@ export class az_batch_account_keys {
      * @param {string} resourceGroup Name of the resource group.
      */
     static list(name: string, resourceGroup: string): az_batch_account_keys_list_command_builder {
-        return new az_batch_account_keys_list_command_builder("az batch account keys list", name, resourceGroup);
+        return new az_batch_account_keys_list_command_builder("az batch account keys list", 'az_batch_account_keys_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -146,7 +146,7 @@ export class az_batch_account_keys {
      * @param {string} resourceGroup Name of the resource group.
      */
     static renew(keyName: 'Primary' | 'Secondary', name: string, resourceGroup: string): az_batch_account_keys_renew_command_builder {
-        return new az_batch_account_keys_renew_command_builder("az batch account keys renew", keyName, name, resourceGroup);
+        return new az_batch_account_keys_renew_command_builder("az batch account keys renew", 'az_batch_account_keys_renew_command_result', keyName, name, resourceGroup);
     }
 }
 
@@ -176,7 +176,7 @@ export class az_batch_account {
      * @param {string} resourceGroup Name of the resource group.
      */
     static create(location: string, name: string, resourceGroup: string): az_batch_account_create_command_builder {
-        return new az_batch_account_create_command_builder("az batch account create", location, name, resourceGroup);
+        return new az_batch_account_create_command_builder("az batch account create", 'az_batch_account_create_command_result', location, name, resourceGroup);
     }
 
     /**
@@ -195,7 +195,7 @@ export class az_batch_account {
      * @param {string} resourceGroup Name of the resource group.
      */
     static delete(name: string, resourceGroup: string): az_batch_account_delete_command_builder {
-        return new az_batch_account_delete_command_builder("az batch account delete", name, resourceGroup);
+        return new az_batch_account_delete_command_builder("az batch account delete", 'az_batch_account_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -209,7 +209,7 @@ export class az_batch_account {
      * ```
      */
     static list(): az_batch_account_list_command_builder {
-        return new az_batch_account_list_command_builder("az batch account list");
+        return new az_batch_account_list_command_builder("az batch account list", 'az_batch_account_list_command_result');
     }
 
     /**
@@ -228,7 +228,7 @@ export class az_batch_account {
      * @param {string} resourceGroup Name of the resource group.
      */
     static login(name: string, resourceGroup: string): az_batch_account_login_command_builder {
-        return new az_batch_account_login_command_builder("az batch account login", name, resourceGroup);
+        return new az_batch_account_login_command_builder("az batch account login", 'az_batch_account_login_command_result', name, resourceGroup);
     }
 
     /**
@@ -250,7 +250,7 @@ export class az_batch_account {
      * @param {string} resourceGroup Name of the resource group.
      */
     static set(name: string, resourceGroup: string): az_batch_account_set_command_builder {
-        return new az_batch_account_set_command_builder("az batch account set", name, resourceGroup);
+        return new az_batch_account_set_command_builder("az batch account set", 'az_batch_account_set_command_result', name, resourceGroup);
     }
 
     /**
@@ -265,7 +265,7 @@ export class az_batch_account {
      * ```
      */
     static show(): az_batch_account_show_command_builder {
-        return new az_batch_account_show_command_builder("az batch account show");
+        return new az_batch_account_show_command_builder("az batch account show", 'az_batch_account_show_command_result');
     }
 }
 
@@ -291,7 +291,7 @@ export class az_batch_application_package {
      * @param {string} versionName The version of the application.
      */
     static activate(applicationName: string, format: string, name: string, resourceGroup: string, versionName: string): az_batch_application_package_activate_command_builder {
-        return new az_batch_application_package_activate_command_builder("az batch application package activate", applicationName, format, name, resourceGroup, versionName);
+        return new az_batch_application_package_activate_command_builder("az batch application package activate", 'az_batch_application_package_activate_command_result', applicationName, format, name, resourceGroup, versionName);
     }
 
     /**
@@ -314,7 +314,7 @@ export class az_batch_application_package {
      * @param {string} versionName The version name of the application.
      */
     static create(applicationName: string, name: string, packageFile: string, resourceGroup: string, versionName: string): az_batch_application_package_create_command_builder {
-        return new az_batch_application_package_create_command_builder("az batch application package create", applicationName, name, packageFile, resourceGroup, versionName);
+        return new az_batch_application_package_create_command_builder("az batch application package create", 'az_batch_application_package_create_command_result', applicationName, name, packageFile, resourceGroup, versionName);
     }
 
     /**
@@ -336,7 +336,7 @@ export class az_batch_application_package {
      * @param {string} versionName The version of the application.
      */
     static delete(applicationName: string, name: string, resourceGroup: string, versionName: string): az_batch_application_package_delete_command_builder {
-        return new az_batch_application_package_delete_command_builder("az batch application package delete", applicationName, name, resourceGroup, versionName);
+        return new az_batch_application_package_delete_command_builder("az batch application package delete", 'az_batch_application_package_delete_command_result', applicationName, name, resourceGroup, versionName);
     }
 
     /**
@@ -357,7 +357,7 @@ export class az_batch_application_package {
      * @param {string} resourceGroup Name of the resource group.
      */
     static list(applicationName: string, name: string, resourceGroup: string): az_batch_application_package_list_command_builder {
-        return new az_batch_application_package_list_command_builder("az batch application package list", applicationName, name, resourceGroup);
+        return new az_batch_application_package_list_command_builder("az batch application package list", 'az_batch_application_package_list_command_result', applicationName, name, resourceGroup);
     }
 
     /**
@@ -379,7 +379,7 @@ export class az_batch_application_package {
      * @param {string} versionName The version of the application.
      */
     static show(applicationName: string, name: string, resourceGroup: string, versionName: string): az_batch_application_package_show_command_builder {
-        return new az_batch_application_package_show_command_builder("az batch application package show", applicationName, name, resourceGroup, versionName);
+        return new az_batch_application_package_show_command_builder("az batch application package show", 'az_batch_application_package_show_command_result', applicationName, name, resourceGroup, versionName);
     }
 }
 
@@ -398,7 +398,7 @@ export class az_batch_application_summary {
      * ```
      */
     static list(): az_batch_application_summary_list_command_builder {
-        return new az_batch_application_summary_list_command_builder("az batch application summary list");
+        return new az_batch_application_summary_list_command_builder("az batch application summary list", 'az_batch_application_summary_list_command_result');
     }
 
     /**
@@ -417,7 +417,7 @@ export class az_batch_application_summary {
      * @param {string} applicationId The ID of the Application.
      */
     static show(applicationId: string): az_batch_application_summary_show_command_builder {
-        return new az_batch_application_summary_show_command_builder("az batch application summary show", applicationId);
+        return new az_batch_application_summary_show_command_builder("az batch application summary show", 'az_batch_application_summary_show_command_result', applicationId);
     }
 }
 
@@ -440,7 +440,7 @@ export class az_batch_application {
      * @param {string} resourceGroup Name of the resource group.
      */
     static create(applicationName: string, name: string, resourceGroup: string): az_batch_application_create_command_builder {
-        return new az_batch_application_create_command_builder("az batch application create", applicationName, name, resourceGroup);
+        return new az_batch_application_create_command_builder("az batch application create", 'az_batch_application_create_command_result', applicationName, name, resourceGroup);
     }
 
     /**
@@ -460,7 +460,7 @@ export class az_batch_application {
      * @param {string} resourceGroup Name of the resource group.
      */
     static delete(applicationName: string, name: string, resourceGroup: string): az_batch_application_delete_command_builder {
-        return new az_batch_application_delete_command_builder("az batch application delete", applicationName, name, resourceGroup);
+        return new az_batch_application_delete_command_builder("az batch application delete", 'az_batch_application_delete_command_result', applicationName, name, resourceGroup);
     }
 
     /**
@@ -479,7 +479,7 @@ export class az_batch_application {
      * @param {string} resourceGroup Name of the resource group.
      */
     static list(name: string, resourceGroup: string): az_batch_application_list_command_builder {
-        return new az_batch_application_list_command_builder("az batch application list", name, resourceGroup);
+        return new az_batch_application_list_command_builder("az batch application list", 'az_batch_application_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -501,7 +501,7 @@ export class az_batch_application {
      * @param {string} resourceGroup Name of the resource group.
      */
     static set(applicationName: string, name: string, resourceGroup: string): az_batch_application_set_command_builder {
-        return new az_batch_application_set_command_builder("az batch application set", applicationName, name, resourceGroup);
+        return new az_batch_application_set_command_builder("az batch application set", 'az_batch_application_set_command_result', applicationName, name, resourceGroup);
     }
 
     /**
@@ -521,7 +521,7 @@ export class az_batch_application {
      * @param {string} resourceGroup Name of the resource group.
      */
     static show(applicationName: string, name: string, resourceGroup: string): az_batch_application_show_command_builder {
-        return new az_batch_application_show_command_builder("az batch application show", applicationName, name, resourceGroup);
+        return new az_batch_application_show_command_builder("az batch application show", 'az_batch_application_show_command_result', applicationName, name, resourceGroup);
     }
 }
 
@@ -545,7 +545,7 @@ export class az_batch_certificate {
      * @param {string} thumbprint The certificate thumbprint.
      */
     static create(certificateFile: string, thumbprint: string): az_batch_certificate_create_command_builder {
-        return new az_batch_certificate_create_command_builder("az batch certificate create", certificateFile, thumbprint);
+        return new az_batch_certificate_create_command_builder("az batch certificate create", 'az_batch_certificate_create_command_result', certificateFile, thumbprint);
     }
 
     /**
@@ -565,7 +565,7 @@ export class az_batch_certificate {
      * @param {string} thumbprint The certificate thumbprint.
      */
     static delete(thumbprint: string): az_batch_certificate_delete_command_builder {
-        return new az_batch_certificate_delete_command_builder("az batch certificate delete", thumbprint);
+        return new az_batch_certificate_delete_command_builder("az batch certificate delete", 'az_batch_certificate_delete_command_result', thumbprint);
     }
 
     /**
@@ -583,7 +583,7 @@ export class az_batch_certificate {
      * ```
      */
     static list(): az_batch_certificate_list_command_builder {
-        return new az_batch_certificate_list_command_builder("az batch certificate list");
+        return new az_batch_certificate_list_command_builder("az batch certificate list", 'az_batch_certificate_list_command_result');
     }
 
     /**
@@ -603,7 +603,7 @@ export class az_batch_certificate {
      * @param {string} thumbprint The certificate thumbprint.
      */
     static show(thumbprint: string): az_batch_certificate_show_command_builder {
-        return new az_batch_certificate_show_command_builder("az batch certificate show", thumbprint);
+        return new az_batch_certificate_show_command_builder("az batch certificate show", 'az_batch_certificate_show_command_result', thumbprint);
     }
 }
 
@@ -622,7 +622,7 @@ export class az_batch_job_all_statistics {
      * ```
      */
     static show(): az_batch_job_all_statistics_show_command_builder {
-        return new az_batch_job_all_statistics_show_command_builder("az batch job all-statistics show");
+        return new az_batch_job_all_statistics_show_command_builder("az batch job all-statistics show", 'az_batch_job_all_statistics_show_command_result');
     }
 }
 
@@ -646,7 +646,7 @@ export class az_batch_job_prep_release_status {
      * @param {string} jobId The ID of the Job.
      */
     static list(jobId: string): az_batch_job_prep_release_status_list_command_builder {
-        return new az_batch_job_prep_release_status_list_command_builder("az batch job prep-release-status list", jobId);
+        return new az_batch_job_prep_release_status_list_command_builder("az batch job prep-release-status list", 'az_batch_job_prep_release_status_list_command_result', jobId);
     }
 }
 
@@ -668,7 +668,7 @@ export class az_batch_job_task_counts {
      * @param {string} jobId The ID of the Job.
      */
     static show(jobId: string): az_batch_job_task_counts_show_command_builder {
-        return new az_batch_job_task_counts_show_command_builder("az batch job task-counts show", jobId);
+        return new az_batch_job_task_counts_show_command_builder("az batch job task-counts show", 'az_batch_job_task_counts_show_command_result', jobId);
     }
 }
 
@@ -702,7 +702,7 @@ export class az_batch_job_schedule {
      * ```
      */
     static create(): az_batch_job_schedule_create_command_builder {
-        return new az_batch_job_schedule_create_command_builder("az batch job-schedule create");
+        return new az_batch_job_schedule_create_command_builder("az batch job-schedule create", 'az_batch_job_schedule_create_command_result');
     }
 
     /**
@@ -725,7 +725,7 @@ export class az_batch_job_schedule {
      * @param {string} jobScheduleId The ID of the Job Schedule to delete.
      */
     static delete(jobScheduleId: string): az_batch_job_schedule_delete_command_builder {
-        return new az_batch_job_schedule_delete_command_builder("az batch job-schedule delete", jobScheduleId);
+        return new az_batch_job_schedule_delete_command_builder("az batch job-schedule delete", 'az_batch_job_schedule_delete_command_result', jobScheduleId);
     }
 
     /**
@@ -747,7 +747,7 @@ export class az_batch_job_schedule {
      * @param {string} jobScheduleId The ID of the Job Schedule to disable.
      */
     static disable(jobScheduleId: string): az_batch_job_schedule_disable_command_builder {
-        return new az_batch_job_schedule_disable_command_builder("az batch job-schedule disable", jobScheduleId);
+        return new az_batch_job_schedule_disable_command_builder("az batch job-schedule disable", 'az_batch_job_schedule_disable_command_result', jobScheduleId);
     }
 
     /**
@@ -769,7 +769,7 @@ export class az_batch_job_schedule {
      * @param {string} jobScheduleId The ID of the Job Schedule to enable.
      */
     static enable(jobScheduleId: string): az_batch_job_schedule_enable_command_builder {
-        return new az_batch_job_schedule_enable_command_builder("az batch job-schedule enable", jobScheduleId);
+        return new az_batch_job_schedule_enable_command_builder("az batch job-schedule enable", 'az_batch_job_schedule_enable_command_result', jobScheduleId);
     }
 
     /**
@@ -788,7 +788,7 @@ export class az_batch_job_schedule {
      * ```
      */
     static list(): az_batch_job_schedule_list_command_builder {
-        return new az_batch_job_schedule_list_command_builder("az batch job-schedule list");
+        return new az_batch_job_schedule_list_command_builder("az batch job-schedule list", 'az_batch_job_schedule_list_command_result');
     }
 
     /**
@@ -826,7 +826,7 @@ export class az_batch_job_schedule {
      * @param {string} jobScheduleId The ID of the Job Schedule to update.
      */
     static reset(jobScheduleId: string): az_batch_job_schedule_reset_command_builder {
-        return new az_batch_job_schedule_reset_command_builder("az batch job-schedule reset", jobScheduleId);
+        return new az_batch_job_schedule_reset_command_builder("az batch job-schedule reset", 'az_batch_job_schedule_reset_command_result', jobScheduleId);
     }
 
     /**
@@ -864,7 +864,7 @@ export class az_batch_job_schedule {
      * @param {string} jobScheduleId The ID of the Job Schedule to update.
      */
     static set(jobScheduleId: string): az_batch_job_schedule_set_command_builder {
-        return new az_batch_job_schedule_set_command_builder("az batch job-schedule set", jobScheduleId);
+        return new az_batch_job_schedule_set_command_builder("az batch job-schedule set", 'az_batch_job_schedule_set_command_result', jobScheduleId);
     }
 
     /**
@@ -889,7 +889,7 @@ export class az_batch_job_schedule {
      * @param {string} jobScheduleId The ID of the Job Schedule to get.
      */
     static show(jobScheduleId: string): az_batch_job_schedule_show_command_builder {
-        return new az_batch_job_schedule_show_command_builder("az batch job-schedule show", jobScheduleId);
+        return new az_batch_job_schedule_show_command_builder("az batch job-schedule show", 'az_batch_job_schedule_show_command_result', jobScheduleId);
     }
 
     /**
@@ -911,7 +911,7 @@ export class az_batch_job_schedule {
      * @param {string} jobScheduleId The ID of the Job Schedule to terminates.
      */
     static stop(jobScheduleId: string): az_batch_job_schedule_stop_command_builder {
-        return new az_batch_job_schedule_stop_command_builder("az batch job-schedule stop", jobScheduleId);
+        return new az_batch_job_schedule_stop_command_builder("az batch job-schedule stop", 'az_batch_job_schedule_stop_command_result', jobScheduleId);
     }
 }
 
@@ -941,7 +941,7 @@ export class az_batch_job {
      * ```
      */
     static create(): az_batch_job_create_command_builder {
-        return new az_batch_job_create_command_builder("az batch job create");
+        return new az_batch_job_create_command_builder("az batch job create", 'az_batch_job_create_command_result');
     }
 
     /**
@@ -964,7 +964,7 @@ export class az_batch_job {
      * @param {string} jobId The ID of the Job to delete.
      */
     static delete(jobId: string): az_batch_job_delete_command_builder {
-        return new az_batch_job_delete_command_builder("az batch job delete", jobId);
+        return new az_batch_job_delete_command_builder("az batch job delete", 'az_batch_job_delete_command_result', jobId);
     }
 
     /**
@@ -987,7 +987,7 @@ export class az_batch_job {
      * @param {string} jobId The ID of the Job to disable.
      */
     static disable(jobId: string): az_batch_job_disable_command_builder {
-        return new az_batch_job_disable_command_builder("az batch job disable", jobId);
+        return new az_batch_job_disable_command_builder("az batch job disable", 'az_batch_job_disable_command_result', jobId);
     }
 
     /**
@@ -1009,7 +1009,7 @@ export class az_batch_job {
      * @param {string} jobId The ID of the Job to enable.
      */
     static enable(jobId: string): az_batch_job_enable_command_builder {
-        return new az_batch_job_enable_command_builder("az batch job enable", jobId);
+        return new az_batch_job_enable_command_builder("az batch job enable", 'az_batch_job_enable_command_result', jobId);
     }
 
     /**
@@ -1029,7 +1029,7 @@ export class az_batch_job {
      * ```
      */
     static list(): az_batch_job_list_command_builder {
-        return new az_batch_job_list_command_builder("az batch job list");
+        return new az_batch_job_list_command_builder("az batch job list", 'az_batch_job_list_command_result');
     }
 
     /**
@@ -1058,7 +1058,7 @@ export class az_batch_job {
      * @param {string} jobId The ID of the Job whose properties you want to update.
      */
     static reset(jobId: string): az_batch_job_reset_command_builder {
-        return new az_batch_job_reset_command_builder("az batch job reset", jobId);
+        return new az_batch_job_reset_command_builder("az batch job reset", 'az_batch_job_reset_command_result', jobId);
     }
 
     /**
@@ -1087,7 +1087,7 @@ export class az_batch_job {
      * @param {string} jobId The ID of the Job whose properties you want to update.
      */
     static set(jobId: string): az_batch_job_set_command_builder {
-        return new az_batch_job_set_command_builder("az batch job set", jobId);
+        return new az_batch_job_set_command_builder("az batch job set", 'az_batch_job_set_command_result', jobId);
     }
 
     /**
@@ -1112,7 +1112,7 @@ export class az_batch_job {
      * @param {string} jobId The ID of the Job.
      */
     static show(jobId: string): az_batch_job_show_command_builder {
-        return new az_batch_job_show_command_builder("az batch job show", jobId);
+        return new az_batch_job_show_command_builder("az batch job show", 'az_batch_job_show_command_result', jobId);
     }
 
     /**
@@ -1135,7 +1135,7 @@ export class az_batch_job {
      * @param {string} jobId The ID of the Job to terminate.
      */
     static stop(jobId: string): az_batch_job_stop_command_builder {
-        return new az_batch_job_stop_command_builder("az batch job stop", jobId);
+        return new az_batch_job_stop_command_builder("az batch job stop", 'az_batch_job_stop_command_result', jobId);
     }
 }
 
@@ -1154,7 +1154,7 @@ export class az_batch_location_quotas {
      * @param {string} location The region from which to display the Batch service quotas.
      */
     static show(location: string): az_batch_location_quotas_show_command_builder {
-        return new az_batch_location_quotas_show_command_builder("az batch location quotas show", location);
+        return new az_batch_location_quotas_show_command_builder("az batch location quotas show", 'az_batch_location_quotas_show_command_result', location);
     }
 }
 
@@ -1185,7 +1185,7 @@ export class az_batch_node_file {
      * @param {string} poolId The ID of the Pool that contains the Compute Node.
      */
     static delete(filePath: string, nodeId: string, poolId: string): az_batch_node_file_delete_command_builder {
-        return new az_batch_node_file_delete_command_builder("az batch node file delete", filePath, nodeId, poolId);
+        return new az_batch_node_file_delete_command_builder("az batch node file delete", 'az_batch_node_file_delete_command_result', filePath, nodeId, poolId);
     }
 
     /**
@@ -1213,7 +1213,7 @@ export class az_batch_node_file {
      * @param {string} poolId The ID of the Pool that contains the Compute Node.
      */
     static download(destination: string, filePath: string, nodeId: string, poolId: string): az_batch_node_file_download_command_builder {
-        return new az_batch_node_file_download_command_builder("az batch node file download", destination, filePath, nodeId, poolId);
+        return new az_batch_node_file_download_command_builder("az batch node file download", 'az_batch_node_file_download_command_result', destination, filePath, nodeId, poolId);
     }
 
     /**
@@ -1236,7 +1236,7 @@ export class az_batch_node_file {
      * @param {string} poolId The ID of the Pool that contains the Compute Node.
      */
     static list(nodeId: string, poolId: string): az_batch_node_file_list_command_builder {
-        return new az_batch_node_file_list_command_builder("az batch node file list", nodeId, poolId);
+        return new az_batch_node_file_list_command_builder("az batch node file list", 'az_batch_node_file_list_command_result', nodeId, poolId);
     }
 
     /**
@@ -1261,7 +1261,7 @@ export class az_batch_node_file {
      * @param {string} poolId The ID of the Pool that contains the Compute Node.
      */
     static show(filePath: string, nodeId: string, poolId: string): az_batch_node_file_show_command_builder {
-        return new az_batch_node_file_show_command_builder("az batch node file show", filePath, nodeId, poolId);
+        return new az_batch_node_file_show_command_builder("az batch node file show", 'az_batch_node_file_show_command_result', filePath, nodeId, poolId);
     }
 }
 
@@ -1286,7 +1286,7 @@ export class az_batch_node_remote_desktop {
      * @param {string} poolId The ID of the Pool that contains the Compute Node.
      */
     static download(destination: string, nodeId: string, poolId: string): az_batch_node_remote_desktop_download_command_builder {
-        return new az_batch_node_remote_desktop_download_command_builder("az batch node remote-desktop download", destination, nodeId, poolId);
+        return new az_batch_node_remote_desktop_download_command_builder("az batch node remote-desktop download", 'az_batch_node_remote_desktop_download_command_result', destination, nodeId, poolId);
     }
 }
 
@@ -1310,7 +1310,7 @@ export class az_batch_node_remote_login_settings {
      * @param {string} poolId The ID of the Pool that contains the Compute Node.
      */
     static show(nodeId: string, poolId: string): az_batch_node_remote_login_settings_show_command_builder {
-        return new az_batch_node_remote_login_settings_show_command_builder("az batch node remote-login-settings show", nodeId, poolId);
+        return new az_batch_node_remote_login_settings_show_command_builder("az batch node remote-login-settings show", 'az_batch_node_remote_login_settings_show_command_result', nodeId, poolId);
     }
 }
 
@@ -1334,7 +1334,7 @@ export class az_batch_node_scheduling {
      * @param {string} poolId The ID of the Pool that contains the Compute Node.
      */
     static disable(nodeId: string, poolId: string): az_batch_node_scheduling_disable_command_builder {
-        return new az_batch_node_scheduling_disable_command_builder("az batch node scheduling disable", nodeId, poolId);
+        return new az_batch_node_scheduling_disable_command_builder("az batch node scheduling disable", 'az_batch_node_scheduling_disable_command_result', nodeId, poolId);
     }
 
     /**
@@ -1354,7 +1354,7 @@ export class az_batch_node_scheduling {
      * @param {string} poolId The ID of the Pool that contains the Compute Node.
      */
     static enable(nodeId: string, poolId: string): az_batch_node_scheduling_enable_command_builder {
-        return new az_batch_node_scheduling_enable_command_builder("az batch node scheduling enable", nodeId, poolId);
+        return new az_batch_node_scheduling_enable_command_builder("az batch node scheduling enable", 'az_batch_node_scheduling_enable_command_result', nodeId, poolId);
     }
 }
 
@@ -1381,7 +1381,7 @@ export class az_batch_node_service_logs {
      * @param {string} poolId The ID of the Pool that contains the Compute Node.
      */
     static upload(nodeId: string, poolId: string): az_batch_node_service_logs_upload_command_builder {
-        return new az_batch_node_service_logs_upload_command_builder("az batch node service-logs upload", nodeId, poolId);
+        return new az_batch_node_service_logs_upload_command_builder("az batch node service-logs upload", 'az_batch_node_service_logs_upload_command_result', nodeId, poolId);
     }
 }
 
@@ -1410,7 +1410,7 @@ export class az_batch_node_user {
      * @param {string} poolId The ID of the Pool that contains the Compute Node.
      */
     static create(nodeId: string, poolId: string): az_batch_node_user_create_command_builder {
-        return new az_batch_node_user_create_command_builder("az batch node user create", nodeId, poolId);
+        return new az_batch_node_user_create_command_builder("az batch node user create", 'az_batch_node_user_create_command_result', nodeId, poolId);
     }
 
     /**
@@ -1433,7 +1433,7 @@ export class az_batch_node_user {
      * @param {string} userName The name of the user Account to delete.
      */
     static delete(nodeId: string, poolId: string, userName: string): az_batch_node_user_delete_command_builder {
-        return new az_batch_node_user_delete_command_builder("az batch node user delete", nodeId, poolId, userName);
+        return new az_batch_node_user_delete_command_builder("az batch node user delete", 'az_batch_node_user_delete_command_result', nodeId, poolId, userName);
     }
 
     /**
@@ -1459,7 +1459,7 @@ export class az_batch_node_user {
      * @param {string} userName The name of the user Account to update.
      */
     static reset(nodeId: string, poolId: string, userName: string): az_batch_node_user_reset_command_builder {
-        return new az_batch_node_user_reset_command_builder("az batch node user reset", nodeId, poolId, userName);
+        return new az_batch_node_user_reset_command_builder("az batch node user reset", 'az_batch_node_user_reset_command_result', nodeId, poolId, userName);
     }
 }
 
@@ -1488,7 +1488,7 @@ export class az_batch_node {
      * @param {string} poolId The ID of the Pool from which you want to remove Compute Nodes.
      */
     static delete(poolId: string): az_batch_node_delete_command_builder {
-        return new az_batch_node_delete_command_builder("az batch node delete", poolId);
+        return new az_batch_node_delete_command_builder("az batch node delete", 'az_batch_node_delete_command_result', poolId);
     }
 
     /**
@@ -1509,7 +1509,7 @@ export class az_batch_node {
      * @param {string} poolId The ID of the Pool from which you want to list Compute Nodes.
      */
     static list(poolId: string): az_batch_node_list_command_builder {
-        return new az_batch_node_list_command_builder("az batch node list", poolId);
+        return new az_batch_node_list_command_builder("az batch node list", 'az_batch_node_list_command_result', poolId);
     }
 
     /**
@@ -1530,7 +1530,7 @@ export class az_batch_node {
      * @param {string} poolId The ID of the Pool that contains the Compute Node.
      */
     static reboot(nodeId: string, poolId: string): az_batch_node_reboot_command_builder {
-        return new az_batch_node_reboot_command_builder("az batch node reboot", nodeId, poolId);
+        return new az_batch_node_reboot_command_builder("az batch node reboot", 'az_batch_node_reboot_command_result', nodeId, poolId);
     }
 
     /**
@@ -1551,7 +1551,7 @@ export class az_batch_node {
      * @param {string} poolId The ID of the Pool that contains the Compute Node.
      */
     static reimage(nodeId: string, poolId: string): az_batch_node_reimage_command_builder {
-        return new az_batch_node_reimage_command_builder("az batch node reimage", nodeId, poolId);
+        return new az_batch_node_reimage_command_builder("az batch node reimage", 'az_batch_node_reimage_command_result', nodeId, poolId);
     }
 
     /**
@@ -1573,7 +1573,7 @@ export class az_batch_node {
      * @param {string} poolId The ID of the Pool that contains the Compute Node.
      */
     static show(nodeId: string, poolId: string): az_batch_node_show_command_builder {
-        return new az_batch_node_show_command_builder("az batch node show", nodeId, poolId);
+        return new az_batch_node_show_command_builder("az batch node show", 'az_batch_node_show_command_result', nodeId, poolId);
     }
 }
 
@@ -1592,7 +1592,7 @@ export class az_batch_pool_all_statistics {
      * ```
      */
     static show(): az_batch_pool_all_statistics_show_command_builder {
-        return new az_batch_pool_all_statistics_show_command_builder("az batch pool all-statistics show");
+        return new az_batch_pool_all_statistics_show_command_builder("az batch pool all-statistics show", 'az_batch_pool_all_statistics_show_command_result');
     }
 }
 
@@ -1613,7 +1613,7 @@ export class az_batch_pool_autoscale {
      * @param {string} poolId The ID of the Pool on which to disable automatic scaling.
      */
     static disable(poolId: string): az_batch_pool_autoscale_disable_command_builder {
-        return new az_batch_pool_autoscale_disable_command_builder("az batch pool autoscale disable", poolId);
+        return new az_batch_pool_autoscale_disable_command_builder("az batch pool autoscale disable", 'az_batch_pool_autoscale_disable_command_result', poolId);
     }
 
     /**
@@ -1637,7 +1637,7 @@ export class az_batch_pool_autoscale {
      * @param {string} poolId The ID of the Pool on which to enable automatic scaling.
      */
     static enable(poolId: string): az_batch_pool_autoscale_enable_command_builder {
-        return new az_batch_pool_autoscale_enable_command_builder("az batch pool autoscale enable", poolId);
+        return new az_batch_pool_autoscale_enable_command_builder("az batch pool autoscale enable", 'az_batch_pool_autoscale_enable_command_result', poolId);
     }
 
     /**
@@ -1657,7 +1657,7 @@ export class az_batch_pool_autoscale {
      * @param {string} poolId The ID of the Pool on which to evaluate the automatic scaling formula.
      */
     static evaluate(autoScaleFormula: string, poolId: string): az_batch_pool_autoscale_evaluate_command_builder {
-        return new az_batch_pool_autoscale_evaluate_command_builder("az batch pool autoscale evaluate", autoScaleFormula, poolId);
+        return new az_batch_pool_autoscale_evaluate_command_builder("az batch pool autoscale evaluate", 'az_batch_pool_autoscale_evaluate_command_result', autoScaleFormula, poolId);
     }
 }
 
@@ -1677,7 +1677,7 @@ export class az_batch_pool_node_counts {
      * ```
      */
     static list(): az_batch_pool_node_counts_list_command_builder {
-        return new az_batch_pool_node_counts_list_command_builder("az batch pool node-counts list");
+        return new az_batch_pool_node_counts_list_command_builder("az batch pool node-counts list", 'az_batch_pool_node_counts_list_command_result');
     }
 }
 
@@ -1697,7 +1697,7 @@ export class az_batch_pool_supported_images {
      * ```
      */
     static list(): az_batch_pool_supported_images_list_command_builder {
-        return new az_batch_pool_supported_images_list_command_builder("az batch pool supported-images list");
+        return new az_batch_pool_supported_images_list_command_builder("az batch pool supported-images list", 'az_batch_pool_supported_images_list_command_result');
     }
 }
 
@@ -1719,7 +1719,7 @@ export class az_batch_pool_usage_metrics {
      * ```
      */
     static list(): az_batch_pool_usage_metrics_list_command_builder {
-        return new az_batch_pool_usage_metrics_list_command_builder("az batch pool usage-metrics list");
+        return new az_batch_pool_usage_metrics_list_command_builder("az batch pool usage-metrics list", 'az_batch_pool_usage_metrics_list_command_result');
     }
 }
 
@@ -1759,7 +1759,7 @@ export class az_batch_pool {
      * ```
      */
     static create(): az_batch_pool_create_command_builder {
-        return new az_batch_pool_create_command_builder("az batch pool create");
+        return new az_batch_pool_create_command_builder("az batch pool create", 'az_batch_pool_create_command_result');
     }
 
     /**
@@ -1782,7 +1782,7 @@ export class az_batch_pool {
      * @param {string} poolId The ID of the Pool to delete.
      */
     static delete(poolId: string): az_batch_pool_delete_command_builder {
-        return new az_batch_pool_delete_command_builder("az batch pool delete", poolId);
+        return new az_batch_pool_delete_command_builder("az batch pool delete", 'az_batch_pool_delete_command_result', poolId);
     }
 
     /**
@@ -1801,7 +1801,7 @@ export class az_batch_pool {
      * ```
      */
     static list(): az_batch_pool_list_command_builder {
-        return new az_batch_pool_list_command_builder("az batch pool list");
+        return new az_batch_pool_list_command_builder("az batch pool list", 'az_batch_pool_list_command_result');
     }
 
     /**
@@ -1827,7 +1827,7 @@ export class az_batch_pool {
      * @param {string} poolId The ID of the pool to update.
      */
     static reset(poolId: string): az_batch_pool_reset_command_builder {
-        return new az_batch_pool_reset_command_builder("az batch pool reset", poolId);
+        return new az_batch_pool_reset_command_builder("az batch pool reset", 'az_batch_pool_reset_command_result', poolId);
     }
 
     /**
@@ -1854,7 +1854,7 @@ export class az_batch_pool {
      * @param {string} poolId The ID of the pool.
      */
     static resize(poolId: string): az_batch_pool_resize_command_builder {
-        return new az_batch_pool_resize_command_builder("az batch pool resize", poolId);
+        return new az_batch_pool_resize_command_builder("az batch pool resize", 'az_batch_pool_resize_command_result', poolId);
     }
 
     /**
@@ -1885,7 +1885,7 @@ export class az_batch_pool {
      * @param {string} poolId The ID of the Pool to update.
      */
     static set(poolId: string): az_batch_pool_set_command_builder {
-        return new az_batch_pool_set_command_builder("az batch pool set", poolId);
+        return new az_batch_pool_set_command_builder("az batch pool set", 'az_batch_pool_set_command_result', poolId);
     }
 
     /**
@@ -1910,7 +1910,7 @@ export class az_batch_pool {
      * @param {string} poolId The ID of the Pool to get.
      */
     static show(poolId: string): az_batch_pool_show_command_builder {
-        return new az_batch_pool_show_command_builder("az batch pool show", poolId);
+        return new az_batch_pool_show_command_builder("az batch pool show", 'az_batch_pool_show_command_result', poolId);
     }
 }
 
@@ -1937,7 +1937,7 @@ export class az_batch_task_file {
      * @param {string} taskId The ID of the Task whose file you want to delete.
      */
     static delete(filePath: string, jobId: string, taskId: string): az_batch_task_file_delete_command_builder {
-        return new az_batch_task_file_delete_command_builder("az batch task file delete", filePath, jobId, taskId);
+        return new az_batch_task_file_delete_command_builder("az batch task file delete", 'az_batch_task_file_delete_command_result', filePath, jobId, taskId);
     }
 
     /**
@@ -1965,7 +1965,7 @@ export class az_batch_task_file {
      * @param {string} taskId The ID of the Task whose file you want to retrieve.
      */
     static download(destination: string, filePath: string, jobId: string, taskId: string): az_batch_task_file_download_command_builder {
-        return new az_batch_task_file_download_command_builder("az batch task file download", destination, filePath, jobId, taskId);
+        return new az_batch_task_file_download_command_builder("az batch task file download", 'az_batch_task_file_download_command_result', destination, filePath, jobId, taskId);
     }
 
     /**
@@ -1988,7 +1988,7 @@ export class az_batch_task_file {
      * @param {string} taskId The ID of the Task whose files you want to list.
      */
     static list(jobId: string, taskId: string): az_batch_task_file_list_command_builder {
-        return new az_batch_task_file_list_command_builder("az batch task file list", jobId, taskId);
+        return new az_batch_task_file_list_command_builder("az batch task file list", 'az_batch_task_file_list_command_result', jobId, taskId);
     }
 
     /**
@@ -2013,7 +2013,7 @@ export class az_batch_task_file {
      * @param {string} taskId The ID of the Task whose file you want to get the properties of.
      */
     static show(filePath: string, jobId: string, taskId: string): az_batch_task_file_show_command_builder {
-        return new az_batch_task_file_show_command_builder("az batch task file show", filePath, jobId, taskId);
+        return new az_batch_task_file_show_command_builder("az batch task file show", 'az_batch_task_file_show_command_result', filePath, jobId, taskId);
     }
 }
 
@@ -2038,7 +2038,7 @@ export class az_batch_task_subtask {
      * @param {string} taskId The ID of the Task.
      */
     static list(jobId: string, taskId: string): az_batch_task_subtask_list_command_builder {
-        return new az_batch_task_subtask_list_command_builder("az batch task subtask list", jobId, taskId);
+        return new az_batch_task_subtask_list_command_builder("az batch task subtask list", 'az_batch_task_subtask_list_command_result', jobId, taskId);
     }
 }
 
@@ -2069,7 +2069,7 @@ export class az_batch_task {
      * @param {string} jobId The ID of the job containing the task.
      */
     static create(jobId: string): az_batch_task_create_command_builder {
-        return new az_batch_task_create_command_builder("az batch task create", jobId);
+        return new az_batch_task_create_command_builder("az batch task create", 'az_batch_task_create_command_result', jobId);
     }
 
     /**
@@ -2094,7 +2094,7 @@ export class az_batch_task {
      * @param {string} taskId The ID of the Task to delete.
      */
     static delete(jobId: string, taskId: string): az_batch_task_delete_command_builder {
-        return new az_batch_task_delete_command_builder("az batch task delete", jobId, taskId);
+        return new az_batch_task_delete_command_builder("az batch task delete", 'az_batch_task_delete_command_result', jobId, taskId);
     }
 
     /**
@@ -2116,7 +2116,7 @@ export class az_batch_task {
      * @param {string} jobId The ID of the Job.
      */
     static list(jobId: string): az_batch_task_list_command_builder {
-        return new az_batch_task_list_command_builder("az batch task list", jobId);
+        return new az_batch_task_list_command_builder("az batch task list", 'az_batch_task_list_command_result', jobId);
     }
 
     /**
@@ -2140,7 +2140,7 @@ export class az_batch_task {
      * @param {string} taskId The ID of the Task to reactivate.
      */
     static reactivate(jobId: string, taskId: string): az_batch_task_reactivate_command_builder {
-        return new az_batch_task_reactivate_command_builder("az batch task reactivate", jobId, taskId);
+        return new az_batch_task_reactivate_command_builder("az batch task reactivate", 'az_batch_task_reactivate_command_result', jobId, taskId);
     }
 
     /**
@@ -2168,7 +2168,7 @@ export class az_batch_task {
      * @param {string} taskId The ID of the Task to update.
      */
     static reset(jobId: string, taskId: string): az_batch_task_reset_command_builder {
-        return new az_batch_task_reset_command_builder("az batch task reset", jobId, taskId);
+        return new az_batch_task_reset_command_builder("az batch task reset", 'az_batch_task_reset_command_result', jobId, taskId);
     }
 
     /**
@@ -2195,7 +2195,7 @@ export class az_batch_task {
      * @param {string} taskId The ID of the Task to get information about.
      */
     static show(jobId: string, taskId: string): az_batch_task_show_command_builder {
-        return new az_batch_task_show_command_builder("az batch task show", jobId, taskId);
+        return new az_batch_task_show_command_builder("az batch task show", 'az_batch_task_show_command_result', jobId, taskId);
     }
 
     /**
@@ -2219,7 +2219,7 @@ export class az_batch_task {
      * @param {string} taskId The ID of the Task to terminate.
      */
     static stop(jobId: string, taskId: string): az_batch_task_stop_command_builder {
-        return new az_batch_task_stop_command_builder("az batch task stop", jobId, taskId);
+        return new az_batch_task_stop_command_builder("az batch task stop", 'az_batch_task_stop_command_result', jobId, taskId);
     }
 }
 
@@ -2241,8 +2241,8 @@ export class az_batch {
  * @param {string} resourceGroup Name of the resource group.
  */
 class az_batch_account_autostorage_keys_sync_command_builder extends CommandBuilder<az_batch_account_autostorage_keys_sync_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2281,8 +2281,8 @@ class az_batch_account_autostorage_keys_sync_command_builder extends CommandBuil
  * @param {string} resourceGroup Name of the resource group.
  */
 class az_batch_account_keys_list_command_builder extends CommandBuilder<az_batch_account_keys_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2328,8 +2328,8 @@ class az_batch_account_keys_list_command_builder extends CommandBuilder<az_batch
  * @param {string} resourceGroup Name of the resource group.
  */
 class az_batch_account_keys_renew_command_builder extends CommandBuilder<az_batch_account_keys_renew_command_result> {
-    constructor(commandPath: string, keyName: 'Primary' | 'Secondary', name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, keyName: 'Primary' | 'Secondary', name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.keyName(keyName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2384,8 +2384,8 @@ class az_batch_account_keys_renew_command_builder extends CommandBuilder<az_batc
  * @param {string} resourceGroup Name of the resource group.
  */
 class az_batch_account_create_command_builder extends CommandBuilder<az_batch_account_create_command_result> {
-    constructor(commandPath: string, location: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2480,8 +2480,8 @@ class az_batch_account_create_command_builder extends CommandBuilder<az_batch_ac
  * @param {string} resourceGroup Name of the resource group.
  */
 class az_batch_account_delete_command_builder extends CommandBuilder<az_batch_account_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2528,8 +2528,8 @@ class az_batch_account_delete_command_builder extends CommandBuilder<az_batch_ac
  * ```
  */
 class az_batch_account_list_command_builder extends CommandBuilder<az_batch_account_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -2567,8 +2567,8 @@ class az_batch_account_list_command_builder extends CommandBuilder<az_batch_acco
  * @param {string} resourceGroup Name of the resource group.
  */
 class az_batch_account_login_command_builder extends CommandBuilder<az_batch_account_login_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2623,8 +2623,8 @@ class az_batch_account_login_command_builder extends CommandBuilder<az_batch_acc
  * @param {string} resourceGroup Name of the resource group.
  */
 class az_batch_account_set_command_builder extends CommandBuilder<az_batch_account_set_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2690,8 +2690,8 @@ class az_batch_account_set_command_builder extends CommandBuilder<az_batch_accou
  * ```
  */
 class az_batch_account_show_command_builder extends CommandBuilder<az_batch_account_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the batch account to show. If not specified will display currently set account. */
@@ -2739,8 +2739,8 @@ class az_batch_account_show_command_builder extends CommandBuilder<az_batch_acco
  * @param {string} versionName The version of the application.
  */
 class az_batch_application_package_activate_command_builder extends CommandBuilder<az_batch_application_package_activate_command_result> {
-    constructor(commandPath: string, applicationName: string, format: string, name: string, resourceGroup: string, versionName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, applicationName: string, format: string, name: string, resourceGroup: string, versionName: string) {
+        super(commandPath, resultDataTypeName);
         this.applicationName(applicationName)
         this.format(format)
         this.name(name)
@@ -2805,8 +2805,8 @@ class az_batch_application_package_activate_command_builder extends CommandBuild
  * @param {string} versionName The version name of the application.
  */
 class az_batch_application_package_create_command_builder extends CommandBuilder<az_batch_application_package_create_command_result> {
-    constructor(commandPath: string, applicationName: string, name: string, packageFile: string, resourceGroup: string, versionName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, applicationName: string, name: string, packageFile: string, resourceGroup: string, versionName: string) {
+        super(commandPath, resultDataTypeName);
         this.applicationName(applicationName)
         this.name(name)
         this.packageFile(packageFile)
@@ -2870,8 +2870,8 @@ class az_batch_application_package_create_command_builder extends CommandBuilder
  * @param {string} versionName The version of the application.
  */
 class az_batch_application_package_delete_command_builder extends CommandBuilder<az_batch_application_package_delete_command_result> {
-    constructor(commandPath: string, applicationName: string, name: string, resourceGroup: string, versionName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, applicationName: string, name: string, resourceGroup: string, versionName: string) {
+        super(commandPath, resultDataTypeName);
         this.applicationName(applicationName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2933,8 +2933,8 @@ class az_batch_application_package_delete_command_builder extends CommandBuilder
  * @param {string} resourceGroup Name of the resource group.
  */
 class az_batch_application_package_list_command_builder extends CommandBuilder<az_batch_application_package_list_command_result> {
-    constructor(commandPath: string, applicationName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, applicationName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.applicationName(applicationName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2996,8 +2996,8 @@ class az_batch_application_package_list_command_builder extends CommandBuilder<a
  * @param {string} versionName The version of the application.
  */
 class az_batch_application_package_show_command_builder extends CommandBuilder<az_batch_application_package_show_command_result> {
-    constructor(commandPath: string, applicationName: string, name: string, resourceGroup: string, versionName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, applicationName: string, name: string, resourceGroup: string, versionName: string) {
+        super(commandPath, resultDataTypeName);
         this.applicationName(applicationName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3054,8 +3054,8 @@ class az_batch_application_package_show_command_builder extends CommandBuilder<a
  * ```
  */
 class az_batch_application_summary_list_command_builder extends CommandBuilder<az_batch_application_summary_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Batch service endpoint. Alternatively, set by environment variable: AZURE_BATCH_ENDPOINT. */
@@ -3105,8 +3105,8 @@ class az_batch_application_summary_list_command_builder extends CommandBuilder<a
  * @param {string} applicationId The ID of the Application.
  */
 class az_batch_application_summary_show_command_builder extends CommandBuilder<az_batch_application_summary_show_command_result> {
-    constructor(commandPath: string, applicationId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, applicationId: string) {
+        super(commandPath, resultDataTypeName);
         this.applicationId(applicationId)
     }
 
@@ -3164,8 +3164,8 @@ class az_batch_application_summary_show_command_builder extends CommandBuilder<a
  * @param {string} resourceGroup Name of the resource group.
  */
 class az_batch_application_create_command_builder extends CommandBuilder<az_batch_application_create_command_result> {
-    constructor(commandPath: string, applicationName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, applicationName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.applicationName(applicationName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3219,8 +3219,8 @@ class az_batch_application_create_command_builder extends CommandBuilder<az_batc
  * @param {string} resourceGroup Name of the resource group.
  */
 class az_batch_application_delete_command_builder extends CommandBuilder<az_batch_application_delete_command_result> {
-    constructor(commandPath: string, applicationName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, applicationName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.applicationName(applicationName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3273,8 +3273,8 @@ class az_batch_application_delete_command_builder extends CommandBuilder<az_batc
  * @param {string} resourceGroup Name of the resource group.
  */
 class az_batch_application_list_command_builder extends CommandBuilder<az_batch_application_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -3329,8 +3329,8 @@ class az_batch_application_list_command_builder extends CommandBuilder<az_batch_
  * @param {string} resourceGroup Name of the resource group.
  */
 class az_batch_application_set_command_builder extends CommandBuilder<az_batch_application_set_command_result> {
-    constructor(commandPath: string, applicationName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, applicationName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.applicationName(applicationName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3396,8 +3396,8 @@ class az_batch_application_set_command_builder extends CommandBuilder<az_batch_a
  * @param {string} resourceGroup Name of the resource group.
  */
 class az_batch_application_show_command_builder extends CommandBuilder<az_batch_application_show_command_result> {
-    constructor(commandPath: string, applicationName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, applicationName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.applicationName(applicationName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3452,8 +3452,8 @@ class az_batch_application_show_command_builder extends CommandBuilder<az_batch_
  * @param {string} thumbprint The certificate thumbprint.
  */
 class az_batch_certificate_create_command_builder extends CommandBuilder<az_batch_certificate_create_command_result> {
-    constructor(commandPath: string, certificateFile: string, thumbprint: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, certificateFile: string, thumbprint: string) {
+        super(commandPath, resultDataTypeName);
         this.certificateFile(certificateFile)
         this.thumbprint(thumbprint)
     }
@@ -3518,8 +3518,8 @@ class az_batch_certificate_create_command_builder extends CommandBuilder<az_batc
  * @param {string} thumbprint The certificate thumbprint.
  */
 class az_batch_certificate_delete_command_builder extends CommandBuilder<az_batch_certificate_delete_command_result> {
-    constructor(commandPath: string, thumbprint: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, thumbprint: string) {
+        super(commandPath, resultDataTypeName);
         this.thumbprint(thumbprint)
     }
 
@@ -3581,8 +3581,8 @@ class az_batch_certificate_delete_command_builder extends CommandBuilder<az_batc
  * ```
  */
 class az_batch_certificate_list_command_builder extends CommandBuilder<az_batch_certificate_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Batch service endpoint. Alternatively, set by environment variable: AZURE_BATCH_ENDPOINT. */
@@ -3645,8 +3645,8 @@ class az_batch_certificate_list_command_builder extends CommandBuilder<az_batch_
  * @param {string} thumbprint The certificate thumbprint.
  */
 class az_batch_certificate_show_command_builder extends CommandBuilder<az_batch_certificate_show_command_result> {
-    constructor(commandPath: string, thumbprint: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, thumbprint: string) {
+        super(commandPath, resultDataTypeName);
         this.thumbprint(thumbprint)
     }
 
@@ -3706,8 +3706,8 @@ class az_batch_certificate_show_command_builder extends CommandBuilder<az_batch_
  * ```
  */
 class az_batch_job_all_statistics_show_command_builder extends CommandBuilder<az_batch_job_all_statistics_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Batch service endpoint. Alternatively, set by environment variable: AZURE_BATCH_ENDPOINT. */
@@ -3759,8 +3759,8 @@ class az_batch_job_all_statistics_show_command_builder extends CommandBuilder<az
  * @param {string} jobId The ID of the Job.
  */
 class az_batch_job_prep_release_status_list_command_builder extends CommandBuilder<az_batch_job_prep_release_status_list_command_result> {
-    constructor(commandPath: string, jobId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
     }
 
@@ -3829,8 +3829,8 @@ class az_batch_job_prep_release_status_list_command_builder extends CommandBuild
  * @param {string} jobId The ID of the Job.
  */
 class az_batch_job_task_counts_show_command_builder extends CommandBuilder<az_batch_job_task_counts_show_command_result> {
-    constructor(commandPath: string, jobId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
     }
 
@@ -3899,8 +3899,8 @@ class az_batch_job_task_counts_show_command_builder extends CommandBuilder<az_ba
  * ```
  */
 class az_batch_job_schedule_create_command_builder extends CommandBuilder<az_batch_job_schedule_create_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Batch service endpoint. Alternatively, set by environment variable: AZURE_BATCH_ENDPOINT. */
@@ -4044,8 +4044,8 @@ class az_batch_job_schedule_create_command_builder extends CommandBuilder<az_bat
  * @param {string} jobScheduleId The ID of the Job Schedule to delete.
  */
 class az_batch_job_schedule_delete_command_builder extends CommandBuilder<az_batch_job_schedule_delete_command_result> {
-    constructor(commandPath: string, jobScheduleId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobScheduleId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobScheduleId(jobScheduleId)
     }
 
@@ -4129,8 +4129,8 @@ class az_batch_job_schedule_delete_command_builder extends CommandBuilder<az_bat
  * @param {string} jobScheduleId The ID of the Job Schedule to disable.
  */
 class az_batch_job_schedule_disable_command_builder extends CommandBuilder<az_batch_job_schedule_disable_command_result> {
-    constructor(commandPath: string, jobScheduleId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobScheduleId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobScheduleId(jobScheduleId)
     }
 
@@ -4208,8 +4208,8 @@ class az_batch_job_schedule_disable_command_builder extends CommandBuilder<az_ba
  * @param {string} jobScheduleId The ID of the Job Schedule to enable.
  */
 class az_batch_job_schedule_enable_command_builder extends CommandBuilder<az_batch_job_schedule_enable_command_result> {
-    constructor(commandPath: string, jobScheduleId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobScheduleId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobScheduleId(jobScheduleId)
     }
 
@@ -4284,8 +4284,8 @@ class az_batch_job_schedule_enable_command_builder extends CommandBuilder<az_bat
  * ```
  */
 class az_batch_job_schedule_list_command_builder extends CommandBuilder<az_batch_job_schedule_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Batch service endpoint. Alternatively, set by environment variable: AZURE_BATCH_ENDPOINT. */
@@ -4372,8 +4372,8 @@ class az_batch_job_schedule_list_command_builder extends CommandBuilder<az_batch
  * @param {string} jobScheduleId The ID of the Job Schedule to update.
  */
 class az_batch_job_schedule_reset_command_builder extends CommandBuilder<az_batch_job_schedule_reset_command_result> {
-    constructor(commandPath: string, jobScheduleId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobScheduleId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobScheduleId(jobScheduleId)
     }
 
@@ -4563,8 +4563,8 @@ class az_batch_job_schedule_reset_command_builder extends CommandBuilder<az_batc
  * @param {string} jobScheduleId The ID of the Job Schedule to update.
  */
 class az_batch_job_schedule_set_command_builder extends CommandBuilder<az_batch_job_schedule_set_command_result> {
-    constructor(commandPath: string, jobScheduleId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobScheduleId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobScheduleId(jobScheduleId)
     }
 
@@ -4741,8 +4741,8 @@ class az_batch_job_schedule_set_command_builder extends CommandBuilder<az_batch_
  * @param {string} jobScheduleId The ID of the Job Schedule to get.
  */
 class az_batch_job_schedule_show_command_builder extends CommandBuilder<az_batch_job_schedule_show_command_result> {
-    constructor(commandPath: string, jobScheduleId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobScheduleId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobScheduleId(jobScheduleId)
     }
 
@@ -4838,8 +4838,8 @@ class az_batch_job_schedule_show_command_builder extends CommandBuilder<az_batch
  * @param {string} jobScheduleId The ID of the Job Schedule to terminates.
  */
 class az_batch_job_schedule_stop_command_builder extends CommandBuilder<az_batch_job_schedule_stop_command_result> {
-    constructor(commandPath: string, jobScheduleId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobScheduleId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobScheduleId(jobScheduleId)
     }
 
@@ -4922,8 +4922,8 @@ class az_batch_job_schedule_stop_command_builder extends CommandBuilder<az_batch
  * ```
  */
 class az_batch_job_create_command_builder extends CommandBuilder<az_batch_job_create_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Batch service endpoint. Alternatively, set by environment variable: AZURE_BATCH_ENDPOINT. */
@@ -5043,8 +5043,8 @@ class az_batch_job_create_command_builder extends CommandBuilder<az_batch_job_cr
  * @param {string} jobId The ID of the Job to delete.
  */
 class az_batch_job_delete_command_builder extends CommandBuilder<az_batch_job_delete_command_result> {
-    constructor(commandPath: string, jobId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
     }
 
@@ -5129,8 +5129,8 @@ class az_batch_job_delete_command_builder extends CommandBuilder<az_batch_job_de
  * @param {string} jobId The ID of the Job to disable.
  */
 class az_batch_job_disable_command_builder extends CommandBuilder<az_batch_job_disable_command_result> {
-    constructor(commandPath: string, jobId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
     }
 
@@ -5214,8 +5214,8 @@ class az_batch_job_disable_command_builder extends CommandBuilder<az_batch_job_d
  * @param {string} jobId The ID of the Job to enable.
  */
 class az_batch_job_enable_command_builder extends CommandBuilder<az_batch_job_enable_command_result> {
-    constructor(commandPath: string, jobId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
     }
 
@@ -5291,8 +5291,8 @@ class az_batch_job_enable_command_builder extends CommandBuilder<az_batch_job_en
  * ```
  */
 class az_batch_job_list_command_builder extends CommandBuilder<az_batch_job_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Batch service endpoint. Alternatively, set by environment variable: AZURE_BATCH_ENDPOINT. */
@@ -5376,8 +5376,8 @@ class az_batch_job_list_command_builder extends CommandBuilder<az_batch_job_list
  * @param {string} jobId The ID of the Job whose properties you want to update.
  */
 class az_batch_job_reset_command_builder extends CommandBuilder<az_batch_job_reset_command_result> {
-    constructor(commandPath: string, jobId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
     }
 
@@ -5504,8 +5504,8 @@ class az_batch_job_reset_command_builder extends CommandBuilder<az_batch_job_res
  * @param {string} jobId The ID of the Job whose properties you want to update.
  */
 class az_batch_job_set_command_builder extends CommandBuilder<az_batch_job_set_command_result> {
-    constructor(commandPath: string, jobId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
     }
 
@@ -5628,8 +5628,8 @@ class az_batch_job_set_command_builder extends CommandBuilder<az_batch_job_set_c
  * @param {string} jobId The ID of the Job.
  */
 class az_batch_job_show_command_builder extends CommandBuilder<az_batch_job_show_command_result> {
-    constructor(commandPath: string, jobId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
     }
 
@@ -5726,8 +5726,8 @@ class az_batch_job_show_command_builder extends CommandBuilder<az_batch_job_show
  * @param {string} jobId The ID of the Job to terminate.
  */
 class az_batch_job_stop_command_builder extends CommandBuilder<az_batch_job_stop_command_result> {
-    constructor(commandPath: string, jobId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
     }
 
@@ -5805,8 +5805,8 @@ class az_batch_job_stop_command_builder extends CommandBuilder<az_batch_job_stop
  * @param {string} location The region from which to display the Batch service quotas.
  */
 class az_batch_location_quotas_show_command_builder extends CommandBuilder<az_batch_location_quotas_show_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -5850,8 +5850,8 @@ class az_batch_location_quotas_show_command_builder extends CommandBuilder<az_ba
  * @param {string} poolId The ID of the Pool that contains the Compute Node.
  */
 class az_batch_node_file_delete_command_builder extends CommandBuilder<az_batch_node_file_delete_command_result> {
-    constructor(commandPath: string, filePath: string, nodeId: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, filePath: string, nodeId: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.filePath(filePath)
         this.nodeId(nodeId)
         this.poolId(poolId)
@@ -5937,8 +5937,8 @@ class az_batch_node_file_delete_command_builder extends CommandBuilder<az_batch_
  * @param {string} poolId The ID of the Pool that contains the Compute Node.
  */
 class az_batch_node_file_download_command_builder extends CommandBuilder<az_batch_node_file_download_command_result> {
-    constructor(commandPath: string, destination: string, filePath: string, nodeId: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, destination: string, filePath: string, nodeId: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.destination(destination)
         this.filePath(filePath)
         this.nodeId(nodeId)
@@ -6038,8 +6038,8 @@ class az_batch_node_file_download_command_builder extends CommandBuilder<az_batc
  * @param {string} poolId The ID of the Pool that contains the Compute Node.
  */
 class az_batch_node_file_list_command_builder extends CommandBuilder<az_batch_node_file_list_command_result> {
-    constructor(commandPath: string, nodeId: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nodeId: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.nodeId(nodeId)
         this.poolId(poolId)
     }
@@ -6121,8 +6121,8 @@ class az_batch_node_file_list_command_builder extends CommandBuilder<az_batch_no
  * @param {string} poolId The ID of the Pool that contains the Compute Node.
  */
 class az_batch_node_file_show_command_builder extends CommandBuilder<az_batch_node_file_show_command_result> {
-    constructor(commandPath: string, filePath: string, nodeId: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, filePath: string, nodeId: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.filePath(filePath)
         this.nodeId(nodeId)
         this.poolId(poolId)
@@ -6208,8 +6208,8 @@ class az_batch_node_file_show_command_builder extends CommandBuilder<az_batch_no
  * @param {string} poolId The ID of the Pool that contains the Compute Node.
  */
 class az_batch_node_remote_desktop_download_command_builder extends CommandBuilder<az_batch_node_remote_desktop_download_command_result> {
-    constructor(commandPath: string, destination: string, nodeId: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, destination: string, nodeId: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.destination(destination)
         this.nodeId(nodeId)
         this.poolId(poolId)
@@ -6276,8 +6276,8 @@ class az_batch_node_remote_desktop_download_command_builder extends CommandBuild
  * @param {string} poolId The ID of the Pool that contains the Compute Node.
  */
 class az_batch_node_remote_login_settings_show_command_builder extends CommandBuilder<az_batch_node_remote_login_settings_show_command_result> {
-    constructor(commandPath: string, nodeId: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nodeId: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.nodeId(nodeId)
         this.poolId(poolId)
     }
@@ -6343,8 +6343,8 @@ class az_batch_node_remote_login_settings_show_command_builder extends CommandBu
  * @param {string} poolId The ID of the Pool that contains the Compute Node.
  */
 class az_batch_node_scheduling_disable_command_builder extends CommandBuilder<az_batch_node_scheduling_disable_command_result> {
-    constructor(commandPath: string, nodeId: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nodeId: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.nodeId(nodeId)
         this.poolId(poolId)
     }
@@ -6409,8 +6409,8 @@ class az_batch_node_scheduling_disable_command_builder extends CommandBuilder<az
  * @param {string} poolId The ID of the Pool that contains the Compute Node.
  */
 class az_batch_node_scheduling_enable_command_builder extends CommandBuilder<az_batch_node_scheduling_enable_command_result> {
-    constructor(commandPath: string, nodeId: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nodeId: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.nodeId(nodeId)
         this.poolId(poolId)
     }
@@ -6473,8 +6473,8 @@ class az_batch_node_scheduling_enable_command_builder extends CommandBuilder<az_
  * @param {string} poolId The ID of the Pool that contains the Compute Node.
  */
 class az_batch_node_service_logs_upload_command_builder extends CommandBuilder<az_batch_node_service_logs_upload_command_result> {
-    constructor(commandPath: string, nodeId: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nodeId: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.nodeId(nodeId)
         this.poolId(poolId)
     }
@@ -6563,8 +6563,8 @@ class az_batch_node_service_logs_upload_command_builder extends CommandBuilder<a
  * @param {string} poolId The ID of the Pool that contains the Compute Node.
  */
 class az_batch_node_user_create_command_builder extends CommandBuilder<az_batch_node_user_create_command_result> {
-    constructor(commandPath: string, nodeId: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nodeId: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.nodeId(nodeId)
         this.poolId(poolId)
     }
@@ -6662,8 +6662,8 @@ class az_batch_node_user_create_command_builder extends CommandBuilder<az_batch_
  * @param {string} userName The name of the user Account to delete.
  */
 class az_batch_node_user_delete_command_builder extends CommandBuilder<az_batch_node_user_delete_command_result> {
-    constructor(commandPath: string, nodeId: string, poolId: string, userName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nodeId: string, poolId: string, userName: string) {
+        super(commandPath, resultDataTypeName);
         this.nodeId(nodeId)
         this.poolId(poolId)
         this.userName(userName)
@@ -6741,8 +6741,8 @@ class az_batch_node_user_delete_command_builder extends CommandBuilder<az_batch_
  * @param {string} userName The name of the user Account to update.
  */
 class az_batch_node_user_reset_command_builder extends CommandBuilder<az_batch_node_user_reset_command_result> {
-    constructor(commandPath: string, nodeId: string, poolId: string, userName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nodeId: string, poolId: string, userName: string) {
+        super(commandPath, resultDataTypeName);
         this.nodeId(nodeId)
         this.poolId(poolId)
         this.userName(userName)
@@ -6838,8 +6838,8 @@ class az_batch_node_user_reset_command_builder extends CommandBuilder<az_batch_n
  * @param {string} poolId The ID of the Pool from which you want to remove Compute Nodes.
  */
 class az_batch_node_delete_command_builder extends CommandBuilder<az_batch_node_delete_command_result> {
-    constructor(commandPath: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.poolId(poolId)
     }
 
@@ -6940,8 +6940,8 @@ class az_batch_node_delete_command_builder extends CommandBuilder<az_batch_node_
  * @param {string} poolId The ID of the Pool from which you want to list Compute Nodes.
  */
 class az_batch_node_list_command_builder extends CommandBuilder<az_batch_node_list_command_result> {
-    constructor(commandPath: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.poolId(poolId)
     }
 
@@ -7012,8 +7012,8 @@ class az_batch_node_list_command_builder extends CommandBuilder<az_batch_node_li
  * @param {string} poolId The ID of the Pool that contains the Compute Node.
  */
 class az_batch_node_reboot_command_builder extends CommandBuilder<az_batch_node_reboot_command_result> {
-    constructor(commandPath: string, nodeId: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nodeId: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.nodeId(nodeId)
         this.poolId(poolId)
     }
@@ -7079,8 +7079,8 @@ class az_batch_node_reboot_command_builder extends CommandBuilder<az_batch_node_
  * @param {string} poolId The ID of the Pool that contains the Compute Node.
  */
 class az_batch_node_reimage_command_builder extends CommandBuilder<az_batch_node_reimage_command_result> {
-    constructor(commandPath: string, nodeId: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nodeId: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.nodeId(nodeId)
         this.poolId(poolId)
     }
@@ -7147,8 +7147,8 @@ class az_batch_node_reimage_command_builder extends CommandBuilder<az_batch_node
  * @param {string} poolId The ID of the Pool that contains the Compute Node.
  */
 class az_batch_node_show_command_builder extends CommandBuilder<az_batch_node_show_command_result> {
-    constructor(commandPath: string, nodeId: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nodeId: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.nodeId(nodeId)
         this.poolId(poolId)
     }
@@ -7215,8 +7215,8 @@ class az_batch_node_show_command_builder extends CommandBuilder<az_batch_node_sh
  * ```
  */
 class az_batch_pool_all_statistics_show_command_builder extends CommandBuilder<az_batch_pool_all_statistics_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Batch service endpoint. Alternatively, set by environment variable: AZURE_BATCH_ENDPOINT. */
@@ -7265,8 +7265,8 @@ class az_batch_pool_all_statistics_show_command_builder extends CommandBuilder<a
  * @param {string} poolId The ID of the Pool on which to disable automatic scaling.
  */
 class az_batch_pool_autoscale_disable_command_builder extends CommandBuilder<az_batch_pool_autoscale_disable_command_result> {
-    constructor(commandPath: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.poolId(poolId)
     }
 
@@ -7322,8 +7322,8 @@ class az_batch_pool_autoscale_disable_command_builder extends CommandBuilder<az_
  * @param {string} poolId The ID of the Pool on which to enable automatic scaling.
  */
 class az_batch_pool_autoscale_enable_command_builder extends CommandBuilder<az_batch_pool_autoscale_enable_command_result> {
-    constructor(commandPath: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.poolId(poolId)
     }
 
@@ -7411,8 +7411,8 @@ class az_batch_pool_autoscale_enable_command_builder extends CommandBuilder<az_b
  * @param {string} poolId The ID of the Pool on which to evaluate the automatic scaling formula.
  */
 class az_batch_pool_autoscale_evaluate_command_builder extends CommandBuilder<az_batch_pool_autoscale_evaluate_command_result> {
-    constructor(commandPath: string, autoScaleFormula: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, autoScaleFormula: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.autoScaleFormula(autoScaleFormula)
         this.poolId(poolId)
     }
@@ -7468,8 +7468,8 @@ class az_batch_pool_autoscale_evaluate_command_builder extends CommandBuilder<az
  * ```
  */
 class az_batch_pool_node_counts_list_command_builder extends CommandBuilder<az_batch_pool_node_counts_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Batch service endpoint. Alternatively, set by environment variable: AZURE_BATCH_ENDPOINT. */
@@ -7523,8 +7523,8 @@ class az_batch_pool_node_counts_list_command_builder extends CommandBuilder<az_b
  * ```
  */
 class az_batch_pool_supported_images_list_command_builder extends CommandBuilder<az_batch_pool_supported_images_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Batch service endpoint. Alternatively, set by environment variable: AZURE_BATCH_ENDPOINT. */
@@ -7580,8 +7580,8 @@ class az_batch_pool_supported_images_list_command_builder extends CommandBuilder
  * ```
  */
 class az_batch_pool_usage_metrics_list_command_builder extends CommandBuilder<az_batch_pool_usage_metrics_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Batch service endpoint. Alternatively, set by environment variable: AZURE_BATCH_ENDPOINT. */
@@ -7667,8 +7667,8 @@ class az_batch_pool_usage_metrics_list_command_builder extends CommandBuilder<az
  * ```
  */
 class az_batch_pool_create_command_builder extends CommandBuilder<az_batch_pool_create_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Batch service endpoint. Alternatively, set by environment variable: AZURE_BATCH_ENDPOINT. */
@@ -7848,8 +7848,8 @@ class az_batch_pool_create_command_builder extends CommandBuilder<az_batch_pool_
  * @param {string} poolId The ID of the Pool to delete.
  */
 class az_batch_pool_delete_command_builder extends CommandBuilder<az_batch_pool_delete_command_result> {
-    constructor(commandPath: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.poolId(poolId)
     }
 
@@ -7930,8 +7930,8 @@ class az_batch_pool_delete_command_builder extends CommandBuilder<az_batch_pool_
  * ```
  */
 class az_batch_pool_list_command_builder extends CommandBuilder<az_batch_pool_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Batch service endpoint. Alternatively, set by environment variable: AZURE_BATCH_ENDPOINT. */
@@ -8006,8 +8006,8 @@ class az_batch_pool_list_command_builder extends CommandBuilder<az_batch_pool_li
  * @param {string} poolId The ID of the pool to update.
  */
 class az_batch_pool_reset_command_builder extends CommandBuilder<az_batch_pool_reset_command_result> {
-    constructor(commandPath: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.poolId(poolId)
     }
 
@@ -8114,8 +8114,8 @@ class az_batch_pool_reset_command_builder extends CommandBuilder<az_batch_pool_r
  * @param {string} poolId The ID of the pool.
  */
 class az_batch_pool_resize_command_builder extends CommandBuilder<az_batch_pool_resize_command_result> {
-    constructor(commandPath: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.poolId(poolId)
     }
 
@@ -8232,8 +8232,8 @@ class az_batch_pool_resize_command_builder extends CommandBuilder<az_batch_pool_
  * @param {string} poolId The ID of the Pool to update.
  */
 class az_batch_pool_set_command_builder extends CommandBuilder<az_batch_pool_set_command_result> {
-    constructor(commandPath: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.poolId(poolId)
     }
 
@@ -8368,8 +8368,8 @@ class az_batch_pool_set_command_builder extends CommandBuilder<az_batch_pool_set
  * @param {string} poolId The ID of the Pool to get.
  */
 class az_batch_pool_show_command_builder extends CommandBuilder<az_batch_pool_show_command_result> {
-    constructor(commandPath: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.poolId(poolId)
     }
 
@@ -8467,8 +8467,8 @@ class az_batch_pool_show_command_builder extends CommandBuilder<az_batch_pool_sh
  * @param {string} taskId The ID of the Task whose file you want to delete.
  */
 class az_batch_task_file_delete_command_builder extends CommandBuilder<az_batch_task_file_delete_command_result> {
-    constructor(commandPath: string, filePath: string, jobId: string, taskId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, filePath: string, jobId: string, taskId: string) {
+        super(commandPath, resultDataTypeName);
         this.filePath(filePath)
         this.jobId(jobId)
         this.taskId(taskId)
@@ -8554,8 +8554,8 @@ class az_batch_task_file_delete_command_builder extends CommandBuilder<az_batch_
  * @param {string} taskId The ID of the Task whose file you want to retrieve.
  */
 class az_batch_task_file_download_command_builder extends CommandBuilder<az_batch_task_file_download_command_result> {
-    constructor(commandPath: string, destination: string, filePath: string, jobId: string, taskId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, destination: string, filePath: string, jobId: string, taskId: string) {
+        super(commandPath, resultDataTypeName);
         this.destination(destination)
         this.filePath(filePath)
         this.jobId(jobId)
@@ -8655,8 +8655,8 @@ class az_batch_task_file_download_command_builder extends CommandBuilder<az_batc
  * @param {string} taskId The ID of the Task whose files you want to list.
  */
 class az_batch_task_file_list_command_builder extends CommandBuilder<az_batch_task_file_list_command_result> {
-    constructor(commandPath: string, jobId: string, taskId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string, taskId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
         this.taskId(taskId)
     }
@@ -8738,8 +8738,8 @@ class az_batch_task_file_list_command_builder extends CommandBuilder<az_batch_ta
  * @param {string} taskId The ID of the Task whose file you want to get the properties of.
  */
 class az_batch_task_file_show_command_builder extends CommandBuilder<az_batch_task_file_show_command_result> {
-    constructor(commandPath: string, filePath: string, jobId: string, taskId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, filePath: string, jobId: string, taskId: string) {
+        super(commandPath, resultDataTypeName);
         this.filePath(filePath)
         this.jobId(jobId)
         this.taskId(taskId)
@@ -8825,8 +8825,8 @@ class az_batch_task_file_show_command_builder extends CommandBuilder<az_batch_ta
  * @param {string} taskId The ID of the Task.
  */
 class az_batch_task_subtask_list_command_builder extends CommandBuilder<az_batch_task_subtask_list_command_result> {
-    constructor(commandPath: string, jobId: string, taskId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string, taskId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
         this.taskId(taskId)
     }
@@ -8905,8 +8905,8 @@ class az_batch_task_subtask_list_command_builder extends CommandBuilder<az_batch
  * @param {string} jobId The ID of the job containing the task.
  */
 class az_batch_task_create_command_builder extends CommandBuilder<az_batch_task_create_command_result> {
-    constructor(commandPath: string, jobId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
     }
 
@@ -9023,8 +9023,8 @@ class az_batch_task_create_command_builder extends CommandBuilder<az_batch_task_
  * @param {string} taskId The ID of the Task to delete.
  */
 class az_batch_task_delete_command_builder extends CommandBuilder<az_batch_task_delete_command_result> {
-    constructor(commandPath: string, jobId: string, taskId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string, taskId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
         this.taskId(taskId)
     }
@@ -9115,8 +9115,8 @@ class az_batch_task_delete_command_builder extends CommandBuilder<az_batch_task_
  * @param {string} jobId The ID of the Job.
  */
 class az_batch_task_list_command_builder extends CommandBuilder<az_batch_task_list_command_result> {
-    constructor(commandPath: string, jobId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
     }
 
@@ -9196,8 +9196,8 @@ class az_batch_task_list_command_builder extends CommandBuilder<az_batch_task_li
  * @param {string} taskId The ID of the Task to reactivate.
  */
 class az_batch_task_reactivate_command_builder extends CommandBuilder<az_batch_task_reactivate_command_result> {
-    constructor(commandPath: string, jobId: string, taskId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string, taskId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
         this.taskId(taskId)
     }
@@ -9288,8 +9288,8 @@ class az_batch_task_reactivate_command_builder extends CommandBuilder<az_batch_t
  * @param {string} taskId The ID of the Task to update.
  */
 class az_batch_task_reset_command_builder extends CommandBuilder<az_batch_task_reset_command_result> {
-    constructor(commandPath: string, jobId: string, taskId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string, taskId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
         this.taskId(taskId)
     }
@@ -9403,8 +9403,8 @@ class az_batch_task_reset_command_builder extends CommandBuilder<az_batch_task_r
  * @param {string} taskId The ID of the Task to get information about.
  */
 class az_batch_task_show_command_builder extends CommandBuilder<az_batch_task_show_command_result> {
-    constructor(commandPath: string, jobId: string, taskId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string, taskId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
         this.taskId(taskId)
     }
@@ -9509,8 +9509,8 @@ class az_batch_task_show_command_builder extends CommandBuilder<az_batch_task_sh
  * @param {string} taskId The ID of the Task to terminate.
  */
 class az_batch_task_stop_command_builder extends CommandBuilder<az_batch_task_stop_command_result> {
-    constructor(commandPath: string, jobId: string, taskId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string, taskId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
         this.taskId(taskId)
     }

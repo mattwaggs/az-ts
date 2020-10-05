@@ -1,13 +1,23 @@
-type CleanUpAddTaskCallback = (_: () => void) => void;
-type CleanUpCallback = ({ addCleanupTask: CleanUpAddTaskCallback }) => void;
+type CleanUpAddTaskCallback = (
+  _: () => void | Promise<any>
+) => void | Promise<any>;
+type CleanUpCallback = ({
+  addCleanupTask: CleanUpAddTaskCallback,
+}) => void | Promise<any>;
 
 /**
  * Performs some 'cleanup' actions when the program exits
  * unexpectedly or when the execution of the callback completes
  */
-export const CleanUp = (callback: CleanUpCallback) => {
-  var controller = new CleanUpController();
-  callback({ addCleanupTask: controller.addTask });
+export const CleanUp = async (callback: CleanUpCallback): Promise<any> => {
+  const controller = new CleanUpController();
+  const result = callback({ addCleanupTask: controller.addTask });
+  if (result) {
+    await result;
+  }
+
+  await Promise.resolve();
+
   controller.destroy();
 };
 

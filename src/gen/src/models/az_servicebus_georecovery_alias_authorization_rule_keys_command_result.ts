@@ -1,1 +1,0 @@
-export type az_servicebus_georecovery_alias_authorization_rule_keys_command_result = Record<string, unknown>

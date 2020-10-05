@@ -1,1 +1,1 @@
-export type az_deployment_mg_wait_command_result = Record<string, unknown>
+export type az_deployment_mg_wait_command_result = Record<string, any>

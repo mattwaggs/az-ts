@@ -25,7 +25,7 @@ export class az_openshift_monitor {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static disable(name: string, resourceGroup: string): az_openshift_monitor_disable_command_builder {
-        return new az_openshift_monitor_disable_command_builder("az openshift monitor disable", name, resourceGroup);
+        return new az_openshift_monitor_disable_command_builder("az openshift monitor disable", 'az_openshift_monitor_disable_command_result', name, resourceGroup);
     }
 
     /**
@@ -45,7 +45,7 @@ export class az_openshift_monitor {
      * @param {string} workspaceId The resource ID of an existing Log Analytics Workspace to use for storing monitoring data.
      */
     static enable(name: string, resourceGroup: string, workspaceId: string): az_openshift_monitor_enable_command_builder {
-        return new az_openshift_monitor_enable_command_builder("az openshift monitor enable", name, resourceGroup, workspaceId);
+        return new az_openshift_monitor_enable_command_builder("az openshift monitor enable", 'az_openshift_monitor_enable_command_result', name, resourceGroup, workspaceId);
     }
 }
 
@@ -78,7 +78,7 @@ export class az_openshift {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_openshift_create_command_builder {
-        return new az_openshift_create_command_builder("az openshift create", name, resourceGroup);
+        return new az_openshift_create_command_builder("az openshift create", 'az_openshift_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -97,7 +97,7 @@ export class az_openshift {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_openshift_delete_command_builder {
-        return new az_openshift_delete_command_builder("az openshift delete", name, resourceGroup);
+        return new az_openshift_delete_command_builder("az openshift delete", 'az_openshift_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -111,7 +111,7 @@ export class az_openshift {
      * ```
      */
     static list(): az_openshift_list_command_builder {
-        return new az_openshift_list_command_builder("az openshift list");
+        return new az_openshift_list_command_builder("az openshift list", 'az_openshift_list_command_result');
     }
 
     /**
@@ -131,7 +131,7 @@ export class az_openshift {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static scale(computeCount: string, name: string, resourceGroup: string): az_openshift_scale_command_builder {
-        return new az_openshift_scale_command_builder("az openshift scale", computeCount, name, resourceGroup);
+        return new az_openshift_scale_command_builder("az openshift scale", 'az_openshift_scale_command_result', computeCount, name, resourceGroup);
     }
 
     /**
@@ -149,7 +149,7 @@ export class az_openshift {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_openshift_show_command_builder {
-        return new az_openshift_show_command_builder("az openshift show", name, resourceGroup);
+        return new az_openshift_show_command_builder("az openshift show", 'az_openshift_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -173,7 +173,7 @@ export class az_openshift {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static wait(name: string, resourceGroup: string): az_openshift_wait_command_builder {
-        return new az_openshift_wait_command_builder("az openshift wait", name, resourceGroup);
+        return new az_openshift_wait_command_builder("az openshift wait", 'az_openshift_wait_command_result', name, resourceGroup);
     }
 }
 
@@ -192,8 +192,8 @@ export class az_openshift {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_openshift_monitor_disable_command_builder extends CommandBuilder<az_openshift_monitor_disable_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -240,8 +240,8 @@ class az_openshift_monitor_disable_command_builder extends CommandBuilder<az_ope
  * @param {string} workspaceId The resource ID of an existing Log Analytics Workspace to use for storing monitoring data.
  */
 class az_openshift_monitor_enable_command_builder extends CommandBuilder<az_openshift_monitor_enable_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, workspaceId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, workspaceId: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.workspaceId(workspaceId)
@@ -305,8 +305,8 @@ class az_openshift_monitor_enable_command_builder extends CommandBuilder<az_open
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_openshift_create_command_builder extends CommandBuilder<az_openshift_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -424,8 +424,8 @@ class az_openshift_create_command_builder extends CommandBuilder<az_openshift_cr
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_openshift_delete_command_builder extends CommandBuilder<az_openshift_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -472,8 +472,8 @@ class az_openshift_delete_command_builder extends CommandBuilder<az_openshift_de
  * ```
  */
 class az_openshift_list_command_builder extends CommandBuilder<az_openshift_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -512,8 +512,8 @@ class az_openshift_list_command_builder extends CommandBuilder<az_openshift_list
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_openshift_scale_command_builder extends CommandBuilder<az_openshift_scale_command_result> {
-    constructor(commandPath: string, computeCount: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, computeCount: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.computeCount(computeCount)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -565,8 +565,8 @@ class az_openshift_scale_command_builder extends CommandBuilder<az_openshift_sca
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_openshift_show_command_builder extends CommandBuilder<az_openshift_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -617,8 +617,8 @@ class az_openshift_show_command_builder extends CommandBuilder<az_openshift_show
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_openshift_wait_command_builder extends CommandBuilder<az_openshift_wait_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }

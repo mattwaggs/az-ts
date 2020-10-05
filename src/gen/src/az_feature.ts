@@ -17,7 +17,7 @@ export class az_feature {
      * ```
      */
     static list(): az_feature_list_command_builder {
-        return new az_feature_list_command_builder("az feature list");
+        return new az_feature_list_command_builder("az feature list", 'az_feature_list_command_result');
     }
 
     /**
@@ -34,7 +34,7 @@ export class az_feature {
      * @param {string} namespace The resource namespace, aka 'provider'.
      */
     static register(name: string, namespace: string): az_feature_register_command_builder {
-        return new az_feature_register_command_builder("az feature register", name, namespace);
+        return new az_feature_register_command_builder("az feature register", 'az_feature_register_command_result', name, namespace);
     }
 
     /**
@@ -52,7 +52,7 @@ export class az_feature {
      * @param {string} namespace The resource namespace, aka 'provider'.
      */
     static show(name: string, namespace: string): az_feature_show_command_builder {
-        return new az_feature_show_command_builder("az feature show", name, namespace);
+        return new az_feature_show_command_builder("az feature show", 'az_feature_show_command_result', name, namespace);
     }
 
     /**
@@ -69,7 +69,7 @@ export class az_feature {
      * @param {string} namespace The resource namespace, aka 'provider'.
      */
     static unregister(name: string, namespace: string): az_feature_unregister_command_builder {
-        return new az_feature_unregister_command_builder("az feature unregister", name, namespace);
+        return new az_feature_unregister_command_builder("az feature unregister", 'az_feature_unregister_command_result', name, namespace);
     }
 }
 
@@ -84,8 +84,8 @@ export class az_feature {
  * ```
  */
 class az_feature_list_command_builder extends CommandBuilder<az_feature_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The resource namespace, aka 'provider'. */
@@ -121,8 +121,8 @@ class az_feature_list_command_builder extends CommandBuilder<az_feature_list_com
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
 class az_feature_register_command_builder extends CommandBuilder<az_feature_register_command_result> {
-    constructor(commandPath: string, name: string, namespace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, namespace: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.namespace(namespace)
     }
@@ -161,8 +161,8 @@ class az_feature_register_command_builder extends CommandBuilder<az_feature_regi
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
 class az_feature_show_command_builder extends CommandBuilder<az_feature_show_command_result> {
-    constructor(commandPath: string, name: string, namespace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, namespace: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.namespace(namespace)
     }
@@ -206,8 +206,8 @@ class az_feature_show_command_builder extends CommandBuilder<az_feature_show_com
  * @param {string} namespace The resource namespace, aka 'provider'.
  */
 class az_feature_unregister_command_builder extends CommandBuilder<az_feature_unregister_command_result> {
-    constructor(commandPath: string, name: string, namespace: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, namespace: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.namespace(namespace)
     }

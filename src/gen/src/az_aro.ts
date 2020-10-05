@@ -45,7 +45,7 @@ export class az_aro {
      * @param {string} workerSubnet Name or ID of worker vnet subnet.  If name is supplied, `--vnet` must be supplied.
      */
     static create(masterSubnet: string, name: string, resourceGroup: string, workerSubnet: string): az_aro_create_command_builder {
-        return new az_aro_create_command_builder("az aro create", masterSubnet, name, resourceGroup, workerSubnet);
+        return new az_aro_create_command_builder("az aro create", 'az_aro_create_command_result', masterSubnet, name, resourceGroup, workerSubnet);
     }
 
     /**
@@ -64,7 +64,7 @@ export class az_aro {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_aro_delete_command_builder {
-        return new az_aro_delete_command_builder("az aro delete", name, resourceGroup);
+        return new az_aro_delete_command_builder("az aro delete", 'az_aro_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -78,7 +78,7 @@ export class az_aro {
      * ```
      */
     static list(): az_aro_list_command_builder {
-        return new az_aro_list_command_builder("az aro list");
+        return new az_aro_list_command_builder("az aro list", 'az_aro_list_command_result');
     }
 
     /**
@@ -95,7 +95,7 @@ export class az_aro {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list_credentials(name: string, resourceGroup: string): az_aro_list_credentials_command_builder {
-        return new az_aro_list_credentials_command_builder("az aro list-credentials", name, resourceGroup);
+        return new az_aro_list_credentials_command_builder("az aro list-credentials", 'az_aro_list_credentials_command_result', name, resourceGroup);
     }
 
     /**
@@ -113,7 +113,7 @@ export class az_aro {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_aro_show_command_builder {
-        return new az_aro_show_command_builder("az aro show", name, resourceGroup);
+        return new az_aro_show_command_builder("az aro show", 'az_aro_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -131,7 +131,7 @@ export class az_aro {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, resourceGroup: string): az_aro_update_command_builder {
-        return new az_aro_update_command_builder("az aro update", name, resourceGroup);
+        return new az_aro_update_command_builder("az aro update", 'az_aro_update_command_result', name, resourceGroup);
     }
 
     /**
@@ -155,7 +155,7 @@ export class az_aro {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static wait(name: string, resourceGroup: string): az_aro_wait_command_builder {
-        return new az_aro_wait_command_builder("az aro wait", name, resourceGroup);
+        return new az_aro_wait_command_builder("az aro wait", 'az_aro_wait_command_result', name, resourceGroup);
     }
 }
 
@@ -195,8 +195,8 @@ export class az_aro {
  * @param {string} workerSubnet Name or ID of worker vnet subnet.  If name is supplied, `--vnet` must be supplied.
  */
 class az_aro_create_command_builder extends CommandBuilder<az_aro_create_command_result> {
-    constructor(commandPath: string, masterSubnet: string, name: string, resourceGroup: string, workerSubnet: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, masterSubnet: string, name: string, resourceGroup: string, workerSubnet: string) {
+        super(commandPath, resultDataTypeName);
         this.masterSubnet(masterSubnet)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -358,8 +358,8 @@ class az_aro_create_command_builder extends CommandBuilder<az_aro_create_command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aro_delete_command_builder extends CommandBuilder<az_aro_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -406,8 +406,8 @@ class az_aro_delete_command_builder extends CommandBuilder<az_aro_delete_command
  * ```
  */
 class az_aro_list_command_builder extends CommandBuilder<az_aro_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -443,8 +443,8 @@ class az_aro_list_command_builder extends CommandBuilder<az_aro_list_command_res
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aro_list_credentials_command_builder extends CommandBuilder<az_aro_list_credentials_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -483,8 +483,8 @@ class az_aro_list_credentials_command_builder extends CommandBuilder<az_aro_list
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aro_show_command_builder extends CommandBuilder<az_aro_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -529,8 +529,8 @@ class az_aro_show_command_builder extends CommandBuilder<az_aro_show_command_res
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aro_update_command_builder extends CommandBuilder<az_aro_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -581,8 +581,8 @@ class az_aro_update_command_builder extends CommandBuilder<az_aro_update_command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aro_wait_command_builder extends CommandBuilder<az_aro_wait_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }

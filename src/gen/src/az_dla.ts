@@ -82,7 +82,7 @@ export class az_dla_account_blob_storage {
      * @param {string} storageAccountName Name of an existing storage account to link to.
      */
     static add(accessKey: string, storageAccountName: string): az_dla_account_blob_storage_add_command_builder {
-        return new az_dla_account_blob_storage_add_command_builder("az dla account blob-storage add", accessKey, storageAccountName);
+        return new az_dla_account_blob_storage_add_command_builder("az dla account blob-storage add", 'az_dla_account_blob_storage_add_command_result', accessKey, storageAccountName);
     }
 
     /**
@@ -100,7 +100,7 @@ export class az_dla_account_blob_storage {
      * @param {string} storageAccountName Name of an existing storage account to link to.
      */
     static delete(storageAccountName: string): az_dla_account_blob_storage_delete_command_builder {
-        return new az_dla_account_blob_storage_delete_command_builder("az dla account blob-storage delete", storageAccountName);
+        return new az_dla_account_blob_storage_delete_command_builder("az dla account blob-storage delete", 'az_dla_account_blob_storage_delete_command_result', storageAccountName);
     }
 
     /**
@@ -122,7 +122,7 @@ export class az_dla_account_blob_storage {
      * ```
      */
     static list(): az_dla_account_blob_storage_list_command_builder {
-        return new az_dla_account_blob_storage_list_command_builder("az dla account blob-storage list");
+        return new az_dla_account_blob_storage_list_command_builder("az dla account blob-storage list", 'az_dla_account_blob_storage_list_command_result');
     }
 
     /**
@@ -141,7 +141,7 @@ export class az_dla_account_blob_storage {
      * @param {string} storageAccountName Name of an existing storage account to link to.
      */
     static show(storageAccountName: string): az_dla_account_blob_storage_show_command_builder {
-        return new az_dla_account_blob_storage_show_command_builder("az dla account blob-storage show", storageAccountName);
+        return new az_dla_account_blob_storage_show_command_builder("az dla account blob-storage show", 'az_dla_account_blob_storage_show_command_result', storageAccountName);
     }
 
     /**
@@ -162,7 +162,7 @@ export class az_dla_account_blob_storage {
      * @param {string} storageAccountName Name of an existing storage account to link to.
      */
     static update(accessKey: string, storageAccountName: string): az_dla_account_blob_storage_update_command_builder {
-        return new az_dla_account_blob_storage_update_command_builder("az dla account blob-storage update", accessKey, storageAccountName);
+        return new az_dla_account_blob_storage_update_command_builder("az dla account blob-storage update", 'az_dla_account_blob_storage_update_command_result', accessKey, storageAccountName);
     }
 }
 
@@ -189,7 +189,7 @@ export class az_dla_account_compute_policy {
      * @param {string} objectType The Azure Active Directory object type associated with the supplied object ID.
      */
     static create(account: string, computePolicyName: string, objectId: string, objectType: string): az_dla_account_compute_policy_create_command_builder {
-        return new az_dla_account_compute_policy_create_command_builder("az dla account compute-policy create", account, computePolicyName, objectId, objectType);
+        return new az_dla_account_compute_policy_create_command_builder("az dla account compute-policy create", 'az_dla_account_compute_policy_create_command_result', account, computePolicyName, objectId, objectType);
     }
 
     /**
@@ -207,7 +207,7 @@ export class az_dla_account_compute_policy {
      * @param {string} computePolicyName The name of the compute policy to delete.
      */
     static delete(computePolicyName: string): az_dla_account_compute_policy_delete_command_builder {
-        return new az_dla_account_compute_policy_delete_command_builder("az dla account compute-policy delete", computePolicyName);
+        return new az_dla_account_compute_policy_delete_command_builder("az dla account compute-policy delete", 'az_dla_account_compute_policy_delete_command_result', computePolicyName);
     }
 
     /**
@@ -223,7 +223,7 @@ export class az_dla_account_compute_policy {
      * ```
      */
     static list(): az_dla_account_compute_policy_list_command_builder {
-        return new az_dla_account_compute_policy_list_command_builder("az dla account compute-policy list");
+        return new az_dla_account_compute_policy_list_command_builder("az dla account compute-policy list", 'az_dla_account_compute_policy_list_command_result');
     }
 
     /**
@@ -242,7 +242,7 @@ export class az_dla_account_compute_policy {
      * @param {string} computePolicyName The name of the compute policy to retrieve.
      */
     static show(computePolicyName: string): az_dla_account_compute_policy_show_command_builder {
-        return new az_dla_account_compute_policy_show_command_builder("az dla account compute-policy show", computePolicyName);
+        return new az_dla_account_compute_policy_show_command_builder("az dla account compute-policy show", 'az_dla_account_compute_policy_show_command_result', computePolicyName);
     }
 
     /**
@@ -262,7 +262,7 @@ export class az_dla_account_compute_policy {
      * @param {string} computePolicyName The name of the compute policy to update.
      */
     static update(computePolicyName: string): az_dla_account_compute_policy_update_command_builder {
-        return new az_dla_account_compute_policy_update_command_builder("az dla account compute-policy update", computePolicyName);
+        return new az_dla_account_compute_policy_update_command_builder("az dla account compute-policy update", 'az_dla_account_compute_policy_update_command_result', computePolicyName);
     }
 }
 
@@ -284,7 +284,7 @@ export class az_dla_account_data_lake_store {
      * @param {string} dataLakeStoreAccountName The name of the Data Lake Store account to add.
      */
     static add(dataLakeStoreAccountName: string): az_dla_account_data_lake_store_add_command_builder {
-        return new az_dla_account_data_lake_store_add_command_builder("az dla account data-lake-store add", dataLakeStoreAccountName);
+        return new az_dla_account_data_lake_store_add_command_builder("az dla account data-lake-store add", 'az_dla_account_data_lake_store_add_command_result', dataLakeStoreAccountName);
     }
 
     /**
@@ -302,7 +302,7 @@ export class az_dla_account_data_lake_store {
      * @param {string} dataLakeStoreAccountName The name of the Data Lake Store account to remove.
      */
     static delete(dataLakeStoreAccountName: string): az_dla_account_data_lake_store_delete_command_builder {
-        return new az_dla_account_data_lake_store_delete_command_builder("az dla account data-lake-store delete", dataLakeStoreAccountName);
+        return new az_dla_account_data_lake_store_delete_command_builder("az dla account data-lake-store delete", 'az_dla_account_data_lake_store_delete_command_result', dataLakeStoreAccountName);
     }
 
     /**
@@ -324,7 +324,7 @@ export class az_dla_account_data_lake_store {
      * ```
      */
     static list(): az_dla_account_data_lake_store_list_command_builder {
-        return new az_dla_account_data_lake_store_list_command_builder("az dla account data-lake-store list");
+        return new az_dla_account_data_lake_store_list_command_builder("az dla account data-lake-store list", 'az_dla_account_data_lake_store_list_command_result');
     }
 
     /**
@@ -343,7 +343,7 @@ export class az_dla_account_data_lake_store {
      * @param {string} dataLakeStoreAccountName The name of the Data Lake Store account to retrieve.
      */
     static show(dataLakeStoreAccountName: string): az_dla_account_data_lake_store_show_command_builder {
-        return new az_dla_account_data_lake_store_show_command_builder("az dla account data-lake-store show", dataLakeStoreAccountName);
+        return new az_dla_account_data_lake_store_show_command_builder("az dla account data-lake-store show", 'az_dla_account_data_lake_store_show_command_result', dataLakeStoreAccountName);
     }
 }
 
@@ -368,7 +368,7 @@ export class az_dla_account_firewall {
      * @param {string} startIpAddress The start of the valid IP range for the firewall rule.
      */
     static create(account: string, endIpAddress: string, firewallRuleName: string, startIpAddress: string): az_dla_account_firewall_create_command_builder {
-        return new az_dla_account_firewall_create_command_builder("az dla account firewall create", account, endIpAddress, firewallRuleName, startIpAddress);
+        return new az_dla_account_firewall_create_command_builder("az dla account firewall create", 'az_dla_account_firewall_create_command_result', account, endIpAddress, firewallRuleName, startIpAddress);
     }
 
     /**
@@ -386,7 +386,7 @@ export class az_dla_account_firewall {
      * @param {string} firewallRuleName The name of the firewall rule to delete.
      */
     static delete(firewallRuleName: string): az_dla_account_firewall_delete_command_builder {
-        return new az_dla_account_firewall_delete_command_builder("az dla account firewall delete", firewallRuleName);
+        return new az_dla_account_firewall_delete_command_builder("az dla account firewall delete", 'az_dla_account_firewall_delete_command_result', firewallRuleName);
     }
 
     /**
@@ -402,7 +402,7 @@ export class az_dla_account_firewall {
      * ```
      */
     static list(): az_dla_account_firewall_list_command_builder {
-        return new az_dla_account_firewall_list_command_builder("az dla account firewall list");
+        return new az_dla_account_firewall_list_command_builder("az dla account firewall list", 'az_dla_account_firewall_list_command_result');
     }
 
     /**
@@ -421,7 +421,7 @@ export class az_dla_account_firewall {
      * @param {string} firewallRuleName The name of the firewall rule to retrieve.
      */
     static show(firewallRuleName: string): az_dla_account_firewall_show_command_builder {
-        return new az_dla_account_firewall_show_command_builder("az dla account firewall show", firewallRuleName);
+        return new az_dla_account_firewall_show_command_builder("az dla account firewall show", 'az_dla_account_firewall_show_command_result', firewallRuleName);
     }
 
     /**
@@ -441,7 +441,7 @@ export class az_dla_account_firewall {
      * @param {string} firewallRuleName The name of the firewall rule to update.
      */
     static update(firewallRuleName: string): az_dla_account_firewall_update_command_builder {
-        return new az_dla_account_firewall_update_command_builder("az dla account firewall update", firewallRuleName);
+        return new az_dla_account_firewall_update_command_builder("az dla account firewall update", 'az_dla_account_firewall_update_command_result', firewallRuleName);
     }
 }
 
@@ -468,7 +468,7 @@ export class az_dla_account {
      * @param {string} defaultDataLakeStore The default Data Lake Store account to associate with the created account.
      */
     static create(account: string, defaultDataLakeStore: string): az_dla_account_create_command_builder {
-        return new az_dla_account_create_command_builder("az dla account create", account, defaultDataLakeStore);
+        return new az_dla_account_create_command_builder("az dla account create", 'az_dla_account_create_command_result', account, defaultDataLakeStore);
     }
 
     /**
@@ -483,7 +483,7 @@ export class az_dla_account {
      * ```
      */
     static delete(): az_dla_account_delete_command_builder {
-        return new az_dla_account_delete_command_builder("az dla account delete");
+        return new az_dla_account_delete_command_builder("az dla account delete", 'az_dla_account_delete_command_result');
     }
 
     /**
@@ -497,7 +497,7 @@ export class az_dla_account {
      * ```
      */
     static list(): az_dla_account_list_command_builder {
-        return new az_dla_account_list_command_builder("az dla account list");
+        return new az_dla_account_list_command_builder("az dla account list", 'az_dla_account_list_command_result');
     }
 
     /**
@@ -513,7 +513,7 @@ export class az_dla_account {
      * ```
      */
     static show(): az_dla_account_show_command_builder {
-        return new az_dla_account_show_command_builder("az dla account show");
+        return new az_dla_account_show_command_builder("az dla account show", 'az_dla_account_show_command_result');
     }
 
     /**
@@ -535,7 +535,7 @@ export class az_dla_account {
      * ```
      */
     static update(): az_dla_account_update_command_builder {
-        return new az_dla_account_update_command_builder("az dla account update");
+        return new az_dla_account_update_command_builder("az dla account update", 'az_dla_account_update_command_result');
     }
 }
 
@@ -562,7 +562,7 @@ export class az_dla_catalog_assembly {
      * @param {string} databaseName The name of the database containing the assembly.
      */
     static list(databaseName: string): az_dla_catalog_assembly_list_command_builder {
-        return new az_dla_catalog_assembly_list_command_builder("az dla catalog assembly list", databaseName);
+        return new az_dla_catalog_assembly_list_command_builder("az dla catalog assembly list", 'az_dla_catalog_assembly_list_command_result', databaseName);
     }
 
     /**
@@ -582,7 +582,7 @@ export class az_dla_catalog_assembly {
      * @param {string} databaseName The name of the database containing the assembly.
      */
     static show(assemblyName: string, databaseName: string): az_dla_catalog_assembly_show_command_builder {
-        return new az_dla_catalog_assembly_show_command_builder("az dla catalog assembly show", assemblyName, databaseName);
+        return new az_dla_catalog_assembly_show_command_builder("az dla catalog assembly show", 'az_dla_catalog_assembly_show_command_result', assemblyName, databaseName);
     }
 }
 
@@ -609,7 +609,7 @@ export class az_dla_catalog_credential {
      * @param {string} userName The user name that will be used when authenticating with this credential.
      */
     static create(account: string, credentialName: string, databaseName: string, uri: string, userName: string): az_dla_catalog_credential_create_command_builder {
-        return new az_dla_catalog_credential_create_command_builder("az dla catalog credential create", account, credentialName, databaseName, uri, userName);
+        return new az_dla_catalog_credential_create_command_builder("az dla catalog credential create", 'az_dla_catalog_credential_create_command_result', account, credentialName, databaseName, uri, userName);
     }
 
     /**
@@ -630,7 +630,7 @@ export class az_dla_catalog_credential {
      * @param {string} databaseName The name of the database containing the credential.
      */
     static delete(credentialName: string, databaseName: string): az_dla_catalog_credential_delete_command_builder {
-        return new az_dla_catalog_credential_delete_command_builder("az dla catalog credential delete", credentialName, databaseName);
+        return new az_dla_catalog_credential_delete_command_builder("az dla catalog credential delete", 'az_dla_catalog_credential_delete_command_result', credentialName, databaseName);
     }
 
     /**
@@ -654,7 +654,7 @@ export class az_dla_catalog_credential {
      * @param {string} databaseName The name of the database containing the schema.
      */
     static list(databaseName: string): az_dla_catalog_credential_list_command_builder {
-        return new az_dla_catalog_credential_list_command_builder("az dla catalog credential list", databaseName);
+        return new az_dla_catalog_credential_list_command_builder("az dla catalog credential list", 'az_dla_catalog_credential_list_command_result', databaseName);
     }
 
     /**
@@ -674,7 +674,7 @@ export class az_dla_catalog_credential {
      * @param {string} databaseName The name of the database containing the schema.
      */
     static show(credentialName: string, databaseName: string): az_dla_catalog_credential_show_command_builder {
-        return new az_dla_catalog_credential_show_command_builder("az dla catalog credential show", credentialName, databaseName);
+        return new az_dla_catalog_credential_show_command_builder("az dla catalog credential show", 'az_dla_catalog_credential_show_command_result', credentialName, databaseName);
     }
 
     /**
@@ -699,7 +699,7 @@ export class az_dla_catalog_credential {
      * @param {string} userName The user name associated with the credential that will have its password updated.
      */
     static update(credentialName: string, databaseName: string, uri: string, userName: string): az_dla_catalog_credential_update_command_builder {
-        return new az_dla_catalog_credential_update_command_builder("az dla catalog credential update", credentialName, databaseName, uri, userName);
+        return new az_dla_catalog_credential_update_command_builder("az dla catalog credential update", 'az_dla_catalog_credential_update_command_result', credentialName, databaseName, uri, userName);
     }
 }
 
@@ -723,7 +723,7 @@ export class az_dla_catalog_database {
      * ```
      */
     static list(): az_dla_catalog_database_list_command_builder {
-        return new az_dla_catalog_database_list_command_builder("az dla catalog database list");
+        return new az_dla_catalog_database_list_command_builder("az dla catalog database list", 'az_dla_catalog_database_list_command_result');
     }
 
     /**
@@ -741,7 +741,7 @@ export class az_dla_catalog_database {
      * @param {string} databaseName The name of the database.
      */
     static show(databaseName: string): az_dla_catalog_database_show_command_builder {
-        return new az_dla_catalog_database_show_command_builder("az dla catalog database show", databaseName);
+        return new az_dla_catalog_database_show_command_builder("az dla catalog database show", 'az_dla_catalog_database_show_command_result', databaseName);
     }
 }
 
@@ -768,7 +768,7 @@ export class az_dla_catalog_external_data_source {
      * @param {string} databaseName The name of the database containing the external data sources.
      */
     static list(databaseName: string): az_dla_catalog_external_data_source_list_command_builder {
-        return new az_dla_catalog_external_data_source_list_command_builder("az dla catalog external-data-source list", databaseName);
+        return new az_dla_catalog_external_data_source_list_command_builder("az dla catalog external-data-source list", 'az_dla_catalog_external_data_source_list_command_result', databaseName);
     }
 
     /**
@@ -788,7 +788,7 @@ export class az_dla_catalog_external_data_source {
      * @param {string} externalDataSourceName The name of the external data source.
      */
     static show(databaseName: string, externalDataSourceName: string): az_dla_catalog_external_data_source_show_command_builder {
-        return new az_dla_catalog_external_data_source_show_command_builder("az dla catalog external-data-source show", databaseName, externalDataSourceName);
+        return new az_dla_catalog_external_data_source_show_command_builder("az dla catalog external-data-source show", 'az_dla_catalog_external_data_source_show_command_result', databaseName, externalDataSourceName);
     }
 }
 
@@ -817,7 +817,7 @@ export class az_dla_catalog_package {
      * @param {string} schemaName The name of the schema containing the packages.
      */
     static list(databaseName: string, schemaName: string): az_dla_catalog_package_list_command_builder {
-        return new az_dla_catalog_package_list_command_builder("az dla catalog package list", databaseName, schemaName);
+        return new az_dla_catalog_package_list_command_builder("az dla catalog package list", 'az_dla_catalog_package_list_command_result', databaseName, schemaName);
     }
 
     /**
@@ -839,7 +839,7 @@ export class az_dla_catalog_package {
      * @param {string} schemaName The name of the schema containing the package.
      */
     static show(databaseName: string, packageName: string, schemaName: string): az_dla_catalog_package_show_command_builder {
-        return new az_dla_catalog_package_show_command_builder("az dla catalog package show", databaseName, packageName, schemaName);
+        return new az_dla_catalog_package_show_command_builder("az dla catalog package show", 'az_dla_catalog_package_show_command_result', databaseName, packageName, schemaName);
     }
 }
 
@@ -868,7 +868,7 @@ export class az_dla_catalog_procedure {
      * @param {string} schemaName The name of the schema containing the procedures.
      */
     static list(databaseName: string, schemaName: string): az_dla_catalog_procedure_list_command_builder {
-        return new az_dla_catalog_procedure_list_command_builder("az dla catalog procedure list", databaseName, schemaName);
+        return new az_dla_catalog_procedure_list_command_builder("az dla catalog procedure list", 'az_dla_catalog_procedure_list_command_result', databaseName, schemaName);
     }
 
     /**
@@ -890,7 +890,7 @@ export class az_dla_catalog_procedure {
      * @param {string} schemaName The name of the schema containing the procedure.
      */
     static show(databaseName: string, procedureName: string, schemaName: string): az_dla_catalog_procedure_show_command_builder {
-        return new az_dla_catalog_procedure_show_command_builder("az dla catalog procedure show", databaseName, procedureName, schemaName);
+        return new az_dla_catalog_procedure_show_command_builder("az dla catalog procedure show", 'az_dla_catalog_procedure_show_command_result', databaseName, procedureName, schemaName);
     }
 }
 
@@ -917,7 +917,7 @@ export class az_dla_catalog_schema {
      * @param {string} databaseName The name of the database containing the schema.
      */
     static list(databaseName: string): az_dla_catalog_schema_list_command_builder {
-        return new az_dla_catalog_schema_list_command_builder("az dla catalog schema list", databaseName);
+        return new az_dla_catalog_schema_list_command_builder("az dla catalog schema list", 'az_dla_catalog_schema_list_command_result', databaseName);
     }
 
     /**
@@ -937,7 +937,7 @@ export class az_dla_catalog_schema {
      * @param {string} schemaName The name of the schema.
      */
     static show(databaseName: string, schemaName: string): az_dla_catalog_schema_show_command_builder {
-        return new az_dla_catalog_schema_show_command_builder("az dla catalog schema show", databaseName, schemaName);
+        return new az_dla_catalog_schema_show_command_builder("az dla catalog schema show", 'az_dla_catalog_schema_show_command_result', databaseName, schemaName);
     }
 }
 
@@ -968,7 +968,7 @@ export class az_dla_catalog_table_partition {
      * @param {string} tableName The name of the table containing the partitions.
      */
     static list(databaseName: string, schemaName: string, tableName: string): az_dla_catalog_table_partition_list_command_builder {
-        return new az_dla_catalog_table_partition_list_command_builder("az dla catalog table-partition list", databaseName, schemaName, tableName);
+        return new az_dla_catalog_table_partition_list_command_builder("az dla catalog table-partition list", 'az_dla_catalog_table_partition_list_command_result', databaseName, schemaName, tableName);
     }
 
     /**
@@ -992,7 +992,7 @@ export class az_dla_catalog_table_partition {
      * @param {string} tableName The name of the table containing the partition.
      */
     static show(databaseName: string, partitionName: string, schemaName: string, tableName: string): az_dla_catalog_table_partition_show_command_builder {
-        return new az_dla_catalog_table_partition_show_command_builder("az dla catalog table-partition show", databaseName, partitionName, schemaName, tableName);
+        return new az_dla_catalog_table_partition_show_command_builder("az dla catalog table-partition show", 'az_dla_catalog_table_partition_show_command_result', databaseName, partitionName, schemaName, tableName);
     }
 }
 
@@ -1015,7 +1015,7 @@ export class az_dla_catalog_table_stats {
      * @param {string} databaseName The name of the database.
      */
     static list(databaseName: string): az_dla_catalog_table_stats_list_command_builder {
-        return new az_dla_catalog_table_stats_list_command_builder("az dla catalog table-stats list", databaseName);
+        return new az_dla_catalog_table_stats_list_command_builder("az dla catalog table-stats list", 'az_dla_catalog_table_stats_list_command_result', databaseName);
     }
 
     /**
@@ -1039,7 +1039,7 @@ export class az_dla_catalog_table_stats {
      * @param {string} tableName The name of the table containing the statistics.
      */
     static show(databaseName: string, schemaName: string, statisticsName: string, tableName: string): az_dla_catalog_table_stats_show_command_builder {
-        return new az_dla_catalog_table_stats_show_command_builder("az dla catalog table-stats show", databaseName, schemaName, statisticsName, tableName);
+        return new az_dla_catalog_table_stats_show_command_builder("az dla catalog table-stats show", 'az_dla_catalog_table_stats_show_command_result', databaseName, schemaName, statisticsName, tableName);
     }
 }
 
@@ -1068,7 +1068,7 @@ export class az_dla_catalog_table_type {
      * @param {string} schemaName The name of the schema containing the table types.
      */
     static list(databaseName: string, schemaName: string): az_dla_catalog_table_type_list_command_builder {
-        return new az_dla_catalog_table_type_list_command_builder("az dla catalog table-type list", databaseName, schemaName);
+        return new az_dla_catalog_table_type_list_command_builder("az dla catalog table-type list", 'az_dla_catalog_table_type_list_command_result', databaseName, schemaName);
     }
 
     /**
@@ -1090,7 +1090,7 @@ export class az_dla_catalog_table_type {
      * @param {string} tableTypeName The name of the table type to retrieve.
      */
     static show(databaseName: string, schemaName: string, tableTypeName: string): az_dla_catalog_table_type_show_command_builder {
-        return new az_dla_catalog_table_type_show_command_builder("az dla catalog table-type show", databaseName, schemaName, tableTypeName);
+        return new az_dla_catalog_table_type_show_command_builder("az dla catalog table-type show", 'az_dla_catalog_table_type_show_command_result', databaseName, schemaName, tableTypeName);
     }
 }
 
@@ -1112,7 +1112,7 @@ export class az_dla_catalog_table {
      * @param {string} databaseName The name of the database.
      */
     static list(databaseName: string): az_dla_catalog_table_list_command_builder {
-        return new az_dla_catalog_table_list_command_builder("az dla catalog table list", databaseName);
+        return new az_dla_catalog_table_list_command_builder("az dla catalog table list", 'az_dla_catalog_table_list_command_result', databaseName);
     }
 
     /**
@@ -1134,7 +1134,7 @@ export class az_dla_catalog_table {
      * @param {string} tableName The name of the table.
      */
     static show(databaseName: string, schemaName: string, tableName: string): az_dla_catalog_table_show_command_builder {
-        return new az_dla_catalog_table_show_command_builder("az dla catalog table show", databaseName, schemaName, tableName);
+        return new az_dla_catalog_table_show_command_builder("az dla catalog table show", 'az_dla_catalog_table_show_command_result', databaseName, schemaName, tableName);
     }
 }
 
@@ -1156,7 +1156,7 @@ export class az_dla_catalog_tvf {
      * @param {string} databaseName The name of the database.
      */
     static list(databaseName: string): az_dla_catalog_tvf_list_command_builder {
-        return new az_dla_catalog_tvf_list_command_builder("az dla catalog tvf list", databaseName);
+        return new az_dla_catalog_tvf_list_command_builder("az dla catalog tvf list", 'az_dla_catalog_tvf_list_command_result', databaseName);
     }
 
     /**
@@ -1178,7 +1178,7 @@ export class az_dla_catalog_tvf {
      * @param {string} tableValuedFunctionName The name of the tableValuedFunction.
      */
     static show(databaseName: string, schemaName: string, tableValuedFunctionName: string): az_dla_catalog_tvf_show_command_builder {
-        return new az_dla_catalog_tvf_show_command_builder("az dla catalog tvf show", databaseName, schemaName, tableValuedFunctionName);
+        return new az_dla_catalog_tvf_show_command_builder("az dla catalog tvf show", 'az_dla_catalog_tvf_show_command_result', databaseName, schemaName, tableValuedFunctionName);
     }
 }
 
@@ -1200,7 +1200,7 @@ export class az_dla_catalog_view {
      * @param {string} databaseName The name of the database.
      */
     static list(databaseName: string): az_dla_catalog_view_list_command_builder {
-        return new az_dla_catalog_view_list_command_builder("az dla catalog view list", databaseName);
+        return new az_dla_catalog_view_list_command_builder("az dla catalog view list", 'az_dla_catalog_view_list_command_result', databaseName);
     }
 
     /**
@@ -1222,7 +1222,7 @@ export class az_dla_catalog_view {
      * @param {string} viewName The name of the view.
      */
     static show(databaseName: string, schemaName: string, viewName: string): az_dla_catalog_view_show_command_builder {
-        return new az_dla_catalog_view_show_command_builder("az dla catalog view show", databaseName, schemaName, viewName);
+        return new az_dla_catalog_view_show_command_builder("az dla catalog view show", 'az_dla_catalog_view_show_command_result', databaseName, schemaName, viewName);
     }
 }
 
@@ -1246,7 +1246,7 @@ export class az_dla_job_pipeline {
      * ```
      */
     static list(): az_dla_job_pipeline_list_command_builder {
-        return new az_dla_job_pipeline_list_command_builder("az dla job pipeline list");
+        return new az_dla_job_pipeline_list_command_builder("az dla job pipeline list", 'az_dla_job_pipeline_list_command_result');
     }
 
     /**
@@ -1266,7 +1266,7 @@ export class az_dla_job_pipeline {
      * @param {string} pipelineIdentity Pipeline ID.
      */
     static show(pipelineIdentity: string): az_dla_job_pipeline_show_command_builder {
-        return new az_dla_job_pipeline_show_command_builder("az dla job pipeline show", pipelineIdentity);
+        return new az_dla_job_pipeline_show_command_builder("az dla job pipeline show", 'az_dla_job_pipeline_show_command_result', pipelineIdentity);
     }
 }
 
@@ -1286,7 +1286,7 @@ export class az_dla_job_recurrence {
      * ```
      */
     static list(): az_dla_job_recurrence_list_command_builder {
-        return new az_dla_job_recurrence_list_command_builder("az dla job recurrence list");
+        return new az_dla_job_recurrence_list_command_builder("az dla job recurrence list", 'az_dla_job_recurrence_list_command_result');
     }
 
     /**
@@ -1306,7 +1306,7 @@ export class az_dla_job_recurrence {
      * @param {string} recurrenceIdentity Recurrence ID.
      */
     static show(recurrenceIdentity: string): az_dla_job_recurrence_show_command_builder {
-        return new az_dla_job_recurrence_show_command_builder("az dla job recurrence show", recurrenceIdentity);
+        return new az_dla_job_recurrence_show_command_builder("az dla job recurrence show", 'az_dla_job_recurrence_show_command_result', recurrenceIdentity);
     }
 }
 
@@ -1326,7 +1326,7 @@ export class az_dla_job {
      * @param {string} jobIdentity JobInfo ID to cancel.
      */
     static cancel(jobIdentity: string): az_dla_job_cancel_command_builder {
-        return new az_dla_job_cancel_command_builder("az dla job cancel", jobIdentity);
+        return new az_dla_job_cancel_command_builder("az dla job cancel", 'az_dla_job_cancel_command_result', jobIdentity);
     }
 
     /**
@@ -1350,7 +1350,7 @@ export class az_dla_job {
      * ```
      */
     static list(): az_dla_job_list_command_builder {
-        return new az_dla_job_list_command_builder("az dla job list");
+        return new az_dla_job_list_command_builder("az dla job list", 'az_dla_job_list_command_result');
     }
 
     /**
@@ -1368,7 +1368,7 @@ export class az_dla_job {
      * @param {string} jobIdentity JobInfo ID.
      */
     static show(jobIdentity: string): az_dla_job_show_command_builder {
-        return new az_dla_job_show_command_builder("az dla job show", jobIdentity);
+        return new az_dla_job_show_command_builder("az dla job show", 'az_dla_job_show_command_result', jobIdentity);
     }
 
     /**
@@ -1398,7 +1398,7 @@ export class az_dla_job {
      * @param {string} script Script to submit. This may be '@{file}' to load from a file.
      */
     static submit(jobName: string, script: string): az_dla_job_submit_command_builder {
-        return new az_dla_job_submit_command_builder("az dla job submit", jobName, script);
+        return new az_dla_job_submit_command_builder("az dla job submit", 'az_dla_job_submit_command_result', jobName, script);
     }
 
     /**
@@ -1417,7 +1417,7 @@ export class az_dla_job {
      * @param {string} jobId Job ID to poll for completion.
      */
     static wait(jobId: string): az_dla_job_wait_command_builder {
-        return new az_dla_job_wait_command_builder("az dla job wait", jobId);
+        return new az_dla_job_wait_command_builder("az dla job wait", 'az_dla_job_wait_command_result', jobId);
     }
 }
 
@@ -1443,8 +1443,8 @@ export class az_dla {
  * @param {string} storageAccountName Name of an existing storage account to link to.
  */
 class az_dla_account_blob_storage_add_command_builder extends CommandBuilder<az_dla_account_blob_storage_add_command_result> {
-    constructor(commandPath: string, accessKey: string, storageAccountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accessKey: string, storageAccountName: string) {
+        super(commandPath, resultDataTypeName);
         this.accessKey(accessKey)
         this.storageAccountName(storageAccountName)
     }
@@ -1507,8 +1507,8 @@ class az_dla_account_blob_storage_add_command_builder extends CommandBuilder<az_
  * @param {string} storageAccountName Name of an existing storage account to link to.
  */
 class az_dla_account_blob_storage_delete_command_builder extends CommandBuilder<az_dla_account_blob_storage_delete_command_result> {
-    constructor(commandPath: string, storageAccountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, storageAccountName: string) {
+        super(commandPath, resultDataTypeName);
         this.storageAccountName(storageAccountName)
     }
 
@@ -1562,8 +1562,8 @@ class az_dla_account_blob_storage_delete_command_builder extends CommandBuilder<
  * ```
  */
 class az_dla_account_blob_storage_list_command_builder extends CommandBuilder<az_dla_account_blob_storage_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Data Lake Analytics account. */
@@ -1649,8 +1649,8 @@ class az_dla_account_blob_storage_list_command_builder extends CommandBuilder<az
  * @param {string} storageAccountName Name of an existing storage account to link to.
  */
 class az_dla_account_blob_storage_show_command_builder extends CommandBuilder<az_dla_account_blob_storage_show_command_result> {
-    constructor(commandPath: string, storageAccountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, storageAccountName: string) {
+        super(commandPath, resultDataTypeName);
         this.storageAccountName(storageAccountName)
     }
 
@@ -1709,8 +1709,8 @@ class az_dla_account_blob_storage_show_command_builder extends CommandBuilder<az
  * @param {string} storageAccountName Name of an existing storage account to link to.
  */
 class az_dla_account_blob_storage_update_command_builder extends CommandBuilder<az_dla_account_blob_storage_update_command_result> {
-    constructor(commandPath: string, accessKey: string, storageAccountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accessKey: string, storageAccountName: string) {
+        super(commandPath, resultDataTypeName);
         this.accessKey(accessKey)
         this.storageAccountName(storageAccountName)
     }
@@ -1779,8 +1779,8 @@ class az_dla_account_blob_storage_update_command_builder extends CommandBuilder<
  * @param {string} objectType The Azure Active Directory object type associated with the supplied object ID.
  */
 class az_dla_account_compute_policy_create_command_builder extends CommandBuilder<az_dla_account_compute_policy_create_command_result> {
-    constructor(commandPath: string, account: string, computePolicyName: string, objectId: string, objectType: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, account: string, computePolicyName: string, objectId: string, objectType: string) {
+        super(commandPath, resultDataTypeName);
         this.account(account)
         this.computePolicyName(computePolicyName)
         this.objectId(objectId)
@@ -1851,8 +1851,8 @@ class az_dla_account_compute_policy_create_command_builder extends CommandBuilde
  * @param {string} computePolicyName The name of the compute policy to delete.
  */
 class az_dla_account_compute_policy_delete_command_builder extends CommandBuilder<az_dla_account_compute_policy_delete_command_result> {
-    constructor(commandPath: string, computePolicyName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, computePolicyName: string) {
+        super(commandPath, resultDataTypeName);
         this.computePolicyName(computePolicyName)
     }
 
@@ -1900,8 +1900,8 @@ class az_dla_account_compute_policy_delete_command_builder extends CommandBuilde
  * ```
  */
 class az_dla_account_compute_policy_list_command_builder extends CommandBuilder<az_dla_account_compute_policy_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Data Lake Analytics account. */
@@ -1951,8 +1951,8 @@ class az_dla_account_compute_policy_list_command_builder extends CommandBuilder<
  * @param {string} computePolicyName The name of the compute policy to retrieve.
  */
 class az_dla_account_compute_policy_show_command_builder extends CommandBuilder<az_dla_account_compute_policy_show_command_result> {
-    constructor(commandPath: string, computePolicyName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, computePolicyName: string) {
+        super(commandPath, resultDataTypeName);
         this.computePolicyName(computePolicyName)
     }
 
@@ -2010,8 +2010,8 @@ class az_dla_account_compute_policy_show_command_builder extends CommandBuilder<
  * @param {string} computePolicyName The name of the compute policy to update.
  */
 class az_dla_account_compute_policy_update_command_builder extends CommandBuilder<az_dla_account_compute_policy_update_command_result> {
-    constructor(commandPath: string, computePolicyName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, computePolicyName: string) {
+        super(commandPath, resultDataTypeName);
         this.computePolicyName(computePolicyName)
     }
 
@@ -2074,8 +2074,8 @@ class az_dla_account_compute_policy_update_command_builder extends CommandBuilde
  * @param {string} dataLakeStoreAccountName The name of the Data Lake Store account to add.
  */
 class az_dla_account_data_lake_store_add_command_builder extends CommandBuilder<az_dla_account_data_lake_store_add_command_result> {
-    constructor(commandPath: string, dataLakeStoreAccountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, dataLakeStoreAccountName: string) {
+        super(commandPath, resultDataTypeName);
         this.dataLakeStoreAccountName(dataLakeStoreAccountName)
     }
 
@@ -2131,8 +2131,8 @@ class az_dla_account_data_lake_store_add_command_builder extends CommandBuilder<
  * @param {string} dataLakeStoreAccountName The name of the Data Lake Store account to remove.
  */
 class az_dla_account_data_lake_store_delete_command_builder extends CommandBuilder<az_dla_account_data_lake_store_delete_command_result> {
-    constructor(commandPath: string, dataLakeStoreAccountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, dataLakeStoreAccountName: string) {
+        super(commandPath, resultDataTypeName);
         this.dataLakeStoreAccountName(dataLakeStoreAccountName)
     }
 
@@ -2186,8 +2186,8 @@ class az_dla_account_data_lake_store_delete_command_builder extends CommandBuild
  * ```
  */
 class az_dla_account_data_lake_store_list_command_builder extends CommandBuilder<az_dla_account_data_lake_store_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Data Lake Analytics account. */
@@ -2273,8 +2273,8 @@ class az_dla_account_data_lake_store_list_command_builder extends CommandBuilder
  * @param {string} dataLakeStoreAccountName The name of the Data Lake Store account to retrieve.
  */
 class az_dla_account_data_lake_store_show_command_builder extends CommandBuilder<az_dla_account_data_lake_store_show_command_result> {
-    constructor(commandPath: string, dataLakeStoreAccountName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, dataLakeStoreAccountName: string) {
+        super(commandPath, resultDataTypeName);
         this.dataLakeStoreAccountName(dataLakeStoreAccountName)
     }
 
@@ -2334,8 +2334,8 @@ class az_dla_account_data_lake_store_show_command_builder extends CommandBuilder
  * @param {string} startIpAddress The start of the valid IP range for the firewall rule.
  */
 class az_dla_account_firewall_create_command_builder extends CommandBuilder<az_dla_account_firewall_create_command_result> {
-    constructor(commandPath: string, account: string, endIpAddress: string, firewallRuleName: string, startIpAddress: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, account: string, endIpAddress: string, firewallRuleName: string, startIpAddress: string) {
+        super(commandPath, resultDataTypeName);
         this.account(account)
         this.endIpAddress(endIpAddress)
         this.firewallRuleName(firewallRuleName)
@@ -2394,8 +2394,8 @@ class az_dla_account_firewall_create_command_builder extends CommandBuilder<az_d
  * @param {string} firewallRuleName The name of the firewall rule to delete.
  */
 class az_dla_account_firewall_delete_command_builder extends CommandBuilder<az_dla_account_firewall_delete_command_result> {
-    constructor(commandPath: string, firewallRuleName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, firewallRuleName: string) {
+        super(commandPath, resultDataTypeName);
         this.firewallRuleName(firewallRuleName)
     }
 
@@ -2443,8 +2443,8 @@ class az_dla_account_firewall_delete_command_builder extends CommandBuilder<az_d
  * ```
  */
 class az_dla_account_firewall_list_command_builder extends CommandBuilder<az_dla_account_firewall_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Data Lake Analytics account. */
@@ -2494,8 +2494,8 @@ class az_dla_account_firewall_list_command_builder extends CommandBuilder<az_dla
  * @param {string} firewallRuleName The name of the firewall rule to retrieve.
  */
 class az_dla_account_firewall_show_command_builder extends CommandBuilder<az_dla_account_firewall_show_command_result> {
-    constructor(commandPath: string, firewallRuleName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, firewallRuleName: string) {
+        super(commandPath, resultDataTypeName);
         this.firewallRuleName(firewallRuleName)
     }
 
@@ -2553,8 +2553,8 @@ class az_dla_account_firewall_show_command_builder extends CommandBuilder<az_dla
  * @param {string} firewallRuleName The name of the firewall rule to update.
  */
 class az_dla_account_firewall_update_command_builder extends CommandBuilder<az_dla_account_firewall_update_command_result> {
-    constructor(commandPath: string, firewallRuleName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, firewallRuleName: string) {
+        super(commandPath, resultDataTypeName);
         this.firewallRuleName(firewallRuleName)
     }
 
@@ -2622,8 +2622,8 @@ class az_dla_account_firewall_update_command_builder extends CommandBuilder<az_d
  * @param {string} defaultDataLakeStore The default Data Lake Store account to associate with the created account.
  */
 class az_dla_account_create_command_builder extends CommandBuilder<az_dla_account_create_command_result> {
-    constructor(commandPath: string, account: string, defaultDataLakeStore: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, account: string, defaultDataLakeStore: string) {
+        super(commandPath, resultDataTypeName);
         this.account(account)
         this.defaultDataLakeStore(defaultDataLakeStore)
     }
@@ -2701,8 +2701,8 @@ class az_dla_account_create_command_builder extends CommandBuilder<az_dla_accoun
  * ```
  */
 class az_dla_account_delete_command_builder extends CommandBuilder<az_dla_account_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Data Lake Analytics account. */
@@ -2741,8 +2741,8 @@ class az_dla_account_delete_command_builder extends CommandBuilder<az_dla_accoun
  * ```
  */
 class az_dla_account_list_command_builder extends CommandBuilder<az_dla_account_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -2777,8 +2777,8 @@ class az_dla_account_list_command_builder extends CommandBuilder<az_dla_account_
  * ```
  */
 class az_dla_account_show_command_builder extends CommandBuilder<az_dla_account_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Data Lake Analytics account. */
@@ -2831,8 +2831,8 @@ class az_dla_account_show_command_builder extends CommandBuilder<az_dla_account_
  * ```
  */
 class az_dla_account_update_command_builder extends CommandBuilder<az_dla_account_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Data Lake Analytics account. */
@@ -2923,8 +2923,8 @@ class az_dla_account_update_command_builder extends CommandBuilder<az_dla_accoun
  * @param {string} databaseName The name of the database containing the assembly.
  */
 class az_dla_catalog_assembly_list_command_builder extends CommandBuilder<az_dla_catalog_assembly_list_command_result> {
-    constructor(commandPath: string, databaseName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
     }
 
@@ -3012,8 +3012,8 @@ class az_dla_catalog_assembly_list_command_builder extends CommandBuilder<az_dla
  * @param {string} databaseName The name of the database containing the assembly.
  */
 class az_dla_catalog_assembly_show_command_builder extends CommandBuilder<az_dla_catalog_assembly_show_command_result> {
-    constructor(commandPath: string, assemblyName: string, databaseName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, assemblyName: string, databaseName: string) {
+        super(commandPath, resultDataTypeName);
         this.assemblyName(assemblyName)
         this.databaseName(databaseName)
     }
@@ -3076,8 +3076,8 @@ class az_dla_catalog_assembly_show_command_builder extends CommandBuilder<az_dla
  * @param {string} userName The user name that will be used when authenticating with this credential.
  */
 class az_dla_catalog_credential_create_command_builder extends CommandBuilder<az_dla_catalog_credential_create_command_result> {
-    constructor(commandPath: string, account: string, credentialName: string, databaseName: string, uri: string, userName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, account: string, credentialName: string, databaseName: string, uri: string, userName: string) {
+        super(commandPath, resultDataTypeName);
         this.account(account)
         this.credentialName(credentialName)
         this.databaseName(databaseName)
@@ -3146,8 +3146,8 @@ class az_dla_catalog_credential_create_command_builder extends CommandBuilder<az
  * @param {string} databaseName The name of the database containing the credential.
  */
 class az_dla_catalog_credential_delete_command_builder extends CommandBuilder<az_dla_catalog_credential_delete_command_result> {
-    constructor(commandPath: string, credentialName: string, databaseName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, credentialName: string, databaseName: string) {
+        super(commandPath, resultDataTypeName);
         this.credentialName(credentialName)
         this.databaseName(databaseName)
     }
@@ -3216,8 +3216,8 @@ class az_dla_catalog_credential_delete_command_builder extends CommandBuilder<az
  * @param {string} databaseName The name of the database containing the schema.
  */
 class az_dla_catalog_credential_list_command_builder extends CommandBuilder<az_dla_catalog_credential_list_command_result> {
-    constructor(commandPath: string, databaseName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
     }
 
@@ -3305,8 +3305,8 @@ class az_dla_catalog_credential_list_command_builder extends CommandBuilder<az_d
  * @param {string} databaseName The name of the database containing the schema.
  */
 class az_dla_catalog_credential_show_command_builder extends CommandBuilder<az_dla_catalog_credential_show_command_result> {
-    constructor(commandPath: string, credentialName: string, databaseName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, credentialName: string, databaseName: string) {
+        super(commandPath, resultDataTypeName);
         this.credentialName(credentialName)
         this.databaseName(databaseName)
     }
@@ -3370,8 +3370,8 @@ class az_dla_catalog_credential_show_command_builder extends CommandBuilder<az_d
  * @param {string} userName The user name associated with the credential that will have its password updated.
  */
 class az_dla_catalog_credential_update_command_builder extends CommandBuilder<az_dla_catalog_credential_update_command_result> {
-    constructor(commandPath: string, credentialName: string, databaseName: string, uri: string, userName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, credentialName: string, databaseName: string, uri: string, userName: string) {
+        super(commandPath, resultDataTypeName);
         this.credentialName(credentialName)
         this.databaseName(databaseName)
         this.uri(uri)
@@ -3451,8 +3451,8 @@ class az_dla_catalog_credential_update_command_builder extends CommandBuilder<az
  * ```
  */
 class az_dla_catalog_database_list_command_builder extends CommandBuilder<az_dla_catalog_database_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Data Lake Analytics account. */
@@ -3531,8 +3531,8 @@ class az_dla_catalog_database_list_command_builder extends CommandBuilder<az_dla
  * @param {string} databaseName The name of the database.
  */
 class az_dla_catalog_database_show_command_builder extends CommandBuilder<az_dla_catalog_database_show_command_result> {
-    constructor(commandPath: string, databaseName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
     }
 
@@ -3588,8 +3588,8 @@ class az_dla_catalog_database_show_command_builder extends CommandBuilder<az_dla
  * @param {string} databaseName The name of the database containing the external data sources.
  */
 class az_dla_catalog_external_data_source_list_command_builder extends CommandBuilder<az_dla_catalog_external_data_source_list_command_result> {
-    constructor(commandPath: string, databaseName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
     }
 
@@ -3677,8 +3677,8 @@ class az_dla_catalog_external_data_source_list_command_builder extends CommandBu
  * @param {string} externalDataSourceName The name of the external data source.
  */
 class az_dla_catalog_external_data_source_show_command_builder extends CommandBuilder<az_dla_catalog_external_data_source_show_command_result> {
-    constructor(commandPath: string, databaseName: string, externalDataSourceName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string, externalDataSourceName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
         this.externalDataSourceName(externalDataSourceName)
     }
@@ -3743,8 +3743,8 @@ class az_dla_catalog_external_data_source_show_command_builder extends CommandBu
  * @param {string} schemaName The name of the schema containing the packages.
  */
 class az_dla_catalog_package_list_command_builder extends CommandBuilder<az_dla_catalog_package_list_command_result> {
-    constructor(commandPath: string, databaseName: string, schemaName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string, schemaName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
     }
@@ -3841,8 +3841,8 @@ class az_dla_catalog_package_list_command_builder extends CommandBuilder<az_dla_
  * @param {string} schemaName The name of the schema containing the package.
  */
 class az_dla_catalog_package_show_command_builder extends CommandBuilder<az_dla_catalog_package_show_command_result> {
-    constructor(commandPath: string, databaseName: string, packageName: string, schemaName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string, packageName: string, schemaName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
         this.packageName(packageName)
         this.schemaName(schemaName)
@@ -3914,8 +3914,8 @@ class az_dla_catalog_package_show_command_builder extends CommandBuilder<az_dla_
  * @param {string} schemaName The name of the schema containing the procedures.
  */
 class az_dla_catalog_procedure_list_command_builder extends CommandBuilder<az_dla_catalog_procedure_list_command_result> {
-    constructor(commandPath: string, databaseName: string, schemaName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string, schemaName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
     }
@@ -4012,8 +4012,8 @@ class az_dla_catalog_procedure_list_command_builder extends CommandBuilder<az_dl
  * @param {string} schemaName The name of the schema containing the procedure.
  */
 class az_dla_catalog_procedure_show_command_builder extends CommandBuilder<az_dla_catalog_procedure_show_command_result> {
-    constructor(commandPath: string, databaseName: string, procedureName: string, schemaName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string, procedureName: string, schemaName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
         this.procedureName(procedureName)
         this.schemaName(schemaName)
@@ -4083,8 +4083,8 @@ class az_dla_catalog_procedure_show_command_builder extends CommandBuilder<az_dl
  * @param {string} databaseName The name of the database containing the schema.
  */
 class az_dla_catalog_schema_list_command_builder extends CommandBuilder<az_dla_catalog_schema_list_command_result> {
-    constructor(commandPath: string, databaseName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
     }
 
@@ -4172,8 +4172,8 @@ class az_dla_catalog_schema_list_command_builder extends CommandBuilder<az_dla_c
  * @param {string} schemaName The name of the schema.
  */
 class az_dla_catalog_schema_show_command_builder extends CommandBuilder<az_dla_catalog_schema_show_command_result> {
-    constructor(commandPath: string, databaseName: string, schemaName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string, schemaName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
     }
@@ -4240,8 +4240,8 @@ class az_dla_catalog_schema_show_command_builder extends CommandBuilder<az_dla_c
  * @param {string} tableName The name of the table containing the partitions.
  */
 class az_dla_catalog_table_partition_list_command_builder extends CommandBuilder<az_dla_catalog_table_partition_list_command_result> {
-    constructor(commandPath: string, databaseName: string, schemaName: string, tableName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string, schemaName: string, tableName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
         this.tableName(tableName)
@@ -4347,8 +4347,8 @@ class az_dla_catalog_table_partition_list_command_builder extends CommandBuilder
  * @param {string} tableName The name of the table containing the partition.
  */
 class az_dla_catalog_table_partition_show_command_builder extends CommandBuilder<az_dla_catalog_table_partition_show_command_result> {
-    constructor(commandPath: string, databaseName: string, partitionName: string, schemaName: string, tableName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string, partitionName: string, schemaName: string, tableName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
         this.partitionName(partitionName)
         this.schemaName(schemaName)
@@ -4421,8 +4421,8 @@ class az_dla_catalog_table_partition_show_command_builder extends CommandBuilder
  * @param {string} databaseName The name of the database.
  */
 class az_dla_catalog_table_stats_list_command_builder extends CommandBuilder<az_dla_catalog_table_stats_list_command_result> {
-    constructor(commandPath: string, databaseName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
     }
 
@@ -4490,8 +4490,8 @@ class az_dla_catalog_table_stats_list_command_builder extends CommandBuilder<az_
  * @param {string} tableName The name of the table containing the statistics.
  */
 class az_dla_catalog_table_stats_show_command_builder extends CommandBuilder<az_dla_catalog_table_stats_show_command_result> {
-    constructor(commandPath: string, databaseName: string, schemaName: string, statisticsName: string, tableName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string, schemaName: string, statisticsName: string, tableName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
         this.statisticsName(statisticsName)
@@ -4570,8 +4570,8 @@ class az_dla_catalog_table_stats_show_command_builder extends CommandBuilder<az_
  * @param {string} schemaName The name of the schema containing the table types.
  */
 class az_dla_catalog_table_type_list_command_builder extends CommandBuilder<az_dla_catalog_table_type_list_command_result> {
-    constructor(commandPath: string, databaseName: string, schemaName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string, schemaName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
     }
@@ -4668,8 +4668,8 @@ class az_dla_catalog_table_type_list_command_builder extends CommandBuilder<az_d
  * @param {string} tableTypeName The name of the table type to retrieve.
  */
 class az_dla_catalog_table_type_show_command_builder extends CommandBuilder<az_dla_catalog_table_type_show_command_result> {
-    constructor(commandPath: string, databaseName: string, schemaName: string, tableTypeName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string, schemaName: string, tableTypeName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
         this.tableTypeName(tableTypeName)
@@ -4734,8 +4734,8 @@ class az_dla_catalog_table_type_show_command_builder extends CommandBuilder<az_d
  * @param {string} databaseName The name of the database.
  */
 class az_dla_catalog_table_list_command_builder extends CommandBuilder<az_dla_catalog_table_list_command_result> {
-    constructor(commandPath: string, databaseName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
     }
 
@@ -4795,8 +4795,8 @@ class az_dla_catalog_table_list_command_builder extends CommandBuilder<az_dla_ca
  * @param {string} tableName The name of the table.
  */
 class az_dla_catalog_table_show_command_builder extends CommandBuilder<az_dla_catalog_table_show_command_result> {
-    constructor(commandPath: string, databaseName: string, schemaName: string, tableName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string, schemaName: string, tableName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
         this.tableName(tableName)
@@ -4861,8 +4861,8 @@ class az_dla_catalog_table_show_command_builder extends CommandBuilder<az_dla_ca
  * @param {string} databaseName The name of the database.
  */
 class az_dla_catalog_tvf_list_command_builder extends CommandBuilder<az_dla_catalog_tvf_list_command_result> {
-    constructor(commandPath: string, databaseName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
     }
 
@@ -4922,8 +4922,8 @@ class az_dla_catalog_tvf_list_command_builder extends CommandBuilder<az_dla_cata
  * @param {string} tableValuedFunctionName The name of the tableValuedFunction.
  */
 class az_dla_catalog_tvf_show_command_builder extends CommandBuilder<az_dla_catalog_tvf_show_command_result> {
-    constructor(commandPath: string, databaseName: string, schemaName: string, tableValuedFunctionName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string, schemaName: string, tableValuedFunctionName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
         this.tableValuedFunctionName(tableValuedFunctionName)
@@ -4988,8 +4988,8 @@ class az_dla_catalog_tvf_show_command_builder extends CommandBuilder<az_dla_cata
  * @param {string} databaseName The name of the database.
  */
 class az_dla_catalog_view_list_command_builder extends CommandBuilder<az_dla_catalog_view_list_command_result> {
-    constructor(commandPath: string, databaseName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
     }
 
@@ -5049,8 +5049,8 @@ class az_dla_catalog_view_list_command_builder extends CommandBuilder<az_dla_cat
  * @param {string} viewName The name of the view.
  */
 class az_dla_catalog_view_show_command_builder extends CommandBuilder<az_dla_catalog_view_show_command_result> {
-    constructor(commandPath: string, databaseName: string, schemaName: string, viewName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, databaseName: string, schemaName: string, viewName: string) {
+        super(commandPath, resultDataTypeName);
         this.databaseName(databaseName)
         this.schemaName(schemaName)
         this.viewName(viewName)
@@ -5113,8 +5113,8 @@ class az_dla_catalog_view_show_command_builder extends CommandBuilder<az_dla_cat
  * ```
  */
 class az_dla_job_pipeline_list_command_builder extends CommandBuilder<az_dla_job_pipeline_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Data Lake Analytics account. */
@@ -5171,8 +5171,8 @@ class az_dla_job_pipeline_list_command_builder extends CommandBuilder<az_dla_job
  * @param {string} pipelineIdentity Pipeline ID.
  */
 class az_dla_job_pipeline_show_command_builder extends CommandBuilder<az_dla_job_pipeline_show_command_result> {
-    constructor(commandPath: string, pipelineIdentity: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, pipelineIdentity: string) {
+        super(commandPath, resultDataTypeName);
         this.pipelineIdentity(pipelineIdentity)
     }
 
@@ -5233,8 +5233,8 @@ class az_dla_job_pipeline_show_command_builder extends CommandBuilder<az_dla_job
  * ```
  */
 class az_dla_job_recurrence_list_command_builder extends CommandBuilder<az_dla_job_recurrence_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Data Lake Analytics account. */
@@ -5291,8 +5291,8 @@ class az_dla_job_recurrence_list_command_builder extends CommandBuilder<az_dla_j
  * @param {string} recurrenceIdentity Recurrence ID.
  */
 class az_dla_job_recurrence_show_command_builder extends CommandBuilder<az_dla_job_recurrence_show_command_result> {
-    constructor(commandPath: string, recurrenceIdentity: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, recurrenceIdentity: string) {
+        super(commandPath, resultDataTypeName);
         this.recurrenceIdentity(recurrenceIdentity)
     }
 
@@ -5353,8 +5353,8 @@ class az_dla_job_recurrence_show_command_builder extends CommandBuilder<az_dla_j
  * @param {string} jobIdentity JobInfo ID to cancel.
  */
 class az_dla_job_cancel_command_builder extends CommandBuilder<az_dla_job_cancel_command_result> {
-    constructor(commandPath: string, jobIdentity: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobIdentity: string) {
+        super(commandPath, resultDataTypeName);
         this.jobIdentity(jobIdentity)
     }
 
@@ -5404,8 +5404,8 @@ class az_dla_job_cancel_command_builder extends CommandBuilder<az_dla_job_cancel
  * ```
  */
 class az_dla_job_list_command_builder extends CommandBuilder<az_dla_job_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Data Lake Analytics account. */
@@ -5502,8 +5502,8 @@ class az_dla_job_list_command_builder extends CommandBuilder<az_dla_job_list_com
  * @param {string} jobIdentity JobInfo ID.
  */
 class az_dla_job_show_command_builder extends CommandBuilder<az_dla_job_show_command_result> {
-    constructor(commandPath: string, jobIdentity: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobIdentity: string) {
+        super(commandPath, resultDataTypeName);
         this.jobIdentity(jobIdentity)
     }
 
@@ -5565,8 +5565,8 @@ class az_dla_job_show_command_builder extends CommandBuilder<az_dla_job_show_com
  * @param {string} script Script to submit. This may be '@{file}' to load from a file.
  */
 class az_dla_job_submit_command_builder extends CommandBuilder<az_dla_job_submit_command_result> {
-    constructor(commandPath: string, jobName: string, script: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobName: string, script: string) {
+        super(commandPath, resultDataTypeName);
         this.jobName(jobName)
         this.script(script)
     }
@@ -5684,8 +5684,8 @@ class az_dla_job_submit_command_builder extends CommandBuilder<az_dla_job_submit
  * @param {string} jobId Job ID to poll for completion.
  */
 class az_dla_job_wait_command_builder extends CommandBuilder<az_dla_job_wait_command_result> {
-    constructor(commandPath: string, jobId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, jobId: string) {
+        super(commandPath, resultDataTypeName);
         this.jobId(jobId)
     }
 

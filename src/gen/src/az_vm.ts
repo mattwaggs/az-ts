@@ -113,7 +113,7 @@ export class az_vm_availability_set {
      * ```
      */
     static convert(): az_vm_availability_set_convert_command_builder {
-        return new az_vm_availability_set_convert_command_builder("az vm availability-set convert");
+        return new az_vm_availability_set_convert_command_builder("az vm availability-set convert", 'az_vm_availability_set_convert_command_result');
     }
 
     /**
@@ -138,7 +138,7 @@ export class az_vm_availability_set {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_vm_availability_set_create_command_builder {
-        return new az_vm_availability_set_create_command_builder("az vm availability-set create", name, resourceGroup);
+        return new az_vm_availability_set_create_command_builder("az vm availability-set create", 'az_vm_availability_set_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -153,7 +153,7 @@ export class az_vm_availability_set {
      * ```
      */
     static delete(): az_vm_availability_set_delete_command_builder {
-        return new az_vm_availability_set_delete_command_builder("az vm availability-set delete");
+        return new az_vm_availability_set_delete_command_builder("az vm availability-set delete", 'az_vm_availability_set_delete_command_result');
     }
 
     /**
@@ -167,7 +167,7 @@ export class az_vm_availability_set {
      * ```
      */
     static list(): az_vm_availability_set_list_command_builder {
-        return new az_vm_availability_set_list_command_builder("az vm availability-set list");
+        return new az_vm_availability_set_list_command_builder("az vm availability-set list", 'az_vm_availability_set_list_command_result');
     }
 
     /**
@@ -182,7 +182,7 @@ export class az_vm_availability_set {
      * ```
      */
     static list_sizes(): az_vm_availability_set_list_sizes_command_builder {
-        return new az_vm_availability_set_list_sizes_command_builder("az vm availability-set list-sizes");
+        return new az_vm_availability_set_list_sizes_command_builder("az vm availability-set list-sizes", 'az_vm_availability_set_list_sizes_command_result');
     }
 
     /**
@@ -198,7 +198,7 @@ export class az_vm_availability_set {
      * ```
      */
     static show(): az_vm_availability_set_show_command_builder {
-        return new az_vm_availability_set_show_command_builder("az vm availability-set show");
+        return new az_vm_availability_set_show_command_builder("az vm availability-set show", 'az_vm_availability_set_show_command_result');
     }
 
     /**
@@ -218,7 +218,7 @@ export class az_vm_availability_set {
      * ```
      */
     static update(): az_vm_availability_set_update_command_builder {
-        return new az_vm_availability_set_update_command_builder("az vm availability-set update");
+        return new az_vm_availability_set_update_command_builder("az vm availability-set update", 'az_vm_availability_set_update_command_result');
     }
 }
 
@@ -236,7 +236,7 @@ export class az_vm_boot_diagnostics {
      * ```
      */
     static disable(): az_vm_boot_diagnostics_disable_command_builder {
-        return new az_vm_boot_diagnostics_disable_command_builder("az vm boot-diagnostics disable");
+        return new az_vm_boot_diagnostics_disable_command_builder("az vm boot-diagnostics disable", 'az_vm_boot_diagnostics_disable_command_result');
     }
 
     /**
@@ -252,7 +252,7 @@ export class az_vm_boot_diagnostics {
      * ```
      */
     static enable(): az_vm_boot_diagnostics_enable_command_builder {
-        return new az_vm_boot_diagnostics_enable_command_builder("az vm boot-diagnostics enable");
+        return new az_vm_boot_diagnostics_enable_command_builder("az vm boot-diagnostics enable", 'az_vm_boot_diagnostics_enable_command_result');
     }
 
     /**
@@ -267,7 +267,7 @@ export class az_vm_boot_diagnostics {
      * ```
      */
     static get_boot_log(): az_vm_boot_diagnostics_get_boot_log_command_builder {
-        return new az_vm_boot_diagnostics_get_boot_log_command_builder("az vm boot-diagnostics get-boot-log");
+        return new az_vm_boot_diagnostics_get_boot_log_command_builder("az vm boot-diagnostics get-boot-log", 'az_vm_boot_diagnostics_get_boot_log_command_result');
     }
 
     /**
@@ -283,7 +283,7 @@ export class az_vm_boot_diagnostics {
      * ```
      */
     static get_boot_log_uris(): az_vm_boot_diagnostics_get_boot_log_uris_command_builder {
-        return new az_vm_boot_diagnostics_get_boot_log_uris_command_builder("az vm boot-diagnostics get-boot-log-uris");
+        return new az_vm_boot_diagnostics_get_boot_log_uris_command_builder("az vm boot-diagnostics get-boot-log-uris", 'az_vm_boot_diagnostics_get_boot_log_uris_command_result');
     }
 }
 
@@ -299,7 +299,7 @@ export class az_vm_diagnostics {
      * ```
      */
     static get_default_config(): az_vm_diagnostics_get_default_config_command_builder {
-        return new az_vm_diagnostics_get_default_config_command_builder("az vm diagnostics get-default-config");
+        return new az_vm_diagnostics_get_default_config_command_builder("az vm diagnostics get-default-config", 'az_vm_diagnostics_get_default_config_command_result');
     }
 
     /**
@@ -320,7 +320,7 @@ export class az_vm_diagnostics {
      * @param {string} settings Json string or a file path, which defines data to be collected.
      */
     static set(settings: string): az_vm_diagnostics_set_command_builder {
-        return new az_vm_diagnostics_set_command_builder("az vm diagnostics set", settings);
+        return new az_vm_diagnostics_set_command_builder("az vm diagnostics set", 'az_vm_diagnostics_set_command_result', settings);
     }
 }
 
@@ -347,7 +347,7 @@ export class az_vm_disk {
      * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
      */
     static attach(vmName: string): az_vm_disk_attach_command_builder {
-        return new az_vm_disk_attach_command_builder("az vm disk attach", vmName);
+        return new az_vm_disk_attach_command_builder("az vm disk attach", 'az_vm_disk_attach_command_result', vmName);
     }
 
     /**
@@ -366,7 +366,7 @@ export class az_vm_disk {
      * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
      */
     static detach(name: string, resourceGroup: string, vmName: string): az_vm_disk_detach_command_builder {
-        return new az_vm_disk_detach_command_builder("az vm disk detach", name, resourceGroup, vmName);
+        return new az_vm_disk_detach_command_builder("az vm disk detach", 'az_vm_disk_detach_command_result', name, resourceGroup, vmName);
     }
 }
 
@@ -386,7 +386,7 @@ export class az_vm_encryption {
      * ```
      */
     static disable(): az_vm_encryption_disable_command_builder {
-        return new az_vm_encryption_disable_command_builder("az vm encryption disable");
+        return new az_vm_encryption_disable_command_builder("az vm encryption disable", 'az_vm_encryption_disable_command_result');
     }
 
     /**
@@ -413,7 +413,7 @@ export class az_vm_encryption {
      * @param {string} diskEncryptionKeyvault Name or ID of the key vault where the generated encryption key will be placed.
      */
     static enable(diskEncryptionKeyvault: string): az_vm_encryption_enable_command_builder {
-        return new az_vm_encryption_enable_command_builder("az vm encryption enable", diskEncryptionKeyvault);
+        return new az_vm_encryption_enable_command_builder("az vm encryption enable", 'az_vm_encryption_enable_command_result', diskEncryptionKeyvault);
     }
 
     /**
@@ -429,7 +429,7 @@ export class az_vm_encryption {
      * ```
      */
     static show(): az_vm_encryption_show_command_builder {
-        return new az_vm_encryption_show_command_builder("az vm encryption show");
+        return new az_vm_encryption_show_command_builder("az vm encryption show", 'az_vm_encryption_show_command_result');
     }
 }
 
@@ -450,7 +450,7 @@ export class az_vm_extension_image {
      * ```
      */
     static list(): az_vm_extension_image_list_command_builder {
-        return new az_vm_extension_image_list_command_builder("az vm extension image list");
+        return new az_vm_extension_image_list_command_builder("az vm extension image list", 'az_vm_extension_image_list_command_result');
     }
 
     /**
@@ -467,7 +467,7 @@ export class az_vm_extension_image {
      * @param {string} publisher Image publisher name.
      */
     static list_names(location: string, publisher: string): az_vm_extension_image_list_names_command_builder {
-        return new az_vm_extension_image_list_names_command_builder("az vm extension image list-names", location, publisher);
+        return new az_vm_extension_image_list_names_command_builder("az vm extension image list-names", 'az_vm_extension_image_list_names_command_result', location, publisher);
     }
 
     /**
@@ -489,7 +489,7 @@ export class az_vm_extension_image {
      * @param {string} publisher Image publisher name.
      */
     static list_versions(location: string, name: string, publisher: string): az_vm_extension_image_list_versions_command_builder {
-        return new az_vm_extension_image_list_versions_command_builder("az vm extension image list-versions", location, name, publisher);
+        return new az_vm_extension_image_list_versions_command_builder("az vm extension image list-versions", 'az_vm_extension_image_list_versions_command_result', location, name, publisher);
     }
 
     /**
@@ -511,7 +511,7 @@ export class az_vm_extension_image {
      * @param {string} version Extension version.
      */
     static show(location: string, name: string, publisher: string, version: string): az_vm_extension_image_show_command_builder {
-        return new az_vm_extension_image_show_command_builder("az vm extension image show", location, name, publisher, version);
+        return new az_vm_extension_image_show_command_builder("az vm extension image show", 'az_vm_extension_image_show_command_result', location, name, publisher, version);
     }
 }
 
@@ -531,7 +531,7 @@ export class az_vm_extension {
      * ```
      */
     static delete(): az_vm_extension_delete_command_builder {
-        return new az_vm_extension_delete_command_builder("az vm extension delete");
+        return new az_vm_extension_delete_command_builder("az vm extension delete", 'az_vm_extension_delete_command_result');
     }
 
     /**
@@ -549,7 +549,7 @@ export class az_vm_extension {
      * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
      */
     static list(resourceGroup: string, vmName: string): az_vm_extension_list_command_builder {
-        return new az_vm_extension_list_command_builder("az vm extension list", resourceGroup, vmName);
+        return new az_vm_extension_list_command_builder("az vm extension list", 'az_vm_extension_list_command_result', resourceGroup, vmName);
     }
 
     /**
@@ -576,7 +576,7 @@ export class az_vm_extension {
      * @param {string} publisher The name of the extension publisher.
      */
     static set(name: string, publisher: string): az_vm_extension_set_command_builder {
-        return new az_vm_extension_set_command_builder("az vm extension set", name, publisher);
+        return new az_vm_extension_set_command_builder("az vm extension set", 'az_vm_extension_set_command_result', name, publisher);
     }
 
     /**
@@ -594,7 +594,7 @@ export class az_vm_extension {
      * ```
      */
     static show(): az_vm_extension_show_command_builder {
-        return new az_vm_extension_show_command_builder("az vm extension show");
+        return new az_vm_extension_show_command_builder("az vm extension show", 'az_vm_extension_show_command_result');
     }
 
     /**
@@ -618,7 +618,7 @@ export class az_vm_extension {
      * ```
      */
     static wait(): az_vm_extension_wait_command_builder {
-        return new az_vm_extension_wait_command_builder("az vm extension wait");
+        return new az_vm_extension_wait_command_builder("az vm extension wait", 'az_vm_extension_wait_command_result');
     }
 }
 
@@ -643,7 +643,7 @@ export class az_vm_host_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_vm_host_group_create_command_builder {
-        return new az_vm_host_group_create_command_builder("az vm host group create", name, resourceGroup);
+        return new az_vm_host_group_create_command_builder("az vm host group create", 'az_vm_host_group_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -659,7 +659,7 @@ export class az_vm_host_group {
      * ```
      */
     static delete(): az_vm_host_group_delete_command_builder {
-        return new az_vm_host_group_delete_command_builder("az vm host group delete");
+        return new az_vm_host_group_delete_command_builder("az vm host group delete", 'az_vm_host_group_delete_command_result');
     }
 
     /**
@@ -674,7 +674,7 @@ export class az_vm_host_group {
      * ```
      */
     static get_instance_view(): az_vm_host_group_get_instance_view_command_builder {
-        return new az_vm_host_group_get_instance_view_command_builder("az vm host group get-instance-view");
+        return new az_vm_host_group_get_instance_view_command_builder("az vm host group get-instance-view", 'az_vm_host_group_get_instance_view_command_result');
     }
 
     /**
@@ -688,7 +688,7 @@ export class az_vm_host_group {
      * ```
      */
     static list(): az_vm_host_group_list_command_builder {
-        return new az_vm_host_group_list_command_builder("az vm host group list");
+        return new az_vm_host_group_list_command_builder("az vm host group list", 'az_vm_host_group_list_command_result');
     }
 
     /**
@@ -704,7 +704,7 @@ export class az_vm_host_group {
      * ```
      */
     static show(): az_vm_host_group_show_command_builder {
-        return new az_vm_host_group_show_command_builder("az vm host group show");
+        return new az_vm_host_group_show_command_builder("az vm host group show", 'az_vm_host_group_show_command_result');
     }
 
     /**
@@ -723,7 +723,7 @@ export class az_vm_host_group {
      * ```
      */
     static update(): az_vm_host_group_update_command_builder {
-        return new az_vm_host_group_update_command_builder("az vm host group update");
+        return new az_vm_host_group_update_command_builder("az vm host group update", 'az_vm_host_group_update_command_result');
     }
 }
 
@@ -752,7 +752,7 @@ export class az_vm_host {
      * @param {'DSv3-Type1' | 'ESv3-Type1' | 'FSv2-Type2'} sku Sku of the dedicated host.
      */
     static create(hostGroup: string, name: string, resourceGroup: string, sku: 'DSv3-Type1' | 'ESv3-Type1' | 'FSv2-Type2'): az_vm_host_create_command_builder {
-        return new az_vm_host_create_command_builder("az vm host create", hostGroup, name, resourceGroup, sku);
+        return new az_vm_host_create_command_builder("az vm host create", 'az_vm_host_create_command_result', hostGroup, name, resourceGroup, sku);
     }
 
     /**
@@ -769,7 +769,7 @@ export class az_vm_host {
      * ```
      */
     static delete(): az_vm_host_delete_command_builder {
-        return new az_vm_host_delete_command_builder("az vm host delete");
+        return new az_vm_host_delete_command_builder("az vm host delete", 'az_vm_host_delete_command_result');
     }
 
     /**
@@ -785,7 +785,7 @@ export class az_vm_host {
      * ```
      */
     static get_instance_view(): az_vm_host_get_instance_view_command_builder {
-        return new az_vm_host_get_instance_view_command_builder("az vm host get-instance-view");
+        return new az_vm_host_get_instance_view_command_builder("az vm host get-instance-view", 'az_vm_host_get_instance_view_command_result');
     }
 
     /**
@@ -803,7 +803,7 @@ export class az_vm_host {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(hostGroup: string, resourceGroup: string): az_vm_host_list_command_builder {
-        return new az_vm_host_list_command_builder("az vm host list", hostGroup, resourceGroup);
+        return new az_vm_host_list_command_builder("az vm host list", 'az_vm_host_list_command_result', hostGroup, resourceGroup);
     }
 
     /**
@@ -820,7 +820,7 @@ export class az_vm_host {
      * ```
      */
     static show(): az_vm_host_show_command_builder {
-        return new az_vm_host_show_command_builder("az vm host show");
+        return new az_vm_host_show_command_builder("az vm host show", 'az_vm_host_show_command_result');
     }
 
     /**
@@ -840,7 +840,7 @@ export class az_vm_host {
      * ```
      */
     static update(): az_vm_host_update_command_builder {
-        return new az_vm_host_update_command_builder("az vm host update");
+        return new az_vm_host_update_command_builder("az vm host update", 'az_vm_host_update_command_result');
     }
 }
 
@@ -861,7 +861,7 @@ export class az_vm_identity {
      * ```
      */
     static assign(): az_vm_identity_assign_command_builder {
-        return new az_vm_identity_assign_command_builder("az vm identity assign");
+        return new az_vm_identity_assign_command_builder("az vm identity assign", 'az_vm_identity_assign_command_result');
     }
 
     /**
@@ -877,7 +877,7 @@ export class az_vm_identity {
      * ```
      */
     static remove(): az_vm_identity_remove_command_builder {
-        return new az_vm_identity_remove_command_builder("az vm identity remove");
+        return new az_vm_identity_remove_command_builder("az vm identity remove", 'az_vm_identity_remove_command_result');
     }
 
     /**
@@ -893,7 +893,7 @@ export class az_vm_identity {
      * ```
      */
     static show(): az_vm_identity_show_command_builder {
-        return new az_vm_identity_show_command_builder("az vm identity show");
+        return new az_vm_identity_show_command_builder("az vm identity show", 'az_vm_identity_show_command_result');
     }
 }
 
@@ -912,7 +912,7 @@ export class az_vm_image_terms {
      * ```
      */
     static accept(): az_vm_image_terms_accept_command_builder {
-        return new az_vm_image_terms_accept_command_builder("az vm image terms accept");
+        return new az_vm_image_terms_accept_command_builder("az vm image terms accept", 'az_vm_image_terms_accept_command_result');
     }
 
     /**
@@ -928,7 +928,7 @@ export class az_vm_image_terms {
      * ```
      */
     static cancel(): az_vm_image_terms_cancel_command_builder {
-        return new az_vm_image_terms_cancel_command_builder("az vm image terms cancel");
+        return new az_vm_image_terms_cancel_command_builder("az vm image terms cancel", 'az_vm_image_terms_cancel_command_result');
     }
 
     /**
@@ -945,7 +945,7 @@ export class az_vm_image_terms {
      * ```
      */
     static show(): az_vm_image_terms_show_command_builder {
-        return new az_vm_image_terms_show_command_builder("az vm image terms show");
+        return new az_vm_image_terms_show_command_builder("az vm image terms show", 'az_vm_image_terms_show_command_result');
     }
 }
 
@@ -964,7 +964,7 @@ export class az_vm_image {
      * ```
      */
     static accept_terms(): az_vm_image_accept_terms_command_builder {
-        return new az_vm_image_accept_terms_command_builder("az vm image accept-terms");
+        return new az_vm_image_accept_terms_command_builder("az vm image accept-terms", 'az_vm_image_accept_terms_command_result');
     }
 
     /**
@@ -982,7 +982,7 @@ export class az_vm_image {
      * ```
      */
     static list(): az_vm_image_list_command_builder {
-        return new az_vm_image_list_command_builder("az vm image list");
+        return new az_vm_image_list_command_builder("az vm image list", 'az_vm_image_list_command_result');
     }
 
     /**
@@ -999,7 +999,7 @@ export class az_vm_image {
      * @param {string} publisher A valid image publisher.
      */
     static list_offers(location: string, publisher: string): az_vm_image_list_offers_command_builder {
-        return new az_vm_image_list_offers_command_builder("az vm image list-offers", location, publisher);
+        return new az_vm_image_list_offers_command_builder("az vm image list-offers", 'az_vm_image_list_offers_command_result', location, publisher);
     }
 
     /**
@@ -1014,7 +1014,7 @@ export class az_vm_image {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list_publishers(location: string): az_vm_image_list_publishers_command_builder {
-        return new az_vm_image_list_publishers_command_builder("az vm image list-publishers", location);
+        return new az_vm_image_list_publishers_command_builder("az vm image list-publishers", 'az_vm_image_list_publishers_command_result', location);
     }
 
     /**
@@ -1033,7 +1033,7 @@ export class az_vm_image {
      * @param {string} publisher A valid image publisher.
      */
     static list_skus(location: string, offer: string, publisher: string): az_vm_image_list_skus_command_builder {
-        return new az_vm_image_list_skus_command_builder("az vm image list-skus", location, offer, publisher);
+        return new az_vm_image_list_skus_command_builder("az vm image list-skus", 'az_vm_image_list_skus_command_result', location, offer, publisher);
     }
 
     /**
@@ -1052,7 +1052,7 @@ export class az_vm_image {
      * ```
      */
     static show(): az_vm_image_show_command_builder {
-        return new az_vm_image_show_command_builder("az vm image show");
+        return new az_vm_image_show_command_builder("az vm image show", 'az_vm_image_show_command_result');
     }
 }
 
@@ -1075,7 +1075,7 @@ export class az_vm_monitor_log {
      * @param {string} analyticsQuery Query to execute over Log Analytics data.
      */
     static show(analyticsQuery: string): az_vm_monitor_log_show_command_builder {
-        return new az_vm_monitor_log_show_command_builder("az vm monitor log show", analyticsQuery);
+        return new az_vm_monitor_log_show_command_builder("az vm monitor log show", 'az_vm_monitor_log_show_command_result', analyticsQuery);
     }
 }
 
@@ -1096,7 +1096,7 @@ export class az_vm_monitor_metrics {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list_definitions(name: string, resourceGroup: string): az_vm_monitor_metrics_list_definitions_command_builder {
-        return new az_vm_monitor_metrics_list_definitions_command_builder("az vm monitor metrics list-definitions", name, resourceGroup);
+        return new az_vm_monitor_metrics_list_definitions_command_builder("az vm monitor metrics list-definitions", 'az_vm_monitor_metrics_list_definitions_command_result', name, resourceGroup);
     }
 
     /**
@@ -1125,7 +1125,7 @@ export class az_vm_monitor_metrics {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static tail(name: string, resourceGroup: string): az_vm_monitor_metrics_tail_command_builder {
-        return new az_vm_monitor_metrics_tail_command_builder("az vm monitor metrics tail", name, resourceGroup);
+        return new az_vm_monitor_metrics_tail_command_builder("az vm monitor metrics tail", 'az_vm_monitor_metrics_tail_command_result', name, resourceGroup);
     }
 }
 
@@ -1152,7 +1152,7 @@ export class az_vm_nic {
      * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
      */
     static add(nics: string, resourceGroup: string, vmName: string): az_vm_nic_add_command_builder {
-        return new az_vm_nic_add_command_builder("az vm nic add", nics, resourceGroup, vmName);
+        return new az_vm_nic_add_command_builder("az vm nic add", 'az_vm_nic_add_command_result', nics, resourceGroup, vmName);
     }
 
     /**
@@ -1170,7 +1170,7 @@ export class az_vm_nic {
      * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
      */
     static list(resourceGroup: string, vmName: string): az_vm_nic_list_command_builder {
-        return new az_vm_nic_list_command_builder("az vm nic list", resourceGroup, vmName);
+        return new az_vm_nic_list_command_builder("az vm nic list", 'az_vm_nic_list_command_result', resourceGroup, vmName);
     }
 
     /**
@@ -1190,7 +1190,7 @@ export class az_vm_nic {
      * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
      */
     static remove(nics: string, resourceGroup: string, vmName: string): az_vm_nic_remove_command_builder {
-        return new az_vm_nic_remove_command_builder("az vm nic remove", nics, resourceGroup, vmName);
+        return new az_vm_nic_remove_command_builder("az vm nic remove", 'az_vm_nic_remove_command_result', nics, resourceGroup, vmName);
     }
 
     /**
@@ -1210,7 +1210,7 @@ export class az_vm_nic {
      * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
      */
     static set(nics: string, resourceGroup: string, vmName: string): az_vm_nic_set_command_builder {
-        return new az_vm_nic_set_command_builder("az vm nic set", nics, resourceGroup, vmName);
+        return new az_vm_nic_set_command_builder("az vm nic set", 'az_vm_nic_set_command_result', nics, resourceGroup, vmName);
     }
 
     /**
@@ -1230,7 +1230,7 @@ export class az_vm_nic {
      * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
      */
     static show(nic: string, resourceGroup: string, vmName: string): az_vm_nic_show_command_builder {
-        return new az_vm_nic_show_command_builder("az vm nic show", nic, resourceGroup, vmName);
+        return new az_vm_nic_show_command_builder("az vm nic show", 'az_vm_nic_show_command_result', nic, resourceGroup, vmName);
     }
 }
 
@@ -1253,7 +1253,7 @@ export class az_vm_run_command {
      * @param {string} commandId The command id.
      */
     static invoke(commandId: string): az_vm_run_command_invoke_command_builder {
-        return new az_vm_run_command_invoke_command_builder("az vm run-command invoke", commandId);
+        return new az_vm_run_command_invoke_command_builder("az vm run-command invoke", 'az_vm_run_command_invoke_command_result', commandId);
     }
 
     /**
@@ -1269,7 +1269,7 @@ export class az_vm_run_command {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list(location: string): az_vm_run_command_list_command_builder {
-        return new az_vm_run_command_list_command_builder("az vm run-command list", location);
+        return new az_vm_run_command_list_command_builder("az vm run-command list", 'az_vm_run_command_list_command_result', location);
     }
 
     /**
@@ -1287,7 +1287,7 @@ export class az_vm_run_command {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static show(commandId: string, location: string): az_vm_run_command_show_command_builder {
-        return new az_vm_run_command_show_command_builder("az vm run-command show", commandId, location);
+        return new az_vm_run_command_show_command_builder("az vm run-command show", 'az_vm_run_command_show_command_result', commandId, location);
     }
 }
 
@@ -1311,7 +1311,7 @@ export class az_vm_secret {
      * @param {string} keyvault Name or ID of the key vault.
      */
     static add(certificate: string, keyvault: string): az_vm_secret_add_command_builder {
-        return new az_vm_secret_add_command_builder("az vm secret add", certificate, keyvault);
+        return new az_vm_secret_add_command_builder("az vm secret add", 'az_vm_secret_add_command_result', certificate, keyvault);
     }
 
     /**
@@ -1329,7 +1329,7 @@ export class az_vm_secret {
      * @param {string} secrets Space-separated list of key vault secret URIs. Perhaps, produced by 'az keyvault secret list-versions --vault-name vaultname -n cert1 --query "[?attributes.enabled].id" -o tsv'.
      */
     static format(secrets: string): az_vm_secret_format_command_builder {
-        return new az_vm_secret_format_command_builder("az vm secret format", secrets);
+        return new az_vm_secret_format_command_builder("az vm secret format", 'az_vm_secret_format_command_result', secrets);
     }
 
     /**
@@ -1347,7 +1347,7 @@ export class az_vm_secret {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, resourceGroup: string): az_vm_secret_list_command_builder {
-        return new az_vm_secret_list_command_builder("az vm secret list", name, resourceGroup);
+        return new az_vm_secret_list_command_builder("az vm secret list", 'az_vm_secret_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -1366,7 +1366,7 @@ export class az_vm_secret {
      * @param {string} keyvault Name or ID of the key vault.
      */
     static remove(keyvault: string): az_vm_secret_remove_command_builder {
-        return new az_vm_secret_remove_command_builder("az vm secret remove", keyvault);
+        return new az_vm_secret_remove_command_builder("az vm secret remove", 'az_vm_secret_remove_command_result', keyvault);
     }
 }
 
@@ -1392,7 +1392,7 @@ export class az_vm_unmanaged_disk {
      * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
      */
     static attach(resourceGroup: string, vmName: string): az_vm_unmanaged_disk_attach_command_builder {
-        return new az_vm_unmanaged_disk_attach_command_builder("az vm unmanaged-disk attach", resourceGroup, vmName);
+        return new az_vm_unmanaged_disk_attach_command_builder("az vm unmanaged-disk attach", 'az_vm_unmanaged_disk_attach_command_result', resourceGroup, vmName);
     }
 
     /**
@@ -1411,7 +1411,7 @@ export class az_vm_unmanaged_disk {
      * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
      */
     static detach(name: string, resourceGroup: string, vmName: string): az_vm_unmanaged_disk_detach_command_builder {
-        return new az_vm_unmanaged_disk_detach_command_builder("az vm unmanaged-disk detach", name, resourceGroup, vmName);
+        return new az_vm_unmanaged_disk_detach_command_builder("az vm unmanaged-disk detach", 'az_vm_unmanaged_disk_detach_command_result', name, resourceGroup, vmName);
     }
 
     /**
@@ -1429,7 +1429,7 @@ export class az_vm_unmanaged_disk {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(vmName: string, resourceGroup: string): az_vm_unmanaged_disk_list_command_builder {
-        return new az_vm_unmanaged_disk_list_command_builder("az vm unmanaged-disk list", vmName, resourceGroup);
+        return new az_vm_unmanaged_disk_list_command_builder("az vm unmanaged-disk list", 'az_vm_unmanaged_disk_list_command_result', vmName, resourceGroup);
     }
 }
 
@@ -1451,7 +1451,7 @@ export class az_vm_user {
      * @param {string} username The user name.
      */
     static delete(username: string): az_vm_user_delete_command_builder {
-        return new az_vm_user_delete_command_builder("az vm user delete", username);
+        return new az_vm_user_delete_command_builder("az vm user delete", 'az_vm_user_delete_command_result', username);
     }
 
     /**
@@ -1467,7 +1467,7 @@ export class az_vm_user {
      * ```
      */
     static reset_ssh(): az_vm_user_reset_ssh_command_builder {
-        return new az_vm_user_reset_ssh_command_builder("az vm user reset-ssh");
+        return new az_vm_user_reset_ssh_command_builder("az vm user reset-ssh", 'az_vm_user_reset_ssh_command_result');
     }
 
     /**
@@ -1488,7 +1488,7 @@ export class az_vm_user {
      * @param {string} username The user name.
      */
     static update(username: string): az_vm_user_update_command_builder {
-        return new az_vm_user_update_command_builder("az vm user update", username);
+        return new az_vm_user_update_command_builder("az vm user update", 'az_vm_user_update_command_result', username);
     }
 }
 
@@ -1506,7 +1506,7 @@ export class az_vm {
      * ```
      */
     static assess_patches(): az_vm_assess_patches_command_builder {
-        return new az_vm_assess_patches_command_builder("az vm assess-patches");
+        return new az_vm_assess_patches_command_builder("az vm assess-patches", 'az_vm_assess_patches_command_result');
     }
 
     /**
@@ -1526,7 +1526,7 @@ export class az_vm {
      * ```
      */
     static auto_shutdown(): az_vm_auto_shutdown_command_builder {
-        return new az_vm_auto_shutdown_command_builder("az vm auto-shutdown");
+        return new az_vm_auto_shutdown_command_builder("az vm auto-shutdown", 'az_vm_auto_shutdown_command_result');
     }
 
     /**
@@ -1546,7 +1546,7 @@ export class az_vm {
      * @param {string} vhdNamePrefix The VHD name prefix specify for the VM disks.
      */
     static capture(vhdNamePrefix: string): az_vm_capture_command_builder {
-        return new az_vm_capture_command_builder("az vm capture", vhdNamePrefix);
+        return new az_vm_capture_command_builder("az vm capture", 'az_vm_capture_command_result', vhdNamePrefix);
     }
 
     /**
@@ -1561,7 +1561,7 @@ export class az_vm {
      * ```
      */
     static convert(): az_vm_convert_command_builder {
-        return new az_vm_convert_command_builder("az vm convert");
+        return new az_vm_convert_command_builder("az vm convert", 'az_vm_convert_command_result');
     }
 
     /**
@@ -1647,7 +1647,7 @@ export class az_vm {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_vm_create_command_builder {
-        return new az_vm_create_command_builder("az vm create", name, resourceGroup);
+        return new az_vm_create_command_builder("az vm create", 'az_vm_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -1663,7 +1663,7 @@ export class az_vm {
      * ```
      */
     static deallocate(): az_vm_deallocate_command_builder {
-        return new az_vm_deallocate_command_builder("az vm deallocate");
+        return new az_vm_deallocate_command_builder("az vm deallocate", 'az_vm_deallocate_command_result');
     }
 
     /**
@@ -1680,7 +1680,7 @@ export class az_vm {
      * ```
      */
     static delete(): az_vm_delete_command_builder {
-        return new az_vm_delete_command_builder("az vm delete");
+        return new az_vm_delete_command_builder("az vm delete", 'az_vm_delete_command_result');
     }
 
     /**
@@ -1696,7 +1696,7 @@ export class az_vm {
      * ```
      */
     static generalize(): az_vm_generalize_command_builder {
-        return new az_vm_generalize_command_builder("az vm generalize");
+        return new az_vm_generalize_command_builder("az vm generalize", 'az_vm_generalize_command_result');
     }
 
     /**
@@ -1711,7 +1711,7 @@ export class az_vm {
      * ```
      */
     static get_instance_view(): az_vm_get_instance_view_command_builder {
-        return new az_vm_get_instance_view_command_builder("az vm get-instance-view");
+        return new az_vm_get_instance_view_command_builder("az vm get-instance-view", 'az_vm_get_instance_view_command_result');
     }
 
     /**
@@ -1726,7 +1726,7 @@ export class az_vm {
      * ```
      */
     static list(): az_vm_list_command_builder {
-        return new az_vm_list_command_builder("az vm list");
+        return new az_vm_list_command_builder("az vm list", 'az_vm_list_command_result');
     }
 
     /**
@@ -1741,7 +1741,7 @@ export class az_vm {
      * ```
      */
     static list_ip_addresses(): az_vm_list_ip_addresses_command_builder {
-        return new az_vm_list_ip_addresses_command_builder("az vm list-ip-addresses");
+        return new az_vm_list_ip_addresses_command_builder("az vm list-ip-addresses", 'az_vm_list_ip_addresses_command_result');
     }
 
     /**
@@ -1756,7 +1756,7 @@ export class az_vm {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list_sizes(location: string): az_vm_list_sizes_command_builder {
-        return new az_vm_list_sizes_command_builder("az vm list-sizes", location);
+        return new az_vm_list_sizes_command_builder("az vm list-sizes", 'az_vm_list_sizes_command_result', location);
     }
 
     /**
@@ -1773,7 +1773,7 @@ export class az_vm {
      * ```
      */
     static list_skus(): az_vm_list_skus_command_builder {
-        return new az_vm_list_skus_command_builder("az vm list-skus");
+        return new az_vm_list_skus_command_builder("az vm list-skus", 'az_vm_list_skus_command_result');
     }
 
     /**
@@ -1788,7 +1788,7 @@ export class az_vm {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list_usage(location: string): az_vm_list_usage_command_builder {
-        return new az_vm_list_usage_command_builder("az vm list-usage", location);
+        return new az_vm_list_usage_command_builder("az vm list-usage", 'az_vm_list_usage_command_result', location);
     }
 
     /**
@@ -1803,7 +1803,7 @@ export class az_vm {
      * ```
      */
     static list_vm_resize_options(): az_vm_list_vm_resize_options_command_builder {
-        return new az_vm_list_vm_resize_options_command_builder("az vm list-vm-resize-options");
+        return new az_vm_list_vm_resize_options_command_builder("az vm list-vm-resize-options", 'az_vm_list_vm_resize_options_command_result');
     }
 
     /**
@@ -1824,7 +1824,7 @@ export class az_vm {
      * @param {string} port The port or port range (ex: 80-100) to open inbound traffic to. Use '\*' to allow traffic to all ports.
      */
     static open_port(port: string): az_vm_open_port_command_builder {
-        return new az_vm_open_port_command_builder("az vm open-port", port);
+        return new az_vm_open_port_command_builder("az vm open-port", 'az_vm_open_port_command_result', port);
     }
 
     /**
@@ -1839,7 +1839,7 @@ export class az_vm {
      * ```
      */
     static perform_maintenance(): az_vm_perform_maintenance_command_builder {
-        return new az_vm_perform_maintenance_command_builder("az vm perform-maintenance");
+        return new az_vm_perform_maintenance_command_builder("az vm perform-maintenance", 'az_vm_perform_maintenance_command_result');
     }
 
     /**
@@ -1855,7 +1855,7 @@ export class az_vm {
      * ```
      */
     static reapply(): az_vm_reapply_command_builder {
-        return new az_vm_reapply_command_builder("az vm reapply");
+        return new az_vm_reapply_command_builder("az vm reapply", 'az_vm_reapply_command_result');
     }
 
     /**
@@ -1871,7 +1871,7 @@ export class az_vm {
      * ```
      */
     static redeploy(): az_vm_redeploy_command_builder {
-        return new az_vm_redeploy_command_builder("az vm redeploy");
+        return new az_vm_redeploy_command_builder("az vm redeploy", 'az_vm_redeploy_command_result');
     }
 
     /**
@@ -1890,7 +1890,7 @@ export class az_vm {
      * @param {string} size The VM size.
      */
     static resize(size: string): az_vm_resize_command_builder {
-        return new az_vm_resize_command_builder("az vm resize", size);
+        return new az_vm_resize_command_builder("az vm resize", 'az_vm_resize_command_result', size);
     }
 
     /**
@@ -1907,7 +1907,7 @@ export class az_vm {
      * ```
      */
     static restart(): az_vm_restart_command_builder {
-        return new az_vm_restart_command_builder("az vm restart");
+        return new az_vm_restart_command_builder("az vm restart", 'az_vm_restart_command_result');
     }
 
     /**
@@ -1924,7 +1924,7 @@ export class az_vm {
      * ```
      */
     static show(): az_vm_show_command_builder {
-        return new az_vm_show_command_builder("az vm show");
+        return new az_vm_show_command_builder("az vm show", 'az_vm_show_command_result');
     }
 
     /**
@@ -1939,7 +1939,7 @@ export class az_vm {
      * ```
      */
     static simulate_eviction(): az_vm_simulate_eviction_command_builder {
-        return new az_vm_simulate_eviction_command_builder("az vm simulate-eviction");
+        return new az_vm_simulate_eviction_command_builder("az vm simulate-eviction", 'az_vm_simulate_eviction_command_result');
     }
 
     /**
@@ -1955,7 +1955,7 @@ export class az_vm {
      * ```
      */
     static start(): az_vm_start_command_builder {
-        return new az_vm_start_command_builder("az vm start");
+        return new az_vm_start_command_builder("az vm start", 'az_vm_start_command_result');
     }
 
     /**
@@ -1972,7 +1972,7 @@ export class az_vm {
      * ```
      */
     static stop(): az_vm_stop_command_builder {
-        return new az_vm_stop_command_builder("az vm stop");
+        return new az_vm_stop_command_builder("az vm stop", 'az_vm_stop_command_result');
     }
 
     /**
@@ -2001,7 +2001,7 @@ export class az_vm {
      * ```
      */
     static update(): az_vm_update_command_builder {
-        return new az_vm_update_command_builder("az vm update");
+        return new az_vm_update_command_builder("az vm update", 'az_vm_update_command_result');
     }
 
     /**
@@ -2023,7 +2023,7 @@ export class az_vm {
      * ```
      */
     static wait(): az_vm_wait_command_builder {
-        return new az_vm_wait_command_builder("az vm wait");
+        return new az_vm_wait_command_builder("az vm wait", 'az_vm_wait_command_result');
     }
 }
 
@@ -2039,8 +2039,8 @@ export class az_vm {
  * ```
  */
 class az_vm_availability_set_convert_command_builder extends CommandBuilder<az_vm_availability_set_convert_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2090,8 +2090,8 @@ class az_vm_availability_set_convert_command_builder extends CommandBuilder<az_v
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vm_availability_set_create_command_builder extends CommandBuilder<az_vm_availability_set_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2175,8 +2175,8 @@ class az_vm_availability_set_create_command_builder extends CommandBuilder<az_vm
  * ```
  */
 class az_vm_availability_set_delete_command_builder extends CommandBuilder<az_vm_availability_set_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2215,8 +2215,8 @@ class az_vm_availability_set_delete_command_builder extends CommandBuilder<az_vm
  * ```
  */
 class az_vm_availability_set_list_command_builder extends CommandBuilder<az_vm_availability_set_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -2250,8 +2250,8 @@ class az_vm_availability_set_list_command_builder extends CommandBuilder<az_vm_a
  * ```
  */
 class az_vm_availability_set_list_sizes_command_builder extends CommandBuilder<az_vm_availability_set_list_sizes_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2292,8 +2292,8 @@ class az_vm_availability_set_list_sizes_command_builder extends CommandBuilder<a
  * ```
  */
 class az_vm_availability_set_show_command_builder extends CommandBuilder<az_vm_availability_set_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2344,8 +2344,8 @@ class az_vm_availability_set_show_command_builder extends CommandBuilder<az_vm_a
  * ```
  */
 class az_vm_availability_set_update_command_builder extends CommandBuilder<az_vm_availability_set_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -2415,8 +2415,8 @@ class az_vm_availability_set_update_command_builder extends CommandBuilder<az_vm
  * ```
  */
 class az_vm_boot_diagnostics_disable_command_builder extends CommandBuilder<az_vm_boot_diagnostics_disable_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2457,8 +2457,8 @@ class az_vm_boot_diagnostics_disable_command_builder extends CommandBuilder<az_v
  * ```
  */
 class az_vm_boot_diagnostics_enable_command_builder extends CommandBuilder<az_vm_boot_diagnostics_enable_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2504,8 +2504,8 @@ class az_vm_boot_diagnostics_enable_command_builder extends CommandBuilder<az_vm
  * ```
  */
 class az_vm_boot_diagnostics_get_boot_log_command_builder extends CommandBuilder<az_vm_boot_diagnostics_get_boot_log_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2546,8 +2546,8 @@ class az_vm_boot_diagnostics_get_boot_log_command_builder extends CommandBuilder
  * ```
  */
 class az_vm_boot_diagnostics_get_boot_log_uris_command_builder extends CommandBuilder<az_vm_boot_diagnostics_get_boot_log_uris_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Expiration duration in minutes for the SAS URIs with a value between 1 to 1440 minutes. If not specified, SAS URIs will be generated with a default expiration duration of 120 minutes. */
@@ -2591,8 +2591,8 @@ class az_vm_boot_diagnostics_get_boot_log_uris_command_builder extends CommandBu
  * ```
  */
 class az_vm_diagnostics_get_default_config_command_builder extends CommandBuilder<az_vm_diagnostics_get_default_config_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** For Windows VMs. */
@@ -2626,8 +2626,8 @@ class az_vm_diagnostics_get_default_config_command_builder extends CommandBuilde
  * @param {string} settings Json string or a file path, which defines data to be collected.
  */
 class az_vm_diagnostics_set_command_builder extends CommandBuilder<az_vm_diagnostics_set_command_result> {
-    constructor(commandPath: string, settings: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, settings: string) {
+        super(commandPath, resultDataTypeName);
         this.settings(settings)
     }
 
@@ -2701,8 +2701,8 @@ class az_vm_diagnostics_set_command_builder extends CommandBuilder<az_vm_diagnos
  * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
  */
 class az_vm_disk_attach_command_builder extends CommandBuilder<az_vm_disk_attach_command_result> {
-    constructor(commandPath: string, vmName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, vmName: string) {
+        super(commandPath, resultDataTypeName);
         this.vmName(vmName)
     }
 
@@ -2789,8 +2789,8 @@ class az_vm_disk_attach_command_builder extends CommandBuilder<az_vm_disk_attach
  * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
  */
 class az_vm_disk_detach_command_builder extends CommandBuilder<az_vm_disk_detach_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, vmName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, vmName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.vmName(vmName)
@@ -2835,8 +2835,8 @@ class az_vm_disk_detach_command_builder extends CommandBuilder<az_vm_disk_detach
  * ```
  */
 class az_vm_encryption_disable_command_builder extends CommandBuilder<az_vm_encryption_disable_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Continue by ignoring client side validation errors. */
@@ -2900,8 +2900,8 @@ class az_vm_encryption_disable_command_builder extends CommandBuilder<az_vm_encr
  * @param {string} diskEncryptionKeyvault Name or ID of the key vault where the generated encryption key will be placed.
  */
 class az_vm_encryption_enable_command_builder extends CommandBuilder<az_vm_encryption_enable_command_result> {
-    constructor(commandPath: string, diskEncryptionKeyvault: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, diskEncryptionKeyvault: string) {
+        super(commandPath, resultDataTypeName);
         this.diskEncryptionKeyvault(diskEncryptionKeyvault)
     }
 
@@ -3003,8 +3003,8 @@ class az_vm_encryption_enable_command_builder extends CommandBuilder<az_vm_encry
  * ```
  */
 class az_vm_encryption_show_command_builder extends CommandBuilder<az_vm_encryption_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3053,8 +3053,8 @@ class az_vm_encryption_show_command_builder extends CommandBuilder<az_vm_encrypt
  * ```
  */
 class az_vm_extension_image_list_command_builder extends CommandBuilder<az_vm_extension_image_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Show the latest version only. */
@@ -3114,8 +3114,8 @@ class az_vm_extension_image_list_command_builder extends CommandBuilder<az_vm_ex
  * @param {string} publisher Image publisher name.
  */
 class az_vm_extension_image_list_names_command_builder extends CommandBuilder<az_vm_extension_image_list_names_command_result> {
-    constructor(commandPath: string, location: string, publisher: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, publisher: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.publisher(publisher)
     }
@@ -3158,8 +3158,8 @@ class az_vm_extension_image_list_names_command_builder extends CommandBuilder<az
  * @param {string} publisher Image publisher name.
  */
 class az_vm_extension_image_list_versions_command_builder extends CommandBuilder<az_vm_extension_image_list_versions_command_result> {
-    constructor(commandPath: string, location: string, name: string, publisher: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string, publisher: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
         this.publisher(publisher)
@@ -3227,8 +3227,8 @@ class az_vm_extension_image_list_versions_command_builder extends CommandBuilder
  * @param {string} version Extension version.
  */
 class az_vm_extension_image_show_command_builder extends CommandBuilder<az_vm_extension_image_show_command_result> {
-    constructor(commandPath: string, location: string, name: string, publisher: string, version: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string, publisher: string, version: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
         this.publisher(publisher)
@@ -3286,8 +3286,8 @@ class az_vm_extension_image_show_command_builder extends CommandBuilder<az_vm_ex
  * ```
  */
 class az_vm_extension_delete_command_builder extends CommandBuilder<az_vm_extension_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3342,8 +3342,8 @@ class az_vm_extension_delete_command_builder extends CommandBuilder<az_vm_extens
  * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
  */
 class az_vm_extension_list_command_builder extends CommandBuilder<az_vm_extension_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, vmName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, vmName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.vmName(vmName)
     }
@@ -3397,8 +3397,8 @@ class az_vm_extension_list_command_builder extends CommandBuilder<az_vm_extensio
  * @param {string} publisher The name of the extension publisher.
  */
 class az_vm_extension_set_command_builder extends CommandBuilder<az_vm_extension_set_command_result> {
-    constructor(commandPath: string, name: string, publisher: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, publisher: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.publisher(publisher)
     }
@@ -3497,8 +3497,8 @@ class az_vm_extension_set_command_builder extends CommandBuilder<az_vm_extension
  * ```
  */
 class az_vm_extension_show_command_builder extends CommandBuilder<az_vm_extension_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The expand expression to apply on the operation. */
@@ -3565,8 +3565,8 @@ class az_vm_extension_show_command_builder extends CommandBuilder<az_vm_extensio
  * ```
  */
 class az_vm_extension_wait_command_builder extends CommandBuilder<az_vm_extension_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */
@@ -3667,8 +3667,8 @@ class az_vm_extension_wait_command_builder extends CommandBuilder<az_vm_extensio
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vm_host_group_create_command_builder extends CommandBuilder<az_vm_host_group_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -3735,8 +3735,8 @@ class az_vm_host_group_create_command_builder extends CommandBuilder<az_vm_host_
  * ```
  */
 class az_vm_host_group_delete_command_builder extends CommandBuilder<az_vm_host_group_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3782,8 +3782,8 @@ class az_vm_host_group_delete_command_builder extends CommandBuilder<az_vm_host_
  * ```
  */
 class az_vm_host_group_get_instance_view_command_builder extends CommandBuilder<az_vm_host_group_get_instance_view_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3822,8 +3822,8 @@ class az_vm_host_group_get_instance_view_command_builder extends CommandBuilder<
  * ```
  */
 class az_vm_host_group_list_command_builder extends CommandBuilder<az_vm_host_group_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -3858,8 +3858,8 @@ class az_vm_host_group_list_command_builder extends CommandBuilder<az_vm_host_gr
  * ```
  */
 class az_vm_host_group_show_command_builder extends CommandBuilder<az_vm_host_group_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3909,8 +3909,8 @@ class az_vm_host_group_show_command_builder extends CommandBuilder<az_vm_host_gr
  * ```
  */
 class az_vm_host_group_update_command_builder extends CommandBuilder<az_vm_host_group_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -3985,8 +3985,8 @@ class az_vm_host_group_update_command_builder extends CommandBuilder<az_vm_host_
  * @param {'DSv3-Type1' | 'ESv3-Type1' | 'FSv2-Type2'} sku Sku of the dedicated host.
  */
 class az_vm_host_create_command_builder extends CommandBuilder<az_vm_host_create_command_result> {
-    constructor(commandPath: string, hostGroup: string, name: string, resourceGroup: string, sku: 'DSv3-Type1' | 'ESv3-Type1' | 'FSv2-Type2') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, hostGroup: string, name: string, resourceGroup: string, sku: 'DSv3-Type1' | 'ESv3-Type1' | 'FSv2-Type2') {
+        super(commandPath, resultDataTypeName);
         this.hostGroup(hostGroup)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4068,8 +4068,8 @@ class az_vm_host_create_command_builder extends CommandBuilder<az_vm_host_create
  * ```
  */
 class az_vm_host_delete_command_builder extends CommandBuilder<az_vm_host_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Dedicated Host Group. */
@@ -4122,8 +4122,8 @@ class az_vm_host_delete_command_builder extends CommandBuilder<az_vm_host_delete
  * ```
  */
 class az_vm_host_get_instance_view_command_builder extends CommandBuilder<az_vm_host_get_instance_view_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Dedicated Host Group. */
@@ -4172,8 +4172,8 @@ class az_vm_host_get_instance_view_command_builder extends CommandBuilder<az_vm_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vm_host_list_command_builder extends CommandBuilder<az_vm_host_list_command_result> {
-    constructor(commandPath: string, hostGroup: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, hostGroup: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.hostGroup(hostGroup)
         this.resourceGroup(resourceGroup)
     }
@@ -4217,8 +4217,8 @@ class az_vm_host_list_command_builder extends CommandBuilder<az_vm_host_list_com
  * ```
  */
 class az_vm_host_show_command_builder extends CommandBuilder<az_vm_host_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the Dedicated Host Group. */
@@ -4275,8 +4275,8 @@ class az_vm_host_show_command_builder extends CommandBuilder<az_vm_host_show_com
  * ```
  */
 class az_vm_host_update_command_builder extends CommandBuilder<az_vm_host_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -4349,8 +4349,8 @@ class az_vm_host_update_command_builder extends CommandBuilder<az_vm_host_update
  * ```
  */
 class az_vm_identity_assign_command_builder extends CommandBuilder<az_vm_identity_assign_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Space-separated identities to assign. Use '[system]' to refer to the system assigned identity. Default: '[system]'. */
@@ -4409,8 +4409,8 @@ class az_vm_identity_assign_command_builder extends CommandBuilder<az_vm_identit
  * ```
  */
 class az_vm_identity_remove_command_builder extends CommandBuilder<az_vm_identity_remove_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Space-separated identities to remove. Use '[system]' to refer to the system assigned identity. Default: '[system]'. */
@@ -4457,8 +4457,8 @@ class az_vm_identity_remove_command_builder extends CommandBuilder<az_vm_identit
  * ```
  */
 class az_vm_identity_show_command_builder extends CommandBuilder<az_vm_identity_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4505,8 +4505,8 @@ class az_vm_identity_show_command_builder extends CommandBuilder<az_vm_identity_
  * ```
  */
 class az_vm_image_terms_accept_command_builder extends CommandBuilder<az_vm_image_terms_accept_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Image offer. */
@@ -4553,8 +4553,8 @@ class az_vm_image_terms_accept_command_builder extends CommandBuilder<az_vm_imag
  * ```
  */
 class az_vm_image_terms_cancel_command_builder extends CommandBuilder<az_vm_image_terms_cancel_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Image offer. */
@@ -4602,8 +4602,8 @@ class az_vm_image_terms_cancel_command_builder extends CommandBuilder<az_vm_imag
  * ```
  */
 class az_vm_image_terms_show_command_builder extends CommandBuilder<az_vm_image_terms_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Image offer. */
@@ -4656,8 +4656,8 @@ class az_vm_image_terms_show_command_builder extends CommandBuilder<az_vm_image_
  * ```
  */
 class az_vm_image_accept_terms_command_builder extends CommandBuilder<az_vm_image_accept_terms_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Image offer. */
@@ -4706,8 +4706,8 @@ class az_vm_image_accept_terms_command_builder extends CommandBuilder<az_vm_imag
  * ```
  */
 class az_vm_image_list_command_builder extends CommandBuilder<az_vm_image_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Retrieve image list from live Azure service rather using an offline image list. */
@@ -4767,8 +4767,8 @@ class az_vm_image_list_command_builder extends CommandBuilder<az_vm_image_list_c
  * @param {string} publisher A valid image publisher.
  */
 class az_vm_image_list_offers_command_builder extends CommandBuilder<az_vm_image_list_offers_command_result> {
-    constructor(commandPath: string, location: string, publisher: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, publisher: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.publisher(publisher)
     }
@@ -4804,8 +4804,8 @@ class az_vm_image_list_offers_command_builder extends CommandBuilder<az_vm_image
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_vm_image_list_publishers_command_builder extends CommandBuilder<az_vm_image_list_publishers_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -4838,8 +4838,8 @@ class az_vm_image_list_publishers_command_builder extends CommandBuilder<az_vm_i
  * @param {string} publisher A valid image publisher.
  */
 class az_vm_image_list_skus_command_builder extends CommandBuilder<az_vm_image_list_skus_command_result> {
-    constructor(commandPath: string, location: string, offer: string, publisher: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, offer: string, publisher: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.offer(offer)
         this.publisher(publisher)
@@ -4886,8 +4886,8 @@ class az_vm_image_list_skus_command_builder extends CommandBuilder<az_vm_image_l
  * ```
  */
 class az_vm_image_show_command_builder extends CommandBuilder<az_vm_image_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`. */
@@ -4956,8 +4956,8 @@ class az_vm_image_show_command_builder extends CommandBuilder<az_vm_image_show_c
  * @param {string} analyticsQuery Query to execute over Log Analytics data.
  */
 class az_vm_monitor_log_show_command_builder extends CommandBuilder<az_vm_monitor_log_show_command_result> {
-    constructor(commandPath: string, analyticsQuery: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, analyticsQuery: string) {
+        super(commandPath, resultDataTypeName);
         this.analyticsQuery(analyticsQuery)
     }
 
@@ -5019,8 +5019,8 @@ class az_vm_monitor_log_show_command_builder extends CommandBuilder<az_vm_monito
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vm_monitor_metrics_list_definitions_command_builder extends CommandBuilder<az_vm_monitor_metrics_list_definitions_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -5076,8 +5076,8 @@ class az_vm_monitor_metrics_list_definitions_command_builder extends CommandBuil
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vm_monitor_metrics_tail_command_builder extends CommandBuilder<az_vm_monitor_metrics_tail_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -5190,8 +5190,8 @@ class az_vm_monitor_metrics_tail_command_builder extends CommandBuilder<az_vm_mo
  * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
  */
 class az_vm_nic_add_command_builder extends CommandBuilder<az_vm_nic_add_command_result> {
-    constructor(commandPath: string, nics: string, resourceGroup: string, vmName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nics: string, resourceGroup: string, vmName: string) {
+        super(commandPath, resultDataTypeName);
         this.nics(nics)
         this.resourceGroup(resourceGroup)
         this.vmName(vmName)
@@ -5243,8 +5243,8 @@ class az_vm_nic_add_command_builder extends CommandBuilder<az_vm_nic_add_command
  * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
  */
 class az_vm_nic_list_command_builder extends CommandBuilder<az_vm_nic_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, vmName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, vmName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.vmName(vmName)
     }
@@ -5291,8 +5291,8 @@ class az_vm_nic_list_command_builder extends CommandBuilder<az_vm_nic_list_comma
  * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
  */
 class az_vm_nic_remove_command_builder extends CommandBuilder<az_vm_nic_remove_command_result> {
-    constructor(commandPath: string, nics: string, resourceGroup: string, vmName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nics: string, resourceGroup: string, vmName: string) {
+        super(commandPath, resultDataTypeName);
         this.nics(nics)
         this.resourceGroup(resourceGroup)
         this.vmName(vmName)
@@ -5346,8 +5346,8 @@ class az_vm_nic_remove_command_builder extends CommandBuilder<az_vm_nic_remove_c
  * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
  */
 class az_vm_nic_set_command_builder extends CommandBuilder<az_vm_nic_set_command_result> {
-    constructor(commandPath: string, nics: string, resourceGroup: string, vmName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nics: string, resourceGroup: string, vmName: string) {
+        super(commandPath, resultDataTypeName);
         this.nics(nics)
         this.resourceGroup(resourceGroup)
         this.vmName(vmName)
@@ -5401,8 +5401,8 @@ class az_vm_nic_set_command_builder extends CommandBuilder<az_vm_nic_set_command
  * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
  */
 class az_vm_nic_show_command_builder extends CommandBuilder<az_vm_nic_show_command_result> {
-    constructor(commandPath: string, nic: string, resourceGroup: string, vmName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, nic: string, resourceGroup: string, vmName: string) {
+        super(commandPath, resultDataTypeName);
         this.nic(nic)
         this.resourceGroup(resourceGroup)
         this.vmName(vmName)
@@ -5456,8 +5456,8 @@ class az_vm_nic_show_command_builder extends CommandBuilder<az_vm_nic_show_comma
  * @param {string} commandId The command id.
  */
 class az_vm_run_command_invoke_command_builder extends CommandBuilder<az_vm_run_command_invoke_command_result> {
-    constructor(commandPath: string, commandId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, commandId: string) {
+        super(commandPath, resultDataTypeName);
         this.commandId(commandId)
     }
 
@@ -5517,8 +5517,8 @@ class az_vm_run_command_invoke_command_builder extends CommandBuilder<az_vm_run_
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_vm_run_command_list_command_builder extends CommandBuilder<az_vm_run_command_list_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -5556,8 +5556,8 @@ class az_vm_run_command_list_command_builder extends CommandBuilder<az_vm_run_co
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_vm_run_command_show_command_builder extends CommandBuilder<az_vm_run_command_show_command_result> {
-    constructor(commandPath: string, commandId: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, commandId: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.commandId(commandId)
         this.location(location)
     }
@@ -5605,8 +5605,8 @@ class az_vm_run_command_show_command_builder extends CommandBuilder<az_vm_run_co
  * @param {string} keyvault Name or ID of the key vault.
  */
 class az_vm_secret_add_command_builder extends CommandBuilder<az_vm_secret_add_command_result> {
-    constructor(commandPath: string, certificate: string, keyvault: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, certificate: string, keyvault: string) {
+        super(commandPath, resultDataTypeName);
         this.certificate(certificate)
         this.keyvault(keyvault)
     }
@@ -5669,8 +5669,8 @@ class az_vm_secret_add_command_builder extends CommandBuilder<az_vm_secret_add_c
  * @param {string} secrets Space-separated list of key vault secret URIs. Perhaps, produced by 'az keyvault secret list-versions --vault-name vaultname -n cert1 --query "[?attributes.enabled].id" -o tsv'.
  */
 class az_vm_secret_format_command_builder extends CommandBuilder<az_vm_secret_format_command_result> {
-    constructor(commandPath: string, secrets: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, secrets: string) {
+        super(commandPath, resultDataTypeName);
         this.secrets(secrets)
     }
 
@@ -5720,8 +5720,8 @@ class az_vm_secret_format_command_builder extends CommandBuilder<az_vm_secret_fo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vm_secret_list_command_builder extends CommandBuilder<az_vm_secret_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -5767,8 +5767,8 @@ class az_vm_secret_list_command_builder extends CommandBuilder<az_vm_secret_list
  * @param {string} keyvault Name or ID of the key vault.
  */
 class az_vm_secret_remove_command_builder extends CommandBuilder<az_vm_secret_remove_command_result> {
-    constructor(commandPath: string, keyvault: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, keyvault: string) {
+        super(commandPath, resultDataTypeName);
         this.keyvault(keyvault)
     }
 
@@ -5829,8 +5829,8 @@ class az_vm_secret_remove_command_builder extends CommandBuilder<az_vm_secret_re
  * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
  */
 class az_vm_unmanaged_disk_attach_command_builder extends CommandBuilder<az_vm_unmanaged_disk_attach_command_result> {
-    constructor(commandPath: string, resourceGroup: string, vmName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, vmName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.vmName(vmName)
     }
@@ -5906,8 +5906,8 @@ class az_vm_unmanaged_disk_attach_command_builder extends CommandBuilder<az_vm_u
  * @param {string} vmName The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`.
  */
 class az_vm_unmanaged_disk_detach_command_builder extends CommandBuilder<az_vm_unmanaged_disk_detach_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, vmName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, vmName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.vmName(vmName)
@@ -5953,8 +5953,8 @@ class az_vm_unmanaged_disk_detach_command_builder extends CommandBuilder<az_vm_u
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vm_unmanaged_disk_list_command_builder extends CommandBuilder<az_vm_unmanaged_disk_list_command_result> {
-    constructor(commandPath: string, vmName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, vmName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.vmName(vmName)
         this.resourceGroup(resourceGroup)
     }
@@ -6000,8 +6000,8 @@ class az_vm_unmanaged_disk_list_command_builder extends CommandBuilder<az_vm_unm
  * @param {string} username The user name.
  */
 class az_vm_user_delete_command_builder extends CommandBuilder<az_vm_user_delete_command_result> {
-    constructor(commandPath: string, username: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, username: string) {
+        super(commandPath, resultDataTypeName);
         this.username(username)
     }
 
@@ -6055,8 +6055,8 @@ class az_vm_user_delete_command_builder extends CommandBuilder<az_vm_user_delete
  * ```
  */
 class az_vm_user_reset_ssh_command_builder extends CommandBuilder<az_vm_user_reset_ssh_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -6108,8 +6108,8 @@ class az_vm_user_reset_ssh_command_builder extends CommandBuilder<az_vm_user_res
  * @param {string} username The user name.
  */
 class az_vm_user_update_command_builder extends CommandBuilder<az_vm_user_update_command_result> {
-    constructor(commandPath: string, username: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, username: string) {
+        super(commandPath, resultDataTypeName);
         this.username(username)
     }
 
@@ -6174,8 +6174,8 @@ class az_vm_user_update_command_builder extends CommandBuilder<az_vm_user_update
  * ```
  */
 class az_vm_assess_patches_command_builder extends CommandBuilder<az_vm_assess_patches_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -6220,8 +6220,8 @@ class az_vm_assess_patches_command_builder extends CommandBuilder<az_vm_assess_p
  * ```
  */
 class az_vm_auto_shutdown_command_builder extends CommandBuilder<az_vm_auto_shutdown_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The email recipient to send notifications to (can be a list of semi-colon separated email addresses). */
@@ -6296,8 +6296,8 @@ class az_vm_auto_shutdown_command_builder extends CommandBuilder<az_vm_auto_shut
  * @param {string} vhdNamePrefix The VHD name prefix specify for the VM disks.
  */
 class az_vm_capture_command_builder extends CommandBuilder<az_vm_capture_command_result> {
-    constructor(commandPath: string, vhdNamePrefix: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, vhdNamePrefix: string) {
+        super(commandPath, resultDataTypeName);
         this.vhdNamePrefix(vhdNamePrefix)
     }
 
@@ -6356,8 +6356,8 @@ class az_vm_capture_command_builder extends CommandBuilder<az_vm_capture_command
  * ```
  */
 class az_vm_convert_command_builder extends CommandBuilder<az_vm_convert_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -6468,8 +6468,8 @@ class az_vm_convert_command_builder extends CommandBuilder<az_vm_convert_command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vm_create_command_builder extends CommandBuilder<az_vm_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -6920,8 +6920,8 @@ class az_vm_create_command_builder extends CommandBuilder<az_vm_create_command_r
  * ```
  */
 class az_vm_deallocate_command_builder extends CommandBuilder<az_vm_deallocate_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -6969,8 +6969,8 @@ class az_vm_deallocate_command_builder extends CommandBuilder<az_vm_deallocate_c
  * ```
  */
 class az_vm_delete_command_builder extends CommandBuilder<az_vm_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -7023,8 +7023,8 @@ class az_vm_delete_command_builder extends CommandBuilder<az_vm_delete_command_r
  * ```
  */
 class az_vm_generalize_command_builder extends CommandBuilder<az_vm_generalize_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -7070,8 +7070,8 @@ class az_vm_generalize_command_builder extends CommandBuilder<az_vm_generalize_c
  * ```
  */
 class az_vm_get_instance_view_command_builder extends CommandBuilder<az_vm_get_instance_view_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -7111,8 +7111,8 @@ class az_vm_get_instance_view_command_builder extends CommandBuilder<az_vm_get_i
  * ```
  */
 class az_vm_list_command_builder extends CommandBuilder<az_vm_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -7152,8 +7152,8 @@ class az_vm_list_command_builder extends CommandBuilder<az_vm_list_command_resul
  * ```
  */
 class az_vm_list_ip_addresses_command_builder extends CommandBuilder<az_vm_list_ip_addresses_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -7193,8 +7193,8 @@ class az_vm_list_ip_addresses_command_builder extends CommandBuilder<az_vm_list_
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_vm_list_sizes_command_builder extends CommandBuilder<az_vm_list_sizes_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -7225,8 +7225,8 @@ class az_vm_list_sizes_command_builder extends CommandBuilder<az_vm_list_sizes_c
  * ```
  */
 class az_vm_list_skus_command_builder extends CommandBuilder<az_vm_list_skus_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Show all information including vm sizes not available under the current subscription. */
@@ -7278,8 +7278,8 @@ class az_vm_list_skus_command_builder extends CommandBuilder<az_vm_list_skus_com
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_vm_list_usage_command_builder extends CommandBuilder<az_vm_list_usage_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -7308,8 +7308,8 @@ class az_vm_list_usage_command_builder extends CommandBuilder<az_vm_list_usage_c
  * ```
  */
 class az_vm_list_vm_resize_options_command_builder extends CommandBuilder<az_vm_list_vm_resize_options_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -7355,8 +7355,8 @@ class az_vm_list_vm_resize_options_command_builder extends CommandBuilder<az_vm_
  * @param {string} port The port or port range (ex: 80-100) to open inbound traffic to. Use '\*' to allow traffic to all ports.
  */
 class az_vm_open_port_command_builder extends CommandBuilder<az_vm_open_port_command_result> {
-    constructor(commandPath: string, port: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, port: string) {
+        super(commandPath, resultDataTypeName);
         this.port(port)
     }
 
@@ -7421,8 +7421,8 @@ class az_vm_open_port_command_builder extends CommandBuilder<az_vm_open_port_com
  * ```
  */
 class az_vm_perform_maintenance_command_builder extends CommandBuilder<az_vm_perform_maintenance_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -7463,8 +7463,8 @@ class az_vm_perform_maintenance_command_builder extends CommandBuilder<az_vm_per
  * ```
  */
 class az_vm_reapply_command_builder extends CommandBuilder<az_vm_reapply_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -7511,8 +7511,8 @@ class az_vm_reapply_command_builder extends CommandBuilder<az_vm_reapply_command
  * ```
  */
 class az_vm_redeploy_command_builder extends CommandBuilder<az_vm_redeploy_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -7562,8 +7562,8 @@ class az_vm_redeploy_command_builder extends CommandBuilder<az_vm_redeploy_comma
  * @param {string} size The VM size.
  */
 class az_vm_resize_command_builder extends CommandBuilder<az_vm_resize_command_result> {
-    constructor(commandPath: string, size: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, size: string) {
+        super(commandPath, resultDataTypeName);
         this.size(size)
     }
 
@@ -7618,8 +7618,8 @@ class az_vm_resize_command_builder extends CommandBuilder<az_vm_resize_command_r
  * ```
  */
 class az_vm_restart_command_builder extends CommandBuilder<az_vm_restart_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Force the VM to restart by redeploying it. Use if the VM is unresponsive. */
@@ -7673,8 +7673,8 @@ class az_vm_restart_command_builder extends CommandBuilder<az_vm_restart_command
  * ```
  */
 class az_vm_show_command_builder extends CommandBuilder<az_vm_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -7726,8 +7726,8 @@ class az_vm_show_command_builder extends CommandBuilder<az_vm_show_command_resul
  * ```
  */
 class az_vm_simulate_eviction_command_builder extends CommandBuilder<az_vm_simulate_eviction_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -7768,8 +7768,8 @@ class az_vm_simulate_eviction_command_builder extends CommandBuilder<az_vm_simul
  * ```
  */
 class az_vm_start_command_builder extends CommandBuilder<az_vm_start_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -7817,8 +7817,8 @@ class az_vm_start_command_builder extends CommandBuilder<az_vm_start_command_res
  * ```
  */
 class az_vm_stop_command_builder extends CommandBuilder<az_vm_stop_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -7884,8 +7884,8 @@ class az_vm_stop_command_builder extends CommandBuilder<az_vm_stop_command_resul
  * ```
  */
 class az_vm_update_command_builder extends CommandBuilder<az_vm_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -8016,8 +8016,8 @@ class az_vm_update_command_builder extends CommandBuilder<az_vm_update_command_r
  * ```
  */
 class az_vm_wait_command_builder extends CommandBuilder<az_vm_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */

@@ -34,7 +34,7 @@ export class az_signalr_cors {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static add(allowedOrigins: string, name: string, resourceGroup: string): az_signalr_cors_add_command_builder {
-        return new az_signalr_cors_add_command_builder("az signalr cors add", allowedOrigins, name, resourceGroup);
+        return new az_signalr_cors_add_command_builder("az signalr cors add", 'az_signalr_cors_add_command_result', allowedOrigins, name, resourceGroup);
     }
 
     /**
@@ -52,7 +52,7 @@ export class az_signalr_cors {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, resourceGroup: string): az_signalr_cors_list_command_builder {
-        return new az_signalr_cors_list_command_builder("az signalr cors list", name, resourceGroup);
+        return new az_signalr_cors_list_command_builder("az signalr cors list", 'az_signalr_cors_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -71,7 +71,7 @@ export class az_signalr_cors {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static remove(allowedOrigins: string, name: string, resourceGroup: string): az_signalr_cors_remove_command_builder {
-        return new az_signalr_cors_remove_command_builder("az signalr cors remove", allowedOrigins, name, resourceGroup);
+        return new az_signalr_cors_remove_command_builder("az signalr cors remove", 'az_signalr_cors_remove_command_result', allowedOrigins, name, resourceGroup);
     }
 }
 
@@ -92,7 +92,7 @@ export class az_signalr_key {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, resourceGroup: string): az_signalr_key_list_command_builder {
-        return new az_signalr_key_list_command_builder("az signalr key list", name, resourceGroup);
+        return new az_signalr_key_list_command_builder("az signalr key list", 'az_signalr_key_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -111,7 +111,7 @@ export class az_signalr_key {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static renew(keyType: 'primary' | 'secondary', name: string, resourceGroup: string): az_signalr_key_renew_command_builder {
-        return new az_signalr_key_renew_command_builder("az signalr key renew", keyType, name, resourceGroup);
+        return new az_signalr_key_renew_command_builder("az signalr key renew", 'az_signalr_key_renew_command_result', keyType, name, resourceGroup);
     }
 }
 
@@ -132,7 +132,7 @@ export class az_signalr_network_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, resourceGroup: string): az_signalr_network_rule_list_command_builder {
-        return new az_signalr_network_rule_list_command_builder("az signalr network-rule list", name, resourceGroup);
+        return new az_signalr_network_rule_list_command_builder("az signalr network-rule list", 'az_signalr_network_rule_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -153,7 +153,7 @@ export class az_signalr_network_rule {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, resourceGroup: string): az_signalr_network_rule_update_command_builder {
-        return new az_signalr_network_rule_update_command_builder("az signalr network-rule update", name, resourceGroup);
+        return new az_signalr_network_rule_update_command_builder("az signalr network-rule update", 'az_signalr_network_rule_update_command_result', name, resourceGroup);
     }
 }
 
@@ -173,7 +173,7 @@ export class az_signalr_upstream {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static clear(name: string, resourceGroup: string): az_signalr_upstream_clear_command_builder {
-        return new az_signalr_upstream_clear_command_builder("az signalr upstream clear", name, resourceGroup);
+        return new az_signalr_upstream_clear_command_builder("az signalr upstream clear", 'az_signalr_upstream_clear_command_result', name, resourceGroup);
     }
 
     /**
@@ -191,7 +191,7 @@ export class az_signalr_upstream {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, resourceGroup: string): az_signalr_upstream_list_command_builder {
-        return new az_signalr_upstream_list_command_builder("az signalr upstream list", name, resourceGroup);
+        return new az_signalr_upstream_list_command_builder("az signalr upstream list", 'az_signalr_upstream_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -210,7 +210,7 @@ export class az_signalr_upstream {
      * @param {string} template Template item for upstream settings. Use key=value pattern to set properties. Supported keys are "url-template", "hub-pattern", "event-pattern", "category-pattern".
      */
     static update(name: string, resourceGroup: string, template: string): az_signalr_upstream_update_command_builder {
-        return new az_signalr_upstream_update_command_builder("az signalr upstream update", name, resourceGroup, template);
+        return new az_signalr_upstream_update_command_builder("az signalr upstream update", 'az_signalr_upstream_update_command_result', name, resourceGroup, template);
     }
 }
 
@@ -238,7 +238,7 @@ export class az_signalr {
      * @param {string} sku The sku name of the signalr service. E.g. Standard_S1.
      */
     static create(name: string, resourceGroup: string, sku: string): az_signalr_create_command_builder {
-        return new az_signalr_create_command_builder("az signalr create", name, resourceGroup, sku);
+        return new az_signalr_create_command_builder("az signalr create", 'az_signalr_create_command_result', name, resourceGroup, sku);
     }
 
     /**
@@ -255,7 +255,7 @@ export class az_signalr {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_signalr_delete_command_builder {
-        return new az_signalr_delete_command_builder("az signalr delete", name, resourceGroup);
+        return new az_signalr_delete_command_builder("az signalr delete", 'az_signalr_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -269,7 +269,7 @@ export class az_signalr {
      * ```
      */
     static list(): az_signalr_list_command_builder {
-        return new az_signalr_list_command_builder("az signalr list");
+        return new az_signalr_list_command_builder("az signalr list", 'az_signalr_list_command_result');
     }
 
     /**
@@ -286,7 +286,7 @@ export class az_signalr {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static restart(name: string, resourceGroup: string): az_signalr_restart_command_builder {
-        return new az_signalr_restart_command_builder("az signalr restart", name, resourceGroup);
+        return new az_signalr_restart_command_builder("az signalr restart", 'az_signalr_restart_command_result', name, resourceGroup);
     }
 
     /**
@@ -304,7 +304,7 @@ export class az_signalr {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_signalr_show_command_builder {
-        return new az_signalr_show_command_builder("az signalr show", name, resourceGroup);
+        return new az_signalr_show_command_builder("az signalr show", 'az_signalr_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -331,7 +331,7 @@ export class az_signalr {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, resourceGroup: string): az_signalr_update_command_builder {
-        return new az_signalr_update_command_builder("az signalr update", name, resourceGroup);
+        return new az_signalr_update_command_builder("az signalr update", 'az_signalr_update_command_result', name, resourceGroup);
     }
 }
 
@@ -351,8 +351,8 @@ export class az_signalr {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_signalr_cors_add_command_builder extends CommandBuilder<az_signalr_cors_add_command_result> {
-    constructor(commandPath: string, allowedOrigins: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, allowedOrigins: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.allowedOrigins(allowedOrigins)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -398,8 +398,8 @@ class az_signalr_cors_add_command_builder extends CommandBuilder<az_signalr_cors
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_signalr_cors_list_command_builder extends CommandBuilder<az_signalr_cors_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -445,8 +445,8 @@ class az_signalr_cors_list_command_builder extends CommandBuilder<az_signalr_cor
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_signalr_cors_remove_command_builder extends CommandBuilder<az_signalr_cors_remove_command_result> {
-    constructor(commandPath: string, allowedOrigins: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, allowedOrigins: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.allowedOrigins(allowedOrigins)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -492,8 +492,8 @@ class az_signalr_cors_remove_command_builder extends CommandBuilder<az_signalr_c
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_signalr_key_list_command_builder extends CommandBuilder<az_signalr_key_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -539,8 +539,8 @@ class az_signalr_key_list_command_builder extends CommandBuilder<az_signalr_key_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_signalr_key_renew_command_builder extends CommandBuilder<az_signalr_key_renew_command_result> {
-    constructor(commandPath: string, keyType: 'primary' | 'secondary', name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, keyType: 'primary' | 'secondary', name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.keyType(keyType)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -586,8 +586,8 @@ class az_signalr_key_renew_command_builder extends CommandBuilder<az_signalr_key
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_signalr_network_rule_list_command_builder extends CommandBuilder<az_signalr_network_rule_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -635,8 +635,8 @@ class az_signalr_network_rule_list_command_builder extends CommandBuilder<az_sig
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_signalr_network_rule_update_command_builder extends CommandBuilder<az_signalr_network_rule_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -698,8 +698,8 @@ class az_signalr_network_rule_update_command_builder extends CommandBuilder<az_s
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_signalr_upstream_clear_command_builder extends CommandBuilder<az_signalr_upstream_clear_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -738,8 +738,8 @@ class az_signalr_upstream_clear_command_builder extends CommandBuilder<az_signal
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_signalr_upstream_list_command_builder extends CommandBuilder<az_signalr_upstream_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -785,8 +785,8 @@ class az_signalr_upstream_list_command_builder extends CommandBuilder<az_signalr
  * @param {string} template Template item for upstream settings. Use key=value pattern to set properties. Supported keys are "url-template", "hub-pattern", "event-pattern", "category-pattern".
  */
 class az_signalr_upstream_update_command_builder extends CommandBuilder<az_signalr_upstream_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, template: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, template: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.template(template)
@@ -839,8 +839,8 @@ class az_signalr_upstream_update_command_builder extends CommandBuilder<az_signa
  * @param {string} sku The sku name of the signalr service. E.g. Standard_S1.
  */
 class az_signalr_create_command_builder extends CommandBuilder<az_signalr_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, sku: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, sku: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.sku(sku)
@@ -921,8 +921,8 @@ class az_signalr_create_command_builder extends CommandBuilder<az_signalr_create
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_signalr_delete_command_builder extends CommandBuilder<az_signalr_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -957,8 +957,8 @@ class az_signalr_delete_command_builder extends CommandBuilder<az_signalr_delete
  * ```
  */
 class az_signalr_list_command_builder extends CommandBuilder<az_signalr_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -994,8 +994,8 @@ class az_signalr_list_command_builder extends CommandBuilder<az_signalr_list_com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_signalr_restart_command_builder extends CommandBuilder<az_signalr_restart_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1034,8 +1034,8 @@ class az_signalr_restart_command_builder extends CommandBuilder<az_signalr_resta
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_signalr_show_command_builder extends CommandBuilder<az_signalr_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1089,8 +1089,8 @@ class az_signalr_show_command_builder extends CommandBuilder<az_signalr_show_com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_signalr_update_command_builder extends CommandBuilder<az_signalr_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }

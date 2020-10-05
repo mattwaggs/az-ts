@@ -26,7 +26,7 @@ export class az_container {
      * ```
      */
     static attach(): az_container_attach_command_builder {
-        return new az_container_attach_command_builder("az container attach");
+        return new az_container_attach_command_builder("az container attach", 'az_container_attach_command_result');
     }
 
     /**
@@ -81,7 +81,7 @@ export class az_container {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(resourceGroup: string): az_container_create_command_builder {
-        return new az_container_create_command_builder("az container create", resourceGroup);
+        return new az_container_create_command_builder("az container create", 'az_container_create_command_result', resourceGroup);
     }
 
     /**
@@ -97,7 +97,7 @@ export class az_container {
      * ```
      */
     static delete(): az_container_delete_command_builder {
-        return new az_container_delete_command_builder("az container delete");
+        return new az_container_delete_command_builder("az container delete", 'az_container_delete_command_result');
     }
 
     /**
@@ -118,7 +118,7 @@ export class az_container {
      * @param {string} execCommand The command to run from within the container.
      */
     static exec(execCommand: string): az_container_exec_command_builder {
-        return new az_container_exec_command_builder("az container exec", execCommand);
+        return new az_container_exec_command_builder("az container exec", 'az_container_exec_command_result', execCommand);
     }
 
     /**
@@ -136,7 +136,7 @@ export class az_container {
      * @param {string} file The file path to export the container group.
      */
     static export(file: string): az_container_export_command_builder {
-        return new az_container_export_command_builder("az container export", file);
+        return new az_container_export_command_builder("az container export", 'az_container_export_command_result', file);
     }
 
     /**
@@ -150,7 +150,7 @@ export class az_container {
      * ```
      */
     static list(): az_container_list_command_builder {
-        return new az_container_list_command_builder("az container list");
+        return new az_container_list_command_builder("az container list", 'az_container_list_command_result');
     }
 
     /**
@@ -167,7 +167,7 @@ export class az_container {
      * ```
      */
     static logs(): az_container_logs_command_builder {
-        return new az_container_logs_command_builder("az container logs");
+        return new az_container_logs_command_builder("az container logs", 'az_container_logs_command_result');
     }
 
     /**
@@ -185,7 +185,7 @@ export class az_container {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static restart(name: string, resourceGroup: string): az_container_restart_command_builder {
-        return new az_container_restart_command_builder("az container restart", name, resourceGroup);
+        return new az_container_restart_command_builder("az container restart", 'az_container_restart_command_result', name, resourceGroup);
     }
 
     /**
@@ -201,7 +201,7 @@ export class az_container {
      * ```
      */
     static show(): az_container_show_command_builder {
-        return new az_container_show_command_builder("az container show");
+        return new az_container_show_command_builder("az container show", 'az_container_show_command_result');
     }
 
     /**
@@ -219,7 +219,7 @@ export class az_container {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static start(name: string, resourceGroup: string): az_container_start_command_builder {
-        return new az_container_start_command_builder("az container start", name, resourceGroup);
+        return new az_container_start_command_builder("az container start", 'az_container_start_command_result', name, resourceGroup);
     }
 
     /**
@@ -236,7 +236,7 @@ export class az_container {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static stop(name: string, resourceGroup: string): az_container_stop_command_builder {
-        return new az_container_stop_command_builder("az container stop", name, resourceGroup);
+        return new az_container_stop_command_builder("az container stop", 'az_container_stop_command_result', name, resourceGroup);
     }
 }
 
@@ -253,8 +253,8 @@ export class az_container {
  * ```
  */
 class az_container_attach_command_builder extends CommandBuilder<az_container_attach_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The container to attach to. If omitted, the first container in the container group will be chosen. */
@@ -340,8 +340,8 @@ class az_container_attach_command_builder extends CommandBuilder<az_container_at
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_container_create_command_builder extends CommandBuilder<az_container_create_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -611,8 +611,8 @@ class az_container_create_command_builder extends CommandBuilder<az_container_cr
  * ```
  */
 class az_container_delete_command_builder extends CommandBuilder<az_container_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -664,8 +664,8 @@ class az_container_delete_command_builder extends CommandBuilder<az_container_de
  * @param {string} execCommand The command to run from within the container.
  */
 class az_container_exec_command_builder extends CommandBuilder<az_container_exec_command_result> {
-    constructor(commandPath: string, execCommand: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, execCommand: string) {
+        super(commandPath, resultDataTypeName);
         this.execCommand(execCommand)
     }
 
@@ -733,8 +733,8 @@ class az_container_exec_command_builder extends CommandBuilder<az_container_exec
  * @param {string} file The file path to export the container group.
  */
 class az_container_export_command_builder extends CommandBuilder<az_container_export_command_result> {
-    constructor(commandPath: string, file: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, file: string) {
+        super(commandPath, resultDataTypeName);
         this.file(file)
     }
 
@@ -780,8 +780,8 @@ class az_container_export_command_builder extends CommandBuilder<az_container_ex
  * ```
  */
 class az_container_list_command_builder extends CommandBuilder<az_container_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -817,8 +817,8 @@ class az_container_list_command_builder extends CommandBuilder<az_container_list
  * ```
  */
 class az_container_logs_command_builder extends CommandBuilder<az_container_logs_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The container name to tail the logs. If omitted, the first container in the container group will be chosen. */
@@ -873,8 +873,8 @@ class az_container_logs_command_builder extends CommandBuilder<az_container_logs
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_container_restart_command_builder extends CommandBuilder<az_container_restart_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -917,8 +917,8 @@ class az_container_restart_command_builder extends CommandBuilder<az_container_r
  * ```
  */
 class az_container_show_command_builder extends CommandBuilder<az_container_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -967,8 +967,8 @@ class az_container_show_command_builder extends CommandBuilder<az_container_show
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_container_start_command_builder extends CommandBuilder<az_container_start_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1012,8 +1012,8 @@ class az_container_start_command_builder extends CommandBuilder<az_container_sta
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_container_stop_command_builder extends CommandBuilder<az_container_stop_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }

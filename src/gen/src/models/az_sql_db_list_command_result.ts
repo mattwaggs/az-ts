@@ -1,1 +1,1 @@
-export type az_sql_db_list_command_result = Record<string, unknown>
+export type az_sql_db_list_command_result = Record<string, any>

@@ -102,7 +102,7 @@ export class az_ams_account_mru {
      * ```
      */
     static set(): az_ams_account_mru_set_command_builder {
-        return new az_ams_account_mru_set_command_builder("az ams account mru set");
+        return new az_ams_account_mru_set_command_builder("az ams account mru set", 'az_ams_account_mru_set_command_result');
     }
 
     /**
@@ -118,7 +118,7 @@ export class az_ams_account_mru {
      * ```
      */
     static show(): az_ams_account_mru_show_command_builder {
-        return new az_ams_account_mru_show_command_builder("az ams account mru show");
+        return new az_ams_account_mru_show_command_builder("az ams account mru show", 'az_ams_account_mru_show_command_result');
     }
 }
 
@@ -144,7 +144,7 @@ export class az_ams_account_sp {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(accountName: string, resourceGroup: string): az_ams_account_sp_create_command_builder {
-        return new az_ams_account_sp_create_command_builder("az ams account sp create", accountName, resourceGroup);
+        return new az_ams_account_sp_create_command_builder("az ams account sp create", 'az_ams_account_sp_create_command_result', accountName, resourceGroup);
     }
 
     /**
@@ -164,7 +164,7 @@ export class az_ams_account_sp {
      * ```
      */
     static reset_credentials(): az_ams_account_sp_reset_credentials_command_builder {
-        return new az_ams_account_sp_reset_credentials_command_builder("az ams account sp reset-credentials");
+        return new az_ams_account_sp_reset_credentials_command_builder("az ams account sp reset-credentials", 'az_ams_account_sp_reset_credentials_command_result');
     }
 }
 
@@ -183,7 +183,7 @@ export class az_ams_account_storage {
      * ```
      */
     static add(): az_ams_account_storage_add_command_builder {
-        return new az_ams_account_storage_add_command_builder("az ams account storage add");
+        return new az_ams_account_storage_add_command_builder("az ams account storage add", 'az_ams_account_storage_add_command_result');
     }
 
     /**
@@ -199,7 +199,7 @@ export class az_ams_account_storage {
      * ```
      */
     static remove(): az_ams_account_storage_remove_command_builder {
-        return new az_ams_account_storage_remove_command_builder("az ams account storage remove");
+        return new az_ams_account_storage_remove_command_builder("az ams account storage remove", 'az_ams_account_storage_remove_command_result');
     }
 
     /**
@@ -217,7 +217,7 @@ export class az_ams_account_storage {
      * @param {string} id The ID of the storage account resource.
      */
     static sync_storage_keys(id: string): az_ams_account_storage_sync_storage_keys_command_builder {
-        return new az_ams_account_storage_sync_storage_keys_command_builder("az ams account storage sync-storage-keys", id);
+        return new az_ams_account_storage_sync_storage_keys_command_builder("az ams account storage sync-storage-keys", 'az_ams_account_storage_sync_storage_keys_command_result', id);
     }
 }
 
@@ -248,7 +248,7 @@ export class az_ams_account_filter {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(accountName: string, name: string, resourceGroup: string): az_ams_account_filter_create_command_builder {
-        return new az_ams_account_filter_create_command_builder("az ams account-filter create", accountName, name, resourceGroup);
+        return new az_ams_account_filter_create_command_builder("az ams account-filter create", 'az_ams_account_filter_create_command_result', accountName, name, resourceGroup);
     }
 
     /**
@@ -264,7 +264,7 @@ export class az_ams_account_filter {
      * ```
      */
     static delete(): az_ams_account_filter_delete_command_builder {
-        return new az_ams_account_filter_delete_command_builder("az ams account-filter delete");
+        return new az_ams_account_filter_delete_command_builder("az ams account-filter delete", 'az_ams_account_filter_delete_command_result');
     }
 
     /**
@@ -282,7 +282,7 @@ export class az_ams_account_filter {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(accountName: string, resourceGroup: string): az_ams_account_filter_list_command_builder {
-        return new az_ams_account_filter_list_command_builder("az ams account-filter list", accountName, resourceGroup);
+        return new az_ams_account_filter_list_command_builder("az ams account-filter list", 'az_ams_account_filter_list_command_result', accountName, resourceGroup);
     }
 
     /**
@@ -299,7 +299,7 @@ export class az_ams_account_filter {
      * ```
      */
     static show(): az_ams_account_filter_show_command_builder {
-        return new az_ams_account_filter_show_command_builder("az ams account-filter show");
+        return new az_ams_account_filter_show_command_builder("az ams account-filter show", 'az_ams_account_filter_show_command_result');
     }
 
     /**
@@ -328,7 +328,7 @@ export class az_ams_account_filter {
      * ```
      */
     static update(): az_ams_account_filter_update_command_builder {
-        return new az_ams_account_filter_update_command_builder("az ams account-filter update");
+        return new az_ams_account_filter_update_command_builder("az ams account-filter update", 'az_ams_account_filter_update_command_result');
     }
 }
 
@@ -348,7 +348,7 @@ export class az_ams_account {
      * @param {string} name The name of the Azure Media Services account.
      */
     static check_name(location: string, name: string): az_ams_account_check_name_command_builder {
-        return new az_ams_account_check_name_command_builder("az ams account check-name", location, name);
+        return new az_ams_account_check_name_command_builder("az ams account check-name", 'az_ams_account_check_name_command_result', location, name);
     }
 
     /**
@@ -369,7 +369,7 @@ export class az_ams_account {
      * @param {string} storageAccount The name or resource ID of the primary storage account to attach to the Azure Media Services account. The storage account MUST be in the same Azure subscription as the Media Services account. It is strongly recommended that the storage account be in the same resource group as the Media Services account. Blob only accounts are not allowed as primary.
      */
     static create(name: string, resourceGroup: string, storageAccount: string): az_ams_account_create_command_builder {
-        return new az_ams_account_create_command_builder("az ams account create", name, resourceGroup, storageAccount);
+        return new az_ams_account_create_command_builder("az ams account create", 'az_ams_account_create_command_result', name, resourceGroup, storageAccount);
     }
 
     /**
@@ -384,7 +384,7 @@ export class az_ams_account {
      * ```
      */
     static delete(): az_ams_account_delete_command_builder {
-        return new az_ams_account_delete_command_builder("az ams account delete");
+        return new az_ams_account_delete_command_builder("az ams account delete", 'az_ams_account_delete_command_result');
     }
 
     /**
@@ -398,7 +398,7 @@ export class az_ams_account {
      * ```
      */
     static list(): az_ams_account_list_command_builder {
-        return new az_ams_account_list_command_builder("az ams account list");
+        return new az_ams_account_list_command_builder("az ams account list", 'az_ams_account_list_command_result');
     }
 
     /**
@@ -414,7 +414,7 @@ export class az_ams_account {
      * ```
      */
     static show(): az_ams_account_show_command_builder {
-        return new az_ams_account_show_command_builder("az ams account show");
+        return new az_ams_account_show_command_builder("az ams account show", 'az_ams_account_show_command_result');
     }
 
     /**
@@ -434,7 +434,7 @@ export class az_ams_account {
      * ```
      */
     static update(): az_ams_account_update_command_builder {
-        return new az_ams_account_update_command_builder("az ams account update");
+        return new az_ams_account_update_command_builder("az ams account update", 'az_ams_account_update_command_result');
     }
 }
 
@@ -467,7 +467,7 @@ export class az_ams_asset_filter {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(accountName: string, assetName: string, name: string, resourceGroup: string): az_ams_asset_filter_create_command_builder {
-        return new az_ams_asset_filter_create_command_builder("az ams asset-filter create", accountName, assetName, name, resourceGroup);
+        return new az_ams_asset_filter_create_command_builder("az ams asset-filter create", 'az_ams_asset_filter_create_command_result', accountName, assetName, name, resourceGroup);
     }
 
     /**
@@ -484,7 +484,7 @@ export class az_ams_asset_filter {
      * ```
      */
     static delete(): az_ams_asset_filter_delete_command_builder {
-        return new az_ams_asset_filter_delete_command_builder("az ams asset-filter delete");
+        return new az_ams_asset_filter_delete_command_builder("az ams asset-filter delete", 'az_ams_asset_filter_delete_command_result');
     }
 
     /**
@@ -504,7 +504,7 @@ export class az_ams_asset_filter {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(accountName: string, assetName: string, resourceGroup: string): az_ams_asset_filter_list_command_builder {
-        return new az_ams_asset_filter_list_command_builder("az ams asset-filter list", accountName, assetName, resourceGroup);
+        return new az_ams_asset_filter_list_command_builder("az ams asset-filter list", 'az_ams_asset_filter_list_command_result', accountName, assetName, resourceGroup);
     }
 
     /**
@@ -522,7 +522,7 @@ export class az_ams_asset_filter {
      * ```
      */
     static show(): az_ams_asset_filter_show_command_builder {
-        return new az_ams_asset_filter_show_command_builder("az ams asset-filter show");
+        return new az_ams_asset_filter_show_command_builder("az ams asset-filter show", 'az_ams_asset_filter_show_command_result');
     }
 
     /**
@@ -552,7 +552,7 @@ export class az_ams_asset_filter {
      * ```
      */
     static update(): az_ams_asset_filter_update_command_builder {
-        return new az_ams_asset_filter_update_command_builder("az ams asset-filter update");
+        return new az_ams_asset_filter_update_command_builder("az ams asset-filter update", 'az_ams_asset_filter_update_command_result');
     }
 }
 
@@ -578,7 +578,7 @@ export class az_ams_asset {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(accountName: string, name: string, resourceGroup: string): az_ams_asset_create_command_builder {
-        return new az_ams_asset_create_command_builder("az ams asset create", accountName, name, resourceGroup);
+        return new az_ams_asset_create_command_builder("az ams asset create", 'az_ams_asset_create_command_result', accountName, name, resourceGroup);
     }
 
     /**
@@ -594,7 +594,7 @@ export class az_ams_asset {
      * ```
      */
     static delete(): az_ams_asset_delete_command_builder {
-        return new az_ams_asset_delete_command_builder("az ams asset delete");
+        return new az_ams_asset_delete_command_builder("az ams asset delete", 'az_ams_asset_delete_command_result');
     }
 
     /**
@@ -610,7 +610,7 @@ export class az_ams_asset {
      * ```
      */
     static get_encryption_key(): az_ams_asset_get_encryption_key_command_builder {
-        return new az_ams_asset_get_encryption_key_command_builder("az ams asset get-encryption-key");
+        return new az_ams_asset_get_encryption_key_command_builder("az ams asset get-encryption-key", 'az_ams_asset_get_encryption_key_command_result');
     }
 
     /**
@@ -628,7 +628,7 @@ export class az_ams_asset {
      * ```
      */
     static get_sas_urls(): az_ams_asset_get_sas_urls_command_builder {
-        return new az_ams_asset_get_sas_urls_command_builder("az ams asset get-sas-urls");
+        return new az_ams_asset_get_sas_urls_command_builder("az ams asset get-sas-urls", 'az_ams_asset_get_sas_urls_command_result');
     }
 
     /**
@@ -649,7 +649,7 @@ export class az_ams_asset {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(accountName: string, resourceGroup: string): az_ams_asset_list_command_builder {
-        return new az_ams_asset_list_command_builder("az ams asset list", accountName, resourceGroup);
+        return new az_ams_asset_list_command_builder("az ams asset list", 'az_ams_asset_list_command_result', accountName, resourceGroup);
     }
 
     /**
@@ -665,7 +665,7 @@ export class az_ams_asset {
      * ```
      */
     static list_streaming_locators(): az_ams_asset_list_streaming_locators_command_builder {
-        return new az_ams_asset_list_streaming_locators_command_builder("az ams asset list-streaming-locators");
+        return new az_ams_asset_list_streaming_locators_command_builder("az ams asset list-streaming-locators", 'az_ams_asset_list_streaming_locators_command_result');
     }
 
     /**
@@ -682,7 +682,7 @@ export class az_ams_asset {
      * ```
      */
     static show(): az_ams_asset_show_command_builder {
-        return new az_ams_asset_show_command_builder("az ams asset show");
+        return new az_ams_asset_show_command_builder("az ams asset show", 'az_ams_asset_show_command_result');
     }
 
     /**
@@ -704,7 +704,7 @@ export class az_ams_asset {
      * ```
      */
     static update(): az_ams_asset_update_command_builder {
-        return new az_ams_asset_update_command_builder("az ams asset update");
+        return new az_ams_asset_update_command_builder("az ams asset update", 'az_ams_asset_update_command_result');
     }
 }
 
@@ -747,7 +747,7 @@ export class az_ams_content_key_policy_option {
      * @param {string} policyOptionName The content key policy option name.
      */
     static add(policyOptionName: string): az_ams_content_key_policy_option_add_command_builder {
-        return new az_ams_content_key_policy_option_add_command_builder("az ams content-key-policy option add", policyOptionName);
+        return new az_ams_content_key_policy_option_add_command_builder("az ams content-key-policy option add", 'az_ams_content_key_policy_option_add_command_result', policyOptionName);
     }
 
     /**
@@ -766,7 +766,7 @@ export class az_ams_content_key_policy_option {
      * @param {string} policyOptionId The content key policy option identifier. This value can be obtained from "policyOptionId" property by running a show operation on a content key policy resource.
      */
     static remove(policyOptionId: string): az_ams_content_key_policy_option_remove_command_builder {
-        return new az_ams_content_key_policy_option_remove_command_builder("az ams content-key-policy option remove", policyOptionId);
+        return new az_ams_content_key_policy_option_remove_command_builder("az ams content-key-policy option remove", 'az_ams_content_key_policy_option_remove_command_result', policyOptionId);
     }
 
     /**
@@ -804,7 +804,7 @@ export class az_ams_content_key_policy_option {
      * @param {string} policyOptionId The content key policy option identifier. This value can be obtained from "policyOptionId" property by running a show operation on a content key policy resource.
      */
     static update(policyOptionId: string): az_ams_content_key_policy_option_update_command_builder {
-        return new az_ams_content_key_policy_option_update_command_builder("az ams content-key-policy option update", policyOptionId);
+        return new az_ams_content_key_policy_option_update_command_builder("az ams content-key-policy option update", 'az_ams_content_key_policy_option_update_command_result', policyOptionId);
     }
 }
 
@@ -850,7 +850,7 @@ export class az_ams_content_key_policy {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(accountName: string, name: string, policyOptionName: string, resourceGroup: string): az_ams_content_key_policy_create_command_builder {
-        return new az_ams_content_key_policy_create_command_builder("az ams content-key-policy create", accountName, name, policyOptionName, resourceGroup);
+        return new az_ams_content_key_policy_create_command_builder("az ams content-key-policy create", 'az_ams_content_key_policy_create_command_result', accountName, name, policyOptionName, resourceGroup);
     }
 
     /**
@@ -866,7 +866,7 @@ export class az_ams_content_key_policy {
      * ```
      */
     static delete(): az_ams_content_key_policy_delete_command_builder {
-        return new az_ams_content_key_policy_delete_command_builder("az ams content-key-policy delete");
+        return new az_ams_content_key_policy_delete_command_builder("az ams content-key-policy delete", 'az_ams_content_key_policy_delete_command_result');
     }
 
     /**
@@ -887,7 +887,7 @@ export class az_ams_content_key_policy {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(accountName: string, resourceGroup: string): az_ams_content_key_policy_list_command_builder {
-        return new az_ams_content_key_policy_list_command_builder("az ams content-key-policy list", accountName, resourceGroup);
+        return new az_ams_content_key_policy_list_command_builder("az ams content-key-policy list", 'az_ams_content_key_policy_list_command_result', accountName, resourceGroup);
     }
 
     /**
@@ -905,7 +905,7 @@ export class az_ams_content_key_policy {
      * ```
      */
     static show(): az_ams_content_key_policy_show_command_builder {
-        return new az_ams_content_key_policy_show_command_builder("az ams content-key-policy show");
+        return new az_ams_content_key_policy_show_command_builder("az ams content-key-policy show", 'az_ams_content_key_policy_show_command_result');
     }
 
     /**
@@ -926,7 +926,7 @@ export class az_ams_content_key_policy {
      * ```
      */
     static update(): az_ams_content_key_policy_update_command_builder {
-        return new az_ams_content_key_policy_update_command_builder("az ams content-key-policy update");
+        return new az_ams_content_key_policy_update_command_builder("az ams content-key-policy update", 'az_ams_content_key_policy_update_command_result');
     }
 }
 
@@ -947,7 +947,7 @@ export class az_ams_job {
      * ```
      */
     static cancel(): az_ams_job_cancel_command_builder {
-        return new az_ams_job_cancel_command_builder("az ams job cancel");
+        return new az_ams_job_cancel_command_builder("az ams job cancel", 'az_ams_job_cancel_command_result');
     }
 
     /**
@@ -964,7 +964,7 @@ export class az_ams_job {
      * ```
      */
     static delete(): az_ams_job_delete_command_builder {
-        return new az_ams_job_delete_command_builder("az ams job delete");
+        return new az_ams_job_delete_command_builder("az ams job delete", 'az_ams_job_delete_command_result');
     }
 
     /**
@@ -986,7 +986,7 @@ export class az_ams_job {
      * @param {string} transformName The name of the transform.
      */
     static list(accountName: string, resourceGroup: string, transformName: string): az_ams_job_list_command_builder {
-        return new az_ams_job_list_command_builder("az ams job list", accountName, resourceGroup, transformName);
+        return new az_ams_job_list_command_builder("az ams job list", 'az_ams_job_list_command_result', accountName, resourceGroup, transformName);
     }
 
     /**
@@ -1004,7 +1004,7 @@ export class az_ams_job {
      * ```
      */
     static show(): az_ams_job_show_command_builder {
-        return new az_ams_job_show_command_builder("az ams job show");
+        return new az_ams_job_show_command_builder("az ams job show", 'az_ams_job_show_command_result');
     }
 
     /**
@@ -1031,7 +1031,7 @@ export class az_ams_job {
      * @param {string} outputAssets Space-separated assets in 'assetName=label' format. An asset without label can be sent like this: 'assetName='.
      */
     static start(outputAssets: string): az_ams_job_start_command_builder {
-        return new az_ams_job_start_command_builder("az ams job start", outputAssets);
+        return new az_ams_job_start_command_builder("az ams job start", 'az_ams_job_start_command_result', outputAssets);
     }
 
     /**
@@ -1054,7 +1054,7 @@ export class az_ams_job {
      * ```
      */
     static update(): az_ams_job_update_command_builder {
-        return new az_ams_job_update_command_builder("az ams job update");
+        return new az_ams_job_update_command_builder("az ams job update", 'az_ams_job_update_command_result');
     }
 }
 
@@ -1096,7 +1096,7 @@ export class az_ams_live_event {
      * @param {'FragmentedMP4' | 'RTMP'} streamingProtocol The streaming protocol for the live event. This value is specified at creation time and cannot be updated.
      */
     static create(accountName: string, ips: string, name: string, resourceGroup: string, streamingProtocol: 'FragmentedMP4' | 'RTMP'): az_ams_live_event_create_command_builder {
-        return new az_ams_live_event_create_command_builder("az ams live-event create", accountName, ips, name, resourceGroup, streamingProtocol);
+        return new az_ams_live_event_create_command_builder("az ams live-event create", 'az_ams_live_event_create_command_result', accountName, ips, name, resourceGroup, streamingProtocol);
     }
 
     /**
@@ -1112,7 +1112,7 @@ export class az_ams_live_event {
      * ```
      */
     static delete(): az_ams_live_event_delete_command_builder {
-        return new az_ams_live_event_delete_command_builder("az ams live-event delete");
+        return new az_ams_live_event_delete_command_builder("az ams live-event delete", 'az_ams_live_event_delete_command_result');
     }
 
     /**
@@ -1130,7 +1130,7 @@ export class az_ams_live_event {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(accountName: string, resourceGroup: string): az_ams_live_event_list_command_builder {
-        return new az_ams_live_event_list_command_builder("az ams live-event list", accountName, resourceGroup);
+        return new az_ams_live_event_list_command_builder("az ams live-event list", 'az_ams_live_event_list_command_result', accountName, resourceGroup);
     }
 
     /**
@@ -1147,7 +1147,7 @@ export class az_ams_live_event {
      * ```
      */
     static reset(): az_ams_live_event_reset_command_builder {
-        return new az_ams_live_event_reset_command_builder("az ams live-event reset");
+        return new az_ams_live_event_reset_command_builder("az ams live-event reset", 'az_ams_live_event_reset_command_result');
     }
 
     /**
@@ -1164,7 +1164,7 @@ export class az_ams_live_event {
      * ```
      */
     static show(): az_ams_live_event_show_command_builder {
-        return new az_ams_live_event_show_command_builder("az ams live-event show");
+        return new az_ams_live_event_show_command_builder("az ams live-event show", 'az_ams_live_event_show_command_result');
     }
 
     /**
@@ -1181,7 +1181,7 @@ export class az_ams_live_event {
      * ```
      */
     static start(): az_ams_live_event_start_command_builder {
-        return new az_ams_live_event_start_command_builder("az ams live-event start");
+        return new az_ams_live_event_start_command_builder("az ams live-event start", 'az_ams_live_event_start_command_result');
     }
 
     /**
@@ -1199,7 +1199,7 @@ export class az_ams_live_event {
      * ```
      */
     static stop(): az_ams_live_event_stop_command_builder {
-        return new az_ams_live_event_stop_command_builder("az ams live-event stop");
+        return new az_ams_live_event_stop_command_builder("az ams live-event stop", 'az_ams_live_event_stop_command_result');
     }
 
     /**
@@ -1226,7 +1226,7 @@ export class az_ams_live_event {
      * ```
      */
     static update(): az_ams_live_event_update_command_builder {
-        return new az_ams_live_event_update_command_builder("az ams live-event update");
+        return new az_ams_live_event_update_command_builder("az ams live-event update", 'az_ams_live_event_update_command_result');
     }
 
     /**
@@ -1249,7 +1249,7 @@ export class az_ams_live_event {
      * ```
      */
     static wait(): az_ams_live_event_wait_command_builder {
-        return new az_ams_live_event_wait_command_builder("az ams live-event wait");
+        return new az_ams_live_event_wait_command_builder("az ams live-event wait", 'az_ams_live_event_wait_command_result');
     }
 }
 
@@ -1281,7 +1281,7 @@ export class az_ams_live_output {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(accountName: string, archiveWindowLength: string, assetName: string, liveEventName: string, name: string, resourceGroup: string): az_ams_live_output_create_command_builder {
-        return new az_ams_live_output_create_command_builder("az ams live-output create", accountName, archiveWindowLength, assetName, liveEventName, name, resourceGroup);
+        return new az_ams_live_output_create_command_builder("az ams live-output create", 'az_ams_live_output_create_command_result', accountName, archiveWindowLength, assetName, liveEventName, name, resourceGroup);
     }
 
     /**
@@ -1298,7 +1298,7 @@ export class az_ams_live_output {
      * ```
      */
     static delete(): az_ams_live_output_delete_command_builder {
-        return new az_ams_live_output_delete_command_builder("az ams live-output delete");
+        return new az_ams_live_output_delete_command_builder("az ams live-output delete", 'az_ams_live_output_delete_command_result');
     }
 
     /**
@@ -1318,7 +1318,7 @@ export class az_ams_live_output {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(accountName: string, liveEventName: string, resourceGroup: string): az_ams_live_output_list_command_builder {
-        return new az_ams_live_output_list_command_builder("az ams live-output list", accountName, liveEventName, resourceGroup);
+        return new az_ams_live_output_list_command_builder("az ams live-output list", 'az_ams_live_output_list_command_result', accountName, liveEventName, resourceGroup);
     }
 
     /**
@@ -1336,7 +1336,7 @@ export class az_ams_live_output {
      * ```
      */
     static show(): az_ams_live_output_show_command_builder {
-        return new az_ams_live_output_show_command_builder("az ams live-output show");
+        return new az_ams_live_output_show_command_builder("az ams live-output show", 'az_ams_live_output_show_command_result');
     }
 }
 
@@ -1358,7 +1358,7 @@ export class az_ams_streaming_endpoint_akamai {
      * ```
      */
     static add(): az_ams_streaming_endpoint_akamai_add_command_builder {
-        return new az_ams_streaming_endpoint_akamai_add_command_builder("az ams streaming-endpoint akamai add");
+        return new az_ams_streaming_endpoint_akamai_add_command_builder("az ams streaming-endpoint akamai add", 'az_ams_streaming_endpoint_akamai_add_command_result');
     }
 
     /**
@@ -1377,7 +1377,7 @@ export class az_ams_streaming_endpoint_akamai {
      * @param {string} identifier The identifier for the authentication key. This is the nonce provided by Akamai.
      */
     static remove(identifier: string): az_ams_streaming_endpoint_akamai_remove_command_builder {
-        return new az_ams_streaming_endpoint_akamai_remove_command_builder("az ams streaming-endpoint akamai remove", identifier);
+        return new az_ams_streaming_endpoint_akamai_remove_command_builder("az ams streaming-endpoint akamai remove", 'az_ams_streaming_endpoint_akamai_remove_command_result', identifier);
     }
 }
 
@@ -1413,7 +1413,7 @@ export class az_ams_streaming_endpoint {
      * @param {string} scaleUnits The number of scale units for Premium StreamingEndpoints. For Standard StreamingEndpoints, set this value to 0. Use the Scale operation to adjust this value for Premium StreamingEndpoints.
      */
     static create(accountName: string, name: string, resourceGroup: string, scaleUnits: string): az_ams_streaming_endpoint_create_command_builder {
-        return new az_ams_streaming_endpoint_create_command_builder("az ams streaming-endpoint create", accountName, name, resourceGroup, scaleUnits);
+        return new az_ams_streaming_endpoint_create_command_builder("az ams streaming-endpoint create", 'az_ams_streaming_endpoint_create_command_result', accountName, name, resourceGroup, scaleUnits);
     }
 
     /**
@@ -1429,7 +1429,7 @@ export class az_ams_streaming_endpoint {
      * ```
      */
     static delete(): az_ams_streaming_endpoint_delete_command_builder {
-        return new az_ams_streaming_endpoint_delete_command_builder("az ams streaming-endpoint delete");
+        return new az_ams_streaming_endpoint_delete_command_builder("az ams streaming-endpoint delete", 'az_ams_streaming_endpoint_delete_command_result');
     }
 
     /**
@@ -1447,7 +1447,7 @@ export class az_ams_streaming_endpoint {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(accountName: string, resourceGroup: string): az_ams_streaming_endpoint_list_command_builder {
-        return new az_ams_streaming_endpoint_list_command_builder("az ams streaming-endpoint list", accountName, resourceGroup);
+        return new az_ams_streaming_endpoint_list_command_builder("az ams streaming-endpoint list", 'az_ams_streaming_endpoint_list_command_result', accountName, resourceGroup);
     }
 
     /**
@@ -1464,7 +1464,7 @@ export class az_ams_streaming_endpoint {
      * ```
      */
     static scale(): az_ams_streaming_endpoint_scale_command_builder {
-        return new az_ams_streaming_endpoint_scale_command_builder("az ams streaming-endpoint scale");
+        return new az_ams_streaming_endpoint_scale_command_builder("az ams streaming-endpoint scale", 'az_ams_streaming_endpoint_scale_command_result');
     }
 
     /**
@@ -1481,7 +1481,7 @@ export class az_ams_streaming_endpoint {
      * ```
      */
     static show(): az_ams_streaming_endpoint_show_command_builder {
-        return new az_ams_streaming_endpoint_show_command_builder("az ams streaming-endpoint show");
+        return new az_ams_streaming_endpoint_show_command_builder("az ams streaming-endpoint show", 'az_ams_streaming_endpoint_show_command_result');
     }
 
     /**
@@ -1498,7 +1498,7 @@ export class az_ams_streaming_endpoint {
      * ```
      */
     static start(): az_ams_streaming_endpoint_start_command_builder {
-        return new az_ams_streaming_endpoint_start_command_builder("az ams streaming-endpoint start");
+        return new az_ams_streaming_endpoint_start_command_builder("az ams streaming-endpoint start", 'az_ams_streaming_endpoint_start_command_result');
     }
 
     /**
@@ -1515,7 +1515,7 @@ export class az_ams_streaming_endpoint {
      * ```
      */
     static stop(): az_ams_streaming_endpoint_stop_command_builder {
-        return new az_ams_streaming_endpoint_stop_command_builder("az ams streaming-endpoint stop");
+        return new az_ams_streaming_endpoint_stop_command_builder("az ams streaming-endpoint stop", 'az_ams_streaming_endpoint_stop_command_result');
     }
 
     /**
@@ -1546,7 +1546,7 @@ export class az_ams_streaming_endpoint {
      * ```
      */
     static update(): az_ams_streaming_endpoint_update_command_builder {
-        return new az_ams_streaming_endpoint_update_command_builder("az ams streaming-endpoint update");
+        return new az_ams_streaming_endpoint_update_command_builder("az ams streaming-endpoint update", 'az_ams_streaming_endpoint_update_command_result');
     }
 
     /**
@@ -1569,7 +1569,7 @@ export class az_ams_streaming_endpoint {
      * ```
      */
     static wait(): az_ams_streaming_endpoint_wait_command_builder {
-        return new az_ams_streaming_endpoint_wait_command_builder("az ams streaming-endpoint wait");
+        return new az_ams_streaming_endpoint_wait_command_builder("az ams streaming-endpoint wait", 'az_ams_streaming_endpoint_wait_command_result');
     }
 }
 
@@ -1602,7 +1602,7 @@ export class az_ams_streaming_locator {
      * @param {string} streamingPolicyName The name of the streaming policy used by the streaming locator. You can either create one with `az ams streaming policy create` or use any of the predefined policies: Predefined_DownloadOnly, Predefined_ClearStreamingOnly, Predefined_DownloadAndClearStreaming, Predefined_ClearKey, Predefined_MultiDrmCencStreaming, Predefined_MultiDrmStreaming.
      */
     static create(accountName: string, assetName: string, name: string, resourceGroup: string, streamingPolicyName: string): az_ams_streaming_locator_create_command_builder {
-        return new az_ams_streaming_locator_create_command_builder("az ams streaming-locator create", accountName, assetName, name, resourceGroup, streamingPolicyName);
+        return new az_ams_streaming_locator_create_command_builder("az ams streaming-locator create", 'az_ams_streaming_locator_create_command_result', accountName, assetName, name, resourceGroup, streamingPolicyName);
     }
 
     /**
@@ -1618,7 +1618,7 @@ export class az_ams_streaming_locator {
      * ```
      */
     static delete(): az_ams_streaming_locator_delete_command_builder {
-        return new az_ams_streaming_locator_delete_command_builder("az ams streaming-locator delete");
+        return new az_ams_streaming_locator_delete_command_builder("az ams streaming-locator delete", 'az_ams_streaming_locator_delete_command_result');
     }
 
     /**
@@ -1634,7 +1634,7 @@ export class az_ams_streaming_locator {
      * ```
      */
     static get_paths(): az_ams_streaming_locator_get_paths_command_builder {
-        return new az_ams_streaming_locator_get_paths_command_builder("az ams streaming-locator get-paths");
+        return new az_ams_streaming_locator_get_paths_command_builder("az ams streaming-locator get-paths", 'az_ams_streaming_locator_get_paths_command_result');
     }
 
     /**
@@ -1655,7 +1655,7 @@ export class az_ams_streaming_locator {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(accountName: string, resourceGroup: string): az_ams_streaming_locator_list_command_builder {
-        return new az_ams_streaming_locator_list_command_builder("az ams streaming-locator list", accountName, resourceGroup);
+        return new az_ams_streaming_locator_list_command_builder("az ams streaming-locator list", 'az_ams_streaming_locator_list_command_result', accountName, resourceGroup);
     }
 
     /**
@@ -1671,7 +1671,7 @@ export class az_ams_streaming_locator {
      * ```
      */
     static list_content_keys(): az_ams_streaming_locator_list_content_keys_command_builder {
-        return new az_ams_streaming_locator_list_content_keys_command_builder("az ams streaming-locator list-content-keys");
+        return new az_ams_streaming_locator_list_content_keys_command_builder("az ams streaming-locator list-content-keys", 'az_ams_streaming_locator_list_content_keys_command_result');
     }
 
     /**
@@ -1688,7 +1688,7 @@ export class az_ams_streaming_locator {
      * ```
      */
     static show(): az_ams_streaming_locator_show_command_builder {
-        return new az_ams_streaming_locator_show_command_builder("az ams streaming-locator show");
+        return new az_ams_streaming_locator_show_command_builder("az ams streaming-locator show", 'az_ams_streaming_locator_show_command_result');
     }
 }
 
@@ -1738,7 +1738,7 @@ export class az_ams_streaming_policy {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(accountName: string, name: string, resourceGroup: string): az_ams_streaming_policy_create_command_builder {
-        return new az_ams_streaming_policy_create_command_builder("az ams streaming-policy create", accountName, name, resourceGroup);
+        return new az_ams_streaming_policy_create_command_builder("az ams streaming-policy create", 'az_ams_streaming_policy_create_command_result', accountName, name, resourceGroup);
     }
 
     /**
@@ -1754,7 +1754,7 @@ export class az_ams_streaming_policy {
      * ```
      */
     static delete(): az_ams_streaming_policy_delete_command_builder {
-        return new az_ams_streaming_policy_delete_command_builder("az ams streaming-policy delete");
+        return new az_ams_streaming_policy_delete_command_builder("az ams streaming-policy delete", 'az_ams_streaming_policy_delete_command_result');
     }
 
     /**
@@ -1775,7 +1775,7 @@ export class az_ams_streaming_policy {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(accountName: string, resourceGroup: string): az_ams_streaming_policy_list_command_builder {
-        return new az_ams_streaming_policy_list_command_builder("az ams streaming-policy list", accountName, resourceGroup);
+        return new az_ams_streaming_policy_list_command_builder("az ams streaming-policy list", 'az_ams_streaming_policy_list_command_result', accountName, resourceGroup);
     }
 
     /**
@@ -1792,7 +1792,7 @@ export class az_ams_streaming_policy {
      * ```
      */
     static show(): az_ams_streaming_policy_show_command_builder {
-        return new az_ams_streaming_policy_show_command_builder("az ams streaming-policy show");
+        return new az_ams_streaming_policy_show_command_builder("az ams streaming-policy show", 'az_ams_streaming_policy_show_command_result');
     }
 }
 
@@ -1819,7 +1819,7 @@ export class az_ams_transform_output {
      * @param {string} preset Preset that describes the operations that will be used to modify, transcode, or extract insights from the source file to generate the transform output. Allowed values: H264SingleBitrateSD, H264SingleBitrate720p, H264SingleBitrate1080p, AdaptiveStreaming, AACGoodQualityAudio, ContentAwareEncodingExperimental, ContentAwareEncoding, H264MultipleBitrate1080p, H264MultipleBitrate720p, H264MultipleBitrateSD, AudioAnalyzer, VideoAnalyzer, FaceDetector. In addition to the allowed values, you can also pass a path to a custom Standard Encoder preset JSON file. See <a href="https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset">https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset</a> for further details on the settings to use to build a custom preset.
      */
     static add(preset: string): az_ams_transform_output_add_command_builder {
-        return new az_ams_transform_output_add_command_builder("az ams transform output add", preset);
+        return new az_ams_transform_output_add_command_builder("az ams transform output add", 'az_ams_transform_output_add_command_result', preset);
     }
 
     /**
@@ -1838,7 +1838,7 @@ export class az_ams_transform_output {
      * @param {string} outputIndex The element index of the output to remove.
      */
     static remove(outputIndex: string): az_ams_transform_output_remove_command_builder {
-        return new az_ams_transform_output_remove_command_builder("az ams transform output remove", outputIndex);
+        return new az_ams_transform_output_remove_command_builder("az ams transform output remove", 'az_ams_transform_output_remove_command_result', outputIndex);
     }
 }
 
@@ -1868,7 +1868,7 @@ export class az_ams_transform {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(accountName: string, name: string, preset: string, resourceGroup: string): az_ams_transform_create_command_builder {
-        return new az_ams_transform_create_command_builder("az ams transform create", accountName, name, preset, resourceGroup);
+        return new az_ams_transform_create_command_builder("az ams transform create", 'az_ams_transform_create_command_result', accountName, name, preset, resourceGroup);
     }
 
     /**
@@ -1884,7 +1884,7 @@ export class az_ams_transform {
      * ```
      */
     static delete(): az_ams_transform_delete_command_builder {
-        return new az_ams_transform_delete_command_builder("az ams transform delete");
+        return new az_ams_transform_delete_command_builder("az ams transform delete", 'az_ams_transform_delete_command_result');
     }
 
     /**
@@ -1904,7 +1904,7 @@ export class az_ams_transform {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(accountName: string, resourceGroup: string): az_ams_transform_list_command_builder {
-        return new az_ams_transform_list_command_builder("az ams transform list", accountName, resourceGroup);
+        return new az_ams_transform_list_command_builder("az ams transform list", 'az_ams_transform_list_command_result', accountName, resourceGroup);
     }
 
     /**
@@ -1921,7 +1921,7 @@ export class az_ams_transform {
      * ```
      */
     static show(): az_ams_transform_show_command_builder {
-        return new az_ams_transform_show_command_builder("az ams transform show");
+        return new az_ams_transform_show_command_builder("az ams transform show", 'az_ams_transform_show_command_result');
     }
 
     /**
@@ -1942,7 +1942,7 @@ export class az_ams_transform {
      * ```
      */
     static update(): az_ams_transform_update_command_builder {
-        return new az_ams_transform_update_command_builder("az ams transform update");
+        return new az_ams_transform_update_command_builder("az ams transform update", 'az_ams_transform_update_command_result');
     }
 }
 
@@ -1964,8 +1964,8 @@ export class az_ams {
  * ```
  */
 class az_ams_account_mru_set_command_builder extends CommandBuilder<az_ams_account_mru_set_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The number of the encoding reserved units that you want to be provisioned for this account for concurrent tasks (one unit equals one task). */
@@ -2018,8 +2018,8 @@ class az_ams_account_mru_set_command_builder extends CommandBuilder<az_ams_accou
  * ```
  */
 class az_ams_account_mru_show_command_builder extends CommandBuilder<az_ams_account_mru_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2073,8 +2073,8 @@ class az_ams_account_mru_show_command_builder extends CommandBuilder<az_ams_acco
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_account_sp_create_command_builder extends CommandBuilder<az_ams_account_sp_create_command_result> {
-    constructor(commandPath: string, accountName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
     }
@@ -2151,8 +2151,8 @@ class az_ams_account_sp_create_command_builder extends CommandBuilder<az_ams_acc
  * ```
  */
 class az_ams_account_sp_reset_credentials_command_builder extends CommandBuilder<az_ams_account_sp_reset_credentials_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -2223,8 +2223,8 @@ class az_ams_account_sp_reset_credentials_command_builder extends CommandBuilder
  * ```
  */
 class az_ams_account_storage_add_command_builder extends CommandBuilder<az_ams_account_storage_add_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -2271,8 +2271,8 @@ class az_ams_account_storage_add_command_builder extends CommandBuilder<az_ams_a
  * ```
  */
 class az_ams_account_storage_remove_command_builder extends CommandBuilder<az_ams_account_storage_remove_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -2321,8 +2321,8 @@ class az_ams_account_storage_remove_command_builder extends CommandBuilder<az_am
  * @param {string} id The ID of the storage account resource.
  */
 class az_ams_account_storage_sync_storage_keys_command_builder extends CommandBuilder<az_ams_account_storage_sync_storage_keys_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -2382,8 +2382,8 @@ class az_ams_account_storage_sync_storage_keys_command_builder extends CommandBu
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_account_filter_create_command_builder extends CommandBuilder<az_ams_account_filter_create_command_result> {
-    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2481,8 +2481,8 @@ class az_ams_account_filter_create_command_builder extends CommandBuilder<az_ams
  * ```
  */
 class az_ams_account_filter_delete_command_builder extends CommandBuilder<az_ams_account_filter_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -2531,8 +2531,8 @@ class az_ams_account_filter_delete_command_builder extends CommandBuilder<az_ams
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_account_filter_list_command_builder extends CommandBuilder<az_ams_account_filter_list_command_result> {
-    constructor(commandPath: string, accountName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
     }
@@ -2576,8 +2576,8 @@ class az_ams_account_filter_list_command_builder extends CommandBuilder<az_ams_a
  * ```
  */
 class az_ams_account_filter_show_command_builder extends CommandBuilder<az_ams_account_filter_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -2643,8 +2643,8 @@ class az_ams_account_filter_show_command_builder extends CommandBuilder<az_ams_a
  * ```
  */
 class az_ams_account_filter_update_command_builder extends CommandBuilder<az_ams_account_filter_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -2770,8 +2770,8 @@ class az_ams_account_filter_update_command_builder extends CommandBuilder<az_ams
  * @param {string} name The name of the Azure Media Services account.
  */
 class az_ams_account_check_name_command_builder extends CommandBuilder<az_ams_account_check_name_command_result> {
-    constructor(commandPath: string, location: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
     }
@@ -2813,8 +2813,8 @@ class az_ams_account_check_name_command_builder extends CommandBuilder<az_ams_ac
  * @param {string} storageAccount The name or resource ID of the primary storage account to attach to the Azure Media Services account. The storage account MUST be in the same Azure subscription as the Media Services account. It is strongly recommended that the storage account be in the same resource group as the Media Services account. Blob only accounts are not allowed as primary.
  */
 class az_ams_account_create_command_builder extends CommandBuilder<az_ams_account_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, storageAccount: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, storageAccount: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.storageAccount(storageAccount)
@@ -2869,8 +2869,8 @@ class az_ams_account_create_command_builder extends CommandBuilder<az_ams_accoun
  * ```
  */
 class az_ams_account_delete_command_builder extends CommandBuilder<az_ams_account_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2909,8 +2909,8 @@ class az_ams_account_delete_command_builder extends CommandBuilder<az_ams_accoun
  * ```
  */
 class az_ams_account_list_command_builder extends CommandBuilder<az_ams_account_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -2945,8 +2945,8 @@ class az_ams_account_list_command_builder extends CommandBuilder<az_ams_account_
  * ```
  */
 class az_ams_account_show_command_builder extends CommandBuilder<az_ams_account_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2997,8 +2997,8 @@ class az_ams_account_show_command_builder extends CommandBuilder<az_ams_account_
  * ```
  */
 class az_ams_account_update_command_builder extends CommandBuilder<az_ams_account_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -3083,8 +3083,8 @@ class az_ams_account_update_command_builder extends CommandBuilder<az_ams_accoun
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_asset_filter_create_command_builder extends CommandBuilder<az_ams_asset_filter_create_command_result> {
-    constructor(commandPath: string, accountName: string, assetName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, assetName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.assetName(assetName)
         this.name(name)
@@ -3190,8 +3190,8 @@ class az_ams_asset_filter_create_command_builder extends CommandBuilder<az_ams_a
  * ```
  */
 class az_ams_asset_filter_delete_command_builder extends CommandBuilder<az_ams_asset_filter_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -3248,8 +3248,8 @@ class az_ams_asset_filter_delete_command_builder extends CommandBuilder<az_ams_a
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_asset_filter_list_command_builder extends CommandBuilder<az_ams_asset_filter_list_command_result> {
-    constructor(commandPath: string, accountName: string, assetName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, assetName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.assetName(assetName)
         this.resourceGroup(resourceGroup)
@@ -3301,8 +3301,8 @@ class az_ams_asset_filter_list_command_builder extends CommandBuilder<az_ams_ass
  * ```
  */
 class az_ams_asset_filter_show_command_builder extends CommandBuilder<az_ams_asset_filter_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -3375,8 +3375,8 @@ class az_ams_asset_filter_show_command_builder extends CommandBuilder<az_ams_ass
  * ```
  */
 class az_ams_asset_filter_update_command_builder extends CommandBuilder<az_ams_asset_filter_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -3514,8 +3514,8 @@ class az_ams_asset_filter_update_command_builder extends CommandBuilder<az_ams_a
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_asset_create_command_builder extends CommandBuilder<az_ams_asset_create_command_result> {
-    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3583,8 +3583,8 @@ class az_ams_asset_create_command_builder extends CommandBuilder<az_ams_asset_cr
  * ```
  */
 class az_ams_asset_delete_command_builder extends CommandBuilder<az_ams_asset_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -3631,8 +3631,8 @@ class az_ams_asset_delete_command_builder extends CommandBuilder<az_ams_asset_de
  * ```
  */
 class az_ams_asset_get_encryption_key_command_builder extends CommandBuilder<az_ams_asset_get_encryption_key_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -3681,8 +3681,8 @@ class az_ams_asset_get_encryption_key_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_ams_asset_get_sas_urls_command_builder extends CommandBuilder<az_ams_asset_get_sas_urls_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -3746,8 +3746,8 @@ class az_ams_asset_get_sas_urls_command_builder extends CommandBuilder<az_ams_as
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_asset_list_command_builder extends CommandBuilder<az_ams_asset_list_command_result> {
-    constructor(commandPath: string, accountName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
     }
@@ -3808,8 +3808,8 @@ class az_ams_asset_list_command_builder extends CommandBuilder<az_ams_asset_list
  * ```
  */
 class az_ams_asset_list_streaming_locators_command_builder extends CommandBuilder<az_ams_asset_list_streaming_locators_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -3857,8 +3857,8 @@ class az_ams_asset_list_streaming_locators_command_builder extends CommandBuilde
  * ```
  */
 class az_ams_asset_show_command_builder extends CommandBuilder<az_ams_asset_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -3917,8 +3917,8 @@ class az_ams_asset_show_command_builder extends CommandBuilder<az_ams_asset_show
  * ```
  */
 class az_ams_asset_update_command_builder extends CommandBuilder<az_ams_asset_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -4025,8 +4025,8 @@ class az_ams_asset_update_command_builder extends CommandBuilder<az_ams_asset_up
  * @param {string} policyOptionName The content key policy option name.
  */
 class az_ams_content_key_policy_option_add_command_builder extends CommandBuilder<az_ams_content_key_policy_option_add_command_result> {
-    constructor(commandPath: string, policyOptionName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyOptionName: string) {
+        super(commandPath, resultDataTypeName);
         this.policyOptionName(policyOptionName)
     }
 
@@ -4209,8 +4209,8 @@ class az_ams_content_key_policy_option_add_command_builder extends CommandBuilde
  * @param {string} policyOptionId The content key policy option identifier. This value can be obtained from "policyOptionId" property by running a show operation on a content key policy resource.
  */
 class az_ams_content_key_policy_option_remove_command_builder extends CommandBuilder<az_ams_content_key_policy_option_remove_command_result> {
-    constructor(commandPath: string, policyOptionId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyOptionId: string) {
+        super(commandPath, resultDataTypeName);
         this.policyOptionId(policyOptionId)
     }
 
@@ -4286,8 +4286,8 @@ class az_ams_content_key_policy_option_remove_command_builder extends CommandBui
  * @param {string} policyOptionId The content key policy option identifier. This value can be obtained from "policyOptionId" property by running a show operation on a content key policy resource.
  */
 class az_ams_content_key_policy_option_update_command_builder extends CommandBuilder<az_ams_content_key_policy_option_update_command_result> {
-    constructor(commandPath: string, policyOptionId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, policyOptionId: string) {
+        super(commandPath, resultDataTypeName);
         this.policyOptionId(policyOptionId)
     }
 
@@ -4482,8 +4482,8 @@ class az_ams_content_key_policy_option_update_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_content_key_policy_create_command_builder extends CommandBuilder<az_ams_content_key_policy_create_command_result> {
-    constructor(commandPath: string, accountName: string, name: string, policyOptionName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, name: string, policyOptionName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.name(name)
         this.policyOptionName(policyOptionName)
@@ -4666,8 +4666,8 @@ class az_ams_content_key_policy_create_command_builder extends CommandBuilder<az
  * ```
  */
 class az_ams_content_key_policy_delete_command_builder extends CommandBuilder<az_ams_content_key_policy_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -4719,8 +4719,8 @@ class az_ams_content_key_policy_delete_command_builder extends CommandBuilder<az
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_content_key_policy_list_command_builder extends CommandBuilder<az_ams_content_key_policy_list_command_result> {
-    constructor(commandPath: string, accountName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
     }
@@ -4783,8 +4783,8 @@ class az_ams_content_key_policy_list_command_builder extends CommandBuilder<az_a
  * ```
  */
 class az_ams_content_key_policy_show_command_builder extends CommandBuilder<az_ams_content_key_policy_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -4848,8 +4848,8 @@ class az_ams_content_key_policy_show_command_builder extends CommandBuilder<az_a
  * ```
  */
 class az_ams_content_key_policy_update_command_builder extends CommandBuilder<az_ams_content_key_policy_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -4928,8 +4928,8 @@ class az_ams_content_key_policy_update_command_builder extends CommandBuilder<az
  * ```
  */
 class az_ams_job_cancel_command_builder extends CommandBuilder<az_ams_job_cancel_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -4989,8 +4989,8 @@ class az_ams_job_cancel_command_builder extends CommandBuilder<az_ams_job_cancel
  * ```
  */
 class az_ams_job_delete_command_builder extends CommandBuilder<az_ams_job_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -5049,8 +5049,8 @@ class az_ams_job_delete_command_builder extends CommandBuilder<az_ams_job_delete
  * @param {string} transformName The name of the transform.
  */
 class az_ams_job_list_command_builder extends CommandBuilder<az_ams_job_list_command_result> {
-    constructor(commandPath: string, accountName: string, resourceGroup: string, transformName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string, transformName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
         this.transformName(transformName)
@@ -5114,8 +5114,8 @@ class az_ams_job_list_command_builder extends CommandBuilder<az_ams_job_list_com
  * ```
  */
 class az_ams_job_show_command_builder extends CommandBuilder<az_ams_job_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -5185,8 +5185,8 @@ class az_ams_job_show_command_builder extends CommandBuilder<az_ams_job_show_com
  * @param {string} outputAssets Space-separated assets in 'assetName=label' format. An asset without label can be sent like this: 'assetName='.
  */
 class az_ams_job_start_command_builder extends CommandBuilder<az_ams_job_start_command_result> {
-    constructor(commandPath: string, outputAssets: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, outputAssets: string) {
+        super(commandPath, resultDataTypeName);
         this.outputAssets(outputAssets)
     }
 
@@ -5295,8 +5295,8 @@ class az_ams_job_start_command_builder extends CommandBuilder<az_ams_job_start_c
  * ```
  */
 class az_ams_job_update_command_builder extends CommandBuilder<az_ams_job_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -5408,8 +5408,8 @@ class az_ams_job_update_command_builder extends CommandBuilder<az_ams_job_update
  * @param {'FragmentedMP4' | 'RTMP'} streamingProtocol The streaming protocol for the live event. This value is specified at creation time and cannot be updated.
  */
 class az_ams_live_event_create_command_builder extends CommandBuilder<az_ams_live_event_create_command_result> {
-    constructor(commandPath: string, accountName: string, ips: string, name: string, resourceGroup: string, streamingProtocol: 'FragmentedMP4' | 'RTMP') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, ips: string, name: string, resourceGroup: string, streamingProtocol: 'FragmentedMP4' | 'RTMP') {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.ips(ips)
         this.name(name)
@@ -5563,8 +5563,8 @@ class az_ams_live_event_create_command_builder extends CommandBuilder<az_ams_liv
  * ```
  */
 class az_ams_live_event_delete_command_builder extends CommandBuilder<az_ams_live_event_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -5613,8 +5613,8 @@ class az_ams_live_event_delete_command_builder extends CommandBuilder<az_ams_liv
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_live_event_list_command_builder extends CommandBuilder<az_ams_live_event_list_command_result> {
-    constructor(commandPath: string, accountName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
     }
@@ -5658,8 +5658,8 @@ class az_ams_live_event_list_command_builder extends CommandBuilder<az_ams_live_
  * ```
  */
 class az_ams_live_event_reset_command_builder extends CommandBuilder<az_ams_live_event_reset_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -5713,8 +5713,8 @@ class az_ams_live_event_reset_command_builder extends CommandBuilder<az_ams_live
  * ```
  */
 class az_ams_live_event_show_command_builder extends CommandBuilder<az_ams_live_event_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -5768,8 +5768,8 @@ class az_ams_live_event_show_command_builder extends CommandBuilder<az_ams_live_
  * ```
  */
 class az_ams_live_event_start_command_builder extends CommandBuilder<az_ams_live_event_start_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -5824,8 +5824,8 @@ class az_ams_live_event_start_command_builder extends CommandBuilder<az_ams_live
  * ```
  */
 class az_ams_live_event_stop_command_builder extends CommandBuilder<az_ams_live_event_stop_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -5895,8 +5895,8 @@ class az_ams_live_event_stop_command_builder extends CommandBuilder<az_ams_live_
  * ```
  */
 class az_ams_live_event_update_command_builder extends CommandBuilder<az_ams_live_event_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -6016,8 +6016,8 @@ class az_ams_live_event_update_command_builder extends CommandBuilder<az_ams_liv
  * ```
  */
 class az_ams_live_event_wait_command_builder extends CommandBuilder<az_ams_live_event_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -6119,8 +6119,8 @@ class az_ams_live_event_wait_command_builder extends CommandBuilder<az_ams_live_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_live_output_create_command_builder extends CommandBuilder<az_ams_live_output_create_command_result> {
-    constructor(commandPath: string, accountName: string, archiveWindowLength: string, assetName: string, liveEventName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, archiveWindowLength: string, assetName: string, liveEventName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.archiveWindowLength(archiveWindowLength)
         this.assetName(assetName)
@@ -6210,8 +6210,8 @@ class az_ams_live_output_create_command_builder extends CommandBuilder<az_ams_li
  * ```
  */
 class az_ams_live_output_delete_command_builder extends CommandBuilder<az_ams_live_output_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -6268,8 +6268,8 @@ class az_ams_live_output_delete_command_builder extends CommandBuilder<az_ams_li
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_live_output_list_command_builder extends CommandBuilder<az_ams_live_output_list_command_result> {
-    constructor(commandPath: string, accountName: string, liveEventName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, liveEventName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.liveEventName(liveEventName)
         this.resourceGroup(resourceGroup)
@@ -6321,8 +6321,8 @@ class az_ams_live_output_list_command_builder extends CommandBuilder<az_ams_live
  * ```
  */
 class az_ams_live_output_show_command_builder extends CommandBuilder<az_ams_live_output_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -6384,8 +6384,8 @@ class az_ams_live_output_show_command_builder extends CommandBuilder<az_ams_live
  * ```
  */
 class az_ams_streaming_endpoint_akamai_add_command_builder extends CommandBuilder<az_ams_streaming_endpoint_akamai_add_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -6453,8 +6453,8 @@ class az_ams_streaming_endpoint_akamai_add_command_builder extends CommandBuilde
  * @param {string} identifier The identifier for the authentication key. This is the nonce provided by Akamai.
  */
 class az_ams_streaming_endpoint_akamai_remove_command_builder extends CommandBuilder<az_ams_streaming_endpoint_akamai_remove_command_result> {
-    constructor(commandPath: string, identifier: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, identifier: string) {
+        super(commandPath, resultDataTypeName);
         this.identifier(identifier)
     }
 
@@ -6525,8 +6525,8 @@ class az_ams_streaming_endpoint_akamai_remove_command_builder extends CommandBui
  * @param {string} scaleUnits The number of scale units for Premium StreamingEndpoints. For Standard StreamingEndpoints, set this value to 0. Use the Scale operation to adjust this value for Premium StreamingEndpoints.
  */
 class az_ams_streaming_endpoint_create_command_builder extends CommandBuilder<az_ams_streaming_endpoint_create_command_result> {
-    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string, scaleUnits: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, name: string, resourceGroup: string, scaleUnits: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -6649,8 +6649,8 @@ class az_ams_streaming_endpoint_create_command_builder extends CommandBuilder<az
  * ```
  */
 class az_ams_streaming_endpoint_delete_command_builder extends CommandBuilder<az_ams_streaming_endpoint_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -6699,8 +6699,8 @@ class az_ams_streaming_endpoint_delete_command_builder extends CommandBuilder<az
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_streaming_endpoint_list_command_builder extends CommandBuilder<az_ams_streaming_endpoint_list_command_result> {
-    constructor(commandPath: string, accountName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
     }
@@ -6744,8 +6744,8 @@ class az_ams_streaming_endpoint_list_command_builder extends CommandBuilder<az_a
  * ```
  */
 class az_ams_streaming_endpoint_scale_command_builder extends CommandBuilder<az_ams_streaming_endpoint_scale_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -6799,8 +6799,8 @@ class az_ams_streaming_endpoint_scale_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_ams_streaming_endpoint_show_command_builder extends CommandBuilder<az_ams_streaming_endpoint_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -6854,8 +6854,8 @@ class az_ams_streaming_endpoint_show_command_builder extends CommandBuilder<az_a
  * ```
  */
 class az_ams_streaming_endpoint_start_command_builder extends CommandBuilder<az_ams_streaming_endpoint_start_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -6909,8 +6909,8 @@ class az_ams_streaming_endpoint_start_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_ams_streaming_endpoint_stop_command_builder extends CommandBuilder<az_ams_streaming_endpoint_stop_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -6978,8 +6978,8 @@ class az_ams_streaming_endpoint_stop_command_builder extends CommandBuilder<az_a
  * ```
  */
 class az_ams_streaming_endpoint_update_command_builder extends CommandBuilder<az_ams_streaming_endpoint_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -7123,8 +7123,8 @@ class az_ams_streaming_endpoint_update_command_builder extends CommandBuilder<az
  * ```
  */
 class az_ams_streaming_endpoint_wait_command_builder extends CommandBuilder<az_ams_streaming_endpoint_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -7227,8 +7227,8 @@ class az_ams_streaming_endpoint_wait_command_builder extends CommandBuilder<az_a
  * @param {string} streamingPolicyName The name of the streaming policy used by the streaming locator. You can either create one with `az ams streaming policy create` or use any of the predefined policies: Predefined_DownloadOnly, Predefined_ClearStreamingOnly, Predefined_DownloadAndClearStreaming, Predefined_ClearKey, Predefined_MultiDrmCencStreaming, Predefined_MultiDrmStreaming.
  */
 class az_ams_streaming_locator_create_command_builder extends CommandBuilder<az_ams_streaming_locator_create_command_result> {
-    constructor(commandPath: string, accountName: string, assetName: string, name: string, resourceGroup: string, streamingPolicyName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, assetName: string, name: string, resourceGroup: string, streamingPolicyName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.assetName(assetName)
         this.name(name)
@@ -7328,8 +7328,8 @@ class az_ams_streaming_locator_create_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_ams_streaming_locator_delete_command_builder extends CommandBuilder<az_ams_streaming_locator_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -7376,8 +7376,8 @@ class az_ams_streaming_locator_delete_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_ams_streaming_locator_get_paths_command_builder extends CommandBuilder<az_ams_streaming_locator_get_paths_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -7429,8 +7429,8 @@ class az_ams_streaming_locator_get_paths_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_streaming_locator_list_command_builder extends CommandBuilder<az_ams_streaming_locator_list_command_result> {
-    constructor(commandPath: string, accountName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
     }
@@ -7491,8 +7491,8 @@ class az_ams_streaming_locator_list_command_builder extends CommandBuilder<az_am
  * ```
  */
 class az_ams_streaming_locator_list_content_keys_command_builder extends CommandBuilder<az_ams_streaming_locator_list_content_keys_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -7540,8 +7540,8 @@ class az_ams_streaming_locator_list_content_keys_command_builder extends Command
  * ```
  */
 class az_ams_streaming_locator_show_command_builder extends CommandBuilder<az_ams_streaming_locator_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -7625,8 +7625,8 @@ class az_ams_streaming_locator_show_command_builder extends CommandBuilder<az_am
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_streaming_policy_create_command_builder extends CommandBuilder<az_ams_streaming_policy_create_command_result> {
-    constructor(commandPath: string, accountName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -7838,8 +7838,8 @@ class az_ams_streaming_policy_create_command_builder extends CommandBuilder<az_a
  * ```
  */
 class az_ams_streaming_policy_delete_command_builder extends CommandBuilder<az_ams_streaming_policy_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -7891,8 +7891,8 @@ class az_ams_streaming_policy_delete_command_builder extends CommandBuilder<az_a
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_streaming_policy_list_command_builder extends CommandBuilder<az_ams_streaming_policy_list_command_result> {
-    constructor(commandPath: string, accountName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
     }
@@ -7954,8 +7954,8 @@ class az_ams_streaming_policy_list_command_builder extends CommandBuilder<az_ams
  * ```
  */
 class az_ams_streaming_policy_show_command_builder extends CommandBuilder<az_ams_streaming_policy_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -8016,8 +8016,8 @@ class az_ams_streaming_policy_show_command_builder extends CommandBuilder<az_ams
  * @param {string} preset Preset that describes the operations that will be used to modify, transcode, or extract insights from the source file to generate the transform output. Allowed values: H264SingleBitrateSD, H264SingleBitrate720p, H264SingleBitrate1080p, AdaptiveStreaming, AACGoodQualityAudio, ContentAwareEncodingExperimental, ContentAwareEncoding, H264MultipleBitrate1080p, H264MultipleBitrate720p, H264MultipleBitrateSD, AudioAnalyzer, VideoAnalyzer, FaceDetector. In addition to the allowed values, you can also pass a path to a custom Standard Encoder preset JSON file. See <a href="https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset">https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset</a> for further details on the settings to use to build a custom preset.
  */
 class az_ams_transform_output_add_command_builder extends CommandBuilder<az_ams_transform_output_add_command_result> {
-    constructor(commandPath: string, preset: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, preset: string) {
+        super(commandPath, resultDataTypeName);
         this.preset(preset)
     }
 
@@ -8104,8 +8104,8 @@ class az_ams_transform_output_add_command_builder extends CommandBuilder<az_ams_
  * @param {string} outputIndex The element index of the output to remove.
  */
 class az_ams_transform_output_remove_command_builder extends CommandBuilder<az_ams_transform_output_remove_command_result> {
-    constructor(commandPath: string, outputIndex: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, outputIndex: string) {
+        super(commandPath, resultDataTypeName);
         this.outputIndex(outputIndex)
     }
 
@@ -8170,8 +8170,8 @@ class az_ams_transform_output_remove_command_builder extends CommandBuilder<az_a
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_transform_create_command_builder extends CommandBuilder<az_ams_transform_create_command_result> {
-    constructor(commandPath: string, accountName: string, name: string, preset: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, name: string, preset: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.name(name)
         this.preset(preset)
@@ -8258,8 +8258,8 @@ class az_ams_transform_create_command_builder extends CommandBuilder<az_ams_tran
  * ```
  */
 class az_ams_transform_delete_command_builder extends CommandBuilder<az_ams_transform_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -8310,8 +8310,8 @@ class az_ams_transform_delete_command_builder extends CommandBuilder<az_ams_tran
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_ams_transform_list_command_builder extends CommandBuilder<az_ams_transform_list_command_result> {
-    constructor(commandPath: string, accountName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
     }
@@ -8367,8 +8367,8 @@ class az_ams_transform_list_command_builder extends CommandBuilder<az_ams_transf
  * ```
  */
 class az_ams_transform_show_command_builder extends CommandBuilder<az_ams_transform_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */
@@ -8426,8 +8426,8 @@ class az_ams_transform_show_command_builder extends CommandBuilder<az_ams_transf
  * ```
  */
 class az_ams_transform_update_command_builder extends CommandBuilder<az_ams_transform_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the Azure Media Services account. */

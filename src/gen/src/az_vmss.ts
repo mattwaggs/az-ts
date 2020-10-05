@@ -62,7 +62,7 @@ export class az_vmss_diagnostics {
      * ```
      */
     static get_default_config(): az_vmss_diagnostics_get_default_config_command_builder {
-        return new az_vmss_diagnostics_get_default_config_command_builder("az vmss diagnostics get-default-config");
+        return new az_vmss_diagnostics_get_default_config_command_builder("az vmss diagnostics get-default-config", 'az_vmss_diagnostics_get_default_config_command_result');
     }
 
     /**
@@ -84,7 +84,7 @@ export class az_vmss_diagnostics {
      * @param {string} vmssName Scale set name.
      */
     static set(resourceGroup: string, settings: string, vmssName: string): az_vmss_diagnostics_set_command_builder {
-        return new az_vmss_diagnostics_set_command_builder("az vmss diagnostics set", resourceGroup, settings, vmssName);
+        return new az_vmss_diagnostics_set_command_builder("az vmss diagnostics set", 'az_vmss_diagnostics_set_command_result', resourceGroup, settings, vmssName);
     }
 }
 
@@ -108,7 +108,7 @@ export class az_vmss_disk {
      * ```
      */
     static attach(): az_vmss_disk_attach_command_builder {
-        return new az_vmss_disk_attach_command_builder("az vmss disk attach");
+        return new az_vmss_disk_attach_command_builder("az vmss disk attach", 'az_vmss_disk_attach_command_result');
     }
 
     /**
@@ -127,7 +127,7 @@ export class az_vmss_disk {
      * @param {string} lun 0-based logical unit number (LUN). Max value depends on the Virtual Machine instance size.
      */
     static detach(lun: string): az_vmss_disk_detach_command_builder {
-        return new az_vmss_disk_detach_command_builder("az vmss disk detach", lun);
+        return new az_vmss_disk_detach_command_builder("az vmss disk detach", 'az_vmss_disk_detach_command_result', lun);
     }
 }
 
@@ -147,7 +147,7 @@ export class az_vmss_encryption {
      * ```
      */
     static disable(): az_vmss_encryption_disable_command_builder {
-        return new az_vmss_encryption_disable_command_builder("az vmss encryption disable");
+        return new az_vmss_encryption_disable_command_builder("az vmss encryption disable", 'az_vmss_encryption_disable_command_result');
     }
 
     /**
@@ -170,7 +170,7 @@ export class az_vmss_encryption {
      * @param {string} diskEncryptionKeyvault Name or ID of the key vault where the generated encryption key will be placed.
      */
     static enable(diskEncryptionKeyvault: string): az_vmss_encryption_enable_command_builder {
-        return new az_vmss_encryption_enable_command_builder("az vmss encryption enable", diskEncryptionKeyvault);
+        return new az_vmss_encryption_enable_command_builder("az vmss encryption enable", 'az_vmss_encryption_enable_command_result', diskEncryptionKeyvault);
     }
 
     /**
@@ -186,7 +186,7 @@ export class az_vmss_encryption {
      * ```
      */
     static show(): az_vmss_encryption_show_command_builder {
-        return new az_vmss_encryption_show_command_builder("az vmss encryption show");
+        return new az_vmss_encryption_show_command_builder("az vmss encryption show", 'az_vmss_encryption_show_command_result');
     }
 }
 
@@ -207,7 +207,7 @@ export class az_vmss_extension_image {
      * ```
      */
     static list(): az_vmss_extension_image_list_command_builder {
-        return new az_vmss_extension_image_list_command_builder("az vmss extension image list");
+        return new az_vmss_extension_image_list_command_builder("az vmss extension image list", 'az_vmss_extension_image_list_command_result');
     }
 
     /**
@@ -224,7 +224,7 @@ export class az_vmss_extension_image {
      * @param {string} publisher Image publisher name.
      */
     static list_names(location: string, publisher: string): az_vmss_extension_image_list_names_command_builder {
-        return new az_vmss_extension_image_list_names_command_builder("az vmss extension image list-names", location, publisher);
+        return new az_vmss_extension_image_list_names_command_builder("az vmss extension image list-names", 'az_vmss_extension_image_list_names_command_result', location, publisher);
     }
 
     /**
@@ -246,7 +246,7 @@ export class az_vmss_extension_image {
      * @param {string} publisher Image publisher name.
      */
     static list_versions(location: string, name: string, publisher: string): az_vmss_extension_image_list_versions_command_builder {
-        return new az_vmss_extension_image_list_versions_command_builder("az vmss extension image list-versions", location, name, publisher);
+        return new az_vmss_extension_image_list_versions_command_builder("az vmss extension image list-versions", 'az_vmss_extension_image_list_versions_command_result', location, name, publisher);
     }
 
     /**
@@ -268,7 +268,7 @@ export class az_vmss_extension_image {
      * @param {string} version Extension version.
      */
     static show(location: string, name: string, publisher: string, version: string): az_vmss_extension_image_show_command_builder {
-        return new az_vmss_extension_image_show_command_builder("az vmss extension image show", location, name, publisher, version);
+        return new az_vmss_extension_image_show_command_builder("az vmss extension image show", 'az_vmss_extension_image_show_command_result', location, name, publisher, version);
     }
 }
 
@@ -291,7 +291,7 @@ export class az_vmss_extension {
      * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      */
     static delete(name: string, resourceGroup: string, vmssName: string): az_vmss_extension_delete_command_builder {
-        return new az_vmss_extension_delete_command_builder("az vmss extension delete", name, resourceGroup, vmssName);
+        return new az_vmss_extension_delete_command_builder("az vmss extension delete", 'az_vmss_extension_delete_command_result', name, resourceGroup, vmssName);
     }
 
     /**
@@ -309,7 +309,7 @@ export class az_vmss_extension {
      * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      */
     static list(resourceGroup: string, vmssName: string): az_vmss_extension_list_command_builder {
-        return new az_vmss_extension_list_command_builder("az vmss extension list", resourceGroup, vmssName);
+        return new az_vmss_extension_list_command_builder("az vmss extension list", 'az_vmss_extension_list_command_result', resourceGroup, vmssName);
     }
 
     /**
@@ -338,7 +338,7 @@ export class az_vmss_extension {
      * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      */
     static set(name: string, publisher: string, resourceGroup: string, vmssName: string): az_vmss_extension_set_command_builder {
-        return new az_vmss_extension_set_command_builder("az vmss extension set", name, publisher, resourceGroup, vmssName);
+        return new az_vmss_extension_set_command_builder("az vmss extension set", 'az_vmss_extension_set_command_result', name, publisher, resourceGroup, vmssName);
     }
 
     /**
@@ -358,7 +358,7 @@ export class az_vmss_extension {
      * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      */
     static show(name: string, resourceGroup: string, vmssName: string): az_vmss_extension_show_command_builder {
-        return new az_vmss_extension_show_command_builder("az vmss extension show", name, resourceGroup, vmssName);
+        return new az_vmss_extension_show_command_builder("az vmss extension show", 'az_vmss_extension_show_command_result', name, resourceGroup, vmssName);
     }
 }
 
@@ -379,7 +379,7 @@ export class az_vmss_identity {
      * ```
      */
     static assign(): az_vmss_identity_assign_command_builder {
-        return new az_vmss_identity_assign_command_builder("az vmss identity assign");
+        return new az_vmss_identity_assign_command_builder("az vmss identity assign", 'az_vmss_identity_assign_command_result');
     }
 
     /**
@@ -395,7 +395,7 @@ export class az_vmss_identity {
      * ```
      */
     static remove(): az_vmss_identity_remove_command_builder {
-        return new az_vmss_identity_remove_command_builder("az vmss identity remove");
+        return new az_vmss_identity_remove_command_builder("az vmss identity remove", 'az_vmss_identity_remove_command_result');
     }
 
     /**
@@ -411,7 +411,7 @@ export class az_vmss_identity {
      * ```
      */
     static show(): az_vmss_identity_show_command_builder {
-        return new az_vmss_identity_show_command_builder("az vmss identity show");
+        return new az_vmss_identity_show_command_builder("az vmss identity show", 'az_vmss_identity_show_command_result');
     }
 }
 
@@ -432,7 +432,7 @@ export class az_vmss_nic {
      * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      */
     static list(resourceGroup: string, vmssName: string): az_vmss_nic_list_command_builder {
-        return new az_vmss_nic_list_command_builder("az vmss nic list", resourceGroup, vmssName);
+        return new az_vmss_nic_list_command_builder("az vmss nic list", 'az_vmss_nic_list_command_result', resourceGroup, vmssName);
     }
 
     /**
@@ -448,7 +448,7 @@ export class az_vmss_nic {
      * ```
      */
     static list_vm_nics(): az_vmss_nic_list_vm_nics_command_builder {
-        return new az_vmss_nic_list_vm_nics_command_builder("az vmss nic list-vm-nics");
+        return new az_vmss_nic_list_vm_nics_command_builder("az vmss nic list-vm-nics", 'az_vmss_nic_list_vm_nics_command_result');
     }
 
     /**
@@ -467,7 +467,7 @@ export class az_vmss_nic {
      * ```
      */
     static show(): az_vmss_nic_show_command_builder {
-        return new az_vmss_nic_show_command_builder("az vmss nic show");
+        return new az_vmss_nic_show_command_builder("az vmss nic show", 'az_vmss_nic_show_command_result');
     }
 }
 
@@ -485,7 +485,7 @@ export class az_vmss_rolling_upgrade {
      * ```
      */
     static cancel(): az_vmss_rolling_upgrade_cancel_command_builder {
-        return new az_vmss_rolling_upgrade_cancel_command_builder("az vmss rolling-upgrade cancel");
+        return new az_vmss_rolling_upgrade_cancel_command_builder("az vmss rolling-upgrade cancel", 'az_vmss_rolling_upgrade_cancel_command_result');
     }
 
     /**
@@ -500,7 +500,7 @@ export class az_vmss_rolling_upgrade {
      * ```
      */
     static get_latest(): az_vmss_rolling_upgrade_get_latest_command_builder {
-        return new az_vmss_rolling_upgrade_get_latest_command_builder("az vmss rolling-upgrade get-latest");
+        return new az_vmss_rolling_upgrade_get_latest_command_builder("az vmss rolling-upgrade get-latest", 'az_vmss_rolling_upgrade_get_latest_command_result');
     }
 
     /**
@@ -515,7 +515,7 @@ export class az_vmss_rolling_upgrade {
      * ```
      */
     static start(): az_vmss_rolling_upgrade_start_command_builder {
-        return new az_vmss_rolling_upgrade_start_command_builder("az vmss rolling-upgrade start");
+        return new az_vmss_rolling_upgrade_start_command_builder("az vmss rolling-upgrade start", 'az_vmss_rolling_upgrade_start_command_result');
     }
 }
 
@@ -539,7 +539,7 @@ export class az_vmss_run_command {
      * @param {string} commandId The command id.
      */
     static invoke(commandId: string): az_vmss_run_command_invoke_command_builder {
-        return new az_vmss_run_command_invoke_command_builder("az vmss run-command invoke", commandId);
+        return new az_vmss_run_command_invoke_command_builder("az vmss run-command invoke", 'az_vmss_run_command_invoke_command_result', commandId);
     }
 
     /**
@@ -555,7 +555,7 @@ export class az_vmss_run_command {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list(location: string): az_vmss_run_command_list_command_builder {
-        return new az_vmss_run_command_list_command_builder("az vmss run-command list", location);
+        return new az_vmss_run_command_list_command_builder("az vmss run-command list", 'az_vmss_run_command_list_command_result', location);
     }
 
     /**
@@ -573,7 +573,7 @@ export class az_vmss_run_command {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static show(commandId: string, location: string): az_vmss_run_command_show_command_builder {
-        return new az_vmss_run_command_show_command_builder("az vmss run-command show", commandId, location);
+        return new az_vmss_run_command_show_command_builder("az vmss run-command show", 'az_vmss_run_command_show_command_result', commandId, location);
     }
 }
 
@@ -671,7 +671,7 @@ export class az_vmss {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_vmss_create_command_builder {
-        return new az_vmss_create_command_builder("az vmss create", name, resourceGroup);
+        return new az_vmss_create_command_builder("az vmss create", 'az_vmss_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -690,7 +690,7 @@ export class az_vmss {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static deallocate(name: string, resourceGroup: string): az_vmss_deallocate_command_builder {
-        return new az_vmss_deallocate_command_builder("az vmss deallocate", name, resourceGroup);
+        return new az_vmss_deallocate_command_builder("az vmss deallocate", 'az_vmss_deallocate_command_result', name, resourceGroup);
     }
 
     /**
@@ -706,7 +706,7 @@ export class az_vmss {
      * ```
      */
     static delete(): az_vmss_delete_command_builder {
-        return new az_vmss_delete_command_builder("az vmss delete");
+        return new az_vmss_delete_command_builder("az vmss delete", 'az_vmss_delete_command_result');
     }
 
     /**
@@ -726,7 +726,7 @@ export class az_vmss {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete_instances(instanceIds: string, name: string, resourceGroup: string): az_vmss_delete_instances_command_builder {
-        return new az_vmss_delete_instances_command_builder("az vmss delete-instances", instanceIds, name, resourceGroup);
+        return new az_vmss_delete_instances_command_builder("az vmss delete-instances", 'az_vmss_delete_instances_command_result', instanceIds, name, resourceGroup);
     }
 
     /**
@@ -742,7 +742,7 @@ export class az_vmss {
      * ```
      */
     static get_instance_view(): az_vmss_get_instance_view_command_builder {
-        return new az_vmss_get_instance_view_command_builder("az vmss get-instance-view");
+        return new az_vmss_get_instance_view_command_builder("az vmss get-instance-view", 'az_vmss_get_instance_view_command_result');
     }
 
     /**
@@ -757,7 +757,7 @@ export class az_vmss {
      * ```
      */
     static get_os_upgrade_history(): az_vmss_get_os_upgrade_history_command_builder {
-        return new az_vmss_get_os_upgrade_history_command_builder("az vmss get-os-upgrade-history");
+        return new az_vmss_get_os_upgrade_history_command_builder("az vmss get-os-upgrade-history", 'az_vmss_get_os_upgrade_history_command_result');
     }
 
     /**
@@ -771,7 +771,7 @@ export class az_vmss {
      * ```
      */
     static list(): az_vmss_list_command_builder {
-        return new az_vmss_list_command_builder("az vmss list");
+        return new az_vmss_list_command_builder("az vmss list", 'az_vmss_list_command_result');
     }
 
     /**
@@ -786,7 +786,7 @@ export class az_vmss {
      * ```
      */
     static list_instance_connection_info(): az_vmss_list_instance_connection_info_command_builder {
-        return new az_vmss_list_instance_connection_info_command_builder("az vmss list-instance-connection-info");
+        return new az_vmss_list_instance_connection_info_command_builder("az vmss list-instance-connection-info", 'az_vmss_list_instance_connection_info_command_result');
     }
 
     /**
@@ -801,7 +801,7 @@ export class az_vmss {
      * ```
      */
     static list_instance_public_ips(): az_vmss_list_instance_public_ips_command_builder {
-        return new az_vmss_list_instance_public_ips_command_builder("az vmss list-instance-public-ips");
+        return new az_vmss_list_instance_public_ips_command_builder("az vmss list-instance-public-ips", 'az_vmss_list_instance_public_ips_command_result');
     }
 
     /**
@@ -819,7 +819,7 @@ export class az_vmss {
      * ```
      */
     static list_instances(): az_vmss_list_instances_command_builder {
-        return new az_vmss_list_instances_command_builder("az vmss list-instances");
+        return new az_vmss_list_instances_command_builder("az vmss list-instances", 'az_vmss_list_instances_command_result');
     }
 
     /**
@@ -834,7 +834,7 @@ export class az_vmss {
      * ```
      */
     static list_skus(): az_vmss_list_skus_command_builder {
-        return new az_vmss_list_skus_command_builder("az vmss list-skus");
+        return new az_vmss_list_skus_command_builder("az vmss list-skus", 'az_vmss_list_skus_command_result');
     }
 
     /**
@@ -850,7 +850,7 @@ export class az_vmss {
      * ```
      */
     static perform_maintenance(): az_vmss_perform_maintenance_command_builder {
-        return new az_vmss_perform_maintenance_command_builder("az vmss perform-maintenance");
+        return new az_vmss_perform_maintenance_command_builder("az vmss perform-maintenance", 'az_vmss_perform_maintenance_command_result');
     }
 
     /**
@@ -867,7 +867,7 @@ export class az_vmss {
      * ```
      */
     static reimage(): az_vmss_reimage_command_builder {
-        return new az_vmss_reimage_command_builder("az vmss reimage");
+        return new az_vmss_reimage_command_builder("az vmss reimage", 'az_vmss_reimage_command_result');
     }
 
     /**
@@ -886,7 +886,7 @@ export class az_vmss {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static restart(name: string, resourceGroup: string): az_vmss_restart_command_builder {
-        return new az_vmss_restart_command_builder("az vmss restart", name, resourceGroup);
+        return new az_vmss_restart_command_builder("az vmss restart", 'az_vmss_restart_command_result', name, resourceGroup);
     }
 
     /**
@@ -905,7 +905,7 @@ export class az_vmss {
      * @param {string} newCapacity Number of VMs in the VMSS.
      */
     static scale(newCapacity: string): az_vmss_scale_command_builder {
-        return new az_vmss_scale_command_builder("az vmss scale", newCapacity);
+        return new az_vmss_scale_command_builder("az vmss scale", 'az_vmss_scale_command_result', newCapacity);
     }
 
     /**
@@ -926,7 +926,7 @@ export class az_vmss {
      * @param {'AutomaticRepairs'} serviceName The name of the orchestration service.
      */
     static set_orchestration_service_state(action: 'Resume' | 'Suspend', serviceName: 'AutomaticRepairs'): az_vmss_set_orchestration_service_state_command_builder {
-        return new az_vmss_set_orchestration_service_state_command_builder("az vmss set-orchestration-service-state", action, serviceName);
+        return new az_vmss_set_orchestration_service_state_command_builder("az vmss set-orchestration-service-state", 'az_vmss_set_orchestration_service_state_command_result', action, serviceName);
     }
 
     /**
@@ -945,7 +945,7 @@ export class az_vmss {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_vmss_show_command_builder {
-        return new az_vmss_show_command_builder("az vmss show", name, resourceGroup);
+        return new az_vmss_show_command_builder("az vmss show", 'az_vmss_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -964,7 +964,7 @@ export class az_vmss {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static simulate_eviction(instanceId: string, name: string, resourceGroup: string): az_vmss_simulate_eviction_command_builder {
-        return new az_vmss_simulate_eviction_command_builder("az vmss simulate-eviction", instanceId, name, resourceGroup);
+        return new az_vmss_simulate_eviction_command_builder("az vmss simulate-eviction", 'az_vmss_simulate_eviction_command_result', instanceId, name, resourceGroup);
     }
 
     /**
@@ -983,7 +983,7 @@ export class az_vmss {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static start(name: string, resourceGroup: string): az_vmss_start_command_builder {
-        return new az_vmss_start_command_builder("az vmss start", name, resourceGroup);
+        return new az_vmss_start_command_builder("az vmss start", 'az_vmss_start_command_result', name, resourceGroup);
     }
 
     /**
@@ -1003,7 +1003,7 @@ export class az_vmss {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static stop(name: string, resourceGroup: string): az_vmss_stop_command_builder {
-        return new az_vmss_stop_command_builder("az vmss stop", name, resourceGroup);
+        return new az_vmss_stop_command_builder("az vmss stop", 'az_vmss_stop_command_result', name, resourceGroup);
     }
 
     /**
@@ -1036,7 +1036,7 @@ export class az_vmss {
      * ```
      */
     static update(): az_vmss_update_command_builder {
-        return new az_vmss_update_command_builder("az vmss update");
+        return new az_vmss_update_command_builder("az vmss update", 'az_vmss_update_command_result');
     }
 
     /**
@@ -1056,7 +1056,7 @@ export class az_vmss {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update_instances(instanceIds: string, name: string, resourceGroup: string): az_vmss_update_instances_command_builder {
-        return new az_vmss_update_instances_command_builder("az vmss update-instances", instanceIds, name, resourceGroup);
+        return new az_vmss_update_instances_command_builder("az vmss update-instances", 'az_vmss_update_instances_command_result', instanceIds, name, resourceGroup);
     }
 
     /**
@@ -1079,7 +1079,7 @@ export class az_vmss {
      * ```
      */
     static wait(): az_vmss_wait_command_builder {
-        return new az_vmss_wait_command_builder("az vmss wait");
+        return new az_vmss_wait_command_builder("az vmss wait", 'az_vmss_wait_command_result');
     }
 }
 
@@ -1093,8 +1093,8 @@ export class az_vmss {
  * ```
  */
 class az_vmss_diagnostics_get_default_config_command_builder extends CommandBuilder<az_vmss_diagnostics_get_default_config_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** For Windows VMs. */
@@ -1129,8 +1129,8 @@ class az_vmss_diagnostics_get_default_config_command_builder extends CommandBuil
  * @param {string} vmssName Scale set name.
  */
 class az_vmss_diagnostics_set_command_builder extends CommandBuilder<az_vmss_diagnostics_set_command_result> {
-    constructor(commandPath: string, resourceGroup: string, settings: string, vmssName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, settings: string, vmssName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.settings(settings)
         this.vmssName(vmssName)
@@ -1197,8 +1197,8 @@ class az_vmss_diagnostics_set_command_builder extends CommandBuilder<az_vmss_dia
  * ```
  */
 class az_vmss_disk_attach_command_builder extends CommandBuilder<az_vmss_disk_attach_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Disk caching policy. */
@@ -1278,8 +1278,8 @@ class az_vmss_disk_attach_command_builder extends CommandBuilder<az_vmss_disk_at
  * @param {string} lun 0-based logical unit number (LUN). Max value depends on the Virtual Machine instance size.
  */
 class az_vmss_disk_detach_command_builder extends CommandBuilder<az_vmss_disk_detach_command_result> {
-    constructor(commandPath: string, lun: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lun: string) {
+        super(commandPath, resultDataTypeName);
         this.lun(lun)
     }
 
@@ -1334,8 +1334,8 @@ class az_vmss_disk_detach_command_builder extends CommandBuilder<az_vmss_disk_de
  * ```
  */
 class az_vmss_encryption_disable_command_builder extends CommandBuilder<az_vmss_encryption_disable_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Continue by ignoring client side validation errors. */
@@ -1395,8 +1395,8 @@ class az_vmss_encryption_disable_command_builder extends CommandBuilder<az_vmss_
  * @param {string} diskEncryptionKeyvault Name or ID of the key vault where the generated encryption key will be placed.
  */
 class az_vmss_encryption_enable_command_builder extends CommandBuilder<az_vmss_encryption_enable_command_result> {
-    constructor(commandPath: string, diskEncryptionKeyvault: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, diskEncryptionKeyvault: string) {
+        super(commandPath, resultDataTypeName);
         this.diskEncryptionKeyvault(diskEncryptionKeyvault)
     }
 
@@ -1474,8 +1474,8 @@ class az_vmss_encryption_enable_command_builder extends CommandBuilder<az_vmss_e
  * ```
  */
 class az_vmss_encryption_show_command_builder extends CommandBuilder<az_vmss_encryption_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1524,8 +1524,8 @@ class az_vmss_encryption_show_command_builder extends CommandBuilder<az_vmss_enc
  * ```
  */
 class az_vmss_extension_image_list_command_builder extends CommandBuilder<az_vmss_extension_image_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Show the latest version only. */
@@ -1585,8 +1585,8 @@ class az_vmss_extension_image_list_command_builder extends CommandBuilder<az_vms
  * @param {string} publisher Image publisher name.
  */
 class az_vmss_extension_image_list_names_command_builder extends CommandBuilder<az_vmss_extension_image_list_names_command_result> {
-    constructor(commandPath: string, location: string, publisher: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, publisher: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.publisher(publisher)
     }
@@ -1629,8 +1629,8 @@ class az_vmss_extension_image_list_names_command_builder extends CommandBuilder<
  * @param {string} publisher Image publisher name.
  */
 class az_vmss_extension_image_list_versions_command_builder extends CommandBuilder<az_vmss_extension_image_list_versions_command_result> {
-    constructor(commandPath: string, location: string, name: string, publisher: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string, publisher: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
         this.publisher(publisher)
@@ -1698,8 +1698,8 @@ class az_vmss_extension_image_list_versions_command_builder extends CommandBuild
  * @param {string} version Extension version.
  */
 class az_vmss_extension_image_show_command_builder extends CommandBuilder<az_vmss_extension_image_show_command_result> {
-    constructor(commandPath: string, location: string, name: string, publisher: string, version: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string, publisher: string, version: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
         this.publisher(publisher)
@@ -1760,8 +1760,8 @@ class az_vmss_extension_image_show_command_builder extends CommandBuilder<az_vms
  * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
  */
 class az_vmss_extension_delete_command_builder extends CommandBuilder<az_vmss_extension_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, vmssName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, vmssName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.vmssName(vmssName)
@@ -1813,8 +1813,8 @@ class az_vmss_extension_delete_command_builder extends CommandBuilder<az_vmss_ex
  * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
  */
 class az_vmss_extension_list_command_builder extends CommandBuilder<az_vmss_extension_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, vmssName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, vmssName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.vmssName(vmssName)
     }
@@ -1870,8 +1870,8 @@ class az_vmss_extension_list_command_builder extends CommandBuilder<az_vmss_exte
  * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
  */
 class az_vmss_extension_set_command_builder extends CommandBuilder<az_vmss_extension_set_command_result> {
-    constructor(commandPath: string, name: string, publisher: string, resourceGroup: string, vmssName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, publisher: string, resourceGroup: string, vmssName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.publisher(publisher)
         this.resourceGroup(resourceGroup)
@@ -1974,8 +1974,8 @@ class az_vmss_extension_set_command_builder extends CommandBuilder<az_vmss_exten
  * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
  */
 class az_vmss_extension_show_command_builder extends CommandBuilder<az_vmss_extension_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, vmssName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, vmssName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.vmssName(vmssName)
@@ -2027,8 +2027,8 @@ class az_vmss_extension_show_command_builder extends CommandBuilder<az_vmss_exte
  * ```
  */
 class az_vmss_identity_assign_command_builder extends CommandBuilder<az_vmss_identity_assign_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Space-separated identities to assign. Use '[system]' to refer to the system assigned identity. Default: '[system]'. */
@@ -2087,8 +2087,8 @@ class az_vmss_identity_assign_command_builder extends CommandBuilder<az_vmss_ide
  * ```
  */
 class az_vmss_identity_remove_command_builder extends CommandBuilder<az_vmss_identity_remove_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Space-separated identities to remove. Use '[system]' to refer to the system assigned identity. Default: '[system]'. */
@@ -2135,8 +2135,8 @@ class az_vmss_identity_remove_command_builder extends CommandBuilder<az_vmss_ide
  * ```
  */
 class az_vmss_identity_show_command_builder extends CommandBuilder<az_vmss_identity_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2185,8 +2185,8 @@ class az_vmss_identity_show_command_builder extends CommandBuilder<az_vmss_ident
  * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
  */
 class az_vmss_nic_list_command_builder extends CommandBuilder<az_vmss_nic_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, vmssName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, vmssName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.vmssName(vmssName)
     }
@@ -2229,8 +2229,8 @@ class az_vmss_nic_list_command_builder extends CommandBuilder<az_vmss_nic_list_c
  * ```
  */
 class az_vmss_nic_list_vm_nics_command_builder extends CommandBuilder<az_vmss_nic_list_vm_nics_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2280,8 +2280,8 @@ class az_vmss_nic_list_vm_nics_command_builder extends CommandBuilder<az_vmss_ni
  * ```
  */
 class az_vmss_nic_show_command_builder extends CommandBuilder<az_vmss_nic_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Expands referenced resources. */
@@ -2345,8 +2345,8 @@ class az_vmss_nic_show_command_builder extends CommandBuilder<az_vmss_nic_show_c
  * ```
  */
 class az_vmss_rolling_upgrade_cancel_command_builder extends CommandBuilder<az_vmss_rolling_upgrade_cancel_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2386,8 +2386,8 @@ class az_vmss_rolling_upgrade_cancel_command_builder extends CommandBuilder<az_v
  * ```
  */
 class az_vmss_rolling_upgrade_get_latest_command_builder extends CommandBuilder<az_vmss_rolling_upgrade_get_latest_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2427,8 +2427,8 @@ class az_vmss_rolling_upgrade_get_latest_command_builder extends CommandBuilder<
  * ```
  */
 class az_vmss_rolling_upgrade_start_command_builder extends CommandBuilder<az_vmss_rolling_upgrade_start_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2474,8 +2474,8 @@ class az_vmss_rolling_upgrade_start_command_builder extends CommandBuilder<az_vm
  * @param {string} commandId The command id.
  */
 class az_vmss_run_command_invoke_command_builder extends CommandBuilder<az_vmss_run_command_invoke_command_result> {
-    constructor(commandPath: string, commandId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, commandId: string) {
+        super(commandPath, resultDataTypeName);
         this.commandId(commandId)
     }
 
@@ -2541,8 +2541,8 @@ class az_vmss_run_command_invoke_command_builder extends CommandBuilder<az_vmss_
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_vmss_run_command_list_command_builder extends CommandBuilder<az_vmss_run_command_list_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -2580,8 +2580,8 @@ class az_vmss_run_command_list_command_builder extends CommandBuilder<az_vmss_ru
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_vmss_run_command_show_command_builder extends CommandBuilder<az_vmss_run_command_show_command_result> {
-    constructor(commandPath: string, commandId: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, commandId: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.commandId(commandId)
         this.location(location)
     }
@@ -2703,8 +2703,8 @@ class az_vmss_run_command_show_command_builder extends CommandBuilder<az_vmss_ru
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_create_command_builder extends CommandBuilder<az_vmss_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -3212,8 +3212,8 @@ class az_vmss_create_command_builder extends CommandBuilder<az_vmss_create_comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_deallocate_command_builder extends CommandBuilder<az_vmss_deallocate_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -3262,8 +3262,8 @@ class az_vmss_deallocate_command_builder extends CommandBuilder<az_vmss_dealloca
  * ```
  */
 class az_vmss_delete_command_builder extends CommandBuilder<az_vmss_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3314,8 +3314,8 @@ class az_vmss_delete_command_builder extends CommandBuilder<az_vmss_delete_comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_delete_instances_command_builder extends CommandBuilder<az_vmss_delete_instances_command_result> {
-    constructor(commandPath: string, instanceIds: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, instanceIds: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.instanceIds(instanceIds)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3365,8 +3365,8 @@ class az_vmss_delete_instances_command_builder extends CommandBuilder<az_vmss_de
  * ```
  */
 class az_vmss_get_instance_view_command_builder extends CommandBuilder<az_vmss_get_instance_view_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3412,8 +3412,8 @@ class az_vmss_get_instance_view_command_builder extends CommandBuilder<az_vmss_g
  * ```
  */
 class az_vmss_get_os_upgrade_history_command_builder extends CommandBuilder<az_vmss_get_os_upgrade_history_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3452,8 +3452,8 @@ class az_vmss_get_os_upgrade_history_command_builder extends CommandBuilder<az_v
  * ```
  */
 class az_vmss_list_command_builder extends CommandBuilder<az_vmss_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -3487,8 +3487,8 @@ class az_vmss_list_command_builder extends CommandBuilder<az_vmss_list_command_r
  * ```
  */
 class az_vmss_list_instance_connection_info_command_builder extends CommandBuilder<az_vmss_list_instance_connection_info_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3528,8 +3528,8 @@ class az_vmss_list_instance_connection_info_command_builder extends CommandBuild
  * ```
  */
 class az_vmss_list_instance_public_ips_command_builder extends CommandBuilder<az_vmss_list_instance_public_ips_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3572,8 +3572,8 @@ class az_vmss_list_instance_public_ips_command_builder extends CommandBuilder<az
  * ```
  */
 class az_vmss_list_instances_command_builder extends CommandBuilder<az_vmss_list_instances_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The expand expression to apply to the operation. Allowed values are 'instanceView'. */
@@ -3631,8 +3631,8 @@ class az_vmss_list_instances_command_builder extends CommandBuilder<az_vmss_list
  * ```
  */
 class az_vmss_list_skus_command_builder extends CommandBuilder<az_vmss_list_skus_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3673,8 +3673,8 @@ class az_vmss_list_skus_command_builder extends CommandBuilder<az_vmss_list_skus
  * ```
  */
 class az_vmss_perform_maintenance_command_builder extends CommandBuilder<az_vmss_perform_maintenance_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3722,8 +3722,8 @@ class az_vmss_perform_maintenance_command_builder extends CommandBuilder<az_vmss
  * ```
  */
 class az_vmss_reimage_command_builder extends CommandBuilder<az_vmss_reimage_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3779,8 +3779,8 @@ class az_vmss_reimage_command_builder extends CommandBuilder<az_vmss_reimage_com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_restart_command_builder extends CommandBuilder<az_vmss_restart_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -3832,8 +3832,8 @@ class az_vmss_restart_command_builder extends CommandBuilder<az_vmss_restart_com
  * @param {string} newCapacity Number of VMs in the VMSS.
  */
 class az_vmss_scale_command_builder extends CommandBuilder<az_vmss_scale_command_result> {
-    constructor(commandPath: string, newCapacity: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, newCapacity: string) {
+        super(commandPath, resultDataTypeName);
         this.newCapacity(newCapacity)
     }
 
@@ -3892,8 +3892,8 @@ class az_vmss_scale_command_builder extends CommandBuilder<az_vmss_scale_command
  * @param {'AutomaticRepairs'} serviceName The name of the orchestration service.
  */
 class az_vmss_set_orchestration_service_state_command_builder extends CommandBuilder<az_vmss_set_orchestration_service_state_command_result> {
-    constructor(commandPath: string, action: 'Resume' | 'Suspend', serviceName: 'AutomaticRepairs') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, action: 'Resume' | 'Suspend', serviceName: 'AutomaticRepairs') {
+        super(commandPath, resultDataTypeName);
         this.action(action)
         this.serviceName(serviceName)
     }
@@ -3957,8 +3957,8 @@ class az_vmss_set_orchestration_service_state_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_show_command_builder extends CommandBuilder<az_vmss_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -4010,8 +4010,8 @@ class az_vmss_show_command_builder extends CommandBuilder<az_vmss_show_command_r
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_simulate_eviction_command_builder extends CommandBuilder<az_vmss_simulate_eviction_command_result> {
-    constructor(commandPath: string, instanceId: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, instanceId: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.instanceId(instanceId)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4058,8 +4058,8 @@ class az_vmss_simulate_eviction_command_builder extends CommandBuilder<az_vmss_s
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_start_command_builder extends CommandBuilder<az_vmss_start_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -4112,8 +4112,8 @@ class az_vmss_start_command_builder extends CommandBuilder<az_vmss_start_command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_stop_command_builder extends CommandBuilder<az_vmss_stop_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -4185,8 +4185,8 @@ class az_vmss_stop_command_builder extends CommandBuilder<az_vmss_stop_command_r
  * ```
  */
 class az_vmss_update_command_builder extends CommandBuilder<az_vmss_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -4339,8 +4339,8 @@ class az_vmss_update_command_builder extends CommandBuilder<az_vmss_update_comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_vmss_update_instances_command_builder extends CommandBuilder<az_vmss_update_instances_command_result> {
-    constructor(commandPath: string, instanceIds: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, instanceIds: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.instanceIds(instanceIds)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4397,8 +4397,8 @@ class az_vmss_update_instances_command_builder extends CommandBuilder<az_vmss_up
  * ```
  */
 class az_vmss_wait_command_builder extends CommandBuilder<az_vmss_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */

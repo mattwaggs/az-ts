@@ -1,1 +1,1 @@
-export type az_pipelines_runs_artifact_upload_command_result = Record<string, unknown>
+export type az_pipelines_runs_artifact_upload_command_result = Record<string, any>

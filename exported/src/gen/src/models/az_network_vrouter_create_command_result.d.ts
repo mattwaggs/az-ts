@@ -1,0 +1,1 @@
+export declare type az_network_vrouter_create_command_result = Record<string, any>;

@@ -1,0 +1,1 @@
+export declare type az_sig_delete_command_result = Record<string, any>;

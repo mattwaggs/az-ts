@@ -4,6 +4,7 @@ import shelljs from "shelljs";
 class RunFileCommand implements Command {
   execute = (options: OptionsResult) => {
     shelljs.exec(`ts-node ${options.file}`);
+    return Promise.resolve();
   };
 }
 

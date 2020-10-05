@@ -85,7 +85,7 @@ export class az_postgres_db {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static create(name: string, resourceGroup: string, serverName: string): az_postgres_db_create_command_builder {
-        return new az_postgres_db_create_command_builder("az postgres db create", name, resourceGroup, serverName);
+        return new az_postgres_db_create_command_builder("az postgres db create", 'az_postgres_db_create_command_result', name, resourceGroup, serverName);
     }
 
     /**
@@ -105,7 +105,7 @@ export class az_postgres_db {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static delete(name: string, resourceGroup: string, serverName: string): az_postgres_db_delete_command_builder {
-        return new az_postgres_db_delete_command_builder("az postgres db delete", name, resourceGroup, serverName);
+        return new az_postgres_db_delete_command_builder("az postgres db delete", 'az_postgres_db_delete_command_result', name, resourceGroup, serverName);
     }
 
     /**
@@ -123,7 +123,7 @@ export class az_postgres_db {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static list(resourceGroup: string, serverName: string): az_postgres_db_list_command_builder {
-        return new az_postgres_db_list_command_builder("az postgres db list", resourceGroup, serverName);
+        return new az_postgres_db_list_command_builder("az postgres db list", 'az_postgres_db_list_command_result', resourceGroup, serverName);
     }
 
     /**
@@ -143,7 +143,7 @@ export class az_postgres_db {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static show(name: string, resourceGroup: string, serverName: string): az_postgres_db_show_command_builder {
-        return new az_postgres_db_show_command_builder("az postgres db show", name, resourceGroup, serverName);
+        return new az_postgres_db_show_command_builder("az postgres db show", 'az_postgres_db_show_command_result', name, resourceGroup, serverName);
     }
 }
 
@@ -169,7 +169,7 @@ export class az_postgres_flexible_server_firewall_rule {
      * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
      */
     static create(endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string): az_postgres_flexible_server_firewall_rule_create_command_builder {
-        return new az_postgres_flexible_server_firewall_rule_create_command_builder("az postgres flexible-server firewall-rule create", endIpAddress, name, resourceGroup, serverName, startIpAddress);
+        return new az_postgres_flexible_server_firewall_rule_create_command_builder("az postgres flexible-server firewall-rule create", 'az_postgres_flexible_server_firewall_rule_create_command_result', endIpAddress, name, resourceGroup, serverName, startIpAddress);
     }
 
     /**
@@ -186,7 +186,7 @@ export class az_postgres_flexible_server_firewall_rule {
      * ```
      */
     static delete(): az_postgres_flexible_server_firewall_rule_delete_command_builder {
-        return new az_postgres_flexible_server_firewall_rule_delete_command_builder("az postgres flexible-server firewall-rule delete");
+        return new az_postgres_flexible_server_firewall_rule_delete_command_builder("az postgres flexible-server firewall-rule delete", 'az_postgres_flexible_server_firewall_rule_delete_command_result');
     }
 
     /**
@@ -204,7 +204,7 @@ export class az_postgres_flexible_server_firewall_rule {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static list(resourceGroup: string, serverName: string): az_postgres_flexible_server_firewall_rule_list_command_builder {
-        return new az_postgres_flexible_server_firewall_rule_list_command_builder("az postgres flexible-server firewall-rule list", resourceGroup, serverName);
+        return new az_postgres_flexible_server_firewall_rule_list_command_builder("az postgres flexible-server firewall-rule list", 'az_postgres_flexible_server_firewall_rule_list_command_result', resourceGroup, serverName);
     }
 
     /**
@@ -221,7 +221,7 @@ export class az_postgres_flexible_server_firewall_rule {
      * ```
      */
     static show(): az_postgres_flexible_server_firewall_rule_show_command_builder {
-        return new az_postgres_flexible_server_firewall_rule_show_command_builder("az postgres flexible-server firewall-rule show");
+        return new az_postgres_flexible_server_firewall_rule_show_command_builder("az postgres flexible-server firewall-rule show", 'az_postgres_flexible_server_firewall_rule_show_command_result');
     }
 
     /**
@@ -243,7 +243,7 @@ export class az_postgres_flexible_server_firewall_rule {
      * ```
      */
     static update(): az_postgres_flexible_server_firewall_rule_update_command_builder {
-        return new az_postgres_flexible_server_firewall_rule_update_command_builder("az postgres flexible-server firewall-rule update");
+        return new az_postgres_flexible_server_firewall_rule_update_command_builder("az postgres flexible-server firewall-rule update", 'az_postgres_flexible_server_firewall_rule_update_command_result');
     }
 }
 
@@ -264,7 +264,7 @@ export class az_postgres_flexible_server_parameter {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static list(resourceGroup: string, serverName: string): az_postgres_flexible_server_parameter_list_command_builder {
-        return new az_postgres_flexible_server_parameter_list_command_builder("az postgres flexible-server parameter list", resourceGroup, serverName);
+        return new az_postgres_flexible_server_parameter_list_command_builder("az postgres flexible-server parameter list", 'az_postgres_flexible_server_parameter_list_command_result', resourceGroup, serverName);
     }
 
     /**
@@ -282,7 +282,7 @@ export class az_postgres_flexible_server_parameter {
      * ```
      */
     static set(): az_postgres_flexible_server_parameter_set_command_builder {
-        return new az_postgres_flexible_server_parameter_set_command_builder("az postgres flexible-server parameter set");
+        return new az_postgres_flexible_server_parameter_set_command_builder("az postgres flexible-server parameter set", 'az_postgres_flexible_server_parameter_set_command_result');
     }
 
     /**
@@ -299,7 +299,7 @@ export class az_postgres_flexible_server_parameter {
      * ```
      */
     static show(): az_postgres_flexible_server_parameter_show_command_builder {
-        return new az_postgres_flexible_server_parameter_show_command_builder("az postgres flexible-server parameter show");
+        return new az_postgres_flexible_server_parameter_show_command_builder("az postgres flexible-server parameter show", 'az_postgres_flexible_server_parameter_show_command_result');
     }
 }
 
@@ -333,7 +333,7 @@ export class az_postgres_flexible_server {
      * ```
      */
     static create(): az_postgres_flexible_server_create_command_builder {
-        return new az_postgres_flexible_server_create_command_builder("az postgres flexible-server create");
+        return new az_postgres_flexible_server_create_command_builder("az postgres flexible-server create", 'az_postgres_flexible_server_create_command_result');
     }
 
     /**
@@ -349,7 +349,7 @@ export class az_postgres_flexible_server {
      * ```
      */
     static delete(): az_postgres_flexible_server_delete_command_builder {
-        return new az_postgres_flexible_server_delete_command_builder("az postgres flexible-server delete");
+        return new az_postgres_flexible_server_delete_command_builder("az postgres flexible-server delete", 'az_postgres_flexible_server_delete_command_result');
     }
 
     /**
@@ -363,7 +363,7 @@ export class az_postgres_flexible_server {
      * ```
      */
     static list(): az_postgres_flexible_server_list_command_builder {
-        return new az_postgres_flexible_server_list_command_builder("az postgres flexible-server list");
+        return new az_postgres_flexible_server_list_command_builder("az postgres flexible-server list", 'az_postgres_flexible_server_list_command_result');
     }
 
     /**
@@ -378,7 +378,7 @@ export class az_postgres_flexible_server {
      * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
      */
     static list_skus(location: string): az_postgres_flexible_server_list_skus_command_builder {
-        return new az_postgres_flexible_server_list_skus_command_builder("az postgres flexible-server list-skus", location);
+        return new az_postgres_flexible_server_list_skus_command_builder("az postgres flexible-server list-skus", 'az_postgres_flexible_server_list_skus_command_result', location);
     }
 
     /**
@@ -393,7 +393,7 @@ export class az_postgres_flexible_server {
      * ```
      */
     static restart(): az_postgres_flexible_server_restart_command_builder {
-        return new az_postgres_flexible_server_restart_command_builder("az postgres flexible-server restart");
+        return new az_postgres_flexible_server_restart_command_builder("az postgres flexible-server restart", 'az_postgres_flexible_server_restart_command_result');
     }
 
     /**
@@ -415,7 +415,7 @@ export class az_postgres_flexible_server {
      * @param {string} time The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00.
      */
     static restore(sourceServer: string, time: string): az_postgres_flexible_server_restore_command_builder {
-        return new az_postgres_flexible_server_restore_command_builder("az postgres flexible-server restore", sourceServer, time);
+        return new az_postgres_flexible_server_restore_command_builder("az postgres flexible-server restore", 'az_postgres_flexible_server_restore_command_result', sourceServer, time);
     }
 
     /**
@@ -431,7 +431,7 @@ export class az_postgres_flexible_server {
      * ```
      */
     static show(): az_postgres_flexible_server_show_command_builder {
-        return new az_postgres_flexible_server_show_command_builder("az postgres flexible-server show");
+        return new az_postgres_flexible_server_show_command_builder("az postgres flexible-server show", 'az_postgres_flexible_server_show_command_result');
     }
 
     /**
@@ -448,7 +448,7 @@ export class az_postgres_flexible_server {
      * ```
      */
     static show_connection_string(): az_postgres_flexible_server_show_connection_string_command_builder {
-        return new az_postgres_flexible_server_show_connection_string_command_builder("az postgres flexible-server show-connection-string");
+        return new az_postgres_flexible_server_show_connection_string_command_builder("az postgres flexible-server show-connection-string", 'az_postgres_flexible_server_show_connection_string_command_result');
     }
 
     /**
@@ -463,7 +463,7 @@ export class az_postgres_flexible_server {
      * ```
      */
     static start(): az_postgres_flexible_server_start_command_builder {
-        return new az_postgres_flexible_server_start_command_builder("az postgres flexible-server start");
+        return new az_postgres_flexible_server_start_command_builder("az postgres flexible-server start", 'az_postgres_flexible_server_start_command_result');
     }
 
     /**
@@ -478,7 +478,7 @@ export class az_postgres_flexible_server {
      * ```
      */
     static stop(): az_postgres_flexible_server_stop_command_builder {
-        return new az_postgres_flexible_server_stop_command_builder("az postgres flexible-server stop");
+        return new az_postgres_flexible_server_stop_command_builder("az postgres flexible-server stop", 'az_postgres_flexible_server_stop_command_result');
     }
 
     /**
@@ -505,7 +505,7 @@ export class az_postgres_flexible_server {
      * ```
      */
     static update(): az_postgres_flexible_server_update_command_builder {
-        return new az_postgres_flexible_server_update_command_builder("az postgres flexible-server update");
+        return new az_postgres_flexible_server_update_command_builder("az postgres flexible-server update", 'az_postgres_flexible_server_update_command_result');
     }
 
     /**
@@ -527,7 +527,7 @@ export class az_postgres_flexible_server {
      * ```
      */
     static wait(): az_postgres_flexible_server_wait_command_builder {
-        return new az_postgres_flexible_server_wait_command_builder("az postgres flexible-server wait");
+        return new az_postgres_flexible_server_wait_command_builder("az postgres flexible-server wait", 'az_postgres_flexible_server_wait_command_result');
     }
 }
 
@@ -550,7 +550,7 @@ export class az_postgres_server_ad_admin {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static create(resourceGroup: string, serverName: string): az_postgres_server_ad_admin_create_command_builder {
-        return new az_postgres_server_ad_admin_create_command_builder("az postgres server ad-admin create", resourceGroup, serverName);
+        return new az_postgres_server_ad_admin_create_command_builder("az postgres server ad-admin create", 'az_postgres_server_ad_admin_create_command_result', resourceGroup, serverName);
     }
 
     /**
@@ -566,7 +566,7 @@ export class az_postgres_server_ad_admin {
      * ```
      */
     static delete(): az_postgres_server_ad_admin_delete_command_builder {
-        return new az_postgres_server_ad_admin_delete_command_builder("az postgres server ad-admin delete");
+        return new az_postgres_server_ad_admin_delete_command_builder("az postgres server ad-admin delete", 'az_postgres_server_ad_admin_delete_command_result');
     }
 
     /**
@@ -582,7 +582,7 @@ export class az_postgres_server_ad_admin {
      * ```
      */
     static list(): az_postgres_server_ad_admin_list_command_builder {
-        return new az_postgres_server_ad_admin_list_command_builder("az postgres server ad-admin list");
+        return new az_postgres_server_ad_admin_list_command_builder("az postgres server ad-admin list", 'az_postgres_server_ad_admin_list_command_result');
     }
 
     /**
@@ -598,7 +598,7 @@ export class az_postgres_server_ad_admin {
      * ```
      */
     static show(): az_postgres_server_ad_admin_show_command_builder {
-        return new az_postgres_server_ad_admin_show_command_builder("az postgres server ad-admin show");
+        return new az_postgres_server_ad_admin_show_command_builder("az postgres server ad-admin show", 'az_postgres_server_ad_admin_show_command_result');
     }
 
     /**
@@ -620,7 +620,7 @@ export class az_postgres_server_ad_admin {
      * ```
      */
     static wait(): az_postgres_server_ad_admin_wait_command_builder {
-        return new az_postgres_server_ad_admin_wait_command_builder("az postgres server ad-admin wait");
+        return new az_postgres_server_ad_admin_wait_command_builder("az postgres server ad-admin wait", 'az_postgres_server_ad_admin_wait_command_result');
     }
 }
 
@@ -639,7 +639,7 @@ export class az_postgres_server_configuration {
      * ```
      */
     static list(): az_postgres_server_configuration_list_command_builder {
-        return new az_postgres_server_configuration_list_command_builder("az postgres server configuration list");
+        return new az_postgres_server_configuration_list_command_builder("az postgres server configuration list", 'az_postgres_server_configuration_list_command_result');
     }
 
     /**
@@ -656,7 +656,7 @@ export class az_postgres_server_configuration {
      * ```
      */
     static set(): az_postgres_server_configuration_set_command_builder {
-        return new az_postgres_server_configuration_set_command_builder("az postgres server configuration set");
+        return new az_postgres_server_configuration_set_command_builder("az postgres server configuration set", 'az_postgres_server_configuration_set_command_result');
     }
 
     /**
@@ -673,7 +673,7 @@ export class az_postgres_server_configuration {
      * ```
      */
     static show(): az_postgres_server_configuration_show_command_builder {
-        return new az_postgres_server_configuration_show_command_builder("az postgres server configuration show");
+        return new az_postgres_server_configuration_show_command_builder("az postgres server configuration show", 'az_postgres_server_configuration_show_command_result');
     }
 }
 
@@ -699,7 +699,7 @@ export class az_postgres_server_firewall_rule {
      * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
      */
     static create(endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string): az_postgres_server_firewall_rule_create_command_builder {
-        return new az_postgres_server_firewall_rule_create_command_builder("az postgres server firewall-rule create", endIpAddress, name, resourceGroup, serverName, startIpAddress);
+        return new az_postgres_server_firewall_rule_create_command_builder("az postgres server firewall-rule create", 'az_postgres_server_firewall_rule_create_command_result', endIpAddress, name, resourceGroup, serverName, startIpAddress);
     }
 
     /**
@@ -716,7 +716,7 @@ export class az_postgres_server_firewall_rule {
      * ```
      */
     static delete(): az_postgres_server_firewall_rule_delete_command_builder {
-        return new az_postgres_server_firewall_rule_delete_command_builder("az postgres server firewall-rule delete");
+        return new az_postgres_server_firewall_rule_delete_command_builder("az postgres server firewall-rule delete", 'az_postgres_server_firewall_rule_delete_command_result');
     }
 
     /**
@@ -732,7 +732,7 @@ export class az_postgres_server_firewall_rule {
      * ```
      */
     static list(): az_postgres_server_firewall_rule_list_command_builder {
-        return new az_postgres_server_firewall_rule_list_command_builder("az postgres server firewall-rule list");
+        return new az_postgres_server_firewall_rule_list_command_builder("az postgres server firewall-rule list", 'az_postgres_server_firewall_rule_list_command_result');
     }
 
     /**
@@ -749,7 +749,7 @@ export class az_postgres_server_firewall_rule {
      * ```
      */
     static show(): az_postgres_server_firewall_rule_show_command_builder {
-        return new az_postgres_server_firewall_rule_show_command_builder("az postgres server firewall-rule show");
+        return new az_postgres_server_firewall_rule_show_command_builder("az postgres server firewall-rule show", 'az_postgres_server_firewall_rule_show_command_result');
     }
 
     /**
@@ -771,7 +771,7 @@ export class az_postgres_server_firewall_rule {
      * ```
      */
     static update(): az_postgres_server_firewall_rule_update_command_builder {
-        return new az_postgres_server_firewall_rule_update_command_builder("az postgres server firewall-rule update");
+        return new az_postgres_server_firewall_rule_update_command_builder("az postgres server firewall-rule update", 'az_postgres_server_firewall_rule_update_command_result');
     }
 }
 
@@ -793,7 +793,7 @@ export class az_postgres_server_key {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(kid: string, name: string, resourceGroup: string): az_postgres_server_key_create_command_builder {
-        return new az_postgres_server_key_create_command_builder("az postgres server key create", kid, name, resourceGroup);
+        return new az_postgres_server_key_create_command_builder("az postgres server key create", 'az_postgres_server_key_create_command_result', kid, name, resourceGroup);
     }
 
     /**
@@ -812,7 +812,7 @@ export class az_postgres_server_key {
      * @param {string} kid The Azure Key Vault key identifier of the server key. An example key identifier is "<a href="https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901">https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901</a>".
      */
     static delete(kid: string): az_postgres_server_key_delete_command_builder {
-        return new az_postgres_server_key_delete_command_builder("az postgres server key delete", kid);
+        return new az_postgres_server_key_delete_command_builder("az postgres server key delete", 'az_postgres_server_key_delete_command_result', kid);
     }
 
     /**
@@ -828,7 +828,7 @@ export class az_postgres_server_key {
      * ```
      */
     static list(): az_postgres_server_key_list_command_builder {
-        return new az_postgres_server_key_list_command_builder("az postgres server key list");
+        return new az_postgres_server_key_list_command_builder("az postgres server key list", 'az_postgres_server_key_list_command_result');
     }
 
     /**
@@ -847,7 +847,7 @@ export class az_postgres_server_key {
      * @param {string} kid The Azure Key Vault key identifier of the server key. An example key identifier is "<a href="https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901">https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901</a>".
      */
     static show(kid: string): az_postgres_server_key_show_command_builder {
-        return new az_postgres_server_key_show_command_builder("az postgres server key show", kid);
+        return new az_postgres_server_key_show_command_builder("az postgres server key show", 'az_postgres_server_key_show_command_result', kid);
     }
 }
 
@@ -868,7 +868,7 @@ export class az_postgres_server_private_endpoint_connection {
      * ```
      */
     static approve(): az_postgres_server_private_endpoint_connection_approve_command_builder {
-        return new az_postgres_server_private_endpoint_connection_approve_command_builder("az postgres server private-endpoint-connection approve");
+        return new az_postgres_server_private_endpoint_connection_approve_command_builder("az postgres server private-endpoint-connection approve", 'az_postgres_server_private_endpoint_connection_approve_command_result');
     }
 
     /**
@@ -885,7 +885,7 @@ export class az_postgres_server_private_endpoint_connection {
      * ```
      */
     static delete(): az_postgres_server_private_endpoint_connection_delete_command_builder {
-        return new az_postgres_server_private_endpoint_connection_delete_command_builder("az postgres server private-endpoint-connection delete");
+        return new az_postgres_server_private_endpoint_connection_delete_command_builder("az postgres server private-endpoint-connection delete", 'az_postgres_server_private_endpoint_connection_delete_command_result');
     }
 
     /**
@@ -903,7 +903,7 @@ export class az_postgres_server_private_endpoint_connection {
      * ```
      */
     static reject(): az_postgres_server_private_endpoint_connection_reject_command_builder {
-        return new az_postgres_server_private_endpoint_connection_reject_command_builder("az postgres server private-endpoint-connection reject");
+        return new az_postgres_server_private_endpoint_connection_reject_command_builder("az postgres server private-endpoint-connection reject", 'az_postgres_server_private_endpoint_connection_reject_command_result');
     }
 
     /**
@@ -921,7 +921,7 @@ export class az_postgres_server_private_endpoint_connection {
      * ```
      */
     static show(): az_postgres_server_private_endpoint_connection_show_command_builder {
-        return new az_postgres_server_private_endpoint_connection_show_command_builder("az postgres server private-endpoint-connection show");
+        return new az_postgres_server_private_endpoint_connection_show_command_builder("az postgres server private-endpoint-connection show", 'az_postgres_server_private_endpoint_connection_show_command_result');
     }
 }
 
@@ -940,7 +940,7 @@ export class az_postgres_server_private_link_resource {
      * ```
      */
     static list(): az_postgres_server_private_link_resource_list_command_builder {
-        return new az_postgres_server_private_link_resource_list_command_builder("az postgres server private-link-resource list");
+        return new az_postgres_server_private_link_resource_list_command_builder("az postgres server private-link-resource list", 'az_postgres_server_private_link_resource_list_command_result');
     }
 }
 
@@ -965,7 +965,7 @@ export class az_postgres_server_replica {
      * @param {string} sourceServer The name or resource ID of the master server to the create replica for.
      */
     static create(name: string, resourceGroup: string, sourceServer: string): az_postgres_server_replica_create_command_builder {
-        return new az_postgres_server_replica_create_command_builder("az postgres server replica create", name, resourceGroup, sourceServer);
+        return new az_postgres_server_replica_create_command_builder("az postgres server replica create", 'az_postgres_server_replica_create_command_result', name, resourceGroup, sourceServer);
     }
 
     /**
@@ -981,7 +981,7 @@ export class az_postgres_server_replica {
      * ```
      */
     static list(): az_postgres_server_replica_list_command_builder {
-        return new az_postgres_server_replica_list_command_builder("az postgres server replica list");
+        return new az_postgres_server_replica_list_command_builder("az postgres server replica list", 'az_postgres_server_replica_list_command_result');
     }
 
     /**
@@ -997,7 +997,7 @@ export class az_postgres_server_replica {
      * ```
      */
     static stop(): az_postgres_server_replica_stop_command_builder {
-        return new az_postgres_server_replica_stop_command_builder("az postgres server replica stop");
+        return new az_postgres_server_replica_stop_command_builder("az postgres server replica stop", 'az_postgres_server_replica_stop_command_result');
     }
 }
 
@@ -1023,7 +1023,7 @@ export class az_postgres_server_vnet_rule {
      * @param {string} subnet Name or ID of the subnet that allows access to an Azure Postgres Server. If subnet name is provided, --vnet-name must be provided.
      */
     static create(name: string, resourceGroup: string, serverName: string, subnet: string): az_postgres_server_vnet_rule_create_command_builder {
-        return new az_postgres_server_vnet_rule_create_command_builder("az postgres server vnet-rule create", name, resourceGroup, serverName, subnet);
+        return new az_postgres_server_vnet_rule_create_command_builder("az postgres server vnet-rule create", 'az_postgres_server_vnet_rule_create_command_result', name, resourceGroup, serverName, subnet);
     }
 
     /**
@@ -1039,7 +1039,7 @@ export class az_postgres_server_vnet_rule {
      * ```
      */
     static delete(): az_postgres_server_vnet_rule_delete_command_builder {
-        return new az_postgres_server_vnet_rule_delete_command_builder("az postgres server vnet-rule delete");
+        return new az_postgres_server_vnet_rule_delete_command_builder("az postgres server vnet-rule delete", 'az_postgres_server_vnet_rule_delete_command_result');
     }
 
     /**
@@ -1055,7 +1055,7 @@ export class az_postgres_server_vnet_rule {
      * ```
      */
     static list(): az_postgres_server_vnet_rule_list_command_builder {
-        return new az_postgres_server_vnet_rule_list_command_builder("az postgres server vnet-rule list");
+        return new az_postgres_server_vnet_rule_list_command_builder("az postgres server vnet-rule list", 'az_postgres_server_vnet_rule_list_command_result');
     }
 
     /**
@@ -1072,7 +1072,7 @@ export class az_postgres_server_vnet_rule {
      * ```
      */
     static show(): az_postgres_server_vnet_rule_show_command_builder {
-        return new az_postgres_server_vnet_rule_show_command_builder("az postgres server vnet-rule show");
+        return new az_postgres_server_vnet_rule_show_command_builder("az postgres server vnet-rule show", 'az_postgres_server_vnet_rule_show_command_result');
     }
 
     /**
@@ -1097,7 +1097,7 @@ export class az_postgres_server_vnet_rule {
      * @param {string} subnet Name or ID of the subnet that allows access to an Azure Postgres Server. If subnet name is provided, --vnet-name must be provided.
      */
     static update(subnet: string): az_postgres_server_vnet_rule_update_command_builder {
-        return new az_postgres_server_vnet_rule_update_command_builder("az postgres server vnet-rule update", subnet);
+        return new az_postgres_server_vnet_rule_update_command_builder("az postgres server vnet-rule update", 'az_postgres_server_vnet_rule_update_command_result', subnet);
     }
 }
 
@@ -1119,7 +1119,7 @@ export class az_postgres_server_logs {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static download(name: string, resourceGroup: string, serverName: string): az_postgres_server_logs_download_command_builder {
-        return new az_postgres_server_logs_download_command_builder("az postgres server-logs download", name, resourceGroup, serverName);
+        return new az_postgres_server_logs_download_command_builder("az postgres server-logs download", 'az_postgres_server_logs_download_command_result', name, resourceGroup, serverName);
     }
 
     /**
@@ -1140,7 +1140,7 @@ export class az_postgres_server_logs {
      * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
     static list(resourceGroup: string, serverName: string): az_postgres_server_logs_list_command_builder {
-        return new az_postgres_server_logs_list_command_builder("az postgres server-logs list", resourceGroup, serverName);
+        return new az_postgres_server_logs_list_command_builder("az postgres server-logs list", 'az_postgres_server_logs_list_command_result', resourceGroup, serverName);
     }
 }
 
@@ -1178,7 +1178,7 @@ export class az_postgres_server {
      * @param {string} skuName The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16.
      */
     static create(adminPassword: string, adminUser: string, name: string, resourceGroup: string, skuName: string): az_postgres_server_create_command_builder {
-        return new az_postgres_server_create_command_builder("az postgres server create", adminPassword, adminUser, name, resourceGroup, skuName);
+        return new az_postgres_server_create_command_builder("az postgres server create", 'az_postgres_server_create_command_result', adminPassword, adminUser, name, resourceGroup, skuName);
     }
 
     /**
@@ -1194,7 +1194,7 @@ export class az_postgres_server {
      * ```
      */
     static delete(): az_postgres_server_delete_command_builder {
-        return new az_postgres_server_delete_command_builder("az postgres server delete");
+        return new az_postgres_server_delete_command_builder("az postgres server delete", 'az_postgres_server_delete_command_result');
     }
 
     /**
@@ -1218,7 +1218,7 @@ export class az_postgres_server {
      * @param {string} sourceServer The name or ID of the source server to restore from.
      */
     static georestore(location: string, sourceServer: string): az_postgres_server_georestore_command_builder {
-        return new az_postgres_server_georestore_command_builder("az postgres server georestore", location, sourceServer);
+        return new az_postgres_server_georestore_command_builder("az postgres server georestore", 'az_postgres_server_georestore_command_result', location, sourceServer);
     }
 
     /**
@@ -1232,7 +1232,7 @@ export class az_postgres_server {
      * ```
      */
     static list(): az_postgres_server_list_command_builder {
-        return new az_postgres_server_list_command_builder("az postgres server list");
+        return new az_postgres_server_list_command_builder("az postgres server list", 'az_postgres_server_list_command_result');
     }
 
     /**
@@ -1247,7 +1247,7 @@ export class az_postgres_server {
      * ```
      */
     static restart(): az_postgres_server_restart_command_builder {
-        return new az_postgres_server_restart_command_builder("az postgres server restart");
+        return new az_postgres_server_restart_command_builder("az postgres server restart", 'az_postgres_server_restart_command_result');
     }
 
     /**
@@ -1268,7 +1268,7 @@ export class az_postgres_server {
      * @param {string} sourceServer The name or resource ID of the source server to restore from.
      */
     static restore(restorePointInTime: string, sourceServer: string): az_postgres_server_restore_command_builder {
-        return new az_postgres_server_restore_command_builder("az postgres server restore", restorePointInTime, sourceServer);
+        return new az_postgres_server_restore_command_builder("az postgres server restore", 'az_postgres_server_restore_command_result', restorePointInTime, sourceServer);
     }
 
     /**
@@ -1284,7 +1284,7 @@ export class az_postgres_server {
      * ```
      */
     static show(): az_postgres_server_show_command_builder {
-        return new az_postgres_server_show_command_builder("az postgres server show");
+        return new az_postgres_server_show_command_builder("az postgres server show", 'az_postgres_server_show_command_result');
     }
 
     /**
@@ -1313,7 +1313,7 @@ export class az_postgres_server {
      * ```
      */
     static update(): az_postgres_server_update_command_builder {
-        return new az_postgres_server_update_command_builder("az postgres server update");
+        return new az_postgres_server_update_command_builder("az postgres server update", 'az_postgres_server_update_command_result');
     }
 
     /**
@@ -1332,7 +1332,7 @@ export class az_postgres_server {
      * ```
      */
     static wait(): az_postgres_server_wait_command_builder {
-        return new az_postgres_server_wait_command_builder("az postgres server wait");
+        return new az_postgres_server_wait_command_builder("az postgres server wait", 'az_postgres_server_wait_command_result');
     }
 }
 
@@ -1358,8 +1358,8 @@ export class az_postgres {
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_db_create_command_builder extends CommandBuilder<az_postgres_db_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
@@ -1419,8 +1419,8 @@ class az_postgres_db_create_command_builder extends CommandBuilder<az_postgres_d
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_db_delete_command_builder extends CommandBuilder<az_postgres_db_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
@@ -1472,8 +1472,8 @@ class az_postgres_db_delete_command_builder extends CommandBuilder<az_postgres_d
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_db_list_command_builder extends CommandBuilder<az_postgres_db_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
     }
@@ -1520,8 +1520,8 @@ class az_postgres_db_list_command_builder extends CommandBuilder<az_postgres_db_
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_db_show_command_builder extends CommandBuilder<az_postgres_db_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
@@ -1578,8 +1578,8 @@ class az_postgres_db_show_command_builder extends CommandBuilder<az_postgres_db_
  * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
  */
 class az_postgres_flexible_server_firewall_rule_create_command_builder extends CommandBuilder<az_postgres_flexible_server_firewall_rule_create_command_result> {
-    constructor(commandPath: string, endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string) {
+        super(commandPath, resultDataTypeName);
         this.endIpAddress(endIpAddress)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1638,8 +1638,8 @@ class az_postgres_flexible_server_firewall_rule_create_command_builder extends C
  * ```
  */
 class az_postgres_flexible_server_firewall_rule_delete_command_builder extends CommandBuilder<az_postgres_flexible_server_firewall_rule_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1694,8 +1694,8 @@ class az_postgres_flexible_server_firewall_rule_delete_command_builder extends C
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_flexible_server_firewall_rule_list_command_builder extends CommandBuilder<az_postgres_flexible_server_firewall_rule_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
     }
@@ -1739,8 +1739,8 @@ class az_postgres_flexible_server_firewall_rule_list_command_builder extends Com
  * ```
  */
 class az_postgres_flexible_server_firewall_rule_show_command_builder extends CommandBuilder<az_postgres_flexible_server_firewall_rule_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1799,8 +1799,8 @@ class az_postgres_flexible_server_firewall_rule_show_command_builder extends Com
  * ```
  */
 class az_postgres_flexible_server_firewall_rule_update_command_builder extends CommandBuilder<az_postgres_flexible_server_firewall_rule_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -1885,8 +1885,8 @@ class az_postgres_flexible_server_firewall_rule_update_command_builder extends C
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_flexible_server_parameter_list_command_builder extends CommandBuilder<az_postgres_flexible_server_parameter_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
     }
@@ -1931,8 +1931,8 @@ class az_postgres_flexible_server_parameter_list_command_builder extends Command
  * ```
  */
 class az_postgres_flexible_server_parameter_set_command_builder extends CommandBuilder<az_postgres_flexible_server_parameter_set_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1992,8 +1992,8 @@ class az_postgres_flexible_server_parameter_set_command_builder extends CommandB
  * ```
  */
 class az_postgres_flexible_server_parameter_show_command_builder extends CommandBuilder<az_postgres_flexible_server_parameter_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2061,8 +2061,8 @@ class az_postgres_flexible_server_parameter_show_command_builder extends Command
  * ```
  */
 class az_postgres_flexible_server_create_command_builder extends CommandBuilder<az_postgres_flexible_server_create_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The virtual network address prefix. */
@@ -2199,8 +2199,8 @@ class az_postgres_flexible_server_create_command_builder extends CommandBuilder<
  * ```
  */
 class az_postgres_flexible_server_delete_command_builder extends CommandBuilder<az_postgres_flexible_server_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Delete the server without prompt. */
@@ -2245,8 +2245,8 @@ class az_postgres_flexible_server_delete_command_builder extends CommandBuilder<
  * ```
  */
 class az_postgres_flexible_server_list_command_builder extends CommandBuilder<az_postgres_flexible_server_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -2280,8 +2280,8 @@ class az_postgres_flexible_server_list_command_builder extends CommandBuilder<az
  * @param {string} location Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`.
  */
 class az_postgres_flexible_server_list_skus_command_builder extends CommandBuilder<az_postgres_flexible_server_list_skus_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -2310,8 +2310,8 @@ class az_postgres_flexible_server_list_skus_command_builder extends CommandBuild
  * ```
  */
 class az_postgres_flexible_server_restart_command_builder extends CommandBuilder<az_postgres_flexible_server_restart_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2358,8 +2358,8 @@ class az_postgres_flexible_server_restart_command_builder extends CommandBuilder
  * @param {string} time The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00.
  */
 class az_postgres_flexible_server_restore_command_builder extends CommandBuilder<az_postgres_flexible_server_restore_command_result> {
-    constructor(commandPath: string, sourceServer: string, time: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, sourceServer: string, time: string) {
+        super(commandPath, resultDataTypeName);
         this.sourceServer(sourceServer)
         this.time(time)
     }
@@ -2426,8 +2426,8 @@ class az_postgres_flexible_server_restore_command_builder extends CommandBuilder
  * ```
  */
 class az_postgres_flexible_server_show_command_builder extends CommandBuilder<az_postgres_flexible_server_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2475,8 +2475,8 @@ class az_postgres_flexible_server_show_command_builder extends CommandBuilder<az
  * ```
  */
 class az_postgres_flexible_server_show_connection_string_command_builder extends CommandBuilder<az_postgres_flexible_server_show_connection_string_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The login password of the administrator. */
@@ -2528,8 +2528,8 @@ class az_postgres_flexible_server_show_connection_string_command_builder extends
  * ```
  */
 class az_postgres_flexible_server_start_command_builder extends CommandBuilder<az_postgres_flexible_server_start_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2569,8 +2569,8 @@ class az_postgres_flexible_server_start_command_builder extends CommandBuilder<a
  * ```
  */
 class az_postgres_flexible_server_stop_command_builder extends CommandBuilder<az_postgres_flexible_server_stop_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2622,8 +2622,8 @@ class az_postgres_flexible_server_stop_command_builder extends CommandBuilder<az
  * ```
  */
 class az_postgres_flexible_server_update_command_builder extends CommandBuilder<az_postgres_flexible_server_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -2742,8 +2742,8 @@ class az_postgres_flexible_server_update_command_builder extends CommandBuilder<
  * ```
  */
 class az_postgres_flexible_server_wait_command_builder extends CommandBuilder<az_postgres_flexible_server_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */
@@ -2830,8 +2830,8 @@ class az_postgres_flexible_server_wait_command_builder extends CommandBuilder<az
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_server_ad_admin_create_command_builder extends CommandBuilder<az_postgres_server_ad_admin_create_command_result> {
-    constructor(commandPath: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
     }
@@ -2886,8 +2886,8 @@ class az_postgres_server_ad_admin_create_command_builder extends CommandBuilder<
  * ```
  */
 class az_postgres_server_ad_admin_delete_command_builder extends CommandBuilder<az_postgres_server_ad_admin_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2934,8 +2934,8 @@ class az_postgres_server_ad_admin_delete_command_builder extends CommandBuilder<
  * ```
  */
 class az_postgres_server_ad_admin_list_command_builder extends CommandBuilder<az_postgres_server_ad_admin_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2982,8 +2982,8 @@ class az_postgres_server_ad_admin_list_command_builder extends CommandBuilder<az
  * ```
  */
 class az_postgres_server_ad_admin_show_command_builder extends CommandBuilder<az_postgres_server_ad_admin_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3036,8 +3036,8 @@ class az_postgres_server_ad_admin_show_command_builder extends CommandBuilder<az
  * ```
  */
 class az_postgres_server_ad_admin_wait_command_builder extends CommandBuilder<az_postgres_server_ad_admin_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */
@@ -3120,8 +3120,8 @@ class az_postgres_server_ad_admin_wait_command_builder extends CommandBuilder<az
  * ```
  */
 class az_postgres_server_configuration_list_command_builder extends CommandBuilder<az_postgres_server_configuration_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3169,8 +3169,8 @@ class az_postgres_server_configuration_list_command_builder extends CommandBuild
  * ```
  */
 class az_postgres_server_configuration_set_command_builder extends CommandBuilder<az_postgres_server_configuration_set_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3224,8 +3224,8 @@ class az_postgres_server_configuration_set_command_builder extends CommandBuilde
  * ```
  */
 class az_postgres_server_configuration_show_command_builder extends CommandBuilder<az_postgres_server_configuration_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3285,8 +3285,8 @@ class az_postgres_server_configuration_show_command_builder extends CommandBuild
  * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
  */
 class az_postgres_server_firewall_rule_create_command_builder extends CommandBuilder<az_postgres_server_firewall_rule_create_command_result> {
-    constructor(commandPath: string, endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string) {
+        super(commandPath, resultDataTypeName);
         this.endIpAddress(endIpAddress)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3345,8 +3345,8 @@ class az_postgres_server_firewall_rule_create_command_builder extends CommandBui
  * ```
  */
 class az_postgres_server_firewall_rule_delete_command_builder extends CommandBuilder<az_postgres_server_firewall_rule_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3399,8 +3399,8 @@ class az_postgres_server_firewall_rule_delete_command_builder extends CommandBui
  * ```
  */
 class az_postgres_server_firewall_rule_list_command_builder extends CommandBuilder<az_postgres_server_firewall_rule_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3448,8 +3448,8 @@ class az_postgres_server_firewall_rule_list_command_builder extends CommandBuild
  * ```
  */
 class az_postgres_server_firewall_rule_show_command_builder extends CommandBuilder<az_postgres_server_firewall_rule_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3508,8 +3508,8 @@ class az_postgres_server_firewall_rule_show_command_builder extends CommandBuild
  * ```
  */
 class az_postgres_server_firewall_rule_update_command_builder extends CommandBuilder<az_postgres_server_firewall_rule_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -3595,8 +3595,8 @@ class az_postgres_server_firewall_rule_update_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_postgres_server_key_create_command_builder extends CommandBuilder<az_postgres_server_key_create_command_result> {
-    constructor(commandPath: string, kid: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, kid: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.kid(kid)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -3643,8 +3643,8 @@ class az_postgres_server_key_create_command_builder extends CommandBuilder<az_po
  * @param {string} kid The Azure Key Vault key identifier of the server key. An example key identifier is "<a href="https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901">https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901</a>".
  */
 class az_postgres_server_key_delete_command_builder extends CommandBuilder<az_postgres_server_key_delete_command_result> {
-    constructor(commandPath: string, kid: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, kid: string) {
+        super(commandPath, resultDataTypeName);
         this.kid(kid)
     }
 
@@ -3698,8 +3698,8 @@ class az_postgres_server_key_delete_command_builder extends CommandBuilder<az_po
  * ```
  */
 class az_postgres_server_key_list_command_builder extends CommandBuilder<az_postgres_server_key_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3749,8 +3749,8 @@ class az_postgres_server_key_list_command_builder extends CommandBuilder<az_post
  * @param {string} kid The Azure Key Vault key identifier of the server key. An example key identifier is "<a href="https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901">https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901</a>".
  */
 class az_postgres_server_key_show_command_builder extends CommandBuilder<az_postgres_server_key_show_command_result> {
-    constructor(commandPath: string, kid: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, kid: string) {
+        super(commandPath, resultDataTypeName);
         this.kid(kid)
     }
 
@@ -3806,8 +3806,8 @@ class az_postgres_server_key_show_command_builder extends CommandBuilder<az_post
  * ```
  */
 class az_postgres_server_private_endpoint_connection_approve_command_builder extends CommandBuilder<az_postgres_server_private_endpoint_connection_approve_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Comments for approve operation. */
@@ -3867,8 +3867,8 @@ class az_postgres_server_private_endpoint_connection_approve_command_builder ext
  * ```
  */
 class az_postgres_server_private_endpoint_connection_delete_command_builder extends CommandBuilder<az_postgres_server_private_endpoint_connection_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The ID of the private endpoint connection associated with the Server. If specified --server-name/-s and --name/-n, this should be omitted. */
@@ -3923,8 +3923,8 @@ class az_postgres_server_private_endpoint_connection_delete_command_builder exte
  * ```
  */
 class az_postgres_server_private_endpoint_connection_reject_command_builder extends CommandBuilder<az_postgres_server_private_endpoint_connection_reject_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Comments for reject operation. */
@@ -3985,8 +3985,8 @@ class az_postgres_server_private_endpoint_connection_reject_command_builder exte
  * ```
  */
 class az_postgres_server_private_endpoint_connection_show_command_builder extends CommandBuilder<az_postgres_server_private_endpoint_connection_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The ID of the private endpoint connection associated with the Server. If specified --server-name/-s and --name/-n, this should be omitted. */
@@ -4045,8 +4045,8 @@ class az_postgres_server_private_endpoint_connection_show_command_builder extend
  * ```
  */
 class az_postgres_server_private_link_resource_list_command_builder extends CommandBuilder<az_postgres_server_private_link_resource_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4099,8 +4099,8 @@ class az_postgres_server_private_link_resource_list_command_builder extends Comm
  * @param {string} sourceServer The name or resource ID of the master server to the create replica for.
  */
 class az_postgres_server_replica_create_command_builder extends CommandBuilder<az_postgres_server_replica_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, sourceServer: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, sourceServer: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.sourceServer(sourceServer)
@@ -4162,8 +4162,8 @@ class az_postgres_server_replica_create_command_builder extends CommandBuilder<a
  * ```
  */
 class az_postgres_server_replica_list_command_builder extends CommandBuilder<az_postgres_server_replica_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4210,8 +4210,8 @@ class az_postgres_server_replica_list_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_postgres_server_replica_stop_command_builder extends CommandBuilder<az_postgres_server_replica_stop_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4265,8 +4265,8 @@ class az_postgres_server_replica_stop_command_builder extends CommandBuilder<az_
  * @param {string} subnet Name or ID of the subnet that allows access to an Azure Postgres Server. If subnet name is provided, --vnet-name must be provided.
  */
 class az_postgres_server_vnet_rule_create_command_builder extends CommandBuilder<az_postgres_server_vnet_rule_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, serverName: string, subnet: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serverName: string, subnet: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
@@ -4329,8 +4329,8 @@ class az_postgres_server_vnet_rule_create_command_builder extends CommandBuilder
  * ```
  */
 class az_postgres_server_vnet_rule_delete_command_builder extends CommandBuilder<az_postgres_server_vnet_rule_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4377,8 +4377,8 @@ class az_postgres_server_vnet_rule_delete_command_builder extends CommandBuilder
  * ```
  */
 class az_postgres_server_vnet_rule_list_command_builder extends CommandBuilder<az_postgres_server_vnet_rule_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4426,8 +4426,8 @@ class az_postgres_server_vnet_rule_list_command_builder extends CommandBuilder<a
  * ```
  */
 class az_postgres_server_vnet_rule_show_command_builder extends CommandBuilder<az_postgres_server_vnet_rule_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4489,8 +4489,8 @@ class az_postgres_server_vnet_rule_show_command_builder extends CommandBuilder<a
  * @param {string} subnet Name or ID of the subnet that allows access to an Azure Postgres Server. If subnet name is provided, --vnet-name must be provided.
  */
 class az_postgres_server_vnet_rule_update_command_builder extends CommandBuilder<az_postgres_server_vnet_rule_update_command_result> {
-    constructor(commandPath: string, subnet: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, subnet: string) {
+        super(commandPath, resultDataTypeName);
         this.subnet(subnet)
     }
 
@@ -4583,8 +4583,8 @@ class az_postgres_server_vnet_rule_update_command_builder extends CommandBuilder
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_server_logs_download_command_builder extends CommandBuilder<az_postgres_server_logs_download_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
@@ -4633,8 +4633,8 @@ class az_postgres_server_logs_download_command_builder extends CommandBuilder<az
  * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_postgres_server_logs_list_command_builder extends CommandBuilder<az_postgres_server_logs_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, serverName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serverName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.serverName(serverName)
     }
@@ -4714,8 +4714,8 @@ class az_postgres_server_logs_list_command_builder extends CommandBuilder<az_pos
  * @param {string} skuName The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16.
  */
 class az_postgres_server_create_command_builder extends CommandBuilder<az_postgres_server_create_command_result> {
-    constructor(commandPath: string, adminPassword: string, adminUser: string, name: string, resourceGroup: string, skuName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, adminPassword: string, adminUser: string, name: string, resourceGroup: string, skuName: string) {
+        super(commandPath, resultDataTypeName);
         this.adminPassword(adminPassword)
         this.adminUser(adminUser)
         this.name(name)
@@ -4845,8 +4845,8 @@ class az_postgres_server_create_command_builder extends CommandBuilder<az_postgr
  * ```
  */
 class az_postgres_server_delete_command_builder extends CommandBuilder<az_postgres_server_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4901,8 +4901,8 @@ class az_postgres_server_delete_command_builder extends CommandBuilder<az_postgr
  * @param {string} sourceServer The name or ID of the source server to restore from.
  */
 class az_postgres_server_georestore_command_builder extends CommandBuilder<az_postgres_server_georestore_command_result> {
-    constructor(commandPath: string, location: string, sourceServer: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, sourceServer: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.sourceServer(sourceServer)
     }
@@ -4979,8 +4979,8 @@ class az_postgres_server_georestore_command_builder extends CommandBuilder<az_po
  * ```
  */
 class az_postgres_server_list_command_builder extends CommandBuilder<az_postgres_server_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -5014,8 +5014,8 @@ class az_postgres_server_list_command_builder extends CommandBuilder<az_postgres
  * ```
  */
 class az_postgres_server_restart_command_builder extends CommandBuilder<az_postgres_server_restart_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5061,8 +5061,8 @@ class az_postgres_server_restart_command_builder extends CommandBuilder<az_postg
  * @param {string} sourceServer The name or resource ID of the source server to restore from.
  */
 class az_postgres_server_restore_command_builder extends CommandBuilder<az_postgres_server_restore_command_result> {
-    constructor(commandPath: string, restorePointInTime: string, sourceServer: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, restorePointInTime: string, sourceServer: string) {
+        super(commandPath, resultDataTypeName);
         this.restorePointInTime(restorePointInTime)
         this.sourceServer(sourceServer)
     }
@@ -5123,8 +5123,8 @@ class az_postgres_server_restore_command_builder extends CommandBuilder<az_postg
  * ```
  */
 class az_postgres_server_show_command_builder extends CommandBuilder<az_postgres_server_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5184,8 +5184,8 @@ class az_postgres_server_show_command_builder extends CommandBuilder<az_postgres
  * ```
  */
 class az_postgres_server_update_command_builder extends CommandBuilder<az_postgres_server_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
@@ -5313,8 +5313,8 @@ class az_postgres_server_update_command_builder extends CommandBuilder<az_postgr
  * ```
  */
 class az_postgres_server_wait_command_builder extends CommandBuilder<az_postgres_server_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until the condition satisfies a custom JMESPath query. E.g. provisioningState!='InProgress', instanceView.statuses[?code=='PowerState/running']. */

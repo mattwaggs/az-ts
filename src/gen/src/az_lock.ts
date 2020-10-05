@@ -27,7 +27,7 @@ export class az_lock {
      * @param {string} name Name of the lock.
      */
     static create(lockType: 'CanNotDelete' | 'ReadOnly', name: string): az_lock_create_command_builder {
-        return new az_lock_create_command_builder("az lock create", lockType, name);
+        return new az_lock_create_command_builder("az lock create", 'az_lock_create_command_result', lockType, name);
     }
 
     /**
@@ -46,7 +46,7 @@ export class az_lock {
      * ```
      */
     static delete(): az_lock_delete_command_builder {
-        return new az_lock_delete_command_builder("az lock delete");
+        return new az_lock_delete_command_builder("az lock delete", 'az_lock_delete_command_result');
     }
 
     /**
@@ -65,7 +65,7 @@ export class az_lock {
      * ```
      */
     static list(): az_lock_list_command_builder {
-        return new az_lock_list_command_builder("az lock list");
+        return new az_lock_list_command_builder("az lock list", 'az_lock_list_command_result');
     }
 
     /**
@@ -85,7 +85,7 @@ export class az_lock {
      * ```
      */
     static show(): az_lock_show_command_builder {
-        return new az_lock_show_command_builder("az lock show");
+        return new az_lock_show_command_builder("az lock show", 'az_lock_show_command_result');
     }
 
     /**
@@ -106,7 +106,7 @@ export class az_lock {
      * ```
      */
     static update(): az_lock_update_command_builder {
-        return new az_lock_update_command_builder("az lock update");
+        return new az_lock_update_command_builder("az lock update", 'az_lock_update_command_result');
     }
 }
 
@@ -130,8 +130,8 @@ export class az_lock {
  * @param {string} name Name of the lock.
  */
 class az_lock_create_command_builder extends CommandBuilder<az_lock_create_command_result> {
-    constructor(commandPath: string, lockType: 'CanNotDelete' | 'ReadOnly', name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lockType: 'CanNotDelete' | 'ReadOnly', name: string) {
+        super(commandPath, resultDataTypeName);
         this.lockType(lockType)
         this.name(name)
     }
@@ -207,8 +207,8 @@ class az_lock_create_command_builder extends CommandBuilder<az_lock_create_comma
  * ```
  */
 class az_lock_delete_command_builder extends CommandBuilder<az_lock_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). If provided, no other "Resource Id" arguments should be specified. */
@@ -276,8 +276,8 @@ class az_lock_delete_command_builder extends CommandBuilder<az_lock_delete_comma
  * ```
  */
 class az_lock_list_command_builder extends CommandBuilder<az_lock_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** A query filter to use to restrict the results. */
@@ -346,8 +346,8 @@ class az_lock_list_command_builder extends CommandBuilder<az_lock_list_command_r
  * ```
  */
 class az_lock_show_command_builder extends CommandBuilder<az_lock_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). If provided, no other "Resource Id" arguments should be specified. */
@@ -423,8 +423,8 @@ class az_lock_show_command_builder extends CommandBuilder<az_lock_show_command_r
  * ```
  */
 class az_lock_update_command_builder extends CommandBuilder<az_lock_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). If provided, no other "Resource Id" arguments should be specified. */

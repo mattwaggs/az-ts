@@ -7,17 +7,19 @@ const appVersion = packageJson.version;
 export interface OptionsResult {
   build: boolean;
   ["build-meta"]: boolean;
+  ["build-datatypes"]: boolean;
   help: boolean;
   file: string;
 }
 
 export interface Command {
-  execute: (options: OptionsResult) => void;
+  execute: (options: OptionsResult) => void | Promise<any>;
 }
 
 const optionDefinitions: OptionDefinition[] = [
   { name: "build", type: Boolean },
   { name: "build-meta", type: Boolean },
+  { name: "build-datatypes", type: Boolean },
   { name: "help", type: Boolean },
   { name: "file", defaultOption: true },
 ];
@@ -41,6 +43,12 @@ const sections = [
   {
     header: "Options",
     optionList: [
+      {
+        name: "build-datatypes",
+        type: Boolean,
+        description:
+          "Build the type interfaces for command results based on usage reporting in azure",
+      },
       {
         name: "build-meta",
         type: Boolean,

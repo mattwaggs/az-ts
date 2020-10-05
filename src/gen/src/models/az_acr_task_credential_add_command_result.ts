@@ -1,1 +1,1 @@
-export type az_acr_task_credential_add_command_result = Record<string, unknown>
+export type az_acr_task_credential_add_command_result = Record<string, any>

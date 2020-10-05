@@ -69,7 +69,7 @@ export class az_bot_authsetting {
      * @param {string} settingName Name of the oauth connection setting.
      */
     static create(clientId: string, clientSecret: string, name: string, providerScopeString: string, resourceGroup: string, service: string, settingName: string): az_bot_authsetting_create_command_builder {
-        return new az_bot_authsetting_create_command_builder("az bot authsetting create", clientId, clientSecret, name, providerScopeString, resourceGroup, service, settingName);
+        return new az_bot_authsetting_create_command_builder("az bot authsetting create", 'az_bot_authsetting_create_command_result', clientId, clientSecret, name, providerScopeString, resourceGroup, service, settingName);
     }
 
     /**
@@ -88,7 +88,7 @@ export class az_bot_authsetting {
      * @param {string} settingName Name of the oauth connection setting.
      */
     static delete(name: string, resourceGroup: string, settingName: string): az_bot_authsetting_delete_command_builder {
-        return new az_bot_authsetting_delete_command_builder("az bot authsetting delete", name, resourceGroup, settingName);
+        return new az_bot_authsetting_delete_command_builder("az bot authsetting delete", 'az_bot_authsetting_delete_command_result', name, resourceGroup, settingName);
     }
 
     /**
@@ -106,7 +106,7 @@ export class az_bot_authsetting {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, resourceGroup: string): az_bot_authsetting_list_command_builder {
-        return new az_bot_authsetting_list_command_builder("az bot authsetting list", name, resourceGroup);
+        return new az_bot_authsetting_list_command_builder("az bot authsetting list", 'az_bot_authsetting_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -119,7 +119,7 @@ export class az_bot_authsetting {
      * ```
      */
     static list_providers(): az_bot_authsetting_list_providers_command_builder {
-        return new az_bot_authsetting_list_providers_command_builder("az bot authsetting list-providers");
+        return new az_bot_authsetting_list_providers_command_builder("az bot authsetting list-providers", 'az_bot_authsetting_list_providers_command_result');
     }
 
     /**
@@ -139,7 +139,7 @@ export class az_bot_authsetting {
      * @param {string} settingName Name of the oauth connection setting.
      */
     static show(name: string, resourceGroup: string, settingName: string): az_bot_authsetting_show_command_builder {
-        return new az_bot_authsetting_show_command_builder("az bot authsetting show", name, resourceGroup, settingName);
+        return new az_bot_authsetting_show_command_builder("az bot authsetting show", 'az_bot_authsetting_show_command_result', name, resourceGroup, settingName);
     }
 }
 
@@ -165,7 +165,7 @@ export class az_bot_directline {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_bot_directline_create_command_builder {
-        return new az_bot_directline_create_command_builder("az bot directline create", name, resourceGroup);
+        return new az_bot_directline_create_command_builder("az bot directline create", 'az_bot_directline_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -182,7 +182,7 @@ export class az_bot_directline {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_bot_directline_delete_command_builder {
-        return new az_bot_directline_delete_command_builder("az bot directline delete", name, resourceGroup);
+        return new az_bot_directline_delete_command_builder("az bot directline delete", 'az_bot_directline_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -201,7 +201,7 @@ export class az_bot_directline {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_bot_directline_show_command_builder {
-        return new az_bot_directline_show_command_builder("az bot directline show", name, resourceGroup);
+        return new az_bot_directline_show_command_builder("az bot directline show", 'az_bot_directline_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -224,7 +224,7 @@ export class az_bot_directline {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, resourceGroup: string): az_bot_directline_update_command_builder {
-        return new az_bot_directline_update_command_builder("az bot directline update", name, resourceGroup);
+        return new az_bot_directline_update_command_builder("az bot directline update", 'az_bot_directline_update_command_result', name, resourceGroup);
     }
 }
 
@@ -249,7 +249,7 @@ export class az_bot_email {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(emailAddress: string, name: string, password: string, resourceGroup: string): az_bot_email_create_command_builder {
-        return new az_bot_email_create_command_builder("az bot email create", emailAddress, name, password, resourceGroup);
+        return new az_bot_email_create_command_builder("az bot email create", 'az_bot_email_create_command_result', emailAddress, name, password, resourceGroup);
     }
 
     /**
@@ -266,7 +266,7 @@ export class az_bot_email {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_bot_email_delete_command_builder {
-        return new az_bot_email_delete_command_builder("az bot email delete", name, resourceGroup);
+        return new az_bot_email_delete_command_builder("az bot email delete", 'az_bot_email_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -285,7 +285,7 @@ export class az_bot_email {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_bot_email_show_command_builder {
-        return new az_bot_email_show_command_builder("az bot email show", name, resourceGroup);
+        return new az_bot_email_show_command_builder("az bot email show", 'az_bot_email_show_command_result', name, resourceGroup);
     }
 }
 
@@ -314,7 +314,7 @@ export class az_bot_facebook {
      * @param {string} token The Facebook application access token.
      */
     static create(appid: string, name: string, pageId: string, resourceGroup: string, secret: string, token: string): az_bot_facebook_create_command_builder {
-        return new az_bot_facebook_create_command_builder("az bot facebook create", appid, name, pageId, resourceGroup, secret, token);
+        return new az_bot_facebook_create_command_builder("az bot facebook create", 'az_bot_facebook_create_command_result', appid, name, pageId, resourceGroup, secret, token);
     }
 
     /**
@@ -331,7 +331,7 @@ export class az_bot_facebook {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_bot_facebook_delete_command_builder {
-        return new az_bot_facebook_delete_command_builder("az bot facebook delete", name, resourceGroup);
+        return new az_bot_facebook_delete_command_builder("az bot facebook delete", 'az_bot_facebook_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -350,7 +350,7 @@ export class az_bot_facebook {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_bot_facebook_show_command_builder {
-        return new az_bot_facebook_show_command_builder("az bot facebook show", name, resourceGroup);
+        return new az_bot_facebook_show_command_builder("az bot facebook show", 'az_bot_facebook_show_command_result', name, resourceGroup);
     }
 }
 
@@ -376,7 +376,7 @@ export class az_bot_kik {
      * @param {string} userName Kik user name.
      */
     static create(key: string, name: string, resourceGroup: string, userName: string): az_bot_kik_create_command_builder {
-        return new az_bot_kik_create_command_builder("az bot kik create", key, name, resourceGroup, userName);
+        return new az_bot_kik_create_command_builder("az bot kik create", 'az_bot_kik_create_command_result', key, name, resourceGroup, userName);
     }
 
     /**
@@ -393,7 +393,7 @@ export class az_bot_kik {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_bot_kik_delete_command_builder {
-        return new az_bot_kik_delete_command_builder("az bot kik delete", name, resourceGroup);
+        return new az_bot_kik_delete_command_builder("az bot kik delete", 'az_bot_kik_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -412,7 +412,7 @@ export class az_bot_kik {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_bot_kik_show_command_builder {
-        return new az_bot_kik_show_command_builder("az bot kik show", name, resourceGroup);
+        return new az_bot_kik_show_command_builder("az bot kik show", 'az_bot_kik_show_command_result', name, resourceGroup);
     }
 }
 
@@ -435,7 +435,7 @@ export class az_bot_msteams {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_bot_msteams_create_command_builder {
-        return new az_bot_msteams_create_command_builder("az bot msteams create", name, resourceGroup);
+        return new az_bot_msteams_create_command_builder("az bot msteams create", 'az_bot_msteams_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -452,7 +452,7 @@ export class az_bot_msteams {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_bot_msteams_delete_command_builder {
-        return new az_bot_msteams_delete_command_builder("az bot msteams delete", name, resourceGroup);
+        return new az_bot_msteams_delete_command_builder("az bot msteams delete", 'az_bot_msteams_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -471,7 +471,7 @@ export class az_bot_msteams {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_bot_msteams_show_command_builder {
-        return new az_bot_msteams_show_command_builder("az bot msteams show", name, resourceGroup);
+        return new az_bot_msteams_show_command_builder("az bot msteams show", 'az_bot_msteams_show_command_result', name, resourceGroup);
     }
 }
 
@@ -500,7 +500,7 @@ export class az_bot_skype {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, resourceGroup: string): az_bot_skype_create_command_builder {
-        return new az_bot_skype_create_command_builder("az bot skype create", name, resourceGroup);
+        return new az_bot_skype_create_command_builder("az bot skype create", 'az_bot_skype_create_command_result', name, resourceGroup);
     }
 
     /**
@@ -517,7 +517,7 @@ export class az_bot_skype {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_bot_skype_delete_command_builder {
-        return new az_bot_skype_delete_command_builder("az bot skype delete", name, resourceGroup);
+        return new az_bot_skype_delete_command_builder("az bot skype delete", 'az_bot_skype_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -536,7 +536,7 @@ export class az_bot_skype {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_bot_skype_show_command_builder {
-        return new az_bot_skype_show_command_builder("az bot skype show", name, resourceGroup);
+        return new az_bot_skype_show_command_builder("az bot skype show", 'az_bot_skype_show_command_result', name, resourceGroup);
     }
 }
 
@@ -564,7 +564,7 @@ export class az_bot_slack {
      * @param {string} verificationToken The verification token from Slack.
      */
     static create(clientId: string, clientSecret: string, name: string, resourceGroup: string, verificationToken: string): az_bot_slack_create_command_builder {
-        return new az_bot_slack_create_command_builder("az bot slack create", clientId, clientSecret, name, resourceGroup, verificationToken);
+        return new az_bot_slack_create_command_builder("az bot slack create", 'az_bot_slack_create_command_result', clientId, clientSecret, name, resourceGroup, verificationToken);
     }
 
     /**
@@ -581,7 +581,7 @@ export class az_bot_slack {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_bot_slack_delete_command_builder {
-        return new az_bot_slack_delete_command_builder("az bot slack delete", name, resourceGroup);
+        return new az_bot_slack_delete_command_builder("az bot slack delete", 'az_bot_slack_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -600,7 +600,7 @@ export class az_bot_slack {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_bot_slack_show_command_builder {
-        return new az_bot_slack_show_command_builder("az bot slack show", name, resourceGroup);
+        return new az_bot_slack_show_command_builder("az bot slack show", 'az_bot_slack_show_command_result', name, resourceGroup);
     }
 }
 
@@ -628,7 +628,7 @@ export class az_bot_sms {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(accountSid: string, authToken: string, name: string, phone: string, resourceGroup: string): az_bot_sms_create_command_builder {
-        return new az_bot_sms_create_command_builder("az bot sms create", accountSid, authToken, name, phone, resourceGroup);
+        return new az_bot_sms_create_command_builder("az bot sms create", 'az_bot_sms_create_command_result', accountSid, authToken, name, phone, resourceGroup);
     }
 
     /**
@@ -645,7 +645,7 @@ export class az_bot_sms {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_bot_sms_delete_command_builder {
-        return new az_bot_sms_delete_command_builder("az bot sms delete", name, resourceGroup);
+        return new az_bot_sms_delete_command_builder("az bot sms delete", 'az_bot_sms_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -664,7 +664,7 @@ export class az_bot_sms {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_bot_sms_show_command_builder {
-        return new az_bot_sms_show_command_builder("az bot sms show", name, resourceGroup);
+        return new az_bot_sms_show_command_builder("az bot sms show", 'az_bot_sms_show_command_result', name, resourceGroup);
     }
 }
 
@@ -688,7 +688,7 @@ export class az_bot_telegram {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(accessToken: string, name: string, resourceGroup: string): az_bot_telegram_create_command_builder {
-        return new az_bot_telegram_create_command_builder("az bot telegram create", accessToken, name, resourceGroup);
+        return new az_bot_telegram_create_command_builder("az bot telegram create", 'az_bot_telegram_create_command_result', accessToken, name, resourceGroup);
     }
 
     /**
@@ -705,7 +705,7 @@ export class az_bot_telegram {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_bot_telegram_delete_command_builder {
-        return new az_bot_telegram_delete_command_builder("az bot telegram delete", name, resourceGroup);
+        return new az_bot_telegram_delete_command_builder("az bot telegram delete", 'az_bot_telegram_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -724,7 +724,7 @@ export class az_bot_telegram {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_bot_telegram_show_command_builder {
-        return new az_bot_telegram_show_command_builder("az bot telegram show", name, resourceGroup);
+        return new az_bot_telegram_show_command_builder("az bot telegram show", 'az_bot_telegram_show_command_result', name, resourceGroup);
     }
 }
 
@@ -746,7 +746,7 @@ export class az_bot_webchat {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_bot_webchat_show_command_builder {
-        return new az_bot_webchat_show_command_builder("az bot webchat show", name, resourceGroup);
+        return new az_bot_webchat_show_command_builder("az bot webchat show", 'az_bot_webchat_show_command_result', name, resourceGroup);
     }
 }
 
@@ -779,7 +779,7 @@ export class az_bot {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(appid: string, kind: 'registration' | 'webapp', name: string, resourceGroup: string): az_bot_create_command_builder {
-        return new az_bot_create_command_builder("az bot create", appid, kind, name, resourceGroup);
+        return new az_bot_create_command_builder("az bot create", 'az_bot_create_command_result', appid, kind, name, resourceGroup);
     }
 
     /**
@@ -796,7 +796,7 @@ export class az_bot {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_bot_delete_command_builder {
-        return new az_bot_delete_command_builder("az bot delete", name, resourceGroup);
+        return new az_bot_delete_command_builder("az bot delete", 'az_bot_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -814,7 +814,7 @@ export class az_bot {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static download(name: string, resourceGroup: string): az_bot_download_command_builder {
-        return new az_bot_download_command_builder("az bot download", name, resourceGroup);
+        return new az_bot_download_command_builder("az bot download", 'az_bot_download_command_result', name, resourceGroup);
     }
 
     /**
@@ -831,7 +831,7 @@ export class az_bot {
      * @param {'Csharp' | 'Javascript' | 'Typescript'} lang The language or runtime of the bot.
      */
     static prepare_deploy(lang: 'Csharp' | 'Javascript' | 'Typescript'): az_bot_prepare_deploy_command_builder {
-        return new az_bot_prepare_deploy_command_builder("az bot prepare-deploy", lang);
+        return new az_bot_prepare_deploy_command_builder("az bot prepare-deploy", 'az_bot_prepare_deploy_command_result', lang);
     }
 
     /**
@@ -854,7 +854,7 @@ export class az_bot {
      * @param {string} slnName Name of the start up solution file name. Required only for C#.
      */
     static prepare_publish(name: string, projFilePath: string, resourceGroup: string, slnName: string): az_bot_prepare_publish_command_builder {
-        return new az_bot_prepare_publish_command_builder("az bot prepare-publish", name, projFilePath, resourceGroup, slnName);
+        return new az_bot_prepare_publish_command_builder("az bot prepare-publish", 'az_bot_prepare_publish_command_result', name, projFilePath, resourceGroup, slnName);
     }
 
     /**
@@ -876,7 +876,7 @@ export class az_bot {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static publish(name: string, resourceGroup: string): az_bot_publish_command_builder {
-        return new az_bot_publish_command_builder("az bot publish", name, resourceGroup);
+        return new az_bot_publish_command_builder("az bot publish", 'az_bot_publish_command_result', name, resourceGroup);
     }
 
     /**
@@ -895,7 +895,7 @@ export class az_bot {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_bot_show_command_builder {
-        return new az_bot_show_command_builder("az bot show", name, resourceGroup);
+        return new az_bot_show_command_builder("az bot show", 'az_bot_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -921,7 +921,7 @@ export class az_bot {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, resourceGroup: string): az_bot_update_command_builder {
-        return new az_bot_update_command_builder("az bot update", name, resourceGroup);
+        return new az_bot_update_command_builder("az bot update", 'az_bot_update_command_result', name, resourceGroup);
     }
 }
 
@@ -950,8 +950,8 @@ export class az_bot {
  * @param {string} settingName Name of the oauth connection setting.
  */
 class az_bot_authsetting_create_command_builder extends CommandBuilder<az_bot_authsetting_create_command_result> {
-    constructor(commandPath: string, clientId: string, clientSecret: string, name: string, providerScopeString: string, resourceGroup: string, service: string, settingName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, clientId: string, clientSecret: string, name: string, providerScopeString: string, resourceGroup: string, service: string, settingName: string) {
+        super(commandPath, resultDataTypeName);
         this.clientId(clientId)
         this.clientSecret(clientSecret)
         this.name(name)
@@ -1032,8 +1032,8 @@ class az_bot_authsetting_create_command_builder extends CommandBuilder<az_bot_au
  * @param {string} settingName Name of the oauth connection setting.
  */
 class az_bot_authsetting_delete_command_builder extends CommandBuilder<az_bot_authsetting_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, settingName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, settingName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.settingName(settingName)
@@ -1079,8 +1079,8 @@ class az_bot_authsetting_delete_command_builder extends CommandBuilder<az_bot_au
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_authsetting_list_command_builder extends CommandBuilder<az_bot_authsetting_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1120,8 +1120,8 @@ class az_bot_authsetting_list_command_builder extends CommandBuilder<az_bot_auth
  * ```
  */
 class az_bot_authsetting_list_providers_command_builder extends CommandBuilder<az_bot_authsetting_list_providers_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Service provider name for which to fetch details. */
@@ -1154,8 +1154,8 @@ class az_bot_authsetting_list_providers_command_builder extends CommandBuilder<a
  * @param {string} settingName Name of the oauth connection setting.
  */
 class az_bot_authsetting_show_command_builder extends CommandBuilder<az_bot_authsetting_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, settingName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, settingName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.settingName(settingName)
@@ -1212,8 +1212,8 @@ class az_bot_authsetting_show_command_builder extends CommandBuilder<az_bot_auth
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_directline_create_command_builder extends CommandBuilder<az_bot_directline_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1287,8 +1287,8 @@ class az_bot_directline_create_command_builder extends CommandBuilder<az_bot_dir
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_directline_delete_command_builder extends CommandBuilder<az_bot_directline_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1328,8 +1328,8 @@ class az_bot_directline_delete_command_builder extends CommandBuilder<az_bot_dir
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_directline_show_command_builder extends CommandBuilder<az_bot_directline_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1385,8 +1385,8 @@ class az_bot_directline_show_command_builder extends CommandBuilder<az_bot_direc
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_directline_update_command_builder extends CommandBuilder<az_bot_directline_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1465,8 +1465,8 @@ class az_bot_directline_update_command_builder extends CommandBuilder<az_bot_dir
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_email_create_command_builder extends CommandBuilder<az_bot_email_create_command_result> {
-    constructor(commandPath: string, emailAddress: string, name: string, password: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, emailAddress: string, name: string, password: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.emailAddress(emailAddress)
         this.name(name)
         this.password(password)
@@ -1524,8 +1524,8 @@ class az_bot_email_create_command_builder extends CommandBuilder<az_bot_email_cr
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_email_delete_command_builder extends CommandBuilder<az_bot_email_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1565,8 +1565,8 @@ class az_bot_email_delete_command_builder extends CommandBuilder<az_bot_email_de
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_email_show_command_builder extends CommandBuilder<az_bot_email_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1625,8 +1625,8 @@ class az_bot_email_show_command_builder extends CommandBuilder<az_bot_email_show
  * @param {string} token The Facebook application access token.
  */
 class az_bot_facebook_create_command_builder extends CommandBuilder<az_bot_facebook_create_command_result> {
-    constructor(commandPath: string, appid: string, name: string, pageId: string, resourceGroup: string, secret: string, token: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, appid: string, name: string, pageId: string, resourceGroup: string, secret: string, token: string) {
+        super(commandPath, resultDataTypeName);
         this.appid(appid)
         this.name(name)
         this.pageId(pageId)
@@ -1698,8 +1698,8 @@ class az_bot_facebook_create_command_builder extends CommandBuilder<az_bot_faceb
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_facebook_delete_command_builder extends CommandBuilder<az_bot_facebook_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1739,8 +1739,8 @@ class az_bot_facebook_delete_command_builder extends CommandBuilder<az_bot_faceb
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_facebook_show_command_builder extends CommandBuilder<az_bot_facebook_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1796,8 +1796,8 @@ class az_bot_facebook_show_command_builder extends CommandBuilder<az_bot_faceboo
  * @param {string} userName Kik user name.
  */
 class az_bot_kik_create_command_builder extends CommandBuilder<az_bot_kik_create_command_result> {
-    constructor(commandPath: string, key: string, name: string, resourceGroup: string, userName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, key: string, name: string, resourceGroup: string, userName: string) {
+        super(commandPath, resultDataTypeName);
         this.key(key)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1861,8 +1861,8 @@ class az_bot_kik_create_command_builder extends CommandBuilder<az_bot_kik_create
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_kik_delete_command_builder extends CommandBuilder<az_bot_kik_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1902,8 +1902,8 @@ class az_bot_kik_delete_command_builder extends CommandBuilder<az_bot_kik_delete
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_kik_show_command_builder extends CommandBuilder<az_bot_kik_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1956,8 +1956,8 @@ class az_bot_kik_show_command_builder extends CommandBuilder<az_bot_kik_show_com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_msteams_create_command_builder extends CommandBuilder<az_bot_msteams_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2013,8 +2013,8 @@ class az_bot_msteams_create_command_builder extends CommandBuilder<az_bot_msteam
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_msteams_delete_command_builder extends CommandBuilder<az_bot_msteams_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2054,8 +2054,8 @@ class az_bot_msteams_delete_command_builder extends CommandBuilder<az_bot_msteam
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_msteams_show_command_builder extends CommandBuilder<az_bot_msteams_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2114,8 +2114,8 @@ class az_bot_msteams_show_command_builder extends CommandBuilder<az_bot_msteams_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_skype_create_command_builder extends CommandBuilder<az_bot_skype_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2207,8 +2207,8 @@ class az_bot_skype_create_command_builder extends CommandBuilder<az_bot_skype_cr
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_skype_delete_command_builder extends CommandBuilder<az_bot_skype_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2248,8 +2248,8 @@ class az_bot_skype_delete_command_builder extends CommandBuilder<az_bot_skype_de
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_skype_show_command_builder extends CommandBuilder<az_bot_skype_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2307,8 +2307,8 @@ class az_bot_skype_show_command_builder extends CommandBuilder<az_bot_skype_show
  * @param {string} verificationToken The verification token from Slack.
  */
 class az_bot_slack_create_command_builder extends CommandBuilder<az_bot_slack_create_command_result> {
-    constructor(commandPath: string, clientId: string, clientSecret: string, name: string, resourceGroup: string, verificationToken: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, clientId: string, clientSecret: string, name: string, resourceGroup: string, verificationToken: string) {
+        super(commandPath, resultDataTypeName);
         this.clientId(clientId)
         this.clientSecret(clientSecret)
         this.name(name)
@@ -2379,8 +2379,8 @@ class az_bot_slack_create_command_builder extends CommandBuilder<az_bot_slack_cr
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_slack_delete_command_builder extends CommandBuilder<az_bot_slack_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2420,8 +2420,8 @@ class az_bot_slack_delete_command_builder extends CommandBuilder<az_bot_slack_de
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_slack_show_command_builder extends CommandBuilder<az_bot_slack_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2479,8 +2479,8 @@ class az_bot_slack_show_command_builder extends CommandBuilder<az_bot_slack_show
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_sms_create_command_builder extends CommandBuilder<az_bot_sms_create_command_result> {
-    constructor(commandPath: string, accountSid: string, authToken: string, name: string, phone: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountSid: string, authToken: string, name: string, phone: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountSid(accountSid)
         this.authToken(authToken)
         this.name(name)
@@ -2551,8 +2551,8 @@ class az_bot_sms_create_command_builder extends CommandBuilder<az_bot_sms_create
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_sms_delete_command_builder extends CommandBuilder<az_bot_sms_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2592,8 +2592,8 @@ class az_bot_sms_delete_command_builder extends CommandBuilder<az_bot_sms_delete
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_sms_show_command_builder extends CommandBuilder<az_bot_sms_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2647,8 +2647,8 @@ class az_bot_sms_show_command_builder extends CommandBuilder<az_bot_sms_show_com
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_telegram_create_command_builder extends CommandBuilder<az_bot_telegram_create_command_result> {
-    constructor(commandPath: string, accessToken: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accessToken: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accessToken(accessToken)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -2705,8 +2705,8 @@ class az_bot_telegram_create_command_builder extends CommandBuilder<az_bot_teleg
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_telegram_delete_command_builder extends CommandBuilder<az_bot_telegram_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2746,8 +2746,8 @@ class az_bot_telegram_delete_command_builder extends CommandBuilder<az_bot_teleg
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_telegram_show_command_builder extends CommandBuilder<az_bot_telegram_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2799,8 +2799,8 @@ class az_bot_telegram_show_command_builder extends CommandBuilder<az_bot_telegra
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_webchat_show_command_builder extends CommandBuilder<az_bot_webchat_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2863,8 +2863,8 @@ class az_bot_webchat_show_command_builder extends CommandBuilder<az_bot_webchat_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_create_command_builder extends CommandBuilder<az_bot_create_command_result> {
-    constructor(commandPath: string, appid: string, kind: 'registration' | 'webapp', name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, appid: string, kind: 'registration' | 'webapp', name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.appid(appid)
         this.kind(kind)
         this.name(name)
@@ -2970,8 +2970,8 @@ class az_bot_create_command_builder extends CommandBuilder<az_bot_create_command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_delete_command_builder extends CommandBuilder<az_bot_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -3010,8 +3010,8 @@ class az_bot_delete_command_builder extends CommandBuilder<az_bot_delete_command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_download_command_builder extends CommandBuilder<az_bot_download_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -3055,8 +3055,8 @@ class az_bot_download_command_builder extends CommandBuilder<az_bot_download_com
  * @param {'Csharp' | 'Javascript' | 'Typescript'} lang The language or runtime of the bot.
  */
 class az_bot_prepare_deploy_command_builder extends CommandBuilder<az_bot_prepare_deploy_command_result> {
-    constructor(commandPath: string, lang: 'Csharp' | 'Javascript' | 'Typescript') {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, lang: 'Csharp' | 'Javascript' | 'Typescript') {
+        super(commandPath, resultDataTypeName);
         this.lang(lang)
     }
 
@@ -3105,8 +3105,8 @@ class az_bot_prepare_deploy_command_builder extends CommandBuilder<az_bot_prepar
  * @param {string} slnName Name of the start up solution file name. Required only for C#.
  */
 class az_bot_prepare_publish_command_builder extends CommandBuilder<az_bot_prepare_publish_command_result> {
-    constructor(commandPath: string, name: string, projFilePath: string, resourceGroup: string, slnName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, projFilePath: string, resourceGroup: string, slnName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.projFilePath(projFilePath)
         this.resourceGroup(resourceGroup)
@@ -3175,8 +3175,8 @@ class az_bot_prepare_publish_command_builder extends CommandBuilder<az_bot_prepa
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_publish_command_builder extends CommandBuilder<az_bot_publish_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -3246,8 +3246,8 @@ class az_bot_publish_command_builder extends CommandBuilder<az_bot_publish_comma
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_show_command_builder extends CommandBuilder<az_bot_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -3306,8 +3306,8 @@ class az_bot_show_command_builder extends CommandBuilder<az_bot_show_command_res
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_bot_update_command_builder extends CommandBuilder<az_bot_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }

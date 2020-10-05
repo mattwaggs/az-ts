@@ -23,7 +23,7 @@ export class az {
      * ```
      */
     static configure(): az_configure_command_builder {
-        return new az_configure_command_builder("az configure");
+        return new az_configure_command_builder("az configure", 'az_configure_command_result');
     }
 
     /**
@@ -35,7 +35,7 @@ export class az {
      * ```
      */
     static feedback(): az_feedback_command_builder {
-        return new az_feedback_command_builder("az feedback");
+        return new az_feedback_command_builder("az feedback", 'az_feedback_command_result');
     }
 
     /**
@@ -47,7 +47,7 @@ export class az {
      * ```
      */
     static find(): az_find_command_builder {
-        return new az_find_command_builder("az find");
+        return new az_find_command_builder("az find", 'az_find_command_result');
     }
 
     /**
@@ -60,7 +60,7 @@ export class az {
      * ```
      */
     static interactive(): az_interactive_command_builder {
-        return new az_interactive_command_builder("az interactive");
+        return new az_interactive_command_builder("az interactive", 'az_interactive_command_result');
     }
 
     /**
@@ -79,7 +79,7 @@ export class az {
      * ```
      */
     static login(): az_login_command_builder {
-        return new az_login_command_builder("az login");
+        return new az_login_command_builder("az login", 'az_login_command_result');
     }
 
     /**
@@ -91,7 +91,7 @@ export class az {
      * ```
      */
     static logout(): az_logout_command_builder {
-        return new az_logout_command_builder("az logout");
+        return new az_logout_command_builder("az logout", 'az_logout_command_result');
     }
 
     /**
@@ -113,7 +113,7 @@ export class az {
      * @param {string} uri Request URL. If it doesn't start with a host, CLI assumes it as an Azure resource ID and prefixes it with the ARM endpoint of the current cloud shown by `az cloud show --query endpoints.resourceManager`. Common token {subscriptionId} will be replaced with the current subscription ID specified by `az account set`.
      */
     static rest(uri: string): az_rest_command_builder {
-        return new az_rest_command_builder("az rest", uri);
+        return new az_rest_command_builder("az rest", 'az_rest_command_result', uri);
     }
 
     /**
@@ -125,7 +125,7 @@ export class az {
      * ```
      */
     static self_test(): az_self_test_command_builder {
-        return new az_self_test_command_builder("az self-test");
+        return new az_self_test_command_builder("az self-test", 'az_self_test_command_result');
     }
 
     /**
@@ -139,7 +139,7 @@ export class az {
      * ```
      */
     static upgrade(): az_upgrade_command_builder {
-        return new az_upgrade_command_builder("az upgrade");
+        return new az_upgrade_command_builder("az upgrade", 'az_upgrade_command_result');
     }
 
     /**
@@ -151,7 +151,7 @@ export class az {
      * ```
      */
     static version(): az_version_command_builder {
-        return new az_version_command_builder("az version");
+        return new az_version_command_builder("az version", 'az_version_command_result');
     }
 }
 
@@ -166,8 +166,8 @@ export class az {
  * ```
  */
 class az_configure_command_builder extends CommandBuilder<az_configure_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Space-separated 'name=value' pairs for common argument defaults. */
@@ -198,8 +198,8 @@ class az_configure_command_builder extends CommandBuilder<az_configure_command_r
  * ```
  */
 class az_feedback_command_builder extends CommandBuilder<az_feedback_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 }
 
@@ -212,8 +212,8 @@ class az_feedback_command_builder extends CommandBuilder<az_feedback_command_res
  * ```
  */
 class az_find_command_builder extends CommandBuilder<az_find_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** An Azure CLI command or group for which you need an example. */
@@ -233,8 +233,8 @@ class az_find_command_builder extends CommandBuilder<az_find_command_result> {
  * ```
  */
 class az_interactive_command_builder extends CommandBuilder<az_interactive_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The colors of the shell. */
@@ -266,8 +266,8 @@ class az_interactive_command_builder extends CommandBuilder<az_interactive_comma
  * ```
  */
 class az_login_command_builder extends CommandBuilder<az_login_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Support access tenants without subscriptions. It's uncommon but useful to run tenant level commands, such as 'az ad'. */
@@ -328,8 +328,8 @@ class az_login_command_builder extends CommandBuilder<az_login_command_result> {
  * ```
  */
 class az_logout_command_builder extends CommandBuilder<az_logout_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Account user, if missing, logout the current active account. */
@@ -358,8 +358,8 @@ class az_logout_command_builder extends CommandBuilder<az_logout_command_result>
  * @param {string} uri Request URL. If it doesn't start with a host, CLI assumes it as an Azure resource ID and prefixes it with the ARM endpoint of the current cloud shown by `az cloud show --query endpoints.resourceManager`. Common token {subscriptionId} will be replaced with the current subscription ID specified by `az account set`.
  */
 class az_rest_command_builder extends CommandBuilder<az_rest_command_result> {
-    constructor(commandPath: string, uri: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, uri: string) {
+        super(commandPath, resultDataTypeName);
         this.uri(uri)
     }
 
@@ -427,8 +427,8 @@ class az_rest_command_builder extends CommandBuilder<az_rest_command_result> {
  * ```
  */
 class az_self_test_command_builder extends CommandBuilder<az_self_test_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -449,8 +449,8 @@ class az_self_test_command_builder extends CommandBuilder<az_self_test_command_r
  * ```
  */
 class az_upgrade_command_builder extends CommandBuilder<az_upgrade_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Enable updating extensions as well. */
@@ -481,8 +481,8 @@ class az_upgrade_command_builder extends CommandBuilder<az_upgrade_command_resul
  * ```
  */
 class az_version_command_builder extends CommandBuilder<az_version_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */

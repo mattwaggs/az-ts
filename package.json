@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "compileandrun": "ts-node src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "export": "tsc --outDir ./exported -d ./src/gen/index.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/axios": "^0.14.0",
     "@types/blessed": "^0.1.17",
     "@types/command-line-args": "^5.0.0",
     "@types/command-line-usage": "^5.0.1",
@@ -18,6 +20,7 @@
     "@types/shelljs": "^0.8.8",
     "@types/temp-dir": "^2.0.2",
     "@types/uuid": "^8.3.0",
+    "axios": "^0.20.0",
     "blessed": "^0.1.81",
     "cli-progress": "^3.8.2",
     "command-line-args": "^5.1.1",

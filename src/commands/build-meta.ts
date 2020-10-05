@@ -8,7 +8,7 @@ import JsonToTS from "json-to-ts";
 
 class BuildMetaCommand implements Command {
   execute = (_: OptionsResult) => {
-    CleanUp(({ addCleanupTask }) => {
+    return CleanUp(({ addCleanupTask }) => {
       console.log("cloning azure-docs-cli repo...");
       const [tempDir, cleanupTask] = cloneRepoToTempDir();
       addCleanupTask(cleanupTask);

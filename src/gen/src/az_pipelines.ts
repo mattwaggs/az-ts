@@ -72,7 +72,7 @@ export class az_pipelines_agent {
      * @param {string} poolId The agent pool containing the agents.
      */
     static list(poolId: string): az_pipelines_agent_list_command_builder {
-        return new az_pipelines_agent_list_command_builder("az pipelines agent list", poolId);
+        return new az_pipelines_agent_list_command_builder("az pipelines agent list", 'az_pipelines_agent_list_command_result', poolId);
     }
 
     /**
@@ -95,7 +95,7 @@ export class az_pipelines_agent {
      * @param {string} poolId The agent pool containing the agent.
      */
     static show(agentId: string, poolId: string): az_pipelines_agent_show_command_builder {
-        return new az_pipelines_agent_show_command_builder("az pipelines agent show", agentId, poolId);
+        return new az_pipelines_agent_show_command_builder("az pipelines agent show", 'az_pipelines_agent_show_command_result', agentId, poolId);
     }
 }
 
@@ -118,7 +118,7 @@ export class az_pipelines_build_definition {
      * ```
      */
     static list(): az_pipelines_build_definition_list_command_builder {
-        return new az_pipelines_build_definition_list_command_builder("az pipelines build definition list");
+        return new az_pipelines_build_definition_list_command_builder("az pipelines build definition list", 'az_pipelines_build_definition_list_command_result');
     }
 
     /**
@@ -137,7 +137,7 @@ export class az_pipelines_build_definition {
      * ```
      */
     static show(): az_pipelines_build_definition_show_command_builder {
-        return new az_pipelines_build_definition_show_command_builder("az pipelines build definition show");
+        return new az_pipelines_build_definition_show_command_builder("az pipelines build definition show", 'az_pipelines_build_definition_show_command_result');
     }
 }
 
@@ -160,7 +160,7 @@ export class az_pipelines_build_tag {
      * @param {string} tags Tag(s) to be added to the build. [Comma seperated values].
      */
     static add(buildId: string, tags: string): az_pipelines_build_tag_add_command_builder {
-        return new az_pipelines_build_tag_add_command_builder("az pipelines build tag add", buildId, tags);
+        return new az_pipelines_build_tag_add_command_builder("az pipelines build tag add", 'az_pipelines_build_tag_add_command_result', buildId, tags);
     }
 
     /**
@@ -180,7 +180,7 @@ export class az_pipelines_build_tag {
      * @param {string} tag Tag to be deleted from the build.
      */
     static delete(buildId: string, tag: string): az_pipelines_build_tag_delete_command_builder {
-        return new az_pipelines_build_tag_delete_command_builder("az pipelines build tag delete", buildId, tag);
+        return new az_pipelines_build_tag_delete_command_builder("az pipelines build tag delete", 'az_pipelines_build_tag_delete_command_result', buildId, tag);
     }
 
     /**
@@ -199,7 +199,7 @@ export class az_pipelines_build_tag {
      * @param {string} buildId ID of the build.
      */
     static list(buildId: string): az_pipelines_build_tag_list_command_builder {
-        return new az_pipelines_build_tag_list_command_builder("az pipelines build tag list", buildId);
+        return new az_pipelines_build_tag_list_command_builder("az pipelines build tag list", 'az_pipelines_build_tag_list_command_result', buildId);
     }
 }
 
@@ -226,7 +226,7 @@ export class az_pipelines_build {
      * ```
      */
     static list(): az_pipelines_build_list_command_builder {
-        return new az_pipelines_build_list_command_builder("az pipelines build list");
+        return new az_pipelines_build_list_command_builder("az pipelines build list", 'az_pipelines_build_list_command_result');
     }
 
     /**
@@ -248,7 +248,7 @@ export class az_pipelines_build {
      * ```
      */
     static queue(): az_pipelines_build_queue_command_builder {
-        return new az_pipelines_build_queue_command_builder("az pipelines build queue");
+        return new az_pipelines_build_queue_command_builder("az pipelines build queue", 'az_pipelines_build_queue_command_result');
     }
 
     /**
@@ -268,7 +268,7 @@ export class az_pipelines_build {
      * @param {string} id ID of the build.
      */
     static show(id: string): az_pipelines_build_show_command_builder {
-        return new az_pipelines_build_show_command_builder("az pipelines build show", id);
+        return new az_pipelines_build_show_command_builder("az pipelines build show", 'az_pipelines_build_show_command_result', id);
     }
 }
 
@@ -290,7 +290,7 @@ export class az_pipelines_folder {
      * @param {string} path Full path of the folder.
      */
     static create(path: string): az_pipelines_folder_create_command_builder {
-        return new az_pipelines_folder_create_command_builder("az pipelines folder create", path);
+        return new az_pipelines_folder_create_command_builder("az pipelines folder create", 'az_pipelines_folder_create_command_result', path);
     }
 
     /**
@@ -309,7 +309,7 @@ export class az_pipelines_folder {
      * @param {string} path Full path of the folder.
      */
     static delete(path: string): az_pipelines_folder_delete_command_builder {
-        return new az_pipelines_folder_delete_command_builder("az pipelines folder delete", path);
+        return new az_pipelines_folder_delete_command_builder("az pipelines folder delete", 'az_pipelines_folder_delete_command_result', path);
     }
 
     /**
@@ -327,7 +327,7 @@ export class az_pipelines_folder {
      * ```
      */
     static list(): az_pipelines_folder_list_command_builder {
-        return new az_pipelines_folder_list_command_builder("az pipelines folder list");
+        return new az_pipelines_folder_list_command_builder("az pipelines folder list", 'az_pipelines_folder_list_command_result');
     }
 
     /**
@@ -347,7 +347,7 @@ export class az_pipelines_folder {
      * @param {string} path Full path of the folder.
      */
     static update(path: string): az_pipelines_folder_update_command_builder {
-        return new az_pipelines_folder_update_command_builder("az pipelines folder update", path);
+        return new az_pipelines_folder_update_command_builder("az pipelines folder update", 'az_pipelines_folder_update_command_result', path);
     }
 }
 
@@ -368,7 +368,7 @@ export class az_pipelines_pool {
      * ```
      */
     static list(): az_pipelines_pool_list_command_builder {
-        return new az_pipelines_pool_list_command_builder("az pipelines pool list");
+        return new az_pipelines_pool_list_command_builder("az pipelines pool list", 'az_pipelines_pool_list_command_result');
     }
 
     /**
@@ -387,7 +387,7 @@ export class az_pipelines_pool {
      * @param {string} poolId Id of the pool to list the details.
      */
     static show(poolId: string): az_pipelines_pool_show_command_builder {
-        return new az_pipelines_pool_show_command_builder("az pipelines pool show", poolId);
+        return new az_pipelines_pool_show_command_builder("az pipelines pool show", 'az_pipelines_pool_show_command_result', poolId);
     }
 }
 
@@ -408,7 +408,7 @@ export class az_pipelines_queue {
      * ```
      */
     static list(): az_pipelines_queue_list_command_builder {
-        return new az_pipelines_queue_list_command_builder("az pipelines queue list");
+        return new az_pipelines_queue_list_command_builder("az pipelines queue list", 'az_pipelines_queue_list_command_result');
     }
 
     /**
@@ -428,7 +428,7 @@ export class az_pipelines_queue {
      * @param {string} queueId Id of the agent queue to get information about.
      */
     static show(queueId: string): az_pipelines_queue_show_command_builder {
-        return new az_pipelines_queue_show_command_builder("az pipelines queue show", queueId);
+        return new az_pipelines_queue_show_command_builder("az pipelines queue show", 'az_pipelines_queue_show_command_result', queueId);
     }
 }
 
@@ -451,7 +451,7 @@ export class az_pipelines_release_definition {
      * ```
      */
     static list(): az_pipelines_release_definition_list_command_builder {
-        return new az_pipelines_release_definition_list_command_builder("az pipelines release definition list");
+        return new az_pipelines_release_definition_list_command_builder("az pipelines release definition list", 'az_pipelines_release_definition_list_command_result');
     }
 
     /**
@@ -470,7 +470,7 @@ export class az_pipelines_release_definition {
      * ```
      */
     static show(): az_pipelines_release_definition_show_command_builder {
-        return new az_pipelines_release_definition_show_command_builder("az pipelines release definition show");
+        return new az_pipelines_release_definition_show_command_builder("az pipelines release definition show", 'az_pipelines_release_definition_show_command_result');
     }
 }
 
@@ -493,7 +493,7 @@ export class az_pipelines_release {
      * ```
      */
     static create(): az_pipelines_release_create_command_builder {
-        return new az_pipelines_release_create_command_builder("az pipelines release create");
+        return new az_pipelines_release_create_command_builder("az pipelines release create", 'az_pipelines_release_create_command_result');
     }
 
     /**
@@ -513,7 +513,7 @@ export class az_pipelines_release {
      * ```
      */
     static list(): az_pipelines_release_list_command_builder {
-        return new az_pipelines_release_list_command_builder("az pipelines release list");
+        return new az_pipelines_release_list_command_builder("az pipelines release list", 'az_pipelines_release_list_command_result');
     }
 
     /**
@@ -533,7 +533,7 @@ export class az_pipelines_release {
      * @param {string} id ID of the release.
      */
     static show(id: string): az_pipelines_release_show_command_builder {
-        return new az_pipelines_release_show_command_builder("az pipelines release show", id);
+        return new az_pipelines_release_show_command_builder("az pipelines release show", 'az_pipelines_release_show_command_result', id);
     }
 }
 
@@ -558,7 +558,7 @@ export class az_pipelines_runs_artifact {
      * @param {string} runId ID of the run that the artifact is associated to.
      */
     static download(artifactName: string, path: string, runId: string): az_pipelines_runs_artifact_download_command_builder {
-        return new az_pipelines_runs_artifact_download_command_builder("az pipelines runs artifact download", artifactName, path, runId);
+        return new az_pipelines_runs_artifact_download_command_builder("az pipelines runs artifact download", 'az_pipelines_runs_artifact_download_command_result', artifactName, path, runId);
     }
 
     /**
@@ -577,7 +577,7 @@ export class az_pipelines_runs_artifact {
      * @param {string} runId ID of the run that the artifact is associated to.
      */
     static list(runId: string): az_pipelines_runs_artifact_list_command_builder {
-        return new az_pipelines_runs_artifact_list_command_builder("az pipelines runs artifact list", runId);
+        return new az_pipelines_runs_artifact_list_command_builder("az pipelines runs artifact list", 'az_pipelines_runs_artifact_list_command_result', runId);
     }
 
     /**
@@ -599,7 +599,7 @@ export class az_pipelines_runs_artifact {
      * @param {string} runId ID of the run that the artifact is associated to.
      */
     static upload(artifactName: string, path: string, runId: string): az_pipelines_runs_artifact_upload_command_builder {
-        return new az_pipelines_runs_artifact_upload_command_builder("az pipelines runs artifact upload", artifactName, path, runId);
+        return new az_pipelines_runs_artifact_upload_command_builder("az pipelines runs artifact upload", 'az_pipelines_runs_artifact_upload_command_result', artifactName, path, runId);
     }
 }
 
@@ -622,7 +622,7 @@ export class az_pipelines_runs_tag {
      * @param {string} tags Tag(s) to be added to the pipeline run. [Comma seperated values].
      */
     static add(runId: string, tags: string): az_pipelines_runs_tag_add_command_builder {
-        return new az_pipelines_runs_tag_add_command_builder("az pipelines runs tag add", runId, tags);
+        return new az_pipelines_runs_tag_add_command_builder("az pipelines runs tag add", 'az_pipelines_runs_tag_add_command_result', runId, tags);
     }
 
     /**
@@ -642,7 +642,7 @@ export class az_pipelines_runs_tag {
      * @param {string} tag Tag to be deleted from the pipeline run.
      */
     static delete(runId: string, tag: string): az_pipelines_runs_tag_delete_command_builder {
-        return new az_pipelines_runs_tag_delete_command_builder("az pipelines runs tag delete", runId, tag);
+        return new az_pipelines_runs_tag_delete_command_builder("az pipelines runs tag delete", 'az_pipelines_runs_tag_delete_command_result', runId, tag);
     }
 
     /**
@@ -661,7 +661,7 @@ export class az_pipelines_runs_tag {
      * @param {string} runId ID of the  pipeline run.
      */
     static list(runId: string): az_pipelines_runs_tag_list_command_builder {
-        return new az_pipelines_runs_tag_list_command_builder("az pipelines runs tag list", runId);
+        return new az_pipelines_runs_tag_list_command_builder("az pipelines runs tag list", 'az_pipelines_runs_tag_list_command_result', runId);
     }
 }
 
@@ -689,7 +689,7 @@ export class az_pipelines_runs {
      * ```
      */
     static list(): az_pipelines_runs_list_command_builder {
-        return new az_pipelines_runs_list_command_builder("az pipelines runs list");
+        return new az_pipelines_runs_list_command_builder("az pipelines runs list", 'az_pipelines_runs_list_command_result');
     }
 
     /**
@@ -709,7 +709,7 @@ export class az_pipelines_runs {
      * @param {string} id ID of the pipeline run.
      */
     static show(id: string): az_pipelines_runs_show_command_builder {
-        return new az_pipelines_runs_show_command_builder("az pipelines runs show", id);
+        return new az_pipelines_runs_show_command_builder("az pipelines runs show", 'az_pipelines_runs_show_command_result', id);
     }
 }
 
@@ -734,7 +734,7 @@ export class az_pipelines_variable_group_variable {
      * @param {string} name Name of the variable.
      */
     static create(groupId: string, name: string): az_pipelines_variable_group_variable_create_command_builder {
-        return new az_pipelines_variable_group_variable_create_command_builder("az pipelines variable-group variable create", groupId, name);
+        return new az_pipelines_variable_group_variable_create_command_builder("az pipelines variable-group variable create", 'az_pipelines_variable_group_variable_create_command_result', groupId, name);
     }
 
     /**
@@ -755,7 +755,7 @@ export class az_pipelines_variable_group_variable {
      * @param {string} name Name of the variable.
      */
     static delete(groupId: string, name: string): az_pipelines_variable_group_variable_delete_command_builder {
-        return new az_pipelines_variable_group_variable_delete_command_builder("az pipelines variable-group variable delete", groupId, name);
+        return new az_pipelines_variable_group_variable_delete_command_builder("az pipelines variable-group variable delete", 'az_pipelines_variable_group_variable_delete_command_result', groupId, name);
     }
 
     /**
@@ -774,7 +774,7 @@ export class az_pipelines_variable_group_variable {
      * @param {string} groupId Id of the variable group.
      */
     static list(groupId: string): az_pipelines_variable_group_variable_list_command_builder {
-        return new az_pipelines_variable_group_variable_list_command_builder("az pipelines variable-group variable list", groupId);
+        return new az_pipelines_variable_group_variable_list_command_builder("az pipelines variable-group variable list", 'az_pipelines_variable_group_variable_list_command_result', groupId);
     }
 
     /**
@@ -798,7 +798,7 @@ export class az_pipelines_variable_group_variable {
      * @param {string} name Name of the variable.
      */
     static update(groupId: string, name: string): az_pipelines_variable_group_variable_update_command_builder {
-        return new az_pipelines_variable_group_variable_update_command_builder("az pipelines variable-group variable update", groupId, name);
+        return new az_pipelines_variable_group_variable_update_command_builder("az pipelines variable-group variable update", 'az_pipelines_variable_group_variable_update_command_result', groupId, name);
     }
 }
 
@@ -823,7 +823,7 @@ export class az_pipelines_variable_group {
      * @param {string} variables Variables in format key=value space separated pairs. Secret variables should be managed using `az pipelines variable-group variable` commands.
      */
     static create(name: string, variables: string): az_pipelines_variable_group_create_command_builder {
-        return new az_pipelines_variable_group_create_command_builder("az pipelines variable-group create", name, variables);
+        return new az_pipelines_variable_group_create_command_builder("az pipelines variable-group create", 'az_pipelines_variable_group_create_command_result', name, variables);
     }
 
     /**
@@ -842,7 +842,7 @@ export class az_pipelines_variable_group {
      * @param {string} groupId Id of the variable group.
      */
     static delete(groupId: string): az_pipelines_variable_group_delete_command_builder {
-        return new az_pipelines_variable_group_delete_command_builder("az pipelines variable-group delete", groupId);
+        return new az_pipelines_variable_group_delete_command_builder("az pipelines variable-group delete", 'az_pipelines_variable_group_delete_command_result', groupId);
     }
 
     /**
@@ -863,7 +863,7 @@ export class az_pipelines_variable_group {
      * ```
      */
     static list(): az_pipelines_variable_group_list_command_builder {
-        return new az_pipelines_variable_group_list_command_builder("az pipelines variable-group list");
+        return new az_pipelines_variable_group_list_command_builder("az pipelines variable-group list", 'az_pipelines_variable_group_list_command_result');
     }
 
     /**
@@ -882,7 +882,7 @@ export class az_pipelines_variable_group {
      * @param {string} groupId ID of the variable group.
      */
     static show(groupId: string): az_pipelines_variable_group_show_command_builder {
-        return new az_pipelines_variable_group_show_command_builder("az pipelines variable-group show", groupId);
+        return new az_pipelines_variable_group_show_command_builder("az pipelines variable-group show", 'az_pipelines_variable_group_show_command_result', groupId);
     }
 
     /**
@@ -903,7 +903,7 @@ export class az_pipelines_variable_group {
      * @param {string} groupId Id of the variable group.
      */
     static update(groupId: string): az_pipelines_variable_group_update_command_builder {
-        return new az_pipelines_variable_group_update_command_builder("az pipelines variable-group update", groupId);
+        return new az_pipelines_variable_group_update_command_builder("az pipelines variable-group update", 'az_pipelines_variable_group_update_command_result', groupId);
     }
 }
 
@@ -929,7 +929,7 @@ export class az_pipelines_variable {
      * @param {string} name Name of the variable.
      */
     static create(name: string): az_pipelines_variable_create_command_builder {
-        return new az_pipelines_variable_create_command_builder("az pipelines variable create", name);
+        return new az_pipelines_variable_create_command_builder("az pipelines variable create", 'az_pipelines_variable_create_command_result', name);
     }
 
     /**
@@ -950,7 +950,7 @@ export class az_pipelines_variable {
      * @param {string} name Name of the variable to delete.
      */
     static delete(name: string): az_pipelines_variable_delete_command_builder {
-        return new az_pipelines_variable_delete_command_builder("az pipelines variable delete", name);
+        return new az_pipelines_variable_delete_command_builder("az pipelines variable delete", 'az_pipelines_variable_delete_command_result', name);
     }
 
     /**
@@ -968,7 +968,7 @@ export class az_pipelines_variable {
      * ```
      */
     static list(): az_pipelines_variable_list_command_builder {
-        return new az_pipelines_variable_list_command_builder("az pipelines variable list");
+        return new az_pipelines_variable_list_command_builder("az pipelines variable list", 'az_pipelines_variable_list_command_result');
     }
 
     /**
@@ -993,7 +993,7 @@ export class az_pipelines_variable {
      * @param {string} name Name of the variable.
      */
     static update(name: string): az_pipelines_variable_update_command_builder {
-        return new az_pipelines_variable_update_command_builder("az pipelines variable update", name);
+        return new az_pipelines_variable_update_command_builder("az pipelines variable update", 'az_pipelines_variable_update_command_result', name);
     }
 }
 
@@ -1023,7 +1023,7 @@ export class az_pipelines {
      * @param {string} name Name of the new pipeline.
      */
     static create(name: string): az_pipelines_create_command_builder {
-        return new az_pipelines_create_command_builder("az pipelines create", name);
+        return new az_pipelines_create_command_builder("az pipelines create", 'az_pipelines_create_command_result', name);
     }
 
     /**
@@ -1042,7 +1042,7 @@ export class az_pipelines {
      * @param {string} id ID of the pipeline.
      */
     static delete(id: string): az_pipelines_delete_command_builder {
-        return new az_pipelines_delete_command_builder("az pipelines delete", id);
+        return new az_pipelines_delete_command_builder("az pipelines delete", 'az_pipelines_delete_command_result', id);
     }
 
     /**
@@ -1064,7 +1064,7 @@ export class az_pipelines {
      * ```
      */
     static list(): az_pipelines_list_command_builder {
-        return new az_pipelines_list_command_builder("az pipelines list");
+        return new az_pipelines_list_command_builder("az pipelines list", 'az_pipelines_list_command_result');
     }
 
     /**
@@ -1086,7 +1086,7 @@ export class az_pipelines {
      * ```
      */
     static run(): az_pipelines_run_command_builder {
-        return new az_pipelines_run_command_builder("az pipelines run");
+        return new az_pipelines_run_command_builder("az pipelines run", 'az_pipelines_run_command_result');
     }
 
     /**
@@ -1106,7 +1106,7 @@ export class az_pipelines {
      * ```
      */
     static show(): az_pipelines_show_command_builder {
-        return new az_pipelines_show_command_builder("az pipelines show");
+        return new az_pipelines_show_command_builder("az pipelines show", 'az_pipelines_show_command_result');
     }
 
     /**
@@ -1129,7 +1129,7 @@ export class az_pipelines {
      * ```
      */
     static update(): az_pipelines_update_command_builder {
-        return new az_pipelines_update_command_builder("az pipelines update");
+        return new az_pipelines_update_command_builder("az pipelines update", 'az_pipelines_update_command_result');
     }
 }
 
@@ -1153,8 +1153,8 @@ export class az_pipelines {
  * @param {string} poolId The agent pool containing the agents.
  */
 class az_pipelines_agent_list_command_builder extends CommandBuilder<az_pipelines_agent_list_command_result> {
-    constructor(commandPath: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.poolId(poolId)
     }
 
@@ -1239,8 +1239,8 @@ class az_pipelines_agent_list_command_builder extends CommandBuilder<az_pipeline
  * @param {string} poolId The agent pool containing the agent.
  */
 class az_pipelines_agent_show_command_builder extends CommandBuilder<az_pipelines_agent_show_command_result> {
-    constructor(commandPath: string, agentId: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, agentId: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.agentId(agentId)
         this.poolId(poolId)
     }
@@ -1317,8 +1317,8 @@ class az_pipelines_agent_show_command_builder extends CommandBuilder<az_pipeline
  * ```
  */
 class az_pipelines_build_definition_list_command_builder extends CommandBuilder<az_pipelines_build_definition_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Automatically detect organization. */
@@ -1392,8 +1392,8 @@ class az_pipelines_build_definition_list_command_builder extends CommandBuilder<
  * ```
  */
 class az_pipelines_build_definition_show_command_builder extends CommandBuilder<az_pipelines_build_definition_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Automatically detect organization. */
@@ -1462,8 +1462,8 @@ class az_pipelines_build_definition_show_command_builder extends CommandBuilder<
  * @param {string} tags Tag(s) to be added to the build. [Comma seperated values].
  */
 class az_pipelines_build_tag_add_command_builder extends CommandBuilder<az_pipelines_build_tag_add_command_result> {
-    constructor(commandPath: string, buildId: string, tags: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, buildId: string, tags: string) {
+        super(commandPath, resultDataTypeName);
         this.buildId(buildId)
         this.tags(tags)
     }
@@ -1522,8 +1522,8 @@ class az_pipelines_build_tag_add_command_builder extends CommandBuilder<az_pipel
  * @param {string} tag Tag to be deleted from the build.
  */
 class az_pipelines_build_tag_delete_command_builder extends CommandBuilder<az_pipelines_build_tag_delete_command_result> {
-    constructor(commandPath: string, buildId: string, tag: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, buildId: string, tag: string) {
+        super(commandPath, resultDataTypeName);
         this.buildId(buildId)
         this.tag(tag)
     }
@@ -1581,8 +1581,8 @@ class az_pipelines_build_tag_delete_command_builder extends CommandBuilder<az_pi
  * @param {string} buildId ID of the build.
  */
 class az_pipelines_build_tag_list_command_builder extends CommandBuilder<az_pipelines_build_tag_list_command_result> {
-    constructor(commandPath: string, buildId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, buildId: string) {
+        super(commandPath, resultDataTypeName);
         this.buildId(buildId)
     }
 
@@ -1644,8 +1644,8 @@ class az_pipelines_build_tag_list_command_builder extends CommandBuilder<az_pipe
  * ```
  */
 class az_pipelines_build_list_command_builder extends CommandBuilder<az_pipelines_build_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Filter by builds for this branch. */
@@ -1746,8 +1746,8 @@ class az_pipelines_build_list_command_builder extends CommandBuilder<az_pipeline
  * ```
  */
 class az_pipelines_build_queue_command_builder extends CommandBuilder<az_pipelines_build_queue_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Branch to build. Required if there is not a default branch set up on the definition. Example: refs/heads/master or master or refs/pull/1/merge. */
@@ -1834,8 +1834,8 @@ class az_pipelines_build_queue_command_builder extends CommandBuilder<az_pipelin
  * @param {string} id ID of the build.
  */
 class az_pipelines_build_show_command_builder extends CommandBuilder<az_pipelines_build_show_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -1898,8 +1898,8 @@ class az_pipelines_build_show_command_builder extends CommandBuilder<az_pipeline
  * @param {string} path Full path of the folder.
  */
 class az_pipelines_folder_create_command_builder extends CommandBuilder<az_pipelines_folder_create_command_result> {
-    constructor(commandPath: string, path: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
     }
 
@@ -1956,8 +1956,8 @@ class az_pipelines_folder_create_command_builder extends CommandBuilder<az_pipel
  * @param {string} path Full path of the folder.
  */
 class az_pipelines_folder_delete_command_builder extends CommandBuilder<az_pipelines_folder_delete_command_result> {
-    constructor(commandPath: string, path: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
     }
 
@@ -2013,8 +2013,8 @@ class az_pipelines_folder_delete_command_builder extends CommandBuilder<az_pipel
  * ```
  */
 class az_pipelines_folder_list_command_builder extends CommandBuilder<az_pipelines_folder_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Automatically detect organization. */
@@ -2077,8 +2077,8 @@ class az_pipelines_folder_list_command_builder extends CommandBuilder<az_pipelin
  * @param {string} path Full path of the folder.
  */
 class az_pipelines_folder_update_command_builder extends CommandBuilder<az_pipelines_folder_update_command_result> {
-    constructor(commandPath: string, path: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, path: string) {
+        super(commandPath, resultDataTypeName);
         this.path(path)
     }
 
@@ -2140,8 +2140,8 @@ class az_pipelines_folder_update_command_builder extends CommandBuilder<az_pipel
  * ```
  */
 class az_pipelines_pool_list_command_builder extends CommandBuilder<az_pipelines_pool_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Filter the list with user action permitted. */
@@ -2203,8 +2203,8 @@ class az_pipelines_pool_list_command_builder extends CommandBuilder<az_pipelines
  * @param {string} poolId Id of the pool to list the details.
  */
 class az_pipelines_pool_show_command_builder extends CommandBuilder<az_pipelines_pool_show_command_result> {
-    constructor(commandPath: string, poolId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, poolId: string) {
+        super(commandPath, resultDataTypeName);
         this.poolId(poolId)
     }
 
@@ -2260,8 +2260,8 @@ class az_pipelines_pool_show_command_builder extends CommandBuilder<az_pipelines
  * ```
  */
 class az_pipelines_queue_list_command_builder extends CommandBuilder<az_pipelines_queue_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Filter by whether the calling user has use or manage permissions. */
@@ -2324,8 +2324,8 @@ class az_pipelines_queue_list_command_builder extends CommandBuilder<az_pipeline
  * @param {string} queueId Id of the agent queue to get information about.
  */
 class az_pipelines_queue_show_command_builder extends CommandBuilder<az_pipelines_queue_show_command_result> {
-    constructor(commandPath: string, queueId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, queueId: string) {
+        super(commandPath, resultDataTypeName);
         this.queueId(queueId)
     }
 
@@ -2389,8 +2389,8 @@ class az_pipelines_queue_show_command_builder extends CommandBuilder<az_pipeline
  * ```
  */
 class az_pipelines_release_definition_list_command_builder extends CommandBuilder<az_pipelines_release_definition_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Limit results to definitions associated with this artifact_source_id. e.g. For build it would be {projectGuid}:{BuildDefinitionId}, for Jenkins it would be {JenkinsConnectionId}:{JenkinsDefinitionId}, for TfsOnPrem it would be {TfsOnPremConnectionId}:{ProjectName}:{TfsOnPremDefinitionId}. For third-party artifacts e.g. TeamCity, BitBucket you may refer 'uniqueSourceIdentifier' inside vss-extension.json at <a href="https://github.com/Microsoft/vsts-rm-extensions/blob/master/Extensions">https://github.com/Microsoft/vsts-rm-extensions/blob/master/Extensions</a>. */
@@ -2464,8 +2464,8 @@ class az_pipelines_release_definition_list_command_builder extends CommandBuilde
  * ```
  */
 class az_pipelines_release_definition_show_command_builder extends CommandBuilder<az_pipelines_release_definition_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Automatically detect organization. */
@@ -2534,8 +2534,8 @@ class az_pipelines_release_definition_show_command_builder extends CommandBuilde
  * ```
  */
 class az_pipelines_release_create_command_builder extends CommandBuilder<az_pipelines_release_create_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Space separated "alias=version_id" pairs. */
@@ -2610,8 +2610,8 @@ class az_pipelines_release_create_command_builder extends CommandBuilder<az_pipe
  * ```
  */
 class az_pipelines_release_list_command_builder extends CommandBuilder<az_pipelines_release_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** ID of definition to list releases for. */
@@ -2686,8 +2686,8 @@ class az_pipelines_release_list_command_builder extends CommandBuilder<az_pipeli
  * @param {string} id ID of the release.
  */
 class az_pipelines_release_show_command_builder extends CommandBuilder<az_pipelines_release_show_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -2753,8 +2753,8 @@ class az_pipelines_release_show_command_builder extends CommandBuilder<az_pipeli
  * @param {string} runId ID of the run that the artifact is associated to.
  */
 class az_pipelines_runs_artifact_download_command_builder extends CommandBuilder<az_pipelines_runs_artifact_download_command_result> {
-    constructor(commandPath: string, artifactName: string, path: string, runId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, artifactName: string, path: string, runId: string) {
+        super(commandPath, resultDataTypeName);
         this.artifactName(artifactName)
         this.path(path)
         this.runId(runId)
@@ -2819,8 +2819,8 @@ class az_pipelines_runs_artifact_download_command_builder extends CommandBuilder
  * @param {string} runId ID of the run that the artifact is associated to.
  */
 class az_pipelines_runs_artifact_list_command_builder extends CommandBuilder<az_pipelines_runs_artifact_list_command_result> {
-    constructor(commandPath: string, runId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, runId: string) {
+        super(commandPath, resultDataTypeName);
         this.runId(runId)
     }
 
@@ -2880,8 +2880,8 @@ class az_pipelines_runs_artifact_list_command_builder extends CommandBuilder<az_
  * @param {string} runId ID of the run that the artifact is associated to.
  */
 class az_pipelines_runs_artifact_upload_command_builder extends CommandBuilder<az_pipelines_runs_artifact_upload_command_result> {
-    constructor(commandPath: string, artifactName: string, path: string, runId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, artifactName: string, path: string, runId: string) {
+        super(commandPath, resultDataTypeName);
         this.artifactName(artifactName)
         this.path(path)
         this.runId(runId)
@@ -2947,8 +2947,8 @@ class az_pipelines_runs_artifact_upload_command_builder extends CommandBuilder<a
  * @param {string} tags Tag(s) to be added to the pipeline run. [Comma seperated values].
  */
 class az_pipelines_runs_tag_add_command_builder extends CommandBuilder<az_pipelines_runs_tag_add_command_result> {
-    constructor(commandPath: string, runId: string, tags: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, runId: string, tags: string) {
+        super(commandPath, resultDataTypeName);
         this.runId(runId)
         this.tags(tags)
     }
@@ -3007,8 +3007,8 @@ class az_pipelines_runs_tag_add_command_builder extends CommandBuilder<az_pipeli
  * @param {string} tag Tag to be deleted from the pipeline run.
  */
 class az_pipelines_runs_tag_delete_command_builder extends CommandBuilder<az_pipelines_runs_tag_delete_command_result> {
-    constructor(commandPath: string, runId: string, tag: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, runId: string, tag: string) {
+        super(commandPath, resultDataTypeName);
         this.runId(runId)
         this.tag(tag)
     }
@@ -3066,8 +3066,8 @@ class az_pipelines_runs_tag_delete_command_builder extends CommandBuilder<az_pip
  * @param {string} runId ID of the  pipeline run.
  */
 class az_pipelines_runs_tag_list_command_builder extends CommandBuilder<az_pipelines_runs_tag_list_command_result> {
-    constructor(commandPath: string, runId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, runId: string) {
+        super(commandPath, resultDataTypeName);
         this.runId(runId)
     }
 
@@ -3130,8 +3130,8 @@ class az_pipelines_runs_tag_list_command_builder extends CommandBuilder<az_pipel
  * ```
  */
 class az_pipelines_runs_list_command_builder extends CommandBuilder<az_pipelines_runs_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Filter by builds for this branch. */
@@ -3236,8 +3236,8 @@ class az_pipelines_runs_list_command_builder extends CommandBuilder<az_pipelines
  * @param {string} id ID of the pipeline run.
  */
 class az_pipelines_runs_show_command_builder extends CommandBuilder<az_pipelines_runs_show_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -3303,8 +3303,8 @@ class az_pipelines_runs_show_command_builder extends CommandBuilder<az_pipelines
  * @param {string} name Name of the variable.
  */
 class az_pipelines_variable_group_variable_create_command_builder extends CommandBuilder<az_pipelines_variable_group_variable_create_command_result> {
-    constructor(commandPath: string, groupId: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, groupId: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.groupId(groupId)
         this.name(name)
     }
@@ -3376,8 +3376,8 @@ class az_pipelines_variable_group_variable_create_command_builder extends Comman
  * @param {string} name Name of the variable.
  */
 class az_pipelines_variable_group_variable_delete_command_builder extends CommandBuilder<az_pipelines_variable_group_variable_delete_command_result> {
-    constructor(commandPath: string, groupId: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, groupId: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.groupId(groupId)
         this.name(name)
     }
@@ -3441,8 +3441,8 @@ class az_pipelines_variable_group_variable_delete_command_builder extends Comman
  * @param {string} groupId Id of the variable group.
  */
 class az_pipelines_variable_group_variable_list_command_builder extends CommandBuilder<az_pipelines_variable_group_variable_list_command_result> {
-    constructor(commandPath: string, groupId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, groupId: string) {
+        super(commandPath, resultDataTypeName);
         this.groupId(groupId)
     }
 
@@ -3504,8 +3504,8 @@ class az_pipelines_variable_group_variable_list_command_builder extends CommandB
  * @param {string} name Name of the variable.
  */
 class az_pipelines_variable_group_variable_update_command_builder extends CommandBuilder<az_pipelines_variable_group_variable_update_command_result> {
-    constructor(commandPath: string, groupId: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, groupId: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.groupId(groupId)
         this.name(name)
     }
@@ -3590,8 +3590,8 @@ class az_pipelines_variable_group_variable_update_command_builder extends Comman
  * @param {string} variables Variables in format key=value space separated pairs. Secret variables should be managed using `az pipelines variable-group variable` commands.
  */
 class az_pipelines_variable_group_create_command_builder extends CommandBuilder<az_pipelines_variable_group_create_command_result> {
-    constructor(commandPath: string, name: string, variables: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, variables: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.variables(variables)
     }
@@ -3661,8 +3661,8 @@ class az_pipelines_variable_group_create_command_builder extends CommandBuilder<
  * @param {string} groupId Id of the variable group.
  */
 class az_pipelines_variable_group_delete_command_builder extends CommandBuilder<az_pipelines_variable_group_delete_command_result> {
-    constructor(commandPath: string, groupId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, groupId: string) {
+        super(commandPath, resultDataTypeName);
         this.groupId(groupId)
     }
 
@@ -3721,8 +3721,8 @@ class az_pipelines_variable_group_delete_command_builder extends CommandBuilder<
  * ```
  */
 class az_pipelines_variable_group_list_command_builder extends CommandBuilder<az_pipelines_variable_group_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Action filter for the variable group. It specifies the action which can be performed on the variable groups. */
@@ -3802,8 +3802,8 @@ class az_pipelines_variable_group_list_command_builder extends CommandBuilder<az
  * @param {string} groupId ID of the variable group.
  */
 class az_pipelines_variable_group_show_command_builder extends CommandBuilder<az_pipelines_variable_group_show_command_result> {
-    constructor(commandPath: string, groupId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, groupId: string) {
+        super(commandPath, resultDataTypeName);
         this.groupId(groupId)
     }
 
@@ -3862,8 +3862,8 @@ class az_pipelines_variable_group_show_command_builder extends CommandBuilder<az
  * @param {string} groupId Id of the variable group.
  */
 class az_pipelines_variable_group_update_command_builder extends CommandBuilder<az_pipelines_variable_group_update_command_result> {
-    constructor(commandPath: string, groupId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, groupId: string) {
+        super(commandPath, resultDataTypeName);
         this.groupId(groupId)
     }
 
@@ -3936,8 +3936,8 @@ class az_pipelines_variable_group_update_command_builder extends CommandBuilder<
  * @param {string} name Name of the variable.
  */
 class az_pipelines_variable_create_command_builder extends CommandBuilder<az_pipelines_variable_create_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -4020,8 +4020,8 @@ class az_pipelines_variable_create_command_builder extends CommandBuilder<az_pip
  * @param {string} name Name of the variable to delete.
  */
 class az_pipelines_variable_delete_command_builder extends CommandBuilder<az_pipelines_variable_delete_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -4089,8 +4089,8 @@ class az_pipelines_variable_delete_command_builder extends CommandBuilder<az_pip
  * ```
  */
 class az_pipelines_variable_list_command_builder extends CommandBuilder<az_pipelines_variable_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Automatically detect organization. */
@@ -4158,8 +4158,8 @@ class az_pipelines_variable_list_command_builder extends CommandBuilder<az_pipel
  * @param {string} name Name of the variable.
  */
 class az_pipelines_variable_update_command_builder extends CommandBuilder<az_pipelines_variable_update_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -4260,8 +4260,8 @@ class az_pipelines_variable_update_command_builder extends CommandBuilder<az_pip
  * @param {string} name Name of the new pipeline.
  */
 class az_pipelines_create_command_builder extends CommandBuilder<az_pipelines_create_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -4366,8 +4366,8 @@ class az_pipelines_create_command_builder extends CommandBuilder<az_pipelines_cr
  * @param {string} id ID of the pipeline.
  */
 class az_pipelines_delete_command_builder extends CommandBuilder<az_pipelines_delete_command_result> {
-    constructor(commandPath: string, id: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, id: string) {
+        super(commandPath, resultDataTypeName);
         this.id(id)
     }
 
@@ -4427,8 +4427,8 @@ class az_pipelines_delete_command_builder extends CommandBuilder<az_pipelines_de
  * ```
  */
 class az_pipelines_list_command_builder extends CommandBuilder<az_pipelines_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Automatically detect organization. */
@@ -4517,8 +4517,8 @@ class az_pipelines_list_command_builder extends CommandBuilder<az_pipelines_list
  * ```
  */
 class az_pipelines_run_command_builder extends CommandBuilder<az_pipelines_run_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the branch on which the pipeline run is to be queued. Example: refs/heads/master or master or refs/pull/1/merge. */
@@ -4605,8 +4605,8 @@ class az_pipelines_run_command_builder extends CommandBuilder<az_pipelines_run_c
  * ```
  */
 class az_pipelines_show_command_builder extends CommandBuilder<az_pipelines_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Automatically detect organization. */
@@ -4684,8 +4684,8 @@ class az_pipelines_show_command_builder extends CommandBuilder<az_pipelines_show
  * ```
  */
 class az_pipelines_update_command_builder extends CommandBuilder<az_pipelines_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Branch name for which the pipeline will be configured. */

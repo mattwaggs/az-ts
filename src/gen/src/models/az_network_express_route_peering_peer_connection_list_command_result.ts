@@ -1,1 +1,1 @@
-export type az_network_express_route_peering_peer_connection_list_command_result = Record<string, unknown>
+export type az_network_express_route_peering_peer_connection_list_command_result = Record<string, any>

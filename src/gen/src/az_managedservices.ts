@@ -24,7 +24,7 @@ export class az_managedservices_assignment {
      * @param {string} definition The fully qualified resource id of the registration definition.
      */
     static create(definition: string): az_managedservices_assignment_create_command_builder {
-        return new az_managedservices_assignment_create_command_builder("az managedservices assignment create", definition);
+        return new az_managedservices_assignment_create_command_builder("az managedservices assignment create", 'az_managedservices_assignment_create_command_result', definition);
     }
 
     /**
@@ -40,7 +40,7 @@ export class az_managedservices_assignment {
      * @param {string} assignment The identifier (guid) or the fully qualified resource id of the registration assignment. When resource id is used, subscription id and resource group parameters are ignored.
      */
     static delete(assignment: string): az_managedservices_assignment_delete_command_builder {
-        return new az_managedservices_assignment_delete_command_builder("az managedservices assignment delete", assignment);
+        return new az_managedservices_assignment_delete_command_builder("az managedservices assignment delete", 'az_managedservices_assignment_delete_command_result', assignment);
     }
 
     /**
@@ -55,7 +55,7 @@ export class az_managedservices_assignment {
      * ```
      */
     static list(): az_managedservices_assignment_list_command_builder {
-        return new az_managedservices_assignment_list_command_builder("az managedservices assignment list");
+        return new az_managedservices_assignment_list_command_builder("az managedservices assignment list", 'az_managedservices_assignment_list_command_result');
     }
 
     /**
@@ -73,7 +73,7 @@ export class az_managedservices_assignment {
      * @param {string} assignment The identifier (guid) or the fully qualified resource id of the registration assignment. When resource id is used, subscription id and resource group parameters are ignored.
      */
     static show(assignment: string): az_managedservices_assignment_show_command_builder {
-        return new az_managedservices_assignment_show_command_builder("az managedservices assignment show", assignment);
+        return new az_managedservices_assignment_show_command_builder("az managedservices assignment show", 'az_managedservices_assignment_show_command_result', assignment);
     }
 }
 
@@ -103,7 +103,7 @@ export class az_managedservices_definition {
      * @param {string} tenantId The managed by tenant id.
      */
     static create(name: string, principalId: string, roleDefinitionId: string, tenantId: string): az_managedservices_definition_create_command_builder {
-        return new az_managedservices_definition_create_command_builder("az managedservices definition create", name, principalId, roleDefinitionId, tenantId);
+        return new az_managedservices_definition_create_command_builder("az managedservices definition create", 'az_managedservices_definition_create_command_result', name, principalId, roleDefinitionId, tenantId);
     }
 
     /**
@@ -118,7 +118,7 @@ export class az_managedservices_definition {
      * @param {string} definition The identifier (guid) or the fully qualified resource id of the registration definition. When resource id is used, subscription id and resource group parameters are ignored.
      */
     static delete(definition: string): az_managedservices_definition_delete_command_builder {
-        return new az_managedservices_definition_delete_command_builder("az managedservices definition delete", definition);
+        return new az_managedservices_definition_delete_command_builder("az managedservices definition delete", 'az_managedservices_definition_delete_command_result', definition);
     }
 
     /**
@@ -131,7 +131,7 @@ export class az_managedservices_definition {
      * ```
      */
     static list(): az_managedservices_definition_list_command_builder {
-        return new az_managedservices_definition_list_command_builder("az managedservices definition list");
+        return new az_managedservices_definition_list_command_builder("az managedservices definition list", 'az_managedservices_definition_list_command_result');
     }
 
     /**
@@ -147,7 +147,7 @@ export class az_managedservices_definition {
      * @param {string} definition The identifier (guid) or the fully qualified resource id of the registration definition. When resource id is used, subscription id and resource group parameters are ignored.
      */
     static show(definition: string): az_managedservices_definition_show_command_builder {
-        return new az_managedservices_definition_show_command_builder("az managedservices definition show", definition);
+        return new az_managedservices_definition_show_command_builder("az managedservices definition show", 'az_managedservices_definition_show_command_result', definition);
     }
 }
 
@@ -169,8 +169,8 @@ export class az_managedservices {
  * @param {string} definition The fully qualified resource id of the registration definition.
  */
 class az_managedservices_assignment_create_command_builder extends CommandBuilder<az_managedservices_assignment_create_command_result> {
-    constructor(commandPath: string, definition: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, definition: string) {
+        super(commandPath, resultDataTypeName);
         this.definition(definition)
     }
 
@@ -212,8 +212,8 @@ class az_managedservices_assignment_create_command_builder extends CommandBuilde
  * @param {string} assignment The identifier (guid) or the fully qualified resource id of the registration assignment. When resource id is used, subscription id and resource group parameters are ignored.
  */
 class az_managedservices_assignment_delete_command_builder extends CommandBuilder<az_managedservices_assignment_delete_command_result> {
-    constructor(commandPath: string, assignment: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, assignment: string) {
+        super(commandPath, resultDataTypeName);
         this.assignment(assignment)
     }
 
@@ -248,8 +248,8 @@ class az_managedservices_assignment_delete_command_builder extends CommandBuilde
  * ```
  */
 class az_managedservices_assignment_list_command_builder extends CommandBuilder<az_managedservices_assignment_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** When provided, gets the associated registration definition details. */
@@ -292,8 +292,8 @@ class az_managedservices_assignment_list_command_builder extends CommandBuilder<
  * @param {string} assignment The identifier (guid) or the fully qualified resource id of the registration assignment. When resource id is used, subscription id and resource group parameters are ignored.
  */
 class az_managedservices_assignment_show_command_builder extends CommandBuilder<az_managedservices_assignment_show_command_result> {
-    constructor(commandPath: string, assignment: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, assignment: string) {
+        super(commandPath, resultDataTypeName);
         this.assignment(assignment)
     }
 
@@ -352,8 +352,8 @@ class az_managedservices_assignment_show_command_builder extends CommandBuilder<
  * @param {string} tenantId The managed by tenant id.
  */
 class az_managedservices_definition_create_command_builder extends CommandBuilder<az_managedservices_definition_create_command_result> {
-    constructor(commandPath: string, name: string, principalId: string, roleDefinitionId: string, tenantId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, principalId: string, roleDefinitionId: string, tenantId: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.principalId(principalId)
         this.roleDefinitionId(roleDefinitionId)
@@ -439,8 +439,8 @@ class az_managedservices_definition_create_command_builder extends CommandBuilde
  * @param {string} definition The identifier (guid) or the fully qualified resource id of the registration definition. When resource id is used, subscription id and resource group parameters are ignored.
  */
 class az_managedservices_definition_delete_command_builder extends CommandBuilder<az_managedservices_definition_delete_command_result> {
-    constructor(commandPath: string, definition: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, definition: string) {
+        super(commandPath, resultDataTypeName);
         this.definition(definition)
     }
 
@@ -467,8 +467,8 @@ class az_managedservices_definition_delete_command_builder extends CommandBuilde
  * ```
  */
 class az_managedservices_definition_list_command_builder extends CommandBuilder<az_managedservices_definition_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -497,8 +497,8 @@ class az_managedservices_definition_list_command_builder extends CommandBuilder<
  * @param {string} definition The identifier (guid) or the fully qualified resource id of the registration definition. When resource id is used, subscription id and resource group parameters are ignored.
  */
 class az_managedservices_definition_show_command_builder extends CommandBuilder<az_managedservices_definition_show_command_result> {
-    constructor(commandPath: string, definition: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, definition: string) {
+        super(commandPath, resultDataTypeName);
         this.definition(definition)
     }
 

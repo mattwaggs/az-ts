@@ -37,7 +37,7 @@ export class az_managedapp_definition {
      * @param {string} resourceGroup The resource group of the managed application definition.
      */
     static create(authorizations: string, description: string, displayName: string, lockLevel: 'CanNotDelete' | 'None' | 'ReadOnly', name: string, resourceGroup: string): az_managedapp_definition_create_command_builder {
-        return new az_managedapp_definition_create_command_builder("az managedapp definition create", authorizations, description, displayName, lockLevel, name, resourceGroup);
+        return new az_managedapp_definition_create_command_builder("az managedapp definition create", 'az_managedapp_definition_create_command_result', authorizations, description, displayName, lockLevel, name, resourceGroup);
     }
 
     /**
@@ -52,7 +52,7 @@ export class az_managedapp_definition {
      * ```
      */
     static delete(): az_managedapp_definition_delete_command_builder {
-        return new az_managedapp_definition_delete_command_builder("az managedapp definition delete");
+        return new az_managedapp_definition_delete_command_builder("az managedapp definition delete", 'az_managedapp_definition_delete_command_result');
     }
 
     /**
@@ -68,7 +68,7 @@ export class az_managedapp_definition {
      * @param {string} resourceGroup The resource group of the managed application definition.
      */
     static list(resourceGroup: string): az_managedapp_definition_list_command_builder {
-        return new az_managedapp_definition_list_command_builder("az managedapp definition list", resourceGroup);
+        return new az_managedapp_definition_list_command_builder("az managedapp definition list", 'az_managedapp_definition_list_command_result', resourceGroup);
     }
 
     /**
@@ -84,7 +84,7 @@ export class az_managedapp_definition {
      * ```
      */
     static show(): az_managedapp_definition_show_command_builder {
-        return new az_managedapp_definition_show_command_builder("az managedapp definition show");
+        return new az_managedapp_definition_show_command_builder("az managedapp definition show", 'az_managedapp_definition_show_command_result');
     }
 }
 
@@ -116,7 +116,7 @@ export class az_managedapp {
      * @param {string} resourceGroup The resource group of the managed application.
      */
     static create(kind: string, managedRgId: string, name: string, resourceGroup: string): az_managedapp_create_command_builder {
-        return new az_managedapp_create_command_builder("az managedapp create", kind, managedRgId, name, resourceGroup);
+        return new az_managedapp_create_command_builder("az managedapp create", 'az_managedapp_create_command_result', kind, managedRgId, name, resourceGroup);
     }
 
     /**
@@ -131,7 +131,7 @@ export class az_managedapp {
      * ```
      */
     static delete(): az_managedapp_delete_command_builder {
-        return new az_managedapp_delete_command_builder("az managedapp delete");
+        return new az_managedapp_delete_command_builder("az managedapp delete", 'az_managedapp_delete_command_result');
     }
 
     /**
@@ -145,7 +145,7 @@ export class az_managedapp {
      * ```
      */
     static list(): az_managedapp_list_command_builder {
-        return new az_managedapp_list_command_builder("az managedapp list");
+        return new az_managedapp_list_command_builder("az managedapp list", 'az_managedapp_list_command_result');
     }
 
     /**
@@ -161,7 +161,7 @@ export class az_managedapp {
      * ```
      */
     static show(): az_managedapp_show_command_builder {
-        return new az_managedapp_show_command_builder("az managedapp show");
+        return new az_managedapp_show_command_builder("az managedapp show", 'az_managedapp_show_command_result');
     }
 }
 
@@ -192,8 +192,8 @@ export class az_managedapp {
  * @param {string} resourceGroup The resource group of the managed application definition.
  */
 class az_managedapp_definition_create_command_builder extends CommandBuilder<az_managedapp_definition_create_command_result> {
-    constructor(commandPath: string, authorizations: string, description: string, displayName: string, lockLevel: 'CanNotDelete' | 'None' | 'ReadOnly', name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, authorizations: string, description: string, displayName: string, lockLevel: 'CanNotDelete' | 'None' | 'ReadOnly', name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.authorizations(authorizations)
         this.description(description)
         this.displayName(displayName)
@@ -287,8 +287,8 @@ class az_managedapp_definition_create_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_managedapp_definition_delete_command_builder extends CommandBuilder<az_managedapp_definition_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -329,8 +329,8 @@ class az_managedapp_definition_delete_command_builder extends CommandBuilder<az_
  * @param {string} resourceGroup The resource group of the managed application definition.
  */
 class az_managedapp_definition_list_command_builder extends CommandBuilder<az_managedapp_definition_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -366,8 +366,8 @@ class az_managedapp_definition_list_command_builder extends CommandBuilder<az_ma
  * ```
  */
 class az_managedapp_definition_show_command_builder extends CommandBuilder<az_managedapp_definition_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -427,8 +427,8 @@ class az_managedapp_definition_show_command_builder extends CommandBuilder<az_ma
  * @param {string} resourceGroup The resource group of the managed application.
  */
 class az_managedapp_create_command_builder extends CommandBuilder<az_managedapp_create_command_result> {
-    constructor(commandPath: string, kind: string, managedRgId: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, kind: string, managedRgId: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.kind(kind)
         this.managedRgId(managedRgId)
         this.name(name)
@@ -526,8 +526,8 @@ class az_managedapp_create_command_builder extends CommandBuilder<az_managedapp_
  * ```
  */
 class az_managedapp_delete_command_builder extends CommandBuilder<az_managedapp_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -566,8 +566,8 @@ class az_managedapp_delete_command_builder extends CommandBuilder<az_managedapp_
  * ```
  */
 class az_managedapp_list_command_builder extends CommandBuilder<az_managedapp_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -602,8 +602,8 @@ class az_managedapp_list_command_builder extends CommandBuilder<az_managedapp_li
  * ```
  */
 class az_managedapp_show_command_builder extends CommandBuilder<az_managedapp_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */

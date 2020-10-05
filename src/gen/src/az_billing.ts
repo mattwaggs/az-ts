@@ -18,7 +18,7 @@ export class az_billing_enrollment_account {
      * ```
      */
     static list(): az_billing_enrollment_account_list_command_builder {
-        return new az_billing_enrollment_account_list_command_builder("az billing enrollment-account list");
+        return new az_billing_enrollment_account_list_command_builder("az billing enrollment-account list", 'az_billing_enrollment_account_list_command_result');
     }
 
     /**
@@ -34,7 +34,7 @@ export class az_billing_enrollment_account {
      * @param {string} name Name of the enrollment account.
      */
     static show(name: string): az_billing_enrollment_account_show_command_builder {
-        return new az_billing_enrollment_account_show_command_builder("az billing enrollment-account show", name);
+        return new az_billing_enrollment_account_show_command_builder("az billing enrollment-account show", 'az_billing_enrollment_account_show_command_result', name);
     }
 }
 
@@ -51,7 +51,7 @@ export class az_billing_invoice {
      * ```
      */
     static list(): az_billing_invoice_list_command_builder {
-        return new az_billing_invoice_list_command_builder("az billing invoice list");
+        return new az_billing_invoice_list_command_builder("az billing invoice list", 'az_billing_invoice_list_command_result');
     }
 
     /**
@@ -65,7 +65,7 @@ export class az_billing_invoice {
      * ```
      */
     static show(): az_billing_invoice_show_command_builder {
-        return new az_billing_invoice_show_command_builder("az billing invoice show");
+        return new az_billing_invoice_show_command_builder("az billing invoice show", 'az_billing_invoice_show_command_result');
     }
 }
 
@@ -84,7 +84,7 @@ export class az_billing_period {
      * ```
      */
     static list(): az_billing_period_list_command_builder {
-        return new az_billing_period_list_command_builder("az billing period list");
+        return new az_billing_period_list_command_builder("az billing period list", 'az_billing_period_list_command_result');
     }
 
     /**
@@ -100,7 +100,7 @@ export class az_billing_period {
      * @param {string} name Name of the billing period.
      */
     static show(name: string): az_billing_period_show_command_builder {
-        return new az_billing_period_show_command_builder("az billing period show", name);
+        return new az_billing_period_show_command_builder("az billing period show", 'az_billing_period_show_command_result', name);
     }
 }
 
@@ -118,8 +118,8 @@ export class az_billing {
  * ```
  */
 class az_billing_enrollment_account_list_command_builder extends CommandBuilder<az_billing_enrollment_account_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -148,8 +148,8 @@ class az_billing_enrollment_account_list_command_builder extends CommandBuilder<
  * @param {string} name Name of the enrollment account.
  */
 class az_billing_enrollment_account_show_command_builder extends CommandBuilder<az_billing_enrollment_account_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -183,8 +183,8 @@ class az_billing_enrollment_account_show_command_builder extends CommandBuilder<
  * ```
  */
 class az_billing_invoice_list_command_builder extends CommandBuilder<az_billing_invoice_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Generate download url of the invoice. */
@@ -217,8 +217,8 @@ class az_billing_invoice_list_command_builder extends CommandBuilder<az_billing_
  * ```
  */
 class az_billing_invoice_show_command_builder extends CommandBuilder<az_billing_invoice_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the invoice. */
@@ -253,8 +253,8 @@ class az_billing_invoice_show_command_builder extends CommandBuilder<az_billing_
  * ```
  */
 class az_billing_period_list_command_builder extends CommandBuilder<az_billing_period_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** May be used to filter billing periods by billingPeriodEndDate. The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. */
@@ -301,8 +301,8 @@ class az_billing_period_list_command_builder extends CommandBuilder<az_billing_p
  * @param {string} name Name of the billing period.
  */
 class az_billing_period_show_command_builder extends CommandBuilder<az_billing_period_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 

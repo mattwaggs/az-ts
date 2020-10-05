@@ -1,1 +1,1 @@
-export type az_servicebus_topic_authorization_rule_create_command_result = Record<string, unknown>
+export type az_servicebus_topic_authorization_rule_create_command_result = Record<string, any>

@@ -1,25 +1,31 @@
 import { options } from "./commands/baseCommand";
-import { Help, Build, BuildMeta, RunFile } from "./commands";
+import { Help, Build, BuildMeta, BuildDataTypes, RunFile } from "./commands";
 import tsNode from "ts-node";
 
-function main() {
+async function main() {
   if (options.help) {
-    return Help.execute(options);
+    return await Help.execute(options);
   }
 
   if (options["build-meta"]) {
-    return BuildMeta.execute(options);
+    return await BuildMeta.execute(options);
+  }
+
+  if (options["build-datatypes"]) {
+    return await BuildDataTypes.execute(options);
   }
 
   if (options.build) {
-    return Build.execute(options);
+    return await Build.execute(options);
   }
 
   if (options.file) {
-    return RunFile.execute(options);
+    return await RunFile.execute(options);
   }
 
-  return Help.execute(options);
+  return await Help.execute(options);
 }
 
-main();
+main().then(() => {
+  console.log();
+});

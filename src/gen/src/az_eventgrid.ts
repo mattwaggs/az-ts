@@ -78,7 +78,7 @@ export class az_eventgrid_domain_key {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, resourceGroup: string): az_eventgrid_domain_key_list_command_builder {
-        return new az_eventgrid_domain_key_list_command_builder("az eventgrid domain key list", name, resourceGroup);
+        return new az_eventgrid_domain_key_list_command_builder("az eventgrid domain key list", 'az_eventgrid_domain_key_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -97,7 +97,7 @@ export class az_eventgrid_domain_key {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static regenerate(keyName: string, name: string, resourceGroup: string): az_eventgrid_domain_key_regenerate_command_builder {
-        return new az_eventgrid_domain_key_regenerate_command_builder("az eventgrid domain key regenerate", keyName, name, resourceGroup);
+        return new az_eventgrid_domain_key_regenerate_command_builder("az eventgrid domain key regenerate", 'az_eventgrid_domain_key_regenerate_command_result', keyName, name, resourceGroup);
     }
 }
 
@@ -119,7 +119,7 @@ export class az_eventgrid_domain_topic {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(domainName: string, name: string, resourceGroup: string): az_eventgrid_domain_topic_create_command_builder {
-        return new az_eventgrid_domain_topic_create_command_builder("az eventgrid domain topic create", domainName, name, resourceGroup);
+        return new az_eventgrid_domain_topic_create_command_builder("az eventgrid domain topic create", 'az_eventgrid_domain_topic_create_command_result', domainName, name, resourceGroup);
     }
 
     /**
@@ -135,7 +135,7 @@ export class az_eventgrid_domain_topic {
      * ```
      */
     static delete(): az_eventgrid_domain_topic_delete_command_builder {
-        return new az_eventgrid_domain_topic_delete_command_builder("az eventgrid domain topic delete");
+        return new az_eventgrid_domain_topic_delete_command_builder("az eventgrid domain topic delete", 'az_eventgrid_domain_topic_delete_command_result');
     }
 
     /**
@@ -154,7 +154,7 @@ export class az_eventgrid_domain_topic {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(domainName: string, resourceGroup: string): az_eventgrid_domain_topic_list_command_builder {
-        return new az_eventgrid_domain_topic_list_command_builder("az eventgrid domain topic list", domainName, resourceGroup);
+        return new az_eventgrid_domain_topic_list_command_builder("az eventgrid domain topic list", 'az_eventgrid_domain_topic_list_command_result', domainName, resourceGroup);
     }
 
     /**
@@ -171,7 +171,7 @@ export class az_eventgrid_domain_topic {
      * ```
      */
     static show(): az_eventgrid_domain_topic_show_command_builder {
-        return new az_eventgrid_domain_topic_show_command_builder("az eventgrid domain topic show");
+        return new az_eventgrid_domain_topic_show_command_builder("az eventgrid domain topic show", 'az_eventgrid_domain_topic_show_command_result');
     }
 }
 
@@ -201,7 +201,7 @@ export class az_eventgrid_domain {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(location: string, name: string, resourceGroup: string): az_eventgrid_domain_create_command_builder {
-        return new az_eventgrid_domain_create_command_builder("az eventgrid domain create", location, name, resourceGroup);
+        return new az_eventgrid_domain_create_command_builder("az eventgrid domain create", 'az_eventgrid_domain_create_command_result', location, name, resourceGroup);
     }
 
     /**
@@ -216,7 +216,7 @@ export class az_eventgrid_domain {
      * ```
      */
     static delete(): az_eventgrid_domain_delete_command_builder {
-        return new az_eventgrid_domain_delete_command_builder("az eventgrid domain delete");
+        return new az_eventgrid_domain_delete_command_builder("az eventgrid domain delete", 'az_eventgrid_domain_delete_command_result');
     }
 
     /**
@@ -231,7 +231,7 @@ export class az_eventgrid_domain {
      * ```
      */
     static list(): az_eventgrid_domain_list_command_builder {
-        return new az_eventgrid_domain_list_command_builder("az eventgrid domain list");
+        return new az_eventgrid_domain_list_command_builder("az eventgrid domain list", 'az_eventgrid_domain_list_command_result');
     }
 
     /**
@@ -247,7 +247,7 @@ export class az_eventgrid_domain {
      * ```
      */
     static show(): az_eventgrid_domain_show_command_builder {
-        return new az_eventgrid_domain_show_command_builder("az eventgrid domain show");
+        return new az_eventgrid_domain_show_command_builder("az eventgrid domain show", 'az_eventgrid_domain_show_command_result');
     }
 
     /**
@@ -267,7 +267,7 @@ export class az_eventgrid_domain {
      * ```
      */
     static update(): az_eventgrid_domain_update_command_builder {
-        return new az_eventgrid_domain_update_command_builder("az eventgrid domain update");
+        return new az_eventgrid_domain_update_command_builder("az eventgrid domain update", 'az_eventgrid_domain_update_command_result');
     }
 }
 
@@ -308,7 +308,7 @@ export class az_eventgrid_event_subscription {
      * @param {string} name Name of the event subscription.
      */
     static create(name: string): az_eventgrid_event_subscription_create_command_builder {
-        return new az_eventgrid_event_subscription_create_command_builder("az eventgrid event-subscription create", name);
+        return new az_eventgrid_event_subscription_create_command_builder("az eventgrid event-subscription create", 'az_eventgrid_event_subscription_create_command_result', name);
     }
 
     /**
@@ -324,7 +324,7 @@ export class az_eventgrid_event_subscription {
      * @param {string} name Name of the event subscription.
      */
     static delete(name: string): az_eventgrid_event_subscription_delete_command_builder {
-        return new az_eventgrid_event_subscription_delete_command_builder("az eventgrid event-subscription delete", name);
+        return new az_eventgrid_event_subscription_delete_command_builder("az eventgrid event-subscription delete", 'az_eventgrid_event_subscription_delete_command_result', name);
     }
 
     /**
@@ -342,7 +342,7 @@ export class az_eventgrid_event_subscription {
      * ```
      */
     static list(): az_eventgrid_event_subscription_list_command_builder {
-        return new az_eventgrid_event_subscription_list_command_builder("az eventgrid event-subscription list");
+        return new az_eventgrid_event_subscription_list_command_builder("az eventgrid event-subscription list", 'az_eventgrid_event_subscription_list_command_result');
     }
 
     /**
@@ -360,7 +360,7 @@ export class az_eventgrid_event_subscription {
      * @param {string} name Name of the event subscription.
      */
     static show(name: string): az_eventgrid_event_subscription_show_command_builder {
-        return new az_eventgrid_event_subscription_show_command_builder("az eventgrid event-subscription show", name);
+        return new az_eventgrid_event_subscription_show_command_builder("az eventgrid event-subscription show", 'az_eventgrid_event_subscription_show_command_result', name);
     }
 
     /**
@@ -393,7 +393,7 @@ export class az_eventgrid_event_subscription {
      * @param {string} name Name of the event subscription.
      */
     static update(name: string): az_eventgrid_event_subscription_update_command_builder {
-        return new az_eventgrid_event_subscription_update_command_builder("az eventgrid event-subscription update", name);
+        return new az_eventgrid_event_subscription_update_command_builder("az eventgrid event-subscription update", 'az_eventgrid_event_subscription_update_command_result', name);
     }
 }
 
@@ -412,7 +412,7 @@ export class az_eventgrid_extension_topic {
      * @param {string} scope The identifier of the resource to which extension topic is queried. The scope can be a subscription, or a resource group, or a top level resource belonging to a resource provider namespace. For example, use '/subscriptions/{subscriptionId}/' for a subscription, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for a resource group, and '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}' for Azure resource.
      */
     static show(scope: string): az_eventgrid_extension_topic_show_command_builder {
-        return new az_eventgrid_extension_topic_show_command_builder("az eventgrid extension-topic show", scope);
+        return new az_eventgrid_extension_topic_show_command_builder("az eventgrid extension-topic show", 'az_eventgrid_extension_topic_show_command_result', scope);
     }
 }
 
@@ -445,7 +445,7 @@ export class az_eventgrid_partner_namespace_event_channel {
      * @param {string} source The identifier of the resource that forms the partner source of the events. This represents a unique resource in the partner's resource model.
      */
     static create(desinationTopicName: string, destinationResourceGroupName: string, destinationSubscriptionId: string, name: string, partnerNamespaceName: string, resourceGroup: string, source: string): az_eventgrid_partner_namespace_event_channel_create_command_builder {
-        return new az_eventgrid_partner_namespace_event_channel_create_command_builder("az eventgrid partner namespace event-channel create", desinationTopicName, destinationResourceGroupName, destinationSubscriptionId, name, partnerNamespaceName, resourceGroup, source);
+        return new az_eventgrid_partner_namespace_event_channel_create_command_builder("az eventgrid partner namespace event-channel create", 'az_eventgrid_partner_namespace_event_channel_create_command_result', desinationTopicName, destinationResourceGroupName, destinationSubscriptionId, name, partnerNamespaceName, resourceGroup, source);
     }
 
     /**
@@ -462,7 +462,7 @@ export class az_eventgrid_partner_namespace_event_channel {
      * ```
      */
     static delete(): az_eventgrid_partner_namespace_event_channel_delete_command_builder {
-        return new az_eventgrid_partner_namespace_event_channel_delete_command_builder("az eventgrid partner namespace event-channel delete");
+        return new az_eventgrid_partner_namespace_event_channel_delete_command_builder("az eventgrid partner namespace event-channel delete", 'az_eventgrid_partner_namespace_event_channel_delete_command_result');
     }
 
     /**
@@ -481,7 +481,7 @@ export class az_eventgrid_partner_namespace_event_channel {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(partnerNamespaceName: string, resourceGroup: string): az_eventgrid_partner_namespace_event_channel_list_command_builder {
-        return new az_eventgrid_partner_namespace_event_channel_list_command_builder("az eventgrid partner namespace event-channel list", partnerNamespaceName, resourceGroup);
+        return new az_eventgrid_partner_namespace_event_channel_list_command_builder("az eventgrid partner namespace event-channel list", 'az_eventgrid_partner_namespace_event_channel_list_command_result', partnerNamespaceName, resourceGroup);
     }
 
     /**
@@ -498,7 +498,7 @@ export class az_eventgrid_partner_namespace_event_channel {
      * ```
      */
     static show(): az_eventgrid_partner_namespace_event_channel_show_command_builder {
-        return new az_eventgrid_partner_namespace_event_channel_show_command_builder("az eventgrid partner namespace event-channel show");
+        return new az_eventgrid_partner_namespace_event_channel_show_command_builder("az eventgrid partner namespace event-channel show", 'az_eventgrid_partner_namespace_event_channel_show_command_result');
     }
 }
 
@@ -519,7 +519,7 @@ export class az_eventgrid_partner_namespace_key {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(partnerNamespaceName: string, resourceGroup: string): az_eventgrid_partner_namespace_key_list_command_builder {
-        return new az_eventgrid_partner_namespace_key_list_command_builder("az eventgrid partner namespace key list", partnerNamespaceName, resourceGroup);
+        return new az_eventgrid_partner_namespace_key_list_command_builder("az eventgrid partner namespace key list", 'az_eventgrid_partner_namespace_key_list_command_result', partnerNamespaceName, resourceGroup);
     }
 
     /**
@@ -538,7 +538,7 @@ export class az_eventgrid_partner_namespace_key {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static regenerate(keyName: string, partnerNamespaceName: string, resourceGroup: string): az_eventgrid_partner_namespace_key_regenerate_command_builder {
-        return new az_eventgrid_partner_namespace_key_regenerate_command_builder("az eventgrid partner namespace key regenerate", keyName, partnerNamespaceName, resourceGroup);
+        return new az_eventgrid_partner_namespace_key_regenerate_command_builder("az eventgrid partner namespace key regenerate", 'az_eventgrid_partner_namespace_key_regenerate_command_result', keyName, partnerNamespaceName, resourceGroup);
     }
 }
 
@@ -563,7 +563,7 @@ export class az_eventgrid_partner_namespace {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(location: string, name: string, partnerRegistrationId: string, resourceGroup: string): az_eventgrid_partner_namespace_create_command_builder {
-        return new az_eventgrid_partner_namespace_create_command_builder("az eventgrid partner namespace create", location, name, partnerRegistrationId, resourceGroup);
+        return new az_eventgrid_partner_namespace_create_command_builder("az eventgrid partner namespace create", 'az_eventgrid_partner_namespace_create_command_result', location, name, partnerRegistrationId, resourceGroup);
     }
 
     /**
@@ -579,7 +579,7 @@ export class az_eventgrid_partner_namespace {
      * ```
      */
     static delete(): az_eventgrid_partner_namespace_delete_command_builder {
-        return new az_eventgrid_partner_namespace_delete_command_builder("az eventgrid partner namespace delete");
+        return new az_eventgrid_partner_namespace_delete_command_builder("az eventgrid partner namespace delete", 'az_eventgrid_partner_namespace_delete_command_result');
     }
 
     /**
@@ -594,7 +594,7 @@ export class az_eventgrid_partner_namespace {
      * ```
      */
     static list(): az_eventgrid_partner_namespace_list_command_builder {
-        return new az_eventgrid_partner_namespace_list_command_builder("az eventgrid partner namespace list");
+        return new az_eventgrid_partner_namespace_list_command_builder("az eventgrid partner namespace list", 'az_eventgrid_partner_namespace_list_command_result');
     }
 
     /**
@@ -610,7 +610,7 @@ export class az_eventgrid_partner_namespace {
      * ```
      */
     static show(): az_eventgrid_partner_namespace_show_command_builder {
-        return new az_eventgrid_partner_namespace_show_command_builder("az eventgrid partner namespace show");
+        return new az_eventgrid_partner_namespace_show_command_builder("az eventgrid partner namespace show", 'az_eventgrid_partner_namespace_show_command_result');
     }
 }
 
@@ -644,7 +644,7 @@ export class az_eventgrid_partner_registration {
      * @param {string} resourceTypeName Name of the partner topic resource type. This name should be unique among all partner topic types names.
      */
     static create(name: string, partnerName: string, resourceGroup: string, resourceTypeName: string): az_eventgrid_partner_registration_create_command_builder {
-        return new az_eventgrid_partner_registration_create_command_builder("az eventgrid partner registration create", name, partnerName, resourceGroup, resourceTypeName);
+        return new az_eventgrid_partner_registration_create_command_builder("az eventgrid partner registration create", 'az_eventgrid_partner_registration_create_command_result', name, partnerName, resourceGroup, resourceTypeName);
     }
 
     /**
@@ -660,7 +660,7 @@ export class az_eventgrid_partner_registration {
      * ```
      */
     static delete(): az_eventgrid_partner_registration_delete_command_builder {
-        return new az_eventgrid_partner_registration_delete_command_builder("az eventgrid partner registration delete");
+        return new az_eventgrid_partner_registration_delete_command_builder("az eventgrid partner registration delete", 'az_eventgrid_partner_registration_delete_command_result');
     }
 
     /**
@@ -675,7 +675,7 @@ export class az_eventgrid_partner_registration {
      * ```
      */
     static list(): az_eventgrid_partner_registration_list_command_builder {
-        return new az_eventgrid_partner_registration_list_command_builder("az eventgrid partner registration list");
+        return new az_eventgrid_partner_registration_list_command_builder("az eventgrid partner registration list", 'az_eventgrid_partner_registration_list_command_result');
     }
 
     /**
@@ -691,7 +691,7 @@ export class az_eventgrid_partner_registration {
      * ```
      */
     static show(): az_eventgrid_partner_registration_show_command_builder {
-        return new az_eventgrid_partner_registration_show_command_builder("az eventgrid partner registration show");
+        return new az_eventgrid_partner_registration_show_command_builder("az eventgrid partner registration show", 'az_eventgrid_partner_registration_show_command_result');
     }
 }
 
@@ -730,7 +730,7 @@ export class az_eventgrid_partner_topic_event_subscription {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(name: string, partnerTopicName: string, resourceGroup: string): az_eventgrid_partner_topic_event_subscription_create_command_builder {
-        return new az_eventgrid_partner_topic_event_subscription_create_command_builder("az eventgrid partner topic event-subscription create", name, partnerTopicName, resourceGroup);
+        return new az_eventgrid_partner_topic_event_subscription_create_command_builder("az eventgrid partner topic event-subscription create", 'az_eventgrid_partner_topic_event_subscription_create_command_result', name, partnerTopicName, resourceGroup);
     }
 
     /**
@@ -750,7 +750,7 @@ export class az_eventgrid_partner_topic_event_subscription {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, partnerTopicName: string, resourceGroup: string): az_eventgrid_partner_topic_event_subscription_delete_command_builder {
-        return new az_eventgrid_partner_topic_event_subscription_delete_command_builder("az eventgrid partner topic event-subscription delete", name, partnerTopicName, resourceGroup);
+        return new az_eventgrid_partner_topic_event_subscription_delete_command_builder("az eventgrid partner topic event-subscription delete", 'az_eventgrid_partner_topic_event_subscription_delete_command_result', name, partnerTopicName, resourceGroup);
     }
 
     /**
@@ -769,7 +769,7 @@ export class az_eventgrid_partner_topic_event_subscription {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(partnerTopicName: string, resourceGroup: string): az_eventgrid_partner_topic_event_subscription_list_command_builder {
-        return new az_eventgrid_partner_topic_event_subscription_list_command_builder("az eventgrid partner topic event-subscription list", partnerTopicName, resourceGroup);
+        return new az_eventgrid_partner_topic_event_subscription_list_command_builder("az eventgrid partner topic event-subscription list", 'az_eventgrid_partner_topic_event_subscription_list_command_result', partnerTopicName, resourceGroup);
     }
 
     /**
@@ -790,7 +790,7 @@ export class az_eventgrid_partner_topic_event_subscription {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, partnerTopicName: string, resourceGroup: string): az_eventgrid_partner_topic_event_subscription_show_command_builder {
-        return new az_eventgrid_partner_topic_event_subscription_show_command_builder("az eventgrid partner topic event-subscription show", name, partnerTopicName, resourceGroup);
+        return new az_eventgrid_partner_topic_event_subscription_show_command_builder("az eventgrid partner topic event-subscription show", 'az_eventgrid_partner_topic_event_subscription_show_command_result', name, partnerTopicName, resourceGroup);
     }
 
     /**
@@ -817,7 +817,7 @@ export class az_eventgrid_partner_topic_event_subscription {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static update(name: string, partnerTopicName: string, resourceGroup: string): az_eventgrid_partner_topic_event_subscription_update_command_builder {
-        return new az_eventgrid_partner_topic_event_subscription_update_command_builder("az eventgrid partner topic event-subscription update", name, partnerTopicName, resourceGroup);
+        return new az_eventgrid_partner_topic_event_subscription_update_command_builder("az eventgrid partner topic event-subscription update", 'az_eventgrid_partner_topic_event_subscription_update_command_result', name, partnerTopicName, resourceGroup);
     }
 }
 
@@ -835,7 +835,7 @@ export class az_eventgrid_partner_topic {
      * ```
      */
     static activate(): az_eventgrid_partner_topic_activate_command_builder {
-        return new az_eventgrid_partner_topic_activate_command_builder("az eventgrid partner topic activate");
+        return new az_eventgrid_partner_topic_activate_command_builder("az eventgrid partner topic activate", 'az_eventgrid_partner_topic_activate_command_result');
     }
 
     /**
@@ -850,7 +850,7 @@ export class az_eventgrid_partner_topic {
      * ```
      */
     static deactivate(): az_eventgrid_partner_topic_deactivate_command_builder {
-        return new az_eventgrid_partner_topic_deactivate_command_builder("az eventgrid partner topic deactivate");
+        return new az_eventgrid_partner_topic_deactivate_command_builder("az eventgrid partner topic deactivate", 'az_eventgrid_partner_topic_deactivate_command_result');
     }
 
     /**
@@ -866,7 +866,7 @@ export class az_eventgrid_partner_topic {
      * ```
      */
     static delete(): az_eventgrid_partner_topic_delete_command_builder {
-        return new az_eventgrid_partner_topic_delete_command_builder("az eventgrid partner topic delete");
+        return new az_eventgrid_partner_topic_delete_command_builder("az eventgrid partner topic delete", 'az_eventgrid_partner_topic_delete_command_result');
     }
 
     /**
@@ -881,7 +881,7 @@ export class az_eventgrid_partner_topic {
      * ```
      */
     static list(): az_eventgrid_partner_topic_list_command_builder {
-        return new az_eventgrid_partner_topic_list_command_builder("az eventgrid partner topic list");
+        return new az_eventgrid_partner_topic_list_command_builder("az eventgrid partner topic list", 'az_eventgrid_partner_topic_list_command_result');
     }
 
     /**
@@ -897,7 +897,7 @@ export class az_eventgrid_partner_topic {
      * ```
      */
     static show(): az_eventgrid_partner_topic_show_command_builder {
-        return new az_eventgrid_partner_topic_show_command_builder("az eventgrid partner topic show");
+        return new az_eventgrid_partner_topic_show_command_builder("az eventgrid partner topic show", 'az_eventgrid_partner_topic_show_command_result');
     }
 }
 
@@ -940,7 +940,7 @@ export class az_eventgrid_system_topic_event_subscription {
      * @param {string} systemTopicName Name of the system topic.
      */
     static create(name: string, resourceGroup: string, systemTopicName: string): az_eventgrid_system_topic_event_subscription_create_command_builder {
-        return new az_eventgrid_system_topic_event_subscription_create_command_builder("az eventgrid system-topic event-subscription create", name, resourceGroup, systemTopicName);
+        return new az_eventgrid_system_topic_event_subscription_create_command_builder("az eventgrid system-topic event-subscription create", 'az_eventgrid_system_topic_event_subscription_create_command_result', name, resourceGroup, systemTopicName);
     }
 
     /**
@@ -960,7 +960,7 @@ export class az_eventgrid_system_topic_event_subscription {
      * @param {string} systemTopicName Name of the system topic.
      */
     static delete(name: string, resourceGroup: string, systemTopicName: string): az_eventgrid_system_topic_event_subscription_delete_command_builder {
-        return new az_eventgrid_system_topic_event_subscription_delete_command_builder("az eventgrid system-topic event-subscription delete", name, resourceGroup, systemTopicName);
+        return new az_eventgrid_system_topic_event_subscription_delete_command_builder("az eventgrid system-topic event-subscription delete", 'az_eventgrid_system_topic_event_subscription_delete_command_result', name, resourceGroup, systemTopicName);
     }
 
     /**
@@ -979,7 +979,7 @@ export class az_eventgrid_system_topic_event_subscription {
      * @param {string} systemTopicName Name of the system topic.
      */
     static list(resourceGroup: string, systemTopicName: string): az_eventgrid_system_topic_event_subscription_list_command_builder {
-        return new az_eventgrid_system_topic_event_subscription_list_command_builder("az eventgrid system-topic event-subscription list", resourceGroup, systemTopicName);
+        return new az_eventgrid_system_topic_event_subscription_list_command_builder("az eventgrid system-topic event-subscription list", 'az_eventgrid_system_topic_event_subscription_list_command_result', resourceGroup, systemTopicName);
     }
 
     /**
@@ -1000,7 +1000,7 @@ export class az_eventgrid_system_topic_event_subscription {
      * @param {string} systemTopicName Name of the system topic.
      */
     static show(name: string, resourceGroup: string, systemTopicName: string): az_eventgrid_system_topic_event_subscription_show_command_builder {
-        return new az_eventgrid_system_topic_event_subscription_show_command_builder("az eventgrid system-topic event-subscription show", name, resourceGroup, systemTopicName);
+        return new az_eventgrid_system_topic_event_subscription_show_command_builder("az eventgrid system-topic event-subscription show", 'az_eventgrid_system_topic_event_subscription_show_command_result', name, resourceGroup, systemTopicName);
     }
 
     /**
@@ -1027,7 +1027,7 @@ export class az_eventgrid_system_topic_event_subscription {
      * @param {string} systemTopicName Name of the system topic.
      */
     static update(name: string, resourceGroup: string, systemTopicName: string): az_eventgrid_system_topic_event_subscription_update_command_builder {
-        return new az_eventgrid_system_topic_event_subscription_update_command_builder("az eventgrid system-topic event-subscription update", name, resourceGroup, systemTopicName);
+        return new az_eventgrid_system_topic_event_subscription_update_command_builder("az eventgrid system-topic event-subscription update", 'az_eventgrid_system_topic_event_subscription_update_command_result', name, resourceGroup, systemTopicName);
     }
 }
 
@@ -1054,7 +1054,7 @@ export class az_eventgrid_system_topic {
      * @param {string} topicType Name of the topic type.
      */
     static create(location: string, name: string, resourceGroup: string, source: string, topicType: string): az_eventgrid_system_topic_create_command_builder {
-        return new az_eventgrid_system_topic_create_command_builder("az eventgrid system-topic create", location, name, resourceGroup, source, topicType);
+        return new az_eventgrid_system_topic_create_command_builder("az eventgrid system-topic create", 'az_eventgrid_system_topic_create_command_result', location, name, resourceGroup, source, topicType);
     }
 
     /**
@@ -1070,7 +1070,7 @@ export class az_eventgrid_system_topic {
      * ```
      */
     static delete(): az_eventgrid_system_topic_delete_command_builder {
-        return new az_eventgrid_system_topic_delete_command_builder("az eventgrid system-topic delete");
+        return new az_eventgrid_system_topic_delete_command_builder("az eventgrid system-topic delete", 'az_eventgrid_system_topic_delete_command_result');
     }
 
     /**
@@ -1085,7 +1085,7 @@ export class az_eventgrid_system_topic {
      * ```
      */
     static list(): az_eventgrid_system_topic_list_command_builder {
-        return new az_eventgrid_system_topic_list_command_builder("az eventgrid system-topic list");
+        return new az_eventgrid_system_topic_list_command_builder("az eventgrid system-topic list", 'az_eventgrid_system_topic_list_command_result');
     }
 
     /**
@@ -1101,7 +1101,7 @@ export class az_eventgrid_system_topic {
      * ```
      */
     static show(): az_eventgrid_system_topic_show_command_builder {
-        return new az_eventgrid_system_topic_show_command_builder("az eventgrid system-topic show");
+        return new az_eventgrid_system_topic_show_command_builder("az eventgrid system-topic show", 'az_eventgrid_system_topic_show_command_result');
     }
 
     /**
@@ -1117,7 +1117,7 @@ export class az_eventgrid_system_topic {
      * ```
      */
     static update(): az_eventgrid_system_topic_update_command_builder {
-        return new az_eventgrid_system_topic_update_command_builder("az eventgrid system-topic update");
+        return new az_eventgrid_system_topic_update_command_builder("az eventgrid system-topic update", 'az_eventgrid_system_topic_update_command_result');
     }
 }
 
@@ -1138,7 +1138,7 @@ export class az_eventgrid_topic_key {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, resourceGroup: string): az_eventgrid_topic_key_list_command_builder {
-        return new az_eventgrid_topic_key_list_command_builder("az eventgrid topic key list", name, resourceGroup);
+        return new az_eventgrid_topic_key_list_command_builder("az eventgrid topic key list", 'az_eventgrid_topic_key_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -1157,7 +1157,7 @@ export class az_eventgrid_topic_key {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static regenerate(keyName: string, name: string, resourceGroup: string): az_eventgrid_topic_key_regenerate_command_builder {
-        return new az_eventgrid_topic_key_regenerate_command_builder("az eventgrid topic key regenerate", keyName, name, resourceGroup);
+        return new az_eventgrid_topic_key_regenerate_command_builder("az eventgrid topic key regenerate", 'az_eventgrid_topic_key_regenerate_command_result', keyName, name, resourceGroup);
     }
 }
 
@@ -1173,7 +1173,7 @@ export class az_eventgrid_topic_type {
      * ```
      */
     static list(): az_eventgrid_topic_type_list_command_builder {
-        return new az_eventgrid_topic_type_list_command_builder("az eventgrid topic-type list");
+        return new az_eventgrid_topic_type_list_command_builder("az eventgrid topic-type list", 'az_eventgrid_topic_type_list_command_result');
     }
 
     /**
@@ -1188,7 +1188,7 @@ export class az_eventgrid_topic_type {
      * @param {string} name Name of the topic type.
      */
     static list_event_types(name: string): az_eventgrid_topic_type_list_event_types_command_builder {
-        return new az_eventgrid_topic_type_list_event_types_command_builder("az eventgrid topic-type list-event-types", name);
+        return new az_eventgrid_topic_type_list_event_types_command_builder("az eventgrid topic-type list-event-types", 'az_eventgrid_topic_type_list_event_types_command_result', name);
     }
 
     /**
@@ -1204,7 +1204,7 @@ export class az_eventgrid_topic_type {
      * @param {string} name Name of the topic type.
      */
     static show(name: string): az_eventgrid_topic_type_show_command_builder {
-        return new az_eventgrid_topic_type_show_command_builder("az eventgrid topic-type show", name);
+        return new az_eventgrid_topic_type_show_command_builder("az eventgrid topic-type show", 'az_eventgrid_topic_type_show_command_result', name);
     }
 }
 
@@ -1234,7 +1234,7 @@ export class az_eventgrid_topic {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(location: string, name: string, resourceGroup: string): az_eventgrid_topic_create_command_builder {
-        return new az_eventgrid_topic_create_command_builder("az eventgrid topic create", location, name, resourceGroup);
+        return new az_eventgrid_topic_create_command_builder("az eventgrid topic create", 'az_eventgrid_topic_create_command_result', location, name, resourceGroup);
     }
 
     /**
@@ -1249,7 +1249,7 @@ export class az_eventgrid_topic {
      * ```
      */
     static delete(): az_eventgrid_topic_delete_command_builder {
-        return new az_eventgrid_topic_delete_command_builder("az eventgrid topic delete");
+        return new az_eventgrid_topic_delete_command_builder("az eventgrid topic delete", 'az_eventgrid_topic_delete_command_result');
     }
 
     /**
@@ -1264,7 +1264,7 @@ export class az_eventgrid_topic {
      * ```
      */
     static list(): az_eventgrid_topic_list_command_builder {
-        return new az_eventgrid_topic_list_command_builder("az eventgrid topic list");
+        return new az_eventgrid_topic_list_command_builder("az eventgrid topic list", 'az_eventgrid_topic_list_command_result');
     }
 
     /**
@@ -1280,7 +1280,7 @@ export class az_eventgrid_topic {
      * ```
      */
     static show(): az_eventgrid_topic_show_command_builder {
-        return new az_eventgrid_topic_show_command_builder("az eventgrid topic show");
+        return new az_eventgrid_topic_show_command_builder("az eventgrid topic show", 'az_eventgrid_topic_show_command_result');
     }
 
     /**
@@ -1300,7 +1300,7 @@ export class az_eventgrid_topic {
      * ```
      */
     static update(): az_eventgrid_topic_update_command_builder {
-        return new az_eventgrid_topic_update_command_builder("az eventgrid topic update");
+        return new az_eventgrid_topic_update_command_builder("az eventgrid topic update", 'az_eventgrid_topic_update_command_result');
     }
 }
 
@@ -1323,8 +1323,8 @@ export class az_eventgrid {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventgrid_domain_key_list_command_builder extends CommandBuilder<az_eventgrid_domain_key_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1370,8 +1370,8 @@ class az_eventgrid_domain_key_list_command_builder extends CommandBuilder<az_eve
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventgrid_domain_key_regenerate_command_builder extends CommandBuilder<az_eventgrid_domain_key_regenerate_command_result> {
-    constructor(commandPath: string, keyName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, keyName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.keyName(keyName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1418,8 +1418,8 @@ class az_eventgrid_domain_key_regenerate_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventgrid_domain_topic_create_command_builder extends CommandBuilder<az_eventgrid_domain_topic_create_command_result> {
-    constructor(commandPath: string, domainName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, domainName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.domainName(domainName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1463,8 +1463,8 @@ class az_eventgrid_domain_topic_create_command_builder extends CommandBuilder<az
  * ```
  */
 class az_eventgrid_domain_topic_delete_command_builder extends CommandBuilder<az_eventgrid_domain_topic_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the domain. */
@@ -1514,8 +1514,8 @@ class az_eventgrid_domain_topic_delete_command_builder extends CommandBuilder<az
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventgrid_domain_topic_list_command_builder extends CommandBuilder<az_eventgrid_domain_topic_list_command_result> {
-    constructor(commandPath: string, domainName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, domainName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.domainName(domainName)
         this.resourceGroup(resourceGroup)
     }
@@ -1565,8 +1565,8 @@ class az_eventgrid_domain_topic_list_command_builder extends CommandBuilder<az_e
  * ```
  */
 class az_eventgrid_domain_topic_show_command_builder extends CommandBuilder<az_eventgrid_domain_topic_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the domain. */
@@ -1630,8 +1630,8 @@ class az_eventgrid_domain_topic_show_command_builder extends CommandBuilder<az_e
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventgrid_domain_create_command_builder extends CommandBuilder<az_eventgrid_domain_create_command_result> {
-    constructor(commandPath: string, location: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -1722,8 +1722,8 @@ class az_eventgrid_domain_create_command_builder extends CommandBuilder<az_event
  * ```
  */
 class az_eventgrid_domain_delete_command_builder extends CommandBuilder<az_eventgrid_domain_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1763,8 +1763,8 @@ class az_eventgrid_domain_delete_command_builder extends CommandBuilder<az_event
  * ```
  */
 class az_eventgrid_domain_list_command_builder extends CommandBuilder<az_eventgrid_domain_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The OData query used for filtering the list results. Filtering is currently allowed on the Name property only. The supported operations include: CONTAINS, eq (for equal), ne (for not equal), AND, OR and NOT. */
@@ -1805,8 +1805,8 @@ class az_eventgrid_domain_list_command_builder extends CommandBuilder<az_eventgr
  * ```
  */
 class az_eventgrid_domain_show_command_builder extends CommandBuilder<az_eventgrid_domain_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -1857,8 +1857,8 @@ class az_eventgrid_domain_show_command_builder extends CommandBuilder<az_eventgr
  * ```
  */
 class az_eventgrid_domain_update_command_builder extends CommandBuilder<az_eventgrid_domain_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The identity type of the resource (e.g., topic or domain). */
@@ -1951,8 +1951,8 @@ class az_eventgrid_domain_update_command_builder extends CommandBuilder<az_event
  * @param {string} name Name of the event subscription.
  */
 class az_eventgrid_event_subscription_create_command_builder extends CommandBuilder<az_eventgrid_event_subscription_create_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -2120,8 +2120,8 @@ class az_eventgrid_event_subscription_create_command_builder extends CommandBuil
  * @param {string} name Name of the event subscription.
  */
 class az_eventgrid_event_subscription_delete_command_builder extends CommandBuilder<az_eventgrid_event_subscription_delete_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -2159,8 +2159,8 @@ class az_eventgrid_event_subscription_delete_command_builder extends CommandBuil
  * ```
  */
 class az_eventgrid_event_subscription_list_command_builder extends CommandBuilder<az_eventgrid_event_subscription_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`. */
@@ -2221,8 +2221,8 @@ class az_eventgrid_event_subscription_list_command_builder extends CommandBuilde
  * @param {string} name Name of the event subscription.
  */
 class az_eventgrid_event_subscription_show_command_builder extends CommandBuilder<az_eventgrid_event_subscription_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -2287,8 +2287,8 @@ class az_eventgrid_event_subscription_show_command_builder extends CommandBuilde
  * @param {string} name Name of the event subscription.
  */
 class az_eventgrid_event_subscription_update_command_builder extends CommandBuilder<az_eventgrid_event_subscription_update_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -2426,8 +2426,8 @@ class az_eventgrid_event_subscription_update_command_builder extends CommandBuil
  * @param {string} scope The identifier of the resource to which extension topic is queried. The scope can be a subscription, or a resource group, or a top level resource belonging to a resource provider namespace. For example, use '/subscriptions/{subscriptionId}/' for a subscription, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for a resource group, and '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}' for Azure resource.
  */
 class az_eventgrid_extension_topic_show_command_builder extends CommandBuilder<az_eventgrid_extension_topic_show_command_result> {
-    constructor(commandPath: string, scope: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, scope: string) {
+        super(commandPath, resultDataTypeName);
         this.scope(scope)
     }
 
@@ -2477,8 +2477,8 @@ class az_eventgrid_extension_topic_show_command_builder extends CommandBuilder<a
  * @param {string} source The identifier of the resource that forms the partner source of the events. This represents a unique resource in the partner's resource model.
  */
 class az_eventgrid_partner_namespace_event_channel_create_command_builder extends CommandBuilder<az_eventgrid_partner_namespace_event_channel_create_command_result> {
-    constructor(commandPath: string, desinationTopicName: string, destinationResourceGroupName: string, destinationSubscriptionId: string, name: string, partnerNamespaceName: string, resourceGroup: string, source: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, desinationTopicName: string, destinationResourceGroupName: string, destinationSubscriptionId: string, name: string, partnerNamespaceName: string, resourceGroup: string, source: string) {
+        super(commandPath, resultDataTypeName);
         this.desinationTopicName(desinationTopicName)
         this.destinationResourceGroupName(destinationResourceGroupName)
         this.destinationSubscriptionId(destinationSubscriptionId)
@@ -2569,8 +2569,8 @@ class az_eventgrid_partner_namespace_event_channel_create_command_builder extend
  * ```
  */
 class az_eventgrid_partner_namespace_event_channel_delete_command_builder extends CommandBuilder<az_eventgrid_partner_namespace_event_channel_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2626,8 +2626,8 @@ class az_eventgrid_partner_namespace_event_channel_delete_command_builder extend
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventgrid_partner_namespace_event_channel_list_command_builder extends CommandBuilder<az_eventgrid_partner_namespace_event_channel_list_command_result> {
-    constructor(commandPath: string, partnerNamespaceName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, partnerNamespaceName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.partnerNamespaceName(partnerNamespaceName)
         this.resourceGroup(resourceGroup)
     }
@@ -2677,8 +2677,8 @@ class az_eventgrid_partner_namespace_event_channel_list_command_builder extends 
  * ```
  */
 class az_eventgrid_partner_namespace_event_channel_show_command_builder extends CommandBuilder<az_eventgrid_partner_namespace_event_channel_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2733,8 +2733,8 @@ class az_eventgrid_partner_namespace_event_channel_show_command_builder extends 
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventgrid_partner_namespace_key_list_command_builder extends CommandBuilder<az_eventgrid_partner_namespace_key_list_command_result> {
-    constructor(commandPath: string, partnerNamespaceName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, partnerNamespaceName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.partnerNamespaceName(partnerNamespaceName)
         this.resourceGroup(resourceGroup)
     }
@@ -2780,8 +2780,8 @@ class az_eventgrid_partner_namespace_key_list_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventgrid_partner_namespace_key_regenerate_command_builder extends CommandBuilder<az_eventgrid_partner_namespace_key_regenerate_command_result> {
-    constructor(commandPath: string, keyName: string, partnerNamespaceName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, keyName: string, partnerNamespaceName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.keyName(keyName)
         this.partnerNamespaceName(partnerNamespaceName)
         this.resourceGroup(resourceGroup)
@@ -2831,8 +2831,8 @@ class az_eventgrid_partner_namespace_key_regenerate_command_builder extends Comm
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventgrid_partner_namespace_create_command_builder extends CommandBuilder<az_eventgrid_partner_namespace_create_command_result> {
-    constructor(commandPath: string, location: string, name: string, partnerRegistrationId: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string, partnerRegistrationId: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
         this.partnerRegistrationId(partnerRegistrationId)
@@ -2889,8 +2889,8 @@ class az_eventgrid_partner_namespace_create_command_builder extends CommandBuild
  * ```
  */
 class az_eventgrid_partner_namespace_delete_command_builder extends CommandBuilder<az_eventgrid_partner_namespace_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2936,8 +2936,8 @@ class az_eventgrid_partner_namespace_delete_command_builder extends CommandBuild
  * ```
  */
 class az_eventgrid_partner_namespace_list_command_builder extends CommandBuilder<az_eventgrid_partner_namespace_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The OData query used for filtering the list results. Filtering is currently allowed on the Name property only. The supported operations include: CONTAINS, eq (for equal), ne (for not equal), AND, OR and NOT. */
@@ -2978,8 +2978,8 @@ class az_eventgrid_partner_namespace_list_command_builder extends CommandBuilder
  * ```
  */
 class az_eventgrid_partner_namespace_show_command_builder extends CommandBuilder<az_eventgrid_partner_namespace_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3041,8 +3041,8 @@ class az_eventgrid_partner_namespace_show_command_builder extends CommandBuilder
  * @param {string} resourceTypeName Name of the partner topic resource type. This name should be unique among all partner topic types names.
  */
 class az_eventgrid_partner_registration_create_command_builder extends CommandBuilder<az_eventgrid_partner_registration_create_command_result> {
-    constructor(commandPath: string, name: string, partnerName: string, resourceGroup: string, resourceTypeName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, partnerName: string, resourceGroup: string, resourceTypeName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.partnerName(partnerName)
         this.resourceGroup(resourceGroup)
@@ -3153,8 +3153,8 @@ class az_eventgrid_partner_registration_create_command_builder extends CommandBu
  * ```
  */
 class az_eventgrid_partner_registration_delete_command_builder extends CommandBuilder<az_eventgrid_partner_registration_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3200,8 +3200,8 @@ class az_eventgrid_partner_registration_delete_command_builder extends CommandBu
  * ```
  */
 class az_eventgrid_partner_registration_list_command_builder extends CommandBuilder<az_eventgrid_partner_registration_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The OData query used for filtering the list results. Filtering is currently allowed on the Name property only. The supported operations include: CONTAINS, eq (for equal), ne (for not equal), AND, OR and NOT. */
@@ -3242,8 +3242,8 @@ class az_eventgrid_partner_registration_list_command_builder extends CommandBuil
  * ```
  */
 class az_eventgrid_partner_registration_show_command_builder extends CommandBuilder<az_eventgrid_partner_registration_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3310,8 +3310,8 @@ class az_eventgrid_partner_registration_show_command_builder extends CommandBuil
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventgrid_partner_topic_event_subscription_create_command_builder extends CommandBuilder<az_eventgrid_partner_topic_event_subscription_create_command_result> {
-    constructor(commandPath: string, name: string, partnerTopicName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, partnerTopicName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.partnerTopicName(partnerTopicName)
         this.resourceGroup(resourceGroup)
@@ -3461,8 +3461,8 @@ class az_eventgrid_partner_topic_event_subscription_create_command_builder exten
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventgrid_partner_topic_event_subscription_delete_command_builder extends CommandBuilder<az_eventgrid_partner_topic_event_subscription_delete_command_result> {
-    constructor(commandPath: string, name: string, partnerTopicName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, partnerTopicName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.partnerTopicName(partnerTopicName)
         this.resourceGroup(resourceGroup)
@@ -3515,8 +3515,8 @@ class az_eventgrid_partner_topic_event_subscription_delete_command_builder exten
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventgrid_partner_topic_event_subscription_list_command_builder extends CommandBuilder<az_eventgrid_partner_topic_event_subscription_list_command_result> {
-    constructor(commandPath: string, partnerTopicName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, partnerTopicName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.partnerTopicName(partnerTopicName)
         this.resourceGroup(resourceGroup)
     }
@@ -3570,8 +3570,8 @@ class az_eventgrid_partner_topic_event_subscription_list_command_builder extends
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventgrid_partner_topic_event_subscription_show_command_builder extends CommandBuilder<az_eventgrid_partner_topic_event_subscription_show_command_result> {
-    constructor(commandPath: string, name: string, partnerTopicName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, partnerTopicName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.partnerTopicName(partnerTopicName)
         this.resourceGroup(resourceGroup)
@@ -3638,8 +3638,8 @@ class az_eventgrid_partner_topic_event_subscription_show_command_builder extends
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventgrid_partner_topic_event_subscription_update_command_builder extends CommandBuilder<az_eventgrid_partner_topic_event_subscription_update_command_result> {
-    constructor(commandPath: string, name: string, partnerTopicName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, partnerTopicName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.partnerTopicName(partnerTopicName)
         this.resourceGroup(resourceGroup)
@@ -3730,8 +3730,8 @@ class az_eventgrid_partner_topic_event_subscription_update_command_builder exten
  * ```
  */
 class az_eventgrid_partner_topic_activate_command_builder extends CommandBuilder<az_eventgrid_partner_topic_activate_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3771,8 +3771,8 @@ class az_eventgrid_partner_topic_activate_command_builder extends CommandBuilder
  * ```
  */
 class az_eventgrid_partner_topic_deactivate_command_builder extends CommandBuilder<az_eventgrid_partner_topic_deactivate_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3813,8 +3813,8 @@ class az_eventgrid_partner_topic_deactivate_command_builder extends CommandBuild
  * ```
  */
 class az_eventgrid_partner_topic_delete_command_builder extends CommandBuilder<az_eventgrid_partner_topic_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3860,8 +3860,8 @@ class az_eventgrid_partner_topic_delete_command_builder extends CommandBuilder<a
  * ```
  */
 class az_eventgrid_partner_topic_list_command_builder extends CommandBuilder<az_eventgrid_partner_topic_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The OData query used for filtering the list results. Filtering is currently allowed on the Name property only. The supported operations include: CONTAINS, eq (for equal), ne (for not equal), AND, OR and NOT. */
@@ -3902,8 +3902,8 @@ class az_eventgrid_partner_topic_list_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_eventgrid_partner_topic_show_command_builder extends CommandBuilder<az_eventgrid_partner_topic_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -3970,8 +3970,8 @@ class az_eventgrid_partner_topic_show_command_builder extends CommandBuilder<az_
  * @param {string} systemTopicName Name of the system topic.
  */
 class az_eventgrid_system_topic_event_subscription_create_command_builder extends CommandBuilder<az_eventgrid_system_topic_event_subscription_create_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, systemTopicName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, systemTopicName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.systemTopicName(systemTopicName)
@@ -4121,8 +4121,8 @@ class az_eventgrid_system_topic_event_subscription_create_command_builder extend
  * @param {string} systemTopicName Name of the system topic.
  */
 class az_eventgrid_system_topic_event_subscription_delete_command_builder extends CommandBuilder<az_eventgrid_system_topic_event_subscription_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, systemTopicName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, systemTopicName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.systemTopicName(systemTopicName)
@@ -4175,8 +4175,8 @@ class az_eventgrid_system_topic_event_subscription_delete_command_builder extend
  * @param {string} systemTopicName Name of the system topic.
  */
 class az_eventgrid_system_topic_event_subscription_list_command_builder extends CommandBuilder<az_eventgrid_system_topic_event_subscription_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string, systemTopicName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, systemTopicName: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
         this.systemTopicName(systemTopicName)
     }
@@ -4230,8 +4230,8 @@ class az_eventgrid_system_topic_event_subscription_list_command_builder extends 
  * @param {string} systemTopicName Name of the system topic.
  */
 class az_eventgrid_system_topic_event_subscription_show_command_builder extends CommandBuilder<az_eventgrid_system_topic_event_subscription_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, systemTopicName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, systemTopicName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.systemTopicName(systemTopicName)
@@ -4298,8 +4298,8 @@ class az_eventgrid_system_topic_event_subscription_show_command_builder extends 
  * @param {string} systemTopicName Name of the system topic.
  */
 class az_eventgrid_system_topic_event_subscription_update_command_builder extends CommandBuilder<az_eventgrid_system_topic_event_subscription_update_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string, systemTopicName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, systemTopicName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
         this.systemTopicName(systemTopicName)
@@ -4399,8 +4399,8 @@ class az_eventgrid_system_topic_event_subscription_update_command_builder extend
  * @param {string} topicType Name of the topic type.
  */
 class az_eventgrid_system_topic_create_command_builder extends CommandBuilder<az_eventgrid_system_topic_create_command_result> {
-    constructor(commandPath: string, location: string, name: string, resourceGroup: string, source: string, topicType: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string, resourceGroup: string, source: string, topicType: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4464,8 +4464,8 @@ class az_eventgrid_system_topic_create_command_builder extends CommandBuilder<az
  * ```
  */
 class az_eventgrid_system_topic_delete_command_builder extends CommandBuilder<az_eventgrid_system_topic_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4511,8 +4511,8 @@ class az_eventgrid_system_topic_delete_command_builder extends CommandBuilder<az
  * ```
  */
 class az_eventgrid_system_topic_list_command_builder extends CommandBuilder<az_eventgrid_system_topic_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The OData query used for filtering the list results. Filtering is currently allowed on the Name property only. The supported operations include: CONTAINS, eq (for equal), ne (for not equal), AND, OR and NOT. */
@@ -4553,8 +4553,8 @@ class az_eventgrid_system_topic_list_command_builder extends CommandBuilder<az_e
  * ```
  */
 class az_eventgrid_system_topic_show_command_builder extends CommandBuilder<az_eventgrid_system_topic_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4601,8 +4601,8 @@ class az_eventgrid_system_topic_show_command_builder extends CommandBuilder<az_e
  * ```
  */
 class az_eventgrid_system_topic_update_command_builder extends CommandBuilder<az_eventgrid_system_topic_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4651,8 +4651,8 @@ class az_eventgrid_system_topic_update_command_builder extends CommandBuilder<az
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventgrid_topic_key_list_command_builder extends CommandBuilder<az_eventgrid_topic_key_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -4698,8 +4698,8 @@ class az_eventgrid_topic_key_list_command_builder extends CommandBuilder<az_even
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventgrid_topic_key_regenerate_command_builder extends CommandBuilder<az_eventgrid_topic_key_regenerate_command_result> {
-    constructor(commandPath: string, keyName: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, keyName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.keyName(keyName)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4740,8 +4740,8 @@ class az_eventgrid_topic_key_regenerate_command_builder extends CommandBuilder<a
  * ```
  */
 class az_eventgrid_topic_type_list_command_builder extends CommandBuilder<az_eventgrid_topic_type_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -4769,8 +4769,8 @@ class az_eventgrid_topic_type_list_command_builder extends CommandBuilder<az_eve
  * @param {string} name Name of the topic type.
  */
 class az_eventgrid_topic_type_list_event_types_command_builder extends CommandBuilder<az_eventgrid_topic_type_list_event_types_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -4800,8 +4800,8 @@ class az_eventgrid_topic_type_list_event_types_command_builder extends CommandBu
  * @param {string} name Name of the topic type.
  */
 class az_eventgrid_topic_type_show_command_builder extends CommandBuilder<az_eventgrid_topic_type_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -4848,8 +4848,8 @@ class az_eventgrid_topic_type_show_command_builder extends CommandBuilder<az_eve
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_eventgrid_topic_create_command_builder extends CommandBuilder<az_eventgrid_topic_create_command_result> {
-    constructor(commandPath: string, location: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.name(name)
         this.resourceGroup(resourceGroup)
@@ -4940,8 +4940,8 @@ class az_eventgrid_topic_create_command_builder extends CommandBuilder<az_eventg
  * ```
  */
 class az_eventgrid_topic_delete_command_builder extends CommandBuilder<az_eventgrid_topic_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4981,8 +4981,8 @@ class az_eventgrid_topic_delete_command_builder extends CommandBuilder<az_eventg
  * ```
  */
 class az_eventgrid_topic_list_command_builder extends CommandBuilder<az_eventgrid_topic_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The OData query used for filtering the list results. Filtering is currently allowed on the Name property only. The supported operations include: CONTAINS, eq (for equal), ne (for not equal), AND, OR and NOT. */
@@ -5023,8 +5023,8 @@ class az_eventgrid_topic_list_command_builder extends CommandBuilder<az_eventgri
  * ```
  */
 class az_eventgrid_topic_show_command_builder extends CommandBuilder<az_eventgrid_topic_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -5075,8 +5075,8 @@ class az_eventgrid_topic_show_command_builder extends CommandBuilder<az_eventgri
  * ```
  */
 class az_eventgrid_topic_update_command_builder extends CommandBuilder<az_eventgrid_topic_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The identity type of the resource (e.g., topic or domain). */

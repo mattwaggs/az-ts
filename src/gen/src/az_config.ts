@@ -22,7 +22,7 @@ export class az_config_param_persist {
      * ```
      */
     static delete(): az_config_param_persist_delete_command_builder {
-        return new az_config_param_persist_delete_command_builder("az config param-persist delete");
+        return new az_config_param_persist_delete_command_builder("az config param-persist delete", 'az_config_param_persist_delete_command_result');
     }
 
     /**
@@ -34,7 +34,7 @@ export class az_config_param_persist {
      * ```
      */
     static off(): az_config_param_persist_off_command_builder {
-        return new az_config_param_persist_off_command_builder("az config param-persist off");
+        return new az_config_param_persist_off_command_builder("az config param-persist off", 'az_config_param_persist_off_command_result');
     }
 
     /**
@@ -46,7 +46,7 @@ export class az_config_param_persist {
      * ```
      */
     static on(): az_config_param_persist_on_command_builder {
-        return new az_config_param_persist_on_command_builder("az config param-persist on");
+        return new az_config_param_persist_on_command_builder("az config param-persist on", 'az_config_param_persist_on_command_result');
     }
 
     /**
@@ -59,7 +59,7 @@ export class az_config_param_persist {
      * ```
      */
     static show(): az_config_param_persist_show_command_builder {
-        return new az_config_param_persist_show_command_builder("az config param-persist show");
+        return new az_config_param_persist_show_command_builder("az config param-persist show", 'az_config_param_persist_show_command_result');
     }
 }
 
@@ -75,7 +75,7 @@ export class az_config {
      * ```
      */
     static get(): az_config_get_command_builder {
-        return new az_config_get_command_builder("az config get");
+        return new az_config_get_command_builder("az config get", 'az_config_get_command_result');
     }
 
     /**
@@ -88,7 +88,7 @@ export class az_config {
      * ```
      */
     static set(): az_config_set_command_builder {
-        return new az_config_set_command_builder("az config set");
+        return new az_config_set_command_builder("az config set", 'az_config_set_command_result');
     }
 
     /**
@@ -101,7 +101,7 @@ export class az_config {
      * ```
      */
     static unset(): az_config_unset_command_builder {
-        return new az_config_unset_command_builder("az config unset");
+        return new az_config_unset_command_builder("az config unset", 'az_config_unset_command_result');
     }
 }
 
@@ -118,8 +118,8 @@ export class az_config {
  * ```
  */
 class az_config_param_persist_delete_command_builder extends CommandBuilder<az_config_param_persist_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Clear all parameter persistence data. Either positional name argument  or --all can be specified. */
@@ -162,8 +162,8 @@ class az_config_param_persist_delete_command_builder extends CommandBuilder<az_c
  * ```
  */
 class az_config_param_persist_off_command_builder extends CommandBuilder<az_config_param_persist_off_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 }
 
@@ -176,8 +176,8 @@ class az_config_param_persist_off_command_builder extends CommandBuilder<az_conf
  * ```
  */
 class az_config_param_persist_on_command_builder extends CommandBuilder<az_config_param_persist_on_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 }
 
@@ -191,8 +191,8 @@ class az_config_param_persist_on_command_builder extends CommandBuilder<az_confi
  * ```
  */
 class az_config_param_persist_show_command_builder extends CommandBuilder<az_config_param_persist_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -218,8 +218,8 @@ class az_config_param_persist_show_command_builder extends CommandBuilder<az_con
  * ```
  */
 class az_config_get_command_builder extends CommandBuilder<az_config_get_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Include local configuration. Scan from the working directory up to the root drive, then the global configuration and return the first occurrence. */
@@ -245,8 +245,8 @@ class az_config_get_command_builder extends CommandBuilder<az_config_get_command
  * ```
  */
 class az_config_set_command_builder extends CommandBuilder<az_config_set_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Set as a local configuration in the working directory. */
@@ -272,8 +272,8 @@ class az_config_set_command_builder extends CommandBuilder<az_config_set_command
  * ```
  */
 class az_config_unset_command_builder extends CommandBuilder<az_config_unset_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Include local configuration. Scan from the working directory up to the root drive, then the global configuration and unset the first occurrence. */

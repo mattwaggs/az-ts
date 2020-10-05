@@ -61,7 +61,7 @@ export class az_netappfiles_account_ad {
      * @param {string} username Username of Active Directory domain administrator.
      */
     static add(dns: string, domain: string, password: string, smbServerName: string, username: string): az_netappfiles_account_ad_add_command_builder {
-        return new az_netappfiles_account_ad_add_command_builder("az netappfiles account ad add", dns, domain, password, smbServerName, username);
+        return new az_netappfiles_account_ad_add_command_builder("az netappfiles account ad add", 'az_netappfiles_account_ad_add_command_result', dns, domain, password, smbServerName, username);
     }
 
     /**
@@ -79,7 +79,7 @@ export class az_netappfiles_account_ad {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(accountName: string, resourceGroup: string): az_netappfiles_account_ad_list_command_builder {
-        return new az_netappfiles_account_ad_list_command_builder("az netappfiles account ad list", accountName, resourceGroup);
+        return new az_netappfiles_account_ad_list_command_builder("az netappfiles account ad list", 'az_netappfiles_account_ad_list_command_result', accountName, resourceGroup);
     }
 
     /**
@@ -97,7 +97,7 @@ export class az_netappfiles_account_ad {
      * @param {string} activeDirectory The id of the active directory.
      */
     static remove(activeDirectory: string): az_netappfiles_account_ad_remove_command_builder {
-        return new az_netappfiles_account_ad_remove_command_builder("az netappfiles account ad remove", activeDirectory);
+        return new az_netappfiles_account_ad_remove_command_builder("az netappfiles account ad remove", 'az_netappfiles_account_ad_remove_command_result', activeDirectory);
     }
 }
 
@@ -120,7 +120,7 @@ export class az_netappfiles_account {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(accountName: string, location: string, resourceGroup: string): az_netappfiles_account_create_command_builder {
-        return new az_netappfiles_account_create_command_builder("az netappfiles account create", accountName, location, resourceGroup);
+        return new az_netappfiles_account_create_command_builder("az netappfiles account create", 'az_netappfiles_account_create_command_result', accountName, location, resourceGroup);
     }
 
     /**
@@ -135,7 +135,7 @@ export class az_netappfiles_account {
      * ```
      */
     static delete(): az_netappfiles_account_delete_command_builder {
-        return new az_netappfiles_account_delete_command_builder("az netappfiles account delete");
+        return new az_netappfiles_account_delete_command_builder("az netappfiles account delete", 'az_netappfiles_account_delete_command_result');
     }
 
     /**
@@ -151,7 +151,7 @@ export class az_netappfiles_account {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(resourceGroup: string): az_netappfiles_account_list_command_builder {
-        return new az_netappfiles_account_list_command_builder("az netappfiles account list", resourceGroup);
+        return new az_netappfiles_account_list_command_builder("az netappfiles account list", 'az_netappfiles_account_list_command_result', resourceGroup);
     }
 
     /**
@@ -167,7 +167,7 @@ export class az_netappfiles_account {
      * ```
      */
     static show(): az_netappfiles_account_show_command_builder {
-        return new az_netappfiles_account_show_command_builder("az netappfiles account show");
+        return new az_netappfiles_account_show_command_builder("az netappfiles account show", 'az_netappfiles_account_show_command_result');
     }
 
     /**
@@ -187,7 +187,7 @@ export class az_netappfiles_account {
      * ```
      */
     static update(): az_netappfiles_account_update_command_builder {
-        return new az_netappfiles_account_update_command_builder("az netappfiles account update");
+        return new az_netappfiles_account_update_command_builder("az netappfiles account update", 'az_netappfiles_account_update_command_result');
     }
 }
 
@@ -216,7 +216,7 @@ export class az_netappfiles_pool {
      * @param {string} size The size for the ANF pool. Must be an integer number of tebibytes in multiples of 4.
      */
     static create(accountName: string, location: string, poolName: string, resourceGroup: string, serviceLevel: 'Premium' | 'Standard' | 'Ultra', size: string): az_netappfiles_pool_create_command_builder {
-        return new az_netappfiles_pool_create_command_builder("az netappfiles pool create", accountName, location, poolName, resourceGroup, serviceLevel, size);
+        return new az_netappfiles_pool_create_command_builder("az netappfiles pool create", 'az_netappfiles_pool_create_command_result', accountName, location, poolName, resourceGroup, serviceLevel, size);
     }
 
     /**
@@ -232,7 +232,7 @@ export class az_netappfiles_pool {
      * ```
      */
     static delete(): az_netappfiles_pool_delete_command_builder {
-        return new az_netappfiles_pool_delete_command_builder("az netappfiles pool delete");
+        return new az_netappfiles_pool_delete_command_builder("az netappfiles pool delete", 'az_netappfiles_pool_delete_command_result');
     }
 
     /**
@@ -250,7 +250,7 @@ export class az_netappfiles_pool {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(accountName: string, resourceGroup: string): az_netappfiles_pool_list_command_builder {
-        return new az_netappfiles_pool_list_command_builder("az netappfiles pool list", accountName, resourceGroup);
+        return new az_netappfiles_pool_list_command_builder("az netappfiles pool list", 'az_netappfiles_pool_list_command_result', accountName, resourceGroup);
     }
 
     /**
@@ -267,7 +267,7 @@ export class az_netappfiles_pool {
      * ```
      */
     static show(): az_netappfiles_pool_show_command_builder {
-        return new az_netappfiles_pool_show_command_builder("az netappfiles pool show");
+        return new az_netappfiles_pool_show_command_builder("az netappfiles pool show", 'az_netappfiles_pool_show_command_result');
     }
 
     /**
@@ -290,7 +290,7 @@ export class az_netappfiles_pool {
      * ```
      */
     static update(): az_netappfiles_pool_update_command_builder {
-        return new az_netappfiles_pool_update_command_builder("az netappfiles pool update");
+        return new az_netappfiles_pool_update_command_builder("az netappfiles pool update", 'az_netappfiles_pool_update_command_result');
     }
 }
 
@@ -318,7 +318,7 @@ export class az_netappfiles_snapshot {
      * @param {string} volumeName The name of the ANF volume.
      */
     static create(accountName: string, location: string, snapshotName: string, poolName: string, resourceGroup: string, volumeName: string): az_netappfiles_snapshot_create_command_builder {
-        return new az_netappfiles_snapshot_create_command_builder("az netappfiles snapshot create", accountName, location, snapshotName, poolName, resourceGroup, volumeName);
+        return new az_netappfiles_snapshot_create_command_builder("az netappfiles snapshot create", 'az_netappfiles_snapshot_create_command_result', accountName, location, snapshotName, poolName, resourceGroup, volumeName);
     }
 
     /**
@@ -336,7 +336,7 @@ export class az_netappfiles_snapshot {
      * ```
      */
     static delete(): az_netappfiles_snapshot_delete_command_builder {
-        return new az_netappfiles_snapshot_delete_command_builder("az netappfiles snapshot delete");
+        return new az_netappfiles_snapshot_delete_command_builder("az netappfiles snapshot delete", 'az_netappfiles_snapshot_delete_command_result');
     }
 
     /**
@@ -358,7 +358,7 @@ export class az_netappfiles_snapshot {
      * @param {string} volumeName The name of the ANF volume.
      */
     static list(accountName: string, poolName: string, resourceGroup: string, volumeName: string): az_netappfiles_snapshot_list_command_builder {
-        return new az_netappfiles_snapshot_list_command_builder("az netappfiles snapshot list", accountName, poolName, resourceGroup, volumeName);
+        return new az_netappfiles_snapshot_list_command_builder("az netappfiles snapshot list", 'az_netappfiles_snapshot_list_command_result', accountName, poolName, resourceGroup, volumeName);
     }
 
     /**
@@ -377,7 +377,7 @@ export class az_netappfiles_snapshot {
      * ```
      */
     static show(): az_netappfiles_snapshot_show_command_builder {
-        return new az_netappfiles_snapshot_show_command_builder("az netappfiles snapshot show");
+        return new az_netappfiles_snapshot_show_command_builder("az netappfiles snapshot show", 'az_netappfiles_snapshot_show_command_result');
     }
 }
 
@@ -416,7 +416,7 @@ export class az_netappfiles_volume_export_policy {
      * @param {boolean} unixReadWrite Indication of read and write access.
      */
     static add(allowedClients: string, cifs: boolean, nfsv3: boolean, nfsv41: boolean, ruleIndex: string, unixReadOnly: boolean, unixReadWrite: boolean): az_netappfiles_volume_export_policy_add_command_builder {
-        return new az_netappfiles_volume_export_policy_add_command_builder("az netappfiles volume export-policy add", allowedClients, cifs, nfsv3, nfsv41, ruleIndex, unixReadOnly, unixReadWrite);
+        return new az_netappfiles_volume_export_policy_add_command_builder("az netappfiles volume export-policy add", 'az_netappfiles_volume_export_policy_add_command_result', allowedClients, cifs, nfsv3, nfsv41, ruleIndex, unixReadOnly, unixReadWrite);
     }
 
     /**
@@ -438,7 +438,7 @@ export class az_netappfiles_volume_export_policy {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(accountName: string, volumeName: string, poolName: string, resourceGroup: string): az_netappfiles_volume_export_policy_list_command_builder {
-        return new az_netappfiles_volume_export_policy_list_command_builder("az netappfiles volume export-policy list", accountName, volumeName, poolName, resourceGroup);
+        return new az_netappfiles_volume_export_policy_list_command_builder("az netappfiles volume export-policy list", 'az_netappfiles_volume_export_policy_list_command_result', accountName, volumeName, poolName, resourceGroup);
     }
 
     /**
@@ -462,7 +462,7 @@ export class az_netappfiles_volume_export_policy {
      * @param {string} ruleIndex Order index. Range 1 to 6.
      */
     static remove(ruleIndex: string): az_netappfiles_volume_export_policy_remove_command_builder {
-        return new az_netappfiles_volume_export_policy_remove_command_builder("az netappfiles volume export-policy remove", ruleIndex);
+        return new az_netappfiles_volume_export_policy_remove_command_builder("az netappfiles volume export-policy remove", 'az_netappfiles_volume_export_policy_remove_command_result', ruleIndex);
     }
 }
 
@@ -488,7 +488,7 @@ export class az_netappfiles_volume_replication {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static approve(accountName: string, volumeName: string, poolName: string, remoteVolumeResourceId: string, resourceGroup: string): az_netappfiles_volume_replication_approve_command_builder {
-        return new az_netappfiles_volume_replication_approve_command_builder("az netappfiles volume replication approve", accountName, volumeName, poolName, remoteVolumeResourceId, resourceGroup);
+        return new az_netappfiles_volume_replication_approve_command_builder("az netappfiles volume replication approve", 'az_netappfiles_volume_replication_approve_command_result', accountName, volumeName, poolName, remoteVolumeResourceId, resourceGroup);
     }
 
     /**
@@ -505,7 +505,7 @@ export class az_netappfiles_volume_replication {
      * ```
      */
     static remove(): az_netappfiles_volume_replication_remove_command_builder {
-        return new az_netappfiles_volume_replication_remove_command_builder("az netappfiles volume replication remove");
+        return new az_netappfiles_volume_replication_remove_command_builder("az netappfiles volume replication remove", 'az_netappfiles_volume_replication_remove_command_result');
     }
 
     /**
@@ -522,7 +522,7 @@ export class az_netappfiles_volume_replication {
      * ```
      */
     static resume(): az_netappfiles_volume_replication_resume_command_builder {
-        return new az_netappfiles_volume_replication_resume_command_builder("az netappfiles volume replication resume");
+        return new az_netappfiles_volume_replication_resume_command_builder("az netappfiles volume replication resume", 'az_netappfiles_volume_replication_resume_command_result');
     }
 
     /**
@@ -539,7 +539,7 @@ export class az_netappfiles_volume_replication {
      * ```
      */
     static status(): az_netappfiles_volume_replication_status_command_builder {
-        return new az_netappfiles_volume_replication_status_command_builder("az netappfiles volume replication status");
+        return new az_netappfiles_volume_replication_status_command_builder("az netappfiles volume replication status", 'az_netappfiles_volume_replication_status_command_result');
     }
 
     /**
@@ -556,7 +556,7 @@ export class az_netappfiles_volume_replication {
      * ```
      */
     static suspend(): az_netappfiles_volume_replication_suspend_command_builder {
-        return new az_netappfiles_volume_replication_suspend_command_builder("az netappfiles volume replication suspend");
+        return new az_netappfiles_volume_replication_suspend_command_builder("az netappfiles volume replication suspend", 'az_netappfiles_volume_replication_suspend_command_result');
     }
 }
 
@@ -597,7 +597,7 @@ export class az_netappfiles_volume {
      * @param {string} vnet The ARM Id or name of the vnet for the volume.
      */
     static create(accountName: string, filePath: string, location: string, volumeName: string, poolName: string, resourceGroup: string, usageThreshold: string, vnet: string): az_netappfiles_volume_create_command_builder {
-        return new az_netappfiles_volume_create_command_builder("az netappfiles volume create", accountName, filePath, location, volumeName, poolName, resourceGroup, usageThreshold, vnet);
+        return new az_netappfiles_volume_create_command_builder("az netappfiles volume create", 'az_netappfiles_volume_create_command_result', accountName, filePath, location, volumeName, poolName, resourceGroup, usageThreshold, vnet);
     }
 
     /**
@@ -614,7 +614,7 @@ export class az_netappfiles_volume {
      * ```
      */
     static delete(): az_netappfiles_volume_delete_command_builder {
-        return new az_netappfiles_volume_delete_command_builder("az netappfiles volume delete");
+        return new az_netappfiles_volume_delete_command_builder("az netappfiles volume delete", 'az_netappfiles_volume_delete_command_result');
     }
 
     /**
@@ -634,7 +634,7 @@ export class az_netappfiles_volume {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(accountName: string, poolName: string, resourceGroup: string): az_netappfiles_volume_list_command_builder {
-        return new az_netappfiles_volume_list_command_builder("az netappfiles volume list", accountName, poolName, resourceGroup);
+        return new az_netappfiles_volume_list_command_builder("az netappfiles volume list", 'az_netappfiles_volume_list_command_result', accountName, poolName, resourceGroup);
     }
 
     /**
@@ -657,7 +657,7 @@ export class az_netappfiles_volume {
      * @param {string} snapshotId Snapshot_Id of the snapshot. UUID v4 used to identify the Snapshot, example "9760acf5-4638-11e7-9bdb-020073ca3333".
      */
     static revert(accountName: string, volumeName: string, poolName: string, resourceGroup: string, snapshotId: string): az_netappfiles_volume_revert_command_builder {
-        return new az_netappfiles_volume_revert_command_builder("az netappfiles volume revert", accountName, volumeName, poolName, resourceGroup, snapshotId);
+        return new az_netappfiles_volume_revert_command_builder("az netappfiles volume revert", 'az_netappfiles_volume_revert_command_result', accountName, volumeName, poolName, resourceGroup, snapshotId);
     }
 
     /**
@@ -675,7 +675,7 @@ export class az_netappfiles_volume {
      * ```
      */
     static show(): az_netappfiles_volume_show_command_builder {
-        return new az_netappfiles_volume_show_command_builder("az netappfiles volume show");
+        return new az_netappfiles_volume_show_command_builder("az netappfiles volume show", 'az_netappfiles_volume_show_command_result');
     }
 
     /**
@@ -700,7 +700,7 @@ export class az_netappfiles_volume {
      * ```
      */
     static update(): az_netappfiles_volume_update_command_builder {
-        return new az_netappfiles_volume_update_command_builder("az netappfiles volume update");
+        return new az_netappfiles_volume_update_command_builder("az netappfiles volume update", 'az_netappfiles_volume_update_command_result');
     }
 }
 
@@ -736,8 +736,8 @@ export class az_netappfiles {
  * @param {string} username Username of Active Directory domain administrator.
  */
 class az_netappfiles_account_ad_add_command_builder extends CommandBuilder<az_netappfiles_account_ad_add_command_result> {
-    constructor(commandPath: string, dns: string, domain: string, password: string, smbServerName: string, username: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, dns: string, domain: string, password: string, smbServerName: string, username: string) {
+        super(commandPath, resultDataTypeName);
         this.dns(dns)
         this.domain(domain)
         this.password(password)
@@ -845,8 +845,8 @@ class az_netappfiles_account_ad_add_command_builder extends CommandBuilder<az_ne
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_netappfiles_account_ad_list_command_builder extends CommandBuilder<az_netappfiles_account_ad_list_command_result> {
-    constructor(commandPath: string, accountName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
     }
@@ -891,8 +891,8 @@ class az_netappfiles_account_ad_list_command_builder extends CommandBuilder<az_n
  * @param {string} activeDirectory The id of the active directory.
  */
 class az_netappfiles_account_ad_remove_command_builder extends CommandBuilder<az_netappfiles_account_ad_remove_command_result> {
-    constructor(commandPath: string, activeDirectory: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, activeDirectory: string) {
+        super(commandPath, resultDataTypeName);
         this.activeDirectory(activeDirectory)
     }
 
@@ -944,8 +944,8 @@ class az_netappfiles_account_ad_remove_command_builder extends CommandBuilder<az
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_netappfiles_account_create_command_builder extends CommandBuilder<az_netappfiles_account_create_command_result> {
-    constructor(commandPath: string, accountName: string, location: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, location: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.location(location)
         this.resourceGroup(resourceGroup)
@@ -994,8 +994,8 @@ class az_netappfiles_account_create_command_builder extends CommandBuilder<az_ne
  * ```
  */
 class az_netappfiles_account_delete_command_builder extends CommandBuilder<az_netappfiles_account_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the ANF account. */
@@ -1036,8 +1036,8 @@ class az_netappfiles_account_delete_command_builder extends CommandBuilder<az_ne
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_netappfiles_account_list_command_builder extends CommandBuilder<az_netappfiles_account_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -1073,8 +1073,8 @@ class az_netappfiles_account_list_command_builder extends CommandBuilder<az_neta
  * ```
  */
 class az_netappfiles_account_show_command_builder extends CommandBuilder<az_netappfiles_account_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the ANF account. */
@@ -1125,8 +1125,8 @@ class az_netappfiles_account_show_command_builder extends CommandBuilder<az_neta
  * ```
  */
 class az_netappfiles_account_update_command_builder extends CommandBuilder<az_netappfiles_account_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the ANF account. */
@@ -1207,8 +1207,8 @@ class az_netappfiles_account_update_command_builder extends CommandBuilder<az_ne
  * @param {string} size The size for the ANF pool. Must be an integer number of tebibytes in multiples of 4.
  */
 class az_netappfiles_pool_create_command_builder extends CommandBuilder<az_netappfiles_pool_create_command_result> {
-    constructor(commandPath: string, accountName: string, location: string, poolName: string, resourceGroup: string, serviceLevel: 'Premium' | 'Standard' | 'Ultra', size: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, location: string, poolName: string, resourceGroup: string, serviceLevel: 'Premium' | 'Standard' | 'Ultra', size: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.location(location)
         this.poolName(poolName)
@@ -1279,8 +1279,8 @@ class az_netappfiles_pool_create_command_builder extends CommandBuilder<az_netap
  * ```
  */
 class az_netappfiles_pool_delete_command_builder extends CommandBuilder<az_netappfiles_pool_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the ANF account. */
@@ -1329,8 +1329,8 @@ class az_netappfiles_pool_delete_command_builder extends CommandBuilder<az_netap
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_netappfiles_pool_list_command_builder extends CommandBuilder<az_netappfiles_pool_list_command_result> {
-    constructor(commandPath: string, accountName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.resourceGroup(resourceGroup)
     }
@@ -1374,8 +1374,8 @@ class az_netappfiles_pool_list_command_builder extends CommandBuilder<az_netappf
  * ```
  */
 class az_netappfiles_pool_show_command_builder extends CommandBuilder<az_netappfiles_pool_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the ANF account. */
@@ -1435,8 +1435,8 @@ class az_netappfiles_pool_show_command_builder extends CommandBuilder<az_netappf
  * ```
  */
 class az_netappfiles_pool_update_command_builder extends CommandBuilder<az_netappfiles_pool_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the ANF account. */
@@ -1534,8 +1534,8 @@ class az_netappfiles_pool_update_command_builder extends CommandBuilder<az_netap
  * @param {string} volumeName The name of the ANF volume.
  */
 class az_netappfiles_snapshot_create_command_builder extends CommandBuilder<az_netappfiles_snapshot_create_command_result> {
-    constructor(commandPath: string, accountName: string, location: string, snapshotName: string, poolName: string, resourceGroup: string, volumeName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, location: string, snapshotName: string, poolName: string, resourceGroup: string, volumeName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.location(location)
         this.snapshotName(snapshotName)
@@ -1602,8 +1602,8 @@ class az_netappfiles_snapshot_create_command_builder extends CommandBuilder<az_n
  * ```
  */
 class az_netappfiles_snapshot_delete_command_builder extends CommandBuilder<az_netappfiles_snapshot_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the ANF account. */
@@ -1668,8 +1668,8 @@ class az_netappfiles_snapshot_delete_command_builder extends CommandBuilder<az_n
  * @param {string} volumeName The name of the ANF volume.
  */
 class az_netappfiles_snapshot_list_command_builder extends CommandBuilder<az_netappfiles_snapshot_list_command_result> {
-    constructor(commandPath: string, accountName: string, poolName: string, resourceGroup: string, volumeName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, poolName: string, resourceGroup: string, volumeName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.poolName(poolName)
         this.resourceGroup(resourceGroup)
@@ -1729,8 +1729,8 @@ class az_netappfiles_snapshot_list_command_builder extends CommandBuilder<az_net
  * ```
  */
 class az_netappfiles_snapshot_show_command_builder extends CommandBuilder<az_netappfiles_snapshot_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the ANF account. */
@@ -1815,8 +1815,8 @@ class az_netappfiles_snapshot_show_command_builder extends CommandBuilder<az_net
  * @param {boolean} unixReadWrite Indication of read and write access.
  */
 class az_netappfiles_volume_export_policy_add_command_builder extends CommandBuilder<az_netappfiles_volume_export_policy_add_command_result> {
-    constructor(commandPath: string, allowedClients: string, cifs: boolean, nfsv3: boolean, nfsv41: boolean, ruleIndex: string, unixReadOnly: boolean, unixReadWrite: boolean) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, allowedClients: string, cifs: boolean, nfsv3: boolean, nfsv41: boolean, ruleIndex: string, unixReadOnly: boolean, unixReadWrite: boolean) {
+        super(commandPath, resultDataTypeName);
         this.allowedClients(allowedClients)
         this.cifs(cifs)
         this.nfsv3(nfsv3)
@@ -1948,8 +1948,8 @@ class az_netappfiles_volume_export_policy_add_command_builder extends CommandBui
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_netappfiles_volume_export_policy_list_command_builder extends CommandBuilder<az_netappfiles_volume_export_policy_list_command_result> {
-    constructor(commandPath: string, accountName: string, volumeName: string, poolName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, volumeName: string, poolName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.volumeName(volumeName)
         this.poolName(poolName)
@@ -2014,8 +2014,8 @@ class az_netappfiles_volume_export_policy_list_command_builder extends CommandBu
  * @param {string} ruleIndex Order index. Range 1 to 6.
  */
 class az_netappfiles_volume_export_policy_remove_command_builder extends CommandBuilder<az_netappfiles_volume_export_policy_remove_command_result> {
-    constructor(commandPath: string, ruleIndex: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, ruleIndex: string) {
+        super(commandPath, resultDataTypeName);
         this.ruleIndex(ruleIndex)
     }
 
@@ -2106,8 +2106,8 @@ class az_netappfiles_volume_export_policy_remove_command_builder extends Command
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_netappfiles_volume_replication_approve_command_builder extends CommandBuilder<az_netappfiles_volume_replication_approve_command_result> {
-    constructor(commandPath: string, accountName: string, volumeName: string, poolName: string, remoteVolumeResourceId: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, volumeName: string, poolName: string, remoteVolumeResourceId: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.volumeName(volumeName)
         this.poolName(poolName)
@@ -2166,8 +2166,8 @@ class az_netappfiles_volume_replication_approve_command_builder extends CommandB
  * ```
  */
 class az_netappfiles_volume_replication_remove_command_builder extends CommandBuilder<az_netappfiles_volume_replication_remove_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the ANF account. */
@@ -2221,8 +2221,8 @@ class az_netappfiles_volume_replication_remove_command_builder extends CommandBu
  * ```
  */
 class az_netappfiles_volume_replication_resume_command_builder extends CommandBuilder<az_netappfiles_volume_replication_resume_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the ANF account. */
@@ -2276,8 +2276,8 @@ class az_netappfiles_volume_replication_resume_command_builder extends CommandBu
  * ```
  */
 class az_netappfiles_volume_replication_status_command_builder extends CommandBuilder<az_netappfiles_volume_replication_status_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the ANF account. */
@@ -2331,8 +2331,8 @@ class az_netappfiles_volume_replication_status_command_builder extends CommandBu
  * ```
  */
 class az_netappfiles_volume_replication_suspend_command_builder extends CommandBuilder<az_netappfiles_volume_replication_suspend_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the ANF account. */
@@ -2407,8 +2407,8 @@ class az_netappfiles_volume_replication_suspend_command_builder extends CommandB
  * @param {string} vnet The ARM Id or name of the vnet for the volume.
  */
 class az_netappfiles_volume_create_command_builder extends CommandBuilder<az_netappfiles_volume_create_command_result> {
-    constructor(commandPath: string, accountName: string, filePath: string, location: string, volumeName: string, poolName: string, resourceGroup: string, usageThreshold: string, vnet: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, filePath: string, location: string, volumeName: string, poolName: string, resourceGroup: string, usageThreshold: string, vnet: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.filePath(filePath)
         this.location(location)
@@ -2542,8 +2542,8 @@ class az_netappfiles_volume_create_command_builder extends CommandBuilder<az_net
  * ```
  */
 class az_netappfiles_volume_delete_command_builder extends CommandBuilder<az_netappfiles_volume_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the ANF account. */
@@ -2600,8 +2600,8 @@ class az_netappfiles_volume_delete_command_builder extends CommandBuilder<az_net
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_netappfiles_volume_list_command_builder extends CommandBuilder<az_netappfiles_volume_list_command_result> {
-    constructor(commandPath: string, accountName: string, poolName: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, poolName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.poolName(poolName)
         this.resourceGroup(resourceGroup)
@@ -2658,8 +2658,8 @@ class az_netappfiles_volume_list_command_builder extends CommandBuilder<az_netap
  * @param {string} snapshotId Snapshot_Id of the snapshot. UUID v4 used to identify the Snapshot, example "9760acf5-4638-11e7-9bdb-020073ca3333".
  */
 class az_netappfiles_volume_revert_command_builder extends CommandBuilder<az_netappfiles_volume_revert_command_result> {
-    constructor(commandPath: string, accountName: string, volumeName: string, poolName: string, resourceGroup: string, snapshotId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, volumeName: string, poolName: string, resourceGroup: string, snapshotId: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.volumeName(volumeName)
         this.poolName(poolName)
@@ -2719,8 +2719,8 @@ class az_netappfiles_volume_revert_command_builder extends CommandBuilder<az_net
  * ```
  */
 class az_netappfiles_volume_show_command_builder extends CommandBuilder<az_netappfiles_volume_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the ANF account. */
@@ -2788,8 +2788,8 @@ class az_netappfiles_volume_show_command_builder extends CommandBuilder<az_netap
  * ```
  */
 class az_netappfiles_volume_update_command_builder extends CommandBuilder<az_netappfiles_volume_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The name of the ANF account. */

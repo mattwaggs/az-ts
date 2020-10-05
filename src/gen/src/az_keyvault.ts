@@ -131,7 +131,7 @@ export class az_keyvault_backup {
      * @param {string} storageContainerSasToken The SAS token pointing to an Azure Blob storage container.
      */
     static start(storageContainerSasToken: string): az_keyvault_backup_start_command_builder {
-        return new az_keyvault_backup_start_command_builder("az keyvault backup start", storageContainerSasToken);
+        return new az_keyvault_backup_start_command_builder("az keyvault backup start", 'az_keyvault_backup_start_command_result', storageContainerSasToken);
     }
 }
 
@@ -153,7 +153,7 @@ export class az_keyvault_certificate_contact {
      * @param {string} vaultName Name of the Vault.
      */
     static add(email: string, vaultName: string): az_keyvault_certificate_contact_add_command_builder {
-        return new az_keyvault_certificate_contact_add_command_builder("az keyvault certificate contact add", email, vaultName);
+        return new az_keyvault_certificate_contact_add_command_builder("az keyvault certificate contact add", 'az_keyvault_certificate_contact_add_command_result', email, vaultName);
     }
 
     /**
@@ -170,7 +170,7 @@ export class az_keyvault_certificate_contact {
      * @param {string} vaultName Name of the Vault.
      */
     static delete(email: string, vaultName: string): az_keyvault_certificate_contact_delete_command_builder {
-        return new az_keyvault_certificate_contact_delete_command_builder("az keyvault certificate contact delete", email, vaultName);
+        return new az_keyvault_certificate_contact_delete_command_builder("az keyvault certificate contact delete", 'az_keyvault_certificate_contact_delete_command_result', email, vaultName);
     }
 
     /**
@@ -186,7 +186,7 @@ export class az_keyvault_certificate_contact {
      * @param {string} vaultName Name of the Vault.
      */
     static list(vaultName: string): az_keyvault_certificate_contact_list_command_builder {
-        return new az_keyvault_certificate_contact_list_command_builder("az keyvault certificate contact list", vaultName);
+        return new az_keyvault_certificate_contact_list_command_builder("az keyvault certificate contact list", 'az_keyvault_certificate_contact_list_command_result', vaultName);
     }
 }
 
@@ -211,7 +211,7 @@ export class az_keyvault_certificate_issuer_admin {
      * @param {string} vaultName Name of the Vault.
      */
     static add(email: string, issuerName: string, vaultName: string): az_keyvault_certificate_issuer_admin_add_command_builder {
-        return new az_keyvault_certificate_issuer_admin_add_command_builder("az keyvault certificate issuer admin add", email, issuerName, vaultName);
+        return new az_keyvault_certificate_issuer_admin_add_command_builder("az keyvault certificate issuer admin add", 'az_keyvault_certificate_issuer_admin_add_command_result', email, issuerName, vaultName);
     }
 
     /**
@@ -230,7 +230,7 @@ export class az_keyvault_certificate_issuer_admin {
      * @param {string} vaultName Name of the Vault.
      */
     static delete(email: string, issuerName: string, vaultName: string): az_keyvault_certificate_issuer_admin_delete_command_builder {
-        return new az_keyvault_certificate_issuer_admin_delete_command_builder("az keyvault certificate issuer admin delete", email, issuerName, vaultName);
+        return new az_keyvault_certificate_issuer_admin_delete_command_builder("az keyvault certificate issuer admin delete", 'az_keyvault_certificate_issuer_admin_delete_command_result', email, issuerName, vaultName);
     }
 
     /**
@@ -248,7 +248,7 @@ export class az_keyvault_certificate_issuer_admin {
      * @param {string} vaultName Name of the Vault.
      */
     static list(issuerName: string, vaultName: string): az_keyvault_certificate_issuer_admin_list_command_builder {
-        return new az_keyvault_certificate_issuer_admin_list_command_builder("az keyvault certificate issuer admin list", issuerName, vaultName);
+        return new az_keyvault_certificate_issuer_admin_list_command_builder("az keyvault certificate issuer admin list", 'az_keyvault_certificate_issuer_admin_list_command_result', issuerName, vaultName);
     }
 }
 
@@ -274,7 +274,7 @@ export class az_keyvault_certificate_issuer {
      * @param {string} vaultName Name of the Vault.
      */
     static create(issuerName: string, providerName: string, vaultName: string): az_keyvault_certificate_issuer_create_command_builder {
-        return new az_keyvault_certificate_issuer_create_command_builder("az keyvault certificate issuer create", issuerName, providerName, vaultName);
+        return new az_keyvault_certificate_issuer_create_command_builder("az keyvault certificate issuer create", 'az_keyvault_certificate_issuer_create_command_result', issuerName, providerName, vaultName);
     }
 
     /**
@@ -291,7 +291,7 @@ export class az_keyvault_certificate_issuer {
      * @param {string} vaultName Name of the Vault.
      */
     static delete(issuerName: string, vaultName: string): az_keyvault_certificate_issuer_delete_command_builder {
-        return new az_keyvault_certificate_issuer_delete_command_builder("az keyvault certificate issuer delete", issuerName, vaultName);
+        return new az_keyvault_certificate_issuer_delete_command_builder("az keyvault certificate issuer delete", 'az_keyvault_certificate_issuer_delete_command_result', issuerName, vaultName);
     }
 
     /**
@@ -308,7 +308,7 @@ export class az_keyvault_certificate_issuer {
      * @param {string} vaultName Name of the Vault.
      */
     static list(vaultName: string): az_keyvault_certificate_issuer_list_command_builder {
-        return new az_keyvault_certificate_issuer_list_command_builder("az keyvault certificate issuer list", vaultName);
+        return new az_keyvault_certificate_issuer_list_command_builder("az keyvault certificate issuer list", 'az_keyvault_certificate_issuer_list_command_result', vaultName);
     }
 
     /**
@@ -326,7 +326,7 @@ export class az_keyvault_certificate_issuer {
      * @param {string} vaultName Name of the Vault.
      */
     static show(issuerName: string, vaultName: string): az_keyvault_certificate_issuer_show_command_builder {
-        return new az_keyvault_certificate_issuer_show_command_builder("az keyvault certificate issuer show", issuerName, vaultName);
+        return new az_keyvault_certificate_issuer_show_command_builder("az keyvault certificate issuer show", 'az_keyvault_certificate_issuer_show_command_result', issuerName, vaultName);
     }
 
     /**
@@ -348,7 +348,7 @@ export class az_keyvault_certificate_issuer {
      * @param {string} vaultName Name of the Vault.
      */
     static update(issuerName: string, vaultName: string): az_keyvault_certificate_issuer_update_command_builder {
-        return new az_keyvault_certificate_issuer_update_command_builder("az keyvault certificate issuer update", issuerName, vaultName);
+        return new az_keyvault_certificate_issuer_update_command_builder("az keyvault certificate issuer update", 'az_keyvault_certificate_issuer_update_command_result', issuerName, vaultName);
     }
 }
 
@@ -368,7 +368,7 @@ export class az_keyvault_certificate_pending {
      * @param {string} vaultName Name of the Vault.
      */
     static delete(name: string, vaultName: string): az_keyvault_certificate_pending_delete_command_builder {
-        return new az_keyvault_certificate_pending_delete_command_builder("az keyvault certificate pending delete", name, vaultName);
+        return new az_keyvault_certificate_pending_delete_command_builder("az keyvault certificate pending delete", 'az_keyvault_certificate_pending_delete_command_result', name, vaultName);
     }
 
     /**
@@ -391,7 +391,7 @@ export class az_keyvault_certificate_pending {
      * @param {string} vaultName Name of the Vault.
      */
     static merge(file: string, name: string, vaultName: string): az_keyvault_certificate_pending_merge_command_builder {
-        return new az_keyvault_certificate_pending_merge_command_builder("az keyvault certificate pending merge", file, name, vaultName);
+        return new az_keyvault_certificate_pending_merge_command_builder("az keyvault certificate pending merge", 'az_keyvault_certificate_pending_merge_command_result', file, name, vaultName);
     }
 
     /**
@@ -409,7 +409,7 @@ export class az_keyvault_certificate_pending {
      * @param {string} vaultName Name of the Vault.
      */
     static show(name: string, vaultName: string): az_keyvault_certificate_pending_show_command_builder {
-        return new az_keyvault_certificate_pending_show_command_builder("az keyvault certificate pending show", name, vaultName);
+        return new az_keyvault_certificate_pending_show_command_builder("az keyvault certificate pending show", 'az_keyvault_certificate_pending_show_command_result', name, vaultName);
     }
 }
 
@@ -430,7 +430,7 @@ export class az_keyvault_certificate {
      * @param {string} file Local file path in which to store certificate backup.
      */
     static backup(file: string): az_keyvault_certificate_backup_command_builder {
-        return new az_keyvault_certificate_backup_command_builder("az keyvault certificate backup", file);
+        return new az_keyvault_certificate_backup_command_builder("az keyvault certificate backup", 'az_keyvault_certificate_backup_command_result', file);
     }
 
     /**
@@ -452,7 +452,7 @@ export class az_keyvault_certificate {
      * @param {string} vaultName Name of the Vault.
      */
     static create(name: string, policy: string, vaultName: string): az_keyvault_certificate_create_command_builder {
-        return new az_keyvault_certificate_create_command_builder("az keyvault certificate create", name, policy, vaultName);
+        return new az_keyvault_certificate_create_command_builder("az keyvault certificate create", 'az_keyvault_certificate_create_command_result', name, policy, vaultName);
     }
 
     /**
@@ -467,7 +467,7 @@ export class az_keyvault_certificate {
      * ```
      */
     static delete(): az_keyvault_certificate_delete_command_builder {
-        return new az_keyvault_certificate_delete_command_builder("az keyvault certificate delete");
+        return new az_keyvault_certificate_delete_command_builder("az keyvault certificate delete", 'az_keyvault_certificate_delete_command_result');
     }
 
     /**
@@ -487,7 +487,7 @@ export class az_keyvault_certificate {
      * @param {string} file File to receive the binary certificate contents.
      */
     static download(file: string): az_keyvault_certificate_download_command_builder {
-        return new az_keyvault_certificate_download_command_builder("az keyvault certificate download", file);
+        return new az_keyvault_certificate_download_command_builder("az keyvault certificate download", 'az_keyvault_certificate_download_command_result', file);
     }
 
     /**
@@ -500,7 +500,7 @@ export class az_keyvault_certificate {
      * ```
      */
     static get_default_policy(): az_keyvault_certificate_get_default_policy_command_builder {
-        return new az_keyvault_certificate_get_default_policy_command_builder("az keyvault certificate get-default-policy");
+        return new az_keyvault_certificate_get_default_policy_command_builder("az keyvault certificate get-default-policy", 'az_keyvault_certificate_get_default_policy_command_result');
     }
 
     /**
@@ -523,7 +523,7 @@ export class az_keyvault_certificate {
      * @param {string} vaultName Name of the Vault.
      */
     static import(file: string, name: string, vaultName: string): az_keyvault_certificate_import_command_builder {
-        return new az_keyvault_certificate_import_command_builder("az keyvault certificate import", file, name, vaultName);
+        return new az_keyvault_certificate_import_command_builder("az keyvault certificate import", 'az_keyvault_certificate_import_command_result', file, name, vaultName);
     }
 
     /**
@@ -540,7 +540,7 @@ export class az_keyvault_certificate {
      * ```
      */
     static list(): az_keyvault_certificate_list_command_builder {
-        return new az_keyvault_certificate_list_command_builder("az keyvault certificate list");
+        return new az_keyvault_certificate_list_command_builder("az keyvault certificate list", 'az_keyvault_certificate_list_command_result');
     }
 
     /**
@@ -558,7 +558,7 @@ export class az_keyvault_certificate {
      * @param {string} vaultName Name of the Vault.
      */
     static list_deleted(vaultName: string): az_keyvault_certificate_list_deleted_command_builder {
-        return new az_keyvault_certificate_list_deleted_command_builder("az keyvault certificate list-deleted", vaultName);
+        return new az_keyvault_certificate_list_deleted_command_builder("az keyvault certificate list-deleted", 'az_keyvault_certificate_list_deleted_command_result', vaultName);
     }
 
     /**
@@ -574,7 +574,7 @@ export class az_keyvault_certificate {
      * ```
      */
     static list_versions(): az_keyvault_certificate_list_versions_command_builder {
-        return new az_keyvault_certificate_list_versions_command_builder("az keyvault certificate list-versions");
+        return new az_keyvault_certificate_list_versions_command_builder("az keyvault certificate list-versions", 'az_keyvault_certificate_list_versions_command_result');
     }
 
     /**
@@ -589,7 +589,7 @@ export class az_keyvault_certificate {
      * ```
      */
     static purge(): az_keyvault_certificate_purge_command_builder {
-        return new az_keyvault_certificate_purge_command_builder("az keyvault certificate purge");
+        return new az_keyvault_certificate_purge_command_builder("az keyvault certificate purge", 'az_keyvault_certificate_purge_command_result');
     }
 
     /**
@@ -604,7 +604,7 @@ export class az_keyvault_certificate {
      * ```
      */
     static recover(): az_keyvault_certificate_recover_command_builder {
-        return new az_keyvault_certificate_recover_command_builder("az keyvault certificate recover");
+        return new az_keyvault_certificate_recover_command_builder("az keyvault certificate recover", 'az_keyvault_certificate_recover_command_result');
     }
 
     /**
@@ -621,7 +621,7 @@ export class az_keyvault_certificate {
      * @param {string} vaultName Name of the Vault.
      */
     static restore(file: string, vaultName: string): az_keyvault_certificate_restore_command_builder {
-        return new az_keyvault_certificate_restore_command_builder("az keyvault certificate restore", file, vaultName);
+        return new az_keyvault_certificate_restore_command_builder("az keyvault certificate restore", 'az_keyvault_certificate_restore_command_result', file, vaultName);
     }
 
     /**
@@ -640,7 +640,7 @@ export class az_keyvault_certificate {
      * ```
      */
     static set_attributes(): az_keyvault_certificate_set_attributes_command_builder {
-        return new az_keyvault_certificate_set_attributes_command_builder("az keyvault certificate set-attributes");
+        return new az_keyvault_certificate_set_attributes_command_builder("az keyvault certificate set-attributes", 'az_keyvault_certificate_set_attributes_command_result');
     }
 
     /**
@@ -657,7 +657,7 @@ export class az_keyvault_certificate {
      * ```
      */
     static show(): az_keyvault_certificate_show_command_builder {
-        return new az_keyvault_certificate_show_command_builder("az keyvault certificate show");
+        return new az_keyvault_certificate_show_command_builder("az keyvault certificate show", 'az_keyvault_certificate_show_command_result');
     }
 
     /**
@@ -672,7 +672,7 @@ export class az_keyvault_certificate {
      * ```
      */
     static show_deleted(): az_keyvault_certificate_show_deleted_command_builder {
-        return new az_keyvault_certificate_show_deleted_command_builder("az keyvault certificate show-deleted");
+        return new az_keyvault_certificate_show_deleted_command_builder("az keyvault certificate show-deleted", 'az_keyvault_certificate_show_deleted_command_result');
     }
 }
 
@@ -694,7 +694,7 @@ export class az_keyvault_key {
      * @param {string} file Local file path in which to store key backup.
      */
     static backup(file: string): az_keyvault_key_backup_command_builder {
-        return new az_keyvault_key_backup_command_builder("az keyvault key backup", file);
+        return new az_keyvault_key_backup_command_builder("az keyvault key backup", 'az_keyvault_key_backup_command_result', file);
     }
 
     /**
@@ -719,7 +719,7 @@ export class az_keyvault_key {
      * ```
      */
     static create(): az_keyvault_key_create_command_builder {
-        return new az_keyvault_key_create_command_builder("az keyvault key create");
+        return new az_keyvault_key_create_command_builder("az keyvault key create", 'az_keyvault_key_create_command_result');
     }
 
     /**
@@ -741,7 +741,7 @@ export class az_keyvault_key {
      * @param {string} value The value to be decrypted, which should be the result of "az keyvault encrypt".
      */
     static decrypt(algorithm: 'RSA-OAEP' | 'RSA-OAEP-256' | 'RSA1_5', value: string): az_keyvault_key_decrypt_command_builder {
-        return new az_keyvault_key_decrypt_command_builder("az keyvault key decrypt", algorithm, value);
+        return new az_keyvault_key_decrypt_command_builder("az keyvault key decrypt", 'az_keyvault_key_decrypt_command_result', algorithm, value);
     }
 
     /**
@@ -757,7 +757,7 @@ export class az_keyvault_key {
      * ```
      */
     static delete(): az_keyvault_key_delete_command_builder {
-        return new az_keyvault_key_delete_command_builder("az keyvault key delete");
+        return new az_keyvault_key_delete_command_builder("az keyvault key delete", 'az_keyvault_key_delete_command_result');
     }
 
     /**
@@ -778,7 +778,7 @@ export class az_keyvault_key {
      * @param {string} file File to receive the key contents.
      */
     static download(file: string): az_keyvault_key_download_command_builder {
-        return new az_keyvault_key_download_command_builder("az keyvault key download", file);
+        return new az_keyvault_key_download_command_builder("az keyvault key download", 'az_keyvault_key_download_command_result', file);
     }
 
     /**
@@ -800,7 +800,7 @@ export class az_keyvault_key {
      * @param {string} value The value to be encrypted. Default data type is Base64 encoded string.
      */
     static encrypt(algorithm: 'RSA-OAEP' | 'RSA-OAEP-256' | 'RSA1_5', value: string): az_keyvault_key_encrypt_command_builder {
-        return new az_keyvault_key_encrypt_command_builder("az keyvault key encrypt", algorithm, value);
+        return new az_keyvault_key_encrypt_command_builder("az keyvault key encrypt", 'az_keyvault_key_encrypt_command_result', algorithm, value);
     }
 
     /**
@@ -812,7 +812,7 @@ export class az_keyvault_key {
      * ```
      */
     static get_policy_template(): az_keyvault_key_get_policy_template_command_builder {
-        return new az_keyvault_key_get_policy_template_command_builder("az keyvault key get-policy-template");
+        return new az_keyvault_key_get_policy_template_command_builder("az keyvault key get-policy-template", 'az_keyvault_key_get_policy_template_command_result');
     }
 
     /**
@@ -839,7 +839,7 @@ export class az_keyvault_key {
      * ```
      */
     static import(): az_keyvault_key_import_command_builder {
-        return new az_keyvault_key_import_command_builder("az keyvault key import");
+        return new az_keyvault_key_import_command_builder("az keyvault key import", 'az_keyvault_key_import_command_result');
     }
 
     /**
@@ -856,7 +856,7 @@ export class az_keyvault_key {
      * ```
      */
     static list(): az_keyvault_key_list_command_builder {
-        return new az_keyvault_key_list_command_builder("az keyvault key list");
+        return new az_keyvault_key_list_command_builder("az keyvault key list", 'az_keyvault_key_list_command_result');
     }
 
     /**
@@ -872,7 +872,7 @@ export class az_keyvault_key {
      * ```
      */
     static list_deleted(): az_keyvault_key_list_deleted_command_builder {
-        return new az_keyvault_key_list_deleted_command_builder("az keyvault key list-deleted");
+        return new az_keyvault_key_list_deleted_command_builder("az keyvault key list-deleted", 'az_keyvault_key_list_deleted_command_result');
     }
 
     /**
@@ -889,7 +889,7 @@ export class az_keyvault_key {
      * ```
      */
     static list_versions(): az_keyvault_key_list_versions_command_builder {
-        return new az_keyvault_key_list_versions_command_builder("az keyvault key list-versions");
+        return new az_keyvault_key_list_versions_command_builder("az keyvault key list-versions", 'az_keyvault_key_list_versions_command_result');
     }
 
     /**
@@ -905,7 +905,7 @@ export class az_keyvault_key {
      * ```
      */
     static purge(): az_keyvault_key_purge_command_builder {
-        return new az_keyvault_key_purge_command_builder("az keyvault key purge");
+        return new az_keyvault_key_purge_command_builder("az keyvault key purge", 'az_keyvault_key_purge_command_result');
     }
 
     /**
@@ -921,7 +921,7 @@ export class az_keyvault_key {
      * ```
      */
     static recover(): az_keyvault_key_recover_command_builder {
-        return new az_keyvault_key_recover_command_builder("az keyvault key recover");
+        return new az_keyvault_key_recover_command_builder("az keyvault key recover", 'az_keyvault_key_recover_command_result');
     }
 
     /**
@@ -939,7 +939,7 @@ export class az_keyvault_key {
      * @param {string} file Local key backup from which to restore key.
      */
     static restore(file: string): az_keyvault_key_restore_command_builder {
-        return new az_keyvault_key_restore_command_builder("az keyvault key restore", file);
+        return new az_keyvault_key_restore_command_builder("az keyvault key restore", 'az_keyvault_key_restore_command_result', file);
     }
 
     /**
@@ -961,7 +961,7 @@ export class az_keyvault_key {
      * ```
      */
     static set_attributes(): az_keyvault_key_set_attributes_command_builder {
-        return new az_keyvault_key_set_attributes_command_builder("az keyvault key set-attributes");
+        return new az_keyvault_key_set_attributes_command_builder("az keyvault key set-attributes", 'az_keyvault_key_set_attributes_command_result');
     }
 
     /**
@@ -979,7 +979,7 @@ export class az_keyvault_key {
      * ```
      */
     static show(): az_keyvault_key_show_command_builder {
-        return new az_keyvault_key_show_command_builder("az keyvault key show");
+        return new az_keyvault_key_show_command_builder("az keyvault key show", 'az_keyvault_key_show_command_result');
     }
 
     /**
@@ -995,7 +995,7 @@ export class az_keyvault_key {
      * ```
      */
     static show_deleted(): az_keyvault_key_show_deleted_command_builder {
-        return new az_keyvault_key_show_deleted_command_builder("az keyvault key show-deleted");
+        return new az_keyvault_key_show_deleted_command_builder("az keyvault key show-deleted", 'az_keyvault_key_show_deleted_command_result');
     }
 }
 
@@ -1018,7 +1018,7 @@ export class az_keyvault_network_rule {
      * @param {string} name Name of the Vault.
      */
     static add(name: string): az_keyvault_network_rule_add_command_builder {
-        return new az_keyvault_network_rule_add_command_builder("az keyvault network-rule add", name);
+        return new az_keyvault_network_rule_add_command_builder("az keyvault network-rule add", 'az_keyvault_network_rule_add_command_result', name);
     }
 
     /**
@@ -1035,7 +1035,7 @@ export class az_keyvault_network_rule {
      * @param {string} name Name of the Vault.
      */
     static list(name: string): az_keyvault_network_rule_list_command_builder {
-        return new az_keyvault_network_rule_list_command_builder("az keyvault network-rule list", name);
+        return new az_keyvault_network_rule_list_command_builder("az keyvault network-rule list", 'az_keyvault_network_rule_list_command_result', name);
     }
 
     /**
@@ -1055,7 +1055,7 @@ export class az_keyvault_network_rule {
      * @param {string} name Name of the Vault.
      */
     static remove(name: string): az_keyvault_network_rule_remove_command_builder {
-        return new az_keyvault_network_rule_remove_command_builder("az keyvault network-rule remove", name);
+        return new az_keyvault_network_rule_remove_command_builder("az keyvault network-rule remove", 'az_keyvault_network_rule_remove_command_result', name);
     }
 
     /**
@@ -1078,7 +1078,7 @@ export class az_keyvault_network_rule {
      * @param {string} name Name of the Vault.
      */
     static wait(name: string): az_keyvault_network_rule_wait_command_builder {
-        return new az_keyvault_network_rule_wait_command_builder("az keyvault network-rule wait", name);
+        return new az_keyvault_network_rule_wait_command_builder("az keyvault network-rule wait", 'az_keyvault_network_rule_wait_command_result', name);
     }
 }
 
@@ -1099,7 +1099,7 @@ export class az_keyvault_private_endpoint_connection {
      * ```
      */
     static approve(): az_keyvault_private_endpoint_connection_approve_command_builder {
-        return new az_keyvault_private_endpoint_connection_approve_command_builder("az keyvault private-endpoint-connection approve");
+        return new az_keyvault_private_endpoint_connection_approve_command_builder("az keyvault private-endpoint-connection approve", 'az_keyvault_private_endpoint_connection_approve_command_result');
     }
 
     /**
@@ -1116,7 +1116,7 @@ export class az_keyvault_private_endpoint_connection {
      * ```
      */
     static delete(): az_keyvault_private_endpoint_connection_delete_command_builder {
-        return new az_keyvault_private_endpoint_connection_delete_command_builder("az keyvault private-endpoint-connection delete");
+        return new az_keyvault_private_endpoint_connection_delete_command_builder("az keyvault private-endpoint-connection delete", 'az_keyvault_private_endpoint_connection_delete_command_result');
     }
 
     /**
@@ -1134,7 +1134,7 @@ export class az_keyvault_private_endpoint_connection {
      * ```
      */
     static reject(): az_keyvault_private_endpoint_connection_reject_command_builder {
-        return new az_keyvault_private_endpoint_connection_reject_command_builder("az keyvault private-endpoint-connection reject");
+        return new az_keyvault_private_endpoint_connection_reject_command_builder("az keyvault private-endpoint-connection reject", 'az_keyvault_private_endpoint_connection_reject_command_result');
     }
 
     /**
@@ -1151,7 +1151,7 @@ export class az_keyvault_private_endpoint_connection {
      * ```
      */
     static show(): az_keyvault_private_endpoint_connection_show_command_builder {
-        return new az_keyvault_private_endpoint_connection_show_command_builder("az keyvault private-endpoint-connection show");
+        return new az_keyvault_private_endpoint_connection_show_command_builder("az keyvault private-endpoint-connection show", 'az_keyvault_private_endpoint_connection_show_command_result');
     }
 
     /**
@@ -1174,7 +1174,7 @@ export class az_keyvault_private_endpoint_connection {
      * ```
      */
     static wait(): az_keyvault_private_endpoint_connection_wait_command_builder {
-        return new az_keyvault_private_endpoint_connection_wait_command_builder("az keyvault private-endpoint-connection wait");
+        return new az_keyvault_private_endpoint_connection_wait_command_builder("az keyvault private-endpoint-connection wait", 'az_keyvault_private_endpoint_connection_wait_command_result');
     }
 }
 
@@ -1194,7 +1194,7 @@ export class az_keyvault_private_link_resource {
      * @param {string} vaultName Name of the Vault.
      */
     static list(vaultName: string): az_keyvault_private_link_resource_list_command_builder {
-        return new az_keyvault_private_link_resource_list_command_builder("az keyvault private-link-resource list", vaultName);
+        return new az_keyvault_private_link_resource_list_command_builder("az keyvault private-link-resource list", 'az_keyvault_private_link_resource_list_command_result', vaultName);
     }
 }
 
@@ -1219,7 +1219,7 @@ export class az_keyvault_restore {
      * @param {string} storageContainerSasToken The SAS token pointing to an Azure Blob storage container.
      */
     static start(backupFolder: string, storageContainerSasToken: string): az_keyvault_restore_start_command_builder {
-        return new az_keyvault_restore_start_command_builder("az keyvault restore start", backupFolder, storageContainerSasToken);
+        return new az_keyvault_restore_start_command_builder("az keyvault restore start", 'az_keyvault_restore_start_command_result', backupFolder, storageContainerSasToken);
     }
 }
 
@@ -1245,7 +1245,7 @@ export class az_keyvault_role_assignment {
      * @param {string} scope Scope at which the role assignment or definition applies to, e.g., "/" or "/keys" or "/keys/{keyname}".
      */
     static create(role: string, scope: string): az_keyvault_role_assignment_create_command_builder {
-        return new az_keyvault_role_assignment_create_command_builder("az keyvault role assignment create", role, scope);
+        return new az_keyvault_role_assignment_create_command_builder("az keyvault role assignment create", 'az_keyvault_role_assignment_create_command_result', role, scope);
     }
 
     /**
@@ -1265,7 +1265,7 @@ export class az_keyvault_role_assignment {
      * ```
      */
     static delete(): az_keyvault_role_assignment_delete_command_builder {
-        return new az_keyvault_role_assignment_delete_command_builder("az keyvault role assignment delete");
+        return new az_keyvault_role_assignment_delete_command_builder("az keyvault role assignment delete", 'az_keyvault_role_assignment_delete_command_result');
     }
 
     /**
@@ -1284,7 +1284,7 @@ export class az_keyvault_role_assignment {
      * ```
      */
     static list(): az_keyvault_role_assignment_list_command_builder {
-        return new az_keyvault_role_assignment_list_command_builder("az keyvault role assignment list");
+        return new az_keyvault_role_assignment_list_command_builder("az keyvault role assignment list", 'az_keyvault_role_assignment_list_command_result');
     }
 }
 
@@ -1302,7 +1302,7 @@ export class az_keyvault_role_definition {
      * ```
      */
     static list(): az_keyvault_role_definition_list_command_builder {
-        return new az_keyvault_role_definition_list_command_builder("az keyvault role definition list");
+        return new az_keyvault_role_definition_list_command_builder("az keyvault role definition list", 'az_keyvault_role_definition_list_command_result');
     }
 }
 
@@ -1327,7 +1327,7 @@ export class az_keyvault_secret {
      * @param {string} file File to receive the secret contents.
      */
     static backup(file: string): az_keyvault_secret_backup_command_builder {
-        return new az_keyvault_secret_backup_command_builder("az keyvault secret backup", file);
+        return new az_keyvault_secret_backup_command_builder("az keyvault secret backup", 'az_keyvault_secret_backup_command_result', file);
     }
 
     /**
@@ -1342,7 +1342,7 @@ export class az_keyvault_secret {
      * ```
      */
     static delete(): az_keyvault_secret_delete_command_builder {
-        return new az_keyvault_secret_delete_command_builder("az keyvault secret delete");
+        return new az_keyvault_secret_delete_command_builder("az keyvault secret delete", 'az_keyvault_secret_delete_command_result');
     }
 
     /**
@@ -1362,7 +1362,7 @@ export class az_keyvault_secret {
      * @param {string} file File to receive the secret contents.
      */
     static download(file: string): az_keyvault_secret_download_command_builder {
-        return new az_keyvault_secret_download_command_builder("az keyvault secret download", file);
+        return new az_keyvault_secret_download_command_builder("az keyvault secret download", 'az_keyvault_secret_download_command_result', file);
     }
 
     /**
@@ -1378,7 +1378,7 @@ export class az_keyvault_secret {
      * ```
      */
     static list(): az_keyvault_secret_list_command_builder {
-        return new az_keyvault_secret_list_command_builder("az keyvault secret list");
+        return new az_keyvault_secret_list_command_builder("az keyvault secret list", 'az_keyvault_secret_list_command_result');
     }
 
     /**
@@ -1395,7 +1395,7 @@ export class az_keyvault_secret {
      * @param {string} vaultName Name of the Vault.
      */
     static list_deleted(vaultName: string): az_keyvault_secret_list_deleted_command_builder {
-        return new az_keyvault_secret_list_deleted_command_builder("az keyvault secret list-deleted", vaultName);
+        return new az_keyvault_secret_list_deleted_command_builder("az keyvault secret list-deleted", 'az_keyvault_secret_list_deleted_command_result', vaultName);
     }
 
     /**
@@ -1411,7 +1411,7 @@ export class az_keyvault_secret {
      * ```
      */
     static list_versions(): az_keyvault_secret_list_versions_command_builder {
-        return new az_keyvault_secret_list_versions_command_builder("az keyvault secret list-versions");
+        return new az_keyvault_secret_list_versions_command_builder("az keyvault secret list-versions", 'az_keyvault_secret_list_versions_command_result');
     }
 
     /**
@@ -1426,7 +1426,7 @@ export class az_keyvault_secret {
      * ```
      */
     static purge(): az_keyvault_secret_purge_command_builder {
-        return new az_keyvault_secret_purge_command_builder("az keyvault secret purge");
+        return new az_keyvault_secret_purge_command_builder("az keyvault secret purge", 'az_keyvault_secret_purge_command_result');
     }
 
     /**
@@ -1441,7 +1441,7 @@ export class az_keyvault_secret {
      * ```
      */
     static recover(): az_keyvault_secret_recover_command_builder {
-        return new az_keyvault_secret_recover_command_builder("az keyvault secret recover");
+        return new az_keyvault_secret_recover_command_builder("az keyvault secret recover", 'az_keyvault_secret_recover_command_result');
     }
 
     /**
@@ -1458,7 +1458,7 @@ export class az_keyvault_secret {
      * @param {string} vaultName Name of the Vault.
      */
     static restore(file: string, vaultName: string): az_keyvault_secret_restore_command_builder {
-        return new az_keyvault_secret_restore_command_builder("az keyvault secret restore", file, vaultName);
+        return new az_keyvault_secret_restore_command_builder("az keyvault secret restore", 'az_keyvault_secret_restore_command_result', file, vaultName);
     }
 
     /**
@@ -1483,7 +1483,7 @@ export class az_keyvault_secret {
      * @param {string} vaultName Name of the Vault.
      */
     static set(name: string, vaultName: string): az_keyvault_secret_set_command_builder {
-        return new az_keyvault_secret_set_command_builder("az keyvault secret set", name, vaultName);
+        return new az_keyvault_secret_set_command_builder("az keyvault secret set", 'az_keyvault_secret_set_command_result', name, vaultName);
     }
 
     /**
@@ -1504,7 +1504,7 @@ export class az_keyvault_secret {
      * ```
      */
     static set_attributes(): az_keyvault_secret_set_attributes_command_builder {
-        return new az_keyvault_secret_set_attributes_command_builder("az keyvault secret set-attributes");
+        return new az_keyvault_secret_set_attributes_command_builder("az keyvault secret set-attributes", 'az_keyvault_secret_set_attributes_command_result');
     }
 
     /**
@@ -1521,7 +1521,7 @@ export class az_keyvault_secret {
      * ```
      */
     static show(): az_keyvault_secret_show_command_builder {
-        return new az_keyvault_secret_show_command_builder("az keyvault secret show");
+        return new az_keyvault_secret_show_command_builder("az keyvault secret show", 'az_keyvault_secret_show_command_result');
     }
 
     /**
@@ -1536,7 +1536,7 @@ export class az_keyvault_secret {
      * ```
      */
     static show_deleted(): az_keyvault_secret_show_deleted_command_builder {
-        return new az_keyvault_secret_show_deleted_command_builder("az keyvault secret show-deleted");
+        return new az_keyvault_secret_show_deleted_command_builder("az keyvault secret show-deleted", 'az_keyvault_secret_show_deleted_command_result');
     }
 }
 
@@ -1560,7 +1560,7 @@ export class az_keyvault_security_domain {
      * @param {string} securityDomainFile Path to a file where the JSON blob returned by this command is stored.
      */
     static download(sdQuorum: string, sdWrappingKeys: string, securityDomainFile: string): az_keyvault_security_domain_download_command_builder {
-        return new az_keyvault_security_domain_download_command_builder("az keyvault security-domain download", sdQuorum, sdWrappingKeys, securityDomainFile);
+        return new az_keyvault_security_domain_download_command_builder("az keyvault security-domain download", 'az_keyvault_security_domain_download_command_result', sdQuorum, sdWrappingKeys, securityDomainFile);
     }
 
     /**
@@ -1577,7 +1577,7 @@ export class az_keyvault_security_domain {
      * @param {string} sdExchangeKey Local file path to store the exported key.
      */
     static init_recovery(sdExchangeKey: string): az_keyvault_security_domain_init_recovery_command_builder {
-        return new az_keyvault_security_domain_init_recovery_command_builder("az keyvault security-domain init-recovery", sdExchangeKey);
+        return new az_keyvault_security_domain_init_recovery_command_builder("az keyvault security-domain init-recovery", 'az_keyvault_security_domain_init_recovery_command_result', sdExchangeKey);
     }
 
     /**
@@ -1600,7 +1600,7 @@ export class az_keyvault_security_domain {
      * @param {string} sdWrappingKeys Space-separated file paths to PEM files containing private keys.
      */
     static upload(sdExchangeKey: string, sdFile: string, sdWrappingKeys: string): az_keyvault_security_domain_upload_command_builder {
-        return new az_keyvault_security_domain_upload_command_builder("az keyvault security-domain upload", sdExchangeKey, sdFile, sdWrappingKeys);
+        return new az_keyvault_security_domain_upload_command_builder("az keyvault security-domain upload", 'az_keyvault_security_domain_upload_command_result', sdExchangeKey, sdFile, sdWrappingKeys);
     }
 
     /**
@@ -1614,7 +1614,7 @@ export class az_keyvault_security_domain {
      * ```
      */
     static wait(): az_keyvault_security_domain_wait_command_builder {
-        return new az_keyvault_security_domain_wait_command_builder("az keyvault security-domain wait");
+        return new az_keyvault_security_domain_wait_command_builder("az keyvault security-domain wait", 'az_keyvault_security_domain_wait_command_result');
     }
 }
 
@@ -1644,7 +1644,7 @@ export class az_keyvault_storage_sas_definition {
      * @param {string} vaultName Name of the Vault.
      */
     static create(accountName: string, name: string, sasType: 'account' | 'service', templateUri: string, validityPeriod: string, vaultName: string): az_keyvault_storage_sas_definition_create_command_builder {
-        return new az_keyvault_storage_sas_definition_create_command_builder("az keyvault storage sas-definition create", accountName, name, sasType, templateUri, validityPeriod, vaultName);
+        return new az_keyvault_storage_sas_definition_create_command_builder("az keyvault storage sas-definition create", 'az_keyvault_storage_sas_definition_create_command_result', accountName, name, sasType, templateUri, validityPeriod, vaultName);
     }
 
     /**
@@ -1660,7 +1660,7 @@ export class az_keyvault_storage_sas_definition {
      * ```
      */
     static delete(): az_keyvault_storage_sas_definition_delete_command_builder {
-        return new az_keyvault_storage_sas_definition_delete_command_builder("az keyvault storage sas-definition delete");
+        return new az_keyvault_storage_sas_definition_delete_command_builder("az keyvault storage sas-definition delete", 'az_keyvault_storage_sas_definition_delete_command_result');
     }
 
     /**
@@ -1679,7 +1679,7 @@ export class az_keyvault_storage_sas_definition {
      * @param {string} vaultName Name of the Vault.
      */
     static list(accountName: string, vaultName: string): az_keyvault_storage_sas_definition_list_command_builder {
-        return new az_keyvault_storage_sas_definition_list_command_builder("az keyvault storage sas-definition list", accountName, vaultName);
+        return new az_keyvault_storage_sas_definition_list_command_builder("az keyvault storage sas-definition list", 'az_keyvault_storage_sas_definition_list_command_result', accountName, vaultName);
     }
 
     /**
@@ -1697,7 +1697,7 @@ export class az_keyvault_storage_sas_definition {
      * @param {string} vaultName Name of the Vault.
      */
     static list_deleted(accountName: string, vaultName: string): az_keyvault_storage_sas_definition_list_deleted_command_builder {
-        return new az_keyvault_storage_sas_definition_list_deleted_command_builder("az keyvault storage sas-definition list-deleted", accountName, vaultName);
+        return new az_keyvault_storage_sas_definition_list_deleted_command_builder("az keyvault storage sas-definition list-deleted", 'az_keyvault_storage_sas_definition_list_deleted_command_result', accountName, vaultName);
     }
 
     /**
@@ -1716,7 +1716,7 @@ export class az_keyvault_storage_sas_definition {
      * @param {string} vaultName Name of the Vault.
      */
     static recover(accountName: string, name: string, vaultName: string): az_keyvault_storage_sas_definition_recover_command_builder {
-        return new az_keyvault_storage_sas_definition_recover_command_builder("az keyvault storage sas-definition recover", accountName, name, vaultName);
+        return new az_keyvault_storage_sas_definition_recover_command_builder("az keyvault storage sas-definition recover", 'az_keyvault_storage_sas_definition_recover_command_result', accountName, name, vaultName);
     }
 
     /**
@@ -1733,7 +1733,7 @@ export class az_keyvault_storage_sas_definition {
      * ```
      */
     static show(): az_keyvault_storage_sas_definition_show_command_builder {
-        return new az_keyvault_storage_sas_definition_show_command_builder("az keyvault storage sas-definition show");
+        return new az_keyvault_storage_sas_definition_show_command_builder("az keyvault storage sas-definition show", 'az_keyvault_storage_sas_definition_show_command_result');
     }
 
     /**
@@ -1752,7 +1752,7 @@ export class az_keyvault_storage_sas_definition {
      * @param {string} vaultName Name of the Vault.
      */
     static show_deleted(accountName: string, name: string, vaultName: string): az_keyvault_storage_sas_definition_show_deleted_command_builder {
-        return new az_keyvault_storage_sas_definition_show_deleted_command_builder("az keyvault storage sas-definition show-deleted", accountName, name, vaultName);
+        return new az_keyvault_storage_sas_definition_show_deleted_command_builder("az keyvault storage sas-definition show-deleted", 'az_keyvault_storage_sas_definition_show_deleted_command_result', accountName, name, vaultName);
     }
 
     /**
@@ -1773,7 +1773,7 @@ export class az_keyvault_storage_sas_definition {
      * ```
      */
     static update(): az_keyvault_storage_sas_definition_update_command_builder {
-        return new az_keyvault_storage_sas_definition_update_command_builder("az keyvault storage sas-definition update");
+        return new az_keyvault_storage_sas_definition_update_command_builder("az keyvault storage sas-definition update", 'az_keyvault_storage_sas_definition_update_command_result');
     }
 }
 
@@ -1801,7 +1801,7 @@ export class az_keyvault_storage {
      * @param {string} vaultName Name of the Vault.
      */
     static add(activeKeyName: string, name: string, resourceId: string, vaultName: string): az_keyvault_storage_add_command_builder {
-        return new az_keyvault_storage_add_command_builder("az keyvault storage add", activeKeyName, name, resourceId, vaultName);
+        return new az_keyvault_storage_add_command_builder("az keyvault storage add", 'az_keyvault_storage_add_command_result', activeKeyName, name, resourceId, vaultName);
     }
 
     /**
@@ -1819,7 +1819,7 @@ export class az_keyvault_storage {
      * @param {string} file Local file path in which to store storage account backup.
      */
     static backup(file: string): az_keyvault_storage_backup_command_builder {
-        return new az_keyvault_storage_backup_command_builder("az keyvault storage backup", file);
+        return new az_keyvault_storage_backup_command_builder("az keyvault storage backup", 'az_keyvault_storage_backup_command_result', file);
     }
 
     /**
@@ -1836,7 +1836,7 @@ export class az_keyvault_storage {
      * @param {string} vaultName Name of the Vault.
      */
     static list(vaultName: string): az_keyvault_storage_list_command_builder {
-        return new az_keyvault_storage_list_command_builder("az keyvault storage list", vaultName);
+        return new az_keyvault_storage_list_command_builder("az keyvault storage list", 'az_keyvault_storage_list_command_result', vaultName);
     }
 
     /**
@@ -1852,7 +1852,7 @@ export class az_keyvault_storage {
      * @param {string} vaultName Name of the Vault.
      */
     static list_deleted(vaultName: string): az_keyvault_storage_list_deleted_command_builder {
-        return new az_keyvault_storage_list_deleted_command_builder("az keyvault storage list-deleted", vaultName);
+        return new az_keyvault_storage_list_deleted_command_builder("az keyvault storage list-deleted", 'az_keyvault_storage_list_deleted_command_result', vaultName);
     }
 
     /**
@@ -1869,7 +1869,7 @@ export class az_keyvault_storage {
      * @param {string} vaultName Name of the Vault.
      */
     static purge(name: string, vaultName: string): az_keyvault_storage_purge_command_builder {
-        return new az_keyvault_storage_purge_command_builder("az keyvault storage purge", name, vaultName);
+        return new az_keyvault_storage_purge_command_builder("az keyvault storage purge", 'az_keyvault_storage_purge_command_result', name, vaultName);
     }
 
     /**
@@ -1886,7 +1886,7 @@ export class az_keyvault_storage {
      * @param {string} vaultName Name of the Vault.
      */
     static recover(name: string, vaultName: string): az_keyvault_storage_recover_command_builder {
-        return new az_keyvault_storage_recover_command_builder("az keyvault storage recover", name, vaultName);
+        return new az_keyvault_storage_recover_command_builder("az keyvault storage recover", 'az_keyvault_storage_recover_command_result', name, vaultName);
     }
 
     /**
@@ -1904,7 +1904,7 @@ export class az_keyvault_storage {
      * @param {string} keyName The storage account key name.
      */
     static regenerate_key(keyName: string): az_keyvault_storage_regenerate_key_command_builder {
-        return new az_keyvault_storage_regenerate_key_command_builder("az keyvault storage regenerate-key", keyName);
+        return new az_keyvault_storage_regenerate_key_command_builder("az keyvault storage regenerate-key", 'az_keyvault_storage_regenerate_key_command_result', keyName);
     }
 
     /**
@@ -1919,7 +1919,7 @@ export class az_keyvault_storage {
      * ```
      */
     static remove(): az_keyvault_storage_remove_command_builder {
-        return new az_keyvault_storage_remove_command_builder("az keyvault storage remove");
+        return new az_keyvault_storage_remove_command_builder("az keyvault storage remove", 'az_keyvault_storage_remove_command_result');
     }
 
     /**
@@ -1936,7 +1936,7 @@ export class az_keyvault_storage {
      * @param {string} vaultName Name of the Vault.
      */
     static restore(file: string, vaultName: string): az_keyvault_storage_restore_command_builder {
-        return new az_keyvault_storage_restore_command_builder("az keyvault storage restore", file, vaultName);
+        return new az_keyvault_storage_restore_command_builder("az keyvault storage restore", 'az_keyvault_storage_restore_command_result', file, vaultName);
     }
 
     /**
@@ -1952,7 +1952,7 @@ export class az_keyvault_storage {
      * ```
      */
     static show(): az_keyvault_storage_show_command_builder {
-        return new az_keyvault_storage_show_command_builder("az keyvault storage show");
+        return new az_keyvault_storage_show_command_builder("az keyvault storage show", 'az_keyvault_storage_show_command_result');
     }
 
     /**
@@ -1969,7 +1969,7 @@ export class az_keyvault_storage {
      * @param {string} vaultName Name of the Vault.
      */
     static show_deleted(name: string, vaultName: string): az_keyvault_storage_show_deleted_command_builder {
-        return new az_keyvault_storage_show_deleted_command_builder("az keyvault storage show-deleted", name, vaultName);
+        return new az_keyvault_storage_show_deleted_command_builder("az keyvault storage show-deleted", 'az_keyvault_storage_show_deleted_command_result', name, vaultName);
     }
 
     /**
@@ -1989,7 +1989,7 @@ export class az_keyvault_storage {
      * ```
      */
     static update(): az_keyvault_storage_update_command_builder {
-        return new az_keyvault_storage_update_command_builder("az keyvault storage update");
+        return new az_keyvault_storage_update_command_builder("az keyvault storage update", 'az_keyvault_storage_update_command_result');
     }
 }
 
@@ -2027,7 +2027,7 @@ export class az_keyvault {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static create(resourceGroup: string): az_keyvault_create_command_builder {
-        return new az_keyvault_create_command_builder("az keyvault create", resourceGroup);
+        return new az_keyvault_create_command_builder("az keyvault create", 'az_keyvault_create_command_result', resourceGroup);
     }
 
     /**
@@ -2043,7 +2043,7 @@ export class az_keyvault {
      * ```
      */
     static delete(): az_keyvault_delete_command_builder {
-        return new az_keyvault_delete_command_builder("az keyvault delete");
+        return new az_keyvault_delete_command_builder("az keyvault delete", 'az_keyvault_delete_command_result');
     }
 
     /**
@@ -2063,7 +2063,7 @@ export class az_keyvault {
      * @param {string} name Name of the Vault.
      */
     static delete_policy(name: string): az_keyvault_delete_policy_command_builder {
-        return new az_keyvault_delete_policy_command_builder("az keyvault delete-policy", name);
+        return new az_keyvault_delete_policy_command_builder("az keyvault delete-policy", 'az_keyvault_delete_policy_command_result', name);
     }
 
     /**
@@ -2078,7 +2078,7 @@ export class az_keyvault {
      * ```
      */
     static list(): az_keyvault_list_command_builder {
-        return new az_keyvault_list_command_builder("az keyvault list");
+        return new az_keyvault_list_command_builder("az keyvault list", 'az_keyvault_list_command_result');
     }
 
     /**
@@ -2091,7 +2091,7 @@ export class az_keyvault {
      * ```
      */
     static list_deleted(): az_keyvault_list_deleted_command_builder {
-        return new az_keyvault_list_deleted_command_builder("az keyvault list-deleted");
+        return new az_keyvault_list_deleted_command_builder("az keyvault list-deleted", 'az_keyvault_list_deleted_command_result');
     }
 
     /**
@@ -2107,7 +2107,7 @@ export class az_keyvault {
      * ```
      */
     static purge(): az_keyvault_purge_command_builder {
-        return new az_keyvault_purge_command_builder("az keyvault purge");
+        return new az_keyvault_purge_command_builder("az keyvault purge", 'az_keyvault_purge_command_result');
     }
 
     /**
@@ -2124,7 +2124,7 @@ export class az_keyvault {
      * ```
      */
     static recover(): az_keyvault_recover_command_builder {
-        return new az_keyvault_recover_command_builder("az keyvault recover");
+        return new az_keyvault_recover_command_builder("az keyvault recover", 'az_keyvault_recover_command_result');
     }
 
     /**
@@ -2148,7 +2148,7 @@ export class az_keyvault {
      * @param {string} name Name of the Vault.
      */
     static set_policy(name: string): az_keyvault_set_policy_command_builder {
-        return new az_keyvault_set_policy_command_builder("az keyvault set-policy", name);
+        return new az_keyvault_set_policy_command_builder("az keyvault set-policy", 'az_keyvault_set_policy_command_result', name);
     }
 
     /**
@@ -2164,7 +2164,7 @@ export class az_keyvault {
      * ```
      */
     static show(): az_keyvault_show_command_builder {
-        return new az_keyvault_show_command_builder("az keyvault show");
+        return new az_keyvault_show_command_builder("az keyvault show", 'az_keyvault_show_command_result');
     }
 
     /**
@@ -2194,7 +2194,7 @@ export class az_keyvault {
      * @param {string} name Name of the Vault.
      */
     static update(name: string): az_keyvault_update_command_builder {
-        return new az_keyvault_update_command_builder("az keyvault update", name);
+        return new az_keyvault_update_command_builder("az keyvault update", 'az_keyvault_update_command_result', name);
     }
 
     /**
@@ -2219,7 +2219,7 @@ export class az_keyvault {
      * @param {string} hsmName Name of the HSM.
      */
     static update_hsm(hsmName: string): az_keyvault_update_hsm_command_builder {
-        return new az_keyvault_update_hsm_command_builder("az keyvault update-hsm", hsmName);
+        return new az_keyvault_update_hsm_command_builder("az keyvault update-hsm", 'az_keyvault_update_hsm_command_result', hsmName);
     }
 
     /**
@@ -2242,7 +2242,7 @@ export class az_keyvault {
      * @param {string} name Name of the Vault.
      */
     static wait(name: string): az_keyvault_wait_command_builder {
-        return new az_keyvault_wait_command_builder("az keyvault wait", name);
+        return new az_keyvault_wait_command_builder("az keyvault wait", 'az_keyvault_wait_command_result', name);
     }
 
     /**
@@ -2265,7 +2265,7 @@ export class az_keyvault {
      * @param {string} hsmName Name of the HSM.
      */
     static wait_hsm(hsmName: string): az_keyvault_wait_hsm_command_builder {
-        return new az_keyvault_wait_hsm_command_builder("az keyvault wait-hsm", hsmName);
+        return new az_keyvault_wait_hsm_command_builder("az keyvault wait-hsm", 'az_keyvault_wait_hsm_command_result', hsmName);
     }
 }
 
@@ -2286,8 +2286,8 @@ export class az_keyvault {
  * @param {string} storageContainerSasToken The SAS token pointing to an Azure Blob storage container.
  */
 class az_keyvault_backup_start_command_builder extends CommandBuilder<az_keyvault_backup_start_command_result> {
-    constructor(commandPath: string, storageContainerSasToken: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, storageContainerSasToken: string) {
+        super(commandPath, resultDataTypeName);
         this.storageContainerSasToken(storageContainerSasToken)
     }
 
@@ -2350,8 +2350,8 @@ class az_keyvault_backup_start_command_builder extends CommandBuilder<az_keyvaul
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_contact_add_command_builder extends CommandBuilder<az_keyvault_certificate_contact_add_command_result> {
-    constructor(commandPath: string, email: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, email: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.email(email)
         this.vaultName(vaultName)
     }
@@ -2401,8 +2401,8 @@ class az_keyvault_certificate_contact_add_command_builder extends CommandBuilder
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_contact_delete_command_builder extends CommandBuilder<az_keyvault_certificate_contact_delete_command_result> {
-    constructor(commandPath: string, email: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, email: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.email(email)
         this.vaultName(vaultName)
     }
@@ -2439,8 +2439,8 @@ class az_keyvault_certificate_contact_delete_command_builder extends CommandBuil
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_contact_list_command_builder extends CommandBuilder<az_keyvault_certificate_contact_list_command_result> {
-    constructor(commandPath: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.vaultName(vaultName)
     }
 
@@ -2482,8 +2482,8 @@ class az_keyvault_certificate_contact_list_command_builder extends CommandBuilde
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_issuer_admin_add_command_builder extends CommandBuilder<az_keyvault_certificate_issuer_admin_add_command_result> {
-    constructor(commandPath: string, email: string, issuerName: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, email: string, issuerName: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.email(email)
         this.issuerName(issuerName)
         this.vaultName(vaultName)
@@ -2548,8 +2548,8 @@ class az_keyvault_certificate_issuer_admin_add_command_builder extends CommandBu
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_issuer_admin_delete_command_builder extends CommandBuilder<az_keyvault_certificate_issuer_admin_delete_command_result> {
-    constructor(commandPath: string, email: string, issuerName: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, email: string, issuerName: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.email(email)
         this.issuerName(issuerName)
         this.vaultName(vaultName)
@@ -2595,8 +2595,8 @@ class az_keyvault_certificate_issuer_admin_delete_command_builder extends Comman
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_issuer_admin_list_command_builder extends CommandBuilder<az_keyvault_certificate_issuer_admin_list_command_result> {
-    constructor(commandPath: string, issuerName: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, issuerName: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.issuerName(issuerName)
         this.vaultName(vaultName)
     }
@@ -2646,8 +2646,8 @@ class az_keyvault_certificate_issuer_admin_list_command_builder extends CommandB
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_issuer_create_command_builder extends CommandBuilder<az_keyvault_certificate_issuer_create_command_result> {
-    constructor(commandPath: string, issuerName: string, providerName: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, issuerName: string, providerName: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.issuerName(issuerName)
         this.providerName(providerName)
         this.vaultName(vaultName)
@@ -2716,8 +2716,8 @@ class az_keyvault_certificate_issuer_create_command_builder extends CommandBuild
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_issuer_delete_command_builder extends CommandBuilder<az_keyvault_certificate_issuer_delete_command_result> {
-    constructor(commandPath: string, issuerName: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, issuerName: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.issuerName(issuerName)
         this.vaultName(vaultName)
     }
@@ -2755,8 +2755,8 @@ class az_keyvault_certificate_issuer_delete_command_builder extends CommandBuild
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_issuer_list_command_builder extends CommandBuilder<az_keyvault_certificate_issuer_list_command_result> {
-    constructor(commandPath: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.vaultName(vaultName)
     }
 
@@ -2800,8 +2800,8 @@ class az_keyvault_certificate_issuer_list_command_builder extends CommandBuilder
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_issuer_show_command_builder extends CommandBuilder<az_keyvault_certificate_issuer_show_command_result> {
-    constructor(commandPath: string, issuerName: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, issuerName: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.issuerName(issuerName)
         this.vaultName(vaultName)
     }
@@ -2850,8 +2850,8 @@ class az_keyvault_certificate_issuer_show_command_builder extends CommandBuilder
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_issuer_update_command_builder extends CommandBuilder<az_keyvault_certificate_issuer_update_command_result> {
-    constructor(commandPath: string, issuerName: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, issuerName: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.issuerName(issuerName)
         this.vaultName(vaultName)
     }
@@ -2919,8 +2919,8 @@ class az_keyvault_certificate_issuer_update_command_builder extends CommandBuild
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_pending_delete_command_builder extends CommandBuilder<az_keyvault_certificate_pending_delete_command_result> {
-    constructor(commandPath: string, name: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.vaultName(vaultName)
     }
@@ -2964,8 +2964,8 @@ class az_keyvault_certificate_pending_delete_command_builder extends CommandBuil
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_pending_merge_command_builder extends CommandBuilder<az_keyvault_certificate_pending_merge_command_result> {
-    constructor(commandPath: string, file: string, name: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, file: string, name: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.file(file)
         this.name(name)
         this.vaultName(vaultName)
@@ -3035,8 +3035,8 @@ class az_keyvault_certificate_pending_merge_command_builder extends CommandBuild
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_pending_show_command_builder extends CommandBuilder<az_keyvault_certificate_pending_show_command_result> {
-    constructor(commandPath: string, name: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.vaultName(vaultName)
     }
@@ -3081,8 +3081,8 @@ class az_keyvault_certificate_pending_show_command_builder extends CommandBuilde
  * @param {string} file Local file path in which to store certificate backup.
  */
 class az_keyvault_certificate_backup_command_builder extends CommandBuilder<az_keyvault_certificate_backup_command_result> {
-    constructor(commandPath: string, file: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, file: string) {
+        super(commandPath, resultDataTypeName);
         this.file(file)
     }
 
@@ -3136,8 +3136,8 @@ class az_keyvault_certificate_backup_command_builder extends CommandBuilder<az_k
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_create_command_builder extends CommandBuilder<az_keyvault_certificate_create_command_result> {
-    constructor(commandPath: string, name: string, policy: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, policy: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.policy(policy)
         this.vaultName(vaultName)
@@ -3198,8 +3198,8 @@ class az_keyvault_certificate_create_command_builder extends CommandBuilder<az_k
  * ```
  */
 class az_keyvault_certificate_delete_command_builder extends CommandBuilder<az_keyvault_certificate_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Id of the certificate. If specified all other 'Id' arguments should be omitted. */
@@ -3244,8 +3244,8 @@ class az_keyvault_certificate_delete_command_builder extends CommandBuilder<az_k
  * @param {string} file File to receive the binary certificate contents.
  */
 class az_keyvault_certificate_download_command_builder extends CommandBuilder<az_keyvault_certificate_download_command_result> {
-    constructor(commandPath: string, file: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, file: string) {
+        super(commandPath, resultDataTypeName);
         this.file(file)
     }
 
@@ -3302,8 +3302,8 @@ class az_keyvault_certificate_download_command_builder extends CommandBuilder<az
  * ```
  */
 class az_keyvault_certificate_get_default_policy_command_builder extends CommandBuilder<az_keyvault_certificate_get_default_policy_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Create a fully formed policy structure with default values. */
@@ -3339,8 +3339,8 @@ class az_keyvault_certificate_get_default_policy_command_builder extends Command
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_import_command_builder extends CommandBuilder<az_keyvault_certificate_import_command_result> {
-    constructor(commandPath: string, file: string, name: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, file: string, name: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.file(file)
         this.name(name)
         this.vaultName(vaultName)
@@ -3409,8 +3409,8 @@ class az_keyvault_certificate_import_command_builder extends CommandBuilder<az_k
  * ```
  */
 class az_keyvault_certificate_list_command_builder extends CommandBuilder<az_keyvault_certificate_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Id of the Vault or HSM. If specified all other 'Id' arguments should be omitted. */
@@ -3465,8 +3465,8 @@ class az_keyvault_certificate_list_command_builder extends CommandBuilder<az_key
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_list_deleted_command_builder extends CommandBuilder<az_keyvault_certificate_list_deleted_command_result> {
-    constructor(commandPath: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.vaultName(vaultName)
     }
 
@@ -3514,8 +3514,8 @@ class az_keyvault_certificate_list_deleted_command_builder extends CommandBuilde
  * ```
  */
 class az_keyvault_certificate_list_versions_command_builder extends CommandBuilder<az_keyvault_certificate_list_versions_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Id of the certificate. If specified all other 'Id' arguments should be omitted. */
@@ -3561,8 +3561,8 @@ class az_keyvault_certificate_list_versions_command_builder extends CommandBuild
  * ```
  */
 class az_keyvault_certificate_purge_command_builder extends CommandBuilder<az_keyvault_certificate_purge_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The recovery id of the certificate. If specified all other 'Id' arguments should be omitted. */
@@ -3602,8 +3602,8 @@ class az_keyvault_certificate_purge_command_builder extends CommandBuilder<az_ke
  * ```
  */
 class az_keyvault_certificate_recover_command_builder extends CommandBuilder<az_keyvault_certificate_recover_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The recovery id of the certificate. If specified all other 'Id' arguments should be omitted. */
@@ -3645,8 +3645,8 @@ class az_keyvault_certificate_recover_command_builder extends CommandBuilder<az_
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_certificate_restore_command_builder extends CommandBuilder<az_keyvault_certificate_restore_command_result> {
-    constructor(commandPath: string, file: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, file: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.file(file)
         this.vaultName(vaultName)
     }
@@ -3686,8 +3686,8 @@ class az_keyvault_certificate_restore_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_keyvault_certificate_set_attributes_command_builder extends CommandBuilder<az_keyvault_certificate_set_attributes_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Enable the certificate. */
@@ -3753,8 +3753,8 @@ class az_keyvault_certificate_set_attributes_command_builder extends CommandBuil
  * ```
  */
 class az_keyvault_certificate_show_command_builder extends CommandBuilder<az_keyvault_certificate_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Id of the certificate. If specified all other 'Id' arguments should be omitted. */
@@ -3806,8 +3806,8 @@ class az_keyvault_certificate_show_command_builder extends CommandBuilder<az_key
  * ```
  */
 class az_keyvault_certificate_show_deleted_command_builder extends CommandBuilder<az_keyvault_certificate_show_deleted_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The recovery id of the certificate. If specified all other 'Id' arguments should be omitted. */
@@ -3851,8 +3851,8 @@ class az_keyvault_certificate_show_deleted_command_builder extends CommandBuilde
  * @param {string} file Local file path in which to store key backup.
  */
 class az_keyvault_key_backup_command_builder extends CommandBuilder<az_keyvault_key_backup_command_result> {
-    constructor(commandPath: string, file: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, file: string) {
+        super(commandPath, resultDataTypeName);
         this.file(file)
     }
 
@@ -3915,8 +3915,8 @@ class az_keyvault_key_backup_command_builder extends CommandBuilder<az_keyvault_
  * ```
  */
 class az_keyvault_key_create_command_builder extends CommandBuilder<az_keyvault_key_create_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Elliptic curve name. For valid values, see: <a href="https://docs.microsoft.com/en-us/rest/api/keyvault/createkey/createkey#jsonwebkeycurvename">https://docs.microsoft.com/en-us/rest/api/keyvault/createkey/createkey#jsonwebkeycurvename</a>. */
@@ -4023,8 +4023,8 @@ class az_keyvault_key_create_command_builder extends CommandBuilder<az_keyvault_
  * @param {string} value The value to be decrypted, which should be the result of "az keyvault encrypt".
  */
 class az_keyvault_key_decrypt_command_builder extends CommandBuilder<az_keyvault_key_decrypt_command_result> {
-    constructor(commandPath: string, algorithm: 'RSA-OAEP' | 'RSA-OAEP-256' | 'RSA1_5', value: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, algorithm: 'RSA-OAEP' | 'RSA-OAEP-256' | 'RSA1_5', value: string) {
+        super(commandPath, resultDataTypeName);
         this.algorithm(algorithm)
         this.value(value)
     }
@@ -4091,8 +4091,8 @@ class az_keyvault_key_decrypt_command_builder extends CommandBuilder<az_keyvault
  * ```
  */
 class az_keyvault_key_delete_command_builder extends CommandBuilder<az_keyvault_key_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the HSM. (--hsm-name and --vault-name are mutually exclusive, please specify just one of them). */
@@ -4144,8 +4144,8 @@ class az_keyvault_key_delete_command_builder extends CommandBuilder<az_keyvault_
  * @param {string} file File to receive the key contents.
  */
 class az_keyvault_key_download_command_builder extends CommandBuilder<az_keyvault_key_download_command_result> {
-    constructor(commandPath: string, file: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, file: string) {
+        super(commandPath, resultDataTypeName);
         this.file(file)
     }
 
@@ -4217,8 +4217,8 @@ class az_keyvault_key_download_command_builder extends CommandBuilder<az_keyvaul
  * @param {string} value The value to be encrypted. Default data type is Base64 encoded string.
  */
 class az_keyvault_key_encrypt_command_builder extends CommandBuilder<az_keyvault_key_encrypt_command_result> {
-    constructor(commandPath: string, algorithm: 'RSA-OAEP' | 'RSA-OAEP-256' | 'RSA1_5', value: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, algorithm: 'RSA-OAEP' | 'RSA-OAEP-256' | 'RSA1_5', value: string) {
+        super(commandPath, resultDataTypeName);
         this.algorithm(algorithm)
         this.value(value)
     }
@@ -4281,8 +4281,8 @@ class az_keyvault_key_encrypt_command_builder extends CommandBuilder<az_keyvault
  * ```
  */
 class az_keyvault_key_get_policy_template_command_builder extends CommandBuilder<az_keyvault_key_get_policy_template_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -4316,8 +4316,8 @@ class az_keyvault_key_get_policy_template_command_builder extends CommandBuilder
  * ```
  */
 class az_keyvault_key_import_command_builder extends CommandBuilder<az_keyvault_key_import_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** BYOK file containing the key to be imported. Must not be password protected. */
@@ -4431,8 +4431,8 @@ class az_keyvault_key_import_command_builder extends CommandBuilder<az_keyvault_
  * ```
  */
 class az_keyvault_key_list_command_builder extends CommandBuilder<az_keyvault_key_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the HSM. (--hsm-name and --vault-name are mutually exclusive, please specify just one of them). */
@@ -4485,8 +4485,8 @@ class az_keyvault_key_list_command_builder extends CommandBuilder<az_keyvault_ke
  * ```
  */
 class az_keyvault_key_list_deleted_command_builder extends CommandBuilder<az_keyvault_key_list_deleted_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the HSM. (--hsm-name and --vault-name are mutually exclusive, please specify just one of them). */
@@ -4534,8 +4534,8 @@ class az_keyvault_key_list_deleted_command_builder extends CommandBuilder<az_key
  * ```
  */
 class az_keyvault_key_list_versions_command_builder extends CommandBuilder<az_keyvault_key_list_versions_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the HSM. (--hsm-name and --vault-name are mutually exclusive, please specify just one of them). */
@@ -4588,8 +4588,8 @@ class az_keyvault_key_list_versions_command_builder extends CommandBuilder<az_ke
  * ```
  */
 class az_keyvault_key_purge_command_builder extends CommandBuilder<az_keyvault_key_purge_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the HSM. (--hsm-name and --vault-name are mutually exclusive, please specify just one of them). */
@@ -4636,8 +4636,8 @@ class az_keyvault_key_purge_command_builder extends CommandBuilder<az_keyvault_k
  * ```
  */
 class az_keyvault_key_recover_command_builder extends CommandBuilder<az_keyvault_key_recover_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the HSM. (--hsm-name and --vault-name are mutually exclusive, please specify just one of them). */
@@ -4686,8 +4686,8 @@ class az_keyvault_key_recover_command_builder extends CommandBuilder<az_keyvault
  * @param {string} file Local key backup from which to restore key.
  */
 class az_keyvault_key_restore_command_builder extends CommandBuilder<az_keyvault_key_restore_command_result> {
-    constructor(commandPath: string, file: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, file: string) {
+        super(commandPath, resultDataTypeName);
         this.file(file)
     }
 
@@ -4741,8 +4741,8 @@ class az_keyvault_key_restore_command_builder extends CommandBuilder<az_keyvault
  * ```
  */
 class az_keyvault_key_set_attributes_command_builder extends CommandBuilder<az_keyvault_key_set_attributes_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Enable the key. */
@@ -4827,8 +4827,8 @@ class az_keyvault_key_set_attributes_command_builder extends CommandBuilder<az_k
  * ```
  */
 class az_keyvault_key_show_command_builder extends CommandBuilder<az_keyvault_key_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the HSM. (--hsm-name and --vault-name are mutually exclusive, please specify just one of them). */
@@ -4887,8 +4887,8 @@ class az_keyvault_key_show_command_builder extends CommandBuilder<az_keyvault_ke
  * ```
  */
 class az_keyvault_key_show_deleted_command_builder extends CommandBuilder<az_keyvault_key_show_deleted_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the HSM. (--hsm-name and --vault-name are mutually exclusive, please specify just one of them). */
@@ -4939,8 +4939,8 @@ class az_keyvault_key_show_deleted_command_builder extends CommandBuilder<az_key
  * @param {string} name Name of the Vault.
  */
 class az_keyvault_network_rule_add_command_builder extends CommandBuilder<az_keyvault_network_rule_add_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -5001,8 +5001,8 @@ class az_keyvault_network_rule_add_command_builder extends CommandBuilder<az_key
  * @param {string} name Name of the Vault.
  */
 class az_keyvault_network_rule_list_command_builder extends CommandBuilder<az_keyvault_network_rule_list_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -5048,8 +5048,8 @@ class az_keyvault_network_rule_list_command_builder extends CommandBuilder<az_ke
  * @param {string} name Name of the Vault.
  */
 class az_keyvault_network_rule_remove_command_builder extends CommandBuilder<az_keyvault_network_rule_remove_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -5116,8 +5116,8 @@ class az_keyvault_network_rule_remove_command_builder extends CommandBuilder<az_
  * @param {string} name Name of the Vault.
  */
 class az_keyvault_network_rule_wait_command_builder extends CommandBuilder<az_keyvault_network_rule_wait_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -5197,8 +5197,8 @@ class az_keyvault_network_rule_wait_command_builder extends CommandBuilder<az_ke
  * ```
  */
 class az_keyvault_private_endpoint_connection_approve_command_builder extends CommandBuilder<az_keyvault_private_endpoint_connection_approve_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Comments for the approve operation. */
@@ -5258,8 +5258,8 @@ class az_keyvault_private_endpoint_connection_approve_command_builder extends Co
  * ```
  */
 class az_keyvault_private_endpoint_connection_delete_command_builder extends CommandBuilder<az_keyvault_private_endpoint_connection_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The ID of the private endpoint connection associated with the Key Vault. If specified --vault-name and --name/-n, this should be omitted. */
@@ -5314,8 +5314,8 @@ class az_keyvault_private_endpoint_connection_delete_command_builder extends Com
  * ```
  */
 class az_keyvault_private_endpoint_connection_reject_command_builder extends CommandBuilder<az_keyvault_private_endpoint_connection_reject_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Comments for the reject operation. */
@@ -5375,8 +5375,8 @@ class az_keyvault_private_endpoint_connection_reject_command_builder extends Com
  * ```
  */
 class az_keyvault_private_endpoint_connection_show_command_builder extends CommandBuilder<az_keyvault_private_endpoint_connection_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The ID of the private endpoint connection associated with the Key Vault. If specified --vault-name and --name/-n, this should be omitted. */
@@ -5436,8 +5436,8 @@ class az_keyvault_private_endpoint_connection_show_command_builder extends Comma
  * ```
  */
 class az_keyvault_private_endpoint_connection_wait_command_builder extends CommandBuilder<az_keyvault_private_endpoint_connection_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Wait until created with 'provisioningState' at 'Succeeded'. */
@@ -5527,8 +5527,8 @@ class az_keyvault_private_endpoint_connection_wait_command_builder extends Comma
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_private_link_resource_list_command_builder extends CommandBuilder<az_keyvault_private_link_resource_list_command_result> {
-    constructor(commandPath: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.vaultName(vaultName)
     }
 
@@ -5576,8 +5576,8 @@ class az_keyvault_private_link_resource_list_command_builder extends CommandBuil
  * @param {string} storageContainerSasToken The SAS token pointing to an Azure Blob storage container.
  */
 class az_keyvault_restore_start_command_builder extends CommandBuilder<az_keyvault_restore_start_command_result> {
-    constructor(commandPath: string, backupFolder: string, storageContainerSasToken: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, backupFolder: string, storageContainerSasToken: string) {
+        super(commandPath, resultDataTypeName);
         this.backupFolder(backupFolder)
         this.storageContainerSasToken(storageContainerSasToken)
     }
@@ -5651,8 +5651,8 @@ class az_keyvault_restore_start_command_builder extends CommandBuilder<az_keyvau
  * @param {string} scope Scope at which the role assignment or definition applies to, e.g., "/" or "/keys" or "/keys/{keyname}".
  */
 class az_keyvault_role_assignment_create_command_builder extends CommandBuilder<az_keyvault_role_assignment_create_command_result> {
-    constructor(commandPath: string, role: string, scope: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, role: string, scope: string) {
+        super(commandPath, resultDataTypeName);
         this.role(role)
         this.scope(scope)
     }
@@ -5729,8 +5729,8 @@ class az_keyvault_role_assignment_create_command_builder extends CommandBuilder<
  * ```
  */
 class az_keyvault_role_assignment_delete_command_builder extends CommandBuilder<az_keyvault_role_assignment_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Represent a user, group, or service principal. supported format: object id, user sign-in name, or service principal name. */
@@ -5804,8 +5804,8 @@ class az_keyvault_role_assignment_delete_command_builder extends CommandBuilder<
  * ```
  */
 class az_keyvault_role_assignment_list_command_builder extends CommandBuilder<az_keyvault_role_assignment_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Represent a user, group, or service principal. supported format: object id, user sign-in name, or service principal name. */
@@ -5869,8 +5869,8 @@ class az_keyvault_role_assignment_list_command_builder extends CommandBuilder<az
  * ```
  */
 class az_keyvault_role_definition_list_command_builder extends CommandBuilder<az_keyvault_role_definition_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the HSM. */
@@ -5913,8 +5913,8 @@ class az_keyvault_role_definition_list_command_builder extends CommandBuilder<az
  * @param {string} file File to receive the secret contents.
  */
 class az_keyvault_secret_backup_command_builder extends CommandBuilder<az_keyvault_secret_backup_command_result> {
-    constructor(commandPath: string, file: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, file: string) {
+        super(commandPath, resultDataTypeName);
         this.file(file)
     }
 
@@ -5961,8 +5961,8 @@ class az_keyvault_secret_backup_command_builder extends CommandBuilder<az_keyvau
  * ```
  */
 class az_keyvault_secret_delete_command_builder extends CommandBuilder<az_keyvault_secret_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Id of the secret. If specified all other 'Id' arguments should be omitted. */
@@ -6007,8 +6007,8 @@ class az_keyvault_secret_delete_command_builder extends CommandBuilder<az_keyvau
  * @param {string} file File to receive the secret contents.
  */
 class az_keyvault_secret_download_command_builder extends CommandBuilder<az_keyvault_secret_download_command_result> {
-    constructor(commandPath: string, file: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, file: string) {
+        super(commandPath, resultDataTypeName);
         this.file(file)
     }
 
@@ -6068,8 +6068,8 @@ class az_keyvault_secret_download_command_builder extends CommandBuilder<az_keyv
  * ```
  */
 class az_keyvault_secret_list_command_builder extends CommandBuilder<az_keyvault_secret_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Id of the Vault or HSM. If specified all other 'Id' arguments should be omitted. */
@@ -6117,8 +6117,8 @@ class az_keyvault_secret_list_command_builder extends CommandBuilder<az_keyvault
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_secret_list_deleted_command_builder extends CommandBuilder<az_keyvault_secret_list_deleted_command_result> {
-    constructor(commandPath: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.vaultName(vaultName)
     }
 
@@ -6160,8 +6160,8 @@ class az_keyvault_secret_list_deleted_command_builder extends CommandBuilder<az_
  * ```
  */
 class az_keyvault_secret_list_versions_command_builder extends CommandBuilder<az_keyvault_secret_list_versions_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Id of the secret. If specified all other 'Id' arguments should be omitted. */
@@ -6207,8 +6207,8 @@ class az_keyvault_secret_list_versions_command_builder extends CommandBuilder<az
  * ```
  */
 class az_keyvault_secret_purge_command_builder extends CommandBuilder<az_keyvault_secret_purge_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The recovery id of the secret. If specified all other 'Id' arguments should be omitted. */
@@ -6248,8 +6248,8 @@ class az_keyvault_secret_purge_command_builder extends CommandBuilder<az_keyvaul
  * ```
  */
 class az_keyvault_secret_recover_command_builder extends CommandBuilder<az_keyvault_secret_recover_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The recovery id of the secret. If specified all other 'Id' arguments should be omitted. */
@@ -6291,8 +6291,8 @@ class az_keyvault_secret_recover_command_builder extends CommandBuilder<az_keyva
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_secret_restore_command_builder extends CommandBuilder<az_keyvault_secret_restore_command_result> {
-    constructor(commandPath: string, file: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, file: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.file(file)
         this.vaultName(vaultName)
     }
@@ -6338,8 +6338,8 @@ class az_keyvault_secret_restore_command_builder extends CommandBuilder<az_keyva
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_secret_set_command_builder extends CommandBuilder<az_keyvault_secret_set_command_result> {
-    constructor(commandPath: string, name: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.vaultName(vaultName)
     }
@@ -6429,8 +6429,8 @@ class az_keyvault_secret_set_command_builder extends CommandBuilder<az_keyvault_
  * ```
  */
 class az_keyvault_secret_set_attributes_command_builder extends CommandBuilder<az_keyvault_secret_set_attributes_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Type of the secret value such as a password. */
@@ -6508,8 +6508,8 @@ class az_keyvault_secret_set_attributes_command_builder extends CommandBuilder<a
  * ```
  */
 class az_keyvault_secret_show_command_builder extends CommandBuilder<az_keyvault_secret_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Id of the secret. If specified all other 'Id' arguments should be omitted. */
@@ -6561,8 +6561,8 @@ class az_keyvault_secret_show_command_builder extends CommandBuilder<az_keyvault
  * ```
  */
 class az_keyvault_secret_show_deleted_command_builder extends CommandBuilder<az_keyvault_secret_show_deleted_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The recovery id of the secret. If specified all other 'Id' arguments should be omitted. */
@@ -6608,8 +6608,8 @@ class az_keyvault_secret_show_deleted_command_builder extends CommandBuilder<az_
  * @param {string} securityDomainFile Path to a file where the JSON blob returned by this command is stored.
  */
 class az_keyvault_security_domain_download_command_builder extends CommandBuilder<az_keyvault_security_domain_download_command_result> {
-    constructor(commandPath: string, sdQuorum: string, sdWrappingKeys: string, securityDomainFile: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, sdQuorum: string, sdWrappingKeys: string, securityDomainFile: string) {
+        super(commandPath, resultDataTypeName);
         this.sdQuorum(sdQuorum)
         this.sdWrappingKeys(sdWrappingKeys)
         this.securityDomainFile(securityDomainFile)
@@ -6666,8 +6666,8 @@ class az_keyvault_security_domain_download_command_builder extends CommandBuilde
  * @param {string} sdExchangeKey Local file path to store the exported key.
  */
 class az_keyvault_security_domain_init_recovery_command_builder extends CommandBuilder<az_keyvault_security_domain_init_recovery_command_result> {
-    constructor(commandPath: string, sdExchangeKey: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, sdExchangeKey: string) {
+        super(commandPath, resultDataTypeName);
         this.sdExchangeKey(sdExchangeKey)
     }
 
@@ -6716,8 +6716,8 @@ class az_keyvault_security_domain_init_recovery_command_builder extends CommandB
  * @param {string} sdWrappingKeys Space-separated file paths to PEM files containing private keys.
  */
 class az_keyvault_security_domain_upload_command_builder extends CommandBuilder<az_keyvault_security_domain_upload_command_result> {
-    constructor(commandPath: string, sdExchangeKey: string, sdFile: string, sdWrappingKeys: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, sdExchangeKey: string, sdFile: string, sdWrappingKeys: string) {
+        super(commandPath, resultDataTypeName);
         this.sdExchangeKey(sdExchangeKey)
         this.sdFile(sdFile)
         this.sdWrappingKeys(sdWrappingKeys)
@@ -6783,8 +6783,8 @@ class az_keyvault_security_domain_upload_command_builder extends CommandBuilder<
  * ```
  */
 class az_keyvault_security_domain_wait_command_builder extends CommandBuilder<az_keyvault_security_domain_wait_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the HSM. Can be omitted if --id is specified. */
@@ -6830,8 +6830,8 @@ class az_keyvault_security_domain_wait_command_builder extends CommandBuilder<az
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_storage_sas_definition_create_command_builder extends CommandBuilder<az_keyvault_storage_sas_definition_create_command_result> {
-    constructor(commandPath: string, accountName: string, name: string, sasType: 'account' | 'service', templateUri: string, validityPeriod: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, name: string, sasType: 'account' | 'service', templateUri: string, validityPeriod: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.name(name)
         this.sasType(sasType)
@@ -6908,8 +6908,8 @@ class az_keyvault_storage_sas_definition_create_command_builder extends CommandB
  * ```
  */
 class az_keyvault_storage_sas_definition_delete_command_builder extends CommandBuilder<az_keyvault_storage_sas_definition_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name to identify the storage account in the vault. Required if --id is not specified. */
@@ -6959,8 +6959,8 @@ class az_keyvault_storage_sas_definition_delete_command_builder extends CommandB
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_storage_sas_definition_list_command_builder extends CommandBuilder<az_keyvault_storage_sas_definition_list_command_result> {
-    constructor(commandPath: string, accountName: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.vaultName(vaultName)
     }
@@ -7011,8 +7011,8 @@ class az_keyvault_storage_sas_definition_list_command_builder extends CommandBui
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_storage_sas_definition_list_deleted_command_builder extends CommandBuilder<az_keyvault_storage_sas_definition_list_deleted_command_result> {
-    constructor(commandPath: string, accountName: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.vaultName(vaultName)
     }
@@ -7058,8 +7058,8 @@ class az_keyvault_storage_sas_definition_list_deleted_command_builder extends Co
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_storage_sas_definition_recover_command_builder extends CommandBuilder<az_keyvault_storage_sas_definition_recover_command_result> {
-    constructor(commandPath: string, accountName: string, name: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, name: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.name(name)
         this.vaultName(vaultName)
@@ -7104,8 +7104,8 @@ class az_keyvault_storage_sas_definition_recover_command_builder extends Command
  * ```
  */
 class az_keyvault_storage_sas_definition_show_command_builder extends CommandBuilder<az_keyvault_storage_sas_definition_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name to identify the storage account in the vault. Required if --id is not specified. */
@@ -7161,8 +7161,8 @@ class az_keyvault_storage_sas_definition_show_command_builder extends CommandBui
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_storage_sas_definition_show_deleted_command_builder extends CommandBuilder<az_keyvault_storage_sas_definition_show_deleted_command_result> {
-    constructor(commandPath: string, accountName: string, name: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, name: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.accountName(accountName)
         this.name(name)
         this.vaultName(vaultName)
@@ -7211,8 +7211,8 @@ class az_keyvault_storage_sas_definition_show_deleted_command_builder extends Co
  * ```
  */
 class az_keyvault_storage_sas_definition_update_command_builder extends CommandBuilder<az_keyvault_storage_sas_definition_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name to identify the storage account in the vault. Required if --id is not specified. */
@@ -7298,8 +7298,8 @@ class az_keyvault_storage_sas_definition_update_command_builder extends CommandB
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_storage_add_command_builder extends CommandBuilder<az_keyvault_storage_add_command_result> {
-    constructor(commandPath: string, activeKeyName: string, name: string, resourceId: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, activeKeyName: string, name: string, resourceId: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.activeKeyName(activeKeyName)
         this.name(name)
         this.resourceId(resourceId)
@@ -7376,8 +7376,8 @@ class az_keyvault_storage_add_command_builder extends CommandBuilder<az_keyvault
  * @param {string} file Local file path in which to store storage account backup.
  */
 class az_keyvault_storage_backup_command_builder extends CommandBuilder<az_keyvault_storage_backup_command_result> {
-    constructor(commandPath: string, file: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, file: string) {
+        super(commandPath, resultDataTypeName);
         this.file(file)
     }
 
@@ -7426,8 +7426,8 @@ class az_keyvault_storage_backup_command_builder extends CommandBuilder<az_keyva
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_storage_list_command_builder extends CommandBuilder<az_keyvault_storage_list_command_result> {
-    constructor(commandPath: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.vaultName(vaultName)
     }
 
@@ -7469,8 +7469,8 @@ class az_keyvault_storage_list_command_builder extends CommandBuilder<az_keyvaul
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_storage_list_deleted_command_builder extends CommandBuilder<az_keyvault_storage_list_deleted_command_result> {
-    constructor(commandPath: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.vaultName(vaultName)
     }
 
@@ -7507,8 +7507,8 @@ class az_keyvault_storage_list_deleted_command_builder extends CommandBuilder<az
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_storage_purge_command_builder extends CommandBuilder<az_keyvault_storage_purge_command_result> {
-    constructor(commandPath: string, name: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.vaultName(vaultName)
     }
@@ -7546,8 +7546,8 @@ class az_keyvault_storage_purge_command_builder extends CommandBuilder<az_keyvau
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_storage_recover_command_builder extends CommandBuilder<az_keyvault_storage_recover_command_result> {
-    constructor(commandPath: string, name: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.vaultName(vaultName)
     }
@@ -7586,8 +7586,8 @@ class az_keyvault_storage_recover_command_builder extends CommandBuilder<az_keyv
  * @param {string} keyName The storage account key name.
  */
 class az_keyvault_storage_regenerate_key_command_builder extends CommandBuilder<az_keyvault_storage_regenerate_key_command_result> {
-    constructor(commandPath: string, keyName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, keyName: string) {
+        super(commandPath, resultDataTypeName);
         this.keyName(keyName)
     }
 
@@ -7634,8 +7634,8 @@ class az_keyvault_storage_regenerate_key_command_builder extends CommandBuilder<
  * ```
  */
 class az_keyvault_storage_remove_command_builder extends CommandBuilder<az_keyvault_storage_remove_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Id of the storage account.  If specified all other 'Id' arguments should be omitted. */
@@ -7677,8 +7677,8 @@ class az_keyvault_storage_remove_command_builder extends CommandBuilder<az_keyva
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_storage_restore_command_builder extends CommandBuilder<az_keyvault_storage_restore_command_result> {
-    constructor(commandPath: string, file: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, file: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.file(file)
         this.vaultName(vaultName)
     }
@@ -7715,8 +7715,8 @@ class az_keyvault_storage_restore_command_builder extends CommandBuilder<az_keyv
  * ```
  */
 class az_keyvault_storage_show_command_builder extends CommandBuilder<az_keyvault_storage_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Id of the storage account.  If specified all other 'Id' arguments should be omitted. */
@@ -7764,8 +7764,8 @@ class az_keyvault_storage_show_command_builder extends CommandBuilder<az_keyvaul
  * @param {string} vaultName Name of the Vault.
  */
 class az_keyvault_storage_show_deleted_command_builder extends CommandBuilder<az_keyvault_storage_show_deleted_command_result> {
-    constructor(commandPath: string, name: string, vaultName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, vaultName: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.vaultName(vaultName)
     }
@@ -7806,8 +7806,8 @@ class az_keyvault_storage_show_deleted_command_builder extends CommandBuilder<az
  * ```
  */
 class az_keyvault_storage_update_command_builder extends CommandBuilder<az_keyvault_storage_update_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** The current active storage account key name. */
@@ -7897,8 +7897,8 @@ class az_keyvault_storage_update_command_builder extends CommandBuilder<az_keyva
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_keyvault_create_command_builder extends CommandBuilder<az_keyvault_create_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -8048,8 +8048,8 @@ class az_keyvault_create_command_builder extends CommandBuilder<az_keyvault_crea
  * ```
  */
 class az_keyvault_delete_command_builder extends CommandBuilder<az_keyvault_delete_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the HSM. (--hsm-name and --name/-n are mutually exclusive, please specify just one of them). */
@@ -8100,8 +8100,8 @@ class az_keyvault_delete_command_builder extends CommandBuilder<az_keyvault_dele
  * @param {string} name Name of the Vault.
  */
 class az_keyvault_delete_policy_command_builder extends CommandBuilder<az_keyvault_delete_policy_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -8160,8 +8160,8 @@ class az_keyvault_delete_policy_command_builder extends CommandBuilder<az_keyvau
  * ```
  */
 class az_keyvault_list_command_builder extends CommandBuilder<az_keyvault_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -8199,8 +8199,8 @@ class az_keyvault_list_command_builder extends CommandBuilder<az_keyvault_list_c
  * ```
  */
 class az_keyvault_list_deleted_command_builder extends CommandBuilder<az_keyvault_list_deleted_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** When --resource-type is not present the command will list all deleted Vaults and HSMs. Possible values for --resource-type are vault and hsm. */
@@ -8229,8 +8229,8 @@ class az_keyvault_list_deleted_command_builder extends CommandBuilder<az_keyvaul
  * ```
  */
 class az_keyvault_purge_command_builder extends CommandBuilder<az_keyvault_purge_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the deleted HSM. (--hsm-name and --name/-n are mutually exclusive, please specify just one of them). */
@@ -8278,8 +8278,8 @@ class az_keyvault_purge_command_builder extends CommandBuilder<az_keyvault_purge
  * ```
  */
 class az_keyvault_recover_command_builder extends CommandBuilder<az_keyvault_recover_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the deleted HSM. (--hsm-name and --name/-n are mutually exclusive, please specify just one of them). */
@@ -8340,8 +8340,8 @@ class az_keyvault_recover_command_builder extends CommandBuilder<az_keyvault_rec
  * @param {string} name Name of the Vault.
  */
 class az_keyvault_set_policy_command_builder extends CommandBuilder<az_keyvault_set_policy_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -8425,8 +8425,8 @@ class az_keyvault_set_policy_command_builder extends CommandBuilder<az_keyvault_
  * ```
  */
 class az_keyvault_show_command_builder extends CommandBuilder<az_keyvault_show_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Name of the HSM. (--hsm-name and --name/-n are mutually exclusive, please specify just one of them). */
@@ -8487,8 +8487,8 @@ class az_keyvault_show_command_builder extends CommandBuilder<az_keyvault_show_c
  * @param {string} name Name of the Vault.
  */
 class az_keyvault_update_command_builder extends CommandBuilder<az_keyvault_update_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -8617,8 +8617,8 @@ class az_keyvault_update_command_builder extends CommandBuilder<az_keyvault_upda
  * @param {string} hsmName Name of the HSM.
  */
 class az_keyvault_update_hsm_command_builder extends CommandBuilder<az_keyvault_update_hsm_command_result> {
-    constructor(commandPath: string, hsmName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, hsmName: string) {
+        super(commandPath, resultDataTypeName);
         this.hsmName(hsmName)
     }
 
@@ -8715,8 +8715,8 @@ class az_keyvault_update_hsm_command_builder extends CommandBuilder<az_keyvault_
  * @param {string} name Name of the Vault.
  */
 class az_keyvault_wait_command_builder extends CommandBuilder<az_keyvault_wait_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -8801,8 +8801,8 @@ class az_keyvault_wait_command_builder extends CommandBuilder<az_keyvault_wait_c
  * @param {string} hsmName Name of the HSM.
  */
 class az_keyvault_wait_hsm_command_builder extends CommandBuilder<az_keyvault_wait_hsm_command_result> {
-    constructor(commandPath: string, hsmName: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, hsmName: string) {
+        super(commandPath, resultDataTypeName);
         this.hsmName(hsmName)
     }
 

@@ -8,7 +8,7 @@ import { generateClassesFromYaml } from "./utils/generate-classes-from-yaml";
 
 class BuildCommand implements Command {
   execute = (_: OptionsResult) => {
-    CleanUp(({ addCleanupTask }) => {
+    return CleanUp(({ addCleanupTask }) => {
       console.log("cloning azure-docs-cli repo...");
       const [tempDir, cleanupTask] = cloneRepoToTempDir();
       addCleanupTask(cleanupTask);

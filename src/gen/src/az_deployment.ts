@@ -74,7 +74,7 @@ export class az_deployment_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static cancel(name: string, resourceGroup: string): az_deployment_group_cancel_command_builder {
-        return new az_deployment_group_cancel_command_builder("az deployment group cancel", name, resourceGroup);
+        return new az_deployment_group_cancel_command_builder("az deployment group cancel", 'az_deployment_group_cancel_command_result', name, resourceGroup);
     }
 
     /**
@@ -103,7 +103,7 @@ export class az_deployment_group {
      * @param {string} resourceGroup The resource group to create deployment at.
      */
     static create(resourceGroup: string): az_deployment_group_create_command_builder {
-        return new az_deployment_group_create_command_builder("az deployment group create", resourceGroup);
+        return new az_deployment_group_create_command_builder("az deployment group create", 'az_deployment_group_create_command_result', resourceGroup);
     }
 
     /**
@@ -121,7 +121,7 @@ export class az_deployment_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_deployment_group_delete_command_builder {
-        return new az_deployment_group_delete_command_builder("az deployment group delete", name, resourceGroup);
+        return new az_deployment_group_delete_command_builder("az deployment group delete", 'az_deployment_group_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -138,7 +138,7 @@ export class az_deployment_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static export(name: string, resourceGroup: string): az_deployment_group_export_command_builder {
-        return new az_deployment_group_export_command_builder("az deployment group export", name, resourceGroup);
+        return new az_deployment_group_export_command_builder("az deployment group export", 'az_deployment_group_export_command_result', name, resourceGroup);
     }
 
     /**
@@ -155,7 +155,7 @@ export class az_deployment_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(resourceGroup: string): az_deployment_group_list_command_builder {
-        return new az_deployment_group_list_command_builder("az deployment group list", resourceGroup);
+        return new az_deployment_group_list_command_builder("az deployment group list", 'az_deployment_group_list_command_result', resourceGroup);
     }
 
     /**
@@ -173,7 +173,7 @@ export class az_deployment_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_deployment_group_show_command_builder {
-        return new az_deployment_group_show_command_builder("az deployment group show", name, resourceGroup);
+        return new az_deployment_group_show_command_builder("az deployment group show", 'az_deployment_group_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -196,7 +196,7 @@ export class az_deployment_group {
      * @param {string} resourceGroup The resource group to create deployment at.
      */
     static validate(resourceGroup: string): az_deployment_group_validate_command_builder {
-        return new az_deployment_group_validate_command_builder("az deployment group validate", resourceGroup);
+        return new az_deployment_group_validate_command_builder("az deployment group validate", 'az_deployment_group_validate_command_result', resourceGroup);
     }
 
     /**
@@ -220,7 +220,7 @@ export class az_deployment_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static wait(name: string, resourceGroup: string): az_deployment_group_wait_command_builder {
-        return new az_deployment_group_wait_command_builder("az deployment group wait", name, resourceGroup);
+        return new az_deployment_group_wait_command_builder("az deployment group wait", 'az_deployment_group_wait_command_result', name, resourceGroup);
     }
 
     /**
@@ -245,7 +245,7 @@ export class az_deployment_group {
      * @param {string} resourceGroup The resource group to execute deployment What-If operation at.
      */
     static what_if(resourceGroup: string): az_deployment_group_what_if_command_builder {
-        return new az_deployment_group_what_if_command_builder("az deployment group what-if", resourceGroup);
+        return new az_deployment_group_what_if_command_builder("az deployment group what-if", 'az_deployment_group_what_if_command_result', resourceGroup);
     }
 }
 
@@ -265,7 +265,7 @@ export class az_deployment_mg {
      * @param {string} name The deployment name.
      */
     static cancel(managementGroupId: string, name: string): az_deployment_mg_cancel_command_builder {
-        return new az_deployment_mg_cancel_command_builder("az deployment mg cancel", managementGroupId, name);
+        return new az_deployment_mg_cancel_command_builder("az deployment mg cancel", 'az_deployment_mg_cancel_command_result', managementGroupId, name);
     }
 
     /**
@@ -292,7 +292,7 @@ export class az_deployment_mg {
      * @param {string} managementGroupId The management group id to create deployment at.
      */
     static create(location: string, managementGroupId: string): az_deployment_mg_create_command_builder {
-        return new az_deployment_mg_create_command_builder("az deployment mg create", location, managementGroupId);
+        return new az_deployment_mg_create_command_builder("az deployment mg create", 'az_deployment_mg_create_command_result', location, managementGroupId);
     }
 
     /**
@@ -310,7 +310,7 @@ export class az_deployment_mg {
      * @param {string} name The deployment name.
      */
     static delete(managementGroupId: string, name: string): az_deployment_mg_delete_command_builder {
-        return new az_deployment_mg_delete_command_builder("az deployment mg delete", managementGroupId, name);
+        return new az_deployment_mg_delete_command_builder("az deployment mg delete", 'az_deployment_mg_delete_command_result', managementGroupId, name);
     }
 
     /**
@@ -327,7 +327,7 @@ export class az_deployment_mg {
      * @param {string} name The deployment name.
      */
     static export(managementGroupId: string, name: string): az_deployment_mg_export_command_builder {
-        return new az_deployment_mg_export_command_builder("az deployment mg export", managementGroupId, name);
+        return new az_deployment_mg_export_command_builder("az deployment mg export", 'az_deployment_mg_export_command_result', managementGroupId, name);
     }
 
     /**
@@ -344,7 +344,7 @@ export class az_deployment_mg {
      * @param {string} managementGroupId The management group id.
      */
     static list(managementGroupId: string): az_deployment_mg_list_command_builder {
-        return new az_deployment_mg_list_command_builder("az deployment mg list", managementGroupId);
+        return new az_deployment_mg_list_command_builder("az deployment mg list", 'az_deployment_mg_list_command_result', managementGroupId);
     }
 
     /**
@@ -362,7 +362,7 @@ export class az_deployment_mg {
      * @param {string} name The deployment name.
      */
     static show(managementGroupId: string, name: string): az_deployment_mg_show_command_builder {
-        return new az_deployment_mg_show_command_builder("az deployment mg show", managementGroupId, name);
+        return new az_deployment_mg_show_command_builder("az deployment mg show", 'az_deployment_mg_show_command_result', managementGroupId, name);
     }
 
     /**
@@ -385,7 +385,7 @@ export class az_deployment_mg {
      * @param {string} managementGroupId The management group id to create deployment at.
      */
     static validate(location: string, managementGroupId: string): az_deployment_mg_validate_command_builder {
-        return new az_deployment_mg_validate_command_builder("az deployment mg validate", location, managementGroupId);
+        return new az_deployment_mg_validate_command_builder("az deployment mg validate", 'az_deployment_mg_validate_command_result', location, managementGroupId);
     }
 
     /**
@@ -409,7 +409,7 @@ export class az_deployment_mg {
      * @param {string} name The deployment name.
      */
     static wait(managementGroupId: string, name: string): az_deployment_mg_wait_command_builder {
-        return new az_deployment_mg_wait_command_builder("az deployment mg wait", managementGroupId, name);
+        return new az_deployment_mg_wait_command_builder("az deployment mg wait", 'az_deployment_mg_wait_command_result', managementGroupId, name);
     }
 
     /**
@@ -434,7 +434,7 @@ export class az_deployment_mg {
      * @param {string} managementGroupId The management group id to create deployment at.
      */
     static what_if(location: string, managementGroupId: string): az_deployment_mg_what_if_command_builder {
-        return new az_deployment_mg_what_if_command_builder("az deployment mg what-if", location, managementGroupId);
+        return new az_deployment_mg_what_if_command_builder("az deployment mg what-if", 'az_deployment_mg_what_if_command_result', location, managementGroupId);
     }
 }
 
@@ -455,7 +455,7 @@ export class az_deployment_operation_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, resourceGroup: string): az_deployment_operation_group_list_command_builder {
-        return new az_deployment_operation_group_list_command_builder("az deployment operation group list", name, resourceGroup);
+        return new az_deployment_operation_group_list_command_builder("az deployment operation group list", 'az_deployment_operation_group_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -475,7 +475,7 @@ export class az_deployment_operation_group {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, operationIds: string, resourceGroup: string): az_deployment_operation_group_show_command_builder {
-        return new az_deployment_operation_group_show_command_builder("az deployment operation group show", name, operationIds, resourceGroup);
+        return new az_deployment_operation_group_show_command_builder("az deployment operation group show", 'az_deployment_operation_group_show_command_result', name, operationIds, resourceGroup);
     }
 }
 
@@ -496,7 +496,7 @@ export class az_deployment_operation_mg {
      * @param {string} name The deployment name.
      */
     static list(managementGroupId: string, name: string): az_deployment_operation_mg_list_command_builder {
-        return new az_deployment_operation_mg_list_command_builder("az deployment operation mg list", managementGroupId, name);
+        return new az_deployment_operation_mg_list_command_builder("az deployment operation mg list", 'az_deployment_operation_mg_list_command_result', managementGroupId, name);
     }
 
     /**
@@ -516,7 +516,7 @@ export class az_deployment_operation_mg {
      * @param {string} operationIds A list of operation ids to show.
      */
     static show(managementGroupId: string, name: string, operationIds: string): az_deployment_operation_mg_show_command_builder {
-        return new az_deployment_operation_mg_show_command_builder("az deployment operation mg show", managementGroupId, name, operationIds);
+        return new az_deployment_operation_mg_show_command_builder("az deployment operation mg show", 'az_deployment_operation_mg_show_command_result', managementGroupId, name, operationIds);
     }
 }
 
@@ -535,7 +535,7 @@ export class az_deployment_operation_sub {
      * @param {string} name The deployment name.
      */
     static list(name: string): az_deployment_operation_sub_list_command_builder {
-        return new az_deployment_operation_sub_list_command_builder("az deployment operation sub list", name);
+        return new az_deployment_operation_sub_list_command_builder("az deployment operation sub list", 'az_deployment_operation_sub_list_command_result', name);
     }
 
     /**
@@ -553,7 +553,7 @@ export class az_deployment_operation_sub {
      * @param {string} operationIds A list of operation ids to show.
      */
     static show(name: string, operationIds: string): az_deployment_operation_sub_show_command_builder {
-        return new az_deployment_operation_sub_show_command_builder("az deployment operation sub show", name, operationIds);
+        return new az_deployment_operation_sub_show_command_builder("az deployment operation sub show", 'az_deployment_operation_sub_show_command_result', name, operationIds);
     }
 }
 
@@ -572,7 +572,7 @@ export class az_deployment_operation_tenant {
      * @param {string} name The deployment name.
      */
     static list(name: string): az_deployment_operation_tenant_list_command_builder {
-        return new az_deployment_operation_tenant_list_command_builder("az deployment operation tenant list", name);
+        return new az_deployment_operation_tenant_list_command_builder("az deployment operation tenant list", 'az_deployment_operation_tenant_list_command_result', name);
     }
 
     /**
@@ -590,7 +590,7 @@ export class az_deployment_operation_tenant {
      * @param {string} operationIds A list of operation ids to show.
      */
     static show(name: string, operationIds: string): az_deployment_operation_tenant_show_command_builder {
-        return new az_deployment_operation_tenant_show_command_builder("az deployment operation tenant show", name, operationIds);
+        return new az_deployment_operation_tenant_show_command_builder("az deployment operation tenant show", 'az_deployment_operation_tenant_show_command_result', name, operationIds);
     }
 }
 
@@ -609,7 +609,7 @@ export class az_deployment_operation {
      * @param {string} name The deployment name.
      */
     static list(name: string): az_deployment_operation_list_command_builder {
-        return new az_deployment_operation_list_command_builder("az deployment operation list", name);
+        return new az_deployment_operation_list_command_builder("az deployment operation list", 'az_deployment_operation_list_command_result', name);
     }
 
     /**
@@ -627,7 +627,7 @@ export class az_deployment_operation {
      * @param {string} operationIds A list of operation ids to show.
      */
     static show(name: string, operationIds: string): az_deployment_operation_show_command_builder {
-        return new az_deployment_operation_show_command_builder("az deployment operation show", name, operationIds);
+        return new az_deployment_operation_show_command_builder("az deployment operation show", 'az_deployment_operation_show_command_result', name, operationIds);
     }
 }
 
@@ -645,7 +645,7 @@ export class az_deployment_sub {
      * @param {string} name The deployment name.
      */
     static cancel(name: string): az_deployment_sub_cancel_command_builder {
-        return new az_deployment_sub_cancel_command_builder("az deployment sub cancel", name);
+        return new az_deployment_sub_cancel_command_builder("az deployment sub cancel", 'az_deployment_sub_cancel_command_result', name);
     }
 
     /**
@@ -670,7 +670,7 @@ export class az_deployment_sub {
      * @param {string} location The location to store the deployment metadata.
      */
     static create(location: string): az_deployment_sub_create_command_builder {
-        return new az_deployment_sub_create_command_builder("az deployment sub create", location);
+        return new az_deployment_sub_create_command_builder("az deployment sub create", 'az_deployment_sub_create_command_result', location);
     }
 
     /**
@@ -686,7 +686,7 @@ export class az_deployment_sub {
      * @param {string} name The deployment name.
      */
     static delete(name: string): az_deployment_sub_delete_command_builder {
-        return new az_deployment_sub_delete_command_builder("az deployment sub delete", name);
+        return new az_deployment_sub_delete_command_builder("az deployment sub delete", 'az_deployment_sub_delete_command_result', name);
     }
 
     /**
@@ -701,7 +701,7 @@ export class az_deployment_sub {
      * @param {string} name The deployment name.
      */
     static export(name: string): az_deployment_sub_export_command_builder {
-        return new az_deployment_sub_export_command_builder("az deployment sub export", name);
+        return new az_deployment_sub_export_command_builder("az deployment sub export", 'az_deployment_sub_export_command_result', name);
     }
 
     /**
@@ -715,7 +715,7 @@ export class az_deployment_sub {
      * ```
      */
     static list(): az_deployment_sub_list_command_builder {
-        return new az_deployment_sub_list_command_builder("az deployment sub list");
+        return new az_deployment_sub_list_command_builder("az deployment sub list", 'az_deployment_sub_list_command_result');
     }
 
     /**
@@ -731,7 +731,7 @@ export class az_deployment_sub {
      * @param {string} name The deployment name.
      */
     static show(name: string): az_deployment_sub_show_command_builder {
-        return new az_deployment_sub_show_command_builder("az deployment sub show", name);
+        return new az_deployment_sub_show_command_builder("az deployment sub show", 'az_deployment_sub_show_command_result', name);
     }
 
     /**
@@ -752,7 +752,7 @@ export class az_deployment_sub {
      * @param {string} location The location to store the deployment metadata.
      */
     static validate(location: string): az_deployment_sub_validate_command_builder {
-        return new az_deployment_sub_validate_command_builder("az deployment sub validate", location);
+        return new az_deployment_sub_validate_command_builder("az deployment sub validate", 'az_deployment_sub_validate_command_result', location);
     }
 
     /**
@@ -774,7 +774,7 @@ export class az_deployment_sub {
      * @param {string} name The deployment name.
      */
     static wait(name: string): az_deployment_sub_wait_command_builder {
-        return new az_deployment_sub_wait_command_builder("az deployment sub wait", name);
+        return new az_deployment_sub_wait_command_builder("az deployment sub wait", 'az_deployment_sub_wait_command_result', name);
     }
 
     /**
@@ -797,7 +797,7 @@ export class az_deployment_sub {
      * @param {string} location The location to store the deployment What-If operation metadata.
      */
     static what_if(location: string): az_deployment_sub_what_if_command_builder {
-        return new az_deployment_sub_what_if_command_builder("az deployment sub what-if", location);
+        return new az_deployment_sub_what_if_command_builder("az deployment sub what-if", 'az_deployment_sub_what_if_command_result', location);
     }
 }
 
@@ -815,7 +815,7 @@ export class az_deployment_tenant {
      * @param {string} name The deployment name.
      */
     static cancel(name: string): az_deployment_tenant_cancel_command_builder {
-        return new az_deployment_tenant_cancel_command_builder("az deployment tenant cancel", name);
+        return new az_deployment_tenant_cancel_command_builder("az deployment tenant cancel", 'az_deployment_tenant_cancel_command_result', name);
     }
 
     /**
@@ -840,7 +840,7 @@ export class az_deployment_tenant {
      * @param {string} location The location to store the deployment metadata.
      */
     static create(location: string): az_deployment_tenant_create_command_builder {
-        return new az_deployment_tenant_create_command_builder("az deployment tenant create", location);
+        return new az_deployment_tenant_create_command_builder("az deployment tenant create", 'az_deployment_tenant_create_command_result', location);
     }
 
     /**
@@ -856,7 +856,7 @@ export class az_deployment_tenant {
      * @param {string} name The deployment name.
      */
     static delete(name: string): az_deployment_tenant_delete_command_builder {
-        return new az_deployment_tenant_delete_command_builder("az deployment tenant delete", name);
+        return new az_deployment_tenant_delete_command_builder("az deployment tenant delete", 'az_deployment_tenant_delete_command_result', name);
     }
 
     /**
@@ -871,7 +871,7 @@ export class az_deployment_tenant {
      * @param {string} name The deployment name.
      */
     static export(name: string): az_deployment_tenant_export_command_builder {
-        return new az_deployment_tenant_export_command_builder("az deployment tenant export", name);
+        return new az_deployment_tenant_export_command_builder("az deployment tenant export", 'az_deployment_tenant_export_command_result', name);
     }
 
     /**
@@ -885,7 +885,7 @@ export class az_deployment_tenant {
      * ```
      */
     static list(): az_deployment_tenant_list_command_builder {
-        return new az_deployment_tenant_list_command_builder("az deployment tenant list");
+        return new az_deployment_tenant_list_command_builder("az deployment tenant list", 'az_deployment_tenant_list_command_result');
     }
 
     /**
@@ -901,7 +901,7 @@ export class az_deployment_tenant {
      * @param {string} name The deployment name.
      */
     static show(name: string): az_deployment_tenant_show_command_builder {
-        return new az_deployment_tenant_show_command_builder("az deployment tenant show", name);
+        return new az_deployment_tenant_show_command_builder("az deployment tenant show", 'az_deployment_tenant_show_command_result', name);
     }
 
     /**
@@ -922,7 +922,7 @@ export class az_deployment_tenant {
      * @param {string} location The location to store the deployment metadata.
      */
     static validate(location: string): az_deployment_tenant_validate_command_builder {
-        return new az_deployment_tenant_validate_command_builder("az deployment tenant validate", location);
+        return new az_deployment_tenant_validate_command_builder("az deployment tenant validate", 'az_deployment_tenant_validate_command_result', location);
     }
 
     /**
@@ -944,7 +944,7 @@ export class az_deployment_tenant {
      * @param {string} name The deployment name.
      */
     static wait(name: string): az_deployment_tenant_wait_command_builder {
-        return new az_deployment_tenant_wait_command_builder("az deployment tenant wait", name);
+        return new az_deployment_tenant_wait_command_builder("az deployment tenant wait", 'az_deployment_tenant_wait_command_result', name);
     }
 
     /**
@@ -967,7 +967,7 @@ export class az_deployment_tenant {
      * @param {string} location The location to store the deployment What-If operation metadata.
      */
     static what_if(location: string): az_deployment_tenant_what_if_command_builder {
-        return new az_deployment_tenant_what_if_command_builder("az deployment tenant what-if", location);
+        return new az_deployment_tenant_what_if_command_builder("az deployment tenant what-if", 'az_deployment_tenant_what_if_command_result', location);
     }
 }
 
@@ -988,7 +988,7 @@ export class az_deployment_scripts {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(name: string, resourceGroup: string): az_deployment_scripts_delete_command_builder {
-        return new az_deployment_scripts_delete_command_builder("az deployment-scripts delete", name, resourceGroup);
+        return new az_deployment_scripts_delete_command_builder("az deployment-scripts delete", 'az_deployment_scripts_delete_command_result', name, resourceGroup);
     }
 
     /**
@@ -1002,7 +1002,7 @@ export class az_deployment_scripts {
      * ```
      */
     static list(): az_deployment_scripts_list_command_builder {
-        return new az_deployment_scripts_list_command_builder("az deployment-scripts list");
+        return new az_deployment_scripts_list_command_builder("az deployment-scripts list", 'az_deployment_scripts_list_command_result');
     }
 
     /**
@@ -1020,7 +1020,7 @@ export class az_deployment_scripts {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(name: string, resourceGroup: string): az_deployment_scripts_show_command_builder {
-        return new az_deployment_scripts_show_command_builder("az deployment-scripts show", name, resourceGroup);
+        return new az_deployment_scripts_show_command_builder("az deployment-scripts show", 'az_deployment_scripts_show_command_result', name, resourceGroup);
     }
 
     /**
@@ -1037,7 +1037,7 @@ export class az_deployment_scripts {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show_log(name: string, resourceGroup: string): az_deployment_scripts_show_log_command_builder {
-        return new az_deployment_scripts_show_log_command_builder("az deployment-scripts show-log", name, resourceGroup);
+        return new az_deployment_scripts_show_log_command_builder("az deployment-scripts show-log", 'az_deployment_scripts_show_log_command_result', name, resourceGroup);
     }
 }
 
@@ -1055,7 +1055,7 @@ export class az_deployment {
      * @param {string} name The deployment name.
      */
     static cancel(name: string): az_deployment_cancel_command_builder {
-        return new az_deployment_cancel_command_builder("az deployment cancel", name);
+        return new az_deployment_cancel_command_builder("az deployment cancel", 'az_deployment_cancel_command_result', name);
     }
 
     /**
@@ -1080,7 +1080,7 @@ export class az_deployment {
      * @param {string} location The location to store the deployment metadata.
      */
     static create(location: string): az_deployment_create_command_builder {
-        return new az_deployment_create_command_builder("az deployment create", location);
+        return new az_deployment_create_command_builder("az deployment create", 'az_deployment_create_command_result', location);
     }
 
     /**
@@ -1096,7 +1096,7 @@ export class az_deployment {
      * @param {string} name The deployment name.
      */
     static delete(name: string): az_deployment_delete_command_builder {
-        return new az_deployment_delete_command_builder("az deployment delete", name);
+        return new az_deployment_delete_command_builder("az deployment delete", 'az_deployment_delete_command_result', name);
     }
 
     /**
@@ -1111,7 +1111,7 @@ export class az_deployment {
      * @param {string} name The deployment name.
      */
     static export(name: string): az_deployment_export_command_builder {
-        return new az_deployment_export_command_builder("az deployment export", name);
+        return new az_deployment_export_command_builder("az deployment export", 'az_deployment_export_command_result', name);
     }
 
     /**
@@ -1125,7 +1125,7 @@ export class az_deployment {
      * ```
      */
     static list(): az_deployment_list_command_builder {
-        return new az_deployment_list_command_builder("az deployment list");
+        return new az_deployment_list_command_builder("az deployment list", 'az_deployment_list_command_result');
     }
 
     /**
@@ -1141,7 +1141,7 @@ export class az_deployment {
      * @param {string} name The deployment name.
      */
     static show(name: string): az_deployment_show_command_builder {
-        return new az_deployment_show_command_builder("az deployment show", name);
+        return new az_deployment_show_command_builder("az deployment show", 'az_deployment_show_command_result', name);
     }
 
     /**
@@ -1162,7 +1162,7 @@ export class az_deployment {
      * @param {string} location The location to store the deployment metadata.
      */
     static validate(location: string): az_deployment_validate_command_builder {
-        return new az_deployment_validate_command_builder("az deployment validate", location);
+        return new az_deployment_validate_command_builder("az deployment validate", 'az_deployment_validate_command_result', location);
     }
 
     /**
@@ -1184,7 +1184,7 @@ export class az_deployment {
      * @param {string} name The deployment name.
      */
     static wait(name: string): az_deployment_wait_command_builder {
-        return new az_deployment_wait_command_builder("az deployment wait", name);
+        return new az_deployment_wait_command_builder("az deployment wait", 'az_deployment_wait_command_result', name);
     }
 }
 
@@ -1202,8 +1202,8 @@ export class az_deployment {
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_group_cancel_command_builder extends CommandBuilder<az_deployment_group_cancel_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1253,8 +1253,8 @@ class az_deployment_group_cancel_command_builder extends CommandBuilder<az_deplo
  * @param {string} resourceGroup The resource group to create deployment at.
  */
 class az_deployment_group_create_command_builder extends CommandBuilder<az_deployment_group_create_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -1370,8 +1370,8 @@ class az_deployment_group_create_command_builder extends CommandBuilder<az_deplo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_group_delete_command_builder extends CommandBuilder<az_deployment_group_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1415,8 +1415,8 @@ class az_deployment_group_delete_command_builder extends CommandBuilder<az_deplo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_group_export_command_builder extends CommandBuilder<az_deployment_group_export_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1454,8 +1454,8 @@ class az_deployment_group_export_command_builder extends CommandBuilder<az_deplo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_group_list_command_builder extends CommandBuilder<az_deployment_group_list_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -1499,8 +1499,8 @@ class az_deployment_group_list_command_builder extends CommandBuilder<az_deploym
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_group_show_command_builder extends CommandBuilder<az_deployment_group_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1550,8 +1550,8 @@ class az_deployment_group_show_command_builder extends CommandBuilder<az_deploym
  * @param {string} resourceGroup The resource group to create deployment at.
  */
 class az_deployment_group_validate_command_builder extends CommandBuilder<az_deployment_group_validate_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -1637,8 +1637,8 @@ class az_deployment_group_validate_command_builder extends CommandBuilder<az_dep
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_group_wait_command_builder extends CommandBuilder<az_deployment_group_wait_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1726,8 +1726,8 @@ class az_deployment_group_wait_command_builder extends CommandBuilder<az_deploym
  * @param {string} resourceGroup The resource group to execute deployment What-If operation at.
  */
 class az_deployment_group_what_if_command_builder extends CommandBuilder<az_deployment_group_what_if_command_result> {
-    constructor(commandPath: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.resourceGroup(resourceGroup)
     }
 
@@ -1818,8 +1818,8 @@ class az_deployment_group_what_if_command_builder extends CommandBuilder<az_depl
  * @param {string} name The deployment name.
  */
 class az_deployment_mg_cancel_command_builder extends CommandBuilder<az_deployment_mg_cancel_command_result> {
-    constructor(commandPath: string, managementGroupId: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, managementGroupId: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.managementGroupId(managementGroupId)
         this.name(name)
     }
@@ -1867,8 +1867,8 @@ class az_deployment_mg_cancel_command_builder extends CommandBuilder<az_deployme
  * @param {string} managementGroupId The management group id to create deployment at.
  */
 class az_deployment_mg_create_command_builder extends CommandBuilder<az_deployment_mg_create_command_result> {
-    constructor(commandPath: string, location: string, managementGroupId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, managementGroupId: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.managementGroupId(managementGroupId)
     }
@@ -1967,8 +1967,8 @@ class az_deployment_mg_create_command_builder extends CommandBuilder<az_deployme
  * @param {string} name The deployment name.
  */
 class az_deployment_mg_delete_command_builder extends CommandBuilder<az_deployment_mg_delete_command_result> {
-    constructor(commandPath: string, managementGroupId: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, managementGroupId: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.managementGroupId(managementGroupId)
         this.name(name)
     }
@@ -2012,8 +2012,8 @@ class az_deployment_mg_delete_command_builder extends CommandBuilder<az_deployme
  * @param {string} name The deployment name.
  */
 class az_deployment_mg_export_command_builder extends CommandBuilder<az_deployment_mg_export_command_result> {
-    constructor(commandPath: string, managementGroupId: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, managementGroupId: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.managementGroupId(managementGroupId)
         this.name(name)
     }
@@ -2051,8 +2051,8 @@ class az_deployment_mg_export_command_builder extends CommandBuilder<az_deployme
  * @param {string} managementGroupId The management group id.
  */
 class az_deployment_mg_list_command_builder extends CommandBuilder<az_deployment_mg_list_command_result> {
-    constructor(commandPath: string, managementGroupId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, managementGroupId: string) {
+        super(commandPath, resultDataTypeName);
         this.managementGroupId(managementGroupId)
     }
 
@@ -2096,8 +2096,8 @@ class az_deployment_mg_list_command_builder extends CommandBuilder<az_deployment
  * @param {string} name The deployment name.
  */
 class az_deployment_mg_show_command_builder extends CommandBuilder<az_deployment_mg_show_command_result> {
-    constructor(commandPath: string, managementGroupId: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, managementGroupId: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.managementGroupId(managementGroupId)
         this.name(name)
     }
@@ -2147,8 +2147,8 @@ class az_deployment_mg_show_command_builder extends CommandBuilder<az_deployment
  * @param {string} managementGroupId The management group id to create deployment at.
  */
 class az_deployment_mg_validate_command_builder extends CommandBuilder<az_deployment_mg_validate_command_result> {
-    constructor(commandPath: string, location: string, managementGroupId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, managementGroupId: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.managementGroupId(managementGroupId)
     }
@@ -2229,8 +2229,8 @@ class az_deployment_mg_validate_command_builder extends CommandBuilder<az_deploy
  * @param {string} name The deployment name.
  */
 class az_deployment_mg_wait_command_builder extends CommandBuilder<az_deployment_mg_wait_command_result> {
-    constructor(commandPath: string, managementGroupId: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, managementGroupId: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.managementGroupId(managementGroupId)
         this.name(name)
     }
@@ -2318,8 +2318,8 @@ class az_deployment_mg_wait_command_builder extends CommandBuilder<az_deployment
  * @param {string} managementGroupId The management group id to create deployment at.
  */
 class az_deployment_mg_what_if_command_builder extends CommandBuilder<az_deployment_mg_what_if_command_result> {
-    constructor(commandPath: string, location: string, managementGroupId: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string, managementGroupId: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
         this.managementGroupId(managementGroupId)
     }
@@ -2406,8 +2406,8 @@ class az_deployment_mg_what_if_command_builder extends CommandBuilder<az_deploym
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_operation_group_list_command_builder extends CommandBuilder<az_deployment_operation_group_list_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -2454,8 +2454,8 @@ class az_deployment_operation_group_list_command_builder extends CommandBuilder<
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_operation_group_show_command_builder extends CommandBuilder<az_deployment_operation_group_show_command_result> {
-    constructor(commandPath: string, name: string, operationIds: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, operationIds: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.operationIds(operationIds)
         this.resourceGroup(resourceGroup)
@@ -2507,8 +2507,8 @@ class az_deployment_operation_group_show_command_builder extends CommandBuilder<
  * @param {string} name The deployment name.
  */
 class az_deployment_operation_mg_list_command_builder extends CommandBuilder<az_deployment_operation_mg_list_command_result> {
-    constructor(commandPath: string, managementGroupId: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, managementGroupId: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.managementGroupId(managementGroupId)
         this.name(name)
     }
@@ -2555,8 +2555,8 @@ class az_deployment_operation_mg_list_command_builder extends CommandBuilder<az_
  * @param {string} operationIds A list of operation ids to show.
  */
 class az_deployment_operation_mg_show_command_builder extends CommandBuilder<az_deployment_operation_mg_show_command_result> {
-    constructor(commandPath: string, managementGroupId: string, name: string, operationIds: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, managementGroupId: string, name: string, operationIds: string) {
+        super(commandPath, resultDataTypeName);
         this.managementGroupId(managementGroupId)
         this.name(name)
         this.operationIds(operationIds)
@@ -2606,8 +2606,8 @@ class az_deployment_operation_mg_show_command_builder extends CommandBuilder<az_
  * @param {string} name The deployment name.
  */
 class az_deployment_operation_sub_list_command_builder extends CommandBuilder<az_deployment_operation_sub_list_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -2645,8 +2645,8 @@ class az_deployment_operation_sub_list_command_builder extends CommandBuilder<az
  * @param {string} operationIds A list of operation ids to show.
  */
 class az_deployment_operation_sub_show_command_builder extends CommandBuilder<az_deployment_operation_sub_show_command_result> {
-    constructor(commandPath: string, name: string, operationIds: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, operationIds: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.operationIds(operationIds)
     }
@@ -2689,8 +2689,8 @@ class az_deployment_operation_sub_show_command_builder extends CommandBuilder<az
  * @param {string} name The deployment name.
  */
 class az_deployment_operation_tenant_list_command_builder extends CommandBuilder<az_deployment_operation_tenant_list_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -2728,8 +2728,8 @@ class az_deployment_operation_tenant_list_command_builder extends CommandBuilder
  * @param {string} operationIds A list of operation ids to show.
  */
 class az_deployment_operation_tenant_show_command_builder extends CommandBuilder<az_deployment_operation_tenant_show_command_result> {
-    constructor(commandPath: string, name: string, operationIds: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, operationIds: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.operationIds(operationIds)
     }
@@ -2772,8 +2772,8 @@ class az_deployment_operation_tenant_show_command_builder extends CommandBuilder
  * @param {string} name The deployment name.
  */
 class az_deployment_operation_list_command_builder extends CommandBuilder<az_deployment_operation_list_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -2811,8 +2811,8 @@ class az_deployment_operation_list_command_builder extends CommandBuilder<az_dep
  * @param {string} operationIds A list of operation ids to show.
  */
 class az_deployment_operation_show_command_builder extends CommandBuilder<az_deployment_operation_show_command_result> {
-    constructor(commandPath: string, name: string, operationIds: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, operationIds: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.operationIds(operationIds)
     }
@@ -2854,8 +2854,8 @@ class az_deployment_operation_show_command_builder extends CommandBuilder<az_dep
  * @param {string} name The deployment name.
  */
 class az_deployment_sub_cancel_command_builder extends CommandBuilder<az_deployment_sub_cancel_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -2894,8 +2894,8 @@ class az_deployment_sub_cancel_command_builder extends CommandBuilder<az_deploym
  * @param {string} location The location to store the deployment metadata.
  */
 class az_deployment_sub_create_command_builder extends CommandBuilder<az_deployment_sub_create_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -2985,8 +2985,8 @@ class az_deployment_sub_create_command_builder extends CommandBuilder<az_deploym
  * @param {string} name The deployment name.
  */
 class az_deployment_sub_delete_command_builder extends CommandBuilder<az_deployment_sub_delete_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -3021,8 +3021,8 @@ class az_deployment_sub_delete_command_builder extends CommandBuilder<az_deploym
  * @param {string} name The deployment name.
  */
 class az_deployment_sub_export_command_builder extends CommandBuilder<az_deployment_sub_export_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -3050,8 +3050,8 @@ class az_deployment_sub_export_command_builder extends CommandBuilder<az_deploym
  * ```
  */
 class az_deployment_sub_list_command_builder extends CommandBuilder<az_deployment_sub_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Filter expression using OData notation. You can use --filter "provisioningState eq '{state}'" to filter provisioningState. To get more information, please visit <a href="https://docs.microsoft.com/en-us/rest/api/resources/deployments/listatsubscriptionscope#uri-parameters">https://docs.microsoft.com/en-us/rest/api/resources/deployments/listatsubscriptionscope#uri-parameters</a>. */
@@ -3086,8 +3086,8 @@ class az_deployment_sub_list_command_builder extends CommandBuilder<az_deploymen
  * @param {string} name The deployment name.
  */
 class az_deployment_sub_show_command_builder extends CommandBuilder<az_deployment_sub_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -3128,8 +3128,8 @@ class az_deployment_sub_show_command_builder extends CommandBuilder<az_deploymen
  * @param {string} location The location to store the deployment metadata.
  */
 class az_deployment_sub_validate_command_builder extends CommandBuilder<az_deployment_sub_validate_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -3201,8 +3201,8 @@ class az_deployment_sub_validate_command_builder extends CommandBuilder<az_deplo
  * @param {string} name The deployment name.
  */
 class az_deployment_sub_wait_command_builder extends CommandBuilder<az_deployment_sub_wait_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -3281,8 +3281,8 @@ class az_deployment_sub_wait_command_builder extends CommandBuilder<az_deploymen
  * @param {string} location The location to store the deployment What-If operation metadata.
  */
 class az_deployment_sub_what_if_command_builder extends CommandBuilder<az_deployment_sub_what_if_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -3359,8 +3359,8 @@ class az_deployment_sub_what_if_command_builder extends CommandBuilder<az_deploy
  * @param {string} name The deployment name.
  */
 class az_deployment_tenant_cancel_command_builder extends CommandBuilder<az_deployment_tenant_cancel_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -3399,8 +3399,8 @@ class az_deployment_tenant_cancel_command_builder extends CommandBuilder<az_depl
  * @param {string} location The location to store the deployment metadata.
  */
 class az_deployment_tenant_create_command_builder extends CommandBuilder<az_deployment_tenant_create_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -3490,8 +3490,8 @@ class az_deployment_tenant_create_command_builder extends CommandBuilder<az_depl
  * @param {string} name The deployment name.
  */
 class az_deployment_tenant_delete_command_builder extends CommandBuilder<az_deployment_tenant_delete_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -3526,8 +3526,8 @@ class az_deployment_tenant_delete_command_builder extends CommandBuilder<az_depl
  * @param {string} name The deployment name.
  */
 class az_deployment_tenant_export_command_builder extends CommandBuilder<az_deployment_tenant_export_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -3555,8 +3555,8 @@ class az_deployment_tenant_export_command_builder extends CommandBuilder<az_depl
  * ```
  */
 class az_deployment_tenant_list_command_builder extends CommandBuilder<az_deployment_tenant_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Filter expression using OData notation. You can use --filter "provisioningState eq '{state}'" to filter provisioningState. To get more information, please visit <a href="https://docs.microsoft.com/en-us/rest/api/resources/deployments/listatsubscriptionscope#uri-parameters">https://docs.microsoft.com/en-us/rest/api/resources/deployments/listatsubscriptionscope#uri-parameters</a>. */
@@ -3591,8 +3591,8 @@ class az_deployment_tenant_list_command_builder extends CommandBuilder<az_deploy
  * @param {string} name The deployment name.
  */
 class az_deployment_tenant_show_command_builder extends CommandBuilder<az_deployment_tenant_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -3633,8 +3633,8 @@ class az_deployment_tenant_show_command_builder extends CommandBuilder<az_deploy
  * @param {string} location The location to store the deployment metadata.
  */
 class az_deployment_tenant_validate_command_builder extends CommandBuilder<az_deployment_tenant_validate_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -3706,8 +3706,8 @@ class az_deployment_tenant_validate_command_builder extends CommandBuilder<az_de
  * @param {string} name The deployment name.
  */
 class az_deployment_tenant_wait_command_builder extends CommandBuilder<az_deployment_tenant_wait_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -3786,8 +3786,8 @@ class az_deployment_tenant_wait_command_builder extends CommandBuilder<az_deploy
  * @param {string} location The location to store the deployment What-If operation metadata.
  */
 class az_deployment_tenant_what_if_command_builder extends CommandBuilder<az_deployment_tenant_what_if_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -3867,8 +3867,8 @@ class az_deployment_tenant_what_if_command_builder extends CommandBuilder<az_dep
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_scripts_delete_command_builder extends CommandBuilder<az_deployment_scripts_delete_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -3909,8 +3909,8 @@ class az_deployment_scripts_delete_command_builder extends CommandBuilder<az_dep
  * ```
  */
 class az_deployment_scripts_list_command_builder extends CommandBuilder<az_deployment_scripts_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -3947,8 +3947,8 @@ class az_deployment_scripts_list_command_builder extends CommandBuilder<az_deplo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_scripts_show_command_builder extends CommandBuilder<az_deployment_scripts_show_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -3992,8 +3992,8 @@ class az_deployment_scripts_show_command_builder extends CommandBuilder<az_deplo
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_deployment_scripts_show_log_command_builder extends CommandBuilder<az_deployment_scripts_show_log_command_result> {
-    constructor(commandPath: string, name: string, resourceGroup: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -4029,8 +4029,8 @@ class az_deployment_scripts_show_log_command_builder extends CommandBuilder<az_d
  * @param {string} name The deployment name.
  */
 class az_deployment_cancel_command_builder extends CommandBuilder<az_deployment_cancel_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -4069,8 +4069,8 @@ class az_deployment_cancel_command_builder extends CommandBuilder<az_deployment_
  * @param {string} location The location to store the deployment metadata.
  */
 class az_deployment_create_command_builder extends CommandBuilder<az_deployment_create_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -4160,8 +4160,8 @@ class az_deployment_create_command_builder extends CommandBuilder<az_deployment_
  * @param {string} name The deployment name.
  */
 class az_deployment_delete_command_builder extends CommandBuilder<az_deployment_delete_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -4196,8 +4196,8 @@ class az_deployment_delete_command_builder extends CommandBuilder<az_deployment_
  * @param {string} name The deployment name.
  */
 class az_deployment_export_command_builder extends CommandBuilder<az_deployment_export_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -4225,8 +4225,8 @@ class az_deployment_export_command_builder extends CommandBuilder<az_deployment_
  * ```
  */
 class az_deployment_list_command_builder extends CommandBuilder<az_deployment_list_command_result> {
-    constructor(commandPath: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
     }
 
     /** Filter expression using OData notation. You can use --filter "provisioningState eq '{state}'" to filter provisioningState. To get more information, please visit <a href="https://docs.microsoft.com/en-us/rest/api/resources/deployments/listatsubscriptionscope#uri-parameters">https://docs.microsoft.com/en-us/rest/api/resources/deployments/listatsubscriptionscope#uri-parameters</a>. */
@@ -4261,8 +4261,8 @@ class az_deployment_list_command_builder extends CommandBuilder<az_deployment_li
  * @param {string} name The deployment name.
  */
 class az_deployment_show_command_builder extends CommandBuilder<az_deployment_show_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 
@@ -4303,8 +4303,8 @@ class az_deployment_show_command_builder extends CommandBuilder<az_deployment_sh
  * @param {string} location The location to store the deployment metadata.
  */
 class az_deployment_validate_command_builder extends CommandBuilder<az_deployment_validate_command_result> {
-    constructor(commandPath: string, location: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
         this.location(location)
     }
 
@@ -4376,8 +4376,8 @@ class az_deployment_validate_command_builder extends CommandBuilder<az_deploymen
  * @param {string} name The deployment name.
  */
 class az_deployment_wait_command_builder extends CommandBuilder<az_deployment_wait_command_result> {
-    constructor(commandPath: string, name: string) {
-        super(commandPath);
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
+        super(commandPath, resultDataTypeName);
         this.name(name)
     }
 

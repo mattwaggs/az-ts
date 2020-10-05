@@ -1,1 +1,1 @@
-export type az_servicebus_topic_subscription_show_command_result = Record<string, unknown>
+export type az_servicebus_topic_subscription_show_command_result = Record<string, any>

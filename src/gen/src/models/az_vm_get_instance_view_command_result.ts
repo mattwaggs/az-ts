@@ -1,1 +1,1 @@
-export type az_vm_get_instance_view_command_result = Record<string, unknown>
+export type az_vm_get_instance_view_command_result = Record<string, any>
