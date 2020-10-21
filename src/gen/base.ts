@@ -16,7 +16,7 @@ export abstract class CommandBuilder<T = void> {
     const commandArgs =
       Object.keys(this._flags)
         .map((flag) => {
-          const wrapInQuotes = /;/.test(this._flags[flag]);
+          const wrapInQuotes = /[; ]/.test(this._flags[flag]);
           if (wrapInQuotes) {
             return `${flag} "${this._flags[flag]}"`;
           } else {

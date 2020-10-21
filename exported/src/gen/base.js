@@ -16,7 +16,7 @@ var CommandBuilder = /** @class */ (function () {
         var _this = this;
         var commandArgs = Object.keys(this._flags)
             .map(function (flag) {
-            var wrapInQuotes = /;/.test(_this._flags[flag]);
+            var wrapInQuotes = /[; ]/.test(_this._flags[flag]);
             if (wrapInQuotes) {
                 return flag + " \"" + _this._flags[flag] + "\"";
             }
