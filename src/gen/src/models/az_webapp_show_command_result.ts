@@ -18,7 +18,7 @@ export interface az_webapp_show_command_result {
   httpsOnly: boolean;
   hyperV: boolean;
   id: string;
-  identity?: any;
+  identity?: Identity;
   inProgressOperationId?: any;
   isDefaultContainer?: any;
   isXenon: boolean;
@@ -123,6 +123,13 @@ interface SiteConfig {
   xManagedServiceIdentityId?: any;
 }
 
+interface Identity {
+  principalId: string;
+  tenantId: string;
+  type: string;
+  userAssignedIdentities?: any;
+}
+
 interface HostName {
   '0': string;
   '1': string;
@@ -159,7 +166,7 @@ interface HostName {
   '32': string;
   '33': string;
   '34': string;
-  '35': string;
+  '35'?: string;
 }
 
 interface HostNameSslState {
@@ -210,7 +217,7 @@ interface EnabledHostName {
   '32': string;
   '33': string;
   '34': string;
-  '35': string;
+  '35'?: string;
   '36'?: string;
   '37'?: string;
   '38'?: string;

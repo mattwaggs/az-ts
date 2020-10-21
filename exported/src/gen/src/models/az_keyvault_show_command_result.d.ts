@@ -13,11 +13,11 @@ interface Properties {
     accessPolicies: AccessPolicy[];
     createMode?: any;
     enablePurgeProtection?: any;
-    enableRbacAuthorization?: any;
+    enableRbacAuthorization?: boolean;
     enableSoftDelete: boolean;
     enabledForDeployment: boolean;
-    enabledForDiskEncryption?: any;
-    enabledForTemplateDeployment?: any;
+    enabledForDiskEncryption?: boolean;
+    enabledForTemplateDeployment?: boolean;
     networkAcls?: any;
     privateEndpointConnections?: any;
     provisioningState: string;
@@ -36,10 +36,10 @@ interface AccessPolicy {
     tenantId: string;
 }
 interface Permissions {
-    certificates: Certificate[];
-    keys: Key[];
+    certificates: (Certificate | Certificate)[];
+    keys: (Key | Key)[];
     secrets: Key[];
-    storage: Storage[];
+    storage: (Storage | Storage[] | null)[];
 }
 interface Storage {
     '0': string;

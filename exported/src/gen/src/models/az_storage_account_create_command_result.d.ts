@@ -25,11 +25,11 @@ export interface az_storage_account_create_command_result {
     provisioningState: string;
     resourceGroup: string;
     routingPreference?: any;
-    secondaryEndpoints?: any;
-    secondaryLocation?: any;
+    secondaryEndpoints?: SecondaryEndpoint;
+    secondaryLocation?: string;
     sku: Sku;
     statusOfPrimary: string;
-    statusOfSecondary?: any;
+    statusOfSecondary?: string;
     tags: Tags;
     type: string;
 }
@@ -38,6 +38,16 @@ interface Tags {
 interface Sku {
     name: string;
     tier: string;
+}
+interface SecondaryEndpoint {
+    blob: string;
+    dfs: string;
+    file?: any;
+    internetEndpoints?: any;
+    microsoftEndpoints?: any;
+    queue: string;
+    table: string;
+    web: string;
 }
 interface PrimaryEndpoints {
     blob: string;

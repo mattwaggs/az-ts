@@ -13,7 +13,7 @@ export interface az_appservice_plan_create_command_result {
   name: string;
   numberOfSites: number;
   perSiteScaling: boolean;
-  provisioningState: string;
+  provisioningState?: string;
   reserved: boolean;
   resourceGroup: string;
   sku: Sku;
@@ -30,7 +30,7 @@ export interface az_appservice_plan_create_command_result {
 interface Sku {
   capabilities?: any;
   capacity: number;
-  family: string;
+  family?: string;
   locations?: any;
   name: string;
   size: string;
