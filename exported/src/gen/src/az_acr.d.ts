@@ -898,7 +898,7 @@ export declare class az_acr_scope_map {
      *
      * @param {string} name The name of the scope map.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
-     * @param {string} repository Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/read', 'metadata/write', 'content/write', 'content/delete', 'metadata/read'}.
+     * @param {string} repository Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/delete', 'metadata/read', 'metadata/write', 'content/read', 'content/write'}.
      */
     static create(name: string, registry: string, repository: string): az_acr_scope_map_create_command_builder;
     /**
@@ -1190,8 +1190,7 @@ export declare class az_acr_task {
      *
      * Syntax:
      * ```
-     * az acr task create --context
-     *                    --name
+     * az acr task create --name
      *                    --registry
      *                    [--agent-pool]
      *                    [--arg]
@@ -1202,10 +1201,13 @@ export declare class az_acr_task {
      *                    [--base-image-trigger-type {All, Runtime}]
      *                    [--cmd]
      *                    [--commit-trigger-enabled {false, true}]
+     *                    [--context]
      *                    [--cpu]
      *                    [--file]
      *                    [--git-access-token]
      *                    [--image]
+     *                    [--is-system-task]
+     *                    [--log-template]
      *                    [--no-cache {false, true}]
      *                    [--no-push {false, true}]
      *                    [--platform]
@@ -1225,11 +1227,10 @@ export declare class az_acr_task {
      *                    [--values]
      * ```
      *
-     * @param {string} context The full URL to the source code repository (Requires '.git' suffix for a github repo) or the repository of an OCI artifact in an Azure container registry (e.g., 'oci://myregistry.azurecr.io/myartifact:mytag'). If '/dev/null' is specified, the value will be set to None and ignored.
      * @param {string} name The name of the task.
      * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
      */
-    static create(context: string, name: string, registry: string): az_acr_task_create_command_builder;
+    static create(name: string, registry: string): az_acr_task_create_command_builder;
     /**
      * Delete a task from an Azure Container Registry.
      *
@@ -1304,6 +1305,7 @@ export declare class az_acr_task {
      *                 [--arg]
      *                 [--context]
      *                 [--file]
+     *                 [--log-template]
      *                 [--no-logs]
      *                 [--no-wait]
      *                 [--resource-group]
@@ -1369,6 +1371,7 @@ export declare class az_acr_task {
      *                    [--file]
      *                    [--git-access-token]
      *                    [--image]
+     *                    [--log-template]
      *                    [--no-cache {false, true}]
      *                    [--no-push {false, true}]
      *                    [--platform]
@@ -1752,6 +1755,7 @@ export declare class az_acr {
      *              [--build-arg]
      *              [--file]
      *              [--image]
+     *              [--log-template]
      *              [--no-format]
      *              [--no-logs]
      *              [--no-push]
@@ -1889,6 +1893,7 @@ export declare class az_acr {
      *            [--auth-mode {Default, None}]
      *            [--cmd]
      *            [--file]
+     *            [--log-template]
      *            [--no-format]
      *            [--no-logs]
      *            [--no-wait]
@@ -3356,7 +3361,7 @@ declare class az_acr_repository_update_command_builder extends CommandBuilder<az
  *
  * @param {string} name The name of the scope map.
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
- * @param {string} repository Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/read', 'metadata/write', 'content/write', 'content/delete', 'metadata/read'}.
+ * @param {string} repository Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/delete', 'metadata/read', 'metadata/write', 'content/read', 'content/write'}.
  */
 declare class az_acr_scope_map_create_command_builder extends CommandBuilder<az_acr_scope_map_create_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, name: string, registry: string, repository: string);
@@ -3364,7 +3369,7 @@ declare class az_acr_scope_map_create_command_builder extends CommandBuilder<az_
     name(value: string): az_acr_scope_map_create_command_builder;
     /** The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`. */
     registry(value: string): az_acr_scope_map_create_command_builder;
-    /** Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/read', 'metadata/write', 'content/write', 'content/delete', 'metadata/read'}. */
+    /** Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/delete', 'metadata/read', 'metadata/write', 'content/read', 'content/write'}. */
     repository(value: string): az_acr_scope_map_create_command_builder;
     /** Description for the scope map. Maximum 256 characters are allowed. */
     description(value: string): az_acr_scope_map_create_command_builder;
@@ -3476,11 +3481,11 @@ declare class az_acr_scope_map_update_command_builder extends CommandBuilder<az_
     name(value: string): az_acr_scope_map_update_command_builder;
     /** The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`. */
     registry(value: string): az_acr_scope_map_update_command_builder;
-    /** Repository permissions to be added. Use the format "--add REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/read', 'metadata/write', 'content/write', 'content/delete', 'metadata/read'}. */
+    /** Repository permissions to be added. Use the format "--add REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/delete', 'metadata/read', 'metadata/write', 'content/read', 'content/write'}. */
     add(value: string): az_acr_scope_map_update_command_builder;
     /** Description for the scope map. Maximum 256 characters are allowed. */
     description(value: string): az_acr_scope_map_update_command_builder;
-    /** Respsitory permissions to be removed. Use the format "--remove REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/read', 'metadata/write', 'content/write', 'content/delete', 'metadata/read'}. */
+    /** Respsitory permissions to be removed. Use the format "--remove REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/delete', 'metadata/read', 'metadata/write', 'content/read', 'content/write'}. */
     remove(value: string): az_acr_scope_map_update_command_builder;
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
     resourceGroup(value: string): az_acr_scope_map_update_command_builder;
@@ -3862,8 +3867,7 @@ declare class az_acr_task_cancel_run_command_builder extends CommandBuilder<az_a
  *
  * Syntax:
  * ```
- * az acr task create --context
- *                    --name
+ * az acr task create --name
  *                    --registry
  *                    [--agent-pool]
  *                    [--arg]
@@ -3874,10 +3878,13 @@ declare class az_acr_task_cancel_run_command_builder extends CommandBuilder<az_a
  *                    [--base-image-trigger-type {All, Runtime}]
  *                    [--cmd]
  *                    [--commit-trigger-enabled {false, true}]
+ *                    [--context]
  *                    [--cpu]
  *                    [--file]
  *                    [--git-access-token]
  *                    [--image]
+ *                    [--is-system-task]
+ *                    [--log-template]
  *                    [--no-cache {false, true}]
  *                    [--no-push {false, true}]
  *                    [--platform]
@@ -3897,14 +3904,11 @@ declare class az_acr_task_cancel_run_command_builder extends CommandBuilder<az_a
  *                    [--values]
  * ```
  *
- * @param {string} context The full URL to the source code repository (Requires '.git' suffix for a github repo) or the repository of an OCI artifact in an Azure container registry (e.g., 'oci://myregistry.azurecr.io/myartifact:mytag'). If '/dev/null' is specified, the value will be set to None and ignored.
  * @param {string} name The name of the task.
  * @param {string} registry The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`.
  */
 declare class az_acr_task_create_command_builder extends CommandBuilder<az_acr_task_create_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, context: string, name: string, registry: string);
-    /** The full URL to the source code repository (Requires '.git' suffix for a github repo) or the repository of an OCI artifact in an Azure container registry (e.g., 'oci://myregistry.azurecr.io/myartifact:mytag'). If '/dev/null' is specified, the value will be set to None and ignored. */
-    context(value: string): az_acr_task_create_command_builder;
+    constructor(commandPath: string, resultDataTypeName: string, name: string, registry: string);
     /** The name of the task. */
     name(value: string): az_acr_task_create_command_builder;
     /** The name of the container registry. You can configure the default registry name using `az configure --defaults acr=<registry name>`. */
@@ -3927,6 +3931,8 @@ declare class az_acr_task_create_command_builder extends CommandBuilder<az_acr_t
     cmd(value: string): az_acr_task_create_command_builder;
     /** Indicates whether the source control commit trigger is enabled. */
     commitTriggerEnabled(value: boolean): az_acr_task_create_command_builder;
+    /** The full URL to the source code repository (Requires '.git' suffix for a github repo) or the repository of an OCI artifact in an Azure container registry (e.g., 'oci://myregistry.azurecr.io/myartifact:mytag'). If '/dev/null' is specified, the value will be set to None and ignored. This is a required argument if the task is not a system task. */
+    context(value: string): az_acr_task_create_command_builder;
     /** The CPU configuration in terms of number of cores required for the run. */
     cpu(value: string): az_acr_task_create_command_builder;
     /** Relative path of the the task/docker file to the source code root folder. Task files must be suffixed with '.yaml' or piped from the standard input using '-'. */
@@ -3935,6 +3941,10 @@ declare class az_acr_task_create_command_builder extends CommandBuilder<az_acr_t
     gitAccessToken(value: string): az_acr_task_create_command_builder;
     /** The name and tag of the image using the format: '-t repo/image:tag'. Multiple tags are supported by passing -t multiple times. */
     image(value: string): az_acr_task_create_command_builder;
+    /** Indicates whether the task resource is a system task. The name of the task must be 'quicktask'. Only applicable to CMK enabled registry. */
+    isSystemTask(value: string): az_acr_task_create_command_builder;
+    /** The repository and tag template for run log artifact using the format: 'log/repo:tag' (e.g., 'acr/logs:{{.Run.ID}}'). Only applicable to CMK enabled registry. */
+    logTemplate(value: string): az_acr_task_create_command_builder;
     /** Indicates whether the image cache is enabled. */
     noCache(value: boolean): az_acr_task_create_command_builder;
     /** Indicates whether the image built should be pushed to the registry. */
@@ -4096,6 +4106,7 @@ declare class az_acr_task_logs_command_builder extends CommandBuilder<az_acr_tas
  *                 [--arg]
  *                 [--context]
  *                 [--file]
+ *                 [--log-template]
  *                 [--no-logs]
  *                 [--no-wait]
  *                 [--resource-group]
@@ -4120,10 +4131,12 @@ declare class az_acr_task_run_command_builder extends CommandBuilder<az_acr_task
     agentPool(value: string): az_acr_task_run_command_builder;
     /** Build argument in '--arg name[=value]' format. Multiples supported by passing '--arg` multiple times. */
     arg(value: string): az_acr_task_run_command_builder;
-    /** The full URL to the source code repository (Requires '.git' suffix for a github repo) or the repository of an OCI artifact in an Azure container registry (e.g., 'oci://myregistry.azurecr.io/myartifact:mytag'). If '/dev/null' is specified, the value will be set to None and ignored. */
+    /** The full URL to the source code repository (Requires '.git' suffix for a github repo) or the repository of an OCI artifact in an Azure container registry (e.g., 'oci://myregistry.azurecr.io/myartifact:mytag'). If '/dev/null' is specified, the value will be set to None and ignored. This is a required argument if the task is not a system task. */
     context(value: string): az_acr_task_run_command_builder;
     /** Relative path of the the task/docker file to the source code root folder. Task files must be suffixed with '.yaml' or piped from the standard input using '-'. */
     file(value: string): az_acr_task_run_command_builder;
+    /** The repository and tag template for run log artifact using the format: 'log/repo:tag' (e.g., 'acr/logs:{{.Run.ID}}'). Only applicable to CMK enabled registry. */
+    logTemplate(value: string): az_acr_task_run_command_builder;
     /** Do not show logs after successfully queuing the build. */
     noLogs(value: string): az_acr_task_run_command_builder;
     /** Do not wait for the run to complete and return immediately after queuing the run. */
@@ -4217,6 +4230,7 @@ declare class az_acr_task_show_run_command_builder extends CommandBuilder<az_acr
  *                    [--file]
  *                    [--git-access-token]
  *                    [--image]
+ *                    [--log-template]
  *                    [--no-cache {false, true}]
  *                    [--no-push {false, true}]
  *                    [--platform]
@@ -4255,7 +4269,7 @@ declare class az_acr_task_update_command_builder extends CommandBuilder<az_acr_t
     baseImageTriggerType(value: 'All' | 'Runtime'): az_acr_task_update_command_builder;
     /** Indicates whether the source control commit trigger is enabled. */
     commitTriggerEnabled(value: boolean): az_acr_task_update_command_builder;
-    /** The full URL to the source code repository (Requires '.git' suffix for a github repo) or the repository of an OCI artifact in an Azure container registry (e.g., 'oci://myregistry.azurecr.io/myartifact:mytag'). If '/dev/null' is specified, the value will be set to None and ignored. */
+    /** The full URL to the source code repository (Requires '.git' suffix for a github repo) or the repository of an OCI artifact in an Azure container registry (e.g., 'oci://myregistry.azurecr.io/myartifact:mytag'). If '/dev/null' is specified, the value will be set to None and ignored. This is a required argument if the task is not a system task. */
     context(value: string): az_acr_task_update_command_builder;
     /** The CPU configuration in terms of number of cores required for the run. */
     cpu(value: string): az_acr_task_update_command_builder;
@@ -4265,6 +4279,8 @@ declare class az_acr_task_update_command_builder extends CommandBuilder<az_acr_t
     gitAccessToken(value: string): az_acr_task_update_command_builder;
     /** The name and tag of the image using the format: '-t repo/image:tag'. Multiple tags are supported by passing -t multiple times. */
     image(value: string): az_acr_task_update_command_builder;
+    /** The repository and tag template for run log artifact using the format: 'log/repo:tag' (e.g., 'acr/logs:{{.Run.ID}}'). Only applicable to CMK enabled registry. */
+    logTemplate(value: string): az_acr_task_update_command_builder;
     /** Indicates whether the image cache is enabled. */
     noCache(value: boolean): az_acr_task_update_command_builder;
     /** Indicates whether the image built should be pushed to the registry. */
@@ -4529,7 +4545,7 @@ declare class az_acr_token_create_command_builder extends CommandBuilder<az_acr_
     expirationInDays(value: string): az_acr_token_create_command_builder;
     /** Do not generate passwords, instead use "az acr token credential generate". */
     noPasswords(value: boolean): az_acr_token_create_command_builder;
-    /** Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/read', 'metadata/write', 'content/write', 'content/delete', 'metadata/read'}. */
+    /** Repository permissions. Use the format "--repository REPO [ACTION1 ACTION2 ...]" per flag. Valid actions are {'content/delete', 'metadata/read', 'metadata/write', 'content/read', 'content/write'}. */
     repository(value: string): az_acr_token_create_command_builder;
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
     resourceGroup(value: string): az_acr_token_create_command_builder;
@@ -4917,6 +4933,7 @@ declare class az_acr_webhook_update_command_builder extends CommandBuilder<az_ac
  *              [--build-arg]
  *              [--file]
  *              [--image]
+ *              [--log-template]
  *              [--no-format]
  *              [--no-logs]
  *              [--no-push]
@@ -4946,6 +4963,8 @@ declare class az_acr_build_command_builder extends CommandBuilder<az_acr_build_c
     file(value: string): az_acr_build_command_builder;
     /** The name and tag of the image using the format: '-t repo/image:tag'. Multiple tags are supported by passing -t multiple times. */
     image(value: string): az_acr_build_command_builder;
+    /** The repository and tag template for run log artifact using the format: 'log/repo:tag' (e.g., 'acr/logs:{{.Run.ID}}'). Only applicable to CMK enabled registry. */
+    logTemplate(value: string): az_acr_build_command_builder;
     /** Indicates whether the logs should be displayed in raw format. */
     noFormat(value: string): az_acr_build_command_builder;
     /** Do not show logs after successfully queuing the build. */
@@ -5188,6 +5207,7 @@ declare class az_acr_login_command_builder extends CommandBuilder<az_acr_login_c
  *            [--auth-mode {Default, None}]
  *            [--cmd]
  *            [--file]
+ *            [--log-template]
  *            [--no-format]
  *            [--no-logs]
  *            [--no-wait]
@@ -5215,6 +5235,8 @@ declare class az_acr_run_command_builder extends CommandBuilder<az_acr_run_comma
     cmd(value: string): az_acr_run_command_builder;
     /** The task template/definition file path relative to the source context. It can be '-' to pipe a file from the standard input. */
     file(value: string): az_acr_run_command_builder;
+    /** The repository and tag template for run log artifact using the format: 'log/repo:tag' (e.g., 'acr/logs:{{.Run.ID}}'). Only applicable to CMK enabled registry. */
+    logTemplate(value: string): az_acr_run_command_builder;
     /** Indicates whether the logs should be displayed in raw format. */
     noFormat(value: string): az_acr_run_command_builder;
     /** Do not show logs after successfully queuing the build. */

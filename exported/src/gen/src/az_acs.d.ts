@@ -82,8 +82,10 @@ export declare class az_acs_kubernetes {
      *
      * Syntax:
      * ```
-     * az acs kubernetes install-cli [--client-version]
+     * az acs kubernetes install-cli [--base-src-url]
+     *                               [--client-version]
      *                               [--install-location]
+     *                               [--kubelogin-base-src-url]
      *                               [--kubelogin-install-location]
      *                               [--kubelogin-version]
      *                               [--subscription]
@@ -351,8 +353,10 @@ declare class az_acs_kubernetes_get_credentials_command_builder extends CommandB
  *
  * Syntax:
  * ```
- * az acs kubernetes install-cli [--client-version]
+ * az acs kubernetes install-cli [--base-src-url]
+ *                               [--client-version]
  *                               [--install-location]
+ *                               [--kubelogin-base-src-url]
  *                               [--kubelogin-install-location]
  *                               [--kubelogin-version]
  *                               [--subscription]
@@ -360,10 +364,14 @@ declare class az_acs_kubernetes_get_credentials_command_builder extends CommandB
  */
 declare class az_acs_kubernetes_install_cli_command_builder extends CommandBuilder<az_acs_kubernetes_install_cli_command_result> {
     constructor(commandPath: string, resultDataTypeName: string);
+    /** Base download source URL for kubectl releases. */
+    baseSrcUrl(value: string): az_acs_kubernetes_install_cli_command_builder;
     /** Version of kubectl to install. */
     clientVersion(value: string): az_acs_kubernetes_install_cli_command_builder;
     /** Path at which to install kubectl. */
     installLocation(value: string): az_acs_kubernetes_install_cli_command_builder;
+    /** Base download source URL for kubelogin releases. */
+    kubeloginBaseSrcUrl(value: string): az_acs_kubernetes_install_cli_command_builder;
     /** Path at which to install kubelogin. */
     kubeloginInstallLocation(value: string): az_acs_kubernetes_install_cli_command_builder;
     /** Version of kubelogin to install. */

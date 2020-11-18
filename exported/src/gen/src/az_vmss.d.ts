@@ -14,6 +14,7 @@ import { az_vmss_extension_delete_command_result } from './models/az_vmss_extens
 import { az_vmss_extension_list_command_result } from './models/az_vmss_extension_list_command_result';
 import { az_vmss_extension_set_command_result } from './models/az_vmss_extension_set_command_result';
 import { az_vmss_extension_show_command_result } from './models/az_vmss_extension_show_command_result';
+import { az_vmss_extension_upgrade_command_result } from './models/az_vmss_extension_upgrade_command_result';
 import { az_vmss_identity_assign_command_result } from './models/az_vmss_identity_assign_command_result';
 import { az_vmss_identity_remove_command_result } from './models/az_vmss_identity_remove_command_result';
 import { az_vmss_identity_show_command_result } from './models/az_vmss_identity_show_command_result';
@@ -315,6 +316,19 @@ export declare class az_vmss_extension {
      * @param {string} vmssName Scale set name. You can configure the default using `az configure --defaults vmss=<name>`.
      */
     static show(name: string, resourceGroup: string, vmssName: string): az_vmss_extension_show_command_builder;
+    /**
+     * Upgrade all extensions for all VMSS instances to the latest version.
+     *
+     * Syntax:
+     * ```
+     * az vmss extension upgrade [--ids]
+     *                           [--name]
+     *                           [--no-wait]
+     *                           [--resource-group]
+     *                           [--subscription]
+     * ```
+     */
+    static upgrade(): az_vmss_extension_upgrade_command_builder;
 }
 /** Manage service identities of a VM scaleset. */
 export declare class az_vmss_identity {
@@ -1405,6 +1419,31 @@ declare class az_vmss_extension_show_command_builder extends CommandBuilder<az_v
     queryExamples(value: string): az_vmss_extension_show_command_builder;
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_vmss_extension_show_command_builder;
+}
+/**
+ * Upgrade all extensions for all VMSS instances to the latest version.
+ *
+ * Syntax:
+ * ```
+ * az vmss extension upgrade [--ids]
+ *                           [--name]
+ *                           [--no-wait]
+ *                           [--resource-group]
+ *                           [--subscription]
+ * ```
+ */
+declare class az_vmss_extension_upgrade_command_builder extends CommandBuilder<az_vmss_extension_upgrade_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string);
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_vmss_extension_upgrade_command_builder;
+    /** Scale set name. You can configure the default using `az configure --defaults vmss=<name>`. */
+    name(value: string): az_vmss_extension_upgrade_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_vmss_extension_upgrade_command_builder;
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_vmss_extension_upgrade_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_vmss_extension_upgrade_command_builder;
 }
 /**
  * Enable managed service identity on a VMSS.

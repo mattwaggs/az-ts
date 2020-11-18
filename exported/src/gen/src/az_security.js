@@ -883,18 +883,17 @@ var az_security_location = /** @class */ (function () {
     return az_security_location;
 }());
 exports.az_security_location = az_security_location;
-/** Shows the Azure Security Center Pricing tier for the subscription. */
+/** Enables managing the Azure Defender plan for the subscription. */
 var az_security_pricing = /** @class */ (function () {
     function az_security_pricing() {
     }
     /**
-     * Updates the Azure Security Center Pricing tier for the subscription.
+     * Updates the Azure defender plan for the subscription.
      *
      * Syntax:
      * ```
      * az security pricing create --name
      *                            --tier
-     *                            [--resource-group]
      *                            [--subscription]
      * ```
      *
@@ -905,7 +904,7 @@ var az_security_pricing = /** @class */ (function () {
         return new az_security_pricing_create_command_builder("az security pricing create", 'az_security_pricing_create_command_result', name, tier);
     };
     /**
-     * Shows the Azure Security Center Pricing tier for the subscription.
+     * Shows the Azure Defender plans for the subscription.
      *
      * Syntax:
      * ```
@@ -917,13 +916,12 @@ var az_security_pricing = /** @class */ (function () {
         return new az_security_pricing_list_command_builder("az security pricing list", 'az_security_pricing_list_command_result');
     };
     /**
-     * Shows the Azure Security Center Pricing tier for the subscription.
+     * Shows the Azure Defender plan for the subscription.
      *
      * Syntax:
      * ```
      * az security pricing show --name
      *                          [--query-examples]
-     *                          [--resource-group]
      *                          [--subscription]
      * ```
      *
@@ -3168,13 +3166,12 @@ var az_security_location_show_command_builder = /** @class */ (function (_super)
     return az_security_location_show_command_builder;
 }(base_1.CommandBuilder));
 /**
- * Updates the Azure Security Center Pricing tier for the subscription.
+ * Updates the Azure defender plan for the subscription.
  *
  * Syntax:
  * ```
  * az security pricing create --name
  *                            --tier
- *                            [--resource-group]
  *                            [--subscription]
  * ```
  *
@@ -3199,11 +3196,6 @@ var az_security_pricing_create_command_builder = /** @class */ (function (_super
         this.setFlag("--tier", value);
         return this;
     };
-    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
-    az_security_pricing_create_command_builder.prototype.resourceGroup = function (value) {
-        this.setFlag("--resource-group", value);
-        return this;
-    };
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     az_security_pricing_create_command_builder.prototype.subscription = function (value) {
         this.setFlag("--subscription", value);
@@ -3212,7 +3204,7 @@ var az_security_pricing_create_command_builder = /** @class */ (function (_super
     return az_security_pricing_create_command_builder;
 }(base_1.CommandBuilder));
 /**
- * Shows the Azure Security Center Pricing tier for the subscription.
+ * Shows the Azure Defender plans for the subscription.
  *
  * Syntax:
  * ```
@@ -3238,13 +3230,12 @@ var az_security_pricing_list_command_builder = /** @class */ (function (_super) 
     return az_security_pricing_list_command_builder;
 }(base_1.CommandBuilder));
 /**
- * Shows the Azure Security Center Pricing tier for the subscription.
+ * Shows the Azure Defender plan for the subscription.
  *
  * Syntax:
  * ```
  * az security pricing show --name
  *                          [--query-examples]
- *                          [--resource-group]
  *                          [--subscription]
  * ```
  *
@@ -3265,11 +3256,6 @@ var az_security_pricing_show_command_builder = /** @class */ (function (_super) 
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
     az_security_pricing_show_command_builder.prototype.queryExamples = function (value) {
         this.setFlag("--query-examples", value);
-        return this;
-    };
-    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
-    az_security_pricing_show_command_builder.prototype.resourceGroup = function (value) {
-        this.setFlag("--resource-group", value);
         return this;
     };
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */

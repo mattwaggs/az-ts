@@ -195,6 +195,7 @@ export declare class az_signalr {
      *                   --sku
      *                   [--allowed-origins]
      *                   [--default-action {Allow, Deny}]
+     *                   [--enable-message-logs {false, true}]
      *                   [--location]
      *                   [--service-mode {Classic, Default, Serverless}]
      *                   [--subscription]
@@ -271,6 +272,7 @@ export declare class az_signalr {
      *                   [--add]
      *                   [--allowed-origins]
      *                   [--default-action {Allow, Deny}]
+     *                   [--enable-message-logs {false, true}]
      *                   [--force-string]
      *                   [--remove]
      *                   [--service-mode {Classic, Default, Serverless}]
@@ -556,6 +558,7 @@ declare class az_signalr_upstream_update_command_builder extends CommandBuilder<
  *                   --sku
  *                   [--allowed-origins]
  *                   [--default-action {Allow, Deny}]
+ *                   [--enable-message-logs {false, true}]
  *                   [--location]
  *                   [--service-mode {Classic, Default, Serverless}]
  *                   [--subscription]
@@ -579,6 +582,8 @@ declare class az_signalr_create_command_builder extends CommandBuilder<az_signal
     allowedOrigins(value: string): az_signalr_create_command_builder;
     /** Default action to apply when no rule matches. */
     defaultAction(value: 'Allow' | 'Deny'): az_signalr_create_command_builder;
+    /** The switch for messaging logs which signalr service will generate or not. */
+    enableMessageLogs(value: boolean): az_signalr_create_command_builder;
     /** Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`. */
     location(value: string): az_signalr_create_command_builder;
     /** The service mode which signalr service will be working on. */
@@ -688,6 +693,7 @@ declare class az_signalr_show_command_builder extends CommandBuilder<az_signalr_
  *                   [--add]
  *                   [--allowed-origins]
  *                   [--default-action {Allow, Deny}]
+ *                   [--enable-message-logs {false, true}]
  *                   [--force-string]
  *                   [--remove]
  *                   [--service-mode {Classic, Default, Serverless}]
@@ -713,6 +719,8 @@ declare class az_signalr_update_command_builder extends CommandBuilder<az_signal
     allowedOrigins(value: string): az_signalr_update_command_builder;
     /** Default action to apply when no rule matches. */
     defaultAction(value: 'Allow' | 'Deny'): az_signalr_update_command_builder;
+    /** The switch for messaging logs which signalr service will generate or not. */
+    enableMessageLogs(value: boolean): az_signalr_update_command_builder;
     /** When using 'set' or 'add', preserve string literals instead of attempting to convert to JSON. */
     forceString(value: string): az_signalr_update_command_builder;
     /** Remove a property or an element from a list.  Example: --remove property.list <indexToRemove> OR --remove propertyToRemove. */

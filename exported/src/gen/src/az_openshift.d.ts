@@ -7,10 +7,10 @@ import { az_openshift_list_command_result } from './models/az_openshift_list_com
 import { az_openshift_scale_command_result } from './models/az_openshift_scale_command_result';
 import { az_openshift_show_command_result } from './models/az_openshift_show_command_result';
 import { az_openshift_wait_command_result } from './models/az_openshift_wait_command_result';
-/** Commands to manage Log Analytics monitoring. Requires "--workspace-id". */
+/** Commands to manage Log Analytics monitoring in an ARO 3.11 cluster. */
 export declare class az_openshift_monitor {
     /**
-     * Disable Log Analytics monitoring.
+     * Disable Log Analytics monitoring in an ARO 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -25,7 +25,7 @@ export declare class az_openshift_monitor {
      */
     static disable(name: string, resourceGroup: string): az_openshift_monitor_disable_command_builder;
     /**
-     * Enable Log Analytics monitoring. Requires "--workspace-id".
+     * Enable Log Analytics monitoring in an ARO 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -42,10 +42,10 @@ export declare class az_openshift_monitor {
      */
     static enable(name: string, resourceGroup: string, workspaceId: string): az_openshift_monitor_enable_command_builder;
 }
-/** Manage Azure Red Hat OpenShift Services. */
+/** Manage Azure Red Hat OpenShift 3.11 clusters. */
 export declare class az_openshift {
     /**
-     * Create a new managed OpenShift cluster.
+     * Create a new Azure Red Hat OpenShift 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -72,7 +72,7 @@ export declare class az_openshift {
      */
     static create(name: string, resourceGroup: string): az_openshift_create_command_builder;
     /**
-     * Delete a managed OpenShift cluster.
+     * Delete an Azure Red Hat OpenShift 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -88,7 +88,7 @@ export declare class az_openshift {
      */
     static delete(name: string, resourceGroup: string): az_openshift_delete_command_builder;
     /**
-     * List managed OpenShift clusters.
+     * List Azure Red Hat OpenShift 3.11 clusters.
      *
      * Syntax:
      * ```
@@ -99,7 +99,7 @@ export declare class az_openshift {
      */
     static list(): az_openshift_list_command_builder;
     /**
-     * Scale the compute pool in a managed OpenShift cluster.
+     * Scale the compute pool in an Azure Red Hat OpenShift 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -116,7 +116,7 @@ export declare class az_openshift {
      */
     static scale(computeCount: string, name: string, resourceGroup: string): az_openshift_scale_command_builder;
     /**
-     * Show the details for a managed OpenShift cluster.
+     * Show the details for an Azure Red Hat OpenShift 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -131,7 +131,7 @@ export declare class az_openshift {
      */
     static show(name: string, resourceGroup: string): az_openshift_show_command_builder;
     /**
-     * Wait for a managed OpenShift cluster to reach a desired state.
+     * Wait for an Azure Red Hat OpenShift 3.11 cluster to reach a desired state.
      *
      * Syntax:
      * ```
@@ -153,7 +153,7 @@ export declare class az_openshift {
     static wait(name: string, resourceGroup: string): az_openshift_wait_command_builder;
 }
 /**
- * Disable Log Analytics monitoring.
+ * Disable Log Analytics monitoring in an ARO 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -178,7 +178,7 @@ declare class az_openshift_monitor_disable_command_builder extends CommandBuilde
     subscription(value: string): az_openshift_monitor_disable_command_builder;
 }
 /**
- * Enable Log Analytics monitoring. Requires "--workspace-id".
+ * Enable Log Analytics monitoring in an ARO 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -207,7 +207,7 @@ declare class az_openshift_monitor_enable_command_builder extends CommandBuilder
     subscription(value: string): az_openshift_monitor_enable_command_builder;
 }
 /**
- * Create a new managed OpenShift cluster.
+ * Create a new Azure Red Hat OpenShift 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -268,7 +268,7 @@ declare class az_openshift_create_command_builder extends CommandBuilder<az_open
     workspaceId(value: string): az_openshift_create_command_builder;
 }
 /**
- * Delete a managed OpenShift cluster.
+ * Delete an Azure Red Hat OpenShift 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -296,7 +296,7 @@ declare class az_openshift_delete_command_builder extends CommandBuilder<az_open
     yes(value: string): az_openshift_delete_command_builder;
 }
 /**
- * List managed OpenShift clusters.
+ * List Azure Red Hat OpenShift 3.11 clusters.
  *
  * Syntax:
  * ```
@@ -315,7 +315,7 @@ declare class az_openshift_list_command_builder extends CommandBuilder<az_opensh
     subscription(value: string): az_openshift_list_command_builder;
 }
 /**
- * Scale the compute pool in a managed OpenShift cluster.
+ * Scale the compute pool in an Azure Red Hat OpenShift 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -344,7 +344,7 @@ declare class az_openshift_scale_command_builder extends CommandBuilder<az_opens
     subscription(value: string): az_openshift_scale_command_builder;
 }
 /**
- * Show the details for a managed OpenShift cluster.
+ * Show the details for an Azure Red Hat OpenShift 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -369,7 +369,7 @@ declare class az_openshift_show_command_builder extends CommandBuilder<az_opensh
     subscription(value: string): az_openshift_show_command_builder;
 }
 /**
- * Wait for a managed OpenShift cluster to reach a desired state.
+ * Wait for an Azure Red Hat OpenShift 3.11 cluster to reach a desired state.
  *
  * Syntax:
  * ```

@@ -41,7 +41,6 @@ import * as _azHdinsight from './src/az_hdinsight';
 import * as _azIdentity from './src/az_identity';
 import * as _azImage from './src/az_image';
 import * as _azIot from './src/az_iot';
-import * as _azIotcentral from './src/az_iotcentral';
 import * as _azKeyvault from './src/az_keyvault';
 import * as _azKusto from './src/az_kusto';
 import * as _azLab from './src/az_lab';
@@ -80,6 +79,7 @@ import * as _azStaticwebapp from './src/az_staticwebapp';
 import * as _azStorage from './src/az_storage';
 import * as _azSynapse from './src/az_synapse';
 import * as _azTag from './src/az_tag';
+import * as _azTs from './src/az_ts';
 import * as _azVm from './src/az_vm';
 import * as _azVmss from './src/az_vmss';
 import * as _azWebapp from './src/az_webapp';
@@ -298,6 +298,7 @@ declare class azAppserviceVnet {
 /** Manage App Service plans. */
 declare class azAppservice extends _azAppservice.az_appservice {
     static ase: typeof _azAppservice.az_appservice_ase;
+    static domain: typeof _azAppservice.az_appservice_domain;
     static hybrid: typeof azAppserviceHybrid;
     static plan: typeof _azAppservice.az_appservice_plan;
     static vnet: typeof azAppserviceVnet;
@@ -458,11 +459,33 @@ declare class azBatchai extends _azBatchai.az_batchai {
 declare class azBillingEnrollment {
     static account: typeof _azBilling.az_billing_enrollment_account;
 }
+/** Get billing invoices for a subscription. */
+declare class azBillingInvoice extends _azBilling.az_billing_invoice {
+    static section: typeof _azBilling.az_billing_invoice_section;
+}
+declare class azBillingRole {
+    static assignment: typeof _azBilling.az_billing_role_assignment;
+    static definition: typeof _azBilling.az_billing_role_definition;
+}
 /** Manage Azure Billing. */
 declare class azBilling extends _azBilling.az_billing {
+    static account: typeof _azBilling.az_billing_account;
+    static agreement: typeof _azBilling.az_billing_agreement;
+    static balance: typeof _azBilling.az_billing_balance;
+    static customer: typeof _azBilling.az_billing_customer;
     static enrollment: typeof azBillingEnrollment;
-    static invoice: typeof _azBilling.az_billing_invoice;
+    static instruction: typeof _azBilling.az_billing_instruction;
+    /** Get billing invoices for a subscription. */
+    static invoice: typeof azBillingInvoice;
     static period: typeof _azBilling.az_billing_period;
+    static permission: typeof _azBilling.az_billing_permission;
+    static policy: typeof _azBilling.az_billing_policy;
+    static product: typeof _azBilling.az_billing_product;
+    static profile: typeof _azBilling.az_billing_profile;
+    static property: typeof _azBilling.az_billing_property;
+    static role: typeof azBillingRole;
+    static subscription: typeof _azBilling.az_billing_subscription;
+    static transaction: typeof _azBilling.az_billing_transaction;
 }
 /** Manage area paths. */
 declare class azBoardsArea extends _azBoards.az_boards_area {
@@ -1149,10 +1172,6 @@ declare class azIot extends _azIot.az_iot {
     /** Manage Azure IoT hubs. */
     static hub: typeof azIotHub;
 }
-/** Manage IoT Central assets. */
-declare class azIotcentral extends _azIotcentral.az_iotcentral {
-    static app: typeof _azIotcentral.az_iotcentral_app;
-}
 /** Manage certificate issuer information. */
 declare class azKeyvaultCertificateIssuer extends _azKeyvault.az_keyvault_certificate_issuer {
     static admin: typeof _azKeyvault.az_keyvault_certificate_issuer_admin;
@@ -1448,15 +1467,26 @@ declare class azMysql extends _azMysql.az_mysql {
     /** Manage MySQL servers. */
     static server: typeof azMysqlServer;
 }
+/** Manage Azure NetApp Files (ANF) Account Backup Resources. */
+declare class azNetappfilesAccountBackup extends _azNetappfiles.az_netappfiles_account_backup {
+    static policy: typeof _azNetappfiles.az_netappfiles_account_backup_policy;
+}
 /** Manage Azure NetApp Files (ANF) Account Resources. */
 declare class azNetappfilesAccount extends _azNetappfiles.az_netappfiles_account {
     static ad: typeof _azNetappfiles.az_netappfiles_account_ad;
+    /** Manage Azure NetApp Files (ANF) Account Backup Resources. */
+    static backup: typeof azNetappfilesAccountBackup;
+}
+/** Manage Azure NetApp Files (ANF) Snapshot Resources. */
+declare class azNetappfilesSnapshot extends _azNetappfiles.az_netappfiles_snapshot {
+    static policy: typeof _azNetappfiles.az_netappfiles_snapshot_policy;
 }
 declare class azNetappfilesVolumeExport {
     static policy: typeof _azNetappfiles.az_netappfiles_volume_export_policy;
 }
 /** Manage Azure NetApp Files (ANF) Volume Resources. */
 declare class azNetappfilesVolume extends _azNetappfiles.az_netappfiles_volume {
+    static backup: typeof _azNetappfiles.az_netappfiles_volume_backup;
     static export: typeof azNetappfilesVolumeExport;
     static replication: typeof _azNetappfiles.az_netappfiles_volume_replication;
 }
@@ -1465,7 +1495,9 @@ declare class azNetappfiles extends _azNetappfiles.az_netappfiles {
     /** Manage Azure NetApp Files (ANF) Account Resources. */
     static account: typeof azNetappfilesAccount;
     static pool: typeof _azNetappfiles.az_netappfiles_pool;
-    static snapshot: typeof _azNetappfiles.az_netappfiles_snapshot;
+    /** Manage Azure NetApp Files (ANF) Snapshot Resources. */
+    static snapshot: typeof azNetappfilesSnapshot;
+    static vault: typeof _azNetappfiles.az_netappfiles_vault;
     /** Manage Azure NetApp Files (ANF) Volume Resources. */
     static volume: typeof azNetappfilesVolume;
 }
@@ -1861,7 +1893,7 @@ declare class azNetworkVpn {
     /** Manage VPN connections. */
     static connection: typeof azNetworkVpnConnection;
 }
-/** Manage the virtual router. This feature supports both VirtualHub and VirtualRouter. Considering VirtualRouter is depcated, we recommand to create VirtualRouter instead. */
+/** Manage the virtual router. This feature supports both VirtualHub and VirtualRouter. Considering VirtualRouter is deprecated, we recommend to create VirtualRouter with --hosted-subnet instead. */
 declare class azNetworkVrouter extends _azNetwork.az_network_vrouter {
     static peering: typeof _azNetwork.az_network_vrouter_peering;
 }
@@ -1921,12 +1953,12 @@ declare class azNetwork extends _azNetwork.az_network {
     /** Manage Azure Virtual Networks. */
     static vnet: typeof azNetworkVnet;
     static vpn: typeof azNetworkVpn;
-    /** Manage the virtual router. This feature supports both VirtualHub and VirtualRouter. Considering VirtualRouter is depcated, we recommand to create VirtualRouter instead. */
+    /** Manage the virtual router. This feature supports both VirtualHub and VirtualRouter. Considering VirtualRouter is deprecated, we recommend to create VirtualRouter with --hosted-subnet instead. */
     static vrouter: typeof azNetworkVrouter;
     /** Manage the Azure Network Watcher. */
     static watcher: typeof azNetworkWatcher;
 }
-/** Manage Azure Red Hat OpenShift Services. */
+/** Manage Azure Red Hat OpenShift 3.11 clusters. */
 declare class azOpenshift extends _azOpenshift.az_openshift {
     static monitor: typeof _azOpenshift.az_openshift_monitor;
 }
@@ -2479,8 +2511,12 @@ declare class azSqlInstance {
     static failover: typeof azSqlInstanceFailover;
     static pool: typeof _azSql.az_sql_instance_pool;
 }
+declare class azSqlMiAdOnly {
+    static auth: typeof _azSql.az_sql_mi_ad_only_auth;
+}
 declare class azSqlMiAd {
     static admin: typeof _azSql.az_sql_mi_ad_admin;
+    static only: typeof azSqlMiAdOnly;
 }
 declare class azSqlMiTde {
     static key: typeof _azSql.az_sql_mi_tde_key;
@@ -2491,6 +2527,9 @@ declare class azSqlMi extends _azSql.az_sql_mi {
     static key: typeof _azSql.az_sql_mi_key;
     static op: typeof _azSql.az_sql_mi_op;
     static tde: typeof azSqlMiTde;
+}
+declare class azSqlMidbLog {
+    static replay: typeof _azSql.az_sql_midb_log_replay;
 }
 declare class azSqlMidbLtr {
     static backup: typeof _azSql.az_sql_midb_ltr_backup;
@@ -2507,11 +2546,16 @@ declare class azSqlMidbShort {
 }
 /** Manage SQL managed instance databases. */
 declare class azSqlMidb extends _azSql.az_sql_midb {
+    static log: typeof azSqlMidbLog;
     static ltr: typeof azSqlMidbLtr;
     static short: typeof azSqlMidbShort;
 }
+declare class azSqlServerAdOnly {
+    static auth: typeof _azSql.az_sql_server_ad_only_auth;
+}
 declare class azSqlServerAd {
     static admin: typeof _azSql.az_sql_server_ad_admin;
+    static only: typeof azSqlServerAdOnly;
 }
 declare class azSqlServerAudit {
     static policy: typeof _azSql.az_sql_server_audit_policy;
@@ -2667,6 +2711,7 @@ declare class azStorageContainer extends _azStorage.az_storage_container {
     static legal: typeof azStorageContainerLegal;
     static metadata: typeof _azStorage.az_storage_container_metadata;
     static policy: typeof _azStorage.az_storage_container_policy;
+    static rm: typeof _azStorage.az_storage_container_rm;
 }
 /** Manage file storage directories. */
 declare class azStorageDirectory extends _azStorage.az_storage_directory {
@@ -2694,7 +2739,7 @@ declare class azStorageFs extends _azStorage.az_storage_fs {
     static file: typeof azStorageFsFile;
     static metadata: typeof _azStorage.az_storage_fs_metadata;
 }
-/** Manage shared access policies of a storage table. */
+/** Manage storage queues. */
 declare class azStorageQueue extends _azStorage.az_storage_queue {
     static metadata: typeof _azStorage.az_storage_queue_metadata;
     static policy: typeof _azStorage.az_storage_queue_policy;
@@ -2728,12 +2773,25 @@ declare class azStorage extends _azStorage.az_storage {
     static logging: typeof _azStorage.az_storage_logging;
     static message: typeof _azStorage.az_storage_message;
     static metrics: typeof _azStorage.az_storage_metrics;
-    /** Manage shared access policies of a storage table. */
+    /** Manage storage queues. */
     static queue: typeof azStorageQueue;
     /** Manage file shares. */
     static share: typeof azStorageShare;
     /** Manage NoSQL key-value storage. */
     static table: typeof azStorageTable;
+}
+declare class azSynapseActivity {
+    static run: typeof _azSynapse.az_synapse_activity_run;
+}
+declare class azSynapseData {
+    static flow: typeof _azSynapse.az_synapse_data_flow;
+}
+declare class azSynapseLinked {
+    static service: typeof _azSynapse.az_synapse_linked_service;
+}
+/** Manage Synapse's pipelines. */
+declare class azSynapsePipeline extends _azSynapse.az_synapse_pipeline {
+    static run: typeof _azSynapse.az_synapse_pipeline_run;
 }
 /** Manage Synapse's role assignments and definitions. */
 declare class azSynapseRole extends _azSynapse.az_synapse_role {
@@ -2751,6 +2809,10 @@ declare class azSynapseSpark extends _azSynapse.az_synapse_spark {
 declare class azSynapseSql extends _azSynapse.az_synapse_sql {
     static pool: typeof _azSynapse.az_synapse_sql_pool;
 }
+/** Manage Synapse's triggers. */
+declare class azSynapseTrigger extends _azSynapse.az_synapse_trigger {
+    static run: typeof _azSynapse.az_synapse_trigger_run;
+}
 declare class azSynapseWorkspaceFirewall {
     static rule: typeof _azSynapse.az_synapse_workspace_firewall_rule;
 }
@@ -2760,12 +2822,21 @@ declare class azSynapseWorkspace extends _azSynapse.az_synapse_workspace {
 }
 /** Manage and operate Synapse Workspace, Spark Pool, SQL Pool. */
 declare class azSynapse extends _azSynapse.az_synapse {
+    static activity: typeof azSynapseActivity;
+    static data: typeof azSynapseData;
+    static dataset: typeof _azSynapse.az_synapse_dataset;
+    static linked: typeof azSynapseLinked;
+    static notebook: typeof _azSynapse.az_synapse_notebook;
+    /** Manage Synapse's pipelines. */
+    static pipeline: typeof azSynapsePipeline;
     /** Manage Synapse's role assignments and definitions. */
     static role: typeof azSynapseRole;
     /** Manage Spark pools and Spark jobs. */
     static spark: typeof azSynapseSpark;
     /** Manage SQL pools. */
     static sql: typeof azSynapseSql;
+    /** Manage Synapse's triggers. */
+    static trigger: typeof azSynapseTrigger;
     /** Manage Synapse workspaces. */
     static workspace: typeof azSynapseWorkspace;
 }
@@ -2987,8 +3058,6 @@ export declare class az extends _az.az {
     static image: typeof azImage;
     /** Manage Internet of Things (IoT) assets. */
     static iot: typeof azIot;
-    /** Manage IoT Central assets. */
-    static iotcentral: typeof azIotcentral;
     /** Manage KeyVault keys, secrets, and certificates. */
     static keyvault: typeof azKeyvault;
     /** Manage Azure Kusto resources. */
@@ -3013,7 +3082,7 @@ export declare class az extends _az.az {
     static netappfiles: typeof azNetappfiles;
     /** Manage Azure Network resources. */
     static network: typeof azNetwork;
-    /** Manage Azure Red Hat OpenShift Services. */
+    /** Manage Azure Red Hat OpenShift 3.11 clusters. */
     static openshift: typeof azOpenshift;
     /** Manage Azure Pipelines. */
     static pipelines: typeof azPipelines;
@@ -3058,6 +3127,7 @@ export declare class az extends _az.az {
     /** Manage and operate Synapse Workspace, Spark Pool, SQL Pool. */
     static synapse: typeof azSynapse;
     static tag: typeof _azTag.az_tag;
+    static ts: typeof _azTs.az_ts;
     /** Manage Linux or Windows virtual machines. */
     static vm: typeof azVm;
     /** Manage groupings of virtual machines in an Azure Virtual Machine Scale Set (VMSS). */

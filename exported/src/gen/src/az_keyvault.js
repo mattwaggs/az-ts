@@ -627,6 +627,7 @@ var az_keyvault_key = /** @class */ (function () {
      * az keyvault key decrypt --algorithm {RSA-OAEP, RSA-OAEP-256, RSA1_5}
      *                         --value
      *                         [--data-type {base64, plaintext}]
+     *                         [--hsm-name]
      *                         [--id]
      *                         [--name]
      *                         [--subscription]
@@ -683,6 +684,7 @@ var az_keyvault_key = /** @class */ (function () {
      * az keyvault key encrypt --algorithm {RSA-OAEP, RSA-OAEP-256, RSA1_5}
      *                         --value
      *                         [--data-type {base64, plaintext}]
+     *                         [--hsm-name]
      *                         [--id]
      *                         [--name]
      *                         [--subscription]
@@ -815,17 +817,22 @@ var az_keyvault_key = /** @class */ (function () {
      *
      * Syntax:
      * ```
-     * az keyvault key restore --file
+     * az keyvault key restore [--backup-folder]
+     *                         [--blob-container-name]
+     *                         [--file]
      *                         [--hsm-name]
      *                         [--id]
+     *                         [--name]
+     *                         [--no-wait]
+     *                         [--storage-account-name]
+     *                         [--storage-container-SAS-token]
+     *                         [--storage-resource-uri]
      *                         [--subscription]
      *                         [--vault-name]
      * ```
-     *
-     * @param {string} file Local key backup from which to restore key.
      */
-    az_keyvault_key.restore = function (file) {
-        return new az_keyvault_key_restore_command_builder("az keyvault key restore", 'az_keyvault_key_restore_command_result', file);
+    az_keyvault_key.restore = function () {
+        return new az_keyvault_key_restore_command_builder("az keyvault key restore", 'az_keyvault_key_restore_command_result');
     };
     /**
      * The update key operation changes specified attributes of a stored key and can be applied to any key type and key version stored in Vault or HSM.
@@ -3759,6 +3766,7 @@ var az_keyvault_key_create_command_builder = /** @class */ (function (_super) {
  * az keyvault key decrypt --algorithm {RSA-OAEP, RSA-OAEP-256, RSA1_5}
  *                         --value
  *                         [--data-type {base64, plaintext}]
+ *                         [--hsm-name]
  *                         [--id]
  *                         [--name]
  *                         [--subscription]
@@ -3790,6 +3798,11 @@ var az_keyvault_key_decrypt_command_builder = /** @class */ (function (_super) {
     /** The type of the original data. */
     az_keyvault_key_decrypt_command_builder.prototype.dataType = function (value) {
         this.setFlag("--data-type", value);
+        return this;
+    };
+    /** Name of the HSM. (--hsm-name and --vault-name are mutually exclusive, please specify just one of them). */
+    az_keyvault_key_decrypt_command_builder.prototype.hsmName = function (value) {
+        this.setFlag("--hsm-name", value);
         return this;
     };
     /** Id of the key. If specified all other 'Id' arguments should be omitted. */
@@ -3937,6 +3950,7 @@ var az_keyvault_key_download_command_builder = /** @class */ (function (_super) 
  * az keyvault key encrypt --algorithm {RSA-OAEP, RSA-OAEP-256, RSA1_5}
  *                         --value
  *                         [--data-type {base64, plaintext}]
+ *                         [--hsm-name]
  *                         [--id]
  *                         [--name]
  *                         [--subscription]
@@ -3968,6 +3982,11 @@ var az_keyvault_key_encrypt_command_builder = /** @class */ (function (_super) {
     /** The type of the original data. */
     az_keyvault_key_encrypt_command_builder.prototype.dataType = function (value) {
         this.setFlag("--data-type", value);
+        return this;
+    };
+    /** Name of the HSM. (--hsm-name and --vault-name are mutually exclusive, please specify just one of them). */
+    az_keyvault_key_encrypt_command_builder.prototype.hsmName = function (value) {
+        this.setFlag("--hsm-name", value);
         return this;
     };
     /** Id of the key. If specified all other 'Id' arguments should be omitted. */
@@ -4364,22 +4383,35 @@ var az_keyvault_key_recover_command_builder = /** @class */ (function (_super) {
  *
  * Syntax:
  * ```
- * az keyvault key restore --file
+ * az keyvault key restore [--backup-folder]
+ *                         [--blob-container-name]
+ *                         [--file]
  *                         [--hsm-name]
  *                         [--id]
+ *                         [--name]
+ *                         [--no-wait]
+ *                         [--storage-account-name]
+ *                         [--storage-container-SAS-token]
+ *                         [--storage-resource-uri]
  *                         [--subscription]
  *                         [--vault-name]
  * ```
- *
- * @param {string} file Local key backup from which to restore key.
  */
 var az_keyvault_key_restore_command_builder = /** @class */ (function (_super) {
     __extends(az_keyvault_key_restore_command_builder, _super);
-    function az_keyvault_key_restore_command_builder(commandPath, resultDataTypeName, file) {
-        var _this = _super.call(this, commandPath, resultDataTypeName) || this;
-        _this.file(file);
-        return _this;
+    function az_keyvault_key_restore_command_builder(commandPath, resultDataTypeName) {
+        return _super.call(this, commandPath, resultDataTypeName) || this;
     }
+    /** Name of the blob container which contains the backup. */
+    az_keyvault_key_restore_command_builder.prototype.backupFolder = function (value) {
+        this.setFlag("--backup-folder", value);
+        return this;
+    };
+    /** Name of Blob Container. */
+    az_keyvault_key_restore_command_builder.prototype.blobContainerName = function (value) {
+        this.setFlag("--blob-container-name", value);
+        return this;
+    };
     /** Local key backup from which to restore key. */
     az_keyvault_key_restore_command_builder.prototype.file = function (value) {
         this.setFlag("--file", value);
@@ -4393,6 +4425,31 @@ var az_keyvault_key_restore_command_builder = /** @class */ (function (_super) {
     /** Id of the Vault or HSM. If specified all other 'Id' arguments should be omitted. */
     az_keyvault_key_restore_command_builder.prototype.id = function (value) {
         this.setFlag("--id", value);
+        return this;
+    };
+    /** Name of the key. (Only for restoring from storage account). */
+    az_keyvault_key_restore_command_builder.prototype.name = function (value) {
+        this.setFlag("--name", value);
+        return this;
+    };
+    /** Do not wait for the long-running operation to finish. */
+    az_keyvault_key_restore_command_builder.prototype.noWait = function (value) {
+        this.setFlag("--no-wait", value);
+        return this;
+    };
+    /** Name of Azure Storage Account. */
+    az_keyvault_key_restore_command_builder.prototype.storageAccountName = function (value) {
+        this.setFlag("--storage-account-name", value);
+        return this;
+    };
+    /** The SAS token pointing to an Azure Blob storage container. */
+    az_keyvault_key_restore_command_builder.prototype.storageContainerSasToken = function (value) {
+        this.setFlag("--storage-container-SAS-token", value);
+        return this;
+    };
+    /** Azure Blob storage container Uri. If specified, all other 'Storage Id' arguments should be omitted. */
+    az_keyvault_key_restore_command_builder.prototype.storageResourceUri = function (value) {
+        this.setFlag("--storage-resource-uri", value);
         return this;
     };
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */

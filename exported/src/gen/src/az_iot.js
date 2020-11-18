@@ -493,6 +493,7 @@ var az_iot_dps = /** @class */ (function () {
      *                   [--location]
      *                   [--sku {S1}]
      *                   [--subscription]
+     *                   [--tags]
      *                   [--unit]
      * ```
      *
@@ -557,6 +558,7 @@ var az_iot_dps = /** @class */ (function () {
      *                   [--resource-group]
      *                   [--set]
      *                   [--subscription]
+     *                   [--tags]
      * ```
      */
     az_iot_dps.update = function () {
@@ -2608,6 +2610,7 @@ var az_iot_dps_linked_hub_update_command_builder = /** @class */ (function (_sup
  *                   [--location]
  *                   [--sku {S1}]
  *                   [--subscription]
+ *                   [--tags]
  *                   [--unit]
  * ```
  *
@@ -2645,6 +2648,11 @@ var az_iot_dps_create_command_builder = /** @class */ (function (_super) {
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     az_iot_dps_create_command_builder.prototype.subscription = function (value) {
         this.setFlag("--subscription", value);
+        return this;
+    };
+    /** Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags. */
+    az_iot_dps_create_command_builder.prototype.tags = function (value) {
+        this.setFlag("--tags", value);
         return this;
     };
     /** Units in your IoT Provisioning Service. */
@@ -2781,6 +2789,7 @@ var az_iot_dps_show_command_builder = /** @class */ (function (_super) {
  *                   [--resource-group]
  *                   [--set]
  *                   [--subscription]
+ *                   [--tags]
  * ```
  */
 var az_iot_dps_update_command_builder = /** @class */ (function (_super) {
@@ -2826,6 +2835,11 @@ var az_iot_dps_update_command_builder = /** @class */ (function (_super) {
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     az_iot_dps_update_command_builder.prototype.subscription = function (value) {
         this.setFlag("--subscription", value);
+        return this;
+    };
+    /** Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags. */
+    az_iot_dps_update_command_builder.prototype.tags = function (value) {
+        this.setFlag("--tags", value);
         return this;
     };
     return az_iot_dps_update_command_builder;

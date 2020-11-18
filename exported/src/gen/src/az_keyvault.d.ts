@@ -633,6 +633,7 @@ export declare class az_keyvault_key {
      * az keyvault key decrypt --algorithm {RSA-OAEP, RSA-OAEP-256, RSA1_5}
      *                         --value
      *                         [--data-type {base64, plaintext}]
+     *                         [--hsm-name]
      *                         [--id]
      *                         [--name]
      *                         [--subscription]
@@ -683,6 +684,7 @@ export declare class az_keyvault_key {
      * az keyvault key encrypt --algorithm {RSA-OAEP, RSA-OAEP-256, RSA1_5}
      *                         --value
      *                         [--data-type {base64, plaintext}]
+     *                         [--hsm-name]
      *                         [--id]
      *                         [--name]
      *                         [--subscription]
@@ -799,16 +801,21 @@ export declare class az_keyvault_key {
      *
      * Syntax:
      * ```
-     * az keyvault key restore --file
+     * az keyvault key restore [--backup-folder]
+     *                         [--blob-container-name]
+     *                         [--file]
      *                         [--hsm-name]
      *                         [--id]
+     *                         [--name]
+     *                         [--no-wait]
+     *                         [--storage-account-name]
+     *                         [--storage-container-SAS-token]
+     *                         [--storage-resource-uri]
      *                         [--subscription]
      *                         [--vault-name]
      * ```
-     *
-     * @param {string} file Local key backup from which to restore key.
      */
-    static restore(file: string): az_keyvault_key_restore_command_builder;
+    static restore(): az_keyvault_key_restore_command_builder;
     /**
      * The update key operation changes specified attributes of a stored key and can be applied to any key type and key version stored in Vault or HSM.
      *
@@ -2843,6 +2850,7 @@ declare class az_keyvault_key_create_command_builder extends CommandBuilder<az_k
  * az keyvault key decrypt --algorithm {RSA-OAEP, RSA-OAEP-256, RSA1_5}
  *                         --value
  *                         [--data-type {base64, plaintext}]
+ *                         [--hsm-name]
  *                         [--id]
  *                         [--name]
  *                         [--subscription]
@@ -2861,6 +2869,8 @@ declare class az_keyvault_key_decrypt_command_builder extends CommandBuilder<az_
     value(value: string): az_keyvault_key_decrypt_command_builder;
     /** The type of the original data. */
     dataType(value: 'base64' | 'plaintext'): az_keyvault_key_decrypt_command_builder;
+    /** Name of the HSM. (--hsm-name and --vault-name are mutually exclusive, please specify just one of them). */
+    hsmName(value: string): az_keyvault_key_decrypt_command_builder;
     /** Id of the key. If specified all other 'Id' arguments should be omitted. */
     id(value: string): az_keyvault_key_decrypt_command_builder;
     /** Name of the key. Required if --id is not specified. */
@@ -2941,6 +2951,7 @@ declare class az_keyvault_key_download_command_builder extends CommandBuilder<az
  * az keyvault key encrypt --algorithm {RSA-OAEP, RSA-OAEP-256, RSA1_5}
  *                         --value
  *                         [--data-type {base64, plaintext}]
+ *                         [--hsm-name]
  *                         [--id]
  *                         [--name]
  *                         [--subscription]
@@ -2959,6 +2970,8 @@ declare class az_keyvault_key_encrypt_command_builder extends CommandBuilder<az_
     value(value: string): az_keyvault_key_encrypt_command_builder;
     /** The type of the original data. */
     dataType(value: 'base64' | 'plaintext'): az_keyvault_key_encrypt_command_builder;
+    /** Name of the HSM. (--hsm-name and --vault-name are mutually exclusive, please specify just one of them). */
+    hsmName(value: string): az_keyvault_key_encrypt_command_builder;
     /** Id of the key. If specified all other 'Id' arguments should be omitted. */
     id(value: string): az_keyvault_key_encrypt_command_builder;
     /** Name of the key. Required if --id is not specified. */
@@ -3177,23 +3190,42 @@ declare class az_keyvault_key_recover_command_builder extends CommandBuilder<az_
  *
  * Syntax:
  * ```
- * az keyvault key restore --file
+ * az keyvault key restore [--backup-folder]
+ *                         [--blob-container-name]
+ *                         [--file]
  *                         [--hsm-name]
  *                         [--id]
+ *                         [--name]
+ *                         [--no-wait]
+ *                         [--storage-account-name]
+ *                         [--storage-container-SAS-token]
+ *                         [--storage-resource-uri]
  *                         [--subscription]
  *                         [--vault-name]
  * ```
- *
- * @param {string} file Local key backup from which to restore key.
  */
 declare class az_keyvault_key_restore_command_builder extends CommandBuilder<az_keyvault_key_restore_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, file: string);
+    constructor(commandPath: string, resultDataTypeName: string);
+    /** Name of the blob container which contains the backup. */
+    backupFolder(value: string): az_keyvault_key_restore_command_builder;
+    /** Name of Blob Container. */
+    blobContainerName(value: string): az_keyvault_key_restore_command_builder;
     /** Local key backup from which to restore key. */
     file(value: string): az_keyvault_key_restore_command_builder;
     /** Name of the HSM. (--hsm-name and --vault-name are mutually exclusive, please specify just one of them). */
     hsmName(value: string): az_keyvault_key_restore_command_builder;
     /** Id of the Vault or HSM. If specified all other 'Id' arguments should be omitted. */
     id(value: string): az_keyvault_key_restore_command_builder;
+    /** Name of the key. (Only for restoring from storage account). */
+    name(value: string): az_keyvault_key_restore_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_keyvault_key_restore_command_builder;
+    /** Name of Azure Storage Account. */
+    storageAccountName(value: string): az_keyvault_key_restore_command_builder;
+    /** The SAS token pointing to an Azure Blob storage container. */
+    storageContainerSasToken(value: string): az_keyvault_key_restore_command_builder;
+    /** Azure Blob storage container Uri. If specified, all other 'Storage Id' arguments should be omitted. */
+    storageResourceUri(value: string): az_keyvault_key_restore_command_builder;
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_keyvault_key_restore_command_builder;
     /** Name of the Vault. */

@@ -98,6 +98,7 @@ var az_webapp_config_access_restriction = /** @class */ (function () {
      *                                         [--subnet]
      *                                         [--subscription]
      *                                         [--vnet-name]
+     *                                         [--vnet-resource-group]
      * ```
      *
      * @param {string} priority Priority of the access restriction rule.
@@ -2056,8 +2057,10 @@ var az_webapp = /** @class */ (function () {
      *              [--location]
      *              [--logs]
      *              [--name]
+     *              [--os-type {Linux, Windows}]
      *              [--plan]
      *              [--resource-group]
+     *              [--runtime]
      *              [--sku {B1, B2, B3, D1, F1, FREE, I1, I2, I3, P1V2, P1V3, P2V2, P2V3, P3V2, P3V3, PC2, PC3, PC4, S1, S2, S3, SHARED}]
      *              [--subscription]
      * ```
@@ -2338,6 +2341,7 @@ var az_webapp_auth_update_command_builder = /** @class */ (function (_super) {
  *                                         [--subnet]
  *                                         [--subscription]
  *                                         [--vnet-name]
+ *                                         [--vnet-resource-group]
  * ```
  *
  * @param {string} priority Priority of the access restriction rule.
@@ -2417,6 +2421,11 @@ var az_webapp_config_access_restriction_add_command_builder = /** @class */ (fun
     /** VNet name. */
     az_webapp_config_access_restriction_add_command_builder.prototype.vnetName = function (value) {
         this.setFlag("--vnet-name", value);
+        return this;
+    };
+    /** Resource group of virtual network (default is web app resource group). */
+    az_webapp_config_access_restriction_add_command_builder.prototype.vnetResourceGroup = function (value) {
+        this.setFlag("--vnet-resource-group", value);
         return this;
     };
     return az_webapp_config_access_restriction_add_command_builder;
@@ -7388,7 +7397,7 @@ var az_webapp_create_command_builder = /** @class */ (function (_super) {
         this.setFlag("--role", value);
         return this;
     };
-    /** Canonicalized web runtime in the format of Framework|Version, e.g. "PHP|7.2". Use `az webapp list-runtimes` for available list. */
+    /** Canonicalized web runtime in the format of Framework|Version, e.g. "PHP|7.2". Allowed delimiters: "|", " ", ":". Use `az webapp list-runtimes` for available list. */
     az_webapp_create_command_builder.prototype.runtime = function (value) {
         this.setFlag("--runtime", value);
         return this;
@@ -7897,8 +7906,10 @@ var az_webapp_stop_command_builder = /** @class */ (function (_super) {
  *              [--location]
  *              [--logs]
  *              [--name]
+ *              [--os-type {Linux, Windows}]
  *              [--plan]
  *              [--resource-group]
+ *              [--runtime]
  *              [--sku {B1, B2, B3, D1, F1, FREE, I1, I2, I3, P1V2, P1V3, P2V2, P2V3, P3V2, P3V3, PC2, PC3, PC4, S1, S2, S3, SHARED}]
  *              [--subscription]
  * ```
@@ -7943,6 +7954,11 @@ var az_webapp_up_command_builder = /** @class */ (function (_super) {
         this.setFlag("--name", value);
         return this;
     };
+    /** Set the OS type for the app to be created. */
+    az_webapp_up_command_builder.prototype.osType = function (value) {
+        this.setFlag("--os-type", value);
+        return this;
+    };
     /** Name of the appserviceplan associated with the webapp. */
     az_webapp_up_command_builder.prototype.plan = function (value) {
         this.setFlag("--plan", value);
@@ -7951,6 +7967,11 @@ var az_webapp_up_command_builder = /** @class */ (function (_super) {
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
     az_webapp_up_command_builder.prototype.resourceGroup = function (value) {
         this.setFlag("--resource-group", value);
+        return this;
+    };
+    /** Canonicalized web runtime in the format of Framework|Version, e.g. "PHP|7.2". Allowed delimiters: "|", " ", ":". Use `az webapp list-runtimes` for available list. */
+    az_webapp_up_command_builder.prototype.runtime = function (value) {
+        this.setFlag("--runtime", value);
         return this;
     };
     /** The pricing tiers, e.g., F1(Free), D1(Shared), B1(Basic Small), B2(Basic Medium), B3(Basic Large), S1(Standard Small), P1V2(Premium V2 Small), P1V3(Premium V3 Small), P2V3(Premium V3 Medium), P3V3(Premium V3 Large), PC2 (Premium Container Small), PC3 (Premium Container Medium), PC4 (Premium Container Large), I1 (Isolated Small), I2 (Isolated Medium), I3 (Isolated Large). */

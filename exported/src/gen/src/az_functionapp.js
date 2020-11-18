@@ -38,6 +38,7 @@ var az_functionapp_config_access_restriction = /** @class */ (function () {
      *                                              [--subnet]
      *                                              [--subscription]
      *                                              [--vnet-name]
+     *                                              [--vnet-resource-group]
      * ```
      *
      * @param {string} priority Priority of the access restriction rule.
@@ -1568,6 +1569,7 @@ var az_functionapp = /** @class */ (function () {
      * Syntax:
      * ```
      * az functionapp update [--add]
+     *                       [--force]
      *                       [--force-string]
      *                       [--ids]
      *                       [--name]
@@ -1603,6 +1605,7 @@ exports.az_functionapp = az_functionapp;
  *                                              [--subnet]
  *                                              [--subscription]
  *                                              [--vnet-name]
+ *                                              [--vnet-resource-group]
  * ```
  *
  * @param {string} priority Priority of the access restriction rule.
@@ -1682,6 +1685,11 @@ var az_functionapp_config_access_restriction_add_command_builder = /** @class */
     /** VNet name. */
     az_functionapp_config_access_restriction_add_command_builder.prototype.vnetName = function (value) {
         this.setFlag("--vnet-name", value);
+        return this;
+    };
+    /** Resource group of virtual network (default is web app resource group). */
+    az_functionapp_config_access_restriction_add_command_builder.prototype.vnetResourceGroup = function (value) {
+        this.setFlag("--vnet-resource-group", value);
         return this;
     };
     return az_functionapp_config_access_restriction_add_command_builder;
@@ -5557,7 +5565,7 @@ var az_functionapp_create_command_builder = /** @class */ (function (_super) {
         this.setFlag("--os-type", value);
         return this;
     };
-    /** Name or resource id of the function app service plan. Use 'appservice plan create' to get one. */
+    /** Name or resource id of the function app service plan. Use 'appservice plan create' to get one. If using an App Service plan from a different resource group, the full resource id must be used and not the plan name. */
     az_functionapp_create_command_builder.prototype.plan = function (value) {
         this.setFlag("--plan", value);
         return this;
@@ -5572,7 +5580,7 @@ var az_functionapp_create_command_builder = /** @class */ (function (_super) {
         this.setFlag("--runtime", value);
         return this;
     };
-    /** The version of the functions runtime stack. Allowed values for each --runtime are: node -> [8, 10, 12], java -> [8, 11 (preview)], powershell -> [7.0], python -> [3.6, 3.7, 3.8]. */
+    /** The version of the functions runtime stack. Allowed values for each --runtime are: node -> [8, 10, 12, 14 (preview)], java -> [8, 11], powershell -> [7.0], python -> [3.6, 3.7, 3.8]. */
     az_functionapp_create_command_builder.prototype.runtimeVersion = function (value) {
         this.setFlag("--runtime-version", value);
         return this;
@@ -5878,6 +5886,7 @@ var az_functionapp_stop_command_builder = /** @class */ (function (_super) {
  * Syntax:
  * ```
  * az functionapp update [--add]
+ *                       [--force]
  *                       [--force-string]
  *                       [--ids]
  *                       [--name]
@@ -5896,6 +5905,11 @@ var az_functionapp_update_command_builder = /** @class */ (function (_super) {
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
     az_functionapp_update_command_builder.prototype.add = function (value) {
         this.setFlag("--add", value);
+        return this;
+    };
+    /** Required if attempting to migrate functionapp from Premium to Consumption --plan. */
+    az_functionapp_update_command_builder.prototype.force = function (value) {
+        this.setFlag("--force", value);
         return this;
     };
     /** When using 'set' or 'add', preserve string literals instead of attempting to convert to JSON. */

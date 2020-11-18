@@ -1012,7 +1012,7 @@ var az_cosmosdb_gremlin = /** @class */ (function () {
     return az_cosmosdb_gremlin;
 }());
 exports.az_cosmosdb_gremlin = az_cosmosdb_gremlin;
-/** Manage Azure Comsos DB keys. */
+/** Manage Azure Cosmos DB keys. */
 var az_cosmosdb_keys = /** @class */ (function () {
     function az_cosmosdb_keys() {
     }
@@ -1434,7 +1434,7 @@ var az_cosmosdb_mongodb = /** @class */ (function () {
     return az_cosmosdb_mongodb;
 }());
 exports.az_cosmosdb_mongodb = az_cosmosdb_mongodb;
-/** Manage Azure Comsos DB network rules. */
+/** Manage Azure Cosmos DB network rules. */
 var az_cosmosdb_network_rule = /** @class */ (function () {
     function az_cosmosdb_network_rule() {
     }
@@ -1495,12 +1495,12 @@ var az_cosmosdb_network_rule = /** @class */ (function () {
     return az_cosmosdb_network_rule;
 }());
 exports.az_cosmosdb_network_rule = az_cosmosdb_network_rule;
-/** Manage Azure Comsos DB private endpoint connections. */
+/** Manage Azure Cosmos DB private endpoint connections. */
 var az_cosmosdb_private_endpoint_connection = /** @class */ (function () {
     function az_cosmosdb_private_endpoint_connection() {
     }
     /**
-     * Approve the specified private endpoint connection associated with Azure Comsos DB.
+     * Approve the specified private endpoint connection associated with Azure Cosmos DB.
      *
      * Syntax:
      * ```
@@ -1517,7 +1517,7 @@ var az_cosmosdb_private_endpoint_connection = /** @class */ (function () {
         return new az_cosmosdb_private_endpoint_connection_approve_command_builder("az cosmosdb private-endpoint-connection approve", 'az_cosmosdb_private_endpoint_connection_approve_command_result');
     };
     /**
-     * Delete the specified private endpoint connection associated with Azure Comsos DB.
+     * Delete the specified private endpoint connection associated with Azure Cosmos DB.
      *
      * Syntax:
      * ```
@@ -1533,7 +1533,7 @@ var az_cosmosdb_private_endpoint_connection = /** @class */ (function () {
         return new az_cosmosdb_private_endpoint_connection_delete_command_builder("az cosmosdb private-endpoint-connection delete", 'az_cosmosdb_private_endpoint_connection_delete_command_result');
     };
     /**
-     * Reject the specified private endpoint connection associated with Azure Comsos DB.
+     * Reject the specified private endpoint connection associated with Azure Cosmos DB.
      *
      * Syntax:
      * ```
@@ -1550,7 +1550,7 @@ var az_cosmosdb_private_endpoint_connection = /** @class */ (function () {
         return new az_cosmosdb_private_endpoint_connection_reject_command_builder("az cosmosdb private-endpoint-connection reject", 'az_cosmosdb_private_endpoint_connection_reject_command_result');
     };
     /**
-     * Show details of a private endpoint connection associated with Azure Comsos DB.
+     * Show details of a private endpoint connection associated with Azure Cosmos DB.
      *
      * Syntax:
      * ```
@@ -1569,12 +1569,12 @@ var az_cosmosdb_private_endpoint_connection = /** @class */ (function () {
     return az_cosmosdb_private_endpoint_connection;
 }());
 exports.az_cosmosdb_private_endpoint_connection = az_cosmosdb_private_endpoint_connection;
-/** Manage Azure Comsos DB private link resources. */
+/** Manage Azure Cosmos DB private link resources. */
 var az_cosmosdb_private_link_resource = /** @class */ (function () {
     function az_cosmosdb_private_link_resource() {
     }
     /**
-     * List the private link resources supported for Azure Comsos DB.
+     * List the private link resources supported for Azure Cosmos DB.
      *
      * Syntax:
      * ```
@@ -1679,6 +1679,7 @@ var az_cosmosdb_sql_container = /** @class */ (function () {
      *                                  --name
      *                                  --partition-key-path
      *                                  --resource-group
+     *                                  [--analytical-storage-ttl]
      *                                  [--conflict-resolution-policy]
      *                                  [--idx]
      *                                  [--max-throughput]
@@ -1788,6 +1789,7 @@ var az_cosmosdb_sql_container = /** @class */ (function () {
      *                                  --database-name
      *                                  --name
      *                                  --resource-group
+     *                                  [--analytical-storage-ttl]
      *                                  [--idx]
      *                                  [--subscription]
      *                                  [--ttl]
@@ -6634,7 +6636,7 @@ var az_cosmosdb_network_rule_remove_command_builder = /** @class */ (function (_
     return az_cosmosdb_network_rule_remove_command_builder;
 }(base_1.CommandBuilder));
 /**
- * Approve the specified private endpoint connection associated with Azure Comsos DB.
+ * Approve the specified private endpoint connection associated with Azure Cosmos DB.
  *
  * Syntax:
  * ```
@@ -6690,7 +6692,7 @@ var az_cosmosdb_private_endpoint_connection_approve_command_builder = /** @class
     return az_cosmosdb_private_endpoint_connection_approve_command_builder;
 }(base_1.CommandBuilder));
 /**
- * Delete the specified private endpoint connection associated with Azure Comsos DB.
+ * Delete the specified private endpoint connection associated with Azure Cosmos DB.
  *
  * Syntax:
  * ```
@@ -6740,7 +6742,7 @@ var az_cosmosdb_private_endpoint_connection_delete_command_builder = /** @class 
     return az_cosmosdb_private_endpoint_connection_delete_command_builder;
 }(base_1.CommandBuilder));
 /**
- * Reject the specified private endpoint connection associated with Azure Comsos DB.
+ * Reject the specified private endpoint connection associated with Azure Cosmos DB.
  *
  * Syntax:
  * ```
@@ -6796,7 +6798,7 @@ var az_cosmosdb_private_endpoint_connection_reject_command_builder = /** @class 
     return az_cosmosdb_private_endpoint_connection_reject_command_builder;
 }(base_1.CommandBuilder));
 /**
- * Show details of a private endpoint connection associated with Azure Comsos DB.
+ * Show details of a private endpoint connection associated with Azure Cosmos DB.
  *
  * Syntax:
  * ```
@@ -6852,7 +6854,7 @@ var az_cosmosdb_private_endpoint_connection_show_command_builder = /** @class */
     return az_cosmosdb_private_endpoint_connection_show_command_builder;
 }(base_1.CommandBuilder));
 /**
- * List the private link resources supported for Azure Comsos DB.
+ * List the private link resources supported for Azure Cosmos DB.
  *
  * Syntax:
  * ```
@@ -7093,6 +7095,7 @@ var az_cosmosdb_sql_container_throughput_update_command_builder = /** @class */ 
  *                                  --name
  *                                  --partition-key-path
  *                                  --resource-group
+ *                                  [--analytical-storage-ttl]
  *                                  [--conflict-resolution-policy]
  *                                  [--idx]
  *                                  [--max-throughput]
@@ -7143,6 +7146,11 @@ var az_cosmosdb_sql_container_create_command_builder = /** @class */ (function (
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
     az_cosmosdb_sql_container_create_command_builder.prototype.resourceGroup = function (value) {
         this.setFlag("--resource-group", value);
+        return this;
+    };
+    /** Analytical TTL, when analytical storage is enabled. */
+    az_cosmosdb_sql_container_create_command_builder.prototype.analyticalStorageTtl = function (value) {
+        this.setFlag("--analytical-storage-ttl", value);
         return this;
     };
     /** Conflict Resolution Policy, you can enter it as a string or as a file, e.g., --conflict-resolution-policy @policy-file.json or --conflict-resolution-policy "{"mode": "lastWriterWins", "conflictResolutionPath": "/path"}". */
@@ -7422,6 +7430,7 @@ var az_cosmosdb_sql_container_show_command_builder = /** @class */ (function (_s
  *                                  --database-name
  *                                  --name
  *                                  --resource-group
+ *                                  [--analytical-storage-ttl]
  *                                  [--idx]
  *                                  [--subscription]
  *                                  [--ttl]
@@ -7460,6 +7469,11 @@ var az_cosmosdb_sql_container_update_command_builder = /** @class */ (function (
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
     az_cosmosdb_sql_container_update_command_builder.prototype.resourceGroup = function (value) {
         this.setFlag("--resource-group", value);
+        return this;
+    };
+    /** Analytical TTL, when analytical storage is enabled. */
+    az_cosmosdb_sql_container_update_command_builder.prototype.analyticalStorageTtl = function (value) {
+        this.setFlag("--analytical-storage-ttl", value);
         return this;
     };
     /** Indexing Policy, you can enter it as a string or as a file, e.g., --idx @policy-file.json or --idx "{"indexingMode": "consistent", "automatic": true, "includedPaths": [{"path": "/\*"}], "excludedPaths": [{ "path": "/headquarters/employees/?"}, { "path": "/\"_etag\"/?"}]}". */

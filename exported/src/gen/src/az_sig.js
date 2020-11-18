@@ -35,6 +35,7 @@ var az_sig_image_definition = /** @class */ (function () {
      *                                [--disallowed-disk-types]
      *                                [--end-of-life-date]
      *                                [--eula]
+     *                                [--features]
      *                                [--hyper-v-generation {V1, V2}]
      *                                [--location]
      *                                [--maximum-cpu-core]
@@ -78,7 +79,7 @@ var az_sig_image_definition = /** @class */ (function () {
         return new az_sig_image_definition_delete_command_builder("az sig image-definition delete", 'az_sig_image_definition_delete_command_result');
     };
     /**
-     * List gallery Image Definitions in a gallery.
+     * List gallery image definitions in a gallery.
      *
      * Syntax:
      * ```
@@ -95,7 +96,7 @@ var az_sig_image_definition = /** @class */ (function () {
         return new az_sig_image_definition_list_command_builder("az sig image-definition list", 'az_sig_image_definition_list_command_result', galleryName, resourceGroup);
     };
     /**
-     * Retrieves information about a gallery Image Definition.
+     * Retrieves information about a gallery image definition.
      *
      * Syntax:
      * ```
@@ -397,6 +398,7 @@ exports.az_sig = az_sig;
  *                                [--disallowed-disk-types]
  *                                [--end-of-life-date]
  *                                [--eula]
+ *                                [--features]
  *                                [--hyper-v-generation {V1, V2}]
  *                                [--location]
  *                                [--maximum-cpu-core]
@@ -487,6 +489,11 @@ var az_sig_image_definition_create_command_builder = /** @class */ (function (_s
     /** The Eula agreement for the gallery image. */
     az_sig_image_definition_create_command_builder.prototype.eula = function (value) {
         this.setFlag("--eula", value);
+        return this;
+    };
+    /** A list of gallery image features. E.g. "IsSecureBootSupported=true IsMeasuredBootSupported=false". */
+    az_sig_image_definition_create_command_builder.prototype.features = function (value) {
+        this.setFlag("--features", value);
         return this;
     };
     /** The hypervisor generation of the Virtual Machine. Applicable to OS disks only. */
@@ -606,7 +613,7 @@ var az_sig_image_definition_delete_command_builder = /** @class */ (function (_s
     return az_sig_image_definition_delete_command_builder;
 }(base_1.CommandBuilder));
 /**
- * List gallery Image Definitions in a gallery.
+ * List gallery image definitions in a gallery.
  *
  * Syntax:
  * ```
@@ -650,7 +657,7 @@ var az_sig_image_definition_list_command_builder = /** @class */ (function (_sup
     return az_sig_image_definition_list_command_builder;
 }(base_1.CommandBuilder));
 /**
- * Retrieves information about a gallery Image Definition.
+ * Retrieves information about a gallery image definition.
  *
  * Syntax:
  * ```

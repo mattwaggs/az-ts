@@ -152,7 +152,7 @@ export declare class az_account_management_group {
      *                                  [--recurse]
      * ```
      *
-     * @param {string} name Name of the management group.
+     * @param {string} name Name of the management group (the last segment of the resource ID). Do not use display name.
      */
     static show(name: string): az_account_management_group_show_command_builder;
     /**
@@ -432,11 +432,11 @@ declare class az_account_management_group_list_command_builder extends CommandBu
  *                                  [--recurse]
  * ```
  *
- * @param {string} name Name of the management group.
+ * @param {string} name Name of the management group (the last segment of the resource ID). Do not use display name.
  */
 declare class az_account_management_group_show_command_builder extends CommandBuilder<az_account_management_group_show_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, name: string);
-    /** Name of the management group. */
+    /** Name of the management group (the last segment of the resource ID). Do not use display name. */
     name(value: string): az_account_management_group_show_command_builder;
     /** If given, lists the children in the first level of hierarchy. */
     expand(value: string): az_account_management_group_show_command_builder;

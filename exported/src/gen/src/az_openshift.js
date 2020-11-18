@@ -15,12 +15,12 @@ var __extends = (this && this.__extends) || (function () {
 exports.__esModule = true;
 exports.az_openshift = exports.az_openshift_monitor = void 0;
 var base_1 = require("../base");
-/** Commands to manage Log Analytics monitoring. Requires "--workspace-id". */
+/** Commands to manage Log Analytics monitoring in an ARO 3.11 cluster. */
 var az_openshift_monitor = /** @class */ (function () {
     function az_openshift_monitor() {
     }
     /**
-     * Disable Log Analytics monitoring.
+     * Disable Log Analytics monitoring in an ARO 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -37,7 +37,7 @@ var az_openshift_monitor = /** @class */ (function () {
         return new az_openshift_monitor_disable_command_builder("az openshift monitor disable", 'az_openshift_monitor_disable_command_result', name, resourceGroup);
     };
     /**
-     * Enable Log Analytics monitoring. Requires "--workspace-id".
+     * Enable Log Analytics monitoring in an ARO 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -58,12 +58,12 @@ var az_openshift_monitor = /** @class */ (function () {
     return az_openshift_monitor;
 }());
 exports.az_openshift_monitor = az_openshift_monitor;
-/** Manage Azure Red Hat OpenShift Services. */
+/** Manage Azure Red Hat OpenShift 3.11 clusters. */
 var az_openshift = /** @class */ (function () {
     function az_openshift() {
     }
     /**
-     * Create a new managed OpenShift cluster.
+     * Create a new Azure Red Hat OpenShift 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -92,7 +92,7 @@ var az_openshift = /** @class */ (function () {
         return new az_openshift_create_command_builder("az openshift create", 'az_openshift_create_command_result', name, resourceGroup);
     };
     /**
-     * Delete a managed OpenShift cluster.
+     * Delete an Azure Red Hat OpenShift 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -110,7 +110,7 @@ var az_openshift = /** @class */ (function () {
         return new az_openshift_delete_command_builder("az openshift delete", 'az_openshift_delete_command_result', name, resourceGroup);
     };
     /**
-     * List managed OpenShift clusters.
+     * List Azure Red Hat OpenShift 3.11 clusters.
      *
      * Syntax:
      * ```
@@ -123,7 +123,7 @@ var az_openshift = /** @class */ (function () {
         return new az_openshift_list_command_builder("az openshift list", 'az_openshift_list_command_result');
     };
     /**
-     * Scale the compute pool in a managed OpenShift cluster.
+     * Scale the compute pool in an Azure Red Hat OpenShift 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -142,7 +142,7 @@ var az_openshift = /** @class */ (function () {
         return new az_openshift_scale_command_builder("az openshift scale", 'az_openshift_scale_command_result', computeCount, name, resourceGroup);
     };
     /**
-     * Show the details for a managed OpenShift cluster.
+     * Show the details for an Azure Red Hat OpenShift 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -159,7 +159,7 @@ var az_openshift = /** @class */ (function () {
         return new az_openshift_show_command_builder("az openshift show", 'az_openshift_show_command_result', name, resourceGroup);
     };
     /**
-     * Wait for a managed OpenShift cluster to reach a desired state.
+     * Wait for an Azure Red Hat OpenShift 3.11 cluster to reach a desired state.
      *
      * Syntax:
      * ```
@@ -185,7 +185,7 @@ var az_openshift = /** @class */ (function () {
 }());
 exports.az_openshift = az_openshift;
 /**
- * Disable Log Analytics monitoring.
+ * Disable Log Analytics monitoring in an ARO 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -229,7 +229,7 @@ var az_openshift_monitor_disable_command_builder = /** @class */ (function (_sup
     return az_openshift_monitor_disable_command_builder;
 }(base_1.CommandBuilder));
 /**
- * Enable Log Analytics monitoring. Requires "--workspace-id".
+ * Enable Log Analytics monitoring in an ARO 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -281,7 +281,7 @@ var az_openshift_monitor_enable_command_builder = /** @class */ (function (_supe
     return az_openshift_monitor_enable_command_builder;
 }(base_1.CommandBuilder));
 /**
- * Create a new managed OpenShift cluster.
+ * Create a new Azure Red Hat OpenShift 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -397,7 +397,7 @@ var az_openshift_create_command_builder = /** @class */ (function (_super) {
     return az_openshift_create_command_builder;
 }(base_1.CommandBuilder));
 /**
- * Delete a managed OpenShift cluster.
+ * Delete an Azure Red Hat OpenShift 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -447,7 +447,7 @@ var az_openshift_delete_command_builder = /** @class */ (function (_super) {
     return az_openshift_delete_command_builder;
 }(base_1.CommandBuilder));
 /**
- * List managed OpenShift clusters.
+ * List Azure Red Hat OpenShift 3.11 clusters.
  *
  * Syntax:
  * ```
@@ -479,7 +479,7 @@ var az_openshift_list_command_builder = /** @class */ (function (_super) {
     return az_openshift_list_command_builder;
 }(base_1.CommandBuilder));
 /**
- * Scale the compute pool in a managed OpenShift cluster.
+ * Scale the compute pool in an Azure Red Hat OpenShift 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -531,7 +531,7 @@ var az_openshift_scale_command_builder = /** @class */ (function (_super) {
     return az_openshift_scale_command_builder;
 }(base_1.CommandBuilder));
 /**
- * Show the details for a managed OpenShift cluster.
+ * Show the details for an Azure Red Hat OpenShift 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -575,7 +575,7 @@ var az_openshift_show_command_builder = /** @class */ (function (_super) {
     return az_openshift_show_command_builder;
 }(base_1.CommandBuilder));
 /**
- * Wait for a managed OpenShift cluster to reach a desired state.
+ * Wait for an Azure Red Hat OpenShift 3.11 cluster to reach a desired state.
  *
  * Syntax:
  * ```

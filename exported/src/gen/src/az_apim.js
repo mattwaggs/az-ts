@@ -482,7 +482,7 @@ var az_apim_api = /** @class */ (function () {
         return new az_apim_api_delete_command_builder("az apim api delete", 'az_apim_api_delete_command_result', apiId, resourceGroup, serviceName);
     };
     /**
-     * Import an API Management service instance.
+     * Import an API Management API.
      *
      * Syntax:
      * ```
@@ -2521,7 +2521,7 @@ var az_apim_api_delete_command_builder = /** @class */ (function (_super) {
     return az_apim_api_delete_command_builder;
 }(base_1.CommandBuilder));
 /**
- * Import an API Management service instance.
+ * Import an API Management API.
  *
  * Syntax:
  * ```

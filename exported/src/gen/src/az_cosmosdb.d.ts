@@ -981,7 +981,7 @@ export declare class az_cosmosdb_gremlin_graph {
 /** Manage Gremlin resources of Azure Cosmos DB account. */
 export declare class az_cosmosdb_gremlin {
 }
-/** Manage Azure Comsos DB keys. */
+/** Manage Azure Cosmos DB keys. */
 export declare class az_cosmosdb_keys {
     /**
      * List the access keys or connection strings for a Azure Cosmos DB database account.
@@ -1341,7 +1341,7 @@ export declare class az_cosmosdb_mongodb_database {
 /** Manage MongoDB resources of Azure Cosmos DB account. */
 export declare class az_cosmosdb_mongodb {
 }
-/** Manage Azure Comsos DB network rules. */
+/** Manage Azure Cosmos DB network rules. */
 export declare class az_cosmosdb_network_rule {
     /**
      * Adds a virtual network rule to an existing Cosmos DB database account.
@@ -1392,10 +1392,10 @@ export declare class az_cosmosdb_network_rule {
      */
     static remove(subnet: string): az_cosmosdb_network_rule_remove_command_builder;
 }
-/** Manage Azure Comsos DB private endpoint connections. */
+/** Manage Azure Cosmos DB private endpoint connections. */
 export declare class az_cosmosdb_private_endpoint_connection {
     /**
-     * Approve the specified private endpoint connection associated with Azure Comsos DB.
+     * Approve the specified private endpoint connection associated with Azure Cosmos DB.
      *
      * Syntax:
      * ```
@@ -1410,7 +1410,7 @@ export declare class az_cosmosdb_private_endpoint_connection {
      */
     static approve(): az_cosmosdb_private_endpoint_connection_approve_command_builder;
     /**
-     * Delete the specified private endpoint connection associated with Azure Comsos DB.
+     * Delete the specified private endpoint connection associated with Azure Cosmos DB.
      *
      * Syntax:
      * ```
@@ -1424,7 +1424,7 @@ export declare class az_cosmosdb_private_endpoint_connection {
      */
     static delete(): az_cosmosdb_private_endpoint_connection_delete_command_builder;
     /**
-     * Reject the specified private endpoint connection associated with Azure Comsos DB.
+     * Reject the specified private endpoint connection associated with Azure Cosmos DB.
      *
      * Syntax:
      * ```
@@ -1439,7 +1439,7 @@ export declare class az_cosmosdb_private_endpoint_connection {
      */
     static reject(): az_cosmosdb_private_endpoint_connection_reject_command_builder;
     /**
-     * Show details of a private endpoint connection associated with Azure Comsos DB.
+     * Show details of a private endpoint connection associated with Azure Cosmos DB.
      *
      * Syntax:
      * ```
@@ -1454,10 +1454,10 @@ export declare class az_cosmosdb_private_endpoint_connection {
      */
     static show(): az_cosmosdb_private_endpoint_connection_show_command_builder;
 }
-/** Manage Azure Comsos DB private link resources. */
+/** Manage Azure Cosmos DB private link resources. */
 export declare class az_cosmosdb_private_link_resource {
     /**
-     * List the private link resources supported for Azure Comsos DB.
+     * List the private link resources supported for Azure Cosmos DB.
      *
      * Syntax:
      * ```
@@ -1546,6 +1546,7 @@ export declare class az_cosmosdb_sql_container {
      *                                  --name
      *                                  --partition-key-path
      *                                  --resource-group
+     *                                  [--analytical-storage-ttl]
      *                                  [--conflict-resolution-policy]
      *                                  [--idx]
      *                                  [--max-throughput]
@@ -1645,6 +1646,7 @@ export declare class az_cosmosdb_sql_container {
      *                                  --database-name
      *                                  --name
      *                                  --resource-group
+     *                                  [--analytical-storage-ttl]
      *                                  [--idx]
      *                                  [--subscription]
      *                                  [--ttl]
@@ -4608,7 +4610,7 @@ declare class az_cosmosdb_network_rule_remove_command_builder extends CommandBui
     virtualNetwork(value: string): az_cosmosdb_network_rule_remove_command_builder;
 }
 /**
- * Approve the specified private endpoint connection associated with Azure Comsos DB.
+ * Approve the specified private endpoint connection associated with Azure Cosmos DB.
  *
  * Syntax:
  * ```
@@ -4639,7 +4641,7 @@ declare class az_cosmosdb_private_endpoint_connection_approve_command_builder ex
     subscription(value: string): az_cosmosdb_private_endpoint_connection_approve_command_builder;
 }
 /**
- * Delete the specified private endpoint connection associated with Azure Comsos DB.
+ * Delete the specified private endpoint connection associated with Azure Cosmos DB.
  *
  * Syntax:
  * ```
@@ -4667,7 +4669,7 @@ declare class az_cosmosdb_private_endpoint_connection_delete_command_builder ext
     subscription(value: string): az_cosmosdb_private_endpoint_connection_delete_command_builder;
 }
 /**
- * Reject the specified private endpoint connection associated with Azure Comsos DB.
+ * Reject the specified private endpoint connection associated with Azure Cosmos DB.
  *
  * Syntax:
  * ```
@@ -4698,7 +4700,7 @@ declare class az_cosmosdb_private_endpoint_connection_reject_command_builder ext
     subscription(value: string): az_cosmosdb_private_endpoint_connection_reject_command_builder;
 }
 /**
- * Show details of a private endpoint connection associated with Azure Comsos DB.
+ * Show details of a private endpoint connection associated with Azure Cosmos DB.
  *
  * Syntax:
  * ```
@@ -4729,7 +4731,7 @@ declare class az_cosmosdb_private_endpoint_connection_show_command_builder exten
     subscription(value: string): az_cosmosdb_private_endpoint_connection_show_command_builder;
 }
 /**
- * List the private link resources supported for Azure Comsos DB.
+ * List the private link resources supported for Azure Cosmos DB.
  *
  * Syntax:
  * ```
@@ -4866,6 +4868,7 @@ declare class az_cosmosdb_sql_container_throughput_update_command_builder extend
  *                                  --name
  *                                  --partition-key-path
  *                                  --resource-group
+ *                                  [--analytical-storage-ttl]
  *                                  [--conflict-resolution-policy]
  *                                  [--idx]
  *                                  [--max-throughput]
@@ -4894,6 +4897,8 @@ declare class az_cosmosdb_sql_container_create_command_builder extends CommandBu
     partitionKeyPath(value: string): az_cosmosdb_sql_container_create_command_builder;
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
     resourceGroup(value: string): az_cosmosdb_sql_container_create_command_builder;
+    /** Analytical TTL, when analytical storage is enabled. */
+    analyticalStorageTtl(value: string): az_cosmosdb_sql_container_create_command_builder;
     /** Conflict Resolution Policy, you can enter it as a string or as a file, e.g., --conflict-resolution-policy @policy-file.json or --conflict-resolution-policy "{"mode": "lastWriterWins", "conflictResolutionPath": "/path"}". */
     conflictResolutionPolicy(value: string): az_cosmosdb_sql_container_create_command_builder;
     /** Indexing Policy, you can enter it as a string or as a file, e.g., --idx @policy-file.json or --idx "{"indexingMode": "consistent", "automatic": true, "includedPaths": [{"path": "/\*"}], "excludedPaths": [{ "path": "/headquarters/employees/?"}, { "path": "/\"_etag\"/?"}]}". */
@@ -5045,6 +5050,7 @@ declare class az_cosmosdb_sql_container_show_command_builder extends CommandBuil
  *                                  --database-name
  *                                  --name
  *                                  --resource-group
+ *                                  [--analytical-storage-ttl]
  *                                  [--idx]
  *                                  [--subscription]
  *                                  [--ttl]
@@ -5065,6 +5071,8 @@ declare class az_cosmosdb_sql_container_update_command_builder extends CommandBu
     name(value: string): az_cosmosdb_sql_container_update_command_builder;
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
     resourceGroup(value: string): az_cosmosdb_sql_container_update_command_builder;
+    /** Analytical TTL, when analytical storage is enabled. */
+    analyticalStorageTtl(value: string): az_cosmosdb_sql_container_update_command_builder;
     /** Indexing Policy, you can enter it as a string or as a file, e.g., --idx @policy-file.json or --idx "{"indexingMode": "consistent", "automatic": true, "includedPaths": [{"path": "/\*"}], "excludedPaths": [{ "path": "/headquarters/employees/?"}, { "path": "/\"_etag\"/?"}]}". */
     idx(value: string): az_cosmosdb_sql_container_update_command_builder;
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */

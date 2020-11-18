@@ -98,6 +98,7 @@ export declare class az_functionapp_config_access_restriction {
      *                                              [--subnet]
      *                                              [--subscription]
      *                                              [--vnet-name]
+     *                                              [--vnet-resource-group]
      * ```
      *
      * @param {string} priority Priority of the access restriction rule.
@@ -1386,6 +1387,7 @@ export declare class az_functionapp {
      * Syntax:
      * ```
      * az functionapp update [--add]
+     *                       [--force]
      *                       [--force-string]
      *                       [--ids]
      *                       [--name]
@@ -1417,6 +1419,7 @@ export declare class az_functionapp {
  *                                              [--subnet]
  *                                              [--subscription]
  *                                              [--vnet-name]
+ *                                              [--vnet-resource-group]
  * ```
  *
  * @param {string} priority Priority of the access restriction rule.
@@ -1451,6 +1454,8 @@ declare class az_functionapp_config_access_restriction_add_command_builder exten
     subscription(value: string): az_functionapp_config_access_restriction_add_command_builder;
     /** VNet name. */
     vnetName(value: string): az_functionapp_config_access_restriction_add_command_builder;
+    /** Resource group of virtual network (default is web app resource group). */
+    vnetResourceGroup(value: string): az_functionapp_config_access_restriction_add_command_builder;
 }
 /**
  * Removes an Access Restriction from the functionapp.
@@ -3598,13 +3603,13 @@ declare class az_functionapp_create_command_builder extends CommandBuilder<az_fu
     functionsVersion(value: '2' | '3'): az_functionapp_create_command_builder;
     /** Set the OS type for the app to be created. */
     osType(value: 'Linux' | 'Windows'): az_functionapp_create_command_builder;
-    /** Name or resource id of the function app service plan. Use 'appservice plan create' to get one. */
+    /** Name or resource id of the function app service plan. Use 'appservice plan create' to get one. If using an App Service plan from a different resource group, the full resource id must be used and not the plan name. */
     plan(value: string): az_functionapp_create_command_builder;
     /** Role name or id the system assigned identity will have. */
     role(value: string): az_functionapp_create_command_builder;
     /** The functions runtime stack. */
     runtime(value: 'custom' | 'dotnet' | 'java' | 'node' | 'powershell' | 'python'): az_functionapp_create_command_builder;
-    /** The version of the functions runtime stack. Allowed values for each --runtime are: node -> [8, 10, 12], java -> [8, 11 (preview)], powershell -> [7.0], python -> [3.6, 3.7, 3.8]. */
+    /** The version of the functions runtime stack. Allowed values for each --runtime are: node -> [8, 10, 12, 14 (preview)], java -> [8, 11], powershell -> [7.0], python -> [3.6, 3.7, 3.8]. */
     runtimeVersion(value: string): az_functionapp_create_command_builder;
     /** Scope that the system assigned identity can access. */
     scope(value: string): az_functionapp_create_command_builder;
@@ -3779,6 +3784,7 @@ declare class az_functionapp_stop_command_builder extends CommandBuilder<az_func
  * Syntax:
  * ```
  * az functionapp update [--add]
+ *                       [--force]
  *                       [--force-string]
  *                       [--ids]
  *                       [--name]
@@ -3793,6 +3799,8 @@ declare class az_functionapp_update_command_builder extends CommandBuilder<az_fu
     constructor(commandPath: string, resultDataTypeName: string);
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
     add(value: string): az_functionapp_update_command_builder;
+    /** Required if attempting to migrate functionapp from Premium to Consumption --plan. */
+    force(value: string): az_functionapp_update_command_builder;
     /** When using 'set' or 'add', preserve string literals instead of attempting to convert to JSON. */
     forceString(value: string): az_functionapp_update_command_builder;
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */

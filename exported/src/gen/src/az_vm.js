@@ -244,7 +244,7 @@ var az_vm_disk = /** @class */ (function () {
     function az_vm_disk() {
     }
     /**
-     * Attach a managed persistent disk to a VM.
+     * Attach a managed persistent disk to a VM. Please note that --ids only supports one disk.
      *
      * Syntax:
      * ```
@@ -549,20 +549,21 @@ var az_vm_host_group = /** @class */ (function () {
      * Syntax:
      * ```
      * az vm host group create --name
+     *                         --platform-fault-domain-count
      *                         --resource-group
      *                         [--automatic-placement {false, true}]
      *                         [--location]
-     *                         [--platform-fault-domain-count]
      *                         [--subscription]
      *                         [--tags]
      *                         [--zone {1, 2, 3}]
      * ```
      *
      * @param {string} name Name of the Dedicated Host Group.
+     * @param {string} platformFaultDomainCount Number of fault domains that the host group can span.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    az_vm_host_group.create = function (name, resourceGroup) {
-        return new az_vm_host_group_create_command_builder("az vm host group create", 'az_vm_host_group_create_command_result', name, resourceGroup);
+    az_vm_host_group.create = function (name, platformFaultDomainCount, resourceGroup) {
+        return new az_vm_host_group_create_command_builder("az vm host group create", 'az_vm_host_group_create_command_result', name, platformFaultDomainCount, resourceGroup);
     };
     /**
      * Delete a dedicated host group.
@@ -654,7 +655,7 @@ var az_vm_host = /** @class */ (function () {
      * az vm host create --host-group
      *                   --name
      *                   --resource-group
-     *                   --sku {DSv3-Type1, ESv3-Type1, FSv2-Type2}
+     *                   --sku
      *                   [--auto-replace {false, true}]
      *                   [--license-type {None, Windows_Server_Hybrid, Windows_Server_Perpetual}]
      *                   [--location]
@@ -666,7 +667,7 @@ var az_vm_host = /** @class */ (function () {
      * @param {string} hostGroup Name of the Dedicated Host Group.
      * @param {string} name Name of the Dedicated Host.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {'DSv3-Type1' | 'ESv3-Type1' | 'FSv2-Type2'} sku Sku of the dedicated host.
+     * @param {string} sku SKU of the dedicated host. Available SKUs: <a href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/dedicated-host/">https://azure.microsoft.com/en-us/pricing/details/virtual-machines/dedicated-host/</a>.
      */
     az_vm_host.create = function (hostGroup, name, resourceGroup, sku) {
         return new az_vm_host_create_command_builder("az vm host create", 'az_vm_host_create_command_result', hostGroup, name, resourceGroup, sku);
@@ -1590,7 +1591,8 @@ var az_vm = /** @class */ (function () {
      *
      * Syntax:
      * ```
-     * az vm delete [--ids]
+     * az vm delete [--force-deletion]
+     *              [--ids]
      *              [--name]
      *              [--no-wait]
      *              [--resource-group]
@@ -2528,7 +2530,7 @@ var az_vm_diagnostics_set_command_builder = /** @class */ (function (_super) {
     return az_vm_diagnostics_set_command_builder;
 }(base_1.CommandBuilder));
 /**
- * Attach a managed persistent disk to a VM.
+ * Attach a managed persistent disk to a VM. Please note that --ids only supports one disk.
  *
  * Syntax:
  * ```
@@ -3417,29 +3419,36 @@ var az_vm_extension_wait_command_builder = /** @class */ (function (_super) {
  * Syntax:
  * ```
  * az vm host group create --name
+ *                         --platform-fault-domain-count
  *                         --resource-group
  *                         [--automatic-placement {false, true}]
  *                         [--location]
- *                         [--platform-fault-domain-count]
  *                         [--subscription]
  *                         [--tags]
  *                         [--zone {1, 2, 3}]
  * ```
  *
  * @param {string} name Name of the Dedicated Host Group.
+ * @param {string} platformFaultDomainCount Number of fault domains that the host group can span.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 var az_vm_host_group_create_command_builder = /** @class */ (function (_super) {
     __extends(az_vm_host_group_create_command_builder, _super);
-    function az_vm_host_group_create_command_builder(commandPath, resultDataTypeName, name, resourceGroup) {
+    function az_vm_host_group_create_command_builder(commandPath, resultDataTypeName, name, platformFaultDomainCount, resourceGroup) {
         var _this = _super.call(this, commandPath, resultDataTypeName) || this;
         _this.name(name);
+        _this.platformFaultDomainCount(platformFaultDomainCount);
         _this.resourceGroup(resourceGroup);
         return _this;
     }
     /** Name of the Dedicated Host Group. */
     az_vm_host_group_create_command_builder.prototype.name = function (value) {
         this.setFlag("--name", value);
+        return this;
+    };
+    /** Number of fault domains that the host group can span. */
+    az_vm_host_group_create_command_builder.prototype.platformFaultDomainCount = function (value) {
+        this.setFlag("--platform-fault-domain-count", value);
         return this;
     };
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
@@ -3455,11 +3464,6 @@ var az_vm_host_group_create_command_builder = /** @class */ (function (_super) {
     /** Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`. Otherwise, location will default to the resource group's location. */
     az_vm_host_group_create_command_builder.prototype.location = function (value) {
         this.setFlag("--location", value);
-        return this;
-    };
-    /** Number of fault domains that the host group can span. Allowed values: 1, 2, 3. */
-    az_vm_host_group_create_command_builder.prototype.platformFaultDomainCount = function (value) {
-        this.setFlag("--platform-fault-domain-count", value);
         return this;
     };
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -3707,7 +3711,7 @@ var az_vm_host_group_update_command_builder = /** @class */ (function (_super) {
  * az vm host create --host-group
  *                   --name
  *                   --resource-group
- *                   --sku {DSv3-Type1, ESv3-Type1, FSv2-Type2}
+ *                   --sku
  *                   [--auto-replace {false, true}]
  *                   [--license-type {None, Windows_Server_Hybrid, Windows_Server_Perpetual}]
  *                   [--location]
@@ -3719,7 +3723,7 @@ var az_vm_host_group_update_command_builder = /** @class */ (function (_super) {
  * @param {string} hostGroup Name of the Dedicated Host Group.
  * @param {string} name Name of the Dedicated Host.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {'DSv3-Type1' | 'ESv3-Type1' | 'FSv2-Type2'} sku Sku of the dedicated host.
+ * @param {string} sku SKU of the dedicated host. Available SKUs: <a href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/dedicated-host/">https://azure.microsoft.com/en-us/pricing/details/virtual-machines/dedicated-host/</a>.
  */
 var az_vm_host_create_command_builder = /** @class */ (function (_super) {
     __extends(az_vm_host_create_command_builder, _super);
@@ -3746,7 +3750,7 @@ var az_vm_host_create_command_builder = /** @class */ (function (_super) {
         this.setFlag("--resource-group", value);
         return this;
     };
-    /** Sku of the dedicated host. */
+    /** SKU of the dedicated host. Available SKUs: <a href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/dedicated-host/">https://azure.microsoft.com/en-us/pricing/details/virtual-machines/dedicated-host/</a>. */
     az_vm_host_create_command_builder.prototype.sku = function (value) {
         this.setFlag("--sku", value);
         return this;
@@ -6148,12 +6152,12 @@ var az_vm_create_command_builder = /** @class */ (function (_super) {
         this.setFlag("--generate-ssh-keys", value);
         return this;
     };
-    /** Name or ID of the dedicated host this VM will reside in. If a name is specified, a host group must be specified via `--host-group`. */
+    /** ID of the dedicated host that the VM will reside in. --host and --host-group can't be used together. */
     az_vm_create_command_builder.prototype.host = function (value) {
         this.setFlag("--host", value);
         return this;
     };
-    /** Name of the dedicated host group containing the dedicated host this VM will reside in. */
+    /** Name or ID of the dedicated host group that the VM will reside in. --host and --host-group can't be used together. */
     az_vm_create_command_builder.prototype.hostGroup = function (value) {
         this.setFlag("--host-group", value);
         return this;
@@ -6444,7 +6448,8 @@ var az_vm_deallocate_command_builder = /** @class */ (function (_super) {
  *
  * Syntax:
  * ```
- * az vm delete [--ids]
+ * az vm delete [--force-deletion]
+ *              [--ids]
  *              [--name]
  *              [--no-wait]
  *              [--resource-group]
@@ -6457,6 +6462,11 @@ var az_vm_delete_command_builder = /** @class */ (function (_super) {
     function az_vm_delete_command_builder(commandPath, resultDataTypeName) {
         return _super.call(this, commandPath, resultDataTypeName) || this;
     }
+    /** Optional parameter to force delete virtual machines. */
+    az_vm_delete_command_builder.prototype.forceDeletion = function (value) {
+        this.setFlag("--force-deletion", value);
+        return this;
+    };
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
     az_vm_delete_command_builder.prototype.ids = function (value) {
         this.setFlag("--ids", value);

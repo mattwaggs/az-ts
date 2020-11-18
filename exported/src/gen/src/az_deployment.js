@@ -53,6 +53,7 @@ var az_deployment_group = /** @class */ (function () {
      *                            [--rollback-on-error]
      *                            [--subscription]
      *                            [--template-file]
+     *                            [--template-spec]
      *                            [--template-uri]
      *                            [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
      *                            [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -143,6 +144,7 @@ var az_deployment_group = /** @class */ (function () {
      *                              [--rollback-on-error]
      *                              [--subscription]
      *                              [--template-file]
+     *                              [--template-spec]
      *                              [--template-uri]
      * ```
      *
@@ -190,6 +192,7 @@ var az_deployment_group = /** @class */ (function () {
      *                             [--result-format {FullResourcePayloads, ResourceIdOnly}]
      *                             [--subscription]
      *                             [--template-file]
+     *                             [--template-spec]
      *                             [--template-uri]
      * ```
      *
@@ -236,6 +239,7 @@ var az_deployment_mg = /** @class */ (function () {
      *                         [--parameters]
      *                         [--subscription]
      *                         [--template-file]
+     *                         [--template-spec]
      *                         [--template-uri]
      *                         [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
      *                         [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -326,6 +330,7 @@ var az_deployment_mg = /** @class */ (function () {
      *                           [--parameters]
      *                           [--subscription]
      *                           [--template-file]
+     *                           [--template-spec]
      *                           [--template-uri]
      * ```
      *
@@ -373,6 +378,7 @@ var az_deployment_mg = /** @class */ (function () {
      *                          [--result-format {FullResourcePayloads, ResourceIdOnly}]
      *                          [--subscription]
      *                          [--template-file]
+     *                          [--template-spec]
      *                          [--template-uri]
      * ```
      *
@@ -620,6 +626,7 @@ var az_deployment_sub = /** @class */ (function () {
      *                          [--parameters]
      *                          [--subscription]
      *                          [--template-file]
+     *                          [--template-spec]
      *                          [--template-uri]
      *                          [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
      *                          [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -699,6 +706,7 @@ var az_deployment_sub = /** @class */ (function () {
      *                            [--parameters]
      *                            [--subscription]
      *                            [--template-file]
+     *                            [--template-spec]
      *                            [--template-uri]
      * ```
      *
@@ -742,6 +750,7 @@ var az_deployment_sub = /** @class */ (function () {
      *                           [--result-format {FullResourcePayloads, ResourceIdOnly}]
      *                           [--subscription]
      *                           [--template-file]
+     *                           [--template-spec]
      *                           [--template-uri]
      * ```
      *
@@ -785,6 +794,7 @@ var az_deployment_tenant = /** @class */ (function () {
      *                             [--parameters]
      *                             [--subscription]
      *                             [--template-file]
+     *                             [--template-spec]
      *                             [--template-uri]
      *                             [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
      *                             [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -864,6 +874,7 @@ var az_deployment_tenant = /** @class */ (function () {
      *                               [--parameters]
      *                               [--subscription]
      *                               [--template-file]
+     *                               [--template-spec]
      *                               [--template-uri]
      * ```
      *
@@ -907,6 +918,7 @@ var az_deployment_tenant = /** @class */ (function () {
      *                              [--result-format {FullResourcePayloads, ResourceIdOnly}]
      *                              [--subscription]
      *                              [--template-file]
+     *                              [--template-spec]
      *                              [--template-uri]
      * ```
      *
@@ -1020,6 +1032,7 @@ var az_deployment = /** @class */ (function () {
      *                      [--parameters]
      *                      [--subscription]
      *                      [--template-file]
+     *                      [--template-spec]
      *                      [--template-uri]
      *                      [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
      *                      [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -1099,6 +1112,7 @@ var az_deployment = /** @class */ (function () {
      *                        [--parameters]
      *                        [--subscription]
      *                        [--template-file]
+     *                        [--template-spec]
      *                        [--template-uri]
      * ```
      *
@@ -1187,6 +1201,7 @@ var az_deployment_group_cancel_command_builder = /** @class */ (function (_super
  *                            [--rollback-on-error]
  *                            [--subscription]
  *                            [--template-file]
+ *                            [--template-spec]
  *                            [--template-uri]
  *                            [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
  *                            [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -1264,6 +1279,11 @@ var az_deployment_group_create_command_builder = /** @class */ (function (_super
     /** The path to the template file. */
     az_deployment_group_create_command_builder.prototype.templateFile = function (value) {
         this.setFlag("--template-file", value);
+        return this;
+    };
+    /** The template spec resource id. */
+    az_deployment_group_create_command_builder.prototype.templateSpec = function (value) {
+        this.setFlag("--template-spec", value);
         return this;
     };
     /** The URI to the template file. */
@@ -1465,6 +1485,7 @@ var az_deployment_group_show_command_builder = /** @class */ (function (_super) 
  *                              [--rollback-on-error]
  *                              [--subscription]
  *                              [--template-file]
+ *                              [--template-spec]
  *                              [--template-uri]
  * ```
  *
@@ -1520,6 +1541,11 @@ var az_deployment_group_validate_command_builder = /** @class */ (function (_sup
     /** The path to the template file. */
     az_deployment_group_validate_command_builder.prototype.templateFile = function (value) {
         this.setFlag("--template-file", value);
+        return this;
+    };
+    /** The template spec resource id. */
+    az_deployment_group_validate_command_builder.prototype.templateSpec = function (value) {
+        this.setFlag("--template-spec", value);
         return this;
     };
     /** The URI to the template file. */
@@ -1625,6 +1651,7 @@ var az_deployment_group_wait_command_builder = /** @class */ (function (_super) 
  *                             [--result-format {FullResourcePayloads, ResourceIdOnly}]
  *                             [--subscription]
  *                             [--template-file]
+ *                             [--template-spec]
  *                             [--template-uri]
  * ```
  *
@@ -1692,6 +1719,11 @@ var az_deployment_group_what_if_command_builder = /** @class */ (function (_supe
         this.setFlag("--template-file", value);
         return this;
     };
+    /** The template spec resource id. */
+    az_deployment_group_what_if_command_builder.prototype.templateSpec = function (value) {
+        this.setFlag("--template-spec", value);
+        return this;
+    };
     /** The URI to the template file. */
     az_deployment_group_what_if_command_builder.prototype.templateUri = function (value) {
         this.setFlag("--template-uri", value);
@@ -1752,6 +1784,7 @@ var az_deployment_mg_cancel_command_builder = /** @class */ (function (_super) {
  *                         [--parameters]
  *                         [--subscription]
  *                         [--template-file]
+ *                         [--template-spec]
  *                         [--template-uri]
  *                         [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
  *                         [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -1816,6 +1849,11 @@ var az_deployment_mg_create_command_builder = /** @class */ (function (_super) {
     /** The path to the template file. */
     az_deployment_mg_create_command_builder.prototype.templateFile = function (value) {
         this.setFlag("--template-file", value);
+        return this;
+    };
+    /** The template spec resource id. */
+    az_deployment_mg_create_command_builder.prototype.templateSpec = function (value) {
+        this.setFlag("--template-spec", value);
         return this;
     };
     /** The URI to the template file. */
@@ -2016,6 +2054,7 @@ var az_deployment_mg_show_command_builder = /** @class */ (function (_super) {
  *                           [--parameters]
  *                           [--subscription]
  *                           [--template-file]
+ *                           [--template-spec]
  *                           [--template-uri]
  * ```
  *
@@ -2068,6 +2107,11 @@ var az_deployment_mg_validate_command_builder = /** @class */ (function (_super)
     /** The path to the template file. */
     az_deployment_mg_validate_command_builder.prototype.templateFile = function (value) {
         this.setFlag("--template-file", value);
+        return this;
+    };
+    /** The template spec resource id. */
+    az_deployment_mg_validate_command_builder.prototype.templateSpec = function (value) {
+        this.setFlag("--template-spec", value);
         return this;
     };
     /** The URI to the template file. */
@@ -2172,6 +2216,7 @@ var az_deployment_mg_wait_command_builder = /** @class */ (function (_super) {
  *                          [--result-format {FullResourcePayloads, ResourceIdOnly}]
  *                          [--subscription]
  *                          [--template-file]
+ *                          [--template-spec]
  *                          [--template-uri]
  * ```
  *
@@ -2234,6 +2279,11 @@ var az_deployment_mg_what_if_command_builder = /** @class */ (function (_super) 
     /** The path to the template file. */
     az_deployment_mg_what_if_command_builder.prototype.templateFile = function (value) {
         this.setFlag("--template-file", value);
+        return this;
+    };
+    /** The template spec resource id. */
+    az_deployment_mg_what_if_command_builder.prototype.templateSpec = function (value) {
+        this.setFlag("--template-spec", value);
         return this;
     };
     /** The URI to the template file. */
@@ -2719,6 +2769,7 @@ var az_deployment_sub_cancel_command_builder = /** @class */ (function (_super) 
  *                          [--parameters]
  *                          [--subscription]
  *                          [--template-file]
+ *                          [--template-spec]
  *                          [--template-uri]
  *                          [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
  *                          [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -2776,6 +2827,11 @@ var az_deployment_sub_create_command_builder = /** @class */ (function (_super) 
     /** The path to the template file. */
     az_deployment_sub_create_command_builder.prototype.templateFile = function (value) {
         this.setFlag("--template-file", value);
+        return this;
+    };
+    /** The template spec resource id. */
+    az_deployment_sub_create_command_builder.prototype.templateSpec = function (value) {
+        this.setFlag("--template-spec", value);
         return this;
     };
     /** The URI to the template file. */
@@ -2941,6 +2997,7 @@ var az_deployment_sub_show_command_builder = /** @class */ (function (_super) {
  *                            [--parameters]
  *                            [--subscription]
  *                            [--template-file]
+ *                            [--template-spec]
  *                            [--template-uri]
  * ```
  *
@@ -2986,6 +3043,11 @@ var az_deployment_sub_validate_command_builder = /** @class */ (function (_super
     /** The path to the template file. */
     az_deployment_sub_validate_command_builder.prototype.templateFile = function (value) {
         this.setFlag("--template-file", value);
+        return this;
+    };
+    /** The template spec resource id. */
+    az_deployment_sub_validate_command_builder.prototype.templateSpec = function (value) {
+        this.setFlag("--template-spec", value);
         return this;
     };
     /** The URI to the template file. */
@@ -3081,6 +3143,7 @@ var az_deployment_sub_wait_command_builder = /** @class */ (function (_super) {
  *                           [--result-format {FullResourcePayloads, ResourceIdOnly}]
  *                           [--subscription]
  *                           [--template-file]
+ *                           [--template-spec]
  *                           [--template-uri]
  * ```
  *
@@ -3138,6 +3201,11 @@ var az_deployment_sub_what_if_command_builder = /** @class */ (function (_super)
         this.setFlag("--template-file", value);
         return this;
     };
+    /** The template spec resource id. */
+    az_deployment_sub_what_if_command_builder.prototype.templateSpec = function (value) {
+        this.setFlag("--template-spec", value);
+        return this;
+    };
     /** The URI to the template file. */
     az_deployment_sub_what_if_command_builder.prototype.templateUri = function (value) {
         this.setFlag("--template-uri", value);
@@ -3189,6 +3257,7 @@ var az_deployment_tenant_cancel_command_builder = /** @class */ (function (_supe
  *                             [--parameters]
  *                             [--subscription]
  *                             [--template-file]
+ *                             [--template-spec]
  *                             [--template-uri]
  *                             [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
  *                             [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -3246,6 +3315,11 @@ var az_deployment_tenant_create_command_builder = /** @class */ (function (_supe
     /** The path to the template file. */
     az_deployment_tenant_create_command_builder.prototype.templateFile = function (value) {
         this.setFlag("--template-file", value);
+        return this;
+    };
+    /** The template spec resource id. */
+    az_deployment_tenant_create_command_builder.prototype.templateSpec = function (value) {
+        this.setFlag("--template-spec", value);
         return this;
     };
     /** The URI to the template file. */
@@ -3411,6 +3485,7 @@ var az_deployment_tenant_show_command_builder = /** @class */ (function (_super)
  *                               [--parameters]
  *                               [--subscription]
  *                               [--template-file]
+ *                               [--template-spec]
  *                               [--template-uri]
  * ```
  *
@@ -3456,6 +3531,11 @@ var az_deployment_tenant_validate_command_builder = /** @class */ (function (_su
     /** The path to the template file. */
     az_deployment_tenant_validate_command_builder.prototype.templateFile = function (value) {
         this.setFlag("--template-file", value);
+        return this;
+    };
+    /** The template spec resource id. */
+    az_deployment_tenant_validate_command_builder.prototype.templateSpec = function (value) {
+        this.setFlag("--template-spec", value);
         return this;
     };
     /** The URI to the template file. */
@@ -3551,6 +3631,7 @@ var az_deployment_tenant_wait_command_builder = /** @class */ (function (_super)
  *                              [--result-format {FullResourcePayloads, ResourceIdOnly}]
  *                              [--subscription]
  *                              [--template-file]
+ *                              [--template-spec]
  *                              [--template-uri]
  * ```
  *
@@ -3606,6 +3687,11 @@ var az_deployment_tenant_what_if_command_builder = /** @class */ (function (_sup
     /** The path to the template file. */
     az_deployment_tenant_what_if_command_builder.prototype.templateFile = function (value) {
         this.setFlag("--template-file", value);
+        return this;
+    };
+    /** The template spec resource id. */
+    az_deployment_tenant_what_if_command_builder.prototype.templateSpec = function (value) {
+        this.setFlag("--template-spec", value);
         return this;
     };
     /** The URI to the template file. */
@@ -3817,6 +3903,7 @@ var az_deployment_cancel_command_builder = /** @class */ (function (_super) {
  *                      [--parameters]
  *                      [--subscription]
  *                      [--template-file]
+ *                      [--template-spec]
  *                      [--template-uri]
  *                      [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
  *                      [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -3874,6 +3961,11 @@ var az_deployment_create_command_builder = /** @class */ (function (_super) {
     /** The path to the template file. */
     az_deployment_create_command_builder.prototype.templateFile = function (value) {
         this.setFlag("--template-file", value);
+        return this;
+    };
+    /** The template spec resource id. */
+    az_deployment_create_command_builder.prototype.templateSpec = function (value) {
+        this.setFlag("--template-spec", value);
         return this;
     };
     /** The URI to the template file. */
@@ -4039,6 +4131,7 @@ var az_deployment_show_command_builder = /** @class */ (function (_super) {
  *                        [--parameters]
  *                        [--subscription]
  *                        [--template-file]
+ *                        [--template-spec]
  *                        [--template-uri]
  * ```
  *
@@ -4084,6 +4177,11 @@ var az_deployment_validate_command_builder = /** @class */ (function (_super) {
     /** The path to the template file. */
     az_deployment_validate_command_builder.prototype.templateFile = function (value) {
         this.setFlag("--template-file", value);
+        return this;
+    };
+    /** The template spec resource id. */
+    az_deployment_validate_command_builder.prototype.templateSpec = function (value) {
+        this.setFlag("--template-spec", value);
         return this;
     };
     /** The URI to the template file. */

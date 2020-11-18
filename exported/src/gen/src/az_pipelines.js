@@ -3725,7 +3725,7 @@ var az_pipelines_variable_create_command_builder = /** @class */ (function (_sup
         this.setFlag("--subscription", value);
         return this;
     };
-    /** Value of the variable. For secret variables, if --value parameter is not given, it will be picked from environment variable prefixed with <problematic ids="id64" refid="id63">AZURE_DEVOPS_EXT_PIPELINE_VAR_</problematic> or user will be prompted to enter it via standard input. e.g. A variable named `MySecret` can be input using environment variable AZURE_DEVOPS_EXT_PIPELINE_VAR_MySecret. */
+    /** Value of the variable. For secret variables, if --value parameter is not given, it will be picked from environment variable prefixed with <problematic ids="id68" refid="id67">AZURE_DEVOPS_EXT_PIPELINE_VAR_</problematic> or user will be prompted to enter it via standard input. e.g. A variable named `MySecret` can be input using environment variable AZURE_DEVOPS_EXT_PIPELINE_VAR_MySecret. */
     az_pipelines_variable_create_command_builder.prototype.value = function (value) {
         this.setFlag("--value", value);
         return this;
@@ -3937,7 +3937,7 @@ var az_pipelines_variable_update_command_builder = /** @class */ (function (_sup
         this.setFlag("--subscription", value);
         return this;
     };
-    /** New value of the variable. For secret variables, use --prompt-value parameter, to be prompted to enter it via standard input. For non-interactive consoles it can be picked from environment variable prefixed with <problematic ids="id66" refid="id65">AZURE_DEVOPS_EXT_PIPELINE_VAR_</problematic> e.g. A variable nameed `MySecret` can be input using environment variable AZURE_DEVOPS_EXT_PIPELINE_VAR_MySecret. */
+    /** New value of the variable. For secret variables, use --prompt-value parameter, to be prompted to enter it via standard input. For non-interactive consoles it can be picked from environment variable prefixed with <problematic ids="id70" refid="id69">AZURE_DEVOPS_EXT_PIPELINE_VAR_</problematic> e.g. A variable nameed `MySecret` can be input using environment variable AZURE_DEVOPS_EXT_PIPELINE_VAR_MySecret. */
     az_pipelines_variable_update_command_builder.prototype.value = function (value) {
         this.setFlag("--value", value);
         return this;

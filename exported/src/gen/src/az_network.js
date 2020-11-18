@@ -1618,6 +1618,7 @@ var az_network_application_gateway_rule = /** @class */ (function () {
      *                                            [--http-listener]
      *                                            [--http-settings]
      *                                            [--no-wait]
+     *                                            [--priority]
      *                                            [--redirect-config]
      *                                            [--rewrite-rule-set]
      *                                            [--rule-type]
@@ -1695,6 +1696,7 @@ var az_network_application_gateway_rule = /** @class */ (function () {
      *                                            [--ids]
      *                                            [--name]
      *                                            [--no-wait]
+     *                                            [--priority]
      *                                            [--redirect-config]
      *                                            [--remove]
      *                                            [--resource-group]
@@ -2421,31 +2423,30 @@ var az_network_application_gateway_waf_policy_managed_rule_rule_set = /** @class
         return new az_network_application_gateway_waf_policy_managed_rule_rule_set_remove_command_builder("az network application-gateway waf-policy managed-rule rule-set remove", 'az_network_application_gateway_waf_policy_managed_rule_rule_set_remove_command_result', policyName, resourceGroup, type, version);
     };
     /**
-     * Update(Override) existing rule set of a WAF policy managed rules. For rule set and rules, please visit: <a href="https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules">https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules</a>.
+     * Manage rules of a WAF policy. If --group-name and --rules are provided, override existing rules. If --group-name is provided, clear all rules under a certain rule group. If neither of them are provided, update rule set and clear all rules under itself. For rule set and rules, please visit: <a href="https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules">https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules</a>.
      *
      * Syntax:
      * ```
-     * az network application-gateway waf-policy managed-rule rule-set update --group-name
-     *                                                                        --policy-name
+     * az network application-gateway waf-policy managed-rule rule-set update --policy-name
      *                                                                        --resource-group
      *                                                                        --type {Microsoft_BotManagerRuleSet, OWASP}
      *                                                                        --version {0.1, 2.2.9, 3.0, 3.1}
      *                                                                        [--add]
      *                                                                        [--force-string]
+     *                                                                        [--group-name]
      *                                                                        [--remove]
      *                                                                        [--rules]
      *                                                                        [--set]
      *                                                                        [--subscription]
      * ```
      *
-     * @param {string} groupName The name of the web application firewall rule set group.
      * @param {string} policyName The name of the web application firewall policy.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'Microsoft_BotManagerRuleSet' | 'OWASP'} type The type of the web application firewall rule set.
      * @param {'0.1' | '2.2.9' | '3.0' | '3.1'} version The version of the web application firewall rule set type. 0.1 is used for Microsoft_BotManagerRuleSet.
      */
-    az_network_application_gateway_waf_policy_managed_rule_rule_set.update = function (groupName, policyName, resourceGroup, type, version) {
-        return new az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder("az network application-gateway waf-policy managed-rule rule-set update", 'az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_result', groupName, policyName, resourceGroup, type, version);
+    az_network_application_gateway_waf_policy_managed_rule_rule_set.update = function (policyName, resourceGroup, type, version) {
+        return new az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder("az network application-gateway waf-policy managed-rule rule-set update", 'az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_result', policyName, resourceGroup, type, version);
     };
     return az_network_application_gateway_waf_policy_managed_rule_rule_set;
 }());
@@ -11957,7 +11958,7 @@ var az_network_vrouter_peering = /** @class */ (function () {
     return az_network_vrouter_peering;
 }());
 exports.az_network_vrouter_peering = az_network_vrouter_peering;
-/** Manage the virtual router. This feature supports both VirtualHub and VirtualRouter. Considering VirtualRouter is depcated, we recommand to create VirtualRouter instead. */
+/** Manage the virtual router. This feature supports both VirtualHub and VirtualRouter. Considering VirtualRouter is deprecated, we recommend to create VirtualRouter with --hosted-subnet instead. */
 var az_network_vrouter = /** @class */ (function () {
     function az_network_vrouter() {
     }
@@ -14294,7 +14295,7 @@ var az_network_application_gateway_http_listener_create_command_builder = /** @c
         this.setFlag("--host-name", value);
         return this;
     };
-    /** List of host names that allows special wildcard characters as well. */
+    /** Space-separated list of host names that allows special wildcard characters as well. */
     az_network_application_gateway_http_listener_create_command_builder.prototype.hostNames = function (value) {
         this.setFlag("--host-names", value);
         return this;
@@ -14523,7 +14524,7 @@ var az_network_application_gateway_http_listener_update_command_builder = /** @c
         this.setFlag("--host-name", value);
         return this;
     };
-    /** List of host names that allows special wildcard characters as well. */
+    /** Space-separated list of host names that allows special wildcard characters as well. */
     az_network_application_gateway_http_listener_update_command_builder.prototype.hostNames = function (value) {
         this.setFlag("--host-names", value);
         return this;
@@ -17943,6 +17944,7 @@ var az_network_application_gateway_root_cert_update_command_builder = /** @class
  *                                            [--http-listener]
  *                                            [--http-settings]
  *                                            [--no-wait]
+ *                                            [--priority]
  *                                            [--redirect-config]
  *                                            [--rewrite-rule-set]
  *                                            [--rule-type]
@@ -17996,6 +17998,11 @@ var az_network_application_gateway_rule_create_command_builder = /** @class */ (
     /** Do not wait for the long-running operation to finish. */
     az_network_application_gateway_rule_create_command_builder.prototype.noWait = function (value) {
         this.setFlag("--no-wait", value);
+        return this;
+    };
+    /** Priority of the request routing rule. Range from 1 to 2000. */
+    az_network_application_gateway_rule_create_command_builder.prototype.priority = function (value) {
+        this.setFlag("--priority", value);
         return this;
     };
     /** The name or ID of the redirect configuration to use with the created rule. */
@@ -18183,6 +18190,7 @@ var az_network_application_gateway_rule_show_command_builder = /** @class */ (fu
  *                                            [--ids]
  *                                            [--name]
  *                                            [--no-wait]
+ *                                            [--priority]
  *                                            [--redirect-config]
  *                                            [--remove]
  *                                            [--resource-group]
@@ -18241,6 +18249,11 @@ var az_network_application_gateway_rule_update_command_builder = /** @class */ (
     /** Do not wait for the long-running operation to finish. */
     az_network_application_gateway_rule_update_command_builder.prototype.noWait = function (value) {
         this.setFlag("--no-wait", value);
+        return this;
+    };
+    /** Priority of the request routing rule. Range from 1 to 2000. */
+    az_network_application_gateway_rule_update_command_builder.prototype.priority = function (value) {
+        this.setFlag("--priority", value);
         return this;
     };
     /** The name or ID of the redirect configuration to use with the created rule. */
@@ -20177,7 +20190,7 @@ var az_network_application_gateway_waf_policy_managed_rule_rule_set_add_command_
         this.setFlag("--group-name", value);
         return this;
     };
-    /** List of rules that will be disabled. */
+    /** List of rules that will be disabled. If provided, --group-name must be provided too. */
     az_network_application_gateway_waf_policy_managed_rule_rule_set_add_command_builder.prototype.rules = function (value) {
         this.setFlag("--rules", value);
         return this;
@@ -20294,24 +20307,23 @@ var az_network_application_gateway_waf_policy_managed_rule_rule_set_remove_comma
     return az_network_application_gateway_waf_policy_managed_rule_rule_set_remove_command_builder;
 }(base_1.CommandBuilder));
 /**
- * Update(Override) existing rule set of a WAF policy managed rules. For rule set and rules, please visit: <a href="https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules">https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules</a>.
+ * Manage rules of a WAF policy. If --group-name and --rules are provided, override existing rules. If --group-name is provided, clear all rules under a certain rule group. If neither of them are provided, update rule set and clear all rules under itself. For rule set and rules, please visit: <a href="https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules">https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules</a>.
  *
  * Syntax:
  * ```
- * az network application-gateway waf-policy managed-rule rule-set update --group-name
- *                                                                        --policy-name
+ * az network application-gateway waf-policy managed-rule rule-set update --policy-name
  *                                                                        --resource-group
  *                                                                        --type {Microsoft_BotManagerRuleSet, OWASP}
  *                                                                        --version {0.1, 2.2.9, 3.0, 3.1}
  *                                                                        [--add]
  *                                                                        [--force-string]
+ *                                                                        [--group-name]
  *                                                                        [--remove]
  *                                                                        [--rules]
  *                                                                        [--set]
  *                                                                        [--subscription]
  * ```
  *
- * @param {string} groupName The name of the web application firewall rule set group.
  * @param {string} policyName The name of the web application firewall policy.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {'Microsoft_BotManagerRuleSet' | 'OWASP'} type The type of the web application firewall rule set.
@@ -20319,20 +20331,14 @@ var az_network_application_gateway_waf_policy_managed_rule_rule_set_remove_comma
  */
 var az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder = /** @class */ (function (_super) {
     __extends(az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder, _super);
-    function az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder(commandPath, resultDataTypeName, groupName, policyName, resourceGroup, type, version) {
+    function az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder(commandPath, resultDataTypeName, policyName, resourceGroup, type, version) {
         var _this = _super.call(this, commandPath, resultDataTypeName) || this;
-        _this.groupName(groupName);
         _this.policyName(policyName);
         _this.resourceGroup(resourceGroup);
         _this.type(type);
         _this.version(version);
         return _this;
     }
-    /** The name of the web application firewall rule set group. */
-    az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder.prototype.groupName = function (value) {
-        this.setFlag("--group-name", value);
-        return this;
-    };
     /** The name of the web application firewall policy. */
     az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder.prototype.policyName = function (value) {
         this.setFlag("--policy-name", value);
@@ -20363,12 +20369,17 @@ var az_network_application_gateway_waf_policy_managed_rule_rule_set_update_comma
         this.setFlag("--force-string", value);
         return this;
     };
+    /** The name of the web application firewall rule set group. */
+    az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder.prototype.groupName = function (value) {
+        this.setFlag("--group-name", value);
+        return this;
+    };
     /** Remove a property or an element from a list.  Example: --remove property.list <indexToRemove> OR --remove propertyToRemove. */
     az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder.prototype.remove = function (value) {
         this.setFlag("--remove", value);
         return this;
     };
-    /** List of rules that will be disabled. */
+    /** List of rules that will be disabled. If provided, --group-name must be provided too. */
     az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder.prototype.rules = function (value) {
         this.setFlag("--rules", value);
         return this;
@@ -39264,7 +39275,7 @@ var az_network_private_endpoint_connection_list_command_builder = /** @class */ 
         this.setFlag("--id", value);
         return this;
     };
-    /** Name of the resource. */
+    /** Name of the resource. If provided, --type and --resource-group must be provided too. */
     az_network_private_endpoint_connection_list_command_builder.prototype.name = function (value) {
         this.setFlag("--name", value);
         return this;
@@ -39274,7 +39285,7 @@ var az_network_private_endpoint_connection_list_command_builder = /** @class */ 
         this.setFlag("--query-examples", value);
         return this;
     };
-    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    /** Name of resource group. If provided, --name and --type must be provided too. */
     az_network_private_endpoint_connection_list_command_builder.prototype.resourceGroup = function (value) {
         this.setFlag("--resource-group", value);
         return this;
@@ -39284,7 +39295,7 @@ var az_network_private_endpoint_connection_list_command_builder = /** @class */ 
         this.setFlag("--subscription", value);
         return this;
     };
-    /** Type of the resource. */
+    /** Type of the resource. If provided, --name and --resource-group must be provided too. */
     az_network_private_endpoint_connection_list_command_builder.prototype.type = function (value) {
         this.setFlag("--type", value);
         return this;
@@ -39465,12 +39476,12 @@ var az_network_private_endpoint_create_command_builder = /** @class */ (function
         this.setFlag("--subnet", value);
         return this;
     };
-    /** The ID of the group obtained from the remote resource that this private endpoint should connect to. You can use "az network private-link-resource list" to obtain the supported group ids. */
+    /** The ID of the group obtained from the remote resource that this private endpoint should connect to. You can use "az network private-link-resource list" to obtain the supported group ids. You must provide this except for PrivateLinkService. */
     az_network_private_endpoint_create_command_builder.prototype.groupId = function (value) {
         this.setFlag("--group-id", value);
         return this;
     };
-    /** The ID of the group obtained from the remote resource that this private endpoint should connect to. You can use "az network private-link-resource list" to obtain the supported group ids. */
+    /** The ID of the group obtained from the remote resource that this private endpoint should connect to. You can use "az network private-link-resource list" to obtain the supported group ids. You must provide this except for PrivateLinkService. */
     az_network_private_endpoint_create_command_builder.prototype.groupIds = function (value) {
         this.setFlag("--group-ids", value);
         return this;
@@ -39748,7 +39759,7 @@ var az_network_private_link_resource_list_command_builder = /** @class */ (funct
         this.setFlag("--id", value);
         return this;
     };
-    /** Name of the resource. */
+    /** Name of the resource. If provided, --type and --resource-group must be provided too. */
     az_network_private_link_resource_list_command_builder.prototype.name = function (value) {
         this.setFlag("--name", value);
         return this;
@@ -39758,7 +39769,7 @@ var az_network_private_link_resource_list_command_builder = /** @class */ (funct
         this.setFlag("--query-examples", value);
         return this;
     };
-    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    /** Name of resource group. If provided, --name and --type must be provided too. */
     az_network_private_link_resource_list_command_builder.prototype.resourceGroup = function (value) {
         this.setFlag("--resource-group", value);
         return this;
@@ -39768,7 +39779,7 @@ var az_network_private_link_resource_list_command_builder = /** @class */ (funct
         this.setFlag("--subscription", value);
         return this;
     };
-    /** Type of the resource. */
+    /** Type of the resource. If provided, --name and --resource-group must be provided too. */
     az_network_private_link_resource_list_command_builder.prototype.type = function (value) {
         this.setFlag("--type", value);
         return this;

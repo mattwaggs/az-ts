@@ -95,6 +95,12 @@ import { az_storage_container_policy_delete_command_result } from './models/az_s
 import { az_storage_container_policy_list_command_result } from './models/az_storage_container_policy_list_command_result';
 import { az_storage_container_policy_show_command_result } from './models/az_storage_container_policy_show_command_result';
 import { az_storage_container_policy_update_command_result } from './models/az_storage_container_policy_update_command_result';
+import { az_storage_container_rm_create_command_result } from './models/az_storage_container_rm_create_command_result';
+import { az_storage_container_rm_delete_command_result } from './models/az_storage_container_rm_delete_command_result';
+import { az_storage_container_rm_exists_command_result } from './models/az_storage_container_rm_exists_command_result';
+import { az_storage_container_rm_list_command_result } from './models/az_storage_container_rm_list_command_result';
+import { az_storage_container_rm_show_command_result } from './models/az_storage_container_rm_show_command_result';
+import { az_storage_container_rm_update_command_result } from './models/az_storage_container_rm_update_command_result';
 import { az_storage_container_create_command_result } from './models/az_storage_container_create_command_result';
 import { az_storage_container_delete_command_result } from './models/az_storage_container_delete_command_result';
 import { az_storage_container_exists_command_result } from './models/az_storage_container_exists_command_result';
@@ -137,8 +143,11 @@ import { az_storage_file_update_command_result } from './models/az_storage_file_
 import { az_storage_file_upload_command_result } from './models/az_storage_file_upload_command_result';
 import { az_storage_file_upload_batch_command_result } from './models/az_storage_file_upload_batch_command_result';
 import { az_storage_file_url_command_result } from './models/az_storage_file_url_command_result';
+import { az_storage_fs_access_remove_recursive_command_result } from './models/az_storage_fs_access_remove_recursive_command_result';
 import { az_storage_fs_access_set_command_result } from './models/az_storage_fs_access_set_command_result';
+import { az_storage_fs_access_set_recursive_command_result } from './models/az_storage_fs_access_set_recursive_command_result';
 import { az_storage_fs_access_show_command_result } from './models/az_storage_fs_access_show_command_result';
+import { az_storage_fs_access_update_recursive_command_result } from './models/az_storage_fs_access_update_recursive_command_result';
 import { az_storage_fs_directory_metadata_show_command_result } from './models/az_storage_fs_directory_metadata_show_command_result';
 import { az_storage_fs_directory_metadata_update_command_result } from './models/az_storage_fs_directory_metadata_update_command_result';
 import { az_storage_fs_directory_create_command_result } from './models/az_storage_fs_directory_create_command_result';
@@ -377,7 +386,7 @@ export declare class az_storage_account_keys {
      * Syntax:
      * ```
      * az storage account keys list --account-name
-     *                              [--expand-key-type {kerb}]
+     *                              [--expand-key-type]
      *                              [--query-examples]
      *                              [--resource-group]
      *                              [--subscription]
@@ -406,7 +415,7 @@ export declare class az_storage_account_keys {
 /** Manage storage account management policies. */
 export declare class az_storage_account_management_policy {
     /**
-     * Creates the data policy rules associated with the specified storage account.
+     * Create the data policy rules associated with the specified storage account.
      *
      * Syntax:
      * ```
@@ -422,7 +431,7 @@ export declare class az_storage_account_management_policy {
      */
     static create(accountName: string, policy: string, resourceGroup: string): az_storage_account_management_policy_create_command_builder;
     /**
-     * Deletes the managementpolicy associated with the specified storage account.
+     * Delete the data policy rules associated with the specified storage account.
      *
      * Syntax:
      * ```
@@ -431,12 +440,12 @@ export declare class az_storage_account_management_policy {
      *                                             [--subscription]
      * ```
      *
-     * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param {string} accountName The name of the storage account within the specified resource group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static delete(accountName: string, resourceGroup: string): az_storage_account_management_policy_delete_command_builder;
     /**
-     * Gets the managementpolicy associated with the specified storage account.
+     * Get the data policy rules associated with the specified storage account.
      *
      * Syntax:
      * ```
@@ -446,12 +455,12 @@ export declare class az_storage_account_management_policy {
      *                                           [--subscription]
      * ```
      *
-     * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param {string} accountName The name of the storage account within the specified resource group.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static show(accountName: string, resourceGroup: string): az_storage_account_management_policy_show_command_builder;
     /**
-     * Updates the data policy rules associated with the specified storage account.
+     * Update the data policy rules associated with the specified storage account.
      *
      * Syntax:
      * ```
@@ -778,7 +787,7 @@ export declare class az_storage_account_private_link_resource {
      *                                               [--subscription]
      * ```
      *
-     * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower- case letters only.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(accountName: string, resourceGroup: string): az_storage_account_private_link_resource_list_command_builder;
@@ -786,7 +795,7 @@ export declare class az_storage_account_private_link_resource {
 /** Manage storage accounts. */
 export declare class az_storage_account {
     /**
-     * Checks that the storage account name is valid and is not already in use.
+     * Check that the storage account name is valid and is not already in use.
      *
      * Syntax:
      * ```
@@ -794,7 +803,7 @@ export declare class az_storage_account {
      *                               [--subscription]
      * ```
      *
-     * @param {string} name The storage account name.
+     * @param {string} name The name of the storage account within the specified resource group.
      */
     static check_name(name: string): az_storage_account_check_name_command_builder;
     /**
@@ -1892,7 +1901,7 @@ export declare class az_storage_blob {
 /** Manage container immutability policies. */
 export declare class az_storage_container_immutability_policy {
     /**
-     * Creates or updates an unlocked immutability policy.
+     * Create or update an unlocked immutability policy.
      *
      * Syntax:
      * ```
@@ -1905,7 +1914,7 @@ export declare class az_storage_container_immutability_policy {
      *                                                 [--subscription]
      * ```
      *
-     * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param {string} accountName Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT.
      * @param {string} containerName The container name.
      */
     static create(accountName: string, containerName: string): az_storage_container_immutability_policy_create_command_builder;
@@ -1921,30 +1930,29 @@ export declare class az_storage_container_immutability_policy {
      *                                                 [--subscription]
      * ```
      *
-     * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower- case letters only.
      * @param {string} containerName The container name.
      * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
      */
     static delete(accountName: string, containerName: string, ifMatch: string): az_storage_container_immutability_policy_delete_command_builder;
     /**
-     * Extends the immutabilityPeriodSinceCreationInDays of a locked immutabilityPolicy.
+     * Extend the immutabilityPeriodSinceCreationInDays of a locked immutabilityPolicy.
      *
      * Syntax:
      * ```
      * az storage container immutability-policy extend --account-name
      *                                                 --container-name
-     *                                                 --if-match
      *                                                 [--allow-protected-append-writes {false, true}]
+     *                                                 [--if-match]
      *                                                 [--period]
      *                                                 [--resource-group]
      *                                                 [--subscription]
      * ```
      *
-     * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param {string} accountName Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT.
      * @param {string} containerName The container name.
-     * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
      */
-    static extend(accountName: string, containerName: string, ifMatch: string): az_storage_container_immutability_policy_extend_command_builder;
+    static extend(accountName: string, containerName: string): az_storage_container_immutability_policy_extend_command_builder;
     /**
      * Sets the ImmutabilityPolicy to Locked state.
      *
@@ -1957,7 +1965,7 @@ export declare class az_storage_container_immutability_policy {
      *                                               [--subscription]
      * ```
      *
-     * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower- case letters only.
      * @param {string} containerName The container name.
      * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
      */
@@ -1975,7 +1983,7 @@ export declare class az_storage_container_immutability_policy {
      *                                               [--subscription]
      * ```
      *
-     * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower- case letters only.
      * @param {string} containerName The container name.
      */
     static show(accountName: string, containerName: string): az_storage_container_immutability_policy_show_command_builder;
@@ -2097,7 +2105,7 @@ export declare class az_storage_container_lease {
 /** Manage container legal holds. */
 export declare class az_storage_container_legal_hold {
     /**
-     * Clears legal hold tags.
+     * Clear legal hold tags.
      *
      * Syntax:
      * ```
@@ -2108,13 +2116,13 @@ export declare class az_storage_container_legal_hold {
      *                                       [--subscription]
      * ```
      *
-     * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param {string} accountName Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT.
      * @param {string} containerName The container name.
      * @param {string} tags Each tag should be 3 to 23 alphanumeric characters and is normalized to lower case.
      */
     static clear(accountName: string, containerName: string, tags: string): az_storage_container_legal_hold_clear_command_builder;
     /**
-     * Sets legal hold tags.
+     * Set legal hold tags.
      *
      * Syntax:
      * ```
@@ -2125,7 +2133,7 @@ export declare class az_storage_container_legal_hold {
      *                                     [--subscription]
      * ```
      *
-     * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param {string} accountName Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT.
      * @param {string} containerName The container name.
      * @param {string} tags Each tag should be 3 to 23 alphanumeric characters and is normalized to lower case.
      */
@@ -2142,7 +2150,7 @@ export declare class az_storage_container_legal_hold {
      *                                      [--subscription]
      * ```
      *
-     * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param {string} accountName Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT.
      * @param {string} containerName The container name.
      */
     static show(accountName: string, containerName: string): az_storage_container_legal_hold_show_command_builder;
@@ -2299,6 +2307,106 @@ export declare class az_storage_container_policy {
      * @param {string} name The stored access policy name.
      */
     static update(containerName: string, name: string): az_storage_container_policy_update_command_builder;
+}
+/** Manage Azure containers using the Microsoft.Storage resource provider. */
+export declare class az_storage_container_rm {
+    /**
+     * Create a new container under the specified storage account.
+     *
+     * Syntax:
+     * ```
+     * az storage container-rm create --name
+     *                                --storage-account
+     *                                [--default-encryption-scope]
+     *                                [--deny-encryption-scope-override {false, true}]
+     *                                [--fail-on-exist]
+     *                                [--metadata]
+     *                                [--public-access {blob, container, off}]
+     *                                [--resource-group]
+     *                                [--subscription]
+     * ```
+     *
+     * @param {string} name The container name.
+     * @param {string} storageAccount The name or ID of the storage account.
+     */
+    static create(name: string, storageAccount: string): az_storage_container_rm_create_command_builder;
+    /**
+     * Delete the specified container under its account.
+     *
+     * Syntax:
+     * ```
+     * az storage container-rm delete [--ids]
+     *                                [--name]
+     *                                [--resource-group]
+     *                                [--storage-account]
+     *                                [--subscription]
+     *                                [--yes]
+     * ```
+     */
+    static delete(): az_storage_container_rm_delete_command_builder;
+    /**
+     * Check for the existence of a container.
+     *
+     * Syntax:
+     * ```
+     * az storage container-rm exists [--ids]
+     *                                [--name]
+     *                                [--resource-group]
+     *                                [--storage-account]
+     *                                [--subscription]
+     * ```
+     */
+    static exists(): az_storage_container_rm_exists_command_builder;
+    /**
+     * List all containers under the specified storage account.
+     *
+     * Syntax:
+     * ```
+     * az storage container-rm list --storage-account
+     *                              [--include-deleted]
+     *                              [--query-examples]
+     *                              [--resource-group]
+     *                              [--subscription]
+     * ```
+     *
+     * @param {string} storageAccount The name or ID of the storage account.
+     */
+    static list(storageAccount: string): az_storage_container_rm_list_command_builder;
+    /**
+     * Show the properties for a specified container.
+     *
+     * Syntax:
+     * ```
+     * az storage container-rm show [--ids]
+     *                              [--name]
+     *                              [--query-examples]
+     *                              [--resource-group]
+     *                              [--storage-account]
+     *                              [--subscription]
+     * ```
+     */
+    static show(): az_storage_container_rm_show_command_builder;
+    /**
+     * Update the properties for a container.
+     *
+     * Syntax:
+     * ```
+     * az storage container-rm update [--add]
+     *                                [--default-encryption-scope]
+     *                                [--deny-encryption-scope-override {false, true}]
+     *                                [--force-string]
+     *                                [--ids]
+     *                                [--metadata]
+     *                                [--name]
+     *                                [--public-access {blob, container, off}]
+     *                                [--remove]
+     *                                [--resource-group]
+     *                                [--set]
+     *                                [--storage-account]
+     *                                [--subscription]
+     * ```
+     */
+    static update(): az_storage_container_rm_update_command_builder;
 }
 /** Manage blob storage containers. */
 export declare class az_storage_container {
@@ -3253,6 +3361,32 @@ export declare class az_storage_file {
 /** Manage file system access and permissions for Azure Data Lake Storage Gen2 account. */
 export declare class az_storage_fs_access {
     /**
+     * Remove the Access Control on a path and sub-paths in Azure Data Lake Storage Gen2 account.
+     *
+     * Syntax:
+     * ```
+     * az storage fs access remove-recursive --acl
+     *                                       --file-system
+     *                                       --path
+     *                                       [--account-key]
+     *                                       [--account-name]
+     *                                       [--auth-mode {key, login}]
+     *                                       [--batch-size]
+     *                                       [--connection-string]
+     *                                       [--continuation]
+     *                                       [--continue-on-failure {false, true}]
+     *                                       [--max-batches]
+     *                                       [--sas-token]
+     *                                       [--subscription]
+     *                                       [--timeout]
+     * ```
+     *
+     * @param {string} acl Remove POSIX access control rights on files and directories. The value is a comma-separated list of access control entries. Each access control entry (ACE) consists of a scope, a type, and a user or group identifier in the format "[scope:][type]:[id]".
+     * @param {string} fileSystem File system name.
+     * @param {string} path The path to a file or directory in the specified file system.
+     */
+    static remove_recursive(acl: string, fileSystem: string, path: string): az_storage_fs_access_remove_recursive_command_builder;
+    /**
      * Set the access control properties of a path(directory or file) in Azure Data Lake Storage Gen2 account.
      *
      * Syntax:
@@ -3276,6 +3410,32 @@ export declare class az_storage_fs_access {
      */
     static set(fileSystem: string, path: string): az_storage_fs_access_set_command_builder;
     /**
+     * Set the Access Control on a path and sub-paths in Azure Data Lake Storage Gen2 account.
+     *
+     * Syntax:
+     * ```
+     * az storage fs access set-recursive --acl
+     *                                    --file-system
+     *                                    --path
+     *                                    [--account-key]
+     *                                    [--account-name]
+     *                                    [--auth-mode {key, login}]
+     *                                    [--batch-size]
+     *                                    [--connection-string]
+     *                                    [--continuation]
+     *                                    [--continue-on-failure {false, true}]
+     *                                    [--max-batches]
+     *                                    [--sas-token]
+     *                                    [--subscription]
+     *                                    [--timeout]
+     * ```
+     *
+     * @param {string} acl The value is a comma-separated list of access control entries. Each access control entry (ACE) consists of a scope, a type, a user or group identifier, and permissions in the format "[scope:][type]:[id]:[permissions]".  For more information, please refer to https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control.
+     * @param {string} fileSystem File system name.
+     * @param {string} path The path to a file or directory in the specified file system.
+     */
+    static set_recursive(acl: string, fileSystem: string, path: string): az_storage_fs_access_set_recursive_command_builder;
+    /**
      * Show the access control properties of a path (directory or file) in Azure Data Lake Storage Gen2 account.
      *
      * Syntax:
@@ -3295,6 +3455,32 @@ export declare class az_storage_fs_access {
      * @param {string} path The path to a file or directory in the specified file system.
      */
     static show(fileSystem: string, path: string): az_storage_fs_access_show_command_builder;
+    /**
+     * Modify the Access Control on a path and sub-paths in Azure Data Lake Storage Gen2 account.
+     *
+     * Syntax:
+     * ```
+     * az storage fs access update-recursive --acl
+     *                                       --file-system
+     *                                       --path
+     *                                       [--account-key]
+     *                                       [--account-name]
+     *                                       [--auth-mode {key, login}]
+     *                                       [--batch-size]
+     *                                       [--connection-string]
+     *                                       [--continuation]
+     *                                       [--continue-on-failure {false, true}]
+     *                                       [--max-batches]
+     *                                       [--sas-token]
+     *                                       [--subscription]
+     *                                       [--timeout]
+     * ```
+     *
+     * @param {string} acl The value is a comma-separated list of access control entries. Each access control entry (ACE) consists of a scope, a type, a user or group identifier, and permissions in the format "[scope:][type]:[id]:[permissions]".  For more information, please refer to https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control.
+     * @param {string} fileSystem File system name.
+     * @param {string} path The path to a file or directory in the specified file system.
+     */
+    static update_recursive(acl: string, fileSystem: string, path: string): az_storage_fs_access_update_recursive_command_builder;
 }
 /** Manage the metadata for directory in file system. */
 export declare class az_storage_fs_directory_metadata {
@@ -4162,7 +4348,6 @@ export declare class az_storage_queue_policy {
      *                                --queue-name
      *                                [--account-key]
      *                                [--account-name]
-     *                                [--auth-mode {key, login}]
      *                                [--connection-string]
      *                                [--expiry]
      *                                [--permissions]
@@ -4184,7 +4369,6 @@ export declare class az_storage_queue_policy {
      *                                --queue-name
      *                                [--account-key]
      *                                [--account-name]
-     *                                [--auth-mode {key, login}]
      *                                [--connection-string]
      *                                [--sas-token]
      *                                [--subscription]
@@ -4202,7 +4386,6 @@ export declare class az_storage_queue_policy {
      * az storage queue policy list --queue-name
      *                              [--account-key]
      *                              [--account-name]
-     *                              [--auth-mode {key, login}]
      *                              [--connection-string]
      *                              [--query-examples]
      *                              [--sas-token]
@@ -4221,7 +4404,6 @@ export declare class az_storage_queue_policy {
      *                              --queue-name
      *                              [--account-key]
      *                              [--account-name]
-     *                              [--auth-mode {key, login}]
      *                              [--connection-string]
      *                              [--query-examples]
      *                              [--sas-token]
@@ -4241,7 +4423,6 @@ export declare class az_storage_queue_policy {
      *                                --queue-name
      *                                [--account-key]
      *                                [--account-name]
-     *                                [--auth-mode {key, login}]
      *                                [--connection-string]
      *                                [--expiry]
      *                                [--permissions]
@@ -4255,7 +4436,7 @@ export declare class az_storage_queue_policy {
      */
     static update(name: string, queueName: string): az_storage_queue_policy_update_command_builder;
 }
-/** Manage shared access policies of a storage table. */
+/** Manage storage queues. */
 export declare class az_storage_queue {
     /**
      * Creates a queue under the given account.
@@ -4350,6 +4531,7 @@ export declare class az_storage_queue {
      *                       [--prefix]
      *                       [--query-examples]
      *                       [--sas-token]
+     *                       [--show-next-marker]
      *                       [--subscription]
      *                       [--timeout]
      * ```
@@ -5371,7 +5553,7 @@ declare class az_storage_account_file_service_properties_update_command_builder 
  * Syntax:
  * ```
  * az storage account keys list --account-name
- *                              [--expand-key-type {kerb}]
+ *                              [--expand-key-type]
  *                              [--query-examples]
  *                              [--resource-group]
  *                              [--subscription]
@@ -5384,7 +5566,7 @@ declare class az_storage_account_keys_list_command_builder extends CommandBuilde
     /** The storage account name. */
     accountName(value: string): az_storage_account_keys_list_command_builder;
     /** Specify the expanded key types to be listed. */
-    expandKeyType(value: 'kerb'): az_storage_account_keys_list_command_builder;
+    expandKeyType(value: string): az_storage_account_keys_list_command_builder;
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
     queryExamples(value: string): az_storage_account_keys_list_command_builder;
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
@@ -5421,7 +5603,7 @@ declare class az_storage_account_keys_renew_command_builder extends CommandBuild
     subscription(value: string): az_storage_account_keys_renew_command_builder;
 }
 /**
- * Creates the data policy rules associated with the specified storage account.
+ * Create the data policy rules associated with the specified storage account.
  *
  * Syntax:
  * ```
@@ -5447,7 +5629,7 @@ declare class az_storage_account_management_policy_create_command_builder extend
     subscription(value: string): az_storage_account_management_policy_create_command_builder;
 }
 /**
- * Deletes the managementpolicy associated with the specified storage account.
+ * Delete the data policy rules associated with the specified storage account.
  *
  * Syntax:
  * ```
@@ -5456,12 +5638,12 @@ declare class az_storage_account_management_policy_create_command_builder extend
  *                                             [--subscription]
  * ```
  *
- * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+ * @param {string} accountName The name of the storage account within the specified resource group.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 declare class az_storage_account_management_policy_delete_command_builder extends CommandBuilder<az_storage_account_management_policy_delete_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string);
-    /** The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only. */
+    /** The name of the storage account within the specified resource group. */
     accountName(value: string): az_storage_account_management_policy_delete_command_builder;
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
     resourceGroup(value: string): az_storage_account_management_policy_delete_command_builder;
@@ -5469,7 +5651,7 @@ declare class az_storage_account_management_policy_delete_command_builder extend
     subscription(value: string): az_storage_account_management_policy_delete_command_builder;
 }
 /**
- * Gets the managementpolicy associated with the specified storage account.
+ * Get the data policy rules associated with the specified storage account.
  *
  * Syntax:
  * ```
@@ -5479,12 +5661,12 @@ declare class az_storage_account_management_policy_delete_command_builder extend
  *                                           [--subscription]
  * ```
  *
- * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+ * @param {string} accountName The name of the storage account within the specified resource group.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 declare class az_storage_account_management_policy_show_command_builder extends CommandBuilder<az_storage_account_management_policy_show_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string);
-    /** The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only. */
+    /** The name of the storage account within the specified resource group. */
     accountName(value: string): az_storage_account_management_policy_show_command_builder;
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
     resourceGroup(value: string): az_storage_account_management_policy_show_command_builder;
@@ -5494,7 +5676,7 @@ declare class az_storage_account_management_policy_show_command_builder extends 
     subscription(value: string): az_storage_account_management_policy_show_command_builder;
 }
 /**
- * Updates the data policy rules associated with the specified storage account.
+ * Update the data policy rules associated with the specified storage account.
  *
  * Syntax:
  * ```
@@ -6076,12 +6258,12 @@ declare class az_storage_account_private_endpoint_connection_show_command_builde
  *                                               [--subscription]
  * ```
  *
- * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+ * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower- case letters only.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 declare class az_storage_account_private_link_resource_list_command_builder extends CommandBuilder<az_storage_account_private_link_resource_list_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, accountName: string, resourceGroup: string);
-    /** The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only. */
+    /** The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower- case letters only. */
     accountName(value: string): az_storage_account_private_link_resource_list_command_builder;
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
     resourceGroup(value: string): az_storage_account_private_link_resource_list_command_builder;
@@ -6091,7 +6273,7 @@ declare class az_storage_account_private_link_resource_list_command_builder exte
     subscription(value: string): az_storage_account_private_link_resource_list_command_builder;
 }
 /**
- * Checks that the storage account name is valid and is not already in use.
+ * Check that the storage account name is valid and is not already in use.
  *
  * Syntax:
  * ```
@@ -6099,11 +6281,11 @@ declare class az_storage_account_private_link_resource_list_command_builder exte
  *                               [--subscription]
  * ```
  *
- * @param {string} name The storage account name.
+ * @param {string} name The name of the storage account within the specified resource group.
  */
 declare class az_storage_account_check_name_command_builder extends CommandBuilder<az_storage_account_check_name_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, name: string);
-    /** The storage account name. */
+    /** The name of the storage account within the specified resource group. */
     name(value: string): az_storage_account_check_name_command_builder;
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_storage_account_check_name_command_builder;
@@ -6672,11 +6854,11 @@ declare class az_storage_blob_copy_start_command_builder extends CommandBuilder<
     connectionString(value: string): az_storage_blob_copy_start_command_builder;
     /** An ETag value, or the wildcard character (\*). Specify an ETag value for this conditional header to copy the blob only if the specified ETag value matches the ETag value for an existing destination blob. If the ETag for the destination blob does not match the ETag specified for If-Match, the Blob service returns status code 412 (Precondition Failed). */
     destinationIfMatch(value: string): az_storage_blob_copy_start_command_builder;
-    /** A DateTime value. Azure expects the date value passed in to be UTC. If timezone is included, any non-UTC datetimes will be converted to UTC. If a date is passed in without timezone info, it is assumed to be UTC. Specify this conditional header to copy the blob only if the destination blob has been modified since the specified date/time. If the destination blob has not been modified, the Blob service returns status code 412 (Precondition Failed). */
+    /** Commence only if modified since supplied UTC datetime (Y-m-d'T'H:M'Z'). */
     destinationIfModifiedSince(value: string): az_storage_blob_copy_start_command_builder;
     /** An ETag value, or the wildcard character (\*). Specify an ETag value for this conditional header to copy the blob only if the specified ETag value does not match the ETag value for the destination blob. Specify the wildcard character (\*) to perform the operation only if the destination blob does not exist. If the specified condition isn't met, the Blob service returns status code 412 (Precondition Failed). */
     destinationIfNoneMatch(value: string): az_storage_blob_copy_start_command_builder;
-    /** A DateTime value. Azure expects the date value passed in to be UTC. If timezone is included, any non-UTC datetimes will be converted to UTC. If a date is passed in without timezone info, it is assumed to be UTC. Specify this conditional header to copy the blob only if the destination blob has not been modified since the specified date/time. If the destination blob has been modified, the Blob service returns status code 412 (Precondition Failed). */
+    /** Commence only if unmodified since supplied UTC datetime (Y-m-d'T'H:M'Z'). */
     destinationIfUnmodifiedSince(value: string): az_storage_blob_copy_start_command_builder;
     /** The lease ID specified for this header must match the lease ID of the destination blob. If the request does not include the lease ID or it is not valid, the operation fails with status code 412 (Precondition Failed). */
     destinationLeaseId(value: string): az_storage_blob_copy_start_command_builder;
@@ -6696,11 +6878,11 @@ declare class az_storage_blob_copy_start_command_builder extends CommandBuilder<
     sourceContainer(value: string): az_storage_blob_copy_start_command_builder;
     /** An ETag value, or the wildcard character (\*). Specify this conditional header to copy the source blob only if its ETag matches the value specified. If the ETag values do not match, the Blob service returns status code 412 (Precondition Failed). This header cannot be specified if the source is an Azure File. */
     sourceIfMatch(value: string): az_storage_blob_copy_start_command_builder;
-    /** A DateTime value. Azure expects the date value passed in to be UTC. If timezone is included, any non-UTC datetimes will be converted to UTC. If a date is passed in without timezone info, it is assumed to be UTC. Specify this conditional header to copy the blob only if the source blob has been modified since the specified date/time. */
+    /** Commence only if modified since supplied UTC datetime (Y-m-d'T'H:M'Z'). */
     sourceIfModifiedSince(value: string): az_storage_blob_copy_start_command_builder;
     /** An ETag value, or the wildcard character (\*). Specify this conditional header to copy the blob only if its ETag does not match the value specified. If the values are identical, the Blob service returns status code 412 (Precondition Failed). This header cannot be specified if the source is an Azure File. */
     sourceIfNoneMatch(value: string): az_storage_blob_copy_start_command_builder;
-    /** A DateTime value. Azure expects the date value passed in to be UTC. If timezone is included, any non-UTC datetimes will be converted to UTC. If a date is passed in without timezone info, it is assumed to be UTC. Specify this conditional header to copy the blob only if the source blob has not been modified since the specified date/time. */
+    /** Commence only if unmodified since supplied UTC datetime (Y-m-d'T'H:M'Z'). */
     sourceIfUnmodifiedSince(value: string): az_storage_blob_copy_start_command_builder;
     /** Specify this to perform the Copy Blob operation only if the lease ID given matches the active lease ID of the source blob. */
     sourceLeaseId(value: string): az_storage_blob_copy_start_command_builder;
@@ -6873,11 +7055,11 @@ declare class az_storage_blob_incremental_copy_start_command_builder extends Com
     connectionString(value: string): az_storage_blob_incremental_copy_start_command_builder;
     /** An ETag value, or the wildcard character (\*). Specify an ETag value for this conditional header to copy the blob only if the specified ETag value matches the ETag value for an existing destination blob. If the ETag for the destination blob does not match the ETag specified for If-Match, the Blob service returns status code 412 (Precondition Failed). */
     destinationIfMatch(value: string): az_storage_blob_incremental_copy_start_command_builder;
-    /** A DateTime value. Azure expects the date value passed in to be UTC. If timezone is included, any non-UTC datetimes will be converted to UTC. If a date is passed in without timezone info, it is assumed to be UTC. Specify this conditional header to copy the blob only if the destination blob has been modified since the specified date/time. If the destination blob has not been modified, the Blob service returns status code 412 (Precondition Failed). */
+    /** Commence only if modified since supplied UTC datetime (Y-m-d'T'H:M'Z'). */
     destinationIfModifiedSince(value: string): az_storage_blob_incremental_copy_start_command_builder;
     /** An ETag value, or the wildcard character (\*). Specify an ETag value for this conditional header to copy the blob only if the specified ETag value does not match the ETag value for the destination blob. Specify the wildcard character (\*) to perform the operation only if the destination blob does not exist. If the specified condition isn't met, the Blob service returns status code 412 (Precondition Failed). */
     destinationIfNoneMatch(value: string): az_storage_blob_incremental_copy_start_command_builder;
-    /** A DateTime value. Azure expects the date value passed in to be UTC. If timezone is included, any non-UTC datetimes will be converted to UTC. If a date is passed in without timezone info, it is assumed to be UTC. Specify this conditional header to copy the blob only if the destination blob has not been modified since the specified ate/time. If the destination blob has been modified, the Blob service returns status code 412 (Precondition Failed). */
+    /** Commence only if unmodified since supplied UTC datetime (Y-m-d'T'H:M'Z'). */
     destinationIfUnmodifiedSince(value: string): az_storage_blob_incremental_copy_start_command_builder;
     /** The lease ID specified for this header must match the lease ID of the destination blob. If the request does not include the lease ID or it is not valid, the operation fails with status code 412 (Precondition Failed). */
     destinationLeaseId(value: string): az_storage_blob_incremental_copy_start_command_builder;
@@ -8515,7 +8697,7 @@ declare class az_storage_blob_url_command_builder extends CommandBuilder<az_stor
     subscription(value: string): az_storage_blob_url_command_builder;
 }
 /**
- * Creates or updates an unlocked immutability policy.
+ * Create or update an unlocked immutability policy.
  *
  * Syntax:
  * ```
@@ -8528,18 +8710,18 @@ declare class az_storage_blob_url_command_builder extends CommandBuilder<az_stor
  *                                                 [--subscription]
  * ```
  *
- * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+ * @param {string} accountName Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT.
  * @param {string} containerName The container name.
  */
 declare class az_storage_container_immutability_policy_create_command_builder extends CommandBuilder<az_storage_container_immutability_policy_create_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, accountName: string, containerName: string);
-    /** The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only. */
+    /** Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT. */
     accountName(value: string): az_storage_container_immutability_policy_create_command_builder;
     /** The container name. */
     containerName(value: string): az_storage_container_immutability_policy_create_command_builder;
     /** This property can only be changed for unlocked time-based retention policies. When enabled, new blocks can be written to an append blob while maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API. */
     allowProtectedAppendWrites(value: boolean): az_storage_container_immutability_policy_create_command_builder;
-    /** The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied. */
+    /** An ETag value, or the wildcard character (\*). Specify this header to perform the operation only if the resource's ETag matches the value specified. */
     ifMatch(value: string): az_storage_container_immutability_policy_create_command_builder;
     /** The immutability period for the blobs in the container since the policy creation, in days. */
     period(value: string): az_storage_container_immutability_policy_create_command_builder;
@@ -8560,13 +8742,13 @@ declare class az_storage_container_immutability_policy_create_command_builder ex
  *                                                 [--subscription]
  * ```
  *
- * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+ * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower- case letters only.
  * @param {string} containerName The container name.
  * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
  */
 declare class az_storage_container_immutability_policy_delete_command_builder extends CommandBuilder<az_storage_container_immutability_policy_delete_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, accountName: string, containerName: string, ifMatch: string);
-    /** The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only. */
+    /** The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower- case letters only. */
     accountName(value: string): az_storage_container_immutability_policy_delete_command_builder;
     /** The container name. */
     containerName(value: string): az_storage_container_immutability_policy_delete_command_builder;
@@ -8578,33 +8760,32 @@ declare class az_storage_container_immutability_policy_delete_command_builder ex
     subscription(value: string): az_storage_container_immutability_policy_delete_command_builder;
 }
 /**
- * Extends the immutabilityPeriodSinceCreationInDays of a locked immutabilityPolicy.
+ * Extend the immutabilityPeriodSinceCreationInDays of a locked immutabilityPolicy.
  *
  * Syntax:
  * ```
  * az storage container immutability-policy extend --account-name
  *                                                 --container-name
- *                                                 --if-match
  *                                                 [--allow-protected-append-writes {false, true}]
+ *                                                 [--if-match]
  *                                                 [--period]
  *                                                 [--resource-group]
  *                                                 [--subscription]
  * ```
  *
- * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+ * @param {string} accountName Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT.
  * @param {string} containerName The container name.
- * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
  */
 declare class az_storage_container_immutability_policy_extend_command_builder extends CommandBuilder<az_storage_container_immutability_policy_extend_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, accountName: string, containerName: string, ifMatch: string);
-    /** The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only. */
+    constructor(commandPath: string, resultDataTypeName: string, accountName: string, containerName: string);
+    /** Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT. */
     accountName(value: string): az_storage_container_immutability_policy_extend_command_builder;
     /** The container name. */
     containerName(value: string): az_storage_container_immutability_policy_extend_command_builder;
-    /** The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied. */
-    ifMatch(value: string): az_storage_container_immutability_policy_extend_command_builder;
     /** This property can only be changed for unlocked time-based retention policies. When enabled, new blocks can be written to an append blob while maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API. */
     allowProtectedAppendWrites(value: boolean): az_storage_container_immutability_policy_extend_command_builder;
+    /** An ETag value, or the wildcard character (\*). Specify this header to perform the operation only if the resource's ETag matches the value specified. */
+    ifMatch(value: string): az_storage_container_immutability_policy_extend_command_builder;
     /** The immutability period for the blobs in the container since the policy creation, in days. */
     period(value: string): az_storage_container_immutability_policy_extend_command_builder;
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
@@ -8624,13 +8805,13 @@ declare class az_storage_container_immutability_policy_extend_command_builder ex
  *                                               [--subscription]
  * ```
  *
- * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+ * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower- case letters only.
  * @param {string} containerName The container name.
  * @param {string} ifMatch The entity state (ETag) version of the immutability policy to update. A value of "\*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
  */
 declare class az_storage_container_immutability_policy_lock_command_builder extends CommandBuilder<az_storage_container_immutability_policy_lock_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, accountName: string, containerName: string, ifMatch: string);
-    /** The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only. */
+    /** The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower- case letters only. */
     accountName(value: string): az_storage_container_immutability_policy_lock_command_builder;
     /** The container name. */
     containerName(value: string): az_storage_container_immutability_policy_lock_command_builder;
@@ -8654,12 +8835,12 @@ declare class az_storage_container_immutability_policy_lock_command_builder exte
  *                                               [--subscription]
  * ```
  *
- * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+ * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower- case letters only.
  * @param {string} containerName The container name.
  */
 declare class az_storage_container_immutability_policy_show_command_builder extends CommandBuilder<az_storage_container_immutability_policy_show_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, accountName: string, containerName: string);
-    /** The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only. */
+    /** The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower- case letters only. */
     accountName(value: string): az_storage_container_immutability_policy_show_command_builder;
     /** The container name. */
     containerName(value: string): az_storage_container_immutability_policy_show_command_builder;
@@ -8908,7 +9089,7 @@ declare class az_storage_container_lease_renew_command_builder extends CommandBu
     timeout(value: string): az_storage_container_lease_renew_command_builder;
 }
 /**
- * Clears legal hold tags.
+ * Clear legal hold tags.
  *
  * Syntax:
  * ```
@@ -8919,13 +9100,13 @@ declare class az_storage_container_lease_renew_command_builder extends CommandBu
  *                                       [--subscription]
  * ```
  *
- * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+ * @param {string} accountName Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT.
  * @param {string} containerName The container name.
  * @param {string} tags Each tag should be 3 to 23 alphanumeric characters and is normalized to lower case.
  */
 declare class az_storage_container_legal_hold_clear_command_builder extends CommandBuilder<az_storage_container_legal_hold_clear_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, accountName: string, containerName: string, tags: string);
-    /** The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only. */
+    /** Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT. */
     accountName(value: string): az_storage_container_legal_hold_clear_command_builder;
     /** The container name. */
     containerName(value: string): az_storage_container_legal_hold_clear_command_builder;
@@ -8937,7 +9118,7 @@ declare class az_storage_container_legal_hold_clear_command_builder extends Comm
     subscription(value: string): az_storage_container_legal_hold_clear_command_builder;
 }
 /**
- * Sets legal hold tags.
+ * Set legal hold tags.
  *
  * Syntax:
  * ```
@@ -8948,13 +9129,13 @@ declare class az_storage_container_legal_hold_clear_command_builder extends Comm
  *                                     [--subscription]
  * ```
  *
- * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+ * @param {string} accountName Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT.
  * @param {string} containerName The container name.
  * @param {string} tags Each tag should be 3 to 23 alphanumeric characters and is normalized to lower case.
  */
 declare class az_storage_container_legal_hold_set_command_builder extends CommandBuilder<az_storage_container_legal_hold_set_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, accountName: string, containerName: string, tags: string);
-    /** The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only. */
+    /** Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT. */
     accountName(value: string): az_storage_container_legal_hold_set_command_builder;
     /** The container name. */
     containerName(value: string): az_storage_container_legal_hold_set_command_builder;
@@ -8977,12 +9158,12 @@ declare class az_storage_container_legal_hold_set_command_builder extends Comman
  *                                      [--subscription]
  * ```
  *
- * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+ * @param {string} accountName Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT.
  * @param {string} containerName The container name.
  */
 declare class az_storage_container_legal_hold_show_command_builder extends CommandBuilder<az_storage_container_legal_hold_show_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, accountName: string, containerName: string);
-    /** The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only. */
+    /** Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT. */
     accountName(value: string): az_storage_container_legal_hold_show_command_builder;
     /** The container name. */
     containerName(value: string): az_storage_container_legal_hold_show_command_builder;
@@ -9299,6 +9480,203 @@ declare class az_storage_container_policy_update_command_builder extends Command
     start(value: string): az_storage_container_policy_update_command_builder;
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_storage_container_policy_update_command_builder;
+}
+/**
+ * Create a new container under the specified storage account.
+ *
+ * Syntax:
+ * ```
+ * az storage container-rm create --name
+ *                                --storage-account
+ *                                [--default-encryption-scope]
+ *                                [--deny-encryption-scope-override {false, true}]
+ *                                [--fail-on-exist]
+ *                                [--metadata]
+ *                                [--public-access {blob, container, off}]
+ *                                [--resource-group]
+ *                                [--subscription]
+ * ```
+ *
+ * @param {string} name The container name.
+ * @param {string} storageAccount The name or ID of the storage account.
+ */
+declare class az_storage_container_rm_create_command_builder extends CommandBuilder<az_storage_container_rm_create_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, storageAccount: string);
+    /** The container name. */
+    name(value: string): az_storage_container_rm_create_command_builder;
+    /** The name or ID of the storage account. */
+    storageAccount(value: string): az_storage_container_rm_create_command_builder;
+    /** Default the container to use specified encryption scope for all writes. */
+    defaultEncryptionScope(value: string): az_storage_container_rm_create_command_builder;
+    /** Block override of encryption scope from the container default. */
+    denyEncryptionScopeOverride(value: boolean): az_storage_container_rm_create_command_builder;
+    /** Throw an exception if the container already exists. */
+    failOnExist(value: string): az_storage_container_rm_create_command_builder;
+    /** Metadata in space-separated key=value pairs. This overwrites any existing metadata. */
+    metadata(value: string): az_storage_container_rm_create_command_builder;
+    /** Specify whether data in the container may be accessed publicly. */
+    publicAccess(value: 'blob' | 'container' | 'off'): az_storage_container_rm_create_command_builder;
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_storage_container_rm_create_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_storage_container_rm_create_command_builder;
+}
+/**
+ * Delete the specified container under its account.
+ *
+ * Syntax:
+ * ```
+ * az storage container-rm delete [--ids]
+ *                                [--name]
+ *                                [--resource-group]
+ *                                [--storage-account]
+ *                                [--subscription]
+ *                                [--yes]
+ * ```
+ */
+declare class az_storage_container_rm_delete_command_builder extends CommandBuilder<az_storage_container_rm_delete_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string);
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_storage_container_rm_delete_command_builder;
+    /** The container name. */
+    name(value: string): az_storage_container_rm_delete_command_builder;
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_storage_container_rm_delete_command_builder;
+    /** The name or ID of the storage account. */
+    storageAccount(value: string): az_storage_container_rm_delete_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_storage_container_rm_delete_command_builder;
+    /** Do not prompt for confirmation. */
+    yes(value: string): az_storage_container_rm_delete_command_builder;
+}
+/**
+ * Check for the existence of a container.
+ *
+ * Syntax:
+ * ```
+ * az storage container-rm exists [--ids]
+ *                                [--name]
+ *                                [--resource-group]
+ *                                [--storage-account]
+ *                                [--subscription]
+ * ```
+ */
+declare class az_storage_container_rm_exists_command_builder extends CommandBuilder<az_storage_container_rm_exists_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string);
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_storage_container_rm_exists_command_builder;
+    /** The container name. */
+    name(value: string): az_storage_container_rm_exists_command_builder;
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_storage_container_rm_exists_command_builder;
+    /** The name or ID of the storage account. */
+    storageAccount(value: string): az_storage_container_rm_exists_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_storage_container_rm_exists_command_builder;
+}
+/**
+ * List all containers under the specified storage account.
+ *
+ * Syntax:
+ * ```
+ * az storage container-rm list --storage-account
+ *                              [--include-deleted]
+ *                              [--query-examples]
+ *                              [--resource-group]
+ *                              [--subscription]
+ * ```
+ *
+ * @param {string} storageAccount The name or ID of the storage account.
+ */
+declare class az_storage_container_rm_list_command_builder extends CommandBuilder<az_storage_container_rm_list_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, storageAccount: string);
+    /** The name or ID of the storage account. */
+    storageAccount(value: string): az_storage_container_rm_list_command_builder;
+    /** Include soft deleted containers when specified. */
+    includeDeleted(value: string): az_storage_container_rm_list_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_storage_container_rm_list_command_builder;
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_storage_container_rm_list_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_storage_container_rm_list_command_builder;
+}
+/**
+ * Show the properties for a specified container.
+ *
+ * Syntax:
+ * ```
+ * az storage container-rm show [--ids]
+ *                              [--name]
+ *                              [--query-examples]
+ *                              [--resource-group]
+ *                              [--storage-account]
+ *                              [--subscription]
+ * ```
+ */
+declare class az_storage_container_rm_show_command_builder extends CommandBuilder<az_storage_container_rm_show_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string);
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_storage_container_rm_show_command_builder;
+    /** The container name. */
+    name(value: string): az_storage_container_rm_show_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_storage_container_rm_show_command_builder;
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_storage_container_rm_show_command_builder;
+    /** The name or ID of the storage account. */
+    storageAccount(value: string): az_storage_container_rm_show_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_storage_container_rm_show_command_builder;
+}
+/**
+ * Update the properties for a container.
+ *
+ * Syntax:
+ * ```
+ * az storage container-rm update [--add]
+ *                                [--default-encryption-scope]
+ *                                [--deny-encryption-scope-override {false, true}]
+ *                                [--force-string]
+ *                                [--ids]
+ *                                [--metadata]
+ *                                [--name]
+ *                                [--public-access {blob, container, off}]
+ *                                [--remove]
+ *                                [--resource-group]
+ *                                [--set]
+ *                                [--storage-account]
+ *                                [--subscription]
+ * ```
+ */
+declare class az_storage_container_rm_update_command_builder extends CommandBuilder<az_storage_container_rm_update_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string);
+    /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
+    add(value: string): az_storage_container_rm_update_command_builder;
+    /** Default the container to use specified encryption scope for all writes. */
+    defaultEncryptionScope(value: string): az_storage_container_rm_update_command_builder;
+    /** Block override of encryption scope from the container default. */
+    denyEncryptionScopeOverride(value: boolean): az_storage_container_rm_update_command_builder;
+    /** When using 'set' or 'add', preserve string literals instead of attempting to convert to JSON. */
+    forceString(value: string): az_storage_container_rm_update_command_builder;
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_storage_container_rm_update_command_builder;
+    /** Metadata in space-separated key=value pairs. This overwrites any existing metadata. */
+    metadata(value: string): az_storage_container_rm_update_command_builder;
+    /** The container name. */
+    name(value: string): az_storage_container_rm_update_command_builder;
+    /** Specify whether data in the container may be accessed publicly. */
+    publicAccess(value: 'blob' | 'container' | 'off'): az_storage_container_rm_update_command_builder;
+    /** Remove a property or an element from a list.  Example: --remove property.list <indexToRemove> OR --remove propertyToRemove. */
+    remove(value: string): az_storage_container_rm_update_command_builder;
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_storage_container_rm_update_command_builder;
+    /** Update an object by specifying a property path and value to set.  Example: --set property1.property2=<value>. */
+    set(value: string): az_storage_container_rm_update_command_builder;
+    /** The name or ID of the storage account. */
+    storageAccount(value: string): az_storage_container_rm_update_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_storage_container_rm_update_command_builder;
 }
 /**
  * Create a container in a storage account.
@@ -11271,6 +11649,62 @@ declare class az_storage_file_url_command_builder extends CommandBuilder<az_stor
     subscription(value: string): az_storage_file_url_command_builder;
 }
 /**
+ * Remove the Access Control on a path and sub-paths in Azure Data Lake Storage Gen2 account.
+ *
+ * Syntax:
+ * ```
+ * az storage fs access remove-recursive --acl
+ *                                       --file-system
+ *                                       --path
+ *                                       [--account-key]
+ *                                       [--account-name]
+ *                                       [--auth-mode {key, login}]
+ *                                       [--batch-size]
+ *                                       [--connection-string]
+ *                                       [--continuation]
+ *                                       [--continue-on-failure {false, true}]
+ *                                       [--max-batches]
+ *                                       [--sas-token]
+ *                                       [--subscription]
+ *                                       [--timeout]
+ * ```
+ *
+ * @param {string} acl Remove POSIX access control rights on files and directories. The value is a comma-separated list of access control entries. Each access control entry (ACE) consists of a scope, a type, and a user or group identifier in the format "[scope:][type]:[id]".
+ * @param {string} fileSystem File system name.
+ * @param {string} path The path to a file or directory in the specified file system.
+ */
+declare class az_storage_fs_access_remove_recursive_command_builder extends CommandBuilder<az_storage_fs_access_remove_recursive_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, acl: string, fileSystem: string, path: string);
+    /** Remove POSIX access control rights on files and directories. The value is a comma-separated list of access control entries. Each access control entry (ACE) consists of a scope, a type, and a user or group identifier in the format "[scope:][type]:[id]". */
+    acl(value: string): az_storage_fs_access_remove_recursive_command_builder;
+    /** File system name. */
+    fileSystem(value: string): az_storage_fs_access_remove_recursive_command_builder;
+    /** The path to a file or directory in the specified file system. */
+    path(value: string): az_storage_fs_access_remove_recursive_command_builder;
+    /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
+    accountKey(value: string): az_storage_fs_access_remove_recursive_command_builder;
+    /** Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT. Must be used in conjunction with either storage account key or a SAS token. If neither are present, the command will try to query the storage account key using the authenticated Azure account. If a large number of storage commands are executed the API quota may be hit. */
+    accountName(value: string): az_storage_fs_access_remove_recursive_command_builder;
+    /** The mode in which to run the command. "login" mode will directly use your login credentials for the authentication. The legacy "key" mode will attempt to query for an account key if no authentication parameters for the account are provided. Environment variable: AZURE_STORAGE_AUTH_MODE. */
+    authMode(value: 'key' | 'login'): az_storage_fs_access_remove_recursive_command_builder;
+    /** Optional. If data set size exceeds batch size then operation will be split into multiple requests so that progress can be tracked. Batch size should be between 1 and 2000. The default when unspecified is 2000. */
+    batchSize(value: string): az_storage_fs_access_remove_recursive_command_builder;
+    /** Storage account connection string. Environment variable: AZURE_STORAGE_CONNECTION_STRING. */
+    connectionString(value: string): az_storage_fs_access_remove_recursive_command_builder;
+    /** Optional continuation token that can be used to resume previously stopped operation. */
+    continuation(value: string): az_storage_fs_access_remove_recursive_command_builder;
+    /** If set to False, the operation will terminate quickly on encountering user errors (4XX). If True, the operation will ignore user errors and proceed with the operation on other sub-entities of the directory. Continuation token will only be returned when --continue-on-failure is True in case of user errors. If not set the default value is False for this. */
+    continueOnFailure(value: boolean): az_storage_fs_access_remove_recursive_command_builder;
+    /** Optional. Define maximum number of batches that single change Access Control operation can execute. If maximum is reached before all sub-paths are processed, then continuation token can be used to resume operation. Empty value indicates that maximum number of batches in unbound and operation continues till end. */
+    maxBatches(value: string): az_storage_fs_access_remove_recursive_command_builder;
+    /** A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN. */
+    sasToken(value: string): az_storage_fs_access_remove_recursive_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_storage_fs_access_remove_recursive_command_builder;
+    /** Request timeout in seconds. Applies to each call to the service. */
+    timeout(value: string): az_storage_fs_access_remove_recursive_command_builder;
+}
+/**
  * Set the access control properties of a path(directory or file) in Azure Data Lake Storage Gen2 account.
  *
  * Syntax:
@@ -11320,6 +11754,62 @@ declare class az_storage_fs_access_set_command_builder extends CommandBuilder<az
     subscription(value: string): az_storage_fs_access_set_command_builder;
 }
 /**
+ * Set the Access Control on a path and sub-paths in Azure Data Lake Storage Gen2 account.
+ *
+ * Syntax:
+ * ```
+ * az storage fs access set-recursive --acl
+ *                                    --file-system
+ *                                    --path
+ *                                    [--account-key]
+ *                                    [--account-name]
+ *                                    [--auth-mode {key, login}]
+ *                                    [--batch-size]
+ *                                    [--connection-string]
+ *                                    [--continuation]
+ *                                    [--continue-on-failure {false, true}]
+ *                                    [--max-batches]
+ *                                    [--sas-token]
+ *                                    [--subscription]
+ *                                    [--timeout]
+ * ```
+ *
+ * @param {string} acl The value is a comma-separated list of access control entries. Each access control entry (ACE) consists of a scope, a type, a user or group identifier, and permissions in the format "[scope:][type]:[id]:[permissions]".  For more information, please refer to https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control.
+ * @param {string} fileSystem File system name.
+ * @param {string} path The path to a file or directory in the specified file system.
+ */
+declare class az_storage_fs_access_set_recursive_command_builder extends CommandBuilder<az_storage_fs_access_set_recursive_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, acl: string, fileSystem: string, path: string);
+    /** The value is a comma-separated list of access control entries. Each access control entry (ACE) consists of a scope, a type, a user or group identifier, and permissions in the format "[scope:][type]:[id]:[permissions]".  For more information, please refer to https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control. */
+    acl(value: string): az_storage_fs_access_set_recursive_command_builder;
+    /** File system name. */
+    fileSystem(value: string): az_storage_fs_access_set_recursive_command_builder;
+    /** The path to a file or directory in the specified file system. */
+    path(value: string): az_storage_fs_access_set_recursive_command_builder;
+    /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
+    accountKey(value: string): az_storage_fs_access_set_recursive_command_builder;
+    /** Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT. Must be used in conjunction with either storage account key or a SAS token. If neither are present, the command will try to query the storage account key using the authenticated Azure account. If a large number of storage commands are executed the API quota may be hit. */
+    accountName(value: string): az_storage_fs_access_set_recursive_command_builder;
+    /** The mode in which to run the command. "login" mode will directly use your login credentials for the authentication. The legacy "key" mode will attempt to query for an account key if no authentication parameters for the account are provided. Environment variable: AZURE_STORAGE_AUTH_MODE. */
+    authMode(value: 'key' | 'login'): az_storage_fs_access_set_recursive_command_builder;
+    /** Optional. If data set size exceeds batch size then operation will be split into multiple requests so that progress can be tracked. Batch size should be between 1 and 2000. The default when unspecified is 2000. */
+    batchSize(value: string): az_storage_fs_access_set_recursive_command_builder;
+    /** Storage account connection string. Environment variable: AZURE_STORAGE_CONNECTION_STRING. */
+    connectionString(value: string): az_storage_fs_access_set_recursive_command_builder;
+    /** Optional continuation token that can be used to resume previously stopped operation. */
+    continuation(value: string): az_storage_fs_access_set_recursive_command_builder;
+    /** If set to False, the operation will terminate quickly on encountering user errors (4XX). If True, the operation will ignore user errors and proceed with the operation on other sub-entities of the directory. Continuation token will only be returned when --continue-on-failure is True in case of user errors. If not set the default value is False for this. */
+    continueOnFailure(value: boolean): az_storage_fs_access_set_recursive_command_builder;
+    /** Optional. Define maximum number of batches that single change Access Control operation can execute. If maximum is reached before all sub-paths are processed, then continuation token can be used to resume operation. Empty value indicates that maximum number of batches in unbound and operation continues till end. */
+    maxBatches(value: string): az_storage_fs_access_set_recursive_command_builder;
+    /** A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN. */
+    sasToken(value: string): az_storage_fs_access_set_recursive_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_storage_fs_access_set_recursive_command_builder;
+    /** Request timeout in seconds. Applies to each call to the service. */
+    timeout(value: string): az_storage_fs_access_set_recursive_command_builder;
+}
+/**
  * Show the access control properties of a path (directory or file) in Azure Data Lake Storage Gen2 account.
  *
  * Syntax:
@@ -11358,6 +11848,62 @@ declare class az_storage_fs_access_show_command_builder extends CommandBuilder<a
     sasToken(value: string): az_storage_fs_access_show_command_builder;
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_storage_fs_access_show_command_builder;
+}
+/**
+ * Modify the Access Control on a path and sub-paths in Azure Data Lake Storage Gen2 account.
+ *
+ * Syntax:
+ * ```
+ * az storage fs access update-recursive --acl
+ *                                       --file-system
+ *                                       --path
+ *                                       [--account-key]
+ *                                       [--account-name]
+ *                                       [--auth-mode {key, login}]
+ *                                       [--batch-size]
+ *                                       [--connection-string]
+ *                                       [--continuation]
+ *                                       [--continue-on-failure {false, true}]
+ *                                       [--max-batches]
+ *                                       [--sas-token]
+ *                                       [--subscription]
+ *                                       [--timeout]
+ * ```
+ *
+ * @param {string} acl The value is a comma-separated list of access control entries. Each access control entry (ACE) consists of a scope, a type, a user or group identifier, and permissions in the format "[scope:][type]:[id]:[permissions]".  For more information, please refer to https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control.
+ * @param {string} fileSystem File system name.
+ * @param {string} path The path to a file or directory in the specified file system.
+ */
+declare class az_storage_fs_access_update_recursive_command_builder extends CommandBuilder<az_storage_fs_access_update_recursive_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, acl: string, fileSystem: string, path: string);
+    /** The value is a comma-separated list of access control entries. Each access control entry (ACE) consists of a scope, a type, a user or group identifier, and permissions in the format "[scope:][type]:[id]:[permissions]".  For more information, please refer to https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control. */
+    acl(value: string): az_storage_fs_access_update_recursive_command_builder;
+    /** File system name. */
+    fileSystem(value: string): az_storage_fs_access_update_recursive_command_builder;
+    /** The path to a file or directory in the specified file system. */
+    path(value: string): az_storage_fs_access_update_recursive_command_builder;
+    /** Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY. */
+    accountKey(value: string): az_storage_fs_access_update_recursive_command_builder;
+    /** Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT. Must be used in conjunction with either storage account key or a SAS token. If neither are present, the command will try to query the storage account key using the authenticated Azure account. If a large number of storage commands are executed the API quota may be hit. */
+    accountName(value: string): az_storage_fs_access_update_recursive_command_builder;
+    /** The mode in which to run the command. "login" mode will directly use your login credentials for the authentication. The legacy "key" mode will attempt to query for an account key if no authentication parameters for the account are provided. Environment variable: AZURE_STORAGE_AUTH_MODE. */
+    authMode(value: 'key' | 'login'): az_storage_fs_access_update_recursive_command_builder;
+    /** Optional. If data set size exceeds batch size then operation will be split into multiple requests so that progress can be tracked. Batch size should be between 1 and 2000. The default when unspecified is 2000. */
+    batchSize(value: string): az_storage_fs_access_update_recursive_command_builder;
+    /** Storage account connection string. Environment variable: AZURE_STORAGE_CONNECTION_STRING. */
+    connectionString(value: string): az_storage_fs_access_update_recursive_command_builder;
+    /** Optional continuation token that can be used to resume previously stopped operation. */
+    continuation(value: string): az_storage_fs_access_update_recursive_command_builder;
+    /** If set to False, the operation will terminate quickly on encountering user errors (4XX). If True, the operation will ignore user errors and proceed with the operation on other sub-entities of the directory. Continuation token will only be returned when --continue-on-failure is True in case of user errors. If not set the default value is False for this. */
+    continueOnFailure(value: boolean): az_storage_fs_access_update_recursive_command_builder;
+    /** Optional. Define maximum number of batches that single change Access Control operation can execute. If maximum is reached before all sub-paths are processed, then continuation token can be used to resume operation. Empty value indicates that maximum number of batches in unbound and operation continues till end. */
+    maxBatches(value: string): az_storage_fs_access_update_recursive_command_builder;
+    /** A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN. */
+    sasToken(value: string): az_storage_fs_access_update_recursive_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_storage_fs_access_update_recursive_command_builder;
+    /** Request timeout in seconds. Applies to each call to the service. */
+    timeout(value: string): az_storage_fs_access_update_recursive_command_builder;
 }
 /**
  * Return all user-defined metadata for the specified directory.
@@ -13091,7 +13637,6 @@ declare class az_storage_queue_metadata_update_command_builder extends CommandBu
  *                                --queue-name
  *                                [--account-key]
  *                                [--account-name]
- *                                [--auth-mode {key, login}]
  *                                [--connection-string]
  *                                [--expiry]
  *                                [--permissions]
@@ -13113,8 +13658,6 @@ declare class az_storage_queue_policy_create_command_builder extends CommandBuil
     accountKey(value: string): az_storage_queue_policy_create_command_builder;
     /** Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT. Must be used in conjunction with either storage account key or a SAS token. If neither are present, the command will try to query the storage account key using the authenticated Azure account. If a large number of storage commands are executed the API quota may be hit. */
     accountName(value: string): az_storage_queue_policy_create_command_builder;
-    /** The mode in which to run the command. "login" mode will directly use your login credentials for the authentication. The legacy "key" mode will attempt to query for an account key if no authentication parameters for the account are provided. Environment variable: AZURE_STORAGE_AUTH_MODE. */
-    authMode(value: 'key' | 'login'): az_storage_queue_policy_create_command_builder;
     /** Storage account connection string. Environment variable: AZURE_STORAGE_CONNECTION_STRING. */
     connectionString(value: string): az_storage_queue_policy_create_command_builder;
     /** Expiration UTC datetime in (Y-m-d'T'H:M:S'Z'). */
@@ -13137,7 +13680,6 @@ declare class az_storage_queue_policy_create_command_builder extends CommandBuil
  *                                --queue-name
  *                                [--account-key]
  *                                [--account-name]
- *                                [--auth-mode {key, login}]
  *                                [--connection-string]
  *                                [--sas-token]
  *                                [--subscription]
@@ -13156,8 +13698,6 @@ declare class az_storage_queue_policy_delete_command_builder extends CommandBuil
     accountKey(value: string): az_storage_queue_policy_delete_command_builder;
     /** Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT. Must be used in conjunction with either storage account key or a SAS token. If neither are present, the command will try to query the storage account key using the authenticated Azure account. If a large number of storage commands are executed the API quota may be hit. */
     accountName(value: string): az_storage_queue_policy_delete_command_builder;
-    /** The mode in which to run the command. "login" mode will directly use your login credentials for the authentication. The legacy "key" mode will attempt to query for an account key if no authentication parameters for the account are provided. Environment variable: AZURE_STORAGE_AUTH_MODE. */
-    authMode(value: 'key' | 'login'): az_storage_queue_policy_delete_command_builder;
     /** Storage account connection string. Environment variable: AZURE_STORAGE_CONNECTION_STRING. */
     connectionString(value: string): az_storage_queue_policy_delete_command_builder;
     /** A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN. */
@@ -13173,7 +13713,6 @@ declare class az_storage_queue_policy_delete_command_builder extends CommandBuil
  * az storage queue policy list --queue-name
  *                              [--account-key]
  *                              [--account-name]
- *                              [--auth-mode {key, login}]
  *                              [--connection-string]
  *                              [--query-examples]
  *                              [--sas-token]
@@ -13190,8 +13729,6 @@ declare class az_storage_queue_policy_list_command_builder extends CommandBuilde
     accountKey(value: string): az_storage_queue_policy_list_command_builder;
     /** Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT. Must be used in conjunction with either storage account key or a SAS token. If neither are present, the command will try to query the storage account key using the authenticated Azure account. If a large number of storage commands are executed the API quota may be hit. */
     accountName(value: string): az_storage_queue_policy_list_command_builder;
-    /** The mode in which to run the command. "login" mode will directly use your login credentials for the authentication. The legacy "key" mode will attempt to query for an account key if no authentication parameters for the account are provided. Environment variable: AZURE_STORAGE_AUTH_MODE. */
-    authMode(value: 'key' | 'login'): az_storage_queue_policy_list_command_builder;
     /** Storage account connection string. Environment variable: AZURE_STORAGE_CONNECTION_STRING. */
     connectionString(value: string): az_storage_queue_policy_list_command_builder;
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -13210,7 +13747,6 @@ declare class az_storage_queue_policy_list_command_builder extends CommandBuilde
  *                              --queue-name
  *                              [--account-key]
  *                              [--account-name]
- *                              [--auth-mode {key, login}]
  *                              [--connection-string]
  *                              [--query-examples]
  *                              [--sas-token]
@@ -13230,8 +13766,6 @@ declare class az_storage_queue_policy_show_command_builder extends CommandBuilde
     accountKey(value: string): az_storage_queue_policy_show_command_builder;
     /** Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT. Must be used in conjunction with either storage account key or a SAS token. If neither are present, the command will try to query the storage account key using the authenticated Azure account. If a large number of storage commands are executed the API quota may be hit. */
     accountName(value: string): az_storage_queue_policy_show_command_builder;
-    /** The mode in which to run the command. "login" mode will directly use your login credentials for the authentication. The legacy "key" mode will attempt to query for an account key if no authentication parameters for the account are provided. Environment variable: AZURE_STORAGE_AUTH_MODE. */
-    authMode(value: 'key' | 'login'): az_storage_queue_policy_show_command_builder;
     /** Storage account connection string. Environment variable: AZURE_STORAGE_CONNECTION_STRING. */
     connectionString(value: string): az_storage_queue_policy_show_command_builder;
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -13250,7 +13784,6 @@ declare class az_storage_queue_policy_show_command_builder extends CommandBuilde
  *                                --queue-name
  *                                [--account-key]
  *                                [--account-name]
- *                                [--auth-mode {key, login}]
  *                                [--connection-string]
  *                                [--expiry]
  *                                [--permissions]
@@ -13272,8 +13805,6 @@ declare class az_storage_queue_policy_update_command_builder extends CommandBuil
     accountKey(value: string): az_storage_queue_policy_update_command_builder;
     /** Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT. Must be used in conjunction with either storage account key or a SAS token. If neither are present, the command will try to query the storage account key using the authenticated Azure account. If a large number of storage commands are executed the API quota may be hit. */
     accountName(value: string): az_storage_queue_policy_update_command_builder;
-    /** The mode in which to run the command. "login" mode will directly use your login credentials for the authentication. The legacy "key" mode will attempt to query for an account key if no authentication parameters for the account are provided. Environment variable: AZURE_STORAGE_AUTH_MODE. */
-    authMode(value: 'key' | 'login'): az_storage_queue_policy_update_command_builder;
     /** Storage account connection string. Environment variable: AZURE_STORAGE_CONNECTION_STRING. */
     connectionString(value: string): az_storage_queue_policy_update_command_builder;
     /** Expiration UTC datetime in (Y-m-d'T'H:M:S'Z'). */
@@ -13464,6 +13995,7 @@ declare class az_storage_queue_generate_sas_command_builder extends CommandBuild
  *                       [--prefix]
  *                       [--query-examples]
  *                       [--sas-token]
+ *                       [--show-next-marker]
  *                       [--subscription]
  *                       [--timeout]
  * ```
@@ -13478,18 +14010,20 @@ declare class az_storage_queue_list_command_builder extends CommandBuilder<az_st
     authMode(value: 'key' | 'login'): az_storage_queue_list_command_builder;
     /** Storage account connection string. Environment variable: AZURE_STORAGE_CONNECTION_STRING. */
     connectionString(value: string): az_storage_queue_list_command_builder;
-    /** Specifies that container metadata be returned in the response. */
+    /** Specify that queue metadata be returned in the response. */
     includeMetadata(value: string): az_storage_queue_list_command_builder;
-    /** An opaque continuation token. This value can be retrieved from the next_marker field of a previous generator object if num_results was specified and that generator has finished enumerating results. If specified, this generator will begin returning results from the point where the previous generator stopped. */
+    /** A string value that identifies the portion of the list of containers to be returned with the next listing operation. The operation returns the NextMarker value within the response body if the listing operation did not return all containers remaining to be listed with the current page. If specified, this generator will begin returning results from the point where the previous generator stopped. */
     marker(value: string): az_storage_queue_list_command_builder;
-    /** The maximum number of queues to return. */
+    /** Specify the maximum number to return. If the request does not specify num_results, or specifies a value greater than 5000, the server will return up to 5000 items. Note that if the listing operation crosses a partition boundary, then the service will return a continuation token for retrieving the remaining of the results. Provide "\*" to return all. */
     numResults(value: string): az_storage_queue_list_command_builder;
-    /** Filters the results to return only queues with names that begin with the specified prefix. */
+    /** Filter the results to return only queues whose names begin with the specified prefix. */
     prefix(value: string): az_storage_queue_list_command_builder;
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
     queryExamples(value: string): az_storage_queue_list_command_builder;
     /** A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN. */
     sasToken(value: string): az_storage_queue_list_command_builder;
+    /** Show nextMarker in result when specified. */
+    showNextMarker(value: string): az_storage_queue_list_command_builder;
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_storage_queue_list_command_builder;
     /** Request timeout in seconds. Applies to each call to the service. */

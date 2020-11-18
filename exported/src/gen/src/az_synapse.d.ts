@@ -1,4 +1,36 @@
 import { CommandBuilder } from '../base';
+import { az_synapse_activity_run_query_by_pipeline_run_command_result } from './models/az_synapse_activity_run_query_by_pipeline_run_command_result';
+import { az_synapse_data_flow_create_command_result } from './models/az_synapse_data_flow_create_command_result';
+import { az_synapse_data_flow_delete_command_result } from './models/az_synapse_data_flow_delete_command_result';
+import { az_synapse_data_flow_list_command_result } from './models/az_synapse_data_flow_list_command_result';
+import { az_synapse_data_flow_set_command_result } from './models/az_synapse_data_flow_set_command_result';
+import { az_synapse_data_flow_show_command_result } from './models/az_synapse_data_flow_show_command_result';
+import { az_synapse_dataset_create_command_result } from './models/az_synapse_dataset_create_command_result';
+import { az_synapse_dataset_delete_command_result } from './models/az_synapse_dataset_delete_command_result';
+import { az_synapse_dataset_list_command_result } from './models/az_synapse_dataset_list_command_result';
+import { az_synapse_dataset_set_command_result } from './models/az_synapse_dataset_set_command_result';
+import { az_synapse_dataset_show_command_result } from './models/az_synapse_dataset_show_command_result';
+import { az_synapse_linked_service_create_command_result } from './models/az_synapse_linked_service_create_command_result';
+import { az_synapse_linked_service_delete_command_result } from './models/az_synapse_linked_service_delete_command_result';
+import { az_synapse_linked_service_list_command_result } from './models/az_synapse_linked_service_list_command_result';
+import { az_synapse_linked_service_set_command_result } from './models/az_synapse_linked_service_set_command_result';
+import { az_synapse_linked_service_show_command_result } from './models/az_synapse_linked_service_show_command_result';
+import { az_synapse_notebook_create_command_result } from './models/az_synapse_notebook_create_command_result';
+import { az_synapse_notebook_delete_command_result } from './models/az_synapse_notebook_delete_command_result';
+import { az_synapse_notebook_export_command_result } from './models/az_synapse_notebook_export_command_result';
+import { az_synapse_notebook_import_command_result } from './models/az_synapse_notebook_import_command_result';
+import { az_synapse_notebook_list_command_result } from './models/az_synapse_notebook_list_command_result';
+import { az_synapse_notebook_set_command_result } from './models/az_synapse_notebook_set_command_result';
+import { az_synapse_notebook_show_command_result } from './models/az_synapse_notebook_show_command_result';
+import { az_synapse_pipeline_run_cancel_command_result } from './models/az_synapse_pipeline_run_cancel_command_result';
+import { az_synapse_pipeline_run_query_by_workspace_command_result } from './models/az_synapse_pipeline_run_query_by_workspace_command_result';
+import { az_synapse_pipeline_run_show_command_result } from './models/az_synapse_pipeline_run_show_command_result';
+import { az_synapse_pipeline_create_command_result } from './models/az_synapse_pipeline_create_command_result';
+import { az_synapse_pipeline_create_run_command_result } from './models/az_synapse_pipeline_create_run_command_result';
+import { az_synapse_pipeline_delete_command_result } from './models/az_synapse_pipeline_delete_command_result';
+import { az_synapse_pipeline_list_command_result } from './models/az_synapse_pipeline_list_command_result';
+import { az_synapse_pipeline_set_command_result } from './models/az_synapse_pipeline_set_command_result';
+import { az_synapse_pipeline_show_command_result } from './models/az_synapse_pipeline_show_command_result';
 import { az_synapse_role_assignment_create_command_result } from './models/az_synapse_role_assignment_create_command_result';
 import { az_synapse_role_assignment_delete_command_result } from './models/az_synapse_role_assignment_delete_command_result';
 import { az_synapse_role_assignment_list_command_result } from './models/az_synapse_role_assignment_list_command_result';
@@ -32,6 +64,18 @@ import { az_synapse_sql_pool_resume_command_result } from './models/az_synapse_s
 import { az_synapse_sql_pool_show_command_result } from './models/az_synapse_sql_pool_show_command_result';
 import { az_synapse_sql_pool_update_command_result } from './models/az_synapse_sql_pool_update_command_result';
 import { az_synapse_sql_pool_wait_command_result } from './models/az_synapse_sql_pool_wait_command_result';
+import { az_synapse_trigger_run_query_by_workspace_command_result } from './models/az_synapse_trigger_run_query_by_workspace_command_result';
+import { az_synapse_trigger_run_rerun_command_result } from './models/az_synapse_trigger_run_rerun_command_result';
+import { az_synapse_trigger_create_command_result } from './models/az_synapse_trigger_create_command_result';
+import { az_synapse_trigger_delete_command_result } from './models/az_synapse_trigger_delete_command_result';
+import { az_synapse_trigger_get_event_subscription_status_command_result } from './models/az_synapse_trigger_get_event_subscription_status_command_result';
+import { az_synapse_trigger_list_command_result } from './models/az_synapse_trigger_list_command_result';
+import { az_synapse_trigger_set_command_result } from './models/az_synapse_trigger_set_command_result';
+import { az_synapse_trigger_show_command_result } from './models/az_synapse_trigger_show_command_result';
+import { az_synapse_trigger_start_command_result } from './models/az_synapse_trigger_start_command_result';
+import { az_synapse_trigger_stop_command_result } from './models/az_synapse_trigger_stop_command_result';
+import { az_synapse_trigger_subscribe_to_event_command_result } from './models/az_synapse_trigger_subscribe_to_event_command_result';
+import { az_synapse_trigger_unsubscribe_from_event_command_result } from './models/az_synapse_trigger_unsubscribe_from_event_command_result';
 import { az_synapse_workspace_firewall_rule_create_command_result } from './models/az_synapse_workspace_firewall_rule_create_command_result';
 import { az_synapse_workspace_firewall_rule_delete_command_result } from './models/az_synapse_workspace_firewall_rule_delete_command_result';
 import { az_synapse_workspace_firewall_rule_list_command_result } from './models/az_synapse_workspace_firewall_rule_list_command_result';
@@ -44,6 +88,549 @@ import { az_synapse_workspace_list_command_result } from './models/az_synapse_wo
 import { az_synapse_workspace_show_command_result } from './models/az_synapse_workspace_show_command_result';
 import { az_synapse_workspace_update_command_result } from './models/az_synapse_workspace_update_command_result';
 import { az_synapse_workspace_wait_command_result } from './models/az_synapse_workspace_wait_command_result';
+/** Synapse activity-run. */
+export declare class az_synapse_activity_run {
+    /**
+     * Query activity runs based on input filter conditions.
+     *
+     * Syntax:
+     * ```
+     * az synapse activity-run query-by-pipeline-run --last-updated-after
+     *                                               --last-updated-before
+     *                                               --name
+     *                                               --run-id
+     *                                               --workspace-name
+     *                                               [--continuation-token]
+     *                                               [--filters]
+     *                                               [--order-by]
+     *                                               [--subscription]
+     * ```
+     *
+     * @param {string} lastUpdatedAfter The time at or after which the run event was updated in 'ISO 8601' format.
+     * @param {string} lastUpdatedBefore The time at or before which the run event was updated in 'ISO 8601' format.
+     * @param {string} name The pipeline name.
+     * @param {string} runId The pipeline run identifier.
+     * @param {string} workspaceName The workspace name.
+     */
+    static query_by_pipeline_run(lastUpdatedAfter: string, lastUpdatedBefore: string, name: string, runId: string, workspaceName: string): az_synapse_activity_run_query_by_pipeline_run_command_builder;
+}
+/** Manage Synapse's data flows. */
+export declare class az_synapse_data_flow {
+    /**
+     * Create a data flow.
+     *
+     * Syntax:
+     * ```
+     * az synapse data-flow create --file
+     *                             --name
+     *                             --workspace-name
+     *                             [--no-wait]
+     *                             [--subscription]
+     * ```
+     *
+     * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+     * @param {string} name The data flow name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static create(file: string, name: string, workspaceName: string): az_synapse_data_flow_create_command_builder;
+    /**
+     * Delete a data flow.
+     *
+     * Syntax:
+     * ```
+     * az synapse data-flow delete --name
+     *                             --workspace-name
+     *                             [--no-wait]
+     *                             [--subscription]
+     *                             [--yes]
+     * ```
+     *
+     * @param {string} name The data flow name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static delete(name: string, workspaceName: string): az_synapse_data_flow_delete_command_builder;
+    /**
+     * List data flows.
+     *
+     * Syntax:
+     * ```
+     * az synapse data-flow list --workspace-name
+     *                           [--query-examples]
+     *                           [--subscription]
+     * ```
+     *
+     * @param {string} workspaceName The workspace name.
+     */
+    static list(workspaceName: string): az_synapse_data_flow_list_command_builder;
+    /**
+     * Set an exist data flow.
+     *
+     * Syntax:
+     * ```
+     * az synapse data-flow set --file
+     *                          --name
+     *                          --workspace-name
+     *                          [--no-wait]
+     *                          [--subscription]
+     * ```
+     *
+     * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+     * @param {string} name The data flow name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static set(file: string, name: string, workspaceName: string): az_synapse_data_flow_set_command_builder;
+    /**
+     * Get a data flow.
+     *
+     * Syntax:
+     * ```
+     * az synapse data-flow show --name
+     *                           --workspace-name
+     *                           [--query-examples]
+     *                           [--subscription]
+     * ```
+     *
+     * @param {string} name The data flow name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static show(name: string, workspaceName: string): az_synapse_data_flow_show_command_builder;
+}
+/** Manage Synapse's datasets. */
+export declare class az_synapse_dataset {
+    /**
+     * Create a dataset.
+     *
+     * Syntax:
+     * ```
+     * az synapse dataset create --file
+     *                           --name
+     *                           --workspace-name
+     *                           [--no-wait]
+     *                           [--subscription]
+     * ```
+     *
+     * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+     * @param {string} name The dataset name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static create(file: string, name: string, workspaceName: string): az_synapse_dataset_create_command_builder;
+    /**
+     * Delete a dataset.
+     *
+     * Syntax:
+     * ```
+     * az synapse dataset delete --name
+     *                           --workspace-name
+     *                           [--no-wait]
+     *                           [--subscription]
+     *                           [--yes]
+     * ```
+     *
+     * @param {string} name The dataset name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static delete(name: string, workspaceName: string): az_synapse_dataset_delete_command_builder;
+    /**
+     * List datasets.
+     *
+     * Syntax:
+     * ```
+     * az synapse dataset list --workspace-name
+     *                         [--query-examples]
+     *                         [--subscription]
+     * ```
+     *
+     * @param {string} workspaceName The workspace name.
+     */
+    static list(workspaceName: string): az_synapse_dataset_list_command_builder;
+    /**
+     * Set an exist dataset.
+     *
+     * Syntax:
+     * ```
+     * az synapse dataset set --file
+     *                        --name
+     *                        --workspace-name
+     *                        [--no-wait]
+     *                        [--subscription]
+     * ```
+     *
+     * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+     * @param {string} name The dataset name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static set(file: string, name: string, workspaceName: string): az_synapse_dataset_set_command_builder;
+    /**
+     * Get a dataset.
+     *
+     * Syntax:
+     * ```
+     * az synapse dataset show --name
+     *                         --workspace-name
+     *                         [--query-examples]
+     *                         [--subscription]
+     * ```
+     *
+     * @param {string} name The dataset name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static show(name: string, workspaceName: string): az_synapse_dataset_show_command_builder;
+}
+/** Manage Synapse's linked services. */
+export declare class az_synapse_linked_service {
+    /**
+     * Create a linked service.
+     *
+     * Syntax:
+     * ```
+     * az synapse linked-service create --file
+     *                                  --name
+     *                                  --workspace-name
+     *                                  [--no-wait]
+     *                                  [--subscription]
+     * ```
+     *
+     * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+     * @param {string} name The linked service name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static create(file: string, name: string, workspaceName: string): az_synapse_linked_service_create_command_builder;
+    /**
+     * Delete a linked service.
+     *
+     * Syntax:
+     * ```
+     * az synapse linked-service delete --name
+     *                                  --workspace-name
+     *                                  [--no-wait]
+     *                                  [--subscription]
+     *                                  [--yes]
+     * ```
+     *
+     * @param {string} name The linked service name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static delete(name: string, workspaceName: string): az_synapse_linked_service_delete_command_builder;
+    /**
+     * List linked services.
+     *
+     * Syntax:
+     * ```
+     * az synapse linked-service list --workspace-name
+     *                                [--query-examples]
+     *                                [--subscription]
+     * ```
+     *
+     * @param {string} workspaceName The workspace name.
+     */
+    static list(workspaceName: string): az_synapse_linked_service_list_command_builder;
+    /**
+     * Set an exist linked service.
+     *
+     * Syntax:
+     * ```
+     * az synapse linked-service set --file
+     *                               --name
+     *                               --workspace-name
+     *                               [--no-wait]
+     *                               [--subscription]
+     * ```
+     *
+     * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+     * @param {string} name The linked service name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static set(file: string, name: string, workspaceName: string): az_synapse_linked_service_set_command_builder;
+    /**
+     * Get a linked service.
+     *
+     * Syntax:
+     * ```
+     * az synapse linked-service show --name
+     *                                --workspace-name
+     *                                [--query-examples]
+     *                                [--subscription]
+     * ```
+     *
+     * @param {string} name The linked service name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static show(name: string, workspaceName: string): az_synapse_linked_service_show_command_builder;
+}
+/** Manage Synapse's notebooks. */
+export declare class az_synapse_notebook {
+    /**
+     * Create a notebook.
+     *
+     * Syntax:
+     * ```
+     * az synapse notebook create --file
+     *                            --name
+     *                            --workspace-name
+     *                            [--executor-count]
+     *                            [--executor-size {Large, Medium, Small}]
+     *                            [--no-wait]
+     *                            [--spark-pool-name]
+     *                            [--subscription]
+     * ```
+     *
+     * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+     * @param {string} name The notebook name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static create(file: string, name: string, workspaceName: string): az_synapse_notebook_create_command_builder;
+    /**
+     * Delete a notebook.
+     *
+     * Syntax:
+     * ```
+     * az synapse notebook delete --name
+     *                            --workspace-name
+     *                            [--no-wait]
+     *                            [--subscription]
+     *                            [--yes]
+     * ```
+     *
+     * @param {string} name The notebook name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static delete(name: string, workspaceName: string): az_synapse_notebook_delete_command_builder;
+    /**
+     * Export notebooks.
+     *
+     * Syntax:
+     * ```
+     * az synapse notebook export --output-folder
+     *                            --workspace-name
+     *                            [--name]
+     *                            [--subscription]
+     * ```
+     *
+     * @param {string} outputFolder The folder where the notebook should be placed.
+     * @param {string} workspaceName The workspace name.
+     */
+    static export(outputFolder: string, workspaceName: string): az_synapse_notebook_export_command_builder;
+    /**
+     * Import a notebook.
+     *
+     * Syntax:
+     * ```
+     * az synapse notebook import --file
+     *                            --name
+     *                            --workspace-name
+     *                            [--executor-count]
+     *                            [--executor-size {Large, Medium, Small}]
+     *                            [--no-wait]
+     *                            [--spark-pool-name]
+     *                            [--subscription]
+     * ```
+     *
+     * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+     * @param {string} name The notebook name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static import(file: string, name: string, workspaceName: string): az_synapse_notebook_import_command_builder;
+    /**
+     * List notebooks.
+     *
+     * Syntax:
+     * ```
+     * az synapse notebook list --workspace-name
+     *                          [--query-examples]
+     *                          [--subscription]
+     * ```
+     *
+     * @param {string} workspaceName The workspace name.
+     */
+    static list(workspaceName: string): az_synapse_notebook_list_command_builder;
+    /**
+     * Set an exist notebook.
+     *
+     * Syntax:
+     * ```
+     * az synapse notebook set --file
+     *                         --name
+     *                         --workspace-name
+     *                         [--executor-count]
+     *                         [--executor-size {Large, Medium, Small}]
+     *                         [--no-wait]
+     *                         [--spark-pool-name]
+     *                         [--subscription]
+     * ```
+     *
+     * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+     * @param {string} name The notebook name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static set(file: string, name: string, workspaceName: string): az_synapse_notebook_set_command_builder;
+    /**
+     * Get a notebook.
+     *
+     * Syntax:
+     * ```
+     * az synapse notebook show --name
+     *                          --workspace-name
+     *                          [--query-examples]
+     *                          [--subscription]
+     * ```
+     *
+     * @param {string} name The notebook name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static show(name: string, workspaceName: string): az_synapse_notebook_show_command_builder;
+}
+/** Manage Synapse's pipeline run. */
+export declare class az_synapse_pipeline_run {
+    /**
+     * Cancel a pipeline run by its run ID.
+     *
+     * Syntax:
+     * ```
+     * az synapse pipeline-run cancel --run-id
+     *                                --workspace-name
+     *                                [--is-recursive {false, true}]
+     *                                [--subscription]
+     *                                [--yes]
+     * ```
+     *
+     * @param {string} runId The pipeline run identifier.
+     * @param {string} workspaceName The workspace name.
+     */
+    static cancel(runId: string, workspaceName: string): az_synapse_pipeline_run_cancel_command_builder;
+    /**
+     * Query pipeline runs in the workspace based on input filter conditions.
+     *
+     * Syntax:
+     * ```
+     * az synapse pipeline-run query-by-workspace --last-updated-after
+     *                                            --last-updated-before
+     *                                            --workspace-name
+     *                                            [--continuation-token]
+     *                                            [--filters]
+     *                                            [--order-by]
+     *                                            [--subscription]
+     * ```
+     *
+     * @param {string} lastUpdatedAfter The time at or after which the run event was updated in 'ISO 8601' format.
+     * @param {string} lastUpdatedBefore The time at or before which the run event was updated in 'ISO 8601' format.
+     * @param {string} workspaceName The workspace name.
+     */
+    static query_by_workspace(lastUpdatedAfter: string, lastUpdatedBefore: string, workspaceName: string): az_synapse_pipeline_run_query_by_workspace_command_builder;
+    /**
+     * Get a pipeline run by its run ID.
+     *
+     * Syntax:
+     * ```
+     * az synapse pipeline-run show --run-id
+     *                              --workspace-name
+     *                              [--query-examples]
+     *                              [--subscription]
+     * ```
+     *
+     * @param {string} runId The pipeline run identifier.
+     * @param {string} workspaceName The workspace name.
+     */
+    static show(runId: string, workspaceName: string): az_synapse_pipeline_run_show_command_builder;
+}
+/** Manage Synapse's pipelines. */
+export declare class az_synapse_pipeline {
+    /**
+     * Create a pipeline.
+     *
+     * Syntax:
+     * ```
+     * az synapse pipeline create --file
+     *                            --name
+     *                            --workspace-name
+     *                            [--no-wait]
+     *                            [--subscription]
+     * ```
+     *
+     * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+     * @param {string} name The pipeline name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static create(file: string, name: string, workspaceName: string): az_synapse_pipeline_create_command_builder;
+    /**
+     * Creates a run of a pipeline.
+     *
+     * Syntax:
+     * ```
+     * az synapse pipeline create-run --name
+     *                                --workspace-name
+     *                                [--is-recovery {false, true}]
+     *                                [--parameters]
+     *                                [--reference-pipeline-run-id]
+     *                                [--start-activity-name]
+     *                                [--subscription]
+     * ```
+     *
+     * @param {string} name The pipeline name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static create_run(name: string, workspaceName: string): az_synapse_pipeline_create_run_command_builder;
+    /**
+     * Delete a pipeline.
+     *
+     * Syntax:
+     * ```
+     * az synapse pipeline delete --name
+     *                            --workspace-name
+     *                            [--no-wait]
+     *                            [--subscription]
+     *                            [--yes]
+     * ```
+     *
+     * @param {string} name The pipeline name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static delete(name: string, workspaceName: string): az_synapse_pipeline_delete_command_builder;
+    /**
+     * List pipelines.
+     *
+     * Syntax:
+     * ```
+     * az synapse pipeline list --workspace-name
+     *                          [--query-examples]
+     *                          [--subscription]
+     * ```
+     *
+     * @param {string} workspaceName The workspace name.
+     */
+    static list(workspaceName: string): az_synapse_pipeline_list_command_builder;
+    /**
+     * Set an exist pipeline.
+     *
+     * Syntax:
+     * ```
+     * az synapse pipeline set --file
+     *                         --name
+     *                         --workspace-name
+     *                         [--no-wait]
+     *                         [--subscription]
+     * ```
+     *
+     * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+     * @param {string} name The pipeline name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static set(file: string, name: string, workspaceName: string): az_synapse_pipeline_set_command_builder;
+    /**
+     * Get a pipeline.
+     *
+     * Syntax:
+     * ```
+     * az synapse pipeline show --name
+     *                          --workspace-name
+     *                          [--query-examples]
+     *                          [--subscription]
+     * ```
+     *
+     * @param {string} name The pipeline name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static show(name: string, workspaceName: string): az_synapse_pipeline_show_command_builder;
+}
 /** Manage Synapse's role assignments. */
 export declare class az_synapse_role_assignment {
     /**
@@ -660,6 +1247,199 @@ export declare class az_synapse_sql_pool {
 /** Manage SQL pools. */
 export declare class az_synapse_sql {
 }
+/** Synapse trigger-run. */
+export declare class az_synapse_trigger_run {
+    /**
+     * Query trigger runs in the workspace based on input filter conditions.
+     *
+     * Syntax:
+     * ```
+     * az synapse trigger-run query-by-workspace --last-updated-after
+     *                                           --last-updated-before
+     *                                           --workspace-name
+     *                                           [--continuation-token]
+     *                                           [--filters]
+     *                                           [--order-by]
+     *                                           [--subscription]
+     * ```
+     *
+     * @param {string} lastUpdatedAfter The time at or after which the run event was updated in 'ISO 8601' format.
+     * @param {string} lastUpdatedBefore The time at or before which the run event was updated in 'ISO 8601' format.
+     * @param {string} workspaceName The workspace name.
+     */
+    static query_by_workspace(lastUpdatedAfter: string, lastUpdatedBefore: string, workspaceName: string): az_synapse_trigger_run_query_by_workspace_command_builder;
+    /**
+     * Rerun single trigger instance by runId.
+     *
+     * Syntax:
+     * ```
+     * az synapse trigger-run rerun --name
+     *                              --run-id
+     *                              --workspace-name
+     *                              [--subscription]
+     * ```
+     *
+     * @param {string} name The trigger name.
+     * @param {string} runId The trigger run identifier.
+     * @param {string} workspaceName The workspace name.
+     */
+    static rerun(name: string, runId: string, workspaceName: string): az_synapse_trigger_run_rerun_command_builder;
+}
+/** Manage Synapse's triggers. */
+export declare class az_synapse_trigger {
+    /**
+     * Create a trigger.
+     *
+     * Syntax:
+     * ```
+     * az synapse trigger create --file
+     *                           --name
+     *                           --workspace-name
+     *                           [--no-wait]
+     *                           [--subscription]
+     * ```
+     *
+     * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+     * @param {string} name The trigger name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static create(file: string, name: string, workspaceName: string): az_synapse_trigger_create_command_builder;
+    /**
+     * Delete a trigger.
+     *
+     * Syntax:
+     * ```
+     * az synapse trigger delete --name
+     *                           --workspace-name
+     *                           [--no-wait]
+     *                           [--subscription]
+     *                           [--yes]
+     * ```
+     *
+     * @param {string} name The trigger name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static delete(name: string, workspaceName: string): az_synapse_trigger_delete_command_builder;
+    /**
+     * Get a trigger's event subscription status.
+     *
+     * Syntax:
+     * ```
+     * az synapse trigger get-event-subscription-status --name
+     *                                                  --workspace-name
+     *                                                  [--subscription]
+     * ```
+     *
+     * @param {string} name The trigger name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static get_event_subscription_status(name: string, workspaceName: string): az_synapse_trigger_get_event_subscription_status_command_builder;
+    /**
+     * List triggers.
+     *
+     * Syntax:
+     * ```
+     * az synapse trigger list --workspace-name
+     *                         [--query-examples]
+     *                         [--subscription]
+     * ```
+     *
+     * @param {string} workspaceName The workspace name.
+     */
+    static list(workspaceName: string): az_synapse_trigger_list_command_builder;
+    /**
+     * Set an exist trigger.
+     *
+     * Syntax:
+     * ```
+     * az synapse trigger set --file
+     *                        --name
+     *                        --workspace-name
+     *                        [--no-wait]
+     *                        [--subscription]
+     * ```
+     *
+     * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+     * @param {string} name The trigger name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static set(file: string, name: string, workspaceName: string): az_synapse_trigger_set_command_builder;
+    /**
+     * Get a trigger.
+     *
+     * Syntax:
+     * ```
+     * az synapse trigger show --name
+     *                         --workspace-name
+     *                         [--query-examples]
+     *                         [--subscription]
+     * ```
+     *
+     * @param {string} name The trigger name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static show(name: string, workspaceName: string): az_synapse_trigger_show_command_builder;
+    /**
+     * Starts a trigger.
+     *
+     * Syntax:
+     * ```
+     * az synapse trigger start --name
+     *                          --workspace-name
+     *                          [--no-wait]
+     *                          [--subscription]
+     * ```
+     *
+     * @param {string} name The trigger name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static start(name: string, workspaceName: string): az_synapse_trigger_start_command_builder;
+    /**
+     * Stops a trigger.
+     *
+     * Syntax:
+     * ```
+     * az synapse trigger stop --name
+     *                         --workspace-name
+     *                         [--no-wait]
+     *                         [--subscription]
+     * ```
+     *
+     * @param {string} name The trigger name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static stop(name: string, workspaceName: string): az_synapse_trigger_stop_command_builder;
+    /**
+     * Subscribe event trigger to events.
+     *
+     * Syntax:
+     * ```
+     * az synapse trigger subscribe-to-event --name
+     *                                       --workspace-name
+     *                                       [--no-wait]
+     *                                       [--subscription]
+     * ```
+     *
+     * @param {string} name The trigger name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static subscribe_to_event(name: string, workspaceName: string): az_synapse_trigger_subscribe_to_event_command_builder;
+    /**
+     * Unsubscribe event trigger from events.
+     *
+     * Syntax:
+     * ```
+     * az synapse trigger unsubscribe-from-event --name
+     *                                           --workspace-name
+     *                                           [--no-wait]
+     *                                           [--subscription]
+     * ```
+     *
+     * @param {string} name The trigger name.
+     * @param {string} workspaceName The workspace name.
+     */
+    static unsubscribe_from_event(name: string, workspaceName: string): az_synapse_trigger_unsubscribe_from_event_command_builder;
+}
 /** Manage a workspace's firewall rules. */
 export declare class az_synapse_workspace_firewall_rule {
     /**
@@ -867,6 +1647,912 @@ export declare class az_synapse_workspace {
 }
 /** Manage and operate Synapse Workspace, Spark Pool, SQL Pool. */
 export declare class az_synapse {
+}
+/**
+ * Query activity runs based on input filter conditions.
+ *
+ * Syntax:
+ * ```
+ * az synapse activity-run query-by-pipeline-run --last-updated-after
+ *                                               --last-updated-before
+ *                                               --name
+ *                                               --run-id
+ *                                               --workspace-name
+ *                                               [--continuation-token]
+ *                                               [--filters]
+ *                                               [--order-by]
+ *                                               [--subscription]
+ * ```
+ *
+ * @param {string} lastUpdatedAfter The time at or after which the run event was updated in 'ISO 8601' format.
+ * @param {string} lastUpdatedBefore The time at or before which the run event was updated in 'ISO 8601' format.
+ * @param {string} name The pipeline name.
+ * @param {string} runId The pipeline run identifier.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_activity_run_query_by_pipeline_run_command_builder extends CommandBuilder<az_synapse_activity_run_query_by_pipeline_run_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, lastUpdatedAfter: string, lastUpdatedBefore: string, name: string, runId: string, workspaceName: string);
+    /** The time at or after which the run event was updated in 'ISO 8601' format. */
+    lastUpdatedAfter(value: string): az_synapse_activity_run_query_by_pipeline_run_command_builder;
+    /** The time at or before which the run event was updated in 'ISO 8601' format. */
+    lastUpdatedBefore(value: string): az_synapse_activity_run_query_by_pipeline_run_command_builder;
+    /** The pipeline name. */
+    name(value: string): az_synapse_activity_run_query_by_pipeline_run_command_builder;
+    /** The pipeline run identifier. */
+    runId(value: string): az_synapse_activity_run_query_by_pipeline_run_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_activity_run_query_by_pipeline_run_command_builder;
+    /** The continuation token for getting the next page of results. Null for first page. */
+    continuationToken(value: string): az_synapse_activity_run_query_by_pipeline_run_command_builder;
+    /** List of filters. */
+    filters(value: string): az_synapse_activity_run_query_by_pipeline_run_command_builder;
+    /** List of OrderBy option. */
+    orderBy(value: string): az_synapse_activity_run_query_by_pipeline_run_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_activity_run_query_by_pipeline_run_command_builder;
+}
+/**
+ * Create a data flow.
+ *
+ * Syntax:
+ * ```
+ * az synapse data-flow create --file
+ *                             --name
+ *                             --workspace-name
+ *                             [--no-wait]
+ *                             [--subscription]
+ * ```
+ *
+ * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+ * @param {string} name The data flow name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_data_flow_create_command_builder extends CommandBuilder<az_synapse_data_flow_create_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, file: string, name: string, workspaceName: string);
+    /** Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string. */
+    file(value: string): az_synapse_data_flow_create_command_builder;
+    /** The data flow name. */
+    name(value: string): az_synapse_data_flow_create_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_data_flow_create_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_data_flow_create_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_data_flow_create_command_builder;
+}
+/**
+ * Delete a data flow.
+ *
+ * Syntax:
+ * ```
+ * az synapse data-flow delete --name
+ *                             --workspace-name
+ *                             [--no-wait]
+ *                             [--subscription]
+ *                             [--yes]
+ * ```
+ *
+ * @param {string} name The data flow name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_data_flow_delete_command_builder extends CommandBuilder<az_synapse_data_flow_delete_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The data flow name. */
+    name(value: string): az_synapse_data_flow_delete_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_data_flow_delete_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_data_flow_delete_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_data_flow_delete_command_builder;
+    /** Do not prompt for confirmation. */
+    yes(value: string): az_synapse_data_flow_delete_command_builder;
+}
+/**
+ * List data flows.
+ *
+ * Syntax:
+ * ```
+ * az synapse data-flow list --workspace-name
+ *                           [--query-examples]
+ *                           [--subscription]
+ * ```
+ *
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_data_flow_list_command_builder extends CommandBuilder<az_synapse_data_flow_list_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, workspaceName: string);
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_data_flow_list_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_synapse_data_flow_list_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_data_flow_list_command_builder;
+}
+/**
+ * Set an exist data flow.
+ *
+ * Syntax:
+ * ```
+ * az synapse data-flow set --file
+ *                          --name
+ *                          --workspace-name
+ *                          [--no-wait]
+ *                          [--subscription]
+ * ```
+ *
+ * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+ * @param {string} name The data flow name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_data_flow_set_command_builder extends CommandBuilder<az_synapse_data_flow_set_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, file: string, name: string, workspaceName: string);
+    /** Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string. */
+    file(value: string): az_synapse_data_flow_set_command_builder;
+    /** The data flow name. */
+    name(value: string): az_synapse_data_flow_set_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_data_flow_set_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_data_flow_set_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_data_flow_set_command_builder;
+}
+/**
+ * Get a data flow.
+ *
+ * Syntax:
+ * ```
+ * az synapse data-flow show --name
+ *                           --workspace-name
+ *                           [--query-examples]
+ *                           [--subscription]
+ * ```
+ *
+ * @param {string} name The data flow name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_data_flow_show_command_builder extends CommandBuilder<az_synapse_data_flow_show_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The data flow name. */
+    name(value: string): az_synapse_data_flow_show_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_data_flow_show_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_synapse_data_flow_show_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_data_flow_show_command_builder;
+}
+/**
+ * Create a dataset.
+ *
+ * Syntax:
+ * ```
+ * az synapse dataset create --file
+ *                           --name
+ *                           --workspace-name
+ *                           [--no-wait]
+ *                           [--subscription]
+ * ```
+ *
+ * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+ * @param {string} name The dataset name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_dataset_create_command_builder extends CommandBuilder<az_synapse_dataset_create_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, file: string, name: string, workspaceName: string);
+    /** Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string. */
+    file(value: string): az_synapse_dataset_create_command_builder;
+    /** The dataset name. */
+    name(value: string): az_synapse_dataset_create_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_dataset_create_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_dataset_create_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_dataset_create_command_builder;
+}
+/**
+ * Delete a dataset.
+ *
+ * Syntax:
+ * ```
+ * az synapse dataset delete --name
+ *                           --workspace-name
+ *                           [--no-wait]
+ *                           [--subscription]
+ *                           [--yes]
+ * ```
+ *
+ * @param {string} name The dataset name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_dataset_delete_command_builder extends CommandBuilder<az_synapse_dataset_delete_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The dataset name. */
+    name(value: string): az_synapse_dataset_delete_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_dataset_delete_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_dataset_delete_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_dataset_delete_command_builder;
+    /** Do not prompt for confirmation. */
+    yes(value: string): az_synapse_dataset_delete_command_builder;
+}
+/**
+ * List datasets.
+ *
+ * Syntax:
+ * ```
+ * az synapse dataset list --workspace-name
+ *                         [--query-examples]
+ *                         [--subscription]
+ * ```
+ *
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_dataset_list_command_builder extends CommandBuilder<az_synapse_dataset_list_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, workspaceName: string);
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_dataset_list_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_synapse_dataset_list_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_dataset_list_command_builder;
+}
+/**
+ * Set an exist dataset.
+ *
+ * Syntax:
+ * ```
+ * az synapse dataset set --file
+ *                        --name
+ *                        --workspace-name
+ *                        [--no-wait]
+ *                        [--subscription]
+ * ```
+ *
+ * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+ * @param {string} name The dataset name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_dataset_set_command_builder extends CommandBuilder<az_synapse_dataset_set_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, file: string, name: string, workspaceName: string);
+    /** Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string. */
+    file(value: string): az_synapse_dataset_set_command_builder;
+    /** The dataset name. */
+    name(value: string): az_synapse_dataset_set_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_dataset_set_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_dataset_set_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_dataset_set_command_builder;
+}
+/**
+ * Get a dataset.
+ *
+ * Syntax:
+ * ```
+ * az synapse dataset show --name
+ *                         --workspace-name
+ *                         [--query-examples]
+ *                         [--subscription]
+ * ```
+ *
+ * @param {string} name The dataset name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_dataset_show_command_builder extends CommandBuilder<az_synapse_dataset_show_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The dataset name. */
+    name(value: string): az_synapse_dataset_show_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_dataset_show_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_synapse_dataset_show_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_dataset_show_command_builder;
+}
+/**
+ * Create a linked service.
+ *
+ * Syntax:
+ * ```
+ * az synapse linked-service create --file
+ *                                  --name
+ *                                  --workspace-name
+ *                                  [--no-wait]
+ *                                  [--subscription]
+ * ```
+ *
+ * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+ * @param {string} name The linked service name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_linked_service_create_command_builder extends CommandBuilder<az_synapse_linked_service_create_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, file: string, name: string, workspaceName: string);
+    /** Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string. */
+    file(value: string): az_synapse_linked_service_create_command_builder;
+    /** The linked service name. */
+    name(value: string): az_synapse_linked_service_create_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_linked_service_create_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_linked_service_create_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_linked_service_create_command_builder;
+}
+/**
+ * Delete a linked service.
+ *
+ * Syntax:
+ * ```
+ * az synapse linked-service delete --name
+ *                                  --workspace-name
+ *                                  [--no-wait]
+ *                                  [--subscription]
+ *                                  [--yes]
+ * ```
+ *
+ * @param {string} name The linked service name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_linked_service_delete_command_builder extends CommandBuilder<az_synapse_linked_service_delete_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The linked service name. */
+    name(value: string): az_synapse_linked_service_delete_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_linked_service_delete_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_linked_service_delete_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_linked_service_delete_command_builder;
+    /** Do not prompt for confirmation. */
+    yes(value: string): az_synapse_linked_service_delete_command_builder;
+}
+/**
+ * List linked services.
+ *
+ * Syntax:
+ * ```
+ * az synapse linked-service list --workspace-name
+ *                                [--query-examples]
+ *                                [--subscription]
+ * ```
+ *
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_linked_service_list_command_builder extends CommandBuilder<az_synapse_linked_service_list_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, workspaceName: string);
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_linked_service_list_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_synapse_linked_service_list_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_linked_service_list_command_builder;
+}
+/**
+ * Set an exist linked service.
+ *
+ * Syntax:
+ * ```
+ * az synapse linked-service set --file
+ *                               --name
+ *                               --workspace-name
+ *                               [--no-wait]
+ *                               [--subscription]
+ * ```
+ *
+ * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+ * @param {string} name The linked service name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_linked_service_set_command_builder extends CommandBuilder<az_synapse_linked_service_set_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, file: string, name: string, workspaceName: string);
+    /** Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string. */
+    file(value: string): az_synapse_linked_service_set_command_builder;
+    /** The linked service name. */
+    name(value: string): az_synapse_linked_service_set_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_linked_service_set_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_linked_service_set_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_linked_service_set_command_builder;
+}
+/**
+ * Get a linked service.
+ *
+ * Syntax:
+ * ```
+ * az synapse linked-service show --name
+ *                                --workspace-name
+ *                                [--query-examples]
+ *                                [--subscription]
+ * ```
+ *
+ * @param {string} name The linked service name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_linked_service_show_command_builder extends CommandBuilder<az_synapse_linked_service_show_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The linked service name. */
+    name(value: string): az_synapse_linked_service_show_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_linked_service_show_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_synapse_linked_service_show_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_linked_service_show_command_builder;
+}
+/**
+ * Create a notebook.
+ *
+ * Syntax:
+ * ```
+ * az synapse notebook create --file
+ *                            --name
+ *                            --workspace-name
+ *                            [--executor-count]
+ *                            [--executor-size {Large, Medium, Small}]
+ *                            [--no-wait]
+ *                            [--spark-pool-name]
+ *                            [--subscription]
+ * ```
+ *
+ * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+ * @param {string} name The notebook name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_notebook_create_command_builder extends CommandBuilder<az_synapse_notebook_create_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, file: string, name: string, workspaceName: string);
+    /** Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string. */
+    file(value: string): az_synapse_notebook_create_command_builder;
+    /** The notebook name. */
+    name(value: string): az_synapse_notebook_create_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_notebook_create_command_builder;
+    /** Number of executors to be allocated in the specified Spark pool for the job. */
+    executorCount(value: string): az_synapse_notebook_create_command_builder;
+    /** Number of core and memory to be used for executors allocated in the specified Spark pool for the job. */
+    executorSize(value: 'Large' | 'Medium' | 'Small'): az_synapse_notebook_create_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_notebook_create_command_builder;
+    /** The name of the Spark pool. */
+    sparkPoolName(value: string): az_synapse_notebook_create_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_notebook_create_command_builder;
+}
+/**
+ * Delete a notebook.
+ *
+ * Syntax:
+ * ```
+ * az synapse notebook delete --name
+ *                            --workspace-name
+ *                            [--no-wait]
+ *                            [--subscription]
+ *                            [--yes]
+ * ```
+ *
+ * @param {string} name The notebook name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_notebook_delete_command_builder extends CommandBuilder<az_synapse_notebook_delete_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The notebook name. */
+    name(value: string): az_synapse_notebook_delete_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_notebook_delete_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_notebook_delete_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_notebook_delete_command_builder;
+    /** Do not prompt for confirmation. */
+    yes(value: string): az_synapse_notebook_delete_command_builder;
+}
+/**
+ * Export notebooks.
+ *
+ * Syntax:
+ * ```
+ * az synapse notebook export --output-folder
+ *                            --workspace-name
+ *                            [--name]
+ *                            [--subscription]
+ * ```
+ *
+ * @param {string} outputFolder The folder where the notebook should be placed.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_notebook_export_command_builder extends CommandBuilder<az_synapse_notebook_export_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, outputFolder: string, workspaceName: string);
+    /** The folder where the notebook should be placed. */
+    outputFolder(value: string): az_synapse_notebook_export_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_notebook_export_command_builder;
+    /** The notebook name. */
+    name(value: string): az_synapse_notebook_export_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_notebook_export_command_builder;
+}
+/**
+ * Import a notebook.
+ *
+ * Syntax:
+ * ```
+ * az synapse notebook import --file
+ *                            --name
+ *                            --workspace-name
+ *                            [--executor-count]
+ *                            [--executor-size {Large, Medium, Small}]
+ *                            [--no-wait]
+ *                            [--spark-pool-name]
+ *                            [--subscription]
+ * ```
+ *
+ * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+ * @param {string} name The notebook name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_notebook_import_command_builder extends CommandBuilder<az_synapse_notebook_import_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, file: string, name: string, workspaceName: string);
+    /** Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string. */
+    file(value: string): az_synapse_notebook_import_command_builder;
+    /** The notebook name. */
+    name(value: string): az_synapse_notebook_import_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_notebook_import_command_builder;
+    /** Number of executors to be allocated in the specified Spark pool for the job. */
+    executorCount(value: string): az_synapse_notebook_import_command_builder;
+    /** Number of core and memory to be used for executors allocated in the specified Spark pool for the job. */
+    executorSize(value: 'Large' | 'Medium' | 'Small'): az_synapse_notebook_import_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_notebook_import_command_builder;
+    /** The name of the Spark pool. */
+    sparkPoolName(value: string): az_synapse_notebook_import_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_notebook_import_command_builder;
+}
+/**
+ * List notebooks.
+ *
+ * Syntax:
+ * ```
+ * az synapse notebook list --workspace-name
+ *                          [--query-examples]
+ *                          [--subscription]
+ * ```
+ *
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_notebook_list_command_builder extends CommandBuilder<az_synapse_notebook_list_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, workspaceName: string);
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_notebook_list_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_synapse_notebook_list_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_notebook_list_command_builder;
+}
+/**
+ * Set an exist notebook.
+ *
+ * Syntax:
+ * ```
+ * az synapse notebook set --file
+ *                         --name
+ *                         --workspace-name
+ *                         [--executor-count]
+ *                         [--executor-size {Large, Medium, Small}]
+ *                         [--no-wait]
+ *                         [--spark-pool-name]
+ *                         [--subscription]
+ * ```
+ *
+ * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+ * @param {string} name The notebook name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_notebook_set_command_builder extends CommandBuilder<az_synapse_notebook_set_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, file: string, name: string, workspaceName: string);
+    /** Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string. */
+    file(value: string): az_synapse_notebook_set_command_builder;
+    /** The notebook name. */
+    name(value: string): az_synapse_notebook_set_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_notebook_set_command_builder;
+    /** Number of executors to be allocated in the specified Spark pool for the job. */
+    executorCount(value: string): az_synapse_notebook_set_command_builder;
+    /** Number of core and memory to be used for executors allocated in the specified Spark pool for the job. */
+    executorSize(value: 'Large' | 'Medium' | 'Small'): az_synapse_notebook_set_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_notebook_set_command_builder;
+    /** The name of the Spark pool. */
+    sparkPoolName(value: string): az_synapse_notebook_set_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_notebook_set_command_builder;
+}
+/**
+ * Get a notebook.
+ *
+ * Syntax:
+ * ```
+ * az synapse notebook show --name
+ *                          --workspace-name
+ *                          [--query-examples]
+ *                          [--subscription]
+ * ```
+ *
+ * @param {string} name The notebook name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_notebook_show_command_builder extends CommandBuilder<az_synapse_notebook_show_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The notebook name. */
+    name(value: string): az_synapse_notebook_show_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_notebook_show_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_synapse_notebook_show_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_notebook_show_command_builder;
+}
+/**
+ * Cancel a pipeline run by its run ID.
+ *
+ * Syntax:
+ * ```
+ * az synapse pipeline-run cancel --run-id
+ *                                --workspace-name
+ *                                [--is-recursive {false, true}]
+ *                                [--subscription]
+ *                                [--yes]
+ * ```
+ *
+ * @param {string} runId The pipeline run identifier.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_pipeline_run_cancel_command_builder extends CommandBuilder<az_synapse_pipeline_run_cancel_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, runId: string, workspaceName: string);
+    /** The pipeline run identifier. */
+    runId(value: string): az_synapse_pipeline_run_cancel_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_pipeline_run_cancel_command_builder;
+    /** If true, cancel all the Child pipelines that are triggered by the current pipeline. */
+    isRecursive(value: boolean): az_synapse_pipeline_run_cancel_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_pipeline_run_cancel_command_builder;
+    /** Do not prompt for confirmation. */
+    yes(value: string): az_synapse_pipeline_run_cancel_command_builder;
+}
+/**
+ * Query pipeline runs in the workspace based on input filter conditions.
+ *
+ * Syntax:
+ * ```
+ * az synapse pipeline-run query-by-workspace --last-updated-after
+ *                                            --last-updated-before
+ *                                            --workspace-name
+ *                                            [--continuation-token]
+ *                                            [--filters]
+ *                                            [--order-by]
+ *                                            [--subscription]
+ * ```
+ *
+ * @param {string} lastUpdatedAfter The time at or after which the run event was updated in 'ISO 8601' format.
+ * @param {string} lastUpdatedBefore The time at or before which the run event was updated in 'ISO 8601' format.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_pipeline_run_query_by_workspace_command_builder extends CommandBuilder<az_synapse_pipeline_run_query_by_workspace_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, lastUpdatedAfter: string, lastUpdatedBefore: string, workspaceName: string);
+    /** The time at or after which the run event was updated in 'ISO 8601' format. */
+    lastUpdatedAfter(value: string): az_synapse_pipeline_run_query_by_workspace_command_builder;
+    /** The time at or before which the run event was updated in 'ISO 8601' format. */
+    lastUpdatedBefore(value: string): az_synapse_pipeline_run_query_by_workspace_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_pipeline_run_query_by_workspace_command_builder;
+    /** The continuation token for getting the next page of results. Null for first page. */
+    continuationToken(value: string): az_synapse_pipeline_run_query_by_workspace_command_builder;
+    /** List of filters. */
+    filters(value: string): az_synapse_pipeline_run_query_by_workspace_command_builder;
+    /** List of OrderBy option. */
+    orderBy(value: string): az_synapse_pipeline_run_query_by_workspace_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_pipeline_run_query_by_workspace_command_builder;
+}
+/**
+ * Get a pipeline run by its run ID.
+ *
+ * Syntax:
+ * ```
+ * az synapse pipeline-run show --run-id
+ *                              --workspace-name
+ *                              [--query-examples]
+ *                              [--subscription]
+ * ```
+ *
+ * @param {string} runId The pipeline run identifier.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_pipeline_run_show_command_builder extends CommandBuilder<az_synapse_pipeline_run_show_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, runId: string, workspaceName: string);
+    /** The pipeline run identifier. */
+    runId(value: string): az_synapse_pipeline_run_show_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_pipeline_run_show_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_synapse_pipeline_run_show_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_pipeline_run_show_command_builder;
+}
+/**
+ * Create a pipeline.
+ *
+ * Syntax:
+ * ```
+ * az synapse pipeline create --file
+ *                            --name
+ *                            --workspace-name
+ *                            [--no-wait]
+ *                            [--subscription]
+ * ```
+ *
+ * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+ * @param {string} name The pipeline name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_pipeline_create_command_builder extends CommandBuilder<az_synapse_pipeline_create_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, file: string, name: string, workspaceName: string);
+    /** Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string. */
+    file(value: string): az_synapse_pipeline_create_command_builder;
+    /** The pipeline name. */
+    name(value: string): az_synapse_pipeline_create_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_pipeline_create_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_pipeline_create_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_pipeline_create_command_builder;
+}
+/**
+ * Creates a run of a pipeline.
+ *
+ * Syntax:
+ * ```
+ * az synapse pipeline create-run --name
+ *                                --workspace-name
+ *                                [--is-recovery {false, true}]
+ *                                [--parameters]
+ *                                [--reference-pipeline-run-id]
+ *                                [--start-activity-name]
+ *                                [--subscription]
+ * ```
+ *
+ * @param {string} name The pipeline name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_pipeline_create_run_command_builder extends CommandBuilder<az_synapse_pipeline_create_run_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The pipeline name. */
+    name(value: string): az_synapse_pipeline_create_run_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_pipeline_create_run_command_builder;
+    /** Recovery mode flag. If recovery mode is set to true, the specified referenced pipeline run and the new run will be grouped under the same groupId. */
+    isRecovery(value: boolean): az_synapse_pipeline_create_run_command_builder;
+    /** Parameters for pipeline run. Can be supplied from a JSON file using the `@{path}` syntax or a JSON string. */
+    parameters(value: string): az_synapse_pipeline_create_run_command_builder;
+    /** The pipeline run ID for rerun. If run ID is specified, the parameters of the specified run will be used to create a new run. */
+    referencePipelineRunId(value: string): az_synapse_pipeline_create_run_command_builder;
+    /** In recovery mode, the rerun will start from this activity. If not specified, all activities will run. */
+    startActivityName(value: string): az_synapse_pipeline_create_run_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_pipeline_create_run_command_builder;
+}
+/**
+ * Delete a pipeline.
+ *
+ * Syntax:
+ * ```
+ * az synapse pipeline delete --name
+ *                            --workspace-name
+ *                            [--no-wait]
+ *                            [--subscription]
+ *                            [--yes]
+ * ```
+ *
+ * @param {string} name The pipeline name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_pipeline_delete_command_builder extends CommandBuilder<az_synapse_pipeline_delete_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The pipeline name. */
+    name(value: string): az_synapse_pipeline_delete_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_pipeline_delete_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_pipeline_delete_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_pipeline_delete_command_builder;
+    /** Do not prompt for confirmation. */
+    yes(value: string): az_synapse_pipeline_delete_command_builder;
+}
+/**
+ * List pipelines.
+ *
+ * Syntax:
+ * ```
+ * az synapse pipeline list --workspace-name
+ *                          [--query-examples]
+ *                          [--subscription]
+ * ```
+ *
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_pipeline_list_command_builder extends CommandBuilder<az_synapse_pipeline_list_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, workspaceName: string);
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_pipeline_list_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_synapse_pipeline_list_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_pipeline_list_command_builder;
+}
+/**
+ * Set an exist pipeline.
+ *
+ * Syntax:
+ * ```
+ * az synapse pipeline set --file
+ *                         --name
+ *                         --workspace-name
+ *                         [--no-wait]
+ *                         [--subscription]
+ * ```
+ *
+ * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+ * @param {string} name The pipeline name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_pipeline_set_command_builder extends CommandBuilder<az_synapse_pipeline_set_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, file: string, name: string, workspaceName: string);
+    /** Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string. */
+    file(value: string): az_synapse_pipeline_set_command_builder;
+    /** The pipeline name. */
+    name(value: string): az_synapse_pipeline_set_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_pipeline_set_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_pipeline_set_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_pipeline_set_command_builder;
+}
+/**
+ * Get a pipeline.
+ *
+ * Syntax:
+ * ```
+ * az synapse pipeline show --name
+ *                          --workspace-name
+ *                          [--query-examples]
+ *                          [--subscription]
+ * ```
+ *
+ * @param {string} name The pipeline name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_pipeline_show_command_builder extends CommandBuilder<az_synapse_pipeline_show_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The pipeline name. */
+    name(value: string): az_synapse_pipeline_show_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_pipeline_show_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_synapse_pipeline_show_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_pipeline_show_command_builder;
 }
 /**
  * Create a role assignment.
@@ -1967,6 +3653,321 @@ declare class az_synapse_sql_pool_wait_command_builder extends CommandBuilder<az
     updated(value: string): az_synapse_sql_pool_wait_command_builder;
     /** The workspace name. */
     workspaceName(value: string): az_synapse_sql_pool_wait_command_builder;
+}
+/**
+ * Query trigger runs in the workspace based on input filter conditions.
+ *
+ * Syntax:
+ * ```
+ * az synapse trigger-run query-by-workspace --last-updated-after
+ *                                           --last-updated-before
+ *                                           --workspace-name
+ *                                           [--continuation-token]
+ *                                           [--filters]
+ *                                           [--order-by]
+ *                                           [--subscription]
+ * ```
+ *
+ * @param {string} lastUpdatedAfter The time at or after which the run event was updated in 'ISO 8601' format.
+ * @param {string} lastUpdatedBefore The time at or before which the run event was updated in 'ISO 8601' format.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_trigger_run_query_by_workspace_command_builder extends CommandBuilder<az_synapse_trigger_run_query_by_workspace_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, lastUpdatedAfter: string, lastUpdatedBefore: string, workspaceName: string);
+    /** The time at or after which the run event was updated in 'ISO 8601' format. */
+    lastUpdatedAfter(value: string): az_synapse_trigger_run_query_by_workspace_command_builder;
+    /** The time at or before which the run event was updated in 'ISO 8601' format. */
+    lastUpdatedBefore(value: string): az_synapse_trigger_run_query_by_workspace_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_trigger_run_query_by_workspace_command_builder;
+    /** The continuation token for getting the next page of results. Null for first page. */
+    continuationToken(value: string): az_synapse_trigger_run_query_by_workspace_command_builder;
+    /** List of filters. */
+    filters(value: string): az_synapse_trigger_run_query_by_workspace_command_builder;
+    /** List of OrderBy option. */
+    orderBy(value: string): az_synapse_trigger_run_query_by_workspace_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_trigger_run_query_by_workspace_command_builder;
+}
+/**
+ * Rerun single trigger instance by runId.
+ *
+ * Syntax:
+ * ```
+ * az synapse trigger-run rerun --name
+ *                              --run-id
+ *                              --workspace-name
+ *                              [--subscription]
+ * ```
+ *
+ * @param {string} name The trigger name.
+ * @param {string} runId The trigger run identifier.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_trigger_run_rerun_command_builder extends CommandBuilder<az_synapse_trigger_run_rerun_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, runId: string, workspaceName: string);
+    /** The trigger name. */
+    name(value: string): az_synapse_trigger_run_rerun_command_builder;
+    /** The trigger run identifier. */
+    runId(value: string): az_synapse_trigger_run_rerun_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_trigger_run_rerun_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_trigger_run_rerun_command_builder;
+}
+/**
+ * Create a trigger.
+ *
+ * Syntax:
+ * ```
+ * az synapse trigger create --file
+ *                           --name
+ *                           --workspace-name
+ *                           [--no-wait]
+ *                           [--subscription]
+ * ```
+ *
+ * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+ * @param {string} name The trigger name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_trigger_create_command_builder extends CommandBuilder<az_synapse_trigger_create_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, file: string, name: string, workspaceName: string);
+    /** Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string. */
+    file(value: string): az_synapse_trigger_create_command_builder;
+    /** The trigger name. */
+    name(value: string): az_synapse_trigger_create_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_trigger_create_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_trigger_create_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_trigger_create_command_builder;
+}
+/**
+ * Delete a trigger.
+ *
+ * Syntax:
+ * ```
+ * az synapse trigger delete --name
+ *                           --workspace-name
+ *                           [--no-wait]
+ *                           [--subscription]
+ *                           [--yes]
+ * ```
+ *
+ * @param {string} name The trigger name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_trigger_delete_command_builder extends CommandBuilder<az_synapse_trigger_delete_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The trigger name. */
+    name(value: string): az_synapse_trigger_delete_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_trigger_delete_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_trigger_delete_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_trigger_delete_command_builder;
+    /** Do not prompt for confirmation. */
+    yes(value: string): az_synapse_trigger_delete_command_builder;
+}
+/**
+ * Get a trigger's event subscription status.
+ *
+ * Syntax:
+ * ```
+ * az synapse trigger get-event-subscription-status --name
+ *                                                  --workspace-name
+ *                                                  [--subscription]
+ * ```
+ *
+ * @param {string} name The trigger name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_trigger_get_event_subscription_status_command_builder extends CommandBuilder<az_synapse_trigger_get_event_subscription_status_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The trigger name. */
+    name(value: string): az_synapse_trigger_get_event_subscription_status_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_trigger_get_event_subscription_status_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_trigger_get_event_subscription_status_command_builder;
+}
+/**
+ * List triggers.
+ *
+ * Syntax:
+ * ```
+ * az synapse trigger list --workspace-name
+ *                         [--query-examples]
+ *                         [--subscription]
+ * ```
+ *
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_trigger_list_command_builder extends CommandBuilder<az_synapse_trigger_list_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, workspaceName: string);
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_trigger_list_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_synapse_trigger_list_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_trigger_list_command_builder;
+}
+/**
+ * Set an exist trigger.
+ *
+ * Syntax:
+ * ```
+ * az synapse trigger set --file
+ *                        --name
+ *                        --workspace-name
+ *                        [--no-wait]
+ *                        [--subscription]
+ * ```
+ *
+ * @param {string} file Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string.
+ * @param {string} name The trigger name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_trigger_set_command_builder extends CommandBuilder<az_synapse_trigger_set_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, file: string, name: string, workspaceName: string);
+    /** Properties may be supplied from a JSON file using the `@{path}` syntax or a JSON string. */
+    file(value: string): az_synapse_trigger_set_command_builder;
+    /** The trigger name. */
+    name(value: string): az_synapse_trigger_set_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_trigger_set_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_trigger_set_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_trigger_set_command_builder;
+}
+/**
+ * Get a trigger.
+ *
+ * Syntax:
+ * ```
+ * az synapse trigger show --name
+ *                         --workspace-name
+ *                         [--query-examples]
+ *                         [--subscription]
+ * ```
+ *
+ * @param {string} name The trigger name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_trigger_show_command_builder extends CommandBuilder<az_synapse_trigger_show_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The trigger name. */
+    name(value: string): az_synapse_trigger_show_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_trigger_show_command_builder;
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_synapse_trigger_show_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_trigger_show_command_builder;
+}
+/**
+ * Starts a trigger.
+ *
+ * Syntax:
+ * ```
+ * az synapse trigger start --name
+ *                          --workspace-name
+ *                          [--no-wait]
+ *                          [--subscription]
+ * ```
+ *
+ * @param {string} name The trigger name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_trigger_start_command_builder extends CommandBuilder<az_synapse_trigger_start_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The trigger name. */
+    name(value: string): az_synapse_trigger_start_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_trigger_start_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_trigger_start_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_trigger_start_command_builder;
+}
+/**
+ * Stops a trigger.
+ *
+ * Syntax:
+ * ```
+ * az synapse trigger stop --name
+ *                         --workspace-name
+ *                         [--no-wait]
+ *                         [--subscription]
+ * ```
+ *
+ * @param {string} name The trigger name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_trigger_stop_command_builder extends CommandBuilder<az_synapse_trigger_stop_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The trigger name. */
+    name(value: string): az_synapse_trigger_stop_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_trigger_stop_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_trigger_stop_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_trigger_stop_command_builder;
+}
+/**
+ * Subscribe event trigger to events.
+ *
+ * Syntax:
+ * ```
+ * az synapse trigger subscribe-to-event --name
+ *                                       --workspace-name
+ *                                       [--no-wait]
+ *                                       [--subscription]
+ * ```
+ *
+ * @param {string} name The trigger name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_trigger_subscribe_to_event_command_builder extends CommandBuilder<az_synapse_trigger_subscribe_to_event_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The trigger name. */
+    name(value: string): az_synapse_trigger_subscribe_to_event_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_trigger_subscribe_to_event_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_trigger_subscribe_to_event_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_trigger_subscribe_to_event_command_builder;
+}
+/**
+ * Unsubscribe event trigger from events.
+ *
+ * Syntax:
+ * ```
+ * az synapse trigger unsubscribe-from-event --name
+ *                                           --workspace-name
+ *                                           [--no-wait]
+ *                                           [--subscription]
+ * ```
+ *
+ * @param {string} name The trigger name.
+ * @param {string} workspaceName The workspace name.
+ */
+declare class az_synapse_trigger_unsubscribe_from_event_command_builder extends CommandBuilder<az_synapse_trigger_unsubscribe_from_event_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, workspaceName: string);
+    /** The trigger name. */
+    name(value: string): az_synapse_trigger_unsubscribe_from_event_command_builder;
+    /** The workspace name. */
+    workspaceName(value: string): az_synapse_trigger_unsubscribe_from_event_command_builder;
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_synapse_trigger_unsubscribe_from_event_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_synapse_trigger_unsubscribe_from_event_command_builder;
 }
 /**
  * Create a firewall rule.

@@ -174,6 +174,7 @@ export declare class az_webapp_config_access_restriction {
      *                                         [--subnet]
      *                                         [--subscription]
      *                                         [--vnet-name]
+     *                                         [--vnet-resource-group]
      * ```
      *
      * @param {string} priority Priority of the access restriction rule.
@@ -1832,8 +1833,10 @@ export declare class az_webapp {
      *              [--location]
      *              [--logs]
      *              [--name]
+     *              [--os-type {Linux, Windows}]
      *              [--plan]
      *              [--resource-group]
+     *              [--runtime]
      *              [--sku {B1, B2, B3, D1, F1, FREE, I1, I2, I3, P1V2, P1V3, P2V2, P2V3, P3V2, P3V3, PC2, PC3, PC4, S1, S2, S3, SHARED}]
      *              [--subscription]
      * ```
@@ -2001,6 +2004,7 @@ declare class az_webapp_auth_update_command_builder extends CommandBuilder<az_we
  *                                         [--subnet]
  *                                         [--subscription]
  *                                         [--vnet-name]
+ *                                         [--vnet-resource-group]
  * ```
  *
  * @param {string} priority Priority of the access restriction rule.
@@ -2035,6 +2039,8 @@ declare class az_webapp_config_access_restriction_add_command_builder extends Co
     subscription(value: string): az_webapp_config_access_restriction_add_command_builder;
     /** VNet name. */
     vnetName(value: string): az_webapp_config_access_restriction_add_command_builder;
+    /** Resource group of virtual network (default is web app resource group). */
+    vnetResourceGroup(value: string): az_webapp_config_access_restriction_add_command_builder;
 }
 /**
  * Removes an Access Restriction from the webapp.
@@ -4783,7 +4789,7 @@ declare class az_webapp_create_command_builder extends CommandBuilder<az_webapp_
     multicontainerConfigType(value: 'COMPOSE' | 'KUBE'): az_webapp_create_command_builder;
     /** Role name or id the system assigned identity will have. */
     role(value: string): az_webapp_create_command_builder;
-    /** Canonicalized web runtime in the format of Framework|Version, e.g. "PHP|7.2". Use `az webapp list-runtimes` for available list. */
+    /** Canonicalized web runtime in the format of Framework|Version, e.g. "PHP|7.2". Allowed delimiters: "|", " ", ":". Use `az webapp list-runtimes` for available list. */
     runtime(value: string): az_webapp_create_command_builder;
     /** Scope that the system assigned identity can access. */
     scope(value: string): az_webapp_create_command_builder;
@@ -5071,8 +5077,10 @@ declare class az_webapp_stop_command_builder extends CommandBuilder<az_webapp_st
  *              [--location]
  *              [--logs]
  *              [--name]
+ *              [--os-type {Linux, Windows}]
  *              [--plan]
  *              [--resource-group]
+ *              [--runtime]
  *              [--sku {B1, B2, B3, D1, F1, FREE, I1, I2, I3, P1V2, P1V3, P2V2, P2V3, P3V2, P3V3, PC2, PC3, PC4, S1, S2, S3, SHARED}]
  *              [--subscription]
  * ```
@@ -5093,10 +5101,14 @@ declare class az_webapp_up_command_builder extends CommandBuilder<az_webapp_up_c
     logs(value: string): az_webapp_up_command_builder;
     /** Name of the web app. You can configure the default using `az configure --defaults web=<name>`. */
     name(value: string): az_webapp_up_command_builder;
+    /** Set the OS type for the app to be created. */
+    osType(value: 'Linux' | 'Windows'): az_webapp_up_command_builder;
     /** Name of the appserviceplan associated with the webapp. */
     plan(value: string): az_webapp_up_command_builder;
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
     resourceGroup(value: string): az_webapp_up_command_builder;
+    /** Canonicalized web runtime in the format of Framework|Version, e.g. "PHP|7.2". Allowed delimiters: "|", " ", ":". Use `az webapp list-runtimes` for available list. */
+    runtime(value: string): az_webapp_up_command_builder;
     /** The pricing tiers, e.g., F1(Free), D1(Shared), B1(Basic Small), B2(Basic Medium), B3(Basic Large), S1(Standard Small), P1V2(Premium V2 Small), P1V3(Premium V3 Small), P2V3(Premium V3 Medium), P3V3(Premium V3 Large), PC2 (Premium Container Small), PC3 (Premium Container Medium), PC4 (Premium Container Large), I1 (Isolated Small), I2 (Isolated Medium), I3 (Isolated Large). */
     sku(value: 'B1' | 'B2' | 'B3' | 'D1' | 'F1' | 'FREE' | 'I1' | 'I2' | 'I3' | 'P1V2' | 'P1V3' | 'P2V2' | 'P2V3' | 'P3V2' | 'P3V3' | 'PC2' | 'PC3' | 'PC4' | 'S1' | 'S2' | 'S3' | 'SHARED'): az_webapp_up_command_builder;
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */

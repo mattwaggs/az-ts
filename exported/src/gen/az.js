@@ -57,7 +57,6 @@ var _azHdinsight = require("./src/az_hdinsight");
 var _azIdentity = require("./src/az_identity");
 var _azImage = require("./src/az_image");
 var _azIot = require("./src/az_iot");
-var _azIotcentral = require("./src/az_iotcentral");
 var _azKeyvault = require("./src/az_keyvault");
 var _azKusto = require("./src/az_kusto");
 var _azLab = require("./src/az_lab");
@@ -96,6 +95,7 @@ var _azStaticwebapp = require("./src/az_staticwebapp");
 var _azStorage = require("./src/az_storage");
 var _azSynapse = require("./src/az_synapse");
 var _azTag = require("./src/az_tag");
+var _azTs = require("./src/az_ts");
 var _azVm = require("./src/az_vm");
 var _azVmss = require("./src/az_vmss");
 var _azWebapp = require("./src/az_webapp");
@@ -488,6 +488,7 @@ var azAppservice = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     azAppservice.ase = _azAppservice.az_appservice_ase;
+    azAppservice.domain = _azAppservice.az_appservice_domain;
     azAppservice.hybrid = azAppserviceHybrid;
     azAppservice.plan = _azAppservice.az_appservice_plan;
     azAppservice.vnet = azAppserviceVnet;
@@ -772,15 +773,45 @@ var azBillingEnrollment = /** @class */ (function () {
     azBillingEnrollment.account = _azBilling.az_billing_enrollment_account;
     return azBillingEnrollment;
 }());
+/** Get billing invoices for a subscription. */
+var azBillingInvoice = /** @class */ (function (_super) {
+    __extends(azBillingInvoice, _super);
+    function azBillingInvoice() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    azBillingInvoice.section = _azBilling.az_billing_invoice_section;
+    return azBillingInvoice;
+}(_azBilling.az_billing_invoice));
+var azBillingRole = /** @class */ (function () {
+    function azBillingRole() {
+    }
+    azBillingRole.assignment = _azBilling.az_billing_role_assignment;
+    azBillingRole.definition = _azBilling.az_billing_role_definition;
+    return azBillingRole;
+}());
 /** Manage Azure Billing. */
 var azBilling = /** @class */ (function (_super) {
     __extends(azBilling, _super);
     function azBilling() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    azBilling.account = _azBilling.az_billing_account;
+    azBilling.agreement = _azBilling.az_billing_agreement;
+    azBilling.balance = _azBilling.az_billing_balance;
+    azBilling.customer = _azBilling.az_billing_customer;
     azBilling.enrollment = azBillingEnrollment;
-    azBilling.invoice = _azBilling.az_billing_invoice;
+    azBilling.instruction = _azBilling.az_billing_instruction;
+    /** Get billing invoices for a subscription. */
+    azBilling.invoice = azBillingInvoice;
     azBilling.period = _azBilling.az_billing_period;
+    azBilling.permission = _azBilling.az_billing_permission;
+    azBilling.policy = _azBilling.az_billing_policy;
+    azBilling.product = _azBilling.az_billing_product;
+    azBilling.profile = _azBilling.az_billing_profile;
+    azBilling.property = _azBilling.az_billing_property;
+    azBilling.role = azBillingRole;
+    azBilling.subscription = _azBilling.az_billing_subscription;
+    azBilling.transaction = _azBilling.az_billing_transaction;
     return azBilling;
 }(_azBilling.az_billing));
 /** Manage area paths. */
@@ -2039,15 +2070,6 @@ var azIot = /** @class */ (function (_super) {
     azIot.hub = azIotHub;
     return azIot;
 }(_azIot.az_iot));
-/** Manage IoT Central assets. */
-var azIotcentral = /** @class */ (function (_super) {
-    __extends(azIotcentral, _super);
-    function azIotcentral() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    azIotcentral.app = _azIotcentral.az_iotcentral_app;
-    return azIotcentral;
-}(_azIotcentral.az_iotcentral));
 /** Manage certificate issuer information. */
 var azKeyvaultCertificateIssuer = /** @class */ (function (_super) {
     __extends(azKeyvaultCertificateIssuer, _super);
@@ -2584,6 +2606,15 @@ var azMysql = /** @class */ (function (_super) {
     azMysql.server = azMysqlServer;
     return azMysql;
 }(_azMysql.az_mysql));
+/** Manage Azure NetApp Files (ANF) Account Backup Resources. */
+var azNetappfilesAccountBackup = /** @class */ (function (_super) {
+    __extends(azNetappfilesAccountBackup, _super);
+    function azNetappfilesAccountBackup() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    azNetappfilesAccountBackup.policy = _azNetappfiles.az_netappfiles_account_backup_policy;
+    return azNetappfilesAccountBackup;
+}(_azNetappfiles.az_netappfiles_account_backup));
 /** Manage Azure NetApp Files (ANF) Account Resources. */
 var azNetappfilesAccount = /** @class */ (function (_super) {
     __extends(azNetappfilesAccount, _super);
@@ -2591,8 +2622,19 @@ var azNetappfilesAccount = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     azNetappfilesAccount.ad = _azNetappfiles.az_netappfiles_account_ad;
+    /** Manage Azure NetApp Files (ANF) Account Backup Resources. */
+    azNetappfilesAccount.backup = azNetappfilesAccountBackup;
     return azNetappfilesAccount;
 }(_azNetappfiles.az_netappfiles_account));
+/** Manage Azure NetApp Files (ANF) Snapshot Resources. */
+var azNetappfilesSnapshot = /** @class */ (function (_super) {
+    __extends(azNetappfilesSnapshot, _super);
+    function azNetappfilesSnapshot() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    azNetappfilesSnapshot.policy = _azNetappfiles.az_netappfiles_snapshot_policy;
+    return azNetappfilesSnapshot;
+}(_azNetappfiles.az_netappfiles_snapshot));
 var azNetappfilesVolumeExport = /** @class */ (function () {
     function azNetappfilesVolumeExport() {
     }
@@ -2605,6 +2647,7 @@ var azNetappfilesVolume = /** @class */ (function (_super) {
     function azNetappfilesVolume() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    azNetappfilesVolume.backup = _azNetappfiles.az_netappfiles_volume_backup;
     azNetappfilesVolume["export"] = azNetappfilesVolumeExport;
     azNetappfilesVolume.replication = _azNetappfiles.az_netappfiles_volume_replication;
     return azNetappfilesVolume;
@@ -2618,7 +2661,9 @@ var azNetappfiles = /** @class */ (function (_super) {
     /** Manage Azure NetApp Files (ANF) Account Resources. */
     azNetappfiles.account = azNetappfilesAccount;
     azNetappfiles.pool = _azNetappfiles.az_netappfiles_pool;
-    azNetappfiles.snapshot = _azNetappfiles.az_netappfiles_snapshot;
+    /** Manage Azure NetApp Files (ANF) Snapshot Resources. */
+    azNetappfiles.snapshot = azNetappfilesSnapshot;
+    azNetappfiles.vault = _azNetappfiles.az_netappfiles_vault;
     /** Manage Azure NetApp Files (ANF) Volume Resources. */
     azNetappfiles.volume = azNetappfilesVolume;
     return azNetappfiles;
@@ -3346,7 +3391,7 @@ var azNetworkVpn = /** @class */ (function () {
     azNetworkVpn.connection = azNetworkVpnConnection;
     return azNetworkVpn;
 }());
-/** Manage the virtual router. This feature supports both VirtualHub and VirtualRouter. Considering VirtualRouter is depcated, we recommand to create VirtualRouter instead. */
+/** Manage the virtual router. This feature supports both VirtualHub and VirtualRouter. Considering VirtualRouter is deprecated, we recommend to create VirtualRouter with --hosted-subnet instead. */
 var azNetworkVrouter = /** @class */ (function (_super) {
     __extends(azNetworkVrouter, _super);
     function azNetworkVrouter() {
@@ -3437,13 +3482,13 @@ var azNetwork = /** @class */ (function (_super) {
     /** Manage Azure Virtual Networks. */
     azNetwork.vnet = azNetworkVnet;
     azNetwork.vpn = azNetworkVpn;
-    /** Manage the virtual router. This feature supports both VirtualHub and VirtualRouter. Considering VirtualRouter is depcated, we recommand to create VirtualRouter instead. */
+    /** Manage the virtual router. This feature supports both VirtualHub and VirtualRouter. Considering VirtualRouter is deprecated, we recommend to create VirtualRouter with --hosted-subnet instead. */
     azNetwork.vrouter = azNetworkVrouter;
     /** Manage the Azure Network Watcher. */
     azNetwork.watcher = azNetworkWatcher;
     return azNetwork;
 }(_azNetwork.az_network));
-/** Manage Azure Red Hat OpenShift Services. */
+/** Manage Azure Red Hat OpenShift 3.11 clusters. */
 var azOpenshift = /** @class */ (function (_super) {
     __extends(azOpenshift, _super);
     function azOpenshift() {
@@ -4465,10 +4510,17 @@ var azSqlInstance = /** @class */ (function () {
     azSqlInstance.pool = _azSql.az_sql_instance_pool;
     return azSqlInstance;
 }());
+var azSqlMiAdOnly = /** @class */ (function () {
+    function azSqlMiAdOnly() {
+    }
+    azSqlMiAdOnly.auth = _azSql.az_sql_mi_ad_only_auth;
+    return azSqlMiAdOnly;
+}());
 var azSqlMiAd = /** @class */ (function () {
     function azSqlMiAd() {
     }
     azSqlMiAd.admin = _azSql.az_sql_mi_ad_admin;
+    azSqlMiAd.only = azSqlMiAdOnly;
     return azSqlMiAd;
 }());
 var azSqlMiTde = /** @class */ (function () {
@@ -4489,6 +4541,12 @@ var azSqlMi = /** @class */ (function (_super) {
     azSqlMi.tde = azSqlMiTde;
     return azSqlMi;
 }(_azSql.az_sql_mi));
+var azSqlMidbLog = /** @class */ (function () {
+    function azSqlMidbLog() {
+    }
+    azSqlMidbLog.replay = _azSql.az_sql_midb_log_replay;
+    return azSqlMidbLog;
+}());
 var azSqlMidbLtr = /** @class */ (function () {
     function azSqlMidbLtr() {
     }
@@ -4520,14 +4578,22 @@ var azSqlMidb = /** @class */ (function (_super) {
     function azSqlMidb() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    azSqlMidb.log = azSqlMidbLog;
     azSqlMidb.ltr = azSqlMidbLtr;
     azSqlMidb.short = azSqlMidbShort;
     return azSqlMidb;
 }(_azSql.az_sql_midb));
+var azSqlServerAdOnly = /** @class */ (function () {
+    function azSqlServerAdOnly() {
+    }
+    azSqlServerAdOnly.auth = _azSql.az_sql_server_ad_only_auth;
+    return azSqlServerAdOnly;
+}());
 var azSqlServerAd = /** @class */ (function () {
     function azSqlServerAd() {
     }
     azSqlServerAd.admin = _azSql.az_sql_server_ad_admin;
+    azSqlServerAd.only = azSqlServerAdOnly;
     return azSqlServerAd;
 }());
 var azSqlServerAudit = /** @class */ (function () {
@@ -4805,6 +4871,7 @@ var azStorageContainer = /** @class */ (function (_super) {
     azStorageContainer.legal = azStorageContainerLegal;
     azStorageContainer.metadata = _azStorage.az_storage_container_metadata;
     azStorageContainer.policy = _azStorage.az_storage_container_policy;
+    azStorageContainer.rm = _azStorage.az_storage_container_rm;
     return azStorageContainer;
 }(_azStorage.az_storage_container));
 /** Manage file storage directories. */
@@ -4858,7 +4925,7 @@ var azStorageFs = /** @class */ (function (_super) {
     azStorageFs.metadata = _azStorage.az_storage_fs_metadata;
     return azStorageFs;
 }(_azStorage.az_storage_fs));
-/** Manage shared access policies of a storage table. */
+/** Manage storage queues. */
 var azStorageQueue = /** @class */ (function (_super) {
     __extends(azStorageQueue, _super);
     function azStorageQueue() {
@@ -4911,7 +4978,7 @@ var azStorage = /** @class */ (function (_super) {
     azStorage.logging = _azStorage.az_storage_logging;
     azStorage.message = _azStorage.az_storage_message;
     azStorage.metrics = _azStorage.az_storage_metrics;
-    /** Manage shared access policies of a storage table. */
+    /** Manage storage queues. */
     azStorage.queue = azStorageQueue;
     /** Manage file shares. */
     azStorage.share = azStorageShare;
@@ -4919,6 +4986,33 @@ var azStorage = /** @class */ (function (_super) {
     azStorage.table = azStorageTable;
     return azStorage;
 }(_azStorage.az_storage));
+var azSynapseActivity = /** @class */ (function () {
+    function azSynapseActivity() {
+    }
+    azSynapseActivity.run = _azSynapse.az_synapse_activity_run;
+    return azSynapseActivity;
+}());
+var azSynapseData = /** @class */ (function () {
+    function azSynapseData() {
+    }
+    azSynapseData.flow = _azSynapse.az_synapse_data_flow;
+    return azSynapseData;
+}());
+var azSynapseLinked = /** @class */ (function () {
+    function azSynapseLinked() {
+    }
+    azSynapseLinked.service = _azSynapse.az_synapse_linked_service;
+    return azSynapseLinked;
+}());
+/** Manage Synapse's pipelines. */
+var azSynapsePipeline = /** @class */ (function (_super) {
+    __extends(azSynapsePipeline, _super);
+    function azSynapsePipeline() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    azSynapsePipeline.run = _azSynapse.az_synapse_pipeline_run;
+    return azSynapsePipeline;
+}(_azSynapse.az_synapse_pipeline));
 /** Manage Synapse's role assignments and definitions. */
 var azSynapseRole = /** @class */ (function (_super) {
     __extends(azSynapseRole, _super);
@@ -4950,6 +5044,15 @@ var azSynapseSql = /** @class */ (function (_super) {
     azSynapseSql.pool = _azSynapse.az_synapse_sql_pool;
     return azSynapseSql;
 }(_azSynapse.az_synapse_sql));
+/** Manage Synapse's triggers. */
+var azSynapseTrigger = /** @class */ (function (_super) {
+    __extends(azSynapseTrigger, _super);
+    function azSynapseTrigger() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    azSynapseTrigger.run = _azSynapse.az_synapse_trigger_run;
+    return azSynapseTrigger;
+}(_azSynapse.az_synapse_trigger));
 var azSynapseWorkspaceFirewall = /** @class */ (function () {
     function azSynapseWorkspaceFirewall() {
     }
@@ -4971,12 +5074,21 @@ var azSynapse = /** @class */ (function (_super) {
     function azSynapse() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    azSynapse.activity = azSynapseActivity;
+    azSynapse.data = azSynapseData;
+    azSynapse.dataset = _azSynapse.az_synapse_dataset;
+    azSynapse.linked = azSynapseLinked;
+    azSynapse.notebook = _azSynapse.az_synapse_notebook;
+    /** Manage Synapse's pipelines. */
+    azSynapse.pipeline = azSynapsePipeline;
     /** Manage Synapse's role assignments and definitions. */
     azSynapse.role = azSynapseRole;
     /** Manage Spark pools and Spark jobs. */
     azSynapse.spark = azSynapseSpark;
     /** Manage SQL pools. */
     azSynapse.sql = azSynapseSql;
+    /** Manage Synapse's triggers. */
+    azSynapse.trigger = azSynapseTrigger;
     /** Manage Synapse workspaces. */
     azSynapse.workspace = azSynapseWorkspace;
     return azSynapse;
@@ -5299,8 +5411,6 @@ var az = /** @class */ (function (_super) {
     az.image = azImage;
     /** Manage Internet of Things (IoT) assets. */
     az.iot = azIot;
-    /** Manage IoT Central assets. */
-    az.iotcentral = azIotcentral;
     /** Manage KeyVault keys, secrets, and certificates. */
     az.keyvault = azKeyvault;
     /** Manage Azure Kusto resources. */
@@ -5325,7 +5435,7 @@ var az = /** @class */ (function (_super) {
     az.netappfiles = azNetappfiles;
     /** Manage Azure Network resources. */
     az.network = azNetwork;
-    /** Manage Azure Red Hat OpenShift Services. */
+    /** Manage Azure Red Hat OpenShift 3.11 clusters. */
     az.openshift = azOpenshift;
     /** Manage Azure Pipelines. */
     az.pipelines = azPipelines;
@@ -5370,6 +5480,7 @@ var az = /** @class */ (function (_super) {
     /** Manage and operate Synapse Workspace, Spark Pool, SQL Pool. */
     az.synapse = azSynapse;
     az.tag = _azTag.az_tag;
+    az.ts = _azTs.az_ts;
     /** Manage Linux or Windows virtual machines. */
     az.vm = azVm;
     /** Manage groupings of virtual machines in an Azure Virtual Machine Scale Set (VMSS). */

@@ -99,8 +99,10 @@ var az_acs_kubernetes = /** @class */ (function () {
      *
      * Syntax:
      * ```
-     * az acs kubernetes install-cli [--client-version]
+     * az acs kubernetes install-cli [--base-src-url]
+     *                               [--client-version]
      *                               [--install-location]
+     *                               [--kubelogin-base-src-url]
      *                               [--kubelogin-install-location]
      *                               [--kubelogin-version]
      *                               [--subscription]
@@ -474,8 +476,10 @@ var az_acs_kubernetes_get_credentials_command_builder = /** @class */ (function 
  *
  * Syntax:
  * ```
- * az acs kubernetes install-cli [--client-version]
+ * az acs kubernetes install-cli [--base-src-url]
+ *                               [--client-version]
  *                               [--install-location]
+ *                               [--kubelogin-base-src-url]
  *                               [--kubelogin-install-location]
  *                               [--kubelogin-version]
  *                               [--subscription]
@@ -486,6 +490,11 @@ var az_acs_kubernetes_install_cli_command_builder = /** @class */ (function (_su
     function az_acs_kubernetes_install_cli_command_builder(commandPath, resultDataTypeName) {
         return _super.call(this, commandPath, resultDataTypeName) || this;
     }
+    /** Base download source URL for kubectl releases. */
+    az_acs_kubernetes_install_cli_command_builder.prototype.baseSrcUrl = function (value) {
+        this.setFlag("--base-src-url", value);
+        return this;
+    };
     /** Version of kubectl to install. */
     az_acs_kubernetes_install_cli_command_builder.prototype.clientVersion = function (value) {
         this.setFlag("--client-version", value);
@@ -494,6 +503,11 @@ var az_acs_kubernetes_install_cli_command_builder = /** @class */ (function (_su
     /** Path at which to install kubectl. */
     az_acs_kubernetes_install_cli_command_builder.prototype.installLocation = function (value) {
         this.setFlag("--install-location", value);
+        return this;
+    };
+    /** Base download source URL for kubelogin releases. */
+    az_acs_kubernetes_install_cli_command_builder.prototype.kubeloginBaseSrcUrl = function (value) {
+        this.setFlag("--kubelogin-base-src-url", value);
         return this;
     };
     /** Path at which to install kubelogin. */

@@ -233,6 +233,7 @@ var az_signalr = /** @class */ (function () {
      *                   --sku
      *                   [--allowed-origins]
      *                   [--default-action {Allow, Deny}]
+     *                   [--enable-message-logs {false, true}]
      *                   [--location]
      *                   [--service-mode {Classic, Default, Serverless}]
      *                   [--subscription]
@@ -319,6 +320,7 @@ var az_signalr = /** @class */ (function () {
      *                   [--add]
      *                   [--allowed-origins]
      *                   [--default-action {Allow, Deny}]
+     *                   [--enable-message-logs {false, true}]
      *                   [--force-string]
      *                   [--remove]
      *                   [--service-mode {Classic, Default, Serverless}]
@@ -808,6 +810,7 @@ var az_signalr_upstream_update_command_builder = /** @class */ (function (_super
  *                   --sku
  *                   [--allowed-origins]
  *                   [--default-action {Allow, Deny}]
+ *                   [--enable-message-logs {false, true}]
  *                   [--location]
  *                   [--service-mode {Classic, Default, Serverless}]
  *                   [--subscription]
@@ -851,6 +854,11 @@ var az_signalr_create_command_builder = /** @class */ (function (_super) {
     /** Default action to apply when no rule matches. */
     az_signalr_create_command_builder.prototype.defaultAction = function (value) {
         this.setFlag("--default-action", value);
+        return this;
+    };
+    /** The switch for messaging logs which signalr service will generate or not. */
+    az_signalr_create_command_builder.prototype.enableMessageLogs = function (value) {
+        this.setFlag("--enable-message-logs", value.toString());
         return this;
     };
     /** Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`. */
@@ -1042,6 +1050,7 @@ var az_signalr_show_command_builder = /** @class */ (function (_super) {
  *                   [--add]
  *                   [--allowed-origins]
  *                   [--default-action {Allow, Deny}]
+ *                   [--enable-message-logs {false, true}]
  *                   [--force-string]
  *                   [--remove]
  *                   [--service-mode {Classic, Default, Serverless}]
@@ -1086,6 +1095,11 @@ var az_signalr_update_command_builder = /** @class */ (function (_super) {
     /** Default action to apply when no rule matches. */
     az_signalr_update_command_builder.prototype.defaultAction = function (value) {
         this.setFlag("--default-action", value);
+        return this;
+    };
+    /** The switch for messaging logs which signalr service will generate or not. */
+    az_signalr_update_command_builder.prototype.enableMessageLogs = function (value) {
+        this.setFlag("--enable-message-logs", value.toString());
         return this;
     };
     /** When using 'set' or 'add', preserve string literals instead of attempting to convert to JSON. */

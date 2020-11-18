@@ -770,16 +770,15 @@ export declare class az_security_location {
      */
     static show(name: string): az_security_location_show_command_builder;
 }
-/** Shows the Azure Security Center Pricing tier for the subscription. */
+/** Enables managing the Azure Defender plan for the subscription. */
 export declare class az_security_pricing {
     /**
-     * Updates the Azure Security Center Pricing tier for the subscription.
+     * Updates the Azure defender plan for the subscription.
      *
      * Syntax:
      * ```
      * az security pricing create --name
      *                            --tier
-     *                            [--resource-group]
      *                            [--subscription]
      * ```
      *
@@ -788,7 +787,7 @@ export declare class az_security_pricing {
      */
     static create(name: string, tier: string): az_security_pricing_create_command_builder;
     /**
-     * Shows the Azure Security Center Pricing tier for the subscription.
+     * Shows the Azure Defender plans for the subscription.
      *
      * Syntax:
      * ```
@@ -798,13 +797,12 @@ export declare class az_security_pricing {
      */
     static list(): az_security_pricing_list_command_builder;
     /**
-     * Shows the Azure Security Center Pricing tier for the subscription.
+     * Shows the Azure Defender plan for the subscription.
      *
      * Syntax:
      * ```
      * az security pricing show --name
      *                          [--query-examples]
-     *                          [--resource-group]
      *                          [--subscription]
      * ```
      *
@@ -2161,13 +2159,12 @@ declare class az_security_location_show_command_builder extends CommandBuilder<a
     subscription(value: string): az_security_location_show_command_builder;
 }
 /**
- * Updates the Azure Security Center Pricing tier for the subscription.
+ * Updates the Azure defender plan for the subscription.
  *
  * Syntax:
  * ```
  * az security pricing create --name
  *                            --tier
- *                            [--resource-group]
  *                            [--subscription]
  * ```
  *
@@ -2180,13 +2177,11 @@ declare class az_security_pricing_create_command_builder extends CommandBuilder<
     name(value: string): az_security_pricing_create_command_builder;
     /** Pricing tier type. */
     tier(value: string): az_security_pricing_create_command_builder;
-    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
-    resourceGroup(value: string): az_security_pricing_create_command_builder;
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_security_pricing_create_command_builder;
 }
 /**
- * Shows the Azure Security Center Pricing tier for the subscription.
+ * Shows the Azure Defender plans for the subscription.
  *
  * Syntax:
  * ```
@@ -2202,13 +2197,12 @@ declare class az_security_pricing_list_command_builder extends CommandBuilder<az
     subscription(value: string): az_security_pricing_list_command_builder;
 }
 /**
- * Shows the Azure Security Center Pricing tier for the subscription.
+ * Shows the Azure Defender plan for the subscription.
  *
  * Syntax:
  * ```
  * az security pricing show --name
  *                          [--query-examples]
- *                          [--resource-group]
  *                          [--subscription]
  * ```
  *
@@ -2220,8 +2214,6 @@ declare class az_security_pricing_show_command_builder extends CommandBuilder<az
     name(value: string): az_security_pricing_show_command_builder;
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
     queryExamples(value: string): az_security_pricing_show_command_builder;
-    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
-    resourceGroup(value: string): az_security_pricing_show_command_builder;
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_security_pricing_show_command_builder;
 }

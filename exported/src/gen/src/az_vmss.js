@@ -329,6 +329,21 @@ var az_vmss_extension = /** @class */ (function () {
     az_vmss_extension.show = function (name, resourceGroup, vmssName) {
         return new az_vmss_extension_show_command_builder("az vmss extension show", 'az_vmss_extension_show_command_result', name, resourceGroup, vmssName);
     };
+    /**
+     * Upgrade all extensions for all VMSS instances to the latest version.
+     *
+     * Syntax:
+     * ```
+     * az vmss extension upgrade [--ids]
+     *                           [--name]
+     *                           [--no-wait]
+     *                           [--resource-group]
+     *                           [--subscription]
+     * ```
+     */
+    az_vmss_extension.upgrade = function () {
+        return new az_vmss_extension_upgrade_command_builder("az vmss extension upgrade", 'az_vmss_extension_upgrade_command_result');
+    };
     return az_vmss_extension;
 }());
 exports.az_vmss_extension = az_vmss_extension;
@@ -1895,6 +1910,50 @@ var az_vmss_extension_show_command_builder = /** @class */ (function (_super) {
         return this;
     };
     return az_vmss_extension_show_command_builder;
+}(base_1.CommandBuilder));
+/**
+ * Upgrade all extensions for all VMSS instances to the latest version.
+ *
+ * Syntax:
+ * ```
+ * az vmss extension upgrade [--ids]
+ *                           [--name]
+ *                           [--no-wait]
+ *                           [--resource-group]
+ *                           [--subscription]
+ * ```
+ */
+var az_vmss_extension_upgrade_command_builder = /** @class */ (function (_super) {
+    __extends(az_vmss_extension_upgrade_command_builder, _super);
+    function az_vmss_extension_upgrade_command_builder(commandPath, resultDataTypeName) {
+        return _super.call(this, commandPath, resultDataTypeName) || this;
+    }
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    az_vmss_extension_upgrade_command_builder.prototype.ids = function (value) {
+        this.setFlag("--ids", value);
+        return this;
+    };
+    /** Scale set name. You can configure the default using `az configure --defaults vmss=<name>`. */
+    az_vmss_extension_upgrade_command_builder.prototype.name = function (value) {
+        this.setFlag("--name", value);
+        return this;
+    };
+    /** Do not wait for the long-running operation to finish. */
+    az_vmss_extension_upgrade_command_builder.prototype.noWait = function (value) {
+        this.setFlag("--no-wait", value);
+        return this;
+    };
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    az_vmss_extension_upgrade_command_builder.prototype.resourceGroup = function (value) {
+        this.setFlag("--resource-group", value);
+        return this;
+    };
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    az_vmss_extension_upgrade_command_builder.prototype.subscription = function (value) {
+        this.setFlag("--subscription", value);
+        return this;
+    };
+    return az_vmss_extension_upgrade_command_builder;
 }(base_1.CommandBuilder));
 /**
  * Enable managed service identity on a VMSS.

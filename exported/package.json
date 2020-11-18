@@ -1,6 +1,6 @@
 {
   "name": "az-ts",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Azure Typescript Cli",
   "main": "./src/gen/index.js",
   "bin": "./runner.js",

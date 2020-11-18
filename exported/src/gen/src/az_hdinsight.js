@@ -621,6 +621,7 @@ var az_hdinsight = /** @class */ (function () {
      *                     [--days {Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday}]
      *                     [--domain]
      *                     [--edgenode-size]
+     *                     [--enable-private-link {false, true}]
      *                     [--encryption-algorithm {RSA-OAEP, RSA-OAEP-256, RSA1_5}]
      *                     [--encryption-at-host {false, true}]
      *                     [--encryption-in-transit {false, true}]
@@ -631,6 +632,7 @@ var az_hdinsight = /** @class */ (function () {
      *                     [--headnode-size]
      *                     [--http-password]
      *                     [--http-user]
+     *                     [--idbroker]
      *                     [--kafka-client-group-id]
      *                     [--kafka-client-group-name]
      *                     [--kafka-management-node-count]
@@ -640,8 +642,7 @@ var az_hdinsight = /** @class */ (function () {
      *                     [--minimal-tls-version {1.0, 1.1, 1.2}]
      *                     [--no-validation-timeout]
      *                     [--no-wait]
-     *                     [--outbound-public-network-access-type {PublicLoadBalancer, UDR}]
-     *                     [--public-network-access-type {InboundAndOutbound, OutboundOnly}]
+     *                     [--resource-provider-connection {Inbound, Outbound}]
      *                     [--ssh-password]
      *                     [--ssh-public-key]
      *                     [--ssh-user]
@@ -2436,6 +2437,7 @@ var az_hdinsight_script_action_show_execution_details_command_builder = /** @cla
  *                     [--days {Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday}]
  *                     [--domain]
  *                     [--edgenode-size]
+ *                     [--enable-private-link {false, true}]
  *                     [--encryption-algorithm {RSA-OAEP, RSA-OAEP-256, RSA1_5}]
  *                     [--encryption-at-host {false, true}]
  *                     [--encryption-in-transit {false, true}]
@@ -2446,6 +2448,7 @@ var az_hdinsight_script_action_show_execution_details_command_builder = /** @cla
  *                     [--headnode-size]
  *                     [--http-password]
  *                     [--http-user]
+ *                     [--idbroker]
  *                     [--kafka-client-group-id]
  *                     [--kafka-client-group-name]
  *                     [--kafka-management-node-count]
@@ -2455,8 +2458,7 @@ var az_hdinsight_script_action_show_execution_details_command_builder = /** @cla
  *                     [--minimal-tls-version {1.0, 1.1, 1.2}]
  *                     [--no-validation-timeout]
  *                     [--no-wait]
- *                     [--outbound-public-network-access-type {PublicLoadBalancer, UDR}]
- *                     [--public-network-access-type {InboundAndOutbound, OutboundOnly}]
+ *                     [--resource-provider-connection {Inbound, Outbound}]
  *                     [--ssh-password]
  *                     [--ssh-public-key]
  *                     [--ssh-user]
@@ -2578,6 +2580,11 @@ var az_hdinsight_create_command_builder = /** @class */ (function (_super) {
         this.setFlag("--edgenode-size", value);
         return this;
     };
+    /** Indicate whether enable the private link or not. */
+    az_hdinsight_create_command_builder.prototype.enablePrivateLink = function (value) {
+        this.setFlag("--enable-private-link", value.toString());
+        return this;
+    };
     /** Algorithm identifier for encryption. */
     az_hdinsight_create_command_builder.prototype.encryptionAlgorithm = function (value) {
         this.setFlag("--encryption-algorithm", value);
@@ -2628,6 +2635,11 @@ var az_hdinsight_create_command_builder = /** @class */ (function (_super) {
         this.setFlag("--http-user", value);
         return this;
     };
+    /** Specify to create ESP cluster with HDInsight ID Broker. If omitted, creating ESP cluster with HDInsight ID Broker will not not allowed. */
+    az_hdinsight_create_command_builder.prototype.idbroker = function (value) {
+        this.setFlag("--idbroker", value);
+        return this;
+    };
     /** The client AAD security group id for Kafka Rest Proxy. */
     az_hdinsight_create_command_builder.prototype.kafkaClientGroupId = function (value) {
         this.setFlag("--kafka-client-group-id", value);
@@ -2673,14 +2685,9 @@ var az_hdinsight_create_command_builder = /** @class */ (function (_super) {
         this.setFlag("--no-wait", value);
         return this;
     };
-    /** The outbound only public network access type. */
-    az_hdinsight_create_command_builder.prototype.outboundPublicNetworkAccessType = function (value) {
-        this.setFlag("--outbound-public-network-access-type", value);
-        return this;
-    };
-    /** The public network access type. */
-    az_hdinsight_create_command_builder.prototype.publicNetworkAccessType = function (value) {
-        this.setFlag("--public-network-access-type", value);
+    /** The resource provider connection type. */
+    az_hdinsight_create_command_builder.prototype.resourceProviderConnection = function (value) {
+        this.setFlag("--resource-provider-connection", value);
         return this;
     };
     /** SSH password for the cluster nodes. If none specified, uses the HTTP password. */

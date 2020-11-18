@@ -6,6 +6,8 @@ import { az_appservice_ase_list_addresses_command_result } from './models/az_app
 import { az_appservice_ase_list_plans_command_result } from './models/az_appservice_ase_list_plans_command_result';
 import { az_appservice_ase_show_command_result } from './models/az_appservice_ase_show_command_result';
 import { az_appservice_ase_update_command_result } from './models/az_appservice_ase_update_command_result';
+import { az_appservice_domain_create_command_result } from './models/az_appservice_domain_create_command_result';
+import { az_appservice_domain_show_terms_command_result } from './models/az_appservice_domain_show_terms_command_result';
 import { az_appservice_hybrid_connection_set_key_command_result } from './models/az_appservice_hybrid_connection_set_key_command_result';
 import { az_appservice_plan_create_command_result } from './models/az_appservice_plan_create_command_result';
 import { az_appservice_plan_delete_command_result } from './models/az_appservice_plan_delete_command_result';
@@ -125,6 +127,42 @@ export declare class az_appservice_ase {
      * @param {string} name Name of the app service environment.
      */
     static update(name: string): az_appservice_ase_update_command_builder;
+}
+/** Manage custom domains. */
+export declare class az_appservice_domain {
+    /**
+     * Create and purchase a custom domain.
+     *
+     * Syntax:
+     * ```
+     * az appservice domain create --contact-info
+     *                             --hostname
+     *                             --resource-group
+     *                             [--accept-terms]
+     *                             [--auto-renew]
+     *                             [--dryrun]
+     *                             [--privacy]
+     *                             [--subscription]
+     *                             [--tags]
+     * ```
+     *
+     * @param {string} contactInfo The file path to a JSON object with your contact info for domain registration. Please see the following link for the format of the JSON file expected: <a href="https://github.com/AzureAppServiceCLI/appservice_domains_templates/blob/master/contact_info.json">https://github.com/AzureAppServiceCLI/appservice_domains_templates/blob/master/contact_info.json</a>.
+     * @param {string} hostname Name of the custom domain.
+     * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
+     */
+    static create(contactInfo: string, hostname: string, resourceGroup: string): az_appservice_domain_create_command_builder;
+    /**
+     * Show the legal terms for purchasing and creating a custom domain.
+     *
+     * Syntax:
+     * ```
+     * az appservice domain show-terms --hostname
+     *                                 [--subscription]
+     * ```
+     *
+     * @param {string} hostname Name of the custom domain.
+     */
+    static show_terms(hostname: string): az_appservice_domain_show_terms_command_builder;
 }
 /** A method that sets the key a hybrid-connection uses. */
 export declare class az_appservice_hybrid_connection {
@@ -465,6 +503,65 @@ declare class az_appservice_ase_update_command_builder extends CommandBuilder<az
     resourceGroup(value: string): az_appservice_ase_update_command_builder;
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_appservice_ase_update_command_builder;
+}
+/**
+ * Create and purchase a custom domain.
+ *
+ * Syntax:
+ * ```
+ * az appservice domain create --contact-info
+ *                             --hostname
+ *                             --resource-group
+ *                             [--accept-terms]
+ *                             [--auto-renew]
+ *                             [--dryrun]
+ *                             [--privacy]
+ *                             [--subscription]
+ *                             [--tags]
+ * ```
+ *
+ * @param {string} contactInfo The file path to a JSON object with your contact info for domain registration. Please see the following link for the format of the JSON file expected: <a href="https://github.com/AzureAppServiceCLI/appservice_domains_templates/blob/master/contact_info.json">https://github.com/AzureAppServiceCLI/appservice_domains_templates/blob/master/contact_info.json</a>.
+ * @param {string} hostname Name of the custom domain.
+ * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
+ */
+declare class az_appservice_domain_create_command_builder extends CommandBuilder<az_appservice_domain_create_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, contactInfo: string, hostname: string, resourceGroup: string);
+    /** The file path to a JSON object with your contact info for domain registration. Please see the following link for the format of the JSON file expected: <a href="https://github.com/AzureAppServiceCLI/appservice_domains_templates/blob/master/contact_info.json">https://github.com/AzureAppServiceCLI/appservice_domains_templates/blob/master/contact_info.json</a>. */
+    contactInfo(value: string): az_appservice_domain_create_command_builder;
+    /** Name of the custom domain. */
+    hostname(value: string): az_appservice_domain_create_command_builder;
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_appservice_domain_create_command_builder;
+    /** By using this flag, you are accepting the conditions shown using the --show-hostname-purchase-terms flag. */
+    acceptTerms(value: string): az_appservice_domain_create_command_builder;
+    /** Enable auto-renew on the domain. */
+    autoRenew(value: string): az_appservice_domain_create_command_builder;
+    /** Show summary of the purchase and create operation instead of executing it. */
+    dryrun(value: string): az_appservice_domain_create_command_builder;
+    /** Enable privacy protection. */
+    privacy(value: string): az_appservice_domain_create_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_appservice_domain_create_command_builder;
+    /** Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags. */
+    tags(value: string): az_appservice_domain_create_command_builder;
+}
+/**
+ * Show the legal terms for purchasing and creating a custom domain.
+ *
+ * Syntax:
+ * ```
+ * az appservice domain show-terms --hostname
+ *                                 [--subscription]
+ * ```
+ *
+ * @param {string} hostname Name of the custom domain.
+ */
+declare class az_appservice_domain_show_terms_command_builder extends CommandBuilder<az_appservice_domain_show_terms_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, hostname: string);
+    /** Name of the custom domain. */
+    hostname(value: string): az_appservice_domain_show_terms_command_builder;
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_appservice_domain_show_terms_command_builder;
 }
 /**
  * Set the key that all apps in an appservice plan use to connect to the hybrid-connections in that appservice plan.

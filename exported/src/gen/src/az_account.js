@@ -180,7 +180,7 @@ var az_account_management_group = /** @class */ (function () {
      *                                  [--recurse]
      * ```
      *
-     * @param {string} name Name of the management group.
+     * @param {string} name Name of the management group (the last segment of the resource ID). Do not use display name.
      */
     az_account_management_group.show = function (name) {
         return new az_account_management_group_show_command_builder("az account management-group show", 'az_account_management_group_show_command_result', name);
@@ -604,7 +604,7 @@ var az_account_management_group_list_command_builder = /** @class */ (function (
  *                                  [--recurse]
  * ```
  *
- * @param {string} name Name of the management group.
+ * @param {string} name Name of the management group (the last segment of the resource ID). Do not use display name.
  */
 var az_account_management_group_show_command_builder = /** @class */ (function (_super) {
     __extends(az_account_management_group_show_command_builder, _super);
@@ -613,7 +613,7 @@ var az_account_management_group_show_command_builder = /** @class */ (function (
         _this.name(name);
         return _this;
     }
-    /** Name of the management group. */
+    /** Name of the management group (the last segment of the resource ID). Do not use display name. */
     az_account_management_group_show_command_builder.prototype.name = function (value) {
         this.setFlag("--name", value);
         return this;

@@ -44,7 +44,7 @@ var az_backup_container = /** @class */ (function () {
      * Syntax:
      * ```
      * az backup container re-register --container-name
-     *                                 --workload-type {AzureFileShare, MSSQL, SAPHANA, SAPHanaDatabase, SQLDataBase, VM}
+     *                                 --workload-type {MSSQL, SAPASE, SAPHANA}
      *                                 [--backup-management-type {AzureIaasVM, AzureStorage, AzureWorkload}]
      *                                 [--ids]
      *                                 [--resource-group]
@@ -54,7 +54,7 @@ var az_backup_container = /** @class */ (function () {
      * ```
      *
      * @param {string} containerName Name of the backup container. Accepts 'Name' or 'FriendlyName' from the output of az backup container list command. If 'FriendlyName' is passed then BackupManagementType is required.
-     * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
+     * @param {'MSSQL' | 'SAPASE' | 'SAPHANA'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
      */
     az_backup_container.re_register = function (containerName, workloadType) {
         return new az_backup_container_re_register_command_builder("az backup container re-register", 'az_backup_container_re_register_command_result', containerName, workloadType);
@@ -65,7 +65,7 @@ var az_backup_container = /** @class */ (function () {
      * Syntax:
      * ```
      * az backup container register --resource-id
-     *                              --workload-type {AzureFileShare, MSSQL, SAPHANA, SAPHanaDatabase, SQLDataBase, VM}
+     *                              --workload-type {MSSQL, SAPASE, SAPHANA}
      *                              [--backup-management-type {AzureIaasVM, AzureStorage, AzureWorkload}]
      *                              [--ids]
      *                              [--resource-group]
@@ -74,7 +74,7 @@ var az_backup_container = /** @class */ (function () {
      * ```
      *
      * @param {string} resourceId ID of the Azure Resource containing items to be protected by Azure Backup service. Currently, only Azure VM resource IDs are supported.
-     * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
+     * @param {'MSSQL' | 'SAPASE' | 'SAPHANA'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
      */
     az_backup_container.register = function (resourceId, workloadType) {
         return new az_backup_container_register_command_builder("az backup container register", 'az_backup_container_register_command_result', resourceId, workloadType);
@@ -418,14 +418,14 @@ var az_backup_protectable_item = /** @class */ (function () {
      * az backup protectable-item initialize --container-name
      *                                       --resource-group
      *                                       --vault-name
-     *                                       --workload-type {AzureFileShare, MSSQL, SAPHANA, SAPHanaDatabase, SQLDataBase, VM}
+     *                                       --workload-type {MSSQL, SAPASE, SAPHANA}
      *                                       [--subscription]
      * ```
      *
      * @param {string} containerName Name of the backup container. Accepts 'Name' or 'FriendlyName' from the output of az backup container list command. If 'FriendlyName' is passed then BackupManagementType is required.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} vaultName Name of the Recovery services vault.
-     * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
+     * @param {'MSSQL' | 'SAPASE' | 'SAPHANA'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
      */
     az_backup_protectable_item.initialize = function (containerName, resourceGroup, vaultName, workloadType) {
         return new az_backup_protectable_item_initialize_command_builder("az backup protectable-item initialize", 'az_backup_protectable_item_initialize_command_result', containerName, resourceGroup, vaultName, workloadType);
@@ -437,7 +437,7 @@ var az_backup_protectable_item = /** @class */ (function () {
      * ```
      * az backup protectable-item list --resource-group
      *                                 --vault-name
-     *                                 --workload-type {AzureFileShare, MSSQL, SAPHANA, SAPHanaDatabase, SQLDataBase, VM}
+     *                                 --workload-type {MSSQL, SAPASE, SAPHANA}
      *                                 [--container-name]
      *                                 [--query-examples]
      *                                 [--subscription]
@@ -445,7 +445,7 @@ var az_backup_protectable_item = /** @class */ (function () {
      *
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} vaultName Name of the Recovery services vault.
-     * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
+     * @param {'MSSQL' | 'SAPASE' | 'SAPHANA'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
      */
     az_backup_protectable_item.list = function (resourceGroup, vaultName, workloadType) {
         return new az_backup_protectable_item_list_command_builder("az backup protectable-item list", 'az_backup_protectable_item_list_command_result', resourceGroup, vaultName, workloadType);
@@ -460,7 +460,7 @@ var az_backup_protectable_item = /** @class */ (function () {
      *                                 --resource-group
      *                                 --server-name
      *                                 --vault-name
-     *                                 --workload-type {AzureFileShare, MSSQL, SAPHANA, SAPHanaDatabase, SQLDataBase, VM}
+     *                                 --workload-type {MSSQL, SAPASE, SAPHANA}
      *                                 [--query-examples]
      *                                 [--subscription]
      * ```
@@ -470,7 +470,7 @@ var az_backup_protectable_item = /** @class */ (function () {
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} serverName Parent Server name of the item.
      * @param {string} vaultName Name of the Recovery services vault.
-     * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
+     * @param {'MSSQL' | 'SAPASE' | 'SAPHANA'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
      */
     az_backup_protectable_item.show = function (name, protectableItemType, resourceGroup, serverName, vaultName, workloadType) {
         return new az_backup_protectable_item_show_command_builder("az backup protectable-item show", 'az_backup_protectable_item_show_command_result', name, protectableItemType, resourceGroup, serverName, vaultName, workloadType);
@@ -747,7 +747,7 @@ var az_backup_recoveryconfig = /** @class */ (function () {
      *                               [--target-item-name]
      *                               [--target-server-name]
      *                               [--target-server-type {HANAInstance, SAPHanaDatabase, SAPHanaSystem, SQLAG, SQLDatabase, SQLInstance}]
-     *                               [--workload-type {AzureFileShare, MSSQL, SAPHANA, SAPHanaDatabase, SQLDataBase, VM}]
+     *                               [--workload-type {MSSQL, SAPASE, SAPHANA}]
      * ```
      *
      * @param {string} containerName Name of the backup container. Accepts 'Name' or 'FriendlyName' from the output of az backup container list command. If 'FriendlyName' is passed then BackupManagementType is required.
@@ -1173,7 +1173,7 @@ var az_backup_container_list_command_builder = /** @class */ (function (_super) 
  * Syntax:
  * ```
  * az backup container re-register --container-name
- *                                 --workload-type {AzureFileShare, MSSQL, SAPHANA, SAPHanaDatabase, SQLDataBase, VM}
+ *                                 --workload-type {MSSQL, SAPASE, SAPHANA}
  *                                 [--backup-management-type {AzureIaasVM, AzureStorage, AzureWorkload}]
  *                                 [--ids]
  *                                 [--resource-group]
@@ -1183,7 +1183,7 @@ var az_backup_container_list_command_builder = /** @class */ (function (_super) 
  * ```
  *
  * @param {string} containerName Name of the backup container. Accepts 'Name' or 'FriendlyName' from the output of az backup container list command. If 'FriendlyName' is passed then BackupManagementType is required.
- * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
+ * @param {'MSSQL' | 'SAPASE' | 'SAPHANA'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
  */
 var az_backup_container_re_register_command_builder = /** @class */ (function (_super) {
     __extends(az_backup_container_re_register_command_builder, _super);
@@ -1241,7 +1241,7 @@ var az_backup_container_re_register_command_builder = /** @class */ (function (_
  * Syntax:
  * ```
  * az backup container register --resource-id
- *                              --workload-type {AzureFileShare, MSSQL, SAPHANA, SAPHanaDatabase, SQLDataBase, VM}
+ *                              --workload-type {MSSQL, SAPASE, SAPHANA}
  *                              [--backup-management-type {AzureIaasVM, AzureStorage, AzureWorkload}]
  *                              [--ids]
  *                              [--resource-group]
@@ -1250,7 +1250,7 @@ var az_backup_container_re_register_command_builder = /** @class */ (function (_
  * ```
  *
  * @param {string} resourceId ID of the Azure Resource containing items to be protected by Azure Backup service. Currently, only Azure VM resource IDs are supported.
- * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
+ * @param {'MSSQL' | 'SAPASE' | 'SAPHANA'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
  */
 var az_backup_container_register_command_builder = /** @class */ (function (_super) {
     __extends(az_backup_container_register_command_builder, _super);
@@ -2239,14 +2239,14 @@ var az_backup_policy_show_command_builder = /** @class */ (function (_super) {
  * az backup protectable-item initialize --container-name
  *                                       --resource-group
  *                                       --vault-name
- *                                       --workload-type {AzureFileShare, MSSQL, SAPHANA, SAPHanaDatabase, SQLDataBase, VM}
+ *                                       --workload-type {MSSQL, SAPASE, SAPHANA}
  *                                       [--subscription]
  * ```
  *
  * @param {string} containerName Name of the backup container. Accepts 'Name' or 'FriendlyName' from the output of az backup container list command. If 'FriendlyName' is passed then BackupManagementType is required.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} vaultName Name of the Recovery services vault.
- * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
+ * @param {'MSSQL' | 'SAPASE' | 'SAPHANA'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
  */
 var az_backup_protectable_item_initialize_command_builder = /** @class */ (function (_super) {
     __extends(az_backup_protectable_item_initialize_command_builder, _super);
@@ -2292,7 +2292,7 @@ var az_backup_protectable_item_initialize_command_builder = /** @class */ (funct
  * ```
  * az backup protectable-item list --resource-group
  *                                 --vault-name
- *                                 --workload-type {AzureFileShare, MSSQL, SAPHANA, SAPHanaDatabase, SQLDataBase, VM}
+ *                                 --workload-type {MSSQL, SAPASE, SAPHANA}
  *                                 [--container-name]
  *                                 [--query-examples]
  *                                 [--subscription]
@@ -2300,7 +2300,7 @@ var az_backup_protectable_item_initialize_command_builder = /** @class */ (funct
  *
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} vaultName Name of the Recovery services vault.
- * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
+ * @param {'MSSQL' | 'SAPASE' | 'SAPHANA'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
  */
 var az_backup_protectable_item_list_command_builder = /** @class */ (function (_super) {
     __extends(az_backup_protectable_item_list_command_builder, _super);
@@ -2353,7 +2353,7 @@ var az_backup_protectable_item_list_command_builder = /** @class */ (function (_
  *                                 --resource-group
  *                                 --server-name
  *                                 --vault-name
- *                                 --workload-type {AzureFileShare, MSSQL, SAPHANA, SAPHanaDatabase, SQLDataBase, VM}
+ *                                 --workload-type {MSSQL, SAPASE, SAPHANA}
  *                                 [--query-examples]
  *                                 [--subscription]
  * ```
@@ -2363,7 +2363,7 @@ var az_backup_protectable_item_list_command_builder = /** @class */ (function (_
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} serverName Parent Server name of the item.
  * @param {string} vaultName Name of the Recovery services vault.
- * @param {'AzureFileShare' | 'MSSQL' | 'SAPHANA' | 'SAPHanaDatabase' | 'SQLDataBase' | 'VM'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
+ * @param {'MSSQL' | 'SAPASE' | 'SAPHANA'} workloadType Specifiy the type of applications within the Resource which should be discovered and protected by Azure Backup.
  */
 var az_backup_protectable_item_show_command_builder = /** @class */ (function (_super) {
     __extends(az_backup_protectable_item_show_command_builder, _super);
@@ -3200,7 +3200,7 @@ var az_backup_protection_update_for_vm_command_builder = /** @class */ (function
  *                               [--target-item-name]
  *                               [--target-server-name]
  *                               [--target-server-type {HANAInstance, SAPHanaDatabase, SAPHanaSystem, SQLAG, SQLDatabase, SQLInstance}]
- *                               [--workload-type {AzureFileShare, MSSQL, SAPHANA, SAPHanaDatabase, SQLDataBase, VM}]
+ *                               [--workload-type {MSSQL, SAPASE, SAPHANA}]
  * ```
  *
  * @param {string} containerName Name of the backup container. Accepts 'Name' or 'FriendlyName' from the output of az backup container list command. If 'FriendlyName' is passed then BackupManagementType is required.

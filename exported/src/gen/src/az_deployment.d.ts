@@ -91,6 +91,7 @@ export declare class az_deployment_group {
      *                            [--rollback-on-error]
      *                            [--subscription]
      *                            [--template-file]
+     *                            [--template-spec]
      *                            [--template-uri]
      *                            [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
      *                            [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -171,6 +172,7 @@ export declare class az_deployment_group {
      *                              [--rollback-on-error]
      *                              [--subscription]
      *                              [--template-file]
+     *                              [--template-spec]
      *                              [--template-uri]
      * ```
      *
@@ -214,6 +216,7 @@ export declare class az_deployment_group {
      *                             [--result-format {FullResourcePayloads, ResourceIdOnly}]
      *                             [--subscription]
      *                             [--template-file]
+     *                             [--template-spec]
      *                             [--template-uri]
      * ```
      *
@@ -252,6 +255,7 @@ export declare class az_deployment_mg {
      *                         [--parameters]
      *                         [--subscription]
      *                         [--template-file]
+     *                         [--template-spec]
      *                         [--template-uri]
      *                         [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
      *                         [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -332,6 +336,7 @@ export declare class az_deployment_mg {
      *                           [--parameters]
      *                           [--subscription]
      *                           [--template-file]
+     *                           [--template-spec]
      *                           [--template-uri]
      * ```
      *
@@ -375,6 +380,7 @@ export declare class az_deployment_mg {
      *                          [--result-format {FullResourcePayloads, ResourceIdOnly}]
      *                          [--subscription]
      *                          [--template-file]
+     *                          [--template-spec]
      *                          [--template-uri]
      * ```
      *
@@ -574,6 +580,7 @@ export declare class az_deployment_sub {
      *                          [--parameters]
      *                          [--subscription]
      *                          [--template-file]
+     *                          [--template-spec]
      *                          [--template-uri]
      *                          [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
      *                          [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -643,6 +650,7 @@ export declare class az_deployment_sub {
      *                            [--parameters]
      *                            [--subscription]
      *                            [--template-file]
+     *                            [--template-spec]
      *                            [--template-uri]
      * ```
      *
@@ -682,6 +690,7 @@ export declare class az_deployment_sub {
      *                           [--result-format {FullResourcePayloads, ResourceIdOnly}]
      *                           [--subscription]
      *                           [--template-file]
+     *                           [--template-spec]
      *                           [--template-uri]
      * ```
      *
@@ -717,6 +726,7 @@ export declare class az_deployment_tenant {
      *                             [--parameters]
      *                             [--subscription]
      *                             [--template-file]
+     *                             [--template-spec]
      *                             [--template-uri]
      *                             [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
      *                             [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -786,6 +796,7 @@ export declare class az_deployment_tenant {
      *                               [--parameters]
      *                               [--subscription]
      *                               [--template-file]
+     *                               [--template-spec]
      *                               [--template-uri]
      * ```
      *
@@ -825,6 +836,7 @@ export declare class az_deployment_tenant {
      *                              [--result-format {FullResourcePayloads, ResourceIdOnly}]
      *                              [--subscription]
      *                              [--template-file]
+     *                              [--template-spec]
      *                              [--template-uri]
      * ```
      *
@@ -918,6 +930,7 @@ export declare class az_deployment {
      *                      [--parameters]
      *                      [--subscription]
      *                      [--template-file]
+     *                      [--template-spec]
      *                      [--template-uri]
      *                      [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
      *                      [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -987,6 +1000,7 @@ export declare class az_deployment {
      *                        [--parameters]
      *                        [--subscription]
      *                        [--template-file]
+     *                        [--template-spec]
      *                        [--template-uri]
      * ```
      *
@@ -1053,6 +1067,7 @@ declare class az_deployment_group_cancel_command_builder extends CommandBuilder<
  *                            [--rollback-on-error]
  *                            [--subscription]
  *                            [--template-file]
+ *                            [--template-spec]
  *                            [--template-uri]
  *                            [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
  *                            [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -1088,6 +1103,8 @@ declare class az_deployment_group_create_command_builder extends CommandBuilder<
     subscription(value: string): az_deployment_group_create_command_builder;
     /** The path to the template file. */
     templateFile(value: string): az_deployment_group_create_command_builder;
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_group_create_command_builder;
     /** The URI to the template file. */
     templateUri(value: string): az_deployment_group_create_command_builder;
     /** Space-separated list of resource change types to be excluded from What-If results. Applicable when --confirm-with-what-if is set. */
@@ -1205,6 +1222,7 @@ declare class az_deployment_group_show_command_builder extends CommandBuilder<az
  *                              [--rollback-on-error]
  *                              [--subscription]
  *                              [--template-file]
+ *                              [--template-spec]
  *                              [--template-uri]
  * ```
  *
@@ -1230,6 +1248,8 @@ declare class az_deployment_group_validate_command_builder extends CommandBuilde
     subscription(value: string): az_deployment_group_validate_command_builder;
     /** The path to the template file. */
     templateFile(value: string): az_deployment_group_validate_command_builder;
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_group_validate_command_builder;
     /** The URI to the template file. */
     templateUri(value: string): az_deployment_group_validate_command_builder;
 }
@@ -1292,6 +1312,7 @@ declare class az_deployment_group_wait_command_builder extends CommandBuilder<az
  *                             [--result-format {FullResourcePayloads, ResourceIdOnly}]
  *                             [--subscription]
  *                             [--template-file]
+ *                             [--template-spec]
  *                             [--template-uri]
  * ```
  *
@@ -1321,6 +1342,8 @@ declare class az_deployment_group_what_if_command_builder extends CommandBuilder
     subscription(value: string): az_deployment_group_what_if_command_builder;
     /** The path to the template file. */
     templateFile(value: string): az_deployment_group_what_if_command_builder;
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_group_what_if_command_builder;
     /** The URI to the template file. */
     templateUri(value: string): az_deployment_group_what_if_command_builder;
 }
@@ -1361,6 +1384,7 @@ declare class az_deployment_mg_cancel_command_builder extends CommandBuilder<az_
  *                         [--parameters]
  *                         [--subscription]
  *                         [--template-file]
+ *                         [--template-spec]
  *                         [--template-uri]
  *                         [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
  *                         [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -1391,6 +1415,8 @@ declare class az_deployment_mg_create_command_builder extends CommandBuilder<az_
     subscription(value: string): az_deployment_mg_create_command_builder;
     /** The path to the template file. */
     templateFile(value: string): az_deployment_mg_create_command_builder;
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_mg_create_command_builder;
     /** The URI to the template file. */
     templateUri(value: string): az_deployment_mg_create_command_builder;
     /** Space-separated list of resource change types to be excluded from What-If results. Applicable when --confirm-with-what-if is set. */
@@ -1507,6 +1533,7 @@ declare class az_deployment_mg_show_command_builder extends CommandBuilder<az_de
  *                           [--parameters]
  *                           [--subscription]
  *                           [--template-file]
+ *                           [--template-spec]
  *                           [--template-uri]
  * ```
  *
@@ -1531,6 +1558,8 @@ declare class az_deployment_mg_validate_command_builder extends CommandBuilder<a
     subscription(value: string): az_deployment_mg_validate_command_builder;
     /** The path to the template file. */
     templateFile(value: string): az_deployment_mg_validate_command_builder;
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_mg_validate_command_builder;
     /** The URI to the template file. */
     templateUri(value: string): az_deployment_mg_validate_command_builder;
 }
@@ -1592,6 +1621,7 @@ declare class az_deployment_mg_wait_command_builder extends CommandBuilder<az_de
  *                          [--result-format {FullResourcePayloads, ResourceIdOnly}]
  *                          [--subscription]
  *                          [--template-file]
+ *                          [--template-spec]
  *                          [--template-uri]
  * ```
  *
@@ -1620,6 +1650,8 @@ declare class az_deployment_mg_what_if_command_builder extends CommandBuilder<az
     subscription(value: string): az_deployment_mg_what_if_command_builder;
     /** The path to the template file. */
     templateFile(value: string): az_deployment_mg_what_if_command_builder;
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_mg_what_if_command_builder;
     /** The URI to the template file. */
     templateUri(value: string): az_deployment_mg_what_if_command_builder;
 }
@@ -1901,6 +1933,7 @@ declare class az_deployment_sub_cancel_command_builder extends CommandBuilder<az
  *                          [--parameters]
  *                          [--subscription]
  *                          [--template-file]
+ *                          [--template-spec]
  *                          [--template-uri]
  *                          [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
  *                          [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -1928,6 +1961,8 @@ declare class az_deployment_sub_create_command_builder extends CommandBuilder<az
     subscription(value: string): az_deployment_sub_create_command_builder;
     /** The path to the template file. */
     templateFile(value: string): az_deployment_sub_create_command_builder;
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_sub_create_command_builder;
     /** The URI to the template file. */
     templateUri(value: string): az_deployment_sub_create_command_builder;
     /** Space-separated list of resource change types to be excluded from What-If results. Applicable when --confirm-with-what-if is set. */
@@ -2026,6 +2061,7 @@ declare class az_deployment_sub_show_command_builder extends CommandBuilder<az_d
  *                            [--parameters]
  *                            [--subscription]
  *                            [--template-file]
+ *                            [--template-spec]
  *                            [--template-uri]
  * ```
  *
@@ -2047,6 +2083,8 @@ declare class az_deployment_sub_validate_command_builder extends CommandBuilder<
     subscription(value: string): az_deployment_sub_validate_command_builder;
     /** The path to the template file. */
     templateFile(value: string): az_deployment_sub_validate_command_builder;
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_sub_validate_command_builder;
     /** The URI to the template file. */
     templateUri(value: string): az_deployment_sub_validate_command_builder;
 }
@@ -2103,6 +2141,7 @@ declare class az_deployment_sub_wait_command_builder extends CommandBuilder<az_d
  *                           [--result-format {FullResourcePayloads, ResourceIdOnly}]
  *                           [--subscription]
  *                           [--template-file]
+ *                           [--template-spec]
  *                           [--template-uri]
  * ```
  *
@@ -2128,6 +2167,8 @@ declare class az_deployment_sub_what_if_command_builder extends CommandBuilder<a
     subscription(value: string): az_deployment_sub_what_if_command_builder;
     /** The path to the template file. */
     templateFile(value: string): az_deployment_sub_what_if_command_builder;
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_sub_what_if_command_builder;
     /** The URI to the template file. */
     templateUri(value: string): az_deployment_sub_what_if_command_builder;
 }
@@ -2163,6 +2204,7 @@ declare class az_deployment_tenant_cancel_command_builder extends CommandBuilder
  *                             [--parameters]
  *                             [--subscription]
  *                             [--template-file]
+ *                             [--template-spec]
  *                             [--template-uri]
  *                             [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
  *                             [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -2190,6 +2232,8 @@ declare class az_deployment_tenant_create_command_builder extends CommandBuilder
     subscription(value: string): az_deployment_tenant_create_command_builder;
     /** The path to the template file. */
     templateFile(value: string): az_deployment_tenant_create_command_builder;
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_tenant_create_command_builder;
     /** The URI to the template file. */
     templateUri(value: string): az_deployment_tenant_create_command_builder;
     /** Space-separated list of resource change types to be excluded from What-If results. Applicable when --confirm-with-what-if is set. */
@@ -2288,6 +2332,7 @@ declare class az_deployment_tenant_show_command_builder extends CommandBuilder<a
  *                               [--parameters]
  *                               [--subscription]
  *                               [--template-file]
+ *                               [--template-spec]
  *                               [--template-uri]
  * ```
  *
@@ -2309,6 +2354,8 @@ declare class az_deployment_tenant_validate_command_builder extends CommandBuild
     subscription(value: string): az_deployment_tenant_validate_command_builder;
     /** The path to the template file. */
     templateFile(value: string): az_deployment_tenant_validate_command_builder;
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_tenant_validate_command_builder;
     /** The URI to the template file. */
     templateUri(value: string): az_deployment_tenant_validate_command_builder;
 }
@@ -2365,6 +2412,7 @@ declare class az_deployment_tenant_wait_command_builder extends CommandBuilder<a
  *                              [--result-format {FullResourcePayloads, ResourceIdOnly}]
  *                              [--subscription]
  *                              [--template-file]
+ *                              [--template-spec]
  *                              [--template-uri]
  * ```
  *
@@ -2390,6 +2438,8 @@ declare class az_deployment_tenant_what_if_command_builder extends CommandBuilde
     subscription(value: string): az_deployment_tenant_what_if_command_builder;
     /** The path to the template file. */
     templateFile(value: string): az_deployment_tenant_what_if_command_builder;
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_tenant_what_if_command_builder;
     /** The URI to the template file. */
     templateUri(value: string): az_deployment_tenant_what_if_command_builder;
 }
@@ -2516,6 +2566,7 @@ declare class az_deployment_cancel_command_builder extends CommandBuilder<az_dep
  *                      [--parameters]
  *                      [--subscription]
  *                      [--template-file]
+ *                      [--template-spec]
  *                      [--template-uri]
  *                      [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
  *                      [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -2543,6 +2594,8 @@ declare class az_deployment_create_command_builder extends CommandBuilder<az_dep
     subscription(value: string): az_deployment_create_command_builder;
     /** The path to the template file. */
     templateFile(value: string): az_deployment_create_command_builder;
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_create_command_builder;
     /** The URI to the template file. */
     templateUri(value: string): az_deployment_create_command_builder;
     /** Space-separated list of resource change types to be excluded from What-If results. Applicable when --confirm-with-what-if is set. */
@@ -2641,6 +2694,7 @@ declare class az_deployment_show_command_builder extends CommandBuilder<az_deplo
  *                        [--parameters]
  *                        [--subscription]
  *                        [--template-file]
+ *                        [--template-spec]
  *                        [--template-uri]
  * ```
  *
@@ -2662,6 +2716,8 @@ declare class az_deployment_validate_command_builder extends CommandBuilder<az_d
     subscription(value: string): az_deployment_validate_command_builder;
     /** The path to the template file. */
     templateFile(value: string): az_deployment_validate_command_builder;
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_validate_command_builder;
     /** The URI to the template file. */
     templateUri(value: string): az_deployment_validate_command_builder;
 }

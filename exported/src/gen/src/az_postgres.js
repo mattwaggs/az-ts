@@ -45,18 +45,17 @@ var az_postgres_db = /** @class */ (function () {
      * Syntax:
      * ```
      * az postgres db delete --name
-     *                       --resource-group
-     *                       --server-name
+     *                       [--ids]
+     *                       [--resource-group]
+     *                       [--server-name]
      *                       [--subscription]
      *                       [--yes]
      * ```
      *
      * @param {string} name The name of the database.
-     * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    az_postgres_db["delete"] = function (name, resourceGroup, serverName) {
-        return new az_postgres_db_delete_command_builder("az postgres db delete", 'az_postgres_db_delete_command_result', name, resourceGroup, serverName);
+    az_postgres_db["delete"] = function (name) {
+        return new az_postgres_db_delete_command_builder("az postgres db delete", 'az_postgres_db_delete_command_result', name);
     };
     /**
      * List the databases for a server.
@@ -70,7 +69,7 @@ var az_postgres_db = /** @class */ (function () {
      * ```
      *
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
+     * @param {string} serverName Name of the Server.
      */
     az_postgres_db.list = function (resourceGroup, serverName) {
         return new az_postgres_db_list_command_builder("az postgres db list", 'az_postgres_db_list_command_result', resourceGroup, serverName);
@@ -81,18 +80,17 @@ var az_postgres_db = /** @class */ (function () {
      * Syntax:
      * ```
      * az postgres db show --name
-     *                     --resource-group
-     *                     --server-name
+     *                     [--ids]
      *                     [--query-examples]
+     *                     [--resource-group]
+     *                     [--server-name]
      *                     [--subscription]
      * ```
      *
      * @param {string} name The name of the database.
-     * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    az_postgres_db.show = function (name, resourceGroup, serverName) {
-        return new az_postgres_db_show_command_builder("az postgres db show", 'az_postgres_db_show_command_result', name, resourceGroup, serverName);
+    az_postgres_db.show = function (name) {
+        return new az_postgres_db_show_command_builder("az postgres db show", 'az_postgres_db_show_command_result', name);
     };
     return az_postgres_db;
 }());
@@ -106,22 +104,19 @@ var az_postgres_flexible_server_firewall_rule = /** @class */ (function () {
      *
      * Syntax:
      * ```
-     * az postgres flexible-server firewall-rule create --end-ip-address
-     *                                                  --name
+     * az postgres flexible-server firewall-rule create --name
      *                                                  --resource-group
-     *                                                  --server-name
-     *                                                  --start-ip-address
+     *                                                  [--end-ip-address]
+     *                                                  [--rule-name]
+     *                                                  [--start-ip-address]
      *                                                  [--subscription]
      * ```
      *
-     * @param {string} endIpAddress The end IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
-     * @param {string} name The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters.
+     * @param {string} name Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
-     * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
      */
-    az_postgres_flexible_server_firewall_rule.create = function (endIpAddress, name, resourceGroup, serverName, startIpAddress) {
-        return new az_postgres_flexible_server_firewall_rule_create_command_builder("az postgres flexible-server firewall-rule create", 'az_postgres_flexible_server_firewall_rule_create_command_result', endIpAddress, name, resourceGroup, serverName, startIpAddress);
+    az_postgres_flexible_server_firewall_rule.create = function (name, resourceGroup) {
+        return new az_postgres_flexible_server_firewall_rule_create_command_builder("az postgres flexible-server firewall-rule create", 'az_postgres_flexible_server_firewall_rule_create_command_result', name, resourceGroup);
     };
     /**
      * Delete a firewall rule.
@@ -130,10 +125,10 @@ var az_postgres_flexible_server_firewall_rule = /** @class */ (function () {
      * ```
      * az postgres flexible-server firewall-rule delete [--ids]
      *                                                  [--name]
-     *                                                  [--prompt]
      *                                                  [--resource-group]
-     *                                                  [--server-name]
+     *                                                  [--rule-name]
      *                                                  [--subscription]
+     *                                                  [--yes]
      * ```
      */
     az_postgres_flexible_server_firewall_rule["delete"] = function () {
@@ -144,17 +139,17 @@ var az_postgres_flexible_server_firewall_rule = /** @class */ (function () {
      *
      * Syntax:
      * ```
-     * az postgres flexible-server firewall-rule list --resource-group
-     *                                                --server-name
+     * az postgres flexible-server firewall-rule list --name
+     *                                                --resource-group
      *                                                [--query-examples]
      *                                                [--subscription]
      * ```
      *
+     * @param {string} name Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    az_postgres_flexible_server_firewall_rule.list = function (resourceGroup, serverName) {
-        return new az_postgres_flexible_server_firewall_rule_list_command_builder("az postgres flexible-server firewall-rule list", 'az_postgres_flexible_server_firewall_rule_list_command_result', resourceGroup, serverName);
+    az_postgres_flexible_server_firewall_rule.list = function (name, resourceGroup) {
+        return new az_postgres_flexible_server_firewall_rule_list_command_builder("az postgres flexible-server firewall-rule list", 'az_postgres_flexible_server_firewall_rule_list_command_result', name, resourceGroup);
     };
     /**
      * Get the details of a firewall rule.
@@ -165,7 +160,7 @@ var az_postgres_flexible_server_firewall_rule = /** @class */ (function () {
      *                                                [--name]
      *                                                [--query-examples]
      *                                                [--resource-group]
-     *                                                [--server-name]
+     *                                                [--rule-name]
      *                                                [--subscription]
      * ```
      */
@@ -184,7 +179,7 @@ var az_postgres_flexible_server_firewall_rule = /** @class */ (function () {
      *                                                  [--name]
      *                                                  [--remove]
      *                                                  [--resource-group]
-     *                                                  [--server-name]
+     *                                                  [--rule-name]
      *                                                  [--set]
      *                                                  [--start-ip-address]
      *                                                  [--subscription]
@@ -292,11 +287,11 @@ var az_postgres_flexible_server = /** @class */ (function () {
      *
      * Syntax:
      * ```
-     * az postgres flexible-server delete [--force]
-     *                                    [--ids]
+     * az postgres flexible-server delete [--ids]
      *                                    [--name]
      *                                    [--resource-group]
      *                                    [--subscription]
+     *                                    [--yes]
      * ```
      */
     az_postgres_flexible_server["delete"] = function () {
@@ -348,8 +343,8 @@ var az_postgres_flexible_server = /** @class */ (function () {
      *
      * Syntax:
      * ```
-     * az postgres flexible-server restore --source-server
-     *                                     --time
+     * az postgres flexible-server restore --restore-time
+     *                                     --source-server
      *                                     [--ids]
      *                                     [--location]
      *                                     [--name]
@@ -358,11 +353,11 @@ var az_postgres_flexible_server = /** @class */ (function () {
      *                                     [--subscription]
      * ```
      *
-     * @param {string} sourceServer The name or resource ID of the source server to restore from.
-     * @param {string} time The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00.
+     * @param {string} restoreTime The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00.
+     * @param {string} sourceServer The name of the source server to restore from.
      */
-    az_postgres_flexible_server.restore = function (sourceServer, time) {
-        return new az_postgres_flexible_server_restore_command_builder("az postgres flexible-server restore", 'az_postgres_flexible_server_restore_command_result', sourceServer, time);
+    az_postgres_flexible_server.restore = function (restoreTime, sourceServer) {
+        return new az_postgres_flexible_server_restore_command_builder("az postgres flexible-server restore", 'az_postgres_flexible_server_restore_command_result', restoreTime, sourceServer);
     };
     /**
      * Get the details of a flexible server.
@@ -1055,17 +1050,16 @@ var az_postgres_server_logs = /** @class */ (function () {
      * Syntax:
      * ```
      * az postgres server-logs download --name
-     *                                  --resource-group
-     *                                  --server-name
+     *                                  [--ids]
+     *                                  [--resource-group]
+     *                                  [--server-name]
      *                                  [--subscription]
      * ```
      *
      * @param {string} name Space-separated list of log filenames on the server to download.
-     * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    az_postgres_server_logs.download = function (name, resourceGroup, serverName) {
-        return new az_postgres_server_logs_download_command_builder("az postgres server-logs download", 'az_postgres_server_logs_download_command_result', name, resourceGroup, serverName);
+    az_postgres_server_logs.download = function (name) {
+        return new az_postgres_server_logs_download_command_builder("az postgres server-logs download", 'az_postgres_server_logs_download_command_result', name);
     };
     /**
      * List log files for a server.
@@ -1082,7 +1076,7 @@ var az_postgres_server_logs = /** @class */ (function () {
      * ```
      *
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
+     * @param {string} serverName Name of the Server.
      */
     az_postgres_server_logs.list = function (resourceGroup, serverName) {
         return new az_postgres_server_logs_list_command_builder("az postgres server-logs list", 'az_postgres_server_logs_list_command_result', resourceGroup, serverName);
@@ -1099,11 +1093,8 @@ var az_postgres_server = /** @class */ (function () {
      *
      * Syntax:
      * ```
-     * az postgres server create --admin-password
-     *                           --admin-user
-     *                           --name
-     *                           --resource-group
-     *                           --sku-name
+     * az postgres server create [--admin-password]
+     *                           [--admin-user]
      *                           [--assign-identity]
      *                           [--auto-grow {Disabled, Enabled}]
      *                           [--backup-retention]
@@ -1111,22 +1102,19 @@ var az_postgres_server = /** @class */ (function () {
      *                           [--infrastructure-encryption {Disabled, Enabled}]
      *                           [--location]
      *                           [--minimal-tls-version {TLS1_0, TLS1_1, TLS1_2, TLSEnforcementDisabled}]
-     *                           [--public {Disabled, Enabled}]
+     *                           [--name]
+     *                           [--public]
+     *                           [--resource-group]
+     *                           [--sku-name]
      *                           [--ssl-enforcement {Disabled, Enabled}]
      *                           [--storage-size]
      *                           [--subscription]
      *                           [--tags]
      *                           [--version]
      * ```
-     *
-     * @param {string} adminPassword The password of the administrator. Minimum 8 characters and maximum 128 characters. Password must contain characters from three of the following categories: English uppercase letters, English lowercase letters, numbers, and non-alphanumeric characters.
-     * @param {string} adminUser Administrator username for the server. Once set, it cannot be changed.
-     * @param {string} name Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
-     * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} skuName The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16.
      */
-    az_postgres_server.create = function (adminPassword, adminUser, name, resourceGroup, skuName) {
-        return new az_postgres_server_create_command_builder("az postgres server create", 'az_postgres_server_create_command_result', adminPassword, adminUser, name, resourceGroup, skuName);
+    az_postgres_server.create = function () {
+        return new az_postgres_server_create_command_builder("az postgres server create", 'az_postgres_server_create_command_result');
     };
     /**
      * Delete a server.
@@ -1178,6 +1166,20 @@ var az_postgres_server = /** @class */ (function () {
      */
     az_postgres_server.list = function () {
         return new az_postgres_server_list_command_builder("az postgres server list", 'az_postgres_server_list_command_result');
+    };
+    /**
+     * List available sku's in the given region.
+     *
+     * Syntax:
+     * ```
+     * az postgres server list-skus --location
+     *                              [--subscription]
+     * ```
+     *
+     * @param {string} location The name of the location.
+     */
+    az_postgres_server.list_skus = function (location) {
+        return new az_postgres_server_list_skus_command_builder("az postgres server list-skus", 'az_postgres_server_list_skus_command_result', location);
     };
     /**
      * Restart a server.
@@ -1242,7 +1244,7 @@ var az_postgres_server = /** @class */ (function () {
      *                           [--ids]
      *                           [--minimal-tls-version {TLS1_0, TLS1_1, TLS1_2, TLSEnforcementDisabled}]
      *                           [--name]
-     *                           [--public {Disabled, Enabled}]
+     *                           [--public]
      *                           [--remove]
      *                           [--resource-group]
      *                           [--set]
@@ -1348,28 +1350,30 @@ var az_postgres_db_create_command_builder = /** @class */ (function (_super) {
  * Syntax:
  * ```
  * az postgres db delete --name
- *                       --resource-group
- *                       --server-name
+ *                       [--ids]
+ *                       [--resource-group]
+ *                       [--server-name]
  *                       [--subscription]
  *                       [--yes]
  * ```
  *
  * @param {string} name The name of the database.
- * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 var az_postgres_db_delete_command_builder = /** @class */ (function (_super) {
     __extends(az_postgres_db_delete_command_builder, _super);
-    function az_postgres_db_delete_command_builder(commandPath, resultDataTypeName, name, resourceGroup, serverName) {
+    function az_postgres_db_delete_command_builder(commandPath, resultDataTypeName, name) {
         var _this = _super.call(this, commandPath, resultDataTypeName) || this;
         _this.name(name);
-        _this.resourceGroup(resourceGroup);
-        _this.serverName(serverName);
         return _this;
     }
     /** The name of the database. */
     az_postgres_db_delete_command_builder.prototype.name = function (value) {
         this.setFlag("--name", value);
+        return this;
+    };
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    az_postgres_db_delete_command_builder.prototype.ids = function (value) {
+        this.setFlag("--ids", value);
         return this;
     };
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
@@ -1406,7 +1410,7 @@ var az_postgres_db_delete_command_builder = /** @class */ (function (_super) {
  * ```
  *
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
+ * @param {string} serverName Name of the Server.
  */
 var az_postgres_db_list_command_builder = /** @class */ (function (_super) {
     __extends(az_postgres_db_list_command_builder, _super);
@@ -1421,7 +1425,7 @@ var az_postgres_db_list_command_builder = /** @class */ (function (_super) {
         this.setFlag("--resource-group", value);
         return this;
     };
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
+    /** Name of the Server. */
     az_postgres_db_list_command_builder.prototype.serverName = function (value) {
         this.setFlag("--server-name", value);
         return this;
@@ -1444,28 +1448,35 @@ var az_postgres_db_list_command_builder = /** @class */ (function (_super) {
  * Syntax:
  * ```
  * az postgres db show --name
- *                     --resource-group
- *                     --server-name
+ *                     [--ids]
  *                     [--query-examples]
+ *                     [--resource-group]
+ *                     [--server-name]
  *                     [--subscription]
  * ```
  *
  * @param {string} name The name of the database.
- * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 var az_postgres_db_show_command_builder = /** @class */ (function (_super) {
     __extends(az_postgres_db_show_command_builder, _super);
-    function az_postgres_db_show_command_builder(commandPath, resultDataTypeName, name, resourceGroup, serverName) {
+    function az_postgres_db_show_command_builder(commandPath, resultDataTypeName, name) {
         var _this = _super.call(this, commandPath, resultDataTypeName) || this;
         _this.name(name);
-        _this.resourceGroup(resourceGroup);
-        _this.serverName(serverName);
         return _this;
     }
     /** The name of the database. */
     az_postgres_db_show_command_builder.prototype.name = function (value) {
         this.setFlag("--name", value);
+        return this;
+    };
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    az_postgres_db_show_command_builder.prototype.ids = function (value) {
+        this.setFlag("--ids", value);
+        return this;
+    };
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    az_postgres_db_show_command_builder.prototype.queryExamples = function (value) {
+        this.setFlag("--query-examples", value);
         return this;
     };
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
@@ -1476,11 +1487,6 @@ var az_postgres_db_show_command_builder = /** @class */ (function (_super) {
     /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
     az_postgres_db_show_command_builder.prototype.serverName = function (value) {
         this.setFlag("--server-name", value);
-        return this;
-    };
-    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
-    az_postgres_db_show_command_builder.prototype.queryExamples = function (value) {
-        this.setFlag("--query-examples", value);
         return this;
     };
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -1495,37 +1501,26 @@ var az_postgres_db_show_command_builder = /** @class */ (function (_super) {
  *
  * Syntax:
  * ```
- * az postgres flexible-server firewall-rule create --end-ip-address
- *                                                  --name
+ * az postgres flexible-server firewall-rule create --name
  *                                                  --resource-group
- *                                                  --server-name
- *                                                  --start-ip-address
+ *                                                  [--end-ip-address]
+ *                                                  [--rule-name]
+ *                                                  [--start-ip-address]
  *                                                  [--subscription]
  * ```
  *
- * @param {string} endIpAddress The end IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
- * @param {string} name The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters.
+ * @param {string} name Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
- * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
  */
 var az_postgres_flexible_server_firewall_rule_create_command_builder = /** @class */ (function (_super) {
     __extends(az_postgres_flexible_server_firewall_rule_create_command_builder, _super);
-    function az_postgres_flexible_server_firewall_rule_create_command_builder(commandPath, resultDataTypeName, endIpAddress, name, resourceGroup, serverName, startIpAddress) {
+    function az_postgres_flexible_server_firewall_rule_create_command_builder(commandPath, resultDataTypeName, name, resourceGroup) {
         var _this = _super.call(this, commandPath, resultDataTypeName) || this;
-        _this.endIpAddress(endIpAddress);
         _this.name(name);
         _this.resourceGroup(resourceGroup);
-        _this.serverName(serverName);
-        _this.startIpAddress(startIpAddress);
         return _this;
     }
-    /** The end IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses. */
-    az_postgres_flexible_server_firewall_rule_create_command_builder.prototype.endIpAddress = function (value) {
-        this.setFlag("--end-ip-address", value);
-        return this;
-    };
-    /** The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters. */
+    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
     az_postgres_flexible_server_firewall_rule_create_command_builder.prototype.name = function (value) {
         this.setFlag("--name", value);
         return this;
@@ -1535,9 +1530,14 @@ var az_postgres_flexible_server_firewall_rule_create_command_builder = /** @clas
         this.setFlag("--resource-group", value);
         return this;
     };
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
-    az_postgres_flexible_server_firewall_rule_create_command_builder.prototype.serverName = function (value) {
-        this.setFlag("--server-name", value);
+    /** The end IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses. */
+    az_postgres_flexible_server_firewall_rule_create_command_builder.prototype.endIpAddress = function (value) {
+        this.setFlag("--end-ip-address", value);
+        return this;
+    };
+    /** The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters. */
+    az_postgres_flexible_server_firewall_rule_create_command_builder.prototype.ruleName = function (value) {
+        this.setFlag("--rule-name", value);
         return this;
     };
     /** The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses. */
@@ -1559,10 +1559,10 @@ var az_postgres_flexible_server_firewall_rule_create_command_builder = /** @clas
  * ```
  * az postgres flexible-server firewall-rule delete [--ids]
  *                                                  [--name]
- *                                                  [--prompt]
  *                                                  [--resource-group]
- *                                                  [--server-name]
+ *                                                  [--rule-name]
  *                                                  [--subscription]
+ *                                                  [--yes]
  * ```
  */
 var az_postgres_flexible_server_firewall_rule_delete_command_builder = /** @class */ (function (_super) {
@@ -1575,14 +1575,9 @@ var az_postgres_flexible_server_firewall_rule_delete_command_builder = /** @clas
         this.setFlag("--ids", value);
         return this;
     };
-    /** The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters. */
+    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
     az_postgres_flexible_server_firewall_rule_delete_command_builder.prototype.name = function (value) {
         this.setFlag("--name", value);
-        return this;
-    };
-    /** Turn confirmation prompt on/off. If off, the rule will be deleted without confirmation. */
-    az_postgres_flexible_server_firewall_rule_delete_command_builder.prototype.prompt = function (value) {
-        this.setFlag("--prompt", value);
         return this;
     };
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
@@ -1590,14 +1585,19 @@ var az_postgres_flexible_server_firewall_rule_delete_command_builder = /** @clas
         this.setFlag("--resource-group", value);
         return this;
     };
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
-    az_postgres_flexible_server_firewall_rule_delete_command_builder.prototype.serverName = function (value) {
-        this.setFlag("--server-name", value);
+    /** The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters. */
+    az_postgres_flexible_server_firewall_rule_delete_command_builder.prototype.ruleName = function (value) {
+        this.setFlag("--rule-name", value);
         return this;
     };
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     az_postgres_flexible_server_firewall_rule_delete_command_builder.prototype.subscription = function (value) {
         this.setFlag("--subscription", value);
+        return this;
+    };
+    /** Do not prompt for confirmation. */
+    az_postgres_flexible_server_firewall_rule_delete_command_builder.prototype.yes = function (value) {
+        this.setFlag("--yes", value);
         return this;
     };
     return az_postgres_flexible_server_firewall_rule_delete_command_builder;
@@ -1607,31 +1607,31 @@ var az_postgres_flexible_server_firewall_rule_delete_command_builder = /** @clas
  *
  * Syntax:
  * ```
- * az postgres flexible-server firewall-rule list --resource-group
- *                                                --server-name
+ * az postgres flexible-server firewall-rule list --name
+ *                                                --resource-group
  *                                                [--query-examples]
  *                                                [--subscription]
  * ```
  *
+ * @param {string} name Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 var az_postgres_flexible_server_firewall_rule_list_command_builder = /** @class */ (function (_super) {
     __extends(az_postgres_flexible_server_firewall_rule_list_command_builder, _super);
-    function az_postgres_flexible_server_firewall_rule_list_command_builder(commandPath, resultDataTypeName, resourceGroup, serverName) {
+    function az_postgres_flexible_server_firewall_rule_list_command_builder(commandPath, resultDataTypeName, name, resourceGroup) {
         var _this = _super.call(this, commandPath, resultDataTypeName) || this;
+        _this.name(name);
         _this.resourceGroup(resourceGroup);
-        _this.serverName(serverName);
         return _this;
     }
+    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
+    az_postgres_flexible_server_firewall_rule_list_command_builder.prototype.name = function (value) {
+        this.setFlag("--name", value);
+        return this;
+    };
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
     az_postgres_flexible_server_firewall_rule_list_command_builder.prototype.resourceGroup = function (value) {
         this.setFlag("--resource-group", value);
-        return this;
-    };
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
-    az_postgres_flexible_server_firewall_rule_list_command_builder.prototype.serverName = function (value) {
-        this.setFlag("--server-name", value);
         return this;
     };
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
@@ -1655,7 +1655,7 @@ var az_postgres_flexible_server_firewall_rule_list_command_builder = /** @class 
  *                                                [--name]
  *                                                [--query-examples]
  *                                                [--resource-group]
- *                                                [--server-name]
+ *                                                [--rule-name]
  *                                                [--subscription]
  * ```
  */
@@ -1669,7 +1669,7 @@ var az_postgres_flexible_server_firewall_rule_show_command_builder = /** @class 
         this.setFlag("--ids", value);
         return this;
     };
-    /** The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters. */
+    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
     az_postgres_flexible_server_firewall_rule_show_command_builder.prototype.name = function (value) {
         this.setFlag("--name", value);
         return this;
@@ -1684,9 +1684,9 @@ var az_postgres_flexible_server_firewall_rule_show_command_builder = /** @class 
         this.setFlag("--resource-group", value);
         return this;
     };
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
-    az_postgres_flexible_server_firewall_rule_show_command_builder.prototype.serverName = function (value) {
-        this.setFlag("--server-name", value);
+    /** The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters. */
+    az_postgres_flexible_server_firewall_rule_show_command_builder.prototype.ruleName = function (value) {
+        this.setFlag("--rule-name", value);
         return this;
     };
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
@@ -1708,7 +1708,7 @@ var az_postgres_flexible_server_firewall_rule_show_command_builder = /** @class 
  *                                                  [--name]
  *                                                  [--remove]
  *                                                  [--resource-group]
- *                                                  [--server-name]
+ *                                                  [--rule-name]
  *                                                  [--set]
  *                                                  [--start-ip-address]
  *                                                  [--subscription]
@@ -1739,7 +1739,7 @@ var az_postgres_flexible_server_firewall_rule_update_command_builder = /** @clas
         this.setFlag("--ids", value);
         return this;
     };
-    /** The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters. */
+    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
     az_postgres_flexible_server_firewall_rule_update_command_builder.prototype.name = function (value) {
         this.setFlag("--name", value);
         return this;
@@ -1754,9 +1754,9 @@ var az_postgres_flexible_server_firewall_rule_update_command_builder = /** @clas
         this.setFlag("--resource-group", value);
         return this;
     };
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
-    az_postgres_flexible_server_firewall_rule_update_command_builder.prototype.serverName = function (value) {
-        this.setFlag("--server-name", value);
+    /** The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters. */
+    az_postgres_flexible_server_firewall_rule_update_command_builder.prototype.ruleName = function (value) {
+        this.setFlag("--rule-name", value);
         return this;
     };
     /** Update an object by specifying a property path and value to set.  Example: --set property1.property2=<value>. */
@@ -1958,7 +1958,7 @@ var az_postgres_flexible_server_create_command_builder = /** @class */ (function
     function az_postgres_flexible_server_create_command_builder(commandPath, resultDataTypeName) {
         return _super.call(this, commandPath, resultDataTypeName) || this;
     }
-    /** The virtual network address prefix. */
+    /** The IP address prefix to use when creating a new virtual network in CIDR format. Default value is 10.0.0.0/16. */
     az_postgres_flexible_server_create_command_builder.prototype.addressPrefixes = function (value) {
         this.setFlag("--address-prefixes", value);
         return this;
@@ -2018,12 +2018,12 @@ var az_postgres_flexible_server_create_command_builder = /** @class */ (function
         this.setFlag("--storage-size", value);
         return this;
     };
-    /** Name or ID of the subnet that allows access to an Azure Flexible Server. */
+    /** Resource ID of an existing subnet. Please note that the subnet will be delegated to Microsoft.DBforPostgreSQL/flexibleServers/Microsoft.DBforMySQL/flexibleServers.After delegation, this subnet cannot be used for any other type of Azure resources. */
     az_postgres_flexible_server_create_command_builder.prototype.subnet = function (value) {
         this.setFlag("--subnet", value);
         return this;
     };
-    /** The subnet address prefix. */
+    /** The subnet IP address prefix to use when creating a new VNet in CIDR format. Default value is 10.0.0.0/24. */
     az_postgres_flexible_server_create_command_builder.prototype.subnetPrefixes = function (value) {
         this.setFlag("--subnet-prefixes", value);
         return this;
@@ -2048,7 +2048,7 @@ var az_postgres_flexible_server_create_command_builder = /** @class */ (function
         this.setFlag("--version", value);
         return this;
     };
-    /** The virtual network name. */
+    /** Name of an existing virtual network or name of a new one to create. The name must be between 2 to 64 characters. The name must begin with a letter or number, end with a letter, number or underscore, and may contain only letters, numbers, underscores, periods, or hyphens. */
     az_postgres_flexible_server_create_command_builder.prototype.vnet = function (value) {
         this.setFlag("--vnet", value);
         return this;
@@ -2065,11 +2065,11 @@ var az_postgres_flexible_server_create_command_builder = /** @class */ (function
  *
  * Syntax:
  * ```
- * az postgres flexible-server delete [--force]
- *                                    [--ids]
+ * az postgres flexible-server delete [--ids]
  *                                    [--name]
  *                                    [--resource-group]
  *                                    [--subscription]
+ *                                    [--yes]
  * ```
  */
 var az_postgres_flexible_server_delete_command_builder = /** @class */ (function (_super) {
@@ -2077,11 +2077,6 @@ var az_postgres_flexible_server_delete_command_builder = /** @class */ (function
     function az_postgres_flexible_server_delete_command_builder(commandPath, resultDataTypeName) {
         return _super.call(this, commandPath, resultDataTypeName) || this;
     }
-    /** Delete the server without prompt. */
-    az_postgres_flexible_server_delete_command_builder.prototype.force = function (value) {
-        this.setFlag("--force", value);
-        return this;
-    };
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
     az_postgres_flexible_server_delete_command_builder.prototype.ids = function (value) {
         this.setFlag("--ids", value);
@@ -2100,6 +2095,11 @@ var az_postgres_flexible_server_delete_command_builder = /** @class */ (function
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     az_postgres_flexible_server_delete_command_builder.prototype.subscription = function (value) {
         this.setFlag("--subscription", value);
+        return this;
+    };
+    /** Do not prompt for confirmation. */
+    az_postgres_flexible_server_delete_command_builder.prototype.yes = function (value) {
+        this.setFlag("--yes", value);
         return this;
     };
     return az_postgres_flexible_server_delete_command_builder;
@@ -2209,8 +2209,8 @@ var az_postgres_flexible_server_restart_command_builder = /** @class */ (functio
  *
  * Syntax:
  * ```
- * az postgres flexible-server restore --source-server
- *                                     --time
+ * az postgres flexible-server restore --restore-time
+ *                                     --source-server
  *                                     [--ids]
  *                                     [--location]
  *                                     [--name]
@@ -2219,25 +2219,25 @@ var az_postgres_flexible_server_restart_command_builder = /** @class */ (functio
  *                                     [--subscription]
  * ```
  *
- * @param {string} sourceServer The name or resource ID of the source server to restore from.
- * @param {string} time The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00.
+ * @param {string} restoreTime The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00.
+ * @param {string} sourceServer The name of the source server to restore from.
  */
 var az_postgres_flexible_server_restore_command_builder = /** @class */ (function (_super) {
     __extends(az_postgres_flexible_server_restore_command_builder, _super);
-    function az_postgres_flexible_server_restore_command_builder(commandPath, resultDataTypeName, sourceServer, time) {
+    function az_postgres_flexible_server_restore_command_builder(commandPath, resultDataTypeName, restoreTime, sourceServer) {
         var _this = _super.call(this, commandPath, resultDataTypeName) || this;
+        _this.restoreTime(restoreTime);
         _this.sourceServer(sourceServer);
-        _this.time(time);
         return _this;
     }
-    /** The name or resource ID of the source server to restore from. */
-    az_postgres_flexible_server_restore_command_builder.prototype.sourceServer = function (value) {
-        this.setFlag("--source-server", value);
+    /** The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00. */
+    az_postgres_flexible_server_restore_command_builder.prototype.restoreTime = function (value) {
+        this.setFlag("--restore-time", value);
         return this;
     };
-    /** The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00. */
-    az_postgres_flexible_server_restore_command_builder.prototype.time = function (value) {
-        this.setFlag("--time", value);
+    /** The name of the source server to restore from. */
+    az_postgres_flexible_server_restore_command_builder.prototype.sourceServer = function (value) {
+        this.setFlag("--source-server", value);
         return this;
     };
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -4242,27 +4242,29 @@ var az_postgres_server_vnet_rule_update_command_builder = /** @class */ (functio
  * Syntax:
  * ```
  * az postgres server-logs download --name
- *                                  --resource-group
- *                                  --server-name
+ *                                  [--ids]
+ *                                  [--resource-group]
+ *                                  [--server-name]
  *                                  [--subscription]
  * ```
  *
  * @param {string} name Space-separated list of log filenames on the server to download.
- * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 var az_postgres_server_logs_download_command_builder = /** @class */ (function (_super) {
     __extends(az_postgres_server_logs_download_command_builder, _super);
-    function az_postgres_server_logs_download_command_builder(commandPath, resultDataTypeName, name, resourceGroup, serverName) {
+    function az_postgres_server_logs_download_command_builder(commandPath, resultDataTypeName, name) {
         var _this = _super.call(this, commandPath, resultDataTypeName) || this;
         _this.name(name);
-        _this.resourceGroup(resourceGroup);
-        _this.serverName(serverName);
         return _this;
     }
     /** Space-separated list of log filenames on the server to download. */
     az_postgres_server_logs_download_command_builder.prototype.name = function (value) {
         this.setFlag("--name", value);
+        return this;
+    };
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    az_postgres_server_logs_download_command_builder.prototype.ids = function (value) {
+        this.setFlag("--ids", value);
         return this;
     };
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
@@ -4297,7 +4299,7 @@ var az_postgres_server_logs_download_command_builder = /** @class */ (function (
  * ```
  *
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
+ * @param {string} serverName Name of the Server.
  */
 var az_postgres_server_logs_list_command_builder = /** @class */ (function (_super) {
     __extends(az_postgres_server_logs_list_command_builder, _super);
@@ -4312,7 +4314,7 @@ var az_postgres_server_logs_list_command_builder = /** @class */ (function (_sup
         this.setFlag("--resource-group", value);
         return this;
     };
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
+    /** Name of the Server. */
     az_postgres_server_logs_list_command_builder.prototype.serverName = function (value) {
         this.setFlag("--server-name", value);
         return this;
@@ -4349,11 +4351,8 @@ var az_postgres_server_logs_list_command_builder = /** @class */ (function (_sup
  *
  * Syntax:
  * ```
- * az postgres server create --admin-password
- *                           --admin-user
- *                           --name
- *                           --resource-group
- *                           --sku-name
+ * az postgres server create [--admin-password]
+ *                           [--admin-user]
  *                           [--assign-identity]
  *                           [--auto-grow {Disabled, Enabled}]
  *                           [--backup-retention]
@@ -4361,30 +4360,21 @@ var az_postgres_server_logs_list_command_builder = /** @class */ (function (_sup
  *                           [--infrastructure-encryption {Disabled, Enabled}]
  *                           [--location]
  *                           [--minimal-tls-version {TLS1_0, TLS1_1, TLS1_2, TLSEnforcementDisabled}]
- *                           [--public {Disabled, Enabled}]
+ *                           [--name]
+ *                           [--public]
+ *                           [--resource-group]
+ *                           [--sku-name]
  *                           [--ssl-enforcement {Disabled, Enabled}]
  *                           [--storage-size]
  *                           [--subscription]
  *                           [--tags]
  *                           [--version]
  * ```
- *
- * @param {string} adminPassword The password of the administrator. Minimum 8 characters and maximum 128 characters. Password must contain characters from three of the following categories: English uppercase letters, English lowercase letters, numbers, and non-alphanumeric characters.
- * @param {string} adminUser Administrator username for the server. Once set, it cannot be changed.
- * @param {string} name Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
- * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} skuName The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16.
  */
 var az_postgres_server_create_command_builder = /** @class */ (function (_super) {
     __extends(az_postgres_server_create_command_builder, _super);
-    function az_postgres_server_create_command_builder(commandPath, resultDataTypeName, adminPassword, adminUser, name, resourceGroup, skuName) {
-        var _this = _super.call(this, commandPath, resultDataTypeName) || this;
-        _this.adminPassword(adminPassword);
-        _this.adminUser(adminUser);
-        _this.name(name);
-        _this.resourceGroup(resourceGroup);
-        _this.skuName(skuName);
-        return _this;
+    function az_postgres_server_create_command_builder(commandPath, resultDataTypeName) {
+        return _super.call(this, commandPath, resultDataTypeName) || this;
     }
     /** The password of the administrator. Minimum 8 characters and maximum 128 characters. Password must contain characters from three of the following categories: English uppercase letters, English lowercase letters, numbers, and non-alphanumeric characters. */
     az_postgres_server_create_command_builder.prototype.adminPassword = function (value) {
@@ -4394,21 +4384,6 @@ var az_postgres_server_create_command_builder = /** @class */ (function (_super)
     /** Administrator username for the server. Once set, it cannot be changed. */
     az_postgres_server_create_command_builder.prototype.adminUser = function (value) {
         this.setFlag("--admin-user", value);
-        return this;
-    };
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
-    az_postgres_server_create_command_builder.prototype.name = function (value) {
-        this.setFlag("--name", value);
-        return this;
-    };
-    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
-    az_postgres_server_create_command_builder.prototype.resourceGroup = function (value) {
-        this.setFlag("--resource-group", value);
-        return this;
-    };
-    /** The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16. */
-    az_postgres_server_create_command_builder.prototype.skuName = function (value) {
-        this.setFlag("--sku-name", value);
         return this;
     };
     /** Generate and assign an Azure Active Directory Identity for this server for use with key management services like Azure KeyVault. */
@@ -4446,9 +4421,24 @@ var az_postgres_server_create_command_builder = /** @class */ (function (_super)
         this.setFlag("--minimal-tls-version", value);
         return this;
     };
-    /** Enable or disable public network access to server. When disabled, only connections made through Private Links can reach this server. Default is Enabled. */
+    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
+    az_postgres_server_create_command_builder.prototype.name = function (value) {
+        this.setFlag("--name", value);
+        return this;
+    };
+    /** Enable or disable public network access to server. When disabled, only connections made through Private Links can reach this server. Allowed values are : Enabled, Disabled, all, 0.0.0.0, <SingleIP>, <StartIP-DestinationIP>. Default is Enabled. */
     az_postgres_server_create_command_builder.prototype.publicNetworkAccess = function (value) {
         this.setFlag("--public-network-access", value);
+        return this;
+    };
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    az_postgres_server_create_command_builder.prototype.resourceGroup = function (value) {
+        this.setFlag("--resource-group", value);
+        return this;
+    };
+    /** The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16. */
+    az_postgres_server_create_command_builder.prototype.skuName = function (value) {
+        this.setFlag("--sku-name", value);
         return this;
     };
     /** Enable or disable ssl enforcement for connections to server. Default is Enabled. */
@@ -4635,6 +4625,36 @@ var az_postgres_server_list_command_builder = /** @class */ (function (_super) {
     return az_postgres_server_list_command_builder;
 }(base_1.CommandBuilder));
 /**
+ * List available sku's in the given region.
+ *
+ * Syntax:
+ * ```
+ * az postgres server list-skus --location
+ *                              [--subscription]
+ * ```
+ *
+ * @param {string} location The name of the location.
+ */
+var az_postgres_server_list_skus_command_builder = /** @class */ (function (_super) {
+    __extends(az_postgres_server_list_skus_command_builder, _super);
+    function az_postgres_server_list_skus_command_builder(commandPath, resultDataTypeName, location) {
+        var _this = _super.call(this, commandPath, resultDataTypeName) || this;
+        _this.location(location);
+        return _this;
+    }
+    /** The name of the location. */
+    az_postgres_server_list_skus_command_builder.prototype.location = function (value) {
+        this.setFlag("--location", value);
+        return this;
+    };
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    az_postgres_server_list_skus_command_builder.prototype.subscription = function (value) {
+        this.setFlag("--subscription", value);
+        return this;
+    };
+    return az_postgres_server_list_skus_command_builder;
+}(base_1.CommandBuilder));
+/**
  * Restart a server.
  *
  * Syntax:
@@ -4792,7 +4812,7 @@ var az_postgres_server_show_command_builder = /** @class */ (function (_super) {
  *                           [--ids]
  *                           [--minimal-tls-version {TLS1_0, TLS1_1, TLS1_2, TLSEnforcementDisabled}]
  *                           [--name]
- *                           [--public {Disabled, Enabled}]
+ *                           [--public]
  *                           [--remove]
  *                           [--resource-group]
  *                           [--set]
@@ -4853,7 +4873,7 @@ var az_postgres_server_update_command_builder = /** @class */ (function (_super)
         this.setFlag("--name", value);
         return this;
     };
-    /** Enable or disable public network access to server. When disabled, only connections made through Private Links can reach this server. Default is Enabled. */
+    /** Enable or disable public network access to server. When disabled, only connections made through Private Links can reach this server. Allowed values are : Enabled, Disabled, all, 0.0.0.0, <SingleIP>, <StartIP-DestinationIP>. Default is Enabled. */
     az_postgres_server_update_command_builder.prototype.publicNetworkAccess = function (value) {
         this.setFlag("--public-network-access", value);
         return this;

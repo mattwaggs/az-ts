@@ -33,6 +33,7 @@ export declare class az_sig_image_definition {
      *                                [--disallowed-disk-types]
      *                                [--end-of-life-date]
      *                                [--eula]
+     *                                [--features]
      *                                [--hyper-v-generation {V1, V2}]
      *                                [--location]
      *                                [--maximum-cpu-core]
@@ -72,7 +73,7 @@ export declare class az_sig_image_definition {
      */
     static delete(): az_sig_image_definition_delete_command_builder;
     /**
-     * List gallery Image Definitions in a gallery.
+     * List gallery image definitions in a gallery.
      *
      * Syntax:
      * ```
@@ -87,7 +88,7 @@ export declare class az_sig_image_definition {
      */
     static list(galleryName: string, resourceGroup: string): az_sig_image_definition_list_command_builder;
     /**
-     * Retrieves information about a gallery Image Definition.
+     * Retrieves information about a gallery image definition.
      *
      * Syntax:
      * ```
@@ -353,6 +354,7 @@ export declare class az_sig {
  *                                [--disallowed-disk-types]
  *                                [--end-of-life-date]
  *                                [--eula]
+ *                                [--features]
  *                                [--hyper-v-generation {V1, V2}]
  *                                [--location]
  *                                [--maximum-cpu-core]
@@ -401,6 +403,8 @@ declare class az_sig_image_definition_create_command_builder extends CommandBuil
     endOfLifeDate(value: string): az_sig_image_definition_create_command_builder;
     /** The Eula agreement for the gallery image. */
     eula(value: string): az_sig_image_definition_create_command_builder;
+    /** A list of gallery image features. E.g. "IsSecureBootSupported=true IsMeasuredBootSupported=false". */
+    features(value: string): az_sig_image_definition_create_command_builder;
     /** The hypervisor generation of the Virtual Machine. Applicable to OS disks only. */
     hyperVGeneration(value: 'V1' | 'V2'): az_sig_image_definition_create_command_builder;
     /** Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`. */
@@ -456,7 +460,7 @@ declare class az_sig_image_definition_delete_command_builder extends CommandBuil
     subscription(value: string): az_sig_image_definition_delete_command_builder;
 }
 /**
- * List gallery Image Definitions in a gallery.
+ * List gallery image definitions in a gallery.
  *
  * Syntax:
  * ```
@@ -481,7 +485,7 @@ declare class az_sig_image_definition_list_command_builder extends CommandBuilde
     subscription(value: string): az_sig_image_definition_list_command_builder;
 }
 /**
- * Retrieves information about a gallery Image Definition.
+ * Retrieves information about a gallery image definition.
  *
  * Syntax:
  * ```

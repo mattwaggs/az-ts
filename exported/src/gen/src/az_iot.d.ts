@@ -479,6 +479,7 @@ export declare class az_iot_dps {
      *                   [--location]
      *                   [--sku {S1}]
      *                   [--subscription]
+     *                   [--tags]
      *                   [--unit]
      * ```
      *
@@ -535,6 +536,7 @@ export declare class az_iot_dps {
      *                   [--resource-group]
      *                   [--set]
      *                   [--subscription]
+     *                   [--tags]
      * ```
      */
     static update(): az_iot_dps_update_command_builder;
@@ -1921,6 +1923,7 @@ declare class az_iot_dps_linked_hub_update_command_builder extends CommandBuilde
  *                   [--location]
  *                   [--sku {S1}]
  *                   [--subscription]
+ *                   [--tags]
  *                   [--unit]
  * ```
  *
@@ -1939,6 +1942,8 @@ declare class az_iot_dps_create_command_builder extends CommandBuilder<az_iot_dp
     sku(value: 'S1'): az_iot_dps_create_command_builder;
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_iot_dps_create_command_builder;
+    /** Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags. */
+    tags(value: string): az_iot_dps_create_command_builder;
     /** Units in your IoT Provisioning Service. */
     unit(value: string): az_iot_dps_create_command_builder;
 }
@@ -2021,6 +2026,7 @@ declare class az_iot_dps_show_command_builder extends CommandBuilder<az_iot_dps_
  *                   [--resource-group]
  *                   [--set]
  *                   [--subscription]
+ *                   [--tags]
  * ```
  */
 declare class az_iot_dps_update_command_builder extends CommandBuilder<az_iot_dps_update_command_result> {
@@ -2041,6 +2047,8 @@ declare class az_iot_dps_update_command_builder extends CommandBuilder<az_iot_dp
     set(value: string): az_iot_dps_update_command_builder;
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_iot_dps_update_command_builder;
+    /** Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags. */
+    tags(value: string): az_iot_dps_update_command_builder;
 }
 /**
  * Create/upload an Azure IoT Hub certificate.

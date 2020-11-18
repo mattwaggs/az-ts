@@ -2010,6 +2010,7 @@ export declare class az_network_application_gateway_rule {
      *                                            [--http-listener]
      *                                            [--http-settings]
      *                                            [--no-wait]
+     *                                            [--priority]
      *                                            [--redirect-config]
      *                                            [--rewrite-rule-set]
      *                                            [--rule-type]
@@ -2079,6 +2080,7 @@ export declare class az_network_application_gateway_rule {
      *                                            [--ids]
      *                                            [--name]
      *                                            [--no-wait]
+     *                                            [--priority]
      *                                            [--redirect-config]
      *                                            [--remove]
      *                                            [--resource-group]
@@ -2695,30 +2697,29 @@ export declare class az_network_application_gateway_waf_policy_managed_rule_rule
      */
     static remove(policyName: string, resourceGroup: string, type: 'Microsoft_BotManagerRuleSet' | 'OWASP', version: '0.1' | '2.2.9' | '3.0' | '3.1'): az_network_application_gateway_waf_policy_managed_rule_rule_set_remove_command_builder;
     /**
-     * Update(Override) existing rule set of a WAF policy managed rules. For rule set and rules, please visit: <a href="https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules">https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules</a>.
+     * Manage rules of a WAF policy. If --group-name and --rules are provided, override existing rules. If --group-name is provided, clear all rules under a certain rule group. If neither of them are provided, update rule set and clear all rules under itself. For rule set and rules, please visit: <a href="https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules">https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules</a>.
      *
      * Syntax:
      * ```
-     * az network application-gateway waf-policy managed-rule rule-set update --group-name
-     *                                                                        --policy-name
+     * az network application-gateway waf-policy managed-rule rule-set update --policy-name
      *                                                                        --resource-group
      *                                                                        --type {Microsoft_BotManagerRuleSet, OWASP}
      *                                                                        --version {0.1, 2.2.9, 3.0, 3.1}
      *                                                                        [--add]
      *                                                                        [--force-string]
+     *                                                                        [--group-name]
      *                                                                        [--remove]
      *                                                                        [--rules]
      *                                                                        [--set]
      *                                                                        [--subscription]
      * ```
      *
-     * @param {string} groupName The name of the web application firewall rule set group.
      * @param {string} policyName The name of the web application firewall policy.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {'Microsoft_BotManagerRuleSet' | 'OWASP'} type The type of the web application firewall rule set.
      * @param {'0.1' | '2.2.9' | '3.0' | '3.1'} version The version of the web application firewall rule set type. 0.1 is used for Microsoft_BotManagerRuleSet.
      */
-    static update(groupName: string, policyName: string, resourceGroup: string, type: 'Microsoft_BotManagerRuleSet' | 'OWASP', version: '0.1' | '2.2.9' | '3.0' | '3.1'): az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder;
+    static update(policyName: string, resourceGroup: string, type: 'Microsoft_BotManagerRuleSet' | 'OWASP', version: '0.1' | '2.2.9' | '3.0' | '3.1'): az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder;
 }
 /** Manage managed rules of a waf-policy. Visit: <a href="https://docs.microsoft.com/en-us/azure/web-application-firewall/afds/afds-overview">https://docs.microsoft.com/en-us/azure/web-application-firewall/afds/afds-overview</a>. */
 export declare class az_network_application_gateway_waf_policy_managed_rule {
@@ -10927,7 +10928,7 @@ export declare class az_network_vrouter_peering {
      */
     static update(name: string, resourceGroup: string, vrouterName: string): az_network_vrouter_peering_update_command_builder;
 }
-/** Manage the virtual router. This feature supports both VirtualHub and VirtualRouter. Considering VirtualRouter is depcated, we recommand to create VirtualRouter instead. */
+/** Manage the virtual router. This feature supports both VirtualHub and VirtualRouter. Considering VirtualRouter is deprecated, we recommend to create VirtualRouter with --hosted-subnet instead. */
 export declare class az_network_vrouter {
     /**
      * Create a virtual router.
@@ -12564,7 +12565,7 @@ declare class az_network_application_gateway_http_listener_create_command_builde
     frontendIp(value: string): az_network_application_gateway_http_listener_create_command_builder;
     /** Host name to use for multisite gateways. */
     hostName(value: string): az_network_application_gateway_http_listener_create_command_builder;
-    /** List of host names that allows special wildcard characters as well. */
+    /** Space-separated list of host names that allows special wildcard characters as well. */
     hostNames(value: string): az_network_application_gateway_http_listener_create_command_builder;
     /** Do not wait for the long-running operation to finish. */
     noWait(value: string): az_network_application_gateway_http_listener_create_command_builder;
@@ -12693,7 +12694,7 @@ declare class az_network_application_gateway_http_listener_update_command_builde
     gatewayName(value: string): az_network_application_gateway_http_listener_update_command_builder;
     /** Host name to use for multisite gateways. */
     hostName(value: string): az_network_application_gateway_http_listener_update_command_builder;
-    /** List of host names that allows special wildcard characters as well. */
+    /** Space-separated list of host names that allows special wildcard characters as well. */
     hostNames(value: string): az_network_application_gateway_http_listener_update_command_builder;
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
     ids(value: string): az_network_application_gateway_http_listener_update_command_builder;
@@ -14557,6 +14558,7 @@ declare class az_network_application_gateway_root_cert_update_command_builder ex
  *                                            [--http-listener]
  *                                            [--http-settings]
  *                                            [--no-wait]
+ *                                            [--priority]
  *                                            [--redirect-config]
  *                                            [--rewrite-rule-set]
  *                                            [--rule-type]
@@ -14584,6 +14586,8 @@ declare class az_network_application_gateway_rule_create_command_builder extends
     httpSettings(value: string): az_network_application_gateway_rule_create_command_builder;
     /** Do not wait for the long-running operation to finish. */
     noWait(value: string): az_network_application_gateway_rule_create_command_builder;
+    /** Priority of the request routing rule. Range from 1 to 2000. */
+    priority(value: string): az_network_application_gateway_rule_create_command_builder;
     /** The name or ID of the redirect configuration to use with the created rule. */
     redirectConfig(value: string): az_network_application_gateway_rule_create_command_builder;
     /** The name or ID of the rewrite rule set. */
@@ -14690,6 +14694,7 @@ declare class az_network_application_gateway_rule_show_command_builder extends C
  *                                            [--ids]
  *                                            [--name]
  *                                            [--no-wait]
+ *                                            [--priority]
  *                                            [--redirect-config]
  *                                            [--remove]
  *                                            [--resource-group]
@@ -14720,6 +14725,8 @@ declare class az_network_application_gateway_rule_update_command_builder extends
     name(value: string): az_network_application_gateway_rule_update_command_builder;
     /** Do not wait for the long-running operation to finish. */
     noWait(value: string): az_network_application_gateway_rule_update_command_builder;
+    /** Priority of the request routing rule. Range from 1 to 2000. */
+    priority(value: string): az_network_application_gateway_rule_update_command_builder;
     /** The name or ID of the redirect configuration to use with the created rule. */
     redirectConfig(value: string): az_network_application_gateway_rule_update_command_builder;
     /** Remove a property or an element from a list.  Example: --remove property.list <indexToRemove> OR --remove propertyToRemove. */
@@ -15780,7 +15787,7 @@ declare class az_network_application_gateway_waf_policy_managed_rule_rule_set_ad
     version(value: '0.1' | '2.2.9' | '3.0' | '3.1'): az_network_application_gateway_waf_policy_managed_rule_rule_set_add_command_builder;
     /** The name of the web application firewall rule set group. */
     groupName(value: string): az_network_application_gateway_waf_policy_managed_rule_rule_set_add_command_builder;
-    /** List of rules that will be disabled. */
+    /** List of rules that will be disabled. If provided, --group-name must be provided too. */
     rules(value: string): az_network_application_gateway_waf_policy_managed_rule_rule_set_add_command_builder;
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_network_application_gateway_waf_policy_managed_rule_rule_set_add_command_builder;
@@ -15844,33 +15851,30 @@ declare class az_network_application_gateway_waf_policy_managed_rule_rule_set_re
     subscription(value: string): az_network_application_gateway_waf_policy_managed_rule_rule_set_remove_command_builder;
 }
 /**
- * Update(Override) existing rule set of a WAF policy managed rules. For rule set and rules, please visit: <a href="https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules">https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules</a>.
+ * Manage rules of a WAF policy. If --group-name and --rules are provided, override existing rules. If --group-name is provided, clear all rules under a certain rule group. If neither of them are provided, update rule set and clear all rules under itself. For rule set and rules, please visit: <a href="https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules">https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules</a>.
  *
  * Syntax:
  * ```
- * az network application-gateway waf-policy managed-rule rule-set update --group-name
- *                                                                        --policy-name
+ * az network application-gateway waf-policy managed-rule rule-set update --policy-name
  *                                                                        --resource-group
  *                                                                        --type {Microsoft_BotManagerRuleSet, OWASP}
  *                                                                        --version {0.1, 2.2.9, 3.0, 3.1}
  *                                                                        [--add]
  *                                                                        [--force-string]
+ *                                                                        [--group-name]
  *                                                                        [--remove]
  *                                                                        [--rules]
  *                                                                        [--set]
  *                                                                        [--subscription]
  * ```
  *
- * @param {string} groupName The name of the web application firewall rule set group.
  * @param {string} policyName The name of the web application firewall policy.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {'Microsoft_BotManagerRuleSet' | 'OWASP'} type The type of the web application firewall rule set.
  * @param {'0.1' | '2.2.9' | '3.0' | '3.1'} version The version of the web application firewall rule set type. 0.1 is used for Microsoft_BotManagerRuleSet.
  */
 declare class az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder extends CommandBuilder<az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, groupName: string, policyName: string, resourceGroup: string, type: 'Microsoft_BotManagerRuleSet' | 'OWASP', version: '0.1' | '2.2.9' | '3.0' | '3.1');
-    /** The name of the web application firewall rule set group. */
-    groupName(value: string): az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder;
+    constructor(commandPath: string, resultDataTypeName: string, policyName: string, resourceGroup: string, type: 'Microsoft_BotManagerRuleSet' | 'OWASP', version: '0.1' | '2.2.9' | '3.0' | '3.1');
     /** The name of the web application firewall policy. */
     policyName(value: string): az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder;
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
@@ -15883,9 +15887,11 @@ declare class az_network_application_gateway_waf_policy_managed_rule_rule_set_up
     add(value: string): az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder;
     /** When using 'set' or 'add', preserve string literals instead of attempting to convert to JSON. */
     forceString(value: string): az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder;
+    /** The name of the web application firewall rule set group. */
+    groupName(value: string): az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder;
     /** Remove a property or an element from a list.  Example: --remove property.list <indexToRemove> OR --remove propertyToRemove. */
     remove(value: string): az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder;
-    /** List of rules that will be disabled. */
+    /** List of rules that will be disabled. If provided, --group-name must be provided too. */
     rules(value: string): az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder;
     /** Update an object by specifying a property path and value to set.  Example: --set property1.property2=<value>. */
     set(value: string): az_network_application_gateway_waf_policy_managed_rule_rule_set_update_command_builder;
@@ -26255,15 +26261,15 @@ declare class az_network_private_endpoint_connection_list_command_builder extend
     constructor(commandPath: string, resultDataTypeName: string);
     /** ID of the resource. */
     id(value: string): az_network_private_endpoint_connection_list_command_builder;
-    /** Name of the resource. */
+    /** Name of the resource. If provided, --type and --resource-group must be provided too. */
     name(value: string): az_network_private_endpoint_connection_list_command_builder;
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
     queryExamples(value: string): az_network_private_endpoint_connection_list_command_builder;
-    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    /** Name of resource group. If provided, --name and --type must be provided too. */
     resourceGroup(value: string): az_network_private_endpoint_connection_list_command_builder;
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_network_private_endpoint_connection_list_command_builder;
-    /** Type of the resource. */
+    /** Type of the resource. If provided, --name and --resource-group must be provided too. */
     type(value: 'Microsoft.AppConfiguration/configurationStores' | 'Microsoft.Batch/batchAccounts' | 'Microsoft.CognitiveServices/accounts' | 'Microsoft.Compute/diskAccesses' | 'Microsoft.ContainerRegistry/registries' | 'Microsoft.DBforMariaDB/servers' | 'Microsoft.DBforMySQL/servers' | 'Microsoft.DBforPostgreSQL/servers' | 'Microsoft.Devices/IotHubs' | 'Microsoft.DocumentDB/databaseAccounts' | 'Microsoft.EventGrid/domains' | 'Microsoft.EventGrid/topics' | 'Microsoft.Keyvault/vaults' | 'Microsoft.Network/applicationGateways' | 'Microsoft.SignalRService/signalr' | 'Microsoft.Storage/storageAccounts' | 'Microsoft.Web/sites' | 'microsoft.insights/privateLinkScopes'): az_network_private_endpoint_connection_list_command_builder;
 }
 /**
@@ -26366,9 +26372,9 @@ declare class az_network_private_endpoint_create_command_builder extends Command
     resourceGroup(value: string): az_network_private_endpoint_create_command_builder;
     /** Name or ID of an existing subnet. If name specified, also specify --vnet-name. If you want to use an existing subnet in other resource group or subscription, please provide the ID instead of the name of the subnet. */
     subnet(value: string): az_network_private_endpoint_create_command_builder;
-    /** The ID of the group obtained from the remote resource that this private endpoint should connect to. You can use "az network private-link-resource list" to obtain the supported group ids. */
+    /** The ID of the group obtained from the remote resource that this private endpoint should connect to. You can use "az network private-link-resource list" to obtain the supported group ids. You must provide this except for PrivateLinkService. */
     groupId(value: string): az_network_private_endpoint_create_command_builder;
-    /** The ID of the group obtained from the remote resource that this private endpoint should connect to. You can use "az network private-link-resource list" to obtain the supported group ids. */
+    /** The ID of the group obtained from the remote resource that this private endpoint should connect to. You can use "az network private-link-resource list" to obtain the supported group ids. You must provide this except for PrivateLinkService. */
     groupIds(value: string): az_network_private_endpoint_create_command_builder;
     /** Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`. */
     location(value: string): az_network_private_endpoint_create_command_builder;
@@ -26524,15 +26530,15 @@ declare class az_network_private_link_resource_list_command_builder extends Comm
     constructor(commandPath: string, resultDataTypeName: string);
     /** ID of the resource. */
     id(value: string): az_network_private_link_resource_list_command_builder;
-    /** Name of the resource. */
+    /** Name of the resource. If provided, --type and --resource-group must be provided too. */
     name(value: string): az_network_private_link_resource_list_command_builder;
     /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
     queryExamples(value: string): az_network_private_link_resource_list_command_builder;
-    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    /** Name of resource group. If provided, --name and --type must be provided too. */
     resourceGroup(value: string): az_network_private_link_resource_list_command_builder;
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_network_private_link_resource_list_command_builder;
-    /** Type of the resource. */
+    /** Type of the resource. If provided, --name and --resource-group must be provided too. */
     type(value: 'Microsoft.AppConfiguration/configurationStores' | 'Microsoft.Batch/batchAccounts' | 'Microsoft.CognitiveServices/accounts' | 'Microsoft.Compute/diskAccesses' | 'Microsoft.ContainerRegistry/registries' | 'Microsoft.DBforMariaDB/servers' | 'Microsoft.DBforMySQL/servers' | 'Microsoft.DBforPostgreSQL/servers' | 'Microsoft.Devices/IotHubs' | 'Microsoft.DocumentDB/databaseAccounts' | 'Microsoft.EventGrid/domains' | 'Microsoft.EventGrid/topics' | 'Microsoft.Keyvault/vaults' | 'Microsoft.Network/applicationGateways' | 'Microsoft.SignalRService/signalr' | 'Microsoft.Storage/storageAccounts' | 'Microsoft.Web/sites' | 'microsoft.insights/privateLinkScopes'): az_network_private_link_resource_list_command_builder;
 }
 /**

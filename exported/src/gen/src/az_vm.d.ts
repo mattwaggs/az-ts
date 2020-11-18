@@ -287,7 +287,7 @@ export declare class az_vm_diagnostics {
 /** Manage the managed data disks attached to a VM. */
 export declare class az_vm_disk {
     /**
-     * Attach a managed persistent disk to a VM.
+     * Attach a managed persistent disk to a VM. Please note that --ids only supports one disk.
      *
      * Syntax:
      * ```
@@ -548,19 +548,20 @@ export declare class az_vm_host_group {
      * Syntax:
      * ```
      * az vm host group create --name
+     *                         --platform-fault-domain-count
      *                         --resource-group
      *                         [--automatic-placement {false, true}]
      *                         [--location]
-     *                         [--platform-fault-domain-count]
      *                         [--subscription]
      *                         [--tags]
      *                         [--zone {1, 2, 3}]
      * ```
      *
      * @param {string} name Name of the Dedicated Host Group.
+     * @param {string} platformFaultDomainCount Number of fault domains that the host group can span.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    static create(name: string, resourceGroup: string): az_vm_host_group_create_command_builder;
+    static create(name: string, platformFaultDomainCount: string, resourceGroup: string): az_vm_host_group_create_command_builder;
     /**
      * Delete a dedicated host group.
      *
@@ -637,7 +638,7 @@ export declare class az_vm_host {
      * az vm host create --host-group
      *                   --name
      *                   --resource-group
-     *                   --sku {DSv3-Type1, ESv3-Type1, FSv2-Type2}
+     *                   --sku
      *                   [--auto-replace {false, true}]
      *                   [--license-type {None, Windows_Server_Hybrid, Windows_Server_Perpetual}]
      *                   [--location]
@@ -649,9 +650,9 @@ export declare class az_vm_host {
      * @param {string} hostGroup Name of the Dedicated Host Group.
      * @param {string} name Name of the Dedicated Host.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {'DSv3-Type1' | 'ESv3-Type1' | 'FSv2-Type2'} sku Sku of the dedicated host.
+     * @param {string} sku SKU of the dedicated host. Available SKUs: <a href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/dedicated-host/">https://azure.microsoft.com/en-us/pricing/details/virtual-machines/dedicated-host/</a>.
      */
-    static create(hostGroup: string, name: string, resourceGroup: string, sku: 'DSv3-Type1' | 'ESv3-Type1' | 'FSv2-Type2'): az_vm_host_create_command_builder;
+    static create(hostGroup: string, name: string, resourceGroup: string, sku: string): az_vm_host_create_command_builder;
     /**
      * Delete a dedicated host.
      *
@@ -1435,7 +1436,8 @@ export declare class az_vm {
      *
      * Syntax:
      * ```
-     * az vm delete [--ids]
+     * az vm delete [--force-deletion]
+     *              [--ids]
      *              [--name]
      *              [--no-wait]
      *              [--resource-group]
@@ -2068,7 +2070,7 @@ declare class az_vm_diagnostics_set_command_builder extends CommandBuilder<az_vm
     vmName(value: string): az_vm_diagnostics_set_command_builder;
 }
 /**
- * Attach a managed persistent disk to a VM.
+ * Attach a managed persistent disk to a VM. Please note that --ids only supports one disk.
  *
  * Syntax:
  * ```
@@ -2557,30 +2559,31 @@ declare class az_vm_extension_wait_command_builder extends CommandBuilder<az_vm_
  * Syntax:
  * ```
  * az vm host group create --name
+ *                         --platform-fault-domain-count
  *                         --resource-group
  *                         [--automatic-placement {false, true}]
  *                         [--location]
- *                         [--platform-fault-domain-count]
  *                         [--subscription]
  *                         [--tags]
  *                         [--zone {1, 2, 3}]
  * ```
  *
  * @param {string} name Name of the Dedicated Host Group.
+ * @param {string} platformFaultDomainCount Number of fault domains that the host group can span.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 declare class az_vm_host_group_create_command_builder extends CommandBuilder<az_vm_host_group_create_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string);
+    constructor(commandPath: string, resultDataTypeName: string, name: string, platformFaultDomainCount: string, resourceGroup: string);
     /** Name of the Dedicated Host Group. */
     name(value: string): az_vm_host_group_create_command_builder;
+    /** Number of fault domains that the host group can span. */
+    platformFaultDomainCount(value: string): az_vm_host_group_create_command_builder;
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
     resourceGroup(value: string): az_vm_host_group_create_command_builder;
     /** Specify whether virtual machines or virtual machine scale sets can be placed automatically on the dedicated host group. Automatic placement means resources are allocated on dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is defaulted to true when not provided. */
     automaticPlacement(value: boolean): az_vm_host_group_create_command_builder;
     /** Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`. Otherwise, location will default to the resource group's location. */
     location(value: string): az_vm_host_group_create_command_builder;
-    /** Number of fault domains that the host group can span. Allowed values: 1, 2, 3. */
-    platformFaultDomainCount(value: string): az_vm_host_group_create_command_builder;
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_vm_host_group_create_command_builder;
     /** Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags. */
@@ -2721,7 +2724,7 @@ declare class az_vm_host_group_update_command_builder extends CommandBuilder<az_
  * az vm host create --host-group
  *                   --name
  *                   --resource-group
- *                   --sku {DSv3-Type1, ESv3-Type1, FSv2-Type2}
+ *                   --sku
  *                   [--auto-replace {false, true}]
  *                   [--license-type {None, Windows_Server_Hybrid, Windows_Server_Perpetual}]
  *                   [--location]
@@ -2733,18 +2736,18 @@ declare class az_vm_host_group_update_command_builder extends CommandBuilder<az_
  * @param {string} hostGroup Name of the Dedicated Host Group.
  * @param {string} name Name of the Dedicated Host.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {'DSv3-Type1' | 'ESv3-Type1' | 'FSv2-Type2'} sku Sku of the dedicated host.
+ * @param {string} sku SKU of the dedicated host. Available SKUs: <a href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/dedicated-host/">https://azure.microsoft.com/en-us/pricing/details/virtual-machines/dedicated-host/</a>.
  */
 declare class az_vm_host_create_command_builder extends CommandBuilder<az_vm_host_create_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, hostGroup: string, name: string, resourceGroup: string, sku: 'DSv3-Type1' | 'ESv3-Type1' | 'FSv2-Type2');
+    constructor(commandPath: string, resultDataTypeName: string, hostGroup: string, name: string, resourceGroup: string, sku: string);
     /** Name of the Dedicated Host Group. */
     hostGroup(value: string): az_vm_host_create_command_builder;
     /** Name of the Dedicated Host. */
     name(value: string): az_vm_host_create_command_builder;
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
     resourceGroup(value: string): az_vm_host_create_command_builder;
-    /** Sku of the dedicated host. */
-    sku(value: 'DSv3-Type1' | 'ESv3-Type1' | 'FSv2-Type2'): az_vm_host_create_command_builder;
+    /** SKU of the dedicated host. Available SKUs: <a href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/dedicated-host/">https://azure.microsoft.com/en-us/pricing/details/virtual-machines/dedicated-host/</a>. */
+    sku(value: string): az_vm_host_create_command_builder;
     /** Replace the host automatically if a failure occurs. */
     autoReplace(value: boolean): az_vm_host_create_command_builder;
     /** The software license type that will be applied to the VMs deployed on the dedicated host. */
@@ -4094,9 +4097,9 @@ declare class az_vm_create_command_builder extends CommandBuilder<az_vm_create_c
     evictionPolicy(value: 'Deallocate' | 'Delete'): az_vm_create_command_builder;
     /** Generate SSH public and private key files if missing. The keys will be stored in the ~/.ssh directory. */
     generateSshKeys(value: string): az_vm_create_command_builder;
-    /** Name or ID of the dedicated host this VM will reside in. If a name is specified, a host group must be specified via `--host-group`. */
+    /** ID of the dedicated host that the VM will reside in. --host and --host-group can't be used together. */
     host(value: string): az_vm_create_command_builder;
-    /** Name of the dedicated host group containing the dedicated host this VM will reside in. */
+    /** Name or ID of the dedicated host group that the VM will reside in. --host and --host-group can't be used together. */
     hostGroup(value: string): az_vm_create_command_builder;
     /** The name of the operating system image as a URN alias, URN, custom image name or ID, custom image version ID, or VHD blob URI. This parameter is required unless using `--attach-os-disk.` Valid URN format: "Publisher:Offer:Sku:Version". */
     image(value: string): az_vm_create_command_builder;
@@ -4223,7 +4226,8 @@ declare class az_vm_deallocate_command_builder extends CommandBuilder<az_vm_deal
  *
  * Syntax:
  * ```
- * az vm delete [--ids]
+ * az vm delete [--force-deletion]
+ *              [--ids]
  *              [--name]
  *              [--no-wait]
  *              [--resource-group]
@@ -4233,6 +4237,8 @@ declare class az_vm_deallocate_command_builder extends CommandBuilder<az_vm_deal
  */
 declare class az_vm_delete_command_builder extends CommandBuilder<az_vm_delete_command_result> {
     constructor(commandPath: string, resultDataTypeName: string);
+    /** Optional parameter to force delete virtual machines. */
+    forceDeletion(value: string): az_vm_delete_command_builder;
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
     ids(value: string): az_vm_delete_command_builder;
     /** The name of the Virtual Machine. You can configure the default using `az configure --defaults vm=<name>`. */

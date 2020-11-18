@@ -458,7 +458,7 @@ export declare class az_apim_api {
      */
     static delete(apiId: string, resourceGroup: string, serviceName: string): az_apim_api_delete_command_builder;
     /**
-     * Import an API Management service instance.
+     * Import an API Management API.
      *
      * Syntax:
      * ```
@@ -1791,7 +1791,7 @@ declare class az_apim_api_delete_command_builder extends CommandBuilder<az_apim_
     yes(value: string): az_apim_api_delete_command_builder;
 }
 /**
- * Import an API Management service instance.
+ * Import an API Management API.
  *
  * Syntax:
  * ```

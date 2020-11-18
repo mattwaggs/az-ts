@@ -561,6 +561,7 @@ export declare class az_hdinsight {
      *                     [--days {Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday}]
      *                     [--domain]
      *                     [--edgenode-size]
+     *                     [--enable-private-link {false, true}]
      *                     [--encryption-algorithm {RSA-OAEP, RSA-OAEP-256, RSA1_5}]
      *                     [--encryption-at-host {false, true}]
      *                     [--encryption-in-transit {false, true}]
@@ -571,6 +572,7 @@ export declare class az_hdinsight {
      *                     [--headnode-size]
      *                     [--http-password]
      *                     [--http-user]
+     *                     [--idbroker]
      *                     [--kafka-client-group-id]
      *                     [--kafka-client-group-name]
      *                     [--kafka-management-node-count]
@@ -580,8 +582,7 @@ export declare class az_hdinsight {
      *                     [--minimal-tls-version {1.0, 1.1, 1.2}]
      *                     [--no-validation-timeout]
      *                     [--no-wait]
-     *                     [--outbound-public-network-access-type {PublicLoadBalancer, UDR}]
-     *                     [--public-network-access-type {InboundAndOutbound, OutboundOnly}]
+     *                     [--resource-provider-connection {Inbound, Outbound}]
      *                     [--ssh-password]
      *                     [--ssh-public-key]
      *                     [--ssh-user]
@@ -1640,6 +1641,7 @@ declare class az_hdinsight_script_action_show_execution_details_command_builder 
  *                     [--days {Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday}]
  *                     [--domain]
  *                     [--edgenode-size]
+ *                     [--enable-private-link {false, true}]
  *                     [--encryption-algorithm {RSA-OAEP, RSA-OAEP-256, RSA1_5}]
  *                     [--encryption-at-host {false, true}]
  *                     [--encryption-in-transit {false, true}]
@@ -1650,6 +1652,7 @@ declare class az_hdinsight_script_action_show_execution_details_command_builder 
  *                     [--headnode-size]
  *                     [--http-password]
  *                     [--http-user]
+ *                     [--idbroker]
  *                     [--kafka-client-group-id]
  *                     [--kafka-client-group-name]
  *                     [--kafka-management-node-count]
@@ -1659,8 +1662,7 @@ declare class az_hdinsight_script_action_show_execution_details_command_builder 
  *                     [--minimal-tls-version {1.0, 1.1, 1.2}]
  *                     [--no-validation-timeout]
  *                     [--no-wait]
- *                     [--outbound-public-network-access-type {PublicLoadBalancer, UDR}]
- *                     [--public-network-access-type {InboundAndOutbound, OutboundOnly}]
+ *                     [--resource-provider-connection {Inbound, Outbound}]
  *                     [--ssh-password]
  *                     [--ssh-public-key]
  *                     [--ssh-user]
@@ -1724,6 +1726,8 @@ declare class az_hdinsight_create_command_builder extends CommandBuilder<az_hdin
     domain(value: string): az_hdinsight_create_command_builder;
     /** The size of the node. See also: <a href="https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-provision-linux-clusters#configure-cluster-size">https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-provision-linux-clusters#configure-cluster-size</a>. */
     edgenodeSize(value: string): az_hdinsight_create_command_builder;
+    /** Indicate whether enable the private link or not. */
+    enablePrivateLink(value: boolean): az_hdinsight_create_command_builder;
     /** Algorithm identifier for encryption. */
     encryptionAlgorithm(value: 'RSA-OAEP' | 'RSA-OAEP-256' | 'RSA1_5'): az_hdinsight_create_command_builder;
     /** Indicates whether enable encryption at host or not. */
@@ -1744,6 +1748,8 @@ declare class az_hdinsight_create_command_builder extends CommandBuilder<az_hdin
     httpPassword(value: string): az_hdinsight_create_command_builder;
     /** HTTP username for the cluster.  Default: admin. */
     httpUser(value: string): az_hdinsight_create_command_builder;
+    /** Specify to create ESP cluster with HDInsight ID Broker. If omitted, creating ESP cluster with HDInsight ID Broker will not not allowed. */
+    idbroker(value: string): az_hdinsight_create_command_builder;
     /** The client AAD security group id for Kafka Rest Proxy. */
     kafkaClientGroupId(value: string): az_hdinsight_create_command_builder;
     /** The client AAD security group name for Kafka Rest Proxy. */
@@ -1762,10 +1768,8 @@ declare class az_hdinsight_create_command_builder extends CommandBuilder<az_hdin
     noValidationTimeout(value: string): az_hdinsight_create_command_builder;
     /** Do not wait for the long-running operation to finish. */
     noWait(value: string): az_hdinsight_create_command_builder;
-    /** The outbound only public network access type. */
-    outboundPublicNetworkAccessType(value: 'PublicLoadBalancer' | 'UDR'): az_hdinsight_create_command_builder;
-    /** The public network access type. */
-    publicNetworkAccessType(value: 'InboundAndOutbound' | 'OutboundOnly'): az_hdinsight_create_command_builder;
+    /** The resource provider connection type. */
+    resourceProviderConnection(value: 'Inbound' | 'Outbound'): az_hdinsight_create_command_builder;
     /** SSH password for the cluster nodes. If none specified, uses the HTTP password. */
     sshPassword(value: string): az_hdinsight_create_command_builder;
     /** SSH public key for the cluster nodes. */
