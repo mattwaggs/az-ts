@@ -516,7 +516,7 @@ export class az_apim_api {
     }
 
     /**
-     * Import an API Management service instance.
+     * Import an API Management API.
      *
      * Syntax:
      * ```
@@ -2683,7 +2683,7 @@ class az_apim_api_delete_command_builder extends CommandBuilder<az_apim_api_dele
 }
 
 /**
- * Import an API Management service instance.
+ * Import an API Management API.
  *
  * Syntax:
  * ```

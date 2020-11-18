@@ -547,6 +547,7 @@ export class az_iot_dps {
      *                   [--location]
      *                   [--sku {S1}]
      *                   [--subscription]
+     *                   [--tags]
      *                   [--unit]
      * ```
      *
@@ -615,6 +616,7 @@ export class az_iot_dps {
      *                   [--resource-group]
      *                   [--set]
      *                   [--subscription]
+     *                   [--tags]
      * ```
      */
     static update(): az_iot_dps_update_command_builder {
@@ -2751,6 +2753,7 @@ class az_iot_dps_linked_hub_update_command_builder extends CommandBuilder<az_iot
  *                   [--location]
  *                   [--sku {S1}]
  *                   [--subscription]
+ *                   [--tags]
  *                   [--unit]
  * ```
  *
@@ -2791,6 +2794,12 @@ class az_iot_dps_create_command_builder extends CommandBuilder<az_iot_dps_create
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_iot_dps_create_command_builder {
         this.setFlag("--subscription", value);
+        return this;
+    }
+
+    /** Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags. */
+    tags(value: string): az_iot_dps_create_command_builder {
+        this.setFlag("--tags", value);
         return this;
     }
 
@@ -2937,6 +2946,7 @@ class az_iot_dps_show_command_builder extends CommandBuilder<az_iot_dps_show_com
  *                   [--resource-group]
  *                   [--set]
  *                   [--subscription]
+ *                   [--tags]
  * ```
  */
 class az_iot_dps_update_command_builder extends CommandBuilder<az_iot_dps_update_command_result> {
@@ -2989,6 +2999,12 @@ class az_iot_dps_update_command_builder extends CommandBuilder<az_iot_dps_update
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_iot_dps_update_command_builder {
         this.setFlag("--subscription", value);
+        return this;
+    }
+
+    /** Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags. */
+    tags(value: string): az_iot_dps_update_command_builder {
+        this.setFlag("--tags", value);
         return this;
     }
 }

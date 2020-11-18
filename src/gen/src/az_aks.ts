@@ -39,6 +39,7 @@ export class az_aks_nodepool {
      *                     --resource-group
      *                     [--enable-cluster-autoscaler]
      *                     [--enable-node-public-ip]
+     *                     [--eviction-policy {Deallocate, Delete}]
      *                     [--kubernetes-version]
      *                     [--labels]
      *                     [--max-count]
@@ -48,9 +49,13 @@ export class az_aks_nodepool {
      *                     [--no-wait]
      *                     [--node-count]
      *                     [--node-osdisk-size]
+     *                     [--node-osdisk-type]
      *                     [--node-taints]
      *                     [--node-vm-size]
      *                     [--os-type]
+     *                     [--ppg]
+     *                     [--priority {Regular, Spot}]
+     *                     [--spot-max-price]
      *                     [--subscription]
      *                     [--tags]
      *                     [--vnet-subnet-id]
@@ -196,20 +201,20 @@ export class az_aks_nodepool {
      * Syntax:
      * ```
      * az aks nodepool upgrade --cluster-name
-     *                         --kubernetes-version
      *                         --name
      *                         --resource-group
+     *                         [--kubernetes-version]
      *                         [--no-wait]
+     *                         [--node-image-only]
      *                         [--subscription]
      * ```
      *
      * @param {string} clusterName The cluster name.
-     * @param {string} kubernetesVersion Version of Kubernetes to upgrade the node pool to, such as "1.16.9".
      * @param {string} name The node pool name.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    static upgrade(clusterName: string, kubernetesVersion: string, name: string, resourceGroup: string): az_aks_nodepool_upgrade_command_builder {
-        return new az_aks_nodepool_upgrade_command_builder("az aks nodepool upgrade", 'az_aks_nodepool_upgrade_command_result', clusterName, kubernetesVersion, name, resourceGroup);
+    static upgrade(clusterName: string, name: string, resourceGroup: string): az_aks_nodepool_upgrade_command_builder {
+        return new az_aks_nodepool_upgrade_command_builder("az aks nodepool upgrade", 'az_aks_nodepool_upgrade_command_result', clusterName, name, resourceGroup);
     }
 }
 
@@ -247,8 +252,10 @@ export class az_aks {
      *               [--aad-server-app-id]
      *               [--aad-server-app-secret]
      *               [--aad-tenant-id]
+     *               [--aci-subnet-name]
      *               [--admin-username]
      *               [--api-server-authorized-ip-ranges]
+     *               [--assign-identity]
      *               [--attach-acr]
      *               [--ca-profile]
      *               [--client-secret]
@@ -258,6 +265,7 @@ export class az_aks {
      *               [--docker-bridge-address]
      *               [--enable-aad]
      *               [--enable-addons]
+     *               [--enable-ahub]
      *               [--enable-cluster-autoscaler]
      *               [--enable-managed-identity]
      *               [--enable-node-public-ip]
@@ -282,12 +290,14 @@ export class az_aks {
      *               [--node-count]
      *               [--node-osdisk-diskencryptionset-id]
      *               [--node-osdisk-size]
+     *               [--node-osdisk-type]
      *               [--node-vm-size]
      *               [--nodepool-labels]
      *               [--nodepool-name]
      *               [--nodepool-tags]
      *               [--outbound-type {loadBalancer, userDefinedRouting}]
      *               [--pod-cidr]
+     *               [--ppg]
      *               [--service-cidr]
      *               [--service-principal]
      *               [--skip-subnet-role-assignment]
@@ -429,8 +439,10 @@ export class az_aks {
      *
      * Syntax:
      * ```
-     * az aks install-cli [--client-version]
+     * az aks install-cli [--base-src-url]
+     *                    [--client-version]
      *                    [--install-location]
+     *                    [--kubelogin-base-src-url]
      *                    [--kubelogin-install-location]
      *                    [--kubelogin-version]
      *                    [--subscription]
@@ -543,8 +555,10 @@ export class az_aks {
      *               [--attach-acr]
      *               [--ca-profile]
      *               [--detach-acr]
+     *               [--disable-ahub]
      *               [--disable-cluster-autoscaler]
      *               [--enable-aad]
+     *               [--enable-ahub]
      *               [--enable-cluster-autoscaler]
      *               [--load-balancer-idle-timeout]
      *               [--load-balancer-managed-outbound-ip-count]
@@ -597,21 +611,21 @@ export class az_aks {
      *
      * Syntax:
      * ```
-     * az aks upgrade --kubernetes-version
-     *                --name
+     * az aks upgrade --name
      *                --resource-group
      *                [--control-plane-only]
+     *                [--kubernetes-version]
      *                [--no-wait]
+     *                [--node-image-only]
      *                [--subscription]
      *                [--yes]
      * ```
      *
-     * @param {string} kubernetesVersion Version of Kubernetes to upgrade the cluster to, such as "1.16.9".
      * @param {string} name Name of the managed cluster.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
-    static upgrade(kubernetesVersion: string, name: string, resourceGroup: string): az_aks_upgrade_command_builder {
-        return new az_aks_upgrade_command_builder("az aks upgrade", 'az_aks_upgrade_command_result', kubernetesVersion, name, resourceGroup);
+    static upgrade(name: string, resourceGroup: string): az_aks_upgrade_command_builder {
+        return new az_aks_upgrade_command_builder("az aks upgrade", 'az_aks_upgrade_command_result', name, resourceGroup);
     }
 
     /**
@@ -670,6 +684,7 @@ export class az_aks {
  *                     --resource-group
  *                     [--enable-cluster-autoscaler]
  *                     [--enable-node-public-ip]
+ *                     [--eviction-policy {Deallocate, Delete}]
  *                     [--kubernetes-version]
  *                     [--labels]
  *                     [--max-count]
@@ -679,9 +694,13 @@ export class az_aks {
  *                     [--no-wait]
  *                     [--node-count]
  *                     [--node-osdisk-size]
+ *                     [--node-osdisk-type]
  *                     [--node-taints]
  *                     [--node-vm-size]
  *                     [--os-type]
+ *                     [--ppg]
+ *                     [--priority {Regular, Spot}]
+ *                     [--spot-max-price]
  *                     [--subscription]
  *                     [--tags]
  *                     [--vnet-subnet-id]
@@ -727,6 +746,12 @@ class az_aks_nodepool_add_command_builder extends CommandBuilder<az_aks_nodepool
     /** Enable VMSS node public IP. */
     enableNodePublicIp(value: string): az_aks_nodepool_add_command_builder {
         this.setFlag("--enable-node-public-ip", value);
+        return this;
+    }
+
+    /** The eviction policy of the Spot node pool. It can only be set when --priority is Spot. */
+    evictionPolicy(value: 'Deallocate' | 'Delete'): az_aks_nodepool_add_command_builder {
+        this.setFlag("--eviction-policy", value);
         return this;
     }
 
@@ -784,6 +809,12 @@ class az_aks_nodepool_add_command_builder extends CommandBuilder<az_aks_nodepool
         return this;
     }
 
+    /** OS disk type to be used for machines in a given agent pool. Defaults to 'Ephemeral' when possible in conjunction with VM size and OS disk size. May not be changed for this pool after creation. */
+    nodeOsdiskType(value: string): az_aks_nodepool_add_command_builder {
+        this.setFlag("--node-osdisk-type", value);
+        return this;
+    }
+
     /** The node taints for the node pool. You can't change the node taints through CLI after the node pool is created. */
     nodeTaints(value: string): az_aks_nodepool_add_command_builder {
         this.setFlag("--node-taints", value);
@@ -799,6 +830,24 @@ class az_aks_nodepool_add_command_builder extends CommandBuilder<az_aks_nodepool
     /** The OS Type. Linux or Windows. */
     osType(value: string): az_aks_nodepool_add_command_builder {
         this.setFlag("--os-type", value);
+        return this;
+    }
+
+    /** The ID of a PPG. */
+    ppg(value: string): az_aks_nodepool_add_command_builder {
+        this.setFlag("--ppg", value);
+        return this;
+    }
+
+    /** The priority of the node pool. */
+    priority(value: 'Regular' | 'Spot'): az_aks_nodepool_add_command_builder {
+        this.setFlag("--priority", value);
+        return this;
+    }
+
+    /** It can only be set when --priority is Spot. Specify the maximum price you are willing to pay in US Dollars. Possible values are any decimal value greater than zero or -1 which indicates default price to be up-to on-demand. It can only include up to 5 decimal places. */
+    spotMaxPrice(value: string): az_aks_nodepool_add_command_builder {
+        this.setFlag("--spot-max-price", value);
         return this;
     }
 
@@ -1203,23 +1252,22 @@ class az_aks_nodepool_update_command_builder extends CommandBuilder<az_aks_nodep
  * Syntax:
  * ```
  * az aks nodepool upgrade --cluster-name
- *                         --kubernetes-version
  *                         --name
  *                         --resource-group
+ *                         [--kubernetes-version]
  *                         [--no-wait]
+ *                         [--node-image-only]
  *                         [--subscription]
  * ```
  *
  * @param {string} clusterName The cluster name.
- * @param {string} kubernetesVersion Version of Kubernetes to upgrade the node pool to, such as "1.16.9".
  * @param {string} name The node pool name.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_nodepool_upgrade_command_builder extends CommandBuilder<az_aks_nodepool_upgrade_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, kubernetesVersion: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, resultDataTypeName: string, clusterName: string, name: string, resourceGroup: string) {
         super(commandPath, resultDataTypeName);
         this.clusterName(clusterName)
-        this.kubernetesVersion(kubernetesVersion)
         this.name(name)
         this.resourceGroup(resourceGroup)
     }
@@ -1227,12 +1275,6 @@ class az_aks_nodepool_upgrade_command_builder extends CommandBuilder<az_aks_node
     /** The cluster name. */
     clusterName(value: string): az_aks_nodepool_upgrade_command_builder {
         this.setFlag("--cluster-name", value);
-        return this;
-    }
-
-    /** Version of Kubernetes to upgrade the node pool to, such as "1.16.9". */
-    kubernetesVersion(value: string): az_aks_nodepool_upgrade_command_builder {
-        this.setFlag("--kubernetes-version", value);
         return this;
     }
 
@@ -1248,9 +1290,21 @@ class az_aks_nodepool_upgrade_command_builder extends CommandBuilder<az_aks_node
         return this;
     }
 
+    /** Version of Kubernetes to upgrade the node pool to, such as "1.16.9". */
+    kubernetesVersion(value: string): az_aks_nodepool_upgrade_command_builder {
+        this.setFlag("--kubernetes-version", value);
+        return this;
+    }
+
     /** Do not wait for the long-running operation to finish. */
     noWait(value: string): az_aks_nodepool_upgrade_command_builder {
         this.setFlag("--no-wait", value);
+        return this;
+    }
+
+    /** Only upgrade agent pool's node image. */
+    nodeImageOnly(value: string): az_aks_nodepool_upgrade_command_builder {
+        this.setFlag("--node-image-only", value);
         return this;
     }
 
@@ -1333,8 +1387,10 @@ class az_aks_browse_command_builder extends CommandBuilder<az_aks_browse_command
  *               [--aad-server-app-id]
  *               [--aad-server-app-secret]
  *               [--aad-tenant-id]
+ *               [--aci-subnet-name]
  *               [--admin-username]
  *               [--api-server-authorized-ip-ranges]
+ *               [--assign-identity]
  *               [--attach-acr]
  *               [--ca-profile]
  *               [--client-secret]
@@ -1344,6 +1400,7 @@ class az_aks_browse_command_builder extends CommandBuilder<az_aks_browse_command
  *               [--docker-bridge-address]
  *               [--enable-aad]
  *               [--enable-addons]
+ *               [--enable-ahub]
  *               [--enable-cluster-autoscaler]
  *               [--enable-managed-identity]
  *               [--enable-node-public-ip]
@@ -1368,12 +1425,14 @@ class az_aks_browse_command_builder extends CommandBuilder<az_aks_browse_command
  *               [--node-count]
  *               [--node-osdisk-diskencryptionset-id]
  *               [--node-osdisk-size]
+ *               [--node-osdisk-type]
  *               [--node-vm-size]
  *               [--nodepool-labels]
  *               [--nodepool-name]
  *               [--nodepool-tags]
  *               [--outbound-type {loadBalancer, userDefinedRouting}]
  *               [--pod-cidr]
+ *               [--ppg]
  *               [--service-cidr]
  *               [--service-principal]
  *               [--skip-subnet-role-assignment]
@@ -1441,6 +1500,12 @@ class az_aks_create_command_builder extends CommandBuilder<az_aks_create_command
         return this;
     }
 
+    /** The name of a subnet in an existing VNet into which to deploy the virtual nodes. */
+    aciSubnetName(value: string): az_aks_create_command_builder {
+        this.setFlag("--aci-subnet-name", value);
+        return this;
+    }
+
     /** User account to create on node VMs for SSH access. */
     adminUsername(value: string): az_aks_create_command_builder {
         this.setFlag("--admin-username", value);
@@ -1450,6 +1515,12 @@ class az_aks_create_command_builder extends CommandBuilder<az_aks_create_command
     /** Comma seperated list of authorized apiserver IP ranges. Set to 0.0.0.0/32 to restrict apiserver traffic to node pools. */
     apiServerAuthorizedIpRanges(value: string): az_aks_create_command_builder {
         this.setFlag("--api-server-authorized-ip-ranges", value);
+        return this;
+    }
+
+    /** Specify an existing user assigned identity for control plane's usage in order to manage cluster resource group. */
+    assignIdentity(value: string): az_aks_create_command_builder {
+        this.setFlag("--assign-identity", value);
         return this;
     }
 
@@ -1504,6 +1575,12 @@ class az_aks_create_command_builder extends CommandBuilder<az_aks_create_command
     /** Enable the Kubernetes addons in a comma-separated list. */
     enableAddons(value: string): az_aks_create_command_builder {
         this.setFlag("--enable-addons", value);
+        return this;
+    }
+
+    /** Enable Azure Hybrid User Benefits (AHUB) for Windows VMs. */
+    enableAhub(value: string): az_aks_create_command_builder {
+        this.setFlag("--enable-ahub", value);
         return this;
     }
 
@@ -1651,6 +1728,12 @@ class az_aks_create_command_builder extends CommandBuilder<az_aks_create_command
         return this;
     }
 
+    /** OS disk type to be used for machines in a given agent pool. Defaults to 'Ephemeral' when possible in conjunction with VM size and OS disk size. May not be changed for this pool after creation. */
+    nodeOsdiskType(value: string): az_aks_create_command_builder {
+        this.setFlag("--node-osdisk-type", value);
+        return this;
+    }
+
     /** Size of Virtual Machines to create as Kubernetes nodes. */
     nodeVmSize(value: string): az_aks_create_command_builder {
         this.setFlag("--node-vm-size", value);
@@ -1684,6 +1767,12 @@ class az_aks_create_command_builder extends CommandBuilder<az_aks_create_command
     /** A CIDR notation IP range from which to assign pod IPs when kubenet is used. */
     podCidr(value: string): az_aks_create_command_builder {
         this.setFlag("--pod-cidr", value);
+        return this;
+    }
+
+    /** The ID of a PPG. */
+    ppg(value: string): az_aks_create_command_builder {
+        this.setFlag("--ppg", value);
         return this;
     }
 
@@ -2084,8 +2173,10 @@ class az_aks_get_versions_command_builder extends CommandBuilder<az_aks_get_vers
  *
  * Syntax:
  * ```
- * az aks install-cli [--client-version]
+ * az aks install-cli [--base-src-url]
+ *                    [--client-version]
  *                    [--install-location]
+ *                    [--kubelogin-base-src-url]
  *                    [--kubelogin-install-location]
  *                    [--kubelogin-version]
  *                    [--subscription]
@@ -2094,6 +2185,12 @@ class az_aks_get_versions_command_builder extends CommandBuilder<az_aks_get_vers
 class az_aks_install_cli_command_builder extends CommandBuilder<az_aks_install_cli_command_result> {
     constructor(commandPath: string, resultDataTypeName: string) {
         super(commandPath, resultDataTypeName);
+    }
+
+    /** Base download source URL for kubectl releases. */
+    baseSrcUrl(value: string): az_aks_install_cli_command_builder {
+        this.setFlag("--base-src-url", value);
+        return this;
     }
 
     /** Version of kubectl to install. */
@@ -2105,6 +2202,12 @@ class az_aks_install_cli_command_builder extends CommandBuilder<az_aks_install_c
     /** Path at which to install kubectl. */
     installLocation(value: string): az_aks_install_cli_command_builder {
         this.setFlag("--install-location", value);
+        return this;
+    }
+
+    /** Base download source URL for kubelogin releases. */
+    kubeloginBaseSrcUrl(value: string): az_aks_install_cli_command_builder {
+        this.setFlag("--kubelogin-base-src-url", value);
         return this;
     }
 
@@ -2381,8 +2484,10 @@ class az_aks_show_command_builder extends CommandBuilder<az_aks_show_command_res
  *               [--attach-acr]
  *               [--ca-profile]
  *               [--detach-acr]
+ *               [--disable-ahub]
  *               [--disable-cluster-autoscaler]
  *               [--enable-aad]
+ *               [--enable-ahub]
  *               [--enable-cluster-autoscaler]
  *               [--load-balancer-idle-timeout]
  *               [--load-balancer-managed-outbound-ip-count]
@@ -2455,6 +2560,12 @@ class az_aks_update_command_builder extends CommandBuilder<az_aks_update_command
         return this;
     }
 
+    /** Disable Azure Hybrid User Benefits (AHUB) feature for cluster. */
+    disableAhub(value: string): az_aks_update_command_builder {
+        this.setFlag("--disable-ahub", value);
+        return this;
+    }
+
     /** Disable cluster autoscaler. */
     disableClusterAutoscaler(value: string): az_aks_update_command_builder {
         this.setFlag("--disable-cluster-autoscaler", value);
@@ -2464,6 +2575,12 @@ class az_aks_update_command_builder extends CommandBuilder<az_aks_update_command
     /** Enable managed AAD feature for cluster. */
     enableAad(value: string): az_aks_update_command_builder {
         this.setFlag("--enable-aad", value);
+        return this;
+    }
+
+    /** Enable Azure Hybrid User Benefits (AHUB) feature for cluster. */
+    enableAhub(value: string): az_aks_update_command_builder {
+        this.setFlag("--enable-ahub", value);
         return this;
     }
 
@@ -2647,31 +2764,24 @@ class az_aks_update_credentials_command_builder extends CommandBuilder<az_aks_up
  *
  * Syntax:
  * ```
- * az aks upgrade --kubernetes-version
- *                --name
+ * az aks upgrade --name
  *                --resource-group
  *                [--control-plane-only]
+ *                [--kubernetes-version]
  *                [--no-wait]
+ *                [--node-image-only]
  *                [--subscription]
  *                [--yes]
  * ```
  *
- * @param {string} kubernetesVersion Version of Kubernetes to upgrade the cluster to, such as "1.16.9".
  * @param {string} name Name of the managed cluster.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_aks_upgrade_command_builder extends CommandBuilder<az_aks_upgrade_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, kubernetesVersion: string, name: string, resourceGroup: string) {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
         super(commandPath, resultDataTypeName);
-        this.kubernetesVersion(kubernetesVersion)
         this.name(name)
         this.resourceGroup(resourceGroup)
-    }
-
-    /** Version of Kubernetes to upgrade the cluster to, such as "1.16.9". */
-    kubernetesVersion(value: string): az_aks_upgrade_command_builder {
-        this.setFlag("--kubernetes-version", value);
-        return this;
     }
 
     /** Name of the managed cluster. */
@@ -2692,9 +2802,21 @@ class az_aks_upgrade_command_builder extends CommandBuilder<az_aks_upgrade_comma
         return this;
     }
 
+    /** Version of Kubernetes to upgrade the cluster to, such as "1.16.9". */
+    kubernetesVersion(value: string): az_aks_upgrade_command_builder {
+        this.setFlag("--kubernetes-version", value);
+        return this;
+    }
+
     /** Do not wait for the long-running operation to finish. */
     noWait(value: string): az_aks_upgrade_command_builder {
         this.setFlag("--no-wait", value);
+        return this;
+    }
+
+    /** Only upgrade node image for agent pools. */
+    nodeImageOnly(value: string): az_aks_upgrade_command_builder {
+        this.setFlag("--node-image-only", value);
         return this;
     }
 

@@ -99,6 +99,7 @@ export class az_functionapp_config_access_restriction {
      *                                              [--subnet]
      *                                              [--subscription]
      *                                              [--vnet-name]
+     *                                              [--vnet-resource-group]
      * ```
      *
      * @param {string} priority Priority of the access restriction rule.
@@ -1619,6 +1620,7 @@ export class az_functionapp {
      * Syntax:
      * ```
      * az functionapp update [--add]
+     *                       [--force]
      *                       [--force-string]
      *                       [--ids]
      *                       [--name]
@@ -1653,6 +1655,7 @@ export class az_functionapp {
  *                                              [--subnet]
  *                                              [--subscription]
  *                                              [--vnet-name]
+ *                                              [--vnet-resource-group]
  * ```
  *
  * @param {string} priority Priority of the access restriction rule.
@@ -1744,6 +1747,12 @@ class az_functionapp_config_access_restriction_add_command_builder extends Comma
     /** VNet name. */
     vnetName(value: string): az_functionapp_config_access_restriction_add_command_builder {
         this.setFlag("--vnet-name", value);
+        return this;
+    }
+
+    /** Resource group of virtual network (default is web app resource group). */
+    vnetResourceGroup(value: string): az_functionapp_config_access_restriction_add_command_builder {
+        this.setFlag("--vnet-resource-group", value);
         return this;
     }
 }
@@ -5954,7 +5963,7 @@ class az_functionapp_create_command_builder extends CommandBuilder<az_functionap
         return this;
     }
 
-    /** Name or resource id of the function app service plan. Use 'appservice plan create' to get one. */
+    /** Name or resource id of the function app service plan. Use 'appservice plan create' to get one. If using an App Service plan from a different resource group, the full resource id must be used and not the plan name. */
     plan(value: string): az_functionapp_create_command_builder {
         this.setFlag("--plan", value);
         return this;
@@ -5972,7 +5981,7 @@ class az_functionapp_create_command_builder extends CommandBuilder<az_functionap
         return this;
     }
 
-    /** The version of the functions runtime stack. Allowed values for each --runtime are: node -> [8, 10, 12], java -> [8, 11 (preview)], powershell -> [7.0], python -> [3.6, 3.7, 3.8]. */
+    /** The version of the functions runtime stack. Allowed values for each --runtime are: node -> [8, 10, 12, 14 (preview)], java -> [8, 11], powershell -> [7.0], python -> [3.6, 3.7, 3.8]. */
     runtimeVersion(value: string): az_functionapp_create_command_builder {
         this.setFlag("--runtime-version", value);
         return this;
@@ -6304,6 +6313,7 @@ class az_functionapp_stop_command_builder extends CommandBuilder<az_functionapp_
  * Syntax:
  * ```
  * az functionapp update [--add]
+ *                       [--force]
  *                       [--force-string]
  *                       [--ids]
  *                       [--name]
@@ -6322,6 +6332,12 @@ class az_functionapp_update_command_builder extends CommandBuilder<az_functionap
     /** Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>. */
     add(value: string): az_functionapp_update_command_builder {
         this.setFlag("--add", value);
+        return this;
+    }
+
+    /** Required if attempting to migrate functionapp from Premium to Consumption --plan. */
+    force(value: string): az_functionapp_update_command_builder {
+        this.setFlag("--force", value);
         return this;
     }
 

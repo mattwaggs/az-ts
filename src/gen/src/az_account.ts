@@ -183,7 +183,7 @@ export class az_account_management_group {
      *                                  [--recurse]
      * ```
      *
-     * @param {string} name Name of the management group.
+     * @param {string} name Name of the management group (the last segment of the resource ID). Do not use display name.
      */
     static show(name: string): az_account_management_group_show_command_builder {
         return new az_account_management_group_show_command_builder("az account management-group show", 'az_account_management_group_show_command_result', name);
@@ -617,7 +617,7 @@ class az_account_management_group_list_command_builder extends CommandBuilder<az
  *                                  [--recurse]
  * ```
  *
- * @param {string} name Name of the management group.
+ * @param {string} name Name of the management group (the last segment of the resource ID). Do not use display name.
  */
 class az_account_management_group_show_command_builder extends CommandBuilder<az_account_management_group_show_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, name: string) {
@@ -625,7 +625,7 @@ class az_account_management_group_show_command_builder extends CommandBuilder<az
         this.name(name)
     }
 
-    /** Name of the management group. */
+    /** Name of the management group (the last segment of the resource ID). Do not use display name. */
     name(value: string): az_account_management_group_show_command_builder {
         this.setFlag("--name", value);
         return this;

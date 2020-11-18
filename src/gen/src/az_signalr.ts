@@ -226,6 +226,7 @@ export class az_signalr {
      *                   --sku
      *                   [--allowed-origins]
      *                   [--default-action {Allow, Deny}]
+     *                   [--enable-message-logs {false, true}]
      *                   [--location]
      *                   [--service-mode {Classic, Default, Serverless}]
      *                   [--subscription]
@@ -317,6 +318,7 @@ export class az_signalr {
      *                   [--add]
      *                   [--allowed-origins]
      *                   [--default-action {Allow, Deny}]
+     *                   [--enable-message-logs {false, true}]
      *                   [--force-string]
      *                   [--remove]
      *                   [--service-mode {Classic, Default, Serverless}]
@@ -827,6 +829,7 @@ class az_signalr_upstream_update_command_builder extends CommandBuilder<az_signa
  *                   --sku
  *                   [--allowed-origins]
  *                   [--default-action {Allow, Deny}]
+ *                   [--enable-message-logs {false, true}]
  *                   [--location]
  *                   [--service-mode {Classic, Default, Serverless}]
  *                   [--subscription]
@@ -873,6 +876,12 @@ class az_signalr_create_command_builder extends CommandBuilder<az_signalr_create
     /** Default action to apply when no rule matches. */
     defaultAction(value: 'Allow' | 'Deny'): az_signalr_create_command_builder {
         this.setFlag("--default-action", value);
+        return this;
+    }
+
+    /** The switch for messaging logs which signalr service will generate or not. */
+    enableMessageLogs(value: boolean): az_signalr_create_command_builder {
+        this.setFlag("--enable-message-logs", value.toString());
         return this;
     }
 
@@ -1075,6 +1084,7 @@ class az_signalr_show_command_builder extends CommandBuilder<az_signalr_show_com
  *                   [--add]
  *                   [--allowed-origins]
  *                   [--default-action {Allow, Deny}]
+ *                   [--enable-message-logs {false, true}]
  *                   [--force-string]
  *                   [--remove]
  *                   [--service-mode {Classic, Default, Serverless}]
@@ -1122,6 +1132,12 @@ class az_signalr_update_command_builder extends CommandBuilder<az_signalr_update
     /** Default action to apply when no rule matches. */
     defaultAction(value: 'Allow' | 'Deny'): az_signalr_update_command_builder {
         this.setFlag("--default-action", value);
+        return this;
+    }
+
+    /** The switch for messaging logs which signalr service will generate or not. */
+    enableMessageLogs(value: boolean): az_signalr_update_command_builder {
+        this.setFlag("--enable-message-logs", value.toString());
         return this;
     }
 

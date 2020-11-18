@@ -95,6 +95,7 @@ export class az_deployment_group {
      *                            [--rollback-on-error]
      *                            [--subscription]
      *                            [--template-file]
+     *                            [--template-spec]
      *                            [--template-uri]
      *                            [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
      *                            [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -190,6 +191,7 @@ export class az_deployment_group {
      *                              [--rollback-on-error]
      *                              [--subscription]
      *                              [--template-file]
+     *                              [--template-spec]
      *                              [--template-uri]
      * ```
      *
@@ -239,6 +241,7 @@ export class az_deployment_group {
      *                             [--result-format {FullResourcePayloads, ResourceIdOnly}]
      *                             [--subscription]
      *                             [--template-file]
+     *                             [--template-spec]
      *                             [--template-uri]
      * ```
      *
@@ -283,6 +286,7 @@ export class az_deployment_mg {
      *                         [--parameters]
      *                         [--subscription]
      *                         [--template-file]
+     *                         [--template-spec]
      *                         [--template-uri]
      *                         [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
      *                         [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -378,6 +382,7 @@ export class az_deployment_mg {
      *                           [--parameters]
      *                           [--subscription]
      *                           [--template-file]
+     *                           [--template-spec]
      *                           [--template-uri]
      * ```
      *
@@ -427,6 +432,7 @@ export class az_deployment_mg {
      *                          [--result-format {FullResourcePayloads, ResourceIdOnly}]
      *                          [--subscription]
      *                          [--template-file]
+     *                          [--template-spec]
      *                          [--template-uri]
      * ```
      *
@@ -662,6 +668,7 @@ export class az_deployment_sub {
      *                          [--parameters]
      *                          [--subscription]
      *                          [--template-file]
+     *                          [--template-spec]
      *                          [--template-uri]
      *                          [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
      *                          [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -746,6 +753,7 @@ export class az_deployment_sub {
      *                            [--parameters]
      *                            [--subscription]
      *                            [--template-file]
+     *                            [--template-spec]
      *                            [--template-uri]
      * ```
      *
@@ -791,6 +799,7 @@ export class az_deployment_sub {
      *                           [--result-format {FullResourcePayloads, ResourceIdOnly}]
      *                           [--subscription]
      *                           [--template-file]
+     *                           [--template-spec]
      *                           [--template-uri]
      * ```
      *
@@ -832,6 +841,7 @@ export class az_deployment_tenant {
      *                             [--parameters]
      *                             [--subscription]
      *                             [--template-file]
+     *                             [--template-spec]
      *                             [--template-uri]
      *                             [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
      *                             [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -916,6 +926,7 @@ export class az_deployment_tenant {
      *                               [--parameters]
      *                               [--subscription]
      *                               [--template-file]
+     *                               [--template-spec]
      *                               [--template-uri]
      * ```
      *
@@ -961,6 +972,7 @@ export class az_deployment_tenant {
      *                              [--result-format {FullResourcePayloads, ResourceIdOnly}]
      *                              [--subscription]
      *                              [--template-file]
+     *                              [--template-spec]
      *                              [--template-uri]
      * ```
      *
@@ -1072,6 +1084,7 @@ export class az_deployment {
      *                      [--parameters]
      *                      [--subscription]
      *                      [--template-file]
+     *                      [--template-spec]
      *                      [--template-uri]
      *                      [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
      *                      [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -1156,6 +1169,7 @@ export class az_deployment {
      *                        [--parameters]
      *                        [--subscription]
      *                        [--template-file]
+     *                        [--template-spec]
      *                        [--template-uri]
      * ```
      *
@@ -1245,6 +1259,7 @@ class az_deployment_group_cancel_command_builder extends CommandBuilder<az_deplo
  *                            [--rollback-on-error]
  *                            [--subscription]
  *                            [--template-file]
+ *                            [--template-spec]
  *                            [--template-uri]
  *                            [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
  *                            [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -1333,6 +1348,12 @@ class az_deployment_group_create_command_builder extends CommandBuilder<az_deplo
     /** The path to the template file. */
     templateFile(value: string): az_deployment_group_create_command_builder {
         this.setFlag("--template-file", value);
+        return this;
+    }
+
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_group_create_command_builder {
+        this.setFlag("--template-spec", value);
         return this;
     }
 
@@ -1544,6 +1565,7 @@ class az_deployment_group_show_command_builder extends CommandBuilder<az_deploym
  *                              [--rollback-on-error]
  *                              [--subscription]
  *                              [--template-file]
+ *                              [--template-spec]
  *                              [--template-uri]
  * ```
  *
@@ -1606,6 +1628,12 @@ class az_deployment_group_validate_command_builder extends CommandBuilder<az_dep
     /** The path to the template file. */
     templateFile(value: string): az_deployment_group_validate_command_builder {
         this.setFlag("--template-file", value);
+        return this;
+    }
+
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_group_validate_command_builder {
+        this.setFlag("--template-spec", value);
         return this;
     }
 
@@ -1720,6 +1748,7 @@ class az_deployment_group_wait_command_builder extends CommandBuilder<az_deploym
  *                             [--result-format {FullResourcePayloads, ResourceIdOnly}]
  *                             [--subscription]
  *                             [--template-file]
+ *                             [--template-spec]
  *                             [--template-uri]
  * ```
  *
@@ -1797,6 +1826,12 @@ class az_deployment_group_what_if_command_builder extends CommandBuilder<az_depl
         return this;
     }
 
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_group_what_if_command_builder {
+        this.setFlag("--template-spec", value);
+        return this;
+    }
+
     /** The URI to the template file. */
     templateUri(value: string): az_deployment_group_what_if_command_builder {
         this.setFlag("--template-uri", value);
@@ -1858,6 +1893,7 @@ class az_deployment_mg_cancel_command_builder extends CommandBuilder<az_deployme
  *                         [--parameters]
  *                         [--subscription]
  *                         [--template-file]
+ *                         [--template-spec]
  *                         [--template-uri]
  *                         [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
  *                         [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -1930,6 +1966,12 @@ class az_deployment_mg_create_command_builder extends CommandBuilder<az_deployme
     /** The path to the template file. */
     templateFile(value: string): az_deployment_mg_create_command_builder {
         this.setFlag("--template-file", value);
+        return this;
+    }
+
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_mg_create_command_builder {
+        this.setFlag("--template-spec", value);
         return this;
     }
 
@@ -2140,6 +2182,7 @@ class az_deployment_mg_show_command_builder extends CommandBuilder<az_deployment
  *                           [--parameters]
  *                           [--subscription]
  *                           [--template-file]
+ *                           [--template-spec]
  *                           [--template-uri]
  * ```
  *
@@ -2198,6 +2241,12 @@ class az_deployment_mg_validate_command_builder extends CommandBuilder<az_deploy
     /** The path to the template file. */
     templateFile(value: string): az_deployment_mg_validate_command_builder {
         this.setFlag("--template-file", value);
+        return this;
+    }
+
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_mg_validate_command_builder {
+        this.setFlag("--template-spec", value);
         return this;
     }
 
@@ -2311,6 +2360,7 @@ class az_deployment_mg_wait_command_builder extends CommandBuilder<az_deployment
  *                          [--result-format {FullResourcePayloads, ResourceIdOnly}]
  *                          [--subscription]
  *                          [--template-file]
+ *                          [--template-spec]
  *                          [--template-uri]
  * ```
  *
@@ -2381,6 +2431,12 @@ class az_deployment_mg_what_if_command_builder extends CommandBuilder<az_deploym
     /** The path to the template file. */
     templateFile(value: string): az_deployment_mg_what_if_command_builder {
         this.setFlag("--template-file", value);
+        return this;
+    }
+
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_mg_what_if_command_builder {
+        this.setFlag("--template-spec", value);
         return this;
     }
 
@@ -2886,6 +2942,7 @@ class az_deployment_sub_cancel_command_builder extends CommandBuilder<az_deploym
  *                          [--parameters]
  *                          [--subscription]
  *                          [--template-file]
+ *                          [--template-spec]
  *                          [--template-uri]
  *                          [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
  *                          [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -2950,6 +3007,12 @@ class az_deployment_sub_create_command_builder extends CommandBuilder<az_deploym
     /** The path to the template file. */
     templateFile(value: string): az_deployment_sub_create_command_builder {
         this.setFlag("--template-file", value);
+        return this;
+    }
+
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_sub_create_command_builder {
+        this.setFlag("--template-spec", value);
         return this;
     }
 
@@ -3122,6 +3185,7 @@ class az_deployment_sub_show_command_builder extends CommandBuilder<az_deploymen
  *                            [--parameters]
  *                            [--subscription]
  *                            [--template-file]
+ *                            [--template-spec]
  *                            [--template-uri]
  * ```
  *
@@ -3172,6 +3236,12 @@ class az_deployment_sub_validate_command_builder extends CommandBuilder<az_deplo
     /** The path to the template file. */
     templateFile(value: string): az_deployment_sub_validate_command_builder {
         this.setFlag("--template-file", value);
+        return this;
+    }
+
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_sub_validate_command_builder {
+        this.setFlag("--template-spec", value);
         return this;
     }
 
@@ -3275,6 +3345,7 @@ class az_deployment_sub_wait_command_builder extends CommandBuilder<az_deploymen
  *                           [--result-format {FullResourcePayloads, ResourceIdOnly}]
  *                           [--subscription]
  *                           [--template-file]
+ *                           [--template-spec]
  *                           [--template-uri]
  * ```
  *
@@ -3340,6 +3411,12 @@ class az_deployment_sub_what_if_command_builder extends CommandBuilder<az_deploy
         return this;
     }
 
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_sub_what_if_command_builder {
+        this.setFlag("--template-spec", value);
+        return this;
+    }
+
     /** The URI to the template file. */
     templateUri(value: string): az_deployment_sub_what_if_command_builder {
         this.setFlag("--template-uri", value);
@@ -3391,6 +3468,7 @@ class az_deployment_tenant_cancel_command_builder extends CommandBuilder<az_depl
  *                             [--parameters]
  *                             [--subscription]
  *                             [--template-file]
+ *                             [--template-spec]
  *                             [--template-uri]
  *                             [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
  *                             [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -3455,6 +3533,12 @@ class az_deployment_tenant_create_command_builder extends CommandBuilder<az_depl
     /** The path to the template file. */
     templateFile(value: string): az_deployment_tenant_create_command_builder {
         this.setFlag("--template-file", value);
+        return this;
+    }
+
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_tenant_create_command_builder {
+        this.setFlag("--template-spec", value);
         return this;
     }
 
@@ -3627,6 +3711,7 @@ class az_deployment_tenant_show_command_builder extends CommandBuilder<az_deploy
  *                               [--parameters]
  *                               [--subscription]
  *                               [--template-file]
+ *                               [--template-spec]
  *                               [--template-uri]
  * ```
  *
@@ -3677,6 +3762,12 @@ class az_deployment_tenant_validate_command_builder extends CommandBuilder<az_de
     /** The path to the template file. */
     templateFile(value: string): az_deployment_tenant_validate_command_builder {
         this.setFlag("--template-file", value);
+        return this;
+    }
+
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_tenant_validate_command_builder {
+        this.setFlag("--template-spec", value);
         return this;
     }
 
@@ -3780,6 +3871,7 @@ class az_deployment_tenant_wait_command_builder extends CommandBuilder<az_deploy
  *                              [--result-format {FullResourcePayloads, ResourceIdOnly}]
  *                              [--subscription]
  *                              [--template-file]
+ *                              [--template-spec]
  *                              [--template-uri]
  * ```
  *
@@ -3842,6 +3934,12 @@ class az_deployment_tenant_what_if_command_builder extends CommandBuilder<az_dep
     /** The path to the template file. */
     templateFile(value: string): az_deployment_tenant_what_if_command_builder {
         this.setFlag("--template-file", value);
+        return this;
+    }
+
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_tenant_what_if_command_builder {
+        this.setFlag("--template-spec", value);
         return this;
     }
 
@@ -4061,6 +4159,7 @@ class az_deployment_cancel_command_builder extends CommandBuilder<az_deployment_
  *                      [--parameters]
  *                      [--subscription]
  *                      [--template-file]
+ *                      [--template-spec]
  *                      [--template-uri]
  *                      [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange}]
  *                      [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
@@ -4125,6 +4224,12 @@ class az_deployment_create_command_builder extends CommandBuilder<az_deployment_
     /** The path to the template file. */
     templateFile(value: string): az_deployment_create_command_builder {
         this.setFlag("--template-file", value);
+        return this;
+    }
+
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_create_command_builder {
+        this.setFlag("--template-spec", value);
         return this;
     }
 
@@ -4297,6 +4402,7 @@ class az_deployment_show_command_builder extends CommandBuilder<az_deployment_sh
  *                        [--parameters]
  *                        [--subscription]
  *                        [--template-file]
+ *                        [--template-spec]
  *                        [--template-uri]
  * ```
  *
@@ -4347,6 +4453,12 @@ class az_deployment_validate_command_builder extends CommandBuilder<az_deploymen
     /** The path to the template file. */
     templateFile(value: string): az_deployment_validate_command_builder {
         this.setFlag("--template-file", value);
+        return this;
+    }
+
+    /** The template spec resource id. */
+    templateSpec(value: string): az_deployment_validate_command_builder {
+        this.setFlag("--template-spec", value);
         return this;
     }
 

@@ -181,6 +181,7 @@ export class az_webapp_config_access_restriction {
      *                                         [--subnet]
      *                                         [--subscription]
      *                                         [--vnet-name]
+     *                                         [--vnet-resource-group]
      * ```
      *
      * @param {string} priority Priority of the access restriction rule.
@@ -2134,8 +2135,10 @@ export class az_webapp {
      *              [--location]
      *              [--logs]
      *              [--name]
+     *              [--os-type {Linux, Windows}]
      *              [--plan]
      *              [--resource-group]
+     *              [--runtime]
      *              [--sku {B1, B2, B3, D1, F1, FREE, I1, I2, I3, P1V2, P1V3, P2V2, P2V3, P3V2, P3V3, PC2, PC3, PC4, S1, S2, S3, SHARED}]
      *              [--subscription]
      * ```
@@ -2447,6 +2450,7 @@ class az_webapp_auth_update_command_builder extends CommandBuilder<az_webapp_aut
  *                                         [--subnet]
  *                                         [--subscription]
  *                                         [--vnet-name]
+ *                                         [--vnet-resource-group]
  * ```
  *
  * @param {string} priority Priority of the access restriction rule.
@@ -2538,6 +2542,12 @@ class az_webapp_config_access_restriction_add_command_builder extends CommandBui
     /** VNet name. */
     vnetName(value: string): az_webapp_config_access_restriction_add_command_builder {
         this.setFlag("--vnet-name", value);
+        return this;
+    }
+
+    /** Resource group of virtual network (default is web app resource group). */
+    vnetResourceGroup(value: string): az_webapp_config_access_restriction_add_command_builder {
+        this.setFlag("--vnet-resource-group", value);
         return this;
     }
 }
@@ -7943,7 +7953,7 @@ class az_webapp_create_command_builder extends CommandBuilder<az_webapp_create_c
         return this;
     }
 
-    /** Canonicalized web runtime in the format of Framework|Version, e.g. "PHP|7.2". Use `az webapp list-runtimes` for available list. */
+    /** Canonicalized web runtime in the format of Framework|Version, e.g. "PHP|7.2". Allowed delimiters: "|", " ", ":". Use `az webapp list-runtimes` for available list. */
     runtime(value: string): az_webapp_create_command_builder {
         this.setFlag("--runtime", value);
         return this;
@@ -8499,8 +8509,10 @@ class az_webapp_stop_command_builder extends CommandBuilder<az_webapp_stop_comma
  *              [--location]
  *              [--logs]
  *              [--name]
+ *              [--os-type {Linux, Windows}]
  *              [--plan]
  *              [--resource-group]
+ *              [--runtime]
  *              [--sku {B1, B2, B3, D1, F1, FREE, I1, I2, I3, P1V2, P1V3, P2V2, P2V3, P3V2, P3V3, PC2, PC3, PC4, S1, S2, S3, SHARED}]
  *              [--subscription]
  * ```
@@ -8552,6 +8564,12 @@ class az_webapp_up_command_builder extends CommandBuilder<az_webapp_up_command_r
         return this;
     }
 
+    /** Set the OS type for the app to be created. */
+    osType(value: 'Linux' | 'Windows'): az_webapp_up_command_builder {
+        this.setFlag("--os-type", value);
+        return this;
+    }
+
     /** Name of the appserviceplan associated with the webapp. */
     plan(value: string): az_webapp_up_command_builder {
         this.setFlag("--plan", value);
@@ -8561,6 +8579,12 @@ class az_webapp_up_command_builder extends CommandBuilder<az_webapp_up_command_r
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
     resourceGroup(value: string): az_webapp_up_command_builder {
         this.setFlag("--resource-group", value);
+        return this;
+    }
+
+    /** Canonicalized web runtime in the format of Framework|Version, e.g. "PHP|7.2". Allowed delimiters: "|", " ", ":". Use `az webapp list-runtimes` for available list. */
+    runtime(value: string): az_webapp_up_command_builder {
+        this.setFlag("--runtime", value);
         return this;
     }
 

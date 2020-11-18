@@ -30,6 +30,7 @@ import { az_mariadb_server_create_command_result } from './models/az_mariadb_ser
 import { az_mariadb_server_delete_command_result } from './models/az_mariadb_server_delete_command_result'
 import { az_mariadb_server_georestore_command_result } from './models/az_mariadb_server_georestore_command_result'
 import { az_mariadb_server_list_command_result } from './models/az_mariadb_server_list_command_result'
+import { az_mariadb_server_list_skus_command_result } from './models/az_mariadb_server_list_skus_command_result'
 import { az_mariadb_server_restart_command_result } from './models/az_mariadb_server_restart_command_result'
 import { az_mariadb_server_restore_command_result } from './models/az_mariadb_server_restore_command_result'
 import { az_mariadb_server_show_command_result } from './models/az_mariadb_server_show_command_result'
@@ -67,18 +68,17 @@ export class az_mariadb_db {
      * Syntax:
      * ```
      * az mariadb db delete --name
-     *                      --resource-group
-     *                      --server-name
+     *                      [--ids]
+     *                      [--resource-group]
+     *                      [--server-name]
      *                      [--subscription]
      *                      [--yes]
      * ```
      *
      * @param {string} name The name of the database.
-     * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    static delete(name: string, resourceGroup: string, serverName: string): az_mariadb_db_delete_command_builder {
-        return new az_mariadb_db_delete_command_builder("az mariadb db delete", 'az_mariadb_db_delete_command_result', name, resourceGroup, serverName);
+    static delete(name: string): az_mariadb_db_delete_command_builder {
+        return new az_mariadb_db_delete_command_builder("az mariadb db delete", 'az_mariadb_db_delete_command_result', name);
     }
 
     /**
@@ -93,7 +93,7 @@ export class az_mariadb_db {
      * ```
      *
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
+     * @param {string} serverName Name of the Server.
      */
     static list(resourceGroup: string, serverName: string): az_mariadb_db_list_command_builder {
         return new az_mariadb_db_list_command_builder("az mariadb db list", 'az_mariadb_db_list_command_result', resourceGroup, serverName);
@@ -105,18 +105,17 @@ export class az_mariadb_db {
      * Syntax:
      * ```
      * az mariadb db show --name
-     *                    --resource-group
-     *                    --server-name
+     *                    [--ids]
      *                    [--query-examples]
+     *                    [--resource-group]
+     *                    [--server-name]
      *                    [--subscription]
      * ```
      *
      * @param {string} name The name of the database.
-     * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    static show(name: string, resourceGroup: string, serverName: string): az_mariadb_db_show_command_builder {
-        return new az_mariadb_db_show_command_builder("az mariadb db show", 'az_mariadb_db_show_command_result', name, resourceGroup, serverName);
+    static show(name: string): az_mariadb_db_show_command_builder {
+        return new az_mariadb_db_show_command_builder("az mariadb db show", 'az_mariadb_db_show_command_result', name);
     }
 }
 
@@ -529,17 +528,16 @@ export class az_mariadb_server_logs {
      * Syntax:
      * ```
      * az mariadb server-logs download --name
-     *                                 --resource-group
-     *                                 --server-name
+     *                                 [--ids]
+     *                                 [--resource-group]
+     *                                 [--server-name]
      *                                 [--subscription]
      * ```
      *
      * @param {string} name Space-separated list of log filenames on the server to download.
-     * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    static download(name: string, resourceGroup: string, serverName: string): az_mariadb_server_logs_download_command_builder {
-        return new az_mariadb_server_logs_download_command_builder("az mariadb server-logs download", 'az_mariadb_server_logs_download_command_result', name, resourceGroup, serverName);
+    static download(name: string): az_mariadb_server_logs_download_command_builder {
+        return new az_mariadb_server_logs_download_command_builder("az mariadb server-logs download", 'az_mariadb_server_logs_download_command_result', name);
     }
 
     /**
@@ -557,7 +555,7 @@ export class az_mariadb_server_logs {
      * ```
      *
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
+     * @param {string} serverName Name of the Server.
      */
     static list(resourceGroup: string, serverName: string): az_mariadb_server_logs_list_command_builder {
         return new az_mariadb_server_logs_list_command_builder("az mariadb server-logs list", 'az_mariadb_server_logs_list_command_result', resourceGroup, serverName);
@@ -571,33 +569,27 @@ export class az_mariadb_server {
      *
      * Syntax:
      * ```
-     * az mariadb server create --admin-password
-     *                          --admin-user
-     *                          --name
-     *                          --resource-group
-     *                          --sku-name
+     * az mariadb server create [--admin-password]
+     *                          [--admin-user]
      *                          [--assign-identity]
      *                          [--auto-grow {Disabled, Enabled}]
      *                          [--backup-retention]
      *                          [--geo-redundant-backup {Disabled, Enabled}]
      *                          [--infrastructure-encryption {Disabled, Enabled}]
      *                          [--location]
-     *                          [--public {Disabled, Enabled}]
+     *                          [--name]
+     *                          [--public]
+     *                          [--resource-group]
+     *                          [--sku-name]
      *                          [--ssl-enforcement {Disabled, Enabled}]
      *                          [--storage-size]
      *                          [--subscription]
      *                          [--tags]
      *                          [--version]
      * ```
-     *
-     * @param {string} adminPassword The password of the administrator. Minimum 8 characters and maximum 128 characters. Password must contain characters from three of the following categories: English uppercase letters, English lowercase letters, numbers, and non-alphanumeric characters.
-     * @param {string} adminUser Administrator username for the server. Once set, it cannot be changed.
-     * @param {string} name Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
-     * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} skuName The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16.
      */
-    static create(adminPassword: string, adminUser: string, name: string, resourceGroup: string, skuName: string): az_mariadb_server_create_command_builder {
-        return new az_mariadb_server_create_command_builder("az mariadb server create", 'az_mariadb_server_create_command_result', adminPassword, adminUser, name, resourceGroup, skuName);
+    static create(): az_mariadb_server_create_command_builder {
+        return new az_mariadb_server_create_command_builder("az mariadb server create", 'az_mariadb_server_create_command_result');
     }
 
     /**
@@ -652,6 +644,21 @@ export class az_mariadb_server {
      */
     static list(): az_mariadb_server_list_command_builder {
         return new az_mariadb_server_list_command_builder("az mariadb server list", 'az_mariadb_server_list_command_result');
+    }
+
+    /**
+     * List available sku's in the given region.
+     *
+     * Syntax:
+     * ```
+     * az mariadb server list-skus --location
+     *                             [--subscription]
+     * ```
+     *
+     * @param {string} location The name of the location.
+     */
+    static list_skus(location: string): az_mariadb_server_list_skus_command_builder {
+        return new az_mariadb_server_list_skus_command_builder("az mariadb server list-skus", 'az_mariadb_server_list_skus_command_result', location);
     }
 
     /**
@@ -749,7 +756,7 @@ export class az_mariadb_server {
      *                          [--force-string]
      *                          [--ids]
      *                          [--name]
-     *                          [--public {Disabled, Enabled}]
+     *                          [--public]
      *                          [--remove]
      *                          [--resource-group]
      *                          [--set]
@@ -856,27 +863,30 @@ class az_mariadb_db_create_command_builder extends CommandBuilder<az_mariadb_db_
  * Syntax:
  * ```
  * az mariadb db delete --name
- *                      --resource-group
- *                      --server-name
+ *                      [--ids]
+ *                      [--resource-group]
+ *                      [--server-name]
  *                      [--subscription]
  *                      [--yes]
  * ```
  *
  * @param {string} name The name of the database.
- * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_mariadb_db_delete_command_builder extends CommandBuilder<az_mariadb_db_delete_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serverName: string) {
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
         super(commandPath, resultDataTypeName);
         this.name(name)
-        this.resourceGroup(resourceGroup)
-        this.serverName(serverName)
     }
 
     /** The name of the database. */
     name(value: string): az_mariadb_db_delete_command_builder {
         this.setFlag("--name", value);
+        return this;
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_mariadb_db_delete_command_builder {
+        this.setFlag("--ids", value);
         return this;
     }
 
@@ -917,7 +927,7 @@ class az_mariadb_db_delete_command_builder extends CommandBuilder<az_mariadb_db_
  * ```
  *
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
+ * @param {string} serverName Name of the Server.
  */
 class az_mariadb_db_list_command_builder extends CommandBuilder<az_mariadb_db_list_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serverName: string) {
@@ -932,7 +942,7 @@ class az_mariadb_db_list_command_builder extends CommandBuilder<az_mariadb_db_li
         return this;
     }
 
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
+    /** Name of the Server. */
     serverName(value: string): az_mariadb_db_list_command_builder {
         this.setFlag("--server-name", value);
         return this;
@@ -957,27 +967,36 @@ class az_mariadb_db_list_command_builder extends CommandBuilder<az_mariadb_db_li
  * Syntax:
  * ```
  * az mariadb db show --name
- *                    --resource-group
- *                    --server-name
+ *                    [--ids]
  *                    [--query-examples]
+ *                    [--resource-group]
+ *                    [--server-name]
  *                    [--subscription]
  * ```
  *
  * @param {string} name The name of the database.
- * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_mariadb_db_show_command_builder extends CommandBuilder<az_mariadb_db_show_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serverName: string) {
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
         super(commandPath, resultDataTypeName);
         this.name(name)
-        this.resourceGroup(resourceGroup)
-        this.serverName(serverName)
     }
 
     /** The name of the database. */
     name(value: string): az_mariadb_db_show_command_builder {
         this.setFlag("--name", value);
+        return this;
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_mariadb_db_show_command_builder {
+        this.setFlag("--ids", value);
+        return this;
+    }
+
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_mariadb_db_show_command_builder {
+        this.setFlag("--query-examples", value);
         return this;
     }
 
@@ -990,12 +1009,6 @@ class az_mariadb_db_show_command_builder extends CommandBuilder<az_mariadb_db_sh
     /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
     serverName(value: string): az_mariadb_db_show_command_builder {
         this.setFlag("--server-name", value);
-        return this;
-    }
-
-    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
-    queryExamples(value: string): az_mariadb_db_show_command_builder {
-        this.setFlag("--query-examples", value);
         return this;
     }
 
@@ -2260,26 +2273,29 @@ class az_mariadb_server_vnet_rule_update_command_builder extends CommandBuilder<
  * Syntax:
  * ```
  * az mariadb server-logs download --name
- *                                 --resource-group
- *                                 --server-name
+ *                                 [--ids]
+ *                                 [--resource-group]
+ *                                 [--server-name]
  *                                 [--subscription]
  * ```
  *
  * @param {string} name Space-separated list of log filenames on the server to download.
- * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_mariadb_server_logs_download_command_builder extends CommandBuilder<az_mariadb_server_logs_download_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serverName: string) {
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
         super(commandPath, resultDataTypeName);
         this.name(name)
-        this.resourceGroup(resourceGroup)
-        this.serverName(serverName)
     }
 
     /** Space-separated list of log filenames on the server to download. */
     name(value: string): az_mariadb_server_logs_download_command_builder {
         this.setFlag("--name", value);
+        return this;
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_mariadb_server_logs_download_command_builder {
+        this.setFlag("--ids", value);
         return this;
     }
 
@@ -2317,7 +2333,7 @@ class az_mariadb_server_logs_download_command_builder extends CommandBuilder<az_
  * ```
  *
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
+ * @param {string} serverName Name of the Server.
  */
 class az_mariadb_server_logs_list_command_builder extends CommandBuilder<az_mariadb_server_logs_list_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serverName: string) {
@@ -2332,7 +2348,7 @@ class az_mariadb_server_logs_list_command_builder extends CommandBuilder<az_mari
         return this;
     }
 
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
+    /** Name of the Server. */
     serverName(value: string): az_mariadb_server_logs_list_command_builder {
         this.setFlag("--server-name", value);
         return this;
@@ -2374,39 +2390,28 @@ class az_mariadb_server_logs_list_command_builder extends CommandBuilder<az_mari
  *
  * Syntax:
  * ```
- * az mariadb server create --admin-password
- *                          --admin-user
- *                          --name
- *                          --resource-group
- *                          --sku-name
+ * az mariadb server create [--admin-password]
+ *                          [--admin-user]
  *                          [--assign-identity]
  *                          [--auto-grow {Disabled, Enabled}]
  *                          [--backup-retention]
  *                          [--geo-redundant-backup {Disabled, Enabled}]
  *                          [--infrastructure-encryption {Disabled, Enabled}]
  *                          [--location]
- *                          [--public {Disabled, Enabled}]
+ *                          [--name]
+ *                          [--public]
+ *                          [--resource-group]
+ *                          [--sku-name]
  *                          [--ssl-enforcement {Disabled, Enabled}]
  *                          [--storage-size]
  *                          [--subscription]
  *                          [--tags]
  *                          [--version]
  * ```
- *
- * @param {string} adminPassword The password of the administrator. Minimum 8 characters and maximum 128 characters. Password must contain characters from three of the following categories: English uppercase letters, English lowercase letters, numbers, and non-alphanumeric characters.
- * @param {string} adminUser Administrator username for the server. Once set, it cannot be changed.
- * @param {string} name Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
- * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} skuName The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16.
  */
 class az_mariadb_server_create_command_builder extends CommandBuilder<az_mariadb_server_create_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, adminPassword: string, adminUser: string, name: string, resourceGroup: string, skuName: string) {
+    constructor(commandPath: string, resultDataTypeName: string) {
         super(commandPath, resultDataTypeName);
-        this.adminPassword(adminPassword)
-        this.adminUser(adminUser)
-        this.name(name)
-        this.resourceGroup(resourceGroup)
-        this.skuName(skuName)
     }
 
     /** The password of the administrator. Minimum 8 characters and maximum 128 characters. Password must contain characters from three of the following categories: English uppercase letters, English lowercase letters, numbers, and non-alphanumeric characters. */
@@ -2418,24 +2423,6 @@ class az_mariadb_server_create_command_builder extends CommandBuilder<az_mariadb
     /** Administrator username for the server. Once set, it cannot be changed. */
     adminUser(value: string): az_mariadb_server_create_command_builder {
         this.setFlag("--admin-user", value);
-        return this;
-    }
-
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
-    name(value: string): az_mariadb_server_create_command_builder {
-        this.setFlag("--name", value);
-        return this;
-    }
-
-    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
-    resourceGroup(value: string): az_mariadb_server_create_command_builder {
-        this.setFlag("--resource-group", value);
-        return this;
-    }
-
-    /** The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16. */
-    skuName(value: string): az_mariadb_server_create_command_builder {
-        this.setFlag("--sku-name", value);
         return this;
     }
 
@@ -2475,9 +2462,27 @@ class az_mariadb_server_create_command_builder extends CommandBuilder<az_mariadb
         return this;
     }
 
-    /** Enable or disable public network access to server. When disabled, only connections made through Private Links can reach this server. Default is Enabled. */
-    publicNetworkAccess(value: 'Disabled' | 'Enabled'): az_mariadb_server_create_command_builder {
+    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
+    name(value: string): az_mariadb_server_create_command_builder {
+        this.setFlag("--name", value);
+        return this;
+    }
+
+    /** Enable or disable public network access to server. When disabled, only connections made through Private Links can reach this server. Allowed values are : Enabled, Disabled, all, 0.0.0.0, <SingleIP>, <StartIP-DestinationIP>. Default is Enabled. */
+    publicNetworkAccess(value: string): az_mariadb_server_create_command_builder {
         this.setFlag("--public-network-access", value);
+        return this;
+    }
+
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_mariadb_server_create_command_builder {
+        this.setFlag("--resource-group", value);
+        return this;
+    }
+
+    /** The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16. */
+    skuName(value: string): az_mariadb_server_create_command_builder {
+        this.setFlag("--sku-name", value);
         return this;
     }
 
@@ -2677,6 +2682,36 @@ class az_mariadb_server_list_command_builder extends CommandBuilder<az_mariadb_s
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_mariadb_server_list_command_builder {
+        this.setFlag("--subscription", value);
+        return this;
+    }
+}
+
+/**
+ * List available sku's in the given region.
+ *
+ * Syntax:
+ * ```
+ * az mariadb server list-skus --location
+ *                             [--subscription]
+ * ```
+ *
+ * @param {string} location The name of the location.
+ */
+class az_mariadb_server_list_skus_command_builder extends CommandBuilder<az_mariadb_server_list_skus_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
+        this.location(location)
+    }
+
+    /** The name of the location. */
+    location(value: string): az_mariadb_server_list_skus_command_builder {
+        this.setFlag("--location", value);
+        return this;
+    }
+
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_mariadb_server_list_skus_command_builder {
         this.setFlag("--subscription", value);
         return this;
     }
@@ -2933,7 +2968,7 @@ class az_mariadb_server_stop_command_builder extends CommandBuilder<az_mariadb_s
  *                          [--force-string]
  *                          [--ids]
  *                          [--name]
- *                          [--public {Disabled, Enabled}]
+ *                          [--public]
  *                          [--remove]
  *                          [--resource-group]
  *                          [--set]
@@ -2997,8 +3032,8 @@ class az_mariadb_server_update_command_builder extends CommandBuilder<az_mariadb
         return this;
     }
 
-    /** Enable or disable public network access to server. When disabled, only connections made through Private Links can reach this server. Default is Enabled. */
-    publicNetworkAccess(value: 'Disabled' | 'Enabled'): az_mariadb_server_update_command_builder {
+    /** Enable or disable public network access to server. When disabled, only connections made through Private Links can reach this server. Allowed values are : Enabled, Disabled, all, 0.0.0.0, <SingleIP>, <StartIP-DestinationIP>. Default is Enabled. */
+    publicNetworkAccess(value: string): az_mariadb_server_update_command_builder {
         this.setFlag("--public-network-access", value);
         return this;
     }

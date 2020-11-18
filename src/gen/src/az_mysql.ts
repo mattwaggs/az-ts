@@ -66,6 +66,7 @@ import { az_mysql_server_create_command_result } from './models/az_mysql_server_
 import { az_mysql_server_delete_command_result } from './models/az_mysql_server_delete_command_result'
 import { az_mysql_server_georestore_command_result } from './models/az_mysql_server_georestore_command_result'
 import { az_mysql_server_list_command_result } from './models/az_mysql_server_list_command_result'
+import { az_mysql_server_list_skus_command_result } from './models/az_mysql_server_list_skus_command_result'
 import { az_mysql_server_restart_command_result } from './models/az_mysql_server_restart_command_result'
 import { az_mysql_server_restore_command_result } from './models/az_mysql_server_restore_command_result'
 import { az_mysql_server_show_command_result } from './models/az_mysql_server_show_command_result'
@@ -103,18 +104,17 @@ export class az_mysql_db {
      * Syntax:
      * ```
      * az mysql db delete --name
-     *                    --resource-group
-     *                    --server-name
+     *                    [--ids]
+     *                    [--resource-group]
+     *                    [--server-name]
      *                    [--subscription]
      *                    [--yes]
      * ```
      *
      * @param {string} name The name of the database.
-     * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    static delete(name: string, resourceGroup: string, serverName: string): az_mysql_db_delete_command_builder {
-        return new az_mysql_db_delete_command_builder("az mysql db delete", 'az_mysql_db_delete_command_result', name, resourceGroup, serverName);
+    static delete(name: string): az_mysql_db_delete_command_builder {
+        return new az_mysql_db_delete_command_builder("az mysql db delete", 'az_mysql_db_delete_command_result', name);
     }
 
     /**
@@ -129,7 +129,7 @@ export class az_mysql_db {
      * ```
      *
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
+     * @param {string} serverName Name of the Server.
      */
     static list(resourceGroup: string, serverName: string): az_mysql_db_list_command_builder {
         return new az_mysql_db_list_command_builder("az mysql db list", 'az_mysql_db_list_command_result', resourceGroup, serverName);
@@ -141,18 +141,17 @@ export class az_mysql_db {
      * Syntax:
      * ```
      * az mysql db show --name
-     *                  --resource-group
-     *                  --server-name
+     *                  [--ids]
      *                  [--query-examples]
+     *                  [--resource-group]
+     *                  [--server-name]
      *                  [--subscription]
      * ```
      *
      * @param {string} name The name of the database.
-     * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    static show(name: string, resourceGroup: string, serverName: string): az_mysql_db_show_command_builder {
-        return new az_mysql_db_show_command_builder("az mysql db show", 'az_mysql_db_show_command_result', name, resourceGroup, serverName);
+    static show(name: string): az_mysql_db_show_command_builder {
+        return new az_mysql_db_show_command_builder("az mysql db show", 'az_mysql_db_show_command_result', name);
     }
 }
 
@@ -185,11 +184,11 @@ export class az_mysql_flexible_server_db {
      * Syntax:
      * ```
      * az mysql flexible-server db delete [--database-name]
-     *                                    [--force]
      *                                    [--ids]
      *                                    [--resource-group]
      *                                    [--server-name]
      *                                    [--subscription]
+     *                                    [--yes]
      * ```
      */
     static delete(): az_mysql_flexible_server_db_delete_command_builder {
@@ -244,19 +243,19 @@ export class az_mysql_flexible_server_firewall_rule {
      * az mysql flexible-server firewall-rule create --end-ip-address
      *                                               --name
      *                                               --resource-group
-     *                                               --server-name
+     *                                               --rule-name
      *                                               --start-ip-address
      *                                               [--subscription]
      * ```
      *
      * @param {string} endIpAddress The end IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
-     * @param {string} name The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters.
+     * @param {string} name Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
+     * @param {string} ruleName The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters.
      * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
      */
-    static create(endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string): az_mysql_flexible_server_firewall_rule_create_command_builder {
-        return new az_mysql_flexible_server_firewall_rule_create_command_builder("az mysql flexible-server firewall-rule create", 'az_mysql_flexible_server_firewall_rule_create_command_result', endIpAddress, name, resourceGroup, serverName, startIpAddress);
+    static create(endIpAddress: string, name: string, resourceGroup: string, ruleName: string, startIpAddress: string): az_mysql_flexible_server_firewall_rule_create_command_builder {
+        return new az_mysql_flexible_server_firewall_rule_create_command_builder("az mysql flexible-server firewall-rule create", 'az_mysql_flexible_server_firewall_rule_create_command_result', endIpAddress, name, resourceGroup, ruleName, startIpAddress);
     }
 
     /**
@@ -266,10 +265,10 @@ export class az_mysql_flexible_server_firewall_rule {
      * ```
      * az mysql flexible-server firewall-rule delete [--ids]
      *                                               [--name]
-     *                                               [--prompt]
      *                                               [--resource-group]
-     *                                               [--server-name]
+     *                                               [--rule-name]
      *                                               [--subscription]
+     *                                               [--yes]
      * ```
      */
     static delete(): az_mysql_flexible_server_firewall_rule_delete_command_builder {
@@ -281,17 +280,17 @@ export class az_mysql_flexible_server_firewall_rule {
      *
      * Syntax:
      * ```
-     * az mysql flexible-server firewall-rule list --resource-group
-     *                                             --server-name
+     * az mysql flexible-server firewall-rule list --name
+     *                                             --resource-group
      *                                             [--query-examples]
      *                                             [--subscription]
      * ```
      *
+     * @param {string} name Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    static list(resourceGroup: string, serverName: string): az_mysql_flexible_server_firewall_rule_list_command_builder {
-        return new az_mysql_flexible_server_firewall_rule_list_command_builder("az mysql flexible-server firewall-rule list", 'az_mysql_flexible_server_firewall_rule_list_command_result', resourceGroup, serverName);
+    static list(name: string, resourceGroup: string): az_mysql_flexible_server_firewall_rule_list_command_builder {
+        return new az_mysql_flexible_server_firewall_rule_list_command_builder("az mysql flexible-server firewall-rule list", 'az_mysql_flexible_server_firewall_rule_list_command_result', name, resourceGroup);
     }
 
     /**
@@ -303,7 +302,7 @@ export class az_mysql_flexible_server_firewall_rule {
      *                                             [--name]
      *                                             [--query-examples]
      *                                             [--resource-group]
-     *                                             [--server-name]
+     *                                             [--rule-name]
      *                                             [--subscription]
      * ```
      */
@@ -323,7 +322,7 @@ export class az_mysql_flexible_server_firewall_rule {
      *                                               [--name]
      *                                               [--remove]
      *                                               [--resource-group]
-     *                                               [--server-name]
+     *                                               [--rule-name]
      *                                               [--set]
      *                                               [--start-ip-address]
      *                                               [--subscription]
@@ -397,22 +396,19 @@ export class az_mysql_flexible_server_replica {
      *
      * Syntax:
      * ```
-     * az mysql flexible-server replica create --name
+     * az mysql flexible-server replica create --replica-name
      *                                         --resource-group
      *                                         --source-server
-     *                                         [--location]
      *                                         [--no-wait]
-     *                                         [--sku-name]
      *                                         [--subscription]
-     *                                         [--tier]
      * ```
      *
-     * @param {string} name Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
+     * @param {string} replicaName The name of the server to restore to.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      * @param {string} sourceServer The name or resource ID of the source server to restore from.
      */
-    static create(name: string, resourceGroup: string, sourceServer: string): az_mysql_flexible_server_replica_create_command_builder {
-        return new az_mysql_flexible_server_replica_create_command_builder("az mysql flexible-server replica create", 'az_mysql_flexible_server_replica_create_command_result', name, resourceGroup, sourceServer);
+    static create(replicaName: string, resourceGroup: string, sourceServer: string): az_mysql_flexible_server_replica_create_command_builder {
+        return new az_mysql_flexible_server_replica_create_command_builder("az mysql flexible-server replica create", 'az_mysql_flexible_server_replica_create_command_result', replicaName, resourceGroup, sourceServer);
     }
 
     /**
@@ -426,7 +422,7 @@ export class az_mysql_flexible_server_replica {
      *                                       [--subscription]
      * ```
      *
-     * @param {string} name Name of the server.
+     * @param {string} name Name of the source server.
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
      */
     static list(name: string, resourceGroup: string): az_mysql_flexible_server_replica_list_command_builder {
@@ -488,11 +484,11 @@ export class az_mysql_flexible_server {
      *
      * Syntax:
      * ```
-     * az mysql flexible-server delete [--force]
-     *                                 [--ids]
+     * az mysql flexible-server delete [--ids]
      *                                 [--name]
      *                                 [--resource-group]
      *                                 [--subscription]
+     *                                 [--yes]
      * ```
      */
     static delete(): az_mysql_flexible_server_delete_command_builder {
@@ -548,8 +544,8 @@ export class az_mysql_flexible_server {
      *
      * Syntax:
      * ```
-     * az mysql flexible-server restore --source-server
-     *                                  --time
+     * az mysql flexible-server restore --restore-time
+     *                                  --source-server
      *                                  [--ids]
      *                                  [--location]
      *                                  [--name]
@@ -558,11 +554,11 @@ export class az_mysql_flexible_server {
      *                                  [--subscription]
      * ```
      *
+     * @param {string} restoreTime The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00.
      * @param {string} sourceServer The name or resource ID of the source server to restore from.
-     * @param {string} time The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00.
      */
-    static restore(sourceServer: string, time: string): az_mysql_flexible_server_restore_command_builder {
-        return new az_mysql_flexible_server_restore_command_builder("az mysql flexible-server restore", 'az_mysql_flexible_server_restore_command_result', sourceServer, time);
+    static restore(restoreTime: string, sourceServer: string): az_mysql_flexible_server_restore_command_builder {
+        return new az_mysql_flexible_server_restore_command_builder("az mysql flexible-server restore", 'az_mysql_flexible_server_restore_command_result', restoreTime, sourceServer);
     }
 
     /**
@@ -1260,17 +1256,16 @@ export class az_mysql_server_logs {
      * Syntax:
      * ```
      * az mysql server-logs download --name
-     *                               --resource-group
-     *                               --server-name
+     *                               [--ids]
+     *                               [--resource-group]
+     *                               [--server-name]
      *                               [--subscription]
      * ```
      *
      * @param {string} name Space-separated list of log filenames on the server to download.
-     * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
      */
-    static download(name: string, resourceGroup: string, serverName: string): az_mysql_server_logs_download_command_builder {
-        return new az_mysql_server_logs_download_command_builder("az mysql server-logs download", 'az_mysql_server_logs_download_command_result', name, resourceGroup, serverName);
+    static download(name: string): az_mysql_server_logs_download_command_builder {
+        return new az_mysql_server_logs_download_command_builder("az mysql server-logs download", 'az_mysql_server_logs_download_command_result', name);
     }
 
     /**
@@ -1288,7 +1283,7 @@ export class az_mysql_server_logs {
      * ```
      *
      * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
+     * @param {string} serverName Name of the Server.
      */
     static list(resourceGroup: string, serverName: string): az_mysql_server_logs_list_command_builder {
         return new az_mysql_server_logs_list_command_builder("az mysql server-logs list", 'az_mysql_server_logs_list_command_result', resourceGroup, serverName);
@@ -1302,11 +1297,8 @@ export class az_mysql_server {
      *
      * Syntax:
      * ```
-     * az mysql server create --admin-password
-     *                        --admin-user
-     *                        --name
-     *                        --resource-group
-     *                        --sku-name
+     * az mysql server create [--admin-password]
+     *                        [--admin-user]
      *                        [--assign-identity]
      *                        [--auto-grow {Disabled, Enabled}]
      *                        [--backup-retention]
@@ -1314,22 +1306,19 @@ export class az_mysql_server {
      *                        [--infrastructure-encryption {Disabled, Enabled}]
      *                        [--location]
      *                        [--minimal-tls-version {TLS1_0, TLS1_1, TLS1_2, TLSEnforcementDisabled}]
-     *                        [--public {Disabled, Enabled}]
+     *                        [--name]
+     *                        [--public]
+     *                        [--resource-group]
+     *                        [--sku-name]
      *                        [--ssl-enforcement {Disabled, Enabled}]
      *                        [--storage-size]
      *                        [--subscription]
      *                        [--tags]
      *                        [--version]
      * ```
-     *
-     * @param {string} adminPassword The password of the administrator. Minimum 8 characters and maximum 128 characters. Password must contain characters from three of the following categories: English uppercase letters, English lowercase letters, numbers, and non-alphanumeric characters.
-     * @param {string} adminUser Administrator username for the server. Once set, it cannot be changed.
-     * @param {string} name Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
-     * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
-     * @param {string} skuName The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16.
      */
-    static create(adminPassword: string, adminUser: string, name: string, resourceGroup: string, skuName: string): az_mysql_server_create_command_builder {
-        return new az_mysql_server_create_command_builder("az mysql server create", 'az_mysql_server_create_command_result', adminPassword, adminUser, name, resourceGroup, skuName);
+    static create(): az_mysql_server_create_command_builder {
+        return new az_mysql_server_create_command_builder("az mysql server create", 'az_mysql_server_create_command_result');
     }
 
     /**
@@ -1384,6 +1373,21 @@ export class az_mysql_server {
      */
     static list(): az_mysql_server_list_command_builder {
         return new az_mysql_server_list_command_builder("az mysql server list", 'az_mysql_server_list_command_result');
+    }
+
+    /**
+     * List available sku's in the given region.
+     *
+     * Syntax:
+     * ```
+     * az mysql server list-skus --location
+     *                           [--subscription]
+     * ```
+     *
+     * @param {string} location The name of the location.
+     */
+    static list_skus(location: string): az_mysql_server_list_skus_command_builder {
+        return new az_mysql_server_list_skus_command_builder("az mysql server list-skus", 'az_mysql_server_list_skus_command_result', location);
     }
 
     /**
@@ -1482,7 +1486,7 @@ export class az_mysql_server {
      *                        [--ids]
      *                        [--minimal-tls-version {TLS1_0, TLS1_1, TLS1_2, TLSEnforcementDisabled}]
      *                        [--name]
-     *                        [--public {Disabled, Enabled}]
+     *                        [--public]
      *                        [--remove]
      *                        [--resource-group]
      *                        [--set]
@@ -1589,27 +1593,30 @@ class az_mysql_db_create_command_builder extends CommandBuilder<az_mysql_db_crea
  * Syntax:
  * ```
  * az mysql db delete --name
- *                    --resource-group
- *                    --server-name
+ *                    [--ids]
+ *                    [--resource-group]
+ *                    [--server-name]
  *                    [--subscription]
  *                    [--yes]
  * ```
  *
  * @param {string} name The name of the database.
- * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_mysql_db_delete_command_builder extends CommandBuilder<az_mysql_db_delete_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serverName: string) {
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
         super(commandPath, resultDataTypeName);
         this.name(name)
-        this.resourceGroup(resourceGroup)
-        this.serverName(serverName)
     }
 
     /** The name of the database. */
     name(value: string): az_mysql_db_delete_command_builder {
         this.setFlag("--name", value);
+        return this;
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_mysql_db_delete_command_builder {
+        this.setFlag("--ids", value);
         return this;
     }
 
@@ -1650,7 +1657,7 @@ class az_mysql_db_delete_command_builder extends CommandBuilder<az_mysql_db_dele
  * ```
  *
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
+ * @param {string} serverName Name of the Server.
  */
 class az_mysql_db_list_command_builder extends CommandBuilder<az_mysql_db_list_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serverName: string) {
@@ -1665,7 +1672,7 @@ class az_mysql_db_list_command_builder extends CommandBuilder<az_mysql_db_list_c
         return this;
     }
 
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
+    /** Name of the Server. */
     serverName(value: string): az_mysql_db_list_command_builder {
         this.setFlag("--server-name", value);
         return this;
@@ -1690,27 +1697,36 @@ class az_mysql_db_list_command_builder extends CommandBuilder<az_mysql_db_list_c
  * Syntax:
  * ```
  * az mysql db show --name
- *                  --resource-group
- *                  --server-name
+ *                  [--ids]
  *                  [--query-examples]
+ *                  [--resource-group]
+ *                  [--server-name]
  *                  [--subscription]
  * ```
  *
  * @param {string} name The name of the database.
- * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_mysql_db_show_command_builder extends CommandBuilder<az_mysql_db_show_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serverName: string) {
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
         super(commandPath, resultDataTypeName);
         this.name(name)
-        this.resourceGroup(resourceGroup)
-        this.serverName(serverName)
     }
 
     /** The name of the database. */
     name(value: string): az_mysql_db_show_command_builder {
         this.setFlag("--name", value);
+        return this;
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_mysql_db_show_command_builder {
+        this.setFlag("--ids", value);
+        return this;
+    }
+
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_mysql_db_show_command_builder {
+        this.setFlag("--query-examples", value);
         return this;
     }
 
@@ -1723,12 +1739,6 @@ class az_mysql_db_show_command_builder extends CommandBuilder<az_mysql_db_show_c
     /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
     serverName(value: string): az_mysql_db_show_command_builder {
         this.setFlag("--server-name", value);
-        return this;
-    }
-
-    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
-    queryExamples(value: string): az_mysql_db_show_command_builder {
-        this.setFlag("--query-examples", value);
         return this;
     }
 
@@ -1807,11 +1817,11 @@ class az_mysql_flexible_server_db_create_command_builder extends CommandBuilder<
  * Syntax:
  * ```
  * az mysql flexible-server db delete [--database-name]
- *                                    [--force]
  *                                    [--ids]
  *                                    [--resource-group]
  *                                    [--server-name]
  *                                    [--subscription]
+ *                                    [--yes]
  * ```
  */
 class az_mysql_flexible_server_db_delete_command_builder extends CommandBuilder<az_mysql_flexible_server_db_delete_command_result> {
@@ -1822,12 +1832,6 @@ class az_mysql_flexible_server_db_delete_command_builder extends CommandBuilder<
     /** The name of a database. */
     databaseName(value: string): az_mysql_flexible_server_db_delete_command_builder {
         this.setFlag("--database-name", value);
-        return this;
-    }
-
-    /** Delete the database without prompt. */
-    force(value: string): az_mysql_flexible_server_db_delete_command_builder {
-        this.setFlag("--force", value);
         return this;
     }
 
@@ -1852,6 +1856,12 @@ class az_mysql_flexible_server_db_delete_command_builder extends CommandBuilder<
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_mysql_flexible_server_db_delete_command_builder {
         this.setFlag("--subscription", value);
+        return this;
+    }
+
+    /** Do not prompt for confirmation. */
+    yes(value: string): az_mysql_flexible_server_db_delete_command_builder {
+        this.setFlag("--yes", value);
         return this;
     }
 }
@@ -1968,24 +1978,24 @@ class az_mysql_flexible_server_db_show_command_builder extends CommandBuilder<az
  * az mysql flexible-server firewall-rule create --end-ip-address
  *                                               --name
  *                                               --resource-group
- *                                               --server-name
+ *                                               --rule-name
  *                                               --start-ip-address
  *                                               [--subscription]
  * ```
  *
  * @param {string} endIpAddress The end IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
- * @param {string} name The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters.
+ * @param {string} name Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
+ * @param {string} ruleName The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters.
  * @param {string} startIpAddress The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
  */
 class az_mysql_flexible_server_firewall_rule_create_command_builder extends CommandBuilder<az_mysql_flexible_server_firewall_rule_create_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, endIpAddress: string, name: string, resourceGroup: string, serverName: string, startIpAddress: string) {
+    constructor(commandPath: string, resultDataTypeName: string, endIpAddress: string, name: string, resourceGroup: string, ruleName: string, startIpAddress: string) {
         super(commandPath, resultDataTypeName);
         this.endIpAddress(endIpAddress)
         this.name(name)
         this.resourceGroup(resourceGroup)
-        this.serverName(serverName)
+        this.ruleName(ruleName)
         this.startIpAddress(startIpAddress)
     }
 
@@ -1995,7 +2005,7 @@ class az_mysql_flexible_server_firewall_rule_create_command_builder extends Comm
         return this;
     }
 
-    /** The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters. */
+    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
     name(value: string): az_mysql_flexible_server_firewall_rule_create_command_builder {
         this.setFlag("--name", value);
         return this;
@@ -2007,9 +2017,9 @@ class az_mysql_flexible_server_firewall_rule_create_command_builder extends Comm
         return this;
     }
 
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
-    serverName(value: string): az_mysql_flexible_server_firewall_rule_create_command_builder {
-        this.setFlag("--server-name", value);
+    /** The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters. */
+    ruleName(value: string): az_mysql_flexible_server_firewall_rule_create_command_builder {
+        this.setFlag("--rule-name", value);
         return this;
     }
 
@@ -2033,10 +2043,10 @@ class az_mysql_flexible_server_firewall_rule_create_command_builder extends Comm
  * ```
  * az mysql flexible-server firewall-rule delete [--ids]
  *                                               [--name]
- *                                               [--prompt]
  *                                               [--resource-group]
- *                                               [--server-name]
+ *                                               [--rule-name]
  *                                               [--subscription]
+ *                                               [--yes]
  * ```
  */
 class az_mysql_flexible_server_firewall_rule_delete_command_builder extends CommandBuilder<az_mysql_flexible_server_firewall_rule_delete_command_result> {
@@ -2050,15 +2060,9 @@ class az_mysql_flexible_server_firewall_rule_delete_command_builder extends Comm
         return this;
     }
 
-    /** The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters. */
+    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
     name(value: string): az_mysql_flexible_server_firewall_rule_delete_command_builder {
         this.setFlag("--name", value);
-        return this;
-    }
-
-    /** Turn confirmation prompt on/off. If off, the rule will be deleted without confirmation. */
-    prompt(value: string): az_mysql_flexible_server_firewall_rule_delete_command_builder {
-        this.setFlag("--prompt", value);
         return this;
     }
 
@@ -2068,15 +2072,21 @@ class az_mysql_flexible_server_firewall_rule_delete_command_builder extends Comm
         return this;
     }
 
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
-    serverName(value: string): az_mysql_flexible_server_firewall_rule_delete_command_builder {
-        this.setFlag("--server-name", value);
+    /** The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters. */
+    ruleName(value: string): az_mysql_flexible_server_firewall_rule_delete_command_builder {
+        this.setFlag("--rule-name", value);
         return this;
     }
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_mysql_flexible_server_firewall_rule_delete_command_builder {
         this.setFlag("--subscription", value);
+        return this;
+    }
+
+    /** Do not prompt for confirmation. */
+    yes(value: string): az_mysql_flexible_server_firewall_rule_delete_command_builder {
+        this.setFlag("--yes", value);
         return this;
     }
 }
@@ -2086,31 +2096,31 @@ class az_mysql_flexible_server_firewall_rule_delete_command_builder extends Comm
  *
  * Syntax:
  * ```
- * az mysql flexible-server firewall-rule list --resource-group
- *                                             --server-name
+ * az mysql flexible-server firewall-rule list --name
+ *                                             --resource-group
  *                                             [--query-examples]
  *                                             [--subscription]
  * ```
  *
+ * @param {string} name Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_mysql_flexible_server_firewall_rule_list_command_builder extends CommandBuilder<az_mysql_flexible_server_firewall_rule_list_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serverName: string) {
+    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string) {
         super(commandPath, resultDataTypeName);
+        this.name(name)
         this.resourceGroup(resourceGroup)
-        this.serverName(serverName)
+    }
+
+    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
+    name(value: string): az_mysql_flexible_server_firewall_rule_list_command_builder {
+        this.setFlag("--name", value);
+        return this;
     }
 
     /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
     resourceGroup(value: string): az_mysql_flexible_server_firewall_rule_list_command_builder {
         this.setFlag("--resource-group", value);
-        return this;
-    }
-
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
-    serverName(value: string): az_mysql_flexible_server_firewall_rule_list_command_builder {
-        this.setFlag("--server-name", value);
         return this;
     }
 
@@ -2136,7 +2146,7 @@ class az_mysql_flexible_server_firewall_rule_list_command_builder extends Comman
  *                                             [--name]
  *                                             [--query-examples]
  *                                             [--resource-group]
- *                                             [--server-name]
+ *                                             [--rule-name]
  *                                             [--subscription]
  * ```
  */
@@ -2151,7 +2161,7 @@ class az_mysql_flexible_server_firewall_rule_show_command_builder extends Comman
         return this;
     }
 
-    /** The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters. */
+    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
     name(value: string): az_mysql_flexible_server_firewall_rule_show_command_builder {
         this.setFlag("--name", value);
         return this;
@@ -2169,9 +2179,9 @@ class az_mysql_flexible_server_firewall_rule_show_command_builder extends Comman
         return this;
     }
 
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
-    serverName(value: string): az_mysql_flexible_server_firewall_rule_show_command_builder {
-        this.setFlag("--server-name", value);
+    /** The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters. */
+    ruleName(value: string): az_mysql_flexible_server_firewall_rule_show_command_builder {
+        this.setFlag("--rule-name", value);
         return this;
     }
 
@@ -2194,7 +2204,7 @@ class az_mysql_flexible_server_firewall_rule_show_command_builder extends Comman
  *                                               [--name]
  *                                               [--remove]
  *                                               [--resource-group]
- *                                               [--server-name]
+ *                                               [--rule-name]
  *                                               [--set]
  *                                               [--start-ip-address]
  *                                               [--subscription]
@@ -2229,7 +2239,7 @@ class az_mysql_flexible_server_firewall_rule_update_command_builder extends Comm
         return this;
     }
 
-    /** The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters. */
+    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
     name(value: string): az_mysql_flexible_server_firewall_rule_update_command_builder {
         this.setFlag("--name", value);
         return this;
@@ -2247,9 +2257,9 @@ class az_mysql_flexible_server_firewall_rule_update_command_builder extends Comm
         return this;
     }
 
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
-    serverName(value: string): az_mysql_flexible_server_firewall_rule_update_command_builder {
-        this.setFlag("--server-name", value);
+    /** The name of the firewall rule. If name is omitted, default name will be chosen for firewall name. The firewall rule name can only contain 0-9, a-z, A-Z, '-' and '_'. Additionally, the firewall rule name cannot exceed 128 characters. */
+    ruleName(value: string): az_mysql_flexible_server_firewall_rule_update_command_builder {
+        this.setFlag("--rule-name", value);
         return this;
     }
 
@@ -2440,31 +2450,28 @@ class az_mysql_flexible_server_parameter_show_command_builder extends CommandBui
  *
  * Syntax:
  * ```
- * az mysql flexible-server replica create --name
+ * az mysql flexible-server replica create --replica-name
  *                                         --resource-group
  *                                         --source-server
- *                                         [--location]
  *                                         [--no-wait]
- *                                         [--sku-name]
  *                                         [--subscription]
- *                                         [--tier]
  * ```
  *
- * @param {string} name Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
+ * @param {string} replicaName The name of the server to restore to.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  * @param {string} sourceServer The name or resource ID of the source server to restore from.
  */
 class az_mysql_flexible_server_replica_create_command_builder extends CommandBuilder<az_mysql_flexible_server_replica_create_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, sourceServer: string) {
+    constructor(commandPath: string, resultDataTypeName: string, replicaName: string, resourceGroup: string, sourceServer: string) {
         super(commandPath, resultDataTypeName);
-        this.name(name)
+        this.replicaName(replicaName)
         this.resourceGroup(resourceGroup)
         this.sourceServer(sourceServer)
     }
 
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
-    name(value: string): az_mysql_flexible_server_replica_create_command_builder {
-        this.setFlag("--name", value);
+    /** The name of the server to restore to. */
+    replicaName(value: string): az_mysql_flexible_server_replica_create_command_builder {
+        this.setFlag("--replica-name", value);
         return this;
     }
 
@@ -2480,33 +2487,15 @@ class az_mysql_flexible_server_replica_create_command_builder extends CommandBui
         return this;
     }
 
-    /** Location. Values from: `az account list-locations`. You can configure the default location using `az configure --defaults location=<location>`. */
-    location(value: string): az_mysql_flexible_server_replica_create_command_builder {
-        this.setFlag("--location", value);
-        return this;
-    }
-
     /** Do not wait for the long-running operation to finish. */
     noWait(value: string): az_mysql_flexible_server_replica_create_command_builder {
         this.setFlag("--no-wait", value);
         return this;
     }
 
-    /** The name of the compute SKU. Follows the convention Standard_{VM name}. Examples: Standard_B1ms, Standard_D4s_v3. */
-    skuName(value: string): az_mysql_flexible_server_replica_create_command_builder {
-        this.setFlag("--sku-name", value);
-        return this;
-    }
-
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_mysql_flexible_server_replica_create_command_builder {
         this.setFlag("--subscription", value);
-        return this;
-    }
-
-    /** Compute tier of the server. Accepted values: Burstable, GeneralPurpose, Memory Optimized. */
-    tier(value: string): az_mysql_flexible_server_replica_create_command_builder {
-        this.setFlag("--tier", value);
         return this;
     }
 }
@@ -2522,7 +2511,7 @@ class az_mysql_flexible_server_replica_create_command_builder extends CommandBui
  *                                       [--subscription]
  * ```
  *
- * @param {string} name Name of the server.
+ * @param {string} name Name of the source server.
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
  */
 class az_mysql_flexible_server_replica_list_command_builder extends CommandBuilder<az_mysql_flexible_server_replica_list_command_result> {
@@ -2532,7 +2521,7 @@ class az_mysql_flexible_server_replica_list_command_builder extends CommandBuild
         this.resourceGroup(resourceGroup)
     }
 
-    /** Name of the server. */
+    /** Name of the source server. */
     name(value: string): az_mysql_flexible_server_replica_list_command_builder {
         this.setFlag("--name", value);
         return this;
@@ -2580,7 +2569,7 @@ class az_mysql_flexible_server_replica_stop_replication_command_builder extends 
         return this;
     }
 
-    /** Name of the server. */
+    /** Name of the replica server. */
     name(value: string): az_mysql_flexible_server_replica_stop_replication_command_builder {
         this.setFlag("--name", value);
         return this;
@@ -2637,7 +2626,7 @@ class az_mysql_flexible_server_create_command_builder extends CommandBuilder<az_
         super(commandPath, resultDataTypeName);
     }
 
-    /** The virtual network address prefix. */
+    /** The IP address prefix to use when creating a new virtual network in CIDR format. Default value is 10.0.0.0/16. */
     addressPrefixes(value: string): az_mysql_flexible_server_create_command_builder {
         this.setFlag("--address-prefixes", value);
         return this;
@@ -2697,7 +2686,7 @@ class az_mysql_flexible_server_create_command_builder extends CommandBuilder<az_
         return this;
     }
 
-    /** The name of the compute SKU. Follows the convention Standard_{VM name}. Examples: Standard_B1ms, Standard_D4s_v3. */
+    /** The name of the compute SKU. Follows the convention Standard_{VM name}. Examples: Standard_B1ms, Standard_E16ds_v4. */
     skuName(value: string): az_mysql_flexible_server_create_command_builder {
         this.setFlag("--sku-name", value);
         return this;
@@ -2709,13 +2698,13 @@ class az_mysql_flexible_server_create_command_builder extends CommandBuilder<az_
         return this;
     }
 
-    /** Name or ID of the subnet that allows access to an Azure Flexible Server. */
+    /** Resource ID of an existing subnet. Please note that the subnet will be delegated to Microsoft.DBforPostgreSQL/flexibleServers/Microsoft.DBforMySQL/flexibleServers.After delegation, this subnet cannot be used for any other type of Azure resources. */
     subnet(value: string): az_mysql_flexible_server_create_command_builder {
         this.setFlag("--subnet", value);
         return this;
     }
 
-    /** The subnet address prefix. */
+    /** The subnet IP address prefix to use when creating a new VNet in CIDR format. Default value is 10.0.0.0/24. */
     subnetPrefixes(value: string): az_mysql_flexible_server_create_command_builder {
         this.setFlag("--subnet-prefixes", value);
         return this;
@@ -2745,7 +2734,7 @@ class az_mysql_flexible_server_create_command_builder extends CommandBuilder<az_
         return this;
     }
 
-    /** The virtual network name. */
+    /** Name of an existing virtual network or name of a new one to create. The name must be between 2 to 64 characters. The name must begin with a letter or number, end with a letter, number or underscore, and may contain only letters, numbers, underscores, periods, or hyphens. */
     vnet(value: string): az_mysql_flexible_server_create_command_builder {
         this.setFlag("--vnet", value);
         return this;
@@ -2763,22 +2752,16 @@ class az_mysql_flexible_server_create_command_builder extends CommandBuilder<az_
  *
  * Syntax:
  * ```
- * az mysql flexible-server delete [--force]
- *                                 [--ids]
+ * az mysql flexible-server delete [--ids]
  *                                 [--name]
  *                                 [--resource-group]
  *                                 [--subscription]
+ *                                 [--yes]
  * ```
  */
 class az_mysql_flexible_server_delete_command_builder extends CommandBuilder<az_mysql_flexible_server_delete_command_result> {
     constructor(commandPath: string, resultDataTypeName: string) {
         super(commandPath, resultDataTypeName);
-    }
-
-    /** Delete the server without prompt. */
-    force(value: string): az_mysql_flexible_server_delete_command_builder {
-        this.setFlag("--force", value);
-        return this;
     }
 
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
@@ -2802,6 +2785,12 @@ class az_mysql_flexible_server_delete_command_builder extends CommandBuilder<az_
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_mysql_flexible_server_delete_command_builder {
         this.setFlag("--subscription", value);
+        return this;
+    }
+
+    /** Do not prompt for confirmation. */
+    yes(value: string): az_mysql_flexible_server_delete_command_builder {
+        this.setFlag("--yes", value);
         return this;
     }
 }
@@ -2916,8 +2905,8 @@ class az_mysql_flexible_server_restart_command_builder extends CommandBuilder<az
  *
  * Syntax:
  * ```
- * az mysql flexible-server restore --source-server
- *                                  --time
+ * az mysql flexible-server restore --restore-time
+ *                                  --source-server
  *                                  [--ids]
  *                                  [--location]
  *                                  [--name]
@@ -2926,25 +2915,25 @@ class az_mysql_flexible_server_restart_command_builder extends CommandBuilder<az
  *                                  [--subscription]
  * ```
  *
+ * @param {string} restoreTime The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00.
  * @param {string} sourceServer The name or resource ID of the source server to restore from.
- * @param {string} time The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00.
  */
 class az_mysql_flexible_server_restore_command_builder extends CommandBuilder<az_mysql_flexible_server_restore_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, sourceServer: string, time: string) {
+    constructor(commandPath: string, resultDataTypeName: string, restoreTime: string, sourceServer: string) {
         super(commandPath, resultDataTypeName);
+        this.restoreTime(restoreTime)
         this.sourceServer(sourceServer)
-        this.time(time)
+    }
+
+    /** The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00. */
+    restoreTime(value: string): az_mysql_flexible_server_restore_command_builder {
+        this.setFlag("--restore-time", value);
+        return this;
     }
 
     /** The name or resource ID of the source server to restore from. */
     sourceServer(value: string): az_mysql_flexible_server_restore_command_builder {
         this.setFlag("--source-server", value);
-        return this;
-    }
-
-    /** The point in time to restore from (ISO8601 format), e.g., 2017-04-26T02:10:00+08:00. */
-    time(value: string): az_mysql_flexible_server_restore_command_builder {
-        this.setFlag("--time", value);
         return this;
     }
 
@@ -3274,7 +3263,7 @@ class az_mysql_flexible_server_update_command_builder extends CommandBuilder<az_
         return this;
     }
 
-    /** The name of the compute SKU. Follows the convention Standard_{VM name}. Examples: Standard_B1ms, Standard_D4s_v3. */
+    /** The name of the compute SKU. Follows the convention Standard_{VM name}. Examples: Standard_B1ms, Standard_E16ds_v4. */
     skuName(value: string): az_mysql_flexible_server_update_command_builder {
         this.setFlag("--sku-name", value);
         return this;
@@ -5173,26 +5162,29 @@ class az_mysql_server_vnet_rule_update_command_builder extends CommandBuilder<az
  * Syntax:
  * ```
  * az mysql server-logs download --name
- *                               --resource-group
- *                               --server-name
+ *                               [--ids]
+ *                               [--resource-group]
+ *                               [--server-name]
  *                               [--subscription]
  * ```
  *
  * @param {string} name Space-separated list of log filenames on the server to download.
- * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
  */
 class az_mysql_server_logs_download_command_builder extends CommandBuilder<az_mysql_server_logs_download_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, name: string, resourceGroup: string, serverName: string) {
+    constructor(commandPath: string, resultDataTypeName: string, name: string) {
         super(commandPath, resultDataTypeName);
         this.name(name)
-        this.resourceGroup(resourceGroup)
-        this.serverName(serverName)
     }
 
     /** Space-separated list of log filenames on the server to download. */
     name(value: string): az_mysql_server_logs_download_command_builder {
         this.setFlag("--name", value);
+        return this;
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_mysql_server_logs_download_command_builder {
+        this.setFlag("--ids", value);
         return this;
     }
 
@@ -5230,7 +5222,7 @@ class az_mysql_server_logs_download_command_builder extends CommandBuilder<az_my
  * ```
  *
  * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} serverName Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
+ * @param {string} serverName Name of the Server.
  */
 class az_mysql_server_logs_list_command_builder extends CommandBuilder<az_mysql_server_logs_list_command_result> {
     constructor(commandPath: string, resultDataTypeName: string, resourceGroup: string, serverName: string) {
@@ -5245,7 +5237,7 @@ class az_mysql_server_logs_list_command_builder extends CommandBuilder<az_mysql_
         return this;
     }
 
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
+    /** Name of the Server. */
     serverName(value: string): az_mysql_server_logs_list_command_builder {
         this.setFlag("--server-name", value);
         return this;
@@ -5287,11 +5279,8 @@ class az_mysql_server_logs_list_command_builder extends CommandBuilder<az_mysql_
  *
  * Syntax:
  * ```
- * az mysql server create --admin-password
- *                        --admin-user
- *                        --name
- *                        --resource-group
- *                        --sku-name
+ * az mysql server create [--admin-password]
+ *                        [--admin-user]
  *                        [--assign-identity]
  *                        [--auto-grow {Disabled, Enabled}]
  *                        [--backup-retention]
@@ -5299,28 +5288,20 @@ class az_mysql_server_logs_list_command_builder extends CommandBuilder<az_mysql_
  *                        [--infrastructure-encryption {Disabled, Enabled}]
  *                        [--location]
  *                        [--minimal-tls-version {TLS1_0, TLS1_1, TLS1_2, TLSEnforcementDisabled}]
- *                        [--public {Disabled, Enabled}]
+ *                        [--name]
+ *                        [--public]
+ *                        [--resource-group]
+ *                        [--sku-name]
  *                        [--ssl-enforcement {Disabled, Enabled}]
  *                        [--storage-size]
  *                        [--subscription]
  *                        [--tags]
  *                        [--version]
  * ```
- *
- * @param {string} adminPassword The password of the administrator. Minimum 8 characters and maximum 128 characters. Password must contain characters from three of the following categories: English uppercase letters, English lowercase letters, numbers, and non-alphanumeric characters.
- * @param {string} adminUser Administrator username for the server. Once set, it cannot be changed.
- * @param {string} name Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters.
- * @param {string} resourceGroup Name of resource group. You can configure the default group using `az configure --defaults group=<name>`.
- * @param {string} skuName The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16.
  */
 class az_mysql_server_create_command_builder extends CommandBuilder<az_mysql_server_create_command_result> {
-    constructor(commandPath: string, resultDataTypeName: string, adminPassword: string, adminUser: string, name: string, resourceGroup: string, skuName: string) {
+    constructor(commandPath: string, resultDataTypeName: string) {
         super(commandPath, resultDataTypeName);
-        this.adminPassword(adminPassword)
-        this.adminUser(adminUser)
-        this.name(name)
-        this.resourceGroup(resourceGroup)
-        this.skuName(skuName)
     }
 
     /** The password of the administrator. Minimum 8 characters and maximum 128 characters. Password must contain characters from three of the following categories: English uppercase letters, English lowercase letters, numbers, and non-alphanumeric characters. */
@@ -5332,24 +5313,6 @@ class az_mysql_server_create_command_builder extends CommandBuilder<az_mysql_ser
     /** Administrator username for the server. Once set, it cannot be changed. */
     adminUser(value: string): az_mysql_server_create_command_builder {
         this.setFlag("--admin-user", value);
-        return this;
-    }
-
-    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
-    name(value: string): az_mysql_server_create_command_builder {
-        this.setFlag("--name", value);
-        return this;
-    }
-
-    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
-    resourceGroup(value: string): az_mysql_server_create_command_builder {
-        this.setFlag("--resource-group", value);
-        return this;
-    }
-
-    /** The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16. */
-    skuName(value: string): az_mysql_server_create_command_builder {
-        this.setFlag("--sku-name", value);
         return this;
     }
 
@@ -5395,9 +5358,27 @@ class az_mysql_server_create_command_builder extends CommandBuilder<az_mysql_ser
         return this;
     }
 
-    /** Enable or disable public network access to server. When disabled, only connections made through Private Links can reach this server. Default is Enabled. */
-    publicNetworkAccess(value: 'Disabled' | 'Enabled'): az_mysql_server_create_command_builder {
+    /** Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters. */
+    name(value: string): az_mysql_server_create_command_builder {
+        this.setFlag("--name", value);
+        return this;
+    }
+
+    /** Enable or disable public network access to server. When disabled, only connections made through Private Links can reach this server. Allowed values are : Enabled, Disabled, all, 0.0.0.0, <SingleIP>, <StartIP-DestinationIP>. Default is Enabled. */
+    publicNetworkAccess(value: string): az_mysql_server_create_command_builder {
         this.setFlag("--public-network-access", value);
+        return this;
+    }
+
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_mysql_server_create_command_builder {
+        this.setFlag("--resource-group", value);
+        return this;
+    }
+
+    /** The name of the sku. Follows the convention {pricing tier}_{compute generation}_{vCores} in shorthand. Examples: B_Gen5_1, GP_Gen5_4, MO_Gen5_16. */
+    skuName(value: string): az_mysql_server_create_command_builder {
+        this.setFlag("--sku-name", value);
         return this;
     }
 
@@ -5597,6 +5578,36 @@ class az_mysql_server_list_command_builder extends CommandBuilder<az_mysql_serve
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_mysql_server_list_command_builder {
+        this.setFlag("--subscription", value);
+        return this;
+    }
+}
+
+/**
+ * List available sku's in the given region.
+ *
+ * Syntax:
+ * ```
+ * az mysql server list-skus --location
+ *                           [--subscription]
+ * ```
+ *
+ * @param {string} location The name of the location.
+ */
+class az_mysql_server_list_skus_command_builder extends CommandBuilder<az_mysql_server_list_skus_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, location: string) {
+        super(commandPath, resultDataTypeName);
+        this.location(location)
+    }
+
+    /** The name of the location. */
+    location(value: string): az_mysql_server_list_skus_command_builder {
+        this.setFlag("--location", value);
+        return this;
+    }
+
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_mysql_server_list_skus_command_builder {
         this.setFlag("--subscription", value);
         return this;
     }
@@ -5854,7 +5865,7 @@ class az_mysql_server_stop_command_builder extends CommandBuilder<az_mysql_serve
  *                        [--ids]
  *                        [--minimal-tls-version {TLS1_0, TLS1_1, TLS1_2, TLSEnforcementDisabled}]
  *                        [--name]
- *                        [--public {Disabled, Enabled}]
+ *                        [--public]
  *                        [--remove]
  *                        [--resource-group]
  *                        [--set]
@@ -5924,8 +5935,8 @@ class az_mysql_server_update_command_builder extends CommandBuilder<az_mysql_ser
         return this;
     }
 
-    /** Enable or disable public network access to server. When disabled, only connections made through Private Links can reach this server. Default is Enabled. */
-    publicNetworkAccess(value: 'Disabled' | 'Enabled'): az_mysql_server_update_command_builder {
+    /** Enable or disable public network access to server. When disabled, only connections made through Private Links can reach this server. Allowed values are : Enabled, Disabled, all, 0.0.0.0, <SingleIP>, <StartIP-DestinationIP>. Default is Enabled. */
+    publicNetworkAccess(value: string): az_mysql_server_update_command_builder {
         this.setFlag("--public-network-access", value);
         return this;
     }

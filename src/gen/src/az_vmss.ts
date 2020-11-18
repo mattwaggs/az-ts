@@ -14,6 +14,7 @@ import { az_vmss_extension_delete_command_result } from './models/az_vmss_extens
 import { az_vmss_extension_list_command_result } from './models/az_vmss_extension_list_command_result'
 import { az_vmss_extension_set_command_result } from './models/az_vmss_extension_set_command_result'
 import { az_vmss_extension_show_command_result } from './models/az_vmss_extension_show_command_result'
+import { az_vmss_extension_upgrade_command_result } from './models/az_vmss_extension_upgrade_command_result'
 import { az_vmss_identity_assign_command_result } from './models/az_vmss_identity_assign_command_result'
 import { az_vmss_identity_remove_command_result } from './models/az_vmss_identity_remove_command_result'
 import { az_vmss_identity_show_command_result } from './models/az_vmss_identity_show_command_result'
@@ -359,6 +360,22 @@ export class az_vmss_extension {
      */
     static show(name: string, resourceGroup: string, vmssName: string): az_vmss_extension_show_command_builder {
         return new az_vmss_extension_show_command_builder("az vmss extension show", 'az_vmss_extension_show_command_result', name, resourceGroup, vmssName);
+    }
+
+    /**
+     * Upgrade all extensions for all VMSS instances to the latest version.
+     *
+     * Syntax:
+     * ```
+     * az vmss extension upgrade [--ids]
+     *                           [--name]
+     *                           [--no-wait]
+     *                           [--resource-group]
+     *                           [--subscription]
+     * ```
+     */
+    static upgrade(): az_vmss_extension_upgrade_command_builder {
+        return new az_vmss_extension_upgrade_command_builder("az vmss extension upgrade", 'az_vmss_extension_upgrade_command_result');
     }
 }
 
@@ -2007,6 +2024,54 @@ class az_vmss_extension_show_command_builder extends CommandBuilder<az_vmss_exte
 
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_vmss_extension_show_command_builder {
+        this.setFlag("--subscription", value);
+        return this;
+    }
+}
+
+/**
+ * Upgrade all extensions for all VMSS instances to the latest version.
+ *
+ * Syntax:
+ * ```
+ * az vmss extension upgrade [--ids]
+ *                           [--name]
+ *                           [--no-wait]
+ *                           [--resource-group]
+ *                           [--subscription]
+ * ```
+ */
+class az_vmss_extension_upgrade_command_builder extends CommandBuilder<az_vmss_extension_upgrade_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_vmss_extension_upgrade_command_builder {
+        this.setFlag("--ids", value);
+        return this;
+    }
+
+    /** Scale set name. You can configure the default using `az configure --defaults vmss=<name>`. */
+    name(value: string): az_vmss_extension_upgrade_command_builder {
+        this.setFlag("--name", value);
+        return this;
+    }
+
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_vmss_extension_upgrade_command_builder {
+        this.setFlag("--no-wait", value);
+        return this;
+    }
+
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_vmss_extension_upgrade_command_builder {
+        this.setFlag("--resource-group", value);
+        return this;
+    }
+
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_vmss_extension_upgrade_command_builder {
         this.setFlag("--subscription", value);
         return this;
     }

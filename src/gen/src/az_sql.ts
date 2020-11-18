@@ -1,6 +1,7 @@
 import { CommandBuilder } from '../base';
 import { az_sql_db_audit_policy_show_command_result } from './models/az_sql_db_audit_policy_show_command_result'
 import { az_sql_db_audit_policy_update_command_result } from './models/az_sql_db_audit_policy_update_command_result'
+import { az_sql_db_audit_policy_wait_command_result } from './models/az_sql_db_audit_policy_wait_command_result'
 import { az_sql_db_classification_recommendation_disable_command_result } from './models/az_sql_db_classification_recommendation_disable_command_result'
 import { az_sql_db_classification_recommendation_enable_command_result } from './models/az_sql_db_classification_recommendation_enable_command_result'
 import { az_sql_db_classification_recommendation_list_command_result } from './models/az_sql_db_classification_recommendation_list_command_result'
@@ -77,6 +78,9 @@ import { az_sql_mi_ad_admin_create_command_result } from './models/az_sql_mi_ad_
 import { az_sql_mi_ad_admin_delete_command_result } from './models/az_sql_mi_ad_admin_delete_command_result'
 import { az_sql_mi_ad_admin_list_command_result } from './models/az_sql_mi_ad_admin_list_command_result'
 import { az_sql_mi_ad_admin_update_command_result } from './models/az_sql_mi_ad_admin_update_command_result'
+import { az_sql_mi_ad_only_auth_disable_command_result } from './models/az_sql_mi_ad_only_auth_disable_command_result'
+import { az_sql_mi_ad_only_auth_enable_command_result } from './models/az_sql_mi_ad_only_auth_enable_command_result'
+import { az_sql_mi_ad_only_auth_get_command_result } from './models/az_sql_mi_ad_only_auth_get_command_result'
 import { az_sql_mi_key_create_command_result } from './models/az_sql_mi_key_create_command_result'
 import { az_sql_mi_key_delete_command_result } from './models/az_sql_mi_key_delete_command_result'
 import { az_sql_mi_key_list_command_result } from './models/az_sql_mi_key_list_command_result'
@@ -92,6 +96,11 @@ import { az_sql_mi_failover_command_result } from './models/az_sql_mi_failover_c
 import { az_sql_mi_list_command_result } from './models/az_sql_mi_list_command_result'
 import { az_sql_mi_show_command_result } from './models/az_sql_mi_show_command_result'
 import { az_sql_mi_update_command_result } from './models/az_sql_mi_update_command_result'
+import { az_sql_midb_log_replay_complete_command_result } from './models/az_sql_midb_log_replay_complete_command_result'
+import { az_sql_midb_log_replay_show_command_result } from './models/az_sql_midb_log_replay_show_command_result'
+import { az_sql_midb_log_replay_start_command_result } from './models/az_sql_midb_log_replay_start_command_result'
+import { az_sql_midb_log_replay_stop_command_result } from './models/az_sql_midb_log_replay_stop_command_result'
+import { az_sql_midb_log_replay_wait_command_result } from './models/az_sql_midb_log_replay_wait_command_result'
 import { az_sql_midb_ltr_backup_delete_command_result } from './models/az_sql_midb_ltr_backup_delete_command_result'
 import { az_sql_midb_ltr_backup_list_command_result } from './models/az_sql_midb_ltr_backup_list_command_result'
 import { az_sql_midb_ltr_backup_restore_command_result } from './models/az_sql_midb_ltr_backup_restore_command_result'
@@ -111,8 +120,12 @@ import { az_sql_server_ad_admin_create_command_result } from './models/az_sql_se
 import { az_sql_server_ad_admin_delete_command_result } from './models/az_sql_server_ad_admin_delete_command_result'
 import { az_sql_server_ad_admin_list_command_result } from './models/az_sql_server_ad_admin_list_command_result'
 import { az_sql_server_ad_admin_update_command_result } from './models/az_sql_server_ad_admin_update_command_result'
+import { az_sql_server_ad_only_auth_disable_command_result } from './models/az_sql_server_ad_only_auth_disable_command_result'
+import { az_sql_server_ad_only_auth_enable_command_result } from './models/az_sql_server_ad_only_auth_enable_command_result'
+import { az_sql_server_ad_only_auth_get_command_result } from './models/az_sql_server_ad_only_auth_get_command_result'
 import { az_sql_server_audit_policy_show_command_result } from './models/az_sql_server_audit_policy_show_command_result'
 import { az_sql_server_audit_policy_update_command_result } from './models/az_sql_server_audit_policy_update_command_result'
+import { az_sql_server_audit_policy_wait_command_result } from './models/az_sql_server_audit_policy_wait_command_result'
 import { az_sql_server_conn_policy_show_command_result } from './models/az_sql_server_conn_policy_show_command_result'
 import { az_sql_server_conn_policy_update_command_result } from './models/az_sql_server_conn_policy_update_command_result'
 import { az_sql_server_dns_alias_create_command_result } from './models/az_sql_server_dns_alias_create_command_result'
@@ -169,7 +182,7 @@ import { az_sql_show_usage_command_result } from './models/az_sql_show_usage_com
 /** Manage a database's auditing policy. */
 export class az_sql_db_audit_policy {
     /**
-     * Gets a database's blob auditing policy.
+     * Show database audit policy.
      *
      * Syntax:
      * ```
@@ -192,8 +205,14 @@ export class az_sql_db_audit_policy {
      * ```
      * az sql db audit-policy update [--actions]
      *                               [--add]
+     *                               [--blob-storage-target-state {Disabled, Enabled}]
+     *                               [--eh]
+     *                               [--ehari]
+     *                               [--ehts {Disabled, Enabled}]
      *                               [--force-string]
      *                               [--ids]
+     *                               [--lats {Disabled, Enabled}]
+     *                               [--lawri]
      *                               [--name]
      *                               [--remove]
      *                               [--resource-group]
@@ -209,6 +228,29 @@ export class az_sql_db_audit_policy {
      */
     static update(): az_sql_db_audit_policy_update_command_builder {
         return new az_sql_db_audit_policy_update_command_builder("az sql db audit-policy update", 'az_sql_db_audit_policy_update_command_result');
+    }
+
+    /**
+     * Place the CLI in a waiting state until a condition of the database's audit policy is met.
+     *
+     * Syntax:
+     * ```
+     * az sql db audit-policy wait [--created]
+     *                             [--custom]
+     *                             [--deleted]
+     *                             [--exists]
+     *                             [--ids]
+     *                             [--interval]
+     *                             [--name]
+     *                             [--resource-group]
+     *                             [--server]
+     *                             [--subscription]
+     *                             [--timeout]
+     *                             [--updated]
+     * ```
+     */
+    static wait(): az_sql_db_audit_policy_wait_command_builder {
+        return new az_sql_db_audit_policy_wait_command_builder("az sql db audit-policy wait", 'az_sql_db_audit_policy_wait_command_result');
     }
 }
 
@@ -427,6 +469,7 @@ export class az_sql_db_ltr_backup {
      *                              --dest-database
      *                              --dest-resource-group
      *                              --dest-server
+     *                              [--backup-storage-redundancy]
      *                              [--no-wait]
      *                              [--subscription]
      * ```
@@ -577,6 +620,7 @@ export class az_sql_db_replica {
      *                          --resource-group
      *                          --server
      *                          [--auto-pause-delay]
+     *                          [--backup-storage-redundancy]
      *                          [--capacity]
      *                          [--compute-model {Provisioned, Serverless}]
      *                          [--elastic-pool]
@@ -584,6 +628,7 @@ export class az_sql_db_replica {
      *                          [--license-type {BasePrice, LicenseIncluded}]
      *                          [--min-capacity]
      *                          [--no-wait]
+     *                          [--partner-database]
      *                          [--partner-resource-group]
      *                          [--read-replicas]
      *                          [--read-scale {Disabled, Enabled}]
@@ -769,6 +814,7 @@ export class az_sql_db {
      * ```
      * az sql db copy --dest-name
      *                [--auto-pause-delay]
+     *                [--backup-storage-redundancy]
      *                [--capacity]
      *                [--compute-model {Provisioned, Serverless}]
      *                [--dest-resource-group]
@@ -805,6 +851,7 @@ export class az_sql_db {
      *                  --resource-group
      *                  --server
      *                  [--auto-pause-delay]
+     *                  [--backup-storage-redundancy]
      *                  [--capacity]
      *                  [--catalog-collation {DATABASE_DEFAULT, SQL_Latin1_General_CP1_CI_AS}]
      *                  [--collation]
@@ -822,6 +869,7 @@ export class az_sql_db {
      *                  [--service-objective]
      *                  [--subscription]
      *                  [--tags]
+     *                  [--yes]
      *                  [--zone-redundant {false, true}]
      * ```
      *
@@ -1002,6 +1050,7 @@ export class az_sql_db {
      * ```
      * az sql db restore --dest-name
      *                   [--auto-pause-delay]
+     *                   [--backup-storage-redundancy]
      *                   [--capacity]
      *                   [--compute-model {Provisioned, Serverless}]
      *                   [--deleted-time]
@@ -1073,6 +1122,7 @@ export class az_sql_db {
      * ```
      * az sql db update [--add]
      *                  [--auto-pause-delay]
+     *                  [--backup-storage-redundancy]
      *                  [--capacity]
      *                  [--compute-model {Provisioned, Serverless}]
      *                  [--edition]
@@ -1110,6 +1160,7 @@ export class az_sql_dw {
      * az sql dw create --name
      *                  --resource-group
      *                  --server
+     *                  [--backup-storage-redundancy]
      *                  [--collation]
      *                  [--max-size]
      *                  [--no-wait]
@@ -1862,6 +1913,54 @@ export class az_sql_mi_ad_admin {
     }
 }
 
+/** Manage a Managed Instance's Azure Active Directly only settings. */
+export class az_sql_mi_ad_only_auth {
+    /**
+     * Disable Azure Active Directly only Authentication for this Managed Instance.
+     *
+     * Syntax:
+     * ```
+     * az sql mi ad-only-auth disable [--ids]
+     *                                [--name]
+     *                                [--resource-group]
+     *                                [--subscription]
+     * ```
+     */
+    static disable(): az_sql_mi_ad_only_auth_disable_command_builder {
+        return new az_sql_mi_ad_only_auth_disable_command_builder("az sql mi ad-only-auth disable", 'az_sql_mi_ad_only_auth_disable_command_result');
+    }
+
+    /**
+     * Enable Azure Active Directly only Authentication for this Managed Instance.
+     *
+     * Syntax:
+     * ```
+     * az sql mi ad-only-auth enable [--ids]
+     *                               [--name]
+     *                               [--resource-group]
+     *                               [--subscription]
+     * ```
+     */
+    static enable(): az_sql_mi_ad_only_auth_enable_command_builder {
+        return new az_sql_mi_ad_only_auth_enable_command_builder("az sql mi ad-only-auth enable", 'az_sql_mi_ad_only_auth_enable_command_result');
+    }
+
+    /**
+     * Get a specific Azure Active Directly only Authentication property.
+     *
+     * Syntax:
+     * ```
+     * az sql mi ad-only-auth get [--ids]
+     *                            [--name]
+     *                            [--resource-group]
+     *                            [--subscription]
+     * ```
+     */
+    static get(): az_sql_mi_ad_only_auth_get_command_builder {
+        return new az_sql_mi_ad_only_auth_get_command_builder("az sql mi ad-only-auth get", 'az_sql_mi_ad_only_auth_get_command_result');
+    }
+}
+
 /** Manage a SQL Instance's keys. */
 export class az_sql_mi_key {
     /**
@@ -2167,6 +2266,108 @@ export class az_sql_mi {
      */
     static update(): az_sql_mi_update_command_builder {
         return new az_sql_mi_update_command_builder("az sql mi update", 'az_sql_mi_update_command_result');
+    }
+}
+
+/** SQL Managed Instance database Log Replay service commands. */
+export class az_sql_midb_log_replay {
+    /**
+     * Complete Log Replay service on specified database.
+     *
+     * Syntax:
+     * ```
+     * az sql midb log-replay complete [--ids]
+     *                                 [--last-backup-name]
+     *                                 [--managed-instance]
+     *                                 [--name]
+     *                                 [--resource-group]
+     *                                 [--subscription]
+     * ```
+     */
+    static complete(): az_sql_midb_log_replay_complete_command_builder {
+        return new az_sql_midb_log_replay_complete_command_builder("az sql midb log-replay complete", 'az_sql_midb_log_replay_complete_command_result');
+    }
+
+    /**
+     * Get status of Log Replay service.
+     *
+     * Syntax:
+     * ```
+     * az sql midb log-replay show [--ids]
+     *                             [--managed-instance]
+     *                             [--name]
+     *                             [--query-examples]
+     *                             [--resource-group]
+     *                             [--subscription]
+     * ```
+     */
+    static show(): az_sql_midb_log_replay_show_command_builder {
+        return new az_sql_midb_log_replay_show_command_builder("az sql midb log-replay show", 'az_sql_midb_log_replay_show_command_result');
+    }
+
+    /**
+     * Start Log Replay service on specified database.
+     *
+     * Syntax:
+     * ```
+     * az sql midb log-replay start --ss
+     *                              --storage-uri
+     *                              [--auto-complete]
+     *                              [--ids]
+     *                              [--last-backup-name]
+     *                              [--managed-instance]
+     *                              [--name]
+     *                              [--no-wait]
+     *                              [--resource-group]
+     *                              [--subscription]
+     * ```
+     *
+     * @param {string} storageSas The authorization Sas token to access storage container where backups are.
+     * @param {string} storageUri The URI of the storage container where backups are.
+     */
+    static start(storageSas: string, storageUri: string): az_sql_midb_log_replay_start_command_builder {
+        return new az_sql_midb_log_replay_start_command_builder("az sql midb log-replay start", 'az_sql_midb_log_replay_start_command_result', storageSas, storageUri);
+    }
+
+    /**
+     * Stop Log Replay service.
+     *
+     * Syntax:
+     * ```
+     * az sql midb log-replay stop [--ids]
+     *                             [--managed-instance]
+     *                             [--name]
+     *                             [--no-wait]
+     *                             [--resource-group]
+     *                             [--subscription]
+     *                             [--yes]
+     * ```
+     */
+    static stop(): az_sql_midb_log_replay_stop_command_builder {
+        return new az_sql_midb_log_replay_stop_command_builder("az sql midb log-replay stop", 'az_sql_midb_log_replay_stop_command_result');
+    }
+
+    /**
+     * Place the CLI in a waiting state until a condition of the managed database is met.
+     *
+     * Syntax:
+     * ```
+     * az sql midb log-replay wait [--created]
+     *                             [--custom]
+     *                             [--deleted]
+     *                             [--exists]
+     *                             [--ids]
+     *                             [--interval]
+     *                             [--managed-instance]
+     *                             [--name]
+     *                             [--resource-group]
+     *                             [--subscription]
+     *                             [--timeout]
+     *                             [--updated]
+     * ```
+     */
+    static wait(): az_sql_midb_log_replay_wait_command_builder {
+        return new az_sql_midb_log_replay_wait_command_builder("az sql midb log-replay wait", 'az_sql_midb_log_replay_wait_command_result');
     }
 }
 
@@ -2551,10 +2752,58 @@ export class az_sql_server_ad_admin {
     }
 }
 
+/** Manage Azure Active Directly only Authentication settings for this Server. */
+export class az_sql_server_ad_only_auth {
+    /**
+     * Disable Azure Active Directly only Authentication for this Server.
+     *
+     * Syntax:
+     * ```
+     * az sql server ad-only-auth disable [--ids]
+     *                                    [--name]
+     *                                    [--resource-group]
+     *                                    [--subscription]
+     * ```
+     */
+    static disable(): az_sql_server_ad_only_auth_disable_command_builder {
+        return new az_sql_server_ad_only_auth_disable_command_builder("az sql server ad-only-auth disable", 'az_sql_server_ad_only_auth_disable_command_result');
+    }
+
+    /**
+     * Enable Azure Active Directly only Authentication for this Server.
+     *
+     * Syntax:
+     * ```
+     * az sql server ad-only-auth enable [--ids]
+     *                                   [--name]
+     *                                   [--resource-group]
+     *                                   [--subscription]
+     * ```
+     */
+    static enable(): az_sql_server_ad_only_auth_enable_command_builder {
+        return new az_sql_server_ad_only_auth_enable_command_builder("az sql server ad-only-auth enable", 'az_sql_server_ad_only_auth_enable_command_result');
+    }
+
+    /**
+     * Get a specific Azure Active Directly only Authentication property.
+     *
+     * Syntax:
+     * ```
+     * az sql server ad-only-auth get [--ids]
+     *                                [--name]
+     *                                [--resource-group]
+     *                                [--subscription]
+     * ```
+     */
+    static get(): az_sql_server_ad_only_auth_get_command_builder {
+        return new az_sql_server_ad_only_auth_get_command_builder("az sql server ad-only-auth get", 'az_sql_server_ad_only_auth_get_command_result');
+    }
+}
+
 /** Manage a server's auditing policy. */
 export class az_sql_server_audit_policy {
     /**
-     * Gets a server's blob auditing policy.
+     * Show server audit policy.
      *
      * Syntax:
      * ```
@@ -2576,9 +2825,16 @@ export class az_sql_server_audit_policy {
      * ```
      * az sql server audit-policy update [--actions]
      *                                   [--add]
+     *                                   [--blob-storage-target-state {Disabled, Enabled}]
+     *                                   [--eh]
+     *                                   [--ehari]
+     *                                   [--ehts {Disabled, Enabled}]
      *                                   [--force-string]
      *                                   [--ids]
+     *                                   [--lats {Disabled, Enabled}]
+     *                                   [--lawri]
      *                                   [--name]
+     *                                   [--no-wait]
      *                                   [--remove]
      *                                   [--resource-group]
      *                                   [--retention-days]
@@ -2592,6 +2848,28 @@ export class az_sql_server_audit_policy {
      */
     static update(): az_sql_server_audit_policy_update_command_builder {
         return new az_sql_server_audit_policy_update_command_builder("az sql server audit-policy update", 'az_sql_server_audit_policy_update_command_result');
+    }
+
+    /**
+     * Place the CLI in a waiting state until a condition of the server's audit policy is met.
+     *
+     * Syntax:
+     * ```
+     * az sql server audit-policy wait [--created]
+     *                                 [--custom]
+     *                                 [--deleted]
+     *                                 [--exists]
+     *                                 [--ids]
+     *                                 [--interval]
+     *                                 [--name]
+     *                                 [--resource-group]
+     *                                 [--subscription]
+     *                                 [--timeout]
+     *                                 [--updated]
+     * ```
+     */
+    static wait(): az_sql_server_audit_policy_wait_command_builder {
+        return new az_sql_server_audit_policy_wait_command_builder("az sql server audit-policy wait", 'az_sql_server_audit_policy_wait_command_result');
     }
 }
 
@@ -3580,7 +3858,7 @@ export class az_sql_vm {
      *
      * Syntax:
      * ```
-     * az sql vm show [--expand]
+     * az sql vm show [--expand {*, AutoBackupSettings, AutoPatchingSettings, KeyVaultCredentialSettings, ServerConfigurationsManagementSettings}]
      *                [--ids]
      *                [--name]
      *                [--query-examples]
@@ -3678,7 +3956,7 @@ export class az_sql {
 }
 
 /**
- * Gets a database's blob auditing policy.
+ * Show database audit policy.
  *
  * Syntax:
  * ```
@@ -3739,8 +4017,14 @@ class az_sql_db_audit_policy_show_command_builder extends CommandBuilder<az_sql_
  * ```
  * az sql db audit-policy update [--actions]
  *                               [--add]
+ *                               [--blob-storage-target-state {Disabled, Enabled}]
+ *                               [--eh]
+ *                               [--ehari]
+ *                               [--ehts {Disabled, Enabled}]
  *                               [--force-string]
  *                               [--ids]
+ *                               [--lats {Disabled, Enabled}]
+ *                               [--lawri]
  *                               [--name]
  *                               [--remove]
  *                               [--resource-group]
@@ -3771,6 +4055,30 @@ class az_sql_db_audit_policy_update_command_builder extends CommandBuilder<az_sq
         return this;
     }
 
+    /** Indicate whether blob storage is a destination for audit records. */
+    blobStorageTargetState(value: 'Disabled' | 'Enabled'): az_sql_db_audit_policy_update_command_builder {
+        this.setFlag("--blob-storage-target-state", value);
+        return this;
+    }
+
+    /** The name of the event hub. If none is specified when providing event_hub_authorization_rule_id, the default event hub will be selected. */
+    eventHub(value: string): az_sql_db_audit_policy_update_command_builder {
+        this.setFlag("--event-hub", value);
+        return this;
+    }
+
+    /** The resource Id for the event hub authorization rule. */
+    eventHubAuthorizationRuleId(value: string): az_sql_db_audit_policy_update_command_builder {
+        this.setFlag("--event-hub-authorization-rule-id", value);
+        return this;
+    }
+
+    /** Indicate whether event hub is a destination for audit records. */
+    eventHubTargetState(value: 'Disabled' | 'Enabled'): az_sql_db_audit_policy_update_command_builder {
+        this.setFlag("--event-hub-target-state", value);
+        return this;
+    }
+
     /** When using 'set' or 'add', preserve string literals instead of attempting to convert to JSON. */
     forceString(value: string): az_sql_db_audit_policy_update_command_builder {
         this.setFlag("--force-string", value);
@@ -3780,6 +4088,18 @@ class az_sql_db_audit_policy_update_command_builder extends CommandBuilder<az_sq
     /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
     ids(value: string): az_sql_db_audit_policy_update_command_builder {
         this.setFlag("--ids", value);
+        return this;
+    }
+
+    /** Indicate whether log analytics is a destination for audit records. */
+    logAnalyticsTargetState(value: 'Disabled' | 'Enabled'): az_sql_db_audit_policy_update_command_builder {
+        this.setFlag("--log-analytics-target-state", value);
+        return this;
+    }
+
+    /** The workspace ID (resource ID of a Log Analytics workspace) for a Log Analytics workspace to which you would like to send Audit Logs. */
+    logAnalyticsWorkspaceResourceId(value: string): az_sql_db_audit_policy_update_command_builder {
+        this.setFlag("--log-analytics-workspace-resource-id", value);
         return this;
     }
 
@@ -3846,6 +4166,103 @@ class az_sql_db_audit_policy_update_command_builder extends CommandBuilder<az_sq
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_sql_db_audit_policy_update_command_builder {
         this.setFlag("--subscription", value);
+        return this;
+    }
+}
+
+/**
+ * Place the CLI in a waiting state until a condition of the database's audit policy is met.
+ *
+ * Syntax:
+ * ```
+ * az sql db audit-policy wait [--created]
+ *                             [--custom]
+ *                             [--deleted]
+ *                             [--exists]
+ *                             [--ids]
+ *                             [--interval]
+ *                             [--name]
+ *                             [--resource-group]
+ *                             [--server]
+ *                             [--subscription]
+ *                             [--timeout]
+ *                             [--updated]
+ * ```
+ */
+class az_sql_db_audit_policy_wait_command_builder extends CommandBuilder<az_sql_db_audit_policy_wait_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
+    }
+
+    /** Wait until created with 'provisioningState' at 'Succeeded'. */
+    created(value: string): az_sql_db_audit_policy_wait_command_builder {
+        this.setFlag("--created", value);
+        return this;
+    }
+
+    /** Wait until the condition satisfies a custom JMESPath query. E.g. provisioningState!='InProgress', instanceView.statuses[?code=='PowerState/running']. */
+    custom(value: string): az_sql_db_audit_policy_wait_command_builder {
+        this.setFlag("--custom", value);
+        return this;
+    }
+
+    /** Wait until deleted. */
+    deleted(value: string): az_sql_db_audit_policy_wait_command_builder {
+        this.setFlag("--deleted", value);
+        return this;
+    }
+
+    /** Wait until the resource exists. */
+    exists(value: string): az_sql_db_audit_policy_wait_command_builder {
+        this.setFlag("--exists", value);
+        return this;
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_sql_db_audit_policy_wait_command_builder {
+        this.setFlag("--ids", value);
+        return this;
+    }
+
+    /** Polling interval in seconds. */
+    interval(value: string): az_sql_db_audit_policy_wait_command_builder {
+        this.setFlag("--interval", value);
+        return this;
+    }
+
+    /** Name of the Azure SQL Database. */
+    name(value: string): az_sql_db_audit_policy_wait_command_builder {
+        this.setFlag("--name", value);
+        return this;
+    }
+
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sql_db_audit_policy_wait_command_builder {
+        this.setFlag("--resource-group", value);
+        return this;
+    }
+
+    /** Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`. */
+    server(value: string): az_sql_db_audit_policy_wait_command_builder {
+        this.setFlag("--server", value);
+        return this;
+    }
+
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sql_db_audit_policy_wait_command_builder {
+        this.setFlag("--subscription", value);
+        return this;
+    }
+
+    /** Maximum wait in seconds. */
+    timeout(value: string): az_sql_db_audit_policy_wait_command_builder {
+        this.setFlag("--timeout", value);
+        return this;
+    }
+
+    /** Wait until updated with provisioningState at 'Succeeded'. */
+    updated(value: string): az_sql_db_audit_policy_wait_command_builder {
+        this.setFlag("--updated", value);
         return this;
     }
 }
@@ -4527,6 +4944,7 @@ class az_sql_db_ltr_backup_list_command_builder extends CommandBuilder<az_sql_db
  *                              --dest-database
  *                              --dest-resource-group
  *                              --dest-server
+ *                              [--backup-storage-redundancy]
  *                              [--no-wait]
  *                              [--subscription]
  * ```
@@ -4566,6 +4984,12 @@ class az_sql_db_ltr_backup_restore_command_builder extends CommandBuilder<az_sql
     /** Name of the server to restore database to. */
     destServer(value: string): az_sql_db_ltr_backup_restore_command_builder {
         this.setFlag("--dest-server", value);
+        return this;
+    }
+
+    /** Backup storage redundancy used to store backups. Allowed values include: Local, Zone, Geo. */
+    backupStorageRedundancy(value: string): az_sql_db_ltr_backup_restore_command_builder {
+        this.setFlag("--backup-storage-redundancy", value);
         return this;
     }
 
@@ -4997,6 +5421,7 @@ class az_sql_db_op_list_command_builder extends CommandBuilder<az_sql_db_op_list
  *                          --resource-group
  *                          --server
  *                          [--auto-pause-delay]
+ *                          [--backup-storage-redundancy]
  *                          [--capacity]
  *                          [--compute-model {Provisioned, Serverless}]
  *                          [--elastic-pool]
@@ -5004,6 +5429,7 @@ class az_sql_db_op_list_command_builder extends CommandBuilder<az_sql_db_op_list
  *                          [--license-type {BasePrice, LicenseIncluded}]
  *                          [--min-capacity]
  *                          [--no-wait]
+ *                          [--partner-database]
  *                          [--partner-resource-group]
  *                          [--read-replicas]
  *                          [--read-scale {Disabled, Enabled}]
@@ -5057,6 +5483,12 @@ class az_sql_db_replica_create_command_builder extends CommandBuilder<az_sql_db_
         return this;
     }
 
+    /** Backup storage redundancy used to store backups. Allowed values include: Local, Zone, Geo. */
+    backupStorageRedundancy(value: string): az_sql_db_replica_create_command_builder {
+        this.setFlag("--backup-storage-redundancy", value);
+        return this;
+    }
+
     /** The capacity component of the sku in integer number of DTUs or vcores. */
     capacity(value: string): az_sql_db_replica_create_command_builder {
         this.setFlag("--capacity", value);
@@ -5096,6 +5528,12 @@ class az_sql_db_replica_create_command_builder extends CommandBuilder<az_sql_db_
     /** Do not wait for the long-running operation to finish. */
     noWait(value: string): az_sql_db_replica_create_command_builder {
         this.setFlag("--no-wait", value);
+        return this;
+    }
+
+    /** Name of the new replica. If unspecified, defaults to the source database name. */
+    partnerDatabase(value: string): az_sql_db_replica_create_command_builder {
+        this.setFlag("--partner-database", value);
         return this;
     }
 
@@ -5672,6 +6110,7 @@ class az_sql_db_threat_policy_update_command_builder extends CommandBuilder<az_s
  * ```
  * az sql db copy --dest-name
  *                [--auto-pause-delay]
+ *                [--backup-storage-redundancy]
  *                [--capacity]
  *                [--compute-model {Provisioned, Serverless}]
  *                [--dest-resource-group]
@@ -5710,6 +6149,12 @@ class az_sql_db_copy_command_builder extends CommandBuilder<az_sql_db_copy_comma
     /** Time in minutes after which database is automatically paused. A value of -1 means that automatic pause is disabled. */
     autoPauseDelay(value: string): az_sql_db_copy_command_builder {
         this.setFlag("--auto-pause-delay", value);
+        return this;
+    }
+
+    /** Backup storage redundancy used to store backups. Allowed values include: Local, Zone, Geo. */
+    backupStorageRedundancy(value: string): az_sql_db_copy_command_builder {
+        this.setFlag("--backup-storage-redundancy", value);
         return this;
     }
 
@@ -5837,6 +6282,7 @@ class az_sql_db_copy_command_builder extends CommandBuilder<az_sql_db_copy_comma
  *                  --resource-group
  *                  --server
  *                  [--auto-pause-delay]
+ *                  [--backup-storage-redundancy]
  *                  [--capacity]
  *                  [--catalog-collation {DATABASE_DEFAULT, SQL_Latin1_General_CP1_CI_AS}]
  *                  [--collation]
@@ -5854,6 +6300,7 @@ class az_sql_db_copy_command_builder extends CommandBuilder<az_sql_db_copy_comma
  *                  [--service-objective]
  *                  [--subscription]
  *                  [--tags]
+ *                  [--yes]
  *                  [--zone-redundant {false, true}]
  * ```
  *
@@ -5890,6 +6337,12 @@ class az_sql_db_create_command_builder extends CommandBuilder<az_sql_db_create_c
     /** Time in minutes after which database is automatically paused. A value of -1 means that automatic pause is disabled. */
     autoPauseDelay(value: string): az_sql_db_create_command_builder {
         this.setFlag("--auto-pause-delay", value);
+        return this;
+    }
+
+    /** Backup storage redundancy used to store backups. Allowed values include: Local, Zone, Geo. */
+    backupStorageRedundancy(value: string): az_sql_db_create_command_builder {
+        this.setFlag("--backup-storage-redundancy", value);
         return this;
     }
 
@@ -5992,6 +6445,12 @@ class az_sql_db_create_command_builder extends CommandBuilder<az_sql_db_create_c
     /** Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags. */
     tags(value: string): az_sql_db_create_command_builder {
         this.setFlag("--tags", value);
+        return this;
+    }
+
+    /** Do not prompt for confirmation. */
+    yes(value: string): az_sql_db_create_command_builder {
+        this.setFlag("--yes", value);
         return this;
     }
 
@@ -6547,6 +7006,7 @@ class az_sql_db_rename_command_builder extends CommandBuilder<az_sql_db_rename_c
  * ```
  * az sql db restore --dest-name
  *                   [--auto-pause-delay]
+ *                   [--backup-storage-redundancy]
  *                   [--capacity]
  *                   [--compute-model {Provisioned, Serverless}]
  *                   [--deleted-time]
@@ -6586,6 +7046,12 @@ class az_sql_db_restore_command_builder extends CommandBuilder<az_sql_db_restore
     /** Time in minutes after which database is automatically paused. A value of -1 means that automatic pause is disabled. */
     autoPauseDelay(value: string): az_sql_db_restore_command_builder {
         this.setFlag("--auto-pause-delay", value);
+        return this;
+    }
+
+    /** Backup storage redundancy used to store backups. Allowed values include: Local, Zone, Geo. */
+    backupStorageRedundancy(value: string): az_sql_db_restore_command_builder {
+        this.setFlag("--backup-storage-redundancy", value);
         return this;
     }
 
@@ -6830,6 +7296,7 @@ class az_sql_db_show_connection_string_command_builder extends CommandBuilder<az
  * ```
  * az sql db update [--add]
  *                  [--auto-pause-delay]
+ *                  [--backup-storage-redundancy]
  *                  [--capacity]
  *                  [--compute-model {Provisioned, Serverless}]
  *                  [--edition]
@@ -6866,6 +7333,12 @@ class az_sql_db_update_command_builder extends CommandBuilder<az_sql_db_update_c
     /** Time in minutes after which database is automatically paused. A value of -1 means that automatic pause is disabled. */
     autoPauseDelay(value: string): az_sql_db_update_command_builder {
         this.setFlag("--auto-pause-delay", value);
+        return this;
+    }
+
+    /** Backup storage redundancy used to store backups. Allowed values include: Local, Zone, Geo. */
+    backupStorageRedundancy(value: string): az_sql_db_update_command_builder {
+        this.setFlag("--backup-storage-redundancy", value);
         return this;
     }
 
@@ -6998,6 +7471,7 @@ class az_sql_db_update_command_builder extends CommandBuilder<az_sql_db_update_c
  * az sql dw create --name
  *                  --resource-group
  *                  --server
+ *                  [--backup-storage-redundancy]
  *                  [--collation]
  *                  [--max-size]
  *                  [--no-wait]
@@ -7035,6 +7509,12 @@ class az_sql_dw_create_command_builder extends CommandBuilder<az_sql_dw_create_c
     /** Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`. */
     server(value: string): az_sql_dw_create_command_builder {
         this.setFlag("--server", value);
+        return this;
+    }
+
+    /** Backup storage redundancy used to store backups. Allowed values include: Local, Zone, Geo. */
+    backupStorageRedundancy(value: string): az_sql_dw_create_command_builder {
+        this.setFlag("--backup-storage-redundancy", value);
         return this;
     }
 
@@ -9409,6 +9889,129 @@ class az_sql_mi_ad_admin_update_command_builder extends CommandBuilder<az_sql_mi
 }
 
 /**
+ * Disable Azure Active Directly only Authentication for this Managed Instance.
+ *
+ * Syntax:
+ * ```
+ * az sql mi ad-only-auth disable [--ids]
+ *                                [--name]
+ *                                [--resource-group]
+ *                                [--subscription]
+ * ```
+ */
+class az_sql_mi_ad_only_auth_disable_command_builder extends CommandBuilder<az_sql_mi_ad_only_auth_disable_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_sql_mi_ad_only_auth_disable_command_builder {
+        this.setFlag("--ids", value);
+        return this;
+    }
+
+    /** The managed instance name. */
+    name(value: string): az_sql_mi_ad_only_auth_disable_command_builder {
+        this.setFlag("--name", value);
+        return this;
+    }
+
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sql_mi_ad_only_auth_disable_command_builder {
+        this.setFlag("--resource-group", value);
+        return this;
+    }
+
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sql_mi_ad_only_auth_disable_command_builder {
+        this.setFlag("--subscription", value);
+        return this;
+    }
+}
+
+/**
+ * Enable Azure Active Directly only Authentication for this Managed Instance.
+ *
+ * Syntax:
+ * ```
+ * az sql mi ad-only-auth enable [--ids]
+ *                               [--name]
+ *                               [--resource-group]
+ *                               [--subscription]
+ * ```
+ */
+class az_sql_mi_ad_only_auth_enable_command_builder extends CommandBuilder<az_sql_mi_ad_only_auth_enable_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_sql_mi_ad_only_auth_enable_command_builder {
+        this.setFlag("--ids", value);
+        return this;
+    }
+
+    /** The managed instance name. */
+    name(value: string): az_sql_mi_ad_only_auth_enable_command_builder {
+        this.setFlag("--name", value);
+        return this;
+    }
+
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sql_mi_ad_only_auth_enable_command_builder {
+        this.setFlag("--resource-group", value);
+        return this;
+    }
+
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sql_mi_ad_only_auth_enable_command_builder {
+        this.setFlag("--subscription", value);
+        return this;
+    }
+}
+
+/**
+ * Get a specific Azure Active Directly only Authentication property.
+ *
+ * Syntax:
+ * ```
+ * az sql mi ad-only-auth get [--ids]
+ *                            [--name]
+ *                            [--resource-group]
+ *                            [--subscription]
+ * ```
+ */
+class az_sql_mi_ad_only_auth_get_command_builder extends CommandBuilder<az_sql_mi_ad_only_auth_get_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_sql_mi_ad_only_auth_get_command_builder {
+        this.setFlag("--ids", value);
+        return this;
+    }
+
+    /** The managed instance name. */
+    name(value: string): az_sql_mi_ad_only_auth_get_command_builder {
+        this.setFlag("--name", value);
+        return this;
+    }
+
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sql_mi_ad_only_auth_get_command_builder {
+        this.setFlag("--resource-group", value);
+        return this;
+    }
+
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sql_mi_ad_only_auth_get_command_builder {
+        this.setFlag("--subscription", value);
+        return this;
+    }
+}
+
+/**
  * Creates a SQL Instance key.
  *
  * Syntax:
@@ -9965,7 +10568,7 @@ class az_sql_mi_create_command_builder extends CommandBuilder<az_sql_mi_create_c
         return this;
     }
 
-    /** Backup storage redundancy used to store backups. */
+    /** Backup storage redundancy used to store backups. Allowed values include: Local, Zone, Geo. */
     backupStorageRedundancy(value: string): az_sql_mi_create_command_builder {
         this.setFlag("--backup-storage-redundancy", value);
         return this;
@@ -10409,6 +11012,363 @@ class az_sql_mi_update_command_builder extends CommandBuilder<az_sql_mi_update_c
     /** Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags. */
     tags(value: string): az_sql_mi_update_command_builder {
         this.setFlag("--tags", value);
+        return this;
+    }
+}
+
+/**
+ * Complete Log Replay service on specified database.
+ *
+ * Syntax:
+ * ```
+ * az sql midb log-replay complete [--ids]
+ *                                 [--last-backup-name]
+ *                                 [--managed-instance]
+ *                                 [--name]
+ *                                 [--resource-group]
+ *                                 [--subscription]
+ * ```
+ */
+class az_sql_midb_log_replay_complete_command_builder extends CommandBuilder<az_sql_midb_log_replay_complete_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_sql_midb_log_replay_complete_command_builder {
+        this.setFlag("--ids", value);
+        return this;
+    }
+
+    /** The name of the last backup to restore. */
+    lastBackupName(value: string): az_sql_midb_log_replay_complete_command_builder {
+        this.setFlag("--last-backup-name", value);
+        return this;
+    }
+
+    /** Name of the Azure SQL managed instance. */
+    managedInstance(value: string): az_sql_midb_log_replay_complete_command_builder {
+        this.setFlag("--managed-instance", value);
+        return this;
+    }
+
+    /** The name of the Azure SQL Managed Database. */
+    name(value: string): az_sql_midb_log_replay_complete_command_builder {
+        this.setFlag("--name", value);
+        return this;
+    }
+
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sql_midb_log_replay_complete_command_builder {
+        this.setFlag("--resource-group", value);
+        return this;
+    }
+
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sql_midb_log_replay_complete_command_builder {
+        this.setFlag("--subscription", value);
+        return this;
+    }
+}
+
+/**
+ * Get status of Log Replay service.
+ *
+ * Syntax:
+ * ```
+ * az sql midb log-replay show [--ids]
+ *                             [--managed-instance]
+ *                             [--name]
+ *                             [--query-examples]
+ *                             [--resource-group]
+ *                             [--subscription]
+ * ```
+ */
+class az_sql_midb_log_replay_show_command_builder extends CommandBuilder<az_sql_midb_log_replay_show_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_sql_midb_log_replay_show_command_builder {
+        this.setFlag("--ids", value);
+        return this;
+    }
+
+    /** Name of the Azure SQL managed instance. */
+    managedInstance(value: string): az_sql_midb_log_replay_show_command_builder {
+        this.setFlag("--managed-instance", value);
+        return this;
+    }
+
+    /** The name of the Azure SQL Managed Database. */
+    name(value: string): az_sql_midb_log_replay_show_command_builder {
+        this.setFlag("--name", value);
+        return this;
+    }
+
+    /** Recommend JMESPath string for you. You can copy one of the query and paste it after --query parameter within double quotation marks to see the results. You can add one or more positional keywords so that we can give suggestions based on these key words. */
+    queryExamples(value: string): az_sql_midb_log_replay_show_command_builder {
+        this.setFlag("--query-examples", value);
+        return this;
+    }
+
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sql_midb_log_replay_show_command_builder {
+        this.setFlag("--resource-group", value);
+        return this;
+    }
+
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sql_midb_log_replay_show_command_builder {
+        this.setFlag("--subscription", value);
+        return this;
+    }
+}
+
+/**
+ * Start Log Replay service on specified database.
+ *
+ * Syntax:
+ * ```
+ * az sql midb log-replay start --ss
+ *                              --storage-uri
+ *                              [--auto-complete]
+ *                              [--ids]
+ *                              [--last-backup-name]
+ *                              [--managed-instance]
+ *                              [--name]
+ *                              [--no-wait]
+ *                              [--resource-group]
+ *                              [--subscription]
+ * ```
+ *
+ * @param {string} storageSas The authorization Sas token to access storage container where backups are.
+ * @param {string} storageUri The URI of the storage container where backups are.
+ */
+class az_sql_midb_log_replay_start_command_builder extends CommandBuilder<az_sql_midb_log_replay_start_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string, storageSas: string, storageUri: string) {
+        super(commandPath, resultDataTypeName);
+        this.storageSas(storageSas)
+        this.storageUri(storageUri)
+    }
+
+    /** The authorization Sas token to access storage container where backups are. */
+    storageSas(value: string): az_sql_midb_log_replay_start_command_builder {
+        this.setFlag("--storage-sas", value);
+        return this;
+    }
+
+    /** The URI of the storage container where backups are. */
+    storageUri(value: string): az_sql_midb_log_replay_start_command_builder {
+        this.setFlag("--storage-uri", value);
+        return this;
+    }
+
+    /** The flag that in usage with last_backup_name automatically completes log replay servise. */
+    autoComplete(value: string): az_sql_midb_log_replay_start_command_builder {
+        this.setFlag("--auto-complete", value);
+        return this;
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_sql_midb_log_replay_start_command_builder {
+        this.setFlag("--ids", value);
+        return this;
+    }
+
+    /** The name of the last backup to restore. */
+    lastBackupName(value: string): az_sql_midb_log_replay_start_command_builder {
+        this.setFlag("--last-backup-name", value);
+        return this;
+    }
+
+    /** Name of the Azure SQL managed instance. */
+    managedInstance(value: string): az_sql_midb_log_replay_start_command_builder {
+        this.setFlag("--managed-instance", value);
+        return this;
+    }
+
+    /** The name of the Azure SQL Managed Database. */
+    name(value: string): az_sql_midb_log_replay_start_command_builder {
+        this.setFlag("--name", value);
+        return this;
+    }
+
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_sql_midb_log_replay_start_command_builder {
+        this.setFlag("--no-wait", value);
+        return this;
+    }
+
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sql_midb_log_replay_start_command_builder {
+        this.setFlag("--resource-group", value);
+        return this;
+    }
+
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sql_midb_log_replay_start_command_builder {
+        this.setFlag("--subscription", value);
+        return this;
+    }
+}
+
+/**
+ * Stop Log Replay service.
+ *
+ * Syntax:
+ * ```
+ * az sql midb log-replay stop [--ids]
+ *                             [--managed-instance]
+ *                             [--name]
+ *                             [--no-wait]
+ *                             [--resource-group]
+ *                             [--subscription]
+ *                             [--yes]
+ * ```
+ */
+class az_sql_midb_log_replay_stop_command_builder extends CommandBuilder<az_sql_midb_log_replay_stop_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_sql_midb_log_replay_stop_command_builder {
+        this.setFlag("--ids", value);
+        return this;
+    }
+
+    /** Name of the Azure SQL managed instance. */
+    managedInstance(value: string): az_sql_midb_log_replay_stop_command_builder {
+        this.setFlag("--managed-instance", value);
+        return this;
+    }
+
+    /** The name of the Azure SQL Managed Database. */
+    name(value: string): az_sql_midb_log_replay_stop_command_builder {
+        this.setFlag("--name", value);
+        return this;
+    }
+
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_sql_midb_log_replay_stop_command_builder {
+        this.setFlag("--no-wait", value);
+        return this;
+    }
+
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sql_midb_log_replay_stop_command_builder {
+        this.setFlag("--resource-group", value);
+        return this;
+    }
+
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sql_midb_log_replay_stop_command_builder {
+        this.setFlag("--subscription", value);
+        return this;
+    }
+
+    /** Do not prompt for confirmation. */
+    yes(value: string): az_sql_midb_log_replay_stop_command_builder {
+        this.setFlag("--yes", value);
+        return this;
+    }
+}
+
+/**
+ * Place the CLI in a waiting state until a condition of the managed database is met.
+ *
+ * Syntax:
+ * ```
+ * az sql midb log-replay wait [--created]
+ *                             [--custom]
+ *                             [--deleted]
+ *                             [--exists]
+ *                             [--ids]
+ *                             [--interval]
+ *                             [--managed-instance]
+ *                             [--name]
+ *                             [--resource-group]
+ *                             [--subscription]
+ *                             [--timeout]
+ *                             [--updated]
+ * ```
+ */
+class az_sql_midb_log_replay_wait_command_builder extends CommandBuilder<az_sql_midb_log_replay_wait_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
+    }
+
+    /** Wait until created with 'provisioningState' at 'Succeeded'. */
+    created(value: string): az_sql_midb_log_replay_wait_command_builder {
+        this.setFlag("--created", value);
+        return this;
+    }
+
+    /** Wait until the condition satisfies a custom JMESPath query. E.g. provisioningState!='InProgress', instanceView.statuses[?code=='PowerState/running']. */
+    custom(value: string): az_sql_midb_log_replay_wait_command_builder {
+        this.setFlag("--custom", value);
+        return this;
+    }
+
+    /** Wait until deleted. */
+    deleted(value: string): az_sql_midb_log_replay_wait_command_builder {
+        this.setFlag("--deleted", value);
+        return this;
+    }
+
+    /** Wait until the resource exists. */
+    exists(value: string): az_sql_midb_log_replay_wait_command_builder {
+        this.setFlag("--exists", value);
+        return this;
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_sql_midb_log_replay_wait_command_builder {
+        this.setFlag("--ids", value);
+        return this;
+    }
+
+    /** Polling interval in seconds. */
+    interval(value: string): az_sql_midb_log_replay_wait_command_builder {
+        this.setFlag("--interval", value);
+        return this;
+    }
+
+    /** Name of the Azure SQL managed instance. */
+    managedInstance(value: string): az_sql_midb_log_replay_wait_command_builder {
+        this.setFlag("--managed-instance", value);
+        return this;
+    }
+
+    /** The name of the Azure SQL Managed Database. */
+    name(value: string): az_sql_midb_log_replay_wait_command_builder {
+        this.setFlag("--name", value);
+        return this;
+    }
+
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sql_midb_log_replay_wait_command_builder {
+        this.setFlag("--resource-group", value);
+        return this;
+    }
+
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sql_midb_log_replay_wait_command_builder {
+        this.setFlag("--subscription", value);
+        return this;
+    }
+
+    /** Maximum wait in seconds. */
+    timeout(value: string): az_sql_midb_log_replay_wait_command_builder {
+        this.setFlag("--timeout", value);
+        return this;
+    }
+
+    /** Wait until updated with provisioningState at 'Succeeded'. */
+    updated(value: string): az_sql_midb_log_replay_wait_command_builder {
+        this.setFlag("--updated", value);
         return this;
     }
 }
@@ -11628,7 +12588,130 @@ class az_sql_server_ad_admin_update_command_builder extends CommandBuilder<az_sq
 }
 
 /**
- * Gets a server's blob auditing policy.
+ * Disable Azure Active Directly only Authentication for this Server.
+ *
+ * Syntax:
+ * ```
+ * az sql server ad-only-auth disable [--ids]
+ *                                    [--name]
+ *                                    [--resource-group]
+ *                                    [--subscription]
+ * ```
+ */
+class az_sql_server_ad_only_auth_disable_command_builder extends CommandBuilder<az_sql_server_ad_only_auth_disable_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_sql_server_ad_only_auth_disable_command_builder {
+        this.setFlag("--ids", value);
+        return this;
+    }
+
+    /** Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`. */
+    name(value: string): az_sql_server_ad_only_auth_disable_command_builder {
+        this.setFlag("--name", value);
+        return this;
+    }
+
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sql_server_ad_only_auth_disable_command_builder {
+        this.setFlag("--resource-group", value);
+        return this;
+    }
+
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sql_server_ad_only_auth_disable_command_builder {
+        this.setFlag("--subscription", value);
+        return this;
+    }
+}
+
+/**
+ * Enable Azure Active Directly only Authentication for this Server.
+ *
+ * Syntax:
+ * ```
+ * az sql server ad-only-auth enable [--ids]
+ *                                   [--name]
+ *                                   [--resource-group]
+ *                                   [--subscription]
+ * ```
+ */
+class az_sql_server_ad_only_auth_enable_command_builder extends CommandBuilder<az_sql_server_ad_only_auth_enable_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_sql_server_ad_only_auth_enable_command_builder {
+        this.setFlag("--ids", value);
+        return this;
+    }
+
+    /** Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`. */
+    name(value: string): az_sql_server_ad_only_auth_enable_command_builder {
+        this.setFlag("--name", value);
+        return this;
+    }
+
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sql_server_ad_only_auth_enable_command_builder {
+        this.setFlag("--resource-group", value);
+        return this;
+    }
+
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sql_server_ad_only_auth_enable_command_builder {
+        this.setFlag("--subscription", value);
+        return this;
+    }
+}
+
+/**
+ * Get a specific Azure Active Directly only Authentication property.
+ *
+ * Syntax:
+ * ```
+ * az sql server ad-only-auth get [--ids]
+ *                                [--name]
+ *                                [--resource-group]
+ *                                [--subscription]
+ * ```
+ */
+class az_sql_server_ad_only_auth_get_command_builder extends CommandBuilder<az_sql_server_ad_only_auth_get_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_sql_server_ad_only_auth_get_command_builder {
+        this.setFlag("--ids", value);
+        return this;
+    }
+
+    /** Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`. */
+    name(value: string): az_sql_server_ad_only_auth_get_command_builder {
+        this.setFlag("--name", value);
+        return this;
+    }
+
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sql_server_ad_only_auth_get_command_builder {
+        this.setFlag("--resource-group", value);
+        return this;
+    }
+
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sql_server_ad_only_auth_get_command_builder {
+        this.setFlag("--subscription", value);
+        return this;
+    }
+}
+
+/**
+ * Show server audit policy.
  *
  * Syntax:
  * ```
@@ -11682,9 +12765,16 @@ class az_sql_server_audit_policy_show_command_builder extends CommandBuilder<az_
  * ```
  * az sql server audit-policy update [--actions]
  *                                   [--add]
+ *                                   [--blob-storage-target-state {Disabled, Enabled}]
+ *                                   [--eh]
+ *                                   [--ehari]
+ *                                   [--ehts {Disabled, Enabled}]
  *                                   [--force-string]
  *                                   [--ids]
+ *                                   [--lats {Disabled, Enabled}]
+ *                                   [--lawri]
  *                                   [--name]
+ *                                   [--no-wait]
  *                                   [--remove]
  *                                   [--resource-group]
  *                                   [--retention-days]
@@ -11713,6 +12803,30 @@ class az_sql_server_audit_policy_update_command_builder extends CommandBuilder<a
         return this;
     }
 
+    /** Indicate whether blob storage is a destination for audit records. */
+    blobStorageTargetState(value: 'Disabled' | 'Enabled'): az_sql_server_audit_policy_update_command_builder {
+        this.setFlag("--blob-storage-target-state", value);
+        return this;
+    }
+
+    /** The name of the event hub. If none is specified when providing event_hub_authorization_rule_id, the default event hub will be selected. */
+    eventHub(value: string): az_sql_server_audit_policy_update_command_builder {
+        this.setFlag("--event-hub", value);
+        return this;
+    }
+
+    /** The resource Id for the event hub authorization rule. */
+    eventHubAuthorizationRuleId(value: string): az_sql_server_audit_policy_update_command_builder {
+        this.setFlag("--event-hub-authorization-rule-id", value);
+        return this;
+    }
+
+    /** Indicate whether event hub is a destination for audit records. */
+    eventHubTargetState(value: 'Disabled' | 'Enabled'): az_sql_server_audit_policy_update_command_builder {
+        this.setFlag("--event-hub-target-state", value);
+        return this;
+    }
+
     /** When using 'set' or 'add', preserve string literals instead of attempting to convert to JSON. */
     forceString(value: string): az_sql_server_audit_policy_update_command_builder {
         this.setFlag("--force-string", value);
@@ -11725,9 +12839,27 @@ class az_sql_server_audit_policy_update_command_builder extends CommandBuilder<a
         return this;
     }
 
+    /** Indicate whether log analytics is a destination for audit records. */
+    logAnalyticsTargetState(value: 'Disabled' | 'Enabled'): az_sql_server_audit_policy_update_command_builder {
+        this.setFlag("--log-analytics-target-state", value);
+        return this;
+    }
+
+    /** The workspace ID (resource ID of a Log Analytics workspace) for a Log Analytics workspace to which you would like to send Audit Logs. */
+    logAnalyticsWorkspaceResourceId(value: string): az_sql_server_audit_policy_update_command_builder {
+        this.setFlag("--log-analytics-workspace-resource-id", value);
+        return this;
+    }
+
     /** Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`. */
     name(value: string): az_sql_server_audit_policy_update_command_builder {
         this.setFlag("--name", value);
+        return this;
+    }
+
+    /** Do not wait for the long-running operation to finish. */
+    noWait(value: string): az_sql_server_audit_policy_update_command_builder {
+        this.setFlag("--no-wait", value);
         return this;
     }
 
@@ -11782,6 +12914,96 @@ class az_sql_server_audit_policy_update_command_builder extends CommandBuilder<a
     /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
     subscription(value: string): az_sql_server_audit_policy_update_command_builder {
         this.setFlag("--subscription", value);
+        return this;
+    }
+}
+
+/**
+ * Place the CLI in a waiting state until a condition of the server's audit policy is met.
+ *
+ * Syntax:
+ * ```
+ * az sql server audit-policy wait [--created]
+ *                                 [--custom]
+ *                                 [--deleted]
+ *                                 [--exists]
+ *                                 [--ids]
+ *                                 [--interval]
+ *                                 [--name]
+ *                                 [--resource-group]
+ *                                 [--subscription]
+ *                                 [--timeout]
+ *                                 [--updated]
+ * ```
+ */
+class az_sql_server_audit_policy_wait_command_builder extends CommandBuilder<az_sql_server_audit_policy_wait_command_result> {
+    constructor(commandPath: string, resultDataTypeName: string) {
+        super(commandPath, resultDataTypeName);
+    }
+
+    /** Wait until created with 'provisioningState' at 'Succeeded'. */
+    created(value: string): az_sql_server_audit_policy_wait_command_builder {
+        this.setFlag("--created", value);
+        return this;
+    }
+
+    /** Wait until the condition satisfies a custom JMESPath query. E.g. provisioningState!='InProgress', instanceView.statuses[?code=='PowerState/running']. */
+    custom(value: string): az_sql_server_audit_policy_wait_command_builder {
+        this.setFlag("--custom", value);
+        return this;
+    }
+
+    /** Wait until deleted. */
+    deleted(value: string): az_sql_server_audit_policy_wait_command_builder {
+        this.setFlag("--deleted", value);
+        return this;
+    }
+
+    /** Wait until the resource exists. */
+    exists(value: string): az_sql_server_audit_policy_wait_command_builder {
+        this.setFlag("--exists", value);
+        return this;
+    }
+
+    /** One or more resource IDs (space-delimited). It should be a complete resource ID containing all information of 'Resource Id' arguments. You should provide either --ids or other 'Resource Id' arguments. */
+    ids(value: string): az_sql_server_audit_policy_wait_command_builder {
+        this.setFlag("--ids", value);
+        return this;
+    }
+
+    /** Polling interval in seconds. */
+    interval(value: string): az_sql_server_audit_policy_wait_command_builder {
+        this.setFlag("--interval", value);
+        return this;
+    }
+
+    /** Name of the Azure SQL server. You can configure the default using `az configure --defaults sql-server=<name>`. */
+    name(value: string): az_sql_server_audit_policy_wait_command_builder {
+        this.setFlag("--name", value);
+        return this;
+    }
+
+    /** Name of resource group. You can configure the default group using `az configure --defaults group=<name>`. */
+    resourceGroup(value: string): az_sql_server_audit_policy_wait_command_builder {
+        this.setFlag("--resource-group", value);
+        return this;
+    }
+
+    /** Name or ID of subscription. You can configure the default subscription using `az account set -s NAME_OR_ID`. */
+    subscription(value: string): az_sql_server_audit_policy_wait_command_builder {
+        this.setFlag("--subscription", value);
+        return this;
+    }
+
+    /** Maximum wait in seconds. */
+    timeout(value: string): az_sql_server_audit_policy_wait_command_builder {
+        this.setFlag("--timeout", value);
+        return this;
+    }
+
+    /** Wait until updated with provisioningState at 'Succeeded'. */
+    updated(value: string): az_sql_server_audit_policy_wait_command_builder {
+        this.setFlag("--updated", value);
         return this;
     }
 }
@@ -14932,7 +16154,7 @@ class az_sql_vm_remove_from_group_command_builder extends CommandBuilder<az_sql_
  *
  * Syntax:
  * ```
- * az sql vm show [--expand]
+ * az sql vm show [--expand {*, AutoBackupSettings, AutoPatchingSettings, KeyVaultCredentialSettings, ServerConfigurationsManagementSettings}]
  *                [--ids]
  *                [--name]
  *                [--query-examples]
@@ -14945,8 +16167,8 @@ class az_sql_vm_show_command_builder extends CommandBuilder<az_sql_vm_show_comma
         super(commandPath, resultDataTypeName);
     }
 
-    /** Get the SQLIaaSExtension configuration settings. */
-    expand(value: string): az_sql_vm_show_command_builder {
+    /** Get the SQLIaaSExtension configuration settings. To view all settings, use \*. To select only a few, the settings must be space-separted. */
+    expand(value: '*' | 'AutoBackupSettings' | 'AutoPatchingSettings' | 'KeyVaultCredentialSettings' | 'ServerConfigurationsManagementSettings'): az_sql_vm_show_command_builder {
         this.setFlag("--expand", value);
         return this;
     }

@@ -34,6 +34,7 @@ export class az_sig_image_definition {
      *                                [--disallowed-disk-types]
      *                                [--end-of-life-date]
      *                                [--eula]
+     *                                [--features]
      *                                [--hyper-v-generation {V1, V2}]
      *                                [--location]
      *                                [--maximum-cpu-core]
@@ -79,7 +80,7 @@ export class az_sig_image_definition {
     }
 
     /**
-     * List gallery Image Definitions in a gallery.
+     * List gallery image definitions in a gallery.
      *
      * Syntax:
      * ```
@@ -97,7 +98,7 @@ export class az_sig_image_definition {
     }
 
     /**
-     * Retrieves information about a gallery Image Definition.
+     * Retrieves information about a gallery image definition.
      *
      * Syntax:
      * ```
@@ -402,6 +403,7 @@ export class az_sig {
  *                                [--disallowed-disk-types]
  *                                [--end-of-life-date]
  *                                [--eula]
+ *                                [--features]
  *                                [--hyper-v-generation {V1, V2}]
  *                                [--location]
  *                                [--maximum-cpu-core]
@@ -501,6 +503,12 @@ class az_sig_image_definition_create_command_builder extends CommandBuilder<az_s
     /** The Eula agreement for the gallery image. */
     eula(value: string): az_sig_image_definition_create_command_builder {
         this.setFlag("--eula", value);
+        return this;
+    }
+
+    /** A list of gallery image features. E.g. "IsSecureBootSupported=true IsMeasuredBootSupported=false". */
+    features(value: string): az_sig_image_definition_create_command_builder {
+        this.setFlag("--features", value);
         return this;
     }
 
@@ -638,7 +646,7 @@ class az_sig_image_definition_delete_command_builder extends CommandBuilder<az_s
 }
 
 /**
- * List gallery Image Definitions in a gallery.
+ * List gallery image definitions in a gallery.
  *
  * Syntax:
  * ```
@@ -684,7 +692,7 @@ class az_sig_image_definition_list_command_builder extends CommandBuilder<az_sig
 }
 
 /**
- * Retrieves information about a gallery Image Definition.
+ * Retrieves information about a gallery image definition.
  *
  * Syntax:
  * ```

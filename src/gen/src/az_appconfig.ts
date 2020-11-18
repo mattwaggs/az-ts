@@ -80,7 +80,9 @@ export class az_appconfig_feature_filter {
      * ```
      * az appconfig feature filter add --feature
      *                                 --filter-name
+     *                                 [--auth-mode {key, login}]
      *                                 [--connection-string]
+     *                                 [--endpoint]
      *                                 [--filter-parameters]
      *                                 [--index]
      *                                 [--label]
@@ -103,7 +105,9 @@ export class az_appconfig_feature_filter {
      * ```
      * az appconfig feature filter delete --feature
      *                                    [--all]
+     *                                    [--auth-mode {key, login}]
      *                                    [--connection-string]
+     *                                    [--endpoint]
      *                                    [--filter-name]
      *                                    [--index]
      *                                    [--label]
@@ -125,7 +129,9 @@ export class az_appconfig_feature_filter {
      * ```
      * az appconfig feature filter list --feature
      *                                  [--all]
+     *                                  [--auth-mode {key, login}]
      *                                  [--connection-string]
+     *                                  [--endpoint]
      *                                  [--label]
      *                                  [--name]
      *                                  [--query-examples]
@@ -146,7 +152,9 @@ export class az_appconfig_feature_filter {
      * ```
      * az appconfig feature filter show --feature
      *                                  --filter-name
+     *                                  [--auth-mode {key, login}]
      *                                  [--connection-string]
+     *                                  [--endpoint]
      *                                  [--index]
      *                                  [--label]
      *                                  [--name]
@@ -170,7 +178,9 @@ export class az_appconfig_feature {
      * Syntax:
      * ```
      * az appconfig feature delete --feature
+     *                             [--auth-mode {key, login}]
      *                             [--connection-string]
+     *                             [--endpoint]
      *                             [--label]
      *                             [--name]
      *                             [--subscription]
@@ -189,7 +199,9 @@ export class az_appconfig_feature {
      * Syntax:
      * ```
      * az appconfig feature disable --feature
+     *                              [--auth-mode {key, login}]
      *                              [--connection-string]
+     *                              [--endpoint]
      *                              [--label]
      *                              [--name]
      *                              [--subscription]
@@ -208,7 +220,9 @@ export class az_appconfig_feature {
      * Syntax:
      * ```
      * az appconfig feature enable --feature
+     *                             [--auth-mode {key, login}]
      *                             [--connection-string]
+     *                             [--endpoint]
      *                             [--label]
      *                             [--name]
      *                             [--subscription]
@@ -227,7 +241,9 @@ export class az_appconfig_feature {
      * Syntax:
      * ```
      * az appconfig feature list [--all]
+     *                           [--auth-mode {key, login}]
      *                           [--connection-string]
+     *                           [--endpoint]
      *                           [--feature]
      *                           [--fields {conditions, description, key, label, last_modified, locked, state}]
      *                           [--label]
@@ -247,7 +263,9 @@ export class az_appconfig_feature {
      * Syntax:
      * ```
      * az appconfig feature lock --feature
+     *                           [--auth-mode {key, login}]
      *                           [--connection-string]
+     *                           [--endpoint]
      *                           [--label]
      *                           [--name]
      *                           [--subscription]
@@ -266,8 +284,10 @@ export class az_appconfig_feature {
      * Syntax:
      * ```
      * az appconfig feature set --feature
+     *                          [--auth-mode {key, login}]
      *                          [--connection-string]
      *                          [--description]
+     *                          [--endpoint]
      *                          [--label]
      *                          [--name]
      *                          [--subscription]
@@ -286,7 +306,9 @@ export class az_appconfig_feature {
      * Syntax:
      * ```
      * az appconfig feature show --feature
+     *                           [--auth-mode {key, login}]
      *                           [--connection-string]
+     *                           [--endpoint]
      *                           [--fields {conditions, description, key, label, last_modified, locked, state}]
      *                           [--label]
      *                           [--name]
@@ -306,7 +328,9 @@ export class az_appconfig_feature {
      * Syntax:
      * ```
      * az appconfig feature unlock --feature
+     *                             [--auth-mode {key, login}]
      *                             [--connection-string]
+     *                             [--endpoint]
      *                             [--label]
      *                             [--name]
      *                             [--subscription]
@@ -382,7 +406,9 @@ export class az_appconfig_kv {
      * Syntax:
      * ```
      * az appconfig kv delete --key
+     *                        [--auth-mode {key, login}]
      *                        [--connection-string]
+     *                        [--endpoint]
      *                        [--label]
      *                        [--name]
      *                        [--subscription]
@@ -402,10 +428,14 @@ export class az_appconfig_kv {
      * ```
      * az appconfig kv export --destination {appconfig, appservice, file}
      *                        [--appservice-account]
+     *                        [--auth-mode {key, login}]
      *                        [--connection-string]
+     *                        [--dest-auth-mode {key, login}]
      *                        [--dest-connection-string]
+     *                        [--dest-endpoint]
      *                        [--dest-label]
      *                        [--dest-name]
+     *                        [--endpoint]
      *                        [--format {json, properties, yaml}]
      *                        [--key]
      *                        [--label]
@@ -435,9 +465,11 @@ export class az_appconfig_kv {
      * ```
      * az appconfig kv import --source {appconfig, appservice, file}
      *                        [--appservice-account]
+     *                        [--auth-mode {key, login}]
      *                        [--connection-string]
      *                        [--content-type]
      *                        [--depth]
+     *                        [--endpoint]
      *                        [--format {json, properties, yaml}]
      *                        [--label]
      *                        [--name]
@@ -446,7 +478,9 @@ export class az_appconfig_kv {
      *                        [--preserve-labels {false, true}]
      *                        [--separator]
      *                        [--skip-features {false, true}]
+     *                        [--src-auth-mode {key, login}]
      *                        [--src-connection-string]
+     *                        [--src-endpoint]
      *                        [--src-key]
      *                        [--src-label]
      *                        [--src-name]
@@ -466,8 +500,10 @@ export class az_appconfig_kv {
      * Syntax:
      * ```
      * az appconfig kv list [--all]
+     *                      [--auth-mode {key, login}]
      *                      [--connection-string]
      *                      [--datetime]
+     *                      [--endpoint]
      *                      [--fields {content_type, etag, key, label, last_modified, locked, tags, value}]
      *                      [--key]
      *                      [--label]
@@ -488,7 +524,9 @@ export class az_appconfig_kv {
      * Syntax:
      * ```
      * az appconfig kv lock --key
+     *                      [--auth-mode {key, login}]
      *                      [--connection-string]
+     *                      [--endpoint]
      *                      [--label]
      *                      [--name]
      *                      [--subscription]
@@ -507,7 +545,9 @@ export class az_appconfig_kv {
      * Syntax:
      * ```
      * az appconfig kv restore --datetime
+     *                         [--auth-mode {key, login}]
      *                         [--connection-string]
+     *                         [--endpoint]
      *                         [--key]
      *                         [--label]
      *                         [--name]
@@ -527,8 +567,10 @@ export class az_appconfig_kv {
      * Syntax:
      * ```
      * az appconfig kv set --key
+     *                     [--auth-mode {key, login}]
      *                     [--connection-string]
      *                     [--content-type]
+     *                     [--endpoint]
      *                     [--label]
      *                     [--name]
      *                     [--subscription]
@@ -550,7 +592,9 @@ export class az_appconfig_kv {
      * ```
      * az appconfig kv set-keyvault --key
      *                              --secret-identifier
+     *                              [--auth-mode {key, login}]
      *                              [--connection-string]
+     *                              [--endpoint]
      *                              [--label]
      *                              [--name]
      *                              [--subscription]
@@ -571,8 +615,10 @@ export class az_appconfig_kv {
      * Syntax:
      * ```
      * az appconfig kv show --key
+     *                      [--auth-mode {key, login}]
      *                      [--connection-string]
      *                      [--datetime]
+     *                      [--endpoint]
      *                      [--label]
      *                      [--name]
      *                      [--query-examples]
@@ -591,7 +637,9 @@ export class az_appconfig_kv {
      * Syntax:
      * ```
      * az appconfig kv unlock --key
+     *                        [--auth-mode {key, login}]
      *                        [--connection-string]
+     *                        [--endpoint]
      *                        [--label]
      *                        [--name]
      *                        [--subscription]
@@ -613,8 +661,10 @@ export class az_appconfig_revision {
      * Syntax:
      * ```
      * az appconfig revision list [--all]
+     *                            [--auth-mode {key, login}]
      *                            [--connection-string]
      *                            [--datetime]
+     *                            [--endpoint]
      *                            [--fields {content_type, etag, key, label, last_modified, locked, tags, value}]
      *                            [--key]
      *                            [--label]
@@ -822,7 +872,9 @@ class az_appconfig_credential_regenerate_command_builder extends CommandBuilder<
  * ```
  * az appconfig feature filter add --feature
  *                                 --filter-name
+ *                                 [--auth-mode {key, login}]
  *                                 [--connection-string]
+ *                                 [--endpoint]
  *                                 [--filter-parameters]
  *                                 [--index]
  *                                 [--label]
@@ -853,9 +905,21 @@ class az_appconfig_feature_filter_add_command_builder extends CommandBuilder<az_
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_feature_filter_add_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_feature_filter_add_command_builder {
         this.setFlag("--connection-string", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_feature_filter_add_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -903,7 +967,9 @@ class az_appconfig_feature_filter_add_command_builder extends CommandBuilder<az_
  * ```
  * az appconfig feature filter delete --feature
  *                                    [--all]
+ *                                    [--auth-mode {key, login}]
  *                                    [--connection-string]
+ *                                    [--endpoint]
  *                                    [--filter-name]
  *                                    [--index]
  *                                    [--label]
@@ -932,9 +998,21 @@ class az_appconfig_feature_filter_delete_command_builder extends CommandBuilder<
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_feature_filter_delete_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_feature_filter_delete_command_builder {
         this.setFlag("--connection-string", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_feature_filter_delete_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -982,7 +1060,9 @@ class az_appconfig_feature_filter_delete_command_builder extends CommandBuilder<
  * ```
  * az appconfig feature filter list --feature
  *                                  [--all]
+ *                                  [--auth-mode {key, login}]
  *                                  [--connection-string]
+ *                                  [--endpoint]
  *                                  [--label]
  *                                  [--name]
  *                                  [--query-examples]
@@ -1010,9 +1090,21 @@ class az_appconfig_feature_filter_list_command_builder extends CommandBuilder<az
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_feature_filter_list_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_feature_filter_list_command_builder {
         this.setFlag("--connection-string", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_feature_filter_list_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -1054,7 +1146,9 @@ class az_appconfig_feature_filter_list_command_builder extends CommandBuilder<az
  * ```
  * az appconfig feature filter show --feature
  *                                  --filter-name
+ *                                  [--auth-mode {key, login}]
  *                                  [--connection-string]
+ *                                  [--endpoint]
  *                                  [--index]
  *                                  [--label]
  *                                  [--name]
@@ -1084,9 +1178,21 @@ class az_appconfig_feature_filter_show_command_builder extends CommandBuilder<az
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_feature_filter_show_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_feature_filter_show_command_builder {
         this.setFlag("--connection-string", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_feature_filter_show_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -1127,7 +1233,9 @@ class az_appconfig_feature_filter_show_command_builder extends CommandBuilder<az
  * Syntax:
  * ```
  * az appconfig feature delete --feature
+ *                             [--auth-mode {key, login}]
  *                             [--connection-string]
+ *                             [--endpoint]
  *                             [--label]
  *                             [--name]
  *                             [--subscription]
@@ -1148,9 +1256,21 @@ class az_appconfig_feature_delete_command_builder extends CommandBuilder<az_appc
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_feature_delete_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_feature_delete_command_builder {
         this.setFlag("--connection-string", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_feature_delete_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -1185,7 +1305,9 @@ class az_appconfig_feature_delete_command_builder extends CommandBuilder<az_appc
  * Syntax:
  * ```
  * az appconfig feature disable --feature
+ *                              [--auth-mode {key, login}]
  *                              [--connection-string]
+ *                              [--endpoint]
  *                              [--label]
  *                              [--name]
  *                              [--subscription]
@@ -1206,9 +1328,21 @@ class az_appconfig_feature_disable_command_builder extends CommandBuilder<az_app
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_feature_disable_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_feature_disable_command_builder {
         this.setFlag("--connection-string", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_feature_disable_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -1243,7 +1377,9 @@ class az_appconfig_feature_disable_command_builder extends CommandBuilder<az_app
  * Syntax:
  * ```
  * az appconfig feature enable --feature
+ *                             [--auth-mode {key, login}]
  *                             [--connection-string]
+ *                             [--endpoint]
  *                             [--label]
  *                             [--name]
  *                             [--subscription]
@@ -1264,9 +1400,21 @@ class az_appconfig_feature_enable_command_builder extends CommandBuilder<az_appc
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_feature_enable_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_feature_enable_command_builder {
         this.setFlag("--connection-string", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_feature_enable_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -1301,7 +1449,9 @@ class az_appconfig_feature_enable_command_builder extends CommandBuilder<az_appc
  * Syntax:
  * ```
  * az appconfig feature list [--all]
+ *                           [--auth-mode {key, login}]
  *                           [--connection-string]
+ *                           [--endpoint]
  *                           [--feature]
  *                           [--fields {conditions, description, key, label, last_modified, locked, state}]
  *                           [--label]
@@ -1322,9 +1472,21 @@ class az_appconfig_feature_list_command_builder extends CommandBuilder<az_appcon
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_feature_list_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_feature_list_command_builder {
         this.setFlag("--connection-string", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_feature_list_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -1377,7 +1539,9 @@ class az_appconfig_feature_list_command_builder extends CommandBuilder<az_appcon
  * Syntax:
  * ```
  * az appconfig feature lock --feature
+ *                           [--auth-mode {key, login}]
  *                           [--connection-string]
+ *                           [--endpoint]
  *                           [--label]
  *                           [--name]
  *                           [--subscription]
@@ -1398,9 +1562,21 @@ class az_appconfig_feature_lock_command_builder extends CommandBuilder<az_appcon
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_feature_lock_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_feature_lock_command_builder {
         this.setFlag("--connection-string", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_feature_lock_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -1435,8 +1611,10 @@ class az_appconfig_feature_lock_command_builder extends CommandBuilder<az_appcon
  * Syntax:
  * ```
  * az appconfig feature set --feature
+ *                          [--auth-mode {key, login}]
  *                          [--connection-string]
  *                          [--description]
+ *                          [--endpoint]
  *                          [--label]
  *                          [--name]
  *                          [--subscription]
@@ -1457,6 +1635,12 @@ class az_appconfig_feature_set_command_builder extends CommandBuilder<az_appconf
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_feature_set_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_feature_set_command_builder {
         this.setFlag("--connection-string", value);
@@ -1466,6 +1650,12 @@ class az_appconfig_feature_set_command_builder extends CommandBuilder<az_appconf
     /** Description of the feature flag to be set. */
     description(value: string): az_appconfig_feature_set_command_builder {
         this.setFlag("--description", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_feature_set_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -1500,7 +1690,9 @@ class az_appconfig_feature_set_command_builder extends CommandBuilder<az_appconf
  * Syntax:
  * ```
  * az appconfig feature show --feature
+ *                           [--auth-mode {key, login}]
  *                           [--connection-string]
+ *                           [--endpoint]
  *                           [--fields {conditions, description, key, label, last_modified, locked, state}]
  *                           [--label]
  *                           [--name]
@@ -1522,9 +1714,21 @@ class az_appconfig_feature_show_command_builder extends CommandBuilder<az_appcon
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_feature_show_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_feature_show_command_builder {
         this.setFlag("--connection-string", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_feature_show_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -1565,7 +1769,9 @@ class az_appconfig_feature_show_command_builder extends CommandBuilder<az_appcon
  * Syntax:
  * ```
  * az appconfig feature unlock --feature
+ *                             [--auth-mode {key, login}]
  *                             [--connection-string]
+ *                             [--endpoint]
  *                             [--label]
  *                             [--name]
  *                             [--subscription]
@@ -1586,9 +1792,21 @@ class az_appconfig_feature_unlock_command_builder extends CommandBuilder<az_appc
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_feature_unlock_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_feature_unlock_command_builder {
         this.setFlag("--connection-string", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_feature_unlock_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -1755,7 +1973,9 @@ class az_appconfig_identity_show_command_builder extends CommandBuilder<az_appco
  * Syntax:
  * ```
  * az appconfig kv delete --key
+ *                        [--auth-mode {key, login}]
  *                        [--connection-string]
+ *                        [--endpoint]
  *                        [--label]
  *                        [--name]
  *                        [--subscription]
@@ -1776,9 +1996,21 @@ class az_appconfig_kv_delete_command_builder extends CommandBuilder<az_appconfig
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_kv_delete_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_kv_delete_command_builder {
         this.setFlag("--connection-string", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_kv_delete_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -1814,10 +2046,14 @@ class az_appconfig_kv_delete_command_builder extends CommandBuilder<az_appconfig
  * ```
  * az appconfig kv export --destination {appconfig, appservice, file}
  *                        [--appservice-account]
+ *                        [--auth-mode {key, login}]
  *                        [--connection-string]
+ *                        [--dest-auth-mode {key, login}]
  *                        [--dest-connection-string]
+ *                        [--dest-endpoint]
  *                        [--dest-label]
  *                        [--dest-name]
+ *                        [--endpoint]
  *                        [--format {json, properties, yaml}]
  *                        [--key]
  *                        [--label]
@@ -1854,15 +2090,33 @@ class az_appconfig_kv_export_command_builder extends CommandBuilder<az_appconfig
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_kv_export_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_kv_export_command_builder {
         this.setFlag("--connection-string", value);
         return this;
     }
 
+    /** Auth mode for connecting to destination App Configuration. For details, refer to "--auth-mode" argument. */
+    destAuthMode(value: 'key' | 'login'): az_appconfig_kv_export_command_builder {
+        this.setFlag("--dest-auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of the destination store. */
     destConnectionString(value: string): az_appconfig_kv_export_command_builder {
         this.setFlag("--dest-connection-string", value);
+        return this;
+    }
+
+    /** If --dest-auth-mode is "login", provide endpoint URL of the destination App Configuration. */
+    destEndpoint(value: string): az_appconfig_kv_export_command_builder {
+        this.setFlag("--dest-endpoint", value);
         return this;
     }
 
@@ -1875,6 +2129,12 @@ class az_appconfig_kv_export_command_builder extends CommandBuilder<az_appconfig
     /** The name of the destination App Configuration. */
     destName(value: string): az_appconfig_kv_export_command_builder {
         this.setFlag("--dest-name", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_kv_export_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -1970,9 +2230,11 @@ class az_appconfig_kv_export_command_builder extends CommandBuilder<az_appconfig
  * ```
  * az appconfig kv import --source {appconfig, appservice, file}
  *                        [--appservice-account]
+ *                        [--auth-mode {key, login}]
  *                        [--connection-string]
  *                        [--content-type]
  *                        [--depth]
+ *                        [--endpoint]
  *                        [--format {json, properties, yaml}]
  *                        [--label]
  *                        [--name]
@@ -1981,7 +2243,9 @@ class az_appconfig_kv_export_command_builder extends CommandBuilder<az_appconfig
  *                        [--preserve-labels {false, true}]
  *                        [--separator]
  *                        [--skip-features {false, true}]
+ *                        [--src-auth-mode {key, login}]
  *                        [--src-connection-string]
+ *                        [--src-endpoint]
  *                        [--src-key]
  *                        [--src-label]
  *                        [--src-name]
@@ -2009,6 +2273,12 @@ class az_appconfig_kv_import_command_builder extends CommandBuilder<az_appconfig
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_kv_import_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_kv_import_command_builder {
         this.setFlag("--connection-string", value);
@@ -2024,6 +2294,12 @@ class az_appconfig_kv_import_command_builder extends CommandBuilder<az_appconfig
     /** Depth for flattening the json or yaml file to key-value pairs. Flatten to the deepest level by default if --separator is provided. Not applicable for property files or feature flags. */
     depth(value: string): az_appconfig_kv_import_command_builder {
         this.setFlag("--depth", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_kv_import_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -2075,9 +2351,21 @@ class az_appconfig_kv_import_command_builder extends CommandBuilder<az_appconfig
         return this;
     }
 
+    /** Auth mode for connecting to source App Configuration. For details, refer to "--auth-mode" argument. */
+    srcAuthMode(value: 'key' | 'login'): az_appconfig_kv_import_command_builder {
+        this.setFlag("--src-auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of the source store. */
     srcConnectionString(value: string): az_appconfig_kv_import_command_builder {
         this.setFlag("--src-connection-string", value);
+        return this;
+    }
+
+    /** If --src-auth-mode is "login", provide endpoint URL of the source App Configuration. */
+    srcEndpoint(value: string): az_appconfig_kv_import_command_builder {
+        this.setFlag("--src-endpoint", value);
         return this;
     }
 
@@ -2118,8 +2406,10 @@ class az_appconfig_kv_import_command_builder extends CommandBuilder<az_appconfig
  * Syntax:
  * ```
  * az appconfig kv list [--all]
+ *                      [--auth-mode {key, login}]
  *                      [--connection-string]
  *                      [--datetime]
+ *                      [--endpoint]
  *                      [--fields {content_type, etag, key, label, last_modified, locked, tags, value}]
  *                      [--key]
  *                      [--label]
@@ -2141,6 +2431,12 @@ class az_appconfig_kv_list_command_builder extends CommandBuilder<az_appconfig_k
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_kv_list_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_kv_list_command_builder {
         this.setFlag("--connection-string", value);
@@ -2150,6 +2446,12 @@ class az_appconfig_kv_list_command_builder extends CommandBuilder<az_appconfig_k
     /** Format: "YYYY-MM-DDThh:mm:ssZ". If no time zone specified, use UTC by default. */
     datetime(value: string): az_appconfig_kv_list_command_builder {
         this.setFlag("--datetime", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_kv_list_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -2208,7 +2510,9 @@ class az_appconfig_kv_list_command_builder extends CommandBuilder<az_appconfig_k
  * Syntax:
  * ```
  * az appconfig kv lock --key
+ *                      [--auth-mode {key, login}]
  *                      [--connection-string]
+ *                      [--endpoint]
  *                      [--label]
  *                      [--name]
  *                      [--subscription]
@@ -2229,9 +2533,21 @@ class az_appconfig_kv_lock_command_builder extends CommandBuilder<az_appconfig_k
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_kv_lock_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_kv_lock_command_builder {
         this.setFlag("--connection-string", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_kv_lock_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -2266,7 +2582,9 @@ class az_appconfig_kv_lock_command_builder extends CommandBuilder<az_appconfig_k
  * Syntax:
  * ```
  * az appconfig kv restore --datetime
+ *                         [--auth-mode {key, login}]
  *                         [--connection-string]
+ *                         [--endpoint]
  *                         [--key]
  *                         [--label]
  *                         [--name]
@@ -2288,9 +2606,21 @@ class az_appconfig_kv_restore_command_builder extends CommandBuilder<az_appconfi
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_kv_restore_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_kv_restore_command_builder {
         this.setFlag("--connection-string", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_kv_restore_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -2331,8 +2661,10 @@ class az_appconfig_kv_restore_command_builder extends CommandBuilder<az_appconfi
  * Syntax:
  * ```
  * az appconfig kv set --key
+ *                     [--auth-mode {key, login}]
  *                     [--connection-string]
  *                     [--content-type]
+ *                     [--endpoint]
  *                     [--label]
  *                     [--name]
  *                     [--subscription]
@@ -2355,6 +2687,12 @@ class az_appconfig_kv_set_command_builder extends CommandBuilder<az_appconfig_kv
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_kv_set_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_kv_set_command_builder {
         this.setFlag("--connection-string", value);
@@ -2364,6 +2702,12 @@ class az_appconfig_kv_set_command_builder extends CommandBuilder<az_appconfig_kv
     /** Content type of the keyvalue to be set. */
     contentType(value: string): az_appconfig_kv_set_command_builder {
         this.setFlag("--content-type", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_kv_set_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -2411,7 +2755,9 @@ class az_appconfig_kv_set_command_builder extends CommandBuilder<az_appconfig_kv
  * ```
  * az appconfig kv set-keyvault --key
  *                              --secret-identifier
+ *                              [--auth-mode {key, login}]
  *                              [--connection-string]
+ *                              [--endpoint]
  *                              [--label]
  *                              [--name]
  *                              [--subscription]
@@ -2441,9 +2787,21 @@ class az_appconfig_kv_set_keyvault_command_builder extends CommandBuilder<az_app
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_kv_set_keyvault_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_kv_set_keyvault_command_builder {
         this.setFlag("--connection-string", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_kv_set_keyvault_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -2484,8 +2842,10 @@ class az_appconfig_kv_set_keyvault_command_builder extends CommandBuilder<az_app
  * Syntax:
  * ```
  * az appconfig kv show --key
+ *                      [--auth-mode {key, login}]
  *                      [--connection-string]
  *                      [--datetime]
+ *                      [--endpoint]
  *                      [--label]
  *                      [--name]
  *                      [--query-examples]
@@ -2506,6 +2866,12 @@ class az_appconfig_kv_show_command_builder extends CommandBuilder<az_appconfig_k
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_kv_show_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_kv_show_command_builder {
         this.setFlag("--connection-string", value);
@@ -2515,6 +2881,12 @@ class az_appconfig_kv_show_command_builder extends CommandBuilder<az_appconfig_k
     /** Format: "YYYY-MM-DDThh:mm:ssZ". If no time zone specified, use UTC by default. */
     datetime(value: string): az_appconfig_kv_show_command_builder {
         this.setFlag("--datetime", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_kv_show_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -2549,7 +2921,9 @@ class az_appconfig_kv_show_command_builder extends CommandBuilder<az_appconfig_k
  * Syntax:
  * ```
  * az appconfig kv unlock --key
+ *                        [--auth-mode {key, login}]
  *                        [--connection-string]
+ *                        [--endpoint]
  *                        [--label]
  *                        [--name]
  *                        [--subscription]
@@ -2570,9 +2944,21 @@ class az_appconfig_kv_unlock_command_builder extends CommandBuilder<az_appconfig
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_kv_unlock_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_kv_unlock_command_builder {
         this.setFlag("--connection-string", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_kv_unlock_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 
@@ -2607,8 +2993,10 @@ class az_appconfig_kv_unlock_command_builder extends CommandBuilder<az_appconfig
  * Syntax:
  * ```
  * az appconfig revision list [--all]
+ *                            [--auth-mode {key, login}]
  *                            [--connection-string]
  *                            [--datetime]
+ *                            [--endpoint]
  *                            [--fields {content_type, etag, key, label, last_modified, locked, tags, value}]
  *                            [--key]
  *                            [--label]
@@ -2629,6 +3017,12 @@ class az_appconfig_revision_list_command_builder extends CommandBuilder<az_appco
         return this;
     }
 
+    /** This parameter can be used for indicating how a data operation is to be authorized. If the auth mode is "key", provide connection string or store name and your account access keys will be retrieved for authorization. If the auth mode is "login", provide the store endpoint or store name and your "az login" credentials will be used for authorization. You can configure the default auth mode using `az configure --defaults appconfig_auth_mode=<auth_mode>`. For more information, see <a href="https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac">https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-enable-rbac</a>. */
+    authMode(value: 'key' | 'login'): az_appconfig_revision_list_command_builder {
+        this.setFlag("--auth-mode", value);
+        return this;
+    }
+
     /** Combination of access key and endpoint of App Configuration. Can be found using 'az appconfig credential list'. Users can preset it using `az configure --defaults appconfig_connection_string=<connection_string>` or environment variable with the name AZURE_APPCONFIG_CONNECTION_STRING. */
     connectionString(value: string): az_appconfig_revision_list_command_builder {
         this.setFlag("--connection-string", value);
@@ -2638,6 +3032,12 @@ class az_appconfig_revision_list_command_builder extends CommandBuilder<az_appco
     /** Format: "YYYY-MM-DDThh:mm:ssZ". If no time zone specified, use UTC by default. */
     datetime(value: string): az_appconfig_revision_list_command_builder {
         this.setFlag("--datetime", value);
+        return this;
+    }
+
+    /** If auth mode is "login", provide endpoint URL of the App Configuration. The endpoint can be retrieved using "az appconfig show" command. You can configure the default endpoint using `az configure --defaults appconfig_endpoint=<endpoint>`. */
+    endpoint(value: string): az_appconfig_revision_list_command_builder {
+        this.setFlag("--endpoint", value);
         return this;
     }
 

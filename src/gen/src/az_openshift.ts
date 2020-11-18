@@ -8,10 +8,10 @@ import { az_openshift_scale_command_result } from './models/az_openshift_scale_c
 import { az_openshift_show_command_result } from './models/az_openshift_show_command_result'
 import { az_openshift_wait_command_result } from './models/az_openshift_wait_command_result'
 
-/** Commands to manage Log Analytics monitoring. Requires "--workspace-id". */
+/** Commands to manage Log Analytics monitoring in an ARO 3.11 cluster. */
 export class az_openshift_monitor {
     /**
-     * Disable Log Analytics monitoring.
+     * Disable Log Analytics monitoring in an ARO 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -29,7 +29,7 @@ export class az_openshift_monitor {
     }
 
     /**
-     * Enable Log Analytics monitoring. Requires "--workspace-id".
+     * Enable Log Analytics monitoring in an ARO 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -49,10 +49,10 @@ export class az_openshift_monitor {
     }
 }
 
-/** Manage Azure Red Hat OpenShift Services. */
+/** Manage Azure Red Hat OpenShift 3.11 clusters. */
 export class az_openshift {
     /**
-     * Create a new managed OpenShift cluster.
+     * Create a new Azure Red Hat OpenShift 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -82,7 +82,7 @@ export class az_openshift {
     }
 
     /**
-     * Delete a managed OpenShift cluster.
+     * Delete an Azure Red Hat OpenShift 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -101,7 +101,7 @@ export class az_openshift {
     }
 
     /**
-     * List managed OpenShift clusters.
+     * List Azure Red Hat OpenShift 3.11 clusters.
      *
      * Syntax:
      * ```
@@ -115,7 +115,7 @@ export class az_openshift {
     }
 
     /**
-     * Scale the compute pool in a managed OpenShift cluster.
+     * Scale the compute pool in an Azure Red Hat OpenShift 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -135,7 +135,7 @@ export class az_openshift {
     }
 
     /**
-     * Show the details for a managed OpenShift cluster.
+     * Show the details for an Azure Red Hat OpenShift 3.11 cluster.
      *
      * Syntax:
      * ```
@@ -153,7 +153,7 @@ export class az_openshift {
     }
 
     /**
-     * Wait for a managed OpenShift cluster to reach a desired state.
+     * Wait for an Azure Red Hat OpenShift 3.11 cluster to reach a desired state.
      *
      * Syntax:
      * ```
@@ -178,7 +178,7 @@ export class az_openshift {
 }
 
 /**
- * Disable Log Analytics monitoring.
+ * Disable Log Analytics monitoring in an ARO 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -224,7 +224,7 @@ class az_openshift_monitor_disable_command_builder extends CommandBuilder<az_ope
 }
 
 /**
- * Enable Log Analytics monitoring. Requires "--workspace-id".
+ * Enable Log Analytics monitoring in an ARO 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -279,7 +279,7 @@ class az_openshift_monitor_enable_command_builder extends CommandBuilder<az_open
 }
 
 /**
- * Create a new managed OpenShift cluster.
+ * Create a new Azure Red Hat OpenShift 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -409,7 +409,7 @@ class az_openshift_create_command_builder extends CommandBuilder<az_openshift_cr
 }
 
 /**
- * Delete a managed OpenShift cluster.
+ * Delete an Azure Red Hat OpenShift 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -462,7 +462,7 @@ class az_openshift_delete_command_builder extends CommandBuilder<az_openshift_de
 }
 
 /**
- * List managed OpenShift clusters.
+ * List Azure Red Hat OpenShift 3.11 clusters.
  *
  * Syntax:
  * ```
@@ -496,7 +496,7 @@ class az_openshift_list_command_builder extends CommandBuilder<az_openshift_list
 }
 
 /**
- * Scale the compute pool in a managed OpenShift cluster.
+ * Scale the compute pool in an Azure Red Hat OpenShift 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -551,7 +551,7 @@ class az_openshift_scale_command_builder extends CommandBuilder<az_openshift_sca
 }
 
 /**
- * Show the details for a managed OpenShift cluster.
+ * Show the details for an Azure Red Hat OpenShift 3.11 cluster.
  *
  * Syntax:
  * ```
@@ -597,7 +597,7 @@ class az_openshift_show_command_builder extends CommandBuilder<az_openshift_show
 }
 
 /**
- * Wait for a managed OpenShift cluster to reach a desired state.
+ * Wait for an Azure Red Hat OpenShift 3.11 cluster to reach a desired state.
  *
  * Syntax:
  * ```

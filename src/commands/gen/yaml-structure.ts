@@ -11,9 +11,6 @@ export interface Node {
 
 export interface Metadata {
   doc_source_url_repo?: string;
-  original_content_git_url?: string;
-  gitcommit?: string;
-  updated_at?: string;
   'ms.date'?: string;
   description?: string;
 }
@@ -41,9 +38,9 @@ export interface OptionalParameter {
   name: string;
   summary: string;
   description: string;
-  valueFrom?: string;
   defaultValue?: string;
   parameterValueGroup?: string;
+  valueFrom?: string;
 }
 
 export interface RequiredParameter {

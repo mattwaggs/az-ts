@@ -95,8 +95,10 @@ export class az_acs_kubernetes {
      *
      * Syntax:
      * ```
-     * az acs kubernetes install-cli [--client-version]
+     * az acs kubernetes install-cli [--base-src-url]
+     *                               [--client-version]
      *                               [--install-location]
+     *                               [--kubelogin-base-src-url]
      *                               [--kubelogin-install-location]
      *                               [--kubelogin-version]
      *                               [--subscription]
@@ -485,8 +487,10 @@ class az_acs_kubernetes_get_credentials_command_builder extends CommandBuilder<a
  *
  * Syntax:
  * ```
- * az acs kubernetes install-cli [--client-version]
+ * az acs kubernetes install-cli [--base-src-url]
+ *                               [--client-version]
  *                               [--install-location]
+ *                               [--kubelogin-base-src-url]
  *                               [--kubelogin-install-location]
  *                               [--kubelogin-version]
  *                               [--subscription]
@@ -495,6 +499,12 @@ class az_acs_kubernetes_get_credentials_command_builder extends CommandBuilder<a
 class az_acs_kubernetes_install_cli_command_builder extends CommandBuilder<az_acs_kubernetes_install_cli_command_result> {
     constructor(commandPath: string, resultDataTypeName: string) {
         super(commandPath, resultDataTypeName);
+    }
+
+    /** Base download source URL for kubectl releases. */
+    baseSrcUrl(value: string): az_acs_kubernetes_install_cli_command_builder {
+        this.setFlag("--base-src-url", value);
+        return this;
     }
 
     /** Version of kubectl to install. */
@@ -506,6 +516,12 @@ class az_acs_kubernetes_install_cli_command_builder extends CommandBuilder<az_ac
     /** Path at which to install kubectl. */
     installLocation(value: string): az_acs_kubernetes_install_cli_command_builder {
         this.setFlag("--install-location", value);
+        return this;
+    }
+
+    /** Base download source URL for kubelogin releases. */
+    kubeloginBaseSrcUrl(value: string): az_acs_kubernetes_install_cli_command_builder {
+        this.setFlag("--kubelogin-base-src-url", value);
         return this;
     }
 
