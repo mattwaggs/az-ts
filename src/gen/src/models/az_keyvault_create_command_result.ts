@@ -30,6 +30,7 @@ interface Properties {
 }
 
 interface Sku {
+  family?: string;
   name: string;
 }
 

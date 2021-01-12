@@ -27,6 +27,7 @@ interface Properties {
     vaultUri: string;
 }
 interface Sku {
+    family?: string;
     name: string;
 }
 interface AccessPolicy {

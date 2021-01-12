@@ -4,8 +4,11 @@ export interface az_group_show_command_result {
   managedBy?: any;
   name: string;
   properties: Properties;
-  tags?: any;
+  tags?: Tag;
   type: string;
+}
+
+interface Tag {
 }
 
 interface Properties {
